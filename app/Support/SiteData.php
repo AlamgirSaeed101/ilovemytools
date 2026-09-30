@@ -128,6 +128,8 @@ class SiteData
             'icon' => $category['icon'] ?? 'sparkles',
             'accent' => $category['accent'] ?? '#4f46e5',
             'intro' => $category['intro'] ?? '',
+            'content' => array_values($category['content'] ?? []),
+            'faqs' => array_values($category['faqs'] ?? []),
             'tools' => $this->registry->inCategory($slug)->keys()->all(),
             'meta' => $this->meta($category['title'], $category['description']),
         ];

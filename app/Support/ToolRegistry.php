@@ -17,7 +17,7 @@ class ToolRegistry
     /** Fields that may be translated. Slugs, icons, categories and links never are. */
     private const TOOL_TEXT = ['name', 'title', 'description', 'h1', 'tagline', 'keywords', 'intro', 'steps', 'features', 'content', 'faqs'];
 
-    private const CATEGORY_TEXT = ['name', 'title', 'description', 'intro'];
+    private const CATEGORY_TEXT = ['name', 'title', 'description', 'intro', 'content', 'faqs'];
 
     /** @var array<string, array<string, mixed>> English originals */
     private array $tools;
@@ -34,7 +34,7 @@ class ToolRegistry
             $tools[$slug] = $tool + ['slug' => $slug, 'related' => [], 'faqs' => [], 'steps' => [], 'features' => [], 'content' => [], 'sources' => [], 'popular' => false];
         }
         foreach ($categories as $slug => $category) {
-            $categories[$slug] = $category + ['slug' => $slug];
+            $categories[$slug] = $category + ['slug' => $slug, 'content' => [], 'faqs' => []];
         }
 
         $this->tools = $tools;

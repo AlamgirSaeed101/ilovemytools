@@ -1530,7 +1530,9 @@
   {
     "key": "Frequently asked questions",
     "files": [
+      "resources/js/pages/Category.jsx",
       "resources/js/pages/ToolPage.jsx",
+      "resources/views/pages/category.blade.php",
       "resources/views/pages/tool.blade.php"
     ]
   },
@@ -3561,6 +3563,13 @@
     ]
   },
   {
+    "key": "Tool",
+    "files": [
+      "resources/js/pages/Category.jsx",
+      "resources/views/pages/category.blade.php"
+    ]
+  },
+  {
     "key": "Tools",
     "files": [
       "app/Http/Controllers/PageController.php",
@@ -3824,6 +3833,13 @@
     ]
   },
   {
+    "key": "What it does",
+    "files": [
+      "resources/js/pages/Category.jsx",
+      "resources/views/pages/category.blade.php"
+    ]
+  },
+  {
     "key": "Wheel with {count} entries",
     "files": [
       "resources/js/tools/SpinWheel.jsx"
@@ -3833,6 +3849,13 @@
     "key": "When reporting a problem, please tell us which tool you used, your browser (for example Chrome or Safari) and your device, so we can fix it quickly.",
     "files": [
       "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Which tool do you need?",
+    "files": [
+      "resources/js/pages/Category.jsx",
+      "resources/views/pages/category.blade.php"
     ]
   },
   {

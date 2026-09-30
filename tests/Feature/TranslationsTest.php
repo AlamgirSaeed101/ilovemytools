@@ -59,6 +59,12 @@ class TranslationsTest extends TestCase
             foreach (['name', 'title', 'description', 'intro'] as $field) {
                 $this->assertNotEmpty($categories[$slug][$field] ?? null, "$code/categories.$slug.$field");
             }
+            $this->assertCount(count($category['content'] ?? []), $categories[$slug]['content'] ?? [], "$code/categories.$slug content");
+            $this->assertCount(count($category['faqs'] ?? []), $categories[$slug]['faqs'] ?? [], "$code/categories.$slug faqs");
+            foreach ($categories[$slug]['faqs'] ?? [] as $faq) {
+                $this->assertNotEmpty($faq['q'] ?? null, "$code/categories.$slug faq q");
+                $this->assertNotEmpty($faq['a'] ?? null, "$code/categories.$slug faq a");
+            }
         }
     }
 

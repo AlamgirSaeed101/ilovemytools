@@ -82,6 +82,7 @@ class PageController extends Controller
 
         $seo = Seo::make($data['title'], $data['description'], $path)
             ->breadcrumbs([[$data['name'], $path]])
+            ->faqs($data['faqs'] ?? [])
             ->addSchema([
                 '@context' => 'https://schema.org',
                 '@type' => 'CollectionPage',

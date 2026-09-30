@@ -36,6 +36,54 @@ export default function Category() {
 
             <AdSlot key={`${category.slug}-in-content`} position="in_content" />
 
+            <article className="prose tool-article my-11">
+                <h2 id="compare">{t('Which tool do you need?')}</h2>
+                <div className="table-wrap">
+                    <table className="compare-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">{t('Tool')}</th>
+                                <th scope="col">{t('What it does')}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {tools.map((tool) => (
+                                <tr key={tool.slug}>
+                                    <th scope="row">
+                                        <Link to={`/${tool.slug}`}>{tool.name}</Link>
+                                    </th>
+                                    <td>{tool.tagline}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+
+                {(category.content ?? []).map((section) => (
+                    <div key={section.heading}>
+                        <h2>{section.heading}</h2>
+                        <p>{section.body}</p>
+                    </div>
+                ))}
+
+                {category.faqs?.length > 0 && (
+                    <>
+                        <h2 id="faq">{t('Frequently asked questions')}</h2>
+                        <div className="faq">
+                            {category.faqs.map((faq, i) => (
+                                <details className="faq__item" key={faq.q} open={i === 0}>
+                                    <summary>
+                                        <h3 className="faq__q">{faq.q}</h3>
+                                        <Icon name="chevron" className="icon faq__chev" />
+                                    </summary>
+                                    <p>{faq.a}</p>
+                                </details>
+                            ))}
+                        </div>
+                    </>
+                )}
+            </article>
+
             <section className="my-11" aria-labelledby="other-heading">
                 <h2 id="other-heading" className="m-0 mb-4 text-[1.35rem] font-bold">
                     {t('Other categories')}
