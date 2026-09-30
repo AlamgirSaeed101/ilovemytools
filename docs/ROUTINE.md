@@ -28,12 +28,18 @@ Read `TOOLS_SPEC_PROMPT.md` (architecture, SEO rules, tool specs) before changin
 Ranked by search demand (what iLovePDF, Smallpdf, FreeConvert and the big calculator sites put first) and
 by whether the tool works well entirely in the browser.
 
+Real US search data (Semrush, 30 Sep 2026) is in `docs/keywords/`. Use it for each new page: the
+highest-volume exact phrase becomes the H1/title keyword; the next variants go in the intro, steps, headings
+and FAQs. When the owner adds new Semrush exports there, re-rank the unchecked items by volume ÷ difficulty.
+
 ### New tools
-- [ ] **JPG to PDF** `/jpg-to-pdf` (pdf-lib; JPG/PNG/WebP in, reorder, A4/Letter/fit, orientation, margin). Spec: TOOLS_SPEC_PROMPT Part 4 #4.
-- [ ] **PDF to JPG** `/pdf-to-jpg` (pdfjs-dist render, 72/150/300 DPI, single image or ZIP). Part 4 #5.
+- [ ] **JPG to PDF** `/jpg-to-pdf` (pdf-lib; JPG/PNG/WebP in, reorder, A4/Letter/fit, orientation, margin). Spec: TOOLS_SPEC_PROMPT Part 4 #4. *Semrush: "jpg to pdf" 301K/mo, "jpeg to pdf" 49.5K.*
+- [ ] **PDF to JPG** `/pdf-to-jpg` (pdfjs-dist render, 72/150/300 DPI, single image or ZIP). Part 4 #5. *"pdf to jpg" 246K, "convert pdf to jpg" 40.5K, "pdf to jpeg" 33.1K.*
+- [ ] **WebP to PNG** `/webp-to-png`, **PNG to JPG** `/png-to-jpg`, **JPG to PNG** `/jpg-to-png` (dedicated landing pages reusing the image converter engine with the format preset; batch + ZIP). *"webp to png" 165K (KD 64), "png to jpg" 49.5K, "png converter" 33.1K, "jpeg to png" 9.9K (KD 37).*
+- [ ] **Click Counter / Tally Counter** `/click-counter` (big tap button, +/−, reset, several named counters, keyboard, vibration on mobile, remembers counts locally). *"click counter" 22.2K (KD 40), "tally counter" 18.1K (KD 42), "clicker counter" 9.9K.*
 - [ ] **Compress PDF** `/compress-pdf` (re-save with object streams + optional page re-render at chosen quality via pdfjs; show before/after size; warn that strong mode rasterises text).
 - [ ] **Unit Converter** `/unit-converter` (length, weight, temperature, area, volume, speed, data, time). Part 4 #1.
-- [ ] **PNG to JPG** `/png-to-jpg`, **JPG to PNG** `/jpg-to-png`, **WebP to JPG** `/webp-to-jpg` (dedicated landing pages reusing the image resizer/converter engine with the format preset).
+- [ ] **WebP to JPG** `/webp-to-jpg`, **PNG to WebP** `/png-to-webp` (same landing-page pattern as above).
 - [ ] **HEIC to JPG** `/heic-to-jpg` (heic2any, batch, ZIP). Part 4 #8.
 - [ ] **BMI Calculator** `/bmi-calculator` (metric/imperial, WHO categories, healthy weight range).
 - [ ] **Loan / EMI Calculator** `/loan-calculator` (amount, rate, term; monthly payment, total interest, amortisation table).
@@ -75,4 +81,5 @@ Not planned: PDF↔Word/Excel/PowerPoint (can't be done well in the browser), vi
 ## Log
 
 <!-- One line per run, newest first: YYYY-MM-DD · what changed · CI result -->
+- 2026-09-30 · Backlog re-ranked with Semrush US data (docs/keywords/); added WebP/PNG/JPG converter pages and Click Counter near the top.
 - 2026-09-30 · Routine set up; backlog created from search-demand research and the SEO/GEO/AEO audit.
