@@ -214,7 +214,7 @@ class PagesTest extends TestCase
 
     public function test_info_pages_have_descriptive_titles_and_short_breadcrumbs(): void
     {
-        $this->get('/about')->assertSee('<title>About Us - Free, Private Browser Tools | ILoveTools</title>', false)
+        $this->get('/about')->assertSee('<title>About Us - Free, Private Browser Tools | '.config('site.name').'</title>', false)
             ->assertSee('"name": "About Us"', false);
         $this->get('/es/contact')->assertSee('Contacto: informa de un error o sugiere una herramienta', false);
     }
