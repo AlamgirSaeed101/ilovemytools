@@ -9,7 +9,7 @@ return [
         'h1' => 'Wortzähler',
         'tagline' => 'Zähle Wörter, Zeichen, Sätze und Lesezeit sofort.',
         'keywords' => ['wortzähler', 'zeichenzähler', 'wörter zählen', 'wörter zählen online', 'lesezeit berechnen'],
-        'intro' => 'Füge deinen Text unten ein oder tippe ihn, um Wörter, Zeichen, Sätze und Absätze beim Schreiben zu zählen. Der Wortzähler zeigt außerdem die geschätzte Lese- und Sprechzeit sowie deine häufigsten Schlüsselwörter – praktisch für Aufsätze, Blogartikel, Social-Media-Posts und SEO-Meta-Beschreibungen.',
+        'intro' => 'Ein Wortzähler ist ein Tool, das die Wörter, Zeichen, Sätze und Absätze eines Textes zählt. Füge deinen Text unten ein oder tippe ihn, um Wörter, Zeichen, Sätze und Absätze beim Schreiben zu zählen. Der Wortzähler zeigt außerdem die geschätzte Lese- und Sprechzeit sowie deine häufigsten Schlüsselwörter – praktisch für Aufsätze, Blogartikel, Social-Media-Posts und SEO-Meta-Beschreibungen.',
         'steps' => [
             'Tippe deinen Text in das Feld oder füge ihn ein.',
             'Sieh zu, wie sich die Zahl der Wörter, Zeichen, Sätze und Absätze live aktualisiert.',
@@ -49,7 +49,7 @@ return [
         'h1' => 'Groß-/Kleinschreibung umwandeln',
         'tagline' => 'Ändere Text mit einem Klick in Groß-, Klein-, Titel-, Satz-, Camel- oder Snake-Schreibweise.',
         'keywords' => ['groß kleinschreibung umwandeln', 'großbuchstaben in kleinbuchstaben', 'titelschreibung', 'satzanfang groß', 'camelcase konverter'],
-        'intro' => 'Versehentlich mit aktivierter Feststelltaste getippt oder brauchst du eine Überschrift in Titelschreibung? Füge deinen Text ein und klicke auf eine Schaltfläche, um ihn sofort umzuwandeln. Entwickler können außerdem zwischen camelCase, PascalCase, snake_case, kebab-case und CONSTANT_CASE wechseln.',
+        'intro' => 'Ein Groß-/Kleinschreibungs-Umwandler ist ein Tool, das die Schreibweise eines Textes ändert, zum Beispiel von GROSSBUCHSTABEN in kleinbuchstaben. Versehentlich mit aktivierter Feststelltaste getippt oder brauchst du eine Überschrift in Titelschreibung? Füge deinen Text ein und klicke auf eine Schaltfläche, um ihn sofort umzuwandeln. Entwickler können außerdem zwischen camelCase, PascalCase, snake_case, kebab-case und CONSTANT_CASE wechseln.',
         'steps' => [
             'Füge deinen Text in das Feld ein.',
             'Klicke auf die gewünschte Schreibweise, zum Beispiel Titelschreibung oder kleinbuchstaben.',
@@ -87,7 +87,7 @@ return [
         'h1' => 'Sicherer Passwort-Generator',
         'tagline' => 'Erstelle sichere Zufallspasswörter mit einem Klick – direkt auf deinem Gerät.',
         'keywords' => ['passwort generator', 'sicheres passwort generator', 'zufallspasswort generator', 'sicheres passwort'],
-        'intro' => 'Erstelle ein starkes Zufallspasswort, das praktisch nicht zu erraten ist. Wähle die Länge und die enthaltenen Zeichen – der Generator nutzt den kryptografisch sicheren Zufallszahlengenerator deines Browsers. Passwörter werden nie an unseren Server gesendet.',
+        'intro' => 'Ein Passwort-Generator ist ein Tool, das aus den gewählten Zeichen zufällige, schwer zu erratende Passwörter erzeugt. Erstelle ein starkes Zufallspasswort, das praktisch nicht zu erraten ist. Wähle die Länge und die enthaltenen Zeichen – der Generator nutzt den kryptografisch sicheren Zufallszahlengenerator deines Browsers. Passwörter werden nie an unseren Server gesendet.',
         'steps' => [
             'Wähle eine Passwortlänge (16 oder mehr wird empfohlen).',
             'Hake die gewünschten Zeichenarten an: Großbuchstaben, Kleinbuchstaben, Ziffern und Sonderzeichen.',
@@ -116,6 +116,17 @@ return [
             ['q' => 'Was bewirkt „Ähnliche ausschließen“?', 'a' => 'Es entfernt Zeichen, die sich ähneln, wie l, 1, I, O und 0, damit das Passwort leichter zu lesen und von Hand einzutippen ist.'],
             ['q' => 'Was ist Passwort-Entropie?', 'a' => 'Die Entropie misst in Bit, wie unvorhersehbar ein Passwort ist. Jedes zusätzliche Bit verdoppelt die Zahl der Versuche, die ein Angreifer braucht. Ab 80 Bit ist es stark, ab 100 Bit ausgezeichnet.'],
         ],
+        'table' => [
+            'caption' => 'Passwortlänge und Stärke (Entropie in Bit)',
+            'headers' => ['Länge', 'Buchstaben und Ziffern (62 Zeichen)', 'Buchstaben, Ziffern und Sonderzeichen (89 Zeichen)'],
+            'rows' => [
+                ['8', '48', '52'],
+                ['12', '71', '78'],
+                ['16', '95', '104'],
+                ['20', '119', '130'],
+                ['32', '191', '207'],
+            ],
+        ],
     ],
 
     'qr-code-generator' => [
@@ -125,7 +136,7 @@ return [
         'h1' => 'Kostenloser QR-Code-Generator',
         'tagline' => 'Erstelle QR-Codes für Links, WLAN, E-Mail, Telefon und SMS. Download als PNG oder SVG.',
         'keywords' => ['qr code generator', 'qr code kostenlos erstellen', 'wlan qr code', 'qr code erstellen', 'qr code für url'],
-        'intro' => 'Erstelle in Sekunden einen QR-Code für einen Website-Link, Text, ein WLAN, eine E-Mail, eine Telefonnummer oder eine SMS. Wähle Farben und Größe und lade ein hochwertiges PNG für Bildschirme oder ein SVG für den Druck herunter. Es sind statische QR-Codes – sie funktionieren für immer und laufen nie ab.',
+        'intro' => 'Ein QR-Code-Generator ist ein Tool, das einen Link, einen Text oder WLAN-Zugangsdaten in einen quadratischen Code verwandelt, den Handykameras scannen können. Erstelle in Sekunden einen QR-Code für einen Website-Link, Text, ein WLAN, eine E-Mail, eine Telefonnummer oder eine SMS. Wähle Farben und Größe und lade ein hochwertiges PNG für Bildschirme oder ein SVG für den Druck herunter. Es sind statische QR-Codes – sie funktionieren für immer und laufen nie ab.',
         'steps' => [
             'Wähle den QR-Code-Typ: URL, Text, WLAN, E-Mail, Telefon oder SMS.',
             'Fülle die Angaben aus. Die Vorschau aktualisiert sich beim Tippen.',
@@ -157,6 +168,16 @@ return [
             ['q' => 'Was ist Fehlerkorrektur?', 'a' => 'Dank Fehlerkorrektur lässt sich ein QR-Code auch dann noch scannen, wenn ein Teil beschädigt ist. Stufe L stellt etwa 7 % des Codes wieder her, Stufe H etwa 30 %, höhere Stufen machen den Code aber dichter.'],
             ['q' => 'Warum lässt sich mein QR-Code nicht scannen?', 'a' => 'Meist sind die Farben zu ähnlich oder vertauscht (heller Code auf dunklem Grund). Verwende einen dunklen Code auf hellem Hintergrund mit gutem Kontrast.'],
         ],
+        'table' => [
+            'caption' => 'Fehlerkorrekturstufen von QR-Codes',
+            'headers' => ['Stufe', 'Stellt bis zu wieder her', 'Geeignet für'],
+            'rows' => [
+                ['L', '7 %', 'Saubere Bildschirme und Codes mit vielen Daten'],
+                ['M', '15 %', 'Die meisten Anwendungen (die häufigste Wahl)'],
+                ['Q', '25 %', 'Gedruckte Codes, die schmutzig werden können'],
+                ['H', '30 %', 'Raue Umgebungen, etwa Etiketten in Fabriken'],
+            ],
+        ],
     ],
 
     'image-compressor' => [
@@ -166,7 +187,7 @@ return [
         'h1' => 'Bild komprimieren',
         'tagline' => 'Verkleinere JPG-, PNG- und WebP-Dateien – sogar auf eine exakte Größe wie 100 KB.',
         'keywords' => ['bild komprimieren', 'bild verkleinern', 'bild auf 100kb komprimieren', 'bildgröße reduzieren', 'jpg komprimieren'],
-        'intro' => 'Mach deine Bilder kleiner, ohne sichtbar an Qualität zu verlieren. Lege eine oder mehrere JPG-, PNG- oder WebP-Dateien ab, wähle eine Qualitätsstufe oder eine Zielgröße wie 100 KB und lade die komprimierten Bilder herunter. Die Komprimierung passiert in deinem Browser, deine Fotos werden also nie hochgeladen.',
+        'intro' => 'Ein Bildkomprimierer ist ein Tool, das Bilddateien verkleinert, ohne dass sie sichtbar schlechter aussehen. Mach deine Bilder kleiner, ohne sichtbar an Qualität zu verlieren. Lege eine oder mehrere JPG-, PNG- oder WebP-Dateien ab, wähle eine Qualitätsstufe oder eine Zielgröße wie 100 KB und lade die komprimierten Bilder herunter. Die Komprimierung passiert in deinem Browser, deine Fotos werden also nie hochgeladen.',
         'steps' => [
             'Bilder per Drag & Drop ablegen oder zum Auswählen klicken (JPG, PNG oder WebP).',
             'Eine Qualitätsstufe wählen oder eine Zielgröße wie 100 KB festlegen.',
@@ -198,6 +219,15 @@ return [
             ['q' => 'Warum ist mein PNG kaum kleiner geworden?', 'a' => 'PNG ist ein verlustfreies Format. Für große Einsparungen wähle WebP oder JPG als Ausgabeformat. Nimm WebP, wenn die Transparenz erhalten bleiben soll.'],
             ['q' => 'Gibt es eine Größenbeschränkung?', 'a' => 'Jedes Bild darf bis zu 50 MB groß sein. Sehr große Fotos können auf älteren Smartphones ein paar Sekunden dauern.'],
         ],
+        'table' => [
+            'caption' => 'Welches Bildformat passt',
+            'headers' => ['Format', 'Am besten für', 'Transparenz'],
+            'rows' => [
+                ['JPG', 'Fotos', 'Nein'],
+                ['PNG', 'Logos, Screenshots, scharfe Grafiken', 'Ja'],
+                ['WebP', 'Websites (kleinste Dateien für Fotos und Grafiken)', 'Ja'],
+            ],
+        ],
     ],
 
     'image-resizer' => [
@@ -207,7 +237,7 @@ return [
         'h1' => 'Bildgröße ändern & umwandeln',
         'tagline' => 'Skaliere auf exakte Pixel oder prozentual und wandle JPG, PNG und WebP um.',
         'keywords' => ['bildgröße ändern', 'bild skalieren', 'png in jpg', 'jpg in png', 'webp in jpg', 'bild konverter'],
-        'intro' => 'Bringe ein Foto auf die exakten Maße für soziale Netzwerke, ein Passformular oder deine Website, oder skaliere es prozentual. Du kannst auch das Format umwandeln, zum Beispiel PNG in JPG oder WebP in PNG. Alles passiert in deinem Browser.',
+        'intro' => 'Ein Tool zum Ändern der Bildgröße passt Breite und Höhe eines Bildes an, und ein Konverter ändert sein Dateiformat. Bringe ein Foto auf die exakten Maße für soziale Netzwerke, ein Passformular oder deine Website, oder skaliere es prozentual. Du kannst auch das Format umwandeln, zum Beispiel PNG in JPG oder WebP in PNG. Alles passiert in deinem Browser.',
         'steps' => [
             'Ein Bild auswählen oder ablegen (JPG, PNG, WebP, GIF oder BMP).',
             'Neue Breite und Höhe eingeben oder einen Prozentwert wählen.',
@@ -237,6 +267,16 @@ return [
             ['q' => 'Verschlechtert das Skalieren die Qualität?', 'a' => 'Beim Verkleinern bleibt das Bild scharf. Deutlich größer als das Original kann es unscharf wirken, weil keine neuen Details entstehen können.'],
             ['q' => 'Wie groß darf das Bild maximal sein?', 'a' => 'Ausgabebilder dürfen bis zu 10.000 Pixel pro Seite haben – das können alle modernen Browser verarbeiten.'],
         ],
+        'table' => [
+            'caption' => 'Übliche Bildgrößen',
+            'headers' => ['Verwendung', 'Größe (Pixel)'],
+            'rows' => [
+                ['Quadratischer Instagram-Post', '1080 × 1080'],
+                ['Geteiltes Bild auf Facebook und LinkedIn', '1200 × 630'],
+                ['YouTube-Thumbnail', '1280 × 720'],
+                ['Bild in voller Website-Breite', 'bis 1920 breit'],
+            ],
+        ],
     ],
 
     'merge-pdf' => [
@@ -246,7 +286,7 @@ return [
         'h1' => 'PDF-Dateien zusammenfügen',
         'tagline' => 'Mehrere PDFs zu einer Datei kombinieren – ohne Wasserzeichen, ohne Upload.',
         'keywords' => ['pdf zusammenfügen', 'pdf kombinieren', 'pdf dateien zusammenführen', 'pdf merger', 'pdf zusammenfügen kostenlos online'],
-        'intro' => 'Kombiniere mehrere PDF-Dateien in der gewünschten Reihenfolge zu einem einzigen Dokument. Anders als bei vielen PDF-Websites werden deine Dateien in deinem Browser zusammengefügt – vertrauliche Dokumente berühren nie einen Server, und das Ergebnis hat kein Wasserzeichen.',
+        'intro' => 'PDFs zusammenfügen bedeutet, mehrere PDF-Dateien zu einem einzigen Dokument zu kombinieren. Kombiniere mehrere PDF-Dateien in der gewünschten Reihenfolge zu einem einzigen Dokument. Anders als bei vielen PDF-Websites werden deine Dateien in deinem Browser zusammengefügt – vertrauliche Dokumente berühren nie einen Server, und das Ergebnis hat kein Wasserzeichen.',
         'steps' => [
             'Zwei oder mehr PDF-Dateien hinzufügen, per Ablegen oder Durchsuchen.',
             'Mit den Pfeilen nach oben und unten in die richtige Reihenfolge bringen.',
@@ -285,7 +325,7 @@ return [
         'h1' => 'PDF teilen & Seiten extrahieren',
         'tagline' => 'Seiten extrahieren oder ein PDF in separate Dateien teilen – privat in deinem Browser.',
         'keywords' => ['pdf teilen', 'seiten aus pdf extrahieren', 'pdf seiten trennen', 'pdf splitter', 'pdf online teilen'],
-        'intro' => 'Hol dir nur die Seiten aus einem PDF, die du brauchst, oder teile es in separate Dateien. Gib Seitenbereiche wie 1-3, 5, 8-10 ein oder mache aus jeder Seite ein eigenes PDF. Die Verarbeitung findet vollständig in deinem Browser statt.',
+        'intro' => 'Ein PDF teilen bedeutet, Seiten aus einem Dokument herauszunehmen oder es in mehrere kleinere PDF-Dateien aufzuteilen. Hol dir nur die Seiten aus einem PDF, die du brauchst, oder teile es in separate Dateien. Gib Seitenbereiche wie 1-3, 5, 8-10 ein oder mache aus jeder Seite ein eigenes PDF. Die Verarbeitung findet vollständig in deinem Browser statt.',
         'steps' => [
             'Das PDF auswählen, das du teilen möchtest.',
             'Einen Modus wählen: Seiten in ein PDF extrahieren, nach Bereichen teilen oder jede Seite trennen.',
@@ -320,7 +360,7 @@ return [
         'h1' => 'Altersrechner',
         'tagline' => 'Finde dein genaues Alter in Jahren, Monaten und Tagen – plus deinen nächsten Geburtstag.',
         'keywords' => ['altersrechner', 'alter berechnen', 'geburtsdatum rechner', 'wie alt bin ich', 'alter berechnen mit geburtsdatum'],
-        'intro' => 'Gib ein Geburtsdatum ein, um das genaue Alter in Jahren, Monaten und Tagen zu erfahren. Außerdem siehst du die Gesamtzahl gelebter Monate, Wochen, Tage und Stunden, den Wochentag deiner Geburt und einen Countdown bis zum nächsten Geburtstag. Du kannst das Alter auch für jedes vergangene oder zukünftige Datum berechnen.',
+        'intro' => 'Ein Altersrechner berechnet aus dem Geburtsdatum das genaue Alter einer Person in Jahren, Monaten und Tagen. Gib ein Geburtsdatum ein, um das genaue Alter in Jahren, Monaten und Tagen zu erfahren. Außerdem siehst du die Gesamtzahl gelebter Monate, Wochen, Tage und Stunden, den Wochentag deiner Geburt und einen Countdown bis zum nächsten Geburtstag. Du kannst das Alter auch für jedes vergangene oder zukünftige Datum berechnen.',
         'steps' => [
             'Das Geburtsdatum eingeben.',
             'Heute als Datum für „Alter am“ lassen oder ein anderes Datum wählen.',
@@ -354,7 +394,7 @@ return [
         'h1' => 'Prozentrechner',
         'tagline' => 'Alle gängigen Prozentrechnungen an einem Ort, mit Formel.',
         'keywords' => ['prozentrechner', 'prozent berechnen', 'prozentuale veränderung berechnen', 'prozentuale zunahme berechnen', 'wie viel prozent'],
-        'intro' => 'Berechne Prozente im Handumdrehen: Was sind 15 % von 200, wie viel Prozent sind 30 von 120, die prozentuale Zunahme von 80 auf 100 und mehr. Jeder Rechner zeigt die verwendete Formel, damit du den Rechenweg für Hausaufgaben, Rabatte, Trinkgeld, Noten und Berichte prüfen kannst.',
+        'intro' => 'Ein Prozentrechner berechnet Prozentwerte, etwa X % von Y oder die prozentuale Veränderung zwischen zwei Zahlen. Berechne Prozente im Handumdrehen: Was sind 15 % von 200, wie viel Prozent sind 30 von 120, die prozentuale Zunahme von 80 auf 100 und mehr. Jeder Rechner zeigt die verwendete Formel, damit du den Rechenweg für Hausaufgaben, Rabatte, Trinkgeld, Noten und Berichte prüfen kannst.',
         'steps' => [
             'Den Rechner suchen, der zu deiner Frage passt.',
             'Deine Zahlen in die Felder eingeben.',
@@ -380,6 +420,17 @@ return [
             ['q' => 'Wie berechne ich einen Rabatt?', 'a' => 'Nutze „Eine Zahl um einen Prozentsatz verringern“. Bei 20 % Rabatt auf 50 € beträgt der Preis 50 € x (1 - 0,20) = 40 €.'],
             ['q' => 'Warum kann ich keine Veränderung ausgehend von null berechnen?', 'a' => 'Die prozentuale Veränderung teilt durch den Anfangswert, und die Division durch null ist nicht definiert. Eine Veränderung ausgehend von 0 lässt sich daher nicht in Prozent ausdrücken.'],
         ],
+        'table' => [
+            'caption' => 'Prozentformeln mit Beispielen',
+            'headers' => ['Frage', 'Formel', 'Beispiel'],
+            'rows' => [
+                ['Was sind X % von Y?', '(X / 100) × Y', '15 % von 200 = 30'],
+                ['X ist wie viel % von Y?', '(X / Y) × 100', '30 von 120 = 25 %'],
+                ['Veränderung in % von A nach B', '(B − A) / |A| × 100', '80 → 100 = +25 %'],
+                ['Y um X % erhöhen', 'Y × (1 + X / 100)', '50 + 20 % = 60'],
+                ['Y um X % verringern', 'Y × (1 − X / 100)', '50 − 20 % = 40'],
+            ],
+        ],
     ],
 
     'json-formatter' => [
@@ -389,7 +440,7 @@ return [
         'h1' => 'JSON-Formatierer & Validator',
         'tagline' => 'JSON verschönern, validieren und minifizieren – mit klaren Fehlermeldungen.',
         'keywords' => ['json formatierer', 'json validator', 'json beautifier', 'json formatieren', 'json minifizieren'],
-        'intro' => 'Füge JSON ein, um es mit sauberer Einrückung zu verschönern, zu validieren oder für die Produktion zu minifizieren. Ist das JSON ungültig, bekommst du eine klare Fehlermeldung mit exakter Zeile und Spalte, damit du es schnell korrigieren kannst. Deine Daten werden lokal verarbeitet und nie gesendet.',
+        'intro' => 'Ein JSON-Formatierer ist ein Tool, das JSON-Daten mit Zeilenumbrüchen und Einrückung lesbar macht und prüft, ob sie gültig sind. Füge JSON ein, um es mit sauberer Einrückung zu verschönern, zu validieren oder für die Produktion zu minifizieren. Ist das JSON ungültig, bekommst du eine klare Fehlermeldung mit exakter Zeile und Spalte, damit du es schnell korrigieren kannst. Deine Daten werden lokal verarbeitet und nie gesendet.',
         'steps' => [
             'Dein JSON in das Eingabefeld einfügen oder auf Beispiel klicken.',
             'Auf Formatieren zum Verschönern oder auf Minifizieren zum Komprimieren klicken.',
@@ -415,6 +466,16 @@ return [
             ['q' => 'Warum zeigt mein JSON einen Fehler?', 'a' => 'Prüfe Zeile und Spalte in der Meldung. Überzählige Kommas, einfache Anführungszeichen und fehlende Anführungszeichen um Schlüssel sind die üblichen Ursachen.'],
             ['q' => 'Kann es große Dateien verarbeiten?', 'a' => 'Ja. Dateien mit mehreren Megabyte werden auf den meisten Geräten in deutlich unter einer Sekunde formatiert.'],
         ],
+        'table' => [
+            'caption' => 'Häufige JSON-Fehler und ihre Korrektur',
+            'headers' => ['Problem', 'Ungültig', 'Gültig'],
+            'rows' => [
+                ['Überzähliges Komma', '{"a": 1,}', '{"a": 1}'],
+                ['Einfache Anführungszeichen', '{\'a\': 1}', '{"a": 1}'],
+                ['Schlüssel ohne Anführungszeichen', '{a: 1}', '{"a": 1}'],
+                ['Kommentar', '{"a": 1 // Notiz}', '{"a": 1}'],
+            ],
+        ],
     ],
 
     'base64-encoder-decoder' => [
@@ -424,7 +485,7 @@ return [
         'h1' => 'Base64-Kodierer & -Dekodierer',
         'tagline' => 'Base64-Text und -Dateien kodieren und dekodieren, mit UTF-8 und URL-sicherer Variante.',
         'keywords' => ['base64 kodieren', 'base64 dekodieren', 'base64 konverter', 'base64 in text', 'bild in base64'],
-        'intro' => 'Wandle Text in Base64 um oder dekodiere Base64 zurück in lesbaren Text – mit voller Unterstützung für Emojis und nicht-englische Zeichen. Du kannst auch eine Datei oder ein Bild in eine Base64-Data-URL umwandeln, um sie in HTML, CSS oder JSON einzubetten.',
+        'intro' => 'Base64 ist eine Methode, beliebige Daten, auch Dateien, mit nur 64 Textzeichen darzustellen; Kodieren wandelt in Base64 um, Dekodieren wieder zurück. Wandle Text in Base64 um oder dekodiere Base64 zurück in lesbaren Text – mit voller Unterstützung für Emojis und nicht-englische Zeichen. Du kannst auch eine Datei oder ein Bild in eine Base64-Data-URL umwandeln, um sie in HTML, CSS oder JSON einzubetten.',
         'steps' => [
             'Modus Text oder Datei wählen.',
             'Bei Text die Eingabe einfügen und auf Kodieren oder Dekodieren klicken.',
@@ -450,6 +511,15 @@ return [
             ['q' => 'Warum ist Base64 größer als das Original?', 'a' => 'Base64 macht aus je 3 Bytes 4 Zeichen, kodierte Daten sind also etwa 33 % größer als das Original.'],
             ['q' => 'Wie wandle ich ein Bild in Base64 um?', 'a' => 'Wechsle in den Datei-Modus und wähle dein Bild. Du erhältst den reinen Base64-String und eine fertige Data-URL.'],
         ],
+        'table' => [
+            'caption' => 'Wie viel größer Daten durch Base64 werden',
+            'headers' => ['Originalgröße', 'Länge in Base64'],
+            'rows' => [
+                ['3 Byte', '4 Zeichen'],
+                ['1 KB (1.024 Byte)', '1.368 Zeichen'],
+                ['1 MB (1.048.576 Byte)', '1.398.104 Zeichen'],
+            ],
+        ],
     ],
 
     'what-is-my-ip' => [
@@ -459,7 +529,7 @@ return [
         'h1' => 'Wie ist meine IP-Adresse?',
         'tagline' => 'Deine öffentliche IP-Adresse und Browserdetails – sofort.',
         'keywords' => ['wie ist meine ip', 'meine ip adresse', 'ip adresse abfragen', 'meine ip prüfen', 'was ist meine ip adresse'],
-        'intro' => 'Deine öffentliche IP-Adresse ist die Adresse, die Websites sehen, wenn du dich mit dem Internet verbindest. Sie wird von deinem Internetanbieter vergeben oder von deinem VPN, falls du eins nutzt. Unten siehst du deine aktuelle IP-Adresse, ob sie IPv4 oder IPv6 ist, und Details zu deinem Browser und Gerät.',
+        'intro' => 'Eine IP-Adresse ist die Nummer, die deine Verbindung im Internet kennzeichnet; deine öffentliche IP ist die, die Websites sehen. Deine öffentliche IP-Adresse ist die Adresse, die Websites sehen, wenn du dich mit dem Internet verbindest. Sie wird von deinem Internetanbieter vergeben oder von deinem VPN, falls du eins nutzt. Unten siehst du deine aktuelle IP-Adresse, ob sie IPv4 oder IPv6 ist, und Details zu deinem Browser und Gerät.',
         'steps' => [
             'Diese Seite öffnen – deine IP-Adresse steht ganz oben.',
             'Auf Kopieren klicken, um sie in die Zwischenablage zu kopieren.',
@@ -497,7 +567,7 @@ return [
         'h1' => 'Online-Würfel',
         'tagline' => 'Wirf bis zu 10 Würfel, von D4 bis D100, mit 3D-Animation und Summe.',
         'keywords' => ['würfel online', 'online würfeln', 'virtueller würfel', 'w20 würfel', 'zufallswürfel'],
-        'intro' => 'Die Würfel fürs Brettspiel verloren oder du brauchst einen D20 fürs Pen-and-Paper-Rollenspiel? Dieser kostenlose Online-Würfel wirft bis zu zehn virtuelle Würfel auf einmal mit realistischer 3D-Animation. Wähle einen normalen sechsseitigen Würfel oder einen beliebigen Polyederwürfel von D4 bis D100 und sieh sofort jeden Wert, die Summe und deine letzten Würfe.',
+        'intro' => 'Ein Online-Würfel ist ein Tool, das das Werfen von Würfeln simuliert und für jeden Würfel ein zufälliges Ergebnis liefert. Die Würfel fürs Brettspiel verloren oder du brauchst einen D20 fürs Pen-and-Paper-Rollenspiel? Dieser kostenlose Online-Würfel wirft bis zu zehn virtuelle Würfel auf einmal mit realistischer 3D-Animation. Wähle einen normalen sechsseitigen Würfel oder einen beliebigen Polyederwürfel von D4 bis D100 und sieh sofort jeden Wert, die Summe und deine letzten Würfe.',
         'steps' => [
             'Den Würfeltyp wählen: D4, D6, D8, D10, D12, D20 oder D100.',
             'Wählen, wie viele Würfel geworfen werden, von 1 bis 10.',
@@ -528,6 +598,17 @@ return [
             ['q' => 'Kann ich ohne Animation würfeln?', 'a' => 'Wenn dein Gerät auf „Bewegung reduzieren“ eingestellt ist, erscheinen die Ergebnisse sofort ohne Rollanimation.'],
             ['q' => 'Funktioniert der Würfel auf dem Handy?', 'a' => 'Ja. Er funktioniert in jedem modernen Browser auf Smartphones, Tablets und Computern, und du kannst zum Würfeln auf die Würfel tippen.'],
         ],
+        'table' => [
+            'caption' => 'Würfeltypen und wofür sie genutzt werden',
+            'headers' => ['Würfel', 'Seiten', 'Typische Verwendung'],
+            'rows' => [
+                ['D4', '4', 'Kleine Schadenswürfe im Rollenspiel'],
+                ['D6', '6', 'Brettspiele wie Monopoly und Mensch ärgere Dich nicht'],
+                ['D8, D10, D12', '8, 10, 12', 'Schadens- und Fertigkeitswürfe im Rollenspiel'],
+                ['D20', '20', 'Angriffswürfe und Proben bei Dungeons & Dragons'],
+                ['D100', '100', 'Prozentwürfe'],
+            ],
+        ],
     ],
 
     'coin-flip' => [
@@ -537,7 +618,7 @@ return [
         'h1' => 'Münze werfen',
         'tagline' => 'Kopf oder Zahl? Wirf eine 3D-Münze oder bis zu 100 auf einmal und sieh die Statistik.',
         'keywords' => ['münzwurf', 'münze werfen', 'kopf oder zahl', 'münze werfen online', 'virtuelle münze'],
-        'intro' => 'Triff eine Entscheidung, bestimme, wer anfängt, oder mach ein Wahrscheinlichkeitsexperiment mit diesem kostenlosen Online-Münzwurf. Wirf eine einzelne 3D-Münze, die durch die Luft wirbelt, oder bis zu 100 Münzen auf einmal. Das Tool zählt Kopf und Zahl mit, zeigt die prozentuale Verteilung und deine aktuelle Serie.',
+        'intro' => 'Ein Münzwurf ist eine schnelle Art, zufällig zwischen zwei Optionen zu wählen: Kopf oder Zahl, jeweils mit 50 % Chance. Triff eine Entscheidung, bestimme, wer anfängt, oder mach ein Wahrscheinlichkeitsexperiment mit diesem kostenlosen Online-Münzwurf. Wirf eine einzelne 3D-Münze, die durch die Luft wirbelt, oder bis zu 100 Münzen auf einmal. Das Tool zählt Kopf und Zahl mit, zeigt die prozentuale Verteilung und deine aktuelle Serie.',
         'steps' => [
             'Wählen, wie viele Münzen geworfen werden: 1, 2, 5, 10, 25 oder 100.',
             'Auf Werfen tippen (oder auf die Münze tippen oder F drücken).',
@@ -576,7 +657,7 @@ return [
         'h1' => 'Glücksrad',
         'tagline' => 'Namen oder Optionen eintragen, drehen und das Rad einen zufälligen Gewinner wählen lassen.',
         'keywords' => ['glücksrad', 'glücksrad online', 'namen auslosen', 'namensrad', 'zufallsauswahl'],
-        'intro' => 'Du kannst dich nicht entscheiden, was es zu essen gibt, wer als Nächstes dran ist oder wer das Gewinnspiel gewinnt? Trag deine Optionen in die Liste ein, eine pro Zeile, und dreh das Rad. Es dreht sich mehrmals, läuft sanft auf einem zufälligen Eintrag aus und verkündet den Gewinner. Du kannst jeden Gewinner automatisch entfernen, um Namen einzeln ohne Wiederholung zu ziehen.',
+        'intro' => 'Das Glücksrad ist ein Zufallsgenerator: Du trägst Namen oder Optionen ein, drehst, und das Rad bleibt zufällig bei einem stehen. Du kannst dich nicht entscheiden, was es zu essen gibt, wer als Nächstes dran ist oder wer das Gewinnspiel gewinnt? Trag deine Optionen in die Liste ein, eine pro Zeile, und dreh das Rad. Es dreht sich mehrmals, läuft sanft auf einem zufälligen Eintrag aus und verkündet den Gewinner. Du kannst jeden Gewinner automatisch entfernen, um Namen einzeln ohne Wiederholung zu ziehen.',
         'steps' => [
             'Einträge eintippen oder einfügen, einer pro Zeile (bis zu 100).',
             'Auf Drehen tippen, in die Radmitte klicken oder S drücken.',
@@ -615,7 +696,7 @@ return [
         'h1' => 'Zufallszahlengenerator',
         'tagline' => 'Ziehe Zufallszahlen in jedem Bereich – bei Bedarf ohne Duplikate.',
         'keywords' => ['zufallszahlengenerator', 'zufallszahl', 'zahlen auslosen', 'zufallsgenerator zahlen', 'lottozahlen generator'],
-        'intro' => 'Erzeuge eine Zufallszahl zwischen zwei beliebigen Werten oder eine ganze Liste davon. Wähle Minimum, Maximum und Anzahl, und entscheide, ob Duplikate erlaubt sind und ob die Liste sortiert werden soll. Ideal für Verlosungen, Lotto, Unterricht, Stichproben und Spiele.',
+        'intro' => 'Ein Zufallszahlengenerator ist ein Tool, das Zahlen zufällig aus einem von dir gewählten Bereich zieht. Erzeuge eine Zufallszahl zwischen zwei beliebigen Werten oder eine ganze Liste davon. Wähle Minimum, Maximum und Anzahl, und entscheide, ob Duplikate erlaubt sind und ob die Liste sortiert werden soll. Ideal für Verlosungen, Lotto, Unterricht, Stichproben und Spiele.',
         'steps' => [
             'Minimum und Maximum eingeben (negative Zahlen funktionieren auch).',
             'Wählen, wie viele Zahlen du willst, bis zu 1.000.',
@@ -654,7 +735,7 @@ return [
         'h1' => 'Online-Stoppuhr',
         'tagline' => 'Genau auf 1/100 Sekunde, mit Runden, Zwischenzeiten und Tastenkürzeln.',
         'keywords' => ['stoppuhr', 'online stoppuhr', 'stoppuhr mit runden', 'timer', 'rundenzeit'],
-        'intro' => 'Stoppe einen Lauf, eine Präsentation, ein Rezept oder ein Training mit dieser kostenlosen Online-Stoppuhr. Sie zählt auf die Hundertstelsekunde, speichert Runden- und Zwischenzeiten und hebt deine schnellste und langsamste Runde hervor. Da sie die tatsächlich vergangene Zeit misst, bleibt sie auch beim Tab-Wechsel genau.',
+        'intro' => 'Eine Stoppuhr misst die Zeit zwischen Start und Stopp und kann Rundenzeiten festhalten. Stoppe einen Lauf, eine Präsentation, ein Rezept oder ein Training mit dieser kostenlosen Online-Stoppuhr. Sie zählt auf die Hundertstelsekunde, speichert Runden- und Zwischenzeiten und hebt deine schnellste und langsamste Runde hervor. Da sie die tatsächlich vergangene Zeit misst, bleibt sie auch beim Tab-Wechsel genau.',
         'steps' => [
             'Auf Start (oder die Leertaste) drücken, um die Zeitmessung zu starten.',
             'Auf Runde (oder L) drücken, um eine Runde ohne Anhalten zu speichern.',
@@ -693,7 +774,7 @@ return [
         'h1' => 'Countdown-Timer',
         'tagline' => 'Minuten oder Stunden einstellen oder eine Vorgabe antippen. Ein Alarm ertönt, wenn die Zeit um ist.',
         'keywords' => ['countdown timer', 'online timer', 'timer mit alarm', '5 minuten timer', 'timer stellen'],
-        'intro' => 'Stell einen Timer fürs Kochen, Lernen, Training, Meetings oder Prüfungen. Gib eine beliebige Dauer bis 99 Stunden ein oder tippe auf eine Vorgabe wie 5 oder 25 Minuten. Ein Ring zählt die Restzeit herunter, der Browser-Tab zeigt sie an, und ein Alarm ertönt, wenn der Countdown null erreicht.',
+        'intro' => 'Ein Countdown-Timer zählt eine eingestellte Zeit bis null herunter und löst dann einen Alarm aus. Stell einen Timer fürs Kochen, Lernen, Training, Meetings oder Prüfungen. Gib eine beliebige Dauer bis 99 Stunden ein oder tippe auf eine Vorgabe wie 5 oder 25 Minuten. Ein Ring zählt die Restzeit herunter, der Browser-Tab zeigt sie an, und ein Alarm ertönt, wenn der Countdown null erreicht.',
         'steps' => [
             'Stunden, Minuten und Sekunden eingeben oder eine Vorgabe antippen.',
             'Auf Start (oder Leertaste) drücken. Ring und Tab-Titel zählen herunter.',
@@ -732,7 +813,7 @@ return [
         'h1' => 'Schlafrechner',
         'tagline' => 'Finde die beste Schlafens- oder Aufwachzeit und zähle deine geschlafenen Stunden.',
         'keywords' => ['schlafrechner', 'schlafzähler', 'wann schlafen gehen', 'schlafzyklus rechner', 'wann sollte ich ins bett gehen', 'stunden schlaf'],
-        'intro' => 'Wenn du mitten in einem Schlafzyklus aufwachst, fühlst du dich nach dem Weckerklingeln benommen – selbst nach einer ganzen Nacht. Dieser Schlafrechner richtet sich nach dem natürlichen Rhythmus der etwa 90-minütigen Schlafzyklen: Sag ihm, wann du aufstehen musst, und er schlägt vor, wann du ins Bett gehen solltest, oder sag ihm, wann du schlafen gehst, und er schlägt die besten Weckzeiten vor. Er kann auch zählen, wie viele Stunden du geschlafen hast, und sie mit den empfohlenen 7-9 Stunden vergleichen.',
+        'intro' => 'Ein Schlafrechner schlägt Schlafens- oder Aufwachzeiten vor, damit du am Ende eines Schlafzyklus aufwachst, wenn der Schlaf am leichtesten ist. Wenn du mitten in einem Schlafzyklus aufwachst, fühlst du dich nach dem Weckerklingeln benommen – selbst nach einer ganzen Nacht. Dieser Schlafrechner richtet sich nach dem natürlichen Rhythmus der etwa 90-minütigen Schlafzyklen: Sag ihm, wann du aufstehen musst, und er schlägt vor, wann du ins Bett gehen solltest, oder sag ihm, wann du schlafen gehst, und er schlägt die besten Weckzeiten vor. Er kann auch zählen, wie viele Stunden du geschlafen hast, und sie mit den empfohlenen 7-9 Stunden vergleichen.',
         'steps' => [
             'Wählen, was berechnet werden soll: Schlafenszeit, Aufwachzeit, „Jetzt schlafen“ oder geschlafene Stunden.',
             'Die Uhrzeit eingeben. Anpassen, wie lange du normalerweise zum Einschlafen brauchst (standardmäßig 15 Minuten).',
@@ -762,6 +843,17 @@ return [
             ['q' => 'Warum bin ich nach 8 Stunden Schlaf müde?', 'a' => 'Wenn dein Wecker im Tiefschlaf klingelt, kannst du dich selbst nach einer langen Nacht benommen fühlen. Den Wecker aufs Ende eines Zyklus zu stellen und feste Schlafzeiten einzuhalten, hilft oft.'],
             ['q' => 'Wie berechnet der Schlafzähler die geschlafenen Stunden?', 'a' => 'Wähle „Geschlafene Stunden“ und gib ein, wann du ins Bett gegangen und wann du aufgewacht bist. Er rechnet über Mitternacht hinweg, zieht die Einschlafzeit ab und vergleicht das Ergebnis mit den 7-9 Stunden, die Erwachsene brauchen.'],
             ['q' => 'Ist dieser Schlafrechner eine medizinische Beratung?', 'a' => 'Nein. Er ist eine allgemeine Orientierung auf Basis durchschnittlicher Schlafzyklen. Wenn du regelmäßig schlecht schläfst, sprich mit einer Ärztin oder einem Arzt.'],
+        ],
+        'table' => [
+            'caption' => 'Schlafenszeiten für übliche Aufwachzeiten (15 Minuten zum Einschlafen)',
+            'headers' => ['Aufwachen um', '6 Zyklen (9 Std.)', '5 Zyklen (7,5 Std.)', '4 Zyklen (6 Std.)'],
+            'rows' => [
+                ['06:00', '20:45', '22:15', '23:45'],
+                ['06:30', '21:15', '22:45', '00:15'],
+                ['07:00', '21:45', '23:15', '00:45'],
+                ['07:30', '22:15', '23:45', '01:15'],
+                ['08:00', '22:45', '00:15', '01:45'],
+            ],
         ],
     ],
 

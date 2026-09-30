@@ -107,6 +107,7 @@ class SiteData
             'steps' => array_values($tool['steps']),
             'features' => array_values($tool['features']),
             'content' => array_values($tool['content']),
+            'table' => $tool['table'] ?? null,
             'faqs' => array_values($tool['faqs']),
             'sources' => array_values($tool['sources'] ?? []),
             'updated' => $tool['updated'] ?? null,

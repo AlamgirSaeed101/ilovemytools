@@ -33,7 +33,7 @@ return [
         'h1' => 'Word Counter',
         'tagline' => 'Count words, characters, sentences and reading time instantly.',
         'keywords' => ['word counter', 'character counter', 'word count', 'count words online', 'reading time calculator'],
-        'intro' => 'Paste or type your text below to count words, characters, sentences and paragraphs as you type. The word counter also shows estimated reading and speaking time plus your most used keywords, which is handy for essays, blog posts, social media captions and SEO meta descriptions.',
+        'intro' => 'A word counter is a tool that counts the words, characters, sentences and paragraphs in a piece of text. Paste or type your text below to count words, characters, sentences and paragraphs as you type. The word counter also shows estimated reading and speaking time plus your most used keywords, which is handy for essays, blog posts, social media captions and SEO meta descriptions.',
         'steps' => [
             'Type or paste your text into the box.',
             'Watch the word, character, sentence and paragraph counts update live.',
@@ -81,7 +81,7 @@ return [
         'h1' => 'Case Converter',
         'tagline' => 'Change text to upper, lower, title, sentence, camel or snake case in one click.',
         'keywords' => ['case converter', 'uppercase to lowercase', 'title case converter', 'sentence case', 'camelcase converter'],
-        'intro' => 'Accidentally typed with Caps Lock on, or need a heading in Title Case? Paste your text and click a button to convert it instantly. Developers can also switch between camelCase, PascalCase, snake_case, kebab-case and CONSTANT_CASE.',
+        'intro' => 'A case converter is a tool that changes the capitalisation of text, for example from UPPERCASE to lowercase or Title Case. Accidentally typed with Caps Lock on, or need a heading in Title Case? Paste your text and click a button to convert it instantly. Developers can also switch between camelCase, PascalCase, snake_case, kebab-case and CONSTANT_CASE.',
         'steps' => [
             'Paste your text into the box.',
             'Click the case you want, for example Title Case or lowercase.',
@@ -124,7 +124,7 @@ return [
         'h1' => 'Strong Password Generator',
         'tagline' => 'Create secure, random passwords in one click - generated on your device.',
         'keywords' => ['password generator', 'strong password generator', 'random password generator', 'secure password'],
-        'intro' => 'Create a strong, random password that is almost impossible to guess. Choose the length and which characters to include, and the generator uses your browser\'s cryptographically secure random number generator. Passwords are never sent to our server.',
+        'intro' => 'A password generator is a tool that creates random, hard-to-guess passwords from the characters you choose. Create a strong, random password that is almost impossible to guess. Choose the length and which characters to include, and the generator uses your browser\'s cryptographically secure random number generator. Passwords are never sent to our server.',
         'steps' => [
             'Choose a password length (16 or more is recommended).',
             'Tick the character types to include: uppercase, lowercase, numbers and symbols.',
@@ -158,6 +158,17 @@ return [
             ['title' => 'MDN: Crypto.getRandomValues()', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues'],
         ],
         'related' => ['qr-code-generator', 'base64-encoder-decoder', 'what-is-my-ip'],
+        'table' => [
+            'caption' => 'Password length and strength (entropy in bits)',
+            'headers' => ['Length', 'Letters and numbers (62 characters)', 'Letters, numbers and symbols (89 characters)'],
+            'rows' => [
+                ['8', '48', '52'],
+                ['12', '71', '78'],
+                ['16', '95', '104'],
+                ['20', '119', '130'],
+                ['32', '191', '207'],
+            ],
+        ],
     ],
 
     'qr-code-generator' => [
@@ -171,7 +182,7 @@ return [
         'h1' => 'Free QR Code Generator',
         'tagline' => 'Make QR codes for links, Wi-Fi, email, phone and SMS. Download PNG or SVG.',
         'keywords' => ['qr code generator', 'free qr code generator', 'wifi qr code', 'qr code maker', 'qr code for url'],
-        'intro' => 'Create a QR code for a website link, plain text, Wi-Fi network, email, phone number or SMS in seconds. Pick your colours and size, then download a high-quality PNG for screens or an SVG for print. These are static QR codes, so they work forever and never expire.',
+        'intro' => 'A QR code generator is a tool that turns a link, text or Wi-Fi details into a square barcode that phone cameras can scan. Create a QR code for a website link, plain text, Wi-Fi network, email, phone number or SMS in seconds. Pick your colours and size, then download a high-quality PNG for screens or an SVG for print. These are static QR codes, so they work forever and never expire.',
         'steps' => [
             'Choose the QR code type: URL, Text, Wi-Fi, Email, Phone or SMS.',
             'Fill in the details. The preview updates as you type.',
@@ -207,6 +218,16 @@ return [
             ['title' => 'DENSO WAVE: QR Code error correction levels', 'url' => 'https://www.qrcode.com/en/about/error_correction.html'],
         ],
         'related' => ['password-generator', 'image-resizer', 'what-is-my-ip'],
+        'table' => [
+            'caption' => 'QR code error correction levels',
+            'headers' => ['Level', 'Restores up to', 'Good for'],
+            'rows' => [
+                ['L', '7%', 'Clean screens and codes holding a lot of data'],
+                ['M', '15%', 'Most everyday uses (the most common choice)'],
+                ['Q', '25%', 'Printed codes that may get dirty'],
+                ['H', '30%', 'Harsh conditions, such as factory labels'],
+            ],
+        ],
     ],
 
     'image-compressor' => [
@@ -220,7 +241,7 @@ return [
         'h1' => 'Image Compressor',
         'tagline' => 'Reduce JPG, PNG and WebP file sizes - even to an exact size like 100KB.',
         'keywords' => ['image compressor', 'compress image', 'compress image to 100kb', 'reduce image size', 'compress jpg'],
-        'intro' => 'Make your images smaller without losing visible quality. Drop in one or many JPG, PNG or WebP files, choose a quality level or a target size such as 100KB, and download the compressed images. Compression happens in your browser, so your photos are never uploaded.',
+        'intro' => 'An image compressor is a tool that makes image files smaller while keeping them looking the same. Make your images smaller without losing visible quality. Drop in one or many JPG, PNG or WebP files, choose a quality level or a target size such as 100KB, and download the compressed images. Compression happens in your browser, so your photos are never uploaded.',
         'steps' => [
             'Drag and drop images or click to choose files (JPG, PNG or WebP).',
             'Pick a quality level, or set a target size such as 100 KB.',
@@ -256,6 +277,15 @@ return [
             ['title' => 'Google for Developers: An image format for the Web (WebP)', 'url' => 'https://developers.google.com/speed/webp'],
         ],
         'related' => ['image-resizer', 'merge-pdf', 'qr-code-generator'],
+        'table' => [
+            'caption' => 'Which image format to use',
+            'headers' => ['Format', 'Best for', 'Transparency'],
+            'rows' => [
+                ['JPG', 'Photos', 'No'],
+                ['PNG', 'Logos, screenshots, sharp graphics', 'Yes'],
+                ['WebP', 'Websites (smallest files for photos and graphics)', 'Yes'],
+            ],
+        ],
     ],
 
     'image-resizer' => [
@@ -269,7 +299,7 @@ return [
         'h1' => 'Image Resizer & Converter',
         'tagline' => 'Resize to exact pixels or a percentage, and convert JPG, PNG and WebP.',
         'keywords' => ['image resizer', 'resize image', 'png to jpg', 'jpg to png', 'webp to jpg', 'image converter'],
-        'intro' => 'Resize a photo to exact dimensions for social media, a passport form or your website, or scale it by percentage. You can also convert the format, for example PNG to JPG or WebP to PNG. Everything happens in your browser.',
+        'intro' => 'An image resizer is a tool that changes the width and height of a picture, and a converter changes its file format. Resize a photo to exact dimensions for social media, a passport form or your website, or scale it by percentage. You can also convert the format, for example PNG to JPG or WebP to PNG. Everything happens in your browser.',
         'steps' => [
             'Choose or drop an image (JPG, PNG, WebP, GIF or BMP).',
             'Enter a new width and height, or pick a percentage.',
@@ -303,6 +333,16 @@ return [
             ['title' => 'Google for Developers: An image format for the Web (WebP)', 'url' => 'https://developers.google.com/speed/webp'],
         ],
         'related' => ['image-compressor', 'qr-code-generator', 'merge-pdf'],
+        'table' => [
+            'caption' => 'Common image sizes',
+            'headers' => ['Use', 'Size (pixels)'],
+            'rows' => [
+                ['Instagram square post', '1080 × 1080'],
+                ['Facebook and LinkedIn shared image', '1200 × 630'],
+                ['YouTube thumbnail', '1280 × 720'],
+                ['Full-width website image', 'up to 1920 wide'],
+            ],
+        ],
     ],
 
     'merge-pdf' => [
@@ -316,7 +356,7 @@ return [
         'h1' => 'Merge PDF Files',
         'tagline' => 'Combine multiple PDFs into one file - no watermark, no upload.',
         'keywords' => ['merge pdf', 'combine pdf', 'join pdf files', 'pdf merger', 'merge pdf online free'],
-        'intro' => 'Combine several PDF files into a single document in the order you choose. Unlike many PDF sites, your files are merged inside your browser, so confidential documents never touch a server, and there is no watermark on the result.',
+        'intro' => 'Merging PDFs means combining several PDF files into a single document. Combine several PDF files into a single document in the order you choose. Unlike many PDF sites, your files are merged inside your browser, so confidential documents never touch a server, and there is no watermark on the result.',
         'steps' => [
             'Add two or more PDF files by dropping them or clicking to browse.',
             'Put them in the right order with the up and down arrows.',
@@ -360,7 +400,7 @@ return [
         'h1' => 'Split PDF & Extract Pages',
         'tagline' => 'Extract pages or split a PDF into separate files - privately in your browser.',
         'keywords' => ['split pdf', 'extract pages from pdf', 'separate pdf pages', 'pdf splitter', 'split pdf online'],
-        'intro' => 'Pull out just the pages you need from a PDF, or split it into separate files. Type page ranges such as 1-3, 5, 8-10, or split every page into its own PDF. Processing happens entirely in your browser.',
+        'intro' => 'Splitting a PDF means taking pages out of a document or dividing it into several smaller PDF files. Pull out just the pages you need from a PDF, or split it into separate files. Type page ranges such as 1-3, 5, 8-10, or split every page into its own PDF. Processing happens entirely in your browser.',
         'steps' => [
             'Choose the PDF you want to split.',
             'Pick a mode: extract pages into one PDF, split by ranges, or split every page.',
@@ -400,7 +440,7 @@ return [
         'h1' => 'Age Calculator',
         'tagline' => 'Find your exact age in years, months and days, plus your next birthday.',
         'keywords' => ['age calculator', 'calculate age', 'date of birth calculator', 'how old am i', 'age calculator by date of birth'],
-        'intro' => 'Enter a date of birth to find the exact age in years, months and days. You also get the total number of months, weeks, days and hours lived, the day of the week you were born and a countdown to your next birthday. You can also calculate age on any past or future date.',
+        'intro' => 'An age calculator works out exactly how old someone is, in years, months and days, from their date of birth. Enter a date of birth to find the exact age in years, months and days. You also get the total number of months, weeks, days and hours lived, the day of the week you were born and a countdown to your next birthday. You can also calculate age on any past or future date.',
         'steps' => [
             'Enter the date of birth.',
             'Keep today as the "age at" date, or choose another date.',
@@ -439,7 +479,7 @@ return [
         'h1' => 'Percentage Calculator',
         'tagline' => 'Every common percentage calculation in one place, with the formula shown.',
         'keywords' => ['percentage calculator', 'percent calculator', 'percentage change calculator', 'percentage increase calculator', 'what percent of'],
-        'intro' => 'Work out percentages quickly: what is 15% of 200, what percent 30 is of 120, the percentage increase from 80 to 100, and more. Each calculator shows the formula it used, so you can check the working for homework, discounts, tips, grades and business reports.',
+        'intro' => 'A percentage calculator works out percentages, such as X% of Y or the percentage change between two numbers. Work out percentages quickly: what is 15% of 200, what percent 30 is of 120, the percentage increase from 80 to 100, and more. Each calculator shows the formula it used, so you can check the working for homework, discounts, tips, grades and business reports.',
         'steps' => [
             'Find the calculator that matches your question.',
             'Type your numbers into the boxes.',
@@ -466,6 +506,17 @@ return [
             ['q' => 'Why can\'t I calculate change from zero?', 'a' => 'Percentage change divides by the starting value, and dividing by zero is undefined, so a change from 0 cannot be expressed as a percentage.'],
         ],
         'related' => ['age-calculator', 'word-counter', 'json-formatter'],
+        'table' => [
+            'caption' => 'Percentage formulas with examples',
+            'headers' => ['Question', 'Formula', 'Example'],
+            'rows' => [
+                ['What is X% of Y?', '(X / 100) × Y', '15% of 200 = 30'],
+                ['X is what % of Y?', '(X / Y) × 100', '30 of 120 = 25%'],
+                ['% change from A to B', '(B − A) / |A| × 100', '80 → 100 = +25%'],
+                ['Increase Y by X%', 'Y × (1 + X / 100)', '50 + 20% = 60'],
+                ['Decrease Y by X%', 'Y × (1 − X / 100)', '50 − 20% = 40'],
+            ],
+        ],
     ],
 
     'json-formatter' => [
@@ -479,7 +530,7 @@ return [
         'h1' => 'JSON Formatter & Validator',
         'tagline' => 'Beautify, validate and minify JSON with clear error messages.',
         'keywords' => ['json formatter', 'json validator', 'json beautifier', 'format json', 'json minify'],
-        'intro' => 'Paste JSON to beautify it with clean indentation, validate it, or minify it for production. If the JSON is invalid, you get a clear error message with the exact line and column, so you can fix it fast. Your data is processed locally and never sent anywhere.',
+        'intro' => 'A JSON formatter is a tool that makes JSON data readable with line breaks and indentation, and checks that it is valid. Paste JSON to beautify it with clean indentation, validate it, or minify it for production. If the JSON is invalid, you get a clear error message with the exact line and column, so you can fix it fast. Your data is processed locally and never sent anywhere.',
         'steps' => [
             'Paste your JSON into the input box, or click Sample.',
             'Click Format to beautify, or Minify to compress.',
@@ -509,6 +560,16 @@ return [
             ['title' => 'RFC 8259: The JavaScript Object Notation (JSON) Data Interchange Format', 'url' => 'https://www.rfc-editor.org/rfc/rfc8259'],
         ],
         'related' => ['base64-encoder-decoder', 'case-converter', 'what-is-my-ip'],
+        'table' => [
+            'caption' => 'Common JSON errors and how to fix them',
+            'headers' => ['Problem', 'Invalid', 'Valid'],
+            'rows' => [
+                ['Trailing comma', '{"a": 1,}', '{"a": 1}'],
+                ['Single quotes', '{\'a\': 1}', '{"a": 1}'],
+                ['Key without quotes', '{a: 1}', '{"a": 1}'],
+                ['Comment', '{"a": 1 // note}', '{"a": 1}'],
+            ],
+        ],
     ],
 
     'base64-encoder-decoder' => [
@@ -522,7 +583,7 @@ return [
         'h1' => 'Base64 Encoder & Decoder',
         'tagline' => 'Encode and decode Base64 text and files, with UTF-8 and URL-safe support.',
         'keywords' => ['base64 encode', 'base64 decode', 'base64 converter', 'base64 to text', 'image to base64'],
-        'intro' => 'Convert text to Base64 or decode Base64 back to readable text, with full support for emoji and non-English characters. You can also turn a file or image into a Base64 data URL for embedding in HTML, CSS or JSON.',
+        'intro' => 'Base64 is a way to write any data, including files, using only 64 plain text characters; encoding converts to Base64 and decoding converts back. Convert text to Base64 or decode Base64 back to readable text, with full support for emoji and non-English characters. You can also turn a file or image into a Base64 data URL for embedding in HTML, CSS or JSON.',
         'steps' => [
             'Choose Text or File mode.',
             'For text, paste your input and click Encode or Decode.',
@@ -552,6 +613,15 @@ return [
             ['title' => 'RFC 4648: The Base16, Base32, and Base64 Data Encodings', 'url' => 'https://www.rfc-editor.org/rfc/rfc4648'],
         ],
         'related' => ['json-formatter', 'password-generator', 'case-converter'],
+        'table' => [
+            'caption' => 'How much bigger Base64 makes data',
+            'headers' => ['Original size', 'Base64 length'],
+            'rows' => [
+                ['3 bytes', '4 characters'],
+                ['1 KB (1,024 bytes)', '1,368 characters'],
+                ['1 MB (1,048,576 bytes)', '1,398,104 characters'],
+            ],
+        ],
     ],
 
     'what-is-my-ip' => [
@@ -565,7 +635,7 @@ return [
         'h1' => 'What Is My IP Address?',
         'tagline' => 'Your public IP address and browser details, instantly.',
         'keywords' => ['what is my ip', 'my ip address', 'ip address lookup', 'check my ip', 'what is my ip address'],
-        'intro' => 'Your public IP address is the address websites see when you connect to the internet. It is assigned by your internet provider, or by your VPN if you use one. Below you can see your current IP address, whether it is IPv4 or IPv6, and details about your browser and device.',
+        'intro' => 'An IP address is the number that identifies your connection on the internet; your public IP is the one websites see. Your public IP address is the address websites see when you connect to the internet. It is assigned by your internet provider, or by your VPN if you use one. Below you can see your current IP address, whether it is IPv4 or IPv6, and details about your browser and device.',
         'steps' => [
             'Open this page - your IP address is shown at the top.',
             'Click Copy to copy it to your clipboard.',
@@ -611,7 +681,7 @@ return [
         'h1' => 'Dice Roller',
         'tagline' => 'Roll up to 10 dice, from D4 to D100, with a 3D animation and totals.',
         'keywords' => ['dice roller', 'roll dice online', 'virtual dice', 'd20 roller', 'random dice'],
-        'intro' => 'Lost the dice for a board game, or need a D20 for tabletop role-playing? This free dice roller throws up to ten virtual dice at once with a realistic 3D animation. Choose a standard six-sided die or any polyhedral die from D4 to D100, and see every value, the total and your recent rolls instantly.',
+        'intro' => 'A dice roller is an online tool that simulates throwing dice and gives a random result for each die. Lost the dice for a board game, or need a D20 for tabletop role-playing? This free dice roller throws up to ten virtual dice at once with a realistic 3D animation. Choose a standard six-sided die or any polyhedral die from D4 to D100, and see every value, the total and your recent rolls instantly.',
         'steps' => [
             'Pick the type of dice: D4, D6, D8, D10, D12, D20 or D100.',
             'Choose how many dice to roll, from 1 to 10.',
@@ -646,6 +716,17 @@ return [
             ['title' => 'MDN: Crypto.getRandomValues()', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues'],
         ],
         'related' => ['coin-flip', 'spin-the-wheel', 'random-number-generator'],
+        'table' => [
+            'caption' => 'Dice types and what they are used for',
+            'headers' => ['Die', 'Faces', 'Common use'],
+            'rows' => [
+                ['D4', '4', 'Small damage rolls in role-playing games'],
+                ['D6', '6', 'Board games such as Monopoly and Ludo'],
+                ['D8, D10, D12', '8, 10, 12', 'Damage and skill rolls in role-playing games'],
+                ['D20', '20', 'Attack rolls and checks in Dungeons & Dragons'],
+                ['D100', '100', 'Percentile rolls'],
+            ],
+        ],
     ],
 
     'coin-flip' => [
@@ -659,7 +740,7 @@ return [
         'h1' => 'Flip a Coin',
         'tagline' => 'Heads or tails? Toss a 3D coin, or flip up to 100 at once and see the stats.',
         'keywords' => ['coin flip', 'flip a coin', 'heads or tails', 'coin toss online', 'virtual coin'],
-        'intro' => 'Settle a decision, pick who goes first or run a probability experiment with this free online coin flip. Toss a single 3D coin that spins through the air, or flip up to 100 coins at once. The tool keeps a running count of heads and tails, the percentage split and your current streak.',
+        'intro' => 'A coin flip is a quick way to choose between two options at random: heads or tails, each with a 50% chance. Settle a decision, pick who goes first or run a probability experiment with this free online coin flip. Toss a single 3D coin that spins through the air, or flip up to 100 coins at once. The tool keeps a running count of heads and tails, the percentage split and your current streak.',
         'steps' => [
             'Choose how many coins to flip: 1, 2, 5, 10, 25 or 100.',
             'Press Flip (or tap the coin, or press F).',
@@ -706,7 +787,7 @@ return [
         'h1' => 'Spin the Wheel',
         'tagline' => 'Add names or choices, spin, and let the wheel pick a random winner.',
         'keywords' => ['spin the wheel', 'wheel spinner', 'random name picker', 'wheel of names', 'random choice picker'],
-        'intro' => 'Can\'t decide what to eat, who goes next or who wins the giveaway? Type your options into the list, one per line, and spin the wheel. It spins several times and eases to a stop on a random entry, then announces the winner. You can remove each winner automatically to draw names one by one without repeats.',
+        'intro' => 'Spin the wheel is a random picker: you add names or options, spin, and the wheel stops on one at random. Can\'t decide what to eat, who goes next or who wins the giveaway? Type your options into the list, one per line, and spin the wheel. It spins several times and eases to a stop on a random entry, then announces the winner. You can remove each winner automatically to draw names one by one without repeats.',
         'steps' => [
             'Type or paste your entries, one per line (up to 100).',
             'Press Spin, click the centre of the wheel, or press S.',
@@ -753,7 +834,7 @@ return [
         'h1' => 'Random Number Generator',
         'tagline' => 'Pick random numbers in any range, with no duplicates if you need them.',
         'keywords' => ['random number generator', 'random number', 'number picker', 'rng', 'lottery number generator'],
-        'intro' => 'Generate a random number between any two values, or a whole list of them. Choose the minimum, the maximum and how many numbers you need, then decide whether duplicates are allowed and whether the list should be sorted. It is ideal for raffles, lottery picks, classroom activities, sampling and games.',
+        'intro' => 'A random number generator is a tool that picks numbers by chance from a range you choose. Generate a random number between any two values, or a whole list of them. Choose the minimum, the maximum and how many numbers you need, then decide whether duplicates are allowed and whether the list should be sorted. It is ideal for raffles, lottery picks, classroom activities, sampling and games.',
         'steps' => [
             'Enter the minimum and maximum numbers (negative numbers work too).',
             'Choose how many numbers you want, up to 1,000.',
@@ -800,7 +881,7 @@ return [
         'h1' => 'Online Stopwatch',
         'tagline' => 'Accurate to 1/100 of a second, with laps, splits and keyboard shortcuts.',
         'keywords' => ['stopwatch', 'online stopwatch', 'stopwatch with laps', 'timer', 'lap timer'],
-        'intro' => 'Time a run, a presentation, a recipe or a workout with this free online stopwatch. It counts to the hundredth of a second, records lap and split times, and highlights your fastest and slowest laps. Because it measures real elapsed time, it stays accurate even if you switch to another tab.',
+        'intro' => 'A stopwatch measures how much time passes between starting and stopping it, and can record lap times. Time a run, a presentation, a recipe or a workout with this free online stopwatch. It counts to the hundredth of a second, records lap and split times, and highlights your fastest and slowest laps. Because it measures real elapsed time, it stays accurate even if you switch to another tab.',
         'steps' => [
             'Press Start (or the Space bar) to begin timing.',
             'Press Lap (or L) to record a lap without stopping the clock.',
@@ -847,7 +928,7 @@ return [
         'h1' => 'Countdown Timer',
         'tagline' => 'Set minutes or hours, or tap a preset. An alarm sounds when time is up.',
         'keywords' => ['countdown timer', 'online timer', 'timer with alarm', '5 minute timer', 'set a timer'],
-        'intro' => 'Set a timer for cooking, study sessions, workouts, meetings or exams. Type any length up to 99 hours or tap a preset like 5 minutes or 25 minutes. A ring counts down the time left, the browser tab shows the remaining time, and an alarm sounds when the countdown reaches zero.',
+        'intro' => 'A countdown timer counts down from a set amount of time to zero and then sounds an alarm. Set a timer for cooking, study sessions, workouts, meetings or exams. Type any length up to 99 hours or tap a preset like 5 minutes or 25 minutes. A ring counts down the time left, the browser tab shows the remaining time, and an alarm sounds when the countdown reaches zero.',
         'steps' => [
             'Type the hours, minutes and seconds, or tap a preset.',
             'Press Start (or Space). The ring and the tab title count down.',
@@ -894,7 +975,7 @@ return [
         'h1' => 'Sleep Calculator',
         'tagline' => 'Find the best bedtime or wake-up time, and count the hours you slept.',
         'keywords' => ['sleep calculator', 'sleep counter', 'bedtime calculator', 'sleep cycle calculator', 'when should I go to bed', 'hours of sleep'],
-        'intro' => 'Waking up in the middle of a sleep cycle is why an alarm can leave you groggy even after a full night. This sleep calculator works with the natural rhythm of roughly 90-minute sleep cycles: tell it when you need to wake up and it suggests when to go to bed, or tell it when you are going to bed and it suggests the best alarm times. It can also count how many hours you slept and compare them with the recommended 7-9 hours.',
+        'intro' => 'A sleep calculator suggests when to go to bed or wake up so that you wake at the end of a sleep cycle, when sleep is lightest. Waking up in the middle of a sleep cycle is why an alarm can leave you groggy even after a full night. This sleep calculator works with the natural rhythm of roughly 90-minute sleep cycles: tell it when you need to wake up and it suggests when to go to bed, or tell it when you are going to bed and it suggests the best alarm times. It can also count how many hours you slept and compare them with the recommended 7-9 hours.',
         'steps' => [
             'Choose what to work out: a bedtime, a wake-up time, "Sleep now" or hours slept.',
             'Enter your time. Adjust how long you usually take to fall asleep (15 minutes by default).',
@@ -930,5 +1011,16 @@ return [
             ['title' => 'Sleep Foundation: How much sleep do you need? (AASM-endorsed recommendations)', 'url' => 'https://www.sleepfoundation.org/how-sleep-works/how-much-sleep-do-we-really-need'],
         ],
         'related' => ['stopwatch', 'countdown-timer', 'age-calculator'],
+        'table' => [
+            'caption' => 'Bedtimes for common wake-up times (15 minutes to fall asleep)',
+            'headers' => ['Wake up at', '6 cycles (9 h)', '5 cycles (7.5 h)', '4 cycles (6 h)'],
+            'rows' => [
+                ['06:00', '20:45', '22:15', '23:45'],
+                ['06:30', '21:15', '22:45', '00:15'],
+                ['07:00', '21:45', '23:15', '00:45'],
+                ['07:30', '22:15', '23:45', '01:15'],
+                ['08:00', '22:45', '00:15', '01:45'],
+            ],
+        ],
     ],
 ];

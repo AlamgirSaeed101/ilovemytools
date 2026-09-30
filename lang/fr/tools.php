@@ -9,7 +9,7 @@ return [
         'h1' => 'Compteur de mots',
         'tagline' => 'Comptez les mots, les caractères, les phrases et le temps de lecture instantanément.',
         'keywords' => ['compteur de mots', 'compteur de caractères', 'nombre de mots', 'compter les mots en ligne', 'calcul du temps de lecture'],
-        'intro' => 'Collez ou saisissez votre texte ci-dessous pour compter les mots, caractères, phrases et paragraphes au fil de la frappe. Le compteur affiche aussi le temps de lecture et de parole estimé ainsi que vos mots-clés les plus utilisés, pratique pour les dissertations, articles de blog, légendes de réseaux sociaux et méta-descriptions SEO.',
+        'intro' => 'Un compteur de mots est un outil qui compte les mots, les caractères, les phrases et les paragraphes d’un texte. Collez ou saisissez votre texte ci-dessous pour compter les mots, caractères, phrases et paragraphes au fil de la frappe. Le compteur affiche aussi le temps de lecture et de parole estimé ainsi que vos mots-clés les plus utilisés, pratique pour les dissertations, articles de blog, légendes de réseaux sociaux et méta-descriptions SEO.',
         'steps' => [
             'Saisissez ou collez votre texte dans la zone.',
             'Regardez le nombre de mots, de caractères, de phrases et de paragraphes se mettre à jour en direct.',
@@ -49,7 +49,7 @@ return [
         'h1' => 'Convertisseur de casse',
         'tagline' => 'Passez un texte en majuscules, minuscules, titre, phrase, camel ou snake case en un clic.',
         'keywords' => ['convertisseur de casse', 'majuscules en minuscules', 'convertir en majuscules', 'casse phrase', 'convertisseur camelcase'],
-        'intro' => 'Vous avez tapé avec la touche Verr. Maj activée ou il vous faut un titre avec des majuscules ? Collez votre texte et cliquez sur un bouton pour le convertir instantanément. Les développeurs peuvent aussi basculer entre camelCase, PascalCase, snake_case, kebab-case et CONSTANT_CASE.',
+        'intro' => 'Un convertisseur de casse est un outil qui change les majuscules d’un texte, par exemple de MAJUSCULES en minuscules. Vous avez tapé avec la touche Verr. Maj activée ou il vous faut un titre avec des majuscules ? Collez votre texte et cliquez sur un bouton pour le convertir instantanément. Les développeurs peuvent aussi basculer entre camelCase, PascalCase, snake_case, kebab-case et CONSTANT_CASE.',
         'steps' => [
             'Collez votre texte dans la zone.',
             'Cliquez sur la casse voulue, par exemple Titre ou minuscules.',
@@ -87,7 +87,7 @@ return [
         'h1' => 'Générateur de mots de passe forts',
         'tagline' => 'Créez des mots de passe sécurisés et aléatoires en un clic, générés sur votre appareil.',
         'keywords' => ['générateur de mot de passe', 'générateur de mot de passe fort', 'mot de passe aléatoire', 'mot de passe sécurisé'],
-        'intro' => 'Créez un mot de passe fort et aléatoire, presque impossible à deviner. Choisissez la longueur et les caractères à inclure : le générateur utilise le générateur de nombres aléatoires cryptographiquement sûr de votre navigateur. Les mots de passe ne sont jamais envoyés à notre serveur.',
+        'intro' => 'Un générateur de mots de passe est un outil qui crée des mots de passe aléatoires et difficiles à deviner avec les caractères de votre choix. Créez un mot de passe fort et aléatoire, presque impossible à deviner. Choisissez la longueur et les caractères à inclure : le générateur utilise le générateur de nombres aléatoires cryptographiquement sûr de votre navigateur. Les mots de passe ne sont jamais envoyés à notre serveur.',
         'steps' => [
             'Choisissez la longueur du mot de passe (16 ou plus recommandé).',
             'Cochez les types de caractères à inclure : majuscules, minuscules, chiffres et symboles.',
@@ -116,6 +116,17 @@ return [
             ['q' => 'À quoi sert « exclure les caractères similaires » ?', 'a' => 'Cette option retire les caractères qui se ressemblent, comme l, 1, I, O et 0, pour que le mot de passe soit plus facile à lire et à saisir à la main.'],
             ['q' => 'Qu’est-ce que l’entropie d’un mot de passe ?', 'a' => 'L’entropie mesure en bits à quel point un mot de passe est imprévisible. Chaque bit supplémentaire double le nombre d’essais nécessaires à un attaquant. 80 bits et plus, c’est fort ; 100 bits et plus, c’est excellent.'],
         ],
+        'table' => [
+            'caption' => 'Longueur et robustesse d’un mot de passe (entropie en bits)',
+            'headers' => ['Longueur', 'Lettres et chiffres (62 caractères)', 'Lettres, chiffres et symboles (89 caractères)'],
+            'rows' => [
+                ['8', '48', '52'],
+                ['12', '71', '78'],
+                ['16', '95', '104'],
+                ['20', '119', '130'],
+                ['32', '191', '207'],
+            ],
+        ],
     ],
 
     'qr-code-generator' => [
@@ -125,7 +136,7 @@ return [
         'h1' => 'Générateur de QR code gratuit',
         'tagline' => 'Créez des QR codes pour liens, Wi-Fi, e-mail, téléphone et SMS. Téléchargez en PNG ou SVG.',
         'keywords' => ['générateur de qr code', 'qr code gratuit', 'qr code wifi', 'créer un qr code', 'qr code pour url'],
-        'intro' => 'Créez en quelques secondes un QR code pour un lien, un texte, un réseau Wi-Fi, un e-mail, un numéro de téléphone ou un SMS. Choisissez les couleurs et la taille, puis téléchargez un PNG de haute qualité pour l’écran ou un SVG pour l’impression. Ce sont des QR codes statiques : ils fonctionnent pour toujours et n’expirent jamais.',
+        'intro' => 'Un générateur de QR code est un outil qui transforme un lien, un texte ou des identifiants Wi-Fi en code carré lisible par l’appareil photo d’un téléphone. Créez en quelques secondes un QR code pour un lien, un texte, un réseau Wi-Fi, un e-mail, un numéro de téléphone ou un SMS. Choisissez les couleurs et la taille, puis téléchargez un PNG de haute qualité pour l’écran ou un SVG pour l’impression. Ce sont des QR codes statiques : ils fonctionnent pour toujours et n’expirent jamais.',
         'steps' => [
             'Choisissez le type de QR code : URL, Texte, Wi-Fi, E-mail, Téléphone ou SMS.',
             'Remplissez les informations. L’aperçu se met à jour pendant la saisie.',
@@ -157,6 +168,16 @@ return [
             ['q' => 'Qu’est-ce que la correction d’erreurs ?', 'a' => 'La correction d’erreurs permet à un QR code de rester lisible même s’il est partiellement abîmé. Le niveau L restaure environ 7 % du code et le niveau H environ 30 %, mais les niveaux élevés rendent le code plus dense.'],
             ['q' => 'Pourquoi mon QR code ne se scanne-t-il pas ?', 'a' => 'En général, les couleurs sont trop proches ou inversées (code clair sur fond sombre). Utilisez un code sombre sur fond clair avec un bon contraste.'],
         ],
+        'table' => [
+            'caption' => 'Niveaux de correction d’erreurs des QR codes',
+            'headers' => ['Niveau', 'Restaure jusqu’à', 'Adapté à'],
+            'rows' => [
+                ['L', '7 %', 'Écrans propres et codes contenant beaucoup de données'],
+                ['M', '15 %', 'La plupart des usages (le choix le plus courant)'],
+                ['Q', '25 %', 'Codes imprimés qui risquent d’être salis'],
+                ['H', '30 %', 'Conditions difficiles, comme les étiquettes d’usine'],
+            ],
+        ],
     ],
 
     'image-compressor' => [
@@ -166,7 +187,7 @@ return [
         'h1' => 'Compresseur d’images',
         'tagline' => 'Réduisez le poids des fichiers JPG, PNG et WebP, même à une taille précise comme 100 Ko.',
         'keywords' => ['compresseur d’image', 'compresser une image', 'compresser une image à 100 ko', 'réduire la taille d’une image', 'compresser jpg'],
-        'intro' => 'Allégez vos images sans perte de qualité visible. Déposez un ou plusieurs fichiers JPG, PNG ou WebP, choisissez un niveau de qualité ou une taille cible comme 100 Ko, puis téléchargez les images compressées. La compression se fait dans votre navigateur : vos photos ne sont jamais envoyées.',
+        'intro' => 'Un compresseur d’images est un outil qui réduit le poids des fichiers image sans changer leur apparence. Allégez vos images sans perte de qualité visible. Déposez un ou plusieurs fichiers JPG, PNG ou WebP, choisissez un niveau de qualité ou une taille cible comme 100 Ko, puis téléchargez les images compressées. La compression se fait dans votre navigateur : vos photos ne sont jamais envoyées.',
         'steps' => [
             'Glissez-déposez des images ou cliquez pour choisir des fichiers (JPG, PNG ou WebP).',
             'Choisissez un niveau de qualité ou définissez une taille cible, par exemple 100 Ko.',
@@ -198,6 +219,15 @@ return [
             ['q' => 'Pourquoi mon PNG a-t-il à peine diminué ?', 'a' => 'Le PNG est un format sans perte. Pour un gain important, choisissez WebP ou JPG comme format de sortie. Prenez WebP si vous devez conserver la transparence.'],
             ['q' => 'Y a-t-il une limite de taille ?', 'a' => 'Chaque image peut peser jusqu’à 50 Mo. Les très grandes photos peuvent prendre quelques secondes sur les téléphones anciens.'],
         ],
+        'table' => [
+            'caption' => 'Quel format d’image choisir',
+            'headers' => ['Format', 'Idéal pour', 'Transparence'],
+            'rows' => [
+                ['JPG', 'Photos', 'Non'],
+                ['PNG', 'Logos, captures d’écran, graphismes nets', 'Oui'],
+                ['WebP', 'Sites web (fichiers les plus légers pour photos et graphismes)', 'Oui'],
+            ],
+        ],
     ],
 
     'image-resizer' => [
@@ -207,7 +237,7 @@ return [
         'h1' => 'Redimensionner et convertir une image',
         'tagline' => 'Redimensionnez au pixel près ou en pourcentage, et convertissez JPG, PNG et WebP.',
         'keywords' => ['redimensionner une image', 'changer la taille d’une image', 'png en jpg', 'jpg en png', 'webp en jpg', 'convertisseur d’image'],
-        'intro' => 'Redimensionnez une photo aux dimensions exactes d’un réseau social, d’un formulaire de passeport ou de votre site, ou changez son échelle en pourcentage. Vous pouvez aussi convertir le format, par exemple PNG en JPG ou WebP en PNG. Tout se passe dans votre navigateur.',
+        'intro' => 'Un outil de redimensionnement change la largeur et la hauteur d’une image, et un convertisseur change son format de fichier. Redimensionnez une photo aux dimensions exactes d’un réseau social, d’un formulaire de passeport ou de votre site, ou changez son échelle en pourcentage. Vous pouvez aussi convertir le format, par exemple PNG en JPG ou WebP en PNG. Tout se passe dans votre navigateur.',
         'steps' => [
             'Choisissez ou déposez une image (JPG, PNG, WebP, GIF ou BMP).',
             'Saisissez une nouvelle largeur et une nouvelle hauteur, ou choisissez un pourcentage.',
@@ -237,6 +267,16 @@ return [
             ['q' => 'Redimensionner réduit-il la qualité ?', 'a' => 'Réduire une image la garde nette. L’agrandir beaucoup au-delà de l’original peut la rendre floue, car aucun nouveau détail ne peut être créé.'],
             ['q' => 'Quelle est la taille maximale ?', 'a' => 'Les images de sortie peuvent atteindre 10 000 pixels de côté, ce que tous les navigateurs modernes savent gérer.'],
         ],
+        'table' => [
+            'caption' => 'Tailles d’image courantes',
+            'headers' => ['Usage', 'Taille (pixels)'],
+            'rows' => [
+                ['Publication carrée Instagram', '1080 × 1080'],
+                ['Image partagée sur Facebook et LinkedIn', '1200 × 630'],
+                ['Miniature YouTube', '1280 × 720'],
+                ['Image pleine largeur d’un site', 'jusqu’à 1920 de large'],
+            ],
+        ],
     ],
 
     'merge-pdf' => [
@@ -246,7 +286,7 @@ return [
         'h1' => 'Fusionner des fichiers PDF',
         'tagline' => 'Combinez plusieurs PDF en un seul fichier, sans filigrane et sans envoi.',
         'keywords' => ['fusionner pdf', 'combiner pdf', 'assembler des pdf', 'fusion pdf', 'fusionner pdf en ligne gratuit'],
-        'intro' => 'Combinez plusieurs fichiers PDF en un seul document, dans l’ordre de votre choix. Contrairement à beaucoup de sites PDF, vos fichiers sont fusionnés dans votre navigateur : les documents confidentiels ne passent jamais par un serveur, et le résultat n’a pas de filigrane.',
+        'intro' => 'Fusionner des PDF consiste à réunir plusieurs fichiers PDF en un seul document. Combinez plusieurs fichiers PDF en un seul document, dans l’ordre de votre choix. Contrairement à beaucoup de sites PDF, vos fichiers sont fusionnés dans votre navigateur : les documents confidentiels ne passent jamais par un serveur, et le résultat n’a pas de filigrane.',
         'steps' => [
             'Ajoutez deux fichiers PDF ou plus en les déposant ou en cliquant pour parcourir.',
             'Mettez-les dans le bon ordre avec les flèches haut et bas.',
@@ -285,7 +325,7 @@ return [
         'h1' => 'Diviser un PDF et extraire des pages',
         'tagline' => 'Extrayez des pages ou divisez un PDF en fichiers séparés, en toute confidentialité dans votre navigateur.',
         'keywords' => ['diviser pdf', 'extraire des pages pdf', 'séparer les pages d’un pdf', 'découper un pdf', 'diviser pdf en ligne'],
-        'intro' => 'Récupérez uniquement les pages dont vous avez besoin dans un PDF, ou divisez-le en plusieurs fichiers. Saisissez des plages comme 1-3, 5, 8-10, ou séparez chaque page dans son propre PDF. Tout le traitement se fait dans votre navigateur.',
+        'intro' => 'Diviser un PDF consiste à extraire des pages d’un document ou à le découper en plusieurs PDF plus petits. Récupérez uniquement les pages dont vous avez besoin dans un PDF, ou divisez-le en plusieurs fichiers. Saisissez des plages comme 1-3, 5, 8-10, ou séparez chaque page dans son propre PDF. Tout le traitement se fait dans votre navigateur.',
         'steps' => [
             'Choisissez le PDF à diviser.',
             'Choisissez un mode : extraire des pages dans un PDF, diviser par plages ou séparer chaque page.',
@@ -320,7 +360,7 @@ return [
         'h1' => 'Calculateur d’âge',
         'tagline' => 'Trouvez votre âge exact en années, mois et jours, et votre prochain anniversaire.',
         'keywords' => ['calculateur d’âge', 'calculer son âge', 'calcul date de naissance', 'quel âge ai-je', 'calcul âge avec date de naissance'],
-        'intro' => 'Saisissez une date de naissance pour connaître l’âge exact en années, mois et jours. Vous obtenez aussi le nombre total de mois, semaines, jours et heures vécus, le jour de la semaine de votre naissance et un compte à rebours jusqu’à votre prochain anniversaire. Vous pouvez aussi calculer un âge à n’importe quelle date passée ou future.',
+        'intro' => 'Un calculateur d’âge calcule l’âge exact d’une personne, en années, mois et jours, à partir de sa date de naissance. Saisissez une date de naissance pour connaître l’âge exact en années, mois et jours. Vous obtenez aussi le nombre total de mois, semaines, jours et heures vécus, le jour de la semaine de votre naissance et un compte à rebours jusqu’à votre prochain anniversaire. Vous pouvez aussi calculer un âge à n’importe quelle date passée ou future.',
         'steps' => [
             'Saisissez la date de naissance.',
             'Gardez aujourd’hui comme date « âge à la date du » ou choisissez-en une autre.',
@@ -354,7 +394,7 @@ return [
         'h1' => 'Calculateur de pourcentage',
         'tagline' => 'Tous les calculs de pourcentage courants au même endroit, avec la formule.',
         'keywords' => ['calcul pourcentage', 'calculateur de pourcentage', 'calcul de variation en pourcentage', 'calcul augmentation pourcentage', 'quel pourcentage de'],
-        'intro' => 'Calculez des pourcentages en un instant : combien font 15 % de 200, quel pourcentage 30 représente de 120, la hausse en pourcentage de 80 à 100, et plus encore. Chaque calculateur affiche la formule utilisée pour vérifier le calcul, pour les devoirs, remises, pourboires, notes et rapports.',
+        'intro' => 'Un calculateur de pourcentage calcule des pourcentages, comme X % de Y ou la variation en pourcentage entre deux nombres. Calculez des pourcentages en un instant : combien font 15 % de 200, quel pourcentage 30 représente de 120, la hausse en pourcentage de 80 à 100, et plus encore. Chaque calculateur affiche la formule utilisée pour vérifier le calcul, pour les devoirs, remises, pourboires, notes et rapports.',
         'steps' => [
             'Trouvez le calculateur qui correspond à votre question.',
             'Saisissez vos nombres dans les cases.',
@@ -380,6 +420,17 @@ return [
             ['q' => 'Comment calculer une remise ?', 'a' => 'Utilisez « Diminuer un nombre d’un pourcentage ». Pour 20 % de remise sur 50 €, le prix soldé est 50 € x (1 - 0,20) = 40 €.'],
             ['q' => 'Pourquoi ne puis-je pas calculer une variation à partir de zéro ?', 'a' => 'La variation en pourcentage divise par la valeur de départ, et la division par zéro n’est pas définie : une variation à partir de 0 ne peut donc pas s’exprimer en pourcentage.'],
         ],
+        'table' => [
+            'caption' => 'Formules de pourcentage avec exemples',
+            'headers' => ['Question', 'Formule', 'Exemple'],
+            'rows' => [
+                ['Combien font X % de Y ?', '(X / 100) × Y', '15 % de 200 = 30'],
+                ['X représente quel % de Y ?', '(X / Y) × 100', '30 sur 120 = 25 %'],
+                ['Variation en % de A à B', '(B − A) / |A| × 100', '80 → 100 = +25 %'],
+                ['Augmenter Y de X %', 'Y × (1 + X / 100)', '50 + 20 % = 60'],
+                ['Diminuer Y de X %', 'Y × (1 − X / 100)', '50 − 20 % = 40'],
+            ],
+        ],
     ],
 
     'json-formatter' => [
@@ -389,7 +440,7 @@ return [
         'h1' => 'Formateur et validateur JSON',
         'tagline' => 'Embellissez, validez et minifiez du JSON avec des messages d’erreur clairs.',
         'keywords' => ['formateur json', 'validateur json', 'embellir json', 'formater json', 'minifier json'],
-        'intro' => 'Collez du JSON pour l’embellir avec une indentation propre, le valider ou le minifier pour la production. Si le JSON est invalide, vous obtenez un message d’erreur clair avec la ligne et la colonne exactes pour le corriger vite. Vos données sont traitées localement et ne sont jamais envoyées.',
+        'intro' => 'Un formateur JSON est un outil qui rend les données JSON lisibles grâce aux retours à la ligne et à l’indentation, et vérifie qu’elles sont valides. Collez du JSON pour l’embellir avec une indentation propre, le valider ou le minifier pour la production. Si le JSON est invalide, vous obtenez un message d’erreur clair avec la ligne et la colonne exactes pour le corriger vite. Vos données sont traitées localement et ne sont jamais envoyées.',
         'steps' => [
             'Collez votre JSON dans la zone d’entrée ou cliquez sur Exemple.',
             'Cliquez sur Formater pour embellir ou sur Minifier pour compacter.',
@@ -415,6 +466,16 @@ return [
             ['q' => 'Pourquoi mon JSON affiche-t-il une erreur ?', 'a' => 'Vérifiez la ligne et la colonne indiquées dans le message. Les virgules en trop, les apostrophes et les guillemets manquants autour des clés sont les causes habituelles.'],
             ['q' => 'Peut-il traiter de gros fichiers ?', 'a' => 'Oui. Des fichiers de plusieurs mégaoctets sont formatés en bien moins d’une seconde sur la plupart des appareils.'],
         ],
+        'table' => [
+            'caption' => 'Erreurs JSON courantes et comment les corriger',
+            'headers' => ['Problème', 'Invalide', 'Valide'],
+            'rows' => [
+                ['Virgule en trop', '{"a": 1,}', '{"a": 1}'],
+                ['Apostrophes', '{\'a\': 1}', '{"a": 1}'],
+                ['Clé sans guillemets', '{a: 1}', '{"a": 1}'],
+                ['Commentaire', '{"a": 1 // note}', '{"a": 1}'],
+            ],
+        ],
     ],
 
     'base64-encoder-decoder' => [
@@ -424,7 +485,7 @@ return [
         'h1' => 'Encodeur et décodeur Base64',
         'tagline' => 'Encodez et décodez du texte et des fichiers en Base64, avec UTF-8 et variante compatible URL.',
         'keywords' => ['encoder base64', 'décoder base64', 'convertisseur base64', 'base64 en texte', 'image en base64'],
-        'intro' => 'Convertissez du texte en Base64 ou décodez du Base64 en texte lisible, avec une prise en charge complète des emojis et des caractères non latins. Vous pouvez aussi transformer un fichier ou une image en data URL Base64 à intégrer dans du HTML, du CSS ou du JSON.',
+        'intro' => 'Le Base64 permet d’écrire n’importe quelle donnée, y compris des fichiers, avec seulement 64 caractères de texte ; encoder convertit en Base64 et décoder fait l’inverse. Convertissez du texte en Base64 ou décodez du Base64 en texte lisible, avec une prise en charge complète des emojis et des caractères non latins. Vous pouvez aussi transformer un fichier ou une image en data URL Base64 à intégrer dans du HTML, du CSS ou du JSON.',
         'steps' => [
             'Choisissez le mode Texte ou Fichier.',
             'Pour du texte, collez votre entrée et cliquez sur Encoder ou Décoder.',
@@ -450,6 +511,15 @@ return [
             ['q' => 'Pourquoi le Base64 est-il plus lourd que l’original ?', 'a' => 'Le Base64 transforme chaque groupe de 3 octets en 4 caractères : les données encodées sont environ 33 % plus lourdes que l’original.'],
             ['q' => 'Comment convertir une image en Base64 ?', 'a' => 'Passez en mode Fichier et choisissez votre image. Vous obtenez la chaîne Base64 brute et une data URL prête à l’emploi.'],
         ],
+        'table' => [
+            'caption' => 'De combien le Base64 alourdit les données',
+            'headers' => ['Taille d’origine', 'Longueur en Base64'],
+            'rows' => [
+                ['3 octets', '4 caractères'],
+                ['1 Ko (1 024 octets)', '1 368 caractères'],
+                ['1 Mo (1 048 576 octets)', '1 398 104 caractères'],
+            ],
+        ],
     ],
 
     'what-is-my-ip' => [
@@ -459,7 +529,7 @@ return [
         'h1' => 'Quelle est mon adresse IP ?',
         'tagline' => 'Votre adresse IP publique et les détails de votre navigateur, instantanément.',
         'keywords' => ['quelle est mon ip', 'mon adresse ip', 'recherche adresse ip', 'vérifier mon ip', 'quelle est mon adresse ip'],
-        'intro' => 'Votre adresse IP publique est l’adresse que voient les sites quand vous vous connectez à Internet. Elle est attribuée par votre fournisseur d’accès, ou par votre VPN si vous en utilisez un. Ci-dessous, vous voyez votre adresse IP actuelle, si elle est en IPv4 ou en IPv6, et des détails sur votre navigateur et votre appareil.',
+        'intro' => 'Une adresse IP est le numéro qui identifie votre connexion sur Internet ; votre IP publique est celle que voient les sites. Votre adresse IP publique est l’adresse que voient les sites quand vous vous connectez à Internet. Elle est attribuée par votre fournisseur d’accès, ou par votre VPN si vous en utilisez un. Ci-dessous, vous voyez votre adresse IP actuelle, si elle est en IPv4 ou en IPv6, et des détails sur votre navigateur et votre appareil.',
         'steps' => [
             'Ouvrez cette page : votre adresse IP s’affiche en haut.',
             'Cliquez sur Copier pour la copier dans le presse-papiers.',
@@ -497,7 +567,7 @@ return [
         'h1' => 'Lanceur de dés',
         'tagline' => 'Lancez jusqu’à 10 dés, du D4 au D100, avec animation 3D et total.',
         'keywords' => ['lancer de dés', 'lancer des dés en ligne', 'dés virtuels', 'lanceur d20', 'dé aléatoire'],
-        'intro' => 'Vous avez perdu les dés d’un jeu de société ou il vous faut un D20 pour un jeu de rôle ? Ce lanceur de dés gratuit lance jusqu’à dix dés virtuels à la fois avec une animation 3D réaliste. Choisissez un dé classique à six faces ou n’importe quel dé polyédrique du D4 au D100, et voyez chaque valeur, le total et vos derniers lancers instantanément.',
+        'intro' => 'Un lanceur de dés est un outil en ligne qui simule un lancer de dés et donne un résultat aléatoire pour chaque dé. Vous avez perdu les dés d’un jeu de société ou il vous faut un D20 pour un jeu de rôle ? Ce lanceur de dés gratuit lance jusqu’à dix dés virtuels à la fois avec une animation 3D réaliste. Choisissez un dé classique à six faces ou n’importe quel dé polyédrique du D4 au D100, et voyez chaque valeur, le total et vos derniers lancers instantanément.',
         'steps' => [
             'Choisissez le type de dé : D4, D6, D8, D10, D12, D20 ou D100.',
             'Choisissez le nombre de dés, de 1 à 10.',
@@ -528,6 +598,17 @@ return [
             ['q' => 'Puis-je lancer les dés sans animation ?', 'a' => 'Si votre appareil est réglé pour réduire les animations, les résultats s’affichent instantanément sans animation.'],
             ['q' => 'Le lanceur de dés fonctionne-t-il sur téléphone ?', 'a' => 'Oui. Il fonctionne dans tout navigateur moderne sur téléphone, tablette et ordinateur, et vous pouvez toucher les dés pour les lancer.'],
         ],
+        'table' => [
+            'caption' => 'Types de dés et leurs usages',
+            'headers' => ['Dé', 'Faces', 'Usage courant'],
+            'rows' => [
+                ['D4', '4', 'Petits jets de dégâts dans les jeux de rôle'],
+                ['D6', '6', 'Jeux de société comme le Monopoly ou les Petits Chevaux'],
+                ['D8, D10, D12', '8, 10, 12', 'Jets de dégâts et de compétence dans les jeux de rôle'],
+                ['D20', '20', 'Jets d’attaque et tests dans Donjons & Dragons'],
+                ['D100', '100', 'Jets de pourcentage'],
+            ],
+        ],
     ],
 
     'coin-flip' => [
@@ -537,7 +618,7 @@ return [
         'h1' => 'Pile ou face',
         'tagline' => 'Pile ou face ? Lancez une pièce en 3D, ou jusqu’à 100 à la fois, et voyez les stats.',
         'keywords' => ['pile ou face', 'lancer une pièce', 'pile ou face en ligne', 'tirage pile ou face', 'pièce virtuelle'],
-        'intro' => 'Tranchez une décision, choisissez qui commence ou faites une expérience de probabilité avec ce pile ou face en ligne gratuit. Lancez une pièce 3D qui tournoie dans les airs, ou jusqu’à 100 pièces à la fois. L’outil tient le compte des faces et des piles, la répartition en pourcentage et votre série en cours.',
+        'intro' => 'Pile ou face est une façon rapide de choisir au hasard entre deux options, chacune avec 50 % de chances. Tranchez une décision, choisissez qui commence ou faites une expérience de probabilité avec ce pile ou face en ligne gratuit. Lancez une pièce 3D qui tournoie dans les airs, ou jusqu’à 100 pièces à la fois. L’outil tient le compte des faces et des piles, la répartition en pourcentage et votre série en cours.',
         'steps' => [
             'Choisissez combien de pièces lancer : 1, 2, 5, 10, 25 ou 100.',
             'Appuyez sur Lancer (ou touchez la pièce, ou appuyez sur F).',
@@ -576,7 +657,7 @@ return [
         'h1' => 'Roue aléatoire',
         'tagline' => 'Ajoutez des noms ou des choix, faites tourner et laissez la roue désigner un gagnant.',
         'keywords' => ['roue aléatoire', 'roue de la fortune en ligne', 'tirage au sort de noms', 'roue des prénoms', 'choix aléatoire'],
-        'intro' => 'Impossible de décider quoi manger, qui passe ensuite ou qui gagne le concours ? Saisissez vos options dans la liste, une par ligne, et faites tourner la roue. Elle fait plusieurs tours puis ralentit jusqu’à s’arrêter sur une entrée au hasard, avant d’annoncer le gagnant. Vous pouvez retirer automatiquement chaque gagnant pour tirer des noms un par un sans répétition.',
+        'intro' => 'La roue aléatoire est un outil de tirage au sort : vous ajoutez des noms ou des choix, vous la faites tourner et elle s’arrête sur l’un d’eux au hasard. Impossible de décider quoi manger, qui passe ensuite ou qui gagne le concours ? Saisissez vos options dans la liste, une par ligne, et faites tourner la roue. Elle fait plusieurs tours puis ralentit jusqu’à s’arrêter sur une entrée au hasard, avant d’annoncer le gagnant. Vous pouvez retirer automatiquement chaque gagnant pour tirer des noms un par un sans répétition.',
         'steps' => [
             'Saisissez ou collez vos entrées, une par ligne (jusqu’à 100).',
             'Appuyez sur Tourner, cliquez au centre de la roue ou appuyez sur S.',
@@ -615,7 +696,7 @@ return [
         'h1' => 'Générateur de nombres aléatoires',
         'tagline' => 'Tirez des nombres au hasard dans n’importe quelle plage, sans doublons si besoin.',
         'keywords' => ['générateur de nombres aléatoires', 'nombre aléatoire', 'tirage de nombres', 'tirer un nombre au hasard', 'générateur de numéros de loto'],
-        'intro' => 'Générez un nombre aléatoire entre deux valeurs, ou toute une liste. Choisissez le minimum, le maximum et le nombre de tirages, puis décidez si les doublons sont autorisés et si la liste doit être triée. Idéal pour les tombolas, le loto, les activités en classe, l’échantillonnage et les jeux.',
+        'intro' => 'Un générateur de nombres aléatoires est un outil qui tire des nombres au hasard dans la plage de votre choix. Générez un nombre aléatoire entre deux valeurs, ou toute une liste. Choisissez le minimum, le maximum et le nombre de tirages, puis décidez si les doublons sont autorisés et si la liste doit être triée. Idéal pour les tombolas, le loto, les activités en classe, l’échantillonnage et les jeux.',
         'steps' => [
             'Saisissez le minimum et le maximum (les nombres négatifs fonctionnent aussi).',
             'Choisissez combien de nombres vous voulez, jusqu’à 1 000.',
@@ -654,7 +735,7 @@ return [
         'h1' => 'Chronomètre en ligne',
         'tagline' => 'Précis au centième de seconde, avec tours, temps intermédiaires et raccourcis clavier.',
         'keywords' => ['chronomètre', 'chronomètre en ligne', 'chronomètre avec tours', 'chrono', 'chronomètre tours'],
-        'intro' => 'Chronométrez une course, une présentation, une recette ou une séance de sport avec ce chronomètre en ligne gratuit. Il compte au centième de seconde, enregistre les temps au tour et intermédiaires, et met en évidence vos tours le plus rapide et le plus lent. Comme il mesure le temps réellement écoulé, il reste précis même si vous changez d’onglet.',
+        'intro' => 'Un chronomètre mesure le temps écoulé entre son démarrage et son arrêt, et peut enregistrer des temps au tour. Chronométrez une course, une présentation, une recette ou une séance de sport avec ce chronomètre en ligne gratuit. Il compte au centième de seconde, enregistre les temps au tour et intermédiaires, et met en évidence vos tours le plus rapide et le plus lent. Comme il mesure le temps réellement écoulé, il reste précis même si vous changez d’onglet.',
         'steps' => [
             'Appuyez sur Démarrer (ou sur la barre d’espace) pour lancer le chrono.',
             'Appuyez sur Tour (ou L) pour enregistrer un tour sans arrêter le chrono.',
@@ -693,7 +774,7 @@ return [
         'h1' => 'Minuteur',
         'tagline' => 'Réglez des minutes ou des heures, ou touchez un préréglage. Une alarme sonne à la fin.',
         'keywords' => ['minuteur', 'minuteur en ligne', 'minuteur avec alarme', 'minuteur 5 minutes', 'compte à rebours'],
-        'intro' => 'Réglez un minuteur pour la cuisine, les révisions, le sport, les réunions ou les examens. Saisissez n’importe quelle durée jusqu’à 99 heures ou touchez un préréglage comme 5 ou 25 minutes. Un anneau décompte le temps restant, l’onglet du navigateur l’affiche et une alarme sonne quand le compte à rebours atteint zéro.',
+        'intro' => 'Un minuteur décompte une durée choisie jusqu’à zéro, puis déclenche une alarme. Réglez un minuteur pour la cuisine, les révisions, le sport, les réunions ou les examens. Saisissez n’importe quelle durée jusqu’à 99 heures ou touchez un préréglage comme 5 ou 25 minutes. Un anneau décompte le temps restant, l’onglet du navigateur l’affiche et une alarme sonne quand le compte à rebours atteint zéro.',
         'steps' => [
             'Saisissez les heures, minutes et secondes, ou touchez un préréglage.',
             'Appuyez sur Démarrer (ou Espace). L’anneau et le titre de l’onglet décomptent.',
@@ -732,7 +813,7 @@ return [
         'h1' => 'Calculateur de sommeil',
         'tagline' => 'Trouvez la meilleure heure de coucher ou de réveil, et comptez vos heures de sommeil.',
         'keywords' => ['calculateur de sommeil', 'compteur de sommeil', 'heure de coucher', 'calcul cycles de sommeil', 'à quelle heure me coucher', 'heures de sommeil'],
-        'intro' => 'Se réveiller au milieu d’un cycle de sommeil explique pourquoi un réveil peut vous laisser groggy même après une nuit complète. Ce calculateur suit le rythme naturel des cycles d’environ 90 minutes : indiquez l’heure à laquelle vous devez vous lever et il suggère quand vous coucher, ou indiquez l’heure du coucher et il suggère les meilleures heures de réveil. Il peut aussi compter vos heures de sommeil et les comparer aux 7-9 heures recommandées.',
+        'intro' => 'Un calculateur de sommeil suggère l’heure du coucher ou du réveil pour que vous vous réveilliez à la fin d’un cycle, quand le sommeil est le plus léger. Se réveiller au milieu d’un cycle de sommeil explique pourquoi un réveil peut vous laisser groggy même après une nuit complète. Ce calculateur suit le rythme naturel des cycles d’environ 90 minutes : indiquez l’heure à laquelle vous devez vous lever et il suggère quand vous coucher, ou indiquez l’heure du coucher et il suggère les meilleures heures de réveil. Il peut aussi compter vos heures de sommeil et les comparer aux 7-9 heures recommandées.',
         'steps' => [
             'Choisissez quoi calculer : une heure de coucher, une heure de réveil, « Dormir maintenant » ou les heures dormies.',
             'Saisissez l’heure. Ajustez le temps que vous mettez d’habitude à vous endormir (15 minutes par défaut).',
@@ -762,6 +843,17 @@ return [
             ['q' => 'Pourquoi suis-je fatigué après 8 heures de sommeil ?', 'a' => 'Si votre réveil sonne pendant le sommeil profond, vous pouvez vous sentir groggy même après une longue nuit. Régler le réveil sur la fin d’un cycle et garder des horaires réguliers aide souvent.'],
             ['q' => 'Comment le compteur calcule-t-il les heures dormies ?', 'a' => 'Choisissez « Heures dormies », puis indiquez l’heure du coucher et celle du réveil. Il gère le passage de minuit, déduit le temps d’endormissement et compare le résultat aux 7-9 heures dont les adultes ont besoin.'],
             ['q' => 'Ce calculateur est-il un avis médical ?', 'a' => 'Non. C’est un guide général fondé sur des cycles de sommeil moyens. Si vous avez régulièrement du mal à dormir, parlez-en à un médecin.'],
+        ],
+        'table' => [
+            'caption' => 'Heures de coucher selon l’heure de réveil (15 minutes d’endormissement)',
+            'headers' => ['Réveil à', '6 cycles (9 h)', '5 cycles (7,5 h)', '4 cycles (6 h)'],
+            'rows' => [
+                ['06:00', '20:45', '22:15', '23:45'],
+                ['06:30', '21:15', '22:45', '00:15'],
+                ['07:00', '21:45', '23:15', '00:45'],
+                ['07:30', '22:15', '23:45', '01:15'],
+                ['08:00', '22:45', '00:15', '01:45'],
+            ],
         ],
     ],
 

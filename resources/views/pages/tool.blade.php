@@ -47,6 +47,34 @@
                         <p>{{ $section['body'] }}</p>
                     @endforeach
 
+                    @if (! empty($tool['table']))
+                        <div class="table-wrap">
+                            <table class="compare-table">
+                                <caption>{{ $tool['table']['caption'] }}</caption>
+                                <thead>
+                                    <tr>
+                                        @foreach ($tool['table']['headers'] as $h)
+                                            <th scope="col">{{ $h }}</th>
+                                        @endforeach
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($tool['table']['rows'] as $row)
+                                        <tr>
+                                            @foreach ($row as $i => $cell)
+                                                @if ($i === 0)
+                                                    <th scope="row">{{ $cell }}</th>
+                                                @else
+                                                    <td>{{ $cell }}</td>
+                                                @endif
+                                            @endforeach
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    @endif
+
                     @if ($tool['faqs'] !== [])
                         <h2 id="faq">{{ t('Frequently asked questions') }}</h2>
                         <div class="faq">

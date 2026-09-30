@@ -15,7 +15,7 @@ use Illuminate\Support\Collection;
 class ToolRegistry
 {
     /** Fields that may be translated. Slugs, icons, categories and links never are. */
-    private const TOOL_TEXT = ['name', 'title', 'description', 'h1', 'tagline', 'keywords', 'intro', 'steps', 'features', 'content', 'faqs'];
+    private const TOOL_TEXT = ['name', 'title', 'description', 'h1', 'tagline', 'keywords', 'intro', 'steps', 'features', 'content', 'table', 'faqs'];
 
     private const CATEGORY_TEXT = ['name', 'title', 'description', 'intro', 'content', 'faqs'];
 

@@ -9,7 +9,7 @@ return [
         'h1' => 'Contaparole',
         'tagline' => 'Conta subito parole, caratteri, frasi e tempo di lettura.',
         'keywords' => ['contaparole', 'conta caratteri', 'contare parole', 'contare parole online', 'calcolo tempo di lettura'],
-        'intro' => 'Incolla o scrivi il tuo testo qui sotto per contare parole, caratteri, frasi e paragrafi mentre scrivi. Il contaparole mostra anche il tempo stimato di lettura e di esposizione orale e le parole chiave più usate: utile per temi, articoli di blog, didascalie social e meta description SEO.',
+        'intro' => 'Un contaparole è uno strumento che conta le parole, i caratteri, le frasi e i paragrafi di un testo. Incolla o scrivi il tuo testo qui sotto per contare parole, caratteri, frasi e paragrafi mentre scrivi. Il contaparole mostra anche il tempo stimato di lettura e di esposizione orale e le parole chiave più usate: utile per temi, articoli di blog, didascalie social e meta description SEO.',
         'steps' => [
             'Scrivi o incolla il tuo testo nella casella.',
             'Guarda aggiornarsi in tempo reale il numero di parole, caratteri, frasi e paragrafi.',
@@ -49,7 +49,7 @@ return [
         'h1' => 'Convertitore maiuscole/minuscole',
         'tagline' => 'Cambia il testo in maiuscolo, minuscolo, iniziali, frase, camel o snake case con un clic.',
         'keywords' => ['convertitore maiuscole minuscole', 'da maiuscolo a minuscolo', 'iniziali maiuscole', 'maiuscola iniziale', 'convertitore camelcase'],
-        'intro' => 'Hai scritto con il Bloc Maiusc attivo o ti serve un titolo con le iniziali maiuscole? Incolla il testo e clicca un pulsante per convertirlo all’istante. Gli sviluppatori possono anche passare tra camelCase, PascalCase, snake_case, kebab-case e CONSTANT_CASE.',
+        'intro' => 'Un convertitore maiuscole/minuscole è uno strumento che cambia le maiuscole di un testo, per esempio da MAIUSCOLO a minuscolo. Hai scritto con il Bloc Maiusc attivo o ti serve un titolo con le iniziali maiuscole? Incolla il testo e clicca un pulsante per convertirlo all’istante. Gli sviluppatori possono anche passare tra camelCase, PascalCase, snake_case, kebab-case e CONSTANT_CASE.',
         'steps' => [
             'Incolla il testo nella casella.',
             'Clicca lo stile che vuoi, ad esempio Iniziali Maiuscole o minuscolo.',
@@ -87,7 +87,7 @@ return [
         'h1' => 'Generatore di password sicure',
         'tagline' => 'Crea password casuali e sicure con un clic, generate sul tuo dispositivo.',
         'keywords' => ['generatore di password', 'generatore password sicure', 'password casuale', 'password sicura'],
-        'intro' => 'Crea una password forte e casuale, quasi impossibile da indovinare. Scegli la lunghezza e i caratteri da includere: il generatore usa il generatore di numeri casuali crittograficamente sicuro del tuo browser. Le password non vengono mai inviate al nostro server.',
+        'intro' => 'Un generatore di password è uno strumento che crea password casuali e difficili da indovinare con i caratteri che scegli. Crea una password forte e casuale, quasi impossibile da indovinare. Scegli la lunghezza e i caratteri da includere: il generatore usa il generatore di numeri casuali crittograficamente sicuro del tuo browser. Le password non vengono mai inviate al nostro server.',
         'steps' => [
             'Scegli la lunghezza della password (consigliati 16 caratteri o più).',
             'Spunta i tipi di caratteri da includere: maiuscole, minuscole, numeri e simboli.',
@@ -116,6 +116,17 @@ return [
             ['q' => 'Cosa fa “Escludi simili”?', 'a' => 'Rimuove i caratteri che si somigliano, come l, 1, I, O e 0, così la password è più facile da leggere e digitare a mano.'],
             ['q' => 'Cos’è l’entropia di una password?', 'a' => 'L’entropia misura in bit quanto è imprevedibile una password. Ogni bit in più raddoppia i tentativi necessari a un attaccante. Da 80 bit in su è forte, da 100 in su è eccellente.'],
         ],
+        'table' => [
+            'caption' => 'Lunghezza e sicurezza della password (entropia in bit)',
+            'headers' => ['Lunghezza', 'Lettere e numeri (62 caratteri)', 'Lettere, numeri e simboli (89 caratteri)'],
+            'rows' => [
+                ['8', '48', '52'],
+                ['12', '71', '78'],
+                ['16', '95', '104'],
+                ['20', '119', '130'],
+                ['32', '191', '207'],
+            ],
+        ],
     ],
 
     'qr-code-generator' => [
@@ -125,7 +136,7 @@ return [
         'h1' => 'Generatore di codici QR gratuito',
         'tagline' => 'Crea codici QR per link, Wi-Fi, email, telefono e SMS. Scarica in PNG o SVG.',
         'keywords' => ['generatore codici qr', 'codice qr gratis', 'codice qr wifi', 'creare codice qr', 'codice qr per url'],
-        'intro' => 'Crea in pochi secondi un codice QR per un link, un testo, una rete Wi-Fi, un’email, un numero di telefono o un SMS. Scegli colori e dimensioni, poi scarica un PNG di alta qualità per lo schermo o un SVG per la stampa. Sono codici QR statici: funzionano per sempre e non scadono mai.',
+        'intro' => 'Un generatore di codici QR è uno strumento che trasforma un link, un testo o i dati del Wi-Fi in un codice quadrato leggibile dalla fotocamera del telefono. Crea in pochi secondi un codice QR per un link, un testo, una rete Wi-Fi, un’email, un numero di telefono o un SMS. Scegli colori e dimensioni, poi scarica un PNG di alta qualità per lo schermo o un SVG per la stampa. Sono codici QR statici: funzionano per sempre e non scadono mai.',
         'steps' => [
             'Scegli il tipo di codice QR: URL, Testo, Wi-Fi, Email, Telefono o SMS.',
             'Compila i dati. L’anteprima si aggiorna mentre scrivi.',
@@ -157,6 +168,16 @@ return [
             ['q' => 'Cos’è la correzione degli errori?', 'a' => 'La correzione degli errori permette di leggere un codice QR anche se in parte è danneggiato. Il livello L recupera circa il 7% del codice e il livello H circa il 30%, ma i livelli più alti rendono il codice più fitto.'],
             ['q' => 'Perché il mio codice QR non viene letto?', 'a' => 'Di solito i colori sono troppo simili o invertiti (codice chiaro su sfondo scuro). Usa un codice scuro su sfondo chiaro con un buon contrasto.'],
         ],
+        'table' => [
+            'caption' => 'Livelli di correzione degli errori dei codici QR',
+            'headers' => ['Livello', 'Recupera fino al', 'Adatto a'],
+            'rows' => [
+                ['L', '7%', 'Schermi puliti e codici con molti dati'],
+                ['M', '15%', 'La maggior parte degli usi (la scelta più comune)'],
+                ['Q', '25%', 'Codici stampati che possono sporcarsi'],
+                ['H', '30%', 'Condizioni difficili, come le etichette in fabbrica'],
+            ],
+        ],
     ],
 
     'image-compressor' => [
@@ -166,7 +187,7 @@ return [
         'h1' => 'Compressore di immagini',
         'tagline' => 'Riduci il peso di file JPG, PNG e WebP, anche a una dimensione precisa come 100 KB.',
         'keywords' => ['compressore immagini', 'comprimere immagine', 'comprimere immagine a 100kb', 'ridurre dimensione immagine', 'comprimere jpg'],
-        'intro' => 'Rendi le tue immagini più leggere senza perdita di qualità visibile. Trascina uno o più file JPG, PNG o WebP, scegli un livello di qualità o una dimensione obiettivo come 100 KB e scarica le immagini compresse. La compressione avviene nel tuo browser, quindi le foto non vengono mai caricate.',
+        'intro' => 'Un compressore di immagini è uno strumento che riduce il peso dei file immagine senza cambiarne l’aspetto. Rendi le tue immagini più leggere senza perdita di qualità visibile. Trascina uno o più file JPG, PNG o WebP, scegli un livello di qualità o una dimensione obiettivo come 100 KB e scarica le immagini compresse. La compressione avviene nel tuo browser, quindi le foto non vengono mai caricate.',
         'steps' => [
             'Trascina le immagini o clicca per scegliere i file (JPG, PNG o WebP).',
             'Scegli un livello di qualità o imposta una dimensione obiettivo come 100 KB.',
@@ -198,6 +219,15 @@ return [
             ['q' => 'Perché il mio PNG si è ridotto pochissimo?', 'a' => 'Il PNG è un formato senza perdita. Per un grande risparmio imposta WebP o JPG come formato di output. Usa WebP se devi mantenere la trasparenza.'],
             ['q' => 'C’è un limite di dimensione?', 'a' => 'Ogni immagine può pesare fino a 50 MB. Le foto molto grandi possono richiedere qualche secondo sui telefoni più vecchi.'],
         ],
+        'table' => [
+            'caption' => 'Quale formato di immagine usare',
+            'headers' => ['Formato', 'Ideale per', 'Trasparenza'],
+            'rows' => [
+                ['JPG', 'Foto', 'No'],
+                ['PNG', 'Loghi, screenshot, grafiche nitide', 'Sì'],
+                ['WebP', 'Siti web (file più leggeri per foto e grafiche)', 'Sì'],
+            ],
+        ],
     ],
 
     'image-resizer' => [
@@ -207,7 +237,7 @@ return [
         'h1' => 'Ridimensiona e converti immagini',
         'tagline' => 'Ridimensiona a pixel esatti o in percentuale e converti JPG, PNG e WebP.',
         'keywords' => ['ridimensionare immagine', 'ridimensiona immagine', 'png in jpg', 'jpg in png', 'webp in jpg', 'convertitore immagini'],
-        'intro' => 'Ridimensiona una foto alle misure esatte per i social, un modulo per il passaporto o il tuo sito, oppure scalala in percentuale. Puoi anche convertire il formato, ad esempio da PNG a JPG o da WebP a PNG. Tutto avviene nel tuo browser.',
+        'intro' => 'Uno strumento per ridimensionare cambia larghezza e altezza di un’immagine, e un convertitore ne cambia il formato di file. Ridimensiona una foto alle misure esatte per i social, un modulo per il passaporto o il tuo sito, oppure scalala in percentuale. Puoi anche convertire il formato, ad esempio da PNG a JPG o da WebP a PNG. Tutto avviene nel tuo browser.',
         'steps' => [
             'Scegli o trascina un’immagine (JPG, PNG, WebP, GIF o BMP).',
             'Inserisci nuova larghezza e altezza, oppure scegli una percentuale.',
@@ -237,6 +267,16 @@ return [
             ['q' => 'Ridimensionare riduce la qualità?', 'a' => 'Rimpicciolire un’immagine la mantiene nitida. Ingrandirla molto oltre l’originale può renderla sfocata, perché non si possono creare nuovi dettagli.'],
             ['q' => 'Qual è la dimensione massima?', 'a' => 'Le immagini in uscita possono arrivare a 10.000 pixel per lato, entro i limiti gestiti da tutti i browser moderni.'],
         ],
+        'table' => [
+            'caption' => 'Dimensioni di immagine comuni',
+            'headers' => ['Uso', 'Dimensione (pixel)'],
+            'rows' => [
+                ['Post quadrato di Instagram', '1080 × 1080'],
+                ['Immagine condivisa su Facebook e LinkedIn', '1200 × 630'],
+                ['Miniatura di YouTube', '1280 × 720'],
+                ['Immagine a tutta larghezza di un sito', 'fino a 1920 di larghezza'],
+            ],
+        ],
     ],
 
     'merge-pdf' => [
@@ -246,7 +286,7 @@ return [
         'h1' => 'Unisci file PDF',
         'tagline' => 'Combina più PDF in un solo file, senza filigrana e senza caricamenti.',
         'keywords' => ['unire pdf', 'unisci pdf', 'combinare pdf', 'unire file pdf', 'unire pdf online gratis'],
-        'intro' => 'Combina più file PDF in un unico documento nell’ordine che preferisci. A differenza di molti siti per PDF, i file vengono uniti nel tuo browser: i documenti riservati non passano mai da un server e il risultato non ha filigrane.',
+        'intro' => 'Unire i PDF significa combinare più file PDF in un unico documento. Combina più file PDF in un unico documento nell’ordine che preferisci. A differenza di molti siti per PDF, i file vengono uniti nel tuo browser: i documenti riservati non passano mai da un server e il risultato non ha filigrane.',
         'steps' => [
             'Aggiungi due o più file PDF trascinandoli o cliccando per sfogliare.',
             'Mettili nell’ordine giusto con le frecce su e giù.',
@@ -285,7 +325,7 @@ return [
         'h1' => 'Dividi PDF ed estrai pagine',
         'tagline' => 'Estrai pagine o dividi un PDF in file separati, in privato nel tuo browser.',
         'keywords' => ['dividere pdf', 'estrarre pagine pdf', 'separare pagine pdf', 'dividi pdf', 'dividere pdf online'],
-        'intro' => 'Estrai solo le pagine che ti servono da un PDF o dividilo in file separati. Inserisci intervalli come 1-3, 5, 8-10, oppure trasforma ogni pagina in un PDF a sé. L’elaborazione avviene interamente nel tuo browser.',
+        'intro' => 'Dividere un PDF significa estrarre pagine da un documento o separarlo in più file PDF più piccoli. Estrai solo le pagine che ti servono da un PDF o dividilo in file separati. Inserisci intervalli come 1-3, 5, 8-10, oppure trasforma ogni pagina in un PDF a sé. L’elaborazione avviene interamente nel tuo browser.',
         'steps' => [
             'Scegli il PDF da dividere.',
             'Scegli una modalità: estrai pagine in un PDF, dividi per intervalli o dividi ogni pagina.',
@@ -320,7 +360,7 @@ return [
         'h1' => 'Calcolatore di età',
         'tagline' => 'Scopri la tua età esatta in anni, mesi e giorni e il prossimo compleanno.',
         'keywords' => ['calcolatore età', 'calcolare età', 'calcolo data di nascita', 'quanti anni ho', 'calcolo età da data di nascita'],
-        'intro' => 'Inserisci una data di nascita per conoscere l’età esatta in anni, mesi e giorni. Ottieni anche il totale di mesi, settimane, giorni e ore vissuti, il giorno della settimana in cui sei nato e il conto alla rovescia per il prossimo compleanno. Puoi calcolare l’età anche a qualsiasi data passata o futura.',
+        'intro' => 'Un calcolatore di età calcola l’età esatta di una persona, in anni, mesi e giorni, dalla sua data di nascita. Inserisci una data di nascita per conoscere l’età esatta in anni, mesi e giorni. Ottieni anche il totale di mesi, settimane, giorni e ore vissuti, il giorno della settimana in cui sei nato e il conto alla rovescia per il prossimo compleanno. Puoi calcolare l’età anche a qualsiasi data passata o futura.',
         'steps' => [
             'Inserisci la data di nascita.',
             'Lascia oggi come data “età alla data del” o scegline un’altra.',
@@ -354,7 +394,7 @@ return [
         'h1' => 'Calcolatore di percentuali',
         'tagline' => 'Tutti i calcoli percentuali più comuni in un unico posto, con la formula.',
         'keywords' => ['calcolatore percentuali', 'calcolo percentuale', 'calcolo variazione percentuale', 'calcolo aumento percentuale', 'che percentuale è'],
-        'intro' => 'Calcola le percentuali in un attimo: quanto è il 15% di 200, che percentuale è 30 di 120, l’aumento percentuale da 80 a 100 e altro. Ogni calcolatore mostra la formula usata, così puoi verificare il calcolo per compiti, sconti, mance, voti e report.',
+        'intro' => 'Un calcolatore di percentuali calcola percentuali come il X% di Y o la variazione percentuale tra due numeri. Calcola le percentuali in un attimo: quanto è il 15% di 200, che percentuale è 30 di 120, l’aumento percentuale da 80 a 100 e altro. Ogni calcolatore mostra la formula usata, così puoi verificare il calcolo per compiti, sconti, mance, voti e report.',
         'steps' => [
             'Trova il calcolatore che corrisponde alla tua domanda.',
             'Inserisci i numeri nelle caselle.',
@@ -380,6 +420,17 @@ return [
             ['q' => 'Come si calcola uno sconto?', 'a' => 'Usa “Diminuire un numero di una percentuale”. Con il 20% di sconto su 50 €, il prezzo scontato è 50 € x (1 - 0,20) = 40 €.'],
             ['q' => 'Perché non posso calcolare la variazione partendo da zero?', 'a' => 'La variazione percentuale divide per il valore iniziale, e la divisione per zero non è definita: una variazione da 0 non si può esprimere in percentuale.'],
         ],
+        'table' => [
+            'caption' => 'Formule delle percentuali con esempi',
+            'headers' => ['Domanda', 'Formula', 'Esempio'],
+            'rows' => [
+                ['Quanto è il X% di Y?', '(X / 100) × Y', '15% di 200 = 30'],
+                ['X è che % di Y?', '(X / Y) × 100', '30 su 120 = 25%'],
+                ['Variazione % da A a B', '(B − A) / |A| × 100', '80 → 100 = +25%'],
+                ['Aumentare Y del X%', 'Y × (1 + X / 100)', '50 + 20% = 60'],
+                ['Diminuire Y del X%', 'Y × (1 − X / 100)', '50 − 20% = 40'],
+            ],
+        ],
     ],
 
     'json-formatter' => [
@@ -389,7 +440,7 @@ return [
         'h1' => 'Formattatore e validatore JSON',
         'tagline' => 'Abbellisci, convalida e minifica JSON con messaggi di errore chiari.',
         'keywords' => ['formattatore json', 'validatore json', 'json beautifier', 'formattare json', 'minificare json'],
-        'intro' => 'Incolla il JSON per abbellirlo con un’indentazione pulita, convalidarlo o minificarlo per la produzione. Se il JSON non è valido, ricevi un messaggio chiaro con riga e colonna esatte per correggerlo in fretta. I dati vengono elaborati localmente e non vengono mai inviati.',
+        'intro' => 'Un formattatore JSON è uno strumento che rende leggibili i dati JSON con a capo e rientri e verifica che siano validi. Incolla il JSON per abbellirlo con un’indentazione pulita, convalidarlo o minificarlo per la produzione. Se il JSON non è valido, ricevi un messaggio chiaro con riga e colonna esatte per correggerlo in fretta. I dati vengono elaborati localmente e non vengono mai inviati.',
         'steps' => [
             'Incolla il JSON nella casella di input o clicca Esempio.',
             'Clicca Formatta per abbellire o Minifica per compattare.',
@@ -415,6 +466,16 @@ return [
             ['q' => 'Perché il mio JSON mostra un errore?', 'a' => 'Controlla riga e colonna nel messaggio. Virgole finali, apici singoli e virgolette mancanti intorno alle chiavi sono le cause abituali.'],
             ['q' => 'Può gestire file grandi?', 'a' => 'Sì. File di diversi megabyte vengono formattati in molto meno di un secondo sulla maggior parte dei dispositivi.'],
         ],
+        'table' => [
+            'caption' => 'Errori JSON comuni e come correggerli',
+            'headers' => ['Problema', 'Non valido', 'Valido'],
+            'rows' => [
+                ['Virgola finale', '{"a": 1,}', '{"a": 1}'],
+                ['Apici singoli', '{\'a\': 1}', '{"a": 1}'],
+                ['Chiave senza virgolette', '{a: 1}', '{"a": 1}'],
+                ['Commento', '{"a": 1 // nota}', '{"a": 1}'],
+            ],
+        ],
     ],
 
     'base64-encoder-decoder' => [
@@ -424,7 +485,7 @@ return [
         'h1' => 'Codificatore e decodificatore Base64',
         'tagline' => 'Codifica e decodifica testo e file in Base64, con UTF-8 e variante sicura per URL.',
         'keywords' => ['codifica base64', 'decodifica base64', 'convertitore base64', 'base64 in testo', 'immagine in base64'],
-        'intro' => 'Converti un testo in Base64 o decodifica Base64 in testo leggibile, con pieno supporto a emoji e caratteri non inglesi. Puoi anche trasformare un file o un’immagine in una data URL Base64 da incorporare in HTML, CSS o JSON.',
+        'intro' => 'Il Base64 è un modo per scrivere qualsiasi dato, file compresi, usando solo 64 caratteri di testo; codificare converte in Base64 e decodificare fa il contrario. Converti un testo in Base64 o decodifica Base64 in testo leggibile, con pieno supporto a emoji e caratteri non inglesi. Puoi anche trasformare un file o un’immagine in una data URL Base64 da incorporare in HTML, CSS o JSON.',
         'steps' => [
             'Scegli la modalità Testo o File.',
             'Per il testo, incolla l’input e clicca Codifica o Decodifica.',
@@ -450,6 +511,15 @@ return [
             ['q' => 'Perché il Base64 è più grande dell’originale?', 'a' => 'Il Base64 trasforma ogni 3 byte in 4 caratteri, quindi i dati codificati sono circa il 33% più grandi dell’originale.'],
             ['q' => 'Come converto un’immagine in Base64?', 'a' => 'Passa alla modalità File e scegli l’immagine. Ottieni sia la stringa Base64 grezza sia una data URL pronta all’uso.'],
         ],
+        'table' => [
+            'caption' => 'Quanto il Base64 aumenta i dati',
+            'headers' => ['Dimensione originale', 'Lunghezza in Base64'],
+            'rows' => [
+                ['3 byte', '4 caratteri'],
+                ['1 KB (1.024 byte)', '1.368 caratteri'],
+                ['1 MB (1.048.576 byte)', '1.398.104 caratteri'],
+            ],
+        ],
     ],
 
     'what-is-my-ip' => [
@@ -459,7 +529,7 @@ return [
         'h1' => 'Qual è il mio indirizzo IP?',
         'tagline' => 'Il tuo indirizzo IP pubblico e i dettagli del browser, all’istante.',
         'keywords' => ['qual è il mio ip', 'il mio indirizzo ip', 'ricerca indirizzo ip', 'controlla il mio ip', 'qual è il mio indirizzo ip'],
-        'intro' => 'Il tuo indirizzo IP pubblico è l’indirizzo che i siti vedono quando ti colleghi a Internet. Viene assegnato dal tuo provider, o dalla tua VPN se ne usi una. Qui sotto trovi il tuo indirizzo IP attuale, se è IPv4 o IPv6 e i dettagli del browser e del dispositivo.',
+        'intro' => 'Un indirizzo IP è il numero che identifica la tua connessione su Internet; il tuo IP pubblico è quello che vedono i siti. Il tuo indirizzo IP pubblico è l’indirizzo che i siti vedono quando ti colleghi a Internet. Viene assegnato dal tuo provider, o dalla tua VPN se ne usi una. Qui sotto trovi il tuo indirizzo IP attuale, se è IPv4 o IPv6 e i dettagli del browser e del dispositivo.',
         'steps' => [
             'Apri questa pagina: il tuo indirizzo IP è mostrato in alto.',
             'Clicca Copia per copiarlo negli appunti.',
@@ -497,7 +567,7 @@ return [
         'h1' => 'Lancio dei dadi',
         'tagline' => 'Lancia fino a 10 dadi, dal D4 al D100, con animazione 3D e totale.',
         'keywords' => ['lancio dadi', 'lanciare dadi online', 'dadi virtuali', 'dado d20', 'dado casuale'],
-        'intro' => 'Hai perso i dadi del gioco da tavolo o ti serve un D20 per un gioco di ruolo? Questo lanciadadi gratuito lancia fino a dieci dadi virtuali insieme con un’animazione 3D realistica. Scegli un classico dado a sei facce o qualsiasi dado poliedrico dal D4 al D100 e vedi subito ogni valore, il totale e gli ultimi lanci.',
+        'intro' => 'Un lancio di dadi online è uno strumento che simula il lancio dei dadi e dà un risultato casuale per ciascun dado. Hai perso i dadi del gioco da tavolo o ti serve un D20 per un gioco di ruolo? Questo lanciadadi gratuito lancia fino a dieci dadi virtuali insieme con un’animazione 3D realistica. Scegli un classico dado a sei facce o qualsiasi dado poliedrico dal D4 al D100 e vedi subito ogni valore, il totale e gli ultimi lanci.',
         'steps' => [
             'Scegli il tipo di dado: D4, D6, D8, D10, D12, D20 o D100.',
             'Scegli quanti dadi lanciare, da 1 a 10.',
@@ -528,6 +598,17 @@ return [
             ['q' => 'Posso lanciare i dadi senza animazione?', 'a' => 'Se il tuo dispositivo è impostato per ridurre il movimento, i risultati appaiono subito senza animazione.'],
             ['q' => 'Il lancio dei dadi funziona sul telefono?', 'a' => 'Sì. Funziona in qualsiasi browser moderno su telefoni, tablet e computer, e puoi toccare i dadi per lanciarli.'],
         ],
+        'table' => [
+            'caption' => 'Tipi di dadi e a cosa servono',
+            'headers' => ['Dado', 'Facce', 'Uso comune'],
+            'rows' => [
+                ['D4', '4', 'Piccoli tiri per i danni nei giochi di ruolo'],
+                ['D6', '6', 'Giochi da tavolo come Monopoly e Non t’arrabbiare'],
+                ['D8, D10, D12', '8, 10, 12', 'Tiri per danni e abilità nei giochi di ruolo'],
+                ['D20', '20', 'Tiri di attacco e prove in Dungeons & Dragons'],
+                ['D100', '100', 'Tiri percentuali'],
+            ],
+        ],
     ],
 
     'coin-flip' => [
@@ -537,7 +618,7 @@ return [
         'h1' => 'Testa o croce',
         'tagline' => 'Testa o croce? Lancia una moneta 3D o fino a 100 insieme e guarda le statistiche.',
         'keywords' => ['testa o croce', 'lancia una moneta', 'lancio moneta', 'testa o croce online', 'moneta virtuale'],
-        'intro' => 'Prendi una decisione, scegli chi inizia o fai un esperimento di probabilità con questo testa o croce online gratuito. Lancia una moneta 3D che vola roteando, o fino a 100 monete insieme. Lo strumento tiene il conto di teste e croci, la ripartizione percentuale e la serie in corso.',
+        'intro' => 'Testa o croce è un modo rapido per scegliere a caso tra due opzioni, ciascuna con il 50% di probabilità. Prendi una decisione, scegli chi inizia o fai un esperimento di probabilità con questo testa o croce online gratuito. Lancia una moneta 3D che vola roteando, o fino a 100 monete insieme. Lo strumento tiene il conto di teste e croci, la ripartizione percentuale e la serie in corso.',
         'steps' => [
             'Scegli quante monete lanciare: 1, 2, 5, 10, 25 o 100.',
             'Premi Lancia (o tocca la moneta, o premi F).',
@@ -576,7 +657,7 @@ return [
         'h1' => 'Ruota della fortuna',
         'tagline' => 'Aggiungi nomi o scelte, gira e lascia che la ruota scelga un vincitore a caso.',
         'keywords' => ['ruota della fortuna', 'ruota online', 'estrattore di nomi', 'ruota dei nomi', 'scelta casuale'],
-        'intro' => 'Non sai decidere cosa mangiare, chi è il prossimo o chi vince il concorso? Scrivi le opzioni nella lista, una per riga, e gira la ruota. Fa diversi giri e rallenta fino a fermarsi su una voce a caso, poi annuncia il vincitore. Puoi rimuovere automaticamente ogni vincitore per estrarre i nomi uno alla volta senza ripetizioni.',
+        'intro' => 'La ruota della fortuna è un estrattore casuale: aggiungi nomi o opzioni, la fai girare e si ferma su uno a caso. Non sai decidere cosa mangiare, chi è il prossimo o chi vince il concorso? Scrivi le opzioni nella lista, una per riga, e gira la ruota. Fa diversi giri e rallenta fino a fermarsi su una voce a caso, poi annuncia il vincitore. Puoi rimuovere automaticamente ogni vincitore per estrarre i nomi uno alla volta senza ripetizioni.',
         'steps' => [
             'Scrivi o incolla le voci, una per riga (fino a 100).',
             'Premi Gira, clicca al centro della ruota o premi S.',
@@ -615,7 +696,7 @@ return [
         'h1' => 'Generatore di numeri casuali',
         'tagline' => 'Estrai numeri casuali in qualsiasi intervallo, senza ripetizioni se serve.',
         'keywords' => ['generatore numeri casuali', 'numero casuale', 'estrattore di numeri', 'numero a caso', 'generatore numeri lotteria'],
-        'intro' => 'Genera un numero casuale tra due valori qualsiasi, o un’intera lista. Scegli minimo, massimo e quanti numeri ti servono, poi decidi se ammettere ripetizioni e se ordinare la lista. Ideale per lotterie, estrazioni, attività in classe, campionamenti e giochi.',
+        'intro' => 'Un generatore di numeri casuali è uno strumento che estrae numeri a caso nell’intervallo che scegli. Genera un numero casuale tra due valori qualsiasi, o un’intera lista. Scegli minimo, massimo e quanti numeri ti servono, poi decidi se ammettere ripetizioni e se ordinare la lista. Ideale per lotterie, estrazioni, attività in classe, campionamenti e giochi.',
         'steps' => [
             'Inserisci minimo e massimo (vanno bene anche i numeri negativi).',
             'Scegli quanti numeri vuoi, fino a 1.000.',
@@ -654,7 +735,7 @@ return [
         'h1' => 'Cronometro online',
         'tagline' => 'Preciso al centesimo di secondo, con giri, tempi intermedi e scorciatoie da tastiera.',
         'keywords' => ['cronometro', 'cronometro online', 'cronometro con giri', 'timer', 'cronometro giri'],
-        'intro' => 'Cronometra una corsa, una presentazione, una ricetta o un allenamento con questo cronometro online gratuito. Conta al centesimo di secondo, registra tempi sul giro e intermedi ed evidenzia il giro più veloce e quello più lento. Poiché misura il tempo reale trascorso, resta preciso anche se cambi scheda.',
+        'intro' => 'Un cronometro misura il tempo che passa tra l’avvio e l’arresto e può registrare i tempi sul giro. Cronometra una corsa, una presentazione, una ricetta o un allenamento con questo cronometro online gratuito. Conta al centesimo di secondo, registra tempi sul giro e intermedi ed evidenzia il giro più veloce e quello più lento. Poiché misura il tempo reale trascorso, resta preciso anche se cambi scheda.',
         'steps' => [
             'Premi Avvia (o la barra spaziatrice) per iniziare.',
             'Premi Giro (o L) per registrare un giro senza fermare il cronometro.',
@@ -693,7 +774,7 @@ return [
         'h1' => 'Timer con conto alla rovescia',
         'tagline' => 'Imposta minuti o ore, o tocca una preimpostazione. Allo scadere suona un allarme.',
         'keywords' => ['timer', 'timer online', 'timer con allarme', 'timer 5 minuti', 'conto alla rovescia'],
-        'intro' => 'Imposta un timer per cucinare, studiare, allenarti, per riunioni o esami. Scrivi qualsiasi durata fino a 99 ore o tocca una preimpostazione come 5 o 25 minuti. Un anello mostra il tempo rimasto, la scheda del browser lo visualizza e un allarme suona quando il conto alla rovescia arriva a zero.',
+        'intro' => 'Un timer conta alla rovescia da un tempo impostato fino a zero e poi fa suonare un allarme. Imposta un timer per cucinare, studiare, allenarti, per riunioni o esami. Scrivi qualsiasi durata fino a 99 ore o tocca una preimpostazione come 5 o 25 minuti. Un anello mostra il tempo rimasto, la scheda del browser lo visualizza e un allarme suona quando il conto alla rovescia arriva a zero.',
         'steps' => [
             'Scrivi ore, minuti e secondi, o tocca una preimpostazione.',
             'Premi Avvia (o Spazio). L’anello e il titolo della scheda fanno il conto alla rovescia.',
@@ -732,7 +813,7 @@ return [
         'h1' => 'Calcolatore del sonno',
         'tagline' => 'Trova l’ora migliore per andare a letto o svegliarti e conta le ore dormite.',
         'keywords' => ['calcolatore del sonno', 'contatore del sonno', 'a che ora andare a letto', 'calcolo cicli del sonno', 'a che ora dormire', 'ore di sonno'],
-        'intro' => 'Svegliarsi a metà di un ciclo di sonno è il motivo per cui la sveglia può lasciarti intontito anche dopo una notte intera. Questo calcolatore segue il ritmo naturale dei cicli di circa 90 minuti: digli quando devi svegliarti e ti suggerisce quando andare a letto, oppure digli quando vai a dormire e ti suggerisce gli orari migliori per la sveglia. Può anche contare quante ore hai dormito e confrontarle con le 7-9 ore consigliate.',
+        'intro' => 'Un calcolatore del sonno suggerisce quando andare a letto o svegliarti per svegliarti alla fine di un ciclo di sonno, quando il sonno è più leggero. Svegliarsi a metà di un ciclo di sonno è il motivo per cui la sveglia può lasciarti intontito anche dopo una notte intera. Questo calcolatore segue il ritmo naturale dei cicli di circa 90 minuti: digli quando devi svegliarti e ti suggerisce quando andare a letto, oppure digli quando vai a dormire e ti suggerisce gli orari migliori per la sveglia. Può anche contare quante ore hai dormito e confrontarle con le 7-9 ore consigliate.',
         'steps' => [
             'Scegli cosa calcolare: ora di andare a letto, ora di sveglia, “Dormi ora” o ore dormite.',
             'Inserisci l’orario. Regola quanto ci metti di solito ad addormentarti (15 minuti di default).',
@@ -762,6 +843,17 @@ return [
             ['q' => 'Perché sono stanco dopo 8 ore di sonno?', 'a' => 'Se la sveglia suona durante il sonno profondo puoi sentirti intontito anche dopo una lunga notte. Far suonare la sveglia alla fine di un ciclo e mantenere orari regolari spesso aiuta.'],
             ['q' => 'Come calcola le ore dormite il contatore del sonno?', 'a' => 'Scegli “Ore dormite” e inserisci quando sei andato a letto e quando ti sei svegliato. Funziona anche a cavallo della mezzanotte, sottrae il tempo per addormentarti e confronta il risultato con le 7-9 ore di cui hanno bisogno gli adulti.'],
             ['q' => 'Questo calcolatore del sonno è un consiglio medico?', 'a' => 'No. È una guida generale basata su cicli di sonno medi. Se hai spesso difficoltà a dormire, parla con un medico.'],
+        ],
+        'table' => [
+            'caption' => 'Orari per andare a letto in base alla sveglia (15 minuti per addormentarsi)',
+            'headers' => ['Sveglia alle', '6 cicli (9 h)', '5 cicli (7,5 h)', '4 cicli (6 h)'],
+            'rows' => [
+                ['06:00', '20:45', '22:15', '23:45'],
+                ['06:30', '21:15', '22:45', '00:15'],
+                ['07:00', '21:45', '23:15', '00:45'],
+                ['07:30', '22:15', '23:45', '01:15'],
+                ['08:00', '22:45', '00:15', '01:45'],
+            ],
         ],
     ],
 

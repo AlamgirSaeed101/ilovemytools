@@ -118,6 +118,38 @@ export default function ToolPage() {
                             </div>
                         ))}
 
+                        {tool.table && (
+                            <div className="table-wrap">
+                                <table className="compare-table">
+                                    <caption>{tool.table.caption}</caption>
+                                    <thead>
+                                        <tr>
+                                            {tool.table.headers.map((h) => (
+                                                <th key={h} scope="col">
+                                                    {h}
+                                                </th>
+                                            ))}
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {tool.table.rows.map((row) => (
+                                            <tr key={row.join('|')}>
+                                                {row.map((cell, i) =>
+                                                    i === 0 ? (
+                                                        <th key={i} scope="row">
+                                                            {cell}
+                                                        </th>
+                                                    ) : (
+                                                        <td key={i}>{cell}</td>
+                                                    ),
+                                                )}
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        )}
+
                         {tool.faqs.length > 0 && (
                             <>
                                 <h2 id="faq">{t('Frequently asked questions')}</h2>

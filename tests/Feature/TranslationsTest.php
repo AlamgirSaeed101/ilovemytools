@@ -44,6 +44,11 @@ class TranslationsTest extends TestCase
             $this->assertCount(count($tool['features']), $tr['features'], "$code/$slug features");
             $this->assertCount(count($tool['content']), $tr['content'], "$code/$slug content");
             $this->assertCount(count($tool['faqs']), $tr['faqs'], "$code/$slug faqs");
+            if (isset($tool['table'])) {
+                $this->assertNotEmpty($tr['table']['caption'] ?? null, "$code/$slug table caption");
+                $this->assertCount(count($tool['table']['headers']), $tr['table']['headers'] ?? [], "$code/$slug table headers");
+                $this->assertCount(count($tool['table']['rows']), $tr['table']['rows'] ?? [], "$code/$slug table rows");
+            }
             foreach ($tr['content'] as $section) {
                 $this->assertNotEmpty($section['heading'] ?? null, "$code/$slug content heading");
                 $this->assertNotEmpty($section['body'] ?? null, "$code/$slug content body");
