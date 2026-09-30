@@ -108,6 +108,7 @@ class SiteData
             'features' => array_values($tool['features']),
             'content' => array_values($tool['content']),
             'faqs' => array_values($tool['faqs']),
+            'sources' => array_values($tool['sources'] ?? []),
             'updated' => $tool['updated'] ?? null,
             'related' => $this->registry->related($tool)->keys()->all(),
             'meta' => $this->meta($tool['title'], $tool['description']),

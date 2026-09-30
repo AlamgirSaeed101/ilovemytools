@@ -112,7 +112,7 @@ return [
         ],
         'faqs' => [
             ['q' => 'Ce générateur de mots de passe est-il sûr ?', 'a' => 'Oui. Les mots de passe sont générés dans votre navigateur avec la Web Crypto API. Rien n’est envoyé à notre serveur, journalisé ou stocké.'],
-            ['q' => 'Quelle longueur choisir ?', 'a' => 'Au moins 12 caractères, et 16 ou plus pour les comptes importants comme la messagerie et la banque.'],
+            ['q' => 'Quelle longueur choisir ?', 'a' => 'Au moins 15 caractères, le minimum des recommandations actuelles du NIST (SP 800-63B), et 16 ou plus pour les comptes importants comme la messagerie et la banque.'],
             ['q' => 'À quoi sert « exclure les caractères similaires » ?', 'a' => 'Cette option retire les caractères qui se ressemblent, comme l, 1, I, O et 0, pour que le mot de passe soit plus facile à lire et à saisir à la main.'],
             ['q' => 'Qu’est-ce que l’entropie d’un mot de passe ?', 'a' => 'L’entropie mesure en bits à quel point un mot de passe est imprévisible. Chaque bit supplémentaire double le nombre d’essais nécessaires à un attaquant. 80 bits et plus, c’est fort ; 100 bits et plus, c’est excellent.'],
         ],

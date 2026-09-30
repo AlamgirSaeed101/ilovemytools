@@ -112,7 +112,7 @@ return [
         ],
         'faqs' => [
             ['q' => 'Questo generatore di password è sicuro?', 'a' => 'Sì. Le password vengono generate nel tuo browser con la Web Crypto API. Niente viene inviato al nostro server, registrato o salvato.'],
-            ['q' => 'Quanto deve essere lunga la password?', 'a' => 'Almeno 12 caratteri, e 16 o più per gli account importanti come email e banca.'],
+            ['q' => 'Quanto deve essere lunga la password?', 'a' => 'Almeno 15 caratteri, il minimo indicato dalle attuali linee guida del NIST (SP 800-63B), e 16 o più per gli account importanti come email e banca.'],
             ['q' => 'Cosa fa “Escludi simili”?', 'a' => 'Rimuove i caratteri che si somigliano, come l, 1, I, O e 0, così la password è più facile da leggere e digitare a mano.'],
             ['q' => 'Cos’è l’entropia di una password?', 'a' => 'L’entropia misura in bit quanto è imprevedibile una password. Ogni bit in più raddoppia i tentativi necessari a un attaccante. Da 80 bit in su è forte, da 100 in su è eccellente.'],
         ],

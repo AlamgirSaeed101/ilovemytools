@@ -165,6 +165,7 @@ class Seo
             'dateModified' => $tool['updated'] ?? null,
             'isPartOf' => ['@id' => self::absoluteUrl('/').'#website'],
             'speakable' => ['@type' => 'SpeakableSpecification', 'cssSelector' => ['h1', '.tool-intro']],
+            'citation' => array_map(fn ($source) => ['@type' => 'CreativeWork', 'name' => $source['title'], 'url' => $source['url']], $tool['sources'] ?? []) ?: null,
         ], fn ($value) => $value !== null);
 
         // "How to use" steps, which answer engines can quote as a list.

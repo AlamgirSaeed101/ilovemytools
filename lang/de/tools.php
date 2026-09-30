@@ -112,7 +112,7 @@ return [
         ],
         'faqs' => [
             ['q' => 'Ist dieser Passwort-Generator sicher?', 'a' => 'Ja. Passwörter werden in deinem Browser mit der Web Crypto API erzeugt. Nichts wird an unseren Server gesendet, protokolliert oder gespeichert.'],
-            ['q' => 'Wie lang sollte mein Passwort sein?', 'a' => 'Mindestens 12 Zeichen, für wichtige Konten wie E-Mail und Online-Banking 16 oder mehr.'],
+            ['q' => 'Wie lang sollte mein Passwort sein?', 'a' => 'Mindestens 15 Zeichen, so verlangen es die aktuellen NIST-Richtlinien (SP 800-63B), für wichtige Konten wie E-Mail und Online-Banking 16 oder mehr.'],
             ['q' => 'Was bewirkt „Ähnliche ausschließen“?', 'a' => 'Es entfernt Zeichen, die sich ähneln, wie l, 1, I, O und 0, damit das Passwort leichter zu lesen und von Hand einzutippen ist.'],
             ['q' => 'Was ist Passwort-Entropie?', 'a' => 'Die Entropie misst in Bit, wie unvorhersehbar ein Passwort ist. Jedes zusätzliche Bit verdoppelt die Zahl der Versuche, die ein Angreifer braucht. Ab 80 Bit ist es stark, ab 100 Bit ausgezeichnet.'],
         ],

@@ -31,7 +31,7 @@ class ToolRegistry
     public function __construct(array $tools, array $categories)
     {
         foreach ($tools as $slug => $tool) {
-            $tools[$slug] = $tool + ['slug' => $slug, 'related' => [], 'faqs' => [], 'steps' => [], 'features' => [], 'content' => [], 'popular' => false];
+            $tools[$slug] = $tool + ['slug' => $slug, 'related' => [], 'faqs' => [], 'steps' => [], 'features' => [], 'content' => [], 'sources' => [], 'popular' => false];
         }
         foreach ($categories as $slug => $category) {
             $categories[$slug] = $category + ['slug' => $slug];

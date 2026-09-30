@@ -94,7 +94,7 @@ return [
         ],
         'faqs' => [
             ['q' => '¿Es seguro este generador de contraseñas?', 'a' => 'Sí. Las contraseñas se generan en tu navegador con la Web Crypto API. No se envía, registra ni guarda nada en nuestro servidor.'],
-            ['q' => '¿Qué longitud debería tener mi contraseña?', 'a' => 'Al menos 12 caracteres, y 16 o más para cuentas importantes como el correo o el banco.'],
+            ['q' => '¿Qué longitud debería tener mi contraseña?', 'a' => 'Al menos 15 caracteres, el mínimo de las directrices actuales del NIST (SP 800-63B), y 16 o más para cuentas importantes como el correo o el banco.'],
             ['q' => '¿Qué hace "excluir caracteres parecidos"?', 'a' => 'Elimina caracteres que se confunden, como l, 1, I, O y 0, para que la contraseña sea más fácil de leer y escribir a mano.'],
             ['q' => '¿Qué es la entropía de una contraseña?', 'a' => 'La entropía mide en bits lo impredecible que es una contraseña. Cada bit extra duplica los intentos que necesita un atacante. Más de 80 bits es fuerte y más de 100 es excelente.'],
         ],

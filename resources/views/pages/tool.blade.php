@@ -58,6 +58,15 @@
                             @endforeach
                         </div>
                     @endif
+
+                    @if (! empty($tool['sources']))
+                        <h2 id="sources">{{ t('Sources') }}</h2>
+                        <ul class="sources">
+                            @foreach ($tool['sources'] as $source)
+                                <li><a href="{{ $source['url'] }}" target="_blank" rel="noopener noreferrer">{{ $source['title'] }}</a></li>
+                            @endforeach
+                        </ul>
+                    @endif
                 </article>
 
                 @if ($related->isNotEmpty())

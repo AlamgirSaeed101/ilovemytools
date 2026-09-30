@@ -1706,6 +1706,7 @@
   {
     "key": "How to use the {name}",
     "files": [
+      "app/Support/Seo.php",
       "resources/js/pages/ToolPage.jsx",
       "resources/views/pages/tool.blade.php"
     ]
@@ -1907,7 +1908,8 @@
   {
     "key": "Last updated: {date}",
     "files": [
-      "resources/js/pages/InfoPages.jsx"
+      "resources/js/pages/InfoPages.jsx",
+      "resources/js/pages/ToolPage.jsx"
     ]
   },
   {
@@ -3067,6 +3069,13 @@
     "key": "Sort low to high",
     "files": [
       "resources/js/tools/RandomNumber.jsx"
+    ]
+  },
+  {
+    "key": "Sources",
+    "files": [
+      "resources/js/pages/ToolPage.jsx",
+      "resources/views/pages/tool.blade.php"
     ]
   },
   {

@@ -112,7 +112,7 @@ return [
         ],
         'faqs' => [
             ['q' => 'Este gerador de senhas é seguro?', 'a' => 'Sim. As senhas são geradas no seu navegador com a Web Crypto API. Nada é enviado ao nosso servidor, registrado ou armazenado.'],
-            ['q' => 'Qual deve ser o tamanho da minha senha?', 'a' => 'Pelo menos 12 caracteres, e 16 ou mais para contas importantes como e-mail e banco.'],
+            ['q' => 'Qual deve ser o tamanho da minha senha?', 'a' => 'Pelo menos 15 caracteres, o mínimo das diretrizes atuais do NIST (SP 800-63B), e 16 ou mais para contas importantes como e-mail e banco.'],
             ['q' => 'O que faz "excluir caracteres parecidos"?', 'a' => 'Remove caracteres que se parecem, como l, 1, I, O e 0, para que a senha seja mais fácil de ler e digitar à mão.'],
             ['q' => 'O que é entropia de senha?', 'a' => 'A entropia mede, em bits, o quanto uma senha é imprevisível. Cada bit a mais dobra as tentativas que um invasor precisa fazer. 80+ bits é forte e 100+ bits é excelente.'],
         ],

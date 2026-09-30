@@ -134,6 +134,21 @@ export default function ToolPage() {
                                 </div>
                             </>
                         )}
+
+                        {tool.sources?.length > 0 && (
+                            <>
+                                <h2 id="sources">{t('Sources')}</h2>
+                                <ul className="sources">
+                                    {tool.sources.map((s) => (
+                                        <li key={s.url}>
+                                            <a href={s.url} target="_blank" rel="noopener noreferrer">
+                                                {s.title}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </>
+                        )}
                     </article>
 
                     {related.length > 0 && (

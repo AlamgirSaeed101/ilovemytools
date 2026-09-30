@@ -64,6 +64,9 @@ return [
             ['q' => 'How many words is a 5 page essay?', 'a' => 'With double spacing and a 12pt font, one page is roughly 250-300 words, so a 5 page essay is about 1,250-1,500 words.'],
             ['q' => 'Does it count characters with spaces?', 'a' => 'Yes. You get both characters with spaces and characters without spaces, which is what most character limits refer to.'],
         ],
+        'sources' => [
+            ['title' => 'Brysbaert (2019), "How many words do we read per minute?", Journal of Memory and Language', 'url' => 'https://doi.org/10.1016/j.jml.2019.104047'],
+        ],
         'related' => ['case-converter', 'json-formatter', 'password-generator'],
     ],
 
@@ -146,9 +149,13 @@ return [
         ],
         'faqs' => [
             ['q' => 'Is this password generator safe?', 'a' => 'Yes. Passwords are generated in your browser using the Web Crypto API. Nothing is sent to our server, logged or stored.'],
-            ['q' => 'How long should my password be?', 'a' => 'At least 12 characters, and 16 or more for important accounts like email and banking.'],
+            ['q' => 'How long should my password be?', 'a' => 'At least 15 characters, which is the minimum in NIST\'s current password guidelines (SP 800-63B), and 16 or more for important accounts like email and banking.'],
             ['q' => 'What does "exclude similar characters" do?', 'a' => 'It removes characters that look alike, such as l, 1, I, O and 0, so the password is easier to read and type by hand.'],
             ['q' => 'What is password entropy?', 'a' => 'Entropy measures how unpredictable a password is, in bits. Each extra bit doubles the guesses an attacker needs. 80+ bits is strong and 100+ bits is excellent.'],
+        ],
+        'sources' => [
+            ['title' => 'NIST SP 800-63B: Digital Identity Guidelines, Authentication', 'url' => 'https://pages.nist.gov/800-63-4/sp800-63b.html'],
+            ['title' => 'MDN: Crypto.getRandomValues()', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues'],
         ],
         'related' => ['qr-code-generator', 'base64-encoder-decoder', 'what-is-my-ip'],
     ],
@@ -196,6 +203,9 @@ return [
             ['q' => 'What is error correction?', 'a' => 'Error correction lets a QR code still scan when part of it is damaged. Level L restores about 7% of the code and level H about 30%, but higher levels make the code denser.'],
             ['q' => 'Why will my QR code not scan?', 'a' => 'Usually the colours are too similar or inverted (light code on dark background). Use a dark code on a light background with good contrast.'],
         ],
+        'sources' => [
+            ['title' => 'DENSO WAVE: QR Code error correction levels', 'url' => 'https://www.qrcode.com/en/about/error_correction.html'],
+        ],
         'related' => ['password-generator', 'image-resizer', 'what-is-my-ip'],
     ],
 
@@ -242,6 +252,9 @@ return [
             ['q' => 'Why did my PNG barely get smaller?', 'a' => 'PNG is a lossless format. For big savings, set the output format to WebP or JPG. Use WebP if you need to keep transparency.'],
             ['q' => 'Is there a file size limit?', 'a' => 'Each image can be up to 50MB. Very large photos may take a few seconds on older phones.'],
         ],
+        'sources' => [
+            ['title' => 'Google for Developers: An image format for the Web (WebP)', 'url' => 'https://developers.google.com/speed/webp'],
+        ],
         'related' => ['image-resizer', 'merge-pdf', 'qr-code-generator'],
     ],
 
@@ -285,6 +298,9 @@ return [
             ['q' => 'Can I convert WebP to JPG?', 'a' => 'Yes. Open your WebP image, choose JPG as the output format and download.'],
             ['q' => 'Does resizing reduce quality?', 'a' => 'Making an image smaller keeps it sharp. Making it much larger than the original can look blurry because no new detail can be created.'],
             ['q' => 'What is the maximum size?', 'a' => 'Output images can be up to 10,000 pixels on each side, which is within what all modern browsers can handle.'],
+        ],
+        'sources' => [
+            ['title' => 'Google for Developers: An image format for the Web (WebP)', 'url' => 'https://developers.google.com/speed/webp'],
         ],
         'related' => ['image-compressor', 'qr-code-generator', 'merge-pdf'],
     ],
@@ -489,6 +505,9 @@ return [
             ['q' => 'Why does my JSON show an error?', 'a' => 'Check the line and column in the message. Trailing commas, single quotes and missing quotes around keys are the usual causes.'],
             ['q' => 'Can it handle large files?', 'a' => 'Yes. Files of several megabytes format in well under a second on most devices.'],
         ],
+        'sources' => [
+            ['title' => 'RFC 8259: The JavaScript Object Notation (JSON) Data Interchange Format', 'url' => 'https://www.rfc-editor.org/rfc/rfc8259'],
+        ],
         'related' => ['base64-encoder-decoder', 'case-converter', 'what-is-my-ip'],
     ],
 
@@ -528,6 +547,9 @@ return [
             ['q' => 'What is URL-safe Base64?', 'a' => 'A variant that replaces + with - and / with _, and usually drops = padding, so the string can be used safely in URLs and file names.'],
             ['q' => 'Why is Base64 larger than the original?', 'a' => 'Base64 turns every 3 bytes into 4 characters, so encoded data is about 33% larger than the original.'],
             ['q' => 'How do I convert an image to Base64?', 'a' => 'Switch to File mode and choose your image. You get both the raw Base64 string and a ready-to-use data URL.'],
+        ],
+        'sources' => [
+            ['title' => 'RFC 4648: The Base16, Base32, and Base64 Data Encodings', 'url' => 'https://www.rfc-editor.org/rfc/rfc4648'],
         ],
         'related' => ['json-formatter', 'password-generator', 'case-converter'],
     ],
@@ -571,6 +593,9 @@ return [
             ['q' => 'Why does my IP address change?', 'a' => 'Most home internet providers assign dynamic IP addresses that can change when your router restarts. Mobile data IPs change frequently.'],
             ['q' => 'How can I hide my IP address?', 'a' => 'Use a VPN or a privacy network such as Tor. Websites then see the VPN\'s IP address instead of yours.'],
             ['q' => 'Do you store my IP address?', 'a' => 'No. This tool only displays your IP address to you and does not save it in a database.'],
+        ],
+        'sources' => [
+            ['title' => 'ARIN: IPv4 address depletion', 'url' => 'https://www.arin.net/resources/guide/ipv4/'],
         ],
         'related' => ['password-generator', 'json-formatter', 'base64-encoder-decoder'],
     ],
@@ -617,6 +642,9 @@ return [
             ['q' => 'Can I use the dice roller without the animation?', 'a' => 'If your device is set to reduce motion, results appear instantly without the rolling animation.'],
             ['q' => 'Does the dice roller work on phones?', 'a' => 'Yes. It works in any modern browser on phones, tablets and computers, and you can tap the dice to roll.'],
         ],
+        'sources' => [
+            ['title' => 'MDN: Crypto.getRandomValues()', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues'],
+        ],
         'related' => ['coin-flip', 'spin-the-wheel', 'random-number-generator'],
     ],
 
@@ -660,6 +688,9 @@ return [
             ['q' => 'Can I flip more than one coin?', 'a' => 'Yes. Choose 2, 5, 10, 25 or 100 coins and they are all flipped at once, with a count of heads and tails.'],
             ['q' => 'Why did I get heads five times in a row?', 'a' => 'Streaks are a normal part of randomness. The chance of five heads in a row is about 3%, so it happens regularly over many flips.'],
             ['q' => 'Does it keep my results?', 'a' => 'Totals and your streak are kept while the page is open. Nothing is sent to a server, and Reset stats clears them.'],
+        ],
+        'sources' => [
+            ['title' => 'Bartoš et al. (2023), "Fair coins tend to land on the same side they started: evidence from 350,757 flips"', 'url' => 'https://arxiv.org/abs/2310.04153'],
         ],
         'related' => ['dice-roller', 'spin-the-wheel', 'random-number-generator'],
     ],
@@ -705,6 +736,9 @@ return [
             ['q' => 'Can I remove a name after it wins?', 'a' => 'Yes. Click the Remove button after a spin, or tick "Remove the winner after each spin" to do it automatically.'],
             ['q' => 'Are my entries saved or shared?', 'a' => 'No. Your list stays in your browser and is never uploaded.'],
         ],
+        'sources' => [
+            ['title' => 'MDN: Crypto.getRandomValues()', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues'],
+        ],
         'related' => ['random-number-generator', 'dice-roller', 'coin-flip'],
     ],
 
@@ -748,6 +782,9 @@ return [
             ['q' => 'Can I generate lottery numbers?', 'a' => 'Yes. Use the "Lottery 6 of 49" preset, or choose your own range and count with "No duplicates" ticked.'],
             ['q' => 'How many numbers can I generate at once?', 'a' => 'Up to 1,000 numbers per click. You can copy them all with one button.'],
             ['q' => 'Can I use negative numbers?', 'a' => 'Yes. Any whole numbers work, for example a range from -50 to 50.'],
+        ],
+        'sources' => [
+            ['title' => 'MDN: Crypto.getRandomValues()', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues'],
         ],
         'related' => ['spin-the-wheel', 'dice-roller', 'password-generator'],
     ],
@@ -793,6 +830,9 @@ return [
             ['q' => 'Can I use the keyboard?', 'a' => 'Yes. Space starts and stops, L records a lap and R resets when stopped.'],
             ['q' => 'Can I save my lap times?', 'a' => 'Press Copy laps to copy all lap and total times, then paste them into a spreadsheet, note or message.'],
         ],
+        'sources' => [
+            ['title' => 'MDN: Performance.now()', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Performance/now'],
+        ],
         'related' => ['countdown-timer', 'age-calculator', 'dice-roller'],
     ],
 
@@ -836,6 +876,9 @@ return [
             ['q' => 'Why did I not hear the alarm?', 'a' => 'Check that your volume is up and the tab is still open. Browsers only allow sound after you click on the page, which happens when you press Start.'],
             ['q' => 'What is the longest timer I can set?', 'a' => 'Up to 99 hours, 59 minutes and 59 seconds.'],
             ['q' => 'Can I pause the timer?', 'a' => 'Yes. Press Pause (or Space) and Resume to carry on. You can also add a minute while it is running.'],
+        ],
+        'sources' => [
+            ['title' => 'MDN: Performance.now()', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Performance/now'],
         ],
         'related' => ['stopwatch', 'age-calculator', 'percentage-calculator'],
     ],
@@ -881,6 +924,10 @@ return [
             ['q' => 'Why do I feel tired after 8 hours of sleep?', 'a' => 'If your alarm goes off during deep sleep you can feel groggy even after a long night. Timing your alarm for the end of a cycle, and keeping a regular schedule, often helps.'],
             ['q' => 'How does the sleep counter work out hours slept?', 'a' => 'Choose "Hours slept", enter when you went to bed and when you woke up. It works across midnight, subtracts the time it took to fall asleep and compares the result with the 7-9 hours adults need.'],
             ['q' => 'Is this sleep calculator medical advice?', 'a' => 'No. It is a general guide based on average sleep cycles. If you regularly struggle with sleep, speak to a doctor.'],
+        ],
+        'sources' => [
+            ['title' => 'National Sleep Foundation: How many hours of sleep do you really need?', 'url' => 'https://www.thensf.org/how-many-hours-of-sleep-do-you-really-need/'],
+            ['title' => 'Sleep Foundation: How much sleep do you need? (AASM-endorsed recommendations)', 'url' => 'https://www.sleepfoundation.org/how-sleep-works/how-much-sleep-do-we-really-need'],
         ],
         'related' => ['stopwatch', 'countdown-timer', 'age-calculator'],
     ],
