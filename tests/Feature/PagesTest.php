@@ -18,7 +18,7 @@ class PagesTest extends TestCase
         $response = $this->get('/');
 
         $response->assertOk()
-            ->assertSee('<h1 class="hero__title">All the free online tools you need, in one place</h1>', false)
+            ->assertSee('<h1 class="hero__title">Free Online Tools for PDF, Image &amp; Text</h1>', false)
             ->assertSee('<link rel="canonical" href="https://toolzy.test/">', false)
             ->assertSee('<meta name="description"', false)
             ->assertSee('"@type": "WebSite"', false)

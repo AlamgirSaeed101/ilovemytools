@@ -1,27 +1,19 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Link, NavLink, Outlet, ScrollRestoration, useLocation, useNavigation } from 'react-router';
+import { Link, Outlet, ScrollRestoration, useLocation, useNavigation } from 'react-router';
 import AdSlot from './AdSlot.jsx';
 import CommandPalette from './CommandPalette.jsx';
 import Icon from './Icon.jsx';
 import { getSite } from '../lib/api.js';
 import { t } from '../lib/i18n.js';
 
-// Shortcut links in the header to the busiest tools.
-const QUICK_LINKS = [
-    ['merge-pdf', 'Merge PDF'],
-    ['split-pdf', 'Split PDF'],
-    ['image-compressor', 'Compress Image'],
-    ['qr-code-generator', 'QR Code'],
-];
-
 const isMac = typeof navigator !== 'undefined' && /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
 
 // Shared Tailwind class strings.
 const iconBtn =
-    'inline-grid size-10 place-items-center rounded-xl border border-line bg-surface text-ink-2 shadow-hair transition-colors hover:border-line-strong hover:bg-surface-2 hover:text-ink cursor-pointer';
+    'inline-grid size-10 place-items-center rounded-full border border-line bg-surface text-ink-2 transition-colors hover:border-line-strong hover:bg-surface-2 hover:text-ink cursor-pointer';
 const navLink =
-    'inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-[10px] border-0 bg-transparent px-3 py-2 font-[inherit] text-[0.8rem] font-bold uppercase tracking-wide text-ink-2 no-underline transition-colors hover:bg-surface-2 hover:text-ink aria-expanded:bg-surface-2 aria-expanded:text-ink [&.active]:text-brand cursor-pointer';
-const tile = 'inline-grid size-7 shrink-0 place-items-center rounded-lg bg-accent/15 text-accent-ink ring-1 ring-inset ring-accent/20 [&_svg]:size-3.5';
+    'inline-flex h-10 shrink-0 items-center gap-1 whitespace-nowrap rounded-xl border-0 bg-transparent px-3 font-[inherit] text-[0.9rem] font-semibold text-ink-2 no-underline transition-colors hover:bg-surface-2 hover:text-ink aria-expanded:bg-surface-2 aria-expanded:text-ink [&.active]:text-brand cursor-pointer';
+const tile = 'inline-grid size-7 shrink-0 place-items-center rounded-lg bg-[linear-gradient(135deg,var(--accent),var(--accent2,var(--accent)))] text-white shadow-hair [&_svg]:size-3.5';
 
 /** Close a popup on outside click or Escape (focus returns to its button). */
 function usePopup(open, setOpen, ref) {
@@ -47,9 +39,9 @@ function usePopup(open, setOpen, ref) {
     }, [open, setOpen, ref]);
 }
 
-// Dark is the default (set on <html> by Laravel); a saved choice overrides it.
+// Light is the default (set on <html> by Laravel); a saved choice overrides it.
 function currentTheme() {
-    return document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
 }
 
 function ThemeToggle() {
@@ -58,7 +50,7 @@ function ThemeToggle() {
     function toggle() {
         const next = theme === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', next);
-        document.querySelector('meta[name="theme-color"]')?.setAttribute('content', next === 'dark' ? '#0b1020' : '#f6f7fb');
+        document.querySelector('meta[name="theme-color"]')?.setAttribute('content', next === 'dark' ? '#0b1020' : '#ffffff');
         try {
             localStorage.setItem('theme', next);
         } catch {
@@ -84,47 +76,87 @@ function Logo({ name, footer = false }) {
     );
 }
 
-/** "All tools" mega menu: every tool, grouped by category. */
-function AllToolsMenu({ categories, tools }) {
+// Header order: the busiest categories first (the rest go under "More").
+const NAV_ORDER = ['pdf-tools', 'image-tools', 'text-tools', 'calculators', 'developer-tools', 'generators', 'games', 'time-tools'];
+const NAV_VISIBLE = 5;
+
+/** One header dropdown: a category's tools, plus a link to the category page. */
+function CategoryMenu({ category, tools, label, children }) {
     const [open, setOpen] = useState(false);
     const ref = useRef(null);
     usePopup(open, setOpen, ref);
+    const items = category ? category.tools.map((slug) => tools.find((x) => x.slug === slug)).filter(Boolean) : [];
 
     return (
-        <div className="relative" ref={ref}>
+        <div className="relative" ref={ref} style={category ? { '--accent': category.accent, '--accent2': category.accent2 } : undefined}>
             <button type="button" className={navLink} aria-expanded={open} aria-haspopup="true" onClick={() => setOpen((o) => !o)}>
-                {t('All tools')} <Icon name="chevron" className={`icon size-4 transition-transform ${open ? 'rotate-180' : ''}`} />
+                {label} <Icon name="chevron" className={`icon size-3.5 opacity-70 transition-transform ${open ? 'rotate-180' : ''}`} />
             </button>
             {open && (
-                <div className="animate-pop absolute top-full z-50 mt-2.5 grid w-[min(860px,calc(100vw-40px))] grid-cols-3 gap-x-6 gap-y-5 rounded-card border border-line bg-surface p-5 shadow-float start-1/2 ltr:-translate-x-[60%] rtl:translate-x-[60%]">
-                    {categories.map((c) => (
-                        <div key={c.slug} style={{ '--accent': c.accent }}>
-                            <Link
-                                className="mb-2 block border-b-2 border-accent/50 pb-2 text-xs font-extrabold tracking-wider text-muted uppercase no-underline hover:text-accent-ink"
-                                to={`/category/${c.slug}`}
-                            >
-                                {c.name}
-                            </Link>
+                <div className="animate-pop absolute top-full z-50 mt-2 w-72 rounded-2xl border border-line bg-surface p-2 shadow-float start-0">
+                    {children ?? (
+                        <>
                             <ul className="m-0 list-none p-0">
-                                {c.tools
-                                    .map((slug) => tools.find((x) => x.slug === slug))
-                                    .filter(Boolean)
-                                    .map((x) => (
-                                        <li key={x.slug}>
-                                            <Link className="flex items-center gap-2.5 rounded-[10px] px-1.5 py-1.5 text-[0.92rem] font-semibold text-ink no-underline hover:bg-surface-2" to={`/${x.slug}`}>
-                                                <span className={tile}>
-                                                    <Icon name={x.icon} />
-                                                </span>
-                                                {x.name}
-                                            </Link>
-                                        </li>
-                                    ))}
+                                {items.map((x) => (
+                                    <li key={x.slug}>
+                                        <Link className="flex items-center gap-3 rounded-xl px-2.5 py-2 text-[0.9rem] font-semibold text-ink no-underline hover:bg-surface-2" to={`/${x.slug}`}>
+                                            <span className={tile}>
+                                                <Icon name={x.icon} />
+                                            </span>
+                                            {x.name}
+                                        </Link>
+                                    </li>
+                                ))}
                             </ul>
-                        </div>
-                    ))}
+                            <Link
+                                className="mt-1 flex items-center justify-between rounded-xl border-t border-line px-2.5 pt-2.5 pb-1.5 text-[0.8rem] font-bold text-brand no-underline hover:text-brand-strong"
+                                to={`/category/${category.slug}`}
+                            >
+                                {t('View all')} {category.name} <Icon name="arrow" className="icon size-4 rtl:-scale-x-100" />
+                            </Link>
+                        </>
+                    )}
                 </div>
             )}
         </div>
+    );
+}
+
+/** Category dropdowns in the header, in NAV_ORDER; the remaining categories sit under "More". */
+function CategoryNav({ categories, tools }) {
+    const ordered = [...categories].sort((a, b) => NAV_ORDER.indexOf(a.slug) - NAV_ORDER.indexOf(b.slug));
+    const visible = ordered.slice(0, NAV_VISIBLE);
+    const more = ordered.slice(NAV_VISIBLE);
+
+    return (
+        <>
+            {visible.map((c) => (
+                <CategoryMenu key={c.slug} category={c} tools={tools} label={c.short || c.name} />
+            ))}
+            {more.length > 0 && (
+                <CategoryMenu tools={tools} label={t('More')}>
+                    <ul className="m-0 list-none p-0">
+                        {more.map((c) => (
+                            <li key={c.slug}>
+                                <Link
+                                    className="flex items-center gap-3 rounded-xl px-2.5 py-2 text-[0.9rem] font-semibold text-ink no-underline hover:bg-surface-2"
+                                    to={`/category/${c.slug}`}
+                                    style={{ '--accent': c.accent, '--accent2': c.accent2 }}
+                                >
+                                    <span className={tile}>
+                                        <Icon name={c.icon} />
+                                    </span>
+                                    <span>
+                                        <span className="block">{c.name}</span>
+                                        <span className="block text-[0.75rem] font-medium text-muted">{c.subtitle}</span>
+                                    </span>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </CategoryMenu>
+            )}
+        </>
     );
 }
 
@@ -176,10 +208,10 @@ function LanguageMenu() {
     // On phones the panel is placed against the (sticky) header so it spans the screen
     // instead of hanging off the button and running past the left edge.
     return (
-        <div className="sm:relative" ref={ref}>
+        <div className="max-[359px]:hidden sm:relative" ref={ref}>
             <button
                 type="button"
-                className="inline-flex h-10 cursor-pointer items-center gap-1.5 rounded-xl border border-line bg-surface px-2.5 text-ink-2 shadow-hair transition-colors hover:border-line-strong hover:bg-surface-2 hover:text-ink"
+                className="inline-flex h-10 cursor-pointer items-center gap-1.5 rounded-full border border-line bg-surface px-3 text-ink-2 transition-colors hover:border-line-strong hover:bg-surface-2 hover:text-ink"
                 aria-expanded={open}
                 aria-haspopup="true"
                 aria-label={t('Language: {language}', { language: current?.native ?? site.locale })}
@@ -187,6 +219,7 @@ function LanguageMenu() {
             >
                 <Icon name="globe" />
                 <span className="hidden text-sm font-bold uppercase md:inline">{site.locale}</span>
+                <Icon name="chevron" className="icon hidden size-3.5 opacity-60 md:inline" />
             </button>
             {open && (
                 <div className="animate-pop absolute inset-x-3 top-full z-50 mt-2 rounded-card sm:inset-x-auto sm:end-0 sm:mt-2.5 sm:w-[min(560px,calc(100vw-24px))] border border-line bg-surface p-3 shadow-float">
@@ -224,27 +257,18 @@ function Header({ onSearch }) {
     const mobileLink = 'flex items-center gap-3 border-b border-line px-1.5 py-3 font-semibold text-ink no-underline last:border-b-0';
 
     return (
-        <header className="sticky top-0 z-40 border-b border-line/80 bg-canvas/80 backdrop-blur-md backdrop-saturate-150">
-            <div className="shell flex min-h-16 items-center gap-5">
+        <header className="sticky top-0 z-40 border-b border-line bg-surface/90 backdrop-blur-md backdrop-saturate-150">
+            <div className="shell flex min-h-16 items-center gap-3 sm:gap-5">
                 <Logo name={site.name} />
 
-                {/* Quick links that don't fit on one row (long languages, narrower screens) wrap
-                    onto a hidden second row, so the header never breaks in any language. */}
-                <nav className="hidden min-w-0 flex-1 items-center gap-1 lg:flex" aria-label={t('Main')}>
-                    <AllToolsMenu categories={site.categories} tools={site.tools} />
-                    <div className="flex h-10 min-w-0 flex-1 flex-wrap items-center gap-1 overflow-hidden">
-                        {QUICK_LINKS.map(([slug, label]) => (
-                            <NavLink key={slug} className={`${navLink} h-10`} to={`/${slug}`}>
-                                {t(label)}
-                            </NavLink>
-                        ))}
-                    </div>
+                <nav className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 lg:flex" aria-label={t('Main')}>
+                    <CategoryNav categories={site.categories} tools={site.tools} />
                 </nav>
 
-                <div className="ms-auto flex shrink-0 items-center gap-2">
+                <div className="ms-auto flex shrink-0 items-center gap-1.5 sm:gap-2">
                     <button
                         type="button"
-                        className="inline-flex h-10 w-10 cursor-pointer items-center justify-center gap-2 rounded-xl border border-line bg-surface text-[0.9rem] font-medium text-muted shadow-hair transition hover:border-line-strong hover:shadow-soft lg:w-auto lg:min-w-44 lg:justify-start lg:ps-3 lg:pe-2 xl:min-w-56"
+                        className="inline-flex h-10 w-10 cursor-pointer items-center justify-center gap-2 rounded-full border border-line bg-surface-2 text-[0.88rem] font-medium text-muted transition hover:border-line-strong hover:bg-surface lg:w-auto lg:min-w-44 lg:justify-start lg:ps-3.5 lg:pe-2 xl:min-w-60"
                         onClick={onSearch}
                         aria-label={t('Search tools')}
                         aria-keyshortcuts={isMac ? 'Meta+K' : 'Control+K'}
@@ -275,7 +299,7 @@ function Header({ onSearch }) {
                             <Icon name="grid" /> {t('All tools')}
                         </Link>
                         {site.categories.map((c) => (
-                            <Link key={c.slug} className={mobileLink} to={`/category/${c.slug}`} style={{ '--accent': c.accent }}>
+                            <Link key={c.slug} className={mobileLink} to={`/category/${c.slug}`} style={{ '--accent': c.accent, '--accent2': c.accent2 }}>
                                 <span className={tile}>
                                     <Icon name={c.icon} />
                                 </span>
@@ -301,7 +325,7 @@ function Header({ onSearch }) {
 function Footer() {
     const site = getSite();
     const toolsIn = (c) => c.tools.map((slug) => site.tools.find((x) => x.slug === slug)).filter(Boolean);
-    const link = 'text-muted no-underline hover:text-brand';
+    const link = 'text-muted no-underline hover:text-brand [overflow-wrap:anywhere] hyphens-auto';
 
     return (
         <footer className="mt-8 border-t border-line bg-surface pt-14 pb-6 text-[0.92rem]">

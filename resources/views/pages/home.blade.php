@@ -3,7 +3,8 @@
 @section('content')
     <section class="hero">
         <div class="shell hero__inner">
-            <h1 class="hero__title">{{ t('All the free online tools you need, in one place') }}</h1>
+            <h1 class="hero__title">{{ t('Free Online Tools for PDF, Image & Text') }}</h1>
+            <p class="hero__lead">{{ t('Access {count} free online tools. 100% free, private and secure.', ['count' => $registry->all()->count()]) }}</p>
             <p class="hero__lead">{{ t('Every tool you need for PDFs, images, text, maths and code, right in your browser. All are 100% free and private: merge PDFs, compress images, count words, make QR codes and more in just a few clicks.') }}</p>
         </div>
     </section>

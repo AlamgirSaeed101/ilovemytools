@@ -11,7 +11,7 @@
     $ga4 = app()->environment('production') && preg_match('/^G-[A-Z0-9]{4,20}$/', $ga4) ? $ga4 : '';
 @endphp
 <!DOCTYPE html>
-<html lang="{{ \App\Support\Locale::hreflang(\App\Support\Locale::current()) }}" dir="{{ \App\Support\Locale::dir() }}" class="no-js" data-theme="dark">
+<html lang="{{ \App\Support\Locale::hreflang(\App\Support\Locale::current()) }}" dir="{{ \App\Support\Locale::dir() }}" class="no-js" data-theme="light">
 <head>
     @if ($ga4 !== '')
         {{-- Google tag (gtag.js). GA4 enhanced measurement also records in-app page changes. --}}
@@ -69,17 +69,20 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#0b1020">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
 
-    {{-- Dark mode is the default. A saved choice from the theme toggle is applied before the first paint (no flash). --}}
+    {{-- Light mode is the default. A saved choice from the theme toggle is applied before the first paint (no flash). --}}
     <script>
         (function (d) {
             d.className = d.className.replace('no-js', 'js');
             try {
                 var t = localStorage.getItem('theme');
-                if (t === 'light') {
-                    d.setAttribute('data-theme', 'light');
-                    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f6f7fb');
+                if (t === 'dark') {
+                    d.setAttribute('data-theme', 'dark');
+                    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0b1020');
                 }
             } catch (e) {}
         })(document.documentElement);

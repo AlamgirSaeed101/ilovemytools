@@ -19,10 +19,10 @@ export default function Category() {
         <div className="shell">
             <Breadcrumbs items={[{ name: category.name, to: `/category/${category.slug}` }]} />
 
-            <header className="mb-6 flex items-start gap-3 sm:gap-[1.1rem]" style={{ '--accent': category.accent }}>
+            <header className="mb-6 flex items-start gap-3 sm:gap-[1.1rem]" style={{ '--accent': category.accent, '--accent2': category.accent2 }}>
                 <IconTile icon={category.icon} size="lg" />
-                <div>
-                    <h1 className="m-0 mb-1 text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">{category.name}</h1>
+                <div className="min-w-0">
+                    <h1 className="m-0 mb-1 text-[clamp(1.6rem,4vw,2.5rem)] font-extrabold tracking-tight [overflow-wrap:anywhere] hyphens-auto">{category.name}</h1>
                     <p className="m-0 text-[1.08rem] text-ink-2">{category.intro}</p>
                     <p className="mt-2 mb-0 text-[0.9rem] font-semibold text-muted">{tn('{count} free tool', '{count} free tools', tools.length)}</p>
                 </div>
@@ -94,7 +94,7 @@ export default function Category() {
                             key={c.slug}
                             className="flex items-center gap-3 rounded-card border border-line bg-surface px-4 py-3.5 text-ink no-underline transition duration-200 hover:-translate-y-px hover:border-accent/45 hover:text-ink hover:shadow-soft"
                             to={`/category/${c.slug}`}
-                            style={{ '--accent': c.accent }}
+                            style={{ '--accent': c.accent, '--accent2': c.accent2 }}
                         >
                             <IconTile icon={c.icon} />
                             <span>

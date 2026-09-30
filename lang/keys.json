@@ -72,6 +72,12 @@
     ]
   },
   {
+    "key": "{category} tool",
+    "files": [
+      "resources/js/components/ToolCard.jsx"
+    ]
+  },
+  {
     "key": "{count} characters",
     "one": "{count} character",
     "files": [
@@ -183,7 +189,8 @@
     "one": "{count} tool",
     "files": [
       "resources/js/lib/i18n.js",
-      "resources/js/pages/Category.jsx"
+      "resources/js/pages/Category.jsx",
+      "resources/js/pages/Home.jsx"
     ]
   },
   {
@@ -520,6 +527,7 @@
     "key": "About",
     "files": [
       "resources/js/components/Layout.jsx",
+      "resources/js/pages/Home.jsx",
       "resources/views/partials/footer.blade.php"
     ]
   },
@@ -547,6 +555,13 @@
     "key": "About Us",
     "files": [
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Access {count} free online tools. 100% free, private and secure.",
+    "files": [
+      "resources/js/pages/Home.jsx",
+      "resources/views/pages/home.blade.php"
     ]
   },
   {
@@ -604,12 +619,6 @@
     ]
   },
   {
-    "key": "All",
-    "files": [
-      "resources/js/pages/Home.jsx"
-    ]
-  },
-  {
     "key": "All free tools",
     "files": [
       "resources/js/pages/ToolPage.jsx",
@@ -624,22 +633,22 @@
     ]
   },
   {
-    "key": "All the free online tools you need, in one place",
-    "files": [
-      "resources/js/pages/Home.jsx",
-      "resources/views/pages/home.blade.php"
-    ]
-  },
-  {
     "key": "All tools",
     "files": [
-      "resources/js/components/Layout.jsx"
+      "resources/js/components/Layout.jsx",
+      "resources/js/pages/Home.jsx"
     ]
   },
   {
     "key": "Already optimised",
     "files": [
       "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Always free for everyone",
+    "files": [
+      "resources/js/pages/Home.jsx"
     ]
   },
   {
@@ -670,6 +679,13 @@
     "key": "Automatic",
     "files": [
       "resources/js/tools/JpgToPdf.jsx"
+    ]
+  },
+  {
+    "key": "Available in {count} languages",
+    "one": "Available in {count} language",
+    "files": [
+      "resources/js/pages/Home.jsx"
     ]
   },
   {
@@ -719,6 +735,12 @@
     "files": [
       "resources/js/pages/NotFound.jsx",
       "resources/views/errors/404.blade.php"
+    ]
+  },
+  {
+    "key": "Browse Tools",
+    "files": [
+      "resources/js/pages/Home.jsx"
     ]
   },
   {
@@ -1443,9 +1465,14 @@
     ]
   },
   {
+    "key": "Every tool runs inside your browser, so your files are never uploaded and results appear instantly.",
+    "files": [
+      "resources/js/pages/Home.jsx"
+    ]
+  },
+  {
     "key": "Every tool you need for PDFs, images, text, maths and code, right in your browser. All are 100% free and private: merge PDFs, compress images, count words, make QR codes and more in just a few clicks.",
     "files": [
-      "resources/js/pages/Home.jsx",
       "resources/views/pages/home.blade.php"
     ]
   },
@@ -1459,6 +1486,12 @@
     "key": "Exclude similar (l, 1, O, 0)",
     "files": [
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Explore Tools",
+    "files": [
+      "resources/js/pages/Home.jsx"
     ]
   },
   {
@@ -1483,6 +1516,12 @@
     "key": "Fastest",
     "files": [
       "resources/js/tools/Stopwatch.jsx"
+    ]
+  },
+  {
+    "key": "Featured:",
+    "files": [
+      "resources/js/pages/Home.jsx"
     ]
   },
   {
@@ -1511,6 +1550,12 @@
     ]
   },
   {
+    "key": "Files stay on your device",
+    "files": [
+      "resources/js/pages/Home.jsx"
+    ]
+  },
+  {
     "key": "Files to merge, in order",
     "files": [
       "resources/js/tools/MergePdf.jsx"
@@ -1525,6 +1570,7 @@
   {
     "key": "files uploaded",
     "files": [
+      "resources/js/pages/Home.jsx",
       "scripts/i18n-extract.mjs"
     ]
   },
@@ -1585,6 +1631,7 @@
   {
     "key": "Free",
     "files": [
+      "resources/js/pages/Home.jsx",
       "scripts/i18n-extract.mjs"
     ]
   },
@@ -1601,6 +1648,13 @@
     ]
   },
   {
+    "key": "Free Online Tools for PDF, Image & Text",
+    "files": [
+      "resources/js/pages/Home.jsx",
+      "resources/views/pages/home.blade.php"
+    ]
+  },
+  {
     "key": "Free online tools that run in your browser. No sign up, no uploads, no watermarks.",
     "files": [
       "resources/js/components/Layout.jsx",
@@ -1610,6 +1664,7 @@
   {
     "key": "free tools",
     "files": [
+      "resources/js/pages/Home.jsx",
       "scripts/i18n-extract.mjs"
     ]
   },
@@ -1986,7 +2041,8 @@
   {
     "key": "Languages",
     "files": [
-      "resources/js/components/Layout.jsx"
+      "resources/js/components/Layout.jsx",
+      "resources/js/pages/Home.jsx"
     ]
   },
   {
@@ -2228,16 +2284,16 @@
     ]
   },
   {
-    "key": "Missing something you need? Tell us which free tool we should build next.",
-    "files": [
-      "resources/js/pages/Home.jsx"
-    ]
-  },
-  {
     "key": "Mobile",
     "files": [
       "resources/js/components/Layout.jsx",
       "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "More",
+    "files": [
+      "resources/js/components/Layout.jsx"
     ]
   },
   {
@@ -2273,6 +2329,12 @@
     ]
   },
   {
+    "key": "Most used",
+    "files": [
+      "resources/js/pages/Home.jsx"
+    ]
+  },
+  {
     "key": "Move {name} down",
     "files": [
       "resources/js/tools/JpgToPdf.jsx",
@@ -2302,6 +2364,12 @@
     "key": "New timer",
     "files": [
       "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "Next",
+    "files": [
+      "resources/js/pages/Home.jsx"
     ]
   },
   {
@@ -2439,6 +2507,12 @@
   },
   {
     "key": "Our privacy promise",
+    "files": [
+      "resources/js/pages/Home.jsx"
+    ]
+  },
+  {
+    "key": "Our solutions",
     "files": [
       "resources/js/pages/Home.jsx"
     ]
@@ -2662,6 +2736,12 @@
     ]
   },
   {
+    "key": "Popular Tools",
+    "files": [
+      "resources/js/pages/Home.jsx"
+    ]
+  },
+  {
     "key": "Portrait",
     "files": [
       "resources/js/tools/JpgToPdf.jsx"
@@ -2704,6 +2784,12 @@
     ]
   },
   {
+    "key": "Previous",
+    "files": [
+      "resources/js/pages/Home.jsx"
+    ]
+  },
+  {
     "key": "Previous picks",
     "files": [
       "resources/js/tools/SpinWheel.jsx"
@@ -2718,6 +2804,7 @@
   {
     "key": "Privacy first",
     "files": [
+      "resources/js/pages/Home.jsx",
       "scripts/i18n-extract.mjs"
     ]
   },
@@ -2740,6 +2827,12 @@
     "key": "Private by design",
     "files": [
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Private in-browser engine",
+    "files": [
+      "resources/js/pages/Home.jsx"
     ]
   },
   {
@@ -3123,12 +3216,6 @@
     ]
   },
   {
-    "key": "Send an idea",
-    "files": [
-      "resources/js/pages/Home.jsx"
-    ]
-  },
-  {
     "key": "Send privacy or legal requests",
     "files": [
       "resources/js/pages/InfoPages.jsx"
@@ -3391,12 +3478,6 @@
     "key": "Suggest a new tool you would like us to build",
     "files": [
       "resources/js/pages/InfoPages.jsx"
-    ]
-  },
-  {
-    "key": "Suggest a tool",
-    "files": [
-      "resources/js/pages/Home.jsx"
     ]
   },
   {
@@ -3753,7 +3834,6 @@
     "files": [
       "app/Http/Controllers/PageController.php",
       "resources/js/components/CommandPalette.jsx",
-      "resources/js/pages/Home.jsx",
       "resources/js/pages/ToolPage.jsx",
       "resources/views/pages/tool.blade.php"
     ]
@@ -3894,7 +3974,14 @@
   {
     "key": "View all",
     "files": [
+      "resources/js/components/Layout.jsx",
       "resources/views/pages/home.blade.php"
+    ]
+  },
+  {
+    "key": "View all {count} tools",
+    "files": [
+      "resources/js/pages/Home.jsx"
     ]
   },
   {
@@ -4066,12 +4153,6 @@
     "key": "Words",
     "files": [
       "resources/js/tools/WordCounter.jsx"
-    ]
-  },
-  {
-    "key": "Work your way",
-    "files": [
-      "resources/js/pages/Home.jsx"
     ]
   },
   {

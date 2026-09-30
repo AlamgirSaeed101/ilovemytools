@@ -37,7 +37,7 @@ export default function ToolPage() {
     useEffect(() => addRecent(tool.slug), [tool.slug]);
 
     return (
-        <div className="shell" style={{ '--accent': category?.accent }}>
+        <div className="shell" style={{ '--accent': category?.accent, '--accent2': category?.accent2 }}>
             <Breadcrumbs
                 items={[
                     { name: category?.name ?? t('Tools'), to: `/category/${tool.category}` },
@@ -47,8 +47,8 @@ export default function ToolPage() {
 
             <header className="mb-6 flex items-start gap-3 sm:gap-[1.1rem]">
                 <IconTile icon={tool.icon} size="lg" />
-                <div>
-                    <h1 className="m-0 mb-1 text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold tracking-tight">{tool.h1}</h1>
+                <div className="min-w-0">
+                    <h1 className="m-0 mb-1 text-[clamp(1.6rem,4vw,2.5rem)] font-extrabold tracking-tight [overflow-wrap:anywhere] hyphens-auto">{tool.h1}</h1>
                     <p className="m-0 text-[1.08rem] text-ink-2">{tool.tagline}</p>
                     <ul className="mt-3 flex list-none flex-wrap gap-1.5 p-0">
                         {badges.map(([icon, label]) => (

@@ -11,8 +11,11 @@ return [
 
     'text-tools' => [
         'name' => 'Text Tools',
+        'short' => 'Text',
+        'subtitle' => 'Count and convert your text',
         'icon' => 'text',
         'accent' => '#2563eb',
+        'accent2' => '#3b82f6',
         'title' => 'Free Online Text Tools - Word Counter & Case Converter',
         'description' => 'Free online text tools to count words and characters, change text case and clean up your writing. Instant results in your browser, no sign up.',
         'intro' => 'Count words, check reading time and convert text case instantly. Everything runs in your browser, so your text stays private.',
@@ -29,8 +32,11 @@ return [
 
     'image-tools' => [
         'name' => 'Image Tools',
+        'short' => 'Image',
+        'subtitle' => 'Compress, resize and convert',
         'icon' => 'image',
-        'accent' => '#db2777',
+        'accent' => '#16a34a',
+        'accent2' => '#22c55e',
         'title' => 'Free Online Image Tools - Compress, Resize & Convert Images',
         'description' => 'Compress, resize and convert JPG, PNG and WebP images for free. Images are processed in your browser and never uploaded to a server.',
         'intro' => 'Shrink image file sizes, resize photos to exact dimensions and convert between JPG, PNG and WebP. Your images never leave your device.',
@@ -47,8 +53,11 @@ return [
 
     'pdf-tools' => [
         'name' => 'PDF Tools',
+        'short' => 'PDF',
+        'subtitle' => 'Merge, split and convert PDFs',
         'icon' => 'pdf',
-        'accent' => '#dc2626',
+        'accent' => '#e11d48',
+        'accent2' => '#f43f5e',
         'title' => 'Free Online PDF Tools - Merge & Split PDF Files',
         'description' => 'Merge and split PDF files online for free. No uploads, no watermarks and no sign up. PDFs are processed privately in your browser.',
         'intro' => 'Combine several PDFs into one or pull out just the pages you need. Files are processed on your device, with no watermark and no size tricks.',
@@ -65,8 +74,11 @@ return [
 
     'calculators' => [
         'name' => 'Calculators',
+        'short' => 'Calculators',
+        'subtitle' => 'Solve everyday maths',
         'icon' => 'calculator',
-        'accent' => '#059669',
+        'accent' => '#d97706',
+        'accent2' => '#f59e0b',
         'title' => 'Free Online Calculators - Age & Percentage Calculator',
         'description' => 'Free online calculators for age, percentages, percentage change and more. Accurate, instant answers with the formula and working shown for every result.',
         'intro' => 'Quick, accurate calculators for everyday maths: exact age, percentages, increases and decreases.',
@@ -83,8 +95,11 @@ return [
 
     'generators' => [
         'name' => 'Generators',
+        'short' => 'Generators',
+        'subtitle' => 'QR codes and passwords',
         'icon' => 'sparkles',
         'accent' => '#7c3aed',
+        'accent2' => '#a855f7',
         'title' => 'Free Online Generators - QR Code & Password Generator',
         'description' => 'Generate QR codes for links and Wi-Fi, and strong, secure random passwords for free. No sign up, no tracking and nothing you create is stored.',
         'intro' => 'Create QR codes for links, Wi-Fi and contacts, and generate strong random passwords that are made on your device.',
@@ -101,8 +116,11 @@ return [
 
     'games' => [
         'name' => 'Random & Games',
+        'short' => 'Games',
+        'subtitle' => 'Dice, coins and wheels',
         'icon' => 'dice',
-        'accent' => '#ea580c',
+        'accent' => '#db2777',
+        'accent2' => '#ec4899',
         'title' => 'Dice Roller, Coin Flip & Spin the Wheel - Free Random Tools',
         'description' => 'Free online dice roller, coin flip, spin the wheel picker and random number generator. Fair, truly random results with fun animations. No sign up needed.',
         'intro' => 'Roll dice, flip a coin, spin a wheel or pick random numbers. Every result is generated fairly on your device with secure randomness.',
@@ -119,8 +137,11 @@ return [
 
     'time-tools' => [
         'name' => 'Time Tools',
+        'short' => 'Time',
+        'subtitle' => 'Timers, stopwatch and sleep',
         'icon' => 'stopwatch',
-        'accent' => '#d97706',
+        'accent' => '#0891b2',
+        'accent2' => '#14b8a6',
         'title' => 'Free Online Time Tools - Stopwatch & Countdown Timer',
         'description' => 'A precise online stopwatch with lap times and a countdown timer with an alarm and presets. Free, no sign up, and they keep exact time in a background tab.',
         'intro' => 'A precise stopwatch with laps and a countdown timer with an alarm. Both keep exact time, even when the tab is in the background.',
@@ -137,8 +158,11 @@ return [
 
     'developer-tools' => [
         'name' => 'Developer Tools',
+        'short' => 'Dev',
+        'subtitle' => 'Format, encode and inspect',
         'icon' => 'code',
-        'accent' => '#0891b2',
+        'accent' => '#4f46e5',
+        'accent2' => '#6366f1',
         'title' => 'Free Developer Tools - JSON Formatter, Base64 & IP',
         'description' => 'Free online developer utilities: format and validate JSON, encode and decode Base64 text and files, and check your public IP address instantly.',
         'intro' => 'Everyday utilities for developers and IT folks: format JSON, encode Base64 and look up your IP address.',

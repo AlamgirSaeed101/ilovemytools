@@ -3,6 +3,8 @@
 return [
     'text-tools' => [
         'name' => 'Ferramentas de texto',
+        'short' => 'Texto',
+        'subtitle' => 'Conte e converta seu texto',
         'title' => 'Ferramentas de texto grátis: contar palavras e maiúsculas',
         'description' => 'Ferramentas de texto online grátis para contar palavras e caracteres, trocar maiúsculas e minúsculas e revisar seus textos. Resultados na hora, sem cadastro.',
         'intro' => 'Conte palavras, veja o tempo de leitura e converta maiúsculas e minúsculas na hora. Tudo funciona no seu navegador, então seu texto continua privado.',
@@ -18,6 +20,8 @@ return [
     ],
     'image-tools' => [
         'name' => 'Ferramentas de imagem',
+        'short' => 'Imagem',
+        'subtitle' => 'Comprima, redimensione e converta',
         'title' => 'Ferramentas de imagem grátis: comprimir e redimensionar',
         'description' => 'Comprima, redimensione e converta imagens JPG, PNG e WebP de graça. As imagens são processadas no seu navegador e nunca são enviadas a um servidor.',
         'intro' => 'Deixe suas imagens mais leves, redimensione fotos para medidas exatas e converta entre JPG, PNG e WebP. Suas imagens nunca saem do seu dispositivo.',
@@ -33,6 +37,8 @@ return [
     ],
     'pdf-tools' => [
         'name' => 'Ferramentas de PDF',
+        'short' => 'PDF',
+        'subtitle' => 'Junte, divida e converta PDFs',
         'title' => 'Ferramentas de PDF grátis: juntar e dividir arquivos PDF',
         'description' => 'Junte e divida arquivos PDF online de graça. Sem uploads, sem marca d\'água e sem cadastro. Os PDFs são processados de forma privada no seu navegador.',
         'intro' => 'Junte vários PDFs em um só ou extraia apenas as páginas de que precisa. Os arquivos são processados no seu dispositivo, sem marca d\'água nem limites escondidos.',
@@ -48,6 +54,8 @@ return [
     ],
     'calculators' => [
         'name' => 'Calculadoras',
+        'short' => 'Calculadoras',
+        'subtitle' => 'Resolva as contas do dia a dia',
         'title' => 'Calculadoras online grátis: idade e porcentagem',
         'description' => 'Calculadoras online grátis de idade, porcentagem, variação percentual e mais. Respostas exatas na hora, com a fórmula e o cálculo explicados.',
         'intro' => 'Calculadoras rápidas e precisas para as contas do dia a dia: idade exata, porcentagens, aumentos e descontos.',
@@ -63,6 +71,8 @@ return [
     ],
     'generators' => [
         'name' => 'Geradores',
+        'short' => 'Geradores',
+        'subtitle' => 'QR codes e senhas',
         'title' => 'Geradores grátis: QR codes e senhas fortes',
         'description' => 'Gere grátis QR codes para links e Wi-Fi e senhas aleatórias fortes. Sem cadastro, sem rastreamento e sem guardar nada do que você cria.',
         'intro' => 'Crie QR codes para links, Wi-Fi e contatos e gere senhas aleatórias fortes direto no seu dispositivo.',
@@ -78,6 +88,8 @@ return [
     ],
     'games' => [
         'name' => 'Sorte e jogos',
+        'short' => 'Jogos',
+        'subtitle' => 'Dados, moedas e roletas',
         'title' => 'Jogar dados, cara ou coroa e roleta aleatória grátis',
         'description' => 'Dados virtuais, cara ou coroa, roleta para sortear e gerador de números aleatórios grátis. Resultados justos e aleatórios com animações. Sem cadastro.',
         'intro' => 'Jogue dados, lance uma moeda, gire uma roleta ou sorteie números. Cada resultado é gerado de forma justa no seu dispositivo, com aleatoriedade segura.',
@@ -93,6 +105,8 @@ return [
     ],
     'time-tools' => [
         'name' => 'Ferramentas de tempo',
+        'short' => 'Tempo',
+        'subtitle' => 'Timer, cronômetro e sono',
         'title' => 'Ferramentas de tempo grátis: cronômetro e timer',
         'description' => 'Um cronômetro preciso com voltas e um timer com alarme e atalhos rápidos. Grátis, sem cadastro e com o tempo exato mesmo com a aba em segundo plano.',
         'intro' => 'Um cronômetro preciso com voltas e um timer com alarme. Os dois mantêm o tempo exato mesmo com a aba em segundo plano.',
@@ -108,6 +122,8 @@ return [
     ],
     'developer-tools' => [
         'name' => 'Ferramentas para desenvolvedores',
+        'short' => 'Dev',
+        'subtitle' => 'Formate, codifique e inspecione',
         'title' => 'Ferramentas para desenvolvedores: JSON, Base64 e IP',
         'description' => 'Utilitários online grátis para desenvolvedores: formate e valide JSON, codifique e decodifique Base64 e veja seu IP público na hora.',
         'intro' => 'Utilitários do dia a dia para desenvolvedores e profissionais de TI: formatar JSON, codificar Base64 e consultar seu endereço IP.',

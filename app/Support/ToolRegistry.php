@@ -17,7 +17,7 @@ class ToolRegistry
     /** Fields that may be translated. Slugs, icons, categories and links never are. */
     private const TOOL_TEXT = ['name', 'title', 'description', 'h1', 'tagline', 'keywords', 'intro', 'steps', 'features', 'content', 'table', 'faqs'];
 
-    private const CATEGORY_TEXT = ['name', 'title', 'description', 'intro', 'content', 'faqs'];
+    private const CATEGORY_TEXT = ['name', 'short', 'subtitle', 'title', 'description', 'intro', 'content', 'faqs'];
 
     /** @var array<string, array<string, mixed>> English originals */
     private array $tools;

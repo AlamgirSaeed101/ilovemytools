@@ -5,11 +5,13 @@ test.describe('App shell', () => {
     test('home page renders every tool, with no errors', async ({ page }) => {
         const t = trackErrors(page);
         await page.goto('/');
-        await expect(page.getByRole('heading', { level: 1 })).toContainText('free online tools you need');
+        await expect(page.getByRole('heading', { level: 1 })).toContainText('Free Online Tools for PDF, Image & Text');
         // The server-rendered copy is replaced by the React app.
         await expect(page.locator('#app > .ssr')).toHaveCount(0);
 
         const site = await page.evaluate(() => JSON.parse(document.getElementById('boot-data').textContent).site);
+        // The grid shows the first 15; "View all" reveals the rest.
+        await page.getByRole('button', { name: `View all ${site.tools.length} tools` }).click();
         for (const tool of site.tools) {
             await expect(page.locator(`main a.tool-card[href="/${tool.slug}"]`).first()).toBeVisible();
         }
@@ -22,7 +24,7 @@ test.describe('App shell', () => {
         await page.goto('/');
         const pills = page.getByRole('group', { name: 'Filter by category' });
         const tiles = page.locator('main .tile-grid a.tool-card');
-        await expect(tiles).toHaveCount(total);
+        await expect(tiles).toHaveCount(Math.min(total, 15));
 
         await pills.getByRole('button', { name: 'PDF Tools' }).click();
         await expect(pills.getByRole('button', { name: 'PDF Tools' })).toHaveAttribute('aria-pressed', 'true');
@@ -32,10 +34,19 @@ test.describe('App shell', () => {
         await pills.getByRole('button', { name: 'Developer Tools' }).click();
         await expect(tiles).toHaveCount(3);
 
-        await pills.getByRole('button', { name: 'All' }).click();
+        await pills.getByRole('button', { name: 'All tools' }).click();
+        await expect(tiles).toHaveCount(Math.min(total, 15));
+        await page.getByRole('button', { name: `View all ${total} tools` }).click();
         await expect(tiles).toHaveCount(total);
-        // The "Suggest a tool" card is always last.
-        await expect(page.locator('main .tile-grid > a').last()).toHaveAttribute('href', '/contact');
+    });
+
+    test('home category cards link to categories and scroll', async ({ page }) => {
+        await page.goto('/');
+        const browse = page.locator('section[aria-labelledby="browse-heading"]');
+        await expect(browse.locator('.browse-card')).toHaveCount(8);
+        await browse.getByRole('button', { name: 'Next' }).click();
+        await browse.locator('.browse-card').first().getByRole('link').first().click();
+        await expect(page).toHaveURL(/\/category\/pdf-tools$/);
     });
 
     test('links navigate inside the app without a full reload and update the head', async ({ page }) => {
@@ -87,38 +98,44 @@ test.describe('App shell', () => {
         await expect(dialog).toBeHidden();
     });
 
-    test('header quick links and the All tools menu', async ({ page }) => {
+    test('header category menus', async ({ page }) => {
         await page.goto('/');
         const nav = page.getByRole('navigation', { name: 'Main' });
+        await nav.getByRole('button', { name: 'PDF' }).click();
         await nav.getByRole('link', { name: 'Split PDF' }).click();
         await expect(page).toHaveURL(/\/split-pdf$/);
 
-        await nav.getByRole('button', { name: 'All tools' }).click();
+        await nav.getByRole('button', { name: 'Calculators' }).click();
         await nav.getByRole('link', { name: 'Percentage Calculator' }).click();
         await expect(page).toHaveURL(/\/percentage-calculator$/);
 
-        await nav.getByRole('button', { name: 'All tools' }).click();
-        await nav.getByRole('link', { name: 'Calculators' }).click();
+        await nav.getByRole('button', { name: 'Calculators' }).click();
+        await nav.getByRole('link', { name: /View all/ }).click();
         await expect(page).toHaveURL(/\/category\/calculators$/);
         await expect(page.locator('main .tool-grid .tool-card')).toHaveCount(2);
+
+        // Categories that don't fit sit under "More".
+        await nav.getByRole('button', { name: 'More' }).click();
+        await nav.getByRole('link', { name: /Time Tools/ }).click();
+        await expect(page).toHaveURL(/\/category\/time-tools$/);
     });
 
-    test('dark mode is the default and a light choice is remembered', async ({ page }) => {
-        // Even when the device prefers light, the site starts dark.
-        await page.emulateMedia({ colorScheme: 'light' });
+    test('light mode is the default and a dark choice is remembered', async ({ page }) => {
+        // Even when the device prefers dark, the site starts light.
+        await page.emulateMedia({ colorScheme: 'dark' });
         await page.goto('/');
+        await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
+        expect(await page.evaluate(() => getComputedStyle(document.body).backgroundColor)).toBe('rgb(255, 255, 255)');
+
+        await page.getByRole('button', { name: 'Switch to dark mode' }).click();
+        await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
+        await page.reload();
         await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
         expect(await page.evaluate(() => getComputedStyle(document.body).backgroundColor)).toBe('rgb(11, 16, 32)');
 
         await page.getByRole('button', { name: 'Switch to light mode' }).click();
-        await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
         await page.reload();
         await expect(page.locator('html')).toHaveAttribute('data-theme', 'light');
-        expect(await page.evaluate(() => getComputedStyle(document.body).backgroundColor)).toBe('rgb(246, 247, 251)');
-
-        await page.getByRole('button', { name: 'Switch to dark mode' }).click();
-        await page.reload();
-        await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
     });
 
     test('recently used tools are listed first in the search palette', async ({ page }) => {
