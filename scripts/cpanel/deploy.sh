@@ -32,20 +32,12 @@ set_env() {
     fi
 }
 
-echo "== 3b. Newsletter email (GoDaddy SMTP)"
-MAIL_CHANGED=0
+echo "== 3b. Newsletter email account"
 if [ -n "$MAIL_PASSWORD_IN" ]; then
-    OLD_MAIL=$(grep -E '^MAIL_(MAILER|HOST|PASSWORD)=' .env | md5sum || true)
-    set_env MAIL_MAILER smtp
-    set_env MAIL_SCHEME smtps
-    set_env MAIL_HOST smtpout.secureserver.net
-    set_env MAIL_PORT 465
     set_env MAIL_USERNAME newsletter@ilovemytools.store
     set_env MAIL_PASSWORD "'$MAIL_PASSWORD_IN'"
     set_env MAIL_FROM_ADDRESS newsletter@ilovemytools.store
     set_env MAIL_FROM_NAME '"${APP_NAME}"'
-    [ "$OLD_MAIL" = "$(grep -E '^MAIL_(MAILER|HOST|PASSWORD)=' .env | md5sum)" ] || MAIL_CHANGED=1
-    echo "mail settings applied (changed: $MAIL_CHANGED)"
 else
     echo "no MAIL_PASSWORD secret - mail settings left as they are"
 fi
@@ -86,9 +78,35 @@ php artisan config:cache
 php artisan route:cache
 php artisan view:cache
 
-if [ "$MAIL_CHANGED" = 1 ]; then
-    echo "== 6b. Test email (mail settings changed)"
-    php artisan newsletter:test-mail newsletter@ilovemytools.store || echo "WARNING: test email failed - check the SMTP settings"
+echo "== 6b. Email delivery check"
+# GoDaddy hosting often blocks outgoing SMTP, so try each way to send and keep
+# the first that works. Runs again only when the password or this list changes.
+MAIL_MARK=storage/app/mail-verified
+MAIL_SIG=$(printf 'v2:%s' "$MAIL_PASSWORD_IN" | md5sum | cut -d' ' -f1)
+mail_try() { # mailer scheme host port auth(yes/no)
+    set_env MAIL_MAILER "$1"; set_env MAIL_SCHEME "$2"; set_env MAIL_HOST "$3"; set_env MAIL_PORT "$4"
+    if [ "$5" = yes ]; then set_env MAIL_USERNAME newsletter@ilovemytools.store; set_env MAIL_PASSWORD "'$MAIL_PASSWORD_IN'"
+    else set_env MAIL_USERNAME ''; set_env MAIL_PASSWORD ''; fi
+    php artisan config:clear >/dev/null
+    if out=$(timeout 45 php artisan newsletter:test-mail newsletter@ilovemytools.store 2>&1); then
+        echo "OK: $1 $3:$4"; return 0
+    fi
+    echo "failed: $1 $3:$4 - $(echo "$out" | tr -s ' \n' ' ' | cut -c1-160)"; return 1
+}
+if [ -n "$MAIL_PASSWORD_IN" ] && [ "$(cat "$MAIL_MARK" 2>/dev/null)" != "$MAIL_SIG" ]; then
+    if mail_try smtp smtps smtpout.secureserver.net 465 yes \
+        || mail_try smtp smtp smtpout.secureserver.net 587 yes \
+        || mail_try sendmail '' '' '' no \
+        || mail_try smtp smtp localhost 25 no; then
+        echo "$MAIL_SIG" > "$MAIL_MARK"
+        echo "test email sent to newsletter@ilovemytools.store"
+    else
+        set_env MAIL_MAILER log
+        echo "WARNING: no way to send email works from this server - mail stays off (MAIL_MAILER=log)"
+    fi
+    php artisan config:cache
+else
+    echo "mail already checked - skipped"
 fi
 
 echo "== 7. Firewall cache (GoDaddy / Sucuri)"
