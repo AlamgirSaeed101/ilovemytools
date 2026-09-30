@@ -279,6 +279,47 @@ return [
         ],
     ],
 
+    'jpg-to-pdf' => [
+        'name' => 'JPG en PDF',
+        'title' => 'JPG en PDF : convertir des images en PDF gratuitement',
+        'description' => 'Convertissez des images JPG, PNG ou WebP en PDF gratuitement. Réorganisez les photos et choisissez le format de page, l’orientation et les marges. Sans envoi, sans filigrane, sans inscription.',
+        'h1' => 'JPG en PDF',
+        'tagline' => 'Combinez des images JPG, PNG et WebP en un seul fichier PDF.',
+        'keywords' => ['jpg en pdf', 'convertir jpg en pdf', 'image en pdf', 'jpg en pdf en ligne', 'convertisseur jpg pdf'],
+        'intro' => 'Un convertisseur JPG en PDF transforme des images JPG, PNG ou WebP en un seul document PDF. Ajoutez plusieurs photos, réorganisez-les, puis choisissez le format de page, l’orientation et les marges avant de les combiner en un seul document. Ce convertisseur jpg en pdf fonctionne entièrement sur votre appareil : vos images ne sont jamais envoyées à un serveur.',
+        'steps' => [
+            'Ajoutez une ou plusieurs images JPG, PNG ou WebP en les déposant ou en cliquant pour parcourir.',
+            'Réorganisez les images avec les flèches haut et bas si besoin.',
+            'Choisissez un format de page, une orientation et une marge.',
+            'Cliquez sur Convertir en PDF et téléchargez votre fichier.',
+        ],
+        'features' => [
+            'Combinez des images JPG, PNG et WebP en un seul PDF',
+            'Réorganisez ou retirez des images avant la conversion',
+            'Formats de page A4, Lettre US ou Ajuster à l’image',
+            'Orientation de page automatique ou manuelle',
+            'Marges ajustables autour de chaque photo',
+            'Privé : les images ne quittent jamais votre appareil',
+        ],
+        'content' => [
+            [
+                'heading' => 'Choisir un format de page',
+                'body' => 'A4 et Lettre US ajoutent de l’espace blanc autour des photos qui ne correspondent pas à la forme de la page, ce qui convient aux documents et à l’impression. Ajuster à l’image règle la taille de la page PDF exactement sur chaque photo, en gardant l’image entière visible sans bordure blanche : pratique quand vous avez juste besoin d’une copie PDF rapide d’une photo.',
+            ],
+            [
+                'heading' => 'Pourquoi convertir JPG en PDF ?',
+                'body' => 'Un seul PDF est plus simple à envoyer par e-mail, à imprimer et à téléverser sur des formulaires que plusieurs fichiers image séparés. Combiner des pages scannées, des reçus ou des photos en un seul PDF permet aussi de les garder dans le bon ordre et évite qu’ils se mélangent.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Puis-je combiner plusieurs images en un seul PDF ?', 'a' => 'Oui. Ajoutez autant d’images JPG, PNG ou WebP que vous voulez, mettez-les dans l’ordre souhaité avec les flèches, et elles sont combinées en un seul PDF.'],
+            ['q' => 'Ce convertisseur JPG en PDF ajoute-t-il un filigrane ?', 'a' => 'Non. Le PDF ne contient que vos images, sans filigrane, logo ni page ajoutée.'],
+            ['q' => 'Puis-je aussi convertir des images PNG et WebP, pas seulement JPG ?', 'a' => 'Oui. Les images JPG, PNG et WebP sont toutes prises en charge et peuvent être mélangées dans le même PDF.'],
+            ['q' => 'À quoi sert le réglage de marge ?', 'a' => 'Il ajoute un espace blanc autour de chaque image sur la page. Choisissez Aucune pour que l’image touche les bords, ou une marge plus grande pour un rendu plus proche d’un document.'],
+            ['q' => 'La qualité de mes images est-elle réduite ?', 'a' => 'Les images JPG et PNG sont intégrées à leur qualité d’origine. Les images WebP sont d’abord converties en PNG, ce qui conserve une qualité sans perte.'],
+        ],
+    ],
+
     'merge-pdf' => [
         'name' => 'Fusionner des PDF',
         'title' => 'Fusionner PDF : combiner des fichiers PDF gratuitement',

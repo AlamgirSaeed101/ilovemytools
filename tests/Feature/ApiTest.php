@@ -47,7 +47,7 @@ class ApiTest extends TestCase
         $this->getJson('/api/categories/pdf-tools')
             ->assertOk()
             ->assertJsonPath('name', 'PDF Tools')
-            ->assertJsonPath('tools', ['merge-pdf', 'split-pdf']);
+            ->assertJsonPath('tools', ['jpg-to-pdf', 'merge-pdf', 'split-pdf']);
     }
 
     public function test_unknown_items_return_json_404(): void

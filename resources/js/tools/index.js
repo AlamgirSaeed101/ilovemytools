@@ -9,6 +9,7 @@ const tools = {
     'qr-code-generator': lazy(() => import('./QrCodeGenerator.jsx')),
     'image-compressor': lazy(() => import('./ImageCompressor.jsx')),
     'image-resizer': lazy(() => import('./ImageResizer.jsx')),
+    'jpg-to-pdf': lazy(() => import('./JpgToPdf.jsx')),
     'merge-pdf': lazy(() => import('./MergePdf.jsx')),
     'split-pdf': lazy(() => import('./SplitPdf.jsx')),
     'age-calculator': lazy(() => import('./AgeCalculator.jsx')),

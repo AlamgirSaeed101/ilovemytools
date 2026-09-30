@@ -20,18 +20,18 @@ test.describe('App shell', () => {
         await page.goto('/');
         const pills = page.getByRole('group', { name: 'Filter by category' });
         const tiles = page.locator('main .tile-grid a.tool-card');
-        await expect(tiles).toHaveCount(20);
+        await expect(tiles).toHaveCount(21);
 
         await pills.getByRole('button', { name: 'PDF Tools' }).click();
         await expect(pills.getByRole('button', { name: 'PDF Tools' })).toHaveAttribute('aria-pressed', 'true');
-        await expect(tiles).toHaveCount(2);
-        await expect(tiles.first()).toContainText('Merge PDF');
+        await expect(tiles).toHaveCount(3);
+        await expect(tiles.first()).toContainText('JPG to PDF');
 
         await pills.getByRole('button', { name: 'Developer Tools' }).click();
         await expect(tiles).toHaveCount(3);
 
         await pills.getByRole('button', { name: 'All' }).click();
-        await expect(tiles).toHaveCount(20);
+        await expect(tiles).toHaveCount(21);
         // The "Suggest a tool" card is always last.
         await expect(page.locator('main .tile-grid > a').last()).toHaveAttribute('href', '/contact');
     });

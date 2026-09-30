@@ -228,6 +228,40 @@ test.describe('PDF tools', () => {
         expect(Object.keys(archive.files)).toHaveLength(5);
         expect(await pdfPageCount(await archive.file('report-page-2.pdf').async('nodebuffer'))).toBe(1);
     });
+
+    test('JPG to PDF combines images into one PDF', async ({ page }) => {
+        await openTool(page, 'jpg-to-pdf');
+        const jpg = await makeImage(page, { width: 300, height: 200, type: 'image/jpeg', quality: 0.9 });
+        const png = await makeImage(page, { width: 200, height: 300, type: 'image/png' });
+
+        await page.getByTestId('file-input').setInputFiles([
+            { name: 'photo.jpg', mimeType: 'image/jpeg', buffer: jpg },
+            { name: 'portrait.png', mimeType: 'image/png', buffer: png },
+        ]);
+        await expect(page.locator('.file-item')).toHaveCount(2);
+        await expect(page.getByText('2 images')).toBeVisible();
+
+        await page.getByLabel('Page size').selectOption('fit');
+        await expect(page.getByLabel('Orientation')).toBeDisabled();
+
+        await page.getByRole('button', { name: 'Convert to PDF' }).click();
+        await expect(page.getByText('Your PDF has')).toContainText('2 pages');
+        const [zipFile] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(zipFile.suggestedFilename()).toBe('images.pdf');
+        expect(await pdfPageCount(await readDownload(zipFile))).toBe(2);
+
+        // Removing an image clears the result and a single image downloads under its own name.
+        await page.getByRole('button', { name: 'Remove portrait.png' }).click();
+        await expect(page.locator('.file-item')).toHaveCount(1);
+        await page.getByRole('button', { name: 'Convert to PDF' }).click();
+        const [singleFile] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(singleFile.suggestedFilename()).toBe('photo.pdf');
+        expect(await pdfPageCount(await readDownload(singleFile))).toBe(1);
+
+        // Rejects non-images.
+        await page.getByTestId('file-input').setInputFiles({ name: 'notes.txt', mimeType: 'text/plain', buffer: Buffer.from('hi') });
+        await expect(page.getByText('only JPG, PNG and WebP images are supported')).toBeVisible();
+    });
 });
 
 test.describe('Calculators', () => {

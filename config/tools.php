@@ -332,7 +332,7 @@ return [
         'sources' => [
             ['title' => 'Google for Developers: An image format for the Web (WebP)', 'url' => 'https://developers.google.com/speed/webp'],
         ],
-        'related' => ['image-compressor', 'qr-code-generator', 'merge-pdf'],
+        'related' => ['image-compressor', 'jpg-to-pdf', 'merge-pdf'],
         'table' => [
             'caption' => 'Common image sizes',
             'headers' => ['Use', 'Size (pixels)'],
@@ -343,6 +343,52 @@ return [
                 ['Full-width website image', 'up to 1920 wide'],
             ],
         ],
+    ],
+
+    'jpg-to-pdf' => [
+        'name' => 'JPG to PDF',
+        'category' => 'pdf-tools',
+        'icon' => 'pdf',
+        'popular' => true,
+        'updated' => '2026-09-30',
+        'title' => 'JPG to PDF Converter - Combine Images Online Free',
+        'description' => 'Convert JPG, PNG or WebP images to a PDF online for free. Reorder photos and choose the page size, orientation and margins. No upload, no watermark, no sign up.',
+        'h1' => 'JPG to PDF',
+        'tagline' => 'Combine JPG, PNG and WebP images into one PDF file.',
+        'keywords' => ['jpg to pdf', 'jpeg to pdf', 'jpg to pdf converter', 'convert jpg to pdf', 'image to pdf'],
+        'intro' => 'A JPG to PDF converter turns JPG, PNG or WebP images into a single PDF document. Add multiple photos, reorder them, and choose the page size, orientation and margins before combining them into one document. This jpg to pdf converter works entirely on your device, so your images are never uploaded to a server.',
+        'steps' => [
+            'Add one or more JPG, PNG or WebP images by dropping them or clicking to browse.',
+            'Reorder the images with the up and down arrows if needed.',
+            'Choose a page size, orientation and margin.',
+            'Click Convert to PDF and download your file.',
+        ],
+        'features' => [
+            'Combine JPG, PNG and WebP images into one PDF',
+            'Reorder or remove images before converting',
+            'A4, Letter or Fit-to-image page sizes',
+            'Automatic or manual page orientation',
+            'Adjustable margins around each photo',
+            'Private - images never leave your device',
+        ],
+        'content' => [
+            [
+                'heading' => 'Choosing a page size',
+                'body' => "A4 and Letter add white space around photos that don't match the page shape, which suits documents and printing. Fit image sizes the PDF page to match each photo exactly, keeping the full image visible with no white borders - useful when you just need a quick PDF copy of a photo.",
+            ],
+            [
+                'heading' => 'Why convert JPG to PDF?',
+                'body' => 'A single PDF is easier to email, print and upload to forms than several separate image files. Combining scanned pages, receipts or photos into one PDF also keeps them in the right order and stops them getting mixed up.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Can I combine multiple images into one PDF?', 'a' => 'Yes. Add as many JPG, PNG or WebP images as you like, put them in the order you want with the arrows, and they are combined into a single PDF.'],
+            ['q' => 'Does this JPG to PDF converter add a watermark?', 'a' => 'No. The PDF contains only your images, with no watermark, logo or extra pages added.'],
+            ['q' => 'Can I convert PNG and WebP images too, not just JPG?', 'a' => 'Yes. JPG, PNG and WebP images are all supported and can be mixed in the same PDF.'],
+            ['q' => 'What does the margin setting do?', 'a' => 'It adds blank space around each image on the page. Choose None for the image to reach the edges, or a bigger margin for a more document-like look.'],
+            ['q' => 'Is my image quality reduced?', 'a' => 'JPG and PNG images are embedded at their original quality. WebP images are converted to PNG first, which keeps them lossless.'],
+        ],
+        'related' => ['merge-pdf', 'image-compressor', 'image-resizer'],
     ],
 
     'merge-pdf' => [
@@ -386,7 +432,7 @@ return [
             ['q' => 'How many PDFs can I merge?', 'a' => 'Up to 50 files at a time. The practical limit depends on your device memory, and most devices handle a few hundred pages easily.'],
             ['q' => 'Will links and bookmarks be kept?', 'a' => 'Page content, images and text are kept exactly. Some interactive features such as bookmarks and form fields may not carry over.'],
         ],
-        'related' => ['split-pdf', 'image-compressor', 'image-resizer'],
+        'related' => ['jpg-to-pdf', 'split-pdf', 'image-compressor'],
     ],
 
     'split-pdf' => [

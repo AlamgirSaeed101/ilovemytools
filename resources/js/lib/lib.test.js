@@ -6,6 +6,7 @@ import { applyPercent, parseNumber, percentChange, percentOf, wholeFromPart, wha
 import { formatJson, parseJson } from './json.js';
 import { decodeText, encodeText, normalizeBase64 } from './base64.js';
 import { parseRanges, rangesToIndexes } from './pdfRanges.js';
+import { computeImagePageLayout, MM_TO_PT, PDF_PAGE_SIZES } from './pdf.js';
 import { buildQrPayload, contrastRatio, escapeWifi } from './qr.js';
 import { formatBytes, uniqueNamer, baseName, safeFilename } from './util.js';
 
@@ -249,6 +250,55 @@ describe('pdf page ranges', () => {
     });
     it('flattens and de-duplicates indexes', () => {
         expect(rangesToIndexes([[1, 3], [2, 4], [1, 1]])).toEqual([0, 1, 2, 3]);
+    });
+});
+
+describe('jpg to pdf page layout', () => {
+    it('fits a portrait image on an A4 page, centred, with the default margin', () => {
+        const margin = 10 * MM_TO_PT;
+        const layout = computeImagePageLayout({ pageSize: 'a4', orientation: 'auto', marginMm: 10, imageWidth: 800, imageHeight: 1200 });
+        expect(layout.pageWidth).toBeCloseTo(PDF_PAGE_SIZES.a4.width);
+        expect(layout.pageHeight).toBeCloseTo(PDF_PAGE_SIZES.a4.height);
+        const scale = Math.min((layout.pageWidth - margin * 2) / 800, (layout.pageHeight - margin * 2) / 1200);
+        expect(layout.drawWidth).toBeCloseTo(800 * scale);
+        expect(layout.drawHeight).toBeCloseTo(1200 * scale);
+        expect(layout.x).toBeCloseTo((layout.pageWidth - layout.drawWidth) / 2);
+        expect(layout.y).toBeCloseTo((layout.pageHeight - layout.drawHeight) / 2);
+    });
+
+    it('rotates the page to landscape for a wide image in auto orientation', () => {
+        const layout = computeImagePageLayout({ pageSize: 'a4', orientation: 'auto', marginMm: 10, imageWidth: 1200, imageHeight: 800 });
+        expect(layout.pageWidth).toBeCloseTo(PDF_PAGE_SIZES.a4.height);
+        expect(layout.pageHeight).toBeCloseTo(PDF_PAGE_SIZES.a4.width);
+    });
+
+    it('keeps the requested orientation even when it does not match the image', () => {
+        const portrait = computeImagePageLayout({ pageSize: 'a4', orientation: 'portrait', marginMm: 10, imageWidth: 1200, imageHeight: 800 });
+        expect(portrait.pageWidth).toBeCloseTo(PDF_PAGE_SIZES.a4.width);
+        expect(portrait.pageHeight).toBeCloseTo(PDF_PAGE_SIZES.a4.height);
+
+        const landscape = computeImagePageLayout({ pageSize: 'letter', orientation: 'landscape', marginMm: 10, imageWidth: 800, imageHeight: 1200 });
+        expect(landscape.pageWidth).toBeCloseTo(PDF_PAGE_SIZES.letter.height);
+        expect(landscape.pageHeight).toBeCloseTo(PDF_PAGE_SIZES.letter.width);
+    });
+
+    it('sizes the page to the image itself in "fit" mode, with no scaling', () => {
+        const layout = computeImagePageLayout({ pageSize: 'fit', marginMm: 5, imageWidth: 640, imageHeight: 480 });
+        const margin = 5 * MM_TO_PT;
+        expect(layout.pageWidth).toBeCloseTo(640 + margin * 2);
+        expect(layout.pageHeight).toBeCloseTo(480 + margin * 2);
+        expect(layout.drawWidth).toBeCloseTo(640);
+        expect(layout.drawHeight).toBeCloseTo(480);
+        expect(layout.x).toBeCloseTo(margin);
+        expect(layout.y).toBeCloseTo(margin);
+    });
+
+    it('supports no margin at all', () => {
+        const layout = computeImagePageLayout({ pageSize: 'fit', marginMm: 0, imageWidth: 100, imageHeight: 200 });
+        expect(layout.pageWidth).toBeCloseTo(100);
+        expect(layout.pageHeight).toBeCloseTo(200);
+        expect(layout.x).toBe(0);
+        expect(layout.y).toBe(0);
     });
 });
 

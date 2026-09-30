@@ -1,5 +1,11 @@
 [
   {
+    "key": "\"{name}\" could not be added. It may be damaged or not a real image.",
+    "files": [
+      "resources/js/lib/pdf.js"
+    ]
+  },
+  {
     "key": "\"{name}\" could not be opened. It may be damaged or in an unsupported format.",
     "files": [
       "resources/js/lib/image.js"
@@ -97,7 +103,8 @@
     "key": "{count} files skipped because they are larger than 50 MB.",
     "one": "{count} file skipped because it is larger than 50 MB.",
     "files": [
-      "resources/js/tools/ImageCompressor.jsx"
+      "resources/js/tools/ImageCompressor.jsx",
+      "resources/js/tools/JpgToPdf.jsx"
     ]
   },
   {
@@ -111,7 +118,8 @@
     "key": "{count} images",
     "one": "{count} image",
     "files": [
-      "resources/js/tools/ImageCompressor.jsx"
+      "resources/js/tools/ImageCompressor.jsx",
+      "resources/js/tools/JpgToPdf.jsx"
     ]
   },
   {
@@ -144,6 +152,7 @@
     "key": "{count} pages",
     "one": "{count} page",
     "files": [
+      "resources/js/tools/JpgToPdf.jsx",
       "resources/js/tools/MergePdf.jsx",
       "resources/js/tools/SplitPdf.jsx"
     ]
@@ -193,7 +202,8 @@
   {
     "key": "{files}: only JPG, PNG and WebP images are supported.",
     "files": [
-      "resources/js/tools/ImageCompressor.jsx"
+      "resources/js/tools/ImageCompressor.jsx",
+      "resources/js/tools/JpgToPdf.jsx"
     ]
   },
   {
@@ -538,6 +548,12 @@
     ]
   },
   {
+    "key": "Add more images",
+    "files": [
+      "resources/js/tools/JpgToPdf.jsx"
+    ]
+  },
+  {
     "key": "Add more PDF files",
     "files": [
       "resources/js/tools/MergePdf.jsx"
@@ -628,6 +644,12 @@
     "key": "Ask about advertising or partnerships",
     "files": [
       "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Automatic",
+    "files": [
+      "resources/js/tools/JpgToPdf.jsx"
     ]
   },
   {
@@ -769,6 +791,7 @@
       "resources/js/tools/Base64Tool.jsx",
       "resources/js/tools/CaseConverter.jsx",
       "resources/js/tools/DiceRoller.jsx",
+      "resources/js/tools/JpgToPdf.jsx",
       "resources/js/tools/JsonFormatter.jsx",
       "resources/js/tools/MergePdf.jsx",
       "resources/js/tools/SpinWheel.jsx",
@@ -865,6 +888,18 @@
     "key": "Convert to",
     "files": [
       "resources/js/tools/CaseConverter.jsx"
+    ]
+  },
+  {
+    "key": "Convert to PDF",
+    "files": [
+      "resources/js/tools/JpgToPdf.jsx"
+    ]
+  },
+  {
+    "key": "Converting…",
+    "files": [
+      "resources/js/tools/JpgToPdf.jsx"
     ]
   },
   {
@@ -1078,6 +1113,12 @@
     ]
   },
   {
+    "key": "Done! Your PDF has {pages}.",
+    "files": [
+      "resources/js/tools/JpgToPdf.jsx"
+    ]
+  },
+  {
     "key": "Download",
     "files": [
       "resources/js/tools/ImageCompressor.jsx",
@@ -1111,6 +1152,7 @@
   {
     "key": "Download PDF",
     "files": [
+      "resources/js/tools/JpgToPdf.jsx",
       "resources/js/tools/SplitPdf.jsx"
     ]
   },
@@ -1154,6 +1196,12 @@
     "key": "Drop images here or click to choose",
     "files": [
       "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Drop JPG, PNG or WebP images here or click to choose",
+    "files": [
+      "resources/js/tools/JpgToPdf.jsx"
     ]
   },
   {
@@ -1445,6 +1493,12 @@
     "key": "Final value",
     "files": [
       "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Fit image",
+    "files": [
+      "resources/js/tools/JpgToPdf.jsx"
     ]
   },
   {
@@ -1744,6 +1798,12 @@
     ]
   },
   {
+    "key": "Images to convert, in order",
+    "files": [
+      "resources/js/tools/JpgToPdf.jsx"
+    ]
+  },
+  {
     "key": "in your browser",
     "files": [
       "scripts/i18n-extract.mjs"
@@ -1852,6 +1912,12 @@
     ]
   },
   {
+    "key": "Landscape",
+    "files": [
+      "resources/js/tools/JpgToPdf.jsx"
+    ]
+  },
+  {
     "key": "Language",
     "files": [
       "resources/js/components/Layout.jsx",
@@ -1902,6 +1968,12 @@
     ]
   },
   {
+    "key": "Large",
+    "files": [
+      "resources/js/tools/JpgToPdf.jsx"
+    ]
+  },
+  {
     "key": "Last flips",
     "files": [
       "resources/js/tools/CoinFlip.jsx"
@@ -1924,6 +1996,12 @@
     "key": "Length:",
     "files": [
       "resources/js/tools/PasswordGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Letter",
+    "files": [
+      "resources/js/tools/JpgToPdf.jsx"
     ]
   },
   {
@@ -2014,6 +2092,7 @@
   {
     "key": "Margin",
     "files": [
+      "resources/js/tools/JpgToPdf.jsx",
       "resources/js/tools/QrCodeGenerator.jsx"
     ]
   },
@@ -2033,6 +2112,12 @@
     "key": "Maximum file size (KB)",
     "files": [
       "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Medium",
+    "files": [
+      "resources/js/tools/JpgToPdf.jsx"
     ]
   },
   {
@@ -2138,12 +2223,14 @@
   {
     "key": "Move {name} down",
     "files": [
+      "resources/js/tools/JpgToPdf.jsx",
       "resources/js/tools/MergePdf.jsx"
     ]
   },
   {
     "key": "Move {name} up",
     "files": [
+      "resources/js/tools/JpgToPdf.jsx",
       "resources/js/tools/MergePdf.jsx"
     ]
   },
@@ -2214,6 +2301,12 @@
     ]
   },
   {
+    "key": "None",
+    "files": [
+      "resources/js/tools/JpgToPdf.jsx"
+    ]
+  },
+  {
     "key": "Number",
     "files": [
       "resources/js/tools/PercentageCalculator.jsx"
@@ -2271,6 +2364,12 @@
     "key": "Operating system",
     "files": [
       "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Orientation",
+    "files": [
+      "resources/js/tools/JpgToPdf.jsx"
     ]
   },
   {
@@ -2339,6 +2438,12 @@
     "key": "Page numbers start at 1.",
     "files": [
       "resources/js/lib/pdfRanges.js"
+    ]
+  },
+  {
+    "key": "Page size",
+    "files": [
+      "resources/js/tools/JpgToPdf.jsx"
     ]
   },
   {
@@ -2502,6 +2607,12 @@
     "files": [
       "resources/js/pages/NotFound.jsx",
       "resources/views/errors/404.blade.php"
+    ]
+  },
+  {
+    "key": "Portrait",
+    "files": [
+      "resources/js/tools/JpgToPdf.jsx"
     ]
   },
   {
@@ -2736,6 +2847,7 @@
     "key": "Remove {name}",
     "files": [
       "resources/js/tools/ImageCompressor.jsx",
+      "resources/js/tools/JpgToPdf.jsx",
       "resources/js/tools/MergePdf.jsx"
     ]
   },
@@ -2951,6 +3063,12 @@
     ]
   },
   {
+    "key": "Select one or more images · up to {max} images · max 50 MB each",
+    "files": [
+      "resources/js/tools/JpgToPdf.jsx"
+    ]
+  },
+  {
     "key": "Send an idea",
     "files": [
       "resources/js/pages/Home.jsx"
@@ -3034,6 +3152,12 @@
     "key": "Slowest",
     "files": [
       "resources/js/tools/Stopwatch.jsx"
+    ]
+  },
+  {
+    "key": "Small",
+    "files": [
+      "resources/js/tools/JpgToPdf.jsx"
     ]
   },
   {
@@ -3922,6 +4046,12 @@
     "key": "You can compress up to {max} images at a time.",
     "files": [
       "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "You can convert up to {max} images at a time.",
+    "files": [
+      "resources/js/tools/JpgToPdf.jsx"
     ]
   },
   {

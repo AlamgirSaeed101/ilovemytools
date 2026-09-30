@@ -279,6 +279,47 @@ return [
         ],
     ],
 
+    'jpg-to-pdf' => [
+        'name' => 'JPG zu PDF',
+        'title' => 'JPG zu PDF: Bilder online kostenlos in PDF umwandeln',
+        'description' => 'Wandle JPG-, PNG- oder WebP-Bilder kostenlos online in PDF um. Fotos neu anordnen, Seitengröße, Ausrichtung und Ränder wählen. Kein Upload, kein Wasserzeichen, keine Anmeldung.',
+        'h1' => 'JPG zu PDF',
+        'tagline' => 'Kombiniere JPG-, PNG- und WebP-Bilder in einer PDF-Datei.',
+        'keywords' => ['jpg zu pdf', 'jpg in pdf umwandeln', 'bild zu pdf', 'jpg zu pdf online', 'jpg pdf konverter'],
+        'intro' => 'Ein JPG-zu-PDF-Konverter wandelt JPG-, PNG- oder WebP-Bilder in ein einziges PDF-Dokument um. Füge mehrere Fotos hinzu, ordne sie neu an und wähle Seitengröße, Ausrichtung und Ränder, bevor du sie zu einem Dokument zusammenfügst. Dieser JPG-zu-PDF-Konverter läuft vollständig auf deinem Gerät, sodass deine Bilder nie auf einen Server hochgeladen werden.',
+        'steps' => [
+            'Ein oder mehrere JPG-, PNG- oder WebP-Bilder per Ablegen oder Durchsuchen hinzufügen.',
+            'Die Bilder bei Bedarf mit den Pfeilen nach oben und unten neu anordnen.',
+            'Seitengröße, Ausrichtung und Rand wählen.',
+            'Auf In PDF umwandeln klicken und die Datei herunterladen.',
+        ],
+        'features' => [
+            'JPG-, PNG- und WebP-Bilder in einem PDF kombinieren',
+            'Bilder vor dem Umwandeln neu anordnen oder entfernen',
+            'Seitengrößen A4, Letter oder An Bild anpassen',
+            'Automatische oder manuelle Seitenausrichtung',
+            'Anpassbare Ränder um jedes Foto',
+            'Privat – Bilder verlassen nie dein Gerät',
+        ],
+        'content' => [
+            [
+                'heading' => 'Die richtige Seitengröße wählen',
+                'body' => 'A4 und Letter fügen um Fotos, die nicht zur Seitenform passen, weißen Rand hinzu – das eignet sich für Dokumente und den Druck. An Bild anpassen richtet die PDF-Seite exakt an jedem Foto aus, sodass das ganze Bild ohne weiße Ränder sichtbar bleibt – praktisch, wenn du nur schnell eine PDF-Kopie eines Fotos brauchst.',
+            ],
+            [
+                'heading' => 'Warum JPG in PDF umwandeln?',
+                'body' => 'Eine einzelne PDF-Datei lässt sich leichter per E-Mail versenden, drucken und in Formulare hochladen als mehrere einzelne Bilddateien. Das Zusammenfügen von gescannten Seiten, Quittungen oder Fotos in einem PDF hält außerdem die richtige Reihenfolge ein und verhindert, dass sie durcheinandergeraten.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Kann ich mehrere Bilder in einer PDF-Datei kombinieren?', 'a' => 'Ja. Füge so viele JPG-, PNG- oder WebP-Bilder hinzu, wie du möchtest, bringe sie mit den Pfeilen in die gewünschte Reihenfolge, und sie werden zu einer einzigen PDF-Datei kombiniert.'],
+            ['q' => 'Fügt dieser JPG-zu-PDF-Konverter ein Wasserzeichen hinzu?', 'a' => 'Nein. Das PDF enthält nur deine Bilder, ohne Wasserzeichen, Logo oder zusätzliche Seiten.'],
+            ['q' => 'Kann ich auch PNG- und WebP-Bilder umwandeln, nicht nur JPG?', 'a' => 'Ja. JPG-, PNG- und WebP-Bilder werden alle unterstützt und können im selben PDF gemischt werden.'],
+            ['q' => 'Was bewirkt die Randeinstellung?', 'a' => 'Sie fügt Leerraum um jedes Bild auf der Seite hinzu. Wähle Kein, damit das Bild bis an den Rand reicht, oder einen größeren Rand für einen dokumentähnlicheren Look.'],
+            ['q' => 'Wird die Qualität meiner Bilder verringert?', 'a' => 'JPG- und PNG-Bilder werden mit ihrer Originalqualität eingebettet. WebP-Bilder werden zuerst in PNG umgewandelt, wodurch die verlustfreie Qualität erhalten bleibt.'],
+        ],
+    ],
+
     'merge-pdf' => [
         'name' => 'PDF zusammenfügen',
         'title' => 'PDF zusammenfügen: PDF-Dateien online kostenlos kombinieren',

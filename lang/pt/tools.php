@@ -279,6 +279,47 @@ return [
         ],
     ],
 
+    'jpg-to-pdf' => [
+        'name' => 'JPG para PDF',
+        'title' => 'JPG para PDF: converta imagens em PDF grátis',
+        'description' => 'Converta imagens JPG, PNG ou WebP em PDF online e grátis. Reordene as fotos e escolha o tamanho da página, a orientação e as margens. Sem upload, sem marca d\'água, sem cadastro.',
+        'h1' => 'JPG para PDF',
+        'tagline' => 'Combine imagens JPG, PNG e WebP em um único arquivo PDF.',
+        'keywords' => ['jpg para pdf', 'converter jpg para pdf', 'imagem para pdf', 'jpg para pdf online', 'conversor jpg para pdf'],
+        'intro' => 'Um conversor de JPG para PDF transforma imagens JPG, PNG ou WebP em um único documento PDF. Adicione várias fotos, reordene-as e escolha o tamanho da página, a orientação e as margens antes de combiná-las em um só documento. Este conversor de jpg para pdf funciona totalmente no seu dispositivo, então suas imagens nunca são enviadas a um servidor.',
+        'steps' => [
+            'Adicione uma ou mais imagens JPG, PNG ou WebP soltando-as aqui ou clicando para procurar.',
+            'Reordene as imagens com as setas para cima e para baixo, se necessário.',
+            'Escolha um tamanho de página, orientação e margem.',
+            'Clique em Converter para PDF e baixe o seu arquivo.',
+        ],
+        'features' => [
+            'Combine imagens JPG, PNG e WebP em um único PDF',
+            'Reordene ou remova imagens antes de converter',
+            'Tamanhos de página A4, Carta ou Ajustar à imagem',
+            'Orientação de página automática ou manual',
+            'Margens ajustáveis ao redor de cada foto',
+            'Privado: as imagens nunca saem do seu dispositivo',
+        ],
+        'content' => [
+            [
+                'heading' => 'Como escolher o tamanho da página',
+                'body' => 'A4 e Carta adicionam espaço em branco ao redor de fotos que não têm a mesma forma da página, o que é útil para documentos e impressão. Ajustar à imagem faz a página do PDF corresponder exatamente a cada foto, mantendo toda a imagem visível sem bordas brancas; útil quando você só precisa de uma cópia rápida em PDF de uma foto.',
+            ],
+            [
+                'heading' => 'Por que converter JPG para PDF?',
+                'body' => 'Um único PDF é mais fácil de enviar por e-mail, imprimir e enviar em formulários do que vários arquivos de imagem separados. Combinar páginas digitalizadas, recibos ou fotos em um único PDF também mantém tudo na ordem certa e evita que se misturem.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Posso combinar várias imagens em um único PDF?', 'a' => 'Sim. Adicione quantas imagens JPG, PNG ou WebP quiser, coloque-as na ordem desejada com as setas e elas serão combinadas em um único PDF.'],
+            ['q' => 'Este conversor de JPG para PDF adiciona marca d\'água?', 'a' => 'Não. O PDF contém apenas as suas imagens, sem marca d\'água, logotipo ou páginas adicionadas.'],
+            ['q' => 'Posso converter imagens PNG e WebP também, não só JPG?', 'a' => 'Sim. Imagens JPG, PNG e WebP são todas compatíveis e podem ser combinadas no mesmo PDF.'],
+            ['q' => 'O que faz a opção de margem?', 'a' => 'Ela adiciona espaço em branco ao redor de cada imagem na página. Escolha Nenhuma para a imagem chegar até as bordas, ou uma margem maior para um visual mais parecido com um documento.'],
+            ['q' => 'A qualidade da minha imagem é reduzida?', 'a' => 'Imagens JPG e PNG são incorporadas com a qualidade original. Imagens WebP são convertidas para PNG primeiro, o que mantém a qualidade sem perdas.'],
+        ],
+    ],
+
     'merge-pdf' => [
         'name' => 'Juntar PDF',
         'title' => 'Juntar PDF: combine arquivos PDF online grátis',
