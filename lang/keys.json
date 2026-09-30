@@ -564,6 +564,12 @@
     ]
   },
   {
+    "key": "About Us - Free, Private Browser Tools",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
     "key": "Access {count} free online tools. 100% free, private and secure.",
     "files": [
       "resources/js/pages/Home.jsx",
@@ -967,6 +973,12 @@
     "key": "Contact Us",
     "files": [
       "resources/js/pages/InfoPages.jsx",
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Contact Us - Report a Bug or Suggest a Tool",
+    "files": [
       "scripts/i18n-extract.mjs"
     ]
   },

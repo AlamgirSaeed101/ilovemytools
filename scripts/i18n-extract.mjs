@@ -27,6 +27,7 @@ const DYNAMIC = [
     'Fast and simple', 'Each tool does one job well, loads quickly and works on phones, tablets and computers.',
     // Info page titles/descriptions (app/Support/SiteData.php)
     'About Us', 'Contact Us', 'Privacy Policy', 'Terms of Use',
+    'About Us - Free, Private Browser Tools', 'Contact Us - Report a Bug or Suggest a Tool',
     'Learn about {name}: a free collection of fast, private online tools for PDFs, images, text and maths that run in your browser with no sign up.',
     'Contact the {name} team to report a bug, suggest a new free tool or ask a question. Email us and we usually reply within two business days.',
     'How {name} handles your data, cookies and advertising. Files and text you use in our tools are processed in your browser.',
