@@ -154,6 +154,38 @@ class Seo
             'publisher' => ['@type' => 'Organization', 'name' => config('site.name'), 'url' => self::absoluteUrl('/')],
         ];
 
+        // The page itself, with the parts a voice assistant can read aloud.
+        $this->schemas[] = array_filter([
+            '@context' => 'https://schema.org',
+            '@type' => 'WebPage',
+            'name' => $this->title,
+            'url' => $this->canonical,
+            'description' => $tool['description'],
+            'inLanguage' => Locale::hreflang(Locale::current()),
+            'dateModified' => $tool['updated'] ?? null,
+            'isPartOf' => ['@id' => self::absoluteUrl('/').'#website'],
+            'speakable' => ['@type' => 'SpeakableSpecification', 'cssSelector' => ['h1', '.tool-intro']],
+        ], fn ($value) => $value !== null);
+
+        // "How to use" steps, which answer engines can quote as a list.
+        if (! empty($tool['steps'])) {
+            $this->schemas[] = [
+                '@context' => 'https://schema.org',
+                '@type' => 'HowTo',
+                'name' => Locale::t('How to use the {name}', ['name' => $tool['name']]),
+                'description' => $tool['tagline'] ?? $tool['description'],
+                'tool' => ['@type' => 'HowToTool', 'name' => $tool['name']],
+                'totalTime' => 'PT1M',
+                'step' => array_map(fn ($text, $i) => [
+                    '@type' => 'HowToStep',
+                    'position' => $i + 1,
+                    'name' => $text,
+                    'text' => $text,
+                    'url' => $this->canonical.'#how-to',
+                ], array_values($tool['steps']), array_keys(array_values($tool['steps']))),
+            ];
+        }
+
         return $this;
     }
 
@@ -213,7 +245,14 @@ class Seo
             'name' => config('site.name'),
             'url' => self::absoluteUrl('/'),
             'logo' => self::absoluteUrl('/images/logo-512.png'),
+            'description' => Locale::group('site')['description'] ?? config('site.description'),
             'email' => config('site.contact_email'),
+            'contactPoint' => [
+                '@type' => 'ContactPoint',
+                'contactType' => 'customer support',
+                'email' => config('site.contact_email'),
+                'availableLanguage' => array_values(array_map(fn ($l) => $l['name'], Locale::all())),
+            ],
             'sameAs' => array_values(array_filter([
                 config('site.twitter_handle') ? 'https://x.com/'.ltrim((string) config('site.twitter_handle'), '@') : null,
             ])),

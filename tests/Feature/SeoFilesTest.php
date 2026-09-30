@@ -59,4 +59,21 @@ class SeoFilesTest extends TestCase
         $response->assertOk()->assertExactJson(['ip' => '203.0.113.9', 'version' => 'IPv4']);
         $this->assertStringContainsString('no-store', (string) $response->headers->get('Cache-Control'));
     }
+
+    public function test_llms_txt_lists_every_tool(): void
+    {
+        $response = $this->get('/llms.txt');
+
+        $response->assertOk()->assertHeader('Content-Type', 'text/plain; charset=UTF-8');
+        $body = $response->getContent();
+        $this->assertStringStartsWith('# '.config('site.name'), $body);
+        foreach (array_keys(config('tools')) as $slug) {
+            $this->assertStringContainsString('/'.$slug.')', $body, "llms.txt is missing $slug");
+        }
+    }
+
+    public function test_responses_do_not_expose_php_version(): void
+    {
+        $this->get('/')->assertHeaderMissing('X-Powered-By');
+    }
 }

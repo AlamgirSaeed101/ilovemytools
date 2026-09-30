@@ -72,6 +72,43 @@ class SeoFilesController extends Controller
         ]);
     }
 
+    /**
+     * llms.txt (llmstxt.org): a plain Markdown summary that AI assistants and answer
+     * engines can read in one request - what the site is, every tool and its URL.
+     */
+    public function llms(): Response
+    {
+        $name = (string) config('site.name');
+        $lines = [
+            "# {$name}",
+            '',
+            '> '.config('site.description'),
+            '',
+            "{$name} is a collection of free online tools. Every tool runs entirely in the visitor's browser: files and text are never uploaded, there is no sign up, no daily limit and no watermark.",
+            '',
+            'Languages: '.collect(Locale::all())->map(fn ($l, $code) => $l['name'].' ('.Locale::url('/', $code).')')->implode(', ').'. Every page exists in each language under the same path with the language prefix.',
+        ];
+
+        foreach ($this->registry->categories() as $category) {
+            $lines[] = '';
+            $lines[] = '## '.$category['name'];
+            $lines[] = '';
+            foreach ($this->registry->inCategory($category['slug']) as $tool) {
+                $lines[] = '- ['.$tool['name'].']('.Seo::absoluteUrl($tool['slug']).'): '.$tool['tagline'];
+            }
+        }
+
+        $lines[] = '';
+        $lines[] = '## About';
+        $lines[] = '';
+        $lines[] = '- [About]('.Seo::absoluteUrl('about').'): who runs the site and why';
+        $lines[] = '- [Privacy policy]('.Seo::absoluteUrl('privacy-policy').'): how data, cookies and advertising are handled';
+        $lines[] = '- [Contact]('.Seo::absoluteUrl('contact').'): '.config('site.contact_email');
+        $lines[] = '- [Sitemap]('.Seo::absoluteUrl('sitemap.xml').')';
+
+        return response(implode("\n", $lines)."\n", 200, ['Content-Type' => 'text/plain; charset=UTF-8']);
+    }
+
     public function robots(): Response
     {
         $lines = app()->environment('production')

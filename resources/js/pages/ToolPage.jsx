@@ -7,7 +7,7 @@ import Icon from '../components/Icon.jsx';
 import { IconTile, ToolGrid } from '../components/ToolCard.jsx';
 import tools from '../tools/index.js';
 import { getSite } from '../lib/api.js';
-import { t } from '../lib/i18n.js';
+import { formatDate, t } from '../lib/i18n.js';
 import { useMeta } from '../lib/meta.js';
 import { addRecent } from '../lib/recent.js';
 
@@ -83,11 +83,12 @@ export default function ToolPage() {
 
                     <article className="prose tool-article">
                         <h2>{t('About the {name}', { name: tool.name })}</h2>
-                        <p>{tool.intro}</p>
+                        <p className="tool-intro">{tool.intro}</p>
+                        {tool.updated && <p className="text-sm text-muted">{t('Last updated: {date}', { date: formatDate(tool.updated) })}</p>}
 
                         {tool.steps.length > 0 && (
                             <>
-                                <h2>{t('How to use the {name}', { name: tool.name })}</h2>
+                                <h2 id="how-to">{t('How to use the {name}', { name: tool.name })}</h2>
                                 <ol className="steps">
                                     {tool.steps.map((step) => (
                                         <li key={step}>{step}</li>

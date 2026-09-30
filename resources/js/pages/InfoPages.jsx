@@ -3,18 +3,8 @@ import Breadcrumbs from '../components/Breadcrumbs.jsx';
 import CopyButton from '../components/CopyButton.jsx';
 import Icon from '../components/Icon.jsx';
 import { getSite } from '../lib/api.js';
-import { numberLocale, t, tr } from '../lib/i18n.js';
+import { formatDate, t, tr } from '../lib/i18n.js';
 import { useMeta } from '../lib/meta.js';
-
-/** "2026-09-29" -> "29 September 2026" in the page's language. */
-function prettyDate(iso) {
-    const [y, m, d] = iso.split('-').map(Number);
-    try {
-        return new Intl.DateTimeFormat(numberLocale(), { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(Date.UTC(y, m - 1, d)));
-    } catch {
-        return iso;
-    }
-}
 
 function InfoPage({ page, path, children }) {
     const site = getSite();
@@ -124,7 +114,7 @@ export function Privacy() {
     return (
         <InfoPage page="privacy" path="/privacy-policy">
             <h1>{t('Privacy Policy')}</h1>
-            <p className="muted">{t('Last updated: {date}', { date: prettyDate(site.legalUpdated) })}</p>
+            <p className="muted">{t('Last updated: {date}', { date: formatDate(site.legalUpdated) })}</p>
 
             <p>{t('This Privacy Policy explains how {name} (“we”, “us”) handles information when you use {url} (the “Site”). Please also read the section about advertising cookies below.', { name, url: site.url })}</p>
 
@@ -176,7 +166,7 @@ export function Terms() {
     return (
         <InfoPage page="terms" path="/terms">
             <h1>{t('Terms of Use')}</h1>
-            <p className="muted">{t('Last updated: {date}', { date: prettyDate(site.legalUpdated) })}</p>
+            <p className="muted">{t('Last updated: {date}', { date: formatDate(site.legalUpdated) })}</p>
 
             <p>{t('By using {name} (the “Site”) you agree to these terms. If you do not agree, please do not use the Site.', { name })}</p>
 

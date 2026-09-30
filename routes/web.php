@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/sitemap.xml', [SeoFilesController::class, 'sitemap'])->name('sitemap');
 Route::get('/robots.txt', [SeoFilesController::class, 'robots'])->name('robots');
 Route::get('/ads.txt', [SeoFilesController::class, 'ads'])->name('ads');
+Route::get('/llms.txt', [SeoFilesController::class, 'llms'])->name('llms');
 
 /*
 |--------------------------------------------------------------------------

@@ -22,10 +22,10 @@
 
                 <article class="prose tool-article">
                     <h2>{{ t('About the {name}', ['name' => $tool['name']]) }}</h2>
-                    <p>{{ $tool['intro'] }}</p>
+                    <p class="tool-intro">{{ $tool['intro'] }}</p>
 
                     @if ($tool['steps'] !== [])
-                        <h2>{{ t('How to use the {name}', ['name' => $tool['name']]) }}</h2>
+                        <h2 id="how-to">{{ t('How to use the {name}', ['name' => $tool['name']]) }}</h2>
                         <ol class="steps">
                             @foreach ($tool['steps'] as $step)
                                 <li>{{ $step }}</li>

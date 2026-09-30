@@ -112,3 +112,14 @@ export function tr(key, parts) {
         return piece === '' ? null : createElement(Fragment, { key: i }, piece);
     });
 }
+
+/** "2026-09-29" -> "29 September 2026" in the page's language (falls back to the ISO date). */
+export function formatDate(iso) {
+    const [y, m, d] = String(iso || '').split('-').map(Number);
+    if (!y || !m || !d) return String(iso || '');
+    try {
+        return new Intl.DateTimeFormat(numberLocale(), { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(Date.UTC(y, m - 1, d)));
+    } catch {
+        return String(iso);
+    }
+}
