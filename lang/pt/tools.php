@@ -5,7 +5,7 @@ return [
     'word-counter' => [
         'name' => 'Contador de palavras',
         'title' => 'Contador de palavras: conte palavras e caracteres grátis',
-        'description' => 'Contador de palavras online grátis. Conte palavras, caracteres, frases e parágrafos na hora e veja o tempo de leitura e a densidade de palavras-chave. Sem cadastro.',
+        'description' => 'Contador de palavras online grátis. Conte palavras, caracteres, frases e parágrafos na hora e veja o tempo de leitura e as palavras-chave.',
         'h1' => 'Contador de palavras',
         'tagline' => 'Conte palavras, caracteres, frases e tempo de leitura na hora.',
         'keywords' => ['contador de palavras', 'contador de caracteres', 'contar palavras', 'contar palavras online', 'tempo de leitura'],
@@ -121,7 +121,7 @@ return [
     'qr-code-generator' => [
         'name' => 'Gerador de QR code',
         'title' => 'Gerador de QR code: QR codes grátis para URL, Wi-Fi e mais',
-        'description' => 'Crie QR codes grátis para links, texto, Wi-Fi, e-mail, telefone e SMS. Cores e tamanhos personalizados, baixe em PNG ou SVG. Sem cadastro e os códigos nunca expiram.',
+        'description' => 'Crie QR codes grátis para links, texto, Wi-Fi, e-mail, telefone e SMS. Cores e tamanhos à sua escolha, download em PNG ou SVG. Nunca expiram.',
         'h1' => 'Gerador de QR code grátis',
         'tagline' => 'Crie QR codes para links, Wi-Fi, e-mail, telefone e SMS. Baixe em PNG ou SVG.',
         'keywords' => ['gerador de qr code', 'gerador de qr code grátis', 'qr code wifi', 'criar qr code', 'qr code para link'],
@@ -162,7 +162,7 @@ return [
     'image-compressor' => [
         'name' => 'Compressor de imagens',
         'title' => 'Compressor de imagens: comprima JPG, PNG e WebP online',
-        'description' => 'Comprima imagens JPG, PNG e WebP online de graça. Reduza a imagem para 100KB ou qualquer tamanho sem perda visível de qualidade. As imagens nunca saem do seu dispositivo.',
+        'description' => 'Comprima imagens JPG, PNG e WebP grátis. Reduza uma foto para 100 KB ou qualquer tamanho sem perda visível. Nada sai do seu dispositivo.',
         'h1' => 'Compressor de imagens',
         'tagline' => 'Reduza o tamanho de arquivos JPG, PNG e WebP, até para um valor exato como 100KB.',
         'keywords' => ['compressor de imagens', 'comprimir imagem', 'comprimir imagem para 100kb', 'reduzir tamanho de imagem', 'comprimir jpg'],
@@ -202,8 +202,8 @@ return [
 
     'image-resizer' => [
         'name' => 'Redimensionar imagem',
-        'title' => 'Redimensionar imagem: redimensione e converta JPG, PNG e WebP grátis',
-        'description' => 'Redimensione imagens para pixels exatos ou por porcentagem e converta entre JPG, PNG e WebP. Redimensionador de imagens online grátis que mantém suas fotos privadas.',
+        'title' => 'Redimensionar imagem: JPG, PNG e WebP online grátis',
+        'description' => 'Redimensione imagens para pixels exatos ou por porcentagem e converta entre JPG, PNG e WebP. Grátis, online e sem enviar suas fotos.',
         'h1' => 'Redimensionar e converter imagem',
         'tagline' => 'Redimensione para pixels exatos ou por porcentagem e converta JPG, PNG e WebP.',
         'keywords' => ['redimensionar imagem', 'mudar tamanho da imagem', 'png para jpg', 'jpg para png', 'webp para jpg', 'conversor de imagem'],
@@ -242,7 +242,7 @@ return [
     'merge-pdf' => [
         'name' => 'Juntar PDF',
         'title' => 'Juntar PDF: combine arquivos PDF online grátis',
-        'description' => 'Junte arquivos PDF em um só documento online de graça. Reordene os arquivos, sem marca d\'água e sem cadastro. Os PDFs são combinados no seu navegador e nunca enviados.',
+        'description' => 'Junte arquivos PDF em um só documento online e grátis. Reordene os arquivos, sem marca d\'água e sem cadastro. Nada é enviado a servidores.',
         'h1' => 'Juntar arquivos PDF',
         'tagline' => 'Combine vários PDFs em um só arquivo, sem marca d\'água e sem upload.',
         'keywords' => ['juntar pdf', 'combinar pdf', 'unir arquivos pdf', 'mesclar pdf', 'juntar pdf online grátis'],
@@ -281,7 +281,7 @@ return [
     'split-pdf' => [
         'name' => 'Dividir PDF',
         'title' => 'Dividir PDF: extraia páginas de um PDF online grátis',
-        'description' => 'Divida um PDF em arquivos separados ou extraia páginas específicas online de graça. Selecione intervalos como 1-3, 5. Sem upload, sem marca d\'água e sem cadastro.',
+        'description' => 'Divida um PDF em arquivos separados ou extraia páginas online e grátis. Escolha intervalos como 1-3, 5. Sem upload e sem marca d\'água.',
         'h1' => 'Dividir PDF e extrair páginas',
         'tagline' => 'Extraia páginas ou divida um PDF em arquivos separados, com privacidade, no seu navegador.',
         'keywords' => ['dividir pdf', 'extrair páginas de pdf', 'separar páginas de pdf', 'separador de pdf', 'dividir pdf online'],
@@ -315,8 +315,8 @@ return [
 
     'age-calculator' => [
         'name' => 'Calculadora de idade',
-        'title' => 'Calculadora de idade: calcule a idade exata pela data de nascimento',
-        'description' => 'Calcule sua idade exata em anos, meses e dias a partir da data de nascimento. Veja o total de dias vividos e a contagem para o próximo aniversário. Grátis e na hora.',
+        'title' => 'Calculadora de idade: idade exata pela data de nascimento',
+        'description' => 'Calcule sua idade exata em anos, meses e dias pela data de nascimento. Veja os dias vividos e a contagem para o próximo aniversário.',
         'h1' => 'Calculadora de idade',
         'tagline' => 'Descubra sua idade exata em anos, meses e dias, além do próximo aniversário.',
         'keywords' => ['calculadora de idade', 'calcular idade', 'calculadora de data de nascimento', 'quantos anos eu tenho', 'calcular idade pela data de nascimento'],
@@ -350,7 +350,7 @@ return [
     'percentage-calculator' => [
         'name' => 'Calculadora de porcentagem',
         'title' => 'Calculadora de porcentagem: porcentagem, variação e aumento',
-        'description' => 'Calculadora de porcentagem grátis: calcule X% de Y, quantos por cento X é de Y, aumento ou redução percentual e some ou subtraia uma porcentagem. Mostra a fórmula.',
+        'description' => 'Calculadora de porcentagem grátis: X% de Y, quantos por cento X é de Y, aumento ou redução percentual e mais. Com a fórmula de cada conta.',
         'h1' => 'Calculadora de porcentagem',
         'tagline' => 'Todos os cálculos de porcentagem comuns em um só lugar, com a fórmula.',
         'keywords' => ['calculadora de porcentagem', 'calcular porcentagem', 'calculadora de variação percentual', 'calculadora de aumento percentual', 'quantos por cento'],
@@ -385,7 +385,7 @@ return [
     'json-formatter' => [
         'name' => 'Formatador de JSON',
         'title' => 'Formatador e validador de JSON: embeleze JSON online',
-        'description' => 'Formate, embeleze, valide e minifique JSON online de graça. Encontra erros com o número exato de linha e coluna. Formatador de JSON rápido e privado para desenvolvedores.',
+        'description' => 'Formate, valide e minifique JSON online e grátis. Encontre erros com a linha e a coluna exatas. Rápido e privado para desenvolvedores.',
         'h1' => 'Formatador e validador de JSON',
         'tagline' => 'Embeleze, valide e minifique JSON com mensagens de erro claras.',
         'keywords' => ['formatador de json', 'validador de json', 'embelezar json', 'formatar json', 'minificar json'],
@@ -420,7 +420,7 @@ return [
     'base64-encoder-decoder' => [
         'name' => 'Codificar / decodificar Base64',
         'title' => 'Codificar e decodificar Base64 online: texto e arquivos',
-        'description' => 'Codifique texto ou arquivos em Base64 e decodifique Base64 de volta para texto online. Suporte completo a UTF-8 e a Base64 seguro para URL. Conversor grátis, rápido e privado.',
+        'description' => 'Codifique texto ou arquivos em Base64 e decodifique Base64 para texto online. Suporte a UTF-8 e Base64 seguro para URL. Grátis e privado.',
         'h1' => 'Codificador e decodificador Base64',
         'tagline' => 'Codifique e decodifique texto e arquivos em Base64, com suporte a UTF-8 e a URL.',
         'keywords' => ['codificar base64', 'decodificar base64', 'conversor base64', 'base64 para texto', 'imagem para base64'],
@@ -455,7 +455,7 @@ return [
     'what-is-my-ip' => [
         'name' => 'Qual é o meu IP',
         'title' => 'Qual é o meu endereço IP? Veja seu IP público na hora',
-        'description' => 'Veja seu endereço IP público na hora, descubra se é IPv4 ou IPv6 e confira navegador, sistema operacional, tamanho da tela e fuso horário. Consulta de IP grátis.',
+        'description' => 'Veja seu endereço IP público na hora, se é IPv4 ou IPv6, e confira navegador, sistema, tela e fuso horário. Consulta de IP grátis.',
         'h1' => 'Qual é o meu endereço IP?',
         'tagline' => 'Seu endereço IP público e os detalhes do navegador, na hora.',
         'keywords' => ['qual é o meu ip', 'meu endereço ip', 'consultar ip', 'verificar meu ip', 'qual é o meu endereço ip'],
@@ -493,7 +493,7 @@ return [
     'dice-roller' => [
         'name' => 'Dados virtuais',
         'title' => 'Dados virtuais: jogue dados online (D6, D20 e mais)',
-        'description' => 'Jogue de 1 a 10 dados virtuais online: D4, D6, D8, D10, D12, D20 ou D100. Resultados justos e aleatórios com animação 3D, total e histórico de jogadas. Grátis.',
+        'description' => 'Jogue de 1 a 10 dados virtuais online: D4, D6, D8, D10, D12, D20 ou D100. Resultados justos com animação 3D, total e histórico. Grátis.',
         'h1' => 'Dados virtuais',
         'tagline' => 'Jogue até 10 dados, do D4 ao D100, com animação 3D e total.',
         'keywords' => ['jogar dados', 'dados online', 'dados virtuais', 'dado d20', 'dado aleatório'],
@@ -572,7 +572,7 @@ return [
     'spin-the-wheel' => [
         'name' => 'Roleta de sorteio',
         'title' => 'Roleta de sorteio: sorteie nomes e opções',
-        'description' => 'Gire uma roleta para sortear um nome, um vencedor ou uma opção. Adicione até 100 opções, gire com uma animação suave e remova os vencedores. Roleta online grátis.',
+        'description' => 'Gire uma roleta online para sortear um nome, um vencedor ou uma opção. Até 100 opções, animação suave e remoção de vencedores. Grátis.',
         'h1' => 'Roleta de sorteio',
         'tagline' => 'Adicione nomes ou opções, gire e deixe a roleta escolher um vencedor aleatório.',
         'keywords' => ['roleta de sorteio', 'roleta online', 'sorteador de nomes', 'roleta de nomes', 'sorteio aleatório'],
@@ -610,7 +610,7 @@ return [
 
     'random-number-generator' => [
         'name' => 'Gerador de números aleatórios',
-        'title' => 'Gerador de números aleatórios: sorteie números em qualquer intervalo',
+        'title' => 'Gerador de números aleatórios em qualquer intervalo',
         'description' => 'Gere números aleatórios em qualquer intervalo, um ou centenas de cada vez, com ou sem repetição. Ótimo para rifas, loterias e jogos. Grátis e na hora.',
         'h1' => 'Gerador de números aleatórios',
         'tagline' => 'Sorteie números aleatórios em qualquer intervalo, sem repetição se precisar.',
@@ -650,7 +650,7 @@ return [
     'stopwatch' => [
         'name' => 'Cronômetro',
         'title' => 'Cronômetro online: cronômetro grátis com voltas',
-        'description' => 'Um cronômetro online grátis com precisão de 1/100 de segundo, tempos de volta e parciais, voltas mais rápida e mais lenta e atalhos de teclado. Funciona em qualquer navegador.',
+        'description' => 'Cronômetro online grátis com precisão de 1/100 de segundo, tempos de volta e parciais, volta mais rápida e mais lenta e atalhos de teclado.',
         'h1' => 'Cronômetro online',
         'tagline' => 'Precisão de 1/100 de segundo, com voltas, parciais e atalhos de teclado.',
         'keywords' => ['cronômetro', 'cronômetro online', 'cronômetro com voltas', 'timer', 'marcador de voltas'],
@@ -689,7 +689,7 @@ return [
     'countdown-timer' => [
         'name' => 'Timer',
         'title' => 'Timer online: contagem regressiva com alarme',
-        'description' => 'Defina um timer de segundos, minutos ou horas com atalhos de um clique. Um alarme toca quando o tempo acaba e o título da aba mostra o tempo restante. Grátis e online.',
+        'description' => 'Timer online grátis de segundos, minutos ou horas com atalhos de um clique. Um alarme toca no fim e a aba mostra o tempo restante.',
         'h1' => 'Timer de contagem regressiva',
         'tagline' => 'Defina minutos ou horas ou toque em um atalho. Um alarme toca quando o tempo acaba.',
         'keywords' => ['timer', 'timer online', 'timer com alarme', 'timer de 5 minutos', 'contagem regressiva'],
@@ -728,7 +728,7 @@ return [
     'sleep-calculator' => [
         'name' => 'Calculadora do sono',
         'title' => 'Calculadora do sono: melhor hora para dormir e acordar',
-        'description' => 'Descubra a melhor hora para dormir ou acordar com base em ciclos de sono de 90 minutos, ou conte quantas horas você dormiu. Acorde descansado, não grogue. Grátis e na hora.',
+        'description' => 'Descubra a melhor hora para dormir ou acordar com base em ciclos de 90 minutos, ou conte quantas horas dormiu. Acorde descansado. Grátis.',
         'h1' => 'Calculadora do sono',
         'tagline' => 'Descubra a melhor hora para dormir ou acordar e conte as horas que você dormiu.',
         'keywords' => ['calculadora do sono', 'contador de sono', 'que horas dormir', 'calculadora de ciclos de sono', 'que horas devo dormir', 'horas de sono'],

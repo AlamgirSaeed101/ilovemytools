@@ -5,7 +5,7 @@ return [
     'word-counter' => [
         'name' => 'Contador de palabras',
         'title' => 'Contador de palabras: cuenta palabras y caracteres gratis',
-        'description' => 'Contador de palabras en línea gratis. Cuenta palabras, caracteres, frases y párrafos al instante, y consulta el tiempo de lectura y la densidad de palabras clave.',
+        'description' => 'Contador de palabras gratis. Cuenta palabras, caracteres, frases y párrafos al instante y consulta el tiempo de lectura y las palabras clave.',
         'h1' => 'Contador de palabras',
         'tagline' => 'Cuenta palabras, caracteres, frases y tiempo de lectura al instante.',
         'keywords' => ['contador de palabras', 'contador de caracteres', 'contar palabras', 'contar palabras online', 'tiempo de lectura'],
@@ -138,7 +138,7 @@ return [
     'image-compressor' => [
         'name' => 'Compresor de imágenes',
         'title' => 'Compresor de imágenes: comprime JPG, PNG y WebP gratis',
-        'description' => 'Comprime imágenes JPG, PNG y WebP en línea gratis. Reduce una imagen a 100 KB o al tamaño que quieras sin pérdida visible. Las imágenes no salen de tu dispositivo.',
+        'description' => 'Comprime imágenes JPG, PNG y WebP gratis. Reduce una foto a 100 KB o al tamaño que quieras sin pérdida visible. Nada sale de tu dispositivo.',
         'h1' => 'Compresor de imágenes',
         'tagline' => 'Reduce el peso de JPG, PNG y WebP, incluso a un tamaño exacto como 100 KB.',
         'keywords' => ['comprimir imagen', 'compresor de imágenes', 'comprimir imagen a 100kb', 'reducir tamaño de imagen', 'comprimir jpg'],
@@ -173,7 +173,7 @@ return [
     'image-resizer' => [
         'name' => 'Redimensionar imagen',
         'title' => 'Redimensionar y convertir imágenes JPG, PNG y WebP gratis',
-        'description' => 'Cambia el tamaño de imágenes a píxeles exactos o por porcentaje y convierte entre JPG, PNG y WebP. Redimensionador en línea gratuito que mantiene tus fotos privadas.',
+        'description' => 'Redimensiona imágenes a píxeles exactos o por porcentaje y convierte entre JPG, PNG y WebP. Gratis, en línea y sin subir tus fotos.',
         'h1' => 'Redimensionar y convertir imágenes',
         'tagline' => 'Redimensiona a píxeles exactos o por porcentaje y convierte JPG, PNG y WebP.',
         'keywords' => ['redimensionar imagen', 'cambiar tamaño de imagen', 'png a jpg', 'jpg a png', 'webp a jpg', 'convertir imagen'],
@@ -271,7 +271,7 @@ return [
     'age-calculator' => [
         'name' => 'Calculadora de edad',
         'title' => 'Calculadora de edad: edad exacta por fecha de nacimiento',
-        'description' => 'Calcula tu edad exacta en años, meses y días a partir de tu fecha de nacimiento. Consulta los días vividos y la cuenta atrás para tu próximo cumpleaños. Gratis.',
+        'description' => 'Calcula tu edad exacta en años, meses y días desde tu fecha de nacimiento. Ve los días vividos y la cuenta atrás para tu próximo cumpleaños.',
         'h1' => 'Calculadora de edad',
         'tagline' => 'Descubre tu edad exacta en años, meses y días, y tu próximo cumpleaños.',
         'keywords' => ['calculadora de edad', 'calcular edad', 'calcular edad por fecha de nacimiento', 'cuántos años tengo', 'edad exacta'],
@@ -302,7 +302,7 @@ return [
     'percentage-calculator' => [
         'name' => 'Calculadora de porcentajes',
         'title' => 'Calculadora de porcentajes: porcentaje, variación y aumento',
-        'description' => 'Calculadora de porcentajes gratis: calcula el X% de Y, qué porcentaje es X de Y, el aumento o descuento porcentual y suma o resta un porcentaje. Muestra la fórmula.',
+        'description' => 'Calculadora de porcentajes gratis: el X% de Y, qué porcentaje es X de Y, aumento o descuento porcentual y más. Con la fórmula de cada resultado.',
         'h1' => 'Calculadora de porcentajes',
         'tagline' => 'Todos los cálculos de porcentajes habituales en un solo lugar, con la fórmula.',
         'keywords' => ['calculadora de porcentajes', 'calcular porcentaje', 'porcentaje de aumento', 'calcular descuento', 'qué porcentaje es'],
@@ -334,7 +334,7 @@ return [
     'json-formatter' => [
         'name' => 'Formateador JSON',
         'title' => 'Formateador y validador JSON en línea gratis',
-        'description' => 'Formatea, embellece, valida y minifica JSON en línea gratis. Encuentra errores con la línea y columna exactas. Formateador JSON rápido y privado para desarrolladores.',
+        'description' => 'Formatea, valida y minifica JSON en línea gratis. Encuentra errores con la línea y la columna exactas. Rápido y privado para desarrolladores.',
         'h1' => 'Formateador y validador JSON',
         'tagline' => 'Embellece, valida y minifica JSON con mensajes de error claros.',
         'keywords' => ['formatear json', 'validar json', 'json beautifier', 'formateador json', 'minificar json'],
@@ -366,7 +366,7 @@ return [
     'base64-encoder-decoder' => [
         'name' => 'Codificar / decodificar Base64',
         'title' => 'Codificar y decodificar Base64 en línea: texto y archivos',
-        'description' => 'Codifica texto o archivos en Base64 y decodifica Base64 a texto en línea. Compatible con UTF-8 y Base64 apto para URL. Conversor Base64 gratis, rápido y privado.',
+        'description' => 'Codifica texto o archivos en Base64 y decodifica Base64 a texto en línea. Compatible con UTF-8 y con Base64 para URL. Gratis y privado.',
         'h1' => 'Codificador y decodificador Base64',
         'tagline' => 'Codifica y decodifica texto y archivos en Base64, con UTF-8 y modo apto para URL.',
         'keywords' => ['codificar base64', 'decodificar base64', 'conversor base64', 'base64 a texto', 'imagen a base64'],
@@ -464,7 +464,7 @@ return [
     'coin-flip' => [
         'name' => 'Cara o cruz',
         'title' => 'Cara o cruz: lanza una moneda online gratis',
-        'description' => 'Lanza una moneda online a cara o cruz con una animación 3D realista. Lanza hasta 100 monedas a la vez y sigue los totales y las rachas. Justo, gratis e instantáneo.',
+        'description' => 'Lanza una moneda a cara o cruz online con una animación 3D realista. Lanza hasta 100 monedas a la vez y sigue totales y rachas. Gratis.',
         'h1' => 'Lanzar una moneda',
         'tagline' => '¿Cara o cruz? Lanza una moneda en 3D o hasta 100 a la vez y consulta las estadísticas.',
         'keywords' => ['cara o cruz', 'lanzar moneda', 'tirar una moneda', 'moneda online', 'cara o sello'],
@@ -497,7 +497,7 @@ return [
     'spin-the-wheel' => [
         'name' => 'Ruleta aleatoria',
         'title' => 'Ruleta aleatoria: elige un nombre o una opción al azar',
-        'description' => 'Gira una ruleta para elegir un nombre, un ganador o una opción al azar. Añade hasta 100 opciones, gira con una animación suave y quita a los ganadores sobre la marcha.',
+        'description' => 'Gira una ruleta para elegir un nombre, un ganador o una opción al azar. Hasta 100 opciones, animación suave y ganadores eliminables.',
         'h1' => 'Ruleta aleatoria',
         'tagline' => 'Añade nombres u opciones, gira y deja que la ruleta elija un ganador al azar.',
         'keywords' => ['ruleta aleatoria', 'ruleta de nombres', 'elegir nombre al azar', 'girar la ruleta', 'sorteo aleatorio'],
@@ -563,7 +563,7 @@ return [
     'stopwatch' => [
         'name' => 'Cronómetro',
         'title' => 'Cronómetro online gratis con tiempos de vuelta',
-        'description' => 'Un cronómetro online gratis preciso a la centésima de segundo, con tiempos de vuelta y parciales, vueltas más rápida y más lenta y atajos de teclado. Funciona en cualquier navegador.',
+        'description' => 'Cronómetro online gratis preciso a la centésima de segundo, con tiempos de vuelta y parciales, la vuelta más rápida y atajos de teclado.',
         'h1' => 'Cronómetro online',
         'tagline' => 'Preciso a la centésima de segundo, con vueltas, parciales y atajos de teclado.',
         'keywords' => ['cronómetro', 'cronómetro online', 'cronómetro con vueltas', 'cronómetro gratis', 'medir tiempo'],
@@ -596,7 +596,7 @@ return [
     'countdown-timer' => [
         'name' => 'Temporizador',
         'title' => 'Temporizador online con alarma: cuenta atrás gratis',
-        'description' => 'Pon un temporizador de segundos, minutos u horas con ajustes rápidos en un clic. Suena una alarma al terminar y la pestaña muestra el tiempo restante. Gratis y online.',
+        'description' => 'Temporizador online gratis de segundos, minutos u horas con ajustes rápidos. Suena una alarma al terminar y la pestaña muestra el tiempo.',
         'h1' => 'Temporizador con cuenta atrás',
         'tagline' => 'Pon minutos u horas, o toca un ajuste rápido. Suena una alarma al terminar.',
         'keywords' => ['temporizador', 'temporizador online', 'cuenta atrás', 'temporizador con alarma', 'temporizador 5 minutos'],

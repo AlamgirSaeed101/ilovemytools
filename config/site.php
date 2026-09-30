@@ -16,7 +16,7 @@ return [
 
     'description' => env(
         'SITE_DESCRIPTION',
-        'Free online tools that run in your browser: word counter, PDF merger, image compressor, QR code generator, calculators and developer utilities. No sign up, no uploads.'
+        'Free online tools that run in your browser: word counter, merge PDF, image compressor, QR code generator and calculators. No sign up, no uploads.'
     ),
 
     'contact_email' => env('CONTACT_EMAIL', 'hello@example.com'),

@@ -849,6 +849,12 @@
     ]
   },
   {
+    "key": "Contact the {name} team to report a bug, suggest a new free tool or ask a question. Email us and we usually reply within two business days.",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
     "key": "Contact Us",
     "files": [
       "resources/js/pages/InfoPages.jsx",
@@ -1565,12 +1571,6 @@
     ]
   },
   {
-    "key": "Get in touch with the {name} team to report a bug, suggest a new tool or ask a question.",
-    "files": [
-      "scripts/i18n-extract.mjs"
-    ]
-  },
-  {
     "key": "Go to bed at one of these times:",
     "files": [
       "resources/js/tools/SleepCalculator.jsx"
@@ -1851,6 +1851,7 @@
   {
     "key": "Language",
     "files": [
+      "resources/js/components/Layout.jsx",
       "resources/js/tools/WhatIsMyIp.jsx",
       "resources/views/partials/header.blade.php"
     ]
@@ -1910,7 +1911,7 @@
     ]
   },
   {
-    "key": "Learn about {name}, a collection of free, private online tools that run in your browser with no sign up.",
+    "key": "Learn about {name}: a free collection of fast, private online tools for PDFs, images, text and maths that run in your browser with no sign up.",
     "files": [
       "scripts/i18n-extract.mjs"
     ]
@@ -3406,7 +3407,7 @@
     ]
   },
   {
-    "key": "The terms and conditions for using {name} free online tools.",
+    "key": "The terms of use for {name}: free online tools for personal and commercial use, provided as is. What you can and cannot do on the site.",
     "files": [
       "scripts/i18n-extract.mjs"
     ]

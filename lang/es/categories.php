@@ -3,13 +3,13 @@
 return [
     'text-tools' => [
         'name' => 'Herramientas de texto',
-        'title' => 'Herramientas de texto gratis: contador de palabras y mayúsculas',
-        'description' => 'Herramientas de texto en línea gratis para contar palabras y caracteres, cambiar mayúsculas y minúsculas y pulir tus textos. Resultados al instante, sin registro.',
+        'title' => 'Herramientas de texto gratis: contar palabras y mayúsculas',
+        'description' => 'Herramientas de texto gratis para contar palabras y caracteres y cambiar mayúsculas y minúsculas. Resultados al instante y sin registro.',
         'intro' => 'Cuenta palabras, consulta el tiempo de lectura y convierte mayúsculas y minúsculas al instante. Todo funciona en tu navegador, así que tu texto sigue siendo privado.',
     ],
     'image-tools' => [
         'name' => 'Herramientas de imagen',
-        'title' => 'Herramientas de imagen gratis: comprimir, redimensionar y convertir',
+        'title' => 'Herramientas de imagen gratis: comprimir y redimensionar',
         'description' => 'Comprime, redimensiona y convierte imágenes JPG, PNG y WebP gratis. Las imágenes se procesan en tu navegador y nunca se suben a un servidor.',
         'intro' => 'Reduce el peso de tus imágenes, redimensiona fotos a medidas exactas y convierte entre JPG, PNG y WebP. Tus imágenes nunca salen de tu dispositivo.',
     ],
@@ -34,13 +34,13 @@ return [
     'games' => [
         'name' => 'Azar y juegos',
         'title' => 'Lanzar dados, cara o cruz y ruleta aleatoria gratis',
-        'description' => 'Lanzador de dados, cara o cruz, ruleta para elegir al azar y generador de números aleatorios gratis. Resultados justos y aleatorios con animaciones. Sin registro.',
+        'description' => 'Lanzar dados, cara o cruz, ruleta para sortear y números aleatorios gratis. Resultados justos y aleatorios con animaciones. Sin registro.',
         'intro' => 'Tira dados, lanza una moneda, gira una ruleta o elige números al azar. Cada resultado se genera de forma justa en tu dispositivo con aleatoriedad segura.',
     ],
     'time-tools' => [
         'name' => 'Herramientas de tiempo',
         'title' => 'Herramientas de tiempo gratis: cronómetro y temporizador',
-        'description' => 'Un cronómetro preciso con vueltas y un temporizador con alarma y ajustes rápidos. Gratis, sin registro y con la hora exacta aunque la pestaña esté en segundo plano.',
+        'description' => 'Cronómetro preciso con vueltas y temporizador con alarma y ajustes rápidos. Gratis, sin registro y exactos aunque la pestaña esté oculta.',
         'intro' => 'Un cronómetro preciso con vueltas y un temporizador con alarma. Los dos mantienen la hora exacta aunque la pestaña esté en segundo plano.',
     ],
     'developer-tools' => [

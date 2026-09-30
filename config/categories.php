@@ -41,7 +41,7 @@ return [
         'icon' => 'calculator',
         'accent' => '#059669',
         'title' => 'Free Online Calculators - Age & Percentage Calculator',
-        'description' => 'Free online calculators for age, percentages, percentage change and more. Accurate, instant answers with the working shown.',
+        'description' => 'Free online calculators for age, percentages, percentage change and more. Accurate, instant answers with the formula and working shown for every result.',
         'intro' => 'Quick, accurate calculators for everyday maths: exact age, percentages, increases and decreases.',
     ],
 

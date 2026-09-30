@@ -9,7 +9,7 @@ return [
     ],
     'image-tools' => [
         'name' => 'Strumenti per immagini',
-        'title' => 'Strumenti per immagini gratuiti: comprimi, ridimensiona e converti',
+        'title' => 'Strumenti per immagini gratis: comprimi e ridimensiona',
         'description' => 'Comprimi, ridimensiona e converti gratis immagini JPG, PNG e WebP. Le immagini vengono elaborate nel browser e non vengono mai caricate su un server.',
         'intro' => 'Alleggerisci le immagini, ridimensiona le foto a misure esatte e converti tra JPG, PNG e WebP. Le tue immagini non lasciano mai il dispositivo.',
     ],
@@ -34,7 +34,7 @@ return [
     'games' => [
         'name' => 'Fortuna e giochi',
         'title' => 'Lancio di dadi, testa o croce e ruota della fortuna gratis',
-        'description' => 'Lancio di dadi, testa o croce, ruota per estrazioni casuali e generatore di numeri casuali gratuiti. Risultati equi e casuali con animazioni. Senza registrazione.',
+        'description' => 'Lancio di dadi, testa o croce, ruota per estrazioni e numeri casuali gratis. Risultati equi e casuali con animazioni. Senza registrazione.',
         'intro' => 'Lancia dadi, fai testa o croce, gira una ruota o estrai numeri a caso. Ogni risultato viene generato in modo equo sul tuo dispositivo con casualità sicura.',
     ],
     'time-tools' => [

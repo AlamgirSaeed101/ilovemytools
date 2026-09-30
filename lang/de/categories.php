@@ -4,13 +4,13 @@ return [
     'text-tools' => [
         'name' => 'Text-Tools',
         'title' => 'Kostenlose Text-Tools: Wortzähler und Groß-/Kleinschreibung',
-        'description' => 'Kostenlose Online-Text-Tools zum Zählen von Wörtern und Zeichen, Ändern der Groß- und Kleinschreibung und Überarbeiten deiner Texte. Sofortige Ergebnisse, ohne Anmeldung.',
+        'description' => 'Kostenlose Text-Tools zum Zählen von Wörtern und Zeichen und zum Ändern der Groß- und Kleinschreibung. Sofortige Ergebnisse, ohne Anmeldung.',
         'intro' => 'Zähle Wörter, sieh dir die Lesezeit an und ändere die Schreibweise im Handumdrehen. Alles läuft in deinem Browser, dein Text bleibt also privat.',
     ],
     'image-tools' => [
         'name' => 'Bild-Tools',
-        'title' => 'Kostenlose Bild-Tools: komprimieren, Größe ändern und umwandeln',
-        'description' => 'Komprimiere, skaliere und konvertiere JPG-, PNG- und WebP-Bilder kostenlos. Die Bilder werden in deinem Browser verarbeitet und nie auf einen Server hochgeladen.',
+        'title' => 'Kostenlose Bild-Tools: komprimieren und Größe ändern',
+        'description' => 'Komprimiere, skaliere und konvertiere JPG-, PNG- und WebP-Bilder kostenlos. Alles läuft in deinem Browser, nichts wird hochgeladen.',
         'intro' => 'Verkleinere Bilddateien, bringe Fotos auf exakte Maße und wandle zwischen JPG, PNG und WebP um. Deine Bilder verlassen nie dein Gerät.',
     ],
     'pdf-tools' => [

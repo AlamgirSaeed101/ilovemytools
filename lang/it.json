@@ -10,24 +10,69 @@
     "(line {line}, column {column})": "(riga {line}, colonna {column})",
     "{\"paste\": \"your JSON here\"}": "{\"incolla\": \"il tuo JSON qui\"}",
     "{bits} bits of entropy": "{bits} bit di entropia",
-    "{count} characters": { "one": "{count} carattere", "other": "{count} caratteri" },
-    "{count} cycles": { "one": "{count} ciclo", "other": "{count} cicli" },
-    "{count} days": { "one": "{count} giorno", "other": "{count} giorni" },
-    "{count} files": { "one": "{count} file", "other": "{count} file" },
-    "{count} files skipped because they are larger than 50 MB.": { "one": "{count} file saltato perché supera i 50 MB.", "other": "{count} file saltati perché superano i 50 MB." },
-    "{count} free tools": { "one": "{count} strumento gratuito", "other": "{count} strumenti gratuiti" },
-    "{count} images": { "one": "{count} immagine", "other": "{count} immagini" },
+    "{count} characters": {
+        "one": "{count} carattere",
+        "other": "{count} caratteri"
+    },
+    "{count} cycles": {
+        "one": "{count} ciclo",
+        "other": "{count} cicli"
+    },
+    "{count} days": {
+        "one": "{count} giorno",
+        "other": "{count} giorni"
+    },
+    "{count} files": {
+        "one": "{count} file",
+        "other": "{count} file"
+    },
+    "{count} files skipped because they are larger than 50 MB.": {
+        "one": "{count} file saltato perché supera i 50 MB.",
+        "other": "{count} file saltati perché superano i 50 MB."
+    },
+    "{count} free tools": {
+        "one": "{count} strumento gratuito",
+        "other": "{count} strumenti gratuiti"
+    },
+    "{count} images": {
+        "one": "{count} immagine",
+        "other": "{count} immagini"
+    },
     "{count} modules": "{count} moduli",
     "{count} modules (recommended)": "{count} moduli (consigliato)",
-    "{count} months": { "one": "{count} mese", "other": "{count} mesi" },
-    "{count} numbers": { "one": "{count} numero", "other": "{count} numeri" },
-    "{count} pages": { "one": "{count} pagina", "other": "{count} pagine" },
-    "{count} pages in total": { "one": "{count} pagina in totale", "other": "{count} pagine in totale" },
+    "{count} months": {
+        "one": "{count} mese",
+        "other": "{count} mesi"
+    },
+    "{count} numbers": {
+        "one": "{count} numero",
+        "other": "{count} numeri"
+    },
+    "{count} pages": {
+        "one": "{count} pagina",
+        "other": "{count} pagine"
+    },
+    "{count} pages in total": {
+        "one": "{count} pagina in totale",
+        "other": "{count} pagine in totale"
+    },
     "{count} PDFs in a ZIP file": "{count} PDF in un file ZIP",
-    "{count} tools": { "one": "{count} strumento", "other": "{count} strumenti" },
-    "{count} words": { "one": "{count} parola", "other": "{count} parole" },
-    "{count} years": { "one": "{count} anno", "other": "{count} anni" },
-    "{files} are not PDFs.": { "one": "{files} non è un PDF.", "other": "{files} non sono PDF." },
+    "{count} tools": {
+        "one": "{count} strumento",
+        "other": "{count} strumenti"
+    },
+    "{count} words": {
+        "one": "{count} parola",
+        "other": "{count} parole"
+    },
+    "{count} years": {
+        "one": "{count} anno",
+        "other": "{count} anni"
+    },
+    "{files} are not PDFs.": {
+        "one": "{files} non è un PDF.",
+        "other": "{files} non sono PDF."
+    },
     "{files}: only JPG, PNG and WebP images are supported.": "{files}: sono supportate solo immagini JPG, PNG e WebP.",
     "{h} h": "{h} h",
     "{h} h {m} min": "{h} h {m} min",
@@ -51,7 +96,10 @@
     "0% (no change)": "0% (nessuna variazione)",
     "1 hour": "1 ora",
     "1 PDF": "1 PDF",
-    "1 PDF with {count} pages": { "one": "1 PDF con {count} pagina", "other": "1 PDF con {count} pagine" },
+    "1 PDF with {count} pages": {
+        "one": "1 PDF con {count} pagina",
+        "other": "1 PDF con {count} pagine"
+    },
     "1. Files and text you use in our tools": "1. File e testi che usi nei nostri strumenti",
     "1. Use of the tools": "1. Uso degli strumenti",
     "12 h": "12 h",
@@ -77,7 +125,10 @@
     "A die needs between 2 and 1000 sides.": "Un dado deve avere tra 2 e 1000 facce.",
     "A small margin can make the code hard to scan when printed on a busy background.": "Un margine piccolo può rendere il codice difficile da scansionare se stampato su uno sfondo complesso.",
     "About": "Chi siamo",
-    "about {count} full sleep cycles": { "one": "circa {count} ciclo di sonno completo", "other": "circa {count} cicli di sonno completi" },
+    "about {count} full sleep cycles": {
+        "one": "circa {count} ciclo di sonno completo",
+        "other": "circa {count} cicli di sonno completi"
+    },
     "About {name}": "Informazioni su {name}",
     "About the {name}": "Informazioni su {name}",
     "About Us": "Chi siamo",
@@ -252,7 +303,7 @@
     "Generate between 1 and {max} numbers at a time.": "Genera da 1 a {max} numeri alla volta.",
     "Generate password": "Genera password",
     "Get in touch": "Contattaci",
-    "Get in touch with the {name} team to report a bug, suggest a new tool or ask a question.": "Contatta il team di {name} per segnalare un bug, suggerire un nuovo strumento o fare una domanda.",
+    "Contact the {name} team to report a bug, suggest a new free tool or ask a question. Email us and we usually reply within two business days.": "Contatta il team di {name} per segnalare un bug, suggerire uno strumento o fare una domanda. Di solito rispondiamo entro due giorni lavorativi.",
     "Go to bed at one of these times:": "Vai a letto a uno di questi orari:",
     "Go to bed at…": "Andare a letto alle…",
     "Good": "Buona",
@@ -309,7 +360,7 @@
     "Laps": "Giri",
     "Last flips": "Ultimi lanci",
     "Last updated: {date}": "Ultimo aggiornamento: {date}",
-    "Learn about {name}, a collection of free, private online tools that run in your browser with no sign up.": "Scopri {name}, una raccolta di strumenti online gratuiti e privati che funzionano nel browser senza registrazione.",
+    "Learn about {name}: a free collection of fast, private online tools for PDFs, images, text and maths that run in your browser with no sign up.": "Scopri {name}: una raccolta gratuita di strumenti online veloci e privati per PDF, immagini, testo e calcoli, senza registrazione.",
     "Length:": "Lunghezza:",
     "Light": "Leggero",
     "Light-on-dark QR codes do not scan on some phones. A dark code on a light background is safest.": "Alcuni telefoni non leggono i codici QR chiari su fondo scuro. Un codice scuro su fondo chiaro è la scelta più sicura.",
@@ -460,7 +511,10 @@
     "Result": "Risultato",
     "Resume": "Riprendi",
     "Right in the recommended 7-9 hours for adults.": "Proprio nelle 7-9 ore consigliate per gli adulti.",
-    "Roll {count} dice": { "one": "Lancia {count} dado", "other": "Lancia {count} dadi" },
+    "Roll {count} dice": {
+        "one": "Lancia {count} dado",
+        "other": "Lancia {count} dadi"
+    },
     "Roll between 1 and {max} dice.": "Lancia da 1 a {max} dadi.",
     "Roll history": "Cronologia dei lanci",
     "Rolling…": "Lancio in corso…",
@@ -553,7 +607,7 @@
     "The Site is not directed at children under 13, and we do not knowingly collect personal information from them.": "Il Sito non è rivolto ai minori di 13 anni e non raccogliamo consapevolmente loro informazioni personali.",
     "The Site shows advertisements and may link to third-party websites. We are not responsible for the content or practices of those websites.": "Il Sito mostra pubblicità e può contenere link a siti di terze parti. Non siamo responsabili dei contenuti o delle pratiche di tali siti.",
     "The starting value cannot be 0 - percentage change from 0 is undefined.": "Il valore iniziale non può essere 0: la variazione percentuale da 0 non è definita.",
-    "The terms and conditions for using {name} free online tools.": "I termini e le condizioni d’uso degli strumenti online gratuiti di {name}.",
+    "The terms of use for {name}: free online tools for personal and commercial use, provided as is. What you can and cannot do on the site.": "I termini d’uso di {name}: strumenti online gratuiti per uso personale e commerciale, forniti così come sono. Cosa puoi fare sul sito.",
     "The tools are provided free of charge for personal and commercial use. You are responsible for the files and content you process and for making sure you have the right to use them.": "Gli strumenti sono forniti gratuitamente per uso personale e commerciale. Sei responsabile dei file e dei contenuti che elabori e di assicurarti di avere il diritto di usarli.",
     "The wheel picked": "La ruota ha scelto",
     "There are only {range} different numbers between {min} and {max}, so you cannot pick {count} without duplicates.": "Tra {min} e {max} ci sono solo {range} numeri diversi, quindi non puoi estrarne {count} senza ripetizioni.",
@@ -561,7 +615,10 @@
     "This is not valid Base64: it contains characters outside A-Z, a-z, 0-9, +, / and =.": "Questo non è Base64 valido: contiene caratteri diversi da A-Z, a-z, 0-9, +, / e =.",
     "This is not valid Base64: the length is wrong (it may be cut off).": "Questo non è Base64 valido: la lunghezza è errata (potrebbe essere troncato).",
     "This page could not be loaded. Check your connection and try again.": "Impossibile caricare questa pagina. Controlla la connessione e riprova.",
-    "This PDF only has {count} pages. \"{part}\" is out of range.": { "one": "Questo PDF ha solo {count} pagina. “{part}” è fuori intervallo.", "other": "Questo PDF ha solo {count} pagine. “{part}” è fuori intervallo." },
+    "This PDF only has {count} pages. \"{part}\" is out of range.": {
+        "one": "Questo PDF ha solo {count} pagina. “{part}” è fuori intervallo.",
+        "other": "Questo PDF ha solo {count} pagine. “{part}” è fuori intervallo."
+    },
     "This Privacy Policy explains how {name} (“we”, “us”) handles information when you use {url} (the “Site”). Please also read the section about advertising cookies below.": "Questa Informativa sulla privacy spiega come {name} (“noi”) tratta le informazioni quando usi {url} (il “Sito”). Leggi anche la sezione sui cookie pubblicitari qui sotto.",
     "This tool is not available right now.": "Questo strumento non è disponibile al momento.",
     "This tool needs JavaScript. Please enable JavaScript in your browser settings to use the {name}.": "Questo strumento richiede JavaScript. Attiva JavaScript nelle impostazioni del browser per usare {name}.",

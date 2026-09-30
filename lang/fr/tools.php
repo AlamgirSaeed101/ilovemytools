@@ -4,8 +4,8 @@ return [
 
     'word-counter' => [
         'name' => 'Compteur de mots',
-        'title' => 'Compteur de mots : compter les mots et caractères gratuitement',
-        'description' => 'Compteur de mots en ligne gratuit. Comptez les mots, caractères, phrases et paragraphes instantanément, avec le temps de lecture et la densité des mots-clés. Sans inscription.',
+        'title' => 'Compteur de mots : compter mots et caractères gratuitement',
+        'description' => 'Compteur de mots gratuit : comptez mots, caractères, phrases et paragraphes en direct, avec temps de lecture et mots-clés. Sans inscription.',
         'h1' => 'Compteur de mots',
         'tagline' => 'Comptez les mots, les caractères, les phrases et le temps de lecture instantanément.',
         'keywords' => ['compteur de mots', 'compteur de caractères', 'nombre de mots', 'compter les mots en ligne', 'calcul du temps de lecture'],
@@ -83,7 +83,7 @@ return [
     'password-generator' => [
         'name' => 'Générateur de mots de passe',
         'title' => 'Générateur de mots de passe forts et aléatoires gratuit',
-        'description' => 'Générez des mots de passe forts et aléatoires avec longueur, symboles et chiffres au choix. Créés de façon sécurisée sur votre appareil et jamais envoyés. Gratuit et instantané.',
+        'description' => 'Générez des mots de passe forts et aléatoires : longueur, symboles et chiffres au choix. Créés sur votre appareil, jamais envoyés.',
         'h1' => 'Générateur de mots de passe forts',
         'tagline' => 'Créez des mots de passe sécurisés et aléatoires en un clic, générés sur votre appareil.',
         'keywords' => ['générateur de mot de passe', 'générateur de mot de passe fort', 'mot de passe aléatoire', 'mot de passe sécurisé'],
@@ -121,7 +121,7 @@ return [
     'qr-code-generator' => [
         'name' => 'Générateur de QR code',
         'title' => 'Générateur de QR code gratuit pour URL, Wi-Fi et plus',
-        'description' => 'Créez gratuitement des QR codes pour liens, texte, Wi-Fi, e-mail, téléphone et SMS. Couleurs et tailles personnalisées, téléchargement PNG ou SVG. Sans inscription et sans expiration.',
+        'description' => 'Créez des QR codes gratuits pour liens, texte, Wi-Fi, e-mail, téléphone et SMS. Couleurs et tailles au choix, PNG ou SVG, sans expiration.',
         'h1' => 'Générateur de QR code gratuit',
         'tagline' => 'Créez des QR codes pour liens, Wi-Fi, e-mail, téléphone et SMS. Téléchargez en PNG ou SVG.',
         'keywords' => ['générateur de qr code', 'qr code gratuit', 'qr code wifi', 'créer un qr code', 'qr code pour url'],
@@ -162,7 +162,7 @@ return [
     'image-compressor' => [
         'name' => 'Compresseur d’images',
         'title' => 'Compresseur d’images : compresser JPG, PNG et WebP en ligne',
-        'description' => 'Compressez gratuitement des images JPG, PNG et WebP en ligne. Réduisez une image à 100 Ko ou à toute autre taille sans perte de qualité visible. Les images ne quittent jamais votre appareil.',
+        'description' => 'Compressez des images JPG, PNG et WebP gratuitement. Réduisez une photo à 100 Ko sans perte visible. Rien ne quitte votre appareil.',
         'h1' => 'Compresseur d’images',
         'tagline' => 'Réduisez le poids des fichiers JPG, PNG et WebP, même à une taille précise comme 100 Ko.',
         'keywords' => ['compresseur d’image', 'compresser une image', 'compresser une image à 100 ko', 'réduire la taille d’une image', 'compresser jpg'],
@@ -202,8 +202,8 @@ return [
 
     'image-resizer' => [
         'name' => 'Redimensionner une image',
-        'title' => 'Redimensionner une image : redimensionner et convertir JPG, PNG, WebP',
-        'description' => 'Redimensionnez des images au pixel près ou en pourcentage et convertissez entre JPG, PNG et WebP. Outil gratuit en ligne qui préserve la confidentialité de vos photos.',
+        'title' => 'Redimensionner une image : JPG, PNG, WebP gratuit',
+        'description' => 'Redimensionnez une image au pixel près ou en pourcentage et convertissez JPG, PNG et WebP. Gratuit, en ligne et sans envoyer vos photos.',
         'h1' => 'Redimensionner et convertir une image',
         'tagline' => 'Redimensionnez au pixel près ou en pourcentage, et convertissez JPG, PNG et WebP.',
         'keywords' => ['redimensionner une image', 'changer la taille d’une image', 'png en jpg', 'jpg en png', 'webp en jpg', 'convertisseur d’image'],
@@ -241,8 +241,8 @@ return [
 
     'merge-pdf' => [
         'name' => 'Fusionner des PDF',
-        'title' => 'Fusionner des PDF : combiner des fichiers PDF en ligne gratuitement',
-        'description' => 'Fusionnez gratuitement des fichiers PDF en un seul document en ligne. Réorganisez les fichiers, sans filigrane ni inscription. Les PDF sont combinés dans votre navigateur et jamais envoyés.',
+        'title' => 'Fusionner PDF : combiner des fichiers PDF gratuitement',
+        'description' => 'Fusionnez des fichiers PDF en un seul document, gratuitement. Réorganisez l’ordre, sans filigrane ni inscription. Rien n’est envoyé.',
         'h1' => 'Fusionner des fichiers PDF',
         'tagline' => 'Combinez plusieurs PDF en un seul fichier, sans filigrane et sans envoi.',
         'keywords' => ['fusionner pdf', 'combiner pdf', 'assembler des pdf', 'fusion pdf', 'fusionner pdf en ligne gratuit'],
@@ -280,8 +280,8 @@ return [
 
     'split-pdf' => [
         'name' => 'Diviser un PDF',
-        'title' => 'Diviser un PDF : extraire des pages d’un PDF en ligne gratuitement',
-        'description' => 'Divisez un PDF en plusieurs fichiers ou extrayez des pages précises gratuitement en ligne. Choisissez des plages comme 1-3, 5. Sans envoi, sans filigrane, sans inscription.',
+        'title' => 'Diviser PDF : extraire des pages d’un PDF gratuitement',
+        'description' => 'Divisez un PDF en plusieurs fichiers ou extrayez des pages en ligne. Choisissez des plages comme 1-3, 5. Gratuit, sans envoi ni filigrane.',
         'h1' => 'Diviser un PDF et extraire des pages',
         'tagline' => 'Extrayez des pages ou divisez un PDF en fichiers séparés, en toute confidentialité dans votre navigateur.',
         'keywords' => ['diviser pdf', 'extraire des pages pdf', 'séparer les pages d’un pdf', 'découper un pdf', 'diviser pdf en ligne'],
@@ -315,8 +315,8 @@ return [
 
     'age-calculator' => [
         'name' => 'Calculateur d’âge',
-        'title' => 'Calculateur d’âge : calculer l’âge exact depuis la date de naissance',
-        'description' => 'Calculez votre âge exact en années, mois et jours à partir de votre date de naissance. Voyez le nombre de jours vécus et le compte à rebours jusqu’à votre prochain anniversaire. Gratuit et instantané.',
+        'title' => 'Calcul d’âge : âge exact depuis la date de naissance',
+        'description' => 'Calculez votre âge exact en années, mois et jours depuis votre date de naissance, avec les jours vécus et le compte à rebours d’anniversaire.',
         'h1' => 'Calculateur d’âge',
         'tagline' => 'Trouvez votre âge exact en années, mois et jours, et votre prochain anniversaire.',
         'keywords' => ['calculateur d’âge', 'calculer son âge', 'calcul date de naissance', 'quel âge ai-je', 'calcul âge avec date de naissance'],
@@ -349,8 +349,8 @@ return [
 
     'percentage-calculator' => [
         'name' => 'Calculateur de pourcentage',
-        'title' => 'Calculateur de pourcentage : pourcentage, variation et hausse',
-        'description' => 'Calculateur de pourcentage gratuit : trouvez X % de Y, quel pourcentage X représente de Y, une hausse ou baisse en pourcentage, et ajoutez ou retirez un pourcentage. Formule affichée.',
+        'title' => 'Calcul de pourcentage : pourcentage, variation, hausse',
+        'description' => 'Calcul de pourcentage gratuit : X % de Y, quel pourcentage X représente de Y, hausse ou baisse en pourcentage et plus. Formule affichée.',
         'h1' => 'Calculateur de pourcentage',
         'tagline' => 'Tous les calculs de pourcentage courants au même endroit, avec la formule.',
         'keywords' => ['calcul pourcentage', 'calculateur de pourcentage', 'calcul de variation en pourcentage', 'calcul augmentation pourcentage', 'quel pourcentage de'],
@@ -385,7 +385,7 @@ return [
     'json-formatter' => [
         'name' => 'Formateur JSON',
         'title' => 'Formateur et validateur JSON : embellir du JSON en ligne',
-        'description' => 'Formatez, embellissez, validez et minifiez du JSON en ligne gratuitement. Trouve les erreurs avec la ligne et la colonne exactes. Formateur JSON rapide et privé pour développeurs.',
+        'description' => 'Formatez, validez et minifiez du JSON en ligne gratuitement. Erreurs indiquées à la ligne et à la colonne près. Rapide et privé, sans envoi.',
         'h1' => 'Formateur et validateur JSON',
         'tagline' => 'Embellissez, validez et minifiez du JSON avec des messages d’erreur clairs.',
         'keywords' => ['formateur json', 'validateur json', 'embellir json', 'formater json', 'minifier json'],
@@ -420,7 +420,7 @@ return [
     'base64-encoder-decoder' => [
         'name' => 'Encoder / décoder Base64',
         'title' => 'Encoder et décoder du Base64 en ligne : texte et fichiers',
-        'description' => 'Encodez du texte ou des fichiers en Base64 et décodez du Base64 en texte en ligne. Prise en charge complète de l’UTF-8 et du Base64 compatible URL. Convertisseur gratuit, rapide et privé.',
+        'description' => 'Encodez du texte ou des fichiers en Base64 et décodez le Base64 en texte. UTF-8 et Base64 compatible URL. Gratuit, rapide et privé.',
         'h1' => 'Encodeur et décodeur Base64',
         'tagline' => 'Encodez et décodez du texte et des fichiers en Base64, avec UTF-8 et variante compatible URL.',
         'keywords' => ['encoder base64', 'décoder base64', 'convertisseur base64', 'base64 en texte', 'image en base64'],
@@ -454,8 +454,8 @@ return [
 
     'what-is-my-ip' => [
         'name' => 'Quelle est mon IP',
-        'title' => 'Quelle est mon adresse IP ? Voir son IP publique instantanément',
-        'description' => 'Voyez instantanément votre adresse IP publique, si elle est en IPv4 ou IPv6, ainsi que votre navigateur, système, taille d’écran et fuseau horaire. Recherche d’IP gratuite.',
+        'title' => 'Quelle est mon adresse IP ? Voir mon IP publique',
+        'description' => 'Voyez votre adresse IP publique, en IPv4 ou IPv6, ainsi que votre navigateur, système, écran et fuseau horaire. Recherche d’IP gratuite.',
         'h1' => 'Quelle est mon adresse IP ?',
         'tagline' => 'Votre adresse IP publique et les détails de votre navigateur, instantanément.',
         'keywords' => ['quelle est mon ip', 'mon adresse ip', 'recherche adresse ip', 'vérifier mon ip', 'quelle est mon adresse ip'],
@@ -493,7 +493,7 @@ return [
     'dice-roller' => [
         'name' => 'Lanceur de dés',
         'title' => 'Lanceur de dés : lancer des dés virtuels en ligne (D6, D20…)',
-        'description' => 'Lancez de 1 à 10 dés virtuels en ligne : D4, D6, D8, D10, D12, D20 ou D100. Résultats équitables et aléatoires avec animation 3D, total et historique. Gratuit.',
+        'description' => 'Lancez de 1 à 10 dés virtuels en ligne : D4, D6, D8, D10, D12, D20 ou D100. Résultats équitables, animation 3D, total et historique.',
         'h1' => 'Lanceur de dés',
         'tagline' => 'Lancez jusqu’à 10 dés, du D4 au D100, avec animation 3D et total.',
         'keywords' => ['lancer de dés', 'lancer des dés en ligne', 'dés virtuels', 'lanceur d20', 'dé aléatoire'],
@@ -533,7 +533,7 @@ return [
     'coin-flip' => [
         'name' => 'Pile ou face',
         'title' => 'Pile ou face : lancer une pièce en ligne',
-        'description' => 'Jouez à pile ou face en ligne avec une animation 3D réaliste. Lancez jusqu’à 100 pièces à la fois et suivez totaux et séries. Équitable, gratuit et instantané.',
+        'description' => 'Jouez à pile ou face en ligne avec une animation 3D réaliste. Lancez jusqu’à 100 pièces à la fois et suivez totaux et séries. Gratuit.',
         'h1' => 'Pile ou face',
         'tagline' => 'Pile ou face ? Lancez une pièce en 3D, ou jusqu’à 100 à la fois, et voyez les stats.',
         'keywords' => ['pile ou face', 'lancer une pièce', 'pile ou face en ligne', 'tirage pile ou face', 'pièce virtuelle'],
@@ -572,7 +572,7 @@ return [
     'spin-the-wheel' => [
         'name' => 'Roue aléatoire',
         'title' => 'Roue aléatoire : tirage au sort de noms et de choix',
-        'description' => 'Faites tourner une roue pour tirer au sort un nom, un gagnant ou un choix. Ajoutez jusqu’à 100 entrées, animation fluide et retrait des gagnants au fur et à mesure. Roue gratuite.',
+        'description' => 'Faites tourner une roue pour tirer au sort un nom, un gagnant ou un choix. Jusqu’à 100 entrées, animation fluide et retrait des gagnants.',
         'h1' => 'Roue aléatoire',
         'tagline' => 'Ajoutez des noms ou des choix, faites tourner et laissez la roue désigner un gagnant.',
         'keywords' => ['roue aléatoire', 'roue de la fortune en ligne', 'tirage au sort de noms', 'roue des prénoms', 'choix aléatoire'],
@@ -610,8 +610,8 @@ return [
 
     'random-number-generator' => [
         'name' => 'Générateur de nombres aléatoires',
-        'title' => 'Générateur de nombres aléatoires : tirer des nombres dans n’importe quelle plage',
-        'description' => 'Générez des nombres aléatoires dans n’importe quelle plage, un seul ou des centaines à la fois, avec ou sans doublons. Idéal pour tombolas, loto et jeux. Gratuit et instantané.',
+        'title' => 'Générateur de nombres aléatoires dans toute plage',
+        'description' => 'Générez des nombres aléatoires dans n’importe quelle plage, un ou des centaines, avec ou sans doublons. Idéal pour tombolas et loto.',
         'h1' => 'Générateur de nombres aléatoires',
         'tagline' => 'Tirez des nombres au hasard dans n’importe quelle plage, sans doublons si besoin.',
         'keywords' => ['générateur de nombres aléatoires', 'nombre aléatoire', 'tirage de nombres', 'tirer un nombre au hasard', 'générateur de numéros de loto'],
@@ -650,7 +650,7 @@ return [
     'stopwatch' => [
         'name' => 'Chronomètre',
         'title' => 'Chronomètre en ligne gratuit avec temps au tour',
-        'description' => 'Un chronomètre en ligne gratuit précis au centième de seconde, avec temps au tour et temps intermédiaires, tours le plus rapide et le plus lent, et raccourcis clavier. Fonctionne dans tout navigateur.',
+        'description' => 'Chronomètre en ligne gratuit précis au centième de seconde, avec temps au tour, temps intermédiaires, meilleur tour et raccourcis clavier.',
         'h1' => 'Chronomètre en ligne',
         'tagline' => 'Précis au centième de seconde, avec tours, temps intermédiaires et raccourcis clavier.',
         'keywords' => ['chronomètre', 'chronomètre en ligne', 'chronomètre avec tours', 'chrono', 'chronomètre tours'],
@@ -689,7 +689,7 @@ return [
     'countdown-timer' => [
         'name' => 'Minuteur',
         'title' => 'Minuteur en ligne : compte à rebours avec alarme',
-        'description' => 'Réglez un minuteur en secondes, minutes ou heures avec des préréglages en un clic. Une alarme sonne à la fin et le titre de l’onglet affiche le temps restant. Gratuit en ligne.',
+        'description' => 'Minuteur en ligne gratuit en secondes, minutes ou heures avec préréglages. Une alarme sonne à la fin et l’onglet affiche le temps restant.',
         'h1' => 'Minuteur',
         'tagline' => 'Réglez des minutes ou des heures, ou touchez un préréglage. Une alarme sonne à la fin.',
         'keywords' => ['minuteur', 'minuteur en ligne', 'minuteur avec alarme', 'minuteur 5 minutes', 'compte à rebours'],
@@ -727,8 +727,8 @@ return [
 
     'sleep-calculator' => [
         'name' => 'Calculateur de sommeil',
-        'title' => 'Calculateur de sommeil : meilleure heure pour dormir et se réveiller',
-        'description' => 'Trouvez la meilleure heure de coucher ou de réveil selon les cycles de sommeil de 90 minutes, ou comptez vos heures de sommeil. Réveillez-vous reposé, pas groggy. Gratuit et instantané.',
+        'title' => 'Calcul du sommeil : meilleure heure de coucher et de réveil',
+        'description' => 'Trouvez la meilleure heure de coucher ou de réveil selon les cycles de 90 minutes, ou comptez vos heures de sommeil. Réveil en forme.',
         'h1' => 'Calculateur de sommeil',
         'tagline' => 'Trouvez la meilleure heure de coucher ou de réveil, et comptez vos heures de sommeil.',
         'keywords' => ['calculateur de sommeil', 'compteur de sommeil', 'heure de coucher', 'calcul cycles de sommeil', 'à quelle heure me coucher', 'heures de sommeil'],

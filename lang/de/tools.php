@@ -44,7 +44,7 @@ return [
 
     'case-converter' => [
         'name' => 'Groß-/Kleinschreibung umwandeln',
-        'title' => 'Groß- und Kleinschreibung umwandeln: Großbuchstaben, Kleinbuchstaben, Titel',
+        'title' => 'Groß-/Kleinschreibung umwandeln: Groß, klein, Titel',
         'description' => 'Wandle Text in GROSSBUCHSTABEN, kleinbuchstaben, Titelschreibung, Satzanfang groß, camelCase, snake_case und mehr um. Kostenlos, sofort und privat.',
         'h1' => 'Groß-/Kleinschreibung umwandeln',
         'tagline' => 'Ändere Text mit einem Klick in Groß-, Klein-, Titel-, Satz-, Camel- oder Snake-Schreibweise.',
@@ -120,8 +120,8 @@ return [
 
     'qr-code-generator' => [
         'name' => 'QR-Code-Generator',
-        'title' => 'QR-Code-Generator: kostenlose QR-Codes für URL, WLAN und mehr',
-        'description' => 'Erstelle kostenlose QR-Codes für Links, Text, WLAN, E-Mail, Telefon und SMS. Eigene Farben und Größen, Download als PNG oder SVG. Ohne Anmeldung, Codes laufen nie ab.',
+        'title' => 'QR-Code-Generator: kostenlose QR-Codes für URL und WLAN',
+        'description' => 'Erstelle kostenlose QR-Codes für Links, Text, WLAN, E-Mail, Telefon und SMS. Eigene Farben und Größen, PNG oder SVG. Laufen nie ab.',
         'h1' => 'Kostenloser QR-Code-Generator',
         'tagline' => 'Erstelle QR-Codes für Links, WLAN, E-Mail, Telefon und SMS. Download als PNG oder SVG.',
         'keywords' => ['qr code generator', 'qr code kostenlos erstellen', 'wlan qr code', 'qr code erstellen', 'qr code für url'],
@@ -162,7 +162,7 @@ return [
     'image-compressor' => [
         'name' => 'Bild komprimieren',
         'title' => 'Bild komprimieren: JPG, PNG und WebP online verkleinern',
-        'description' => 'Komprimiere JPG-, PNG- und WebP-Bilder kostenlos online. Verkleinere Bilder auf 100 KB oder jede Zielgröße ohne sichtbaren Qualitätsverlust. Die Bilder verlassen nie dein Gerät.',
+        'description' => 'Komprimiere JPG-, PNG- und WebP-Bilder kostenlos. Verkleinere Fotos auf 100 KB ohne sichtbaren Qualitätsverlust. Nichts verlässt dein Gerät.',
         'h1' => 'Bild komprimieren',
         'tagline' => 'Verkleinere JPG-, PNG- und WebP-Dateien – sogar auf eine exakte Größe wie 100 KB.',
         'keywords' => ['bild komprimieren', 'bild verkleinern', 'bild auf 100kb komprimieren', 'bildgröße reduzieren', 'jpg komprimieren'],
@@ -242,7 +242,7 @@ return [
     'merge-pdf' => [
         'name' => 'PDF zusammenfügen',
         'title' => 'PDF zusammenfügen: PDF-Dateien online kostenlos kombinieren',
-        'description' => 'Füge PDF-Dateien online kostenlos zu einem Dokument zusammen. Reihenfolge ändern, ohne Wasserzeichen, ohne Anmeldung. PDFs werden im Browser kombiniert und nie hochgeladen.',
+        'description' => 'Füge PDF-Dateien kostenlos zu einem Dokument zusammen. Reihenfolge ändern, ohne Wasserzeichen und Anmeldung. Nichts wird hochgeladen.',
         'h1' => 'PDF-Dateien zusammenfügen',
         'tagline' => 'Mehrere PDFs zu einer Datei kombinieren – ohne Wasserzeichen, ohne Upload.',
         'keywords' => ['pdf zusammenfügen', 'pdf kombinieren', 'pdf dateien zusammenführen', 'pdf merger', 'pdf zusammenfügen kostenlos online'],
@@ -281,7 +281,7 @@ return [
     'split-pdf' => [
         'name' => 'PDF teilen',
         'title' => 'PDF teilen: Seiten aus PDF online kostenlos extrahieren',
-        'description' => 'Teile ein PDF in separate Dateien oder extrahiere bestimmte Seiten kostenlos online. Wähle Bereiche wie 1-3, 5. Ohne Upload, ohne Wasserzeichen, ohne Anmeldung.',
+        'description' => 'Teile ein PDF in separate Dateien oder extrahiere Seiten kostenlos online. Bereiche wie 1-3, 5 wählen. Ohne Upload und ohne Wasserzeichen.',
         'h1' => 'PDF teilen & Seiten extrahieren',
         'tagline' => 'Seiten extrahieren oder ein PDF in separate Dateien teilen – privat in deinem Browser.',
         'keywords' => ['pdf teilen', 'seiten aus pdf extrahieren', 'pdf seiten trennen', 'pdf splitter', 'pdf online teilen'],
@@ -316,7 +316,7 @@ return [
     'age-calculator' => [
         'name' => 'Altersrechner',
         'title' => 'Altersrechner: genaues Alter aus dem Geburtsdatum berechnen',
-        'description' => 'Berechne dein genaues Alter in Jahren, Monaten und Tagen aus deinem Geburtsdatum. Sieh die Gesamtzahl gelebter Tage und einen Countdown bis zum nächsten Geburtstag. Kostenlos und sofort.',
+        'description' => 'Berechne dein genaues Alter in Jahren, Monaten und Tagen aus dem Geburtsdatum, mit gelebten Tagen und Countdown zum nächsten Geburtstag.',
         'h1' => 'Altersrechner',
         'tagline' => 'Finde dein genaues Alter in Jahren, Monaten und Tagen – plus deinen nächsten Geburtstag.',
         'keywords' => ['altersrechner', 'alter berechnen', 'geburtsdatum rechner', 'wie alt bin ich', 'alter berechnen mit geburtsdatum'],
@@ -385,7 +385,7 @@ return [
     'json-formatter' => [
         'name' => 'JSON-Formatierer',
         'title' => 'JSON-Formatierer & Validator: JSON online verschönern',
-        'description' => 'JSON online kostenlos formatieren, verschönern, validieren und minifizieren. Findet Fehler mit exakter Zeilen- und Spaltennummer. Schneller, privater JSON-Formatierer für Entwickler.',
+        'description' => 'JSON online kostenlos formatieren, validieren und minifizieren. Fehler mit exakter Zeile und Spalte. Schnell und privat für Entwickler.',
         'h1' => 'JSON-Formatierer & Validator',
         'tagline' => 'JSON verschönern, validieren und minifizieren – mit klaren Fehlermeldungen.',
         'keywords' => ['json formatierer', 'json validator', 'json beautifier', 'json formatieren', 'json minifizieren'],
@@ -420,7 +420,7 @@ return [
     'base64-encoder-decoder' => [
         'name' => 'Base64 kodieren / dekodieren',
         'title' => 'Base64 online kodieren und dekodieren: Text und Dateien',
-        'description' => 'Kodiere Text oder Dateien online in Base64 und dekodiere Base64 zurück in Text. Volle UTF-8- und URL-sichere Unterstützung. Kostenloser, schneller und privater Base64-Konverter.',
+        'description' => 'Kodiere Text oder Dateien in Base64 und dekodiere Base64 zurück in Text. Mit UTF-8 und URL-sicherer Variante. Kostenlos und privat.',
         'h1' => 'Base64-Kodierer & -Dekodierer',
         'tagline' => 'Base64-Text und -Dateien kodieren und dekodieren, mit UTF-8 und URL-sicherer Variante.',
         'keywords' => ['base64 kodieren', 'base64 dekodieren', 'base64 konverter', 'base64 in text', 'bild in base64'],
@@ -533,7 +533,7 @@ return [
     'coin-flip' => [
         'name' => 'Münzwurf',
         'title' => 'Münzwurf: Kopf oder Zahl online werfen',
-        'description' => 'Wirf online eine Münze für Kopf oder Zahl mit realistischer 3D-Animation. Wirf bis zu 100 Münzen auf einmal und verfolge Summen und Serien. Fair, kostenlos und sofort.',
+        'description' => 'Wirf online eine Münze für Kopf oder Zahl mit realistischer 3D-Animation. Bis zu 100 Münzen auf einmal, mit Summen und Serien. Kostenlos.',
         'h1' => 'Münze werfen',
         'tagline' => 'Kopf oder Zahl? Wirf eine 3D-Münze oder bis zu 100 auf einmal und sieh die Statistik.',
         'keywords' => ['münzwurf', 'münze werfen', 'kopf oder zahl', 'münze werfen online', 'virtuelle münze'],
@@ -572,7 +572,7 @@ return [
     'spin-the-wheel' => [
         'name' => 'Glücksrad',
         'title' => 'Glücksrad: zufällig Namen und Optionen auslosen',
-        'description' => 'Dreh ein Glücksrad, um einen zufälligen Namen, Gewinner oder eine Option auszulosen. Bis zu 100 Einträge, flüssige Animation und Gewinner entfernen. Kostenloses Glücksrad.',
+        'description' => 'Dreh ein Glücksrad und lose einen Namen, Gewinner oder eine Option aus. Bis zu 100 Einträge, flüssige Animation, Gewinner entfernen.',
         'h1' => 'Glücksrad',
         'tagline' => 'Namen oder Optionen eintragen, drehen und das Rad einen zufälligen Gewinner wählen lassen.',
         'keywords' => ['glücksrad', 'glücksrad online', 'namen auslosen', 'namensrad', 'zufallsauswahl'],
@@ -650,7 +650,7 @@ return [
     'stopwatch' => [
         'name' => 'Stoppuhr',
         'title' => 'Online-Stoppuhr: kostenlose Stoppuhr mit Rundenzeiten',
-        'description' => 'Eine kostenlose Online-Stoppuhr, genau auf 1/100 Sekunde, mit Runden- und Zwischenzeiten, schnellster und langsamster Runde und Tastenkürzeln. Funktioniert in jedem Browser.',
+        'description' => 'Kostenlose Online-Stoppuhr, genau auf 1/100 Sekunde, mit Runden- und Zwischenzeiten, schnellster und langsamster Runde und Tastenkürzeln.',
         'h1' => 'Online-Stoppuhr',
         'tagline' => 'Genau auf 1/100 Sekunde, mit Runden, Zwischenzeiten und Tastenkürzeln.',
         'keywords' => ['stoppuhr', 'online stoppuhr', 'stoppuhr mit runden', 'timer', 'rundenzeit'],
@@ -689,7 +689,7 @@ return [
     'countdown-timer' => [
         'name' => 'Countdown-Timer',
         'title' => 'Countdown-Timer: Online-Timer mit Alarm',
-        'description' => 'Stelle einen Countdown-Timer für Sekunden, Minuten oder Stunden mit Vorgaben per Klick. Ein Alarm ertönt, wenn die Zeit um ist, und der Tab-Titel zeigt die Restzeit. Kostenlos online.',
+        'description' => 'Countdown-Timer für Sekunden, Minuten oder Stunden mit Vorgaben per Klick. Ein Alarm ertönt am Ende, der Tab zeigt die Restzeit. Kostenlos.',
         'h1' => 'Countdown-Timer',
         'tagline' => 'Minuten oder Stunden einstellen oder eine Vorgabe antippen. Ein Alarm ertönt, wenn die Zeit um ist.',
         'keywords' => ['countdown timer', 'online timer', 'timer mit alarm', '5 minuten timer', 'timer stellen'],
@@ -728,7 +728,7 @@ return [
     'sleep-calculator' => [
         'name' => 'Schlafrechner',
         'title' => 'Schlafrechner: beste Zeit zum Schlafen und Aufwachen',
-        'description' => 'Finde die beste Zeit zum Schlafengehen oder Aufwachen anhand von 90-minütigen Schlafzyklen oder zähle, wie viele Stunden du geschlafen hast. Wach erholt auf statt benommen. Kostenlos und sofort.',
+        'description' => 'Finde die beste Zeit zum Schlafengehen oder Aufwachen nach 90-Minuten-Schlafzyklen oder zähle deine Schlafstunden. Erholt aufwachen.',
         'h1' => 'Schlafrechner',
         'tagline' => 'Finde die beste Schlafens- oder Aufwachzeit und zähle deine geschlafenen Stunden.',
         'keywords' => ['schlafrechner', 'schlafzähler', 'wann schlafen gehen', 'schlafzyklus rechner', 'wann sollte ich ins bett gehen', 'stunden schlaf'],

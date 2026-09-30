@@ -3,13 +3,13 @@
 return [
     'text-tools' => [
         'name' => 'Ferramentas de texto',
-        'title' => 'Ferramentas de texto grátis: contador de palavras e maiúsculas',
+        'title' => 'Ferramentas de texto grátis: contar palavras e maiúsculas',
         'description' => 'Ferramentas de texto online grátis para contar palavras e caracteres, trocar maiúsculas e minúsculas e revisar seus textos. Resultados na hora, sem cadastro.',
         'intro' => 'Conte palavras, veja o tempo de leitura e converta maiúsculas e minúsculas na hora. Tudo funciona no seu navegador, então seu texto continua privado.',
     ],
     'image-tools' => [
         'name' => 'Ferramentas de imagem',
-        'title' => 'Ferramentas de imagem grátis: comprimir, redimensionar e converter',
+        'title' => 'Ferramentas de imagem grátis: comprimir e redimensionar',
         'description' => 'Comprima, redimensione e converta imagens JPG, PNG e WebP de graça. As imagens são processadas no seu navegador e nunca são enviadas a um servidor.',
         'intro' => 'Deixe suas imagens mais leves, redimensione fotos para medidas exatas e converta entre JPG, PNG e WebP. Suas imagens nunca saem do seu dispositivo.',
     ],
@@ -22,7 +22,7 @@ return [
     'calculators' => [
         'name' => 'Calculadoras',
         'title' => 'Calculadoras online grátis: idade e porcentagem',
-        'description' => 'Calculadoras online grátis de idade, porcentagem, variação percentual e mais. Respostas exatas na hora, com o cálculo explicado.',
+        'description' => 'Calculadoras online grátis de idade, porcentagem, variação percentual e mais. Respostas exatas na hora, com a fórmula e o cálculo explicados.',
         'intro' => 'Calculadoras rápidas e precisas para as contas do dia a dia: idade exata, porcentagens, aumentos e descontos.',
     ],
     'generators' => [

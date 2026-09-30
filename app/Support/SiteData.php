@@ -11,10 +11,10 @@ class SiteData
 {
     /** Legal / info pages: [title, meta description] (English; translated with Locale::t). */
     public const PAGES = [
-        'about' => ['About Us', 'Learn about {name}, a collection of free, private online tools that run in your browser with no sign up.'],
-        'contact' => ['Contact Us', 'Get in touch with the {name} team to report a bug, suggest a new tool or ask a question.'],
+        'about' => ['About Us', 'Learn about {name}: a free collection of fast, private online tools for PDFs, images, text and maths that run in your browser with no sign up.'],
+        'contact' => ['Contact Us', 'Contact the {name} team to report a bug, suggest a new free tool or ask a question. Email us and we usually reply within two business days.'],
         'privacy' => ['Privacy Policy', 'How {name} handles your data, cookies and advertising. Files and text you use in our tools are processed in your browser.'],
-        'terms' => ['Terms of Use', 'The terms and conditions for using {name} free online tools.'],
+        'terms' => ['Terms of Use', 'The terms of use for {name}: free online tools for personal and commercial use, provided as is. What you can and cannot do on the site.'],
     ];
 
     /** URL path of each info page. */

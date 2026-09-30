@@ -178,7 +178,7 @@ class Seo
         return $path === '/' ? $base.'/' : $base.$path;
     }
 
-    /** Append the brand only when the result still fits Google's ~60-65 char display. */
+    /** Append the brand only when the whole title still fits in the ~60 characters Google shows. */
     public static function fullTitle(string $title): string
     {
         $brand = (string) config('site.name');
@@ -188,7 +188,7 @@ class Seo
 
         $withBrand = $title.' | '.$brand;
 
-        return mb_strlen($withBrand) <= 65 ? $withBrand : $title;
+        return mb_strlen($withBrand) <= 60 ? $withBrand : $title;
     }
 
     public static function limit(string $text, int $max): string

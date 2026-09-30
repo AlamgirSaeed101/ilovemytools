@@ -5,7 +5,7 @@ return [
     'word-counter' => [
         'name' => 'Contaparole',
         'title' => 'Contaparole: conta parole e caratteri online gratis',
-        'description' => 'Contaparole online gratuito. Conta subito parole, caratteri, frasi e paragrafi e visualizza tempo di lettura e densità delle parole chiave. Senza registrazione.',
+        'description' => 'Contaparole online gratuito. Conta subito parole, caratteri, frasi e paragrafi e vedi tempo di lettura e parole chiave. Senza registrazione.',
         'h1' => 'Contaparole',
         'tagline' => 'Conta subito parole, caratteri, frasi e tempo di lettura.',
         'keywords' => ['contaparole', 'conta caratteri', 'contare parole', 'contare parole online', 'calcolo tempo di lettura'],
@@ -44,8 +44,8 @@ return [
 
     'case-converter' => [
         'name' => 'Convertitore maiuscole/minuscole',
-        'title' => 'Convertitore maiuscole e minuscole: maiuscolo, minuscolo e iniziali',
-        'description' => 'Converti il testo in MAIUSCOLO, minuscolo, Iniziali Maiuscole, maiuscola iniziale, camelCase, snake_case e altro. Convertitore online gratuito, immediato e privato.',
+        'title' => 'Convertitore maiuscole e minuscole online gratis',
+        'description' => 'Converti il testo in MAIUSCOLO, minuscolo, Iniziali Maiuscole, camelCase, snake_case e altro. Convertitore gratuito, immediato e privato.',
         'h1' => 'Convertitore maiuscole/minuscole',
         'tagline' => 'Cambia il testo in maiuscolo, minuscolo, iniziali, frase, camel o snake case con un clic.',
         'keywords' => ['convertitore maiuscole minuscole', 'da maiuscolo a minuscolo', 'iniziali maiuscole', 'maiuscola iniziale', 'convertitore camelcase'],
@@ -121,7 +121,7 @@ return [
     'qr-code-generator' => [
         'name' => 'Generatore di codici QR',
         'title' => 'Generatore di codici QR gratis per URL, Wi-Fi e altro',
-        'description' => 'Crea gratis codici QR per link, testo, Wi-Fi, email, telefono e SMS. Colori e dimensioni personalizzati, download PNG o SVG. Senza registrazione e i codici non scadono mai.',
+        'description' => 'Crea codici QR gratis per link, testo, Wi-Fi, email, telefono e SMS. Colori e dimensioni a scelta, PNG o SVG. I codici non scadono mai.',
         'h1' => 'Generatore di codici QR gratuito',
         'tagline' => 'Crea codici QR per link, Wi-Fi, email, telefono e SMS. Scarica in PNG o SVG.',
         'keywords' => ['generatore codici qr', 'codice qr gratis', 'codice qr wifi', 'creare codice qr', 'codice qr per url'],
@@ -162,7 +162,7 @@ return [
     'image-compressor' => [
         'name' => 'Compressore di immagini',
         'title' => 'Compressore di immagini: comprimi JPG, PNG e WebP online',
-        'description' => 'Comprimi gratis immagini JPG, PNG e WebP online. Riduci un’immagine a 100 KB o a qualsiasi dimensione senza perdita di qualità visibile. Le immagini non lasciano mai il tuo dispositivo.',
+        'description' => 'Comprimi immagini JPG, PNG e WebP gratis. Riduci una foto a 100 KB senza perdita di qualità visibile. Nulla lascia il tuo dispositivo.',
         'h1' => 'Compressore di immagini',
         'tagline' => 'Riduci il peso di file JPG, PNG e WebP, anche a una dimensione precisa come 100 KB.',
         'keywords' => ['compressore immagini', 'comprimere immagine', 'comprimere immagine a 100kb', 'ridurre dimensione immagine', 'comprimere jpg'],
@@ -202,7 +202,7 @@ return [
 
     'image-resizer' => [
         'name' => 'Ridimensiona immagine',
-        'title' => 'Ridimensiona immagine: ridimensiona e converti JPG, PNG, WebP gratis',
+        'title' => 'Ridimensiona immagine: JPG, PNG e WebP online gratis',
         'description' => 'Ridimensiona immagini a pixel esatti o in percentuale e converti tra JPG, PNG e WebP. Strumento online gratuito che mantiene private le tue foto.',
         'h1' => 'Ridimensiona e converti immagini',
         'tagline' => 'Ridimensiona a pixel esatti o in percentuale e converti JPG, PNG e WebP.',
@@ -242,7 +242,7 @@ return [
     'merge-pdf' => [
         'name' => 'Unisci PDF',
         'title' => 'Unisci PDF: combina file PDF online gratis',
-        'description' => 'Unisci gratis file PDF in un unico documento online. Riordina i file, senza filigrana e senza registrazione. I PDF vengono combinati nel browser e mai caricati.',
+        'description' => 'Unisci file PDF in un unico documento online e gratis. Riordina i file, senza filigrana e senza registrazione. Nulla viene caricato.',
         'h1' => 'Unisci file PDF',
         'tagline' => 'Combina più PDF in un solo file, senza filigrana e senza caricamenti.',
         'keywords' => ['unire pdf', 'unisci pdf', 'combinare pdf', 'unire file pdf', 'unire pdf online gratis'],
@@ -281,7 +281,7 @@ return [
     'split-pdf' => [
         'name' => 'Dividi PDF',
         'title' => 'Dividi PDF: estrai pagine da un PDF online gratis',
-        'description' => 'Dividi un PDF in file separati o estrai pagine specifiche online gratis. Seleziona intervalli come 1-3, 5. Senza caricamenti, senza filigrana, senza registrazione.',
+        'description' => 'Dividi un PDF in file separati o estrai pagine online gratis. Scegli intervalli come 1-3, 5. Senza caricamenti, filigrane né registrazione.',
         'h1' => 'Dividi PDF ed estrai pagine',
         'tagline' => 'Estrai pagine o dividi un PDF in file separati, in privato nel tuo browser.',
         'keywords' => ['dividere pdf', 'estrarre pagine pdf', 'separare pagine pdf', 'dividi pdf', 'dividere pdf online'],
@@ -315,8 +315,8 @@ return [
 
     'age-calculator' => [
         'name' => 'Calcolatore di età',
-        'title' => 'Calcolatore di età: calcola l’età esatta dalla data di nascita',
-        'description' => 'Calcola la tua età esatta in anni, mesi e giorni dalla data di nascita. Vedi i giorni vissuti in totale e il conto alla rovescia per il prossimo compleanno. Gratis e immediato.',
+        'title' => 'Calcolatore di età: età esatta dalla data di nascita',
+        'description' => 'Calcola la tua età esatta in anni, mesi e giorni dalla data di nascita, con i giorni vissuti e il conto alla rovescia per il compleanno.',
         'h1' => 'Calcolatore di età',
         'tagline' => 'Scopri la tua età esatta in anni, mesi e giorni e il prossimo compleanno.',
         'keywords' => ['calcolatore età', 'calcolare età', 'calcolo data di nascita', 'quanti anni ho', 'calcolo età da data di nascita'],
@@ -349,8 +349,8 @@ return [
 
     'percentage-calculator' => [
         'name' => 'Calcolatore di percentuali',
-        'title' => 'Calcolatore di percentuali: percentuale, variazione e aumento',
-        'description' => 'Calcolatore di percentuali gratuito: trova il X% di Y, che percentuale è X di Y, aumento o diminuzione percentuale e aggiungi o togli una percentuale. Con la formula.',
+        'title' => 'Calcolo percentuale: percentuale, variazione e aumento',
+        'description' => 'Calcolatore di percentuali gratis: il X% di Y, che percentuale è X di Y, aumento o diminuzione percentuale e altro. Con la formula.',
         'h1' => 'Calcolatore di percentuali',
         'tagline' => 'Tutti i calcoli percentuali più comuni in un unico posto, con la formula.',
         'keywords' => ['calcolatore percentuali', 'calcolo percentuale', 'calcolo variazione percentuale', 'calcolo aumento percentuale', 'che percentuale è'],
@@ -385,7 +385,7 @@ return [
     'json-formatter' => [
         'name' => 'Formattatore JSON',
         'title' => 'Formattatore e validatore JSON: abbellisci JSON online',
-        'description' => 'Formatta, abbellisci, convalida e minifica JSON online gratis. Trova gli errori con riga e colonna esatte. Formattatore JSON veloce e privato per sviluppatori.',
+        'description' => 'Formatta, convalida e minifica JSON online gratis. Trova gli errori con riga e colonna esatte. Veloce e privato, pensato per sviluppatori.',
         'h1' => 'Formattatore e validatore JSON',
         'tagline' => 'Abbellisci, convalida e minifica JSON con messaggi di errore chiari.',
         'keywords' => ['formattatore json', 'validatore json', 'json beautifier', 'formattare json', 'minificare json'],
@@ -420,7 +420,7 @@ return [
     'base64-encoder-decoder' => [
         'name' => 'Codifica / decodifica Base64',
         'title' => 'Codifica e decodifica Base64 online: testo e file',
-        'description' => 'Codifica testo o file in Base64 e decodifica Base64 in testo online. Supporto completo a UTF-8 e Base64 sicuro per URL. Convertitore Base64 gratuito, veloce e privato.',
+        'description' => 'Codifica testo o file in Base64 e decodifica Base64 in testo online. Con UTF-8 e Base64 sicuro per URL. Gratuito, veloce e privato.',
         'h1' => 'Codificatore e decodificatore Base64',
         'tagline' => 'Codifica e decodifica testo e file in Base64, con UTF-8 e variante sicura per URL.',
         'keywords' => ['codifica base64', 'decodifica base64', 'convertitore base64', 'base64 in testo', 'immagine in base64'],
@@ -454,7 +454,7 @@ return [
 
     'what-is-my-ip' => [
         'name' => 'Qual è il mio IP',
-        'title' => 'Qual è il mio indirizzo IP? Controlla subito il tuo IP pubblico',
+        'title' => 'Qual è il mio indirizzo IP? Vedi il tuo IP pubblico',
         'description' => 'Vedi subito il tuo indirizzo IP pubblico, se è IPv4 o IPv6, e i dettagli di browser, sistema operativo, schermo e fuso orario. Ricerca IP gratuita.',
         'h1' => 'Qual è il mio indirizzo IP?',
         'tagline' => 'Il tuo indirizzo IP pubblico e i dettagli del browser, all’istante.',
@@ -492,7 +492,7 @@ return [
 
     'dice-roller' => [
         'name' => 'Lancio dei dadi',
-        'title' => 'Lancio dei dadi: lancia dadi virtuali online (D6, D20 e altri)',
+        'title' => 'Lancio dei dadi online: D6, D20 e altri dadi virtuali',
         'description' => 'Lancia da 1 a 10 dadi virtuali online: D4, D6, D8, D10, D12, D20 o D100. Risultati equi e casuali con animazione 3D, totale e cronologia. Gratis.',
         'h1' => 'Lancio dei dadi',
         'tagline' => 'Lancia fino a 10 dadi, dal D4 al D100, con animazione 3D e totale.',
@@ -572,7 +572,7 @@ return [
     'spin-the-wheel' => [
         'name' => 'Ruota della fortuna',
         'title' => 'Ruota della fortuna: estrai nomi e scelte a caso',
-        'description' => 'Gira una ruota per estrarre a caso un nome, un vincitore o una scelta. Aggiungi fino a 100 voci, gira con un’animazione fluida e rimuovi i vincitori. Ruota online gratuita.',
+        'description' => 'Gira una ruota per estrarre a caso un nome, un vincitore o una scelta. Fino a 100 voci, animazione fluida e rimozione dei vincitori.',
         'h1' => 'Ruota della fortuna',
         'tagline' => 'Aggiungi nomi o scelte, gira e lascia che la ruota scelga un vincitore a caso.',
         'keywords' => ['ruota della fortuna', 'ruota online', 'estrattore di nomi', 'ruota dei nomi', 'scelta casuale'],
@@ -610,8 +610,8 @@ return [
 
     'random-number-generator' => [
         'name' => 'Generatore di numeri casuali',
-        'title' => 'Generatore di numeri casuali: estrai numeri in qualsiasi intervallo',
-        'description' => 'Genera numeri casuali in qualsiasi intervallo, uno o centinaia alla volta, con o senza ripetizioni. Ottimo per lotterie, estrazioni e giochi. Gratis e immediato.',
+        'title' => 'Generatore di numeri casuali in qualsiasi intervallo',
+        'description' => 'Genera numeri casuali in qualsiasi intervallo, uno o centinaia alla volta, con o senza ripetizioni. Ottimo per lotterie ed estrazioni.',
         'h1' => 'Generatore di numeri casuali',
         'tagline' => 'Estrai numeri casuali in qualsiasi intervallo, senza ripetizioni se serve.',
         'keywords' => ['generatore numeri casuali', 'numero casuale', 'estrattore di numeri', 'numero a caso', 'generatore numeri lotteria'],
@@ -650,7 +650,7 @@ return [
     'stopwatch' => [
         'name' => 'Cronometro',
         'title' => 'Cronometro online gratuito con tempi sul giro',
-        'description' => 'Un cronometro online gratuito preciso al centesimo di secondo, con tempi sul giro e intermedi, giro più veloce e più lento e scorciatoie da tastiera. Funziona in qualsiasi browser.',
+        'description' => 'Cronometro online gratuito preciso al centesimo di secondo, con tempi sul giro e intermedi, giro più veloce e scorciatoie da tastiera.',
         'h1' => 'Cronometro online',
         'tagline' => 'Preciso al centesimo di secondo, con giri, tempi intermedi e scorciatoie da tastiera.',
         'keywords' => ['cronometro', 'cronometro online', 'cronometro con giri', 'timer', 'cronometro giri'],
@@ -689,7 +689,7 @@ return [
     'countdown-timer' => [
         'name' => 'Timer',
         'title' => 'Timer online: conto alla rovescia con allarme',
-        'description' => 'Imposta un timer di secondi, minuti o ore con preimpostazioni a un clic. Un allarme suona allo scadere e il titolo della scheda mostra il tempo rimasto. Gratis online.',
+        'description' => 'Timer online gratis di secondi, minuti o ore con preimpostazioni a un clic. Un allarme suona alla fine e la scheda mostra il tempo.',
         'h1' => 'Timer con conto alla rovescia',
         'tagline' => 'Imposta minuti o ore, o tocca una preimpostazione. Allo scadere suona un allarme.',
         'keywords' => ['timer', 'timer online', 'timer con allarme', 'timer 5 minuti', 'conto alla rovescia'],
@@ -727,8 +727,8 @@ return [
 
     'sleep-calculator' => [
         'name' => 'Calcolatore del sonno',
-        'title' => 'Calcolatore del sonno: l’ora migliore per dormire e svegliarsi',
-        'description' => 'Trova l’ora migliore per andare a letto o svegliarti in base ai cicli di sonno di 90 minuti, o conta quante ore hai dormito. Svegliati riposato, non intontito. Gratis e immediato.',
+        'title' => 'Calcolatore del sonno: quando dormire e svegliarsi',
+        'description' => 'Trova l’ora migliore per andare a letto o svegliarti con i cicli di 90 minuti, o conta quante ore hai dormito. Svegliati riposato.',
         'h1' => 'Calcolatore del sonno',
         'tagline' => 'Trova l’ora migliore per andare a letto o svegliarti e conta le ore dormite.',
         'keywords' => ['calcolatore del sonno', 'contatore del sonno', 'a che ora andare a letto', 'calcolo cicli del sonno', 'a che ora dormire', 'ore di sonno'],
