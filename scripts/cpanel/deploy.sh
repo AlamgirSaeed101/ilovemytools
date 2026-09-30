@@ -1,6 +1,9 @@
 #!/bin/bash
 # Deploy Toolzy on cPanel: app in ~/toolzy, public files in ~/public_html.
 set -euo pipefail
+# The CI passes the SMTP password on stdin (empty line when there is none).
+MAIL_PASSWORD_IN=""
+IFS= read -r MAIL_PASSWORD_IN || true
 cd ~
 
 echo "== 1. Back up cPanel's placeholder page (first deploy only)"
@@ -18,6 +21,34 @@ cd ~/toolzy
 echo "== 3. Environment"
 if [ ! -f .env ]; then cp ~/env.production .env; echo "created .env from env.production"; else echo "kept existing .env"; fi
 chmod 600 .env
+
+# Set KEY=VALUE in .env (replace or append) without sed escaping issues.
+set_env() {
+    if grep -q "^$1=" .env; then
+        K="$1" V="$2" awk 'index($0, ENVIRON["K"] "=") == 1 { print ENVIRON["K"] "=" ENVIRON["V"]; next } { print }' .env > .env.tmp
+        cat .env.tmp > .env && rm -f .env.tmp
+    else
+        printf '%s=%s\n' "$1" "$2" >> .env
+    fi
+}
+
+echo "== 3b. Newsletter email (GoDaddy SMTP)"
+MAIL_CHANGED=0
+if [ -n "$MAIL_PASSWORD_IN" ]; then
+    OLD_MAIL=$(grep -E '^MAIL_(MAILER|HOST|PASSWORD)=' .env | md5sum || true)
+    set_env MAIL_MAILER smtp
+    set_env MAIL_SCHEME smtps
+    set_env MAIL_HOST smtpout.secureserver.net
+    set_env MAIL_PORT 465
+    set_env MAIL_USERNAME newsletter@ilovemytools.store
+    set_env MAIL_PASSWORD "'$MAIL_PASSWORD_IN'"
+    set_env MAIL_FROM_ADDRESS newsletter@ilovemytools.store
+    set_env MAIL_FROM_NAME '"${APP_NAME}"'
+    [ "$OLD_MAIL" = "$(grep -E '^MAIL_(MAILER|HOST|PASSWORD)=' .env | md5sum)" ] || MAIL_CHANGED=1
+    echo "mail settings applied (changed: $MAIL_CHANGED)"
+else
+    echo "no MAIL_PASSWORD secret - mail settings left as they are"
+fi
 
 echo "== 4. PHP packages"
 composer install --no-dev --optimize-autoloader --no-interaction --no-progress 2>&1 | tail -4
@@ -54,6 +85,11 @@ php artisan optimize:clear >/dev/null
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache
+
+if [ "$MAIL_CHANGED" = 1 ]; then
+    echo "== 6b. Test email (mail settings changed)"
+    php artisan newsletter:test-mail newsletter@ilovemytools.store || echo "WARNING: test email failed - check the SMTP settings"
+fi
 
 echo "== 7. Firewall cache (GoDaddy / Sucuri)"
 # Keys live only in the server .env (SUCURI_API_KEY / SUCURI_API_SECRET), never in the repo.
