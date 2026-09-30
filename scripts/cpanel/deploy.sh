@@ -67,8 +67,9 @@ else
 fi
 
 echo "== 5. Public files -> ~/public_html"
-rm -rf ~/public_html/build
+# Keep earlier builds' hashed assets for a week: cached pages may still point at them.
 cp -a ~/toolzy/public/. ~/public_html/
+find ~/public_html/build/assets -type f -mtime +7 -delete 2>/dev/null || true
 cp ~/index.public_html.php ~/public_html/index.php
 rm -f ~/public_html/hot
 

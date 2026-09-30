@@ -136,12 +136,19 @@ class PageController extends Controller
 
     private function info(string $page): Response
     {
-        [$title, $description] = SiteData::pageMeta($page);
+        [$title, $description, $label] = SiteData::pageMeta($page);
         $path = SiteData::PAGE_PATHS[$page];
-        $seo = Seo::make($title, $description, $path)->breadcrumbs([[$title, $path]]);
+        $seo = Seo::make($title, $description, $path)->breadcrumbs([[$label, $path]]);
 
-        return $this->render($page, $seo, 'pages.'.$page, ['pageTitle' => $title]);
+        return $this->render($page, $seo, 'pages.'.$page, ['pageTitle' => $label]);
     }
+
+    /**
+     * Pages are the same for every visitor (no cookies or sessions), so the
+     * firewall (Sucuri) may cache them for a day - each deploy clears it - and
+     * browsers for 10 minutes (deploys keep the previous build's assets).
+     */
+    private const PAGE_CACHE = 'public, max-age=600, s-maxage=86400';
 
     private function render(string $type, Seo $seo, string $view, array $viewData, ?string $slug = null, ?array $pageData = null): Response
     {
@@ -150,6 +157,6 @@ class PageController extends Controller
             'page' => ['type' => $type, 'slug' => $slug, 'data' => $pageData],
         ];
 
-        return response(view($view, $viewData + ['seo' => $seo, 'boot' => $boot]));
+        return response(view($view, $viewData + ['seo' => $seo, 'boot' => $boot]))->header('Cache-Control', self::PAGE_CACHE);
     }
 }

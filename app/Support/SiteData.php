@@ -9,10 +9,10 @@ namespace App\Support;
  */
 class SiteData
 {
-    /** Legal / info pages: [title, meta description] (English; translated with Locale::t). */
+    /** Legal / info pages: [label, meta description, search title (optional)] (English; translated with Locale::t). */
     public const PAGES = [
-        'about' => ['About Us', 'Learn about {name}: a free collection of fast, private online tools for PDFs, images, text and maths that run in your browser with no sign up.'],
-        'contact' => ['Contact Us', 'Contact the {name} team to report a bug, suggest a new free tool or ask a question. Email us and we usually reply within two business days.'],
+        'about' => ['About Us', 'Learn about {name}: a free collection of fast, private online tools for PDFs, images, text and maths that run in your browser with no sign up.', 'About Us - Free, Private Browser Tools'],
+        'contact' => ['Contact Us', 'Contact the {name} team to report a bug, suggest a new free tool or ask a question. Email us and we usually reply within two business days.', 'Contact Us - Report a Bug or Suggest a Tool'],
         'privacy' => ['Privacy Policy', 'How {name} handles your data, cookies and advertising. Files and text you use in our tools are processed in your browser.'],
         'terms' => ['Terms of Use', 'The terms of use for {name}: free online tools for personal and commercial use, provided as is. What you can and cannot do on the site.'],
     ];
@@ -27,11 +27,13 @@ class SiteData
     {
     }
 
+    /** @return array{0: string, 1: string, 2: string} [search title, meta description, short label] */
     public static function pageMeta(string $page): array
     {
-        [$title, $description] = self::PAGES[$page];
+        [$label, $description] = self::PAGES[$page];
+        $title = self::PAGES[$page][2] ?? $label;
 
-        return [Locale::t($title), Locale::t($description, ['name' => (string) config('site.name')])];
+        return [Locale::t($title), Locale::t($description, ['name' => (string) config('site.name')]), Locale::t($label)];
     }
 
     public static function tagline(): string
@@ -75,7 +77,7 @@ class SiteData
             'meta' => [
                 'home' => $this->meta(self::tagline(), self::description()),
             ] + collect(array_keys(self::PAGES))->mapWithKeys(fn ($page) => [
-                $page => $this->meta(...self::pageMeta($page)),
+                $page => $this->meta(...array_slice(self::pageMeta($page), 0, 2)),
             ])->all(),
             'categories' => $this->registry->categories()->map(fn (array $category, string $slug) => [
                 'slug' => $slug,

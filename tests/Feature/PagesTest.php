@@ -200,4 +200,22 @@ class PagesTest extends TestCase
         $this->assertStringNotContainsString('<script>alert(1)', $m[1]);
         $this->assertSame('Tools </script><script>alert(1)</script>', json_decode($m[1], true)['site']['tagline']);
     }
+
+    public function test_pages_can_be_cached_by_the_firewall_but_links_from_emails_cannot(): void
+    {
+        foreach (['/', '/merge-pdf', '/es/merge-pdf', '/category/pdf-tools', '/about'] as $url) {
+            $cache = (string) $this->get($url)->headers->get('Cache-Control');
+            $this->assertStringContainsString('public', $cache, $url);
+            $this->assertStringContainsString('s-maxage=86400', $cache, $url);
+        }
+        $this->assertStringNotContainsString('public', (string) $this->get('/no-such-page')->headers->get('Cache-Control'));
+        $this->assertStringNotContainsString('public', (string) $this->get('/newsletter/confirm/'.str_repeat('a', 48))->headers->get('Cache-Control'));
+    }
+
+    public function test_info_pages_have_descriptive_titles_and_short_breadcrumbs(): void
+    {
+        $this->get('/about')->assertSee('<title>About Us - Free, Private Browser Tools | ILoveTools</title>', false)
+            ->assertSee('"name": "About Us"', false);
+        $this->get('/es/contact')->assertSee('Contacto: informa de un error o sugiere una herramienta', false);
+    }
 }
