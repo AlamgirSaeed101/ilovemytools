@@ -1,4 +1,8 @@
-import { lazy } from 'react';
+import { createElement, lazy } from 'react';
+
+// One converter component, several landing pages: each page fixes the output format.
+const converter = (to) =>
+    lazy(() => import('./ImageConverter.jsx').then((m) => ({ default: (props) => createElement(m.default, { ...props, to }) })));
 
 // Slug (must match the key in config/tools.php) => React component.
 // Each tool is lazy-loaded into its own small JavaScript file.
@@ -10,6 +14,9 @@ const tools = {
     'image-compressor': lazy(() => import('./ImageCompressor.jsx')),
     'image-resizer': lazy(() => import('./ImageResizer.jsx')),
     'jpg-to-pdf': lazy(() => import('./JpgToPdf.jsx')),
+    'webp-to-png': converter('image/png'),
+    'png-to-jpg': converter('image/jpeg'),
+    'jpg-to-png': converter('image/png'),
     'merge-pdf': lazy(() => import('./MergePdf.jsx')),
     'split-pdf': lazy(() => import('./SplitPdf.jsx')),
     'age-calculator': lazy(() => import('./AgeCalculator.jsx')),

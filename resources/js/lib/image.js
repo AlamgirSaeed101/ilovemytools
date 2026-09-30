@@ -182,3 +182,13 @@ export async function compressImage(file, options) {
         URL.revokeObjectURL(url);
     }
 }
+
+/** "holiday photo.webp" + "image/png" -> "holiday photo.png" (safe for downloads). */
+export function convertedName(filename, type, safe = (s) => s) {
+    const ext = EXTENSIONS[type] || 'jpg';
+    const base = String(filename || 'image').replace(/\.[a-z0-9]{1,5}$/i, '') || 'image';
+    return safe(`${base}.${ext}`);
+}
+
+/** Input formats the converter pages accept (anything the browser can decode into a canvas). */
+export const CONVERTIBLE_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'image/bmp'];

@@ -38,6 +38,10 @@
         "one": "{count} imagem",
         "other": "{count} imagens"
     },
+    "{count} images converted to {format}": {
+        "one": "{count} imagem convertida para {format}",
+        "other": "{count} imagens convertidas para {format}"
+    },
     "{count} modules": "{count} módulos",
     "{count} modules (recommended)": "{count} módulos (recomendado)",
     "{count} months": {
@@ -74,6 +78,7 @@
         "other": "{files} não são PDFs."
     },
     "{files}: only JPG, PNG and WebP images are supported.": "{files}: só são aceitas imagens JPG, PNG e WebP.",
+    "{files}: please choose JPG, PNG, WebP, GIF or BMP images.": "{files}: escolha imagens JPG, PNG, WebP, GIF ou BMP.",
     "{h} h": "{h} h",
     "{h} h {m} min": "{h} h {m} min",
     "{h} hr": "{h} h",
@@ -121,6 +126,7 @@
     "7. Changes to this policy": "7. Alterações nesta política",
     "7. Contact": "7. Contato",
     "8. Contact": "8. Contato",
+    "90% or more looks identical to the original. Lower values make smaller files.": "A partir de 90% fica igual ao original. Valores menores geram arquivos menores.",
     "A bit short": "Um pouco curto",
     "A die needs between 2 and 1000 sides.": "Um dado precisa ter entre 2 e 1000 lados.",
     "A small margin can make the code hard to scan when printed on a busy background.": "Uma margem pequena pode dificultar a leitura quando o código é impresso sobre um fundo carregado.",
@@ -187,7 +193,10 @@
     "contact page": "página de contato",
     "Contact the {name} team to report a bug, suggest a new free tool or ask a question. Email us and we usually reply within two business days.": "Fale com a equipe do {name} para relatar um erro, sugerir uma ferramenta ou tirar uma dúvida. Costumamos responder em até dois dias úteis.",
     "Contact Us": "Fale conosco",
+    "Convert again": "Converter de novo",
     "Convert to": "Converter para",
+    "converting…": "convertendo…",
+    "Converting…": "Convertendo…",
     "Cookies": "Cookies",
     "Cookies are small text files stored on your device. We do not set any cookies of our own. We use:": "Cookies são pequenos arquivos de texto salvos no seu dispositivo. Não usamos cookies próprios. Usamos:",
     "Copied!": "Copiado!",
@@ -197,6 +206,7 @@
     "Copy IP": "Copiar IP",
     "Copy laps": "Copiar voltas",
     "Could not compress this image.": "Não foi possível comprimir esta imagem.",
+    "Could not convert this image.": "Não foi possível converter esta imagem.",
     "Could not create the QR code: {message}": "Não foi possível criar o QR code: {message}",
     "Could not create the SVG: {message}": "Não foi possível criar o SVG: {message}",
     "Could not create the ZIP file: {message}": "Não foi possível criar o arquivo ZIP: {message}",
@@ -346,6 +356,7 @@
     "JPG has no transparency, so transparent areas become white.": "JPG não tem transparência, então as áreas transparentes ficam brancas.",
     "JPG, PNG or WebP · up to {max} images · max 50 MB each": "JPG, PNG ou WebP · até {max} imagens · máx. 50 MB cada",
     "JPG, PNG, WebP, GIF or BMP · max 50 MB": "JPG, PNG, WebP, GIF ou BMP · máx. 50 MB",
+    "JPG, PNG, WebP, GIF or BMP · up to {max} images · max 50 MB each": "JPG, PNG, WebP, GIF ou BMP · até {max} imagens · máx. 50 MB cada",
     "JSON input": "JSON de entrada",
     "JSON strings and keys must use double quotes (\"), not single quotes.": "Strings e chaves de JSON devem usar aspas duplas (\"), não simples.",
     "Keyboard:": "Teclado:",
@@ -694,6 +705,7 @@
     "X is Y% of what number?": "X é Y% de qual número?",
     "You agree not to misuse the Site, including attempting to disrupt it, overload it with automated requests, or use it for unlawful purposes.": "Você concorda em não usar o Site de forma indevida, o que inclui tentar interrompê-lo, sobrecarregá-lo com solicitações automáticas ou usá-lo para fins ilícitos.",
     "You can compress up to {max} images at a time.": "Você pode comprimir até {max} imagens de cada vez.",
+    "You can convert up to {max} images at a time.": "Você pode converter até {max} imagens de cada vez.",
     "You can merge up to {max} files at a time.": "Você pode juntar até {max} arquivos de cada vez.",
     "You may opt out of personalised advertising by visiting {adsSettings}. You can also opt out of some third-party vendors’ use of cookies for personalised advertising at {aboutAds}. Learn more in {howGoogle}.": "Você pode desativar a publicidade personalizada em {adsSettings}. Também pode recusar o uso de cookies de alguns fornecedores terceiros para publicidade personalizada em {aboutAds}. Saiba mais em {howGoogle}.",
     "You slept about": "Você dormiu cerca de",

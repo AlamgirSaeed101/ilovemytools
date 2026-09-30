@@ -147,6 +147,54 @@ test.describe('Image tools', () => {
         await expect(page.getByText('only JPG, PNG and WebP images are supported')).toBeVisible();
     });
 
+    test('format converters: WebP to PNG, PNG to JPG and JPG to PNG in batches', async ({ page }) => {
+        const isPng = (buf) => buf[0] === 0x89 && buf.subarray(1, 4).toString() === 'PNG';
+        const isJpg = (buf) => buf[0] === 0xff && buf[1] === 0xd8;
+
+        // WebP -> PNG, two files, ZIP download.
+        await openTool(page, 'webp-to-png');
+        await expect(page.getByRole('heading', { level: 1 })).toHaveText('WebP to PNG Converter');
+        const webp = await makeImage(page, { width: 320, height: 200, type: 'image/webp' });
+        await page.getByTestId('file-input').setInputFiles([
+            { name: 'first.webp', mimeType: 'image/webp', buffer: webp },
+            { name: 'second.webp', mimeType: 'image/webp', buffer: webp },
+        ]);
+        const items = page.locator('.file-item');
+        await expect(items.getByRole('button', { name: 'Download' })).toHaveCount(2, { timeout: 30_000 });
+        await expect(page.getByText('2 images converted to PNG')).toBeVisible();
+        const [one] = await Promise.all([page.waitForEvent('download'), items.first().getByRole('button', { name: 'Download' }).click()]);
+        expect(one.suggestedFilename()).toBe('first.png');
+        expect(isPng(await readDownload(one))).toBe(true);
+        const [zip] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download all (ZIP)' }).click()]);
+        expect(zip.suggestedFilename()).toBe('converted-to-png.zip');
+        const archive = await JSZip.loadAsync(await readDownload(zip));
+        expect(Object.keys(archive.files).sort()).toEqual(['first.png', 'second.png']);
+
+        // PNG -> JPG with a quality setting and the transparency notice.
+        await openTool(page, 'png-to-jpg');
+        await page.getByLabel(/Quality/).fill('80');
+        const png = await makeImage(page, { width: 400, height: 300, type: 'image/png' });
+        await page.getByTestId('file-input').setInputFiles({ name: 'logo.png', mimeType: 'image/png', buffer: png });
+        await expect(page.getByRole('status').filter({ hasText: 'JPG has no transparency' })).toBeVisible();
+        const jpgButton = page.locator('.file-item').getByRole('button', { name: 'Download' });
+        await expect(jpgButton).toBeVisible({ timeout: 30_000 });
+        const [jpgFile] = await Promise.all([page.waitForEvent('download'), jpgButton.click()]);
+        expect(jpgFile.suggestedFilename()).toBe('logo.jpg');
+        expect(isJpg(await readDownload(jpgFile))).toBe(true);
+
+        // JPG -> PNG, and non-images are rejected.
+        await openTool(page, 'jpg-to-png');
+        const jpg = await makeImage(page, { width: 300, height: 300, type: 'image/jpeg' });
+        await page.getByTestId('file-input').setInputFiles({ name: 'photo.jpeg', mimeType: 'image/jpeg', buffer: jpg });
+        const pngButton = page.locator('.file-item').getByRole('button', { name: 'Download' });
+        await expect(pngButton).toBeVisible({ timeout: 30_000 });
+        const [pngFile] = await Promise.all([page.waitForEvent('download'), pngButton.click()]);
+        expect(pngFile.suggestedFilename()).toBe('photo.png');
+        expect(isPng(await readDownload(pngFile))).toBe(true);
+        await page.getByTestId('file-input').setInputFiles({ name: 'notes.txt', mimeType: 'text/plain', buffer: Buffer.from('hi') });
+        await expect(page.getByText('please choose JPG, PNG, WebP, GIF or BMP images')).toBeVisible();
+    });
+
     test('image resizer keeps aspect ratio and outputs the exact size', async ({ page }) => {
         await openTool(page, 'image-resizer');
         const png = await makeImage(page, { width: 800, height: 600, type: 'image/png' });

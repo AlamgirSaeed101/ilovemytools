@@ -17,10 +17,12 @@ test.describe('App shell', () => {
     });
 
     test('home filter pills show one category at a time', async ({ page }) => {
+        // Count from the site data, so adding tools never breaks this test.
+        const total = (await (await page.request.get('/api/site')).json()).tools.length;
         await page.goto('/');
         const pills = page.getByRole('group', { name: 'Filter by category' });
         const tiles = page.locator('main .tile-grid a.tool-card');
-        await expect(tiles).toHaveCount(21);
+        await expect(tiles).toHaveCount(total);
 
         await pills.getByRole('button', { name: 'PDF Tools' }).click();
         await expect(pills.getByRole('button', { name: 'PDF Tools' })).toHaveAttribute('aria-pressed', 'true');
@@ -31,7 +33,7 @@ test.describe('App shell', () => {
         await expect(tiles).toHaveCount(3);
 
         await pills.getByRole('button', { name: 'All' }).click();
-        await expect(tiles).toHaveCount(21);
+        await expect(tiles).toHaveCount(total);
         // The "Suggest a tool" card is always last.
         await expect(page.locator('main .tile-grid > a').last()).toHaveAttribute('href', '/contact');
     });

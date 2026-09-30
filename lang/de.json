@@ -38,6 +38,10 @@
         "one": "{count} Bild",
         "other": "{count} Bilder"
     },
+    "{count} images converted to {format}": {
+        "one": "{count} Bild in {format} umgewandelt",
+        "other": "{count} Bilder in {format} umgewandelt"
+    },
     "{count} modules": "{count} Module",
     "{count} modules (recommended)": "{count} Module (empfohlen)",
     "{count} months": {
@@ -74,6 +78,7 @@
         "other": "{files} sind keine PDFs."
     },
     "{files}: only JPG, PNG and WebP images are supported.": "{files}: Nur JPG-, PNG- und WebP-Bilder werden unterstützt.",
+    "{files}: please choose JPG, PNG, WebP, GIF or BMP images.": "{files}: Bitte wähle JPG-, PNG-, WebP-, GIF- oder BMP-Bilder.",
     "{h} h": "{h} Std.",
     "{h} h {m} min": "{h} Std. {m} Min.",
     "{h} hr": "{h} Std.",
@@ -121,6 +126,7 @@
     "7. Changes to this policy": "7. Änderungen dieser Richtlinie",
     "7. Contact": "7. Kontakt",
     "8. Contact": "8. Kontakt",
+    "90% or more looks identical to the original. Lower values make smaller files.": "Ab 90 % sieht es aus wie das Original. Niedrigere Werte ergeben kleinere Dateien.",
     "A bit short": "Etwas kurz",
     "A die needs between 2 and 1000 sides.": "Ein Würfel braucht zwischen 2 und 1000 Seiten.",
     "A small margin can make the code hard to scan when printed on a busy background.": "Ein kleiner Rand kann das Scannen erschweren, wenn der Code auf einem unruhigen Hintergrund gedruckt wird.",
@@ -187,7 +193,10 @@
     "contact page": "Kontaktseite",
     "Contact the {name} team to report a bug, suggest a new free tool or ask a question. Email us and we usually reply within two business days.": "Kontaktiere das {name}-Team, um einen Fehler zu melden, ein Tool vorzuschlagen oder etwas zu fragen. Wir antworten meist in zwei Werktagen.",
     "Contact Us": "Kontakt",
+    "Convert again": "Erneut umwandeln",
     "Convert to": "Umwandeln in",
+    "converting…": "wird umgewandelt…",
+    "Converting…": "Wird umgewandelt…",
     "Cookies": "Cookies",
     "Cookies are small text files stored on your device. We do not set any cookies of our own. We use:": "Cookies sind kleine Textdateien, die auf deinem Gerät gespeichert werden. Wir setzen keine eigenen Cookies. Wir verwenden:",
     "Copied!": "Kopiert!",
@@ -197,6 +206,7 @@
     "Copy IP": "IP kopieren",
     "Copy laps": "Runden kopieren",
     "Could not compress this image.": "Dieses Bild konnte nicht komprimiert werden.",
+    "Could not convert this image.": "Dieses Bild konnte nicht umgewandelt werden.",
     "Could not create the QR code: {message}": "Der QR-Code konnte nicht erstellt werden: {message}",
     "Could not create the SVG: {message}": "Die SVG-Datei konnte nicht erstellt werden: {message}",
     "Could not create the ZIP file: {message}": "Die ZIP-Datei konnte nicht erstellt werden: {message}",
@@ -346,6 +356,7 @@
     "JPG has no transparency, so transparent areas become white.": "JPG unterstützt keine Transparenz, deshalb werden transparente Bereiche weiß.",
     "JPG, PNG or WebP · up to {max} images · max 50 MB each": "JPG, PNG oder WebP · bis zu {max} Bilder · je max. 50 MB",
     "JPG, PNG, WebP, GIF or BMP · max 50 MB": "JPG, PNG, WebP, GIF oder BMP · max. 50 MB",
+    "JPG, PNG, WebP, GIF or BMP · up to {max} images · max 50 MB each": "JPG, PNG, WebP, GIF oder BMP · bis zu {max} Bilder · je max. 50 MB",
     "JSON input": "JSON-Eingabe",
     "JSON strings and keys must use double quotes (\"), not single quotes.": "JSON-Strings und -Schlüssel müssen doppelte Anführungszeichen (\") verwenden, keine einfachen.",
     "Keyboard:": "Tastatur:",
@@ -694,6 +705,7 @@
     "X is Y% of what number?": "X ist Y % von welcher Zahl?",
     "You agree not to misuse the Site, including attempting to disrupt it, overload it with automated requests, or use it for unlawful purposes.": "Du verpflichtest dich, die Website nicht zu missbrauchen, etwa indem du versuchst, sie zu stören, sie mit automatisierten Anfragen zu überlasten oder sie für rechtswidrige Zwecke zu nutzen.",
     "You can compress up to {max} images at a time.": "Du kannst bis zu {max} Bilder auf einmal komprimieren.",
+    "You can convert up to {max} images at a time.": "Du kannst bis zu {max} Bilder auf einmal umwandeln.",
     "You can merge up to {max} files at a time.": "Du kannst bis zu {max} Dateien auf einmal zusammenfügen.",
     "You may opt out of personalised advertising by visiting {adsSettings}. You can also opt out of some third-party vendors’ use of cookies for personalised advertising at {aboutAds}. Learn more in {howGoogle}.": "Du kannst personalisierte Werbung in den {adsSettings} deaktivieren. Außerdem kannst du der Verwendung von Cookies für personalisierte Werbung durch einige Drittanbieter unter {aboutAds} widersprechen. Mehr erfährst du unter {howGoogle}.",
     "You slept about": "Geschlafen: etwa",

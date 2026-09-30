@@ -282,7 +282,7 @@ return [
     'jpg-to-pdf' => [
         'name' => 'JPG en PDF',
         'title' => 'JPG en PDF : convertir des images en PDF gratuitement',
-        'description' => 'Convertissez des images JPG, PNG ou WebP en PDF gratuitement. Réorganisez les photos et choisissez le format de page, l’orientation et les marges. Sans envoi, sans filigrane, sans inscription.',
+        'description' => 'Convertissez des images JPG, PNG ou WebP en PDF gratuitement. Réorganisez les photos, choisissez format, orientation et marges. Sans envoi ni filigrane.',
         'h1' => 'JPG en PDF',
         'tagline' => 'Combinez des images JPG, PNG et WebP en un seul fichier PDF.',
         'keywords' => ['jpg en pdf', 'convertir jpg en pdf', 'image en pdf', 'jpg en pdf en ligne', 'convertisseur jpg pdf'],
@@ -317,6 +317,123 @@ return [
             ['q' => 'Puis-je aussi convertir des images PNG et WebP, pas seulement JPG ?', 'a' => 'Oui. Les images JPG, PNG et WebP sont toutes prises en charge et peuvent être mélangées dans le même PDF.'],
             ['q' => 'À quoi sert le réglage de marge ?', 'a' => 'Il ajoute un espace blanc autour de chaque image sur la page. Choisissez Aucune pour que l’image touche les bords, ou une marge plus grande pour un rendu plus proche d’un document.'],
             ['q' => 'La qualité de mes images est-elle réduite ?', 'a' => 'Les images JPG et PNG sont intégrées à leur qualité d’origine. Les images WebP sont d’abord converties en PNG, ce qui conserve une qualité sans perte.'],
+        ],
+    ],
+
+    'webp-to-png' => [
+        'name' => 'WebP en PNG',
+        'title' => 'Convertir WebP en PNG gratuitement, par lot',
+        'description' => 'Convertissez des WebP en PNG en ligne gratuitement. Jusqu’à 30 images à la fois, transparence conservée et téléchargement en ZIP. Rien n’est envoyé.',
+        'h1' => 'Convertir WebP en PNG',
+        'tagline' => 'Transformez des images WebP en PNG en quelques secondes, transparence comprise.',
+        'keywords' => ['webp en png', 'convertir webp en png', 'convertisseur webp png', 'webp to png', 'webp vers png'],
+        'intro' => 'Le WebP est un format d’image créé par Google qui produit des fichiers légers, mais certaines applications, certains logiciels et formulaires ne l’acceptent toujours pas. Ce convertisseur WebP en PNG transforme vos images WebP en PNG, un format qui s’ouvre partout, et conserve les fonds transparents. Déposez une image ou tout un lot et téléchargez les résultats un par un ou dans un ZIP.',
+        'steps' => [
+            'Déposez vos images WebP dans la zone ou cliquez pour les choisir (jusqu’à 30 à la fois).',
+            'Chaque image est convertie en PNG immédiatement, dans votre navigateur.',
+            'Cliquez sur Télécharger à côté d’une image, ou sur Tout télécharger (ZIP).',
+            'Utilisez Tout effacer pour recommencer avec d’autres images.',
+        ],
+        'features' => [
+            'Conversion de WebP en PNG avec transparence conservée',
+            'Conversion par lot jusqu’à 30 images',
+            'Téléchargement en ZIP de plusieurs fichiers',
+            'Accepte aussi JPG, GIF et BMP',
+            '100 % privé : rien n’est envoyé',
+        ],
+        'content' => [
+            [
+                'heading' => 'Pourquoi convertir un WebP en PNG ?',
+                'body' => 'Les navigateurs enregistrent beaucoup d’images du web en WebP, mais d’anciens logiciels photo, des documents bureautiques et certains formulaires n’acceptent que le PNG ou le JPG. Le PNG est sans perte et compatible partout : la conversion vous donne un fichier qui s’ouvre n’importe où sans perdre de détails. En contrepartie, un PNG est généralement plus lourd qu’un WebP.',
+            ],
+            [
+                'heading' => 'La conversion de WebP en PNG fait-elle perdre de la qualité ?',
+                'body' => 'La conversion elle-même ne fait rien perdre, car le PNG est sans perte : chaque pixel de l’image WebP est enregistré à l’identique. Si le WebP d’origine avait été compressé avec perte, cette perte reste, mais aucune nouvelle n’est ajoutée.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Comment convertir un WebP en PNG ?', 'a' => 'Déposez le fichier WebP dans la zone ci-dessus. Il est converti en PNG instantanément et se télécharge en un clic.'],
+            ['q' => 'La transparence est-elle conservée ?', 'a' => 'Oui. Le PNG gère la transparence : les zones transparentes du WebP le restent après la conversion.'],
+            ['q' => 'Pourquoi le PNG est-il plus lourd que le WebP ?', 'a' => 'Le WebP utilise une compression plus efficace. Le PNG enregistre chaque pixel sans perte, donc la même image prend généralement plus de place.'],
+            ['q' => 'Mes images sont-elles envoyées ?', 'a' => 'Non. La conversion se fait dans votre navigateur avec l’API Canvas et vos images ne quittent jamais votre appareil.'],
+        ],
+    ],
+
+    'png-to-jpg' => [
+        'name' => 'PNG en JPG',
+        'title' => 'Convertir PNG en JPG (JPEG) gratuitement',
+        'description' => 'Convertissez des PNG en JPG (JPEG) en ligne gratuitement. Jusqu’à 30 images à la fois, qualité réglable et téléchargement en ZIP. Rien n’est envoyé.',
+        'h1' => 'Convertir PNG en JPG',
+        'tagline' => 'Convertissez des images PNG en JPG (JPEG) par lot, avec une qualité réglable.',
+        'keywords' => ['png en jpg', 'convertir png en jpg', 'png en jpeg', 'convertisseur png jpg', 'png to jpg'],
+        'intro' => 'Le PNG est un format sans perte idéal pour les graphismes, mais il produit des fichiers lourds, alors que le JPG (aussi appelé JPEG) est plus léger et accepté presque partout. Ce convertisseur PNG en JPG transforme une ou plusieurs images PNG en JPG avec la qualité de votre choix. Les zones transparentes deviennent blanches, car le JPG ne gère pas la transparence.',
+        'steps' => [
+            'Déposez vos images PNG dans la zone ou cliquez pour les choisir (jusqu’à 30 à la fois).',
+            'Réglez la qualité pour des fichiers plus légers (à partir de 90 %, aucune différence visible).',
+            'Chaque image est convertie en JPG immédiatement, dans votre navigateur.',
+            'Téléchargez chaque JPG, ou tous ensemble dans un ZIP.',
+        ],
+        'features' => [
+            'Conversion de PNG en JPG (JPEG) par lot',
+            'Qualité JPG réglable de 50 % à 100 %',
+            'Zones transparentes remplies de blanc',
+            'Téléchargement en ZIP de plusieurs fichiers',
+            'Privé : les images sont traitées sur votre appareil',
+        ],
+        'content' => [
+            [
+                'heading' => 'Quand convertir un PNG en JPG ?',
+                'body' => 'Convertissez un PNG en JPG quand il s’agit d’une photo ou d’une image détaillée trop lourde pour un e-mail, un site ou un formulaire, ou quand un site exige du JPG. Gardez le PNG pour les logos, icônes, captures d’écran avec du texte net et tout ce qui a besoin d’un fond transparent.',
+            ],
+            [
+                'heading' => 'JPG et JPEG, est-ce pareil ?',
+                'body' => 'Oui. JPG et JPEG sont deux noms du même format ; l’extension .jpg à trois lettres vient d’anciennes versions de Windows limitées à trois caractères. Les fichiers de ce convertisseur utilisent l’extension .jpg, acceptée par tous les appareils et sites.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Comment convertir un PNG en JPG ?', 'a' => 'Déposez le PNG dans la zone ci-dessus : il est converti en JPG aussitôt. Cliquez sur Télécharger pour l’enregistrer.'],
+            ['q' => 'Que devient le fond transparent ?', 'a' => 'Le JPG ne peut pas stocker de transparence : les zones transparentes sont remplies de blanc pendant la conversion.'],
+            ['q' => 'Quelle qualité choisir ?', 'a' => 'Les 92 % par défaut donnent un résultat identique à l’original. Vers 80 %, les fichiers sont nettement plus légers avec peu de différence visible.'],
+            ['q' => 'Puis-je convertir plusieurs PNG à la fois ?', 'a' => 'Oui. Déposez jusqu’à 30 images à la fois et téléchargez-les toutes ensemble dans un fichier ZIP.'],
+        ],
+    ],
+
+    'jpg-to-png' => [
+        'name' => 'JPG en PNG',
+        'title' => 'Convertir JPG en PNG (JPEG en PNG) gratuitement',
+        'description' => 'Convertissez des images JPG ou JPEG en PNG en ligne gratuitement. Sans perte, jusqu’à 30 fichiers à la fois et téléchargement en ZIP. Rien n’est envoyé.',
+        'h1' => 'Convertir JPG en PNG',
+        'tagline' => 'Convertissez des images JPG et JPEG en PNG sans perte, par lot.',
+        'keywords' => ['jpg en png', 'jpeg en png', 'convertir jpg en png', 'convertisseur jpg png', 'jpeg to png'],
+        'intro' => 'Le PNG est un format sans perte : une image enregistrée en PNG peut être modifiée et réenregistrée sans devenir plus floue. Ce convertisseur JPEG en PNG transforme vos photos JPG et JPEG en fichiers PNG, une par une ou par lots de 30, directement dans votre navigateur.',
+        'steps' => [
+            'Déposez vos images JPG ou JPEG dans la zone ou cliquez pour les choisir.',
+            'Chaque image est convertie en PNG immédiatement.',
+            'Cliquez sur Télécharger à côté d’une image, ou sur Tout télécharger (ZIP).',
+            'Utilisez Tout effacer pour convertir un autre lot.',
+        ],
+        'features' => [
+            'Conversion de JPG et JPEG en PNG sans perte',
+            'Conversion par lot jusqu’à 30 images',
+            'Téléchargement en ZIP de plusieurs fichiers',
+            'Accepte aussi WebP, GIF et BMP',
+            'Privé : rien n’est envoyé',
+        ],
+        'content' => [
+            [
+                'heading' => 'Pourquoi convertir un JPG en PNG ?',
+                'body' => 'Passez au PNG quand vous allez modifier une image plusieurs fois, l’intégrer à une création graphique ou quand un site ou une application demande du PNG. À chaque enregistrement, un JPG perd un peu de qualité ; un PNG non, c’est donc un format de travail plus sûr.',
+            ],
+            [
+                'heading' => 'L’image sera-t-elle transparente ou plus nette ?',
+                'body' => 'Non. La conversion garde l’image telle quelle : un JPG n’a pas de transparence à conserver, et les détails perdus par la compression JPG ne peuvent pas être récupérés. Le PNG sera aussi généralement plus lourd que le JPG, car il enregistre chaque pixel sans perte.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Comment convertir un JPG en PNG ?', 'a' => 'Déposez le JPG dans la zone ci-dessus. Il est converti en PNG aussitôt et se télécharge en un clic.'],
+            ['q' => 'Y a-t-il une différence entre JPG et JPEG ?', 'a' => 'Non. Ce sont deux noms du même format, et les deux se convertissent de la même façon.'],
+            ['q' => 'Pourquoi le fichier PNG est-il plus lourd ?', 'a' => 'Le PNG est sans perte : il conserve chaque pixel. Le JPG gagne de la place en supprimant des détails, d’où des fichiers plus légers.'],
+            ['q' => 'Mes photos sont-elles envoyées ?', 'a' => 'Non. Tout se passe dans votre navigateur et vos photos ne quittent jamais votre appareil.'],
         ],
     ],
 

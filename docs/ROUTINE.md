@@ -35,7 +35,7 @@ and FAQs. When the owner adds new Semrush exports there, re-rank the unchecked i
 ### New tools
 - [x] **JPG to PDF** `/jpg-to-pdf` (pdf-lib; JPG/PNG/WebP in, reorder, A4/Letter/fit, orientation, margin). Spec: TOOLS_SPEC_PROMPT Part 4 #4. *Semrush: "jpg to pdf" 301K/mo, "jpeg to pdf" 49.5K.*
 - [ ] **PDF to JPG** `/pdf-to-jpg` (pdfjs-dist render, 72/150/300 DPI, single image or ZIP). Part 4 #5. *"pdf to jpg" 246K, "convert pdf to jpg" 40.5K, "pdf to jpeg" 33.1K.*
-- [ ] **WebP to PNG** `/webp-to-png`, **PNG to JPG** `/png-to-jpg`, **JPG to PNG** `/jpg-to-png` (dedicated landing pages reusing the image converter engine with the format preset; batch + ZIP). *"webp to png" 165K (KD 64), "png to jpg" 49.5K, "png converter" 33.1K, "jpeg to png" 9.9K (KD 37).*
+- [x] **WebP to PNG** `/webp-to-png`, **PNG to JPG** `/png-to-jpg`, **JPG to PNG** `/jpg-to-png` (dedicated landing pages reusing the image converter engine with the format preset; batch + ZIP). *"webp to png" 165K (KD 64), "png to jpg" 49.5K, "png converter" 33.1K, "jpeg to png" 9.9K (KD 37).*
 - [ ] **Click Counter / Tally Counter** `/click-counter` (big tap button, +/−, reset, several named counters, keyboard, vibration on mobile, remembers counts locally). *"click counter" 22.2K (KD 40), "tally counter" 18.1K (KD 42), "clicker counter" 9.9K.*
 - [ ] **Compress PDF** `/compress-pdf` (re-save with object streams + optional page re-render at chosen quality via pdfjs; show before/after size; warn that strong mode rasterises text).
 - [ ] **Unit Converter** `/unit-converter` (length, weight, temperature, area, volume, speed, data, time). Part 4 #1.
@@ -64,23 +64,24 @@ and FAQs. When the owner adds new Semrush exports there, re-rank the unchecked i
 Not planned: PDF↔Word/Excel/PowerPoint (can't be done well in the browser), video/audio converters (too heavy), social-media downloaders (AdSense and copyright risk).
 
 ### SEO / GEO / AEO (from the audit of 30 Sep 2026, Desktop report)
-- [ ] Rewrite meta descriptions that get truncated with "…" (home + 5 localised homes + 3 localised Word Counter pages); lengthen /terms, /contact and /about descriptions to 140-155 chars (all 6 languages).
-- [ ] Shorten the 16 titles longer than 60 characters (all languages).
-- [ ] Long-cache hashed assets: `Cache-Control: public, max-age=31536000, immutable` for `/build/*` in `public/.htaccess`; remove the `X-Powered-By` header.
-- [ ] Add `/llms.txt` (generated like the sitemap: site summary, every tool with one line, languages).
-- [ ] Expand each of the 8 category pages to 300+ unique words: when to use which tool, a comparison table and 3-4 FAQs (plus FAQPage schema). All languages.
-- [ ] Add one reference table per tool where it helps answers (image sizes, bedtime chart, percentage formulas, QR error-correction levels, dice types…).
-- [ ] Cite real sources with outbound links for factual claims (sleep hours, coin-flip bias study, Base64 spec…). Only cite pages you fetched and checked.
-- [ ] Show "Last updated" on tool pages and add `dateModified` to the WebApplication schema.
+- [x] Rewrite meta descriptions that get truncated with "…" (home + 5 localised homes + 3 localised Word Counter pages); lengthen /terms, /contact and /about descriptions to 140-155 chars (all 6 languages).
+- [x] Shorten the 16 titles longer than 60 characters (all languages).
+- [x] Long-cache hashed assets: `Cache-Control: public, max-age=31536000, immutable` for `/build/*` in `public/.htaccess`; remove the `X-Powered-By` header.
+- [x] Add `/llms.txt` (generated like the sitemap: site summary, every tool with one line, languages).
+- [x] Expand each of the 8 category pages to 300+ unique words: when to use which tool, a comparison table and 3-4 FAQs (plus FAQPage schema). All languages.
+- [x] Add one reference table per tool where it helps answers (image sizes, bedtime chart, percentage formulas, QR error-correction levels, dice types…).
+- [x] Cite real sources with outbound links for factual claims (sleep hours, coin-flip bias study, Base64 spec…). Only cite pages you fetched and checked.
+- [x] Show "Last updated" on tool pages and add `dateModified` to the WebApplication schema.
 - [ ] Per-tool Open Graph images (tool name + icon, generated at build time).
-- [ ] Rephrase statement H2s as questions where natural, and open each tool intro with a one-line "X is…" definition.
-- [ ] HowTo and SpeakableSpecification schema on tool pages.
+- [ ] Rephrase statement H2s as questions where natural (e.g. "Common image sizes" -> "What size should my image be?"), all languages. (Intro definitions are done.)
+- [x] HowTo and SpeakableSpecification schema on tool pages.
 - [ ] *(owner input)* About page: real founder name, bio and founding date; Person schema linked as Organization.founder.
 - [ ] *(owner input)* Brand social profiles in Organization.sameAs and the footer.
 
 ## Log
 
 <!-- One line per run, newest first: YYYY-MM-DD · what changed · CI result -->
+- 2026-09-30 · (manual session) SEO/GEO/AEO pass: all titles ≤60 and descriptions 130-160 in 6 languages, llms.txt, HowTo/Speakable/citation schema, verified sources on 15 tools, 8 category pages expanded, definitions + 9 reference tables, asset caching; new WebP to PNG / PNG to JPG / JPG to PNG pages from Semrush data (webp to png 165K, png to jpg 49.5K, jpeg to png 9.9K). All suites green.
 - 2026-09-30 · Added the **JPG to PDF** tool (`/jpg-to-pdf`, all 6 languages): JPG/PNG/WebP images (JPG/PNG embedded directly via pdf-lib, WebP re-encoded to PNG via canvas) combined into one PDF with reorder, A4/Letter/Fit-image page size, automatic/manual orientation and margin controls. Live Semrush lookup returned `no_api_units`, so keyword data was taken from the existing `docs/keywords/semrush-us-2026-09-30.json` export and saved to `docs/keywords/jpg-to-pdf.json`: "jpg to pdf" (301K/mo, used for title/H1) plus "jpeg to pdf", "jpg to pdf converter" and other variants in the intro/FAQs. Linked from Merge PDF and Image Resizer's related tools. Note: CI was red on `main` before this run (a command-palette test flake); another concurrent run of this routine already fixed it and pushed two more commits, so this run rebased on top of that instead of duplicating the fix, and also fixed two tests (`ApiTest::test_category_endpoint`, `site.spec.js`'s tool-count assertions) that only needed updating for the new tool. Ran `npm run build`, `npm test` (102 passed), `php artisan test` (43 passed) and `npx playwright test` (40 passed, against local Chromium since CI's Google Chrome isn't installed here) before pushing.
 - 2026-09-30 · Backlog re-ranked with Semrush US data (docs/keywords/); added WebP/PNG/JPG converter pages and Click Counter near the top.
 - 2026-09-30 · Routine set up; backlog created from search-demand research and the SEO/GEO/AEO audit.

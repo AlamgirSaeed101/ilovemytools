@@ -104,6 +104,7 @@
     "one": "{count} file skipped because it is larger than 50 MB.",
     "files": [
       "resources/js/tools/ImageCompressor.jsx",
+      "resources/js/tools/ImageConverter.jsx",
       "resources/js/tools/JpgToPdf.jsx"
     ]
   },
@@ -120,6 +121,13 @@
     "files": [
       "resources/js/tools/ImageCompressor.jsx",
       "resources/js/tools/JpgToPdf.jsx"
+    ]
+  },
+  {
+    "key": "{count} images converted to {format}",
+    "one": "{count} image converted to {format}",
+    "files": [
+      "resources/js/tools/ImageConverter.jsx"
     ]
   },
   {
@@ -204,6 +212,12 @@
     "files": [
       "resources/js/tools/ImageCompressor.jsx",
       "resources/js/tools/JpgToPdf.jsx"
+    ]
+  },
+  {
+    "key": "{files}: please choose JPG, PNG, WebP, GIF or BMP images.",
+    "files": [
+      "resources/js/tools/ImageConverter.jsx"
     ]
   },
   {
@@ -476,6 +490,12 @@
     "key": "8. Contact",
     "files": [
       "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "90% or more looks identical to the original. Lower values make smaller files.",
+    "files": [
+      "resources/js/tools/ImageConverter.jsx"
     ]
   },
   {
@@ -801,7 +821,8 @@
   {
     "key": "Clear all",
     "files": [
-      "resources/js/tools/ImageCompressor.jsx"
+      "resources/js/tools/ImageCompressor.jsx",
+      "resources/js/tools/ImageConverter.jsx"
     ]
   },
   {
@@ -885,6 +906,12 @@
     ]
   },
   {
+    "key": "Convert again",
+    "files": [
+      "resources/js/tools/ImageConverter.jsx"
+    ]
+  },
+  {
     "key": "Convert to",
     "files": [
       "resources/js/tools/CaseConverter.jsx"
@@ -897,8 +924,15 @@
     ]
   },
   {
+    "key": "converting…",
+    "files": [
+      "resources/js/tools/ImageConverter.jsx"
+    ]
+  },
+  {
     "key": "Converting…",
     "files": [
+      "resources/js/tools/ImageConverter.jsx",
       "resources/js/tools/JpgToPdf.jsx"
     ]
   },
@@ -957,6 +991,12 @@
     ]
   },
   {
+    "key": "Could not convert this image.",
+    "files": [
+      "resources/js/tools/ImageConverter.jsx"
+    ]
+  },
+  {
     "key": "Could not create the QR code: {message}",
     "files": [
       "resources/js/tools/QrCodeGenerator.jsx"
@@ -971,7 +1011,8 @@
   {
     "key": "Could not create the ZIP file: {message}",
     "files": [
-      "resources/js/tools/ImageCompressor.jsx"
+      "resources/js/tools/ImageCompressor.jsx",
+      "resources/js/tools/ImageConverter.jsx"
     ]
   },
   {
@@ -1007,7 +1048,8 @@
   {
     "key": "Creating ZIP…",
     "files": [
-      "resources/js/tools/ImageCompressor.jsx"
+      "resources/js/tools/ImageCompressor.jsx",
+      "resources/js/tools/ImageConverter.jsx"
     ]
   },
   {
@@ -1122,6 +1164,7 @@
     "key": "Download",
     "files": [
       "resources/js/tools/ImageCompressor.jsx",
+      "resources/js/tools/ImageConverter.jsx",
       "resources/js/tools/JsonFormatter.jsx"
     ]
   },
@@ -1134,7 +1177,8 @@
   {
     "key": "Download all (ZIP)",
     "files": [
-      "resources/js/tools/ImageCompressor.jsx"
+      "resources/js/tools/ImageCompressor.jsx",
+      "resources/js/tools/ImageConverter.jsx"
     ]
   },
   {
@@ -1195,7 +1239,8 @@
   {
     "key": "Drop images here or click to choose",
     "files": [
-      "resources/js/tools/ImageCompressor.jsx"
+      "resources/js/tools/ImageCompressor.jsx",
+      "resources/js/tools/ImageConverter.jsx"
     ]
   },
   {
@@ -1872,6 +1917,7 @@
   {
     "key": "JPG has no transparency, so transparent areas become white.",
     "files": [
+      "resources/js/tools/ImageConverter.jsx",
       "resources/js/tools/ImageResizer.jsx"
     ]
   },
@@ -1885,6 +1931,12 @@
     "key": "JPG, PNG, WebP, GIF or BMP · max 50 MB",
     "files": [
       "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "JPG, PNG, WebP, GIF or BMP · up to {max} images · max 50 MB each",
+    "files": [
+      "resources/js/tools/ImageConverter.jsx"
     ]
   },
   {
@@ -2731,6 +2783,7 @@
     "key": "Quality: {value}%",
     "files": [
       "resources/js/tools/ImageCompressor.jsx",
+      "resources/js/tools/ImageConverter.jsx",
       "resources/js/tools/ImageResizer.jsx"
     ]
   },
@@ -2847,6 +2900,7 @@
     "key": "Remove {name}",
     "files": [
       "resources/js/tools/ImageCompressor.jsx",
+      "resources/js/tools/ImageConverter.jsx",
       "resources/js/tools/JpgToPdf.jsx",
       "resources/js/tools/MergePdf.jsx"
     ]
@@ -3107,7 +3161,8 @@
   {
     "key": "Settings changed.",
     "files": [
-      "resources/js/tools/ImageCompressor.jsx"
+      "resources/js/tools/ImageCompressor.jsx",
+      "resources/js/tools/ImageConverter.jsx"
     ]
   },
   {
@@ -3851,7 +3906,8 @@
   {
     "key": "waiting…",
     "files": [
-      "resources/js/tools/ImageCompressor.jsx"
+      "resources/js/tools/ImageCompressor.jsx",
+      "resources/js/tools/ImageConverter.jsx"
     ]
   },
   {
@@ -4051,6 +4107,7 @@
   {
     "key": "You can convert up to {max} images at a time.",
     "files": [
+      "resources/js/tools/ImageConverter.jsx",
       "resources/js/tools/JpgToPdf.jsx"
     ]
   },

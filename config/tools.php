@@ -276,7 +276,7 @@ return [
         'sources' => [
             ['title' => 'Google for Developers: An image format for the Web (WebP)', 'url' => 'https://developers.google.com/speed/webp'],
         ],
-        'related' => ['image-resizer', 'merge-pdf', 'qr-code-generator'],
+        'related' => ['image-resizer', 'png-to-jpg', 'webp-to-png', 'merge-pdf'],
         'table' => [
             'caption' => 'Which image format to use',
             'headers' => ['Format', 'Best for', 'Transparency'],
@@ -332,7 +332,7 @@ return [
         'sources' => [
             ['title' => 'Google for Developers: An image format for the Web (WebP)', 'url' => 'https://developers.google.com/speed/webp'],
         ],
-        'related' => ['image-compressor', 'jpg-to-pdf', 'merge-pdf'],
+        'related' => ['png-to-jpg', 'webp-to-png', 'jpg-to-pdf', 'image-compressor'],
         'table' => [
             'caption' => 'Common image sizes',
             'headers' => ['Use', 'Size (pixels)'],
@@ -389,6 +389,141 @@ return [
             ['q' => 'Is my image quality reduced?', 'a' => 'JPG and PNG images are embedded at their original quality. WebP images are converted to PNG first, which keeps them lossless.'],
         ],
         'related' => ['merge-pdf', 'image-compressor', 'image-resizer'],
+    ],
+
+    'webp-to-png' => [
+        'name' => 'WebP to PNG',
+        'category' => 'image-tools',
+        'icon' => 'image',
+        'popular' => true,
+        'updated' => '2026-09-30',
+        'title' => 'WebP to PNG Converter - Free, Private, Batch',
+        'description' => 'Convert WebP to PNG online for free. Batch convert up to 30 images at once, keep transparency and download a ZIP. Images never leave your device.',
+        'h1' => 'WebP to PNG Converter',
+        'tagline' => 'Turn WebP images into PNG in seconds, with transparency kept.',
+        'keywords' => ['webp to png', 'convert webp to png', 'webp to png converter', 'webp converter', 'change webp to png'],
+        'intro' => 'WebP is an image format made by Google that makes files small, but some apps, editors and upload forms still don\'t accept it. This WebP to PNG converter changes WebP images into PNG, a format that opens everywhere, and keeps transparent backgrounds intact. Drop one image or a whole batch and download the results one by one or as a ZIP.',
+        'steps' => [
+            'Drop your WebP images into the box or click to choose them (up to 30 at once).',
+            'Each image is converted to PNG straight away, in your browser.',
+            'Click Download next to an image, or Download all (ZIP) for the whole batch.',
+            'Use Clear all to start again with new images.',
+        ],
+        'features' => [
+            'Converts WebP to PNG with transparency preserved',
+            'Batch conversion of up to 30 images',
+            'ZIP download for several files',
+            'Also accepts JPG, GIF and BMP',
+            '100% private: nothing is uploaded',
+        ],
+        'content' => [
+            [
+                'heading' => 'Why convert WebP to PNG?',
+                'body' => 'Browsers save many images from the web as WebP, but older photo editors, office documents and some upload forms only accept PNG or JPG. PNG is lossless and widely supported, so converting gives you a file that opens anywhere without losing detail. The trade-off is size: PNG files are usually larger than WebP.',
+            ],
+            [
+                'heading' => 'Does converting WebP to PNG lose quality?',
+                'body' => 'No quality is lost in the conversion itself, because PNG is lossless: every pixel of the decoded WebP image is saved exactly. If the original WebP was saved with lossy compression, that earlier loss stays, but nothing new is added.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'How do I convert WebP to PNG?', 'a' => 'Drop the WebP file into the box above. It is converted to PNG instantly, and you can download it with one click.'],
+            ['q' => 'Is transparency kept?', 'a' => 'Yes. PNG supports transparency, so transparent areas of a WebP image stay transparent after conversion.'],
+            ['q' => 'Why is the PNG bigger than the WebP?', 'a' => 'WebP uses more efficient compression. PNG stores every pixel without loss, so the same image usually takes more space.'],
+            ['q' => 'Are my images uploaded?', 'a' => 'No. The conversion runs in your browser with the Canvas API and your images never leave your device.'],
+        ],
+        'sources' => [
+            ['title' => 'Google for Developers: An image format for the Web (WebP)', 'url' => 'https://developers.google.com/speed/webp'],
+        ],
+        'related' => ['png-to-jpg', 'jpg-to-png', 'image-compressor', 'image-resizer'],
+    ],
+
+    'png-to-jpg' => [
+        'name' => 'PNG to JPG',
+        'category' => 'image-tools',
+        'icon' => 'image',
+        'popular' => true,
+        'updated' => '2026-09-30',
+        'title' => 'PNG to JPG Converter - Convert PNG to JPEG Free',
+        'description' => 'Convert PNG to JPG (JPEG) online for free. Batch convert up to 30 images, choose the quality and download a ZIP. Nothing is uploaded to a server.',
+        'h1' => 'PNG to JPG Converter',
+        'tagline' => 'Convert PNG images to JPG (JPEG) in bulk, with adjustable quality.',
+        'keywords' => ['png to jpg', 'png to jpeg', 'convert png to jpg', 'png to jpg converter', 'png converter'],
+        'intro' => 'PNG is a lossless image format that is great for graphics but makes large files, while JPG (also called JPEG) is smaller and accepted almost everywhere. This PNG to JPG converter turns one or many PNG images into JPG with the quality you choose. Transparent areas are filled with white, because JPG has no transparency.',
+        'steps' => [
+            'Drop your PNG images into the box or click to choose them (up to 30 at once).',
+            'Adjust the quality if you want smaller files (90% or more looks identical).',
+            'Each image is converted to JPG immediately, in your browser.',
+            'Download each JPG, or all of them together as a ZIP.',
+        ],
+        'features' => [
+            'Converts PNG to JPG (JPEG) in bulk',
+            'Adjustable JPG quality from 50% to 100%',
+            'Transparent areas filled with white',
+            'ZIP download for several files',
+            'Private: images are processed on your device',
+        ],
+        'content' => [
+            [
+                'heading' => 'When should I convert PNG to JPG?',
+                'body' => 'Convert a PNG to JPG when it is a photo or a detailed image and the file is too big for email, a website or an upload form, or when a site simply requires JPG. Keep PNG for logos, icons, screenshots with sharp text and anything that needs a transparent background.',
+            ],
+            [
+                'heading' => 'Is JPG the same as JPEG?',
+                'body' => 'Yes. JPG and JPEG are two names for the same format; the three-letter .jpg extension comes from older versions of Windows that allowed only three characters. Files saved by this converter use the .jpg extension, which every device and website accepts.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'How do I convert PNG to JPG?', 'a' => 'Drop the PNG into the box above and it is converted to JPG straight away. Click Download to save it.'],
+            ['q' => 'What happens to a transparent background?', 'a' => 'JPG cannot store transparency, so transparent areas are filled with white during the conversion.'],
+            ['q' => 'Which quality should I choose?', 'a' => 'The default of 92% looks the same as the original. Around 80% gives noticeably smaller files with little visible change.'],
+            ['q' => 'Can I convert many PNGs at once?', 'a' => 'Yes. Drop up to 30 images at a time and download them all together as a ZIP file.'],
+        ],
+        'related' => ['jpg-to-png', 'webp-to-png', 'image-compressor', 'image-resizer'],
+    ],
+
+    'jpg-to-png' => [
+        'name' => 'JPG to PNG',
+        'category' => 'image-tools',
+        'icon' => 'image',
+        'popular' => false,
+        'updated' => '2026-09-30',
+        'title' => 'JPG to PNG Converter - Convert JPEG to PNG Free',
+        'description' => 'Convert JPG or JPEG images to PNG online for free. Lossless output, batch conversion of up to 30 files and ZIP download. Nothing leaves your device.',
+        'h1' => 'JPEG to PNG Converter',
+        'tagline' => 'Convert JPG and JPEG images to lossless PNG in bulk.',
+        'keywords' => ['jpeg to png', 'jpg to png', 'convert jpg to png', 'jpeg to png converter', 'change jpg to png'],
+        'intro' => 'PNG is a lossless format, so once an image is saved as PNG it can be edited and saved again without getting blurrier. This JPEG to PNG converter changes JPG and JPEG photos into PNG files, one at a time or in a batch of up to 30, right in your browser.',
+        'steps' => [
+            'Drop your JPG or JPEG images into the box or click to choose them.',
+            'Each image is converted to PNG straight away.',
+            'Click Download next to an image, or Download all (ZIP).',
+            'Use Clear all to convert another set.',
+        ],
+        'features' => [
+            'Converts JPG and JPEG to lossless PNG',
+            'Batch conversion of up to 30 images',
+            'ZIP download for several files',
+            'Also accepts WebP, GIF and BMP',
+            'Private: nothing is uploaded',
+        ],
+        'content' => [
+            [
+                'heading' => 'Why convert JPG to PNG?',
+                'body' => 'Convert to PNG when you are going to edit an image several times, add it to a design, or when a site or app asks for PNG. Each time a JPG is saved it loses a little quality; a PNG does not, so it is a safer working format.',
+            ],
+            [
+                'heading' => 'Will converting make the image transparent or sharper?',
+                'body' => 'No. Converting keeps the picture exactly as it is: a JPG has no transparency to carry over, and detail already lost to JPG compression cannot be restored. The PNG will also usually be larger than the JPG, because PNG stores every pixel without loss.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'How do I convert JPG to PNG?', 'a' => 'Drop the JPG into the box above. It is converted to PNG immediately and you can download it with one click.'],
+            ['q' => 'Is there a difference between JPG and JPEG?', 'a' => 'No. They are two names for the same format, and both convert the same way.'],
+            ['q' => 'Why is the PNG file bigger?', 'a' => 'PNG is lossless, so it keeps every pixel exactly. JPG saves space by discarding detail, which makes its files smaller.'],
+            ['q' => 'Are my photos uploaded?', 'a' => 'No. Everything happens in your browser and your photos never leave your device.'],
+        ],
+        'related' => ['png-to-jpg', 'webp-to-png', 'image-resizer', 'image-compressor'],
     ],
 
     'merge-pdf' => [
