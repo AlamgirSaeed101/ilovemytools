@@ -156,6 +156,12 @@
     ]
   },
   {
+    "key": "{count} new free tools on {name}",
+    "files": [
+      "app/Mail/NewToolsAnnouncement.php"
+    ]
+  },
+  {
     "key": "{count} numbers",
     "one": "{count} number",
     "files": [
@@ -640,6 +646,12 @@
     ]
   },
   {
+    "key": "Almost done! Check your inbox and click the link to confirm your subscription.",
+    "files": [
+      "resources/js/components/Newsletter.jsx"
+    ]
+  },
+  {
     "key": "Already optimised",
     "files": [
       "resources/js/tools/ImageCompressor.jsx"
@@ -707,6 +719,12 @@
     ]
   },
   {
+    "key": "Be the first to try new tools",
+    "files": [
+      "resources/js/components/Newsletter.jsx"
+    ]
+  },
+  {
     "key": "Bedtime",
     "files": [
       "resources/js/tools/SleepCalculator.jsx"
@@ -734,6 +752,7 @@
     "key": "Browse all free tools",
     "files": [
       "resources/js/pages/NotFound.jsx",
+      "resources/views/emails/new-tools.blade.php",
       "resources/views/errors/404.blade.php"
     ]
   },
@@ -854,6 +873,12 @@
     ]
   },
   {
+    "key": "Close",
+    "files": [
+      "resources/js/components/Newsletter.jsx"
+    ]
+  },
+  {
     "key": "Close menu",
     "files": [
       "resources/js/components/Layout.jsx"
@@ -899,6 +924,24 @@
     "key": "Compression mode",
     "files": [
       "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Confirm my email",
+    "files": [
+      "resources/views/emails/confirm.blade.php"
+    ]
+  },
+  {
+    "key": "Confirm your subscription",
+    "files": [
+      "resources/views/emails/confirm.blade.php"
+    ]
+  },
+  {
+    "key": "Confirm your subscription to {name}",
+    "files": [
+      "app/Mail/ConfirmSubscription.php"
     ]
   },
   {
@@ -1310,6 +1353,7 @@
   {
     "key": "Email address",
     "files": [
+      "resources/js/components/Newsletter.jsx",
       "resources/js/tools/QrCodeGenerator.jsx"
     ]
   },
@@ -1676,6 +1720,12 @@
     ]
   },
   {
+    "key": "Free, private and right in your browser - no sign up, no uploads, no watermarks.",
+    "files": [
+      "resources/views/emails/new-tools.blade.php"
+    ]
+  },
+  {
     "key": "Free, with no limits",
     "files": [
       "scripts/i18n-extract.mjs"
@@ -1724,6 +1774,12 @@
     "key": "Get in touch",
     "files": [
       "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Get new tools by email",
+    "files": [
+      "resources/js/components/Newsletter.jsx"
     ]
   },
   {
@@ -1886,9 +1942,21 @@
     ]
   },
   {
+    "key": "If you did not sign up, just ignore this email and you will not hear from us again.",
+    "files": [
+      "resources/views/emails/confirm.blade.php"
+    ]
+  },
+  {
     "key": "If you go to bed now",
     "files": [
       "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "If you subscribe to our newsletter, we store your email address, your language and the date you signed up and confirmed, only to email you when we add new tools. We never share or sell it. Every email has a one-click unsubscribe link, and you can ask us to delete your address at any time.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
     ]
   },
   {
@@ -2361,9 +2429,39 @@
     ]
   },
   {
+    "key": "New free tools you can use right now.",
+    "files": [
+      "resources/views/emails/new-tools.blade.php"
+    ]
+  },
+  {
+    "key": "New on {name}: {tool}",
+    "files": [
+      "app/Mail/NewToolsAnnouncement.php"
+    ]
+  },
+  {
     "key": "New timer",
     "files": [
       "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "New tool",
+    "files": [
+      "resources/views/emails/new-tools.blade.php"
+    ]
+  },
+  {
+    "key": "New tools",
+    "files": [
+      "resources/views/emails/new-tools.blade.php"
+    ]
+  },
+  {
+    "key": "Newsletter",
+    "files": [
+      "resources/js/components/Newsletter.jsx"
     ]
   },
   {
@@ -2457,9 +2555,21 @@
     ]
   },
   {
+    "key": "One click to confirm your subscription.",
+    "files": [
+      "resources/views/emails/confirm.blade.php"
+    ]
+  },
+  {
     "key": "One PDF file · max 200 MB",
     "files": [
       "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "One short email when we add a new free tool. No spam.",
+    "files": [
+      "resources/js/components/Newsletter.jsx"
     ]
   },
   {
@@ -2702,6 +2812,12 @@
     "key": "Please enter a valid date of birth.",
     "files": [
       "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Please enter a valid email address.",
+    "files": [
+      "resources/js/components/Newsletter.jsx"
     ]
   },
   {
@@ -3315,6 +3431,12 @@
     ]
   },
   {
+    "key": "Something went wrong. Please try again.",
+    "files": [
+      "resources/js/components/Newsletter.jsx"
+    ]
+  },
+  {
     "key": "Sorry, something went wrong with this tool.",
     "files": [
       "resources/js/components/ErrorBoundary.jsx"
@@ -3475,6 +3597,18 @@
     ]
   },
   {
+    "key": "Subscribe",
+    "files": [
+      "resources/js/components/Newsletter.jsx"
+    ]
+  },
+  {
+    "key": "Subscribing…",
+    "files": [
+      "resources/js/components/Newsletter.jsx"
+    ]
+  },
+  {
     "key": "Suggest a new tool you would like us to build",
     "files": [
       "resources/js/pages/InfoPages.jsx"
@@ -3579,6 +3713,12 @@
       "resources/js/tools/Base64Tool.jsx",
       "resources/js/tools/QrCodeGenerator.jsx",
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Thanks for signing up! Click the button below to confirm your email address. We will then send you one short email whenever we add a new free tool.",
+    "files": [
+      "resources/views/emails/confirm.blade.php"
     ]
   },
   {
@@ -3720,6 +3860,12 @@
     ]
   },
   {
+    "key": "This link is invalid or has expired.",
+    "files": [
+      "resources/js/components/Newsletter.jsx"
+    ]
+  },
+  {
     "key": "This page could not be loaded. Check your connection and try again.",
     "files": [
       "resources/js/pages/NotFound.jsx"
@@ -3823,6 +3969,12 @@
     ]
   },
   {
+    "key": "Too many attempts. Please wait a minute and try again.",
+    "files": [
+      "resources/js/components/Newsletter.jsx"
+    ]
+  },
+  {
     "key": "Tool",
     "files": [
       "resources/js/pages/Category.jsx",
@@ -3882,6 +4034,12 @@
     ]
   },
   {
+    "key": "Try it free",
+    "files": [
+      "resources/views/emails/new-tools.blade.php"
+    ]
+  },
+  {
     "key": "Type of dice",
     "files": [
       "resources/js/tools/DiceRoller.jsx"
@@ -3915,6 +4073,19 @@
     "key": "Unknown QR code type.",
     "files": [
       "resources/js/lib/qr.js"
+    ]
+  },
+  {
+    "key": "Unsubscribe",
+    "files": [
+      "resources/js/components/Newsletter.jsx",
+      "resources/views/emails/new-tools.blade.php"
+    ]
+  },
+  {
+    "key": "Unsubscribe from new tool emails?",
+    "files": [
+      "resources/js/components/Newsletter.jsx"
     ]
   },
   {
@@ -4010,9 +4181,27 @@
     ]
   },
   {
+    "key": "We add new free tools every week. Get one short email when a new one goes live. No spam, unsubscribe in one click.",
+    "files": [
+      "resources/js/components/Newsletter.jsx"
+    ]
+  },
+  {
     "key": "We currently offer {tools} free tools across {categories} categories, including a word counter, PDF merger, image compressor, QR code generator, calculators, games, timers and developer utilities, and we add new tools regularly.",
     "files": [
       "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "We just added a new free tool",
+    "files": [
+      "resources/views/emails/new-tools.blade.php"
+    ]
+  },
+  {
+    "key": "We just added new free tools",
+    "files": [
+      "resources/views/emails/new-tools.blade.php"
     ]
   },
   {
@@ -4180,6 +4369,18 @@
     ]
   },
   {
+    "key": "You are receiving this because you subscribed to new tool announcements.",
+    "files": [
+      "resources/views/emails/new-tools.blade.php"
+    ]
+  },
+  {
+    "key": "You are subscribed! We will email you when we add a new tool.",
+    "files": [
+      "resources/js/components/Newsletter.jsx"
+    ]
+  },
+  {
     "key": "You can compress up to {max} images at a time.",
     "files": [
       "resources/js/tools/ImageCompressor.jsx"
@@ -4199,15 +4400,33 @@
     ]
   },
   {
+    "key": "You have been unsubscribed. You will not get any more emails from us.",
+    "files": [
+      "resources/js/components/Newsletter.jsx"
+    ]
+  },
+  {
     "key": "You may opt out of personalised advertising by visiting {adsSettings}. You can also opt out of some third-party vendors’ use of cookies for personalised advertising at {aboutAds}. Learn more in {howGoogle}.",
     "files": [
       "resources/js/pages/InfoPages.jsx"
     ]
   },
   {
+    "key": "You received this email because someone entered this address in the newsletter form on our website.",
+    "files": [
+      "resources/views/emails/confirm.blade.php"
+    ]
+  },
+  {
     "key": "You slept about",
     "files": [
       "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "you@example.com",
+    "files": [
+      "resources/js/components/Newsletter.jsx"
     ]
   },
   {

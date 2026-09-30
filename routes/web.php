@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\SeoFilesController;
 use App\Support\Locale;
@@ -14,6 +15,11 @@ Route::get('/sitemap.xml', [SeoFilesController::class, 'sitemap'])->name('sitema
 Route::get('/robots.txt', [SeoFilesController::class, 'robots'])->name('robots');
 Route::get('/ads.txt', [SeoFilesController::class, 'ads'])->name('ads');
 Route::get('/llms.txt', [SeoFilesController::class, 'llms'])->name('llms');
+
+// Newsletter links from emails (not language-prefixed; they redirect to the subscriber's language).
+Route::get('/newsletter/confirm/{token}', [NewsletterController::class, 'confirm'])->where('token', '[A-Za-z0-9]{20,64}')->name('newsletter.confirm');
+Route::get('/newsletter/unsubscribe/{token}', [NewsletterController::class, 'unsubscribePrompt'])->where('token', '[A-Za-z0-9]{20,64}')->name('newsletter.unsubscribe');
+Route::post('/newsletter/unsubscribe/{token}', [NewsletterController::class, 'unsubscribe'])->where('token', '[A-Za-z0-9]{20,64}')->middleware('throttle:20,1,newsletter-one-click');
 
 /*
 |--------------------------------------------------------------------------

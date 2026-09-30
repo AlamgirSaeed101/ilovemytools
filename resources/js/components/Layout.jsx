@@ -3,6 +3,7 @@ import { Link, Outlet, ScrollRestoration, useLocation, useNavigation } from 'rea
 import AdSlot from './AdSlot.jsx';
 import CommandPalette from './CommandPalette.jsx';
 import Icon from './Icon.jsx';
+import NewsletterForm, { NewsletterNotice } from './Newsletter.jsx';
 import { getSite } from '../lib/api.js';
 import { t } from '../lib/i18n.js';
 
@@ -345,6 +346,9 @@ function Footer() {
                                 </li>
                             ))}
                         </ul>
+                        <div className="mt-6 max-w-[360px]">
+                            <NewsletterForm compact />
+                        </div>
                     </div>
                     {site.categories.map((c) => (
                         <div key={c.slug}>
@@ -449,6 +453,7 @@ export default function Layout() {
             <ProgressBar />
             <Header onSearch={openPalette} />
             <main id="main" className="flex-1 pb-12 outline-none" tabIndex={-1} ref={mainRef}>
+                <NewsletterNotice />
                 <Outlet />
             </main>
             <div className="shell">

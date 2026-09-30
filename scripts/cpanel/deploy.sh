@@ -26,6 +26,23 @@ grep -q '^APP_KEY=base64:' .env || php artisan key:generate --force
 mkdir -p storage/framework/cache/data storage/framework/sessions storage/framework/views storage/logs bootstrap/cache
 chmod -R u+rwX,go-w storage bootstrap/cache
 
+echo "== 4b. Database (newsletter subscribers)"
+# SQLite in ~/toolzy/database; the release never contains it, so it survives deploys.
+[ -f database/database.sqlite ] || { touch database/database.sqlite; echo "created database/database.sqlite"; }
+chmod 600 database/database.sqlite
+# Keep the last 5 copies before migrating.
+if [ -s database/database.sqlite ]; then cp database/database.sqlite "database/database.sqlite.bak-$(date +%Y%m%d%H%M%S)"; fi
+(ls -1t database/database.sqlite.bak-* 2>/dev/null | tail -n +6 | xargs -r rm -f) || true
+php artisan migrate --force
+
+echo "== 4c. Scheduler (cron, installed once)"
+CRON_LINE='* * * * * cd ~/toolzy && php artisan schedule:run >> /dev/null 2>&1'
+if crontab -l 2>/dev/null | grep -qF 'artisan schedule:run'; then
+    echo "cron already installed"
+else
+    (crontab -l 2>/dev/null; echo "$CRON_LINE") | crontab - && echo "cron installed" || echo "WARNING: could not install cron - add it in cPanel > Cron Jobs: $CRON_LINE"
+fi
+
 echo "== 5. Public files -> ~/public_html"
 rm -rf ~/public_html/build
 cp -a ~/toolzy/public/. ~/public_html/

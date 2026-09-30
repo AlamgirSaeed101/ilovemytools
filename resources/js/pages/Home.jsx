@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 import { Link } from 'react-router';
 import AdSlot from '../components/AdSlot.jsx';
 import Icon from '../components/Icon.jsx';
+import NewsletterForm from '../components/Newsletter.jsx';
 import ToolCard, { categoryOf } from '../components/ToolCard.jsx';
 import { getSite } from '../lib/api.js';
 import { formatNumber, t, tn } from '../lib/i18n.js';
@@ -323,6 +324,8 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
+
+                <NewsletterForm />
 
                 <section className="mb-6 text-center" aria-labelledby="trusted-heading">
                     <h2 id="trusted-heading" className={`${sectionTitle} mb-4`}>

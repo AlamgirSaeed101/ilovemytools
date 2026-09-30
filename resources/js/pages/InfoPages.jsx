@@ -125,6 +125,8 @@ export function Privacy() {
             <h2>{t('2. Information collected automatically')}</h2>
             <p>{t('Like most websites, our web server may keep standard log files that include your IP address, browser type, pages visited and the date and time of the visit. These logs are used only for security, troubleshooting and preventing abuse, and are deleted regularly.')}</p>
 
+            <p>{t('If you subscribe to our newsletter, we store your email address, your language and the date you signed up and confirmed, only to email you when we add new tools. We never share or sell it. Every email has a one-click unsubscribe link, and you can ask us to delete your address at any time.')}</p>
+
             <h2>{t('3. Cookies and local storage')}</h2>
             <p>{t('Cookies are small text files stored on your device. We do not set any cookies of our own. We use:')}</p>
             <ul>

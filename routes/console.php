@@ -1,8 +1,13 @@
 <?php
 
-use Illuminate\Foundation\Inspiring;
-use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Schedule;
 
-Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
-})->purpose('Display an inspiring quote');
+/*
+|--------------------------------------------------------------------------
+| Scheduled tasks
+|--------------------------------------------------------------------------
+| The server's cron runs `php artisan schedule:run` every minute.
+*/
+
+// Email newsletter subscribers when a new tool goes live.
+Schedule::command('newsletter:announce')->hourly()->withoutOverlapping();

@@ -41,6 +41,8 @@ jobs:
         run: |
           cp .env.example .env
           php artisan key:generate
+          touch database/database.sqlite
+          php artisan migrate --force
 
       - name: Build frontend
         run: npm run build
@@ -70,7 +72,7 @@ jobs:
         run: |
           rm .env
           tar -czf /tmp/release.tgz --exclude=./node_modules --exclude=./vendor --exclude=./.env \
-            --exclude=./.git --exclude=./test-results --exclude=./playwright-report --exclude=./public/hot \
+            --exclude=./.git --exclude='./database/*.sqlite*' --exclude=./test-results --exclude=./playwright-report --exclude=./public/hot \
             --exclude='./storage/logs/*.log' --exclude='./storage/framework/views/*.php' \
             --exclude='./bootstrap/cache/*.php' .
 

@@ -26,3 +26,8 @@ yarn-error.log
 /public/build
 /claude-seo
 /_cmp.mjs
+
+# Local SQLite database (subscribers)
+/database/*.sqlite
+/database/*.sqlite-journal
+/database/*.sqlite.bak-*

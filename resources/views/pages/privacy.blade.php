@@ -17,6 +17,8 @@
             <h2>2. Information collected automatically</h2>
             <p>Like most websites, our web server may keep standard log files that include your IP address, browser type, pages visited and the date and time of the visit. These logs are used only for security, troubleshooting and preventing abuse, and are deleted regularly.</p>
 
+            <p>If you subscribe to our newsletter, we store your email address, your language and the date you signed up and confirmed, only to email you when we add new tools. We never share or sell it. Every email has a one-click unsubscribe link, and you can ask us to delete your address at any time.</p>
+
             <h2>3. Cookies</h2>
             <p>Cookies are small text files stored on your device. We use:</p>
             <ul>
