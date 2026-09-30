@@ -55,7 +55,7 @@ export default function NewsletterForm({ compact = false }) {
             </p>
         ) : (
             <form className="min-w-0" onSubmit={submit} noValidate>
-                <div className={`flex gap-2 ${compact ? 'flex-col min-[420px]:flex-row md:flex-col lg:flex-row' : 'flex-col sm:flex-row'}`}>
+                <div className={`flex gap-2 ${compact ? 'flex-col min-[420px]:flex-row' : 'flex-col sm:flex-row'}`}>
                     <label className="sr-only" htmlFor={`${id}-email`}>
                         {t('Email address')}
                     </label>
@@ -102,9 +102,16 @@ export default function NewsletterForm({ compact = false }) {
 
     if (compact) {
         return (
-            <div className="min-w-0" data-testid="newsletter-footer">
-                <h2 className="m-0 mb-1.5 text-[0.8rem] font-bold tracking-wider uppercase">{t('Get new tools by email')}</h2>
-                <p className="mt-0 mb-3 text-muted">{t('One short email when we add a new free tool. No spam.')}</p>
+            <div className="grid min-w-0 gap-4 md:grid-cols-[1fr_minmax(0,440px)] md:items-center md:gap-8" data-testid="newsletter-footer">
+                <div className="flex min-w-0 items-start gap-3.5">
+                    <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-[linear-gradient(135deg,#3b82f6,#7c3aed)] text-white [&_svg]:size-5" aria-hidden="true">
+                        <Icon name="mail" />
+                    </span>
+                    <div className="min-w-0">
+                        <h2 className="m-0 mb-0.5 text-[1.05rem] font-extrabold">{t('Get new tools by email')}</h2>
+                        <p className="m-0 text-muted">{t('One short email when we add a new free tool. No spam.')}</p>
+                    </div>
+                </div>
                 {form}
             </div>
         );

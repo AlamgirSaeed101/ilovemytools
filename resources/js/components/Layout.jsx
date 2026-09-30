@@ -329,12 +329,16 @@ function Footer() {
     const link = 'text-muted no-underline hover:text-brand [overflow-wrap:anywhere] hyphens-auto';
 
     return (
-        <footer className="mt-8 border-t border-line bg-surface pt-14 pb-6 text-[0.92rem]">
+        <footer className="mt-12 border-t border-line bg-surface pt-10 pb-6 text-[0.92rem]">
             <div className="shell">
-                <div className="grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-[1.6fr_repeat(3,1fr)]">
-                    <div className="col-span-2 md:col-span-1 md:row-span-2">
+                <div className="rounded-2xl border border-line bg-surface-2 p-5 sm:p-6">
+                    <NewsletterForm compact />
+                </div>
+
+                <div className="mt-10 grid gap-8 lg:grid-cols-[250px_1fr] lg:gap-12">
+                    <div className="min-w-0">
                         <Logo name={site.name} footer />
-                        <p className="mt-3.5 mb-4 max-w-[300px] text-muted">{t('Free online tools that run in your browser. No sign up, no uploads, no watermarks.')}</p>
+                        <p className="mt-3 mb-4 max-w-[320px] text-muted">{t('Free online tools that run in your browser. No sign up, no uploads, no watermarks.')}</p>
                         <ul className="m-0 flex list-none flex-wrap gap-1.5 p-0">
                             {[
                                 ['shield', 'Private'],
@@ -346,45 +350,41 @@ function Footer() {
                                 </li>
                             ))}
                         </ul>
-                        <div className="mt-6 max-w-[360px]">
-                            <NewsletterForm compact />
-                        </div>
                     </div>
-                    {site.categories.map((c) => (
-                        <div key={c.slug}>
-                            <h2 className="m-0 mb-2.5 text-[0.8rem] font-bold tracking-wider uppercase">
-                                <Link className="text-ink no-underline" to={`/category/${c.slug}`}>
-                                    {c.name}
-                                </Link>
-                            </h2>
-                            <ul className="m-0 list-none space-y-1.5 p-0">
-                                {toolsIn(c).map((x) => (
-                                    <li key={x.slug}>
-                                        <Link className={link} to={`/${x.slug}`}>
-                                            {x.name}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
+                    {/* Columns (not a grid) so short and long categories pack without gaps. */}
+                    <nav className="columns-2 gap-x-6 sm:columns-3 xl:columns-4" aria-label={t('All tools')}>
+                        {site.categories.map((c) => (
+                            <div key={c.slug} className="mb-6 break-inside-avoid">
+                                <h2 className="m-0 mb-2 text-[0.8rem] font-bold tracking-wider uppercase">
+                                    <Link className="text-ink no-underline hover:text-brand" to={`/category/${c.slug}`}>
+                                        {c.name}
+                                    </Link>
+                                </h2>
+                                <ul className="m-0 list-none space-y-1 p-0">
+                                    {toolsIn(c).map((x) => (
+                                        <li key={x.slug}>
+                                            <Link className={link} to={`/${x.slug}`}>
+                                                {x.name}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </nav>
                 </div>
 
-                <div className="mt-10 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-line pt-6">
-                    <span className="inline-flex items-center gap-1.5 text-[0.8rem] font-bold tracking-wider text-ink uppercase">
-                        <Icon name="globe" /> {t('Language')}
-                    </span>
-                    <LanguageLinks
-                        className="m-0 flex list-none flex-wrap gap-x-4 gap-y-1 p-0"
-                        linkClass={`${link} aria-[current]:font-bold aria-[current]:text-brand`}
-                    />
-                </div>
-
-                <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-6 text-muted">
-                    <p className="m-0">
-                        © {new Date().getFullYear()} {site.name}. {t('All rights reserved.')}
-                    </p>
-                    <ul className="m-0 flex list-none flex-wrap gap-x-5 gap-y-2 p-0">
+                <div className="mt-4 flex flex-col gap-3 border-t border-line pt-5 lg:flex-row lg:items-center lg:justify-between">
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
+                        <span className="inline-flex items-center gap-1.5 text-[0.8rem] font-bold tracking-wider text-ink uppercase">
+                            <Icon name="globe" /> {t('Language')}
+                        </span>
+                        <LanguageLinks
+                            className="m-0 flex list-none flex-wrap gap-x-3.5 gap-y-1 p-0"
+                            linkClass={`${link} aria-[current]:font-bold aria-[current]:text-brand`}
+                        />
+                    </div>
+                    <ul className="m-0 flex list-none flex-wrap gap-x-4 gap-y-1 p-0">
                         <li><Link className={link} to="/about">{t('About')}</Link></li>
                         <li><Link className={link} to="/contact">{t('Contact')}</Link></li>
                         <li><Link className={link} to="/privacy-policy">{t('Privacy Policy')}</Link></li>
@@ -392,6 +392,9 @@ function Footer() {
                         <li><a className={link} href="/sitemap.xml">{t('Sitemap')}</a></li>
                     </ul>
                 </div>
+                <p className="mt-4 mb-0 text-[0.85rem] text-muted">
+                    © {new Date().getFullYear()} {site.name}. {t('All rights reserved.')}
+                </p>
             </div>
         </footer>
     );
