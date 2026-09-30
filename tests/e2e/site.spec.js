@@ -73,6 +73,8 @@ test.describe('App shell', () => {
         await page.keyboard.press('/');
         await expect(dialog).toBeVisible();
         await page.keyboard.type('json');
+        // Wait for the results to update before using the keyboard (slower CI machines).
+        await expect(dialog.getByRole('option').first()).toContainText('JSON Formatter');
         await page.keyboard.press('ArrowDown');
         await page.keyboard.press('ArrowUp');
         await page.keyboard.press('Enter');
