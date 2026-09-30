@@ -1,0 +1,438 @@
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { Link, NavLink, Outlet, ScrollRestoration, useLocation, useNavigation } from 'react-router';
+import AdSlot from './AdSlot.jsx';
+import CommandPalette from './CommandPalette.jsx';
+import Icon from './Icon.jsx';
+import { getSite } from '../lib/api.js';
+import { t } from '../lib/i18n.js';
+
+// Shortcut links in the header to the busiest tools.
+const QUICK_LINKS = [
+    ['merge-pdf', 'Merge PDF'],
+    ['split-pdf', 'Split PDF'],
+    ['image-compressor', 'Compress Image'],
+    ['qr-code-generator', 'QR Code'],
+];
+
+const isMac = typeof navigator !== 'undefined' && /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
+
+// Shared Tailwind class strings.
+const iconBtn =
+    'inline-grid size-10 place-items-center rounded-xl border border-line bg-surface text-ink-2 shadow-hair transition-colors hover:border-line-strong hover:bg-surface-2 hover:text-ink cursor-pointer';
+const navLink =
+    'inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-[10px] border-0 bg-transparent px-3 py-2 font-[inherit] text-[0.8rem] font-bold uppercase tracking-wide text-ink-2 no-underline transition-colors hover:bg-surface-2 hover:text-ink aria-expanded:bg-surface-2 aria-expanded:text-ink [&.active]:text-brand cursor-pointer';
+const tile = 'inline-grid size-7 shrink-0 place-items-center rounded-lg bg-accent/15 text-accent-ink ring-1 ring-inset ring-accent/20 [&_svg]:size-3.5';
+
+/** Close a popup on outside click or Escape (focus returns to its button). */
+function usePopup(open, setOpen, ref) {
+    const location = useLocation();
+    useEffect(() => setOpen(false), [location.pathname, setOpen]);
+    useEffect(() => {
+        if (!open) return undefined;
+        const onDown = (e) => {
+            if (!ref.current?.contains(e.target)) setOpen(false);
+        };
+        const onKey = (e) => {
+            if (e.key === 'Escape') {
+                setOpen(false);
+                ref.current?.querySelector('button')?.focus();
+            }
+        };
+        document.addEventListener('pointerdown', onDown);
+        document.addEventListener('keydown', onKey);
+        return () => {
+            document.removeEventListener('pointerdown', onDown);
+            document.removeEventListener('keydown', onKey);
+        };
+    }, [open, setOpen, ref]);
+}
+
+// Dark is the default (set on <html> by Laravel); a saved choice overrides it.
+function currentTheme() {
+    return document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+}
+
+function ThemeToggle() {
+    const [theme, setTheme] = useState(currentTheme);
+
+    function toggle() {
+        const next = theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        document.querySelector('meta[name="theme-color"]')?.setAttribute('content', next === 'dark' ? '#0b1020' : '#f6f7fb');
+        try {
+            localStorage.setItem('theme', next);
+        } catch {
+            // not saved, but still applied for this visit
+        }
+        setTheme(next);
+    }
+
+    return (
+        <button type="button" className={iconBtn} onClick={toggle} aria-label={theme === 'dark' ? t('Switch to light mode') : t('Switch to dark mode')} title={t('Toggle dark mode')}>
+            <Icon name={theme === 'dark' ? 'sun' : 'moon'} />
+        </button>
+    );
+}
+
+function Logo({ name, footer = false }) {
+    const h = footer ? 'h-9' : 'h-[30px] sm:h-10';
+    return (
+        <Link className="inline-flex shrink-0 items-center no-underline" to="/" aria-label={t('{name} home', { name })}>
+            <img className={`${h} w-auto block dark:hidden`} src="/images/logo.svg?v=3" alt="" width="1103" height="234" />
+            <img className={`${h} w-auto hidden dark:block`} src="/images/logo-white.svg?v=3" alt="" width="1103" height="234" />
+        </Link>
+    );
+}
+
+/** "All tools" mega menu: every tool, grouped by category. */
+function AllToolsMenu({ categories, tools }) {
+    const [open, setOpen] = useState(false);
+    const ref = useRef(null);
+    usePopup(open, setOpen, ref);
+
+    return (
+        <div className="relative" ref={ref}>
+            <button type="button" className={navLink} aria-expanded={open} aria-haspopup="true" onClick={() => setOpen((o) => !o)}>
+                {t('All tools')} <Icon name="chevron" className={`icon size-4 transition-transform ${open ? 'rotate-180' : ''}`} />
+            </button>
+            {open && (
+                <div className="animate-pop absolute top-full z-50 mt-2.5 grid w-[min(860px,calc(100vw-40px))] grid-cols-3 gap-x-6 gap-y-5 rounded-card border border-line bg-surface p-5 shadow-float start-1/2 ltr:-translate-x-[60%] rtl:translate-x-[60%]">
+                    {categories.map((c) => (
+                        <div key={c.slug} style={{ '--accent': c.accent }}>
+                            <Link
+                                className="mb-2 block border-b-2 border-accent/50 pb-2 text-xs font-extrabold tracking-wider text-muted uppercase no-underline hover:text-accent-ink"
+                                to={`/category/${c.slug}`}
+                            >
+                                {c.name}
+                            </Link>
+                            <ul className="m-0 list-none p-0">
+                                {c.tools
+                                    .map((slug) => tools.find((x) => x.slug === slug))
+                                    .filter(Boolean)
+                                    .map((x) => (
+                                        <li key={x.slug}>
+                                            <Link className="flex items-center gap-2.5 rounded-[10px] px-1.5 py-1.5 text-[0.92rem] font-semibold text-ink no-underline hover:bg-surface-2" to={`/${x.slug}`}>
+                                                <span className={tile}>
+                                                    <Icon name={x.icon} />
+                                                </span>
+                                                {x.name}
+                                            </Link>
+                                        </li>
+                                    ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+            )}
+        </div>
+    );
+}
+
+/** Link to the current page in another language (a full page load, so everything switches). */
+function useLanguageHref() {
+    const site = getSite();
+    const location = useLocation();
+    return (code) => {
+        const prefix = code === site.defaultLocale ? '' : `/${code}`;
+        const path = location.pathname === '/' ? '' : location.pathname;
+        return `${prefix}${path}${location.search}` || '/';
+    };
+}
+
+/** Plain list of language links, used in the mobile menu and the footer. */
+function LanguageLinks({ className, linkClass }) {
+    const site = getSite();
+    const hrefFor = useLanguageHref();
+    return (
+        <ul className={className} aria-label={t('Languages')}>
+            {site.locales.map((l) => (
+                <li key={l.code}>
+                    <a
+                        href={hrefFor(l.code)}
+                        hrefLang={l.hreflang}
+                        lang={l.code}
+                        dir={l.dir}
+                        aria-current={l.code === site.locale ? 'true' : undefined}
+                        className={linkClass}
+                    >
+                        {l.native}
+                    </a>
+                </li>
+            ))}
+        </ul>
+    );
+}
+
+/** Language menu. Each option is a normal link, so the new page loads fully in that language. */
+function LanguageMenu() {
+    const site = getSite();
+    const [open, setOpen] = useState(false);
+    const ref = useRef(null);
+    const hrefFor = useLanguageHref();
+    usePopup(open, setOpen, ref);
+
+    const current = site.locales.find((l) => l.code === site.locale);
+
+    // On phones the panel is placed against the (sticky) header so it spans the screen
+    // instead of hanging off the button and running past the left edge.
+    return (
+        <div className="sm:relative" ref={ref}>
+            <button
+                type="button"
+                className="inline-flex h-10 cursor-pointer items-center gap-1.5 rounded-xl border border-line bg-surface px-2.5 text-ink-2 shadow-hair transition-colors hover:border-line-strong hover:bg-surface-2 hover:text-ink"
+                aria-expanded={open}
+                aria-haspopup="true"
+                aria-label={t('Language: {language}', { language: current?.native ?? site.locale })}
+                onClick={() => setOpen((o) => !o)}
+            >
+                <Icon name="globe" />
+                <span className="hidden text-sm font-bold uppercase md:inline">{site.locale}</span>
+            </button>
+            {open && (
+                <div className="animate-pop absolute inset-x-3 top-full z-50 mt-2 rounded-card sm:inset-x-auto sm:end-0 sm:mt-2.5 sm:w-[min(560px,calc(100vw-24px))] border border-line bg-surface p-3 shadow-float">
+                    <p className="m-0 px-2 pb-2 text-xs font-extrabold tracking-wider text-muted uppercase">{t('Choose your language')}</p>
+                    <ul className="m-0 grid list-none grid-cols-2 gap-1 p-0 sm:grid-cols-3" aria-label={t('Languages')}>
+                        {site.locales.map((l) => (
+                            <li key={l.code}>
+                                <a
+                                    href={hrefFor(l.code)}
+                                    hrefLang={l.hreflang}
+                                    lang={l.code}
+                                    dir={l.dir}
+                                    aria-current={l.code === site.locale ? 'true' : undefined}
+                                    className="flex items-center justify-between gap-2 rounded-[10px] px-3 py-2 text-[0.92rem] font-semibold text-ink no-underline hover:bg-surface-2 aria-[current]:bg-brand/15 aria-[current]:text-brand"
+                                >
+                                    <span>{l.native}</span>
+                                    <span className="text-[0.7rem] font-bold text-muted uppercase">{l.code}</span>
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
+        </div>
+    );
+}
+
+function Header({ onSearch }) {
+    const site = getSite();
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const location = useLocation();
+
+    useEffect(() => setMobileOpen(false), [location.pathname]);
+
+    const mobileLink = 'flex items-center gap-3 border-b border-line px-1.5 py-3 font-semibold text-ink no-underline last:border-b-0';
+
+    return (
+        <header className="sticky top-0 z-40 border-b border-line/80 bg-canvas/80 backdrop-blur-md backdrop-saturate-150">
+            <div className="shell flex min-h-16 items-center gap-5">
+                <Logo name={site.name} />
+
+                {/* Quick links that don't fit on one row (long languages, narrower screens) wrap
+                    onto a hidden second row, so the header never breaks in any language. */}
+                <nav className="hidden min-w-0 flex-1 items-center gap-1 lg:flex" aria-label={t('Main')}>
+                    <AllToolsMenu categories={site.categories} tools={site.tools} />
+                    <div className="flex h-10 min-w-0 flex-1 flex-wrap items-center gap-1 overflow-hidden">
+                        {QUICK_LINKS.map(([slug, label]) => (
+                            <NavLink key={slug} className={`${navLink} h-10`} to={`/${slug}`}>
+                                {t(label)}
+                            </NavLink>
+                        ))}
+                    </div>
+                </nav>
+
+                <div className="ms-auto flex shrink-0 items-center gap-2">
+                    <button
+                        type="button"
+                        className="inline-flex h-10 w-10 cursor-pointer items-center justify-center gap-2 rounded-xl border border-line bg-surface text-[0.9rem] font-medium text-muted shadow-hair transition hover:border-line-strong hover:shadow-soft lg:w-auto lg:min-w-44 lg:justify-start lg:ps-3 lg:pe-2 xl:min-w-56"
+                        onClick={onSearch}
+                        aria-label={t('Search tools')}
+                        aria-keyshortcuts={isMac ? 'Meta+K' : 'Control+K'}
+                    >
+                        <Icon name="search" />
+                        <span className="hidden max-w-40 truncate lg:inline">{t('Search tools…')}</span>
+                        <kbd className="kbd ms-auto hidden lg:inline-flex">{isMac ? '⌘' : 'Ctrl'} K</kbd>
+                    </button>
+                    <LanguageMenu />
+                    <ThemeToggle />
+                    <button
+                        type="button"
+                        className={`${iconBtn} lg:hidden`}
+                        aria-expanded={mobileOpen}
+                        aria-controls="mobile-nav"
+                        aria-label={mobileOpen ? t('Close menu') : t('Open menu')}
+                        onClick={() => setMobileOpen((o) => !o)}
+                    >
+                        <Icon name={mobileOpen ? 'x' : 'menu'} />
+                    </button>
+                </div>
+            </div>
+
+            {mobileOpen && (
+                <nav id="mobile-nav" className="animate-slide-down border-t border-line bg-surface pt-2 pb-4" aria-label={t('Mobile')}>
+                    <div className="shell">
+                        <Link className={mobileLink} to="/">
+                            <Icon name="grid" /> {t('All tools')}
+                        </Link>
+                        {site.categories.map((c) => (
+                            <Link key={c.slug} className={mobileLink} to={`/category/${c.slug}`} style={{ '--accent': c.accent }}>
+                                <span className={tile}>
+                                    <Icon name={c.icon} />
+                                </span>
+                                {c.name}
+                            </Link>
+                        ))}
+                        <Link className={mobileLink} to="/about">{t('About')}</Link>
+                        <Link className={mobileLink} to="/contact">{t('Contact')}</Link>
+                        <p className="m-0 mt-4 mb-2 flex items-center gap-2 px-1.5 text-xs font-extrabold tracking-wider text-muted uppercase">
+                            <Icon name="globe" /> {t('Language')}
+                        </p>
+                        <LanguageLinks
+                            className="m-0 grid list-none grid-cols-2 gap-1.5 p-0"
+                            linkClass="block rounded-[10px] border border-line px-3 py-2 font-semibold text-ink no-underline aria-[current]:border-brand aria-[current]:bg-brand/15 aria-[current]:text-brand"
+                        />
+                    </div>
+                </nav>
+            )}
+        </header>
+    );
+}
+
+function Footer() {
+    const site = getSite();
+    const toolsIn = (c) => c.tools.map((slug) => site.tools.find((x) => x.slug === slug)).filter(Boolean);
+    const link = 'text-muted no-underline hover:text-brand';
+
+    return (
+        <footer className="mt-8 border-t border-line bg-surface pt-14 pb-6 text-[0.92rem]">
+            <div className="shell">
+                <div className="grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-[1.6fr_repeat(3,1fr)]">
+                    <div className="col-span-2 md:col-span-1 md:row-span-2">
+                        <Logo name={site.name} footer />
+                        <p className="mt-3.5 mb-4 max-w-[300px] text-muted">{t('Free online tools that run in your browser. No sign up, no uploads, no watermarks.')}</p>
+                        <ul className="m-0 flex list-none flex-wrap gap-1.5 p-0">
+                            {[
+                                ['shield', 'Private'],
+                                ['gift', 'Free'],
+                                ['zap', 'Fast'],
+                            ].map(([icon, label]) => (
+                                <li key={label} className="inline-flex items-center gap-1 rounded-full bg-surface-2 px-2.5 py-0.5 text-[0.8rem] font-semibold text-ink-2">
+                                    <Icon name={icon} /> {t(label)}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    {site.categories.map((c) => (
+                        <div key={c.slug}>
+                            <h2 className="m-0 mb-2.5 text-[0.8rem] font-bold tracking-wider uppercase">
+                                <Link className="text-ink no-underline" to={`/category/${c.slug}`}>
+                                    {c.name}
+                                </Link>
+                            </h2>
+                            <ul className="m-0 list-none space-y-1.5 p-0">
+                                {toolsIn(c).map((x) => (
+                                    <li key={x.slug}>
+                                        <Link className={link} to={`/${x.slug}`}>
+                                            {x.name}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="mt-10 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-line pt-6">
+                    <span className="inline-flex items-center gap-1.5 text-[0.8rem] font-bold tracking-wider text-ink uppercase">
+                        <Icon name="globe" /> {t('Language')}
+                    </span>
+                    <LanguageLinks
+                        className="m-0 flex list-none flex-wrap gap-x-4 gap-y-1 p-0"
+                        linkClass={`${link} aria-[current]:font-bold aria-[current]:text-brand`}
+                    />
+                </div>
+
+                <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-6 text-muted">
+                    <p className="m-0">
+                        © {new Date().getFullYear()} {site.name}. {t('All rights reserved.')}
+                    </p>
+                    <ul className="m-0 flex list-none flex-wrap gap-x-5 gap-y-2 p-0">
+                        <li><Link className={link} to="/about">{t('About')}</Link></li>
+                        <li><Link className={link} to="/contact">{t('Contact')}</Link></li>
+                        <li><Link className={link} to="/privacy-policy">{t('Privacy Policy')}</Link></li>
+                        <li><Link className={link} to="/terms">{t('Terms of Use')}</Link></li>
+                        <li><a className={link} href="/sitemap.xml">{t('Sitemap')}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    );
+}
+
+/** Thin progress bar while the next page's data loads. */
+function ProgressBar() {
+    const navigation = useNavigation();
+    return <div className={`progress${navigation.state !== 'idle' ? ' is-active' : ''}`} aria-hidden="true" />;
+}
+
+function usePageFocus() {
+    const location = useLocation();
+    const first = useRef(true);
+    const mainRef = useRef(null);
+
+    useEffect(() => {
+        if (first.current) {
+            first.current = false;
+            return;
+        }
+        // Move focus to the new page for keyboard and screen reader users.
+        mainRef.current?.focus({ preventScroll: true });
+    }, [location.pathname]);
+
+    return mainRef;
+}
+
+export default function Layout() {
+    const [paletteOpen, setPaletteOpen] = useState(false);
+    const location = useLocation();
+    const mainRef = usePageFocus();
+    const openPalette = useCallback(() => setPaletteOpen(true), []);
+    const closePalette = useCallback(() => setPaletteOpen(false), []);
+
+    useEffect(() => {
+        const onKey = (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+                e.preventDefault();
+                setPaletteOpen((o) => !o);
+                return;
+            }
+            const el = e.target;
+            const typing = el instanceof HTMLElement && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName));
+            if (e.key === '/' && !typing && !e.ctrlKey && !e.metaKey && !e.altKey) {
+                e.preventDefault();
+                setPaletteOpen(true);
+            }
+        };
+        document.addEventListener('keydown', onKey);
+        return () => document.removeEventListener('keydown', onKey);
+    }, []);
+
+    return (
+        <>
+            <a className="skip-link" href="#main">
+                {t('Skip to content')}
+            </a>
+            <ProgressBar />
+            <Header onSearch={openPalette} />
+            <main id="main" className="flex-1 pb-12 outline-none" tabIndex={-1} ref={mainRef}>
+                <Outlet />
+            </main>
+            <div className="shell">
+                <AdSlot key={`footer-${location.pathname}`} position="footer" />
+            </div>
+            <Footer />
+            <CommandPalette open={paletteOpen} onClose={closePalette} />
+            <ScrollRestoration />
+        </>
+    );
+}

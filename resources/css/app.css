@@ -1,0 +1,89 @@
+/* ==========================================================================
+   ILoveTools styles - Tailwind CSS v4
+   --------------------------------------------------------------------------
+   - Pages and layout are styled with Tailwind utility classes in the JSX.
+   - kit.css holds the design tokens (colours as CSS variables, light + dark)
+     and the shared tool UI kit (buttons, fields, notices...) used by every tool.
+   - games.css / landing.css hold the complex animations (3D dice, coin toss,
+     wheel...), which are clearer as plain CSS keyframes.
+   Tailwind's preflight reset is intentionally not imported: kit.css has its
+   own base styles, and a global reset would restyle every tool at once.
+   ========================================================================== */
+
+@layer theme, base, components, utilities;
+
+@import 'tailwindcss/theme.css' layer(theme);
+@import './kit.css' layer(components);
+@import './landing.css' layer(components);
+@import './games.css' layer(components);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+@source '../js';
+@source '../views';
+
+/* dark: variant follows the site's theme switch (<html data-theme="dark">). */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+/*
+ * Tailwind colour and font names mapped to the site's design tokens, so
+ * utilities like bg-surface, text-muted or border-line switch automatically
+ * between light and dark mode.
+ */
+@theme inline {
+    --font-sans: var(--font);
+    --font-mono: var(--mono);
+
+    --color-canvas: var(--bg);
+    --color-surface: var(--surface);
+    --color-surface-2: var(--surface-2);
+    --color-surface-3: var(--surface-3);
+    --color-line: var(--border);
+    --color-line-strong: var(--border-strong);
+    --color-ink: var(--text);
+    --color-ink-2: var(--text-2);
+    --color-muted: var(--muted);
+    --color-brand: var(--brand);
+    --color-brand-2: var(--brand-2);
+    --color-brand-strong: var(--brand-strong);
+    --color-on-brand: var(--on-brand);
+    --color-accent: var(--accent);
+    --color-accent-ink: var(--accent-ink, var(--accent));
+    --color-success: var(--success);
+    --color-success-soft: var(--success-bg);
+    --color-danger: var(--danger);
+    --color-danger-soft: var(--danger-bg);
+    --color-warn: var(--warn);
+    --color-info: var(--info);
+
+    --shadow-soft: var(--shadow-sm);
+    --shadow-card: var(--shadow);
+    --shadow-float: var(--shadow-lg);
+    --shadow-hair: var(--shadow-xs);
+
+    --radius-card: var(--radius-lg);
+    --radius-panel: var(--radius-xl);
+
+    --ease-snap: var(--ease);
+}
+
+/* Animations used as Tailwind utilities (animate-pop, animate-slide-down).
+   They animate `transform`, which composes with Tailwind's separate
+   `translate` property, so positioned popups don't jump while opening. */
+@theme {
+    --animate-pop: menu-pop 0.16s cubic-bezier(0.2, 0.8, 0.2, 1);
+    --animate-slide-down: menu-slide 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+    @keyframes menu-pop {
+        from {
+            opacity: 0;
+            transform: translateY(-6px) scale(0.98);
+        }
+    }
+
+    @keyframes menu-slide {
+        from {
+            opacity: 0;
+            transform: translateY(-6px);
+        }
+    }
+}

@@ -1,0 +1,3973 @@
+[
+  {
+    "key": "\"{name}\" could not be opened. It may be damaged or in an unsupported format.",
+    "files": [
+      "resources/js/lib/image.js"
+    ]
+  },
+  {
+    "key": "\"{name}\" could not be read as an image.",
+    "files": [
+      "resources/js/lib/image.js"
+    ]
+  },
+  {
+    "key": "\"{name}\" could not be read. It may be damaged or not a real PDF.",
+    "files": [
+      "resources/js/lib/pdf.js"
+    ]
+  },
+  {
+    "key": "\"{name}\" has no pages.",
+    "files": [
+      "resources/js/lib/pdf.js"
+    ]
+  },
+  {
+    "key": "\"{name}\" is larger than 200 MB.",
+    "files": [
+      "resources/js/lib/pdf.js"
+    ]
+  },
+  {
+    "key": "\"{name}\" is password-protected. Remove the password first (open it with the password and save a copy), then try again.",
+    "files": [
+      "resources/js/lib/pdf.js"
+    ]
+  },
+  {
+    "key": "\"{part}\" is backwards. Write the smaller page number first, like {end}-{start}.",
+    "files": [
+      "resources/js/lib/pdfRanges.js"
+    ]
+  },
+  {
+    "key": "\"{part}\" is not a valid page or range. Use numbers like 3 or 1-5.",
+    "files": [
+      "resources/js/lib/pdfRanges.js"
+    ]
+  },
+  {
+    "key": "(line {line}, column {column})",
+    "files": [
+      "resources/js/lib/json.js"
+    ]
+  },
+  {
+    "key": "{\"paste\": \"your JSON here\"}",
+    "files": [
+      "resources/js/tools/JsonFormatter.jsx"
+    ]
+  },
+  {
+    "key": "{bits} bits of entropy",
+    "files": [
+      "resources/js/tools/PasswordGenerator.jsx"
+    ]
+  },
+  {
+    "key": "{count} characters",
+    "one": "{count} character",
+    "files": [
+      "resources/js/tools/CaseConverter.jsx"
+    ]
+  },
+  {
+    "key": "{count} cycles",
+    "one": "{count} cycle",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "{count} days",
+    "one": "{count} day",
+    "files": [
+      "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "{count} files",
+    "one": "{count} file",
+    "files": [
+      "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "{count} files skipped because they are larger than 50 MB.",
+    "one": "{count} file skipped because it is larger than 50 MB.",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "{count} free tools",
+    "one": "{count} free tool",
+    "files": [
+      "resources/js/pages/Category.jsx"
+    ]
+  },
+  {
+    "key": "{count} images",
+    "one": "{count} image",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "{count} modules",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "{count} modules (recommended)",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "{count} months",
+    "one": "{count} month",
+    "files": [
+      "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "{count} numbers",
+    "one": "{count} number",
+    "files": [
+      "resources/js/tools/RandomNumber.jsx"
+    ]
+  },
+  {
+    "key": "{count} pages",
+    "one": "{count} page",
+    "files": [
+      "resources/js/tools/MergePdf.jsx",
+      "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "{count} pages in total",
+    "one": "{count} page in total",
+    "files": [
+      "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "{count} PDFs in a ZIP file",
+    "files": [
+      "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "{count} tools",
+    "one": "{count} tool",
+    "files": [
+      "resources/js/lib/i18n.js",
+      "resources/js/pages/Category.jsx"
+    ]
+  },
+  {
+    "key": "{count} words",
+    "one": "{count} word",
+    "files": [
+      "resources/js/tools/CaseConverter.jsx"
+    ]
+  },
+  {
+    "key": "{count} years",
+    "one": "{count} year",
+    "files": [
+      "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "{files} are not PDFs.",
+    "one": "{files} is not a PDF.",
+    "files": [
+      "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "{files}: only JPG, PNG and WebP images are supported.",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "{h} h",
+    "files": [
+      "resources/js/lib/sleep.js",
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "{h} h {m} min",
+    "files": [
+      "resources/js/lib/sleep.js"
+    ]
+  },
+  {
+    "key": "{h} hr",
+    "files": [
+      "resources/js/lib/text.js"
+    ]
+  },
+  {
+    "key": "{h} hr {m} min",
+    "files": [
+      "resources/js/lib/text.js"
+    ]
+  },
+  {
+    "key": "{heads}% heads, {tails}% tails",
+    "files": [
+      "resources/js/tools/CoinFlip.jsx"
+    ]
+  },
+  {
+    "key": "{m} min",
+    "files": [
+      "resources/js/lib/sleep.js",
+      "resources/js/lib/text.js",
+      "resources/js/tools/CountdownTimer.jsx",
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "{m} min {s} sec",
+    "files": [
+      "resources/js/lib/text.js"
+    ]
+  },
+  {
+    "key": "{name} home",
+    "files": [
+      "resources/js/components/Layout.jsx",
+      "resources/views/partials/header.blade.php"
+    ]
+  },
+  {
+    "key": "{name} is a free collection of simple, fast and private online tools. We built it because most “free” tools online are slow, covered in pop-ups, add watermarks, or quietly upload your files to their servers.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "{name} is a free web app for everyday tasks with PDFs, images, text and data. Every tool runs in your browser, so your work stays private and results appear instantly.",
+    "files": [
+      "resources/js/pages/Home.jsx",
+      "resources/views/pages/home.blade.php"
+    ]
+  },
+  {
+    "key": "{percent}% smaller",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "{s} sec",
+    "files": [
+      "resources/js/lib/text.js",
+      "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "{size} of Base64",
+    "files": [
+      "resources/js/tools/Base64Tool.jsx"
+    ]
+  },
+  {
+    "key": "{time} in bed",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "{time} of sleep; 7 to 9 hours is recommended",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "{time} timer",
+    "files": [
+      "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "{value}% decrease",
+    "files": [
+      "resources/js/lib/percent.js"
+    ]
+  },
+  {
+    "key": "{value}% increase",
+    "files": [
+      "resources/js/lib/percent.js"
+    ]
+  },
+  {
+    "key": "{years}, {months}, {days}",
+    "files": [
+      "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "0% (no change)",
+    "files": [
+      "resources/js/lib/percent.js"
+    ]
+  },
+  {
+    "key": "1 hour",
+    "files": [
+      "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "1 PDF",
+    "files": [
+      "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "1 PDF with {count} pages",
+    "one": "1 PDF with {count} page",
+    "files": [
+      "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "1. Files and text you use in our tools",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "1. Use of the tools",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "12 h",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "2 spaces",
+    "files": [
+      "resources/js/tools/JsonFormatter.jsx"
+    ]
+  },
+  {
+    "key": "2. Information collected automatically",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "2. No warranty",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "24 h",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "3. Cookies and local storage",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "3. Limitation of liability",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "4 spaces",
+    "files": [
+      "resources/js/tools/JsonFormatter.jsx"
+    ]
+  },
+  {
+    "key": "4. Acceptable use",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "4. Advertising (Google AdSense)",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "5 of 1 – {max}",
+    "files": [
+      "resources/js/tools/RandomNumber.jsx"
+    ]
+  },
+  {
+    "key": "5. Advertising and third-party links",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "5. Your rights",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "6. Changes",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "6. Children",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "7-9 h",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "7. Changes to this policy",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "7. Contact",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "8. Contact",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "A bit short",
+    "files": [
+      "resources/js/lib/sleep.js"
+    ]
+  },
+  {
+    "key": "A die needs between 2 and 1000 sides.",
+    "files": [
+      "resources/js/lib/random.js"
+    ]
+  },
+  {
+    "key": "A small margin can make the code hard to scan when printed on a busy background.",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "About",
+    "files": [
+      "resources/js/components/Layout.jsx",
+      "resources/views/partials/footer.blade.php"
+    ]
+  },
+  {
+    "key": "about {count} full sleep cycles",
+    "one": "about {count} full sleep cycle",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "About {name}",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "About the {name}",
+    "files": [
+      "resources/js/pages/ToolPage.jsx",
+      "resources/views/pages/tool.blade.php"
+    ]
+  },
+  {
+    "key": "About Us",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Ad space",
+    "files": [
+      "resources/js/components/AdSlot.jsx"
+    ]
+  },
+  {
+    "key": "Add at least 2 entries to spin.",
+    "files": [
+      "resources/js/tools/SpinWheel.jsx"
+    ]
+  },
+  {
+    "key": "Add at least one more PDF to merge.",
+    "files": [
+      "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "Add more PDF files",
+    "files": [
+      "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "Adults need 7-9 hours. Under 6 hours regularly affects mood, focus and health.",
+    "files": [
+      "resources/js/lib/sleep.js"
+    ]
+  },
+  {
+    "key": "Advertisement",
+    "files": [
+      "resources/js/components/AdSlot.jsx"
+    ]
+  },
+  {
+    "key": "Advertising cookies used by Google and its partners to show ads, as described below.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Age at the date of",
+    "files": [
+      "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "All",
+    "files": [
+      "resources/js/pages/Home.jsx"
+    ]
+  },
+  {
+    "key": "All free tools",
+    "files": [
+      "resources/js/pages/ToolPage.jsx",
+      "resources/views/pages/tool.blade.php"
+    ]
+  },
+  {
+    "key": "All rights reserved.",
+    "files": [
+      "resources/js/components/Layout.jsx",
+      "resources/views/partials/footer.blade.php"
+    ]
+  },
+  {
+    "key": "All the free online tools you need, in one place",
+    "files": [
+      "resources/js/pages/Home.jsx",
+      "resources/views/pages/home.blade.php"
+    ]
+  },
+  {
+    "key": "All tools",
+    "files": [
+      "resources/js/components/Layout.jsx"
+    ]
+  },
+  {
+    "key": "Already optimised",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Analytics cookies (if enabled) such as Google Analytics, to understand how visitors use the Site in aggregate.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Any file · max 10 MB · images get a ready-to-use data URL",
+    "files": [
+      "resources/js/tools/Base64Tool.jsx"
+    ]
+  },
+  {
+    "key": "Any text…",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Ask about advertising or partnerships",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Awake",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Background",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Base64 mode",
+    "files": [
+      "resources/js/tools/Base64Tool.jsx"
+    ]
+  },
+  {
+    "key": "Bedtime",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Best rest",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Born on a {weekday}",
+    "files": [
+      "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Breadcrumb",
+    "files": [
+      "resources/js/components/Breadcrumbs.jsx"
+    ]
+  },
+  {
+    "key": "Browse all free tools",
+    "files": [
+      "resources/js/pages/NotFound.jsx",
+      "resources/views/errors/404.blade.php"
+    ]
+  },
+  {
+    "key": "Browser",
+    "files": [
+      "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Burgers",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "by",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "By percentage",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "By pixels",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "By using {name} (the “Site”) you agree to these terms. If you do not agree, please do not use the Site.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "characters",
+    "files": [
+      "resources/js/tools/PasswordGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Characters",
+    "files": [
+      "resources/js/tools/WordCounter.jsx"
+    ]
+  },
+  {
+    "key": "Characters (no spaces)",
+    "files": [
+      "resources/js/tools/WordCounter.jsx"
+    ]
+  },
+  {
+    "key": "Characters to include",
+    "files": [
+      "resources/js/tools/PasswordGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Choose another image",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Choose another PDF",
+    "files": [
+      "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "Choose your language",
+    "files": [
+      "resources/js/components/Layout.jsx"
+    ]
+  },
+  {
+    "key": "Chrome, Safari, Edge or Firefox on a phone, tablet or computer. No app to install.",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Clear",
+    "files": [
+      "resources/js/tools/Base64Tool.jsx",
+      "resources/js/tools/CaseConverter.jsx",
+      "resources/js/tools/DiceRoller.jsx",
+      "resources/js/tools/JsonFormatter.jsx",
+      "resources/js/tools/MergePdf.jsx",
+      "resources/js/tools/SpinWheel.jsx",
+      "resources/js/tools/WordCounter.jsx"
+    ]
+  },
+  {
+    "key": "Clear all",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Clock format",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Close menu",
+    "files": [
+      "resources/js/components/Layout.jsx"
+    ]
+  },
+  {
+    "key": "Close, but most adults feel best with at least 7 hours.",
+    "files": [
+      "resources/js/lib/sleep.js"
+    ]
+  },
+  {
+    "key": "Coins per flip",
+    "files": [
+      "resources/js/tools/CoinFlip.jsx"
+    ]
+  },
+  {
+    "key": "Comments are not allowed in JSON.",
+    "files": [
+      "resources/js/lib/json.js"
+    ]
+  },
+  {
+    "key": "Compress Image",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "compressing…",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Compressing…",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Compression mode",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Contact",
+    "files": [
+      "resources/js/components/Layout.jsx",
+      "resources/views/partials/footer.blade.php"
+    ]
+  },
+  {
+    "key": "contact page",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Contact Us",
+    "files": [
+      "resources/js/pages/InfoPages.jsx",
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Convert to",
+    "files": [
+      "resources/js/tools/CaseConverter.jsx"
+    ]
+  },
+  {
+    "key": "Cookies",
+    "files": [
+      "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Cookies are small text files stored on your device. We do not set any cookies of our own. We use:",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Copied!",
+    "files": [
+      "resources/js/components/CopyButton.jsx"
+    ]
+  },
+  {
+    "key": "Copy",
+    "files": [
+      "resources/js/components/CopyButton.jsx"
+    ]
+  },
+  {
+    "key": "Copy all",
+    "files": [
+      "resources/js/tools/RandomNumber.jsx"
+    ]
+  },
+  {
+    "key": "Copy email",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Copy IP",
+    "files": [
+      "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Copy laps",
+    "files": [
+      "resources/js/tools/Stopwatch.jsx"
+    ]
+  },
+  {
+    "key": "Could not compress this image.",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Could not create the QR code: {message}",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Could not create the SVG: {message}",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Could not create the ZIP file: {message}",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Could not look up your IP address. Check your connection and try again.",
+    "files": [
+      "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Could not reach the target size; this is the smallest version possible.",
+    "files": [
+      "resources/js/lib/image.js"
+    ]
+  },
+  {
+    "key": "Could not read this file.",
+    "files": [
+      "resources/js/tools/Base64Tool.jsx"
+    ]
+  },
+  {
+    "key": "Could not resize this image.",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Counting down",
+    "files": [
+      "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "Creating ZIP…",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Curry",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Customise colours, size and quality",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Data URL (for HTML / CSS)",
+    "files": [
+      "resources/js/tools/Base64Tool.jsx"
+    ]
+  },
+  {
+    "key": "Date of birth",
+    "files": [
+      "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Decode",
+    "files": [
+      "resources/js/tools/Base64Tool.jsx"
+    ]
+  },
+  {
+    "key": "Decoded to text ✓",
+    "files": [
+      "resources/js/tools/Base64Tool.jsx"
+    ]
+  },
+  {
+    "key": "Decoded, but the result is binary data (not readable text), so some characters may look strange.",
+    "files": [
+      "resources/js/tools/Base64Tool.jsx"
+    ]
+  },
+  {
+    "key": "Decrease",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Deep",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Depending on where you live (for example under the GDPR or UK GDPR, or the CCPA in California), you may have the right to access, correct or delete personal data, and to object to or restrict certain processing. Because we do not store your tool data, there is usually no personal data for us to return. To make a request, contact us using the details below.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Desktop",
+    "files": [
+      "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Device type",
+    "files": [
+      "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Dice (1 – 6)",
+    "files": [
+      "resources/js/tools/RandomNumber.jsx"
+    ]
+  },
+  {
+    "key": "Difference: {value}",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Disabled",
+    "files": [
+      "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Done!",
+    "files": [
+      "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "Done! Your merged PDF has {pages} ({size}).",
+    "files": [
+      "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "Download",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx",
+      "resources/js/tools/JsonFormatter.jsx"
+    ]
+  },
+  {
+    "key": "Download .txt",
+    "files": [
+      "resources/js/tools/CaseConverter.jsx"
+    ]
+  },
+  {
+    "key": "Download all (ZIP)",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Download image",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Download merged PDF",
+    "files": [
+      "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "Download PDF",
+    "files": [
+      "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "Download PNG",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Download SVG",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Download ZIP",
+    "files": [
+      "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "Drop a file here or click to choose",
+    "files": [
+      "resources/js/tools/Base64Tool.jsx"
+    ]
+  },
+  {
+    "key": "Drop a PDF here or click to choose",
+    "files": [
+      "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "Drop an image here or click to choose",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Drop images here or click to choose",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Drop PDF files here or click to choose",
+    "files": [
+      "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "e.g. 1-3, 5, 8-10",
+    "files": [
+      "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "e.g. 1920",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Each image is made as good as possible while staying under this size.",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Each tool does one job well, loads quickly and works on phones, tablets and computers.",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Email",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Email address",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Email us at",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Email us at {email}.",
+    "files": [
+      "resources/js/lib/i18n.js"
+    ]
+  },
+  {
+    "key": "Empty QR code preview",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Enabled",
+    "files": [
+      "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Encode",
+    "files": [
+      "resources/js/tools/Base64Tool.jsx"
+    ]
+  },
+  {
+    "key": "Encoded to Base64 ✓",
+    "files": [
+      "resources/js/tools/Base64Tool.jsx"
+    ]
+  },
+  {
+    "key": "Enter a date of birth to see the exact age.",
+    "files": [
+      "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Enter a percentage greater than 0.",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Enter a valid email address.",
+    "files": [
+      "resources/js/lib/qr.js"
+    ]
+  },
+  {
+    "key": "Enter a valid phone number.",
+    "files": [
+      "resources/js/lib/qr.js"
+    ]
+  },
+  {
+    "key": "Enter a valid time.",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Enter a website address.",
+    "files": [
+      "resources/js/lib/qr.js"
+    ]
+  },
+  {
+    "key": "Enter a width and height of at least 1 pixel.",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Enter how many numbers you want.",
+    "files": [
+      "resources/js/tools/RandomNumber.jsx"
+    ]
+  },
+  {
+    "key": "Enter some text.",
+    "files": [
+      "resources/js/lib/qr.js"
+    ]
+  },
+  {
+    "key": "Enter the pages you want, for example 1-3, 5.",
+    "files": [
+      "resources/js/lib/pdfRanges.js"
+    ]
+  },
+  {
+    "key": "Enter the Wi-Fi network name (SSID).",
+    "files": [
+      "resources/js/lib/qr.js"
+    ]
+  },
+  {
+    "key": "Enter the Wi-Fi password, or choose \"No password\".",
+    "files": [
+      "resources/js/lib/qr.js"
+    ]
+  },
+  {
+    "key": "Enter two different times.",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Enter whole numbers for the minimum and maximum.",
+    "files": [
+      "resources/js/lib/random.js",
+      "resources/js/tools/RandomNumber.jsx"
+    ]
+  },
+  {
+    "key": "Entries (one per line)",
+    "files": [
+      "resources/js/tools/SpinWheel.jsx"
+    ]
+  },
+  {
+    "key": "Error correction",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Every page will be saved as its own PDF ({count} files), bundled in a ZIP.",
+    "files": [
+      "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "Every page will be saved as its own PDF (1 file).",
+    "files": [
+      "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "Every tool is free with no account, no daily limit and no watermark. The site is supported by unobtrusive advertising.",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Every tool you need for PDFs, images, text, maths and code, right in your browser. All are 100% free and private: merge PDFs, compress images, count words, make QR codes and more in just a few clicks.",
+    "files": [
+      "resources/js/pages/Home.jsx",
+      "resources/views/pages/home.blade.php"
+    ]
+  },
+  {
+    "key": "Excellent",
+    "files": [
+      "resources/js/lib/password.js"
+    ]
+  },
+  {
+    "key": "Exclude similar (l, 1, O, 0)",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Extract pages",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Fast",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Fast and simple",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Fastest",
+    "files": [
+      "resources/js/tools/Stopwatch.jsx"
+    ]
+  },
+  {
+    "key": "Features",
+    "files": [
+      "resources/js/pages/ToolPage.jsx",
+      "resources/views/pages/tool.blade.php"
+    ]
+  },
+  {
+    "key": "Fewer dice",
+    "files": [
+      "resources/js/tools/DiceRoller.jsx"
+    ]
+  },
+  {
+    "key": "File / Image",
+    "files": [
+      "resources/js/tools/Base64Tool.jsx"
+    ]
+  },
+  {
+    "key": "Files and text are processed on your own device. Nothing is uploaded, stored or shared.",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Files to merge, in order",
+    "files": [
+      "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "Files up to 10 MB are supported. Base64 for bigger files is too large to paste anywhere useful.",
+    "files": [
+      "resources/js/tools/Base64Tool.jsx"
+    ]
+  },
+  {
+    "key": "files uploaded",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Filter by category",
+    "files": [
+      "resources/js/pages/Home.jsx"
+    ]
+  },
+  {
+    "key": "Final value",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Flip {count} coins",
+    "files": [
+      "resources/js/tools/CoinFlip.jsx"
+    ]
+  },
+  {
+    "key": "Flip between 1 and 100 coins.",
+    "files": [
+      "resources/js/lib/random.js"
+    ]
+  },
+  {
+    "key": "Flip the coin",
+    "files": [
+      "resources/js/tools/CoinFlip.jsx"
+    ]
+  },
+  {
+    "key": "Flipping…",
+    "files": [
+      "resources/js/tools/CoinFlip.jsx"
+    ]
+  },
+  {
+    "key": "Format / Beautify",
+    "files": [
+      "resources/js/tools/JsonFormatter.jsx"
+    ]
+  },
+  {
+    "key": "Formatted",
+    "files": [
+      "resources/js/tools/JsonFormatter.jsx"
+    ]
+  },
+  {
+    "key": "Free",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Free forever",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Free online tools",
+    "files": [
+      "app/Http/Controllers/PageController.php"
+    ]
+  },
+  {
+    "key": "Free online tools that run in your browser. No sign up, no uploads, no watermarks.",
+    "files": [
+      "resources/js/components/Layout.jsx",
+      "resources/views/partials/footer.blade.php"
+    ]
+  },
+  {
+    "key": "free tools",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Free tools people can trust",
+    "files": [
+      "resources/js/pages/Home.jsx",
+      "resources/views/pages/home.blade.php"
+    ]
+  },
+  {
+    "key": "Free, with no limits",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Frequently asked questions",
+    "files": [
+      "resources/js/pages/ToolPage.jsx",
+      "resources/views/pages/tool.blade.php"
+    ]
+  },
+  {
+    "key": "From",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Generate",
+    "files": [
+      "resources/js/tools/RandomNumber.jsx"
+    ]
+  },
+  {
+    "key": "Generate a new password",
+    "files": [
+      "resources/js/tools/PasswordGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Generate between 1 and {max} numbers at a time.",
+    "files": [
+      "resources/js/lib/random.js"
+    ]
+  },
+  {
+    "key": "Generate password",
+    "files": [
+      "resources/js/tools/PasswordGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Get in touch",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Get in touch with the {name} team to report a bug, suggest a new tool or ask a question.",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Go to bed at one of these times:",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Go to bed at…",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Good",
+    "files": [
+      "resources/js/lib/password.js"
+    ]
+  },
+  {
+    "key": "Google Ads Settings",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Google's use of advertising cookies enables it and its partners to serve ads to you based on your visits to this Site and/or other sites on the Internet.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "H",
+    "files": [
+      "resources/js/tools/CoinFlip.jsx"
+    ]
+  },
+  {
+    "key": "Happy birthday! Turning {age} today.",
+    "files": [
+      "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Have an idea for a new tool or found a bug? We would love to hear from you on our {link}.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "heads",
+    "files": [
+      "resources/js/tools/CoinFlip.jsx"
+    ]
+  },
+  {
+    "key": "Heads",
+    "files": [
+      "resources/js/tools/CoinFlip.jsx"
+    ]
+  },
+  {
+    "key": "Heads streak",
+    "files": [
+      "resources/js/tools/CoinFlip.jsx"
+    ]
+  },
+  {
+    "key": "Heads!",
+    "files": [
+      "resources/js/tools/CoinFlip.jsx"
+    ]
+  },
+  {
+    "key": "Healthy amount",
+    "files": [
+      "resources/js/lib/sleep.js"
+    ]
+  },
+  {
+    "key": "Height (px)",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Hidden network",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "High (30%)",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Home",
+    "files": [
+      "app/Support/Seo.php",
+      "resources/js/components/Breadcrumbs.jsx"
+    ]
+  },
+  {
+    "key": "Hours",
+    "files": [
+      "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "Hours slept",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "How {name} handles your data, cookies and advertising. Files and text you use in our tools are processed in your browser.",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "how Google uses information from sites that use its services",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "How many",
+    "files": [
+      "resources/js/tools/RandomNumber.jsx"
+    ]
+  },
+  {
+    "key": "How to use the {name}",
+    "files": [
+      "resources/js/pages/ToolPage.jsx",
+      "resources/views/pages/tool.blade.php"
+    ]
+  },
+  {
+    "key": "https:// is added automatically if you leave it out.",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "I want to wake up at",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "I will go to bed at",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "If you go to bed now",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Illustrative sleep stages: about {cycles} cycles of {minutes} minutes, with more deep sleep early in the night and more REM (dreaming) near morning.",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "in your browser",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Include the country code, e.g. +44 7700 900123",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Increase",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Increase or decrease",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Increase or decrease a number by a percentage",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Indent",
+    "files": [
+      "resources/js/tools/JsonFormatter.jsx"
+    ]
+  },
+  {
+    "key": "Input",
+    "files": [
+      "resources/js/tools/Base64Tool.jsx"
+    ]
+  },
+  {
+    "key": "Instant results - no waiting in an upload or download queue",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Invalid JSON: {message}",
+    "files": [
+      "resources/js/lib/json.js"
+    ]
+  },
+  {
+    "key": "is",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "is what % of",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "JPG has no transparency, so transparent areas become white.",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "JPG, PNG or WebP · up to {max} images · max 50 MB each",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "JPG, PNG, WebP, GIF or BMP · max 50 MB",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "JSON input",
+    "files": [
+      "resources/js/tools/JsonFormatter.jsx"
+    ]
+  },
+  {
+    "key": "JSON strings and keys must use double quotes (\"), not single quotes.",
+    "files": [
+      "resources/js/lib/json.js"
+    ]
+  },
+  {
+    "key": "Keyboard:",
+    "files": [
+      "resources/js/tools/Stopwatch.jsx"
+    ]
+  },
+  {
+    "key": "Keys and text values must be wrapped in double quotes.",
+    "files": [
+      "resources/js/lib/json.js"
+    ]
+  },
+  {
+    "key": "Language",
+    "files": [
+      "resources/js/tools/WhatIsMyIp.jsx",
+      "resources/views/partials/header.blade.php"
+    ]
+  },
+  {
+    "key": "Language: {language}",
+    "files": [
+      "resources/js/components/Layout.jsx"
+    ]
+  },
+  {
+    "key": "Languages",
+    "files": [
+      "resources/js/components/Layout.jsx"
+    ]
+  },
+  {
+    "key": "lap",
+    "files": [
+      "resources/js/tools/Stopwatch.jsx"
+    ]
+  },
+  {
+    "key": "Lap",
+    "files": [
+      "resources/js/tools/Stopwatch.jsx"
+    ]
+  },
+  {
+    "key": "Lap {n}",
+    "files": [
+      "resources/js/tools/Stopwatch.jsx"
+    ]
+  },
+  {
+    "key": "Lap time",
+    "files": [
+      "resources/js/tools/Stopwatch.jsx"
+    ]
+  },
+  {
+    "key": "Laps",
+    "files": [
+      "resources/js/tools/Stopwatch.jsx"
+    ]
+  },
+  {
+    "key": "Last flips",
+    "files": [
+      "resources/js/tools/CoinFlip.jsx"
+    ]
+  },
+  {
+    "key": "Last updated: {date}",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Learn about {name}, a collection of free, private online tools that run in your browser with no sign up.",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Length:",
+    "files": [
+      "resources/js/tools/PasswordGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Light",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Light-on-dark QR codes do not scan on some phones. A dark code on a light background is safest.",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Like most websites, our web server may keep standard log files that include your IP address, browser type, pages visited and the date and time of the visit. These logs are used only for security, troubleshooting and preventing abuse, and are deleted regularly.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Lines:",
+    "files": [
+      "resources/js/tools/WordCounter.jsx"
+    ]
+  },
+  {
+    "key": "Loading {name}…",
+    "files": [
+      "resources/js/pages/ToolPage.jsx"
+    ]
+  },
+  {
+    "key": "Local storage in your browser to remember your light/dark theme and recently used tools. This never leaves your device.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Lock aspect ratio",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Looking up…",
+    "files": [
+      "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Lottery 6 of 49",
+    "files": [
+      "resources/js/tools/RandomNumber.jsx"
+    ]
+  },
+  {
+    "key": "Low (7%)",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Lower = smaller file. 70-80% looks the same as the original to most people.",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "lowercase",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Lowercase (a-z)",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Main",
+    "files": [
+      "resources/js/components/Layout.jsx",
+      "resources/views/partials/header.blade.php"
+    ]
+  },
+  {
+    "key": "Margin",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Max width (px, optional)",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Maximum",
+    "files": [
+      "resources/js/tools/RandomNumber.jsx"
+    ]
+  },
+  {
+    "key": "Maximum file size (KB)",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Medium (15%)",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Merge PDF",
+    "files": [
+      "resources/js/tools/MergePdf.jsx",
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Merging failed: {message}",
+    "files": [
+      "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "Merging…",
+    "files": [
+      "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "Message (optional)",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Minified",
+    "files": [
+      "resources/js/tools/JsonFormatter.jsx"
+    ]
+  },
+  {
+    "key": "Minify",
+    "files": [
+      "resources/js/tools/JsonFormatter.jsx"
+    ]
+  },
+  {
+    "key": "Minimum",
+    "files": [
+      "resources/js/tools/RandomNumber.jsx"
+    ]
+  },
+  {
+    "key": "Minutes",
+    "files": [
+      "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "Missing something you need? Tell us which free tool we should build next.",
+    "files": [
+      "resources/js/pages/Home.jsx"
+    ]
+  },
+  {
+    "key": "Mobile",
+    "files": [
+      "resources/js/components/Layout.jsx",
+      "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "More dice",
+    "files": [
+      "resources/js/tools/DiceRoller.jsx"
+    ]
+  },
+  {
+    "key": "More in {category}",
+    "files": [
+      "resources/js/pages/ToolPage.jsx",
+      "resources/views/pages/tool.blade.php"
+    ]
+  },
+  {
+    "key": "More than usual",
+    "files": [
+      "resources/js/lib/sleep.js"
+    ]
+  },
+  {
+    "key": "More tools",
+    "files": [
+      "resources/js/pages/ToolPage.jsx",
+      "resources/views/pages/tool.blade.php"
+    ]
+  },
+  {
+    "key": "Most people take 10-20 minutes to fall asleep. Each sleep cycle lasts about 90 minutes.",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Move {name} down",
+    "files": [
+      "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "Move {name} up",
+    "files": [
+      "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "Network name (SSID)",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "New",
+    "files": [
+      "resources/js/tools/PasswordGenerator.jsx"
+    ]
+  },
+  {
+    "key": "New timer",
+    "files": [
+      "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "Next birthday: {weekday}, {date} - in {days} (turning {age}).",
+    "files": [
+      "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "No accounts, no daily caps and no watermarks. Use every tool as often as you like.",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "No duplicates",
+    "files": [
+      "resources/js/tools/RandomNumber.jsx"
+    ]
+  },
+  {
+    "key": "No password",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "No preview",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "No sign up",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "No sign up, no email address, no watermarks on your files",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "No tools match “{query}”. Try another word.",
+    "files": [
+      "resources/js/components/CommandPalette.jsx"
+    ]
+  },
+  {
+    "key": "Number",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Number of dice",
+    "files": [
+      "resources/js/tools/DiceRoller.jsx"
+    ]
+  },
+  {
+    "key": "Numbers (0-9)",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "of",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "of what?",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "One PDF file · max 200 MB",
+    "files": [
+      "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "Only the first {max} entries are used.",
+    "files": [
+      "resources/js/tools/SpinWheel.jsx"
+    ]
+  },
+  {
+    "key": "Oops",
+    "files": [
+      "resources/js/pages/NotFound.jsx"
+    ]
+  },
+  {
+    "key": "Open menu",
+    "files": [
+      "resources/js/components/Layout.jsx"
+    ]
+  },
+  {
+    "key": "Operating system",
+    "files": [
+      "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Original image preview",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Other categories",
+    "files": [
+      "resources/js/pages/Category.jsx",
+      "resources/views/pages/category.blade.php"
+    ]
+  },
+  {
+    "key": "Our privacy promise",
+    "files": [
+      "resources/js/pages/Home.jsx"
+    ]
+  },
+  {
+    "key": "Our tools",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Our tools (for example the PDF, image and text tools) run entirely inside your web browser. The files, images and text you process are not uploaded to our servers, are not stored by us and are not visible to us. When you close the page, the data is gone.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Our tools process your files and text directly in your web browser. PDFs, images and documents never leave your device.",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Output",
+    "files": [
+      "resources/js/tools/Base64Tool.jsx"
+    ]
+  },
+  {
+    "key": "Output format",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Over 9 hours is fine now and then, for example when recovering from illness or lost sleep.",
+    "files": [
+      "resources/js/lib/sleep.js"
+    ]
+  },
+  {
+    "key": "Page not found",
+    "files": [
+      "resources/js/pages/NotFound.jsx",
+      "resources/views/errors/404.blade.php"
+    ]
+  },
+  {
+    "key": "Page numbers start at 1.",
+    "files": [
+      "resources/js/lib/pdfRanges.js"
+    ]
+  },
+  {
+    "key": "Pages 1 to {count}. Separate with commas. Example: 1-3, 5, 8-{count}",
+    "files": [
+      "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "Pages to extract",
+    "files": [
+      "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "Paragraphs",
+    "files": [
+      "resources/js/tools/WordCounter.jsx"
+    ]
+  },
+  {
+    "key": "Part",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Password",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Password length",
+    "files": [
+      "resources/js/tools/PasswordGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Pasta",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Pause",
+    "files": [
+      "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "Paused",
+    "files": [
+      "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "Percentage",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Percentage increase / decrease",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Phone",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Phone number",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Picked and removed from the list",
+    "files": [
+      "resources/js/tools/SpinWheel.jsx"
+    ]
+  },
+  {
+    "key": "Picking…",
+    "files": [
+      "resources/js/tools/RandomNumber.jsx"
+    ]
+  },
+  {
+    "key": "Pizza",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Play an alarm sound",
+    "files": [
+      "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "Please choose a JPG, PNG, WebP, GIF or BMP image.",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Please choose a PDF file.",
+    "files": [
+      "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "Please enter a 4-digit year.",
+    "files": [
+      "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Please enter a valid \"age at\" date.",
+    "files": [
+      "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Please enter a valid date of birth.",
+    "files": [
+      "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Please paste some Base64 text first.",
+    "files": [
+      "resources/js/lib/base64.js"
+    ]
+  },
+  {
+    "key": "Please paste some JSON first.",
+    "files": [
+      "resources/js/lib/json.js"
+    ]
+  },
+  {
+    "key": "PNG (lossless)",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "PNG is lossless, so the quality setting has no effect. Choose WebP or JPG for much smaller files.",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Popular tools",
+    "files": [
+      "resources/js/pages/NotFound.jsx",
+      "resources/views/errors/404.blade.php"
+    ]
+  },
+  {
+    "key": "Presets",
+    "files": [
+      "resources/js/tools/RandomNumber.jsx"
+    ]
+  },
+  {
+    "key": "Press Ctrl+C",
+    "files": [
+      "resources/js/components/CopyButton.jsx"
+    ]
+  },
+  {
+    "key": "Press Flip, tap the coin, or press F",
+    "files": [
+      "resources/js/tools/CoinFlip.jsx"
+    ]
+  },
+  {
+    "key": "Press Roll, tap the dice, or press R",
+    "files": [
+      "resources/js/tools/DiceRoller.jsx"
+    ]
+  },
+  {
+    "key": "Press Spin, or press S",
+    "files": [
+      "resources/js/tools/SpinWheel.jsx"
+    ]
+  },
+  {
+    "key": "Preview of the encoded image",
+    "files": [
+      "resources/js/tools/Base64Tool.jsx"
+    ]
+  },
+  {
+    "key": "Previous picks",
+    "files": [
+      "resources/js/tools/SpinWheel.jsx"
+    ]
+  },
+  {
+    "key": "Previous:",
+    "files": [
+      "resources/js/tools/RandomNumber.jsx"
+    ]
+  },
+  {
+    "key": "Privacy first",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Privacy Policy",
+    "files": [
+      "resources/js/components/Layout.jsx",
+      "resources/js/pages/InfoPages.jsx",
+      "resources/views/partials/footer.blade.php",
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Private",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Private by design",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Private: this tool runs in your browser. Your data is never uploaded.",
+    "files": [
+      "resources/js/pages/ToolPage.jsx",
+      "resources/views/pages/tool.blade.php"
+    ]
+  },
+  {
+    "key": "QR Code",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "QR code preview",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "QR code type",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "QR colour",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Quality",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Quality: {value}%",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx",
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Quartile (25%)",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Questions about privacy? Email {email}.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Questions? Email {email}.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Quick presets",
+    "files": [
+      "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "Ramen",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Ranges (each becomes a separate PDF)",
+    "files": [
+      "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "Re-compress all",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Reading file…",
+    "files": [
+      "resources/js/tools/Base64Tool.jsx"
+    ]
+  },
+  {
+    "key": "Reading PDF…",
+    "files": [
+      "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "Reading time:",
+    "files": [
+      "resources/js/tools/WordCounter.jsx"
+    ]
+  },
+  {
+    "key": "reading…",
+    "files": [
+      "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "Recommended",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Refresh",
+    "files": [
+      "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Refreshing…",
+    "files": [
+      "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Related tools",
+    "files": [
+      "resources/js/pages/ToolPage.jsx",
+      "resources/views/pages/tool.blade.php"
+    ]
+  },
+  {
+    "key": "Reload the page",
+    "files": [
+      "resources/js/components/ErrorBoundary.jsx"
+    ]
+  },
+  {
+    "key": "REM",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Remove “{name}”",
+    "files": [
+      "resources/js/tools/SpinWheel.jsx"
+    ]
+  },
+  {
+    "key": "Remove {name}",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx",
+      "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "Remove the files marked in red to continue.",
+    "files": [
+      "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "Remove the trailing comma before this bracket.",
+    "files": [
+      "resources/js/lib/json.js"
+    ]
+  },
+  {
+    "key": "Remove the winner after each spin",
+    "files": [
+      "resources/js/tools/SpinWheel.jsx"
+    ]
+  },
+  {
+    "key": "Report a bug or a tool that is not working as expected",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "reset",
+    "files": [
+      "resources/js/tools/CountdownTimer.jsx",
+      "resources/js/tools/Stopwatch.jsx"
+    ]
+  },
+  {
+    "key": "Reset",
+    "files": [
+      "resources/js/tools/CountdownTimer.jsx",
+      "resources/js/tools/Stopwatch.jsx"
+    ]
+  },
+  {
+    "key": "Reset stats",
+    "files": [
+      "resources/js/tools/CoinFlip.jsx"
+    ]
+  },
+  {
+    "key": "Resize image",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Resize mode",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Resize to {width} × {height}px",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Resized image preview",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Resized to",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Resizing…",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Result",
+    "files": [
+      "resources/js/tools/JsonFormatter.jsx"
+    ]
+  },
+  {
+    "key": "Resume",
+    "files": [
+      "resources/js/tools/CountdownTimer.jsx",
+      "resources/js/tools/Stopwatch.jsx"
+    ]
+  },
+  {
+    "key": "Right in the recommended 7-9 hours for adults.",
+    "files": [
+      "resources/js/lib/sleep.js"
+    ]
+  },
+  {
+    "key": "Roll {count} dice",
+    "one": "Roll {count} die",
+    "files": [
+      "resources/js/lib/i18n.js",
+      "resources/js/tools/DiceRoller.jsx"
+    ]
+  },
+  {
+    "key": "Roll between 1 and {max} dice.",
+    "files": [
+      "resources/js/lib/random.js"
+    ]
+  },
+  {
+    "key": "Roll history",
+    "files": [
+      "resources/js/tools/DiceRoller.jsx"
+    ]
+  },
+  {
+    "key": "Rolling…",
+    "files": [
+      "resources/js/tools/DiceRoller.jsx"
+    ]
+  },
+  {
+    "key": "Runs in your browser",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Salad",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Same as original",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Sample",
+    "files": [
+      "resources/js/tools/JsonFormatter.jsx"
+    ]
+  },
+  {
+    "key": "Save as",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Scale: {value}%",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Screen resolution",
+    "files": [
+      "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Search tools",
+    "files": [
+      "resources/js/components/CommandPalette.jsx",
+      "resources/js/components/Layout.jsx"
+    ]
+  },
+  {
+    "key": "Search tools…",
+    "files": [
+      "resources/js/components/CommandPalette.jsx",
+      "resources/js/components/Layout.jsx"
+    ]
+  },
+  {
+    "key": "Seconds",
+    "files": [
+      "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "Secure random numbers are not available in this browser.",
+    "files": [
+      "resources/js/lib/password.js"
+    ]
+  },
+  {
+    "key": "Security",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Select 2 or more PDFs · up to {max} files",
+    "files": [
+      "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "Select at least one character type.",
+    "files": [
+      "resources/js/lib/password.js"
+    ]
+  },
+  {
+    "key": "Send an idea",
+    "files": [
+      "resources/js/pages/Home.jsx"
+    ]
+  },
+  {
+    "key": "Send privacy or legal requests",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Sentence case",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Sentences",
+    "files": [
+      "resources/js/tools/WordCounter.jsx"
+    ]
+  },
+  {
+    "key": "Set a time",
+    "files": [
+      "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "Set your alarm for one of these times:",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Settings changed.",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Shuffle",
+    "files": [
+      "resources/js/tools/SpinWheel.jsx"
+    ]
+  },
+  {
+    "key": "Sitemap",
+    "files": [
+      "resources/js/components/Layout.jsx",
+      "resources/views/partials/footer.blade.php"
+    ]
+  },
+  {
+    "key": "Size: {size} × {size} px",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Skip to content",
+    "files": [
+      "resources/js/components/Layout.jsx",
+      "resources/views/layouts/app.blade.php"
+    ]
+  },
+  {
+    "key": "Sleep chart: {cycles} cycles from {from} to {to}",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Sleep now",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Slowest",
+    "files": [
+      "resources/js/tools/Stopwatch.jsx"
+    ]
+  },
+  {
+    "key": "SMS",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Something went wrong",
+    "files": [
+      "resources/js/pages/NotFound.jsx"
+    ]
+  },
+  {
+    "key": "Sorry, something went wrong with this tool.",
+    "files": [
+      "resources/js/components/ErrorBoundary.jsx"
+    ]
+  },
+  {
+    "key": "Sorry, we couldn't find that page. It may have moved, or the link may be wrong.",
+    "files": [
+      "resources/js/pages/NotFound.jsx",
+      "resources/views/errors/404.blade.php"
+    ]
+  },
+  {
+    "key": "Sort keys A-Z",
+    "files": [
+      "resources/js/tools/JsonFormatter.jsx"
+    ]
+  },
+  {
+    "key": "Sort low to high",
+    "files": [
+      "resources/js/tools/RandomNumber.jsx"
+    ]
+  },
+  {
+    "key": "Speaking time:",
+    "files": [
+      "resources/js/tools/WordCounter.jsx"
+    ]
+  },
+  {
+    "key": "Spin",
+    "files": [
+      "resources/js/tools/SpinWheel.jsx"
+    ]
+  },
+  {
+    "key": "SPIN",
+    "files": [
+      "resources/js/tools/SpinWheel.jsx"
+    ]
+  },
+  {
+    "key": "Spin the wheel",
+    "files": [
+      "resources/js/tools/SpinWheel.jsx"
+    ]
+  },
+  {
+    "key": "Spinning…",
+    "files": [
+      "resources/js/tools/SpinWheel.jsx"
+    ]
+  },
+  {
+    "key": "Split by ranges",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Split every page",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Split mode",
+    "files": [
+      "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "Split PDF",
+    "files": [
+      "resources/js/tools/SplitPdf.jsx",
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Splitting failed: {message}",
+    "files": [
+      "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "Splitting…",
+    "files": [
+      "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "Start",
+    "files": [
+      "resources/js/tools/CountdownTimer.jsx",
+      "resources/js/tools/Stopwatch.jsx"
+    ]
+  },
+  {
+    "key": "start / pause",
+    "files": [
+      "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "start / stop",
+    "files": [
+      "resources/js/tools/Stopwatch.jsx"
+    ]
+  },
+  {
+    "key": "Start typing or paste your text here…",
+    "files": [
+      "resources/js/tools/WordCounter.jsx"
+    ]
+  },
+  {
+    "key": "Starting value",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Stop",
+    "files": [
+      "resources/js/tools/Stopwatch.jsx"
+    ]
+  },
+  {
+    "key": "Stop alarm",
+    "files": [
+      "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "Strength:",
+    "files": [
+      "resources/js/tools/PasswordGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Strong",
+    "files": [
+      "resources/js/lib/password.js"
+    ]
+  },
+  {
+    "key": "Subject (optional)",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Suggest a new tool you would like us to build",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Suggest a tool",
+    "files": [
+      "resources/js/pages/Home.jsx"
+    ]
+  },
+  {
+    "key": "Sushi",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Swap",
+    "files": [
+      "resources/js/tools/Base64Tool.jsx"
+    ]
+  },
+  {
+    "key": "Switch to dark mode",
+    "files": [
+      "resources/js/components/Layout.jsx"
+    ]
+  },
+  {
+    "key": "Switch to light mode",
+    "files": [
+      "resources/js/components/Layout.jsx"
+    ]
+  },
+  {
+    "key": "Symbols (!@#$…)",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "T",
+    "files": [
+      "resources/js/tools/CoinFlip.jsx"
+    ]
+  },
+  {
+    "key": "Tablet",
+    "files": [
+      "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Tabs",
+    "files": [
+      "resources/js/tools/JsonFormatter.jsx"
+    ]
+  },
+  {
+    "key": "Tacos",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "tails",
+    "files": [
+      "resources/js/tools/CoinFlip.jsx"
+    ]
+  },
+  {
+    "key": "Tails",
+    "files": [
+      "resources/js/tools/CoinFlip.jsx"
+    ]
+  },
+  {
+    "key": "Tails streak",
+    "files": [
+      "resources/js/tools/CoinFlip.jsx"
+    ]
+  },
+  {
+    "key": "Tails!",
+    "files": [
+      "resources/js/tools/CoinFlip.jsx"
+    ]
+  },
+  {
+    "key": "Target size (e.g. 100 KB)",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Terms of Use",
+    "files": [
+      "resources/js/components/Layout.jsx",
+      "resources/js/pages/InfoPages.jsx",
+      "resources/views/partials/footer.blade.php",
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Text",
+    "files": [
+      "resources/js/tools/Base64Tool.jsx",
+      "resources/js/tools/QrCodeGenerator.jsx",
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "That is too much data for one QR code. Please shorten the text or use a lower error correction level.",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "The colours are too similar - many phones will not be able to scan this code.",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "The date of birth must be on or before the \"age at\" date.",
+    "files": [
+      "resources/js/lib/date.js"
+    ]
+  },
+  {
+    "key": "The longest timer is 99 hours, 59 minutes and 59 seconds.",
+    "files": [
+      "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "The maximum size is {max} pixels per side.",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "The minimum must be less than or equal to the maximum.",
+    "files": [
+      "resources/js/lib/random.js"
+    ]
+  },
+  {
+    "key": "The only exception is the “What Is My IP” tool, which shows you the IP address your browser used to reach our server. We display it back to you and do not store it in a database.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "The page you are looking for could not be found.",
+    "files": [
+      "resources/js/pages/NotFound.jsx"
+    ]
+  },
+  {
+    "key": "The PDF has no pages.",
+    "files": [
+      "resources/js/lib/pdfRanges.js"
+    ]
+  },
+  {
+    "key": "The percentage cannot be 0 (division by zero).",
+    "files": [
+      "resources/js/lib/percent.js"
+    ]
+  },
+  {
+    "key": "The range is too large. Keep max - min under {limit}.",
+    "files": [
+      "resources/js/lib/random.js"
+    ]
+  },
+  {
+    "key": "The second number cannot be 0 (division by zero).",
+    "files": [
+      "resources/js/lib/percent.js"
+    ]
+  },
+  {
+    "key": "The Site and tools are provided “as is” and “as available”, without warranties of any kind. While we work hard to make every tool accurate, we do not guarantee that results will be error-free. Always keep a copy of your original files and double-check important results such as calculations.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "The Site is not directed at children under 13, and we do not knowingly collect personal information from them.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "The Site shows advertisements and may link to third-party websites. We are not responsible for the content or practices of those websites.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "The starting value cannot be 0 - percentage change from 0 is undefined.",
+    "files": [
+      "resources/js/lib/percent.js"
+    ]
+  },
+  {
+    "key": "The terms and conditions for using {name} free online tools.",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "The tools are provided free of charge for personal and commercial use. You are responsible for the files and content you process and for making sure you have the right to use them.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "The wheel picked",
+    "files": [
+      "resources/js/tools/SpinWheel.jsx"
+    ]
+  },
+  {
+    "key": "There are only {range} different numbers between {min} and {max}, so you cannot pick {count} without duplicates.",
+    "files": [
+      "resources/js/lib/random.js"
+    ]
+  },
+  {
+    "key": "This image is larger than 50 MB. Please choose a smaller file.",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "This is not valid Base64: it contains characters outside A-Z, a-z, 0-9, +, / and =.",
+    "files": [
+      "resources/js/lib/base64.js"
+    ]
+  },
+  {
+    "key": "This is not valid Base64: the length is wrong (it may be cut off).",
+    "files": [
+      "resources/js/lib/base64.js"
+    ]
+  },
+  {
+    "key": "This page could not be loaded. Check your connection and try again.",
+    "files": [
+      "resources/js/pages/NotFound.jsx"
+    ]
+  },
+  {
+    "key": "This PDF only has {count} pages. \"{part}\" is out of range.",
+    "one": "This PDF only has {count} page. \"{part}\" is out of range.",
+    "files": [
+      "resources/js/lib/pdfRanges.js"
+    ]
+  },
+  {
+    "key": "This Privacy Policy explains how {name} (“we”, “us”) handles information when you use {url} (the “Site”). Please also read the section about advertising cookies below.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "This tool is not available right now.",
+    "files": [
+      "resources/js/pages/ToolPage.jsx"
+    ]
+  },
+  {
+    "key": "This tool needs JavaScript. Please enable JavaScript in your browser settings to use the {name}.",
+    "files": [
+      "resources/views/pages/tool.blade.php"
+    ]
+  },
+  {
+    "key": "Time to fall asleep: {minutes} min",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Time zone",
+    "files": [
+      "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Time's up!",
+    "files": [
+      "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "Timer",
+    "files": [
+      "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "Timer length",
+    "files": [
+      "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "Title Case",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "to",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "to navigate",
+    "files": [
+      "resources/js/components/CommandPalette.jsx"
+    ]
+  },
+  {
+    "key": "to open",
+    "files": [
+      "resources/js/components/CommandPalette.jsx"
+    ]
+  },
+  {
+    "key": "To the fullest extent permitted by law, {name} is not liable for any loss or damage, including loss of data or profits, arising from your use of the Site or tools.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Toggle dark mode",
+    "files": [
+      "resources/js/components/Layout.jsx"
+    ]
+  },
+  {
+    "key": "Too little sleep",
+    "files": [
+      "resources/js/lib/sleep.js"
+    ]
+  },
+  {
+    "key": "Tools",
+    "files": [
+      "app/Http/Controllers/PageController.php",
+      "resources/js/components/CommandPalette.jsx",
+      "resources/js/pages/Home.jsx",
+      "resources/js/pages/ToolPage.jsx",
+      "resources/views/pages/tool.blade.php"
+    ]
+  },
+  {
+    "key": "Top keywords",
+    "files": [
+      "resources/js/tools/WordCounter.jsx"
+    ]
+  },
+  {
+    "key": "Total",
+    "files": [
+      "resources/js/tools/Stopwatch.jsx"
+    ]
+  },
+  {
+    "key": "Total days",
+    "files": [
+      "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Total flips",
+    "files": [
+      "resources/js/tools/CoinFlip.jsx"
+    ]
+  },
+  {
+    "key": "Total hours (approx.)",
+    "files": [
+      "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Total months",
+    "files": [
+      "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Try again",
+    "files": [
+      "resources/js/components/ErrorBoundary.jsx",
+      "resources/js/pages/NotFound.jsx"
+    ]
+  },
+  {
+    "key": "Type of dice",
+    "files": [
+      "resources/js/tools/DiceRoller.jsx"
+    ]
+  },
+  {
+    "key": "Type or paste the text you want to convert…",
+    "files": [
+      "resources/js/tools/CaseConverter.jsx"
+    ]
+  },
+  {
+    "key": "Type text to encode, or paste Base64 to decode…",
+    "files": [
+      "resources/js/tools/Base64Tool.jsx"
+    ]
+  },
+  {
+    "key": "Unknown",
+    "files": [
+      "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Unknown browser",
+    "files": [
+      "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Unknown QR code type.",
+    "files": [
+      "resources/js/lib/qr.js"
+    ]
+  },
+  {
+    "key": "UPPERCASE",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Uppercase (A-Z)",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "URL",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "URL-safe",
+    "files": [
+      "resources/js/tools/Base64Tool.jsx"
+    ]
+  },
+  {
+    "key": "Use as input",
+    "files": [
+      "resources/js/tools/JsonFormatter.jsx"
+    ]
+  },
+  {
+    "key": "User agent",
+    "files": [
+      "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Valid JSON ✓",
+    "files": [
+      "resources/js/tools/JsonFormatter.jsx"
+    ]
+  },
+  {
+    "key": "Validate",
+    "files": [
+      "resources/js/tools/JsonFormatter.jsx"
+    ]
+  },
+  {
+    "key": "Very weak",
+    "files": [
+      "resources/js/lib/password.js"
+    ]
+  },
+  {
+    "key": "View all",
+    "files": [
+      "resources/views/pages/home.blade.php"
+    ]
+  },
+  {
+    "key": "Visitors in the European Economic Area, the UK and Switzerland are asked for consent through a Google-certified consent management platform before personalised ads are shown.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "waiting…",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Wake up",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Wake up at…",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "We currently offer {tools} free tools across {categories} categories, including a word counter, PDF merger, image compressor, QR code generator, calculators, games, timers and developer utilities, and we add new tools regularly.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "We may update these terms at any time. Continued use of the Site after changes means you accept the new terms.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "We may update this policy from time to time. The “Last updated” date above shows when it last changed.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "We read every message. Get in touch to:",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "We use Google AdSense to show advertisements. Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this Site or other websites.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "We usually reply within 2 business days.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Weak",
+    "files": [
+      "resources/js/lib/password.js"
+    ]
+  },
+  {
+    "key": "WebP (smallest)",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Website URL",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Weeks",
+    "files": [
+      "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Weeks (+{days})",
+    "files": [
+      "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Went to bed at",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "What do you want to work out?",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "What is",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "What is X% of Y?",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Wheel with {count} entries",
+    "files": [
+      "resources/js/tools/SpinWheel.jsx"
+    ]
+  },
+  {
+    "key": "When reporting a problem, please tell us which tool you used, your browser (for example Chrome or Safari) and your device, so we can fix it quickly.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Whole",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Wi-Fi",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Width (px)",
+    "files": [
+      "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Woke up at",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Words",
+    "files": [
+      "resources/js/tools/WordCounter.jsx"
+    ]
+  },
+  {
+    "key": "Work your way",
+    "files": [
+      "resources/js/pages/Home.jsx"
+    ]
+  },
+  {
+    "key": "Works on any device",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "X is what percent of Y?",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "X is Y% of what number?",
+    "files": [
+      "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "You agree not to misuse the Site, including attempting to disrupt it, overload it with automated requests, or use it for unlawful purposes.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "You can compress up to {max} images at a time.",
+    "files": [
+      "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "You can merge up to {max} files at a time.",
+    "files": [
+      "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "You may opt out of personalised advertising by visiting {adsSettings}. You can also opt out of some third-party vendors’ use of cookies for personalised advertising at {aboutAds}. Learn more in {howGoogle}.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "You slept about",
+    "files": [
+      "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Your browser and device details",
+    "files": [
+      "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Your browser cannot save WebP, so JPG was used instead.",
+    "files": [
+      "resources/js/lib/image.js"
+    ]
+  },
+  {
+    "key": "Your browser could not create this image. Try smaller dimensions.",
+    "files": [
+      "resources/js/lib/image.js"
+    ]
+  },
+  {
+    "key": "Your browser does not support image processing (Canvas).",
+    "files": [
+      "resources/js/lib/image.js"
+    ]
+  },
+  {
+    "key": "Your files stay on your device",
+    "files": [
+      "resources/js/pages/Home.jsx"
+    ]
+  },
+  {
+    "key": "Your password",
+    "files": [
+      "resources/js/tools/PasswordGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Your PDFs, photos and documents never leave your browser",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Your public IP address",
+    "files": [
+      "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Your QR code will appear here.",
+    "files": [
+      "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Your text",
+    "files": [
+      "resources/js/tools/CaseConverter.jsx",
+      "resources/js/tools/WordCounter.jsx"
+    ]
+  }
+]

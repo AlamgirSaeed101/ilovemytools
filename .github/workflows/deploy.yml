@@ -1,0 +1,94 @@
+# Test, then deploy to the live cPanel server.
+# Runs on every push to main (including the daily SEO routine's pushes).
+# Nothing is deployed unless all three test suites pass.
+#
+# Repository secrets needed: SSH_HOST, SSH_PORT, SSH_USER, SSH_PASS
+name: Test and deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  test-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, intl, zip
+          coverage: none
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: |
+          composer install --no-interaction --no-progress --prefer-dist
+          npm ci
+
+      - name: App environment
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+
+      - name: Build frontend
+        run: npm run build
+
+      - name: Unit tests (Vitest)
+        run: npm test
+
+      - name: Feature tests (PHPUnit)
+        run: php artisan test
+
+      - name: Browser tests (Playwright)
+        run: |
+          npx playwright install --with-deps chrome
+          npx playwright test
+
+      - name: Upload test report on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-results
+          path: test-results
+          retention-days: 7
+
+      - name: Package release
+        run: |
+          rm .env
+          tar -czf /tmp/release.tgz --exclude=./node_modules --exclude=./vendor --exclude=./.env \
+            --exclude=./.git --exclude=./test-results --exclude=./playwright-report --exclude=./public/hot \
+            --exclude='./storage/logs/*.log' --exclude='./storage/framework/views/*.php' \
+            --exclude='./bootstrap/cache/*.php' .
+
+      - name: Deploy
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_PASS: ${{ secrets.SSH_PASS }}
+        run: |
+          node scripts/cpanel/ssh-put.cjs /tmp/release.tgz release.tgz \
+            scripts/cpanel/deploy.sh deploy.sh \
+            scripts/cpanel/index.public_html.php index.public_html.php
+          node scripts/cpanel/ssh-run.cjs 'bash ~/deploy.sh'
+
+      - name: Smoke test live site
+        run: |
+          sleep 60
+          for p in / /word-counter /fr/merge-pdf /sitemap.xml; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "https://ilovemytools.store$p")
+            echo "$p $code"
+            [ "$code" = "200" ] || exit 1
+          done

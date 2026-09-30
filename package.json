@@ -1,0 +1,29 @@
+{
+    "$schema": "https://json.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "test": "vitest run",
+        "test:e2e": "playwright test"
+    },
+    "dependencies": {
+        "jszip": "^3.10.2",
+        "pdf-lib": "^1.17.1",
+        "qrcode": "^1.5.4",
+        "react": "^19.3.0",
+        "react-dom": "^19.3.0",
+        "react-router": "^7.18.4"
+    },
+    "devDependencies": {
+        "@playwright/test": "^1.63.0",
+        "@tailwindcss/vite": "^4.3.3",
+        "@vitejs/plugin-react": "^6.1.1",
+        "laravel-vite-plugin": "^3.2.0",
+        "ssh2": "^1.17.0",
+        "tailwindcss": "^4.3.3",
+        "vite": "^8.3.1",
+        "vitest": "^5.0.2"
+    }
+}

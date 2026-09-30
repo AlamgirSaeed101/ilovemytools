@@ -1,0 +1,14 @@
+{
+    "name": "ILoveTools - Free Online Tools",
+    "short_name": "ILoveTools",
+    "description": "Free online tools that run in your browser. No sign up, no uploads.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0b1020",
+    "theme_color": "#0b1020",
+    "icons": [
+        { "src": "/images/icon-192.png", "sizes": "192x192", "type": "image/png" },
+        { "src": "/images/logo-512.png", "sizes": "512x512", "type": "image/png" },
+        { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+    ]
+}
