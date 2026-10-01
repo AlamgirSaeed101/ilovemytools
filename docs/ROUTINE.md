@@ -22,6 +22,18 @@ Read `TOOLS_SPEC_PROMPT.md` (architecture, SEO rules, tool specs) before changin
 8. **Never touch secrets or the server.** Don't edit `.env`, GitHub secrets or `scripts/cpanel/deploy.sh` credentials handling, and never SSH to the server yourself. Deploys happen only through CI.
 9. **AdSense policy.** No ads inside tool UIs. No content about piracy, downloading copyrighted media (YouTube/Instagram downloaders), hacking or adult topics.
 10. **Commit message:** `feat(tool): add JPG to PDF` / `seo: ...` / `fix: ...`, with a short body saying what changed.
+11. **Tell the owner.** After pushing (or when the run ends early), comment on the pinned issue #1 "Daily site updates": `gh issue comment 1 --body-file update.md`. GitHub emails the owner each comment. Use plain, non-technical English and this shape:
+    ```
+    ### <date>
+    **Changed today**
+    - <what visitors will notice, e.g. "New Tip Calculator at ilovemytools.store/tip-calculator (6 languages)">
+    **Status:** CI <passed/failed> · live <yes/no>
+    **Coming next**
+    - <the next 2-3 unchecked backlog items>
+    **Waiting on you** (only if something needs the owner)
+    - <owner-input items still open>
+    ```
+    If CI fails after your push, comment again saying what failed and that tomorrow's run fixes it first.
 
 ## Backlog (in priority order)
 
@@ -78,6 +90,9 @@ Not planned: PDF↔Word/Excel/PowerPoint (can't be done well in the browser), vi
 - [ ] Per-tool Open Graph images (tool name + icon, generated at build time).
 - [ ] Rephrase statement H2s as questions where natural (e.g. "Common image sizes" -> "What size should my image be?"), all languages. (Intro definitions are done.)
 - [x] HowTo and SpeakableSpecification schema on tool pages.
+- [ ] Homepage FAQ (4-5 questions such as "Are these tools really free?", "Are my files uploaded?") with FAQPage schema, all languages. *(quick audit 30 Sep)*
+- [ ] Tools without them get a one-line definition, a reference table and 2-3 cited sources, like /image-compressor (start with /merge-pdf, /split-pdf). *(quick audit 30 Sep)*
+- [ ] *(owner input)* Enable OPcache in cPanel > Select PHP Version > Extensions (uncached pages take ~1.8 s to first byte).
 - [ ] *(owner input)* About page: real founder name, bio and founding date; Person schema linked as Organization.founder.
 - [ ] *(owner input)* Brand social profiles in Organization.sameAs and the footer.
 
