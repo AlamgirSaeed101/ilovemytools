@@ -112,7 +112,7 @@ test.describe('App shell', () => {
         await nav.getByRole('button', { name: 'Calculators' }).click();
         await nav.getByRole('link', { name: /View all/ }).click();
         await expect(page).toHaveURL(/\/category\/calculators$/);
-        await expect(page.locator('main .tool-grid .tool-card')).toHaveCount(2);
+        await expect(page.locator('main .tool-grid .tool-card')).toHaveCount(3);
 
         // Categories that don't fit sit under "More".
         await nav.getByRole('button', { name: 'More' }).click();
