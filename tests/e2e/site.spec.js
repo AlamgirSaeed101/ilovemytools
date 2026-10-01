@@ -20,7 +20,9 @@ test.describe('App shell', () => {
 
     test('home filter pills show one category at a time', async ({ page }) => {
         // Count from the site data, so adding tools never breaks this test.
-        const total = (await (await page.request.get('/api/site')).json()).tools.length;
+        const site = await (await page.request.get('/api/site')).json();
+        const total = site.tools.length;
+        const inCategory = (slug) => site.categories.find((c) => c.slug === slug).tools.length;
         await page.goto('/');
         const pills = page.getByRole('group', { name: 'Filter by category' });
         const tiles = page.locator('main .tile-grid a.tool-card');
@@ -28,11 +30,10 @@ test.describe('App shell', () => {
 
         await pills.getByRole('button', { name: 'PDF Tools' }).click();
         await expect(pills.getByRole('button', { name: 'PDF Tools' })).toHaveAttribute('aria-pressed', 'true');
-        await expect(tiles).toHaveCount(3);
-        await expect(tiles.first()).toContainText('JPG to PDF');
+        await expect(tiles).toHaveCount(inCategory('pdf-tools'));
 
         await pills.getByRole('button', { name: 'Developer Tools' }).click();
-        await expect(tiles).toHaveCount(3);
+        await expect(tiles).toHaveCount(inCategory('developer-tools'));
 
         await pills.getByRole('button', { name: 'All tools' }).click();
         await expect(tiles).toHaveCount(Math.min(total, 15));
@@ -41,9 +42,10 @@ test.describe('App shell', () => {
     });
 
     test('home category cards link to categories and scroll', async ({ page }) => {
+        const site = await (await page.request.get('/api/site')).json();
         await page.goto('/');
         const browse = page.locator('section[aria-labelledby="browse-heading"]');
-        await expect(browse.locator('.browse-card')).toHaveCount(8);
+        await expect(browse.locator('.browse-card')).toHaveCount(site.categories.length);
         await browse.getByRole('button', { name: 'Next' }).click();
         await browse.locator('.browse-card').first().getByRole('link').first().click();
         await expect(page).toHaveURL(/\/category\/pdf-tools$/);
@@ -99,6 +101,8 @@ test.describe('App shell', () => {
     });
 
     test('header category menus', async ({ page }) => {
+        // Counts come from the site data, so adding a tool never breaks this test.
+        const site = await (await page.request.get('/api/site')).json();
         await page.goto('/');
         const nav = page.getByRole('navigation', { name: 'Main' });
         await nav.getByRole('button', { name: 'PDF' }).click();
@@ -112,7 +116,7 @@ test.describe('App shell', () => {
         await nav.getByRole('button', { name: 'Calculators' }).click();
         await nav.getByRole('link', { name: /View all/ }).click();
         await expect(page).toHaveURL(/\/category\/calculators$/);
-        await expect(page.locator('main .tool-grid .tool-card')).toHaveCount(3);
+        await expect(page.locator('main .tool-grid .tool-card')).toHaveCount(site.categories.find((c) => c.slug === 'calculators').tools.length);
 
         // Categories that don't fit sit under "More".
         await nav.getByRole('button', { name: 'More' }).click();

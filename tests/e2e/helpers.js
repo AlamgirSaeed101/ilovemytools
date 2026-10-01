@@ -47,12 +47,16 @@ export async function readDownload(download) {
     return fs.readFile(await download.path());
 }
 
+/** Third-party files the app does not depend on (sandboxes and proxies often block them). */
+const IGNORED_SOURCES = /^https:\/\/fonts\.(googleapis|gstatic)\.com\//;
+
 /** Fail the test on any uncaught page error or console error. */
 export function trackErrors(page) {
     const errors = [];
     page.on('pageerror', (e) => errors.push(`pageerror: ${e.message}`));
     page.on('console', (msg) => {
-        if (msg.type() === 'error') errors.push(`console: ${msg.text()}`);
+        if (msg.type() !== 'error' || IGNORED_SOURCES.test(msg.location()?.url || '')) return;
+        errors.push(`console: ${msg.text()}`);
     });
     return {
         errors,
