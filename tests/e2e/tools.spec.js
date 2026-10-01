@@ -344,6 +344,33 @@ test.describe('Calculators', () => {
         await page.getByLabel('Increase or decrease', { exact: true }).selectOption('decrease');
         await expect(page.locator('#pc5').locator('..').locator('.result__value')).toHaveText('40');
     });
+
+    test('tip calculator splits the tip and total, and can round up', async ({ page }) => {
+        await openTool(page, 'tip-calculator');
+
+        // Defaults: $85 bill, 20% tip, 4 people.
+        await expect(stat(page, 'Total per person')).toHaveText('25.50');
+        await expect(stat(page, 'Tip per person')).toHaveText('4.25');
+        await expect(stat(page, 'Total bill')).toHaveText('102.00');
+        await expect(stat(page, 'Total tip')).toHaveText('17.00');
+
+        await page.getByLabel('Bill amount').fill('50');
+        await page.getByLabel('Number of people').fill('1');
+        await page.getByRole('button', { name: '15%' }).click();
+        await expect(stat(page, 'Total per person')).toHaveText('57.50');
+        await expect(stat(page, 'Tip per person')).toHaveText('7.50');
+
+        await page.getByLabel('Number of people').fill('3');
+        await expect(page.getByRole('alert')).toHaveCount(0);
+        await page.getByLabel('Round up the total per person to the next whole dollar').check();
+        await expect(stat(page, 'Total per person')).toHaveText('20.00');
+        await expect(stat(page, 'Total bill')).toHaveText('60.00');
+        await expect(stat(page, 'Total tip')).toHaveText('10.00');
+        await expect(page.getByText('Rounded up so each person pays a whole dollar amount.')).toBeVisible();
+
+        await page.getByLabel('Number of people').fill('0');
+        await expect(page.getByRole('alert')).toContainText('at least 1 person');
+    });
 });
 
 test.describe('Developer tools', () => {

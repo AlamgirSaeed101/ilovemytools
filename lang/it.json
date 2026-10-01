@@ -789,5 +789,19 @@
     "Your PDFs, photos and documents never leave your browser": "I tuoi PDF, foto e documenti non lasciano mai il browser",
     "Your public IP address": "Il tuo indirizzo IP pubblico",
     "Your QR code will appear here.": "Il tuo codice QR apparirà qui.",
-    "Your text": "Il tuo testo"
+    "Your text": "Il tuo testo",
+    "Bill amount": "Importo del conto",
+    "Custom tip percentage": "Percentuale di mancia personalizzata",
+    "Enter a bill amount and tip percentage to split the bill.": "Inserisci l’importo del conto e la percentuale di mancia per dividere il conto.",
+    "Enter a bill amount of 0 or more.": "Inserisci un importo del conto di 0 o superiore.",
+    "Enter a tip percentage of 0 or more.": "Inserisci una percentuale di mancia di 0 o superiore.",
+    "Enter at least 1 person to split between.": "Inserisci almeno 1 persona per dividere il conto.",
+    "Number of people": "Numero di persone",
+    "Round up the total per person to the next whole dollar": "Arrotonda il totale a persona al numero intero successivo",
+    "Rounded up so each person pays a whole dollar amount.": "Arrotondato così ciascuna persona paga un importo intero.",
+    "Tip per person": "Mancia a persona",
+    "Tip percentage": "Percentuale di mancia",
+    "Total bill": "Totale del conto",
+    "Total per person": "Totale a persona",
+    "Total tip": "Mancia totale"
 }

@@ -789,5 +789,19 @@
     "Your PDFs, photos and documents never leave your browser": "Seus PDFs, fotos e documentos nunca saem do seu navegador",
     "Your public IP address": "Seu endereço IP público",
     "Your QR code will appear here.": "Seu QR code vai aparecer aqui.",
-    "Your text": "Seu texto"
+    "Your text": "Seu texto",
+    "Bill amount": "Valor da conta",
+    "Custom tip percentage": "Porcentagem de gorjeta personalizada",
+    "Enter a bill amount and tip percentage to split the bill.": "Informe o valor da conta e a porcentagem de gorjeta para dividir a conta.",
+    "Enter a bill amount of 0 or more.": "Informe um valor de conta de 0 ou mais.",
+    "Enter a tip percentage of 0 or more.": "Informe uma porcentagem de gorjeta de 0 ou mais.",
+    "Enter at least 1 person to split between.": "Informe pelo menos 1 pessoa para dividir a conta.",
+    "Number of people": "Número de pessoas",
+    "Round up the total per person to the next whole dollar": "Arredondar o total por pessoa para o número fechado seguinte",
+    "Rounded up so each person pays a whole dollar amount.": "Arredondado para que cada pessoa pague um valor fechado.",
+    "Tip per person": "Gorjeta por pessoa",
+    "Tip percentage": "Porcentagem de gorjeta",
+    "Total bill": "Total da conta",
+    "Total per person": "Total por pessoa",
+    "Total tip": "Gorjeta total"
 }

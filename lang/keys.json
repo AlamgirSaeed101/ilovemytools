@@ -743,6 +743,12 @@
     ]
   },
   {
+    "key": "Bill amount",
+    "files": [
+      "resources/js/tools/TipCalculator.jsx"
+    ]
+  },
+  {
     "key": "Born on a {weekday}",
     "files": [
       "resources/js/tools/AgeCalculator.jsx"
@@ -1136,6 +1142,12 @@
     ]
   },
   {
+    "key": "Custom tip percentage",
+    "files": [
+      "resources/js/tools/TipCalculator.jsx"
+    ]
+  },
+  {
     "key": "Customise colours, size and quality",
     "files": [
       "resources/js/tools/QrCodeGenerator.jsx"
@@ -1406,6 +1418,18 @@
     ]
   },
   {
+    "key": "Enter a bill amount and tip percentage to split the bill.",
+    "files": [
+      "resources/js/tools/TipCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Enter a bill amount of 0 or more.",
+    "files": [
+      "resources/js/lib/tip.js"
+    ]
+  },
+  {
     "key": "Enter a date of birth to see the exact age.",
     "files": [
       "resources/js/tools/AgeCalculator.jsx"
@@ -1415,6 +1439,12 @@
     "key": "Enter a percentage greater than 0.",
     "files": [
       "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Enter a tip percentage of 0 or more.",
+    "files": [
+      "resources/js/lib/tip.js"
     ]
   },
   {
@@ -1445,6 +1475,13 @@
     "key": "Enter a width and height of at least 1 pixel.",
     "files": [
       "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Enter at least 1 person to split between.",
+    "files": [
+      "resources/js/lib/tip.js",
+      "resources/js/tools/TipCalculator.jsx"
     ]
   },
   {
@@ -2549,6 +2586,12 @@
     ]
   },
   {
+    "key": "Number of people",
+    "files": [
+      "resources/js/tools/TipCalculator.jsx"
+    ]
+  },
+  {
     "key": "Numbers (0-9)",
     "files": [
       "scripts/i18n-extract.mjs"
@@ -3252,6 +3295,18 @@
     ]
   },
   {
+    "key": "Round up the total per person to the next whole dollar",
+    "files": [
+      "resources/js/tools/TipCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Rounded up so each person pays a whole dollar amount.",
+    "files": [
+      "resources/js/tools/TipCalculator.jsx"
+    ]
+  },
+  {
     "key": "Runs in your browser",
     "files": [
       "scripts/i18n-extract.mjs"
@@ -3939,6 +3994,18 @@
     ]
   },
   {
+    "key": "Tip per person",
+    "files": [
+      "resources/js/tools/TipCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Tip percentage",
+    "files": [
+      "resources/js/tools/TipCalculator.jsx"
+    ]
+  },
+  {
     "key": "Title Case",
     "files": [
       "scripts/i18n-extract.mjs"
@@ -4015,6 +4082,12 @@
     ]
   },
   {
+    "key": "Total bill",
+    "files": [
+      "resources/js/tools/TipCalculator.jsx"
+    ]
+  },
+  {
     "key": "Total days",
     "files": [
       "resources/js/tools/AgeCalculator.jsx"
@@ -4036,6 +4109,18 @@
     "key": "Total months",
     "files": [
       "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Total per person",
+    "files": [
+      "resources/js/tools/TipCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Total tip",
+    "files": [
+      "resources/js/tools/TipCalculator.jsx"
     ]
   },
   {

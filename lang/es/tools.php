@@ -540,6 +540,57 @@ return [
         ],
     ],
 
+    'tip-calculator' => [
+        'name' => 'Calculadora de propinas',
+        'title' => 'Calculadora de propinas - Reparte la cuenta',
+        'description' => 'Calculadora de propinas gratis: introduce la cuenta, elige un porcentaje de propina y reparte el total entre varias personas. Al instante, sin registro.',
+        'h1' => 'Calculadora de propinas',
+        'tagline' => 'Calcula la propina y reparte la cuenta entre cualquier número de personas.',
+        'keywords' => ['calculadora de propinas', 'repartir la cuenta', 'cómo calcular la propina', 'calculadora de propina por persona', 'propina restaurante'],
+        'intro' => 'Una calculadora de propinas calcula cuánto dejar de propina en una cuenta y reparte la propina y el total entre cualquier número de personas. Introduce el importe de la cuenta, elige un porcentaje de propina (15 %, 18 %, 20 % y 25 % son los más habituales, o escribe el tuyo) y el número de personas que comparten la cuenta. La calculadora muestra al instante la propina, el total con propina incluida y lo que debe pagar cada persona, con la opción de redondear el importe por persona al euro siguiente para que nadie necesite cambio exacto.',
+        'steps' => [
+            'Introduce el importe de la cuenta antes de la propina.',
+            'Elige un porcentaje de propina predefinido o escribe el tuyo.',
+            'Indica el número de personas que reparten la cuenta (déjalo en 1 si nadie la reparte).',
+            'Activa "Redondear" si quieres que cada persona pague una cantidad entera.',
+            'Lee la propina, el total y los importes por persona debajo.',
+        ],
+        'features' => [
+            'Porcentajes de propina predefinidos (15 %, 18 %, 20 %, 25 %) y cualquier porcentaje personalizado',
+            'Reparte la propina y el total por igual entre cualquier número de personas',
+            'Redondeo opcional para que el importe por persona sea una cantidad entera',
+            'Muestra el cálculo detrás de cada resultado',
+            'Funciona por completo en tu navegador: no se envía nada de lo que escribes',
+        ],
+        'content' => [
+            [
+                'heading' => '¿Cuánto hay que dejar de propina?',
+                'body' => 'En Estados Unidos, el 15-20 % de la cuenta es el rango más habitual para la propina en restaurantes, con un 20 % para un buen servicio, 15 % para un servicio normal y un 10 % o menos para un servicio deficiente. El reparto a domicilio, los taxis y las peluquerías suelen usar porcentajes más bajos, a menudo del 10-15 %. El importe adecuado siempre depende de la costumbre local y del servicio recibido, así que los botones predefinidos son un punto de partida, no una regla.',
+            ],
+            [
+                'heading' => 'Repartir una cuenta entre un grupo',
+                'body' => 'Poner "Número de personas" en más de uno reparte la propina y el total por igual, la forma más sencilla de dividir una cuenta compartida. No tiene en cuenta que cada persona haya pedido cantidades distintas; en ese caso, calcula primero lo que pidió cada uno y usa esta calculadora solo para una propina que realmente deba repartirse por igual, como una entrada compartida o una propina de grupo.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => '¿Cuánto debo dejar de propina en un restaurante?', 'a' => 'En EE. UU., el 15-20 % de la cuenta antes de impuestos es el rango más habitual, con un 20 % para un buen servicio. Usa un botón predefinido o escribe tu propio porcentaje.'],
+            ['q' => '¿La propina se calcula antes o después de impuestos?', 'a' => 'La mayoría de las guías recomiendan calcular la propina sobre el subtotal antes de impuestos, aunque calcularla sobre el total con impuestos también es habitual y solo añade una pequeña cantidad.'],
+            ['q' => '¿Cómo reparto una cuenta entre amigos?', 'a' => 'Introduce la cuenta y el porcentaje de propina y pon "Número de personas" según cuántas la repartan. La propina y el total se dividen por igual entre todas.'],
+            ['q' => '¿Qué hace "Redondear"?', 'a' => 'Redondea lo que paga cada persona a la unidad entera siguiente, para que nadie necesite cambio exacto. La diferencia se suma a la propina.'],
+            ['q' => '¿Esta calculadora de propinas es gratis?', 'a' => 'Sí. Es gratuita, sin registro, y todo se calcula en tu navegador.'],
+        ],
+        'table' => [
+            'caption' => 'Importe de la propina sobre una cuenta de 50 €',
+            'headers' => ['Propina %', 'Importe de la propina', 'Total con propina'],
+            'rows' => [
+                ['15 %', '7,50 €', '57,50 €'],
+                ['18 %', '9,00 €', '59,00 €'],
+                ['20 %', '10,00 €', '60,00 €'],
+                ['25 %', '12,50 €', '62,50 €'],
+            ],
+        ],
+    ],
+
     'json-formatter' => [
         'name' => 'Formateador JSON',
         'title' => 'Formateador y validador JSON en línea gratis',

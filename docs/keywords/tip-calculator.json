@@ -1,0 +1,11 @@
+{
+  "source": "docs/keywords/semrush-us-bulk-2026-09-30.json (Semrush Keyword Magic, US database, 2026-09-30) -- reused because the live Semrush connector returned a \"WRONG FORMAT OR EMPTY KEY\" error on 2026-10-01 (phrase_this and phrase_these both failed); no close-variant data is available from that export, so only the main phrase is listed here",
+  "slug": "tip-calculator",
+  "keywords": [
+    {
+      "keyword": "tip calculator",
+      "volume": 1500000,
+      "kd": 49
+    }
+  ]
+}

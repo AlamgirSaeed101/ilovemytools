@@ -591,6 +591,57 @@ return [
         ],
     ],
 
+    'tip-calculator' => [
+        'name' => 'Calculadora de gorjeta',
+        'title' => 'Calculadora de gorjeta - divida a conta',
+        'description' => 'Calculadora de gorjeta grátis: informe a conta, escolha uma porcentagem de gorjeta e divida o total entre as pessoas. Na hora, sem cadastro.',
+        'h1' => 'Calculadora de gorjeta',
+        'tagline' => 'Calcule a gorjeta e divida a conta entre qualquer número de pessoas.',
+        'keywords' => ['calculadora de gorjeta', 'dividir a conta', 'como calcular a gorjeta', 'calculadora de gorjeta por pessoa', 'gorjeta restaurante'],
+        'intro' => 'Uma calculadora de gorjeta calcula quanto deixar de gorjeta em uma conta e divide a gorjeta e o total entre qualquer número de pessoas. Informe o valor da conta, escolha uma porcentagem de gorjeta (15%, 18%, 20% e 25% são as mais comuns, ou digite a sua) e o número de pessoas que dividem a conta. A calculadora mostra na hora a gorjeta, o total com a gorjeta incluída e quanto cada pessoa deve pagar, com a opção de arredondar o valor por pessoa para um real fechado, para que ninguém precise de troco exato.',
+        'steps' => [
+            'Informe o valor da conta antes da gorjeta.',
+            'Escolha uma porcentagem de gorjeta predefinida ou digite a sua.',
+            'Defina quantas pessoas vão dividir a conta (deixe em 1 se ninguém for dividir).',
+            'Ative "Arredondar" se quiser que cada pessoa pague um valor fechado.',
+            'Veja a gorjeta, o total e os valores por pessoa abaixo.',
+        ],
+        'features' => [
+            'Porcentagens de gorjeta predefinidas (15%, 18%, 20%, 25%) e qualquer porcentagem personalizada',
+            'Divide a gorjeta e o total igualmente entre qualquer número de pessoas',
+            'Arredondamento opcional para que o valor por pessoa seja um número fechado',
+            'Mostra a conta por trás de cada resultado',
+            'Funciona totalmente no seu navegador: nada do que você digita é enviado',
+        ],
+        'content' => [
+            [
+                'heading' => 'Quanto devo deixar de gorjeta?',
+                'body' => 'Nos Estados Unidos, 15-20% da conta é a faixa mais comum para gorjetas em restaurantes, com 20% para um bom atendimento, 15% para um atendimento normal e 10% ou menos para um atendimento ruim. Entregas, táxis e salões costumam usar porcentagens menores, geralmente 10-15%. O valor certo sempre depende do costume local e do atendimento recebido, então os botões predefinidos são um ponto de partida, não uma regra.',
+            ],
+            [
+                'heading' => 'Dividir a conta entre um grupo',
+                'body' => 'Definir "Número de pessoas" para mais de uma divide a gorjeta e o total igualmente, a forma mais simples de dividir uma conta compartilhada. Isso não considera que cada pessoa tenha pedido valores diferentes; nesse caso, calcule primeiro o que cada um pediu e use esta calculadora só para uma gorjeta que realmente deva ser dividida igualmente, como uma entrada compartilhada ou uma gorjeta de grupo.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Quanto devo deixar de gorjeta em um restaurante?', 'a' => 'Nos EUA, 15-20% da conta antes dos impostos é a faixa mais comum, com 20% para um bom atendimento. Use um botão predefinido ou digite sua própria porcentagem.'],
+            ['q' => 'A gorjeta é calculada antes ou depois dos impostos?', 'a' => 'A maioria dos guias recomenda calcular a gorjeta sobre o subtotal antes dos impostos, mas calcular sobre o total com impostos também é comum e só acrescenta um valor pequeno.'],
+            ['q' => 'Como divido uma conta entre amigos?', 'a' => 'Informe a conta e a porcentagem de gorjeta e defina "Número de pessoas" conforme quantas vão dividir. A gorjeta e o total são divididos igualmente entre elas.'],
+            ['q' => 'O que o "Arredondar" faz?', 'a' => 'Arredonda o valor que cada pessoa paga para o número fechado seguinte, para que ninguém precise de troco exato. A diferença é somada à gorjeta.'],
+            ['q' => 'Essa calculadora de gorjeta é gratuita?', 'a' => 'Sim. É gratuita, sem cadastro, e tudo é calculado no seu navegador.'],
+        ],
+        'table' => [
+            'caption' => 'Valor da gorjeta em uma conta de R$ 50',
+            'headers' => ['Gorjeta %', 'Valor da gorjeta', 'Total com gorjeta'],
+            'rows' => [
+                ['15%', 'R$ 7,50', 'R$ 57,50'],
+                ['18%', 'R$ 9,00', 'R$ 59,00'],
+                ['20%', 'R$ 10,00', 'R$ 60,00'],
+                ['25%', 'R$ 12,50', 'R$ 62,50'],
+            ],
+        ],
+    ],
+
     'json-formatter' => [
         'name' => 'Formatador de JSON',
         'title' => 'Formatador e validador de JSON: embeleze JSON online',

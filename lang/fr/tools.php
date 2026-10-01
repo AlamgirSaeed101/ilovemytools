@@ -591,6 +591,57 @@ return [
         ],
     ],
 
+    'tip-calculator' => [
+        'name' => 'Calculateur de pourboire',
+        'title' => 'Calculateur de pourboire - partagez l’addition',
+        'description' => 'Calculateur de pourboire gratuit : indiquez l’addition, choisissez un pourcentage de pourboire et partagez le total entre plusieurs personnes. Instantané.',
+        'h1' => 'Calculateur de pourboire',
+        'tagline' => 'Calculez le pourboire et partagez l’addition entre n’importe quel nombre de personnes.',
+        'keywords' => ['calculateur de pourboire', 'partager l’addition', 'comment calculer le pourboire', 'calcul du pourboire par personne', 'pourboire restaurant'],
+        'intro' => 'Un calculateur de pourboire calcule combien laisser de pourboire sur une addition et partage le pourboire et le total entre n’importe quel nombre de personnes. Indiquez le montant de l’addition, choisissez un pourcentage de pourboire (15 %, 18 %, 20 % et 25 % sont les plus courants, ou saisissez le vôtre) et le nombre de personnes qui partagent l’addition. Le calculateur affiche instantanément le pourboire, le total avec le pourboire inclus et ce que chaque personne doit payer, avec une option pour arrondir le montant par personne à l’euro supérieur afin que personne n’ait besoin de faire l’appoint.',
+        'steps' => [
+            'Indiquez le montant de l’addition avant le pourboire.',
+            'Choisissez un pourcentage de pourboire prédéfini ou saisissez le vôtre.',
+            'Indiquez le nombre de personnes qui partagent l’addition (laissez 1 si personne ne la partage).',
+            'Activez « Arrondir » si vous voulez que chaque personne paie un montant rond.',
+            'Lisez le pourboire, le total et les montants par personne ci-dessous.',
+        ],
+        'features' => [
+            'Pourcentages de pourboire prédéfinis (15 %, 18 %, 20 %, 25 %) et tout pourcentage personnalisé',
+            'Partage le pourboire et le total à parts égales entre n’importe quel nombre de personnes',
+            'Arrondi optionnel pour que le montant par personne soit un chiffre rond',
+            'Affiche le calcul derrière chaque résultat',
+            'Fonctionne entièrement dans votre navigateur : rien de ce que vous saisissez n’est envoyé',
+        ],
+        'content' => [
+            [
+                'heading' => 'Combien faut-il laisser de pourboire ?',
+                'body' => 'Aux États-Unis, 15-20 % de l’addition est la fourchette la plus courante pour le pourboire au restaurant, avec 20 % pour un bon service, 15 % pour un service normal et 10 % ou moins pour un service médiocre. La livraison, les taxis et les salons utilisent souvent des pourcentages plus bas, en général 10-15 %. Le montant juste dépend toujours de l’usage local et du service reçu, les boutons prédéfinis sont donc un point de départ, pas une règle.',
+            ],
+            [
+                'heading' => 'Partager une addition entre un groupe',
+                'body' => 'Régler « Nombre de personnes » sur plus d’une partage le pourboire et le total à parts égales, la façon la plus simple de diviser une addition commune. Cela ne tient pas compte du fait que chacun ait commandé des montants différents ; dans ce cas, calculez d’abord ce que chacun a commandé et n’utilisez ce calculateur que pour un pourboire qui doit vraiment être partagé à parts égales, comme une entrée partagée ou un pourboire de groupe.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Combien dois-je laisser de pourboire au restaurant ?', 'a' => 'Aux États-Unis, 15-20 % de l’addition avant taxes est la fourchette la plus courante, avec 20 % pour un bon service. Utilisez un bouton prédéfini ou saisissez votre propre pourcentage.'],
+            ['q' => 'Le pourboire se calcule-t-il avant ou après les taxes ?', 'a' => 'La plupart des guides recommandent de calculer le pourboire sur le sous-total avant taxes, même si le calculer sur le total taxes incluses est aussi courant et n’ajoute qu’un petit montant.'],
+            ['q' => 'Comment partager une addition entre amis ?', 'a' => 'Indiquez l’addition et le pourcentage de pourboire, puis réglez « Nombre de personnes » selon le nombre de personnes qui la partagent. Le pourboire et le total sont divisés à parts égales entre elles.'],
+            ['q' => 'Que fait « Arrondir » ?', 'a' => 'Cela arrondit ce que chaque personne paie au chiffre rond supérieur, afin que personne n’ait besoin de faire l’appoint. La différence est ajoutée au pourboire.'],
+            ['q' => 'Ce calculateur de pourboire est-il gratuit ?', 'a' => 'Oui. Il est gratuit, sans inscription, et tout est calculé dans votre navigateur.'],
+        ],
+        'table' => [
+            'caption' => 'Montant du pourboire sur une addition de 50 €',
+            'headers' => ['Pourboire %', 'Montant du pourboire', 'Total avec pourboire'],
+            'rows' => [
+                ['15 %', '7,50 €', '57,50 €'],
+                ['18 %', '9,00 €', '59,00 €'],
+                ['20 %', '10,00 €', '60,00 €'],
+                ['25 %', '12,50 €', '62,50 €'],
+            ],
+        ],
+    ],
+
     'json-formatter' => [
         'name' => 'Formateur JSON',
         'title' => 'Formateur et validateur JSON : embellir du JSON en ligne',

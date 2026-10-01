@@ -789,5 +789,19 @@
     "Your PDFs, photos and documents never leave your browser": "Tus PDF, fotos y documentos nunca salen de tu navegador",
     "Your public IP address": "Tu dirección IP pública",
     "Your QR code will appear here.": "Tu código QR aparecerá aquí.",
-    "Your text": "Tu texto"
+    "Your text": "Tu texto",
+    "Bill amount": "Importe de la cuenta",
+    "Custom tip percentage": "Porcentaje de propina personalizado",
+    "Enter a bill amount and tip percentage to split the bill.": "Introduce el importe de la cuenta y el porcentaje de propina para repartir la cuenta.",
+    "Enter a bill amount of 0 or more.": "Introduce un importe de cuenta de 0 o más.",
+    "Enter a tip percentage of 0 or more.": "Introduce un porcentaje de propina de 0 o más.",
+    "Enter at least 1 person to split between.": "Introduce al menos 1 persona para repartir la cuenta.",
+    "Number of people": "Número de personas",
+    "Round up the total per person to the next whole dollar": "Redondear el total por persona a la unidad superior",
+    "Rounded up so each person pays a whole dollar amount.": "Redondeado para que cada persona pague una cantidad entera.",
+    "Tip per person": "Propina por persona",
+    "Tip percentage": "Porcentaje de propina",
+    "Total bill": "Total de la cuenta",
+    "Total per person": "Total por persona",
+    "Total tip": "Propina total"
 }

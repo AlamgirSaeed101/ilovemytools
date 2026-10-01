@@ -591,6 +591,57 @@ return [
         ],
     ],
 
+    'tip-calculator' => [
+        'name' => 'Calcolatore di mance',
+        'title' => 'Calcolatore di mance - dividi il conto',
+        'description' => 'Calcolatore di mance gratis: inserisci il conto, scegli una percentuale di mancia e dividi il totale tra più persone. Risultato istantaneo, senza iscrizione.',
+        'h1' => 'Calcolatore di mance',
+        'tagline' => 'Calcola la mancia e dividi il conto tra un numero qualsiasi di persone.',
+        'keywords' => ['calcolatore di mance', 'dividere il conto', 'come calcolare la mancia', 'calcolo mancia a persona', 'mancia al ristorante'],
+        'intro' => 'Un calcolatore di mance calcola quanto lasciare di mancia su un conto e divide la mancia e il totale tra un numero qualsiasi di persone. Inserisci l’importo del conto, scegli una percentuale di mancia (15%, 18%, 20% e 25% sono le più comuni, oppure inseriscine una personalizzata) e il numero di persone che dividono il conto. Il calcolatore mostra all’istante la mancia, il totale con la mancia inclusa e quanto deve pagare ciascuna persona, con l’opzione di arrotondare l’importo a persona all’euro superiore, così nessuno ha bisogno di resto esatto.',
+        'steps' => [
+            'Inserisci l’importo del conto prima della mancia.',
+            'Scegli una percentuale di mancia predefinita o inseriscine una personalizzata.',
+            'Imposta quante persone dividono il conto (lascialo a 1 se nessuno lo divide).',
+            'Attiva “Arrotonda” se vuoi che ciascuna persona paghi un importo intero.',
+            'Leggi la mancia, il totale e gli importi a persona qui sotto.',
+        ],
+        'features' => [
+            'Percentuali di mancia predefinite (15%, 18%, 20%, 25%) più qualsiasi percentuale personalizzata',
+            'Divide la mancia e il totale in parti uguali tra un numero qualsiasi di persone',
+            'Arrotondamento facoltativo così l’importo a persona è un numero intero',
+            'Mostra il calcolo dietro ogni risultato',
+            'Funziona interamente nel tuo browser: nulla di ciò che scrivi viene inviato',
+        ],
+        'content' => [
+            [
+                'heading' => 'Quanto bisogna lasciare di mancia?',
+                'body' => 'Negli Stati Uniti, il 15-20% del conto è l’intervallo più comune per la mancia al ristorante, con il 20% per un buon servizio, il 15% per un servizio nella norma e il 10% o meno per un servizio scarso. Consegne, taxi e saloni di bellezza usano spesso percentuali più basse, in genere il 10-15%. L’importo giusto dipende sempre dalle usanze locali e dal servizio ricevuto, quindi i pulsanti predefiniti sono un punto di partenza, non una regola.',
+            ],
+            [
+                'heading' => 'Dividere un conto tra un gruppo',
+                'body' => 'Impostare “Numero di persone” su più di uno divide la mancia e il totale in parti uguali, il modo più semplice per dividere un conto condiviso. Non tiene conto del fatto che ciascuno abbia ordinato importi diversi; in quel caso, calcola prima cosa ha ordinato ciascuno e usa questo calcolatore solo per una mancia che vada davvero divisa in parti uguali, come un antipasto condiviso o una mancia di gruppo.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Quanto bisogna lasciare di mancia al ristorante?', 'a' => 'Negli Stati Uniti, il 15-20% del conto prima delle tasse è l’intervallo più comune, con il 20% tipico per un buon servizio. Usa un pulsante predefinito o inserisci la tua percentuale.'],
+            ['q' => 'La mancia si calcola prima o dopo le tasse?', 'a' => 'La maggior parte delle guide consiglia di calcolare la mancia sul subtotale prima delle tasse, anche se calcolarla sul totale con le tasse è comune e aggiunge solo un piccolo importo.'],
+            ['q' => 'Come divido un conto tra amici?', 'a' => 'Inserisci il conto e la percentuale di mancia, poi imposta “Numero di persone” in base a quante persone lo dividono. La mancia e il totale vengono divisi in parti uguali tra loro.'],
+            ['q' => 'Cosa fa “Arrotonda”?', 'a' => 'Arrotonda quanto paga ciascuna persona al numero intero successivo, così nessuno ha bisogno di resto esatto. La differenza viene aggiunta alla mancia.'],
+            ['q' => 'Questo calcolatore di mance è gratuito?', 'a' => 'Sì. È gratuito, senza iscrizione, e tutto viene calcolato nel tuo browser.'],
+        ],
+        'table' => [
+            'caption' => 'Importo della mancia su un conto di 50 €',
+            'headers' => ['Mancia %', 'Importo mancia', 'Totale con mancia'],
+            'rows' => [
+                ['15%', '7,50 €', '57,50 €'],
+                ['18%', '9,00 €', '59,00 €'],
+                ['20%', '10,00 €', '60,00 €'],
+                ['25%', '12,50 €', '62,50 €'],
+            ],
+        ],
+    ],
+
     'json-formatter' => [
         'name' => 'Formattatore JSON',
         'title' => 'Formattatore e validatore JSON: abbellisci JSON online',

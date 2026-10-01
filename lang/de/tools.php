@@ -591,6 +591,57 @@ return [
         ],
     ],
 
+    'tip-calculator' => [
+        'name' => 'Trinkgeldrechner',
+        'title' => 'Trinkgeldrechner - Rechnung und Trinkgeld teilen',
+        'description' => 'Kostenloser Trinkgeldrechner: Rechnung eingeben, Trinkgeld-Prozentsatz wählen und die Summe auf mehrere Personen aufteilen. Sofort, ohne Anmeldung.',
+        'h1' => 'Trinkgeldrechner',
+        'tagline' => 'Berechne das Trinkgeld und teile die Rechnung durch eine beliebige Anzahl Personen.',
+        'keywords' => ['trinkgeldrechner', 'rechnung teilen', 'trinkgeld berechnen', 'trinkgeldrechner pro person', 'trinkgeld restaurant'],
+        'intro' => 'Ein Trinkgeldrechner berechnet, wie viel Trinkgeld du auf eine Rechnung geben solltest, und teilt das Trinkgeld und die Gesamtsumme auf eine beliebige Anzahl Personen auf. Gib den Rechnungsbetrag ein, wähle einen Trinkgeld-Prozentsatz (15 %, 18 %, 20 % und 25 % sind am gängigsten, oder gib deinen eigenen ein) und die Anzahl der Personen, die sich die Rechnung teilen. Der Rechner zeigt sofort das Trinkgeld, die Summe inklusive Trinkgeld und was jede Person zahlen muss, mit der Option, den Betrag pro Person auf einen vollen Euro aufzurunden, damit niemand genau abzählen muss.',
+        'steps' => [
+            'Gib den Rechnungsbetrag vor dem Trinkgeld ein.',
+            'Wähle einen vordefinierten Trinkgeld-Prozentsatz oder gib deinen eigenen ein.',
+            'Lege fest, wie viele Personen sich die Rechnung teilen (lass es bei 1, wenn niemand teilt).',
+            'Aktiviere „Aufrunden“, wenn jede Person einen vollen Betrag zahlen soll.',
+            'Lies das Trinkgeld, die Summe und die Beträge pro Person unten ab.',
+        ],
+        'features' => [
+            'Vordefinierte Trinkgeld-Prozentsätze (15 %, 18 %, 20 %, 25 %) sowie jeder eigene Prozentsatz',
+            'Teilt das Trinkgeld und die Summe gleichmäßig auf eine beliebige Anzahl Personen auf',
+            'Optionales Aufrunden, damit der Betrag pro Person eine volle Zahl ist',
+            'Zeigt die Rechenschritte hinter jedem Ergebnis',
+            'Läuft vollständig in deinem Browser: nichts, was du eingibst, wird verschickt',
+        ],
+        'content' => [
+            [
+                'heading' => 'Wie viel Trinkgeld sollte man geben?',
+                'body' => 'In den USA sind 15-20 % der Rechnung die gängigste Spanne für Trinkgeld im Restaurant, wobei 20 % für guten Service, 15 % für durchschnittlichen Service und 10 % oder weniger für schlechten Service üblich sind. Lieferdienste, Taxis und Friseursalons verwenden oft niedrigere Prozentsätze, meist 10-15 %. Der richtige Betrag hängt immer von den örtlichen Gewohnheiten und dem erhaltenen Service ab, die vordefinierten Schaltflächen sind also ein Ausgangspunkt, keine feste Regel.',
+            ],
+            [
+                'heading' => 'Eine Rechnung in einer Gruppe teilen',
+                'body' => 'Stellst du „Anzahl der Personen“ auf mehr als eins, werden Trinkgeld und Summe gleichmäßig aufgeteilt - die einfachste Art, eine gemeinsame Rechnung zu teilen. Dabei wird nicht berücksichtigt, dass jede Person etwas anderes bestellt hat; in diesem Fall rechne zuerst aus, was jeder bestellt hat, und nutze diesen Rechner nur für ein Trinkgeld, das wirklich gleichmäßig aufgeteilt werden soll, etwa eine gemeinsame Vorspeise oder ein Gruppen-Trinkgeld.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Wie viel Trinkgeld sollte ich im Restaurant geben?', 'a' => 'In den USA sind 15-20 % der Rechnung vor Steuern die gängigste Spanne, wobei 20 % für guten Service üblich sind. Nutze eine vordefinierte Schaltfläche oder gib deinen eigenen Prozentsatz ein.'],
+            ['q' => 'Berechnet man das Trinkgeld vor oder nach Steuern?', 'a' => 'Die meisten Ratgeber empfehlen, das Trinkgeld auf den Nettobetrag vor Steuern zu berechnen, auch wenn die Berechnung auf den Bruttobetrag üblich ist und nur einen kleinen Unterschied macht.'],
+            ['q' => 'Wie teile ich eine Rechnung mit Freunden?', 'a' => 'Gib die Rechnung und den Trinkgeld-Prozentsatz ein und stelle „Anzahl der Personen“ auf die Anzahl der Personen, die teilen. Trinkgeld und Summe werden gleichmäßig zwischen ihnen aufgeteilt.'],
+            ['q' => 'Was macht „Aufrunden“?', 'a' => 'Es rundet den Betrag, den jede Person zahlt, auf die nächste volle Zahl auf, damit niemand genau abzählen muss. Die Differenz wird dem Trinkgeld hinzugefügt.'],
+            ['q' => 'Ist dieser Trinkgeldrechner kostenlos?', 'a' => 'Ja. Er ist kostenlos, ohne Anmeldung, und alles wird in deinem Browser berechnet.'],
+        ],
+        'table' => [
+            'caption' => 'Trinkgeldbeträge bei einer Rechnung von 50 €',
+            'headers' => ['Trinkgeld %', 'Trinkgeldbetrag', 'Summe mit Trinkgeld'],
+            'rows' => [
+                ['15 %', '7,50 €', '57,50 €'],
+                ['18 %', '9,00 €', '59,00 €'],
+                ['20 %', '10,00 €', '60,00 €'],
+                ['25 %', '12,50 €', '62,50 €'],
+            ],
+        ],
+    ],
+
     'json-formatter' => [
         'name' => 'JSON-Formatierer',
         'title' => 'JSON-Formatierer & Validator: JSON online verschönern',
