@@ -719,6 +719,12 @@
     ]
   },
   {
+    "key": "Back to top",
+    "files": [
+      "resources/js/components/Layout.jsx"
+    ]
+  },
+  {
     "key": "Background",
     "files": [
       "resources/js/tools/QrCodeGenerator.jsx"

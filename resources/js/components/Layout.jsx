@@ -7,6 +7,7 @@ import Icon from './Icon.jsx';
 import NewsletterForm, { NewsletterNotice } from './Newsletter.jsx';
 import { getSite } from '../lib/api.js';
 import { t } from '../lib/i18n.js';
+import { usePageMotion } from '../lib/pageMotion.js';
 
 const isMac = typeof navigator !== 'undefined' && /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
 
@@ -401,6 +402,29 @@ function Footer() {
     );
 }
 
+/** Appears after scrolling down; smooth-scrolls back to the top. */
+function BackToTop() {
+    const [shown, setShown] = useState(false);
+    useEffect(() => {
+        const onScroll = () => setShown(window.scrollY > 700);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+    return (
+        <button
+            type="button"
+            className={`back-to-top${shown ? ' is-shown' : ''}`}
+            onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })}
+            aria-label={t('Back to top')}
+            tabIndex={shown ? 0 : -1}
+            aria-hidden={!shown}
+        >
+            <Icon name="chevron" />
+        </button>
+    );
+}
+
 /** Thin progress bar while the next page's data loads. */
 function ProgressBar() {
     const navigation = useNavigation();
@@ -428,6 +452,7 @@ export default function Layout() {
     const [paletteOpen, setPaletteOpen] = useState(false);
     const location = useLocation();
     const mainRef = usePageFocus();
+    usePageMotion(location.pathname, mainRef);
     const openPalette = useCallback(() => setPaletteOpen(true), []);
     const closePalette = useCallback(() => setPaletteOpen(false), []);
 
@@ -465,6 +490,7 @@ export default function Layout() {
             </div>
             <Footer />
             <CommandPalette open={paletteOpen} onClose={closePalette} />
+            <BackToTop />
             <AdblockNotice />
             <ScrollRestoration />
         </>
