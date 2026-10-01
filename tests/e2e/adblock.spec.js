@@ -10,7 +10,7 @@ async function withAds(page) {
 }
 
 test.describe('Ad blocker notice', () => {
-    test('asks to turn off a blocker and respects "Continue anyway"', async ({ page }) => {
+    test('blocks the site until the ad blocker is turned off', async ({ page }) => {
         await withAds(page);
         await page.addInitScript(() => {
             window.__adsBlocked = true; // the AdSense script failed to load
@@ -19,13 +19,13 @@ test.describe('Ad blocker notice', () => {
         const notice = page.getByTestId('adblock-notice');
         await expect(notice).toBeVisible({ timeout: 8000 });
         await expect(notice.getByRole('heading', { name: 'Please turn off your ad blocker' })).toBeVisible();
+        await expect(notice.getByRole('button')).toHaveCount(1); // no way to dismiss it
+        await page.keyboard.press('Escape');
+        await expect(notice).toBeVisible();
 
-        await notice.getByRole('button', { name: 'Continue anyway' }).click();
-        await expect(notice).toHaveCount(0);
-
-        await page.reload();
-        await page.waitForTimeout(4000);
-        await expect(page.getByTestId('adblock-notice')).toHaveCount(0);
+        // Still blocked after reloading.
+        await notice.getByRole('button', { name: "I've turned it off - reload" }).click();
+        await expect(page.getByTestId('adblock-notice')).toBeVisible({ timeout: 8000 });
     });
 
     test('stays away when nothing is blocked', async ({ page }) => {

@@ -1007,12 +1007,6 @@
     ]
   },
   {
-    "key": "Continue anyway",
-    "files": [
-      "resources/js/components/AdblockNotice.jsx"
-    ]
-  },
-  {
     "key": "Convert again",
     "files": [
       "resources/js/tools/ImageConverter.jsx"

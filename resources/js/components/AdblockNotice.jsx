@@ -4,17 +4,9 @@ import { getSite } from '../lib/api.js';
 import { t } from '../lib/i18n.js';
 
 // A website cannot switch off a visitor's ad blocker (extensions run outside the page),
-// so we detect it and politely ask. "Continue anyway" hides the notice for a week.
-const DISMISS_KEY = 'adblock-dismissed-until';
-const DISMISS_DAYS = 7;
-
-function dismissedRecently() {
-    try {
-        return Number(localStorage.getItem(DISMISS_KEY) || 0) > Date.now();
-    } catch {
-        return false;
-    }
-}
+// so we detect it and block the site until the visitor allows ads and reloads (owner's choice).
+// Search engine crawlers never see it: Google demotes pages hidden behind interstitials.
+const BOTS = /bot|crawl|spider|slurp|lighthouse|headlesschrome|google-inspectiontool|bingpreview|facebookexternalhit|embedly/i;
 
 /** True when the AdSense script failed to load or a bait element named like an ad was hidden. */
 function detectBlocker() {
@@ -41,7 +33,7 @@ export default function AdblockNotice() {
 
     useEffect(() => {
         // Only when real ads are configured, and well after the page has loaded.
-        if (!getSite().ads?.client || dismissedRecently()) return;
+        if (!getSite().ads?.client || BOTS.test(navigator.userAgent)) return;
         let cancelled = false;
         const timer = setTimeout(() => {
             detectBlocker().then((blocked) => !cancelled && blocked && setOpen(true));
@@ -53,22 +45,20 @@ export default function AdblockNotice() {
     }, []);
 
     useEffect(() => {
-        if (open) dialogRef.current?.focus();
+        if (!open) return undefined;
+        dialogRef.current?.focus();
+        // The page behind the wall can't be scrolled or used.
+        const previous = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        return () => {
+            document.body.style.overflow = previous;
+        };
     }, [open]);
 
     if (!open) return null;
 
-    const dismiss = () => {
-        try {
-            localStorage.setItem(DISMISS_KEY, String(Date.now() + DISMISS_DAYS * 86400000));
-        } catch {
-            // Private mode: the notice may show again next visit.
-        }
-        setOpen(false);
-    };
-
     return (
-        <div className="fixed inset-0 z-[90] grid place-items-center bg-[rgb(15_23_42/0.55)] p-4" onKeyDown={(e) => e.key === 'Escape' && dismiss()}>
+        <div className="fixed inset-0 z-[90] grid place-items-center bg-[rgb(15_23_42/0.7)] p-4 backdrop-blur-sm">
             <div
                 ref={dialogRef}
                 className="w-full max-w-[440px] rounded-[24px] bg-surface p-6 text-center shadow-2xl outline-none sm:p-8"
@@ -93,14 +83,9 @@ export default function AdblockNotice() {
                     <li>2. {t('Choose "Pause on this site" or "Allow ads on this site".')}</li>
                     <li>3. {t('Reload the page.')}</li>
                 </ol>
-                <div className="flex flex-col gap-2">
-                    <button className="btn btn--primary btn--lg rounded-full" type="button" onClick={() => window.location.reload()}>
-                        {t("I've turned it off - reload")}
-                    </button>
-                    <button className="btn btn--ghost" type="button" onClick={dismiss}>
-                        {t('Continue anyway')}
-                    </button>
-                </div>
+                <button className="btn btn--primary btn--lg w-full rounded-full" type="button" onClick={() => window.location.reload()}>
+                    {t("I've turned it off - reload")}
+                </button>
             </div>
         </div>
     );
