@@ -98,3 +98,7 @@ jobs:
             echo "$p $code"
             [ "$code" = "200" ] || exit 1
           done
+
+      - name: Notify search engines (IndexNow)
+        continue-on-error: true
+        run: node scripts/indexnow.mjs
