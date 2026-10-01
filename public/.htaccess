@@ -36,6 +36,7 @@
 
 # Correct type for the web app manifest (lets browsers offer "Install app").
 AddType application/manifest+json .webmanifest
+AddType text/xsl .xsl
 
 # Performance (Core Web Vitals): compress text and cache build assets for a year.
 <IfModule mod_deflate.c>

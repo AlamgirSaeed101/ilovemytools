@@ -38,6 +38,8 @@ class SeoFilesController extends Controller
         $xml->openMemory();
         $xml->setIndent(true);
         $xml->startDocument('1.0', 'UTF-8');
+        // Shows the sitemap as a readable table in browsers; search engines ignore it.
+        $xml->writePi('xml-stylesheet', 'type="text/xsl" href="/sitemap.xsl"');
         $xml->startElement('urlset');
         $xml->writeAttribute('xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9');
         $xml->writeAttribute('xmlns:xhtml', 'http://www.w3.org/1999/xhtml');
