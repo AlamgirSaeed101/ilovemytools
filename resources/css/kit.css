@@ -290,18 +290,6 @@ h3 {
     color: transparent;
 }
 
-/* Server-rendered copy: hidden while React starts; revealed only if the app never mounts. */
-.js #app > .ssr {
-    visibility: hidden;
-    animation: ssr-reveal 0s linear 4s forwards;
-}
-
-@keyframes ssr-reveal {
-    to {
-        visibility: visible;
-    }
-}
-
 .ssr .site-nav ul,
 .ssr .footer-legal,
 .ssr .trust-list {

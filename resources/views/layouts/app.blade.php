@@ -72,7 +72,9 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+    {{-- Loaded without blocking the first paint (text shows in the fallback font, then swaps). --}}
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"></noscript>
 
     {{-- Light mode is the default. A saved choice from the theme toggle is applied before the first paint (no flash). --}}
     <script>
@@ -99,7 +101,7 @@
     {{-- Google AdSense (loads async so it never blocks the page) --}}
     @if ($adClient !== '')
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ $adClient }}" crossorigin="anonymous"></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ $adClient }}" crossorigin="anonymous" onerror="window.__adsBlocked=true"></script>
     @endif
 </head>
 <body>

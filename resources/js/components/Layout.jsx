@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link, Outlet, ScrollRestoration, useLocation, useNavigation } from 'react-router';
 import AdSlot from './AdSlot.jsx';
+import AdblockNotice from './AdblockNotice.jsx';
 import CommandPalette from './CommandPalette.jsx';
 import Icon from './Icon.jsx';
 import NewsletterForm, { NewsletterNotice } from './Newsletter.jsx';
@@ -464,6 +465,7 @@ export default function Layout() {
             </div>
             <Footer />
             <CommandPalette open={paletteOpen} onClose={closePalette} />
+            <AdblockNotice />
             <ScrollRestoration />
         </>
     );

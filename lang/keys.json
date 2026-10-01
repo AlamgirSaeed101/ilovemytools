@@ -607,6 +607,12 @@
     ]
   },
   {
+    "key": "Ads are how we keep every tool free, with no sign up and no limits. Your files still never leave your device.",
+    "files": [
+      "resources/js/components/AdblockNotice.jsx"
+    ]
+  },
+  {
     "key": "Adults need 7-9 hours. Under 6 hours regularly affects mood, focus and health.",
     "files": [
       "resources/js/lib/sleep.js"
@@ -835,6 +841,12 @@
     ]
   },
   {
+    "key": "Choose \"Pause on this site\" or \"Allow ads on this site\".",
+    "files": [
+      "resources/js/components/AdblockNotice.jsx"
+    ]
+  },
+  {
     "key": "Choose another image",
     "files": [
       "resources/js/tools/ImageResizer.jsx"
@@ -876,6 +888,12 @@
     "files": [
       "resources/js/tools/ImageCompressor.jsx",
       "resources/js/tools/ImageConverter.jsx"
+    ]
+  },
+  {
+    "key": "Click the ad blocker icon in your browser toolbar.",
+    "files": [
+      "resources/js/components/AdblockNotice.jsx"
     ]
   },
   {
@@ -986,6 +1004,12 @@
     "key": "Contact Us - Report a Bug or Suggest a Tool",
     "files": [
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Continue anyway",
+    "files": [
+      "resources/js/components/AdblockNotice.jsx"
     ]
   },
   {
@@ -1991,6 +2015,12 @@
     ]
   },
   {
+    "key": "I've turned it off - reload",
+    "files": [
+      "resources/js/components/AdblockNotice.jsx"
+    ]
+  },
+  {
     "key": "If you did not sign up, just ignore this email and you will not hear from us again.",
     "files": [
       "resources/views/emails/confirm.blade.php"
@@ -2888,6 +2918,12 @@
     ]
   },
   {
+    "key": "Please turn off your ad blocker",
+    "files": [
+      "resources/js/components/AdblockNotice.jsx"
+    ]
+  },
+  {
     "key": "PNG (lossless)",
     "files": [
       "resources/js/tools/ImageCompressor.jsx"
@@ -3146,6 +3182,12 @@
     "key": "Reload the page",
     "files": [
       "resources/js/components/ErrorBoundary.jsx"
+    ]
+  },
+  {
+    "key": "Reload the page.",
+    "files": [
+      "resources/js/components/AdblockNotice.jsx"
     ]
   },
   {
