@@ -21,11 +21,13 @@ export default function CommandPalette({ open, onClose }) {
         const dialog = dialogRef.current;
         if (!dialog) return;
         if (open && !dialog.open) {
+            dialog.showModal();
+        } else if (!open) {
+            if (dialog.open) dialog.close();
+            // Clear on close, so the box is already empty when it reopens (fast typists
+            // used to get the old query plus their new letters).
             setQuery('');
             setActive(0);
-            dialog.showModal();
-        } else if (!open && dialog.open) {
-            dialog.close();
         }
     }, [open]);
 
