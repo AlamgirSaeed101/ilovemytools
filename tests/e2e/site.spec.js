@@ -78,6 +78,8 @@ test.describe('App shell', () => {
         await page.keyboard.press('Control+k');
         const dialog = page.getByRole('dialog', { name: 'Search tools' });
         await expect(dialog).toBeVisible();
+        // Type only once the search box has focus (on slow CI machines it can lag the dialog).
+        await expect(dialog.locator('input')).toBeFocused();
         await page.keyboard.type('split');
         await expect(dialog.getByRole('option').first()).toContainText('Split PDF');
         await page.keyboard.press('Enter');
@@ -87,6 +89,7 @@ test.describe('App shell', () => {
         await page.locator('body').click({ position: { x: 5, y: 300 } });
         await page.keyboard.press('/');
         await expect(dialog).toBeVisible();
+        await expect(dialog.locator('input')).toBeFocused();
         await page.keyboard.type('json');
         // Wait for the results to update before using the keyboard (slower CI machines).
         await expect(dialog.getByRole('option').first()).toContainText('JSON Formatter');
