@@ -35,6 +35,13 @@ Read `TOOLS_SPEC_PROMPT.md` (architecture, SEO rules, tool specs) before changin
     ```
     If CI fails after your push, comment again saying what failed and that tomorrow's run fixes it first.
 
+12. **Target markets.** The site serves every country, but ad revenue comes mostly from the US, UK, Canada,
+    Australia and Western Europe (Germany, the Nordics, Switzerland, the Netherlands, France). So: research
+    keywords in the Semrush `us` database first, then `uk` and `de` (and `fr`/`it`/`es` for those pages);
+    prefer tools whose keywords have a high CPC (finance calculators earn far more per ad than file tools);
+    use local conventions via `resources/js/lib/region.js` (Letter vs A4, tipping, US vs metric units); and
+    for money tools be exact: show formulas, cite official sources (e.g. EU/HMRC VAT rates) and never give tax advice.
+
 ## Backlog (in priority order)
 
 Ranked by search demand (what iLovePDF, Smallpdf, FreeConvert and the big calculator sites put first) and
@@ -43,6 +50,15 @@ by whether the tool works well entirely in the browser.
 Real US search data (Semrush, 30 Sep 2026) is in `docs/keywords/`. Use it for each new page: the
 highest-volume exact phrase becomes the H1/title keyword; the next variants go in the intro, steps, headings
 and FAQs. When the owner adds new Semrush exports there, re-rank the unchecked items by volume ÷ difficulty.
+
+### High-revenue tools (do these first, from 3 Oct 2026)
+Finance topics have much higher ad prices in the US/UK/EU than file tools. Before building each one, check
+volume and CPC in Semrush (`us`, `uk`, `de`) and save the data in `docs/keywords/`.
+- [ ] **Mortgage Calculator** `/mortgage-calculator` (monthly payment, amortization table, extra payments; US and UK wording).
+- [ ] **Loan Calculator** `/loan-calculator` (payment, total interest, amortization schedule).
+- [ ] **Compound Interest Calculator** `/compound-interest-calculator` (monthly contributions, chart, table).
+- [ ] **VAT Calculator** `/vat-calculator` (add/remove VAT; UK and EU country rates from official sources, dated).
+- [ ] **Salary to Hourly Calculator** `/salary-calculator` (hourly, weekly, monthly, yearly; no tax estimates).
 
 ### New tools
 Ranked by real US search volume and keyword difficulty (KD 0-100, lower is easier) from Semrush,

@@ -5,6 +5,7 @@ import { IMAGE_TYPES, imageTypeOf, MAX_FILE_BYTES } from '../lib/image.js';
 import { buildImagePdf } from '../lib/pdf.js';
 import { baseName, downloadBlob, formatBytes, safeFilename } from '../lib/util.js';
 import { t, tn } from '../lib/i18n.js';
+import { defaultPaper } from '../lib/region.js';
 
 const MAX_FILES = 30;
 let nextId = 1;
@@ -12,7 +13,8 @@ let nextId = 1;
 export default function JpgToPdf() {
     const [items, setItems] = useState([]); // { id, file, thumb }
     const [message, setMessage] = useState({ type: '', text: '' });
-    const [settings, setSettings] = useState({ pageSize: 'a4', orientation: 'auto', marginMm: 10 });
+    // Letter paper in the US/Canada, A4 elsewhere (from browser settings).
+    const [settings, setSettings] = useState(() => ({ pageSize: defaultPaper(), orientation: 'auto', marginMm: 10 }));
     const [building, setBuilding] = useState(false);
     const [result, setResult] = useState(null);
     const itemsRef = useRef(items);

@@ -1,11 +1,14 @@
-import { useId, useState } from 'react';
+import { useId, useMemo, useState } from 'react';
 import { Notice, Stat } from '../components/ui.jsx';
-import { calcTip, parseAmount, parsePeople, TIP_PRESETS } from '../lib/tip.js';
+import { tipPresets } from '../lib/region.js';
+import { calcTip, parseAmount, parsePeople } from '../lib/tip.js';
 import { t } from '../lib/i18n.js';
 
 export default function TipCalculator() {
     const [bill, setBill] = useState('85');
-    const [tipPercent, setTipPercent] = useState('20');
+    // Local tipping habits: 15-25% in North America, 10-20% in the UK/Australia, 5-20% in Europe.
+    const presets = useMemo(() => tipPresets(), []);
+    const [tipPercent, setTipPercent] = useState(() => String(presets.includes(20) && presets[0] >= 15 ? 20 : presets[1]));
     const [people, setPeople] = useState('4');
     const [roundUp, setRoundUp] = useState(false);
     const billId = useId();
@@ -53,7 +56,7 @@ export default function TipCalculator() {
             <div className="field">
                 <span className="field__label" id={`${tipId}-label`}>{t('Tip percentage')}</span>
                 <div className="row" role="group" aria-label={t('Tip percentage')}>
-                    {TIP_PRESETS.map((preset) => (
+                    {presets.map((preset) => (
                         <button
                             key={preset}
                             type="button"
