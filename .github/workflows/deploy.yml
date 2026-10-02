@@ -93,9 +93,14 @@ jobs:
       - name: Smoke test live site
         run: |
           sleep 60
+          # Each page gets 3 tries: the shared host sometimes stalls for a few seconds.
           for p in / /word-counter /fr/merge-pdf /sitemap.xml; do
-            code=$(curl -s -o /dev/null -w '%{http_code}' "https://ilovemytools.store$p")
-            echo "$p $code"
+            for try in 1 2 3; do
+              code=$(curl -s -m 30 -o /dev/null -w '%{http_code}' "https://ilovemytools.store$p")
+              echo "$p $code (try $try)"
+              [ "$code" = "200" ] && break
+              sleep 15
+            done
             [ "$code" = "200" ] || exit 1
           done
 
