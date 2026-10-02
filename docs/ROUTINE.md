@@ -108,7 +108,7 @@ Not planned: PDF↔Word/Excel/PowerPoint (can't be done well in the browser), vi
 - [x] HowTo and SpeakableSpecification schema on tool pages.
 - [ ] Homepage FAQ (4-5 questions such as "Are these tools really free?", "Are my files uploaded?") with FAQPage schema, all languages. *(quick audit 30 Sep)*
 - [ ] Tools without them get a one-line definition, a reference table and 2-3 cited sources, like /image-compressor (start with /merge-pdf, /split-pdf). *(quick audit 30 Sep)*
-- [ ] *(owner input)* Enable OPcache in cPanel > Select PHP Version > Extensions (uncached pages take ~1.8 s to first byte).
+- [x] *(owner input)* OPcache enabled (3 Oct 2026): uncached pages went from ~1.8 s to ~0.6 s to first byte, the same as a static file. What remains is distance to the Singapore server (moving hosting to the US would help US visitors).
 - [ ] *(owner input)* About page: real founder name, bio and founding date; Person schema linked as Organization.founder.
 - [ ] *(owner input)* Brand social profiles in Organization.sameAs and the footer.
 
