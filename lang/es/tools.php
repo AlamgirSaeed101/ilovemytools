@@ -1182,4 +1182,95 @@ return [
         ],
     ],
 
+    'broken-link-checker' => [
+        'name' => 'Comprobador de enlaces rotos',
+        'title' => 'Comprobador de enlaces rotos gratis: encuentra 404',
+        'description' => 'Comprobador de enlaces rotos gratis: encuentra errores 404, enlaces muertos, imágenes rotas y redirecciones en cualquier página y expórtalos a un archivo CSV.',
+        'h1' => 'Comprobador de enlaces rotos',
+        'tagline' => 'Encuentra enlaces muertos, errores 404 y redirecciones en cualquier página.',
+        'keywords' => [
+            'comprobador de enlaces rotos',
+            'enlaces rotos',
+            'verificar enlaces rotos',
+            'comprobar enlaces',
+            'error 404',
+            'buscar enlaces rotos',
+        ],
+        'intro' => 'Un comprobador de enlaces rotos encuentra los enlaces de una página web que ya no funcionan, como errores 404 de «página no encontrada», imágenes borradas o dominios caducados. Escribe la dirección de una página y la herramienta prueba cada enlace e imagen (hasta 300), te muestra cuáles están rotos, cuáles redirigen y cuáles funcionan, y te deja descargar los resultados en un archivo CSV.',
+        'steps' => [
+            'Escribe la dirección de la página que quieres revisar, por ejemplo example.com/blog.',
+            'Haz clic en Comprobar enlaces; los resultados aparecen a medida que se prueba cada grupo de enlaces.',
+            'Corrige o elimina los enlaces rotos que aparecen en Problemas y actualiza los que redirigen.',
+        ],
+        'features' => [
+            'Revisa todos los enlaces e imágenes de una página (hasta 300)',
+            'Detecta errores 404, errores del servidor, dominios caducados y redirecciones',
+            'Muestra el texto del enlace y si es interno o externo',
+            'Exportación a CSV gratis y sin registro',
+        ],
+        'content' => [
+            [
+                'heading' => '¿Por qué importan los enlaces rotos?',
+                'body' => 'Los enlaces rotos llevan a los visitantes a páginas de error, algo frustrante que hace que un sitio parezca descuidado. Los buscadores también siguen los enlaces para descubrir páginas, así que los enlaces muertos desperdician su rastreo y pueden impedir que encuentren páginas importantes. Arreglarlos es una de las mejoras de SEO y experiencia de usuario más rápidas.',
+            ],
+            [
+                'heading' => '¿Qué significan los resultados?',
+                'body' => 'OK significa que el enlace funciona. Redirección significa que funciona pero pasa por una o más redirecciones; cambiarlo por la dirección final es más rápido para los visitantes. Roto significa que la página respondió con un error como 404 o 500, o que el dominio ya no existe. Bloqueado significa que el sitio rechazó la comprobación automática (código 401, 403 o 429), así que ábrelo tú para confirmarlo.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => '¿Cómo encuentro los enlaces rotos de mi web?',
+                'a' => 'Escribe la dirección de una página arriba y haz clic en Comprobar enlaces. Repite con tus páginas más importantes, como la portada, los menús y los artículos más visitados.',
+            ],
+            [
+                'q' => '¿Revisa toda la web?',
+                'a' => 'Revisa todos los enlaces e imágenes de la página que escribas, hasta 300. Para revisar otras páginas, escribe sus direcciones una a una.',
+            ],
+            [
+                'q' => '¿Por qué algunos enlaces aparecen como Bloqueados?',
+                'a' => 'Algunas webs rechazan las peticiones automáticas o piden iniciar sesión, y responden con el código 401, 403 o 429. El enlace puede funcionar en un navegador normal, así que ábrelo para comprobarlo.',
+            ],
+            [
+                'q' => '¿Se guarda la página o mis resultados?',
+                'a' => 'No. Nuestro servidor descarga la página y los enlaces solo para comprobarlos y no guarda la dirección ni los resultados.',
+            ],
+        ],
+        'table' => [
+            'caption' => 'Códigos de estado HTTP habituales',
+            'headers' => [
+                'Código',
+                'Significado',
+                'Qué hacer',
+            ],
+            'rows' => [
+                [
+                    '200',
+                    'OK',
+                    'Nada',
+                ],
+                [
+                    '301 / 308',
+                    'Movido de forma permanente',
+                    'Actualiza el enlace a la nueva dirección',
+                ],
+                [
+                    '404',
+                    'Página no encontrada',
+                    'Corrige o elimina el enlace',
+                ],
+                [
+                    '410',
+                    'Eliminada para siempre',
+                    'Elimina el enlace',
+                ],
+                [
+                    '500 / 503',
+                    'Error del servidor',
+                    'Vuelve a comprobar más tarde; avisa al propietario',
+                ],
+            ],
+        ],
+    ],
+
 ];

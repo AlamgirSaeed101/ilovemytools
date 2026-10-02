@@ -43,6 +43,8 @@ const DYNAMIC = [
     'Likely AI-generated', 'Mixed or unclear', 'Likely human-written',
     // Background remover backgrounds (tools/BackgroundRemover.jsx)
     'Transparent', 'White', 'Colour',
+    // Broken Link Checker result labels (tools/BrokenLinkChecker.jsx)
+    'OK', 'Redirect', 'Broken', 'Blocked', 'No answer',
     'Uniform sentence lengths', 'People mix short and long sentences; AI text is often very even.',
     'AI-typical phrases', `Words such as "delve", "moreover" or "in today's fast-paced world".`,
     'Few contractions', `AI rarely writes "don't" or "it's" unless asked to.`,

@@ -1287,4 +1287,95 @@ return [
         ],
     ],
 
+    'broken-link-checker' => [
+        'name' => 'Controllo link non funzionanti',
+        'title' => 'Controllo link rotti gratis: trova errori 404',
+        'description' => 'Controllo link rotti gratis: trova errori 404, link morti, immagini non funzionanti e reindirizzamenti in qualsiasi pagina web ed esportali in un file CSV.',
+        'h1' => 'Controllo link non funzionanti',
+        'tagline' => 'Trova link morti, errori 404 e reindirizzamenti in qualsiasi pagina.',
+        'keywords' => [
+            'controllo link rotti',
+            'link non funzionanti',
+            'verificare link rotti',
+            'link checker',
+            'errore 404',
+            'trovare link rotti',
+        ],
+        'intro' => 'Uno strumento di controllo dei link non funzionanti trova i link di una pagina web che non funzionano più, come gli errori 404 «pagina non trovata», le immagini eliminate o i domini scaduti. Inserisci l’indirizzo di una pagina e lo strumento verifica ogni link e immagine (fino a 300), mostra quali sono rotti, quali reindirizzano e quali funzionano, e ti permette di scaricare i risultati in un file CSV.',
+        'steps' => [
+            'Inserisci l’indirizzo della pagina da controllare, ad esempio example.com/blog.',
+            'Fai clic su Controlla link; i risultati compaiono man mano che ogni gruppo di link viene verificato.',
+            'Correggi o rimuovi i link rotti indicati in Problemi e aggiorna quelli che reindirizzano.',
+        ],
+        'features' => [
+            'Controlla tutti i link e le immagini di una pagina (fino a 300)',
+            'Trova errori 404, errori del server, domini scaduti e reindirizzamenti',
+            'Mostra il testo del link e se è interno o esterno',
+            'Esportazione CSV gratis, senza registrazione',
+        ],
+        'content' => [
+            [
+                'heading' => 'Perché i link rotti sono importanti?',
+                'body' => 'I link rotti portano i visitatori su pagine di errore: è frustrante e fa sembrare il sito trascurato. Anche i motori di ricerca seguono i link per scoprire le pagine, quindi i link morti sprecano la scansione e possono impedire di trovare pagine importanti. Correggerli è uno dei miglioramenti SEO e di esperienza più rapidi.',
+            ],
+            [
+                'heading' => 'Cosa significano i risultati?',
+                'body' => 'OK significa che il link funziona. Reindirizzamento significa che funziona ma passa per uno o più reindirizzamenti; sostituirlo con l’indirizzo finale è più veloce per i visitatori. Rotto significa che la pagina ha risposto con un errore come 404 o 500, oppure che il dominio non esiste più. Bloccato significa che il sito ha rifiutato il controllo automatico (codice 401, 403 o 429): apri il link per verificarlo.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Come trovo i link rotti del mio sito?',
+                'a' => 'Inserisci l’indirizzo di una pagina qui sopra e fai clic su Controlla link. Ripeti con le pagine più importanti, come la home, i menu e gli articoli più letti.',
+            ],
+            [
+                'q' => 'Controlla tutto il sito?',
+                'a' => 'Controlla tutti i link e le immagini della pagina inserita, fino a 300. Per controllare altre pagine, inserisci i loro indirizzi uno alla volta.',
+            ],
+            [
+                'q' => 'Perché alcuni link risultano Bloccati?',
+                'a' => 'Alcuni siti rifiutano le richieste automatiche o richiedono l’accesso, rispondendo con il codice 401, 403 o 429. Il link può comunque funzionare in un normale browser: aprilo per verificare.',
+            ],
+            [
+                'q' => 'La pagina o i miei risultati vengono salvati?',
+                'a' => 'No. Il nostro server scarica la pagina e i link solo per controllarli e non salva né l’indirizzo né i risultati.',
+            ],
+        ],
+        'table' => [
+            'caption' => 'Codici di stato HTTP comuni',
+            'headers' => [
+                'Codice',
+                'Significato',
+                'Cosa fare',
+            ],
+            'rows' => [
+                [
+                    '200',
+                    'OK',
+                    'Niente',
+                ],
+                [
+                    '301 / 308',
+                    'Spostato in modo permanente',
+                    'Aggiorna il link al nuovo indirizzo',
+                ],
+                [
+                    '404',
+                    'Pagina non trovata',
+                    'Correggi o rimuovi il link',
+                ],
+                [
+                    '410',
+                    'Rimossa definitivamente',
+                    'Rimuovi il link',
+                ],
+                [
+                    '500 / 503',
+                    'Errore del server',
+                    'Ricontrolla più tardi; avvisa il proprietario del sito',
+                ],
+            ],
+        ],
+    ],
+
 ];

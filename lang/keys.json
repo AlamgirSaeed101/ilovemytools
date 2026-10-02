@@ -710,6 +710,12 @@
     ]
   },
   {
+    "key": "All",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
     "key": "All free tools",
     "files": [
       "resources/js/pages/ToolPage.jsx",
@@ -859,6 +865,18 @@
     ]
   },
   {
+    "key": "Blocked",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Blocked or no answer",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
     "key": "Born on a {weekday}",
     "files": [
       "resources/js/tools/AgeCalculator.jsx"
@@ -868,6 +886,13 @@
     "key": "Breadcrumb",
     "files": [
       "resources/js/components/Breadcrumbs.jsx"
+    ]
+  },
+  {
+    "key": "Broken",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx",
+      "scripts/i18n-extract.mjs"
     ]
   },
   {
@@ -945,9 +970,33 @@
     ]
   },
   {
+    "key": "Check links",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
     "key": "Check text",
     "files": [
       "resources/js/tools/AiDetector.jsx"
+    ]
+  },
+  {
+    "key": "Checked {done} of {total} links on {url}",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
+    "key": "Checking {done} of {total} links…",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
+    "key": "Checks every link and image on one page (up to 300).",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
     ]
   },
   {
@@ -1386,6 +1435,12 @@
     ]
   },
   {
+    "key": "Domain not found",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
     "key": "Done!",
     "files": [
       "resources/js/tools/SplitPdf.jsx"
@@ -1422,6 +1477,12 @@
     "files": [
       "resources/js/tools/ImageCompressor.jsx",
       "resources/js/tools/ImageConverter.jsx"
+    ]
+  },
+  {
+    "key": "Download CSV",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
     ]
   },
   {
@@ -1747,6 +1808,12 @@
     "key": "Explore Tools",
     "files": [
       "resources/js/pages/Home.jsx"
+    ]
+  },
+  {
+    "key": "External",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
     ]
   },
   {
@@ -2238,6 +2305,12 @@
     ]
   },
   {
+    "key": "Image",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
     "key": "Images to convert, in order",
     "files": [
       "resources/js/tools/JpgToPdf.jsx"
@@ -2289,6 +2362,12 @@
     "key": "Instant results - no waiting in an upload or download queue",
     "files": [
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Internal",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
     ]
   },
   {
@@ -2492,6 +2571,18 @@
     "key": "Lines:",
     "files": [
       "resources/js/tools/WordCounter.jsx"
+    ]
+  },
+  {
+    "key": "Link",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
+    "key": "Link check results",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
     ]
   },
   {
@@ -2803,6 +2894,18 @@
     ]
   },
   {
+    "key": "No answer",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "No broken links found on this page.",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
     "key": "No duplicates",
     "files": [
       "resources/js/tools/RandomNumber.jsx"
@@ -2818,6 +2921,18 @@
     "key": "No preview",
     "files": [
       "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "No problems found so far…",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
+    "key": "No response",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
     ]
   },
   {
@@ -2842,6 +2957,18 @@
     "key": "None",
     "files": [
       "resources/js/tools/JpgToPdf.jsx"
+    ]
+  },
+  {
+    "key": "Not checked",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
+    "key": "Nothing to show.",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
     ]
   },
   {
@@ -2878,6 +3005,13 @@
     "key": "of what?",
     "files": [
       "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "OK",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx",
+      "scripts/i18n-extract.mjs"
     ]
   },
   {
@@ -2993,6 +3127,12 @@
     "key": "Over 9 hours is fine now and then, for example when recovering from illness or lost sleep.",
     "files": [
       "resources/js/lib/sleep.js"
+    ]
+  },
+  {
+    "key": "Page address (URL)",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
     ]
   },
   {
@@ -3183,6 +3323,12 @@
     ]
   },
   {
+    "key": "Please enter a valid web address, for example example.com/page.",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
     "key": "Please paste at least {min} words (you have {count}) for a meaningful result.",
     "files": [
       "resources/js/tools/AiDetector.jsx"
@@ -3333,6 +3479,12 @@
     ]
   },
   {
+    "key": "Problems",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
     "key": "QR Code",
     "files": [
       "scripts/i18n-extract.mjs"
@@ -3447,6 +3599,24 @@
     "key": "Recommended",
     "files": [
       "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Redirect",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Redirects",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
+    "key": "redirects to {url}",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
     ]
   },
   {
@@ -3787,6 +3957,12 @@
     ]
   },
   {
+    "key": "Show",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
     "key": "Shuffle",
     "files": [
       "resources/js/tools/SpinWheel.jsx"
@@ -3857,7 +4033,8 @@
   {
     "key": "Something went wrong. Please try again.",
     "files": [
-      "resources/js/components/Newsletter.jsx"
+      "resources/js/components/Newsletter.jsx",
+      "resources/js/tools/BrokenLinkChecker.jsx"
     ]
   },
   {
@@ -3997,6 +4174,12 @@
     ]
   },
   {
+    "key": "Status",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
     "key": "Still seeing this? Brave Shields, Opera, Edge \"Strict\" tracking prevention, antivirus, VPN or DNS ad blocking can also block ads.",
     "files": [
       "resources/js/components/AdblockNotice.jsx"
@@ -4005,6 +4188,7 @@
   {
     "key": "Stop",
     "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx",
       "resources/js/tools/Stopwatch.jsx"
     ]
   },
@@ -4170,9 +4354,21 @@
     ]
   },
   {
+    "key": "That address is not a web page (HTML), so there are no links to check.",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
     "key": "That is too much data for one QR code. Please shorten the text or use a lower error correction level.",
     "files": [
       "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "That website could not be found. Check the address for typos.",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
     ]
   },
   {
@@ -4221,6 +4417,18 @@
     "key": "The only exception is the “What Is My IP” tool, which shows you the IP address your browser used to reach our server. We display it back to you and do not store it in a database.",
     "files": [
       "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "The page answered with error {status}, so its links could not be read.",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
+    "key": "The page redirects too many times.",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
     ]
   },
   {
@@ -4290,6 +4498,12 @@
     ]
   },
   {
+    "key": "The website did not respond. It may be down or blocking automated checks.",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
     "key": "The wheel picked",
     "files": [
       "resources/js/tools/SpinWheel.jsx"
@@ -4305,6 +4519,12 @@
     "key": "These formulas were designed for English text; scores for other languages are only a rough guide.",
     "files": [
       "resources/js/tools/ReadabilityChecker.jsx"
+    ]
+  },
+  {
+    "key": "This address can’t be checked. Only public websites on normal web ports are supported.",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
     ]
   },
   {
@@ -4338,6 +4558,12 @@
     ]
   },
   {
+    "key": "This page has more than 300 links; the first 300 were checked.",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
     "key": "This PDF only has {count} pages. \"{part}\" is out of range.",
     "one": "This PDF only has {count} page. \"{part}\" is out of range.",
     "files": [
@@ -4348,6 +4574,13 @@
     "key": "This Privacy Policy explains how {name} (“we”, “us”) handles information when you use {url} (the “Site”). Please also read the section about advertising cookies below.",
     "files": [
       "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "This tool asks our server to fetch the address you enter. We don’t store the address or the results.",
+    "files": [
+      "resources/js/pages/ToolPage.jsx",
+      "resources/views/pages/tool.blade.php"
     ]
   },
   {
@@ -4450,6 +4683,18 @@
     "key": "Too many attempts. Please wait a minute and try again.",
     "files": [
       "resources/js/components/Newsletter.jsx"
+    ]
+  },
+  {
+    "key": "Too many checks in a short time. Please wait a minute and try again.",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
+    "key": "Too many redirects",
+    "files": [
+      "resources/js/tools/BrokenLinkChecker.jsx"
     ]
   },
   {

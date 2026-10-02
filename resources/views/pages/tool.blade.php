@@ -17,7 +17,7 @@
                 {{-- The React app renders the working tool here. --}}
                 <section class="tool-panel" aria-label="{{ $tool['name'] }}">
                     <p class="notice notice--warn">{{ t('This tool needs JavaScript. Please enable JavaScript in your browser settings to use the {name}.', ['name' => $tool['name']]) }}</p>
-                    <p class="privacy-note">{!! \App\Support\Icon::svg('shield') !!} {{ t('Private: this tool runs in your browser. Your data is never uploaded.') }}</p>
+                    <p class="privacy-note">{!! \App\Support\Icon::svg('shield') !!} {{ ! empty($tool['server']) ? t('This tool asks our server to fetch the address you enter. We don’t store the address or the results.') : t('Private: this tool runs in your browser. Your data is never uploaded.') }}</p>
                 </section>
 
                 <article class="prose tool-article">

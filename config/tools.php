@@ -1506,4 +1506,55 @@ return [
         'related' => ['image-compressor', 'image-resizer', 'png-to-jpg', 'avif-to-png'],
     ],
 
+    'broken-link-checker' => [
+        'name' => 'Broken Link Checker',
+        'category' => 'developer-tools',
+        'icon' => 'link',
+        'popular' => false,
+        'server' => true,
+        'updated' => '2026-10-02',
+        'title' => 'Broken Link Checker - Free Dead Link Finder',
+        'description' => 'Free broken link checker: find 404 errors, dead links, broken images and redirect chains on any web page in seconds, then export the list as a CSV file.',
+        'h1' => 'Broken Link Checker',
+        'tagline' => 'Find dead links, 404 errors and redirects on any page.',
+        'keywords' => ['broken link checker', 'dead link checker', 'check broken links', '404 checker', 'link checker', 'find broken links'],
+        'intro' => 'A broken link checker finds links on a web page that no longer work, such as 404 "page not found" errors, deleted images and domains that have expired. Enter a page address and the checker tests every link and image on it (up to 300), shows which are broken, which redirect and which are fine, and lets you download the results as a CSV file.',
+        'steps' => [
+            'Enter the address of the page you want to check, for example example.com/blog.',
+            'Click Check links; the results fill in as each batch of links is tested.',
+            'Fix or remove the broken links shown under Problems, and update links that redirect.',
+        ],
+        'features' => [
+            'Checks every link and image on a page (up to 300)',
+            'Finds 404s, server errors, dead domains and redirects',
+            'Shows link text and whether a link is internal or external',
+            'Free CSV export, no sign up',
+        ],
+        'content' => [
+            ['heading' => 'Why do broken links matter?', 'body' => 'Broken links send visitors to error pages, which is frustrating and makes a site look neglected. Search engines also follow links to discover pages, so dead links waste their crawl and can stop important pages from being found. Fixing them is one of the quickest SEO and user-experience wins.'],
+            ['heading' => 'What do the results mean?', 'body' => 'OK means the link works. Redirect means it works but goes through one or more redirects; updating it to the final address is faster for visitors. Broken means the page answered with an error such as 404 or 500, or the domain no longer exists. Blocked means the site refused automated checks (status 401, 403 or 429), so open the link yourself to confirm it.'],
+        ],
+        'faqs' => [
+            ['q' => 'How do I find broken links on my website?', 'a' => 'Enter a page address above and click Check links. Repeat for your most important pages, such as the home page, menus and popular articles.'],
+            ['q' => 'Does it check the whole website?', 'a' => 'It checks every link and image on the page you enter, up to 300. To check other pages, enter their addresses one by one.'],
+            ['q' => 'Why are some links marked Blocked?', 'a' => 'Some websites refuse automated requests or require a login, answering with status 401, 403 or 429. The link may still work in a normal browser, so open it to check.'],
+            ['q' => 'Is the page or my results stored?', 'a' => 'No. Our server fetches the page and the links only to check them and does not save the address or the results.'],
+        ],
+        'table' => [
+            'caption' => 'Common HTTP status codes',
+            'headers' => ['Code', 'Meaning', 'What to do'],
+            'rows' => [
+                ['200', 'OK', 'Nothing'],
+                ['301 / 308', 'Moved permanently', 'Update the link to the new address'],
+                ['404', 'Page not found', 'Fix or remove the link'],
+                ['410', 'Gone for good', 'Remove the link'],
+                ['500 / 503', 'Server error', 'Check again later; tell the site owner'],
+            ],
+        ],
+        'sources' => [
+            ['title' => 'MDN: HTTP response status codes', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status'],
+        ],
+        'related' => ['json-formatter', 'what-is-my-ip', 'readability-checker'],
+    ],
+
 ];

@@ -23,6 +23,7 @@ const tools = {
     'readability-checker': lazy(() => import('./ReadabilityChecker.jsx')),
     'ai-content-detector': lazy(() => import('./AiDetector.jsx')),
     'remove-background': lazy(() => import('./BackgroundRemover.jsx')),
+    'broken-link-checker': lazy(() => import('./BrokenLinkChecker.jsx')),
     'merge-pdf': lazy(() => import('./MergePdf.jsx')),
     'split-pdf': lazy(() => import('./SplitPdf.jsx')),
     'age-calculator': lazy(() => import('./AgeCalculator.jsx')),

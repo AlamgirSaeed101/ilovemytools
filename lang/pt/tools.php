@@ -1287,4 +1287,95 @@ return [
         ],
     ],
 
+    'broken-link-checker' => [
+        'name' => 'Verificador de links quebrados',
+        'title' => 'Verificador de links quebrados grátis: ache 404',
+        'description' => 'Verificador de links quebrados grátis: encontre erros 404, links mortos, imagens quebradas e redirecionamentos em qualquer página e exporte para um arquivo CSV.',
+        'h1' => 'Verificador de links quebrados',
+        'tagline' => 'Encontre links mortos, erros 404 e redirecionamentos em qualquer página.',
+        'keywords' => [
+            'verificador de links quebrados',
+            'links quebrados',
+            'verificar links quebrados',
+            'checar links',
+            'erro 404',
+            'encontrar links quebrados',
+        ],
+        'intro' => 'Um verificador de links quebrados encontra os links de uma página que não funcionam mais, como erros 404 de “página não encontrada”, imagens apagadas ou domínios expirados. Digite o endereço de uma página e a ferramenta testa cada link e imagem (até 300), mostra quais estão quebrados, quais redirecionam e quais funcionam, e permite baixar os resultados em um arquivo CSV.',
+        'steps' => [
+            'Digite o endereço da página que você quer verificar, por exemplo example.com/blog.',
+            'Clique em Verificar links; os resultados aparecem à medida que cada grupo de links é testado.',
+            'Corrija ou remova os links quebrados mostrados em Problemas e atualize os que redirecionam.',
+        ],
+        'features' => [
+            'Verifica todos os links e imagens de uma página (até 300)',
+            'Encontra erros 404, erros de servidor, domínios expirados e redirecionamentos',
+            'Mostra o texto do link e se ele é interno ou externo',
+            'Exportação CSV grátis, sem cadastro',
+        ],
+        'content' => [
+            [
+                'heading' => 'Por que os links quebrados importam?',
+                'body' => 'Links quebrados levam os visitantes a páginas de erro, o que é frustrante e faz o site parecer abandonado. Os buscadores também seguem os links para descobrir páginas, então links mortos desperdiçam o rastreamento e podem impedir que páginas importantes sejam encontradas. Corrigi-los é uma das melhorias de SEO e de experiência mais rápidas.',
+            ],
+            [
+                'heading' => 'O que significam os resultados?',
+                'body' => 'OK significa que o link funciona. Redirecionamento significa que funciona, mas passa por um ou mais redirecionamentos; trocar pelo endereço final é mais rápido para os visitantes. Quebrado significa que a página respondeu com um erro como 404 ou 500, ou que o domínio não existe mais. Bloqueado significa que o site recusou a verificação automática (código 401, 403 ou 429), então abra o link para confirmar.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Como encontro links quebrados no meu site?',
+                'a' => 'Digite o endereço de uma página acima e clique em Verificar links. Repita com as páginas mais importantes, como a página inicial, os menus e os artigos mais acessados.',
+            ],
+            [
+                'q' => 'Ele verifica o site inteiro?',
+                'a' => 'Ele verifica todos os links e imagens da página que você digitar, até 300. Para verificar outras páginas, digite os endereços um por um.',
+            ],
+            [
+                'q' => 'Por que alguns links aparecem como Bloqueados?',
+                'a' => 'Alguns sites recusam pedidos automáticos ou exigem login, respondendo com o código 401, 403 ou 429. O link ainda pode funcionar em um navegador normal, então abra-o para conferir.',
+            ],
+            [
+                'q' => 'A página ou meus resultados são guardados?',
+                'a' => 'Não. Nosso servidor acessa a página e os links só para verificá-los e não guarda o endereço nem os resultados.',
+            ],
+        ],
+        'table' => [
+            'caption' => 'Códigos de status HTTP comuns',
+            'headers' => [
+                'Código',
+                'Significado',
+                'O que fazer',
+            ],
+            'rows' => [
+                [
+                    '200',
+                    'OK',
+                    'Nada',
+                ],
+                [
+                    '301 / 308',
+                    'Movido permanentemente',
+                    'Atualize o link para o novo endereço',
+                ],
+                [
+                    '404',
+                    'Página não encontrada',
+                    'Corrija ou remova o link',
+                ],
+                [
+                    '410',
+                    'Removida para sempre',
+                    'Remova o link',
+                ],
+                [
+                    '500 / 503',
+                    'Erro do servidor',
+                    'Verifique de novo mais tarde; avise o dono do site',
+                ],
+            ],
+        ],
+    ],
+
 ];

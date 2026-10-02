@@ -1287,4 +1287,95 @@ return [
         ],
     ],
 
+    'broken-link-checker' => [
+        'name' => 'Vérificateur de liens cassés',
+        'title' => 'Vérificateur de liens cassés gratuit : erreurs 404',
+        'description' => 'Vérificateur de liens cassés gratuit : trouvez les erreurs 404, liens morts, images cassées et redirections d’une page web, puis exportez la liste en CSV.',
+        'h1' => 'Vérificateur de liens cassés',
+        'tagline' => 'Trouvez les liens morts, erreurs 404 et redirections d’une page.',
+        'keywords' => [
+            'vérificateur de liens cassés',
+            'liens cassés',
+            'vérifier les liens cassés',
+            'liens morts',
+            'erreur 404',
+            'trouver les liens cassés',
+        ],
+        'intro' => 'Un vérificateur de liens cassés repère les liens d’une page web qui ne fonctionnent plus : erreurs 404 « page introuvable », images supprimées ou noms de domaine expirés. Saisissez l’adresse d’une page et l’outil teste chaque lien et chaque image (jusqu’à 300), indique lesquels sont cassés, lesquels redirigent et lesquels fonctionnent, et vous permet de télécharger les résultats au format CSV.',
+        'steps' => [
+            'Saisissez l’adresse de la page à vérifier, par exemple example.com/blog.',
+            'Cliquez sur Vérifier les liens ; les résultats s’affichent au fur et à mesure des tests.',
+            'Corrigez ou supprimez les liens cassés listés dans Problèmes, et mettez à jour ceux qui redirigent.',
+        ],
+        'features' => [
+            'Vérifie tous les liens et images d’une page (jusqu’à 300)',
+            'Repère les 404, erreurs serveur, domaines expirés et redirections',
+            'Affiche le texte du lien et s’il est interne ou externe',
+            'Export CSV gratuit, sans inscription',
+        ],
+        'content' => [
+            [
+                'heading' => 'Pourquoi les liens cassés sont-ils importants ?',
+                'body' => 'Les liens cassés envoient les visiteurs vers des pages d’erreur, ce qui est frustrant et donne l’image d’un site mal entretenu. Les moteurs de recherche suivent aussi les liens pour découvrir les pages : les liens morts gaspillent leur exploration et peuvent les empêcher de trouver des pages importantes. Les corriger est l’une des améliorations SEO et d’expérience les plus rapides.',
+            ],
+            [
+                'heading' => 'Que signifient les résultats ?',
+                'body' => 'OK signifie que le lien fonctionne. Redirection signifie qu’il fonctionne mais passe par une ou plusieurs redirections ; le remplacer par l’adresse finale est plus rapide pour les visiteurs. Cassé signifie que la page a répondu par une erreur comme 404 ou 500, ou que le domaine n’existe plus. Bloqué signifie que le site a refusé la vérification automatique (code 401, 403 ou 429) : ouvrez le lien vous-même pour vérifier.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Comment trouver les liens cassés de mon site ?',
+                'a' => 'Saisissez l’adresse d’une page ci-dessus et cliquez sur Vérifier les liens. Recommencez avec vos pages les plus importantes : accueil, menus et articles les plus lus.',
+            ],
+            [
+                'q' => 'Vérifie-t-il tout le site ?',
+                'a' => 'Il vérifie tous les liens et images de la page saisie, jusqu’à 300. Pour vérifier d’autres pages, saisissez leurs adresses une par une.',
+            ],
+            [
+                'q' => 'Pourquoi certains liens sont-ils marqués Bloqués ?',
+                'a' => 'Certains sites refusent les requêtes automatiques ou demandent une connexion, et répondent avec le code 401, 403 ou 429. Le lien peut fonctionner dans un navigateur normal : ouvrez-le pour vérifier.',
+            ],
+            [
+                'q' => 'La page ou mes résultats sont-ils conservés ?',
+                'a' => 'Non. Notre serveur récupère la page et les liens uniquement pour les vérifier et n’enregistre ni l’adresse ni les résultats.',
+            ],
+        ],
+        'table' => [
+            'caption' => 'Codes de statut HTTP courants',
+            'headers' => [
+                'Code',
+                'Signification',
+                'Que faire',
+            ],
+            'rows' => [
+                [
+                    '200',
+                    'OK',
+                    'Rien',
+                ],
+                [
+                    '301 / 308',
+                    'Déplacé définitivement',
+                    'Mettre le lien à jour vers la nouvelle adresse',
+                ],
+                [
+                    '404',
+                    'Page introuvable',
+                    'Corriger ou supprimer le lien',
+                ],
+                [
+                    '410',
+                    'Supprimée définitivement',
+                    'Supprimer le lien',
+                ],
+                [
+                    '500 / 503',
+                    'Erreur serveur',
+                    'Revérifier plus tard ; prévenir le propriétaire du site',
+                ],
+            ],
+        ],
+    ],
+
 ];

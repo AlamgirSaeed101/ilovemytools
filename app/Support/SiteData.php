@@ -115,6 +115,7 @@ class SiteData
             'table' => $tool['table'] ?? null,
             'faqs' => array_values($tool['faqs']),
             'sources' => array_values($tool['sources'] ?? []),
+            'server' => (bool) ($tool['server'] ?? false),
             'updated' => $tool['updated'] ?? null,
             'related' => $this->registry->related($tool)->keys()->all(),
             'meta' => $this->meta($tool['title'], $tool['description']),

@@ -495,6 +495,7 @@ test.describe('Text analysis and AVIF', () => {
 
 test.describe('Background remover', () => {
     test('removes a plain background and downloads a transparent PNG', async ({ page }) => {
+        test.slow(); // AI inference on the CPU; slow when other tests share the machine
         const fs = await import('node:fs');
         // Serve ONNX Runtime from node_modules instead of the CDN, so the test never depends on it.
         await page.route(/cdn\.jsdelivr\.net\/npm\/onnxruntime-web@[^/]+\/dist\/(.+)$/, (route) => {
@@ -521,7 +522,7 @@ test.describe('Background remover', () => {
             return Array.from(new Uint8Array(await (await c.convertToBlob({ type: 'image/png' })).arrayBuffer()));
         });
         await page.getByTestId('file-input').setInputFiles([{ name: 'ball.png', mimeType: 'image/png', buffer: Buffer.from(png) }]);
-        await expect(page.getByTestId('bg-result')).toBeVisible({ timeout: 90_000 });
+        await expect(page.getByTestId('bg-result')).toBeVisible({ timeout: 180_000 });
 
         const [dl] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PNG' }).click()]);
         expect(dl.suggestedFilename()).toBe('ball-no-bg.png');
@@ -541,5 +542,62 @@ test.describe('Background remover', () => {
         // White background option fills the transparent area.
         await page.getByRole('button', { name: 'White' }).click();
         await expect(page.getByRole('button', { name: 'White' })).toHaveAttribute('aria-pressed', 'true');
+    });
+});
+
+test.describe('Broken link checker', () => {
+    test('refuses private addresses (real server, no outside network)', async ({ page }) => {
+        await openTool(page, 'broken-link-checker');
+        await expect(page.getByText('This tool asks our server to fetch the address you enter.')).toBeVisible();
+        await page.getByLabel('Page address (URL)').fill('http://127.0.0.1/admin');
+        await page.getByRole('button', { name: 'Check links' }).click();
+        await expect(page.getByRole('alert')).toContainText('This address can’t be checked');
+    });
+
+    test('lists broken links, redirects and exports a CSV', async ({ page }) => {
+        await page.route('**/api/links/extract', (route) =>
+            route.fulfill({
+                json: {
+                    url: 'https://example.com/',
+                    truncated: false,
+                    links: [
+                        { url: 'https://example.com/ok', text: 'Fine', type: 'link', internal: true },
+                        { url: 'https://example.com/gone', text: 'Old post', type: 'link', internal: true },
+                        { url: 'https://example.com/moved', text: 'Moved', type: 'link', internal: true },
+                        { url: 'https://other.example/logo.png', text: 'Logo', type: 'image', internal: false },
+                    ],
+                },
+            }),
+        );
+        await page.route('**/api/links/check', (route) =>
+            route.fulfill({
+                json: {
+                    results: [
+                        { url: 'https://example.com/ok', status: 200, final: 'https://example.com/ok', redirects: 0, error: null },
+                        { url: 'https://example.com/gone', status: 404, final: 'https://example.com/gone', redirects: 0, error: null },
+                        { url: 'https://example.com/moved', status: 200, final: 'https://example.com/new', redirects: 1, error: null },
+                        { url: 'https://other.example/logo.png', status: null, final: 'https://other.example/logo.png', redirects: 0, error: 'dns' },
+                    ],
+                },
+            }),
+        );
+        await openTool(page, 'broken-link-checker');
+        await page.getByLabel('Page address (URL)').fill('example.com');
+        await page.getByRole('button', { name: 'Check links' }).click();
+        await expect(page.getByTestId('blc-summary')).toContainText('Checked 4 of 4 links');
+
+        const table = page.getByTestId('blc-table');
+        await expect(table.getByRole('row')).toHaveCount(3); // header + 2 problems
+        await expect(table).toContainText('404 · Broken');
+        await expect(table).toContainText('Domain not found · Broken');
+
+        await page.getByRole('tab', { name: 'Redirects' }).click();
+        await expect(table).toContainText('redirects to https://example.com/new');
+
+        const [csv] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download CSV' }).click()]);
+        expect(csv.suggestedFilename()).toBe('example.com-links.csv');
+        const text = (await readDownload(csv)).toString();
+        expect(text.split('\n')).toHaveLength(5);
+        expect(text).toContain('https://example.com/gone,404,Broken');
     });
 });

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\SiteController;
 use App\Http\Controllers\IpController;
+use App\Http\Controllers\LinkCheckerController;
 use App\Http\Controllers\NewsletterController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +26,7 @@ Route::middleware('throttle:5,1,newsletter')->group(function () {
     Route::post('/newsletter', [NewsletterController::class, 'subscribe'])->name('api.newsletter.subscribe');
     Route::post('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscribe'])->name('api.newsletter.unsubscribe');
 });
+
+// Broken Link Checker: the server fetches other sites, so both endpoints are strictly limited.
+Route::post('/links/extract', [LinkCheckerController::class, 'extract'])->middleware('throttle:10,1,links-extract')->name('api.links.extract');
+Route::post('/links/check', [LinkCheckerController::class, 'check'])->middleware('throttle:40,1,links-check')->name('api.links.check');

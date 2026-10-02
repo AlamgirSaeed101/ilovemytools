@@ -1287,4 +1287,95 @@ return [
         ],
     ],
 
+    'broken-link-checker' => [
+        'name' => 'Broken-Link-Checker',
+        'title' => 'Broken-Link-Checker kostenlos: tote Links finden',
+        'description' => 'Kostenloser Broken-Link-Checker: Finden Sie 404-Fehler, tote Links, defekte Bilder und Weiterleitungen auf jeder Webseite und exportieren Sie sie als CSV.',
+        'h1' => 'Broken-Link-Checker',
+        'tagline' => 'Finden Sie tote Links, 404-Fehler und Weiterleitungen auf jeder Seite.',
+        'keywords' => [
+            'broken link checker',
+            'tote links finden',
+            'defekte links prüfen',
+            'link checker',
+            '404 fehler finden',
+            'kaputte links finden',
+        ],
+        'intro' => 'Ein Broken-Link-Checker findet Links auf einer Webseite, die nicht mehr funktionieren, etwa 404-Fehler („Seite nicht gefunden“), gelöschte Bilder oder abgelaufene Domains. Geben Sie eine Seitenadresse ein: Das Tool prüft jeden Link und jedes Bild (bis zu 300), zeigt, welche defekt sind, welche weiterleiten und welche funktionieren, und Sie können die Ergebnisse als CSV-Datei herunterladen.',
+        'steps' => [
+            'Geben Sie die Adresse der Seite ein, die Sie prüfen möchten, zum Beispiel example.com/blog.',
+            'Klicken Sie auf Links prüfen; die Ergebnisse erscheinen, sobald jede Gruppe von Links getestet ist.',
+            'Korrigieren oder entfernen Sie die defekten Links unter Probleme und aktualisieren Sie Links mit Weiterleitung.',
+        ],
+        'features' => [
+            'Prüft alle Links und Bilder einer Seite (bis zu 300)',
+            'Findet 404-Fehler, Serverfehler, tote Domains und Weiterleitungen',
+            'Zeigt den Linktext und ob ein Link intern oder extern ist',
+            'Kostenloser CSV-Export, ohne Anmeldung',
+        ],
+        'content' => [
+            [
+                'heading' => 'Warum sind defekte Links ein Problem?',
+                'body' => 'Defekte Links schicken Besucher auf Fehlerseiten. Das ist ärgerlich und lässt eine Website vernachlässigt wirken. Suchmaschinen folgen außerdem Links, um Seiten zu finden – tote Links verschwenden ihr Crawling und können verhindern, dass wichtige Seiten entdeckt werden. Sie zu beheben ist einer der schnellsten Gewinne für SEO und Nutzererlebnis.',
+            ],
+            [
+                'heading' => 'Was bedeuten die Ergebnisse?',
+                'body' => 'OK heißt, der Link funktioniert. Weiterleitung heißt, er funktioniert, führt aber über eine oder mehrere Weiterleitungen; die Zieladresse direkt zu verlinken ist für Besucher schneller. Defekt heißt, die Seite antwortete mit einem Fehler wie 404 oder 500 oder die Domain existiert nicht mehr. Blockiert heißt, die Website lehnte die automatische Prüfung ab (Status 401, 403 oder 429) – öffnen Sie den Link selbst, um ihn zu prüfen.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Wie finde ich defekte Links auf meiner Website?',
+                'a' => 'Geben Sie oben eine Seitenadresse ein und klicken Sie auf Links prüfen. Wiederholen Sie das für Ihre wichtigsten Seiten wie Startseite, Menüs und beliebte Artikel.',
+            ],
+            [
+                'q' => 'Wird die ganze Website geprüft?',
+                'a' => 'Geprüft werden alle Links und Bilder der eingegebenen Seite, bis zu 300. Für andere Seiten geben Sie deren Adressen einzeln ein.',
+            ],
+            [
+                'q' => 'Warum sind manche Links als Blockiert markiert?',
+                'a' => 'Manche Websites lehnen automatische Anfragen ab oder verlangen eine Anmeldung und antworten mit Status 401, 403 oder 429. Der Link kann in einem normalen Browser trotzdem funktionieren – öffnen Sie ihn zur Kontrolle.',
+            ],
+            [
+                'q' => 'Werden die Seite oder meine Ergebnisse gespeichert?',
+                'a' => 'Nein. Unser Server ruft die Seite und die Links nur zur Prüfung ab und speichert weder die Adresse noch die Ergebnisse.',
+            ],
+        ],
+        'table' => [
+            'caption' => 'Häufige HTTP-Statuscodes',
+            'headers' => [
+                'Code',
+                'Bedeutung',
+                'Was tun?',
+            ],
+            'rows' => [
+                [
+                    '200',
+                    'OK',
+                    'Nichts',
+                ],
+                [
+                    '301 / 308',
+                    'Dauerhaft verschoben',
+                    'Link auf die neue Adresse ändern',
+                ],
+                [
+                    '404',
+                    'Seite nicht gefunden',
+                    'Link korrigieren oder entfernen',
+                ],
+                [
+                    '410',
+                    'Endgültig entfernt',
+                    'Link entfernen',
+                ],
+                [
+                    '500 / 503',
+                    'Serverfehler',
+                    'Später erneut prüfen; Website-Betreiber informieren',
+                ],
+            ],
+        ],
+    ],
+
 ];
