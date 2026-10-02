@@ -1557,4 +1557,55 @@ return [
         'related' => ['json-formatter', 'what-is-my-ip', 'readability-checker'],
     ],
 
+    'domain-authority-checker' => [
+        'name' => 'Bulk Domain Authority Checker',
+        'category' => 'developer-tools',
+        'icon' => 'gauge',
+        'popular' => false,
+        'server' => true,
+        'updated' => '2026-10-02',
+        'title' => 'Bulk Domain Authority Checker - Free, 100 at Once',
+        'description' => 'Free bulk domain authority checker: see the authority score, global rank and referring domains of up to 100 websites at once, and export the list as CSV.',
+        'h1' => 'Bulk Domain Authority Checker',
+        'tagline' => 'Compare the authority of up to 100 websites in seconds.',
+        'keywords' => ['domain authority checker', 'bulk domain authority checker', 'bulk da checker', 'website authority checker', 'domain rating checker', 'check domain authority'],
+        'intro' => 'A domain authority checker estimates how strong a website is in search, based on how many other sites link to it and how important those sites are. Paste up to 100 domains to see each one\'s OpenPageRank score from 0 to 10, its global rank and its referring domains, sort them and download a CSV. It is useful for comparing competitors, checking link partners and judging guest-post sites.',
+        'steps' => [
+            'Paste up to 100 domains or page addresses, one per line.',
+            'Click Check authority.',
+            'Sort the results by score and download them as a CSV if you need them later.',
+        ],
+        'features' => [
+            'Up to 100 domains in one check',
+            'Authority score from 0 to 10, global rank and referring domains',
+            'Accepts full URLs and removes www automatically',
+            'Free CSV export, no sign up',
+        ],
+        'content' => [
+            ['heading' => 'Is this the same as Moz Domain Authority?', 'body' => 'No. Domain Authority (DA) is a 0-100 score owned by Moz, and Domain Rating (DR) belongs to Ahrefs. This tool shows OpenPageRank, a 0-10 score calculated from the public Common Crawl web graph with the PageRank method. All of these measure the same idea, the strength of a site\'s links, but they are calculated differently, so the numbers can\'t be converted into each other.'],
+            ['heading' => 'What is a good score?', 'body' => 'The scale is logarithmic: moving from 2 to 3 takes far fewer links than moving from 8 to 9. New websites usually start near 0, small established sites often score 2-4, well-known brands 5-7, and only the largest sites on the internet reach 9 or 10. Compare a site with others in the same niche rather than with the biggest websites.'],
+        ],
+        'faqs' => [
+            ['q' => 'How do I check the domain authority of a website?', 'a' => 'Paste the domain into the box and click Check authority. You can check up to 100 domains at once.'],
+            ['q' => 'Where do the scores come from?', 'a' => 'From OpenPageRank, which calculates authority from the Common Crawl web graph, a public crawl of billions of web pages. The scores are updated monthly.'],
+            ['q' => 'How can I increase my score?', 'a' => 'Earn links from respected websites in your field: useful content, listings in quality directories, guest articles and mentions in the press. Links from many different sites count more than many links from one site.'],
+            ['q' => 'Why does a site show Not found?', 'a' => 'Very new or very small sites may not have enough links in the web graph yet to receive a score.'],
+        ],
+        'table' => [
+            'caption' => 'Authority metrics compared',
+            'headers' => ['Metric', 'Made by', 'Scale'],
+            'rows' => [
+                ['OpenPageRank', 'OpenPageRank (Common Crawl data)', '0-10'],
+                ['Domain Authority (DA)', 'Moz', '0-100'],
+                ['Domain Rating (DR)', 'Ahrefs', '0-100'],
+                ['Authority Score', 'Semrush', '0-100'],
+            ],
+        ],
+        'sources' => [
+            ['title' => 'OpenPageRank: how the score is calculated', 'url' => 'https://openpagerank.keywordseverywhere.com/methodology'],
+            ['title' => 'Common Crawl: open repository of web crawl data', 'url' => 'https://commoncrawl.org/'],
+        ],
+        'related' => ['broken-link-checker', 'readability-checker', 'what-is-my-ip'],
+    ],
+
 ];

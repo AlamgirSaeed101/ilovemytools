@@ -3,7 +3,10 @@
 set -euo pipefail
 # The CI passes the SMTP password on stdin (empty line when there is none).
 MAIL_PASSWORD_IN=""
+OPR_KEY_IN=""
 IFS= read -r MAIL_PASSWORD_IN || true
+IFS= read -r OPR_KEY_IN || true
+OPR_KEY_IN=$(printf '%s' "$OPR_KEY_IN" | tr -d '[:space:]')
 cd ~
 
 echo "== 1. Back up cPanel's placeholder page (first deploy only)"
@@ -41,6 +44,9 @@ if [ -n "$MAIL_PASSWORD_IN" ]; then
 else
     echo "no MAIL_PASSWORD secret - mail settings left as they are"
 fi
+
+echo "== 3c. OpenPageRank API key (Domain Authority Checker)"
+if [ -n "$OPR_KEY_IN" ]; then set_env OPENPAGERANK_API_KEY "$OPR_KEY_IN"; echo "key set"; else echo "no OPENPAGERANK_API_KEY secret - tool stays in 'being set up' mode"; fi
 
 echo "== 4. PHP packages"
 composer install --no-dev --optimize-autoloader --no-interaction --no-progress 2>&1 | tail -4

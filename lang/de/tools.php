@@ -1378,4 +1378,90 @@ return [
         ],
     ],
 
+    'domain-authority-checker' => [
+        'name' => 'Domain-Authority-Checker',
+        'title' => 'Domain Authority Checker kostenlos - 100 auf einmal',
+        'description' => 'Kostenloser Domain-Authority-Checker: Autoritätswert, globaler Rang und verweisende Domains von bis zu 100 Websites auf einmal – mit CSV-Export der Liste.',
+        'h1' => 'Domain-Authority-Checker für viele Domains',
+        'tagline' => 'Vergleichen Sie die Autorität von bis zu 100 Websites in Sekunden.',
+        'keywords' => [
+            'domain authority checker',
+            'domain autorität prüfen',
+            'domain authority prüfen',
+            'da checker',
+            'website autorität',
+            'domain rating prüfen',
+        ],
+        'intro' => 'Ein Domain-Authority-Checker schätzt, wie stark eine Website in Suchmaschinen ist – danach, wie viele andere Websites auf sie verlinken und wie wichtig diese sind. Fügen Sie bis zu 100 Domains ein und sehen Sie für jede den OpenPageRank-Wert von 0 bis 10, den globalen Rang und die verweisenden Domains; sortieren Sie die Liste und laden Sie eine CSV herunter. Praktisch, um Mitbewerber zu vergleichen, Linkpartner zu prüfen und Websites für Gastbeiträge zu bewerten.',
+        'steps' => [
+            'Fügen Sie bis zu 100 Domains oder Seitenadressen ein, eine pro Zeile.',
+            'Klicken Sie auf Autorität prüfen.',
+            'Sortieren Sie die Ergebnisse nach Wert und laden Sie sie bei Bedarf als CSV herunter.',
+        ],
+        'features' => [
+            'Bis zu 100 Domains in einer Prüfung',
+            'Autoritätswert von 0 bis 10, globaler Rang und verweisende Domains',
+            'Akzeptiert vollständige URLs und entfernt www automatisch',
+            'Kostenloser CSV-Export, ohne Anmeldung',
+        ],
+        'content' => [
+            [
+                'heading' => 'Ist das dasselbe wie Moz Domain Authority?',
+                'body' => 'Nein. Domain Authority (DA) ist ein Wert von 0 bis 100 der Firma Moz, Domain Rating (DR) gehört zu Ahrefs. Dieses Tool zeigt OpenPageRank, einen Wert von 0 bis 10, der mit dem PageRank-Verfahren aus dem öffentlichen Web-Graphen von Common Crawl berechnet wird. Alle messen dieselbe Idee – die Stärke der Links einer Website –, werden aber unterschiedlich berechnet, daher lassen sich die Zahlen nicht ineinander umrechnen.',
+            ],
+            [
+                'heading' => 'Was ist ein guter Wert?',
+                'body' => 'Die Skala ist logarithmisch: Von 2 auf 3 braucht es viel weniger Links als von 8 auf 9. Neue Websites starten meist nahe 0, kleine etablierte Websites liegen oft bei 2 bis 4, bekannte Marken bei 5 bis 7, und nur die größten Websites im Internet erreichen 9 oder 10. Vergleichen Sie eine Website mit anderen aus derselben Branche statt mit den Riesen.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Wie prüfe ich die Domain Authority einer Website?',
+                'a' => 'Fügen Sie die Domain in das Feld ein und klicken Sie auf Autorität prüfen. Sie können bis zu 100 Domains auf einmal prüfen.',
+            ],
+            [
+                'q' => 'Woher stammen die Werte?',
+                'a' => 'Von OpenPageRank, das die Autorität aus dem Web-Graphen von Common Crawl berechnet, einem öffentlichen Crawl von Milliarden Webseiten. Die Werte werden monatlich aktualisiert.',
+            ],
+            [
+                'q' => 'Wie kann ich meinen Wert verbessern?',
+                'a' => 'Gewinnen Sie Links von angesehenen Websites Ihrer Branche: hilfreiche Inhalte, gute Verzeichnisse, Gastbeiträge und Erwähnungen in der Presse. Links von vielen verschiedenen Websites zählen mehr als viele Links von einer einzigen.',
+            ],
+            [
+                'q' => 'Warum steht bei einer Website Nicht gefunden?',
+                'a' => 'Sehr neue oder sehr kleine Websites haben im Web-Graphen eventuell noch nicht genug Links, um einen Wert zu erhalten.',
+            ],
+        ],
+        'table' => [
+            'caption' => 'Autoritätswerte im Vergleich',
+            'headers' => [
+                'Kennzahl',
+                'Anbieter',
+                'Skala',
+            ],
+            'rows' => [
+                [
+                    'OpenPageRank',
+                    'OpenPageRank (Daten von Common Crawl)',
+                    '0-10',
+                ],
+                [
+                    'Domain Authority (DA)',
+                    'Moz',
+                    '0-100',
+                ],
+                [
+                    'Domain Rating (DR)',
+                    'Ahrefs',
+                    '0-100',
+                ],
+                [
+                    'Authority Score',
+                    'Semrush',
+                    '0-100',
+                ],
+            ],
+        ],
+    ],
+
 ];

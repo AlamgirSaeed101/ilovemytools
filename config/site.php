@@ -69,4 +69,13 @@ return [
         ],
     ],
 
+
+    /*
+    | OpenPageRank API (Domain Authority Checker). Free plan: 30,000 domains a month.
+    | The key lives only in the server .env (OPENPAGERANK_API_KEY), set by deploy.sh from a GitHub secret.
+    */
+    'openpagerank' => [
+        'key' => env('OPENPAGERANK_API_KEY'),
+        'daily_limit' => (int) env('OPENPAGERANK_DAILY_LIMIT', 900),
+    ],
 ];

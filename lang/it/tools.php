@@ -1378,4 +1378,90 @@ return [
         ],
     ],
 
+    'domain-authority-checker' => [
+        'name' => 'Controllo autorità di dominio',
+        'title' => 'Controllo autorità di dominio in blocco gratis',
+        'description' => 'Controllo autorità di dominio gratis: punteggio di autorità, posizione globale e domini di riferimento di 100 siti alla volta, con esportazione in CSV.',
+        'h1' => 'Controllo autorità di dominio in blocco',
+        'tagline' => 'Confronta l’autorità di 100 siti in pochi secondi.',
+        'keywords' => [
+            'controllo autorità di dominio',
+            'autorità di dominio',
+            'domain authority',
+            'verificare da',
+            'autorità di un sito',
+            'da checker',
+        ],
+        'intro' => 'Uno strumento per controllare l’autorità di dominio stima quanto un sito è forte nei motori di ricerca in base a quanti siti lo linkano e a quanto sono importanti. Incolla fino a 100 domini per vedere il punteggio OpenPageRank di ciascuno, da 0 a 10, la posizione globale e i domini di riferimento, ordina i risultati e scarica un CSV. Utile per confrontare concorrenti, valutare partner di link e scegliere siti per articoli ospite.',
+        'steps' => [
+            'Incolla fino a 100 domini o indirizzi di pagina, uno per riga.',
+            'Fai clic su Controlla autorità.',
+            'Ordina i risultati per punteggio e scaricali in CSV se ti servono più tardi.',
+        ],
+        'features' => [
+            'Fino a 100 domini in un solo controllo',
+            'Punteggio di autorità da 0 a 10, posizione globale e domini di riferimento',
+            'Accetta URL completi e rimuove il www automaticamente',
+            'Esportazione CSV gratis, senza registrazione',
+        ],
+        'content' => [
+            [
+                'heading' => 'È lo stesso della Domain Authority di Moz?',
+                'body' => 'No. La Domain Authority (DA) è un punteggio da 0 a 100 di proprietà di Moz, e il Domain Rating (DR) appartiene ad Ahrefs. Questo strumento mostra OpenPageRank, un punteggio da 0 a 10 calcolato dal grafo web pubblico di Common Crawl con il metodo PageRank. Misurano tutti la stessa idea, la forza dei link di un sito, ma sono calcolati in modo diverso, quindi i numeri non si possono convertire tra loro.',
+            ],
+            [
+                'heading' => 'Qual è un buon punteggio?',
+                'body' => 'La scala è logaritmica: passare da 2 a 3 richiede molti meno link che passare da 8 a 9. I siti nuovi partono di solito vicino a 0, i piccoli siti già avviati hanno spesso 2-4, i marchi noti 5-7, e solo i siti più grandi di internet arrivano a 9 o 10. Confronta un sito con altri del suo settore, non con i giganti.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Come controllo l’autorità di dominio di un sito?',
+                'a' => 'Incolla il dominio nel riquadro e fai clic su Controlla autorità. Puoi controllare fino a 100 domini alla volta.',
+            ],
+            [
+                'q' => 'Da dove vengono i punteggi?',
+                'a' => 'Da OpenPageRank, che calcola l’autorità dal grafo web di Common Crawl, una scansione pubblica di miliardi di pagine. I punteggi vengono aggiornati ogni mese.',
+            ],
+            [
+                'q' => 'Come posso aumentare il mio punteggio?',
+                'a' => 'Ottieni link da siti autorevoli del tuo settore: contenuti utili, directory di qualità, articoli ospite e citazioni sulla stampa. I link da molti siti diversi contano più di tanti link da un solo sito.',
+            ],
+            [
+                'q' => 'Perché un sito risulta Non trovato?',
+                'a' => 'I siti molto nuovi o molto piccoli potrebbero non avere ancora abbastanza link nel grafo web per ricevere un punteggio.',
+            ],
+        ],
+        'table' => [
+            'caption' => 'Metriche di autorità a confronto',
+            'headers' => [
+                'Metrica',
+                'Creata da',
+                'Scala',
+            ],
+            'rows' => [
+                [
+                    'OpenPageRank',
+                    'OpenPageRank (dati di Common Crawl)',
+                    '0-10',
+                ],
+                [
+                    'Domain Authority (DA)',
+                    'Moz',
+                    '0-100',
+                ],
+                [
+                    'Domain Rating (DR)',
+                    'Ahrefs',
+                    '0-100',
+                ],
+                [
+                    'Authority Score',
+                    'Semrush',
+                    '0-100',
+                ],
+            ],
+        ],
+    ],
+
 ];

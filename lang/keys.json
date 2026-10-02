@@ -175,6 +175,12 @@
     ]
   },
   {
+    "key": "{count} of {max} domains · full URLs are fine, they are reduced to the domain.",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
     "key": "{count} pages",
     "one": "{count} page",
     "files": [
@@ -804,6 +810,12 @@
     ]
   },
   {
+    "key": "Average score",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
     "key": "Awake",
     "files": [
       "scripts/i18n-extract.mjs"
@@ -970,6 +982,12 @@
     ]
   },
   {
+    "key": "Check authority",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
     "key": "Check links",
     "files": [
       "resources/js/tools/BrokenLinkChecker.jsx"
@@ -991,6 +1009,12 @@
     "key": "Checking {done} of {total} links…",
     "files": [
       "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
+    "key": "Checking…",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
     ]
   },
   {
@@ -1036,6 +1060,7 @@
       "resources/js/tools/Base64Tool.jsx",
       "resources/js/tools/CaseConverter.jsx",
       "resources/js/tools/DiceRoller.jsx",
+      "resources/js/tools/DomainAuthority.jsx",
       "resources/js/tools/JpgToPdf.jsx",
       "resources/js/tools/JsonFormatter.jsx",
       "resources/js/tools/MergePdf.jsx",
@@ -1351,6 +1376,12 @@
     ]
   },
   {
+    "key": "Data from {date}.",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
     "key": "Data URL (for HTML / CSS)",
     "files": [
       "resources/js/tools/Base64Tool.jsx"
@@ -1435,9 +1466,39 @@
     ]
   },
   {
+    "key": "Domain",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
+    "key": "Domain A-Z",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
+    "key": "Domain authority results",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
     "key": "Domain not found",
     "files": [
       "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
+    "key": "Domains (one per line, up to {max})",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
+    "key": "Domains checked",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
     ]
   },
   {
@@ -1482,7 +1543,8 @@
   {
     "key": "Download CSV",
     "files": [
-      "resources/js/tools/BrokenLinkChecker.jsx"
+      "resources/js/tools/BrokenLinkChecker.jsx",
+      "resources/js/tools/DomainAuthority.jsx"
     ]
   },
   {
@@ -2098,6 +2160,12 @@
     ]
   },
   {
+    "key": "Global rank",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
     "key": "Go to bed at one of these times:",
     "files": [
       "resources/js/tools/SleepCalculator.jsx"
@@ -2209,6 +2277,12 @@
     "key": "High quality mode could not run on this device. Please try Fast mode.",
     "files": [
       "resources/js/tools/BackgroundRemover.jsx"
+    ]
+  },
+  {
+    "key": "Highest score",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
     ]
   },
   {
@@ -2966,6 +3040,12 @@
     ]
   },
   {
+    "key": "Not found",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
     "key": "Nothing to show.",
     "files": [
       "resources/js/tools/BrokenLinkChecker.jsx"
@@ -3329,6 +3409,12 @@
     ]
   },
   {
+    "key": "Please enter at most {max} domains at a time.",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
     "key": "Please paste at least {min} words (you have {count}) for a meaningful result.",
     "files": [
       "resources/js/tools/AiDetector.jsx"
@@ -3620,6 +3706,12 @@
     ]
   },
   {
+    "key": "Referring domains",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
     "key": "Refresh",
     "files": [
       "resources/js/tools/WhatIsMyIp.jsx"
@@ -3857,9 +3949,21 @@
     ]
   },
   {
+    "key": "Score (0-10)",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
     "key": "Scores appear as soon as you type or paste a sentence.",
     "files": [
       "resources/js/tools/ReadabilityChecker.jsx"
+    ]
+  },
+  {
+    "key": "Scores: OpenPageRank (0-10), based on the Common Crawl link graph.",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
     ]
   },
   {
@@ -3989,6 +4093,12 @@
     ]
   },
   {
+    "key": "Skipped (not a domain): {list}",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
     "key": "Sleep chart: {cycles} cycles from {from} to {to}",
     "files": [
       "resources/js/tools/SleepCalculator.jsx"
@@ -4054,6 +4164,12 @@
     "files": [
       "resources/js/pages/NotFound.jsx",
       "resources/views/errors/404.blade.php"
+    ]
+  },
+  {
+    "key": "Sort by",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
     ]
   },
   {
@@ -4390,6 +4506,12 @@
     ]
   },
   {
+    "key": "The Domain Authority Checker is being set up. Please check back soon.",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
     "key": "The longest timer is 99 hours, 59 minutes and 59 seconds.",
     "files": [
       "resources/js/tools/CountdownTimer.jsx"
@@ -4453,6 +4575,12 @@
     "key": "The range is too large. Keep max - min under {limit}.",
     "files": [
       "resources/js/lib/random.js"
+    ]
+  },
+  {
+    "key": "The score service is not available right now. Please try again later.",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
     ]
   },
   {
@@ -4668,6 +4796,12 @@
     ]
   },
   {
+    "key": "Today’s free lookups have been used up. Please try again tomorrow.",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
     "key": "Toggle dark mode",
     "files": [
       "resources/js/components/Layout.jsx"
@@ -4688,7 +4822,8 @@
   {
     "key": "Too many checks in a short time. Please wait a minute and try again.",
     "files": [
-      "resources/js/tools/BrokenLinkChecker.jsx"
+      "resources/js/tools/BrokenLinkChecker.jsx",
+      "resources/js/tools/DomainAuthority.jsx"
     ]
   },
   {
@@ -5110,6 +5245,12 @@
     ]
   },
   {
+    "key": "With a score",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
     "key": "Woke up at",
     "files": [
       "resources/js/tools/SleepCalculator.jsx"
@@ -5253,6 +5394,12 @@
     "key": "Your files stay on your device",
     "files": [
       "resources/js/pages/Home.jsx"
+    ]
+  },
+  {
+    "key": "Your order",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
     ]
   },
   {

@@ -82,8 +82,10 @@ jobs:
           SSH_PORT: ${{ secrets.SSH_PORT }}
           SSH_USER: ${{ secrets.SSH_USER }}
           SSH_PASS: ${{ secrets.SSH_PASS }}
-          # Newsletter SMTP password: sent to deploy.sh on stdin, written only to the server .env.
-          SSH_STDIN: ${{ secrets.MAIL_PASSWORD }}
+          # Line 1: SMTP password, line 2: OpenPageRank API key (written only to the server .env).
+          SSH_STDIN: |
+            ${{ secrets.MAIL_PASSWORD }}
+            ${{ secrets.OPENPAGERANK_API_KEY }}
         run: |
           node scripts/cpanel/ssh-put.cjs /tmp/release.tgz release.tgz \
             scripts/cpanel/deploy.sh deploy.sh \

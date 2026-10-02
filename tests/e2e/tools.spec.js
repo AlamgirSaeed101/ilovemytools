@@ -601,3 +601,42 @@ test.describe('Broken link checker', () => {
         expect(text).toContain('https://example.com/gone,404,Broken');
     });
 });
+
+test.describe('Domain authority checker', () => {
+    test('says it is being set up when no API key is configured (real server)', async ({ page }) => {
+        await openTool(page, 'domain-authority-checker');
+        await page.getByLabel(/Domains \(one per line/).fill('github.com');
+        await page.getByRole('button', { name: 'Check authority' }).click();
+        await expect(page.getByRole('alert')).toContainText('being set up');
+    });
+
+    test('shows scores sorted with a CSV export', async ({ page }) => {
+        await page.route('**/api/domain-authority', (route) =>
+            route.fulfill({
+                json: {
+                    as_of: '2026-09-01',
+                    invalid: ['not a domain'],
+                    results: [
+                        { domain: 'small-blog.example', found: true, score: 2.5, rank: 900000, referring_domains: 40 },
+                        { domain: 'github.com', found: true, score: 9.67, rank: 30, referring_domains: 282833 },
+                        { domain: 'brand-new.example', found: false, score: null, rank: null, referring_domains: null },
+                    ],
+                },
+            }),
+        );
+        await openTool(page, 'domain-authority-checker');
+        await page.getByLabel(/Domains \(one per line/).fill('small-blog.example\ngithub.com\nbrand-new.example\nnot a domain');
+        await page.getByRole('button', { name: 'Check authority' }).click();
+
+        const rows = page.getByTestId('da-table').locator('tbody tr');
+        await expect(rows).toHaveCount(3);
+        await expect(rows.first()).toContainText('github.com'); // highest score first
+        await expect(rows.first()).toContainText('#30');
+        await expect(rows.last()).toContainText('Not found');
+        await expect(page.getByText('Skipped (not a domain): not a domain')).toBeVisible();
+
+        const [csv] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download CSV' }).click()]);
+        expect(csv.suggestedFilename()).toBe('domain-authority.csv');
+        expect((await readDownload(csv)).toString()).toContain('github.com,9.67,30,282833');
+    });
+});

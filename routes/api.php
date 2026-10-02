@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\SiteController;
+use App\Http\Controllers\DomainAuthorityController;
 use App\Http\Controllers\IpController;
 use App\Http\Controllers\LinkCheckerController;
 use App\Http\Controllers\NewsletterController;
@@ -30,3 +31,6 @@ Route::middleware('throttle:5,1,newsletter')->group(function () {
 // Broken Link Checker: the server fetches other sites, so both endpoints are strictly limited.
 Route::post('/links/extract', [LinkCheckerController::class, 'extract'])->middleware('throttle:10,1,links-extract')->name('api.links.extract');
 Route::post('/links/check', [LinkCheckerController::class, 'check'])->middleware('throttle:40,1,links-check')->name('api.links.check');
+
+// Domain Authority Checker (OpenPageRank API, cached; the daily cap is in config/site.php).
+Route::post('/domain-authority', [DomainAuthorityController::class, 'check'])->middleware('throttle:10,1,domain-authority')->name('api.domain-authority');

@@ -1378,4 +1378,90 @@ return [
         ],
     ],
 
+    'domain-authority-checker' => [
+        'name' => 'Vérificateur d’autorité de domaine',
+        'title' => 'Vérificateur d’autorité de domaine en masse gratuit',
+        'description' => 'Vérificateur d’autorité de domaine gratuit : score d’autorité, rang mondial et domaines référents de 100 sites à la fois, avec export de la liste en CSV.',
+        'h1' => 'Vérificateur d’autorité de domaine en masse',
+        'tagline' => 'Comparez l’autorité de 100 sites en quelques secondes.',
+        'keywords' => [
+            'vérificateur d’autorité de domaine',
+            'autorité de domaine',
+            'domain authority',
+            'vérifier le da',
+            'autorité d’un site',
+            'da checker',
+        ],
+        'intro' => 'Un vérificateur d’autorité de domaine estime la force d’un site dans les moteurs de recherche selon le nombre de sites qui le citent et leur importance. Collez jusqu’à 100 domaines pour voir le score OpenPageRank de chacun, de 0 à 10, son rang mondial et ses domaines référents, triez-les et téléchargez un CSV. Pratique pour comparer des concurrents, évaluer des partenaires de liens ou choisir des sites pour des articles invités.',
+        'steps' => [
+            'Collez jusqu’à 100 domaines ou adresses de pages, un par ligne.',
+            'Cliquez sur Vérifier l’autorité.',
+            'Triez les résultats par score et téléchargez-les en CSV si besoin.',
+        ],
+        'features' => [
+            'Jusqu’à 100 domaines en une seule vérification',
+            'Score d’autorité de 0 à 10, rang mondial et domaines référents',
+            'Accepte les URL complètes et retire le www automatiquement',
+            'Export CSV gratuit, sans inscription',
+        ],
+        'content' => [
+            [
+                'heading' => 'Est-ce la même chose que le Domain Authority de Moz ?',
+                'body' => 'Non. Le Domain Authority (DA) est un score de 0 à 100 appartenant à Moz, et le Domain Rating (DR) appartient à Ahrefs. Cet outil affiche OpenPageRank, un score de 0 à 10 calculé à partir du graphe web public de Common Crawl avec la méthode PageRank. Tous mesurent la même idée, la force des liens d’un site, mais avec des calculs différents : leurs valeurs ne sont donc pas convertibles.',
+            ],
+            [
+                'heading' => 'Qu’est-ce qu’un bon score ?',
+                'body' => 'L’échelle est logarithmique : passer de 2 à 3 demande bien moins de liens que passer de 8 à 9. Les nouveaux sites démarrent souvent près de 0, les petits sites établis obtiennent souvent 2 à 4, les marques connues 5 à 7, et seuls les plus grands sites d’internet atteignent 9 ou 10. Comparez un site avec d’autres de sa thématique plutôt qu’avec les géants du web.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Comment vérifier l’autorité de domaine d’un site ?',
+                'a' => 'Collez le domaine dans le cadre et cliquez sur Vérifier l’autorité. Vous pouvez vérifier jusqu’à 100 domaines à la fois.',
+            ],
+            [
+                'q' => 'D’où viennent les scores ?',
+                'a' => 'D’OpenPageRank, qui calcule l’autorité à partir du graphe web de Common Crawl, une exploration publique de milliards de pages. Les scores sont mis à jour chaque mois.',
+            ],
+            [
+                'q' => 'Comment augmenter mon score ?',
+                'a' => 'Obtenez des liens de sites reconnus dans votre domaine : contenu utile, annuaires de qualité, articles invités et mentions dans la presse. Des liens venant de nombreux sites différents comptent davantage que de nombreux liens d’un même site.',
+            ],
+            [
+                'q' => 'Pourquoi un site est-il marqué Introuvable ?',
+                'a' => 'Les sites très récents ou très petits n’ont parfois pas encore assez de liens dans le graphe web pour obtenir un score.',
+            ],
+        ],
+        'table' => [
+            'caption' => 'Comparaison des indicateurs d’autorité',
+            'headers' => [
+                'Indicateur',
+                'Créé par',
+                'Échelle',
+            ],
+            'rows' => [
+                [
+                    'OpenPageRank',
+                    'OpenPageRank (données Common Crawl)',
+                    '0-10',
+                ],
+                [
+                    'Domain Authority (DA)',
+                    'Moz',
+                    '0-100',
+                ],
+                [
+                    'Domain Rating (DR)',
+                    'Ahrefs',
+                    '0-100',
+                ],
+                [
+                    'Authority Score',
+                    'Semrush',
+                    '0-100',
+                ],
+            ],
+        ],
+    ],
+
 ];

@@ -1378,4 +1378,90 @@ return [
         ],
     ],
 
+    'domain-authority-checker' => [
+        'name' => 'Verificador de autoridade de domínio',
+        'title' => 'Verificador de autoridade de domínio em massa grátis',
+        'description' => 'Verificador de autoridade de domínio grátis: veja a pontuação de autoridade, o ranking global e os domínios de referência de até 100 sites e exporte um CSV.',
+        'h1' => 'Verificador de autoridade de domínio em massa',
+        'tagline' => 'Compare a autoridade de até 100 sites em segundos.',
+        'keywords' => [
+            'verificador de autoridade de domínio',
+            'autoridade de domínio',
+            'domain authority',
+            'verificar da',
+            'autoridade de um site',
+            'da checker',
+        ],
+        'intro' => 'Um verificador de autoridade de domínio estima a força de um site nos buscadores com base em quantos sites apontam para ele e na importância desses sites. Cole até 100 domínios para ver a pontuação OpenPageRank de cada um, de 0 a 10, o ranking global e os domínios de referência, ordene os resultados e baixe um CSV. É útil para comparar concorrentes, avaliar parceiros de links e escolher sites para artigos de convidado.',
+        'steps' => [
+            'Cole até 100 domínios ou endereços de página, um por linha.',
+            'Clique em Verificar autoridade.',
+            'Ordene os resultados pela pontuação e baixe um CSV se precisar deles depois.',
+        ],
+        'features' => [
+            'Até 100 domínios em uma única verificação',
+            'Pontuação de autoridade de 0 a 10, ranking global e domínios de referência',
+            'Aceita URLs completas e remove o www automaticamente',
+            'Exportação CSV grátis, sem cadastro',
+        ],
+        'content' => [
+            [
+                'heading' => 'É o mesmo que o Domain Authority da Moz?',
+                'body' => 'Não. O Domain Authority (DA) é uma pontuação de 0 a 100 da Moz, e o Domain Rating (DR) pertence à Ahrefs. Esta ferramenta mostra o OpenPageRank, uma pontuação de 0 a 10 calculada a partir do grafo web público do Common Crawl com o método PageRank. Todas medem a mesma ideia, a força dos links de um site, mas são calculadas de formas diferentes, então os números não podem ser convertidos entre si.',
+            ],
+            [
+                'heading' => 'O que é uma boa pontuação?',
+                'body' => 'A escala é logarítmica: subir de 2 para 3 exige muito menos links do que subir de 8 para 9. Sites novos costumam começar perto de 0, sites pequenos já estabelecidos ficam entre 2 e 4, marcas conhecidas entre 5 e 7, e só os maiores sites da internet chegam a 9 ou 10. Compare um site com outros do mesmo nicho, não com os gigantes.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Como verifico a autoridade de domínio de um site?',
+                'a' => 'Cole o domínio na caixa e clique em Verificar autoridade. Você pode verificar até 100 domínios de uma vez.',
+            ],
+            [
+                'q' => 'De onde vêm as pontuações?',
+                'a' => 'Do OpenPageRank, que calcula a autoridade a partir do grafo web do Common Crawl, um rastreamento público de bilhões de páginas. As pontuações são atualizadas todo mês.',
+            ],
+            [
+                'q' => 'Como posso aumentar minha pontuação?',
+                'a' => 'Consiga links de sites respeitados da sua área: conteúdo útil, diretórios de qualidade, artigos de convidado e menções na imprensa. Links de muitos sites diferentes contam mais do que muitos links de um só site.',
+            ],
+            [
+                'q' => 'Por que um site aparece como Não encontrado?',
+                'a' => 'Sites muito novos ou muito pequenos podem ainda não ter links suficientes no grafo web para receber uma pontuação.',
+            ],
+        ],
+        'table' => [
+            'caption' => 'Métricas de autoridade comparadas',
+            'headers' => [
+                'Métrica',
+                'Criada por',
+                'Escala',
+            ],
+            'rows' => [
+                [
+                    'OpenPageRank',
+                    'OpenPageRank (dados do Common Crawl)',
+                    '0-10',
+                ],
+                [
+                    'Domain Authority (DA)',
+                    'Moz',
+                    '0-100',
+                ],
+                [
+                    'Domain Rating (DR)',
+                    'Ahrefs',
+                    '0-100',
+                ],
+                [
+                    'Authority Score',
+                    'Semrush',
+                    '0-100',
+                ],
+            ],
+        ],
+    ],
+
 ];
