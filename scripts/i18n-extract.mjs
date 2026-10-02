@@ -41,6 +41,8 @@ const DYNAMIC = [
     // Readability levels (resources/js/lib/readability.js) and AI detector labels (tools/AiDetector.jsx)
     'Very easy', 'Easy', 'Fairly easy', 'Plain English', 'Fairly difficult', 'Difficult', 'Very difficult',
     'Likely AI-generated', 'Mixed or unclear', 'Likely human-written',
+    // Background remover backgrounds (tools/BackgroundRemover.jsx)
+    'Transparent', 'White', 'Colour',
     'Uniform sentence lengths', 'People mix short and long sentences; AI text is often very even.',
     'AI-typical phrases', `Words such as "delve", "moreover" or "in today's fast-paced world".`,
     'Few contractions', `AI rarely writes "don't" or "it's" unless asked to.`,

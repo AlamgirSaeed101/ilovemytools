@@ -492,3 +492,54 @@ test.describe('Text analysis and AVIF', () => {
         await expect(page.getByTestId('ai-verdict')).toHaveText('Likely human-written');
     });
 });
+
+test.describe('Background remover', () => {
+    test('removes a plain background and downloads a transparent PNG', async ({ page }) => {
+        const fs = await import('node:fs');
+        // Serve ONNX Runtime from node_modules instead of the CDN, so the test never depends on it.
+        await page.route(/cdn\.jsdelivr\.net\/npm\/onnxruntime-web@[^/]+\/dist\/(.+)$/, (route) => {
+            const file = route.request().url().split('/dist/')[1].split('?')[0];
+            route.fulfill({
+                body: fs.readFileSync(`node_modules/onnxruntime-web/dist/${file}`),
+                contentType: file.endsWith('.wasm') ? 'application/wasm' : 'text/javascript',
+                headers: { 'Access-Control-Allow-Origin': '*' },
+            });
+        });
+        await openTool(page, 'remove-background');
+        await expect(page.getByRole('heading', { level: 1 })).toHaveText('Remove Background from Image');
+
+        // A red circle on a white background.
+        const png = await page.evaluate(async () => {
+            const c = new OffscreenCanvas(400, 300);
+            const x = c.getContext('2d');
+            x.fillStyle = '#fff';
+            x.fillRect(0, 0, 400, 300);
+            x.fillStyle = '#e11d48';
+            x.beginPath();
+            x.arc(200, 150, 90, 0, Math.PI * 2);
+            x.fill();
+            return Array.from(new Uint8Array(await (await c.convertToBlob({ type: 'image/png' })).arrayBuffer()));
+        });
+        await page.getByTestId('file-input').setInputFiles([{ name: 'ball.png', mimeType: 'image/png', buffer: Buffer.from(png) }]);
+        await expect(page.getByTestId('bg-result')).toBeVisible({ timeout: 90_000 });
+
+        const [dl] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PNG' }).click()]);
+        expect(dl.suggestedFilename()).toBe('ball-no-bg.png');
+        const bytes = Array.from(await readDownload(dl));
+        const alpha = await page.evaluate(async (b) => {
+            const bm = await createImageBitmap(new Blob([new Uint8Array(b)]));
+            const c = new OffscreenCanvas(bm.width, bm.height);
+            const x = c.getContext('2d');
+            x.drawImage(bm, 0, 0);
+            const at = (px, py) => x.getImageData(px, py, 1, 1).data[3];
+            return { corner: at(5, 5), center: at(200, 150), w: bm.width };
+        }, bytes);
+        expect(alpha.w).toBe(400);
+        expect(alpha.corner).toBeLessThan(30);
+        expect(alpha.center).toBeGreaterThan(225);
+
+        // White background option fills the transparent area.
+        await page.getByRole('button', { name: 'White' }).click();
+        await expect(page.getByRole('button', { name: 'White' })).toHaveAttribute('aria-pressed', 'true');
+    });
+});

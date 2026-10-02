@@ -1231,4 +1231,60 @@ return [
         ],
     ],
 
+    'remove-background' => [
+        'name' => 'Rimuovi sfondo',
+        'title' => 'Rimuovere lo sfondo da un’immagine gratis',
+        'description' => 'Rimuovi gratis lo sfondo da qualsiasi immagine con l’IA. PNG trasparente o sfondo colorato in pochi secondi. Funziona nel browser: le foto non vengono caricate.',
+        'h1' => 'Rimuovi lo sfondo da un’immagine',
+        'tagline' => 'Scontorna persone, prodotti e animali con un clic.',
+        'keywords' => [
+            'rimuovere sfondo',
+            'rimuovere sfondo immagine',
+            'scontornare foto',
+            'sfondo trasparente',
+            'remove bg',
+            'png trasparente',
+        ],
+        'intro' => 'Uno strumento per rimuovere lo sfondo scontorna il soggetto principale di una foto e rende trasparente tutto ciò che c’è dietro. Questo usa un modello di IA che funziona nel tuo browser: trascina la foto di una persona, un prodotto, un animale o un logo e scarica un PNG trasparente, oppure mettilo su bianco o su qualsiasi colore. La tua immagine non viene mai caricata; viene scaricato una sola volta il modello di IA.',
+        'steps' => [
+            'Trascina un’immagine JPG, PNG, WebP o AVIF nel riquadro.',
+            'Attendi qualche secondo mentre l’IA rimuove lo sfondo (la prima volta viene scaricato anche il modello).',
+            'Scegli uno sfondo trasparente, bianco o colorato e fai clic su Scarica PNG.',
+        ],
+        'features' => [
+            'Rimozione dello sfondo con IA nel browser',
+            'PNG trasparente, sfondo bianco o di qualsiasi colore',
+            'Modalità veloce per ogni dispositivo, alta qualità con WebGPU',
+            'Gratis, senza registrazione, senza filigrana, nulla viene caricato',
+        ],
+        'content' => [
+            [
+                'heading' => 'Veloce o Alta qualità: quale usare?',
+                'body' => 'La modalità veloce usa un piccolo modello da 4,4 MB che funziona su qualsiasi smartphone o computer e scontorna bene soggetti nitidi come prodotti, persone e loghi. La modalità alta qualità scarica una sola volta un modello da 109 MB e offre bordi più puliti su capelli, pelo e dettagli fini. Serve un browser con WebGPU, come una versione recente di Chrome o Edge.',
+            ],
+            [
+                'heading' => 'Come ottengo lo scontorno migliore?',
+                'body' => 'Usa una foto in cui il soggetto è a fuoco e si distingue dallo sfondo per colore o luminosità. Sfondi pieni di elementi, foto mosse e soggetti che si confondono con lo sfondo sono più difficili per qualsiasi modello di IA. Se un bordo è irregolare in modalità veloce, prova l’alta qualità.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Lo strumento è davvero gratis?',
+                'a' => 'Sì. Nessuna registrazione, nessun limite giornaliero e nessuna filigrana, e scarichi il risultato a dimensione piena.',
+            ],
+            [
+                'q' => 'Le mie foto vengono caricate online?',
+                'a' => 'No. Il modello di IA funziona nel browser, quindi le tue foto restano sul tuo dispositivo. Viene scaricato solo il file del modello, che resta salvato per la volta successiva.',
+            ],
+            [
+                'q' => 'Quali formati posso usare?',
+                'a' => 'JPG, PNG, WebP e AVIF, fino a 50 MB. Il risultato è un PNG con sfondo trasparente o del colore che scegli.',
+            ],
+            [
+                'q' => 'Perché la prima volta è più lenta?',
+                'a' => 'La prima volta il browser scarica il modello di IA (4,4 MB in modalità veloce, 109 MB in alta qualità). Poi resta salvato e parte molto più velocemente.',
+            ],
+        ],
+    ],
+
 ];

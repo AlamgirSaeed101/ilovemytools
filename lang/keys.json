@@ -30,6 +30,12 @@
     ]
   },
   {
+    "key": "\"{name}\" is larger than {max}.",
+    "files": [
+      "resources/js/tools/BackgroundRemover.jsx"
+    ]
+  },
+  {
     "key": "\"{name}\" is larger than 200 MB.",
     "files": [
       "resources/js/lib/pdf.js"
@@ -314,9 +320,21 @@
     ]
   },
   {
+    "key": "{size} model · works on every device",
+    "files": [
+      "resources/js/tools/BackgroundRemover.jsx"
+    ]
+  },
+  {
     "key": "{size} of Base64",
     "files": [
       "resources/js/tools/Base64Tool.jsx"
+    ]
+  },
+  {
+    "key": "{size} one-time download · sharper hair and edges",
+    "files": [
+      "resources/js/tools/BackgroundRemover.jsx"
     ]
   },
   {
@@ -347,6 +365,12 @@
     "key": "{value}% increase",
     "files": [
       "resources/js/lib/percent.js"
+    ]
+  },
+  {
+    "key": "{width} × {height} px",
+    "files": [
+      "resources/js/tools/BackgroundRemover.jsx"
     ]
   },
   {
@@ -788,7 +812,20 @@
   {
     "key": "Background",
     "files": [
+      "resources/js/tools/BackgroundRemover.jsx",
       "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Background colour",
+    "files": [
+      "resources/js/tools/BackgroundRemover.jsx"
+    ]
+  },
+  {
+    "key": "Background removed",
+    "files": [
+      "resources/js/tools/BackgroundRemover.jsx"
     ]
   },
   {
@@ -1005,6 +1042,12 @@
     "key": "Coleman-Liau Index",
     "files": [
       "resources/js/tools/ReadabilityChecker.jsx"
+    ]
+  },
+  {
+    "key": "Colour",
+    "files": [
+      "scripts/i18n-extract.mjs"
     ]
   },
   {
@@ -1403,6 +1446,7 @@
   {
     "key": "Download PNG",
     "files": [
+      "resources/js/tools/BackgroundRemover.jsx",
       "resources/js/tools/QrCodeGenerator.jsx"
     ]
   },
@@ -1433,6 +1477,7 @@
   {
     "key": "Drop an image here or click to choose",
     "files": [
+      "resources/js/tools/BackgroundRemover.jsx",
       "resources/js/tools/ImageResizer.jsx"
     ]
   },
@@ -1725,6 +1770,7 @@
   {
     "key": "Fast",
     "files": [
+      "resources/js/tools/BackgroundRemover.jsx",
       "scripts/i18n-extract.mjs"
     ]
   },
@@ -2087,6 +2133,18 @@
     ]
   },
   {
+    "key": "High quality",
+    "files": [
+      "resources/js/tools/BackgroundRemover.jsx"
+    ]
+  },
+  {
+    "key": "High quality mode could not run on this device. Please try Fast mode.",
+    "files": [
+      "resources/js/tools/BackgroundRemover.jsx"
+    ]
+  },
+  {
     "key": "Home",
     "files": [
       "app/Support/Seo.php",
@@ -2265,6 +2323,12 @@
     ]
   },
   {
+    "key": "JPG, PNG, WebP or AVIF · max 50 MB · your image is never uploaded",
+    "files": [
+      "resources/js/tools/BackgroundRemover.jsx"
+    ]
+  },
+  {
     "key": "JPG, PNG, WebP, AVIF, GIF or BMP · max 50 MB",
     "files": [
       "resources/js/tools/ImageResizer.jsx"
@@ -2434,6 +2498,12 @@
     "key": "Loading {name}…",
     "files": [
       "resources/js/pages/ToolPage.jsx"
+    ]
+  },
+  {
+    "key": "Loading the AI model… {percent}%",
+    "files": [
+      "resources/js/tools/BackgroundRemover.jsx"
     ]
   },
   {
@@ -2655,6 +2725,12 @@
     ]
   },
   {
+    "key": "Needs a browser with WebGPU (Chrome or Edge)",
+    "files": [
+      "resources/js/tools/BackgroundRemover.jsx"
+    ]
+  },
+  {
     "key": "Network name (SSID)",
     "files": [
       "resources/js/tools/QrCodeGenerator.jsx"
@@ -2850,6 +2926,12 @@
     "key": "Orientation",
     "files": [
       "resources/js/tools/JpgToPdf.jsx"
+    ]
+  },
+  {
+    "key": "Original",
+    "files": [
+      "resources/js/tools/BackgroundRemover.jsx"
     ]
   },
   {
@@ -3056,6 +3138,12 @@
     "key": "Play an alarm sound",
     "files": [
       "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "Please choose a JPG, PNG, WebP or AVIF image.",
+    "files": [
+      "resources/js/tools/BackgroundRemover.jsx"
     ]
   },
   {
@@ -3271,6 +3359,7 @@
   {
     "key": "Quality",
     "files": [
+      "resources/js/tools/BackgroundRemover.jsx",
       "resources/js/tools/ImageCompressor.jsx"
     ]
   },
@@ -3428,6 +3517,12 @@
     "key": "Remove the winner after each spin",
     "files": [
       "resources/js/tools/SpinWheel.jsx"
+    ]
+  },
+  {
+    "key": "Removing the background…",
+    "files": [
+      "resources/js/tools/BackgroundRemover.jsx"
     ]
   },
   {
@@ -3772,6 +3867,12 @@
     ]
   },
   {
+    "key": "Sorry, the background could not be removed. Please try another image or reload the page.",
+    "files": [
+      "resources/js/tools/BackgroundRemover.jsx"
+    ]
+  },
+  {
     "key": "Sorry, we couldn't find that page. It may have moved, or the link may be wrong.",
     "files": [
       "resources/js/pages/NotFound.jsx",
@@ -4111,6 +4212,12 @@
     ]
   },
   {
+    "key": "The model is saved in your browser, so next time it starts instantly.",
+    "files": [
+      "resources/js/tools/BackgroundRemover.jsx"
+    ]
+  },
+  {
     "key": "The only exception is the “What Is My IP” tool, which shows you the IP address your browser used to reach our server. We display it back to you and do not store it in a database.",
     "files": [
       "resources/js/pages/InfoPages.jsx"
@@ -4413,6 +4520,12 @@
     "key": "Total tip",
     "files": [
       "resources/js/tools/TipCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Transparent",
+    "files": [
+      "scripts/i18n-extract.mjs"
     ]
   },
   {
@@ -4728,6 +4841,12 @@
     ]
   },
   {
+    "key": "White",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
     "key": "Whole",
     "files": [
       "resources/js/tools/PercentageCalculator.jsx"
@@ -4768,6 +4887,12 @@
     "key": "Words such as \"delve\", \"moreover\" or \"in today's fast-paced world\".",
     "files": [
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Working…",
+    "files": [
+      "resources/js/tools/BackgroundRemover.jsx"
     ]
   },
   {

@@ -1231,4 +1231,60 @@ return [
         ],
     ],
 
+    'remove-background' => [
+        'name' => 'Supprimer l’arrière-plan',
+        'title' => 'Supprimer l’arrière-plan d’une image, gratuit',
+        'description' => 'Supprimez gratuitement l’arrière-plan de n’importe quelle image grâce à l’IA. PNG transparent ou fond coloré en quelques secondes. Rien n’est envoyé.',
+        'h1' => 'Supprimer l’arrière-plan d’une image',
+        'tagline' => 'Détourez personnes, produits et animaux en un clic.',
+        'keywords' => [
+            'supprimer arrière-plan',
+            'enlever le fond d’une image',
+            'détourer une photo',
+            'fond transparent',
+            'remove bg',
+            'png transparent',
+        ],
+        'intro' => 'Un outil de suppression d’arrière-plan détoure le sujet principal d’une photo et rend transparent tout ce qui se trouve derrière. Celui-ci utilise un modèle d’IA qui fonctionne dans votre navigateur : déposez la photo d’une personne, d’un produit, d’un animal ou d’un logo et téléchargez un PNG transparent, ou placez-le sur du blanc ou la couleur de votre choix. Votre image n’est jamais envoyée ; seul le modèle d’IA est téléchargé une fois.',
+        'steps' => [
+            'Déposez une image JPG, PNG, WebP ou AVIF dans le cadre.',
+            'Patientez quelques secondes pendant que l’IA supprime l’arrière-plan (la première fois, le modèle est aussi téléchargé).',
+            'Choisissez un fond transparent, blanc ou coloré, puis cliquez sur Télécharger le PNG.',
+        ],
+        'features' => [
+            'Suppression d’arrière-plan par IA dans votre navigateur',
+            'PNG transparent, fond blanc ou de n’importe quelle couleur',
+            'Mode rapide pour tous les appareils, mode haute qualité avec WebGPU',
+            'Gratuit, sans inscription, sans filigrane, rien n’est envoyé',
+        ],
+        'content' => [
+            [
+                'heading' => 'Rapide ou Haute qualité : lequel choisir ?',
+                'body' => 'Le mode rapide utilise un petit modèle de 4,4 Mo qui fonctionne sur n’importe quel téléphone ou ordinateur et détoure bien les sujets nets comme les produits, les personnes et les logos. Le mode haute qualité télécharge une seule fois un modèle de 109 Mo et donne des contours plus propres sur les cheveux, les poils et les petits détails. Il nécessite un navigateur compatible WebGPU, comme une version récente de Chrome ou d’Edge.',
+            ],
+            [
+                'heading' => 'Comment obtenir le meilleur détourage ?',
+                'body' => 'Utilisez une photo où le sujet est net et se distingue du fond par sa couleur ou sa luminosité. Les fonds chargés, les photos floues et les sujets qui se confondent avec le décor sont plus difficiles pour tout modèle d’IA. Si un contour semble irrégulier en mode rapide, essayez le mode haute qualité.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'L’outil est-il vraiment gratuit ?',
+                'a' => 'Oui. Sans inscription, sans limite quotidienne et sans filigrane, et vous téléchargez le résultat en taille réelle.',
+            ],
+            [
+                'q' => 'Mes photos sont-elles envoyées sur un serveur ?',
+                'a' => 'Non. Le modèle d’IA tourne dans votre navigateur, vos photos restent donc sur votre appareil. Seul le fichier du modèle est téléchargé, puis conservé pour la prochaine fois.',
+            ],
+            [
+                'q' => 'Quels formats d’image puis-je utiliser ?',
+                'a' => 'JPG, PNG, WebP et AVIF, jusqu’à 50 Mo. Le résultat est un PNG à fond transparent ou de la couleur de votre choix.',
+            ],
+            [
+                'q' => 'Pourquoi la première fois est-elle plus lente ?',
+                'a' => 'La première fois, votre navigateur télécharge le modèle d’IA (4,4 Mo en mode rapide, 109 Mo en haute qualité). Ensuite, il est enregistré et démarre bien plus vite.',
+            ],
+        ],
+    ],
+
 ];

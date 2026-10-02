@@ -1231,4 +1231,60 @@ return [
         ],
     ],
 
+    'remove-background' => [
+        'name' => 'Hintergrund entfernen',
+        'title' => 'Hintergrund entfernen - kostenlos, ohne Upload',
+        'description' => 'Entfernen Sie kostenlos mit KI den Hintergrund aus jedem Bild. Transparentes PNG oder farbiger Hintergrund in Sekunden. Läuft im Browser, ohne Upload.',
+        'h1' => 'Bildhintergrund entfernen',
+        'tagline' => 'Stellen Sie Personen, Produkte und Tiere mit einem Klick frei.',
+        'keywords' => [
+            'hintergrund entfernen',
+            'bild hintergrund entfernen',
+            'foto freistellen',
+            'transparenter hintergrund',
+            'remove bg',
+            'png transparent machen',
+        ],
+        'intro' => 'Ein Hintergrundentferner stellt das Hauptmotiv eines Fotos frei und macht alles dahinter transparent. Dieser nutzt ein KI-Modell, das in Ihrem Browser läuft: Ziehen Sie das Foto einer Person, eines Produkts, eines Haustiers oder eines Logos hinein und laden Sie ein transparentes PNG herunter – oder setzen Sie es auf Weiß oder eine beliebige Farbe. Ihr Bild wird nie hochgeladen; nur das KI-Modell wird einmal heruntergeladen.',
+        'steps' => [
+            'Ziehen Sie ein JPG-, PNG-, WebP- oder AVIF-Bild in das Feld.',
+            'Warten Sie einige Sekunden, während die KI den Hintergrund entfernt (beim ersten Mal wird auch das Modell geladen).',
+            'Wählen Sie einen transparenten, weißen oder farbigen Hintergrund und klicken Sie auf PNG herunterladen.',
+        ],
+        'features' => [
+            'KI-Hintergrundentfernung im Browser',
+            'Transparentes PNG, weißer oder beliebig farbiger Hintergrund',
+            'Schneller Modus für jedes Gerät, Hohe Qualität mit WebGPU',
+            'Kostenlos, ohne Anmeldung, ohne Wasserzeichen, ohne Upload',
+        ],
+        'content' => [
+            [
+                'heading' => 'Schnell oder Hohe Qualität: Was soll ich nutzen?',
+                'body' => 'Der schnelle Modus nutzt ein kleines 4,4-MB-Modell, das auf jedem Handy und Computer läuft und klare Motive wie Produkte, Personen und Logos gut freistellt. Der Modus Hohe Qualität lädt einmalig ein 109-MB-Modell und liefert sauberere Kanten bei Haaren, Fell und feinen Details. Dafür ist ein Browser mit WebGPU nötig, zum Beispiel ein aktuelles Chrome oder Edge.',
+            ],
+            [
+                'heading' => 'Wie gelingt die beste Freistellung?',
+                'body' => 'Verwenden Sie ein Foto, auf dem das Motiv scharf ist und sich farblich oder in der Helligkeit vom Hintergrund abhebt. Unruhige Hintergründe, Bewegungsunschärfe und Motive, die mit dem Hintergrund verschwimmen, sind für jedes KI-Modell schwieriger. Wirkt eine Kante im schnellen Modus unsauber, probieren Sie Hohe Qualität.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Ist der Hintergrundentferner wirklich kostenlos?',
+                'a' => 'Ja. Ohne Anmeldung, ohne Tageslimit und ohne Wasserzeichen – und Sie laden das Ergebnis in voller Größe herunter.',
+            ],
+            [
+                'q' => 'Werden meine Fotos hochgeladen?',
+                'a' => 'Nein. Das KI-Modell läuft in Ihrem Browser, Ihre Fotos bleiben also auf Ihrem Gerät. Nur die Modelldatei wird heruntergeladen und für das nächste Mal gespeichert.',
+            ],
+            [
+                'q' => 'Welche Bildformate kann ich verwenden?',
+                'a' => 'JPG, PNG, WebP und AVIF bis 50 MB. Das Ergebnis ist ein PNG mit transparentem Hintergrund oder in der Farbe Ihrer Wahl.',
+            ],
+            [
+                'q' => 'Warum ist das erste Mal langsamer?',
+                'a' => 'Beim ersten Mal lädt Ihr Browser das KI-Modell herunter (4,4 MB im schnellen Modus, 109 MB bei Hoher Qualität). Danach ist es gespeichert und startet deutlich schneller.',
+            ],
+        ],
+    ],
+
 ];

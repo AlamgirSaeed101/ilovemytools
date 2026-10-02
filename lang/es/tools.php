@@ -1126,4 +1126,60 @@ return [
         ],
     ],
 
+    'remove-background' => [
+        'name' => 'Quitar fondo',
+        'title' => 'Quitar fondo de imagen gratis, sin subir nada',
+        'description' => 'Quita el fondo de cualquier imagen gratis con IA. Obtén un PNG transparente o añade un color en segundos. Funciona en tu navegador: tus fotos no se suben.',
+        'h1' => 'Quitar el fondo de una imagen',
+        'tagline' => 'Recorta personas, productos y mascotas con un clic.',
+        'keywords' => [
+            'quitar fondo',
+            'eliminar fondo de imagen',
+            'quitar fondo de foto',
+            'fondo transparente',
+            'remove bg',
+            'hacer png transparente',
+        ],
+        'intro' => 'Un eliminador de fondos recorta el sujeto principal de una foto y deja transparente todo lo que hay detrás. Este usa un modelo de IA que funciona en tu navegador: suelta una foto de una persona, un producto, una mascota o un logotipo y descarga un PNG transparente, o colócalo sobre blanco o cualquier color. Tu imagen nunca se sube; solo se descarga una vez el modelo de IA.',
+        'steps' => [
+            'Suelta una imagen JPG, PNG, WebP o AVIF en el recuadro.',
+            'Espera unos segundos mientras la IA quita el fondo (la primera vez también se descarga el modelo).',
+            'Elige fondo transparente, blanco o de color y haz clic en Descargar PNG.',
+        ],
+        'features' => [
+            'Eliminación de fondo con IA en tu navegador',
+            'PNG transparente, fondo blanco o de cualquier color',
+            'Modo rápido para cualquier dispositivo y modo de alta calidad con WebGPU',
+            'Gratis, sin registro, sin marca de agua y sin subir nada',
+        ],
+        'content' => [
+            [
+                'heading' => 'Rápido o Alta calidad: ¿cuál uso?',
+                'body' => 'El modo rápido usa un modelo pequeño de 4,4 MB que funciona en cualquier móvil u ordenador y recorta bien sujetos claros como productos, personas y logotipos. El modo de alta calidad descarga una sola vez un modelo de 109 MB y consigue bordes más limpios en el pelo y los detalles finos. Necesita un navegador con WebGPU, como una versión reciente de Chrome o Edge.',
+            ],
+            [
+                'heading' => '¿Cómo consigo el mejor recorte?',
+                'body' => 'Usa una foto en la que el sujeto esté enfocado y destaque del fondo por color o brillo. Los fondos recargados, las fotos movidas y los sujetos que se confunden con el fondo son más difíciles para cualquier modelo de IA. Si un borde queda irregular en el modo rápido, prueba el de alta calidad.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => '¿El eliminador de fondos es realmente gratis?',
+                'a' => 'Sí. Sin registro, sin límite diario y sin marca de agua, y descargas el resultado a tamaño completo.',
+            ],
+            [
+                'q' => '¿Se suben mis fotos?',
+                'a' => 'No. El modelo de IA funciona en tu navegador, así que tus fotos se quedan en tu dispositivo. Solo se descarga el archivo del modelo, que se guarda para la próxima vez.',
+            ],
+            [
+                'q' => '¿Qué formatos de imagen puedo usar?',
+                'a' => 'JPG, PNG, WebP y AVIF, de hasta 50 MB. El resultado es un PNG con fondo transparente o con el color que elijas.',
+            ],
+            [
+                'q' => '¿Por qué la primera vez es más lenta?',
+                'a' => 'La primera vez tu navegador descarga el modelo de IA (4,4 MB en modo rápido, 109 MB en alta calidad). Después queda guardado y arranca mucho más rápido.',
+            ],
+        ],
+    ],
+
 ];

@@ -1466,4 +1466,44 @@ return [
         'related' => ['readability-checker', 'word-counter', 'case-converter'],
     ],
 
+    'remove-background' => [
+        'name' => 'Background Remover',
+        'category' => 'image-tools',
+        'icon' => 'eraser',
+        'popular' => true,
+        'updated' => '2026-10-02',
+        'title' => 'Remove Background from Image - Free, No Upload',
+        'description' => 'Remove the background from any image for free with AI. Get a transparent PNG or add a colour in seconds. Runs in your browser, so photos are never uploaded.',
+        'h1' => 'Remove Background from Image',
+        'tagline' => 'Cut out people, products and pets with one click.',
+        'keywords' => ['remove background', 'background remover', 'remove bg', 'transparent background', 'remove background from image', 'png maker'],
+        'intro' => 'A background remover cuts the main subject out of a photo and makes everything behind it transparent. This one uses an AI model that runs in your browser: drop a photo of a person, product, pet or logo and download a transparent PNG, or place it on white or any colour. Your image is never uploaded; only the AI model is downloaded once.',
+        'steps' => [
+            'Drop a JPG, PNG, WebP or AVIF image into the box.',
+            'Wait a few seconds while the AI removes the background (the first run also downloads the model).',
+            'Choose a transparent, white or coloured background and click Download PNG.',
+        ],
+        'features' => [
+            'AI background removal in your browser',
+            'Transparent PNG, white or any colour background',
+            'Fast mode for every device, High quality mode with WebGPU',
+            'Free, no sign up, no watermark, nothing uploaded',
+        ],
+        'content' => [
+            ['heading' => 'Fast or High quality: which should I use?', 'body' => 'Fast mode uses a small 4.4 MB model that works on any phone or computer and handles clear subjects such as products, people and logos well. High quality mode downloads a larger 109 MB model once and gives cleaner edges around hair, fur and fine details. It needs a browser with WebGPU, such as a recent Chrome or Edge.'],
+            ['heading' => 'How do I get the best cut-out?', 'body' => 'Use a photo where the subject is in focus and stands out from the background in colour or brightness. Busy backgrounds, motion blur and subjects that blend into the background are harder for any AI model. If an edge looks rough in Fast mode, try High quality mode.'],
+        ],
+        'faqs' => [
+            ['q' => 'Is the background remover really free?', 'a' => 'Yes. There is no sign up, no daily limit and no watermark, and you download the full-size result.'],
+            ['q' => 'Are my photos uploaded?', 'a' => 'No. The AI model runs in your browser, so your photos stay on your device. Only the model file is downloaded, and it is saved for next time.'],
+            ['q' => 'What image formats can I use?', 'a' => 'JPG, PNG, WebP and AVIF, up to 50 MB. The result is a PNG with a transparent background, or with the colour you choose.'],
+            ['q' => 'Why is the first run slower?', 'a' => 'The first time, your browser downloads the AI model (4.4 MB for Fast, 109 MB for High quality). After that it is stored in your browser and starts much faster.'],
+        ],
+        'sources' => [
+            ['title' => 'Qin et al. (2020): U²-Net, the model behind Fast mode (Apache-2.0)', 'url' => 'https://arxiv.org/abs/2005.09007'],
+            ['title' => 'Zheng et al. (2024): BiRefNet, the model behind High quality mode (MIT)', 'url' => 'https://arxiv.org/abs/2401.03407'],
+        ],
+        'related' => ['image-compressor', 'image-resizer', 'png-to-jpg', 'avif-to-png'],
+    ],
+
 ];

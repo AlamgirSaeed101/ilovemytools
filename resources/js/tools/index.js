@@ -22,6 +22,7 @@ const tools = {
     'avif-to-webp': converter('image/webp'),
     'readability-checker': lazy(() => import('./ReadabilityChecker.jsx')),
     'ai-content-detector': lazy(() => import('./AiDetector.jsx')),
+    'remove-background': lazy(() => import('./BackgroundRemover.jsx')),
     'merge-pdf': lazy(() => import('./MergePdf.jsx')),
     'split-pdf': lazy(() => import('./SplitPdf.jsx')),
     'age-calculator': lazy(() => import('./AgeCalculator.jsx')),

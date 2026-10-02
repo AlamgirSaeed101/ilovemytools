@@ -1231,4 +1231,60 @@ return [
         ],
     ],
 
+    'remove-background' => [
+        'name' => 'Remover fundo',
+        'title' => 'Remover fundo de imagem grátis, sem enviar nada',
+        'description' => 'Remova o fundo de qualquer imagem grátis com IA. Obtenha um PNG transparente ou adicione uma cor em segundos. Roda no navegador: suas fotos não são enviadas.',
+        'h1' => 'Remover fundo de imagem',
+        'tagline' => 'Recorte pessoas, produtos e pets com um clique.',
+        'keywords' => [
+            'remover fundo',
+            'remover fundo de imagem',
+            'tirar fundo de foto',
+            'fundo transparente',
+            'remove bg',
+            'deixar png transparente',
+        ],
+        'intro' => 'Um removedor de fundo recorta o elemento principal de uma foto e deixa transparente tudo o que está atrás. Este usa um modelo de IA que roda no seu navegador: solte uma foto de uma pessoa, produto, pet ou logotipo e baixe um PNG transparente, ou coloque-o sobre branco ou qualquer cor. Sua imagem nunca é enviada; só o modelo de IA é baixado uma vez.',
+        'steps' => [
+            'Solte uma imagem JPG, PNG, WebP ou AVIF na caixa.',
+            'Aguarde alguns segundos enquanto a IA remove o fundo (na primeira vez o modelo também é baixado).',
+            'Escolha fundo transparente, branco ou colorido e clique em Baixar PNG.',
+        ],
+        'features' => [
+            'Remoção de fundo com IA no seu navegador',
+            'PNG transparente, fundo branco ou de qualquer cor',
+            'Modo rápido para qualquer dispositivo e modo de alta qualidade com WebGPU',
+            'Grátis, sem cadastro, sem marca d’água e sem enviar nada',
+        ],
+        'content' => [
+            [
+                'heading' => 'Rápido ou Alta qualidade: qual usar?',
+                'body' => 'O modo rápido usa um modelo pequeno de 4,4 MB que funciona em qualquer celular ou computador e recorta bem elementos nítidos como produtos, pessoas e logotipos. O modo de alta qualidade baixa uma única vez um modelo de 109 MB e deixa as bordas mais limpas em cabelos, pelos e detalhes finos. Ele precisa de um navegador com WebGPU, como uma versão recente do Chrome ou do Edge.',
+            ],
+            [
+                'heading' => 'Como consigo o melhor recorte?',
+                'body' => 'Use uma foto em que o elemento principal esteja em foco e se destaque do fundo pela cor ou pelo brilho. Fundos poluídos, fotos tremidas e elementos que se confundem com o fundo são mais difíceis para qualquer modelo de IA. Se uma borda ficar irregular no modo rápido, experimente o de alta qualidade.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'O removedor de fundo é mesmo grátis?',
+                'a' => 'Sim. Sem cadastro, sem limite diário e sem marca d’água, e você baixa o resultado no tamanho original.',
+            ],
+            [
+                'q' => 'Minhas fotos são enviadas?',
+                'a' => 'Não. O modelo de IA roda no seu navegador, então suas fotos ficam no seu dispositivo. Só o arquivo do modelo é baixado, e ele fica salvo para a próxima vez.',
+            ],
+            [
+                'q' => 'Quais formatos de imagem posso usar?',
+                'a' => 'JPG, PNG, WebP e AVIF, até 50 MB. O resultado é um PNG com fundo transparente ou com a cor que você escolher.',
+            ],
+            [
+                'q' => 'Por que a primeira vez é mais lenta?',
+                'a' => 'Na primeira vez seu navegador baixa o modelo de IA (4,4 MB no modo rápido, 109 MB na alta qualidade). Depois ele fica salvo e começa muito mais rápido.',
+            ],
+        ],
+    ],
+
 ];
