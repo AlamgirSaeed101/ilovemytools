@@ -109,6 +109,8 @@ Not planned: PDF↔Word/Excel/PowerPoint (can't be done well in the browser), vi
 - [ ] Homepage FAQ (4-5 questions such as "Are these tools really free?", "Are my files uploaded?") with FAQPage schema, all languages. *(quick audit 30 Sep)*
 - [ ] Tools without them get a one-line definition, a reference table and 2-3 cited sources, like /image-compressor (start with /merge-pdf, /split-pdf). *(quick audit 30 Sep)*
 - [x] *(owner input)* OPcache enabled (3 Oct 2026): uncached pages went from ~1.8 s to ~0.6 s to first byte, the same as a static file. What remains is distance to the Singapore server (moving hosting to the US would help US visitors).
+- [ ] *(owner input, REMIND on 4 Oct 2026)* Connect **Google Search Console** to Windsor.ai while logged in to the Windsor account **talibhussain.monzo@gmail.com** (Google account mas032746@gmail.com is fine): https://onboard.windsor.ai/connect?connector=searchconsole&next=/searchconsole/authorize then tick ilovemytools.store and Finish. It was connected to a different Windsor account (mas032746).
+- [ ] *(owner input, REMIND on 4 Oct 2026)* Connect **Google Analytics 4** (property with ID G-GMWZ0PJW1R) the same way: https://onboard.windsor.ai/connect?connector=googleanalytics4&next=/googleanalytics4/authorize then select the GA4 property and Finish.
 - [ ] *(owner input)* About page: real founder name, bio and founding date; Person schema linked as Organization.founder.
 - [ ] *(owner input)* Brand social profiles in Organization.sameAs and the footer.
 
