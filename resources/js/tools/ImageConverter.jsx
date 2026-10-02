@@ -120,18 +120,18 @@ export default function ImageConverter({ to = 'image/png' }) {
     }
 
     const done = items.filter((it) => it.status === 'done');
-    const hasTransparentSources = items.some((it) => ['image/png', 'image/webp', 'image/gif'].includes(imageTypeOf(it.file)));
+    const hasTransparentSources = items.some((it) => ['image/png', 'image/webp', 'image/avif', 'image/gif'].includes(imageTypeOf(it.file)));
 
     return (
         <div className="stack">
             <Dropzone
                 multiple
-                accept="image/jpeg,image/png,image/webp,image/gif,image/bmp,.jpg,.jpeg,.jfif,.png,.webp,.gif,.bmp"
+                accept="image/jpeg,image/png,image/webp,image/avif,image/gif,image/bmp,.jpg,.jpeg,.jfif,.png,.webp,.avif,.gif,.bmp"
                 isAccepted={(f) => CONVERTIBLE_TYPES.includes(imageTypeOf(f))}
-                onReject={(bad) => setMessage({ type: 'error', text: t('{files}: please choose JPG, PNG, WebP, GIF or BMP images.', { files: bad.map((f) => f.name).join(', ') }) })}
+                onReject={(bad) => setMessage({ type: 'error', text: t('{files}: please choose JPG, PNG, WebP, AVIF, GIF or BMP images.', { files: bad.map((f) => f.name).join(', ') }) })}
                 onFiles={addFiles}
                 title={t('Drop images here or click to choose')}
-                hint={t('JPG, PNG, WebP, GIF or BMP · up to {max} images · max 50 MB each', { max: MAX_FILES })}
+                hint={t('JPG, PNG, WebP, AVIF, GIF or BMP · up to {max} images · max 50 MB each', { max: MAX_FILES })}
                 compact={items.length > 0}
             />
 

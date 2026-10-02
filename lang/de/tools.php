@@ -1066,4 +1066,169 @@ return [
         ],
     ],
 
+    'avif-to-jpg' => [
+        'name' => 'AVIF in JPG',
+        'title' => 'AVIF in JPG umwandeln - kostenlos, privat, Stapel',
+        'description' => 'AVIF kostenlos online in JPG umwandeln. Bis zu 30 Bilder auf einmal, Qualität wählbar, Download als ZIP. Ihre Bilder verlassen nie Ihr Gerät.',
+        'h1' => 'AVIF in JPG umwandeln',
+        'tagline' => 'Machen Sie aus AVIF-Bildern JPGs, die sich überall öffnen.',
+        'keywords' => ['avif in jpg', 'avif in jpg umwandeln', 'avif zu jpg', 'avif in jpeg', 'avif datei öffnen'],
+        'intro' => 'AVIF ist ein modernes Bildformat auf Basis des Videocodecs AV1, das sehr kleine Dateien erzeugt, doch viele Programme, Bildbearbeitungen und Upload-Formulare können es noch nicht öffnen. Dieser AVIF-zu-JPG-Konverter wandelt Ihre AVIF-Bilder in JPG um, das am weitesten verbreitete Bildformat. Ziehen Sie ein Bild oder einen ganzen Stapel hinein, wählen Sie die Qualität und laden Sie die Ergebnisse einzeln oder als ZIP herunter.',
+        'steps' => [
+            'Ziehen Sie Ihre AVIF-Bilder in das Feld oder klicken Sie, um sie auszuwählen (bis zu 30 auf einmal).',
+            'Passen Sie bei Bedarf die JPG-Qualität an; 85 % hält Fotos scharf bei kleiner Dateigröße.',
+            'Klicken Sie neben einem Bild auf Herunterladen oder auf Alle herunterladen (ZIP) für den ganzen Stapel.',
+        ],
+        'features' => [
+            'Wandelt AVIF in Ihrem Browser in JPG um',
+            'Bis zu 30 Bilder pro Stapel mit ZIP-Download',
+            'Einstellbare JPG-Qualität',
+            '100 % privat: Es wird nichts hochgeladen',
+        ],
+        'content' => [
+            ['heading' => 'Warum AVIF in JPG umwandeln?', 'body' => 'AVIF-Dateien sind bei gleicher Bildqualität oft 30 bis 50 % kleiner als JPGs, deshalb liefern viele Websites ihre Bilder inzwischen als AVIF aus. Speichern Sie ein solches Bild, verweigern ältere Bildprogramme, Office-Dokumente, Drucker und manche soziale Netzwerke oft das Öffnen. JPG funktioniert fast überall – nach der Umwandlung haben Sie also eine Datei, die Sie überall nutzen können.'],
+            ['heading' => 'Was passiert mit der Transparenz?', 'body' => 'JPG unterstützt keine Transparenz. Hat Ihr AVIF-Bild transparente Bereiche, werden sie im JPG weiß gefüllt. Um die Transparenz zu behalten, nutzen Sie stattdessen den AVIF-zu-PNG-Konverter.'],
+        ],
+        'faqs' => [
+            ['q' => 'Wie wandle ich AVIF in JPG um?', 'a' => 'Ziehen Sie die AVIF-Datei in das Feld oben. Sie wird sofort in JPG umgewandelt und Sie laden sie mit einem Klick herunter.'],
+            ['q' => 'Warum kann ich AVIF-Dateien nicht öffnen?', 'a' => 'AVIF ist ein neueres Format. Aktuelle Browser öffnen es, viele ältere Programme und Bildbearbeitungen aber noch nicht – die Umwandlung in JPG ist die einfachste Lösung.'],
+            ['q' => 'Wird das JPG größer als die AVIF-Datei?', 'a' => 'Meistens ja. AVIF komprimiert Bilder effizienter als JPG, daher braucht dasselbe Bild als JPG mehr Platz.'],
+            ['q' => 'Werden meine Bilder hochgeladen?', 'a' => 'Nein. Ihr Browser dekodiert das AVIF und speichert das JPG auf Ihrem Gerät – Ihre Bilder verlassen nie Ihren Computer oder Ihr Handy.'],
+        ],
+    ],
+
+    'avif-to-png' => [
+        'name' => 'AVIF in PNG',
+        'title' => 'AVIF in PNG umwandeln - kostenlos, mit Transparenz',
+        'description' => 'AVIF kostenlos online in PNG umwandeln. Transparente Hintergründe bleiben erhalten, bis zu 30 Bilder pro Stapel, Download als ZIP. Kein Upload.',
+        'h1' => 'AVIF in PNG umwandeln',
+        'tagline' => 'Wandeln Sie AVIF-Bilder in PNG um – mit Transparenz.',
+        'keywords' => ['avif in png', 'avif in png umwandeln', 'avif zu png', 'avif konverter', 'avif in png transparent'],
+        'intro' => 'Beim Umwandeln von AVIF in PNG wird ein modernes, stark komprimiertes AVIF-Bild zu einem verlustfreien PNG, das fast jedes Programm öffnen kann. Transparente Hintergründe bleiben transparent, deshalb ist PNG die richtige Wahl für Logos, Icons und Grafiken. Ziehen Sie ein Bild oder einen Stapel hinein und laden Sie die Ergebnisse einzeln oder als ZIP herunter.',
+        'steps' => [
+            'Ziehen Sie Ihre AVIF-Bilder in das Feld oder klicken Sie, um sie auszuwählen (bis zu 30 auf einmal).',
+            'Jedes Bild wird sofort in Ihrem Browser in PNG umgewandelt.',
+            'Klicken Sie neben einem Bild auf Herunterladen oder auf Alle herunterladen (ZIP) für den ganzen Stapel.',
+        ],
+        'features' => [
+            'Wandelt AVIF verlustfrei in PNG um',
+            'Transparente Hintergründe bleiben erhalten',
+            'Bis zu 30 Bilder pro Stapel mit ZIP-Download',
+            '100 % privat: Es wird nichts hochgeladen',
+        ],
+        'content' => [
+            ['heading' => 'Wann ist PNG besser als JPG?', 'body' => 'Wählen Sie PNG für Logos, Icons, Screenshots und alle Bilder mit transparenten Bereichen oder scharfen Kanten, denn PNG ist verlustfrei und unterstützt Transparenz. Für normale Fotos erzeugt JPG deutlich kleinere Dateien – dann ist AVIF in JPG meist die bessere Wahl.'],
+            ['heading' => 'Verliert das Bild beim Umwandeln in PNG an Qualität?', 'body' => 'Die Umwandlung selbst verursacht keinen Verlust, weil PNG jedes Pixel exakt speichert. Wurde das ursprüngliche AVIF verlustbehaftet komprimiert, bleibt dieser frühere Verlust bestehen, es kommt aber kein neuer hinzu.'],
+        ],
+        'faqs' => [
+            ['q' => 'Wie wandle ich AVIF in PNG um?', 'a' => 'Ziehen Sie die AVIF-Datei in das Feld oben. Sie wird sofort in PNG umgewandelt und Sie laden sie mit einem Klick herunter.'],
+            ['q' => 'Bleibt die Transparenz erhalten?', 'a' => 'Ja. PNG unterstützt Transparenz, daher bleiben transparente Bereiche des AVIF auch im PNG transparent.'],
+            ['q' => 'Warum ist das PNG so viel größer?', 'a' => 'AVIF komprimiert sehr effizient, PNG dagegen verlustfrei – dasselbe Bild kann als PNG um ein Vielfaches größer sein.'],
+            ['q' => 'Werden meine Bilder hochgeladen?', 'a' => 'Nein. Die Umwandlung läuft in Ihrem Browser und Ihre Bilder verlassen nie Ihr Gerät.'],
+        ],
+    ],
+
+    'avif-to-webp' => [
+        'name' => 'AVIF in WebP',
+        'title' => 'AVIF in WebP umwandeln - kostenlos online, Stapel',
+        'description' => 'AVIF kostenlos online in WebP umwandeln. Kleine Dateien und Transparenz bleiben, bis zu 30 Bilder pro Stapel, Download als ZIP. Kein Upload.',
+        'h1' => 'AVIF in WebP umwandeln',
+        'tagline' => 'Wandeln Sie AVIF in WebP um und behalten Sie kleine Dateien.',
+        'keywords' => ['avif in webp', 'avif in webp umwandeln', 'avif zu webp', 'avif webp', 'avif konverter online'],
+        'intro' => 'Durch das Umwandeln von AVIF in WebP erhalten Sie ein kleines, webtaugliches Bild, das mehr Programme und Content-Management-Systeme akzeptieren als AVIF. WebP behält die Transparenz und komprimiert gut, sodass die Dateien deutlich kleiner bleiben als PNG oder JPG. Ziehen Sie ein Bild oder einen Stapel hinein, wählen Sie die Qualität und laden Sie die Ergebnisse herunter.',
+        'steps' => [
+            'Ziehen Sie Ihre AVIF-Bilder in das Feld oder klicken Sie, um sie auszuwählen (bis zu 30 auf einmal).',
+            'Passen Sie bei Bedarf die WebP-Qualität an; 85 % ist ein guter Kompromiss aus Größe und Schärfe.',
+            'Klicken Sie neben einem Bild auf Herunterladen oder auf Alle herunterladen (ZIP) für den ganzen Stapel.',
+        ],
+        'features' => [
+            'Wandelt AVIF in Ihrem Browser in WebP um',
+            'Transparente Hintergründe bleiben erhalten',
+            'Einstellbare Qualität und ZIP-Download',
+            '100 % privat: Es wird nichts hochgeladen',
+        ],
+        'content' => [
+            ['heading' => 'AVIF oder WebP: Was soll ich nutzen?', 'body' => 'Beide sind moderne Formate mit Transparenz. AVIF erzeugt meist kleinere Dateien, WebP gibt es aber schon länger und es wird von mehr Programmen, Plugins und Upload-Formularen akzeptiert. Die Umwandlung in WebP ist ein guter Mittelweg, wenn eine Website oder ein Tool kein AVIF annimmt, Sie aber kleine Bilder möchten.'],
+            ['heading' => 'Sieht das WebP genauso aus?', 'body' => 'Ab 85 % Qualität ist der Unterschied kaum zu erkennen. Jedes verlustbehaftete Speichern kann etwas Detail kosten – zum Archivieren oder Weiterbearbeiten behält AVIF in PNG dagegen jedes Pixel.'],
+        ],
+        'faqs' => [
+            ['q' => 'Wie wandle ich AVIF in WebP um?', 'a' => 'Ziehen Sie die AVIF-Datei in das Feld oben, wählen Sie die Qualität und laden Sie das WebP mit einem Klick herunter.'],
+            ['q' => 'Bleibt die Transparenz erhalten?', 'a' => 'Ja. WebP unterstützt Transparenz, daher bleiben transparente Bereiche erhalten.'],
+            ['q' => 'Welche Browser können das?', 'a' => 'Aktuelle Versionen von Chrome, Edge, Firefox und Safari können AVIF lesen und WebP speichern, daher funktioniert der Konverter in allen.'],
+            ['q' => 'Werden meine Bilder hochgeladen?', 'a' => 'Nein. Alles passiert in Ihrem Browser und Ihre Bilder verlassen nie Ihr Gerät.'],
+        ],
+    ],
+
+    'readability-checker' => [
+        'name' => 'Lesbarkeitsprüfer',
+        'title' => 'Lesbarkeitsprüfer kostenlos: Flesch-Wert & Niveau',
+        'description' => 'Kostenloser Lesbarkeitsprüfer: Flesch-Lesbarkeitswert, Klassenstufe, Gunning Fog und SMOG berechnen und zu lange Sätze finden. Ihr Text bleibt privat.',
+        'h1' => 'Lesbarkeitsprüfer',
+        'tagline' => 'Sehen Sie, wie leicht Ihr Text lesbar ist – und was Sie verbessern können.',
+        'keywords' => ['lesbarkeit prüfen', 'lesbarkeitsprüfer', 'lesbarkeitsindex', 'flesch index', 'flesch reading ease', 'lesbarkeitstest'],
+        'intro' => 'Ein Lesbarkeitsprüfer misst, wie leicht ein Text zu lesen ist – mit Formeln, die auf Satz- und Wortlänge beruhen. Fügen Sie einen Artikel, eine Hausarbeit, eine E-Mail oder einen KI-Entwurf ein und erhalten Sie den Flesch-Lesbarkeitswert, die Klassenstufe nach fünf Formeln und eine Liste zu langer Sätze. Ihr Text wird in Ihrem Browser analysiert und nie hochgeladen.',
+        'steps' => [
+            'Fügen Sie Ihren Text in das Feld ein oder tippen Sie ihn.',
+            'Lesen Sie den Flesch-Wert und die Klassenstufe jeder Formel ab.',
+            'Kürzen Sie die unter den Ergebnissen aufgeführten langen Sätze und prüfen Sie erneut.',
+        ],
+        'features' => [
+            'Flesch-Lesbarkeitswert und Flesch-Kincaid-Klassenstufe',
+            'Gunning Fog, SMOG, Coleman-Liau und ARI',
+            'Markiert Sätze mit mehr als 25 Wörtern',
+            'Sofortige Ergebnisse; nichts wird hochgeladen',
+        ],
+        'content' => [
+            ['heading' => 'Was ist ein guter Lesbarkeitswert?', 'body' => 'Für die meisten Websites, Blogs und E-Mails sollten Sie einen Flesch-Wert von mindestens 60 anstreben – das ist einfache Sprache, die fast alle Erwachsenen mühelos lesen – und eine Klassenstufe von etwa 8 oder darunter. Fach- und wissenschaftliche Texte liegen oft bei 30 bis 50, was für Fachleute passt, für alle anderen aber schwer ist.'],
+            ['heading' => 'Wie mache ich meinen Text leichter lesbar?', 'body' => 'Teilen Sie lange Sätze, verwenden Sie kurze Alltagswörter statt langer, schreiben Sie aktiv und gliedern Sie große Absätze. Diese Änderungen erhöhen den Flesch-Wert direkt, weil er aus Wörtern pro Satz und Silben pro Wort berechnet wird.'],
+        ],
+        'faqs' => [
+            ['q' => 'Was ist der Flesch-Lesbarkeitswert?', 'a' => 'Ein Wert von 0 bis 100, der auf der durchschnittlichen Satzlänge und den Silben pro Wort beruht. Je höher, desto leichter: 60-70 ist einfache Sprache, über 90 sehr leicht.'],
+            ['q' => 'Was bedeutet die Klassenstufe?', 'a' => 'Sie gibt die US-Schulklasse an, die ein Leser braucht, um den Text zu verstehen. Stufe 8 entspricht einem typischen 13- bis 14-Jährigen.'],
+            ['q' => 'Kann ich KI-Texte prüfen?', 'a' => 'Ja. KI-Entwürfe enthalten oft lange Sätze und lange Wörter; der Prüfer zeigt, welche Sätze Sie kürzen sollten, damit der Text natürlicher klingt.'],
+            ['q' => 'Funktioniert das auch auf Deutsch?', 'a' => 'Die Formeln wurden für Englisch entwickelt, deshalb sind die Ergebnisse für deutsche Texte nur ein grober Anhaltspunkt.'],
+        ],
+        'table' => [
+            'caption' => 'Flesch-Lesbarkeitswerte',
+            'headers' => ['Wert', 'Niveau', 'Typischer Leser'],
+            'rows' => [
+                ['90-100', 'Sehr leicht', '11 Jahre'],
+                ['60-70', 'Einfache Sprache', '13-15 Jahre'],
+                ['30-50', 'Schwer', 'Studium'],
+                ['0-30', 'Sehr schwer', 'Hochschulabsolvent'],
+            ],
+        ],
+    ],
+
+    'ai-content-detector' => [
+        'name' => 'KI-Text-Detektor',
+        'title' => 'KI-Detektor kostenlos: KI-Texte erkennen',
+        'description' => 'Kostenloser KI-Detektor: Prüfen Sie, ob ein Text KI-generiert wirkt – mit Wert, den verräterischen Formulierungen und vier Schreibsignalen. Privat.',
+        'h1' => 'KI-Text-Detektor',
+        'tagline' => 'Prüfen Sie, wie KI-typisch ein Text wirkt – und warum.',
+        'keywords' => ['ki detektor', 'ki text erkennen', 'ki checker', 'chatgpt detektor', 'ki generierten text erkennen', 'ai detector kostenlos'],
+        'intro' => 'Ein KI-Text-Detektor schätzt, ob ein Text von einem KI-Chatbot wie ChatGPT geschrieben wurde. Dieser analysiert vier Signale, in denen sich typische KI-Texte von menschlichen unterscheiden: wie gleichmäßig die Sätze sind, KI-typische Formulierungen, Kurzformen und die Vielfalt des Wortschatzes. Er liefert einen Wert und zeigt genau, was ihn erhöht hat. Er analysiert englische Texte in Ihrem Browser, ohne etwas hochzuladen.',
+        'steps' => [
+            'Fügen Sie mindestens 80 Wörter englischen Text in das Feld ein.',
+            'Klicken Sie auf Text prüfen, um den Wert und die vier Signale zu sehen.',
+            'Sehen Sie sich die gefundenen KI-typischen Formulierungen an; umformuliert klingt der Text menschlicher.',
+        ],
+        'features' => [
+            'KI-Ähnlichkeitswert von 0 bis 100 %',
+            'Zeigt die gefundenen KI-typischen Formulierungen',
+            'Erklärt jedes Signal verständlich',
+            'Kostenlos, unbegrenzt und privat: Es wird nichts hochgeladen',
+        ],
+        'content' => [
+            ['heading' => 'Wie funktioniert KI-Erkennung?', 'body' => 'KI-Modelle schreiben oft sehr gleichmäßige Sätze, wiederholen dieselben polierten Wendungen („moreover“, „it is important to note“, „delve“) und vermeiden Kurzformen. Menschen mischen eher kurze und lange Sätze und schreiben lockerer. Der Detektor misst diese Muster und fasst sie zu einem Wert zusammen.'],
+            ['heading' => 'Wie zuverlässig sind KI-Detektoren?', 'body' => 'Kein KI-Detektor ist völlig zuverlässig. Sehr förmliche menschliche Texte können hoch bewertet werden, und überarbeitete oder locker formulierte KI-Texte niedrig. Betrachten Sie den Wert als Hinweis, genauer hinzusehen – nie als Beweis, und nutzen Sie ihn nie allein, um Schülern oder Autoren Täuschung vorzuwerfen.'],
+        ],
+        'faqs' => [
+            ['q' => 'Erkennt er ChatGPT?', 'a' => 'Er markiert Schreibmuster, die ChatGPT und ähnliche Modelle oft erzeugen. Überarbeitete oder gezielt gesteuerte KI-Texte werden möglicherweise nicht erkannt.'],
+            ['q' => 'Wie viel Text brauche ich?', 'a' => 'Mindestens 80 Wörter. Ab etwa 300 Wörtern ist der Wert aussagekräftiger.'],
+            ['q' => 'Kann ein menschlicher Text als KI gelten?', 'a' => 'Ja. Ein sehr förmlicher, gleichmäßiger Text mit Wörtern wie „furthermore“ kann hoch bewertet werden, auch wenn ein Mensch ihn geschrieben hat. Deshalb ist der Wert nur ein Anhaltspunkt.'],
+            ['q' => 'Wird mein Text gespeichert?', 'a' => 'Nein. Die Analyse läuft in Ihrem Browser und Ihr Text wird nirgendwohin gesendet.'],
+        ],
+    ],
+
 ];

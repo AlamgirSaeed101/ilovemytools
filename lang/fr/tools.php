@@ -1066,4 +1066,169 @@ return [
         ],
     ],
 
+    'avif-to-jpg' => [
+        'name' => 'AVIF en JPG',
+        'title' => 'Convertir AVIF en JPG gratuit, privé et par lots',
+        'description' => 'Convertissez des AVIF en JPG en ligne gratuitement. Jusqu’à 30 images à la fois, qualité réglable et ZIP. Vos images ne quittent pas votre appareil.',
+        'h1' => 'Convertisseur AVIF en JPG',
+        'tagline' => 'Transformez vos images AVIF en JPG lisibles partout.',
+        'keywords' => ['avif en jpg', 'convertir avif en jpg', 'convertisseur avif jpg', 'avif en jpeg', 'ouvrir un fichier avif'],
+        'intro' => 'L’AVIF est un format d’image moderne basé sur le codec vidéo AV1 qui produit des fichiers très légers, mais beaucoup d’applications, d’éditeurs et de formulaires ne savent pas encore l’ouvrir. Ce convertisseur AVIF en JPG transforme vos images AVIF en JPG, le format le plus compatible. Déposez une image ou un lot entier, choisissez la qualité et téléchargez les résultats un par un ou dans un ZIP.',
+        'steps' => [
+            'Déposez vos images AVIF dans le cadre ou cliquez pour les choisir (jusqu’à 30 à la fois).',
+            'Réglez la qualité du JPG si besoin ; 85 % garde des photos nettes avec un poids réduit.',
+            'Cliquez sur Télécharger à côté d’une image, ou sur Tout télécharger (ZIP) pour le lot.',
+        ],
+        'features' => [
+            'Convertit l’AVIF en JPG dans votre navigateur',
+            'Jusqu’à 30 images par lot avec téléchargement ZIP',
+            'Qualité JPG réglable',
+            '100 % privé : rien n’est envoyé',
+        ],
+        'content' => [
+            ['heading' => 'Pourquoi convertir l’AVIF en JPG ?', 'body' => 'Un fichier AVIF pèse souvent 30 à 50 % de moins qu’un JPG de même qualité visuelle, c’est pourquoi de nombreux sites servent désormais leurs images en AVIF. Une fois enregistrées, ces images peuvent être refusées par les anciens logiciels photo, les documents bureautiques, les imprimantes et certains réseaux sociaux. Le JPG fonctionne presque partout : en convertissant, vous obtenez un fichier utilisable n’importe où.'],
+            ['heading' => 'Que devient la transparence ?', 'body' => 'Le JPG ne gère pas la transparence. Si votre image AVIF contient des zones transparentes, elles deviennent blanches dans le JPG. Pour conserver la transparence, utilisez plutôt le convertisseur AVIF en PNG.'],
+        ],
+        'faqs' => [
+            ['q' => 'Comment convertir un AVIF en JPG ?', 'a' => 'Déposez le fichier AVIF dans le cadre ci-dessus. Il est converti en JPG immédiatement et vous le téléchargez en un clic.'],
+            ['q' => 'Pourquoi je n’arrive pas à ouvrir les fichiers AVIF ?', 'a' => 'L’AVIF est un format récent. Les navigateurs actuels l’ouvrent, mais beaucoup d’anciennes applications et de logiciels photo ne le gèrent pas encore : le convertir en JPG est la solution la plus simple.'],
+            ['q' => 'Le JPG sera-t-il plus lourd que l’AVIF ?', 'a' => 'En général, oui. L’AVIF compresse les images plus efficacement que le JPG, donc la même image prend plus de place en JPG.'],
+            ['q' => 'Mes images sont-elles envoyées sur un serveur ?', 'a' => 'Non. Votre navigateur décode l’AVIF et enregistre le JPG sur votre appareil : vos images ne quittent jamais votre ordinateur ou votre téléphone.'],
+        ],
+    ],
+
+    'avif-to-png' => [
+        'name' => 'AVIF en PNG',
+        'title' => 'Convertir AVIF en PNG gratuit, avec transparence',
+        'description' => 'Convertissez des AVIF en PNG en ligne gratuitement. La transparence est conservée, jusqu’à 30 images par lot et téléchargement ZIP. Rien n’est envoyé.',
+        'h1' => 'Convertisseur AVIF en PNG',
+        'tagline' => 'Convertissez vos AVIF en PNG en gardant la transparence.',
+        'keywords' => ['avif en png', 'convertir avif en png', 'convertisseur avif png', 'convertisseur avif', 'avif en png transparent'],
+        'intro' => 'Convertir un AVIF en PNG transforme une image AVIF moderne et très compressée en PNG sans perte, que presque toutes les applications savent ouvrir. Les fonds transparents restent transparents, ce qui fait du PNG le bon choix pour les logos, icônes et graphiques. Déposez une image ou un lot et téléchargez-les un par un ou dans un ZIP.',
+        'steps' => [
+            'Déposez vos images AVIF dans le cadre ou cliquez pour les choisir (jusqu’à 30 à la fois).',
+            'Chaque image est convertie en PNG immédiatement, dans votre navigateur.',
+            'Cliquez sur Télécharger à côté d’une image, ou sur Tout télécharger (ZIP) pour le lot.',
+        ],
+        'features' => [
+            'Convertit l’AVIF en PNG sans perte',
+            'Conserve les fonds transparents',
+            'Jusqu’à 30 images par lot avec téléchargement ZIP',
+            '100 % privé : rien n’est envoyé',
+        ],
+        'content' => [
+            ['heading' => 'Quand choisir le PNG plutôt que le JPG ?', 'body' => 'Choisissez le PNG pour les logos, icônes, captures d’écran et toute image avec des zones transparentes ou des contours nets, car le PNG est sans perte et gère la transparence. Pour des photos classiques, le JPG donne des fichiers bien plus légers : AVIF en JPG est alors souvent le meilleur choix.'],
+            ['heading' => 'La conversion AVIF en PNG fait-elle perdre en qualité ?', 'body' => 'La conversion elle-même n’ajoute aucune perte, car le PNG enregistre chaque pixel à l’identique. Si l’AVIF d’origine a été compressé avec perte, cette perte antérieure reste, mais aucune nouvelle n’est ajoutée.'],
+        ],
+        'faqs' => [
+            ['q' => 'Comment convertir un AVIF en PNG ?', 'a' => 'Déposez le fichier AVIF dans le cadre ci-dessus. Il est converti en PNG immédiatement et vous le téléchargez en un clic.'],
+            ['q' => 'La transparence est-elle conservée ?', 'a' => 'Oui. Le PNG gère la transparence : les zones transparentes de l’AVIF le restent dans le PNG.'],
+            ['q' => 'Pourquoi le PNG est-il beaucoup plus lourd ?', 'a' => 'L’AVIF utilise une compression très efficace alors que le PNG est sans perte : la même image peut peser plusieurs fois plus en PNG.'],
+            ['q' => 'Mes images sont-elles envoyées sur un serveur ?', 'a' => 'Non. La conversion se fait dans votre navigateur et vos images ne quittent jamais votre appareil.'],
+        ],
+    ],
+
+    'avif-to-webp' => [
+        'name' => 'AVIF en WebP',
+        'title' => 'Convertir AVIF en WebP gratuit en ligne, par lots',
+        'description' => 'Convertissez des AVIF en WebP en ligne gratuitement. Fichiers légers et transparence conservée, jusqu’à 30 images par lot et ZIP. Rien n’est envoyé.',
+        'h1' => 'Convertisseur AVIF en WebP',
+        'tagline' => 'Convertissez l’AVIF en WebP et gardez des fichiers légers.',
+        'keywords' => ['avif en webp', 'convertir avif en webp', 'convertisseur avif webp', 'avif webp', 'convertisseur avif en ligne'],
+        'intro' => 'Convertir un AVIF en WebP vous donne une image légère et adaptée au web, acceptée par davantage d’applications et de CMS que l’AVIF. Le WebP garde la transparence et compresse bien : vos fichiers restent bien plus légers qu’en PNG ou en JPG. Déposez une image ou un lot, choisissez la qualité et téléchargez les résultats.',
+        'steps' => [
+            'Déposez vos images AVIF dans le cadre ou cliquez pour les choisir (jusqu’à 30 à la fois).',
+            'Réglez la qualité du WebP si besoin ; 85 % offre un bon équilibre entre poids et netteté.',
+            'Cliquez sur Télécharger à côté d’une image, ou sur Tout télécharger (ZIP) pour le lot.',
+        ],
+        'features' => [
+            'Convertit l’AVIF en WebP dans votre navigateur',
+            'Conserve les fonds transparents',
+            'Qualité réglable et téléchargement du lot en ZIP',
+            '100 % privé : rien n’est envoyé',
+        ],
+        'content' => [
+            ['heading' => 'AVIF ou WebP : lequel choisir ?', 'body' => 'Ce sont deux formats modernes qui gèrent la transparence. L’AVIF donne souvent des fichiers plus légers, mais le WebP existe depuis plus longtemps et il est accepté par plus d’applications, d’extensions et de formulaires. Passer au WebP est un bon compromis quand un site ou un outil refuse l’AVIF mais que vous voulez des images légères.'],
+            ['heading' => 'Le WebP sera-t-il identique ?', 'body' => 'À partir de 85 % de qualité, la différence est très difficile à voir. Chaque enregistrement avec perte peut retirer un peu de détail : pour archiver ou retoucher ensuite, AVIF en PNG conserve tous les pixels.'],
+        ],
+        'faqs' => [
+            ['q' => 'Comment convertir un AVIF en WebP ?', 'a' => 'Déposez le fichier AVIF dans le cadre ci-dessus, choisissez la qualité et téléchargez le WebP en un clic.'],
+            ['q' => 'La transparence est-elle conservée ?', 'a' => 'Oui. Le WebP gère la transparence : les zones transparentes restent transparentes.'],
+            ['q' => 'Quels navigateurs peuvent le faire ?', 'a' => 'Les versions actuelles de Chrome, Edge, Firefox et Safari savent lire l’AVIF et enregistrer du WebP : le convertisseur fonctionne donc dans tous ces navigateurs.'],
+            ['q' => 'Mes images sont-elles envoyées sur un serveur ?', 'a' => 'Non. Tout se passe dans votre navigateur et vos images ne quittent jamais votre appareil.'],
+        ],
+    ],
+
+    'readability-checker' => [
+        'name' => 'Test de lisibilité',
+        'title' => 'Test de lisibilité gratuit : score Flesch et niveau',
+        'description' => 'Test de lisibilité gratuit : obtenez le score Flesch, le niveau scolaire, les indices Gunning Fog et SMOG, et repérez les phrases trop longues.',
+        'h1' => 'Test de lisibilité',
+        'tagline' => 'Voyez si votre texte est facile à lire, et quoi améliorer.',
+        'keywords' => ['test de lisibilité', 'lisibilité d’un texte', 'score de lisibilité', 'indice flesch', 'niveau de lecture', 'outil de lisibilité'],
+        'intro' => 'Un test de lisibilité mesure la facilité de lecture d’un texte grâce à des formules basées sur la longueur des phrases et des mots. Collez un article, un devoir, un e-mail ou un brouillon rédigé par une IA pour obtenir le score de facilité de lecture Flesch, le niveau scolaire selon cinq formules et la liste des phrases trop longues à raccourcir. Le texte est analysé dans votre navigateur et n’est jamais envoyé.',
+        'steps' => [
+            'Collez ou tapez votre texte dans le cadre.',
+            'Lisez le score Flesch et le niveau scolaire donné par chaque formule.',
+            'Raccourcissez les phrases longues listées sous les résultats, puis vérifiez à nouveau.',
+        ],
+        'features' => [
+            'Score Flesch et niveau Flesch-Kincaid',
+            'Gunning Fog, SMOG, Coleman-Liau et indice ARI',
+            'Repère les phrases de plus de 25 mots',
+            'Résultats immédiats ; rien n’est envoyé',
+        ],
+        'content' => [
+            ['heading' => 'Qu’est-ce qu’un bon score de lisibilité ?', 'body' => 'Pour la plupart des sites, blogs et e-mails, visez un score Flesch d’au moins 60, soit un langage simple que presque tous les adultes lisent facilement, et un niveau scolaire de 8 ou moins. Les textes techniques et universitaires obtiennent souvent 30 à 50, ce qui convient à des experts mais reste difficile pour les autres.'],
+            ['heading' => 'Comment rendre mon texte plus facile à lire ?', 'body' => 'Coupez les phrases longues en deux, préférez les mots courts et courants, utilisez la voix active et découpez les gros paragraphes. Ces changements font monter directement le score Flesch, car il se calcule à partir du nombre de mots par phrase et de syllabes par mot.'],
+        ],
+        'faqs' => [
+            ['q' => 'Qu’est-ce que le score de facilité de lecture Flesch ?', 'a' => 'C’est un score de 0 à 100 basé sur la longueur moyenne des phrases et le nombre de syllabes par mot. Plus il est élevé, plus le texte est facile : 60-70 correspond à un langage simple et plus de 90 à un texte très facile.'],
+            ['q' => 'Que signifie le niveau scolaire ?', 'a' => 'C’est la classe américaine dont un lecteur a besoin pour comprendre le texte. Le niveau 8 correspond à un élève typique de 13 ou 14 ans.'],
+            ['q' => 'Puis-je tester un texte écrit par une IA ?', 'a' => 'Oui. Les brouillons d’IA contiennent souvent des phrases et des mots longs ; l’outil indique quelles phrases raccourcir pour un texte plus naturel.'],
+            ['q' => 'Est-ce que ça fonctionne en français ?', 'a' => 'Les formules ont été conçues pour l’anglais : en français, les résultats ne sont qu’une indication approximative.'],
+        ],
+        'table' => [
+            'caption' => 'Scores de facilité de lecture Flesch',
+            'headers' => ['Score', 'Niveau', 'Lecteur type'],
+            'rows' => [
+                ['90-100', 'Très facile', '11 ans'],
+                ['60-70', 'Langage simple', '13-15 ans'],
+                ['30-50', 'Difficile', 'Études supérieures'],
+                ['0-30', 'Très difficile', 'Diplômé universitaire'],
+            ],
+        ],
+    ],
+
+    'ai-content-detector' => [
+        'name' => 'Détecteur de contenu IA',
+        'title' => 'Détecteur de contenu IA gratuit : vérifiez un texte',
+        'description' => 'Détecteur d’IA gratuit : vérifiez si un texte semble généré par une IA, avec un score, les expressions qui le trahissent et quatre signaux d’écriture.',
+        'h1' => 'Détecteur de contenu IA',
+        'tagline' => 'Voyez à quel point un texte ressemble à de l’IA, et pourquoi.',
+        'keywords' => ['détecteur ia', 'détecteur de contenu ia', 'détecteur de texte ia', 'détecteur chatgpt', 'détecter un texte ia', 'détecteur ia gratuit'],
+        'intro' => 'Un détecteur de contenu IA estime si un texte a été écrit par un chatbot comme ChatGPT. Celui-ci analyse quatre signaux qui distinguent l’écriture typique d’une IA de celle d’une personne : la régularité des phrases, les expressions typiques de l’IA, les contractions et la variété du vocabulaire. Il donne un score et montre précisément ce qui l’a fait monter. Il analyse les textes en anglais dans votre navigateur, sans rien envoyer.',
+        'steps' => [
+            'Collez au moins 80 mots d’un texte en anglais dans le cadre.',
+            'Cliquez sur Vérifier le texte pour obtenir le score et les quatre signaux.',
+            'Repérez les expressions typiques de l’IA trouvées ; les reformuler rend le texte plus humain.',
+        ],
+        'features' => [
+            'Score de ressemblance avec l’IA de 0 à 100 %',
+            'Affiche les expressions typiques de l’IA trouvées',
+            'Explique chaque signal simplement',
+            'Gratuit, illimité et privé : rien n’est envoyé',
+        ],
+        'content' => [
+            ['heading' => 'Comment fonctionne la détection d’IA ?', 'body' => 'Les modèles d’IA écrivent souvent des phrases très régulières, répètent les mêmes formules soignées (« moreover », « it is important to note », « delve ») et évitent les contractions. Les humains mélangent plutôt phrases courtes et longues et écrivent de façon plus naturelle. Le détecteur mesure ces tendances et les combine en un seul score.'],
+            ['heading' => 'Les détecteurs d’IA sont-ils fiables ?', 'body' => 'Aucun détecteur d’IA n’est totalement fiable. Un texte humain très formel peut obtenir un score élevé, et un texte d’IA retravaillé ou rédigé sur un ton familier peut obtenir un score faible. Voyez le score comme un indice pour regarder de plus près, jamais comme une preuve, et ne l’utilisez jamais seul pour accuser un élève ou un rédacteur de tricher.'],
+        ],
+        'faqs' => [
+            ['q' => 'Est-ce qu’il détecte ChatGPT ?', 'a' => 'Il repère les tournures que ChatGPT et les modèles similaires produisent souvent. Un texte d’IA retravaillé ou bien guidé peut passer inaperçu.'],
+            ['q' => 'De combien de texte ai-je besoin ?', 'a' => 'Au moins 80 mots. Avec 300 mots ou plus, le score est plus pertinent.'],
+            ['q' => 'Un texte humain peut-il être vu comme de l’IA ?', 'a' => 'Oui. Un texte très formel et régulier avec des mots comme « furthermore » peut obtenir un score élevé même s’il a été écrit par une personne. C’est pourquoi le score n’est qu’une indication.'],
+            ['q' => 'Mon texte est-il conservé ?', 'a' => 'Non. L’analyse se fait dans votre navigateur et votre texte n’est jamais envoyé nulle part.'],
+        ],
+    ],
+
 ];

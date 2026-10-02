@@ -1066,4 +1066,169 @@ return [
         ],
     ],
 
+    'avif-to-jpg' => [
+        'name' => 'AVIF para JPG',
+        'title' => 'Converter AVIF para JPG grátis: privado e em lote',
+        'description' => 'Converta AVIF para JPG online grátis. Até 30 imagens de uma vez, escolha a qualidade e baixe um ZIP. Suas imagens nunca saem dseu dispositivo.',
+        'h1' => 'Conversor de AVIF para JPG',
+        'tagline' => 'Transforme imagens AVIF em JPG que abrem em qualquer lugar.',
+        'keywords' => ['avif para jpg', 'converter avif para jpg', 'conversor avif para jpg', 'avif para jpeg', 'abrir arquivo avif'],
+        'intro' => 'AVIF é um formato de imagem moderno baseado no codec de vídeo AV1 que cria arquivos muito pequenos, mas muitos aplicativos, editores e formulários ainda não o abrem. Este conversor de AVIF para JPG transforma suas imagens AVIF em JPG, o formato mais compatível. Solte uma imagem ou um lote inteiro, escolha a qualidade e baixe os resultados um a um ou num ZIP.',
+        'steps' => [
+            'Solte suas imagens AVIF na caixa ou clique para escolhê-las (até 30 de uma vez).',
+            'Ajuste a qualidade do JPG se quiser; 85% mantém as fotos nítidas com um tamanho pequeno.',
+            'Clique em Baixar ao lado de cada imagem ou em Baixar tudo (ZIP) para o lote completo.',
+        ],
+        'features' => [
+            'Converte AVIF para JPG nseu navegador',
+            'Até 30 imagens por lote com download em ZIP',
+            'Qualidade do JPG ajustável',
+            '100% privado: nada é enviado',
+        ],
+        'content' => [
+            ['heading' => 'Por que converter AVIF para JPG?', 'body' => 'Os arquivos AVIF costumam ser 30 a 50% menores do que um JPG com a mesma qualidade visual, por isso muitos sites já servem suas imagens em AVIF. Ao salvá-las, editores de fotos antigos, documentos de escritório, impressoras e algumas redes sociais podem não abri-las. O JPG funciona em quase todo lugar, por isso, ao converter, você obtém um arquivo que pode usar onde quiser.'],
+            ['heading' => 'O que acontece com a transparência?', 'body' => 'O JPG não suporta transparência. Se sua imagem AVIF tiver áreas transparentes, elas ficam brancas no JPG. Para manter a transparência, use o conversor de AVIF para PNG.'],
+        ],
+        'faqs' => [
+            ['q' => 'Como converto AVIF para JPG?', 'a' => 'Solte o arquivo AVIF na caixa acima. Ele é convertido para JPG na hora e você pode baixá-lo com um clique.'],
+            ['q' => 'Por que não consigo abrir arquivos AVIF?', 'a' => 'O AVIF é um formato recente. Os navegadores atuais o abrem, mas muitos aplicativos e editores antigos ainda não, por isso converter para JPG é a solução mais simples.'],
+            ['q' => 'O JPG vai ficar maior do que o AVIF?', 'a' => 'Normalmente sim. O AVIF comprime as imagens de forma mais eficiente do que o JPG, por isso a mesma imagem ocupa mais em JPG.'],
+            ['q' => 'Minhas imagens são enviadas?', 'a' => 'Não. Seu navegador lê o AVIF e salva o JPG nseu dispositivo, por isso suas imagens nunca saem do seu computador ou celular.'],
+        ],
+    ],
+
+    'avif-to-png' => [
+        'name' => 'AVIF para PNG',
+        'title' => 'Converter AVIF para PNG grátis, com transparência',
+        'description' => 'Converta AVIF para PNG online grátis. Os fundos transparentes são mantidos, até 30 imagens por lote e download em ZIP. Nada é enviado.',
+        'h1' => 'Conversor de AVIF para PNG',
+        'tagline' => 'Converta imagens AVIF para PNG mantendo a transparência.',
+        'keywords' => ['avif para png', 'converter avif para png', 'conversor avif para png', 'conversor avif', 'avif para png transparente'],
+        'intro' => 'Converter AVIF para PNG transforma uma imagem AVIF moderna e muito comprimida num PNG sem perdas que quase qualquer aplicativo consegue abrir. Os fundos transparentes continuam transparentes, por isso o PNG é a melhor escolha para logotipos, ícones e gráficos. Solte uma imagem ou um lote e baixe-os um a um ou num ZIP.',
+        'steps' => [
+            'Solte suas imagens AVIF na caixa ou clique para escolhê-las (até 30 de uma vez).',
+            'Cada imagem é convertida para PNG na hora, nseu navegador.',
+            'Clique em Baixar ao lado de cada imagem ou em Baixar tudo (ZIP) para o lote completo.',
+        ],
+        'features' => [
+            'Converte AVIF para PNG sem perdas',
+            'Mantém os fundos transparentes',
+            'Até 30 imagens por lote com download em ZIP',
+            '100% privado: nada é enviado',
+        ],
+        'content' => [
+            ['heading' => 'Quando escolher PNG em vez de JPG?', 'body' => 'Escolha PNG para logotipos, ícones, capturas de tela e qualquer imagem com áreas transparentes ou contornos nítidos, porque o PNG não tem perdas e suporta transparência. Para fotos normais, o JPG gera arquivos muito menores, por isso AVIF para JPG costuma ser a melhor opção.'],
+            ['heading' => 'Converter AVIF para PNG perde qualidade?', 'body' => 'A conversão em si não acrescenta perdas, porque o PNG salva cada pixel exatamente. Se o AVIF original foi salvo com compressão com perdas, essa perda anterior continua, mas nenhuma nova é acrescentada.'],
+        ],
+        'faqs' => [
+            ['q' => 'Como converto AVIF para PNG?', 'a' => 'Solte o arquivo AVIF na caixa acima. Ele é convertido para PNG na hora e você pode baixá-lo com um clique.'],
+            ['q' => 'A transparência é mantida?', 'a' => 'Sim. O PNG suporta transparência, por isso as áreas transparentes do AVIF continuam assim no PNG.'],
+            ['q' => 'Por que o PNG fica tão maior?', 'a' => 'O AVIF usa uma compressão muito eficiente e o PNG não tem perdas, por isso a mesma imagem pode ficar várias vezes maior em PNG.'],
+            ['q' => 'Minhas imagens são enviadas?', 'a' => 'Não. A conversão acontece nseu navegador e suas imagens nunca saem dseu dispositivo.'],
+        ],
+    ],
+
+    'avif-to-webp' => [
+        'name' => 'AVIF para WebP',
+        'title' => 'Converter AVIF para WebP grátis online, em lote',
+        'description' => 'Converta AVIF para WebP online grátis. Mantenha arquivos leves e a transparência, até 30 imagens por lote e download em ZIP. Nada é enviado.',
+        'h1' => 'Conversor de AVIF para WebP',
+        'tagline' => 'Converta AVIF para WebP e mantenha os arquivos leves.',
+        'keywords' => ['avif para webp', 'converter avif para webp', 'conversor avif para webp', 'avif webp', 'conversor avif online'],
+        'intro' => 'Converter AVIF para WebP gera uma imagem leve e pronta para a web que mais aplicativos e gestores de conteúdo aceitam do que o AVIF. O WebP mantém a transparência e comprime bem, por isso os arquivos continuam muito menores do que em PNG ou JPG. Solte uma imagem ou um lote, escolha a qualidade e baixe os resultados.',
+        'steps' => [
+            'Solte suas imagens AVIF na caixa ou clique para escolhê-las (até 30 de uma vez).',
+            'Ajuste a qualidade do WebP se quiser; 85% equilibra bem tamanho e nitidez.',
+            'Clique em Baixar ao lado de cada imagem ou em Baixar tudo (ZIP) para o lote completo.',
+        ],
+        'features' => [
+            'Converte AVIF para WebP nseu navegador',
+            'Mantém os fundos transparentes',
+            'Qualidade ajustável e download do lote em ZIP',
+            '100% privado: nada é enviado',
+        ],
+        'content' => [
+            ['heading' => 'AVIF ou WebP: qual usar?', 'body' => 'Ambos são formatos modernos com transparência. O AVIF costuma criar arquivos menores, mas o WebP existe há mais tempo e é aceito por mais aplicativos, plugins e formulários. Converter para WebP é um bom meio-termo quando um site ou ferramenta não aceita AVIF mas você quer imagens leves.'],
+            ['heading' => 'O WebP vai ficar igual?', 'body' => 'Com 85% de qualidade ou mais, a diferença é muito difícil de ver. Cada salvamento com perdas pode tirar algum detalhe, por isso para arquivar ou continuar a editar, AVIF para PNG mantém todos os pixels.'],
+        ],
+        'faqs' => [
+            ['q' => 'Como converto AVIF para WebP?', 'a' => 'Solte o arquivo AVIF na caixa acima, escolha a qualidade e baixe o WebP com um clique.'],
+            ['q' => 'A transparência é mantida?', 'a' => 'Sim. O WebP suporta transparência, por isso as áreas transparentes são mantidas.'],
+            ['q' => 'Que navegadores conseguem fazer isto?', 'a' => 'As versões atuais do Chrome, Edge, Firefox e Safari leem AVIF e salvam WebP, por isso o conversor funciona em todos eles.'],
+            ['q' => 'Minhas imagens são enviadas?', 'a' => 'Não. Tudo acontece nseu navegador e suas imagens nunca saem dseu dispositivo.'],
+        ],
+    ],
+
+    'readability-checker' => [
+        'name' => 'Verificador de legibilidade',
+        'title' => 'Verificador de legibilidade grátis: índice Flesch',
+        'description' => 'Verificador de legibilidade grátis: veja o índice Flesch, o nível escolar, Gunning Fog e SMOG, e encontre as frases longas que deve corrigir.',
+        'h1' => 'Verificador de legibilidade',
+        'tagline' => 'Veja como seu texto é fácil de ler e o que melhorar.',
+        'keywords' => ['verificador de legibilidade', 'legibilidade de texto', 'índice de legibilidade', 'índice flesch', 'nível de leitura', 'teste de legibilidade'],
+        'intro' => 'Um verificador de legibilidade mede como um texto é fácil de ler, com fórmulas baseadas no comprimento das frases e das palavras. Cole um artigo, trabalho, e-mail ou rascunho escrito com IA para obter o índice de facilidade de leitura Flesch, o nível escolar segundo cinco fórmulas e uma lista de frases longas a encurtar. O texto é analisado nseu navegador e nunca é enviado.',
+        'steps' => [
+            'Cole ou escreva seu texto na caixa.',
+            'Veja o índice Flesch e o nível escolar dado por cada fórmula.',
+            'Encurte as frases longas listadas abaixo dos resultados e verifique novamente.',
+        ],
+        'features' => [
+            'Índice Flesch e nível Flesch-Kincaid',
+            'Gunning Fog, SMOG, Coleman-Liau e índice ARI',
+            'Destaca as frases com mais de 25 palavras',
+            'Resultados imediatos; nada é enviado',
+        ],
+        'content' => [
+            ['heading' => 'O que é uma boa pontuação de legibilidade?', 'body' => 'Para a maioria dos sites, blogs e e-mails, procure um índice Flesch de 60 ou mais, o que corresponde a uma linguagem simples que quase todos os adultos leem com facilidade, e um nível escolar de 8 ou menos. Textos técnicos e acadêmicos costumam ficar entre 30 e 50, o que é normal para especialistas mas difícil para os demais.'],
+            ['heading' => 'Como torno meu texto mais fácil de ler?', 'body' => 'Divida as frases longas em duas, use palavras curtas e do dia a dia, prefira a voz ativa e separe os parágrafos grandes. Estas mudanças aumentam diretamente o índice Flesch, porque ele é calculado a partir das palavras por frase e das sílabas por palavra.'],
+        ],
+        'faqs' => [
+            ['q' => 'O que é o índice de facilidade de leitura Flesch?', 'a' => 'É uma pontuação de 0 a 100 baseada no comprimento médio das frases e nas sílabas por palavra. Quanto mais alta, mais fácil: 60-70 é linguagem simples e mais de 90 é muito fácil.'],
+            ['q' => 'O que significa o nível escolar?', 'a' => 'É o ano escolar dos EUA que um leitor precisa ter para entender o texto. Nível 8 significa que um jovem típico de 13 ou 14 anos o entende.'],
+            ['q' => 'Posso verificar textos escritos com IA?', 'a' => 'Sim. Os rascunhos de IA costumam ter frases e palavras longas; o verificador mostra quais frases encurtar para que o texto soe mais natural.'],
+            ['q' => 'Funciona em português?', 'a' => 'As fórmulas foram criadas para o inglês, por isso em português os resultados são apenas uma orientação aproximada.'],
+        ],
+        'table' => [
+            'caption' => 'Pontuações do índice Flesch',
+            'headers' => ['Pontuação', 'Nível', 'Leitor típico'],
+            'rows' => [
+                ['90-100', 'Muito fácil', '11 anos'],
+                ['60-70', 'Linguagem simples', '13-15 anos'],
+                ['30-50', 'Difícil', 'Universidade'],
+                ['0-30', 'Muito difícil', 'Licenciado'],
+            ],
+        ],
+    ],
+
+    'ai-content-detector' => [
+        'name' => 'Detector de conteúdo IA',
+        'title' => 'Detector de conteúdo IA grátis: verifique textos',
+        'description' => 'Detector de IA grátis: verifique se um texto parece gerado por IA com uma pontuação, as frases que o denunciam e quatro sinais de escrita. Privado.',
+        'h1' => 'Detector de conteúdo IA',
+        'tagline' => 'Veja o quanto um texto parece escrito por IA e porquê.',
+        'keywords' => ['detector de ia', 'detector de conteúdo ia', 'detector de texto ia', 'detector de chatgpt', 'detectar texto de ia', 'detector ia grátis'],
+        'intro' => 'Um detector de conteúdo IA estima se um texto foi escrito por um chatbot de IA como o ChatGPT. Este analisa quatro sinais que distinguem a escrita típica de uma IA da de uma pessoa: a regularidade das frases, expressões típicas de IA, contrações e a variedade do vocabulário. Ele dá uma pontuação e mostra exatamente o que a fez subir. Analisa textos em inglês nseu navegador, sem enviar nada.',
+        'steps' => [
+            'Cole pelo menos 80 palavras de um texto em inglês na caixa.',
+            'Clique em Verificar texto para ver a pontuação e os quatro sinais.',
+            'Revise as expressões típicas de IA encontradas; reescrevê-las faz o texto soar mais humano.',
+        ],
+        'features' => [
+            'Pontuação de semelhança com IA de 0 a 100%',
+            'Mostra as expressões típicas de IA encontradas',
+            'Explica cada sinal em palavras simples',
+            'Grátis, ilimitado e privado: nada é enviado',
+        ],
+        'content' => [
+            ['heading' => 'Como funciona a detecção de IA?', 'body' => 'Os modelos de IA costumam escrever frases muito regulares, repetir as mesmas expressões polidas («moreover», «it is important to note», «delve») e evitar contrações. As pessoas costumam misturar frases curtas e longas e escrever de forma mais informal. O detector mede estes padrões e combina-os numa única pontuação.'],
+            ['heading' => 'Os detectores de IA são confiáveis?', 'body' => 'Nenhum detector de IA é totalmente confiável. Um texto humano muito formal pode ter uma pontuação alta, e um texto de IA editado ou escrito num tom informal pode ter uma pontuação baixa. Use a pontuação como uma pista para olhar com atenção, nunca como prova, e nunca a use sozinha para acusar um estudante ou redator de copiar.'],
+        ],
+        'faqs' => [
+            ['q' => 'Detecta o ChatGPT?', 'a' => 'Sinaliza os padrões de escrita que o ChatGPT e modelos semelhantes costumam produzir. Um texto de IA editado ou bem orientado pode não ser detectado.'],
+            ['q' => 'De quanto texto preciso?', 'a' => 'Pelo menos 80 palavras. Com textos de 300 palavras ou mais, a pontuação é mais significativa.'],
+            ['q' => 'Um texto humano pode parecer IA?', 'a' => 'Sim. Um texto muito formal e regular com palavras como «furthermore» pode ter uma pontuação alta mesmo que uma pessoa o tenha escrito. Por isso a pontuação é apenas uma orientação.'],
+            ['q' => 'Meu texto é salvo?', 'a' => 'Não. A análise acontece nseu navegador e seu texto nunca é enviado para lugar nenhum.'],
+        ],
+    ],
+
 ];

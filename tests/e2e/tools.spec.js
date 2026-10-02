@@ -192,7 +192,7 @@ test.describe('Image tools', () => {
         expect(pngFile.suggestedFilename()).toBe('photo.png');
         expect(isPng(await readDownload(pngFile))).toBe(true);
         await page.getByTestId('file-input').setInputFiles({ name: 'notes.txt', mimeType: 'text/plain', buffer: Buffer.from('hi') });
-        await expect(page.getByText('please choose JPG, PNG, WebP, GIF or BMP images')).toBeVisible();
+        await expect(page.getByText('please choose JPG, PNG, WebP, AVIF, GIF or BMP images')).toBeVisible();
     });
 
     test('image resizer keeps aspect ratio and outputs the exact size', async ({ page }) => {
@@ -430,5 +430,65 @@ test.describe('Developer tools', () => {
         await page.goto('/');
         await page.locator('main a.tool-card[href="/what-is-my-ip"]').first().click();
         await expect(page.getByTestId('ip-value')).toHaveText('127.0.0.1');
+    });
+});
+
+test.describe('Text analysis and AVIF', () => {
+    test('AVIF to WebP and AVIF to JPG convert a real AVIF file', async ({ page }) => {
+        const fs = await import('node:fs/promises');
+        const avif = await fs.readFile(new URL('./fixtures/sample.avif', import.meta.url));
+
+        await openTool(page, 'avif-to-webp');
+        await expect(page.getByRole('heading', { level: 1 })).toHaveText('AVIF to WebP Converter');
+        await page.getByTestId('file-input').setInputFiles([{ name: 'photo.avif', mimeType: 'image/avif', buffer: avif }]);
+        const items = page.locator('.file-item');
+        await expect(items.getByRole('button', { name: 'Download' })).toHaveCount(1, { timeout: 30_000 });
+        const [webp] = await Promise.all([page.waitForEvent('download'), items.first().getByRole('button', { name: 'Download' }).click()]);
+        expect(webp.suggestedFilename()).toBe('photo.webp');
+        const buf = await readDownload(webp);
+        expect(buf.subarray(0, 4).toString()).toBe('RIFF');
+        expect(buf.subarray(8, 12).toString()).toBe('WEBP');
+
+        await openTool(page, 'avif-to-jpg');
+        await page.getByTestId('file-input').setInputFiles([{ name: 'photo.avif', mimeType: 'image/avif', buffer: avif }]);
+        const [jpg] = await Promise.all([page.waitForEvent('download'), page.locator('.file-item').first().getByRole('button', { name: 'Download' }).click({ timeout: 30_000 })]);
+        expect(jpg.suggestedFilename()).toBe('photo.jpg');
+        const j = await readDownload(jpg);
+        expect(j[0] === 0xff && j[1] === 0xd8).toBe(true);
+    });
+
+    test('readability checker scores text and lists long sentences', async ({ page }) => {
+        await openTool(page, 'readability-checker');
+        const box = page.getByLabel('Your text');
+        await box.fill('The cat sat on the mat. The dog ran to the park. We had fun in the sun.');
+        await expect(page.getByTestId('readability-level')).toHaveText('Very easy');
+        expect(Number(await page.getByTestId('flesch-ease').textContent())).toBeGreaterThan(90);
+
+        await box.fill(`${'This is a very long sentence that keeps going and going '.repeat(4)}until it ends. Short one.`);
+        await expect(page.getByText(/Long sentences to shorten \(1\)/)).toBeVisible();
+        await expect(page.getByRole('table', { name: 'Readability scores' })).toContainText('Gunning Fog Index');
+    });
+
+    test('AI content detector separates AI-style and casual human text', async ({ page }) => {
+        await openTool(page, 'ai-content-detector');
+        const box = page.getByLabel('Text to check');
+        const check = page.getByRole('button', { name: 'Check text' });
+
+        await box.fill('Just a few words here.');
+        await check.click();
+        await expect(page.getByText(/Please paste at least 80 words/)).toBeVisible();
+
+        await box.fill(
+            "In today's fast-paced digital landscape, it is important to note that effective communication plays a crucial role in organizational success. Furthermore, businesses must leverage robust strategies to navigate the complexities of an ever-evolving market. Moreover, fostering a holistic approach enables teams to unlock the potential of their workforce. Additionally, organizations that embrace innovation can seamlessly streamline their operations. In conclusion, a comprehensive strategy is a testament to the paramount importance of meticulous planning. Overall, companies that delve into these practices will empower their employees and elevate their performance in a vibrant and dynamic realm.",
+        );
+        await check.click();
+        await expect(page.getByTestId('ai-verdict')).toHaveText('Likely AI-generated');
+        await expect(page.getByText('AI-typical phrases found')).toBeVisible();
+
+        await box.fill(
+            "I didn't plan to buy a bike. Honestly, I just walked past the shop on Saturday because the bakery next door was out of bread, and there it was: a green one, a bit rusty, forty quid. The guy said it'd been sitting there since spring. I rode it home in the rain. Got soaked. My neighbour laughed at me, which, fair enough. Anyway, it's been three weeks now and I've ridden it to work almost every day. Turns out the hill on Mill Lane is brutal! But I'm getting faster, and I don't miss the bus at all. Not even a little.",
+        );
+        await check.click();
+        await expect(page.getByTestId('ai-verdict')).toHaveText('Likely human-written');
     });
 });

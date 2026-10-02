@@ -5,7 +5,7 @@ import { EXTENSIONS, IMAGE_TYPES, imageTypeOf, loadImage, MAX_FILE_BYTES, MAX_SI
 import { baseName, downloadBlob, formatBytes, safeFilename } from '../lib/util.js';
 import { formatNumber, t } from '../lib/i18n.js';
 
-const INPUT_TYPES = [...IMAGE_TYPES, 'image/gif', 'image/bmp'];
+const INPUT_TYPES = [...IMAGE_TYPES, 'image/avif', 'image/gif', 'image/bmp'];
 
 export default function ImageResizer() {
     const [source, setSource] = useState(null); // { file, img, url, width, height }
@@ -113,10 +113,10 @@ export default function ImageResizer() {
                 <Dropzone
                     accept="image/*"
                     isAccepted={(f) => INPUT_TYPES.includes(imageTypeOf(f))}
-                    onReject={() => setError(t('Please choose a JPG, PNG, WebP, GIF or BMP image.'))}
+                    onReject={() => setError(t('Please choose a JPG, PNG, WebP, AVIF, GIF or BMP image.'))}
                     onFiles={openFile}
                     title={t('Drop an image here or click to choose')}
-                    hint={t('JPG, PNG, WebP, GIF or BMP · max 50 MB')}
+                    hint={t('JPG, PNG, WebP, AVIF, GIF or BMP · max 50 MB')}
                 />
                 <Notice type="error">{error}</Notice>
             </div>

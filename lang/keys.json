@@ -203,7 +203,8 @@
     "key": "{count} words",
     "one": "{count} word",
     "files": [
-      "resources/js/tools/CaseConverter.jsx"
+      "resources/js/tools/CaseConverter.jsx",
+      "resources/js/tools/ReadabilityChecker.jsx"
     ]
   },
   {
@@ -228,7 +229,7 @@
     ]
   },
   {
-    "key": "{files}: please choose JPG, PNG, WebP, GIF or BMP images.",
+    "key": "{files}: please choose JPG, PNG, WebP, AVIF, GIF or BMP images.",
     "files": [
       "resources/js/tools/ImageConverter.jsx"
     ]
@@ -346,6 +347,12 @@
     "key": "{value}% increase",
     "files": [
       "resources/js/lib/percent.js"
+    ]
+  },
+  {
+    "key": "{words} words · {sentences} sentences analysed",
+    "files": [
+      "resources/js/tools/AiDetector.jsx"
     ]
   },
   {
@@ -530,6 +537,12 @@
     ]
   },
   {
+    "key": "A smaller range of different words than usual.",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
     "key": "About",
     "files": [
       "resources/js/components/Layout.jsx",
@@ -649,6 +662,30 @@
     ]
   },
   {
+    "key": "AI rarely writes \"don't\" or \"it's\" unless asked to.",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "AI-likeness score",
+    "files": [
+      "resources/js/tools/AiDetector.jsx"
+    ]
+  },
+  {
+    "key": "AI-typical phrases",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "AI-typical phrases found",
+    "files": [
+      "resources/js/tools/AiDetector.jsx"
+    ]
+  },
+  {
     "key": "All free tools",
     "files": [
       "resources/js/pages/ToolPage.jsx",
@@ -712,6 +749,12 @@
     ]
   },
   {
+    "key": "Automated Readability Index",
+    "files": [
+      "resources/js/tools/ReadabilityChecker.jsx"
+    ]
+  },
+  {
     "key": "Automatic",
     "files": [
       "resources/js/tools/JpgToPdf.jsx"
@@ -722,6 +765,12 @@
     "one": "Available in {count} language",
     "files": [
       "resources/js/pages/Home.jsx"
+    ]
+  },
+  {
+    "key": "Average grade level: {grade} · about {minutes} min to read",
+    "files": [
+      "resources/js/tools/ReadabilityChecker.jsx"
     ]
   },
   {
@@ -859,6 +908,12 @@
     ]
   },
   {
+    "key": "Check text",
+    "files": [
+      "resources/js/tools/AiDetector.jsx"
+    ]
+  },
+  {
     "key": "Choose \"Pause on this site\" or \"Allow ads on this site\".",
     "files": [
       "resources/js/components/AdblockNotice.jsx"
@@ -891,12 +946,14 @@
   {
     "key": "Clear",
     "files": [
+      "resources/js/tools/AiDetector.jsx",
       "resources/js/tools/Base64Tool.jsx",
       "resources/js/tools/CaseConverter.jsx",
       "resources/js/tools/DiceRoller.jsx",
       "resources/js/tools/JpgToPdf.jsx",
       "resources/js/tools/JsonFormatter.jsx",
       "resources/js/tools/MergePdf.jsx",
+      "resources/js/tools/ReadabilityChecker.jsx",
       "resources/js/tools/SpinWheel.jsx",
       "resources/js/tools/WordCounter.jsx"
     ]
@@ -945,9 +1002,21 @@
     ]
   },
   {
+    "key": "Coleman-Liau Index",
+    "files": [
+      "resources/js/tools/ReadabilityChecker.jsx"
+    ]
+  },
+  {
     "key": "Comments are not allowed in JSON.",
     "files": [
       "resources/js/lib/json.js"
+    ]
+  },
+  {
+    "key": "Complex words (3+ syllables)",
+    "files": [
+      "resources/js/tools/ReadabilityChecker.jsx"
     ]
   },
   {
@@ -1262,6 +1331,12 @@
     ]
   },
   {
+    "key": "Difficult",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
     "key": "Disabled",
     "files": [
       "resources/js/tools/WhatIsMyIp.jsx"
@@ -1400,6 +1475,12 @@
   },
   {
     "key": "Each tool does one job well, loads quickly and works on phones, tablets and computers.",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Easy",
     "files": [
       "scripts/i18n-extract.mjs"
     ]
@@ -1630,6 +1711,18 @@
     ]
   },
   {
+    "key": "Fairly difficult",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Fairly easy",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
     "key": "Fast",
     "files": [
       "scripts/i18n-extract.mjs"
@@ -1658,6 +1751,12 @@
     "files": [
       "resources/js/pages/ToolPage.jsx",
       "resources/views/pages/tool.blade.php"
+    ]
+  },
+  {
+    "key": "Few contractions",
+    "files": [
+      "scripts/i18n-extract.mjs"
     ]
   },
   {
@@ -1722,6 +1821,18 @@
     ]
   },
   {
+    "key": "Flesch Reading Ease",
+    "files": [
+      "resources/js/tools/ReadabilityChecker.jsx"
+    ]
+  },
+  {
+    "key": "Flesch-Kincaid Grade",
+    "files": [
+      "resources/js/tools/ReadabilityChecker.jsx"
+    ]
+  },
+  {
     "key": "Flip {count} coins",
     "files": [
       "resources/js/tools/CoinFlip.jsx"
@@ -1755,6 +1866,12 @@
     "key": "Formatted",
     "files": [
       "resources/js/tools/JsonFormatter.jsx"
+    ]
+  },
+  {
+    "key": "Formula",
+    "files": [
+      "resources/js/tools/ReadabilityChecker.jsx"
     ]
   },
   {
@@ -1895,6 +2012,12 @@
     "key": "Google's use of advertising cookies enables it and its partners to serve ads to you based on your visits to this Site and/or other sites on the Internet.",
     "files": [
       "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Gunning Fog Index",
+    "files": [
+      "resources/js/tools/ReadabilityChecker.jsx"
     ]
   },
   {
@@ -2142,13 +2265,13 @@
     ]
   },
   {
-    "key": "JPG, PNG, WebP, GIF or BMP · max 50 MB",
+    "key": "JPG, PNG, WebP, AVIF, GIF or BMP · max 50 MB",
     "files": [
       "resources/js/tools/ImageResizer.jsx"
     ]
   },
   {
-    "key": "JPG, PNG, WebP, GIF or BMP · up to {max} images · max 50 MB each",
+    "key": "JPG, PNG, WebP, AVIF, GIF or BMP · up to {max} images · max 50 MB each",
     "files": [
       "resources/js/tools/ImageConverter.jsx"
     ]
@@ -2290,6 +2413,18 @@
     ]
   },
   {
+    "key": "Likely AI-generated",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Likely human-written",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
     "key": "Lines:",
     "files": [
       "resources/js/tools/WordCounter.jsx"
@@ -2311,6 +2446,12 @@
     "key": "Lock aspect ratio",
     "files": [
       "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Long sentences to shorten ({count})",
+    "files": [
+      "resources/js/tools/ReadabilityChecker.jsx"
     ]
   },
   {
@@ -2443,6 +2584,12 @@
     ]
   },
   {
+    "key": "Mixed or unclear",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
     "key": "Mobile",
     "files": [
       "resources/js/components/Layout.jsx",
@@ -2571,6 +2718,12 @@
     "key": "No accounts, no daily caps and no watermarks. Use every tool as often as you like.",
     "files": [
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "No AI detector is fully reliable, including this one. Use the score as a hint, never as proof, and never to accuse someone of cheating.",
+    "files": [
+      "resources/js/tools/AiDetector.jsx"
     ]
   },
   {
@@ -2822,6 +2975,18 @@
     ]
   },
   {
+    "key": "Paste an article, essay or AI-written draft to check how easy it is to read…",
+    "files": [
+      "resources/js/tools/ReadabilityChecker.jsx"
+    ]
+  },
+  {
+    "key": "Paste at least {min} words of English text…",
+    "files": [
+      "resources/js/tools/AiDetector.jsx"
+    ]
+  },
+  {
     "key": "Pause",
     "files": [
       "resources/js/tools/CountdownTimer.jsx"
@@ -2831,6 +2996,12 @@
     "key": "Paused",
     "files": [
       "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "People mix short and long sentences; AI text is often very even.",
+    "files": [
+      "scripts/i18n-extract.mjs"
     ]
   },
   {
@@ -2876,13 +3047,19 @@
     ]
   },
   {
+    "key": "Plain English",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
     "key": "Play an alarm sound",
     "files": [
       "resources/js/tools/CountdownTimer.jsx"
     ]
   },
   {
-    "key": "Please choose a JPG, PNG, WebP, GIF or BMP image.",
+    "key": "Please choose a JPG, PNG, WebP, AVIF, GIF or BMP image.",
     "files": [
       "resources/js/tools/ImageResizer.jsx"
     ]
@@ -2915,6 +3092,12 @@
     "key": "Please enter a valid email address.",
     "files": [
       "resources/js/components/Newsletter.jsx"
+    ]
+  },
+  {
+    "key": "Please paste at least {min} words (you have {count}) for a meaningful result.",
+    "files": [
+      "resources/js/tools/AiDetector.jsx"
     ]
   },
   {
@@ -3142,6 +3325,12 @@
     ]
   },
   {
+    "key": "Readability scores",
+    "files": [
+      "resources/js/tools/ReadabilityChecker.jsx"
+    ]
+  },
+  {
     "key": "Reading file…",
     "files": [
       "resources/js/tools/Base64Tool.jsx"
@@ -3239,6 +3428,12 @@
     "key": "Remove the winner after each spin",
     "files": [
       "resources/js/tools/SpinWheel.jsx"
+    ]
+  },
+  {
+    "key": "Repetitive vocabulary",
+    "files": [
+      "scripts/i18n-extract.mjs"
     ]
   },
   {
@@ -3397,6 +3592,12 @@
     ]
   },
   {
+    "key": "Scores appear as soon as you type or paste a sentence.",
+    "files": [
+      "resources/js/tools/ReadabilityChecker.jsx"
+    ]
+  },
+  {
     "key": "Screen resolution",
     "files": [
       "resources/js/tools/WhatIsMyIp.jsx"
@@ -3467,6 +3668,7 @@
   {
     "key": "Sentences",
     "files": [
+      "resources/js/tools/ReadabilityChecker.jsx",
       "resources/js/tools/WordCounter.jsx"
     ]
   },
@@ -3537,6 +3739,12 @@
     "key": "Small",
     "files": [
       "resources/js/tools/JpgToPdf.jsx"
+    ]
+  },
+  {
+    "key": "SMOG Index",
+    "files": [
+      "resources/js/tools/ReadabilityChecker.jsx"
     ]
   },
   {
@@ -3766,6 +3974,12 @@
     ]
   },
   {
+    "key": "Syllables per word",
+    "files": [
+      "resources/js/tools/ReadabilityChecker.jsx"
+    ]
+  },
+  {
     "key": "Symbols (!@#$…)",
     "files": [
       "scripts/i18n-extract.mjs"
@@ -3843,6 +4057,12 @@
     ]
   },
   {
+    "key": "Text to check",
+    "files": [
+      "resources/js/tools/AiDetector.jsx"
+    ]
+  },
+  {
     "key": "Thanks for signing up! Click the button below to confirm your email address. We will then send you one short email whenever we add a new free tool.",
     "files": [
       "resources/views/emails/confirm.blade.php"
@@ -3852,6 +4072,12 @@
     "key": "That is too much data for one QR code. Please shorten the text or use a lower error correction level.",
     "files": [
       "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "The checker analyses English text only.",
+    "files": [
+      "resources/js/tools/AiDetector.jsx"
     ]
   },
   {
@@ -3966,6 +4192,12 @@
     "key": "There are only {range} different numbers between {min} and {max}, so you cannot pick {count} without duplicates.",
     "files": [
       "resources/js/lib/random.js"
+    ]
+  },
+  {
+    "key": "These formulas were designed for English text; scores for other languages are only a rough guide.",
+    "files": [
+      "resources/js/tools/ReadabilityChecker.jsx"
     ]
   },
   {
@@ -4215,6 +4447,12 @@
     ]
   },
   {
+    "key": "Uniform sentence lengths",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
     "key": "Unknown",
     "files": [
       "resources/js/tools/WhatIsMyIp.jsx"
@@ -4270,6 +4508,12 @@
     ]
   },
   {
+    "key": "US school grade",
+    "files": [
+      "resources/js/tools/ReadabilityChecker.jsx"
+    ]
+  },
+  {
     "key": "Use as input",
     "files": [
       "resources/js/tools/JsonFormatter.jsx"
@@ -4291,6 +4535,18 @@
     "key": "Validate",
     "files": [
       "resources/js/tools/JsonFormatter.jsx"
+    ]
+  },
+  {
+    "key": "Very difficult",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Very easy",
+    "files": [
+      "scripts/i18n-extract.mjs"
     ]
   },
   {
@@ -4498,7 +4754,20 @@
   {
     "key": "Words",
     "files": [
+      "resources/js/tools/ReadabilityChecker.jsx",
       "resources/js/tools/WordCounter.jsx"
+    ]
+  },
+  {
+    "key": "Words per sentence",
+    "files": [
+      "resources/js/tools/ReadabilityChecker.jsx"
+    ]
+  },
+  {
+    "key": "Words such as \"delve\", \"moreover\" or \"in today's fast-paced world\".",
+    "files": [
+      "scripts/i18n-extract.mjs"
     ]
   },
   {
@@ -4644,6 +4913,7 @@
     "key": "Your text",
     "files": [
       "resources/js/tools/CaseConverter.jsx",
+      "resources/js/tools/ReadabilityChecker.jsx",
       "resources/js/tools/WordCounter.jsx"
     ]
   }

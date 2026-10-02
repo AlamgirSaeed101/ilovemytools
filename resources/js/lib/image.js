@@ -6,7 +6,7 @@ export const EXTENSIONS = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp
 export const MAX_SIDE = 10000;
 export const MAX_FILE_BYTES = 50 * 1024 * 1024;
 
-const TYPE_BY_EXTENSION = { jpg: 'image/jpeg', jpeg: 'image/jpeg', jfif: 'image/jpeg', png: 'image/png', webp: 'image/webp', gif: 'image/gif', bmp: 'image/bmp' };
+const TYPE_BY_EXTENSION = { jpg: 'image/jpeg', jpeg: 'image/jpeg', jfif: 'image/jpeg', png: 'image/png', webp: 'image/webp', avif: 'image/avif', gif: 'image/gif', bmp: 'image/bmp' };
 
 /** The file's image MIME type, falling back to its extension when the browser reports none. */
 export function imageTypeOf(file) {
@@ -191,4 +191,4 @@ export function convertedName(filename, type, safe = (s) => s) {
 }
 
 /** Input formats the converter pages accept (anything the browser can decode into a canvas). */
-export const CONVERTIBLE_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'image/bmp'];
+export const CONVERTIBLE_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/avif', 'image/gif', 'image/bmp'];

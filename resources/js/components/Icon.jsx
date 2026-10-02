@@ -1,6 +1,37 @@
 // Inline SVG icons (no icon font request = faster pages).
 // The first group mirrors app/Support/Icon.php so server and client match.
 const PATHS = {
+    receipt: (
+        <>
+            <path d="M6 3h12v18l-2-1.5L14 21l-2-1.5L10 21l-2-1.5L6 21z" />
+            <path d="M9 7h6M9 11h6M9 15h4" />
+        </>
+    ),
+    bot: (
+        <>
+            <path d="M12 8V4H8" />
+            <rect x="4" y="8" width="16" height="12" rx="2" />
+            <path d="M2 14h2M20 14h2M15 13v2M9 13v2" />
+        </>
+    ),
+    gauge: (
+        <>
+            <path d="m12 14 4-4" />
+            <path d="M3.34 19a10 10 0 1 1 17.32 0" />
+        </>
+    ),
+    eraser: (
+        <>
+            <path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21" />
+            <path d="M22 21H7M5 11l9 9" />
+        </>
+    ),
+    link: (
+        <>
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+        </>
+    ),
     text: <path d="M4 6h16M4 12h16M4 18h10" />,
     image: (
         <>
