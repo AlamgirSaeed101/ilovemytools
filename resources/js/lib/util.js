@@ -1,3 +1,4 @@
+import { fileType, track } from './analytics.js';
 import { formatNumber } from './i18n.js';
 // Small shared helpers used by several tools.
 
@@ -27,6 +28,7 @@ export function downloadBlob(blob, filename) {
     a.remove();
     // Give the browser time to start the download before freeing memory.
     setTimeout(() => URL.revokeObjectURL(url), 30000);
+    track('tool_download', { file_type: fileType(filename) });
 }
 
 export function downloadText(text, filename, type = 'text/plain') {
@@ -37,6 +39,7 @@ export async function copyToClipboard(text) {
     try {
         if (navigator.clipboard && window.isSecureContext) {
             await navigator.clipboard.writeText(text);
+            track('tool_copy');
             return true;
         }
     } catch {
@@ -56,6 +59,7 @@ export async function copyToClipboard(text) {
         ok = false;
     }
     ta.remove();
+    if (ok) track('tool_copy');
     return ok;
 }
 

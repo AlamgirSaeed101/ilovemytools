@@ -35,6 +35,30 @@
     @foreach ($seo->alternates() as $alt)
         <link rel="alternate" hreflang="{{ $alt['hreflang'] }}" href="{{ $alt['href'] }}">
     @endforeach
+    {{-- Language on first visit: if the browser's main language is one we have and the visitor opened an
+         English page, show the same page in their language. Picking a language in the menu is remembered and
+         always wins; pages opened in another language are never changed; search engine bots are never redirected. --}}
+    <script>
+        (function () {
+            var KEY = 'lang-choice';
+            try {
+                localStorage.setItem(KEY + '-probe', '1');
+                localStorage.removeItem(KEY + '-probe');
+            } catch (e) {
+                return; // can't remember a choice, so never redirect
+            }
+            document.addEventListener('click', function (e) {
+                var a = e.target && e.target.closest ? e.target.closest('a[hreflang]') : null;
+                if (a) localStorage.setItem(KEY, a.getAttribute('hreflang').slice(0, 2).toLowerCase());
+            }, true);
+            if (document.documentElement.lang.slice(0, 2) !== 'en' || localStorage.getItem(KEY)) return;
+            if (/bot|crawl|spider|slurp|lighthouse|inspectiontool|preview|headlesschrome/i.test(navigator.userAgent)) return;
+            var first = ((navigator.languages && navigator.languages[0]) || navigator.language || '').slice(0, 2).toLowerCase();
+            if (first === 'en') return;
+            var alt = document.querySelector('link[rel="alternate"][hreflang="' + first + '"]');
+            if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+        })();
+    </script>
 
     {{-- Open Graph (Facebook, LinkedIn, WhatsApp) --}}
     <meta property="og:type" content="{{ $seo->ogType }}">

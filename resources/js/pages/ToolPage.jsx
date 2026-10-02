@@ -1,8 +1,9 @@
-import { Suspense, useEffect } from 'react';
+import { Suspense, useCallback, useEffect, useRef } from 'react';
 import { Link, useLoaderData } from 'react-router';
 import AdSlot from '../components/AdSlot.jsx';
 import Breadcrumbs from '../components/Breadcrumbs.jsx';
 import ErrorBoundary from '../components/ErrorBoundary.jsx';
+import { track } from '../lib/analytics.js';
 import Icon from '../components/Icon.jsx';
 import { IconTile, ToolGrid } from '../components/ToolCard.jsx';
 import tools from '../tools/index.js';
@@ -30,6 +31,17 @@ export default function ToolPage() {
     const site = getSite();
     const category = site.categories.find((c) => c.slug === tool.category);
     const Tool = tools[tool.slug];
+
+    // Count the first interaction with the tool on each page view as "tool_use" in Analytics.
+    const used = useRef(false);
+    useEffect(() => {
+        used.current = false;
+    }, [tool.slug]);
+    const markUse = useCallback(() => {
+        if (used.current) return;
+        used.current = true;
+        track('tool_use');
+    }, []);
     const siblings = (category?.tools ?? []).map((slug) => site.tools.find((x) => x.slug === slug)).filter(Boolean);
     const related = tool.related.map((slug) => site.tools.find((x) => x.slug === slug)).filter(Boolean);
 
@@ -64,7 +76,7 @@ export default function ToolPage() {
 
             <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_290px]">
                 <div className="min-w-0">
-                    <section className="tool-panel" aria-label={tool.name}>
+                    <section className="tool-panel" aria-label={tool.name} onPointerDownCapture={markUse} onInputCapture={markUse} onDropCapture={markUse}>
                         {Tool ? (
                             <ErrorBoundary key={tool.slug}>
                                 <Suspense fallback={<ToolLoading name={tool.name} />}>

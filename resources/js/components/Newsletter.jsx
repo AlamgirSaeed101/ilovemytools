@@ -1,6 +1,7 @@
 import { useEffect, useId, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import Icon from './Icon.jsx';
+import { track } from '../lib/analytics.js';
 import { getLocale, t } from '../lib/i18n.js';
 
 async function post(url, body) {
@@ -32,7 +33,10 @@ export default function NewsletterForm({ compact = false }) {
         setState('sending');
         try {
             const { status } = await post('/api/newsletter', { email: email.trim(), locale: getLocale(), website });
-            if (status === 200) setState('done');
+            if (status === 200) {
+                setState('done');
+                track('sign_up', { method: 'newsletter' });
+            }
             else if (status === 422) setState('invalid');
             else if (status === 429) setState('busy');
             else setState('error');
