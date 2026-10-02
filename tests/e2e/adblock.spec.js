@@ -12,14 +12,17 @@ async function withAds(page) {
 test.describe('Ad blocker notice', () => {
     test('blocks the site until the ad blocker is turned off', async ({ page }) => {
         await withAds(page);
+        // Like an ad blocker: the ad script fails to load and can't be fetched again.
         await page.addInitScript(() => {
-            window.__adsBlocked = true; // the AdSense script failed to load
+            window.__adsBlocked = true;
         });
+        await page.route(/googlesyndication.com/, (route) => route.abort());
         await page.goto('/');
         const notice = page.getByTestId('adblock-notice');
         await expect(notice).toBeVisible({ timeout: 8000 });
         await expect(notice.getByRole('heading', { name: 'Please turn off your ad blocker' })).toBeVisible();
         await expect(notice.getByRole('button')).toHaveCount(1); // no way to dismiss it
+        await expect(notice.getByTestId('adblock-reason')).toHaveText('(ad script blocked)');
         await page.keyboard.press('Escape');
         await expect(notice).toBeVisible();
 
@@ -28,8 +31,12 @@ test.describe('Ad blocker notice', () => {
         await expect(page.getByTestId('adblock-notice')).toBeVisible({ timeout: 8000 });
     });
 
-    test('stays away when nothing is blocked', async ({ page }) => {
+    test('stays away when nothing is blocked, even after a one-off script failure', async ({ page }) => {
         await withAds(page);
+        await page.addInitScript(() => {
+            window.__adsBlocked = true; // failed once, but the re-check can reach it
+        });
+        await page.route(/googlesyndication.com/, (route) => route.fulfill({ status: 200, body: '' }));
         await page.goto('/');
         await page.waitForTimeout(4000);
         await expect(page.getByTestId('adblock-notice')).toHaveCount(0);

@@ -577,6 +577,18 @@
     ]
   },
   {
+    "key": "ad elements hidden",
+    "files": [
+      "resources/js/components/AdblockNotice.jsx"
+    ]
+  },
+  {
+    "key": "ad script blocked",
+    "files": [
+      "resources/js/components/AdblockNotice.jsx"
+    ]
+  },
+  {
     "key": "Ad space",
     "files": [
       "resources/js/components/AdSlot.jsx"
@@ -3673,6 +3685,12 @@
     "key": "Starting value",
     "files": [
       "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Still seeing this? Brave Shields, Opera, Edge \"Strict\" tracking prevention, antivirus, VPN or DNS ad blocking can also block ads.",
+    "files": [
+      "resources/js/components/AdblockNotice.jsx"
     ]
   },
   {

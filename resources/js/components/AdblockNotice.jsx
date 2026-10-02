@@ -8,9 +8,20 @@ import { t } from '../lib/i18n.js';
 // Search engine crawlers never see it: Google demotes pages hidden behind interstitials.
 const BOTS = /bot|crawl|spider|slurp|lighthouse|headlesschrome|google-inspectiontool|bingpreview|facebookexternalhit|embedly/i;
 
-/** True when the AdSense script failed to load or a bait element named like an ad was hidden. */
-function detectBlocker() {
-    if (window.__adsBlocked) return Promise.resolve(true);
+const AD_SCRIPT = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+
+/** Does the ad script download? A one-off network glitch is retried, so it never triggers the wall. */
+async function scriptReachable() {
+    try {
+        await fetch(`${AD_SCRIPT}?probe=${Date.now()}`, { mode: 'no-cors', cache: 'no-store' });
+        return true;
+    } catch {
+        return false;
+    }
+}
+
+/** Is a decoy element named like an ad hidden by the page's blocker rules? */
+function baitHidden() {
     const bait = document.createElement('div');
     bait.className = 'adsbox ad-banner ad-placement textads banner-ads';
     bait.setAttribute('aria-hidden', 'true');
@@ -22,13 +33,22 @@ function detectBlocker() {
             const style = getComputedStyle(bait);
             const hidden = bait.offsetHeight === 0 || style.display === 'none' || style.visibility === 'hidden' || !bait.isConnected;
             bait.remove();
-            resolve(hidden || Boolean(window.__adsBlocked));
+            resolve(hidden);
         }, 200);
     });
 }
 
+/** @returns {Promise<string[]>} which checks failed ("script", "elements"); empty when ads work. */
+async function detectBlocker() {
+    const reasons = [];
+    if (await baitHidden()) reasons.push('elements');
+    if (window.__adsBlocked && !(await scriptReachable())) reasons.push('script');
+    return reasons;
+}
+
 export default function AdblockNotice() {
-    const [open, setOpen] = useState(false);
+    const [reasons, setReasons] = useState([]);
+    const open = reasons.length > 0;
     const dialogRef = useRef(null);
 
     useEffect(() => {
@@ -36,7 +56,7 @@ export default function AdblockNotice() {
         if (!getSite().ads?.client || BOTS.test(navigator.userAgent)) return;
         let cancelled = false;
         const timer = setTimeout(() => {
-            detectBlocker().then((blocked) => !cancelled && blocked && setOpen(true));
+            detectBlocker().then((found) => !cancelled && setReasons(found));
         }, 3000);
         return () => {
             cancelled = true;
@@ -78,11 +98,17 @@ export default function AdblockNotice() {
                 <p id="adblock-text" className="m-0 mb-4 text-ink-2">
                     {t('Ads are how we keep every tool free, with no sign up and no limits. Your files still never leave your device.')}
                 </p>
-                <ol className="m-0 mb-6 list-none space-y-1.5 rounded-xl bg-surface-2 p-4 text-left text-[0.92rem] text-ink-2">
+                <ol className="m-0 mb-3 list-none space-y-1.5 rounded-xl bg-surface-2 p-4 text-left text-[0.92rem] text-ink-2">
                     <li>1. {t('Click the ad blocker icon in your browser toolbar.')}</li>
                     <li>2. {t('Choose "Pause on this site" or "Allow ads on this site".')}</li>
                     <li>3. {t('Reload the page.')}</li>
                 </ol>
+                <p className="m-0 mb-5 text-[0.85rem] text-muted">
+                    {t('Still seeing this? Brave Shields, Opera, Edge "Strict" tracking prevention, antivirus, VPN or DNS ad blocking can also block ads.')}{' '}
+                    <span className="whitespace-nowrap" data-testid="adblock-reason">
+                        ({reasons.map((r) => (r === 'script' ? t('ad script blocked') : t('ad elements hidden'))).join(', ')})
+                    </span>
+                </p>
                 <button className="btn btn--primary btn--lg w-full rounded-full" type="button" onClick={() => window.location.reload()}>
                     {t("I've turned it off - reload")}
                 </button>
