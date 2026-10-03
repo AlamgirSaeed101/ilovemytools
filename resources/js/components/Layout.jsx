@@ -207,6 +207,8 @@ function LanguageMenu() {
     usePopup(open, setOpen, ref);
 
     const current = site.locales.find((l) => l.code === site.locale);
+    // One column of native names, ordered by their English name (Arabic, Chinese, English, French…).
+    const sorted = [...site.locales].sort((a, b) => a.name.localeCompare(b.name, 'en'));
 
     // On phones the panel is placed against the (sticky) header so it spans the screen
     // instead of hanging off the button and running past the left edge.
@@ -214,32 +216,37 @@ function LanguageMenu() {
         <div className="max-[359px]:hidden sm:relative" ref={ref}>
             <button
                 type="button"
-                className="inline-flex h-10 cursor-pointer items-center gap-1.5 rounded-full border border-line bg-surface px-3 text-ink-2 transition-colors hover:border-line-strong hover:bg-surface-2 hover:text-ink"
+                className="inline-flex h-10 cursor-pointer items-center gap-2 rounded-xl border border-line bg-surface px-3 text-ink-2 shadow-[0_1px_3px_rgb(15_23_42/0.06)] transition-colors hover:border-line-strong hover:text-ink md:min-w-[150px] md:px-3.5"
                 aria-expanded={open}
                 aria-haspopup="true"
                 aria-label={t('Language: {language}', { language: current?.native ?? site.locale })}
                 onClick={() => setOpen((o) => !o)}
             >
                 <Icon name="globe" />
-                <span className="hidden text-sm font-bold uppercase md:inline">{site.locale}</span>
-                <Icon name="chevron" className="icon hidden size-3.5 opacity-60 md:inline" />
+                <span className="hidden flex-1 text-start text-[0.92rem] font-medium md:inline" lang={site.locale}>
+                    {current?.native ?? site.locale}
+                </span>
+                <Icon name="chevron" className={`icon hidden size-3.5 opacity-60 transition-transform md:inline ${open ? 'rotate-180' : ''}`} />
             </button>
             {open && (
-                <div className="animate-pop absolute inset-x-3 top-full z-50 mt-2 rounded-card sm:inset-x-auto sm:end-0 sm:mt-2.5 sm:w-[min(560px,calc(100vw-24px))] border border-line bg-surface p-3 shadow-float">
-                    <p className="m-0 px-2 pb-2 text-xs font-extrabold tracking-wider text-muted uppercase">{t('Choose your language')}</p>
-                    <ul className="m-0 grid list-none grid-cols-2 gap-1 p-0 sm:grid-cols-3" aria-label={t('Languages')}>
-                        {site.locales.map((l) => (
-                            <li key={l.code}>
+                <div className="animate-pop absolute inset-x-3 top-full z-50 mt-2 overflow-hidden rounded-2xl border border-line bg-surface shadow-float sm:inset-x-auto sm:end-0 sm:mt-2.5 sm:w-[300px]">
+                    <ul className="m-0 max-h-[min(70vh,560px)] list-none overflow-y-auto p-0" aria-label={t('Choose your language')}>
+                        {sorted.map((l) => (
+                            <li key={l.code} className="border-b border-line last:border-b-0">
                                 <a
                                     href={hrefFor(l.code)}
                                     hrefLang={l.hreflang}
                                     lang={l.code}
                                     dir={l.dir}
                                     aria-current={l.code === site.locale ? 'true' : undefined}
-                                    className="flex items-center justify-between gap-2 rounded-[10px] px-3 py-2 text-[0.92rem] font-semibold text-ink no-underline hover:bg-surface-2 aria-[current]:bg-brand/15 aria-[current]:text-brand"
+                                    className="flex items-center justify-between gap-3 px-6 py-3.5 text-[0.95rem] text-ink no-underline transition-colors hover:bg-surface-2 aria-[current]:bg-surface-2"
                                 >
                                     <span>{l.native}</span>
-                                    <span className="text-[0.7rem] font-bold text-muted uppercase">{l.code}</span>
+                                    {l.code === site.locale && (
+                                        <span className="grid size-5 shrink-0 place-items-center rounded-full border border-muted text-muted [&_svg]:size-3" aria-hidden="true">
+                                            <Icon name="check" />
+                                        </span>
+                                    )}
                                 </a>
                             </li>
                         ))}
