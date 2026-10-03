@@ -388,7 +388,7 @@ return [
             ['q' => 'What does the margin setting do?', 'a' => 'It adds blank space around each image on the page. Choose None for the image to reach the edges, or a bigger margin for a more document-like look.'],
             ['q' => 'Is my image quality reduced?', 'a' => 'JPG and PNG images are embedded at their original quality. WebP images are converted to PNG first, which keeps them lossless.'],
         ],
-        'related' => ['merge-pdf', 'image-compressor', 'image-resizer'],
+        'related' => ['pdf-to-jpg', 'merge-pdf', 'image-compressor'],
     ],
 
     'webp-to-png' => [
@@ -1788,6 +1788,94 @@ return [
             ['q' => 'Can I also delete or rotate pages here?', 'a' => 'This tool only reorders pages. Use Delete PDF Pages or Rotate PDF for those, either before or after organizing the order.'],
         ],
         'related' => ['delete-pdf-pages', 'rotate-pdf', 'merge-pdf', 'split-pdf'],
+    ],
+
+    'pdf-to-jpg' => [
+        'name' => 'PDF to JPG',
+        'category' => 'pdf-tools',
+        'icon' => 'image',
+        'popular' => true,
+        'updated' => '2026-10-03',
+        'title' => 'PDF to JPG Converter - Convert PDF Pages Free',
+        'description' => 'Convert PDF pages to JPG images online for free. Choose 72, 150 or 300 DPI and download one image or a ZIP. No upload, no watermark, no sign up.',
+        'h1' => 'PDF to JPG',
+        'tagline' => 'Turn PDF pages into JPG images, right in your browser.',
+        'keywords' => ['pdf to jpg', 'pdf to jpg converter', 'convert pdf to jpg', 'pdf to image', 'pdf page to jpg'],
+        'intro' => 'A PDF to JPG converter renders each page of a PDF as a JPG image, useful for sharing a page on social media, pasting it into a document or viewing it where PDFs aren\'t supported. Choose a resolution of 72, 150 or 300 DPI, then convert: a single-page PDF downloads as one JPG, and a multi-page PDF downloads as a ZIP of numbered images. Everything runs on your device, so the PDF is never uploaded.',
+        'steps' => [
+            'Choose the PDF you want to convert.',
+            'Pick an image quality: 72 DPI for screens, 150 for general use, or 300 DPI for printing.',
+            'Click Convert.',
+            'Download the JPG, or the ZIP file if the PDF has more than one page.',
+        ],
+        'features' => [
+            'Choose 72, 150 or 300 DPI',
+            'Single-page PDFs download as one JPG',
+            'Multi-page PDFs download as a ZIP of numbered images',
+            'Page thumbnails confirm you picked the right file',
+            'Private - your PDF never leaves your device',
+        ],
+        'content' => [
+            [
+                'heading' => 'Which DPI should I choose?',
+                'body' => '72 DPI matches a typical screen and gives the smallest file, good for quick previews or web use. 150 DPI is a good general-purpose choice for sharing or pasting into documents. 300 DPI produces a sharper, larger image suited to printing or zooming in on fine text.',
+            ],
+            [
+                'heading' => 'PDF to JPG vs PDF to PNG',
+                'body' => 'JPG uses lossy compression, which makes smaller files and suits scanned pages or photos. PNG is lossless and better for pages with sharp text, tables or line art, at the cost of a larger file. Use PDF to PNG when image quality matters more than file size.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Can I convert every page of a PDF to JPG at once?', 'a' => 'Yes. Converting renders every page; if there is more than one page, the images are bundled into a single ZIP file for download.'],
+            ['q' => 'What DPI should I use for printing?', 'a' => '300 DPI gives a sharp result for printing. 150 DPI is enough for most screens, and 72 DPI is the smallest file, best for quick previews.'],
+            ['q' => 'Is my PDF uploaded to a server?', 'a' => 'No. Pages are rendered to images entirely in your browser with JavaScript, and the file is never sent anywhere.'],
+            ['q' => 'Can I convert just one page instead of the whole PDF?', 'a' => 'This tool converts every page. To get a single page, use Split PDF\'s "Extract pages" mode first, then convert the resulting one-page PDF here.'],
+        ],
+        'related' => ['pdf-to-png', 'jpg-to-pdf', 'split-pdf', 'image-compressor'],
+    ],
+
+    'pdf-to-png' => [
+        'name' => 'PDF to PNG',
+        'category' => 'pdf-tools',
+        'icon' => 'image',
+        'popular' => false,
+        'updated' => '2026-10-03',
+        'title' => 'PDF to PNG Converter - Convert PDF Pages Free',
+        'description' => 'Convert PDF pages to PNG images online for free. Choose 72, 150 or 300 DPI and download one image or a ZIP. No upload, no watermark, no sign up.',
+        'h1' => 'PDF to PNG',
+        'tagline' => 'Turn PDF pages into sharp PNG images, right in your browser.',
+        'keywords' => ['pdf to png', 'pdf to png converter', 'convert pdf to png', 'pdf page to png', 'pdf to image png'],
+        'intro' => 'A PDF to PNG converter renders each page of a PDF as a lossless PNG image, which keeps sharp text, tables and line art crisp. Choose a resolution of 72, 150 or 300 DPI, then convert: a single-page PDF downloads as one PNG, and a multi-page PDF downloads as a ZIP of numbered images. Everything runs on your device, so the PDF is never uploaded.',
+        'steps' => [
+            'Choose the PDF you want to convert.',
+            'Pick an image quality: 72 DPI for screens, 150 for general use, or 300 DPI for printing.',
+            'Click Convert.',
+            'Download the PNG, or the ZIP file if the PDF has more than one page.',
+        ],
+        'features' => [
+            'Choose 72, 150 or 300 DPI',
+            'Lossless PNG output, sharp for text and line art',
+            'Single-page PDFs download as one PNG',
+            'Multi-page PDFs download as a ZIP of numbered images',
+            'Private - your PDF never leaves your device',
+        ],
+        'content' => [
+            [
+                'heading' => 'Which DPI should I choose?',
+                'body' => '72 DPI matches a typical screen and gives the smallest file, good for quick previews or web use. 150 DPI is a good general-purpose choice for sharing or pasting into documents. 300 DPI produces a sharper, larger image suited to printing or zooming in on fine text.',
+            ],
+            [
+                'heading' => 'PDF to PNG vs PDF to JPG',
+                'body' => 'PNG is lossless, which keeps sharp text, tables and line art crisp, at the cost of a larger file. JPG uses lossy compression for smaller files and suits scanned pages or photos. Use PDF to JPG when file size matters more than exact pixel quality.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Why choose PNG instead of JPG?', 'a' => 'PNG is lossless, so sharp text, tables and diagrams stay crisp with no compression artefacts. JPG files are usually smaller but can blur fine detail.'],
+            ['q' => 'Can I convert every page of a PDF to PNG at once?', 'a' => 'Yes. Converting renders every page; if there is more than one page, the images are bundled into a single ZIP file for download.'],
+            ['q' => 'Is my PDF uploaded to a server?', 'a' => 'No. Pages are rendered to images entirely in your browser with JavaScript, and the file is never sent anywhere.'],
+            ['q' => 'What DPI should I use for printing?', 'a' => '300 DPI gives a sharp result for printing. 150 DPI is enough for most screens, and 72 DPI is the smallest file, best for quick previews.'],
+        ],
+        'related' => ['pdf-to-jpg', 'jpg-to-pdf', 'split-pdf', 'image-compressor'],
     ],
 
 ];

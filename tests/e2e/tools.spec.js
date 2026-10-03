@@ -378,6 +378,41 @@ test.describe('PDF tools', () => {
         expect(file.suggestedFilename()).toBe('doc-organized.pdf');
         expect(await pdfPageCount(await readDownload(file))).toBe(3);
     });
+
+    test('PDF to JPG renders a single page as one image and several pages as a ZIP', async ({ page }) => {
+        await openTool(page, 'pdf-to-jpg');
+        await page.getByTestId('file-input').setInputFiles({ name: 'doc.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
+        await expect(page.locator('.page-card')).toHaveCount(1);
+        await page.getByLabel('Image quality (DPI)').selectOption('72');
+
+        await page.getByRole('button', { name: 'Convert', exact: true }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download image' }).click()]);
+        expect(file.suggestedFilename()).toBe('doc.jpg');
+        const buf = await readDownload(file);
+        expect(buf[0]).toBe(0xff);
+        expect(buf[1]).toBe(0xd8);
+
+        await page.getByRole('button', { name: 'Choose another PDF' }).click();
+        await page.getByTestId('file-input').setInputFiles({ name: 'multi.pdf', mimeType: 'application/pdf', buffer: await makePdf(2) });
+        await expect(page.locator('.page-card')).toHaveCount(2);
+        await page.getByRole('button', { name: 'Convert', exact: true }).click();
+        const [zip] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download ZIP' }).click()]);
+        expect(zip.suggestedFilename()).toBe('multi.zip');
+        const archive = await JSZip.loadAsync(await readDownload(zip));
+        expect(Object.keys(archive.files).sort()).toEqual(['multi-page-1.jpg', 'multi-page-2.jpg']);
+    });
+
+    test('PDF to PNG renders pages as lossless PNG images', async ({ page }) => {
+        await openTool(page, 'pdf-to-png');
+        await page.getByTestId('file-input').setInputFiles({ name: 'doc.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
+        await expect(page.locator('.page-card')).toHaveCount(1);
+
+        await page.getByRole('button', { name: 'Convert', exact: true }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download image' }).click()]);
+        expect(file.suggestedFilename()).toBe('doc.png');
+        const buf = await readDownload(file);
+        expect(buf.subarray(0, 8)).toEqual(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]));
+    });
 });
 
 test.describe('Calculators', () => {

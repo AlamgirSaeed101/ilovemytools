@@ -8,6 +8,7 @@ import { decodeText, encodeText, normalizeBase64 } from './base64.js';
 import { parseRanges, rangesToIndexes, indexesExcluding } from './pdfRanges.js';
 import { computeImagePageLayout, MM_TO_PT, PDF_PAGE_SIZES, addRotation, buildRotatedPdf } from './pdf.js';
 import { dpiToScale } from './pdfRender.js';
+import { fileExtension, mimeType, pageFilename } from './pdfToImage.js';
 import { PDFDocument } from 'pdf-lib';
 import { buildQrPayload, contrastRatio, escapeWifi } from './qr.js';
 import { formatBytes, uniqueNamer, baseName, safeFilename } from './util.js';
@@ -294,6 +295,25 @@ describe('pdf render scale', () => {
         expect(dpiToScale(72)).toBe(1);
         expect(dpiToScale(150)).toBeCloseTo(150 / 72);
         expect(dpiToScale(300)).toBeCloseTo(300 / 72);
+    });
+});
+
+describe('pdf to image naming', () => {
+    it('picks the right mime type and extension per format', () => {
+        expect(mimeType('jpeg')).toBe('image/jpeg');
+        expect(mimeType('png')).toBe('image/png');
+        expect(fileExtension('jpeg')).toBe('jpg');
+        expect(fileExtension('png')).toBe('png');
+    });
+
+    it('names a single page without a "-page-N" suffix', () => {
+        expect(pageFilename('report', 1, 1, 'jpeg')).toBe('report.jpg');
+        expect(pageFilename('report', 1, 1, 'png')).toBe('report.png');
+    });
+
+    it('numbers each page when there is more than one', () => {
+        expect(pageFilename('report', 1, 3, 'jpeg')).toBe('report-page-1.jpg');
+        expect(pageFilename('report', 3, 3, 'png')).toBe('report-page-3.png');
     });
 });
 

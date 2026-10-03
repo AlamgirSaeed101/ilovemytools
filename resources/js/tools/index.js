@@ -4,6 +4,10 @@ import { createElement, lazy } from 'react';
 const converter = (to) =>
     lazy(() => import('./ImageConverter.jsx').then((m) => ({ default: (props) => createElement(m.default, { ...props, to }) })));
 
+// One shared component renders either format for the PDF to JPG / PDF to PNG pages.
+const pdfToImage = (format) =>
+    lazy(() => import('./PdfToImage.jsx').then((m) => ({ default: (props) => createElement(m.default, { ...props, format }) })));
+
 // Slug (must match the key in config/tools.php) => React component.
 // Each tool is lazy-loaded into its own small JavaScript file.
 const tools = {
@@ -31,6 +35,8 @@ const tools = {
     'rotate-pdf': lazy(() => import('./RotatePdf.jsx')),
     'delete-pdf-pages': lazy(() => import('./DeletePdfPages.jsx')),
     'organize-pdf': lazy(() => import('./OrganizePdf.jsx')),
+    'pdf-to-jpg': pdfToImage('jpeg'),
+    'pdf-to-png': pdfToImage('png'),
     'age-calculator': lazy(() => import('./AgeCalculator.jsx')),
     'percentage-calculator': lazy(() => import('./PercentageCalculator.jsx')),
     'tip-calculator': lazy(() => import('./TipCalculator.jsx')),
