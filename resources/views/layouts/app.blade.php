@@ -99,6 +99,11 @@
     {{-- Loaded without blocking the first paint (text shows in the fallback font, then swaps). --}}
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"></noscript>
+    @if (\App\Support\Locale::current() === 'ur')
+        {{-- Urdu needs its own font (Latin fonts have no Urdu glyphs); loaded only on Urdu pages, same non-blocking pattern as above. --}}
+        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap"></noscript>
+    @endif
 
     {{-- Light mode is the default. A saved choice from the theme toggle is applied before the first paint (no flash). --}}
     <script>

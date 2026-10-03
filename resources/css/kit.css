@@ -61,6 +61,16 @@
     --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+/* Urdu has no glyphs in the Latin font above, and its script needs extra
+   line-height (Nastaliq's diagonal flow and loops clip at Latin line-heights). */
+:root:lang(ur) {
+    --font: 'Noto Nastaliq Urdu', 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+}
+
+html:lang(ur) body {
+    line-height: 2.1;
+}
+
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme='light']) {
         color-scheme: dark;
@@ -230,7 +240,7 @@ h3 {
 
 .skip-link {
     position: absolute;
-    left: 12px;
+    inset-inline-start: 12px;
     top: -60px;
     z-index: 100;
     padding: 0.6rem 1rem;
@@ -473,7 +483,7 @@ h3 {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-left: auto;
+    margin-inline-start: auto;
 }
 
 .search-trigger {
@@ -499,7 +509,7 @@ h3 {
 }
 
 .search-trigger .kbd {
-    margin-left: auto;
+    margin-inline-start: auto;
 }
 
 .icon-btn {
@@ -692,7 +702,7 @@ h3 {
 }
 
 .palette__foot .kbd {
-    margin-right: 0.2rem;
+    margin-inline-end: 0.2rem;
 }
 
 @media (max-width: 640px) {
@@ -805,7 +815,7 @@ h3 {
 .hero-search__icon {
     position: absolute;
     top: 50%;
-    left: 1.2rem;
+    inset-inline-start: 1.2rem;
     width: 1.3em;
     height: 1.3em;
     color: var(--muted);
@@ -816,7 +826,8 @@ h3 {
 .hero-search__input {
     width: 100%;
     height: 60px;
-    padding: 0 1.25rem 0 3.3rem;
+    padding-block: 0;
+    padding-inline: 3.3rem 1.25rem;
     border: 1px solid var(--border);
     border-radius: 18px;
     background: var(--surface);
@@ -1360,7 +1371,7 @@ h3 {
 
 .prose ul,
 .prose ol {
-    padding-left: 1.3rem;
+    padding-inline-start: 1.3rem;
 }
 
 .prose li {
@@ -1396,7 +1407,8 @@ h3 {
     counter-increment: step;
     position: relative;
     margin: 0;
-    padding: 0.8rem 1rem 0.8rem 3.4rem;
+    padding-block: 0.8rem;
+    padding-inline: 3.4rem 1rem;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     background: var(--surface);
@@ -1406,7 +1418,7 @@ h3 {
     content: counter(step);
     position: absolute;
     top: 50%;
-    left: 0.9rem;
+    inset-inline-start: 0.9rem;
     display: grid;
     place-items: center;
     width: 1.8rem;
@@ -1531,7 +1543,7 @@ h3 {
 }
 
 .category-card__arrow {
-    margin-left: auto;
+    margin-inline-start: auto;
     color: var(--muted);
 }
 
@@ -1995,12 +2007,20 @@ a.btn--primary:hover {
 
 .select {
     appearance: none;
-    padding-right: 2.2rem;
+    padding-inline-end: 2.2rem;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 0.7rem center;
     background-size: 1.1rem;
     cursor: pointer;
+}
+
+[dir='rtl'] .select {
+    background-position: left 0.7rem center;
+}
+
+[dir='rtl'] .back-to-top {
+    inset-inline-end: max(16px, env(safe-area-inset-left));
 }
 
 .textarea {
@@ -2524,7 +2544,7 @@ fieldset.grid-2 .check:has(input:checked) {
 .kv td {
     padding: 0.7rem 1rem;
     border-bottom: 1px solid var(--border);
-    text-align: left;
+    text-align: start;
     vertical-align: top;
 }
 
@@ -2588,7 +2608,7 @@ fieldset.grid-2 .check:has(input:checked) {
 
 .back-to-top {
     position: fixed;
-    right: max(16px, env(safe-area-inset-right));
+    inset-inline-end: max(16px, env(safe-area-inset-right));
     bottom: max(16px, env(safe-area-inset-bottom));
     z-index: 40;
     display: grid;

@@ -22,6 +22,14 @@ test.describe('Automatic language on first visit', () => {
         await ctx.close();
     });
 
+    test('Urdu pages are right-to-left', async ({ page }) => {
+        await page.goto('/ur');
+        await expect(page.locator('html')).toHaveAttribute('lang', /^ur/);
+        await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+        await page.goto('/ur/merge-pdf');
+        await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+    });
+
     test('pages opened in a language stay in it, and English browsers are untouched', async ({ browser, baseURL }) => {
         const de = await browser.newContext({ locale: 'de-DE', baseURL });
         const p1 = await de.newPage();

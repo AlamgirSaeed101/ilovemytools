@@ -110,7 +110,7 @@ export default function BackgroundRemover() {
                                 setMode(key);
                                 if (file) process(file, key);
                             }}
-                            className={`btn ${mode === key ? 'btn--primary' : ''} flex-col !items-start text-left`}
+                            className={`btn ${mode === key ? 'btn--primary' : ''} flex-col !items-start text-start`}
                         >
                             <span>{label}</span>
                             <span className="text-[0.75rem] font-medium opacity-80">{hint}</span>

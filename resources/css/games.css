@@ -1064,7 +1064,7 @@
 .laps td {
     padding: 0.6rem 0.9rem;
     border-bottom: 1px solid var(--border);
-    text-align: left;
+    text-align: start;
 }
 
 .laps th {
@@ -1098,7 +1098,7 @@
 }
 
 .lap-tag {
-    margin-left: 0.5rem;
+    margin-inline-start: 0.5rem;
     padding: 0.05rem 0.45rem;
     border-radius: 999px;
     font-size: 0.7rem;
@@ -1222,7 +1222,7 @@
     background: var(--surface-2);
     color: var(--text);
     font-family: var(--font);
-    text-align: left;
+    text-align: start;
     cursor: pointer;
     animation: rise-in 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.1) both;
     transition: border-color 0.2s, background 0.2s, box-shadow 0.2s, transform 0.2s var(--ease);
@@ -1259,7 +1259,7 @@
 .sleep-card__badge {
     position: absolute;
     top: -9px;
-    right: 10px;
+    inset-inline-end: 10px;
     padding: 0.12rem 0.55rem;
     border-radius: 999px;
     background: var(--accent);

@@ -98,7 +98,7 @@ export default function AdblockNotice() {
                 <p id="adblock-text" className="m-0 mb-4 text-ink-2">
                     {t('Ads are how we keep every tool free, with no sign up and no limits. Your files still never leave your device.')}
                 </p>
-                <ol className="m-0 mb-3 list-none space-y-1.5 rounded-xl bg-surface-2 p-4 text-left text-[0.92rem] text-ink-2">
+                <ol className="m-0 mb-3 list-none space-y-1.5 rounded-xl bg-surface-2 p-4 text-start text-[0.92rem] text-ink-2">
                     <li>1. {t('Click the ad blocker icon in your browser toolbar.')}</li>
                     <li>2. {t('Choose "Pause on this site" or "Allow ads on this site".')}</li>
                     <li>3. {t('Reload the page.')}</li>
