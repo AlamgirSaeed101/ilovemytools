@@ -38,6 +38,8 @@ const DYNAMIC = [
     'URL', 'Text', 'Wi-Fi', 'Email', 'Phone', 'SMS',
     // Split PDF modes
     'Extract pages', 'Split by ranges', 'Split every page',
+    // Delete PDF Pages modes
+    'Select by thumbnail', 'Page ranges',
     // Readability levels (resources/js/lib/readability.js) and AI detector labels (tools/AiDetector.jsx)
     'Very easy', 'Easy', 'Fairly easy', 'Plain English', 'Fairly difficult', 'Difficult', 'Very difficult',
     'Likely AI-generated', 'Mixed or unclear', 'Likely human-written',

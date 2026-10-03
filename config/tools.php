@@ -567,7 +567,7 @@ return [
             ['q' => 'How many PDFs can I merge?', 'a' => 'Up to 50 files at a time. The practical limit depends on your device memory, and most devices handle a few hundred pages easily.'],
             ['q' => 'Will links and bookmarks be kept?', 'a' => 'Page content, images and text are kept exactly. Some interactive features such as bookmarks and form fields may not carry over.'],
         ],
-        'related' => ['jpg-to-pdf', 'split-pdf', 'image-compressor'],
+        'related' => ['jpg-to-pdf', 'split-pdf', 'rotate-pdf', 'image-compressor'],
     ],
 
     'split-pdf' => [
@@ -607,7 +607,7 @@ return [
             ['q' => 'Are my files uploaded?', 'a' => 'No. The PDF is split locally in your browser and never leaves your device.'],
             ['q' => 'Does splitting reduce quality?', 'a' => 'No. Pages are copied exactly as they are, so text and images keep their original quality.'],
         ],
-        'related' => ['merge-pdf', 'image-compressor', 'word-counter'],
+        'related' => ['merge-pdf', 'rotate-pdf', 'image-compressor'],
     ],
 
     'age-calculator' => [
@@ -1656,6 +1656,138 @@ return [
             ['title' => 'RFC 7483: JSON Responses for RDAP', 'url' => 'https://www.rfc-editor.org/rfc/rfc7483.html'],
         ],
         'related' => ['domain-authority-checker', 'broken-link-checker', 'what-is-my-ip'],
+    ],
+
+    'rotate-pdf' => [
+        'name' => 'Rotate PDF',
+        'category' => 'pdf-tools',
+        'icon' => 'pdf',
+        'popular' => false,
+        'updated' => '2026-10-03',
+        'title' => 'Rotate PDF - Fix Sideways Pages Online Free',
+        'description' => 'Rotate PDF pages 90, 180 or 270 degrees online for free. Rotate the whole document or just the pages you pick. No upload, no watermark, no sign up.',
+        'h1' => 'Rotate PDF',
+        'tagline' => 'Turn sideways or upside-down pages the right way up - right in your browser.',
+        'keywords' => ['rotate pdf', 'rotate pdf pages', 'rotate pdf online', 'turn pdf pages', 'fix sideways pdf'],
+        'intro' => 'A scanned page or a photo taken in the wrong orientation often ends up sideways or upside down in a PDF. This rotate PDF tool turns pages 90, 180 or 270 degrees so they read the right way up. Rotate every page at once or pick only the ones that need it, then download the corrected file. Everything happens on your device - your PDF is never uploaded.',
+        'steps' => [
+            'Choose the PDF you want to fix.',
+            'Click a page to select it, or leave none selected to rotate the whole document.',
+            'Click 90°, 90° or 180° to rotate the selected pages (or every page).',
+            'Click Rotate PDF and download the corrected file.',
+        ],
+        'features' => [
+            'Rotate 90, 180 or 270 degrees',
+            'Rotate every page or only the ones you select',
+            'Page thumbnails show the result before you download',
+            'No watermark and no quality loss',
+            'Private - your PDF never leaves your device',
+        ],
+        'content' => [
+            [
+                'heading' => 'Why do PDF pages end up sideways?',
+                'body' => 'Scanners and phone cameras sometimes save a page in landscape orientation inside a document that is otherwise portrait, which makes that one page show up sideways when you read the PDF. Rotating only that page, rather than the whole file, fixes it without affecting the rest of the document.',
+            ],
+            [
+                'heading' => 'Does rotating change the page content?',
+                'body' => 'No. Rotating only changes the page\'s orientation flag, which every PDF viewer and printer reads to display it correctly. The text, images and quality of the page itself are not touched.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Can I rotate just one page instead of the whole PDF?', 'a' => 'Yes. Click the thumbnail of the page (or pages) you want to fix before clicking a rotate button; only the selected pages turn. Leave none selected to rotate every page.'],
+            ['q' => 'What rotation angles are available?', 'a' => 'Rotate left or right by 90 degrees, or flip a page 180 degrees for a page scanned upside down. You can combine clicks to reach any of the four orientations.'],
+            ['q' => 'Is my PDF uploaded to a server?', 'a' => 'No. The PDF is opened and rotated entirely in your browser with JavaScript and is never sent anywhere.'],
+            ['q' => 'Will this add a watermark or reduce quality?', 'a' => 'No. Rotating only changes each page\'s orientation. No watermark, logo or extra pages are added, and no image or text quality is lost.'],
+        ],
+        'related' => ['organize-pdf', 'delete-pdf-pages', 'merge-pdf', 'split-pdf'],
+    ],
+
+    'delete-pdf-pages' => [
+        'name' => 'Delete PDF Pages',
+        'category' => 'pdf-tools',
+        'icon' => 'pdf',
+        'popular' => false,
+        'updated' => '2026-10-03',
+        'title' => 'Delete PDF Pages - Remove Pages Online Free',
+        'description' => 'Delete pages from a PDF online for free. Click page thumbnails or type page ranges like 2, 4-6. No upload, no watermark, no sign up required.',
+        'h1' => 'Delete PDF Pages',
+        'tagline' => 'Remove the pages you don\'t need, right in your browser.',
+        'keywords' => ['delete pdf pages', 'remove pdf pages', 'delete pages from pdf', 'remove pages from pdf online', 'pdf page remover'],
+        'intro' => 'A blank cover sheet, a duplicate scan or an unwanted page can be removed from a PDF without recreating the whole file. This tool deletes pages from a PDF by clicking their thumbnail or typing page ranges such as 2, 4-6, then saves a new file with only the pages you want to keep. Everything runs on your device, so the PDF is never uploaded.',
+        'steps' => [
+            'Choose the PDF you want to edit.',
+            'Click the thumbnail of each page to delete, or switch to page ranges and type numbers like 2, 4-6.',
+            'Check the pages marked for deletion in the grid.',
+            'Click Delete pages and download the new PDF.',
+        ],
+        'features' => [
+            'Pick pages by thumbnail or by typing ranges',
+            'Page thumbnails show exactly what you are removing',
+            'Keeps at least one page - you can\'t delete everything by mistake',
+            'No watermark and no quality loss on the pages you keep',
+            'Private - your PDF never leaves your device',
+        ],
+        'content' => [
+            [
+                'heading' => 'When to delete pages instead of splitting',
+                'body' => 'Use this tool when most of a PDF is fine and only a few pages need to go, such as a blank page, a duplicate or an outdated cover sheet. If you instead want to pull specific pages out into their own file, Split PDF\'s "Extract pages" mode does that.',
+            ],
+            [
+                'heading' => 'Can a deleted page be brought back?',
+                'body' => 'Not from the new file - once downloaded, the removed pages are gone from that copy. Keep your original PDF until you are sure the result is correct, since nothing here overwrites the file on your device.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'How do I delete more than one page at once?', 'a' => 'Click each page\'s thumbnail to mark it, or switch to "Page ranges" and type something like 2, 4-6 to mark several pages in one go.'],
+            ['q' => 'Can I delete every page in the PDF?', 'a' => 'No. At least one page must remain, so the Delete pages button stays disabled if your selection would remove them all.'],
+            ['q' => 'Is my PDF uploaded anywhere?', 'a' => 'No. Pages are removed entirely in your browser with JavaScript, and the file is never sent to a server.'],
+            ['q' => 'Will the remaining pages lose quality?', 'a' => 'No. The pages you keep are copied exactly as they are, with no recompression, watermark or added pages.'],
+        ],
+        'related' => ['organize-pdf', 'rotate-pdf', 'split-pdf', 'merge-pdf'],
+    ],
+
+    'organize-pdf' => [
+        'name' => 'Organize PDF',
+        'category' => 'pdf-tools',
+        'icon' => 'pdf',
+        'popular' => false,
+        'updated' => '2026-10-03',
+        'title' => 'Organize PDF - Reorder Pages Online Free',
+        'description' => 'Reorder the pages of a PDF online for free. Drag page thumbnails into a new order, or use the move buttons. No upload, no watermark, no sign up.',
+        'h1' => 'Organize PDF',
+        'tagline' => 'Drag pages into the order you want, right in your browser.',
+        'keywords' => ['organize pdf', 'reorder pdf pages', 'rearrange pdf pages', 'sort pdf pages', 'change pdf page order'],
+        'intro' => 'Pages sometimes end up in the wrong order after scanning or merging several documents. This tool organizes a PDF by letting you drag page thumbnails into a new order, or move them with the arrow buttons if you prefer not to drag. Once the order looks right, save a new PDF with the pages rearranged. Everything happens on your device, so the file is never uploaded.',
+        'steps' => [
+            'Choose the PDF you want to reorder.',
+            'Drag a page thumbnail to its new position, or use the ← and → buttons.',
+            'Repeat until the pages are in the order you want.',
+            'Click Save new order and download the reorganized PDF.',
+        ],
+        'features' => [
+            'Drag and drop page thumbnails to reorder them',
+            'Move buttons work without a mouse, for keyboard users',
+            'Page numbers update live as you reorder',
+            'No watermark and no quality loss',
+            'Private - your PDF never leaves your device',
+        ],
+        'content' => [
+            [
+                'heading' => 'When pages need reordering',
+                'body' => 'A common case is scanning a stack of paper that comes out in the wrong sequence, or merging two PDFs where one needs to slot into the middle of the other. Rather than starting over, this tool lets you fix the order of an existing PDF directly.',
+            ],
+            [
+                'heading' => 'Reordering without a mouse',
+                'body' => 'Each page thumbnail has a "move earlier" and "move later" button, so pages can be reordered with a keyboard or touch screen as easily as with drag and drop.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Can I reorder pages without dragging them?', 'a' => 'Yes. Every page thumbnail has ← and → buttons that move it one position earlier or later, which also works with a keyboard.'],
+            ['q' => 'Does reordering change the content of a page?', 'a' => 'No. Pages are copied exactly as they are; only their position in the document changes.'],
+            ['q' => 'Is my PDF uploaded to a server?', 'a' => 'No. The PDF is opened and reordered entirely in your browser with JavaScript and is never sent anywhere.'],
+            ['q' => 'Can I also delete or rotate pages here?', 'a' => 'This tool only reorders pages. Use Delete PDF Pages or Rotate PDF for those, either before or after organizing the order.'],
+        ],
+        'related' => ['delete-pdf-pages', 'rotate-pdf', 'merge-pdf', 'split-pdf'],
     ],
 
 ];

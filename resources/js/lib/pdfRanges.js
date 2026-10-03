@@ -58,3 +58,13 @@ export function rangesToIndexes(ranges) {
 export function rangeLabel([start, end]) {
     return start === end ? `${start}` : `${start}-${end}`;
 }
+
+/** Zero-based indexes to keep, in order, when the given zero-based indexes are removed. */
+export function indexesExcluding(pageCount, excludeIndexes) {
+    const exclude = excludeIndexes instanceof Set ? excludeIndexes : new Set(excludeIndexes);
+    const out = [];
+    for (let i = 0; i < pageCount; i++) {
+        if (!exclude.has(i)) out.push(i);
+    }
+    return out;
+}

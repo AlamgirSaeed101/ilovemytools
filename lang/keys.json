@@ -191,8 +191,12 @@
     "key": "{count} pages",
     "one": "{count} page",
     "files": [
+      "resources/js/tools/DeletePdfPages.jsx",
       "resources/js/tools/JpgToPdf.jsx",
       "resources/js/tools/MergePdf.jsx",
+      "resources/js/tools/OrganizePdf.jsx",
+      "resources/js/tools/PdfToImage.jsx",
+      "resources/js/tools/RotatePdf.jsx",
       "resources/js/tools/SplitPdf.jsx"
     ]
   },
@@ -201,6 +205,20 @@
     "one": "{count} page in total",
     "files": [
       "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "{count} pages marked for deletion",
+    "one": "{count} page marked for deletion",
+    "files": [
+      "resources/js/tools/DeletePdfPages.jsx"
+    ]
+  },
+  {
+    "key": "{count} pages selected",
+    "one": "{count} page selected",
+    "files": [
+      "resources/js/tools/RotatePdf.jsx"
     ]
   },
   {
@@ -231,6 +249,12 @@
     "one": "{count} year",
     "files": [
       "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "{dpi} DPI",
+    "files": [
+      "resources/js/tools/PdfToImage.jsx"
     ]
   },
   {
@@ -1064,6 +1088,10 @@
   {
     "key": "Choose another PDF",
     "files": [
+      "resources/js/tools/DeletePdfPages.jsx",
+      "resources/js/tools/OrganizePdf.jsx",
+      "resources/js/tools/PdfToImage.jsx",
+      "resources/js/tools/RotatePdf.jsx",
       "resources/js/tools/SplitPdf.jsx"
     ]
   },
@@ -1101,6 +1129,12 @@
     "files": [
       "resources/js/tools/ImageCompressor.jsx",
       "resources/js/tools/ImageConverter.jsx"
+    ]
+  },
+  {
+    "key": "Click a page to mark it for deletion.",
+    "files": [
+      "resources/js/tools/DeletePdfPages.jsx"
     ]
   },
   {
@@ -1238,6 +1272,18 @@
     ]
   },
   {
+    "key": "Conversion failed: {message}",
+    "files": [
+      "resources/js/tools/PdfToImage.jsx"
+    ]
+  },
+  {
+    "key": "Convert",
+    "files": [
+      "resources/js/tools/PdfToImage.jsx"
+    ]
+  },
+  {
     "key": "Convert again",
     "files": [
       "resources/js/tools/ImageConverter.jsx"
@@ -1253,6 +1299,12 @@
     "key": "Convert to PDF",
     "files": [
       "resources/js/tools/JpgToPdf.jsx"
+    ]
+  },
+  {
+    "key": "Converting {done} of {total}…",
+    "files": [
+      "resources/js/tools/PdfToImage.jsx"
     ]
   },
   {
@@ -1463,6 +1515,36 @@
     ]
   },
   {
+    "key": "Delete",
+    "files": [
+      "resources/js/tools/DeletePdfPages.jsx"
+    ]
+  },
+  {
+    "key": "Delete page {number}",
+    "files": [
+      "resources/js/tools/DeletePdfPages.jsx"
+    ]
+  },
+  {
+    "key": "Delete pages",
+    "files": [
+      "resources/js/tools/DeletePdfPages.jsx"
+    ]
+  },
+  {
+    "key": "Deleting pages failed: {message}",
+    "files": [
+      "resources/js/tools/DeletePdfPages.jsx"
+    ]
+  },
+  {
+    "key": "Deleting…",
+    "files": [
+      "resources/js/tools/DeletePdfPages.jsx"
+    ]
+  },
+  {
     "key": "Depending on where you live (for example under the GDPR or UK GDPR, or the CCPA in California), you may have the right to access, correct or delete personal data, and to object to or restrict certain processing. Because we do not store your tool data, there is usually no personal data for us to return. To make a request, contact us using the details below.",
     "files": [
       "resources/js/pages/InfoPages.jsx"
@@ -1551,7 +1633,16 @@
   {
     "key": "Done!",
     "files": [
+      "resources/js/tools/OrganizePdf.jsx",
+      "resources/js/tools/PdfToImage.jsx",
+      "resources/js/tools/RotatePdf.jsx",
       "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "Done! {pages} left ({size}).",
+    "files": [
+      "resources/js/tools/DeletePdfPages.jsx"
     ]
   },
   {
@@ -1598,7 +1689,8 @@
   {
     "key": "Download image",
     "files": [
-      "resources/js/tools/ImageResizer.jsx"
+      "resources/js/tools/ImageResizer.jsx",
+      "resources/js/tools/PdfToImage.jsx"
     ]
   },
   {
@@ -1610,7 +1702,10 @@
   {
     "key": "Download PDF",
     "files": [
+      "resources/js/tools/DeletePdfPages.jsx",
       "resources/js/tools/JpgToPdf.jsx",
+      "resources/js/tools/OrganizePdf.jsx",
+      "resources/js/tools/RotatePdf.jsx",
       "resources/js/tools/SplitPdf.jsx"
     ]
   },
@@ -1630,7 +1725,14 @@
   {
     "key": "Download ZIP",
     "files": [
+      "resources/js/tools/PdfToImage.jsx",
       "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "Drag a page to reorder it, or use the move buttons.",
+    "files": [
+      "resources/js/tools/OrganizePdf.jsx"
     ]
   },
   {
@@ -1642,6 +1744,10 @@
   {
     "key": "Drop a PDF here or click to choose",
     "files": [
+      "resources/js/tools/DeletePdfPages.jsx",
+      "resources/js/tools/OrganizePdf.jsx",
+      "resources/js/tools/PdfToImage.jsx",
+      "resources/js/tools/RotatePdf.jsx",
       "resources/js/tools/SplitPdf.jsx"
     ]
   },
@@ -1681,6 +1787,12 @@
     "key": "e.g. 1920",
     "files": [
       "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "e.g. 2, 4-6",
+    "files": [
+      "resources/js/tools/DeletePdfPages.jsx"
     ]
   },
   {
@@ -2377,6 +2489,12 @@
     ]
   },
   {
+    "key": "How to pick pages",
+    "files": [
+      "resources/js/tools/DeletePdfPages.jsx"
+    ]
+  },
+  {
     "key": "How to use the {name}",
     "files": [
       "app/Support/Seo.php",
@@ -2436,6 +2554,12 @@
     "key": "Image",
     "files": [
       "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
+    "key": "Image quality (DPI)",
+    "files": [
+      "resources/js/tools/PdfToImage.jsx"
     ]
   },
   {
@@ -2557,6 +2681,12 @@
     "key": "JSON strings and keys must use double quotes (\"), not single quotes.",
     "files": [
       "resources/js/lib/json.js"
+    ]
+  },
+  {
+    "key": "Keep page {number}",
+    "files": [
+      "resources/js/tools/DeletePdfPages.jsx"
     ]
   },
   {
@@ -2729,6 +2859,15 @@
     "key": "Loading the AI model… {percent}%",
     "files": [
       "resources/js/tools/BackgroundRemover.jsx"
+    ]
+  },
+  {
+    "key": "Loading…",
+    "files": [
+      "resources/js/tools/DeletePdfPages.jsx",
+      "resources/js/tools/OrganizePdf.jsx",
+      "resources/js/tools/PdfToImage.jsx",
+      "resources/js/tools/RotatePdf.jsx"
     ]
   },
   {
@@ -2950,6 +3089,18 @@
     ]
   },
   {
+    "key": "Move page {number} earlier",
+    "files": [
+      "resources/js/tools/OrganizePdf.jsx"
+    ]
+  },
+  {
+    "key": "Move page {number} later",
+    "files": [
+      "resources/js/tools/OrganizePdf.jsx"
+    ]
+  },
+  {
     "key": "Nameservers",
     "files": [
       "resources/js/tools/DomainAgeChecker.jsx"
@@ -3049,6 +3200,12 @@
     "key": "No duplicates",
     "files": [
       "resources/js/tools/RandomNumber.jsx"
+    ]
+  },
+  {
+    "key": "No pages selected - rotation applies to every page",
+    "files": [
+      "resources/js/tools/RotatePdf.jsx"
     ]
   },
   {
@@ -3175,6 +3332,10 @@
   {
     "key": "One PDF file · max 200 MB",
     "files": [
+      "resources/js/tools/DeletePdfPages.jsx",
+      "resources/js/tools/OrganizePdf.jsx",
+      "resources/js/tools/PdfToImage.jsx",
+      "resources/js/tools/RotatePdf.jsx",
       "resources/js/tools/SplitPdf.jsx"
     ]
   },
@@ -3282,6 +3443,12 @@
     ]
   },
   {
+    "key": "Page {number}",
+    "files": [
+      "resources/js/tools/OrganizePdf.jsx"
+    ]
+  },
+  {
     "key": "Page address (URL)",
     "files": [
       "resources/js/tools/BrokenLinkChecker.jsx"
@@ -3301,6 +3468,12 @@
     ]
   },
   {
+    "key": "Page ranges",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
     "key": "Page size",
     "files": [
       "resources/js/tools/JpgToPdf.jsx"
@@ -3310,6 +3483,18 @@
     "key": "Pages 1 to {count}. Separate with commas. Example: 1-3, 5, 8-{count}",
     "files": [
       "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "Pages 1 to {count}. Separate with commas. Example: 2, 4-6",
+    "files": [
+      "resources/js/tools/DeletePdfPages.jsx"
+    ]
+  },
+  {
+    "key": "Pages to delete",
+    "files": [
+      "resources/js/tools/DeletePdfPages.jsx"
     ]
   },
   {
@@ -3370,6 +3555,20 @@
     "key": "Paused",
     "files": [
       "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "PDF pages",
+    "files": [
+      "resources/js/tools/DeletePdfPages.jsx",
+      "resources/js/tools/PdfToImage.jsx",
+      "resources/js/tools/RotatePdf.jsx"
+    ]
+  },
+  {
+    "key": "PDF pages, in order",
+    "files": [
+      "resources/js/tools/OrganizePdf.jsx"
     ]
   },
   {
@@ -3447,6 +3646,10 @@
   {
     "key": "Please choose a PDF file.",
     "files": [
+      "resources/js/tools/DeletePdfPages.jsx",
+      "resources/js/tools/OrganizePdf.jsx",
+      "resources/js/tools/PdfToImage.jsx",
+      "resources/js/tools/RotatePdf.jsx",
       "resources/js/tools/SplitPdf.jsx"
     ]
   },
@@ -3739,6 +3942,10 @@
   {
     "key": "Reading PDF…",
     "files": [
+      "resources/js/tools/DeletePdfPages.jsx",
+      "resources/js/tools/OrganizePdf.jsx",
+      "resources/js/tools/PdfToImage.jsx",
+      "resources/js/tools/RotatePdf.jsx",
       "resources/js/tools/SplitPdf.jsx"
     ]
   },
@@ -3752,6 +3959,12 @@
     "key": "reading…",
     "files": [
       "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "recommended",
+    "files": [
+      "resources/js/tools/PdfToImage.jsx"
     ]
   },
   {
@@ -3864,6 +4077,12 @@
     "key": "Removing the background…",
     "files": [
       "resources/js/tools/BackgroundRemover.jsx"
+    ]
+  },
+  {
+    "key": "Reordering failed: {message}",
+    "files": [
+      "resources/js/tools/OrganizePdf.jsx"
     ]
   },
   {
@@ -3980,6 +4199,42 @@
     ]
   },
   {
+    "key": "Rotate 180 degrees",
+    "files": [
+      "resources/js/tools/RotatePdf.jsx"
+    ]
+  },
+  {
+    "key": "Rotate left 90 degrees",
+    "files": [
+      "resources/js/tools/RotatePdf.jsx"
+    ]
+  },
+  {
+    "key": "Rotate PDF",
+    "files": [
+      "resources/js/tools/RotatePdf.jsx"
+    ]
+  },
+  {
+    "key": "Rotate right 90 degrees",
+    "files": [
+      "resources/js/tools/RotatePdf.jsx"
+    ]
+  },
+  {
+    "key": "Rotating failed: {message}",
+    "files": [
+      "resources/js/tools/RotatePdf.jsx"
+    ]
+  },
+  {
+    "key": "Rotating…",
+    "files": [
+      "resources/js/tools/RotatePdf.jsx"
+    ]
+  },
+  {
     "key": "Round up the total per person to the next whole dollar",
     "files": [
       "resources/js/tools/TipCalculator.jsx"
@@ -4019,6 +4274,18 @@
     "key": "Save as",
     "files": [
       "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Save new order",
+    "files": [
+      "resources/js/tools/OrganizePdf.jsx"
+    ]
+  },
+  {
+    "key": "Saving…",
+    "files": [
+      "resources/js/tools/OrganizePdf.jsx"
     ]
   },
   {
@@ -4090,15 +4357,39 @@
     ]
   },
   {
+    "key": "Select all",
+    "files": [
+      "resources/js/tools/RotatePdf.jsx"
+    ]
+  },
+  {
     "key": "Select at least one character type.",
     "files": [
       "resources/js/lib/password.js"
     ]
   },
   {
+    "key": "Select by thumbnail",
+    "files": [
+      "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Select none",
+    "files": [
+      "resources/js/tools/RotatePdf.jsx"
+    ]
+  },
+  {
     "key": "Select one or more images · up to {max} images · max 50 MB each",
     "files": [
       "resources/js/tools/JpgToPdf.jsx"
+    ]
+  },
+  {
+    "key": "Select page {number}",
+    "files": [
+      "resources/js/tools/RotatePdf.jsx"
     ]
   },
   {
@@ -5428,6 +5719,12 @@
     "key": "You can merge up to {max} files at a time.",
     "files": [
       "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "You can't delete every page. At least one page must remain.",
+    "files": [
+      "resources/js/tools/DeletePdfPages.jsx"
     ]
   },
   {

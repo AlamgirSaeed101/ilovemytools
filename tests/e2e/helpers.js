@@ -17,6 +17,11 @@ export async function pdfPageCount(buffer) {
     return (await PDFDocument.load(buffer)).getPageCount();
 }
 
+export async function pdfPageRotations(buffer) {
+    const doc = await PDFDocument.load(buffer);
+    return doc.getPages().map((p) => p.getRotation().angle);
+}
+
 /** A colourful test image made by the browser's canvas (so it is a real, decodable file). */
 export async function makeImage(page, { width = 800, height = 600, type = 'image/png', quality = 0.95 } = {}) {
     const dataUrl = await page.evaluate(

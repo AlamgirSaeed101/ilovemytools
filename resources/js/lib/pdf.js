@@ -1,6 +1,6 @@
 import { t } from './i18n.js';
 // PDF helpers built on pdf-lib (runs fully in the browser).
-import { PDFDocument } from 'pdf-lib';
+import { degrees, PDFDocument } from 'pdf-lib';
 import { drawScaled, imageTypeOf, loadImage } from './image.js';
 
 export const MAX_PDF_BYTES = 200 * 1024 * 1024;
@@ -115,6 +115,20 @@ export async function embedImageForPdf(pdfDoc, file) {
     } finally {
         URL.revokeObjectURL(url);
     }
+}
+
+/** Normalise a rotation in degrees to 0/90/180/270, wrapping negative deltas. */
+export function addRotation(base, delta) {
+    return (((base + delta) % 360) + 360) % 360;
+}
+
+/** Set each page's absolute rotation (degrees, one entry per page index) and save. */
+export async function buildRotatedPdf(doc, targetRotations) {
+    doc.getPages().forEach((page, i) => {
+        if (targetRotations[i] != null) page.setRotation(degrees(targetRotations[i]));
+    });
+    const bytes = await doc.save();
+    return new Blob([bytes], { type: 'application/pdf' });
 }
 
 /** Build a PDF with one image per page from a list of image Files. */

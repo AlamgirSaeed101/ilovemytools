@@ -5,8 +5,10 @@ import { calculateAge, parseDateInput } from './date.js';
 import { applyPercent, parseNumber, percentChange, percentOf, wholeFromPart, whatPercent, formatNumber } from './percent.js';
 import { formatJson, parseJson } from './json.js';
 import { decodeText, encodeText, normalizeBase64 } from './base64.js';
-import { parseRanges, rangesToIndexes } from './pdfRanges.js';
-import { computeImagePageLayout, MM_TO_PT, PDF_PAGE_SIZES } from './pdf.js';
+import { parseRanges, rangesToIndexes, indexesExcluding } from './pdfRanges.js';
+import { computeImagePageLayout, MM_TO_PT, PDF_PAGE_SIZES, addRotation, buildRotatedPdf } from './pdf.js';
+import { dpiToScale } from './pdfRender.js';
+import { PDFDocument } from 'pdf-lib';
 import { buildQrPayload, contrastRatio, escapeWifi } from './qr.js';
 import { formatBytes, uniqueNamer, baseName, safeFilename } from './util.js';
 
@@ -250,6 +252,48 @@ describe('pdf page ranges', () => {
     });
     it('flattens and de-duplicates indexes', () => {
         expect(rangesToIndexes([[1, 3], [2, 4], [1, 1]])).toEqual([0, 1, 2, 3]);
+    });
+    it('keeps the indexes not excluded, in order', () => {
+        expect(indexesExcluding(5, [1, 3])).toEqual([0, 2, 4]);
+        expect(indexesExcluding(3, new Set([0, 1, 2]))).toEqual([]);
+        expect(indexesExcluding(4, [])).toEqual([0, 1, 2, 3]);
+    });
+});
+
+describe('pdf rotation', () => {
+    it('normalises rotation deltas to 0-270', () => {
+        expect(addRotation(0, 90)).toBe(90);
+        expect(addRotation(270, 90)).toBe(0);
+        expect(addRotation(0, -90)).toBe(270);
+        expect(addRotation(90, 180)).toBe(270);
+        expect(addRotation(350, 20)).toBe(10);
+    });
+
+    it('sets absolute page rotation and keeps page content', async () => {
+        const doc = await PDFDocument.create();
+        doc.addPage([100, 200]);
+        doc.addPage([100, 200]);
+        const blob = await buildRotatedPdf(doc, [90, 180]);
+        const out = await PDFDocument.load(await blob.arrayBuffer());
+        expect(out.getPageCount()).toBe(2);
+        expect(out.getPage(0).getRotation().angle).toBe(90);
+        expect(out.getPage(1).getRotation().angle).toBe(180);
+    });
+
+    it('leaves a page untouched when no target rotation is given for it', async () => {
+        const doc = await PDFDocument.create();
+        doc.addPage([100, 200]);
+        const blob = await buildRotatedPdf(doc, []);
+        const out = await PDFDocument.load(await blob.arrayBuffer());
+        expect(out.getPage(0).getRotation().angle).toBe(0);
+    });
+});
+
+describe('pdf render scale', () => {
+    it('converts DPI to a pdfjs viewport scale (72 dpi = scale 1)', () => {
+        expect(dpiToScale(72)).toBe(1);
+        expect(dpiToScale(150)).toBeCloseTo(150 / 72);
+        expect(dpiToScale(300)).toBeCloseTo(300 / 72);
     });
 });
 

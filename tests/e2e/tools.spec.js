@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 import JSZip from 'jszip';
-import { makeImage, makePdf, openTool, pdfPageCount, readDownload, trackErrors } from './helpers.js';
+import { makeImage, makePdf, openTool, pdfPageCount, pdfPageRotations, readDownload, trackErrors } from './helpers.js';
 
 let errors;
 test.beforeEach(({ page }) => {
@@ -309,6 +309,74 @@ test.describe('PDF tools', () => {
         // Rejects non-images.
         await page.getByTestId('file-input').setInputFiles({ name: 'notes.txt', mimeType: 'text/plain', buffer: Buffer.from('hi') });
         await expect(page.getByText('only JPG, PNG and WebP images are supported')).toBeVisible();
+    });
+
+    test('rotate PDF turns selected pages, or every page when none is selected', async ({ page }) => {
+        await openTool(page, 'rotate-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'doc.pdf', mimeType: 'application/pdf', buffer: await makePdf(3) });
+        await expect(page.locator('.page-card')).toHaveCount(3);
+
+        // Rotating just the selected page leaves the others untouched.
+        await expect(page.getByRole('button', { name: 'Rotate PDF' })).toBeDisabled();
+        await page.getByLabel('Select page 2').check();
+        await page.getByRole('button', { name: 'Rotate right 90 degrees' }).click();
+        await expect(page.getByRole('button', { name: 'Rotate PDF' })).toBeEnabled();
+        await page.getByRole('button', { name: 'Rotate PDF' }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(file.suggestedFilename()).toBe('doc-rotated.pdf');
+        expect(await pdfPageRotations(await readDownload(file))).toEqual([0, 90, 0]);
+
+        // Starting over with no page selected rotates every page.
+        await page.getByRole('button', { name: 'Choose another PDF' }).click();
+        await page.getByTestId('file-input').setInputFiles({ name: 'doc2.pdf', mimeType: 'application/pdf', buffer: await makePdf(2) });
+        await expect(page.locator('.page-card')).toHaveCount(2);
+        await page.getByRole('button', { name: 'Rotate 180 degrees' }).click();
+        await page.getByRole('button', { name: 'Rotate PDF' }).click();
+        const [file2] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(await pdfPageRotations(await readDownload(file2))).toEqual([180, 180]);
+    });
+
+    test('delete PDF pages removes the marked pages, by ranges or by thumbnail', async ({ page }) => {
+        await openTool(page, 'delete-pdf-pages');
+        await page.getByTestId('file-input').setInputFiles({ name: 'doc.pdf', mimeType: 'application/pdf', buffer: await makePdf(4) });
+        await expect(page.locator('.page-card')).toHaveCount(4);
+
+        await page.getByRole('tab', { name: 'Page ranges' }).click();
+        await page.getByLabel('Pages to delete').fill('2, 4');
+        await expect(page.getByText('2 pages marked for deletion')).toBeVisible();
+        await page.getByRole('button', { name: 'Delete pages' }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(file.suggestedFilename()).toBe('doc-pages-deleted.pdf');
+        expect(await pdfPageCount(await readDownload(file))).toBe(2);
+
+        // Deleting every page is blocked, whichever way pages are picked.
+        await page.getByRole('button', { name: 'Choose another PDF' }).click();
+        await page.getByTestId('file-input').setInputFiles({ name: 'two.pdf', mimeType: 'application/pdf', buffer: await makePdf(2) });
+        await expect(page.locator('.page-card')).toHaveCount(2);
+        await page.getByLabel('Delete page 1').check();
+        await page.getByLabel('Delete page 2').check();
+        await expect(page.getByText("You can't delete every page")).toBeVisible();
+        await expect(page.getByRole('button', { name: 'Delete pages' })).toBeDisabled();
+    });
+
+    test('organize PDF reorders pages with the move buttons', async ({ page }) => {
+        await openTool(page, 'organize-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'doc.pdf', mimeType: 'application/pdf', buffer: await makePdf(3, 'Doc') });
+        await expect(page.locator('.page-card')).toHaveCount(3);
+        await expect(page.getByRole('button', { name: 'Save new order' })).toBeDisabled();
+
+        // Move page 1 later twice: new order is 2, 3, 1.
+        await page.getByRole('button', { name: 'Move page 1 later' }).click();
+        await page.getByRole('button', { name: 'Move page 1 later' }).click();
+        const labels = await page.locator('.page-card').evaluateAll((els) => els.map((el) => el.getAttribute('aria-label')));
+        expect(labels).toEqual(['Page 2', 'Page 3', 'Page 1']);
+        await expect(page.locator('.page-card__number')).toHaveText(['1', '2', '3']);
+        await expect(page.getByRole('button', { name: 'Save new order' })).toBeEnabled();
+
+        await page.getByRole('button', { name: 'Save new order' }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(file.suggestedFilename()).toBe('doc-organized.pdf');
+        expect(await pdfPageCount(await readDownload(file))).toBe(3);
     });
 });
 
