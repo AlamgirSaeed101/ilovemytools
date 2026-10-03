@@ -1346,4 +1346,69 @@ return [
         ],
     ],
 
+    'domain-age-checker' => [
+        'name' => 'Sprawdzanie wieku domeny',
+        'title' => 'Sprawdzanie wieku domeny: kiedy została zarejestrowana?',
+        'description' => 'Darmowe sprawdzanie wieku domeny: wiek, data wygaśnięcia, rejestrator i serwery nazw do 20 domen, na podstawie danych RDAP, następcy WHOIS.',
+        'h1' => 'Sprawdzanie wieku domeny',
+        'tagline' => 'Sprawdź dokładny wiek, datę wygaśnięcia i rejestratora do 20 domen.',
+        'keywords' => [
+            'sprawdzanie wieku domeny',
+            'wiek domeny',
+            'kiedy zarejestrowano domenę',
+            'data rejestracji domeny',
+            'wyszukiwarka domen',
+            'zapytanie rdap',
+        ],
+        'intro' => 'Narzędzie do sprawdzania wieku domeny odpytuje oficjalny rejestr nazwy domeny, aby pokazać dokładnie, ile ma lat. Wpisz do 20 domen, aby zobaczyć datę utworzenia każdej z nich, dokładny wiek w latach, miesiącach i dniach, datę wygaśnięcia, datę ostatniej aktualizacji, rejestratora i serwery nazw, pobrane na żywo z RDAP, darmowego następcy WHOIS niewymagającego klucza. Przydaje się to przy sprawdzaniu strony przed jej kupnem lub umieszczeniem linku, sprawdzaniu, jak długo firma działa online, oraz pilnowaniu terminów odnowienia własnych domen.',
+        'steps' => [
+            'Wpisz do 20 domen lub adresów stron, po jednym w wierszu.',
+            'Kliknij Sprawdź wiek domeny.',
+            'Sprawdź wiek, daty, rejestratora i serwery nazw każdej domeny albo pobierz wyniki jako CSV.',
+        ],
+        'features' => [
+            'Do 20 domen w jednym sprawdzeniu',
+            'Dokładny wiek w latach, miesiącach i dniach, a także daty utworzenia, wygaśnięcia i ostatniej aktualizacji',
+            'Rejestrator, kody statusu i serwery nazw każdej domeny',
+            'Dane na żywo z RDAP, bez rejestracji, darmowy eksport CSV',
+        ],
+        'content' => [
+            [
+                'heading' => 'Czym jest RDAP i czym różni się od WHOIS?',
+                'body' => 'RDAP (Registration Data Access Protocol) to nowoczesny, ustandaryzowany następca WHOIS. Podczas gdy WHOIS zwraca zwykły tekst w formacie, który różni się w zależności od rejestru, RDAP zwraca ustrukturyzowany JSON z takimi samymi nazwami pól wszędzie, jest darmowy i nie wymaga klucza, a także obsługuje umiędzynarodowione nazwy domen i precyzyjną kontrolę dostępu. ICANN zobowiązała wszystkich akredytowanych rejestratorów i rejestry gTLD do udostępniania RDAP, a rejestry krajowe, takie jak niemiecki DENIC czy polski NASK, również je dodały, więc WHOIS jest stopniowo wypierane przez RDAP.',
+            ],
+            [
+                'heading' => 'Dlaczego niektóre domeny pokazują „niewspierane” lub „nie znaleziono rekordu”?',
+                'body' => 'Niewielka liczba krajowych rozszerzeń domen nie wdrożyła jeszcze usługi RDAP, więc nie da się skontaktować z żadnym rejestrem dla nich; takie domeny pokazują „niewspierane”. Domena może też nie pokazać rekordu, jeśli nie jest obecnie zarejestrowana, została zarejestrowana bardzo niedawno i nie pojawiła się jeszcze w publicznych danych rejestru, albo gdy rejestr jest tymczasowo niedostępny. Żadna z tych sytuacji nie oznacza błędu narzędzia: pokazywane daty zawsze pochodzą bezpośrednio z odpowiedzi rejestru na żywo, nigdy nie są szacowane.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Jak mogę sprawdzić, ile lat ma domena?',
+                'a' => 'Wpisz domenę powyżej i kliknij Sprawdź wiek domeny. Dokładna data rejestracji oraz wiek w latach, miesiącach i dniach pochodzą bezpośrednio z rekordu RDAP domeny.',
+            ],
+            [
+                'q' => 'Czy to te same informacje co w wyszukiwarce WHOIS?',
+                'a' => 'Tak, to te same dane rejestracyjne, ale odczytane z RDAP, ustrukturyzowanego protokołu bez klucza, który zastępuje WHOIS. Data, rejestrator i serwery nazw pochodzą z tego samego rekordu w obu przypadkach.',
+            ],
+            [
+                'q' => 'Dlaczego data wygaśnięcia ma znaczenie?',
+                'a' => 'Domena, która nie zostanie odnowiona przed datą wygaśnięcia, może wejść w okres karencji, a potem zostać zwolniona do rejestracji przez kogokolwiek. Sprawdzenie daty wygaśnięcia strony to szybki sposób na ocenę, jak aktywnie jest ona utrzymywana.',
+            ],
+            [
+                'q' => 'Czy mogę sprawdzić dowolne rozszerzenie domeny?',
+                'a' => 'Większość popularnych rozszerzeń (w tym .com, .net, .org, .io, .co.uk, .de i .pl) ma rekordy RDAP. Niewielka liczba mniejszych rozszerzeń krajowych nie wdrożyła jeszcze RDAP; takie domeny są pokazywane jako niewspierane, zamiast zgadywać dane.',
+            ],
+        ],
+        'table' => [
+            'caption' => 'Pokazywane typy zdarzeń RDAP',
+            'headers' => ['Pole', 'Zdarzenie RDAP', 'Znaczenie'],
+            'rows' => [
+                ['Utworzono', 'registration', 'Kiedy domena została zarejestrowana po raz pierwszy'],
+                ['Wygasa', 'expiration', 'Kiedy kończy się obecny okres rejestracji'],
+                ['Ostatnia aktualizacja', 'last changed', 'Kiedy sam rekord rejestru został ostatnio zmieniony'],
+            ],
+        ],
+    ],
+
 ];

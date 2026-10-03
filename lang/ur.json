@@ -941,5 +941,19 @@
     "Your PDFs, photos and documents never leave your browser": "آپ کی PDFs، تصاویر اور دستاویزات کبھی آپ کے براؤزر سے باہر نہیں جاتیں",
     "Your public IP address": "آپ کا پبلک IP ایڈریس",
     "Your QR code will appear here.": "آپ کا QR کوڈ یہاں ظاہر ہوگا۔",
-    "Your text": "آپ کا متن"
+    "Your text": "آپ کا متن",
+    "{count} of {total} domains checked": "{total} میں سے {count} ڈومین چیک ہوئے",
+    "{years}y {months}m {days}d": "{years}س {months}م {days}د",
+    "Age": "عمر",
+    "Check domain age": "ڈومین کی عمر چیک کریں",
+    "Could not be checked right now. Please try again.": "ابھی چیک نہیں ہو سکا۔ براہ کرم دوبارہ کوشش کریں۔",
+    "Created": "تخلیق شدہ",
+    "Domain age results": "ڈومین کی عمر کے نتائج",
+    "Expires": "میعاد ختم",
+    "Last updated": "آخری تازہ کاری",
+    "Nameservers": "نیم سرورز",
+    "No RDAP record was found (it may be unregistered or very new).": "کوئی RDAP ریکارڈ نہیں ملا (ہو سکتا ہے یہ رجسٹرڈ نہ ہو یا بہت نیا ہو)۔",
+    "Registrar": "رجسٹرار",
+    "The domain age service is not available right now. Please try again later.": "ڈومین ایج سروس ابھی دستیاب نہیں ہے۔ براہ کرم بعد میں دوبارہ کوشش کریں۔",
+    "This domain’s extension does not have an RDAP service yet.": "اس ڈومین ایکسٹینشن کے لیے ابھی تک RDAP سروس دستیاب نہیں ہے۔"
 }

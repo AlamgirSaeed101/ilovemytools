@@ -25,6 +25,7 @@ const tools = {
     'remove-background': lazy(() => import('./BackgroundRemover.jsx')),
     'broken-link-checker': lazy(() => import('./BrokenLinkChecker.jsx')),
     'domain-authority-checker': lazy(() => import('./DomainAuthority.jsx')),
+    'domain-age-checker': lazy(() => import('./DomainAgeChecker.jsx')),
     'merge-pdf': lazy(() => import('./MergePdf.jsx')),
     'split-pdf': lazy(() => import('./SplitPdf.jsx')),
     'age-calculator': lazy(() => import('./AgeCalculator.jsx')),

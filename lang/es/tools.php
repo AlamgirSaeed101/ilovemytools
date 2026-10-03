@@ -1359,4 +1359,69 @@ return [
         ],
     ],
 
+    'domain-age-checker' => [
+        'name' => 'Comprobador de antigüedad de dominio',
+        'title' => 'Comprobador de antigüedad de dominio: ¿cuándo se registró?',
+        'description' => 'Comprobador de antigüedad de dominio gratis: edad, caducidad, registrador y servidores de nombres de hasta 20 dominios, con datos de RDAP, sucesor de WHOIS.',
+        'h1' => 'Comprobador de antigüedad de dominio',
+        'tagline' => 'Consulta la antigüedad exacta, la fecha de caducidad y el registrador de hasta 20 dominios.',
+        'keywords' => [
+            'comprobador de antigüedad de dominio',
+            'antigüedad de un dominio',
+            'cuándo se registró un dominio',
+            'fecha de registro de un dominio',
+            'buscador de dominios',
+            'consulta rdap',
+        ],
+        'intro' => 'Un comprobador de antigüedad de dominio consulta el registro oficial de un nombre de dominio para mostrar exactamente cuántos años tiene. Introduce hasta 20 dominios para ver la fecha de creación de cada uno, su antigüedad exacta en años, meses y días, la fecha de caducidad, la última actualización, el registrador y los servidores de nombres, obtenidos en directo de RDAP, el sucesor gratuito y sin clave de WHOIS. Es útil para investigar una web antes de comprarla o enlazarla, comprobar cuánto tiempo lleva online un negocio y controlar las fechas de renovación de tus propios dominios.',
+        'steps' => [
+            'Introduce hasta 20 dominios o direcciones de página, uno por línea.',
+            'Haz clic en Comprobar antigüedad del dominio.',
+            'Revisa la antigüedad, las fechas, el registrador y los servidores de nombres de cada dominio, o descarga los resultados en CSV.',
+        ],
+        'features' => [
+            'Hasta 20 dominios en una sola consulta',
+            'Antigüedad exacta en años, meses y días, además de las fechas de creación, caducidad y última actualización',
+            'Registrador, códigos de estado y servidores de nombres de cada dominio',
+            'Datos en directo desde RDAP, sin registro, con exportación CSV gratis',
+        ],
+        'content' => [
+            [
+                'heading' => '¿Qué es RDAP y en qué se diferencia de WHOIS?',
+                'body' => 'RDAP (Registration Data Access Protocol) es el sustituto moderno y estandarizado de WHOIS. Mientras que WHOIS devuelve texto plano con un formato que varía según el registro, RDAP devuelve JSON estructurado con los mismos nombres de campo en todas partes, es gratuito y no necesita clave, y admite nombres de dominio internacionalizados y controles de acceso precisos. ICANN exigió a todos los registradores acreditados y registros de gTLD que ofrecieran RDAP, y registros de dominios de país como el alemán DENIC o el polaco NASK también lo han añadido, por lo que WHOIS se está retirando poco a poco en su favor.',
+            ],
+            [
+                'heading' => '¿Por qué algunos dominios muestran "no compatible" o "sin registro encontrado"?',
+                'body' => 'Un pequeño número de extensiones de dominio de país todavía no ha implantado un servicio RDAP, así que no se puede contactar con ningún registro para ellas; estas muestran "no compatible". Un dominio también puede no mostrar registro si no está registrado actualmente, si se registró hace muy poco y aún no aparece en los datos públicos del registro, o si el registro no está disponible temporalmente. Ninguno de estos casos significa que el comprobador esté fallando: las fechas mostradas siempre proceden directamente de la respuesta en directo del propio registro, nunca se estiman.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => '¿Cómo puedo comprobar la antigüedad de un dominio?',
+                'a' => 'Introduce el dominio arriba y haz clic en Comprobar antigüedad del dominio. La fecha exacta de registro y la antigüedad en años, meses y días proceden directamente del registro RDAP del dominio.',
+            ],
+            [
+                'q' => '¿Es la misma información que una consulta WHOIS?',
+                'a' => 'Sí, son los mismos datos de registro, pero leídos de RDAP, el protocolo estructurado y sin clave que está sustituyendo a WHOIS. Las fechas, el registrador y los servidores de nombres proceden del mismo registro en ambos casos.',
+            ],
+            [
+                'q' => '¿Por qué importa la fecha de caducidad?',
+                'a' => 'Un dominio que no se renueva antes de su fecha de caducidad puede entrar en un periodo de gracia y después quedar libre para que cualquiera lo registre. Comprobar la fecha de caducidad de una web es una forma rápida de valorar lo activamente que se mantiene.',
+            ],
+            [
+                'q' => '¿Puedo comprobar cualquier extensión de dominio?',
+                'a' => 'La mayoría de extensiones habituales (incluidas .com, .net, .org, .io, .co.uk, .de y .pl) tienen registro RDAP. Un pequeño número de extensiones de país más pequeñas todavía no han implantado RDAP; estas se muestran como no compatibles en lugar de adivinar datos.',
+            ],
+        ],
+        'table' => [
+            'caption' => 'Tipos de evento RDAP mostrados',
+            'headers' => ['Campo', 'Evento RDAP', 'Significado'],
+            'rows' => [
+                ['Creado', 'registration', 'Cuándo se registró el dominio por primera vez'],
+                ['Caduca', 'expiration', 'Cuándo termina el periodo de registro actual'],
+                ['Última actualización', 'last changed', 'Cuándo se modificó por última vez el propio registro'],
+            ],
+        ],
+    ],
+
 ];

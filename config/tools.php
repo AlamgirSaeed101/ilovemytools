@@ -1554,7 +1554,7 @@ return [
         'sources' => [
             ['title' => 'MDN: HTTP response status codes', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status'],
         ],
-        'related' => ['json-formatter', 'what-is-my-ip', 'readability-checker'],
+        'related' => ['json-formatter', 'what-is-my-ip', 'readability-checker', 'domain-age-checker'],
     ],
 
     'domain-authority-checker' => [
@@ -1605,7 +1605,57 @@ return [
             ['title' => 'OpenPageRank: how the score is calculated', 'url' => 'https://openpagerank.keywordseverywhere.com/methodology'],
             ['title' => 'Common Crawl: open repository of web crawl data', 'url' => 'https://commoncrawl.org/'],
         ],
-        'related' => ['broken-link-checker', 'readability-checker', 'what-is-my-ip'],
+        'related' => ['broken-link-checker', 'readability-checker', 'what-is-my-ip', 'domain-age-checker'],
+    ],
+
+    'domain-age-checker' => [
+        'name' => 'Domain Age Checker',
+        'category' => 'developer-tools',
+        'icon' => 'clock',
+        'popular' => false,
+        'server' => true,
+        'updated' => '2026-10-03',
+        'title' => 'Domain Age Checker - When Was a Domain Registered?',
+        'description' => 'Free domain age checker: see when up to 20 domains were registered, their age, expiry, registrar and nameservers from RDAP, the official successor to WHOIS.',
+        'h1' => 'Domain Age Checker',
+        'tagline' => 'See the exact age, expiry date and registrar of up to 20 domains.',
+        'keywords' => ['domain age checker', 'check domain age', 'when was a domain registered', 'domain registration date', 'domain lookup', 'rdap lookup'],
+        'intro' => 'A domain age checker looks up the official registration record of a website\'s domain name to show exactly how old it is. Enter up to 20 domains to see each one\'s creation date, exact age in years, months and days, expiry date, last update, registrar and nameservers, pulled live from RDAP, the keyless, official successor to WHOIS. It is useful for researching a site before buying or linking to it, checking how long a business has been online, and keeping track of your own domains\' renewal dates.',
+        'steps' => [
+            'Enter up to 20 domains or page addresses, one per line.',
+            'Click Check domain age.',
+            'Review each domain\'s age, dates, registrar and nameservers, or download the results as a CSV.',
+        ],
+        'features' => [
+            'Up to 20 domains in one check',
+            'Exact age in years, months and days, plus creation, expiry and last-updated dates',
+            'Registrar, status codes and nameservers for each domain',
+            'Live data straight from RDAP, no sign up, free CSV export',
+        ],
+        'content' => [
+            ['heading' => 'What is RDAP and how is it different from WHOIS?', 'body' => 'RDAP (Registration Data Access Protocol) is the modern, standardised replacement for WHOIS. Where WHOIS returns plain, inconsistently formatted text that differs by registry, RDAP returns structured JSON with the same field names everywhere, is keyless and free to query, and supports internationalised domain names and precise access controls. ICANN required all ICANN-accredited registrars and gTLD registries to run RDAP services, and country-code registries such as Germany\'s DENIC and Poland\'s NASK have added RDAP too, so WHOIS is being phased out in favour of it.'],
+            ['heading' => 'Why do some domains show "not supported" or "no record found"?', 'body' => 'A small number of country-code domain extensions have not yet deployed an RDAP service, so no registry can be reached for them; these show "not supported". A domain can also show no record if it is not currently registered, was registered very recently and has not yet appeared in the registry\'s public data, or if the registry is temporarily unavailable. None of these mean the checker is wrong: the dates shown always come directly from the registry\'s own live answer, never estimated.'],
+        ],
+        'faqs' => [
+            ['q' => 'How can I check how old a domain is?', 'a' => 'Enter the domain above and click Check domain age. The exact registration date and age in years, months and days come straight from the domain\'s RDAP record.'],
+            ['q' => 'Is this the same information as a WHOIS lookup?', 'a' => 'Yes, it is the same registration data, but read from RDAP, the structured, keyless protocol that is replacing WHOIS. Dates, registrar and nameservers come from the same registry record either way.'],
+            ['q' => 'Why does Expiry date matter?', 'a' => 'A domain that is not renewed before its expiry date can enter a grace period and then be released for anyone to register. Checking a site\'s expiry date is a quick way to judge how actively it is maintained.'],
+            ['q' => 'Can I check any domain extension?', 'a' => 'Most common extensions (including .com, .net, .org, .io, .co.uk, .de and .pl) have RDAP records. A small number of smaller country-code extensions have not deployed RDAP yet; these are shown as not supported rather than guessed at.'],
+        ],
+        'table' => [
+            'caption' => 'RDAP event types shown',
+            'headers' => ['Field', 'RDAP event', 'Meaning'],
+            'rows' => [
+                ['Created', 'registration', 'When the domain was first registered'],
+                ['Expires', 'expiration', 'When the current registration period ends'],
+                ['Last updated', 'last changed', 'When the registry record itself was last changed'],
+            ],
+        ],
+        'sources' => [
+            ['title' => 'ICANN: RDAP (Registration Data Access Protocol)', 'url' => 'https://www.icann.org/rdap'],
+            ['title' => 'RFC 7483: JSON Responses for RDAP', 'url' => 'https://www.rfc-editor.org/rfc/rfc7483.html'],
+        ],
+        'related' => ['domain-authority-checker', 'broken-link-checker', 'what-is-my-ip'],
     ],
 
 ];

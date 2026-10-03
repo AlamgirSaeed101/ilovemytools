@@ -640,3 +640,51 @@ test.describe('Domain authority checker', () => {
         expect((await readDownload(csv)).toString()).toContain('github.com,9.67,30,282833');
     });
 });
+
+test.describe('Domain age checker', () => {
+    test('shows dates, age and registrar, lists failures and exports a CSV', async ({ page }) => {
+        await page.route('**/api/domain-age', (route) =>
+            route.fulfill({
+                json: {
+                    invalid: ['not a domain'],
+                    results: [
+                        {
+                            domain: 'example.com',
+                            created: '1995-08-14T04:00:00Z',
+                            expires: '2026-08-13T04:00:00Z',
+                            updated: '2024-08-14T07:01:31Z',
+                            registrar: 'RESERVED-Internet Assigned Numbers Authority',
+                            status: ['client delete prohibited'],
+                            nameservers: ['a.iana-servers.net', 'b.iana-servers.net'],
+                        },
+                        { domain: 'never-registered.example', error: 'not-found' },
+                    ],
+                },
+            }),
+        );
+        await openTool(page, 'domain-age-checker');
+        await page.getByLabel(/Domains \(one per line/).fill('example.com\nnever-registered.example\nnot a domain');
+        await page.getByRole('button', { name: 'Check domain age' }).click();
+
+        const rows = page.getByTestId('age-table').locator('tbody tr');
+        await expect(rows).toHaveCount(1);
+        await expect(rows.first()).toContainText('example.com');
+        await expect(rows.first()).toContainText('RESERVED-Internet Assigned Numbers Authority');
+        await expect(rows.first()).toContainText(/\d+y \d+m \d+d/);
+        await expect(page.getByText('Skipped (not a domain): not a domain')).toBeVisible();
+        await expect(page.getByTestId('age-errors')).toContainText('never-registered.example');
+        await expect(page.getByTestId('age-errors')).toContainText('No RDAP record was found');
+
+        const [csv] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download CSV' }).click()]);
+        expect(csv.suggestedFilename()).toBe('domain-age.csv');
+        expect((await readDownload(csv)).toString()).toContain('example.com');
+    });
+
+    test('refuses more than 20 domains without calling the server', async ({ page }) => {
+        await openTool(page, 'domain-age-checker');
+        const many = Array.from({ length: 21 }, (_, i) => `site${i}.com`).join('\n');
+        await page.getByLabel(/Domains \(one per line/).fill(many);
+        await page.getByRole('button', { name: 'Check domain age' }).click();
+        await expect(page.getByRole('alert')).toContainText('at most 20 domains');
+    });
+});

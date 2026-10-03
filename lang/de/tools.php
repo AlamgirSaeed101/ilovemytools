@@ -1464,4 +1464,69 @@ return [
         ],
     ],
 
+    'domain-age-checker' => [
+        'name' => 'Domainalter-Prüfung',
+        'title' => 'Domainalter prüfen: Wann wurde die Domain registriert?',
+        'description' => 'Kostenlose Domainalter-Prüfung: Alter, Ablaufdatum, Registrar und Nameserver von bis zu 20 Domains, mit Daten von RDAP, dem Nachfolger von WHOIS.',
+        'h1' => 'Domainalter prüfen',
+        'tagline' => 'Sieh das genaue Alter, Ablaufdatum und den Registrar von bis zu 20 Domains.',
+        'keywords' => [
+            'domainalter prüfen',
+            'alter einer domain',
+            'wann wurde eine domain registriert',
+            'domain-registrierungsdatum',
+            'domain-abfrage',
+            'rdap abfrage',
+        ],
+        'intro' => 'Eine Domainalter-Prüfung fragt den offiziellen Registrierungseintrag eines Domainnamens ab, um genau zu zeigen, wie alt er ist. Gib bis zu 20 Domains ein, um für jede das Erstellungsdatum, das genaue Alter in Jahren, Monaten und Tagen, das Ablaufdatum, die letzte Aktualisierung, den Registrar und die Nameserver zu sehen – live von RDAP, dem kostenlosen, schlüssellosen Nachfolger von WHOIS. Das ist nützlich, um eine Website vor dem Kauf oder einer Verlinkung zu recherchieren, zu prüfen, wie lange ein Unternehmen schon online ist, und die Verlängerungstermine der eigenen Domains im Blick zu behalten.',
+        'steps' => [
+            'Gib bis zu 20 Domains oder Seitenadressen ein, eine pro Zeile.',
+            'Klicke auf Domainalter prüfen.',
+            'Sieh dir Alter, Daten, Registrar und Nameserver jeder Domain an oder lade die Ergebnisse als CSV herunter.',
+        ],
+        'features' => [
+            'Bis zu 20 Domains in einer Prüfung',
+            'Genaues Alter in Jahren, Monaten und Tagen sowie Erstellungs-, Ablauf- und letztes Aktualisierungsdatum',
+            'Registrar, Statuscodes und Nameserver für jede Domain',
+            'Live-Daten direkt von RDAP, keine Anmeldung, kostenloser CSV-Export',
+        ],
+        'content' => [
+            [
+                'heading' => 'Was ist RDAP und wie unterscheidet es sich von WHOIS?',
+                'body' => 'RDAP (Registration Data Access Protocol) ist der moderne, standardisierte Nachfolger von WHOIS. Während WHOIS einfachen Text zurückgibt, dessen Format je nach Registry unterschiedlich ist, liefert RDAP strukturiertes JSON mit überall gleichen Feldnamen, ist kostenlos und schlüssellos abrufbar und unterstützt internationalisierte Domainnamen sowie präzise Zugriffskontrollen. ICANN verpflichtete alle akkreditierten Registrare und gTLD-Registries zum Betrieb von RDAP-Diensten, und auch Länder-Registries wie die deutsche DENIC oder die polnische NASK haben RDAP ergänzt – WHOIS wird deshalb zunehmend durch RDAP abgelöst.',
+            ],
+            [
+                'heading' => 'Warum zeigen manche Domains „nicht unterstützt“ oder „kein Eintrag gefunden“ an?',
+                'body' => 'Eine kleine Zahl von Länder-Domainendungen hat noch keinen RDAP-Dienst eingeführt, sodass für sie keine Registry erreichbar ist; diese zeigen „nicht unterstützt“. Eine Domain kann auch keinen Eintrag zeigen, wenn sie aktuell nicht registriert ist, erst sehr kürzlich registriert wurde und noch nicht in den öffentlichen Daten der Registry erscheint, oder wenn die Registry vorübergehend nicht erreichbar ist. Nichts davon bedeutet, dass die Prüfung falsch liegt: Die angezeigten Daten stammen immer direkt aus der Live-Antwort der jeweiligen Registry, niemals aus einer Schätzung.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Wie kann ich prüfen, wie alt eine Domain ist?',
+                'a' => 'Gib die Domain oben ein und klicke auf Domainalter prüfen. Das genaue Registrierungsdatum und das Alter in Jahren, Monaten und Tagen stammen direkt aus dem RDAP-Eintrag der Domain.',
+            ],
+            [
+                'q' => 'Sind das dieselben Informationen wie bei einer WHOIS-Abfrage?',
+                'a' => 'Ja, es sind dieselben Registrierungsdaten, nur über RDAP abgerufen, das strukturierte, schlüssellose Protokoll, das WHOIS ablöst. Datum, Registrar und Nameserver stammen in beiden Fällen aus demselben Registry-Eintrag.',
+            ],
+            [
+                'q' => 'Warum ist das Ablaufdatum wichtig?',
+                'a' => 'Eine Domain, die nicht vor ihrem Ablaufdatum verlängert wird, kann in eine Nachfrist eintreten und anschließend für jeden zur Registrierung freigegeben werden. Das Ablaufdatum einer Website zu prüfen, ist eine schnelle Möglichkeit zu beurteilen, wie aktiv sie gepflegt wird.',
+            ],
+            [
+                'q' => 'Kann ich jede Domainendung prüfen?',
+                'a' => 'Die meisten gängigen Endungen (darunter .com, .net, .org, .io, .co.uk, .de und .pl) haben RDAP-Einträge. Eine kleine Zahl kleinerer Länderendungen hat RDAP noch nicht eingeführt; diese werden als nicht unterstützt angezeigt, statt geraten zu werden.',
+            ],
+        ],
+        'table' => [
+            'caption' => 'Angezeigte RDAP-Ereignistypen',
+            'headers' => ['Feld', 'RDAP-Ereignis', 'Bedeutung'],
+            'rows' => [
+                ['Erstellt', 'registration', 'Wann die Domain erstmals registriert wurde'],
+                ['Läuft ab', 'expiration', 'Wann der aktuelle Registrierungszeitraum endet'],
+                ['Zuletzt aktualisiert', 'last changed', 'Wann der Registry-Eintrag selbst zuletzt geändert wurde'],
+            ],
+        ],
+    ],
+
 ];

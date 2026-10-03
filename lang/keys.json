@@ -177,7 +177,14 @@
   {
     "key": "{count} of {max} domains · full URLs are fine, they are reduced to the domain.",
     "files": [
+      "resources/js/tools/DomainAgeChecker.jsx",
       "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
+    "key": "{count} of {total} domains checked",
+    "files": [
+      "resources/js/tools/DomainAgeChecker.jsx"
     ]
   },
   {
@@ -389,6 +396,12 @@
     "key": "{years}, {months}, {days}",
     "files": [
       "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "{years}y {months}m {days}d",
+    "files": [
+      "resources/js/tools/DomainAgeChecker.jsx"
     ]
   },
   {
@@ -683,6 +696,12 @@
     "key": "Advertising cookies used by Google and its partners to show ads, as described below.",
     "files": [
       "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Age",
+    "files": [
+      "resources/js/tools/DomainAgeChecker.jsx"
     ]
   },
   {
@@ -988,6 +1007,12 @@
     ]
   },
   {
+    "key": "Check domain age",
+    "files": [
+      "resources/js/tools/DomainAgeChecker.jsx"
+    ]
+  },
+  {
     "key": "Check links",
     "files": [
       "resources/js/tools/BrokenLinkChecker.jsx"
@@ -1014,6 +1039,7 @@
   {
     "key": "Checking…",
     "files": [
+      "resources/js/tools/DomainAgeChecker.jsx",
       "resources/js/tools/DomainAuthority.jsx"
     ]
   },
@@ -1060,6 +1086,7 @@
       "resources/js/tools/Base64Tool.jsx",
       "resources/js/tools/CaseConverter.jsx",
       "resources/js/tools/DiceRoller.jsx",
+      "resources/js/tools/DomainAgeChecker.jsx",
       "resources/js/tools/DomainAuthority.jsx",
       "resources/js/tools/JpgToPdf.jsx",
       "resources/js/tools/JsonFormatter.jsx",
@@ -1290,6 +1317,12 @@
     ]
   },
   {
+    "key": "Could not be checked right now. Please try again.",
+    "files": [
+      "resources/js/tools/DomainAgeChecker.jsx"
+    ]
+  },
+  {
     "key": "Could not compress this image.",
     "files": [
       "resources/js/tools/ImageCompressor.jsx"
@@ -1348,6 +1381,12 @@
     "key": "Counting down",
     "files": [
       "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "Created",
+    "files": [
+      "resources/js/tools/DomainAgeChecker.jsx"
     ]
   },
   {
@@ -1468,6 +1507,7 @@
   {
     "key": "Domain",
     "files": [
+      "resources/js/tools/DomainAgeChecker.jsx",
       "resources/js/tools/DomainAuthority.jsx"
     ]
   },
@@ -1475,6 +1515,12 @@
     "key": "Domain A-Z",
     "files": [
       "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
+    "key": "Domain age results",
+    "files": [
+      "resources/js/tools/DomainAgeChecker.jsx"
     ]
   },
   {
@@ -1492,6 +1538,7 @@
   {
     "key": "Domains (one per line, up to {max})",
     "files": [
+      "resources/js/tools/DomainAgeChecker.jsx",
       "resources/js/tools/DomainAuthority.jsx"
     ]
   },
@@ -1544,6 +1591,7 @@
     "key": "Download CSV",
     "files": [
       "resources/js/tools/BrokenLinkChecker.jsx",
+      "resources/js/tools/DomainAgeChecker.jsx",
       "resources/js/tools/DomainAuthority.jsx"
     ]
   },
@@ -1864,6 +1912,12 @@
     "key": "Exclude similar (l, 1, O, 0)",
     "files": [
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Expires",
+    "files": [
+      "resources/js/tools/DomainAgeChecker.jsx"
     ]
   },
   {
@@ -2587,6 +2641,12 @@
     ]
   },
   {
+    "key": "Last updated",
+    "files": [
+      "resources/js/tools/DomainAgeChecker.jsx"
+    ]
+  },
+  {
     "key": "Last updated: {date}",
     "files": [
       "resources/js/pages/InfoPages.jsx",
@@ -2890,6 +2950,12 @@
     ]
   },
   {
+    "key": "Nameservers",
+    "files": [
+      "resources/js/tools/DomainAgeChecker.jsx"
+    ]
+  },
+  {
     "key": "Needs a browser with WebGPU (Chrome or Edge)",
     "files": [
       "resources/js/tools/BackgroundRemover.jsx"
@@ -3001,6 +3067,12 @@
     "key": "No problems found so far…",
     "files": [
       "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
+    "key": "No RDAP record was found (it may be unregistered or very new).",
+    "files": [
+      "resources/js/tools/DomainAgeChecker.jsx"
     ]
   },
   {
@@ -3411,6 +3483,7 @@
   {
     "key": "Please enter at most {max} domains at a time.",
     "files": [
+      "resources/js/tools/DomainAgeChecker.jsx",
       "resources/js/tools/DomainAuthority.jsx"
     ]
   },
@@ -3721,6 +3794,12 @@
     "key": "Refreshing…",
     "files": [
       "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Registrar",
+    "files": [
+      "resources/js/tools/DomainAgeChecker.jsx"
     ]
   },
   {
@@ -4095,6 +4174,7 @@
   {
     "key": "Skipped (not a domain): {list}",
     "files": [
+      "resources/js/tools/DomainAgeChecker.jsx",
       "resources/js/tools/DomainAuthority.jsx"
     ]
   },
@@ -4292,7 +4372,8 @@
   {
     "key": "Status",
     "files": [
-      "resources/js/tools/BrokenLinkChecker.jsx"
+      "resources/js/tools/BrokenLinkChecker.jsx",
+      "resources/js/tools/DomainAgeChecker.jsx"
     ]
   },
   {
@@ -4506,6 +4587,12 @@
     ]
   },
   {
+    "key": "The domain age service is not available right now. Please try again later.",
+    "files": [
+      "resources/js/tools/DomainAgeChecker.jsx"
+    ]
+  },
+  {
     "key": "The Domain Authority Checker is being set up. Please check back soon.",
     "files": [
       "resources/js/tools/DomainAuthority.jsx"
@@ -4653,6 +4740,12 @@
     "key": "This address can’t be checked. Only public websites on normal web ports are supported.",
     "files": [
       "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
+    "key": "This domain’s extension does not have an RDAP service yet.",
+    "files": [
+      "resources/js/tools/DomainAgeChecker.jsx"
     ]
   },
   {
@@ -4823,6 +4916,7 @@
     "key": "Too many checks in a short time. Please wait a minute and try again.",
     "files": [
       "resources/js/tools/BrokenLinkChecker.jsx",
+      "resources/js/tools/DomainAgeChecker.jsx",
       "resources/js/tools/DomainAuthority.jsx"
     ]
   },

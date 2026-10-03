@@ -1464,4 +1464,69 @@ return [
         ],
     ],
 
+    'domain-age-checker' => [
+        'name' => 'Vérificateur d’âge de domaine',
+        'title' => 'Vérificateur d’âge de domaine : date d’enregistrement',
+        'description' => 'Vérificateur d’âge de domaine gratuit : âge, expiration, bureau d’enregistrement et serveurs de noms de 20 domaines, via RDAP, le successeur du WHOIS.',
+        'h1' => 'Vérificateur d’âge de domaine',
+        'tagline' => 'Consultez l’âge exact, la date d’expiration et le bureau d’enregistrement de 20 domaines.',
+        'keywords' => [
+            'vérificateur d’âge de domaine',
+            'âge d’un domaine',
+            'date d’enregistrement d’un domaine',
+            'quand un domaine a été enregistré',
+            'recherche de domaine',
+            'recherche rdap',
+        ],
+        'intro' => 'Un vérificateur d’âge de domaine consulte le registre officiel d’un nom de domaine pour afficher exactement son ancienneté. Entrez jusqu’à 20 domaines pour voir la date de création de chacun, son âge exact en années, mois et jours, sa date d’expiration, sa dernière mise à jour, son bureau d’enregistrement et ses serveurs de noms, obtenus en direct via RDAP, le successeur gratuit et sans clé du WHOIS. C’est utile pour étudier un site avant de l’acheter ou d’y créer un lien, vérifier depuis combien de temps une entreprise est en ligne, et suivre les dates de renouvellement de vos propres domaines.',
+        'steps' => [
+            'Entrez jusqu’à 20 domaines ou adresses de page, un par ligne.',
+            'Cliquez sur Vérifier l’âge du domaine.',
+            'Consultez l’âge, les dates, le bureau d’enregistrement et les serveurs de noms de chaque domaine, ou téléchargez les résultats en CSV.',
+        ],
+        'features' => [
+            'Jusqu’à 20 domaines en une seule vérification',
+            'Âge exact en années, mois et jours, ainsi que les dates de création, d’expiration et de dernière mise à jour',
+            'Bureau d’enregistrement, codes de statut et serveurs de noms de chaque domaine',
+            'Données en direct depuis RDAP, sans inscription, export CSV gratuit',
+        ],
+        'content' => [
+            [
+                'heading' => 'Qu’est-ce que le RDAP et en quoi diffère-t-il du WHOIS ?',
+                'body' => 'Le RDAP (Registration Data Access Protocol) est le remplaçant moderne et standardisé du WHOIS. Là où le WHOIS renvoie du texte brut au format variable selon le registre, le RDAP renvoie du JSON structuré avec les mêmes noms de champs partout, est gratuit et sans clé, et prend en charge les noms de domaine internationalisés ainsi que des contrôles d’accès précis. L’ICANN a exigé que tous les bureaux d’enregistrement accrédités et les registres de gTLD proposent le RDAP, et des registres de domaines nationaux comme l’allemand DENIC ou le polonais NASK l’ont aussi ajouté : le WHOIS est donc progressivement remplacé par le RDAP.',
+            ],
+            [
+                'heading' => 'Pourquoi certains domaines affichent-ils "non pris en charge" ou "aucun enregistrement trouvé" ?',
+                'body' => 'Un petit nombre d’extensions de domaine nationales n’ont pas encore déployé de service RDAP, donc aucun registre ne peut être contacté pour elles ; elles affichent "non pris en charge". Un domaine peut aussi n’afficher aucun enregistrement s’il n’est pas enregistré actuellement, s’il a été enregistré très récemment et n’apparaît pas encore dans les données publiques du registre, ou si le registre est temporairement indisponible. Rien de tout cela ne signifie que le vérificateur se trompe : les dates affichées proviennent toujours directement de la réponse en direct du registre lui-même, jamais d’une estimation.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Comment vérifier l’ancienneté d’un domaine ?',
+                'a' => 'Entrez le domaine ci-dessus et cliquez sur Vérifier l’âge du domaine. La date d’enregistrement exacte et l’âge en années, mois et jours proviennent directement de l’enregistrement RDAP du domaine.',
+            ],
+            [
+                'q' => 'Est-ce la même information qu’une recherche WHOIS ?',
+                'a' => 'Oui, ce sont les mêmes données d’enregistrement, mais lues via RDAP, le protocole structuré et sans clé qui remplace le WHOIS. Les dates, le bureau d’enregistrement et les serveurs de noms proviennent du même enregistrement dans les deux cas.',
+            ],
+            [
+                'q' => 'Pourquoi la date d’expiration est-elle importante ?',
+                'a' => 'Un domaine non renouvelé avant sa date d’expiration peut entrer dans une période de grâce puis être libéré pour que n’importe qui l’enregistre. Vérifier la date d’expiration d’un site est un moyen rapide de juger à quel point il est entretenu activement.',
+            ],
+            [
+                'q' => 'Puis-je vérifier n’importe quelle extension de domaine ?',
+                'a' => 'La plupart des extensions courantes (dont .com, .net, .org, .io, .co.uk, .de et .pl) ont un enregistrement RDAP. Un petit nombre d’extensions nationales plus confidentielles n’ont pas encore déployé le RDAP ; elles sont affichées comme non prises en charge plutôt que devinées.',
+            ],
+        ],
+        'table' => [
+            'caption' => 'Types d’événements RDAP affichés',
+            'headers' => ['Champ', 'Événement RDAP', 'Signification'],
+            'rows' => [
+                ['Créé le', 'registration', 'Quand le domaine a été enregistré pour la première fois'],
+                ['Expire le', 'expiration', 'Quand la période d’enregistrement actuelle se termine'],
+                ['Dernière mise à jour', 'last changed', 'Quand l’enregistrement du registre a été modifié pour la dernière fois'],
+            ],
+        ],
+    ],
+
 ];

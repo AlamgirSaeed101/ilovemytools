@@ -1464,4 +1464,69 @@ return [
         ],
     ],
 
+    'domain-age-checker' => [
+        'name' => 'Verificador de idade do domínio',
+        'title' => 'Verificador de idade do domínio: quando foi registrado?',
+        'description' => 'Verificador de idade de domínio grátis: idade, validade, registrador e servidores de nomes de até 20 domínios, com dados do RDAP, sucessor do WHOIS.',
+        'h1' => 'Verificador de idade do domínio',
+        'tagline' => 'Veja a idade exata, a data de validade e o registrador de até 20 domínios.',
+        'keywords' => [
+            'verificador de idade do domínio',
+            'idade de um domínio',
+            'quando um domínio foi registrado',
+            'data de registro do domínio',
+            'busca de domínio',
+            'consulta rdap',
+        ],
+        'intro' => 'Um verificador de idade de domínio consulta o registro oficial de um nome de domínio para mostrar exatamente há quanto tempo ele existe. Digite até 20 domínios para ver a data de criação de cada um, a idade exata em anos, meses e dias, a data de validade, a última atualização, o registrador e os servidores de nomes, obtidos ao vivo do RDAP, o sucessor gratuito e sem chave do WHOIS. É útil para pesquisar um site antes de comprá-lo ou linká-lo, verificar há quanto tempo uma empresa está online e acompanhar as datas de renovação dos seus próprios domínios.',
+        'steps' => [
+            'Digite até 20 domínios ou endereços de página, um por linha.',
+            'Clique em Verificar idade do domínio.',
+            'Veja a idade, as datas, o registrador e os servidores de nomes de cada domínio, ou baixe os resultados em CSV.',
+        ],
+        'features' => [
+            'Até 20 domínios em uma única consulta',
+            'Idade exata em anos, meses e dias, além das datas de criação, validade e última atualização',
+            'Registrador, códigos de status e servidores de nomes de cada domínio',
+            'Dados ao vivo direto do RDAP, sem cadastro, com exportação CSV grátis',
+        ],
+        'content' => [
+            [
+                'heading' => 'O que é RDAP e qual a diferença em relação ao WHOIS?',
+                'body' => 'O RDAP (Registration Data Access Protocol) é o substituto moderno e padronizado do WHOIS. Enquanto o WHOIS retorna texto simples formatado de forma inconsistente, que muda conforme o registro, o RDAP retorna JSON estruturado com os mesmos nomes de campo em qualquer lugar, é gratuito, não exige chave, e oferece suporte a nomes de domínio internacionalizados e controles de acesso precisos. A ICANN exigiu que todos os registradores credenciados e registros de gTLD oferecessem RDAP, e registros de domínios de país como o DENIC (Alemanha) e o NASK (Polônia) também o adotaram, então o WHOIS está sendo substituído por ele aos poucos.',
+            ],
+            [
+                'heading' => 'Por que alguns domínios mostram "não suportado" ou "nenhum registro encontrado"?',
+                'body' => 'Um pequeno número de extensões de domínio de país ainda não implantou um serviço RDAP, então nenhum registro pode ser consultado para elas; essas aparecem como "não suportado". Um domínio também pode não mostrar registro se não estiver registrado no momento, se foi registrado muito recentemente e ainda não apareceu nos dados públicos do registro, ou se o registro estiver temporariamente indisponível. Nada disso significa que o verificador esteja errado: as datas mostradas vêm sempre diretamente da resposta ao vivo do próprio registro, nunca são estimadas.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Como posso verificar a idade de um domínio?',
+                'a' => 'Digite o domínio acima e clique em Verificar idade do domínio. A data exata de registro e a idade em anos, meses e dias vêm diretamente do registro RDAP do domínio.',
+            ],
+            [
+                'q' => 'É a mesma informação de uma consulta WHOIS?',
+                'a' => 'Sim, são os mesmos dados de registro, mas lidos do RDAP, o protocolo estruturado e sem chave que está substituindo o WHOIS. A data, o registrador e os servidores de nomes vêm do mesmo registro nos dois casos.',
+            ],
+            [
+                'q' => 'Por que a data de validade importa?',
+                'a' => 'Um domínio que não é renovado antes da data de validade pode entrar em um período de carência e depois ser liberado para qualquer pessoa registrar. Verificar a data de validade de um site é uma forma rápida de avaliar o quanto ele é mantido ativamente.',
+            ],
+            [
+                'q' => 'Posso verificar qualquer extensão de domínio?',
+                'a' => 'A maioria das extensões comuns (incluindo .com, .net, .org, .io, .co.uk, .de e .pl) tem registro RDAP. Um pequeno número de extensões de país menores ainda não implantou o RDAP; essas aparecem como não suportadas em vez de serem adivinhadas.',
+            ],
+        ],
+        'table' => [
+            'caption' => 'Tipos de evento RDAP exibidos',
+            'headers' => ['Campo', 'Evento RDAP', 'Significado'],
+            'rows' => [
+                ['Criado', 'registration', 'Quando o domínio foi registrado pela primeira vez'],
+                ['Expira', 'expiration', 'Quando o período de registro atual termina'],
+                ['Última atualização', 'last changed', 'Quando o próprio registro foi alterado pela última vez'],
+            ],
+        ],
+    ],
+
 ];

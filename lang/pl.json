@@ -983,5 +983,19 @@
     "Your PDFs, photos and documents never leave your browser": "Twoje pliki PDF, zdjęcia i dokumenty nigdy nie opuszczają przeglądarki",
     "Your public IP address": "Twój publiczny adres IP",
     "Your QR code will appear here.": "Twój kod QR pojawi się tutaj.",
-    "Your text": "Twój tekst"
+    "Your text": "Twój tekst",
+    "{count} of {total} domains checked": "{count} z {total} sprawdzonych domen",
+    "{years}y {months}m {days}d": "{years}l {months}m {days}d",
+    "Age": "Wiek",
+    "Check domain age": "Sprawdź wiek domeny",
+    "Could not be checked right now. Please try again.": "Nie można teraz sprawdzić. Spróbuj ponownie.",
+    "Created": "Utworzono",
+    "Domain age results": "Wyniki wieku domeny",
+    "Expires": "Wygasa",
+    "Last updated": "Ostatnia aktualizacja",
+    "Nameservers": "Serwery nazw",
+    "No RDAP record was found (it may be unregistered or very new).": "Nie znaleziono rekordu RDAP (domena może być niezarejestrowana lub bardzo nowa).",
+    "Registrar": "Rejestrator",
+    "The domain age service is not available right now. Please try again later.": "Usługa sprawdzania wieku domeny jest teraz niedostępna. Spróbuj ponownie później.",
+    "This domain’s extension does not have an RDAP service yet.": "To rozszerzenie domeny nie ma jeszcze usługi RDAP."
 }
