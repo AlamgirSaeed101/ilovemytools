@@ -6,7 +6,7 @@ import { trackErrors } from './helpers.js';
 // (Each tool's behaviour is tested in tools.spec.js / games.spec.js; this checks that none is broken anywhere.)
 
 const site = await (async () => {
-    const base = `http://127.0.0.1:${process.env.PORT || 8765}`;
+    const base = 'http://127.0.0.1:8123';
     try {
         return await (await fetch(`${base}/api/site`)).json();
     } catch {
