@@ -31,7 +31,9 @@ export async function loadPdf(file) {
     } catch (e) {
         const msg = String(e?.message || e);
         if (/encrypt/i.test(msg)) {
-            throw new Error(t('"{name}" is password-protected. Remove the password first (open it with the password and save a copy), then try again.', { name: file.name }));
+            const err = new Error(t('"{name}" is password-protected. Remove the password first (open it with the password and save a copy), then try again.', { name: file.name }));
+            err.isEncrypted = true;
+            throw err;
         }
         if (e?.noPages) throw e;
         throw new Error(t('"{name}" could not be read. It may be damaged or not a real PDF.', { name: file.name }));

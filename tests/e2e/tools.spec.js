@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 import JSZip from 'jszip';
-import { makeImage, makePdf, openTool, pdfPageCount, pdfPageRotations, readDownload, trackErrors } from './helpers.js';
+import { checkPdfPassword, makeImage, makePdf, makePdfWithImage, mockQpdfCdn, openTool, pdfPageCount, pdfPageRotations, readDownload, trackErrors } from './helpers.js';
 
 let errors;
 test.beforeEach(({ page }) => {
@@ -412,6 +412,86 @@ test.describe('PDF tools', () => {
         expect(file.suggestedFilename()).toBe('doc.png');
         const buf = await readDownload(file);
         expect(buf.subarray(0, 8)).toEqual(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]));
+    });
+
+    test('compress PDF shrinks an image-heavy PDF in both modes and keeps the original if it cannot shrink', async ({ page }) => {
+        await openTool(page, 'compress-pdf');
+        const jpeg = await makeImage(page, { width: 900, height: 600, type: 'image/jpeg', quality: 0.95 });
+        const original = await makePdfWithImage(jpeg, { width: 450, height: 300 });
+        await page.getByTestId('file-input').setInputFiles({ name: 'photos.pdf', mimeType: 'application/pdf', buffer: original });
+        await expect(page.getByText('photos.pdf')).toBeVisible();
+
+        // Recommended mode re-encodes the embedded JPEG at a lower quality - the file gets smaller.
+        await page.getByRole('button', { name: 'Compress PDF' }).click();
+        const [recommended] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(recommended.suggestedFilename()).toBe('photos-compressed.pdf');
+        const recommendedBuf = await readDownload(recommended);
+        expect(recommendedBuf.length).toBeLessThan(original.length);
+        expect(await pdfPageCount(recommendedBuf)).toBe(1);
+
+        // Strong mode rasterises the page to a JPEG at the chosen DPI - still one valid page.
+        await page.getByRole('tab', { name: 'Strong' }).click();
+        await page.getByLabel('Image quality (DPI)').selectOption('72');
+        await page.getByRole('button', { name: 'Compress PDF' }).click();
+        const [strong] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(await pdfPageCount(await readDownload(strong))).toBe(1);
+
+        // A text-only PDF has nothing left to recompress, so the original is kept.
+        await page.getByRole('button', { name: 'Choose another PDF' }).click();
+        const textOnly = await makePdf(1);
+        await page.getByTestId('file-input').setInputFiles({ name: 'text.pdf', mimeType: 'application/pdf', buffer: textOnly });
+        await page.getByRole('tab', { name: 'Recommended' }).click();
+        await page.getByRole('button', { name: 'Compress PDF' }).click();
+        await expect(page.getByText('could not be made smaller')).toBeVisible();
+        const [kept] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect((await readDownload(kept)).length).toBe(textOnly.length);
+    });
+
+    test('protect PDF adds a real AES password and unlock PDF removes it', async ({ page }) => {
+        await mockQpdfCdn(page);
+        const password = 'correct-horse-9';
+
+        await openTool(page, 'protect-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'secret.pdf', mimeType: 'application/pdf', buffer: await makePdf(2) });
+        await expect(page.getByText('secret.pdf')).toBeVisible();
+        await page.getByLabel('Choose a password').fill(password);
+        await page.getByLabel('Confirm password').fill('does-not-match');
+        await expect(page.getByText('Passwords do not match.')).toBeVisible();
+        await expect(page.getByRole('button', { name: 'Protect PDF' })).toBeDisabled();
+        await page.getByLabel('Confirm password').fill(password);
+
+        await page.getByRole('button', { name: 'Protect PDF' }).click();
+        const [protectedFile] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download protected PDF' }).click()]);
+        expect(protectedFile.suggestedFilename()).toBe('secret-protected.pdf');
+        const protectedBytes = await readDownload(protectedFile);
+
+        const check = await checkPdfPassword(page, protectedBytes, password);
+        expect(check.openedWithoutPassword).toBe(false);
+        expect(check.openedWithPassword).toBe(true);
+
+        await openTool(page, 'unlock-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'secret-protected.pdf', mimeType: 'application/pdf', buffer: protectedBytes });
+        await expect(page.getByLabel('PDF password')).toBeVisible();
+
+        await page.getByLabel('PDF password').fill('wrong-password');
+        await page.getByRole('button', { name: 'Unlock PDF' }).click();
+        await expect(page.getByText('Incorrect password. Please try again.')).toBeVisible();
+        // qpdf-wasm itself logs this expected "invalid password" message to the console (it has no
+        // configurable stderr hook); our own error handling already surfaced the friendly message above.
+        errors.errors.splice(0, errors.errors.length, ...errors.errors.filter((e) => !e.includes('invalid password')));
+
+        await page.getByLabel('PDF password').fill(password);
+        await page.getByRole('button', { name: 'Unlock PDF' }).click();
+        const [unlockedFile] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download unlocked PDF' }).click()]);
+        expect(unlockedFile.suggestedFilename()).toBe('secret-protected-unlocked.pdf');
+        const unlockedBytes = await readDownload(unlockedFile);
+        expect(await pdfPageCount(unlockedBytes)).toBe(2);
+        expect((await checkPdfPassword(page, unlockedBytes, password)).openedWithoutPassword).toBe(true);
+
+        // A PDF with no password at all has nothing to unlock.
+        await openTool(page, 'unlock-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'plain.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
+        await expect(page.getByText('does not have a password')).toBeVisible();
     });
 });
 

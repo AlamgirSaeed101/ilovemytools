@@ -1685,4 +1685,175 @@ return [
             ['q' => 'Qual DPI devo usar para impressão?', 'a' => '300 DPI dá um resultado nítido para impressão. 150 DPI é suficiente para a maioria das telas, e 72 DPI é o arquivo mais pequeno, ideal para pré-visualizações rápidas.'],
         ],
     ],
+
+    'compress-pdf' => [
+        'name' => 'Comprimir PDF',
+        'title' => 'Comprimir PDF - Reduza o Tamanho do PDF Grátis',
+        'description' => 'Comprima um PDF online de graça para reduzir o tamanho. Modo Recomendado mantém o texto selecionável; modo Forte reduz ainda mais. Sem upload, sem cadastro.',
+        'h1' => 'Comprimir PDF',
+        'tagline' => 'Deixe um PDF menor sem perder a legibilidade, direto no seu navegador.',
+        'keywords' => [
+            'comprimir pdf',
+            'compressor de pdf',
+            'reduzir tamanho do pdf',
+            'diminuir pdf',
+            'comprimir pdf online',
+        ],
+        'intro' => 'Uma ferramenta de comprimir PDF deixa um arquivo PDF menor reduzindo o tamanho das imagens dentro dele, facilitando o envio por e-mail, upload ou armazenamento. O modo Recomendado recomprime as fotos incluídas com qualidade menor, mantendo o texto nítido e selecionável. O modo Forte vai além e transforma cada página em uma única imagem, o que gera o menor arquivo possível, mas faz com que o texto não possa mais ser selecionado ou pesquisado. Tudo acontece no seu dispositivo, então seu PDF nunca é enviado a um servidor.',
+        'steps' => [
+            'Escolha o PDF que você quer comprimir.',
+            'Escolha Recomendado para reduzir as imagens mantendo o texto selecionável, ou Forte para o menor arquivo possível.',
+            'No modo Forte, escolha uma qualidade de imagem (DPI).',
+            'Clique em Comprimir PDF e baixe o arquivo menor.',
+        ],
+        'features' => [
+            'O modo Recomendado mantém o texto selecionável e pesquisável',
+            'O modo Forte gera o menor arquivo transformando as páginas em imagens',
+            'Mostra o tamanho antes e depois, para você ver a economia',
+            'Mantém o arquivo original se a compressão não o deixar menor',
+            'Privado: seu PDF nunca sai do seu dispositivo',
+        ],
+        'content' => [
+            [
+                'heading' => 'Recomendado ou Forte - qual escolher?',
+                'body' => 'O modo Recomendado recomprime apenas as fotos e imagens escaneadas dentro do PDF, então títulos, parágrafos e tabelas continuam exatamente como estão e podem ser selecionados, pesquisados e copiados. O modo Forte converte cada página em uma única imagem JPEG, o que geralmente gera um arquivo bem menor, mas faz com que nenhum texto possa ser selecionado, pesquisado ou copiado depois: melhor para documentos cheios de fotos que só precisam ficar menores para compartilhar.',
+            ],
+            [
+                'heading' => 'Por que meu PDF não ficou menor?',
+                'body' => 'Um PDF formado só por texto e gráficos vetoriais, ou um que já foi comprimido antes, pode não encolher mais no modo Recomendado porque não sobram imagens grandes para recomprimir. Nesse caso o arquivo original é mantido para você nunca acabar com um resultado maior do que o original, e o modo Forte ainda pode deixá-lo menor transformando as páginas em imagens.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Comprimir um PDF reduz a qualidade?',
+                'a' => 'O modo Recomendado reduz um pouco a qualidade das fotos incluídas, parecido com salvar um JPEG com uma configuração menor, enquanto o texto e os gráficos de linha continuam nítidos. O modo Forte transforma a página inteira em uma imagem, então textos bem pequenos podem ficar menos nítidos ao dar zoom.',
+            ],
+            [
+                'q' => 'Vou conseguir selecionar texto depois de comprimir?',
+                'a' => 'Sim, no modo Recomendado. O modo Forte transforma cada página em uma única imagem, então o texto não pode mais ser selecionado, pesquisado ou copiado: escolha-o só quando o tamanho do arquivo importar mais do que isso.',
+            ],
+            [
+                'q' => 'O que acontece se o arquivo comprimido não ficar menor?',
+                'a' => 'O arquivo original é mantido e oferecido para download sem alterações, então você nunca fica com um resultado maior do que o que começou.',
+            ],
+            [
+                'q' => 'Meu PDF é enviado para algum servidor?',
+                'a' => 'Não. A compressão acontece inteiramente no seu navegador com JavaScript, e o arquivo nunca é enviado para lugar nenhum.',
+            ],
+        ],
+    ],
+
+    'protect-pdf' => [
+        'name' => 'Proteger PDF',
+        'title' => 'Proteger PDF - Adicione uma Senha Online Grátis',
+        'description' => 'Adicione uma senha de verdade a um PDF online de graça, usando criptografia AES-256. Só quem souber a senha consegue abrir o arquivo. Sem upload, sem cadastro.',
+        'h1' => 'Proteger PDF',
+        'tagline' => 'Bloqueie um PDF com uma senha para que só quem a souber consiga abri-lo.',
+        'keywords' => [
+            'proteger pdf',
+            'colocar senha no pdf',
+            'adicionar senha ao pdf',
+            'criptografar pdf',
+            'senha de pdf online',
+        ],
+        'intro' => 'Proteger um PDF adiciona uma senha para que o arquivo só possa ser aberto por quem a conhece. Esta ferramenta criptografa seu PDF com criptografia AES-256 de verdade, a mesma força usada por sistemas bancários e governamentais, direto no seu navegador. Escolha uma senha, confirme-a e baixe uma cópia do PDF que vai pedir essa senha antes de abrir em qualquer leitor de PDF.',
+        'steps' => [
+            'Escolha o PDF que você quer proteger.',
+            'Digite uma senha e confirme-a.',
+            'Clique em Proteger PDF.',
+            'Baixe a cópia protegida por senha.',
+        ],
+        'features' => [
+            'Criptografia AES-256 de verdade, não só um truque no nome do arquivo',
+            'Só abre com a senha que você definir',
+            'Funciona com qualquer leitor de PDF compatível com a criptografia padrão de PDF',
+            'Processado inteiramente no seu navegador - o PDF nunca é enviado',
+            'Sem marca d\'água, sem limite de páginas',
+        ],
+        'content' => [
+            [
+                'heading' => 'Quão forte é a criptografia?',
+                'body' => 'O PDF é criptografado com AES-256, o mesmo algoritmo amplamente usado para proteger dados sensíveis, por meio da biblioteca de código aberto QPDF rodando no seu navegador como WebAssembly. Sem a senha, o conteúdo do arquivo não pode ser lido por um leitor de PDF.',
+            ],
+            [
+                'heading' => 'E se eu esquecer a senha?',
+                'body' => 'Não há como recuperar uma senha esquecida de um PDF protegido com AES-256, de propósito - é isso que torna a proteção eficaz. Guarde uma cópia da senha em um lugar seguro, como um gerenciador de senhas, e mantenha o arquivo original sem proteção até ter certeza de que vai lembrar dela.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Isso envia meu PDF para algum lugar?',
+                'a' => 'Não. O arquivo é criptografado inteiramente no seu navegador com JavaScript usando uma versão do QPDF compilada em WebAssembly, e nunca sai do seu dispositivo.',
+            ],
+            [
+                'q' => 'Que criptografia isso usa?',
+                'a' => 'AES-256, o padrão moderno para criptografia de PDF, aplicado com a biblioteca de código aberto QPDF compilada para rodar no navegador.',
+            ],
+            [
+                'q' => 'Posso remover a senha depois?',
+                'a' => 'Sim. Use a ferramenta Desbloquear PDF com a senha que você definiu para gerar uma cópia sem ela.',
+            ],
+            [
+                'q' => 'O PDF protegido vai abrir em qualquer leitor de PDF?',
+                'a' => 'Sim. Ele usa o formato padrão de criptografia de PDF compatível com Adobe Acrobat, navegadores e a maioria dos outros leitores de PDF, que vão pedir a senha antes de abri-lo.',
+            ],
+        ],
+    ],
+
+    'unlock-pdf' => [
+        'name' => 'Desbloquear PDF',
+        'title' => 'Desbloquear PDF - Remova a Senha Online Grátis',
+        'description' => 'Remova a senha de um PDF online de graça quando você a conhece. Digite a senha uma vez e baixe uma cópia desbloqueada. Sem upload, sem cadastro.',
+        'h1' => 'Desbloquear PDF',
+        'tagline' => 'Remova a senha de um PDF quando você já a conhece, direto no seu navegador.',
+        'keywords' => [
+            'desbloquear pdf',
+            'remover senha do pdf',
+            'tirar senha do pdf',
+            'descriptografar pdf',
+            'remover senha de pdf',
+        ],
+        'intro' => 'Desbloquear um PDF remove a senha de abertura para que ele pare de pedi-la toda vez que for aberto. Esta ferramenta só remove uma senha que você já conhece: digite-a uma vez, e uma nova cópia do PDF é criada sem ela. Ela não quebra, adivinha nem contorna uma senha que você não tem, já que isso tornaria a proteção inútil.',
+        'steps' => [
+            'Escolha o PDF protegido por senha.',
+            'Digite a senha.',
+            'Clique em Desbloquear PDF.',
+            'Baixe a cópia sem senha.',
+        ],
+        'features' => [
+            'Remove a senha de abertura de um PDF que você já consegue abrir',
+            'Não quebra, adivinha ou contorna senhas desconhecidas',
+            'Funciona inteiramente no seu navegador - o PDF nunca é enviado',
+            'Baixe um PDF normal que abre sem pedir nada',
+            'Sem marca d\'água, sem limite de páginas',
+        ],
+        'content' => [
+            [
+                'heading' => 'Por que preciso digitar a senha?',
+                'body' => 'Esta ferramenta descriptografa um PDF usando a mesma senha que já o abre, em vez de tentar quebrar a criptografia. Se você não souber a senha, esta ferramenta não pode ajudar: não existe uma forma confiável ou responsável de recuperá-la.',
+            ],
+            [
+                'heading' => 'Isso é diferente de Proteger PDF?',
+                'body' => 'Proteger PDF adiciona uma senha a um PDF que não tem nenhuma. Desbloquear PDF faz o contrário: remove uma senha de um PDF que já tem uma, desde que você a forneça.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Esta ferramenta pode quebrar ou adivinhar a senha de um PDF?',
+                'a' => 'Não. Ela só remove uma senha que você mesmo digita. Se você não souber a senha, não existe uma forma legítima desta ou de qualquer outra ferramenta recuperá-la para você.',
+            ],
+            [
+                'q' => 'Meu PDF é enviado para algum lugar?',
+                'a' => 'Não. A senha é verificada e removida inteiramente no seu navegador usando uma versão do QPDF compilada em WebAssembly, e o arquivo nunca sai do seu dispositivo.',
+            ],
+            [
+                'q' => 'O que acontece se eu digitar a senha errada?',
+                'a' => 'Você verá uma mensagem de "Senha incorreta" e poderá tentar de novo. O arquivo em si nunca é alterado até que a senha correta o desbloqueie com sucesso.',
+            ],
+            [
+                'q' => 'Desbloquear muda mais alguma coisa no PDF?',
+                'a' => 'Não. Só a proteção por senha é removida; as páginas, o texto e as imagens continuam exatamente como estavam.',
+            ],
+        ],
+    ],
 ];

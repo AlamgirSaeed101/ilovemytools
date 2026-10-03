@@ -1685,4 +1685,175 @@ return [
             ['q' => 'Welche DPI sollte ich zum Drucken verwenden?', 'a' => '300 DPI ergibt ein scharfes Ergebnis zum Drucken. 150 DPI reicht für die meisten Bildschirme, und 72 DPI ist die kleinste Datei, am besten für schnelle Vorschauen.'],
         ],
     ],
+
+    'compress-pdf' => [
+        'name' => 'PDF komprimieren',
+        'title' => 'PDF komprimieren - Dateigröße kostenlos reduzieren',
+        'description' => 'Komprimieren Sie ein PDF online kostenlos, um es kleiner zu machen. Modus „Empfohlen" hält Text auswählbar; „Stark" verkleinert stärker. Kein Upload.',
+        'h1' => 'PDF komprimieren',
+        'tagline' => 'Machen Sie ein PDF kleiner, ohne die Lesbarkeit zu verlieren - direkt in Ihrem Browser.',
+        'keywords' => [
+            'pdf komprimieren',
+            'pdf compressor',
+            'pdf größe reduzieren',
+            'pdf verkleinern',
+            'pdf komprimieren online',
+        ],
+        'intro' => 'Ein Tool zum PDF komprimieren verkleinert eine PDF-Datei, indem es die darin enthaltenen Bilder reduziert, damit sie sich leichter per E-Mail versenden, hochladen oder speichern lässt. Der Modus „Empfohlen" komprimiert eingebettete Fotos mit geringerer Qualität neu, während der Text scharf und auswählbar bleibt. Der Modus „Stark" geht weiter und verwandelt jede Seite in ein einziges Bild, was die kleinstmögliche Datei ergibt, aber bedeutet, dass Text nicht mehr ausgewählt oder durchsucht werden kann. Alles läuft auf Ihrem Gerät ab, Ihr PDF wird also nie hochgeladen.',
+        'steps' => [
+            'Wählen Sie das PDF, das Sie komprimieren möchten.',
+            'Wählen Sie „Empfohlen", um Bilder zu verkleinern und den Text auswählbar zu halten, oder „Stark" für die kleinstmögliche Datei.',
+            'Wählen Sie im Modus „Stark" eine Bildqualität (DPI).',
+            'Klicken Sie auf PDF komprimieren und laden Sie die kleinere Datei herunter.',
+        ],
+        'features' => [
+            'Der Modus „Empfohlen" hält Text auswählbar und durchsuchbar',
+            'Der Modus „Stark" liefert die kleinste Datei, indem er Seiten in Bilder umwandelt',
+            'Zeigt die Größe vorher und nachher, damit Sie die Ersparnis sehen',
+            'Behält die Originaldatei, wenn eine Komprimierung sie nicht verkleinern würde',
+            'Privat - Ihr PDF verlässt nie Ihr Gerät',
+        ],
+        'content' => [
+            [
+                'heading' => '„Empfohlen" oder „Stark" - was ist die richtige Wahl?',
+                'body' => 'Der Modus „Empfohlen" komprimiert nur die Fotos und gescannten Bilder im PDF neu, sodass Überschriften, Absätze und Tabellen genau gleich bleiben und weiterhin ausgewählt, durchsucht und kopiert werden können. Der Modus „Stark" wandelt jede Seite in ein einziges JPEG-Bild um, was meist eine viel kleinere Datei ergibt, aber bedeutet, dass danach kein Text mehr ausgewählt, durchsucht oder kopiert werden kann - besser geeignet für fotolastige Dokumente, die zum Teilen einfach nur kleiner sein müssen.',
+            ],
+            [
+                'heading' => 'Warum ist mein PDF nicht kleiner geworden?',
+                'body' => 'Ein PDF, das nur aus Text und Vektorgrafiken besteht, oder eines, das bereits komprimiert wurde, schrumpft im Modus „Empfohlen" möglicherweise nicht weiter, weil keine großen Bilder mehr zum Neukomprimieren übrig sind. In diesem Fall wird die Originaldatei beibehalten, damit Sie nie mit einem größeren Download enden, und der Modus „Stark" kann sie trotzdem verkleinern, indem er die Seiten in Bilder umwandelt.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Verringert das Komprimieren eines PDFs die Qualität?',
+                'a' => 'Der Modus „Empfohlen" senkt die Qualität eingebetteter Fotos leicht, ähnlich wie das Speichern eines JPEGs mit einer niedrigeren Einstellung, während Text und Strichgrafiken scharf bleiben. Der Modus „Stark" rendert die gesamte Seite als Bild, sodass sehr kleiner Text beim Hineinzoomen weniger scharf wirken kann.',
+            ],
+            [
+                'q' => 'Kann ich nach dem Komprimieren noch Text auswählen?',
+                'a' => 'Ja, mit dem Modus „Empfohlen". Der Modus „Stark" rastert jede Seite zu einem einzigen Bild, sodass Text danach nicht mehr ausgewählt, durchsucht oder kopiert werden kann - wählen Sie ihn nur, wenn die Dateigröße wichtiger ist als das.',
+            ],
+            [
+                'q' => 'Was passiert, wenn die komprimierte Datei nicht kleiner ist?',
+                'a' => 'Die Originaldatei wird beibehalten und unverändert zum Download angeboten, sodass Sie nie mit einem größeren Ergebnis als zu Beginn enden.',
+            ],
+            [
+                'q' => 'Wird mein PDF an einen Server gesendet?',
+                'a' => 'Nein. Die Komprimierung erfolgt vollständig in Ihrem Browser mit JavaScript, und die Datei wird nie irgendwohin gesendet.',
+            ],
+        ],
+    ],
+
+    'protect-pdf' => [
+        'name' => 'PDF schützen',
+        'title' => 'PDF schützen - Passwort kostenlos hinzufügen',
+        'description' => 'Fügen Sie einem PDF online kostenlos ein echtes Passwort mit AES-256-Verschlüsselung hinzu. Nur wer es kennt, kann die Datei öffnen. Kein Upload.',
+        'h1' => 'PDF schützen',
+        'tagline' => 'Sperren Sie ein PDF mit einem Passwort, damit es nur jemand öffnen kann, der es kennt.',
+        'keywords' => [
+            'pdf schützen',
+            'pdf passwort schützen',
+            'pdf passwort hinzufügen',
+            'pdf verschlüsseln',
+            'pdf passwort online',
+        ],
+        'intro' => 'Ein PDF zu schützen fügt ein Passwort hinzu, sodass die Datei nur von jemandem geöffnet werden kann, der es kennt. Dieses Tool verschlüsselt Ihr PDF direkt in Ihrem Browser mit echter AES-256-Verschlüsselung, derselben Stärke, die auch Banken und Behörden verwenden. Wählen Sie ein Passwort, bestätigen Sie es, und laden Sie eine Kopie des PDFs herunter, die dieses Passwort verlangt, bevor es sich in einem beliebigen PDF-Reader öffnen lässt.',
+        'steps' => [
+            'Wählen Sie das PDF, das Sie schützen möchten.',
+            'Geben Sie ein Passwort ein und bestätigen Sie es.',
+            'Klicken Sie auf PDF schützen.',
+            'Laden Sie die passwortgeschützte Kopie herunter.',
+        ],
+        'features' => [
+            'Echte AES-256-Verschlüsselung, kein bloßer Dateinamen-Trick',
+            'Öffnet sich nur mit dem von Ihnen festgelegten Passwort',
+            'Funktioniert mit jedem PDF-Reader, der die PDF-Standardverschlüsselung unterstützt',
+            'Vollständig in Ihrem Browser verarbeitet - das PDF wird nie hochgeladen',
+            'Kein Wasserzeichen, kein Seitenlimit',
+        ],
+        'content' => [
+            [
+                'heading' => 'Wie stark ist die Verschlüsselung?',
+                'body' => 'Das PDF wird mit AES-256 verschlüsselt, demselben Algorithmus, der häufig zum Schutz sensibler Daten verwendet wird, mithilfe der Open-Source-Bibliothek QPDF, die als WebAssembly in Ihrem Browser läuft. Ohne das Passwort kann der Inhalt der Datei von keinem PDF-Betrachter gelesen werden.',
+            ],
+            [
+                'heading' => 'Was, wenn ich das Passwort vergesse?',
+                'body' => 'Ein vergessenes Passwort eines mit AES-256 geschützten PDFs lässt sich absichtlich nicht wiederherstellen - genau das macht den Schutz wirksam. Bewahren Sie eine Kopie des Passworts an einem sicheren Ort auf, etwa in einem Passwort-Manager, und behalten Sie die ungeschützte Originaldatei, bis Sie sicher sind, dass Sie sich daran erinnern werden.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Wird mein PDF dabei irgendwohin hochgeladen?',
+                'a' => 'Nein. Die Datei wird vollständig in Ihrem Browser mit JavaScript verschlüsselt, mithilfe einer als WebAssembly kompilierten Version von QPDF, und verlässt nie Ihr Gerät.',
+            ],
+            [
+                'q' => 'Welche Verschlüsselung wird verwendet?',
+                'a' => 'AES-256, der moderne Standard für die PDF-Verschlüsselung, angewendet mit der Open-Source-Bibliothek QPDF, die für den Browser kompiliert wurde.',
+            ],
+            [
+                'q' => 'Kann ich das Passwort später wieder entfernen?',
+                'a' => 'Ja. Verwenden Sie das Tool „PDF entsperren" mit dem von Ihnen festgelegten Passwort, um eine Kopie ohne Passwort zu erhalten.',
+            ],
+            [
+                'q' => 'Öffnet sich das passwortgeschützte PDF in jedem PDF-Reader?',
+                'a' => 'Ja. Es verwendet das von Adobe Acrobat, Browsern und den meisten anderen PDF-Readern unterstützte Standard-Verschlüsselungsformat für PDFs, die vor dem Öffnen nach dem Passwort fragen.',
+            ],
+        ],
+    ],
+
+    'unlock-pdf' => [
+        'name' => 'PDF entsperren',
+        'title' => 'PDF entsperren - Passwort kostenlos entfernen',
+        'description' => 'Entfernen Sie das Passwort eines PDFs online kostenlos, wenn Sie es kennen. Einmal eingeben und eine entsperrte Kopie herunterladen. Kein Upload.',
+        'h1' => 'PDF entsperren',
+        'tagline' => 'Entfernen Sie das Passwort eines PDFs, das Sie bereits kennen - direkt in Ihrem Browser.',
+        'keywords' => [
+            'pdf entsperren',
+            'pdf passwort entfernen',
+            'pdf passwort löschen',
+            'pdf entschlüsseln',
+            'passwort aus pdf entfernen',
+        ],
+        'intro' => 'Ein PDF zu entsperren entfernt dessen Öffnungspasswort, sodass es nicht mehr bei jedem Öffnen danach fragt. Dieses Tool entfernt nur ein Passwort, das Sie bereits kennen - geben Sie es einmal ein, und es wird eine neue Kopie des PDFs ohne Passwort erstellt. Es knackt, errät oder umgeht kein Passwort, das Sie nicht haben, da dies den Schutz sinnlos machen würde.',
+        'steps' => [
+            'Wählen Sie das passwortgeschützte PDF.',
+            'Geben Sie das Passwort ein.',
+            'Klicken Sie auf PDF entsperren.',
+            'Laden Sie die Kopie ohne Passwort herunter.',
+        ],
+        'features' => [
+            'Entfernt das Öffnungspasswort eines PDFs, das Sie bereits öffnen können',
+            'Knackt, errät oder umgeht keine unbekannten Passwörter',
+            'Funktioniert vollständig in Ihrem Browser - das PDF wird nie hochgeladen',
+            'Laden Sie ein normales PDF herunter, das sich ohne Nachfrage öffnet',
+            'Kein Wasserzeichen, kein Seitenlimit',
+        ],
+        'content' => [
+            [
+                'heading' => 'Warum muss ich das Passwort eingeben?',
+                'body' => 'Dieses Tool entschlüsselt ein PDF mit demselben Passwort, das es bereits öffnet, statt zu versuchen, die Verschlüsselung zu knacken. Wenn Sie das Passwort nicht kennen, kann dieses Tool nicht helfen - es gibt keine zuverlässige oder verantwortungsvolle Möglichkeit, es wiederherzustellen.',
+            ],
+            [
+                'heading' => 'Ist das etwas anderes als „PDF schützen"?',
+                'body' => '„PDF schützen" fügt einem PDF ohne Passwort eines hinzu. „PDF entsperren" macht das Gegenteil: Es entfernt ein Passwort von einem PDF, das bereits eines hat, vorausgesetzt Sie geben es an.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Kann dieses Tool das Passwort eines PDFs knacken oder erraten?',
+                'a' => 'Nein. Es entfernt nur ein Passwort, das Sie selbst eingeben. Wenn Sie das Passwort nicht kennen, gibt es keine legitime Möglichkeit für dieses oder irgendein anderes Tool, es für Sie wiederherzustellen.',
+            ],
+            [
+                'q' => 'Wird mein PDF irgendwohin hochgeladen?',
+                'a' => 'Nein. Das Passwort wird vollständig in Ihrem Browser geprüft und entfernt, mithilfe einer als WebAssembly kompilierten Version der Open-Source-Bibliothek QPDF, und die Datei verlässt nie Ihr Gerät.',
+            ],
+            [
+                'q' => 'Was passiert, wenn ich das falsche Passwort eingebe?',
+                'a' => 'Sie sehen eine Meldung „Falsches Passwort" und können es erneut versuchen. Die Datei selbst wird erst verändert, wenn das richtige Passwort sie erfolgreich entsperrt hat.',
+            ],
+            [
+                'q' => 'Ändert das Entsperren noch etwas anderes am PDF?',
+                'a' => 'Nein. Nur der Passwortschutz wird entfernt; Seiten, Text und Bilder bleiben genau so, wie sie waren.',
+            ],
+        ],
+    ],
 ];

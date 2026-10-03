@@ -9,7 +9,8 @@ import { parseRanges, rangesToIndexes, indexesExcluding } from './pdfRanges.js';
 import { computeImagePageLayout, MM_TO_PT, PDF_PAGE_SIZES, addRotation, buildRotatedPdf } from './pdf.js';
 import { dpiToScale } from './pdfRender.js';
 import { fileExtension, mimeType, pageFilename } from './pdfToImage.js';
-import { PDFDocument } from 'pdf-lib';
+import { isRecompressibleImage, isRecompressibleImageInfo, listRecompressibleImages, scaledDimensions } from './pdfCompress.js';
+import { PDFDocument, PDFRawStream } from 'pdf-lib';
 import { buildQrPayload, contrastRatio, escapeWifi } from './qr.js';
 import { formatBytes, uniqueNamer, baseName, safeFilename } from './util.js';
 
@@ -314,6 +315,45 @@ describe('pdf to image naming', () => {
     it('numbers each page when there is more than one', () => {
         expect(pageFilename('report', 1, 3, 'jpeg')).toBe('report-page-1.jpg');
         expect(pageFilename('report', 3, 3, 'png')).toBe('report-page-3.png');
+    });
+});
+
+describe('pdf compression', () => {
+    // A hand-built minimal JPEG header: just enough for pdf-lib's JpegEmbedder to read
+    // SOI, a SOF0 marker, 8-bit depth, 2x2 size and 3 (RGB) channels - not a decodable image,
+    // but enough to produce a real DCTDecode image stream to inspect.
+    const MINIMAL_JPEG = new Uint8Array([0xff, 0xd8, 0xff, 0xc0, 0x00, 0x0b, 0x08, 0x00, 0x02, 0x00, 0x02, 0x03, 0, 0, 0, 0]);
+    // A real, valid 1x1 transparent PNG.
+    const MINIMAL_PNG = Uint8Array.from(atob('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII='), (c) => c.charCodeAt(0));
+
+    it('judges recompressibility from an image stream\'s own attributes', () => {
+        expect(isRecompressibleImageInfo({ subtype: 'Image', filter: 'DCTDecode', colorSpace: 'DeviceRGB', hasSMask: false })).toBe(true);
+        expect(isRecompressibleImageInfo({ subtype: 'Image', filter: 'DCTDecode', colorSpace: 'DeviceGray', hasSMask: false })).toBe(true);
+        expect(isRecompressibleImageInfo({ subtype: 'Image', filter: 'DCTDecode', colorSpace: 'DeviceCMYK', hasSMask: false })).toBe(false);
+        expect(isRecompressibleImageInfo({ subtype: 'Image', filter: 'FlateDecode', colorSpace: 'DeviceRGB', hasSMask: false })).toBe(false);
+        expect(isRecompressibleImageInfo({ subtype: 'Image', filter: 'DCTDecode', colorSpace: 'DeviceRGB', hasSMask: true })).toBe(false);
+        expect(isRecompressibleImageInfo({ subtype: 'Form', filter: 'DCTDecode', colorSpace: 'DeviceRGB', hasSMask: false })).toBe(false);
+    });
+
+    it('finds embedded JPEGs in a real PDF but skips PNGs', async () => {
+        const doc = await PDFDocument.create();
+        const page = doc.addPage([100, 100]);
+        const jpg = await doc.embedJpg(MINIMAL_JPEG);
+        const png = await doc.embedPng(MINIMAL_PNG);
+        page.drawImage(jpg, { x: 0, y: 0, width: 10, height: 10 });
+        page.drawImage(png, { x: 20, y: 0, width: 10, height: 10 });
+
+        const reloaded = await PDFDocument.load(await doc.save());
+        const images = listRecompressibleImages(reloaded.context);
+        expect(images).toHaveLength(1);
+        expect(images[0].obj).toBeInstanceOf(PDFRawStream);
+        expect(isRecompressibleImage(images[0].obj)).toBe(true);
+    });
+
+    it('keeps aspect ratio when capping the longer side, and leaves small images alone', () => {
+        expect(scaledDimensions(2000, 1000, 1600)).toEqual({ width: 1600, height: 800 });
+        expect(scaledDimensions(1000, 2000, 1600)).toEqual({ width: 800, height: 1600 });
+        expect(scaledDimensions(800, 600, 1600)).toEqual({ width: 800, height: 600 });
     });
 });
 

@@ -24,6 +24,12 @@
     ]
   },
   {
+    "key": "\"{name}\" does not have a password. There is nothing to unlock.",
+    "files": [
+      "resources/js/tools/UnlockPdf.jsx"
+    ]
+  },
+  {
     "key": "\"{name}\" has no pages.",
     "files": [
       "resources/js/lib/pdf.js"
@@ -191,13 +197,16 @@
     "key": "{count} pages",
     "one": "{count} page",
     "files": [
+      "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/DeletePdfPages.jsx",
       "resources/js/tools/JpgToPdf.jsx",
       "resources/js/tools/MergePdf.jsx",
       "resources/js/tools/OrganizePdf.jsx",
       "resources/js/tools/PdfToImage.jsx",
+      "resources/js/tools/ProtectPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
-      "resources/js/tools/SplitPdf.jsx"
+      "resources/js/tools/SplitPdf.jsx",
+      "resources/js/tools/UnlockPdf.jsx"
     ]
   },
   {
@@ -254,6 +263,7 @@
   {
     "key": "{dpi} DPI",
     "files": [
+      "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/PdfToImage.jsx"
     ]
   },
@@ -1080,6 +1090,12 @@
     ]
   },
   {
+    "key": "Choose a password",
+    "files": [
+      "resources/js/tools/ProtectPdf.jsx"
+    ]
+  },
+  {
     "key": "Choose another image",
     "files": [
       "resources/js/tools/ImageResizer.jsx"
@@ -1088,11 +1104,14 @@
   {
     "key": "Choose another PDF",
     "files": [
+      "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/DeletePdfPages.jsx",
       "resources/js/tools/OrganizePdf.jsx",
       "resources/js/tools/PdfToImage.jsx",
+      "resources/js/tools/ProtectPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
-      "resources/js/tools/SplitPdf.jsx"
+      "resources/js/tools/SplitPdf.jsx",
+      "resources/js/tools/UnlockPdf.jsx"
     ]
   },
   {
@@ -1204,6 +1223,18 @@
     ]
   },
   {
+    "key": "Compress PDF",
+    "files": [
+      "resources/js/tools/CompressPdf.jsx"
+    ]
+  },
+  {
+    "key": "Compressing {done} of {total}…",
+    "files": [
+      "resources/js/tools/CompressPdf.jsx"
+    ]
+  },
+  {
     "key": "compressing…",
     "files": [
       "resources/js/tools/ImageCompressor.jsx"
@@ -1212,12 +1243,20 @@
   {
     "key": "Compressing…",
     "files": [
+      "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Compression failed: {message}",
+    "files": [
+      "resources/js/tools/CompressPdf.jsx"
     ]
   },
   {
     "key": "Compression mode",
     "files": [
+      "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/ImageCompressor.jsx"
     ]
   },
@@ -1225,6 +1264,12 @@
     "key": "Confirm my email",
     "files": [
       "resources/views/emails/confirm.blade.php"
+    ]
+  },
+  {
+    "key": "Confirm password",
+    "files": [
+      "resources/js/tools/ProtectPdf.jsx"
     ]
   },
   {
@@ -1409,6 +1454,12 @@
     "key": "Could not look up your IP address. Check your connection and try again.",
     "files": [
       "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Could not protect this PDF. It may be damaged or not a real PDF.",
+    "files": [
+      "resources/js/lib/qpdf.js"
     ]
   },
   {
@@ -1640,6 +1691,12 @@
     ]
   },
   {
+    "key": "Done! {before} → {after} ({percent}% smaller).",
+    "files": [
+      "resources/js/tools/CompressPdf.jsx"
+    ]
+  },
+  {
     "key": "Done! {pages} left ({size}).",
     "files": [
       "resources/js/tools/DeletePdfPages.jsx"
@@ -1652,9 +1709,21 @@
     ]
   },
   {
+    "key": "Done! Your PDF has {pages} ({size}), with no password.",
+    "files": [
+      "resources/js/tools/UnlockPdf.jsx"
+    ]
+  },
+  {
     "key": "Done! Your PDF has {pages}.",
     "files": [
       "resources/js/tools/JpgToPdf.jsx"
+    ]
+  },
+  {
+    "key": "Done! Your PDF is protected with AES-256 encryption ({size}).",
+    "files": [
+      "resources/js/tools/ProtectPdf.jsx"
     ]
   },
   {
@@ -1702,6 +1771,7 @@
   {
     "key": "Download PDF",
     "files": [
+      "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/DeletePdfPages.jsx",
       "resources/js/tools/JpgToPdf.jsx",
       "resources/js/tools/OrganizePdf.jsx",
@@ -1717,9 +1787,21 @@
     ]
   },
   {
+    "key": "Download protected PDF",
+    "files": [
+      "resources/js/tools/ProtectPdf.jsx"
+    ]
+  },
+  {
     "key": "Download SVG",
     "files": [
       "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Download unlocked PDF",
+    "files": [
+      "resources/js/tools/UnlockPdf.jsx"
     ]
   },
   {
@@ -1742,11 +1824,19 @@
     ]
   },
   {
+    "key": "Drop a password-protected PDF here or click to choose",
+    "files": [
+      "resources/js/tools/UnlockPdf.jsx"
+    ]
+  },
+  {
     "key": "Drop a PDF here or click to choose",
     "files": [
+      "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/DeletePdfPages.jsx",
       "resources/js/tools/OrganizePdf.jsx",
       "resources/js/tools/PdfToImage.jsx",
+      "resources/js/tools/ProtectPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
       "resources/js/tools/SplitPdf.jsx"
     ]
@@ -1945,6 +2035,12 @@
     "key": "Enter the pages you want, for example 1-3, 5.",
     "files": [
       "resources/js/lib/pdfRanges.js"
+    ]
+  },
+  {
+    "key": "Enter the PDF's password",
+    "files": [
+      "resources/js/tools/UnlockPdf.jsx"
     ]
   },
   {
@@ -2428,6 +2524,12 @@
     ]
   },
   {
+    "key": "Hide",
+    "files": [
+      "resources/js/tools/UnlockPdf.jsx"
+    ]
+  },
+  {
     "key": "High (30%)",
     "files": [
       "resources/js/tools/QrCodeGenerator.jsx"
@@ -2559,6 +2661,7 @@
   {
     "key": "Image quality (DPI)",
     "files": [
+      "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/PdfToImage.jsx"
     ]
   },
@@ -2578,6 +2681,12 @@
     "key": "Include the country code, e.g. +44 7700 900123",
     "files": [
       "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Incorrect password. Please try again.",
+    "files": [
+      "resources/js/lib/qpdf.js"
     ]
   },
   {
@@ -3332,11 +3441,14 @@
   {
     "key": "One PDF file · max 200 MB",
     "files": [
+      "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/DeletePdfPages.jsx",
       "resources/js/tools/OrganizePdf.jsx",
       "resources/js/tools/PdfToImage.jsx",
+      "resources/js/tools/ProtectPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
-      "resources/js/tools/SplitPdf.jsx"
+      "resources/js/tools/SplitPdf.jsx",
+      "resources/js/tools/UnlockPdf.jsx"
     ]
   },
   {
@@ -3528,6 +3640,12 @@
     ]
   },
   {
+    "key": "Passwords do not match.",
+    "files": [
+      "resources/js/tools/ProtectPdf.jsx"
+    ]
+  },
+  {
     "key": "Pasta",
     "files": [
       "scripts/i18n-extract.mjs"
@@ -3569,6 +3687,12 @@
     "key": "PDF pages, in order",
     "files": [
       "resources/js/tools/OrganizePdf.jsx"
+    ]
+  },
+  {
+    "key": "PDF password",
+    "files": [
+      "resources/js/tools/UnlockPdf.jsx"
     ]
   },
   {
@@ -3646,11 +3770,14 @@
   {
     "key": "Please choose a PDF file.",
     "files": [
+      "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/DeletePdfPages.jsx",
       "resources/js/tools/OrganizePdf.jsx",
       "resources/js/tools/PdfToImage.jsx",
+      "resources/js/tools/ProtectPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
-      "resources/js/tools/SplitPdf.jsx"
+      "resources/js/tools/SplitPdf.jsx",
+      "resources/js/tools/UnlockPdf.jsx"
     ]
   },
   {
@@ -3847,6 +3974,18 @@
     ]
   },
   {
+    "key": "Protect PDF",
+    "files": [
+      "resources/js/tools/ProtectPdf.jsx"
+    ]
+  },
+  {
+    "key": "Protecting…",
+    "files": [
+      "resources/js/tools/ProtectPdf.jsx"
+    ]
+  },
+  {
     "key": "QR Code",
     "files": [
       "scripts/i18n-extract.mjs"
@@ -3928,6 +4067,12 @@
     ]
   },
   {
+    "key": "Re-encodes images at a lower quality and resolution. Text stays selectable and sharp.",
+    "files": [
+      "resources/js/tools/CompressPdf.jsx"
+    ]
+  },
+  {
     "key": "Readability scores",
     "files": [
       "resources/js/tools/ReadabilityChecker.jsx"
@@ -3942,11 +4087,14 @@
   {
     "key": "Reading PDF…",
     "files": [
+      "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/DeletePdfPages.jsx",
       "resources/js/tools/OrganizePdf.jsx",
       "resources/js/tools/PdfToImage.jsx",
+      "resources/js/tools/ProtectPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
-      "resources/js/tools/SplitPdf.jsx"
+      "resources/js/tools/SplitPdf.jsx",
+      "resources/js/tools/UnlockPdf.jsx"
     ]
   },
   {
@@ -3964,6 +4112,7 @@
   {
     "key": "recommended",
     "files": [
+      "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/PdfToImage.jsx"
     ]
   },
@@ -4433,7 +4582,14 @@
   {
     "key": "Show",
     "files": [
-      "resources/js/tools/BrokenLinkChecker.jsx"
+      "resources/js/tools/BrokenLinkChecker.jsx",
+      "resources/js/tools/UnlockPdf.jsx"
+    ]
+  },
+  {
+    "key": "Show passwords",
+    "files": [
+      "resources/js/tools/ProtectPdf.jsx"
     ]
   },
   {
@@ -4696,6 +4852,12 @@
     "key": "Strong",
     "files": [
       "resources/js/lib/password.js"
+    ]
+  },
+  {
+    "key": "Strong mode turns every page into an image. Text can no longer be selected, searched or copied.",
+    "files": [
+      "resources/js/tools/CompressPdf.jsx"
     ]
   },
   {
@@ -5076,6 +5238,12 @@
     ]
   },
   {
+    "key": "This PDF could not be made smaller, so the original file is ready to download unchanged ({size}).",
+    "files": [
+      "resources/js/tools/CompressPdf.jsx"
+    ]
+  },
+  {
     "key": "This PDF only has {count} pages. \"{part}\" is out of range.",
     "one": "This PDF only has {count} page. \"{part}\" is out of range.",
     "files": [
@@ -5346,6 +5514,18 @@
     "key": "Unknown QR code type.",
     "files": [
       "resources/js/lib/qr.js"
+    ]
+  },
+  {
+    "key": "Unlock PDF",
+    "files": [
+      "resources/js/tools/UnlockPdf.jsx"
+    ]
+  },
+  {
+    "key": "Unlocking…",
+    "files": [
+      "resources/js/tools/UnlockPdf.jsx"
     ]
   },
   {
@@ -5737,6 +5917,12 @@
     "key": "You may opt out of personalised advertising by visiting {adsSettings}. You can also opt out of some third-party vendors’ use of cookies for personalised advertising at {aboutAds}. Learn more in {howGoogle}.",
     "files": [
       "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "You must know the password - this tool does not crack or guess passwords.",
+    "files": [
+      "resources/js/tools/UnlockPdf.jsx"
     ]
   },
   {

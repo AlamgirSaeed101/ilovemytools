@@ -1567,4 +1567,175 @@ return [
             ['q' => 'Jakie DPI powinienem użyć do druku?', 'a' => '300 DPI daje ostry wynik do druku. 150 DPI wystarcza do większości ekranów, a 72 DPI to najmniejszy plik, najlepszy do szybkich podglądów.'],
         ],
     ],
+
+    'compress-pdf' => [
+        'name' => 'Kompresuj PDF',
+        'title' => 'Kompresuj PDF - Zmniejsz Rozmiar Pliku za Darmo',
+        'description' => 'Skompresuj PDF online za darmo, aby zmniejszyć rozmiar. Tryb Zalecany zachowuje zaznaczalny tekst; Mocny zmniejsza więcej. Bez przesyłania na serwer.',
+        'h1' => 'Kompresuj PDF',
+        'tagline' => 'Zmniejsz plik PDF, nie tracąc czytelności - prosto w przeglądarce.',
+        'keywords' => [
+            'kompresuj pdf',
+            'kompresor pdf',
+            'zmniejsz rozmiar pdf',
+            'zmniejszanie pdf',
+            'kompresuj pdf online',
+        ],
+        'intro' => 'Narzędzie do kompresji PDF zmniejsza rozmiar pliku PDF, redukując wielkość znajdujących się w nim obrazów, dzięki czemu łatwiej go wysłać e-mailem, przesłać lub przechowywać. Tryb Zalecany kompresuje ponownie osadzone zdjęcia w niższej jakości, zachowując ostry i zaznaczalny tekst. Tryb Mocny idzie dalej i zamienia każdą stronę w pojedynczy obraz, co daje najmniejszy możliwy plik, ale oznacza, że tekstu nie można już zaznaczyć ani wyszukać. Wszystko odbywa się na Twoim urządzeniu, więc Twój plik PDF nigdy nie trafia na serwer.',
+        'steps' => [
+            'Wybierz plik PDF, który chcesz skompresować.',
+            'Wybierz Zalecany, aby zmniejszyć obrazy, zachowując zaznaczalny tekst, lub Mocny dla najmniejszego możliwego pliku.',
+            'W trybie Mocnym wybierz jakość obrazu (DPI).',
+            'Kliknij Kompresuj PDF i pobierz mniejszy plik.',
+        ],
+        'features' => [
+            'Tryb Zalecany zachowuje zaznaczalny i przeszukiwalny tekst',
+            'Tryb Mocny daje najmniejszy plik, zamieniając strony w obrazy',
+            'Pokazuje rozmiar przed i po, abyś widział oszczędność',
+            'Zachowuje oryginalny plik, jeśli kompresja go nie zmniejszy',
+            'Prywatnie - Twój PDF nigdy nie opuszcza Twojego urządzenia',
+        ],
+        'content' => [
+            [
+                'heading' => 'Zalecany czy Mocny - który wybrać?',
+                'body' => 'Tryb Zalecany kompresuje ponownie tylko zdjęcia i zeskanowane obrazy w pliku PDF, więc nagłówki, akapity i tabele pozostają dokładnie takie same i nadal można je zaznaczać, wyszukiwać i kopiować. Tryb Mocny zamienia każdą stronę w jeden obraz JPEG, co zwykle daje znacznie mniejszy plik, ale oznacza, że żadnego tekstu nie da się potem zaznaczyć, wyszukać ani skopiować - lepszy dla dokumentów pełnych zdjęć, które po prostu muszą być mniejsze do udostępnienia.',
+            ],
+            [
+                'heading' => 'Dlaczego mój plik PDF się nie zmniejszył?',
+                'body' => 'Plik PDF złożony tylko z tekstu i grafiki wektorowej, albo taki, który był już wcześniej skompresowany, może się nie zmniejszyć dalej w trybie Zalecanym, ponieważ nie zostały duże obrazy do ponownej kompresji. W takim przypadku zachowywany jest oryginalny plik, dzięki czemu nigdy nie otrzymasz cięższego wyniku niż na początku, a tryb Mocny nadal może go zmniejszyć, zamieniając strony w obrazy.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Czy kompresowanie PDF obniża jego jakość?',
+                'a' => 'Tryb Zalecany nieznacznie obniża jakość osadzonych zdjęć, podobnie jak zapisanie JPEG w niższych ustawieniach, podczas gdy tekst i grafika liniowa pozostają ostre. Tryb Mocny renderuje całą stronę jako obraz, więc bardzo mały tekst może wyglądać mniej ostro po powiększeniu.',
+            ],
+            [
+                'q' => 'Czy po kompresji nadal będę mógł zaznaczyć tekst?',
+                'a' => 'Tak, w trybie Zalecanym. Tryb Mocny rasteryzuje każdą stronę do jednego obrazu, więc tekstu nie da się już zaznaczyć, wyszukać ani skopiować - wybieraj go tylko wtedy, gdy rozmiar pliku liczy się bardziej niż to.',
+            ],
+            [
+                'q' => 'Co się stanie, jeśli skompresowany plik nie będzie mniejszy?',
+                'a' => 'Oryginalny plik zostaje zachowany i udostępniony do pobrania bez zmian, więc nigdy nie otrzymasz wyniku cięższego niż to, od czego zacząłeś.',
+            ],
+            [
+                'q' => 'Czy mój PDF jest przesyłany na serwer?',
+                'a' => 'Nie. Kompresja odbywa się całkowicie w Twojej przeglądarce za pomocą JavaScript, a plik nigdy nigdzie nie jest wysyłany.',
+            ],
+        ],
+    ],
+
+    'protect-pdf' => [
+        'name' => 'Zabezpiecz PDF',
+        'title' => 'Zabezpiecz PDF - Dodaj Hasło za Darmo',
+        'description' => 'Dodaj prawdziwe hasło do pliku PDF online za darmo, z szyfrowaniem AES-256. Plik otworzy tylko osoba znająca hasło. Bez przesyłania na serwer, bez rejestracji.',
+        'h1' => 'Zabezpiecz PDF',
+        'tagline' => 'Zablokuj plik PDF hasłem, aby mogła go otworzyć tylko osoba, która je zna.',
+        'keywords' => [
+            'zabezpiecz pdf',
+            'hasło do pdf',
+            'dodaj hasło do pdf',
+            'zaszyfruj pdf',
+            'hasło pdf online',
+        ],
+        'intro' => 'Zabezpieczenie pliku PDF dodaje hasło, dzięki któremu plik może otworzyć tylko osoba, która je zna. To narzędzie szyfruje Twój plik PDF prawdziwym szyfrowaniem AES-256, tą samą siłą, jakiej używają systemy bankowe i rządowe, bezpośrednio w przeglądarce. Wybierz hasło, potwierdź je i pobierz kopię pliku PDF, która poprosi o to hasło przed otwarciem w dowolnym czytniku PDF.',
+        'steps' => [
+            'Wybierz plik PDF, który chcesz zabezpieczyć.',
+            'Wpisz hasło i je potwierdź.',
+            'Kliknij Zabezpiecz PDF.',
+            'Pobierz kopię zabezpieczoną hasłem.',
+        ],
+        'features' => [
+            'Prawdziwe szyfrowanie AES-256, a nie tylko sztuczka z nazwą pliku',
+            'Otwiera się tylko przy użyciu ustawionego przez Ciebie hasła',
+            'Działa z każdym czytnikiem PDF obsługującym standardowe szyfrowanie PDF',
+            'Przetwarzane całkowicie w przeglądarce - plik PDF nigdy nie jest przesyłany',
+            'Bez znaku wodnego, bez limitu stron',
+        ],
+        'content' => [
+            [
+                'heading' => 'Jak silne jest to szyfrowanie?',
+                'body' => 'Plik PDF jest szyfrowany algorytmem AES-256, powszechnie stosowanym do ochrony wrażliwych danych, za pomocą biblioteki open source QPDF działającej w przeglądarce jako WebAssembly. Bez hasła zawartość pliku nie może zostać odczytana przez czytnik PDF.',
+            ],
+            [
+                'heading' => 'Co, jeśli zapomnę hasła?',
+                'body' => 'Celowo nie ma możliwości odzyskania zapomnianego hasła do pliku PDF zabezpieczonego AES-256 - właśnie to czyni ochronę skuteczną. Przechowuj kopię hasła w bezpiecznym miejscu, na przykład w menedżerze haseł, i zachowaj oryginalny, niezabezpieczony plik, dopóki nie będziesz pewien, że je zapamiętasz.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Czy to przesyła mój plik PDF gdziekolwiek?',
+                'a' => 'Nie. Plik jest szyfrowany całkowicie w Twojej przeglądarce za pomocą JavaScript, przy użyciu wersji QPDF skompilowanej do WebAssembly, i nigdy nie opuszcza Twojego urządzenia.',
+            ],
+            [
+                'q' => 'Jakiego szyfrowania to używa?',
+                'a' => 'AES-256, współczesnego standardu szyfrowania PDF, zastosowanego za pomocą biblioteki open source QPDF skompilowanej do działania w przeglądarce.',
+            ],
+            [
+                'q' => 'Czy mogę później usunąć hasło?',
+                'a' => 'Tak. Użyj narzędzia Odblokuj PDF z ustawionym hasłem, aby uzyskać kopię bez niego.',
+            ],
+            [
+                'q' => 'Czy zabezpieczony plik PDF otworzy się w każdym czytniku?',
+                'a' => 'Tak. Wykorzystuje standardowy format szyfrowania PDF obsługiwany przez Adobe Acrobat, przeglądarki i większość innych czytników PDF, które poproszą o hasło przed otwarciem.',
+            ],
+        ],
+    ],
+
+    'unlock-pdf' => [
+        'name' => 'Odblokuj PDF',
+        'title' => 'Odblokuj PDF - Usuń Hasło za Darmo',
+        'description' => 'Usuń hasło z pliku PDF online za darmo, gdy je znasz. Wpisz hasło raz i pobierz odblokowaną kopię. Bez przesyłania na serwer, bez rejestracji.',
+        'h1' => 'Odblokuj PDF',
+        'tagline' => 'Usuń hasło z pliku PDF, które już znasz - prosto w przeglądarce.',
+        'keywords' => [
+            'odblokuj pdf',
+            'usuń hasło z pdf',
+            'usunąć hasło pdf',
+            'odszyfruj pdf',
+            'zdjęcie hasła z pdf',
+        ],
+        'intro' => 'Odblokowanie pliku PDF usuwa jego hasło otwierania, dzięki czemu nie jest już wymagane przy każdym otwarciu. To narzędzie usuwa wyłącznie hasło, które już znasz - wpisz je raz, a zostanie utworzona nowa kopia pliku PDF bez niego. Nie łamie, nie zgaduje ani nie omija hasła, którego nie znasz, ponieważ pozbawiłoby to sensu całą ochronę.',
+        'steps' => [
+            'Wybierz plik PDF zabezpieczony hasłem.',
+            'Wpisz hasło.',
+            'Kliknij Odblokuj PDF.',
+            'Pobierz kopię bez hasła.',
+        ],
+        'features' => [
+            'Usuwa hasło otwierania z pliku PDF, który już możesz otworzyć',
+            'Nie łamie, nie zgaduje ani nie omija nieznanych haseł',
+            'Działa całkowicie w Twojej przeglądarce - plik PDF nigdy nie jest przesyłany',
+            'Pobierz zwykły plik PDF, który otwiera się bez pytania o nic',
+            'Bez znaku wodnego, bez limitu stron',
+        ],
+        'content' => [
+            [
+                'heading' => 'Dlaczego muszę wpisać hasło?',
+                'body' => 'To narzędzie odszyfrowuje plik PDF przy użyciu tego samego hasła, które już go otwiera, zamiast próbować złamać szyfrowanie. Jeśli nie znasz hasła, to narzędzie nie pomoże - nie ma wiarygodnego ani odpowiedzialnego sposobu, aby je odzyskać.',
+            ],
+            [
+                'heading' => 'Czy to co innego niż Zabezpiecz PDF?',
+                'body' => 'Zabezpiecz PDF dodaje hasło do pliku PDF, który go nie ma. Odblokuj PDF robi coś przeciwnego: usuwa hasło z pliku PDF, który już je ma, pod warunkiem że je podasz.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Czy to narzędzie może złamać lub odgadnąć hasło do pliku PDF?',
+                'a' => 'Nie. Usuwa wyłącznie hasło, które sam wpisujesz. Jeśli nie znasz hasła, nie ma legalnego sposobu, aby to ani żadne inne narzędzie odzyskało je za Ciebie.',
+            ],
+            [
+                'q' => 'Czy mój plik PDF jest gdzieś przesyłany?',
+                'a' => 'Nie. Hasło jest sprawdzane i usuwane całkowicie w Twojej przeglądarce przy użyciu wersji biblioteki open source QPDF skompilowanej do WebAssembly, a plik nigdy nie opuszcza Twojego urządzenia.',
+            ],
+            [
+                'q' => 'Co się stanie, jeśli wpiszę złe hasło?',
+                'a' => 'Zobaczysz komunikat „Nieprawidłowe hasło" i będziesz mógł spróbować ponownie. Sam plik nigdy nie zostaje zmieniony, dopóki prawidłowe hasło pomyślnie go nie odblokuje.',
+            ],
+            [
+                'q' => 'Czy odblokowanie zmienia coś jeszcze w pliku PDF?',
+                'a' => 'Nie. Usuwana jest tylko ochrona hasłem; strony, tekst i obrazy pozostają dokładnie takie same.',
+            ],
+        ],
+    ],
 ];

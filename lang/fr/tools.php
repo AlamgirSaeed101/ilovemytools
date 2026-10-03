@@ -1685,4 +1685,175 @@ return [
             ['q' => 'Quel DPI utiliser pour l\'impression ?', 'a' => '300 DPI donne un résultat net pour l\'impression. 150 DPI suffit pour la plupart des écrans, et 72 DPI donne le fichier le plus petit, idéal pour un aperçu rapide.'],
         ],
     ],
+
+    'compress-pdf' => [
+        'name' => 'Compresser le PDF',
+        'title' => 'Compresser un PDF - Réduire sa Taille Gratuitement',
+        'description' => 'Compressez un PDF en ligne gratuitement pour réduire sa taille. Le mode Recommandé garde le texte sélectionnable ; le mode Fort réduit davantage. Sans upload.',
+        'h1' => 'Compresser le PDF',
+        'tagline' => 'Rendez un PDF plus léger sans perdre en lisibilité, directement dans votre navigateur.',
+        'keywords' => [
+            'compresser pdf',
+            'compresseur pdf',
+            'réduire la taille d\'un pdf',
+            'alléger un pdf',
+            'compresser pdf en ligne',
+        ],
+        'intro' => 'Un outil de compression de PDF réduit la taille d\'un fichier PDF en diminuant le poids des images qu\'il contient, pour qu\'il soit plus facile à envoyer par e-mail, à téléverser ou à stocker. Le mode Recommandé recompresse les photos intégrées à une qualité moindre tout en gardant le texte net et sélectionnable. Le mode Fort va plus loin en transformant chaque page en une seule image, ce qui donne le fichier le plus léger possible mais empêche de sélectionner ou de rechercher le texte. Tout se passe sur votre appareil, votre PDF n\'est donc jamais envoyé à un serveur.',
+        'steps' => [
+            'Choisissez le PDF à compresser.',
+            'Choisissez Recommandé pour réduire les images en gardant le texte sélectionnable, ou Fort pour le fichier le plus léger possible.',
+            'En mode Fort, choisissez une qualité d\'image (DPI).',
+            'Cliquez sur Compresser le PDF et téléchargez le fichier allégé.',
+        ],
+        'features' => [
+            'Le mode Recommandé garde le texte sélectionnable et recherchable',
+            'Le mode Fort donne le fichier le plus léger en transformant les pages en images',
+            'Affiche la taille avant et après, pour voir le gain',
+            'Conserve le fichier original si la compression ne le rendrait pas plus léger',
+            'Confidentiel - votre PDF ne quitte jamais votre appareil',
+        ],
+        'content' => [
+            [
+                'heading' => 'Recommandé ou Fort - lequel choisir ?',
+                'body' => 'Le mode Recommandé ne recompresse que les photos et images scannées du PDF : les titres, paragraphes et tableaux restent exactement identiques et peuvent toujours être sélectionnés, recherchés et copiés. Le mode Fort convertit chaque page en une seule image JPEG, ce qui donne généralement un fichier bien plus léger mais empêche ensuite de sélectionner, rechercher ou copier le moindre texte - idéal pour les documents riches en photos qui ont juste besoin d\'être plus légers à partager.',
+            ],
+            [
+                'heading' => 'Pourquoi mon PDF n\'est-il pas devenu plus léger ?',
+                'body' => 'Un PDF composé uniquement de texte et de graphiques vectoriels, ou déjà compressé, peut ne pas rétrécir davantage en mode Recommandé car il ne reste pas de grandes images à recompresser. Dans ce cas, le fichier original est conservé afin que vous n\'obteniez jamais un résultat plus lourd que le départ, et le mode Fort peut encore le réduire en transformant les pages en images.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Compresser un PDF réduit-il sa qualité ?',
+                'a' => 'Le mode Recommandé réduit légèrement la qualité des photos intégrées, un peu comme enregistrer un JPEG avec un réglage plus bas, tandis que le texte et les graphiques vectoriels restent nets. Le mode Fort transforme toute la page en image, donc un texte très petit peut paraître moins net en zoomant.',
+            ],
+            [
+                'q' => 'Pourrai-je encore sélectionner le texte après compression ?',
+                'a' => 'Oui, avec le mode Recommandé. Le mode Fort transforme chaque page en une seule image, le texte ne peut alors plus être sélectionné, recherché ni copié - ne le choisissez que lorsque la taille du fichier compte plus que cela.',
+            ],
+            [
+                'q' => 'Que se passe-t-il si le fichier compressé n\'est pas plus léger ?',
+                'a' => 'Le fichier original est conservé et proposé au téléchargement sans modification, vous ne vous retrouvez donc jamais avec un résultat plus lourd que celui de départ.',
+            ],
+            [
+                'q' => 'Mon PDF est-il envoyé à un serveur ?',
+                'a' => 'Non. La compression se fait entièrement dans votre navigateur avec JavaScript, et le fichier n\'est jamais envoyé nulle part.',
+            ],
+        ],
+    ],
+
+    'protect-pdf' => [
+        'name' => 'Protéger le PDF',
+        'title' => 'Protéger un PDF - Ajouter un Mot de Passe Gratuit',
+        'description' => 'Ajoutez un vrai mot de passe à un PDF en ligne gratuitement, avec un chiffrement AES-256. Seul qui le connaît peut ouvrir le fichier. Sans upload.',
+        'h1' => 'Protéger le PDF',
+        'tagline' => 'Verrouillez un PDF avec un mot de passe pour que seules les personnes qui le connaissent puissent l\'ouvrir.',
+        'keywords' => [
+            'protéger pdf',
+            'mettre un mot de passe sur un pdf',
+            'ajouter un mot de passe à un pdf',
+            'chiffrer pdf',
+            'mot de passe pdf en ligne',
+        ],
+        'intro' => 'Protéger un PDF ajoute un mot de passe afin que le fichier ne puisse être ouvert que par une personne qui le connaît. Cet outil chiffre votre PDF avec un vrai chiffrement AES-256, la même robustesse utilisée par les systèmes bancaires et gouvernementaux, directement dans votre navigateur. Choisissez un mot de passe, confirmez-le, puis téléchargez une copie du PDF qui demandera ce mot de passe avant de s\'ouvrir dans n\'importe quel lecteur de PDF.',
+        'steps' => [
+            'Choisissez le PDF à protéger.',
+            'Saisissez un mot de passe et confirmez-le.',
+            'Cliquez sur Protéger le PDF.',
+            'Téléchargez la copie protégée par mot de passe.',
+        ],
+        'features' => [
+            'Un vrai chiffrement AES-256, pas juste une astuce de nom de fichier',
+            'S\'ouvre uniquement avec le mot de passe que vous avez choisi',
+            'Fonctionne avec tout lecteur de PDF compatible avec le chiffrement PDF standard',
+            'Traité entièrement dans votre navigateur - le PDF n\'est jamais envoyé',
+            'Sans filigrane, sans limite de pages',
+        ],
+        'content' => [
+            [
+                'heading' => 'Le chiffrement est-il vraiment solide ?',
+                'body' => 'Le PDF est chiffré en AES-256, l\'algorithme largement utilisé pour protéger les données sensibles, via la bibliothèque open source QPDF exécutée dans votre navigateur sous forme de WebAssembly. Sans le mot de passe, le contenu du fichier ne peut pas être lu par un lecteur de PDF.',
+            ],
+            [
+                'heading' => 'Et si j\'oublie le mot de passe ?',
+                'body' => 'Il n\'existe aucun moyen de récupérer un mot de passe oublié sur un PDF protégé en AES-256, c\'est voulu : c\'est ce qui rend la protection efficace. Conservez une copie du mot de passe en lieu sûr, comme un gestionnaire de mots de passe, et gardez le fichier original non protégé jusqu\'à être sûr de vous en souvenir.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Est-ce que cela envoie mon PDF quelque part ?',
+                'a' => 'Non. Le fichier est chiffré entièrement dans votre navigateur avec JavaScript grâce à une version de QPDF compilée en WebAssembly, et ne quitte jamais votre appareil.',
+            ],
+            [
+                'q' => 'Quel chiffrement est utilisé ?',
+                'a' => 'AES-256, la norme moderne pour le chiffrement des PDF, appliquée avec la bibliothèque open source QPDF compilée pour s\'exécuter dans le navigateur.',
+            ],
+            [
+                'q' => 'Puis-je retirer le mot de passe plus tard ?',
+                'a' => 'Oui. Utilisez l\'outil Déverrouiller le PDF avec le mot de passe que vous avez défini pour obtenir une copie sans lui.',
+            ],
+            [
+                'q' => 'Le PDF protégé s\'ouvrira-t-il dans n\'importe quel lecteur ?',
+                'a' => 'Oui. Il utilise le format de chiffrement PDF standard pris en charge par Adobe Acrobat, les navigateurs et la plupart des autres lecteurs de PDF, qui demanderont le mot de passe avant de l\'ouvrir.',
+            ],
+        ],
+    ],
+
+    'unlock-pdf' => [
+        'name' => 'Déverrouiller le PDF',
+        'title' => 'Déverrouiller un PDF - Retirer le Mot de Passe',
+        'description' => 'Retirez le mot de passe d\'un PDF en ligne gratuitement si vous le connaissez. Saisissez-le une fois et téléchargez une copie déverrouillée. Sans upload.',
+        'h1' => 'Déverrouiller le PDF',
+        'tagline' => 'Retirez le mot de passe d\'un PDF que vous connaissez déjà, directement dans votre navigateur.',
+        'keywords' => [
+            'déverrouiller pdf',
+            'retirer mot de passe pdf',
+            'supprimer mot de passe pdf',
+            'déchiffrer pdf',
+            'enlever mot de passe pdf',
+        ],
+        'intro' => 'Déverrouiller un PDF retire son mot de passe d\'ouverture afin qu\'il ne soit plus demandé à chaque ouverture. Cet outil ne retire qu\'un mot de passe que vous connaissez déjà - saisissez-le une fois, et une nouvelle copie du PDF est créée sans lui. Il ne casse, ne devine ni ne contourne un mot de passe que vous ne possédez pas, car cela rendrait la protection inutile.',
+        'steps' => [
+            'Choisissez le PDF protégé par mot de passe.',
+            'Saisissez le mot de passe.',
+            'Cliquez sur Déverrouiller le PDF.',
+            'Téléchargez la copie sans mot de passe.',
+        ],
+        'features' => [
+            'Retire le mot de passe d\'ouverture d\'un PDF que vous pouvez déjà ouvrir',
+            'Ne casse, ne devine ni ne contourne les mots de passe inconnus',
+            'Fonctionne entièrement dans votre navigateur - le PDF n\'est jamais envoyé',
+            'Téléchargez un PDF normal qui s\'ouvre sans rien demander',
+            'Sans filigrane, sans limite de pages',
+        ],
+        'content' => [
+            [
+                'heading' => 'Pourquoi dois-je saisir le mot de passe ?',
+                'body' => 'Cet outil déchiffre un PDF à l\'aide du même mot de passe qui l\'ouvre déjà, plutôt que de tenter de casser le chiffrement. Si vous ne connaissez pas le mot de passe, cet outil ne peut pas vous aider - il n\'existe aucun moyen fiable ou responsable de le récupérer.',
+            ],
+            [
+                'heading' => 'Est-ce différent de Protéger le PDF ?',
+                'body' => 'Protéger le PDF ajoute un mot de passe à un PDF qui n\'en a pas. Déverrouiller le PDF fait l\'inverse : il retire un mot de passe d\'un PDF qui en a déjà un, à condition que vous le fournissiez.',
+            ],
+        ],
+        'faqs' => [
+            [
+                'q' => 'Cet outil peut-il casser ou deviner le mot de passe d\'un PDF ?',
+                'a' => 'Non. Il ne retire qu\'un mot de passe que vous saisissez vous-même. Si vous ne connaissez pas le mot de passe, aucun outil, celui-ci ou un autre, ne peut légitimement le récupérer pour vous.',
+            ],
+            [
+                'q' => 'Mon PDF est-il envoyé quelque part ?',
+                'a' => 'Non. Le mot de passe est vérifié et retiré entièrement dans votre navigateur grâce à une version de la bibliothèque open source QPDF compilée en WebAssembly, et le fichier ne quitte jamais votre appareil.',
+            ],
+            [
+                'q' => 'Que se passe-t-il si je saisis le mauvais mot de passe ?',
+                'a' => 'Un message « Mot de passe incorrect » s\'affiche et vous pouvez réessayer. Le fichier lui-même n\'est jamais modifié tant que le bon mot de passe ne l\'a pas déverrouillé avec succès.',
+            ],
+            [
+                'q' => 'Le déverrouillage modifie-t-il autre chose dans le PDF ?',
+                'a' => 'Non. Seule la protection par mot de passe est retirée ; les pages, le texte et les images restent exactement identiques.',
+            ],
+        ],
+    ],
 ];

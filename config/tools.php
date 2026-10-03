@@ -567,7 +567,7 @@ return [
             ['q' => 'How many PDFs can I merge?', 'a' => 'Up to 50 files at a time. The practical limit depends on your device memory, and most devices handle a few hundred pages easily.'],
             ['q' => 'Will links and bookmarks be kept?', 'a' => 'Page content, images and text are kept exactly. Some interactive features such as bookmarks and form fields may not carry over.'],
         ],
-        'related' => ['jpg-to-pdf', 'split-pdf', 'rotate-pdf', 'image-compressor'],
+        'related' => ['jpg-to-pdf', 'split-pdf', 'rotate-pdf', 'compress-pdf'],
     ],
 
     'split-pdf' => [
@@ -607,7 +607,7 @@ return [
             ['q' => 'Are my files uploaded?', 'a' => 'No. The PDF is split locally in your browser and never leaves your device.'],
             ['q' => 'Does splitting reduce quality?', 'a' => 'No. Pages are copied exactly as they are, so text and images keep their original quality.'],
         ],
-        'related' => ['merge-pdf', 'rotate-pdf', 'image-compressor'],
+        'related' => ['merge-pdf', 'rotate-pdf', 'compress-pdf'],
     ],
 
     'age-calculator' => [
@@ -1876,6 +1876,138 @@ return [
             ['q' => 'What DPI should I use for printing?', 'a' => '300 DPI gives a sharp result for printing. 150 DPI is enough for most screens, and 72 DPI is the smallest file, best for quick previews.'],
         ],
         'related' => ['pdf-to-jpg', 'jpg-to-pdf', 'split-pdf', 'image-compressor'],
+    ],
+
+    'compress-pdf' => [
+        'name' => 'Compress PDF',
+        'category' => 'pdf-tools',
+        'icon' => 'pdf',
+        'popular' => true,
+        'updated' => '2026-10-03',
+        'title' => 'Compress PDF - Reduce PDF File Size Free',
+        'description' => 'Compress a PDF online for free to make it smaller. Keep text selectable with Recommended mode, or shrink further with Strong mode. No upload, no sign up.',
+        'h1' => 'Compress PDF',
+        'tagline' => 'Make a PDF smaller while keeping it readable - right in your browser.',
+        'keywords' => ['compress pdf', 'pdf compressor', 'reduce pdf size', 'shrink pdf file', 'compress pdf online'],
+        'intro' => 'A compress PDF tool makes a PDF file smaller by reducing the size of the images inside it, so it is easier to email, upload or store. Recommended mode re-encodes embedded photos at a lower quality while keeping your text sharp and selectable. Strong mode goes further by turning every page into a single image, which gives the smallest file but means text can no longer be selected or searched. Everything runs on your device, so your PDF is never uploaded.',
+        'steps' => [
+            'Choose the PDF you want to compress.',
+            'Pick Recommended to shrink images while keeping text selectable, or Strong for the smallest possible file.',
+            'For Strong mode, choose an image quality (DPI).',
+            'Click Compress PDF and download the smaller file.',
+        ],
+        'features' => [
+            'Recommended mode keeps text selectable and searchable',
+            'Strong mode gives the smallest file by rendering pages as images',
+            'Shows the size before and after, so you can see the saving',
+            'Keeps the original file if compression would not make it smaller',
+            'Private - your PDF never leaves your device',
+        ],
+        'content' => [
+            [
+                'heading' => 'Recommended vs Strong - which should I use?',
+                'body' => 'Recommended mode only re-encodes the photos and scanned images inside the PDF, so headings, paragraphs and tables stay exactly as they are and can still be selected, searched and copied. Strong mode converts every page into a single JPEG image, which usually produces a much smaller file but means none of the text can be selected, searched or copied afterwards - better for photo-heavy documents that just need to be smaller for sharing.',
+            ],
+            [
+                'heading' => 'Why didn\'t my PDF get smaller?',
+                'body' => 'A PDF made only of text and vector graphics, or one that has already been compressed, may not shrink further in Recommended mode because there are no large images left to re-encode. In that case the original file is kept so you never end up with a bigger download, and Strong mode can still make it smaller by rendering the pages as images.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Does compressing a PDF reduce its quality?', 'a' => 'Recommended mode lowers the quality of embedded photos slightly, similar to saving a JPEG at a lower setting, while text and line art stay sharp. Strong mode renders the whole page as an image, so very small text can look less crisp when zoomed in.'],
+            ['q' => 'Will I still be able to select text after compressing?', 'a' => 'Yes, with Recommended mode. Strong mode rasterises every page into one image, so text can no longer be selected, searched or copied - only choose it when file size matters more than that.'],
+            ['q' => 'What happens if the compressed file is not smaller?', 'a' => 'The original file is kept and offered for download unchanged, so you are never left with a result that is bigger than what you started with.'],
+            ['q' => 'Is my PDF uploaded to a server?', 'a' => 'No. Compression happens entirely in your browser with JavaScript, and the file is never sent anywhere.'],
+        ],
+        'related' => ['protect-pdf', 'merge-pdf', 'split-pdf', 'image-compressor'],
+    ],
+
+    'protect-pdf' => [
+        'name' => 'Protect PDF',
+        'category' => 'pdf-tools',
+        'icon' => 'lock',
+        'popular' => false,
+        'updated' => '2026-10-03',
+        'title' => 'Protect PDF - Add a Password Online Free',
+        'description' => 'Add a real password to a PDF online for free, using AES-256 encryption. Only people who know the password can open the file. No upload, no sign up required.',
+        'h1' => 'Protect PDF',
+        'tagline' => 'Lock a PDF with a password so only people who know it can open it.',
+        'keywords' => ['protect pdf', 'password protect pdf', 'add password to pdf', 'encrypt pdf', 'pdf password online'],
+        'intro' => 'Protecting a PDF adds a password so the file can only be opened by someone who knows it. This tool encrypts your PDF with real AES-256 encryption, the same strength used by banking and government systems, directly in your browser. Choose a password, confirm it, and download a copy of the PDF that asks for that password before it will open in any PDF reader.',
+        'steps' => [
+            'Choose the PDF you want to protect.',
+            'Type a password and confirm it.',
+            'Click Protect PDF.',
+            'Download the password-protected copy.',
+        ],
+        'features' => [
+            'Real AES-256 encryption, not just a filename trick',
+            'Only opens with the password you set',
+            'Works with any PDF reader that supports standard PDF encryption',
+            'Processed entirely in your browser - the PDF is never uploaded',
+            'No watermark, no page limit',
+        ],
+        'content' => [
+            [
+                'heading' => 'How strong is the encryption?',
+                'body' => 'The PDF is encrypted with AES-256, the same algorithm widely used to protect sensitive data, via the open-source QPDF library running inside your browser as WebAssembly. Without the password, the file\'s contents cannot be read by a PDF viewer.',
+            ],
+            [
+                'heading' => 'What if I forget the password?',
+                'body' => 'There is no way to recover a forgotten password from an AES-256 protected PDF, by design - that is what makes the protection effective. Keep a copy of the password somewhere safe, such as a password manager, and keep the original unprotected file until you are sure you will remember it.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Does this upload my PDF anywhere?', 'a' => 'No. The file is encrypted entirely in your browser with JavaScript using a WebAssembly build of QPDF, and never leaves your device.'],
+            ['q' => 'What encryption does this use?', 'a' => 'AES-256, the modern standard for PDF encryption, applied with the open-source QPDF library compiled to run in the browser.'],
+            ['q' => 'Can I remove the password later?', 'a' => 'Yes. Use the Unlock PDF tool with the password you set to produce a copy without it.'],
+            ['q' => 'Will the password-protected PDF open in any PDF reader?', 'a' => 'Yes. It uses the standard PDF encryption format supported by Adobe Acrobat, browsers and most other PDF readers, which will prompt for the password before opening it.'],
+        ],
+        'related' => ['unlock-pdf', 'compress-pdf', 'merge-pdf', 'split-pdf'],
+    ],
+
+    'unlock-pdf' => [
+        'name' => 'Unlock PDF',
+        'category' => 'pdf-tools',
+        'icon' => 'lock',
+        'popular' => false,
+        'updated' => '2026-10-03',
+        'title' => 'Unlock PDF - Remove a PDF Password Free',
+        'description' => 'Remove the password from a PDF online for free when you know it. Type the password once and download an unlocked copy. No upload, no sign up required.',
+        'h1' => 'Unlock PDF',
+        'tagline' => 'Remove a PDF\'s password when you already know it - right in your browser.',
+        'keywords' => ['unlock pdf', 'remove pdf password', 'pdf password remover', 'decrypt pdf', 'remove password from pdf'],
+        'intro' => 'Unlocking a PDF removes its open password so it no longer asks for one every time it is opened. This tool only removes a password you already know - type it in once, and a new copy of the PDF is created without it. It does not crack, guess or bypass a password you do not have, since that would make the protection pointless.',
+        'steps' => [
+            'Choose the password-protected PDF.',
+            'Type the password.',
+            'Click Unlock PDF.',
+            'Download the copy with no password.',
+        ],
+        'features' => [
+            'Removes the open password from a PDF you can already open',
+            'Does not crack, guess or bypass unknown passwords',
+            'Works entirely in your browser - the PDF is never uploaded',
+            'Download a normal PDF that opens without a prompt',
+            'No watermark, no page limit',
+        ],
+        'content' => [
+            [
+                'heading' => 'Why do I need to type the password?',
+                'body' => 'This tool decrypts a PDF using the same password that already opens it, rather than attempting to break the encryption. If you do not know the password, this tool cannot help - there is no reliable or responsible way to recover it.',
+            ],
+            [
+                'heading' => 'Is this different from Protect PDF?',
+                'body' => 'Protect PDF adds a password to a PDF that does not have one. Unlock PDF does the opposite: it removes a password from a PDF that already has one, as long as you provide it.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Can this tool crack or guess a PDF password?', 'a' => 'No. It only removes a password you type in yourself. If you do not know the password, there is no legitimate way for this tool, or any tool, to recover it for you.'],
+            ['q' => 'Is my PDF uploaded anywhere?', 'a' => 'No. The password is checked and removed entirely in your browser using a WebAssembly build of the open-source QPDF library, and the file never leaves your device.'],
+            ['q' => 'What if I enter the wrong password?', 'a' => 'You will see an "Incorrect password" message and can try again. The file itself is never altered until the correct password successfully unlocks it.'],
+            ['q' => 'Does unlocking change anything else in the PDF?', 'a' => 'No. Only the password protection is removed; the pages, text and images stay exactly as they were.'],
+        ],
+        'related' => ['protect-pdf', 'compress-pdf', 'merge-pdf', 'split-pdf'],
     ],
 
 ];

@@ -13,6 +13,15 @@ export async function makePdf(pages, label = 'Doc') {
     return Buffer.from(await doc.save());
 }
 
+/** A real PDF with one page containing an embedded JPEG image (for compression tests). */
+export async function makePdfWithImage(jpegBytes, { width = 400, height = 300 } = {}) {
+    const doc = await PDFDocument.create();
+    const img = await doc.embedJpg(jpegBytes);
+    const page = doc.addPage([width, height]);
+    page.drawImage(img, { x: 0, y: 0, width, height });
+    return Buffer.from(await doc.save());
+}
+
 export async function pdfPageCount(buffer) {
     return (await PDFDocument.load(buffer)).getPageCount();
 }
@@ -74,4 +83,63 @@ export async function openTool(page, slug) {
     await page.goto(`/${slug}`);
     await expect(page.locator('.tool-panel .tool-loading')).toHaveCount(0);
     await expect(page.locator('.tool-panel')).toBeVisible();
+}
+
+/** Serve the qpdf-wasm binary from node_modules instead of jsDelivr, so Protect/Unlock PDF tests never depend on the CDN. */
+export async function mockQpdfCdn(page) {
+    await page.route(/cdn\.jsdelivr\.net\/npm\/@neslinesli93\/qpdf-wasm@[^/]+\/dist\/qpdf\.wasm/, async (route) => {
+        route.fulfill({
+            body: await fs.readFile('node_modules/@neslinesli93/qpdf-wasm/dist/qpdf.wasm'),
+            contentType: 'application/wasm',
+            headers: { 'Access-Control-Allow-Origin': '*' },
+        });
+    });
+}
+
+const PDFJS_MJS_URL = 'https://pdfjs.e2e-test.invalid/pdf.mjs';
+const PDFJS_WORKER_URL = 'https://pdfjs.e2e-test.invalid/pdf.worker.mjs';
+
+/**
+ * Checks whether `bytes` opens in a real pdf.js instance without a password, and with `password`.
+ * Routes pdfjs-dist from node_modules through a fake origin instead of a CDN or the app's own bundle,
+ * so this works independently of what the page currently has loaded.
+ */
+export async function checkPdfPassword(page, bytes, password) {
+    await page.route(PDFJS_MJS_URL, async (route) => {
+        route.fulfill({
+            body: await fs.readFile('node_modules/pdfjs-dist/legacy/build/pdf.mjs'),
+            contentType: 'text/javascript',
+            headers: { 'Access-Control-Allow-Origin': '*' },
+        });
+    });
+    await page.route(PDFJS_WORKER_URL, async (route) => {
+        route.fulfill({
+            body: await fs.readFile('node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs'),
+            contentType: 'text/javascript',
+            headers: { 'Access-Control-Allow-Origin': '*' },
+        });
+    });
+
+    return page.evaluate(
+        async ({ bytesB64, password, pdfjsUrl, workerUrl }) => {
+            const pdfjsLib = await import(pdfjsUrl);
+            pdfjsLib.GlobalWorkerOptions.workerSrc = workerUrl;
+            const toBytes = () => Uint8Array.from(atob(bytesB64), (c) => c.charCodeAt(0));
+
+            const tryOpen = async (opts) => {
+                try {
+                    const doc = await pdfjsLib.getDocument(opts).promise;
+                    return doc.numPages > 0;
+                } catch {
+                    return false;
+                }
+            };
+
+            return {
+                openedWithoutPassword: await tryOpen({ data: toBytes() }),
+                openedWithPassword: await tryOpen({ data: toBytes(), password }),
+            };
+        },
+        { bytesB64: Buffer.from(bytes).toString('base64'), password, pdfjsUrl: PDFJS_MJS_URL, workerUrl: PDFJS_WORKER_URL },
+    );
 }

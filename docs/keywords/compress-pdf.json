@@ -1,0 +1,8 @@
+{
+  "source": "docs/keywords/semrush-us-bulk-2026-09-30.json (Semrush Keyword Overview, US database, 2026-09-30) -- reused because a live Semrush phrase_these lookup on this run returned \"WRONG FORMAT OR EMPTY KEY\"",
+  "slug": "compress-pdf",
+  "keywords": [
+    { "keyword": "compress pdf", "volume": 110000, "kd": 74 },
+    { "keyword": "pdf compressor", "volume": 74000, "kd": 67 }
+  ]
+}
