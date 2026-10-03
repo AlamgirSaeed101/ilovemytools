@@ -71,7 +71,7 @@ Ranked by real US search volume and keyword difficulty (KD 0-100, lower is easie
 - [ ] **Unit Converter** `/unit-converter` plus landing pages **kg to lbs** `/kg-to-lbs`, **Celsius to Fahrenheit** `/celsius-to-fahrenheit`, **cm to inches** `/cm-to-inches` (one engine, preset units, conversion table on each page). *1.5M cm to inches (KD 72), 823K kg to lbs (KD 51), 450K celsius to fahrenheit (KD 49), 135K unit converter (KD 69).*
 - [ ] **GPA Calculator** `/gpa-calculator` (courses, credits, letter or 4.0 grades, cumulative GPA). *673K (KD 50).*
 - [ ] **WebP to JPG** `/webp-to-jpg`, **PNG to WebP** `/png-to-webp` (ImageConverter pages). *90.5K (KD 60) / 14.8K (KD 48).*
-- [ ] **PDF to JPG** `/pdf-to-jpg` and **PDF to PNG** `/pdf-to-png` (pdfjs-dist render, 72/150/300 DPI, ZIP). *246K (KD 81) / 74K (KD 56).*
+- [x] **PDF to JPG** `/pdf-to-jpg` and **PDF to PNG** `/pdf-to-png` (pdfjs-dist render, 72/150/300 DPI, ZIP). *246K (KD 81) / 74K (KD 56).*
 - [ ] **Barcode Generator** `/barcode-generator` (JsBarcode: CODE128, EAN-13, UPC-A, CODE39; PNG/SVG). *823K (KD 60).*
 - [ ] **HEIC to JPG** `/heic-to-jpg` (heic2any, batch, ZIP). *246K (KD 71).*
 - [ ] **Compress PDF** `/compress-pdf` (object-stream re-save + optional re-render at chosen quality; before/after size; warn that strong mode rasterises text). *110K "compress pdf" (KD 74) + 74K "pdf compressor" (KD 67).*
@@ -89,7 +89,9 @@ Ranked by real US search volume and keyword difficulty (KD 0-100, lower is easie
 - [ ] **Fancy Text Generator** `/fancy-text-generator` (Unicode styles, copy). *60.5K (KD 66).*
 - [ ] **Image to Text (OCR)** `/image-to-text` (tesseract.js, language data served from `/public`). *60.5K (KD 67).*
 - [ ] **Online Timer** `/online-timer` landing page for the countdown timer, and **Hours Calculator** `/hours-calculator`. *135K (KD 80) / 165K (KD 72).*
-- [ ] **Rotate PDF** `/rotate-pdf`, **Add Page Numbers to PDF** `/add-page-numbers-to-pdf`, **Watermark PDF** `/watermark-pdf`. *8.1K (KD 47) / 2.4K (KD 39) / 1.3K (KD 40).*
+- [x] **Rotate PDF** `/rotate-pdf`. *8.1K (KD 47).*
+- [x] **Delete PDF Pages** `/delete-pdf-pages` and **Organize PDF** `/organize-pdf` (page thumbnail grid: pick pages to remove, or drag/keyboard reorder). Not on the ranked list below (no Semrush volume data found for either), but requested directly and genuinely useful alongside Rotate PDF.
+- [ ] **Add Page Numbers to PDF** `/add-page-numbers-to-pdf`, **Watermark PDF** `/watermark-pdf`. *2.4K (KD 39) / 1.3K (KD 40).*
 - [ ] Later (huge but very hard, KD 83-100): BMI 4.09M, mortgage 3.35M, loan 1.5M, calorie 3.35M, time zone converter 550K, text to speech 246K, colour picker 550K, remove background 673K, scientific calculator 1M. Build only after the easier items are done.
 
 Not planned: PDF↔Word/Excel/PowerPoint (can't be done well in the browser), video/audio converters (too heavy), social-media downloaders (AdSense and copyright risk), pregnancy/due-date calculators (medical advice risk).
