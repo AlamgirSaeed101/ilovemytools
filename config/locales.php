@@ -29,6 +29,7 @@ return [
         'fr' => ['name' => 'French', 'native' => 'Français', 'dir' => 'ltr', 'og' => 'fr_FR'],
         'de' => ['name' => 'German', 'native' => 'Deutsch', 'dir' => 'ltr', 'og' => 'de_DE'],
         'it' => ['name' => 'Italian', 'native' => 'Italiano', 'dir' => 'ltr', 'og' => 'it_IT'],
+        'pl' => ['name' => 'Polish', 'native' => 'Polski', 'dir' => 'ltr', 'og' => 'pl_PL'],
     ],
 
 ];
