@@ -13,6 +13,10 @@ import { isRecompressibleImage, isRecompressibleImageInfo, listRecompressibleIma
 import { PDFDocument, PDFRawStream } from 'pdf-lib';
 import { buildQrPayload, contrastRatio, escapeWifi } from './qr.js';
 import { formatBytes, uniqueNamer, baseName, safeFilename } from './util.js';
+import { decodeEntities, parseHtmlToBlocks, tokenizeRuns, wrapWords, layoutBlocksToPages } from './htmlToPdf.js';
+import { groupItemsIntoLines, detectBodySize, headingLevelFor, buildDocumentBlocks } from './pdfToWord.js';
+import { groupItemsIntoRows, detectColumnBoundaries, rowsToTable } from './pdfToExcel.js';
+import { cellText, computeColumnWidths, truncateToWidth, paginateRows, layoutSheetToPages } from './excelToPdf.js';
 
 describe('word counter', () => {
     it('counts an empty string as zero', () => {
@@ -469,5 +473,195 @@ describe('age calculator edge cases (brute force)', () => {
         }
         expect(checked).toBeGreaterThan(40000);
         expect(failures).toEqual([]);
+    });
+});
+
+describe('html to pdf', () => {
+    it('decodes named and numeric HTML entities', () => {
+        expect(decodeEntities('&amp;&lt;&gt;&quot;&#39;&nbsp;')).toBe('&<>"\' ');
+        expect(decodeEntities('&#65;&#x42;')).toBe('AB');
+    });
+
+    it('parses headings and paragraphs, keeping bold/italic runs', () => {
+        const blocks = parseHtmlToBlocks('<h1>Title</h1><p>Hello <b>world</b></p>');
+        expect(blocks).toEqual([
+            { type: 'heading', level: 1, runs: [{ text: 'Title', bold: false, italic: false }] },
+            { type: 'paragraph', runs: [{ text: 'Hello ', bold: false, italic: false }, { text: 'world', bold: true, italic: false }] },
+        ]);
+    });
+
+    it('numbers ordered lists and leaves unordered lists unnumbered', () => {
+        const ordered = parseHtmlToBlocks('<ol><li>A</li><li>B</li></ol>');
+        expect(ordered.map((b) => b.number)).toEqual([1, 2]);
+        const unordered = parseHtmlToBlocks('<ul><li>One</li><li>Two</li></ul>');
+        expect(unordered.every((b) => b.ordered === false)).toBe(true);
+    });
+
+    it('turns <br> into an explicit break and <img src> into its own block', () => {
+        const blocks = parseHtmlToBlocks('<p>Line1<br>Line2</p><img src="data:image/png;base64,abc">');
+        expect(blocks[0].runs).toEqual([
+            { text: 'Line1', bold: false, italic: false },
+            { break: true },
+            { text: 'Line2', bold: false, italic: false },
+        ]);
+        expect(blocks[1]).toEqual({ type: 'image', src: 'data:image/png;base64,abc' });
+    });
+
+    it('treats plain text with no tags as one paragraph', () => {
+        expect(parseHtmlToBlocks('Hello world')).toEqual([{ type: 'paragraph', runs: [{ text: 'Hello world', bold: false, italic: false }] }]);
+    });
+
+    it('tokenizes runs into words with space markers', () => {
+        const words = tokenizeRuns([{ text: 'Hello world', bold: false, italic: false }]);
+        expect(words).toEqual([
+            { text: 'Hello', bold: false, italic: false, space: true },
+            { text: 'world', bold: false, italic: false, space: false },
+        ]);
+    });
+
+    it('wraps words greedily to fit the available width', () => {
+        const words = tokenizeRuns([{ text: 'aa bb cc dd', bold: false, italic: false }]);
+        const lines = wrapWords(words, 10, (text) => text.length, 12);
+        expect(lines.map((l) => l.map((w) => w.text))).toEqual([['aa', 'bb', 'cc'], ['dd']]);
+    });
+
+    it('hard-breaks a single word wider than the whole line', () => {
+        const words = tokenizeRuns([{ text: 'abcdefghij', bold: false, italic: false }]);
+        const lines = wrapWords(words, 5, (text) => text.length, 12);
+        expect(lines.flat().map((w) => w.text).join('')).toBe('abcdefghij');
+        expect(lines.every((l) => l.reduce((w, word) => w + word.text.length, 0) <= 5)).toBe(true);
+    });
+
+    it('paginates long content and scales oversized images to fit the page', () => {
+        const blocks = Array.from({ length: 6 }, (_, i) => ({ type: 'paragraph', runs: [{ text: `Paragraph ${i}`, bold: false, italic: false }] }));
+        const measure = (text) => (text || ' ').length * 2;
+        const pages = layoutBlocksToPages(blocks, { pageWidth: 200, pageHeight: 100, marginPt: 10, measure, imageSize: () => null });
+        expect(pages.length).toBeGreaterThan(1);
+        expect(pages.flat().length).toBe(6);
+
+        const withImage = layoutBlocksToPages([{ type: 'image', src: 'big.png' }], {
+            pageWidth: 200, pageHeight: 300, marginPt: 10, measure, imageSize: () => ({ width: 400, height: 200 }),
+        });
+        expect(withImage[0][0]).toMatchObject({ width: 180, height: 90 });
+
+        const unknownImage = layoutBlocksToPages([{ type: 'image', src: 'missing.png' }], {
+            pageWidth: 200, pageHeight: 300, marginPt: 10, measure, imageSize: () => null,
+        });
+        expect(unknownImage.flat()).toEqual([]);
+    });
+});
+
+describe('pdf to word text reconstruction', () => {
+    it('joins same-line text items with a space when there is a visible gap', () => {
+        const items = [
+            { str: 'Hello', x: 0, y: 700, height: 12 },
+            { str: 'World', x: 50, y: 700, height: 12 },
+            { str: 'Second line', x: 0, y: 680, height: 12 },
+        ];
+        const lines = groupItemsIntoLines(items);
+        expect(lines.map((l) => l.text)).toEqual(['Hello World', 'Second line']);
+    });
+
+    it('picks the most common line height as the body text size', () => {
+        expect(detectBodySize([{ height: 10 }, { height: 10 }, { height: 20 }])).toBe(10);
+        expect(detectBodySize([])).toBe(12);
+    });
+
+    it('guesses a heading level from how much bigger a line is than the body text', () => {
+        expect(headingLevelFor(20, 10)).toBe(1);
+        expect(headingLevelFor(13.6, 10)).toBe(2);
+        expect(headingLevelFor(12, 10)).toBe(3);
+        expect(headingLevelFor(10, 10)).toBeNull();
+    });
+
+    it('groups lines into headings and multi-line paragraphs, splitting on big gaps', () => {
+        const lines = [
+            { y: 700, height: 20, text: 'Big Title' },
+            { y: 670, height: 10, text: 'First paragraph line one' },
+            { y: 658, height: 10, text: 'continuing same paragraph' },
+            { y: 600, height: 10, text: 'New paragraph after big gap' },
+        ];
+        expect(buildDocumentBlocks(lines)).toEqual([
+            { type: 'heading', level: 1, text: 'Big Title' },
+            { type: 'paragraph', lines: ['First paragraph line one', 'continuing same paragraph'] },
+            { type: 'paragraph', lines: ['New paragraph after big gap'] },
+        ]);
+    });
+});
+
+describe('pdf to excel table reconstruction', () => {
+    it('clusters text items that share a Y position into rows, sorted top to bottom', () => {
+        const items = [
+            { str: 'A1', x: 0, y: 700 },
+            { str: 'B1', x: 100, y: 700 },
+            { str: 'A2', x: 0, y: 680 },
+        ];
+        const rows = groupItemsIntoRows(items);
+        expect(rows.map((r) => r.items.map((i) => i.str))).toEqual([['A1', 'B1'], ['A2']]);
+    });
+
+    it('clusters nearby X start-positions into shared column boundaries', () => {
+        const rows = groupItemsIntoRows([
+            { str: 'A1', x: 0, y: 700 },
+            { str: 'B1', x: 100, y: 700 },
+            { str: 'A2', x: 2, y: 680 },
+        ]);
+        expect(detectColumnBoundaries(rows)).toEqual([0, 100]);
+    });
+
+    it('places each row into its detected column, leaving missing cells blank', () => {
+        const rows = groupItemsIntoRows([
+            { str: 'A1', x: 0, y: 700 },
+            { str: 'B1', x: 100, y: 700 },
+            { str: 'A2', x: 0, y: 680 },
+        ]);
+        expect(rowsToTable(rows, detectColumnBoundaries(rows))).toEqual([
+            ['A1', 'B1'],
+            ['A2', ''],
+        ]);
+    });
+});
+
+describe('excel to pdf table layout', () => {
+    it('reads cell values as text, never null/undefined', () => {
+        expect(cellText(null)).toBe('');
+        expect(cellText(undefined)).toBe('');
+        expect(cellText(5)).toBe('5');
+        expect(cellText('x')).toBe('x');
+    });
+
+    it('keeps natural column widths when they already fit the page', () => {
+        const widths = computeColumnWidths([['Name', 'Age'], ['Alexander', '30']], 200, (text) => text.length);
+        expect(widths).toEqual([36, 36]);
+    });
+
+    it('scales columns down proportionally when the table is wider than the page', () => {
+        const measure = (text) => text.length * 5;
+        const widths = computeColumnWidths([['Name', 'VeryLongColumnHeader'], ['Bob', 'Short']], 100, measure);
+        expect(widths.reduce((a, b) => a + b, 0)).toBeLessThanOrEqual(100.01);
+        expect(widths[1]).toBeGreaterThan(widths[0]);
+    });
+
+    it('truncates text with an ellipsis only when it does not already fit', () => {
+        expect(truncateToWidth('Hi', 10, (text) => text.length)).toBe('Hi');
+        expect(truncateToWidth('Hello World', 5, (text) => text.length)).toBe('Hell…');
+    });
+
+    it('paginates rows into fixed-size chunks', () => {
+        expect(paginateRows([], 5)).toEqual([[]]);
+        expect(paginateRows([1, 2, 3, 4, 5, 6, 7], 3)).toEqual([[1, 2, 3], [4, 5, 6], [7]]);
+    });
+
+    it('lays out a sheet into a header plus row chunks that fit the page height', () => {
+        const rows = [['H1', 'H2'], ['r1c1', 'r1c2'], ['r2c1', 'r2c2'], ['r3c1', 'r3c2']];
+        const pages = layoutSheetToPages(rows, { maxWidth: 1000, maxBodyHeight: 48, measure: (text) => text.length, rowHeight: 16 });
+        expect(pages).toHaveLength(2);
+        expect(pages[0].header).toEqual(['H1', 'H2']);
+        expect(pages[0].rows).toEqual([['r1c1', 'r1c2'], ['r2c1', 'r2c2']]);
+        expect(pages[1].rows).toEqual([['r3c1', 'r3c2']]);
+    });
+
+    it('returns no pages for an empty sheet', () => {
+        expect(layoutSheetToPages([], { maxWidth: 100, maxBodyHeight: 100, measure: (text) => text.length })).toEqual([]);
     });
 });

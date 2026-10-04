@@ -38,18 +38,21 @@ return [
     'pdf-tools' => [
         'name' => 'Strumenti PDF',
         'short' => 'PDF',
-        'subtitle' => 'Unisci, dividi e converti PDF',
-        'title' => 'Strumenti PDF gratuiti: unisci e dividi file PDF',
-        'description' => 'Unisci e dividi file PDF online gratis. Senza caricamenti, senza filigrane e senza registrazione. I PDF vengono elaborati in privato nel tuo browser.',
-        'intro' => 'Combina più PDF in uno solo o estrai solo le pagine che ti servono. I file vengono elaborati sul tuo dispositivo, senza filigrane né limiti nascosti.',
+        'subtitle' => 'Unisci, converti, comprimi e proteggi PDF',
+        'title' => 'Strumenti PDF gratuiti: unire, convertire, modificare',
+        'description' => 'Unisci, dividi, converti, comprimi e proteggi file PDF online gratis. Senza caricamenti, senza filigrane, senza registrazione: tutto nel browser.',
+        'intro' => 'Un toolkit PDF completo che non carica mai i tuoi file: unisci o dividi documenti, ruota, riordina ed elimina pagine, trasforma i PDF in JPG, PNG, Word o Excel (e viceversa), converti HTML o testo semplice in PDF, riduci file grandi, e aggiungi o rimuovi una password di apertura. Ogni strumento elabora il tuo documento sul tuo dispositivo, senza filigrane, senza limiti di pagine e senza trucchi sulla dimensione.',
         'content' => [
-            ['heading' => 'Unire o dividere: quale strumento PDF mi serve?', 'body' => 'Usa Unisci PDF per riunire più file in un unico documento nell’ordine che preferisci, per esempio curriculum, lettera di presentazione e certificati per una candidatura. Usa Dividi PDF per il contrario: estrarre pagine in un nuovo file, tagliare un documento per intervalli o salvare ogni pagina come PDF separato.'],
-            ['heading' => 'È sicuro modificare i PDF online?', 'body' => 'Con la maggior parte dei siti PDF il documento viene caricato su un server. Qui entrambi gli strumenti funzionano nel browser, quindi contratti, estratti conto e altri file privati non lasciano mai il tuo dispositivo, e il risultato non ha filigrane né limiti di pagine.'],
+            ['heading' => 'Quale strumento PDF mi serve?', 'body' => 'Usa Unisci PDF per riunire più file in un documento nell’ordine che preferisci, per esempio curriculum, lettera di presentazione e certificati per una candidatura, e Dividi PDF per il contrario: estrarre pagine in un nuovo file, tagliare un documento per intervalli o salvare ogni pagina come PDF separato. Ruota PDF corregge le pagine storte, Elimina pagine PDF rimuove quelle indesiderate, e Organizza PDF riordina un intero documento trascinando le miniature delle pagine. Comprimi PDF riduce un file troppo grande da inviare per email, e Proteggi PDF / Sblocca PDF aggiungono o rimuovono una password di apertura.'],
+            ['heading' => 'Convertire i PDF in altri formati e viceversa', 'body' => 'PDF in Word e PDF in Excel estraggono il testo (e, in Excel, righe e colonne) di un PDF in un file .docx o .xlsx modificabile, mentre Word in PDF ed Excel in PDF fanno il contrario: trasformano un documento Word o un foglio di calcolo in un PDF fisso che appare uguale ovunque. PDF in JPG e PDF in PNG salvano le pagine come immagini, e HTML in PDF trasforma HTML incollato o testo semplice in un PDF scaricabile. Queste conversioni sono una stima: testo e struttura di base vengono conservati bene, ma layout esatto, tabelle, grafici e font non sempre vengono mantenuti; ogni strumento spiega esattamente cosa aspettarsi.'],
+            ['heading' => 'È sicuro modificare i PDF online?', 'body' => 'Con la maggior parte dei siti PDF il documento viene caricato su un server prima che accada qualsiasi cosa. Qui ogni strumento funziona nel tuo browser con JavaScript, quindi contratti, estratti conto, documenti Word e foglio di calcolo non lasciano mai il tuo dispositivo, e i risultati non hanno filigrane né limiti di pagine.'],
         ],
         'faqs' => [
             ['q' => 'Come unisco più PDF in uno solo?', 'a' => 'Apri Unisci PDF, aggiungi due o più file, mettili in ordine con le frecce e clicca Unisci PDF. Il file combinato si scarica subito.'],
             ['q' => 'Come estraggo pagine da un PDF?', 'a' => 'Apri Dividi PDF, scegli Estrai pagine, scrivi le pagine che ti servono, per esempio 1-3, 5, e clicca Dividi PDF.'],
-            ['q' => 'Posso unire PDF protetti da password?', 'a' => 'Non direttamente. Apri il file con la password, salva o stampa una copia non protetta e poi unisci quella copia.'],
+            ['q' => 'Posso convertire un PDF in un file Word o Excel modificabile?', 'a' => 'Sì: PDF in Word e PDF in Excel estraggono il testo (e, in Excel, le sue righe e colonne) come stima. Layout complessi, tabelle, colonne e immagini non sempre vengono mantenuti, come spiega ogni strumento.'],
+            ['q' => 'Posso unire PDF protetti da password?', 'a' => 'Non direttamente. Apri il file con la password, salva o stampa una copia non protetta e poi unisci quella copia. Puoi anche usare prima Sblocca PDF se conosci la password.'],
+            ['q' => 'I miei file vengono caricati su un server?', 'a' => 'No. Tutti gli strumenti PDF di questo sito elaborano i tuoi file localmente nel tuo browser con JavaScript, quindi non vengono mai caricati né salvati.'],
         ],
     ],
     'calculators' => [

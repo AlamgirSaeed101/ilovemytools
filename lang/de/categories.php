@@ -38,18 +38,21 @@ return [
     'pdf-tools' => [
         'name' => 'PDF-Tools',
         'short' => 'PDF',
-        'subtitle' => 'PDFs zusammenfügen und teilen',
-        'title' => 'Kostenlose PDF-Tools: PDF-Dateien zusammenfügen und teilen',
-        'description' => 'PDF-Dateien online kostenlos zusammenfügen und teilen. Ohne Upload, ohne Wasserzeichen und ohne Anmeldung. PDFs werden privat in deinem Browser verarbeitet.',
-        'intro' => 'Füge mehrere PDFs zu einem zusammen oder extrahiere nur die Seiten, die du brauchst. Die Dateien werden auf deinem Gerät verarbeitet, ohne Wasserzeichen oder versteckte Größenlimits.',
+        'subtitle' => 'PDFs zusammenfügen, umwandeln und schützen',
+        'title' => 'Kostenlose PDF-Tools: zusammenfügen, umwandeln, bearbeiten',
+        'description' => 'PDF-Dateien online kostenlos zusammenfügen, teilen, umwandeln, komprimieren und schützen. Ohne Upload, ohne Wasserzeichen, ohne Anmeldung - alles im Browser.',
+        'intro' => 'Ein vollständiges PDF-Toolkit, das deine Dateien nie hochlädt: Dokumente zusammenfügen oder teilen, Seiten drehen, neu anordnen und löschen, PDFs in JPG, PNG, Word oder Excel umwandeln (und zurück), HTML oder einfachen Text zu PDF umwandeln, große Dateien verkleinern und ein Öffnungspasswort hinzufügen oder entfernen. Jedes Tool verarbeitet dein Dokument auf deinem eigenen Gerät, ohne Wasserzeichen, ohne Seitenlimit und ohne versteckte Größentricks.',
         'content' => [
-            ['heading' => 'Zusammenfügen oder teilen: Welches PDF-Tool brauche ich?', 'body' => 'Mit „PDF zusammenfügen“ vereinst du mehrere Dateien in der gewünschten Reihenfolge zu einem Dokument, etwa Lebenslauf, Anschreiben und Zeugnisse für eine Bewerbung. Mit „PDF teilen“ geht es umgekehrt: ausgewählte Seiten in eine neue Datei übernehmen, ein Dokument in Bereiche aufteilen oder jede Seite als eigenes PDF speichern.'],
-            ['heading' => 'Ist es sicher, PDFs online zu bearbeiten?', 'body' => 'Bei den meisten PDF-Websites wird dein Dokument auf einen Server hochgeladen. Hier laufen beide Tools in deinem Browser, deshalb verlassen Verträge, Kontoauszüge und andere private Dateien nie dein Gerät, und das Ergebnis hat weder Wasserzeichen noch Seitenlimit.'],
+            ['heading' => 'Welches PDF-Tool brauche ich?', 'body' => 'Mit „PDF zusammenfügen“ vereinst du mehrere Dateien in der gewünschten Reihenfolge zu einem Dokument, etwa Lebenslauf, Anschreiben und Zeugnisse für eine Bewerbung, und mit „PDF teilen“ geht es umgekehrt: ausgewählte Seiten in eine neue Datei übernehmen, ein Dokument in Bereiche aufteilen oder jede Seite als eigenes PDF speichern. „PDF drehen“ korrigiert falsch ausgerichtete Seiten, „PDF-Seiten löschen“ entfernt unerwünschte Seiten, und „PDF organisieren“ ordnet ein ganzes Dokument per Drag & Drop von Seitenminiaturen neu. „PDF komprimieren“ verkleinert eine zu große Datei, und „PDF schützen“/„PDF entsperren“ fügen ein Öffnungspasswort hinzu oder entfernen es.'],
+            ['heading' => 'PDFs in andere Formate umwandeln und zurück', 'body' => '„PDF zu Word“ und „PDF zu Excel“ extrahieren den Text (bei Excel auch Zeilen und Spalten) eines PDFs in eine bearbeitbare .docx- oder .xlsx-Datei, während „Word zu PDF“ und „Excel zu PDF“ das Gegenteil tun: ein Word-Dokument oder eine Tabelle in ein festes PDF verwandeln, das überall gleich aussieht. „PDF zu JPG“ und „PDF zu PNG“ speichern Seiten als Bilder, und „HTML zu PDF“ verwandelt eingefügtes HTML oder einfachen Text in ein herunterladbares PDF. Diese Umwandlungen sind bestmöglich: Text und Grundstruktur kommen gut rüber, aber exaktes Layout, Tabellen, Diagramme und Schriftarten bleiben nicht immer erhalten - jedes Tool erklärt genau, was zu erwarten ist.'],
+            ['heading' => 'Ist es sicher, PDFs online zu bearbeiten?', 'body' => 'Bei den meisten PDF-Websites wird dein Dokument erst auf einen Server hochgeladen, bevor etwas damit passiert. Hier läuft jedes Tool mit JavaScript direkt in deinem Browser, deshalb verlassen Verträge, Kontoauszüge, Word-Dokumente und Tabellen nie dein Gerät, und die Ergebnisse haben weder Wasserzeichen noch Seitenlimit.'],
         ],
         'faqs' => [
             ['q' => 'Wie füge ich mehrere PDFs zu einem zusammen?', 'a' => 'Öffne „PDF zusammenfügen“, füge zwei oder mehr Dateien hinzu, bring sie mit den Pfeilen in die richtige Reihenfolge und klicke auf „PDF zusammenfügen“. Die kombinierte Datei wird sofort heruntergeladen.'],
             ['q' => 'Wie extrahiere ich Seiten aus einem PDF?', 'a' => 'Öffne „PDF teilen“, wähle „Seiten extrahieren“, gib die gewünschten Seiten ein, etwa 1-3, 5, und klicke auf „PDF teilen“.'],
-            ['q' => 'Kann ich passwortgeschützte PDFs zusammenfügen?', 'a' => 'Nicht direkt. Öffne die Datei mit dem Passwort, speichere oder drucke eine ungeschützte Kopie und füge dann diese Kopie zusammen.'],
+            ['q' => 'Kann ich ein PDF in eine bearbeitbare Word- oder Excel-Datei umwandeln?', 'a' => 'Ja - „PDF zu Word“ und „PDF zu Excel“ extrahieren den Text (bei Excel auch Zeilen und Spalten) bestmöglich. Komplexe Layouts, Tabellen, Spalten und Bilder bleiben nicht immer erhalten, wie jedes Tool erklärt.'],
+            ['q' => 'Kann ich passwortgeschützte PDFs zusammenfügen?', 'a' => 'Nicht direkt. Öffne die Datei mit dem Passwort, speichere oder drucke eine ungeschützte Kopie und füge dann diese Kopie zusammen. Du kannst auch zuerst „PDF entsperren“ nutzen, wenn du das Passwort kennst.'],
+            ['q' => 'Werden meine Dateien auf einen Server hochgeladen?', 'a' => 'Nein. Alle PDF-Tools dieser Website verarbeiten deine Dateien lokal in deinem Browser mit JavaScript, sie werden also nie hochgeladen oder gespeichert.'],
         ],
     ],
     'calculators' => [

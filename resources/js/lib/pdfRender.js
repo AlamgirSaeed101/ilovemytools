@@ -59,6 +59,21 @@ export async function renderThumbnail(renderDoc, pageNumber, { maxWidth = 150 } 
     return { url, width: canvas.width, height: canvas.height, rotation: base.rotation };
 }
 
+/** {str, x, y, height, width} items (in PDF points) for one page, used by the PDF-to-Word/Excel extractors. */
+export async function pageTextItems(renderDoc, pageNumber) {
+    const page = await renderDoc.getPage(pageNumber);
+    const content = await page.getTextContent();
+    return content.items
+        .filter((it) => typeof it.str === 'string')
+        .map((it) => ({
+            str: it.str,
+            x: it.transform[4],
+            y: it.transform[5],
+            height: Math.abs(it.transform[3]) || Math.abs(it.transform[0]) || 10,
+            width: it.width,
+        }));
+}
+
 export function canvasToBlob(canvas, type, quality) {
     return new Promise((resolve, reject) => {
         canvas.toBlob((blob) => (blob ? resolve(blob) : reject(new Error('Could not render the page.'))), type, quality);

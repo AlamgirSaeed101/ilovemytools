@@ -1738,4 +1738,224 @@ return [
             ],
         ],
     ],
+
+    'pdf-to-word' => [
+        'name' => 'PDF do Worda',
+        'title' => 'Konwerter PDF do Worda - Darmowy i Prywatny',
+        'description' => 'Konwertuj PDF do Worda online za darmo. Tekst, akapity i nagłówki stają się edytowalnym plikiem .docx tworzonym w przeglądarce, bez rejestracji.',
+        'h1' => 'Konwerter PDF do Worda',
+        'tagline' => 'Zamień PDF w edytowalny dokument Word, bezpośrednio w przeglądarce.',
+        'keywords' => [
+            'pdf do worda',
+            'konwertuj pdf do worda',
+            'konwerter pdf do worda',
+            'pdf do docx',
+            'pdf do worda online za darmo',
+        ],
+        'intro' => 'Konwerter PDF do Worda zmienia tekst z PDF-a w edytowalny plik .docx, który można otworzyć w Microsoft Word, Google Docs albo LibreOffice. To narzędzie odczytuje tekst z Twojego PDF-a i odtwarza go jako akapity i nagłówki, dzięki czemu możesz edytować treść bez przepisywania jej od nowa. PDF jest odczytywany w całości w Twojej przeglądarce i nigdy nie jest wysyłany na żaden serwer.',
+        'steps' => [
+            'Wybierz albo upuść PDF, który chcesz przekonwertować.',
+            'Kliknij Konwertuj do Worda.',
+            'Pobierz plik .docx i otwórz go w Wordzie, Google Docs albo LibreOffice.',
+        ],
+        'features' => [
+            'Wyodrębnia tekst w naprawdę edytowalne akapity',
+            'Wykrywa nagłówki na podstawie rozmiaru czcionki, w sposób orientacyjny',
+            'Zachowuje podziały wiersza i kolejność czytania',
+            'Prywatne: PDF nigdy nie jest wysyłany',
+            'Bez rejestracji, bez znaku wodnego',
+        ],
+        'content' => [
+            [
+                'heading' => 'Co jest konwertowane, a co nie',
+                'body' => 'PDF nie ma prawdziwej struktury akapitów, tabel czy nagłówków - jest w nim tylko tekst umieszczony na stronie. To narzędzie odtwarza akapity i nagłówki na podstawie tego tekstu, co dobrze działa w prostych dokumentach, takich jak listy, raporty i artykuły. Tabele, układy wielokolumnowe, pola tekstowe, obrazy oraz dokładne czcionki czy odstępy nie są zachowywane - wynikiem jest czytelny, edytowalny dokument, a nie piksel po pikselu identyczna kopia.',
+            ],
+            [
+                'heading' => 'Czemu zeskanowanego PDF-a nie można przekonwertować?',
+                'body' => 'Zeskanowany PDF to w rzeczywistości zdjęcie strony, bez leżącego pod nim tekstu, który można zaznaczyć i który przeglądarka mogłaby odczytać. Konwersja wymagałaby najpierw OCR (optycznego rozpoznawania znaków), czego to narzędzie nie robi; jeśli w Twoim czytniku PDF można zaznaczyć i skopiować tekst, konwersja powinna zadziałać normalnie.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Czy formatowanie będzie identyczne jak w oryginalnym PDF-ie?', 'a' => 'Nie dokładnie. Tekst, podstawowe nagłówki i podziały wiersza są zachowywane, ale tabele, kolumny, obrazy oraz dokładne czcionki czy odstępy nie. Celem jest edytowalny tekst, a nie piksel po pikselu identyczna kopia.'],
+            ['q' => 'Czy mogę przekonwertować zeskanowany PDF?', 'a' => 'Tylko jeśli ma już tekst, który można zaznaczyć. Zeskanowana strona bez warstwy tekstu nie ma nic, co to narzędzie mogłoby wyodrębnić, ponieważ nie wykonuje OCR.'],
+            ['q' => 'Czy mój PDF jest gdzieś wysyłany?', 'a' => 'Nie. Cała konwersja odbywa się w Twojej przeglądarce za pomocą JavaScript, a plik nigdy nie opuszcza Twojego urządzenia.'],
+            ['q' => 'Jaki plik otrzymam?', 'a' => 'Standardowy plik .docx, który otwiera się w Microsoft Word, Google Docs, LibreOffice Writer i większości innych programów do edycji tekstu.'],
+        ],
+    ],
+
+    'word-to-pdf' => [
+        'name' => 'Word do PDF',
+        'title' => 'Konwerter Worda do PDF - Darmowy i Prywatny',
+        'description' => 'Konwertuj Worda (.docx) do PDF online za darmo. Zachowuje nagłówki, akapity, listy, pogrubienie/kursywę i obrazy - w całości w Twojej przeglądarce.',
+        'h1' => 'Konwerter Worda do PDF',
+        'tagline' => 'Zamień dokument Word w PDF, prywatnie w Twojej przeglądarce.',
+        'keywords' => [
+            'word do pdf',
+            'konwertuj word do pdf',
+            'docx do pdf',
+            'konwerter word do pdf',
+            'word do pdf online za darmo',
+        ],
+        'intro' => 'Konwersja Worda do PDF zmienia edytowalny plik .docx w stały PDF, który wygląda tak samo na każdym urządzeniu i nie da się go łatwo edytować. To narzędzie odczytuje Twój dokument Word i odtwarza jego nagłówki, akapity, listy, tekst pogrubiony lub kursywą oraz obrazy jako nowy PDF - wszystko w Twojej przeglądarce. Dokument nigdzie nie jest wysyłany.',
+        'steps' => [
+            'Wybierz albo upuść plik Word (.docx), który chcesz przekonwertować.',
+            'Wybierz rozmiar strony A4 albo Letter.',
+            'Kliknij Konwertuj do PDF i pobierz wynik.',
+        ],
+        'features' => [
+            'Zachowuje nagłówki, akapity i podziały wiersza',
+            'Zachowuje listy wypunktowane i numerowane',
+            'Zachowuje tekst pogrubiony i kursywą',
+            'Zachowuje obrazy z dokumentu',
+            'Prywatne: Twój dokument nigdy nie jest wysyłany',
+        ],
+        'content' => [
+            [
+                'heading' => 'Co jest zachowywane, a co nie',
+                'body' => 'Nagłówki, akapity, podziały wiersza, listy wypunktowane i numerowane, tekst pogrubiony i kursywą oraz większość obrazów są odtwarzane w PDF-ie. Tabele, układy wielokolumnowe, pola tekstowe, nagłówki i stopki stron, śledzenie zmian oraz dokładne czcionki czy pozycjonowanie z oryginalnego dokumentu Word nie są zachowywane - wynik zachowuje treść i kolejność czytania, a nie odtwarza stronę piksel po pikselu.',
+            ],
+            [
+                'heading' => 'Obsługiwane są tylko pliki .docx',
+                'body' => 'To narzędzie odczytuje nowoczesny format Worda (.docx). Starszy format .doc z Worda 2003 i wcześniejszych nie jest obsługiwany; otwórz go w Wordzie i użyj „Zapisz jako”, aby najpierw utworzyć kopię .docx.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Czy mój dokument Word będzie wyglądał identycznie w PDF-ie?', 'a' => 'Nagłówki, akapity, listy, pogrubienie/kursywa i obrazy są zachowywane, ale tabele, kolumny, pola tekstowe oraz dokładne czcionki czy odstępy nie. W większości listów, raportów i artykułów wynik jest bardzo zbliżony do oryginału.'],
+            ['q' => 'Czy to działa z plikami .doc?', 'a' => 'Nie, tylko z nowoczesnym formatem .docx. Starsze pliki .doc trzeba najpierw zapisać jako .docx w Wordzie.'],
+            ['q' => 'Czy mój dokument jest gdzieś wysyłany?', 'a' => 'Nie. Cała konwersja odbywa się w Twojej przeglądarce za pomocą JavaScript, a plik nigdy nie opuszcza Twojego urządzenia.'],
+            ['q' => 'Jakiego rozmiaru strony używa PDF?', 'a' => 'Wybierz A4 albo Letter przed konwersją; treść jest dopasowywana do wybranej strony.'],
+        ],
+    ],
+
+    'excel-to-pdf' => [
+        'name' => 'Excel do PDF',
+        'title' => 'Konwerter Excela do PDF - Darmowy i Prywatny',
+        'description' => 'Konwertuj Excel (.xlsx, .xls) albo CSV do PDF online za darmo. Każdy arkusz staje się czytelną, podzieloną na strony tabelą, w całości w przeglądarce.',
+        'h1' => 'Konwerter Excela do PDF',
+        'tagline' => 'Zamień arkusz kalkulacyjny w czytelną, podzieloną na strony tabelę PDF.',
+        'keywords' => [
+            'excel do pdf',
+            'konwertuj excel do pdf',
+            'xlsx do pdf',
+            'arkusz kalkulacyjny do pdf',
+            'csv do pdf',
+        ],
+        'intro' => 'Konwerter Excela do PDF zmienia arkusz kalkulacyjny w stały dokument, który otwiera się tak samo na każdym urządzeniu, bez potrzeby zainstalowanego Excela. To narzędzie odczytuje Twój plik .xlsx, .xls albo .csv i rysuje każdy arkusz jako tabelę z obramowaniem, dzieląc go na tyle stron, ile potrzeba, z powtórzonym wierszem nagłówka na każdej stronie. Plik jest odczytywany w całości w Twojej przeglądarce i nigdy nie jest wysyłany.',
+        'steps' => [
+            'Wybierz albo upuść swój plik Excel (.xlsx, .xls) albo CSV.',
+            'Wybierz rozmiar strony i orientację (pionową albo poziomą).',
+            'Kliknij Konwertuj do PDF i pobierz wynik.',
+        ],
+        'features' => [
+            'Konwertuje pliki .xlsx, .xls i .csv',
+            'Każdy arkusz staje się własną tabelą, z nagłówkiem powtórzonym na każdej stronie',
+            'Pionowa albo pozioma, A4 albo Letter',
+            'Kolumny automatycznie dopasowują się do treści',
+            'Prywatne: Twój arkusz nigdy nie jest wysyłany',
+        ],
+        'content' => [
+            [
+                'heading' => 'Jak szeroki arkusz wygląda w PDF-ie',
+                'body' => 'Kolumny dopasowują się do swojej treści i są zmniejszane, aby zmieścić się w szerokości strony, gdy to możliwe. Jeśli arkusz wciąż ma zbyt wiele kolumn, tekst, który nie mieści się w swojej kolumnie, jest skracany wielokropkiem („…”) zamiast nakładać się na następną kolumnę. Przełączenie na orientację poziomą zwykle daje szerokim arkuszom więcej miejsca.',
+            ],
+            [
+                'heading' => 'Co nie jest zachowywane',
+                'body' => 'To narzędzie skupia się na tym, aby dane były czytelne na stronie: kolory tła komórek, własne czcionki, formuły (zamiast nich używana jest ostatnia obliczona wartość), wykresy i scalone komórki nie są zachowywane.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Czy mogę przekonwertować też plik CSV?', 'a' => 'Tak. Pliki CSV działają tak samo jak .xlsx i .xls: wybierz plik, a stanie się jednostronicową tabelą PDF.'],
+            ['q' => 'Co się dzieje z arkuszem mającym dużo kolumn?', 'a' => 'Szerokość kolumn jest zmniejszana, aby zmieściła się na stronie, a przełączenie na orientację poziomą daje szerokim tabelom więcej miejsca. Tekst, który wciąż nie mieści się w swojej kolumnie, jest skracany znakiem „…”.'],
+            ['q' => 'Czy formuły albo wykresy są zachowywane?', 'a' => 'Formuły pokazują swoją ostatnią obliczoną wartość jako tekst, nie samą formułę, a wykresy nie są umieszczane w PDF-ie.'],
+            ['q' => 'Czy mój arkusz jest gdzieś wysyłany?', 'a' => 'Nie. Cała konwersja odbywa się w Twojej przeglądarce za pomocą JavaScript, a plik nigdy nie opuszcza Twojego urządzenia.'],
+        ],
+    ],
+
+    'pdf-to-excel' => [
+        'name' => 'PDF do Excela',
+        'title' => 'Konwerter PDF do Excela - Darmowy i Prywatny',
+        'description' => 'Konwertuj PDF do Excela online za darmo. Tekst jest grupowany w wiersze i kolumny w sposób orientacyjny, w pliku .xlsx tworzonym w przeglądarce.',
+        'h1' => 'Konwerter PDF do Excela',
+        'tagline' => 'Zamień tabele z PDF-a w arkusz kalkulacyjny, w sposób orientacyjny.',
+        'keywords' => [
+            'pdf do excela',
+            'konwertuj pdf do excela',
+            'pdf do xlsx',
+            'pdf do arkusza kalkulacyjnego',
+            'tabela pdf do excela',
+        ],
+        'intro' => 'PDF nie ma prawdziwych wierszy czy kolumn - jest w nim tylko tekst umieszczony na stronie, więc zamiana go w arkusz kalkulacyjny jest zawsze oszacowaniem. To narzędzie grupuje tekst, który ma tę samą pozycję pionową, w jeden wiersz, a następnie dopasowuje podobne pozycje poziome na stronie w kolumny i zapisuje wynik jako plik .xlsx z jednym arkuszem na stronę. Działa najlepiej na PDF-ach, które już wyglądają jak tabela, na przykład fakturach albo wyeksportowanych raportach, i jest odczytywany w całości w Twojej przeglądarce.',
+        'steps' => [
+            'Wybierz albo upuść PDF, który chcesz przekonwertować.',
+            'Kliknij Konwertuj do Excela.',
+            'Pobierz plik .xlsx i otwórz go w Excelu, Google Sheets albo LibreOffice Calc.',
+        ],
+        'features' => [
+            'Automatycznie grupuje tekst w wiersze i kolumny',
+            'Jeden arkusz na każdą stronę PDF-a',
+            'Dobrze działa na fakturach i już tabelarycznych wyeksportowanych raportach',
+            'Prywatne: PDF nigdy nie jest wysyłany',
+            'Bez rejestracji, bez znaku wodnego',
+        ],
+        'content' => [
+            [
+                'heading' => 'Kiedy to dobrze działa, a kiedy nie',
+                'body' => 'PDF-y, które już wyglądają jak tabela (faktury, wyciągi bankowe, wyeksportowane raporty z wyraźnymi kolumnami), są dobrze konwertowane, ponieważ ich tekst równo układa się w wiersze i kolumny. Swobodny tekst, na przykład z listów czy artykułów, nie ma prawdziwych kolumn do wykrycia, więc często trafia do jednej kolumny. Scalone komórki, komórki z wieloma wierszami oraz zeskanowane (same obrazy) strony nie są obsługiwane.',
+            ],
+            [
+                'heading' => 'Czemu zeskanowany PDF się nie przekonwertuje',
+                'body' => 'Zeskanowany PDF to zdjęcie strony bez leżącego pod nim tekstu, który można zaznaczyć, więc nie ma nic, co to narzędzie mogłoby odczytać. Konwersja skanu wymaga najpierw OCR (optycznego rozpoznawania znaków), czego to narzędzie nie robi; jeśli możesz zaznaczyć i skopiować tekst w swoim czytniku PDF, konwersja powinna zadziałać.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Czy kolumny ułożą się idealnie?', 'a' => 'Na PDF-ach, które już wyglądają jak tabela, zwykle tak. Na swobodnym tekście nie ma prawdziwych kolumn do wykrycia, więc wyniki są dużo mniej wiarygodne - to zawsze orientacyjne wyodrębnianie, a nie precyzyjny czytnik tabel.'],
+            ['q' => 'Czy mogę przekonwertować zeskanowany PDF?', 'a' => 'Tylko jeśli ma już tekst, który można zaznaczyć. Zeskanowana strona bez warstwy tekstu nie ma nic, co to narzędzie mogłoby wyodrębnić, ponieważ nie wykonuje OCR.'],
+            ['q' => 'Jak obsługiwane są wielostronicowe pliki?', 'a' => 'Każda strona PDF-a staje się własnym arkuszem w skoroszycie, nazwanym „Page 1”, „Page 2” i tak dalej.'],
+            ['q' => 'Czy mój PDF jest gdzieś wysyłany?', 'a' => 'Nie. Cała konwersja odbywa się w Twojej przeglądarce za pomocą JavaScript, a plik nigdy nie opuszcza Twojego urządzenia.'],
+        ],
+    ],
+
+    'html-to-pdf' => [
+        'name' => 'HTML do PDF',
+        'title' => 'Konwerter HTML do PDF - Darmowy i Prywatny',
+        'description' => 'Konwertuj HTML albo zwykły tekst do PDF online za darmo. Wklej kod albo tekst i pobierz PDF z nagłówkami, listami i formatowaniem, w przeglądarce.',
+        'h1' => 'Konwerter HTML do PDF',
+        'tagline' => 'Wklej HTML albo zwykły tekst i pobierz go jako PDF.',
+        'keywords' => [
+            'html do pdf',
+            'konwertuj html do pdf',
+            'konwerter html do pdf',
+            'tekst do pdf',
+            'html do pdf online za darmo',
+        ],
+        'intro' => 'Ten konwerter HTML do PDF zamienia wklejony HTML, albo po prostu zwykły tekst, w PDF do pobrania. Rozumie typowe tagi, takie jak nagłówki, akapity, podziały wiersza, listy, tekst pogrubiony i kursywą oraz obrazy, i układa je na stronach A4 albo Letter. Nigdy nie pobiera innej strony internetowej - używany jest tylko wklejony przez Ciebie HTML albo tekst, a PDF powstaje w całości w Twojej przeglądarce.',
+        'steps' => [
+            'Wklej HTML albo zwykły tekst w polu.',
+            'Wybierz rozmiar strony A4 albo Letter.',
+            'Kliknij Konwertuj do PDF i pobierz wynik.',
+        ],
+        'features' => [
+            'Obsługuje nagłówki, akapity i podziały wiersza',
+            'Obsługuje listy wypunktowane i numerowane',
+            'Obsługuje tekst pogrubiony i kursywą',
+            'Obsługuje obrazy podane jako adresy data:',
+            'Nigdy nie pobiera innych stron internetowych - używana jest tylko Twoja wklejona treść',
+        ],
+        'content' => [
+            [
+                'heading' => 'Jaki HTML jest obsługiwany',
+                'body' => 'Nagłówki (h1-h6), akapity, podziały wiersza, listy wypunktowane i numerowane, tekst pogrubiony/strong i kursywą/em oraz obrazy podane jako adresy data: są układane w PDF-ie. Tagi, których to narzędzie nie rozumie konkretnie, takie jak tabele, linki czy własne style, są ignorowane, ale tekst w nich zostaje zachowany, dzięki czemu nic nie jest po cichu tracone.',
+            ],
+            [
+                'heading' => 'Czemu nie można pobrać obrazów albo stron z adresu URL?',
+                'body' => 'To narzędzie nigdy nie wysyła żądań sieciowych w Twoim imieniu, więc tag <img src="https://..."> wskazujący na inną stronę internetową się nie pojawi - widoczne są tylko obrazy już osadzone jako adresy data:. Dzięki temu narzędzie pozostaje prywatne i nigdy nie kontaktuje żadnej strony bez Twojego bezpośredniego działania.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Czy mogę przekonwertować zwykły tekst, nie tylko HTML?', 'a' => 'Tak. Tekst bez żadnych tagów jest traktowany jako jeden akapit, więc możesz wkleić zwykły tekst bezpośrednio.'],
+            ['q' => 'Czy moje style CSS i kolory zostaną zachowane?', 'a' => 'Nie. To narzędzie skupia się na strukturze i czytelnej treści - nagłówkach, akapitach, listach, pogrubieniu/kursywie i obrazach - a nie na dokładnych kolorach, czcionkach czy układzie CSS.'],
+            ['q' => 'Czy może przekonwertować stronę internetową z adresu URL?', 'a' => 'Nie, tylko HTML albo tekst, który sam wklejesz. Nigdy nie pobiera innych stron internetowych, co zachowuje prywatność i przewidywalność.'],
+            ['q' => 'Czy moja wklejona treść jest gdzieś wysyłana?', 'a' => 'Nie. Cała konwersja odbywa się w Twojej przeglądarce za pomocą JavaScript, a nic z tego, co wklejasz, nigdy nie opuszcza Twojego urządzenia.'],
+        ],
+    ],
 ];

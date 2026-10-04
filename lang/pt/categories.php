@@ -38,18 +38,21 @@ return [
     'pdf-tools' => [
         'name' => 'Ferramentas de PDF',
         'short' => 'PDF',
-        'subtitle' => 'Junte, divida e converta PDFs',
-        'title' => 'Ferramentas de PDF grátis: juntar e dividir arquivos PDF',
-        'description' => 'Junte e divida arquivos PDF online de graça. Sem uploads, sem marca d\'água e sem cadastro. Os PDFs são processados de forma privada no seu navegador.',
-        'intro' => 'Junte vários PDFs em um só ou extraia apenas as páginas de que precisa. Os arquivos são processados no seu dispositivo, sem marca d\'água nem limites escondidos.',
+        'subtitle' => 'Junte, converta, comprima e proteja PDFs',
+        'title' => 'Ferramentas de PDF grátis: juntar, converter e editar',
+        'description' => 'Junte, divida, converta, comprima e proteja arquivos PDF online de graça. Sem uploads, sem marca d\'água e sem cadastro: tudo no seu navegador.',
+        'intro' => 'Um kit completo de ferramentas PDF que nunca envia seus arquivos: junte ou divida documentos, rotacione, reordene e exclua páginas, transforme PDFs em JPG, PNG, Word ou Excel (e vice-versa), converta HTML ou texto simples para PDF, reduza arquivos grandes, e adicione ou remova uma senha de abertura. Cada ferramenta processa seu documento no seu próprio dispositivo, sem marca d\'água, sem limite de páginas e sem truques de tamanho.',
         'content' => [
-            ['heading' => 'Juntar ou dividir: de qual ferramenta de PDF eu preciso?', 'body' => 'Use Juntar PDF para unir vários arquivos em um só documento, na ordem que você escolher, por exemplo currículo, carta de apresentação e certificados de uma candidatura. Use Dividir PDF para o contrário: separar páginas escolhidas em um novo arquivo, cortar um documento em intervalos ou salvar cada página como um PDF próprio.'],
-            ['heading' => 'É seguro editar PDF online?', 'body' => 'Na maioria dos sites de PDF, seu documento é enviado a um servidor. Aqui as duas ferramentas funcionam dentro do seu navegador, então contratos, extratos bancários e outros arquivos privados nunca saem do seu dispositivo, e o resultado não tem marca d\'água nem limite de páginas.'],
+            ['heading' => 'De qual ferramenta de PDF eu preciso?', 'body' => 'Use Juntar PDF para unir vários arquivos em um documento, na ordem que você escolher, por exemplo currículo, carta de apresentação e certificados para uma candidatura, e Dividir PDF para o contrário: separar páginas em um novo arquivo, cortar um documento em intervalos ou salvar cada página como um PDF próprio. Rotacionar PDF corrige páginas de ponta-cabeça, Excluir páginas de PDF remove as que você não quer, e Organizar PDF reordena todo um documento arrastando miniaturas das páginas. Comprimir PDF reduz um arquivo grande demais para enviar por e-mail, e Proteger PDF / Desbloquear PDF adicionam ou removem uma senha de abertura.'],
+            ['heading' => 'Converter PDF para outros formatos e vice-versa', 'body' => 'PDF para Word e PDF para Excel extraem o texto (e, no Excel, linhas e colunas) de um PDF para um arquivo .docx ou .xlsx editável, enquanto Word para PDF e Excel para PDF fazem o contrário: transformam um documento Word ou uma planilha em um PDF fixo que fica igual em qualquer lugar. PDF para JPG e PDF para PNG salvam páginas como imagens, e HTML para PDF transforma HTML colado ou texto simples em um PDF para download. Essas conversões são uma estimativa: o texto e a estrutura básica são bem preservados, mas o layout exato, tabelas, gráficos e fontes nem sempre são mantidos; a página de cada ferramenta explica o que esperar.'],
+            ['heading' => 'É seguro editar PDF online?', 'body' => 'Na maioria dos sites de PDF, seu documento é enviado a um servidor antes de qualquer coisa acontecer com ele. Aqui, cada ferramenta funciona dentro do seu navegador usando JavaScript, então contratos, extratos bancários, documentos Word e planilhas nunca saem do seu dispositivo, e os resultados não têm marca d\'água nem limite de páginas.'],
         ],
         'faqs' => [
             ['q' => 'Como junto vários PDFs em um só?', 'a' => 'Abra Juntar PDF, adicione dois ou mais arquivos, coloque-os na ordem com as setas e clique em Juntar PDF. O arquivo combinado é baixado na hora.'],
             ['q' => 'Como extraio páginas de um PDF?', 'a' => 'Abra Dividir PDF, escolha Extrair páginas, digite as páginas de que precisa, como 1-3, 5, e clique em Dividir PDF.'],
-            ['q' => 'Posso juntar PDFs protegidos por senha?', 'a' => 'Não diretamente. Abra o arquivo com a senha, salve ou imprima uma cópia sem proteção e junte essa cópia.'],
+            ['q' => 'Posso converter um PDF para um arquivo Word ou Excel editável?', 'a' => 'Sim: PDF para Word e PDF para Excel extraem o texto (e, no Excel, suas linhas e colunas) como uma estimativa. Layouts complexos, tabelas, colunas e imagens nem sempre são preservados, como cada página de ferramenta explica.'],
+            ['q' => 'Posso juntar PDFs protegidos por senha?', 'a' => 'Não diretamente. Abra o arquivo com a senha, salve ou imprima uma cópia sem proteção e junte essa cópia. Você também pode usar Desbloquear PDF primeiro, se souber a senha.'],
+            ['q' => 'Meus arquivos são enviados a um servidor?', 'a' => 'Não. Todas as ferramentas de PDF deste site processam seus arquivos localmente no seu navegador com JavaScript, então nunca são enviados nem armazenados.'],
         ],
     ],
     'calculators' => [

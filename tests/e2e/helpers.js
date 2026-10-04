@@ -1,6 +1,54 @@
 import { expect } from '@playwright/test';
 import { PDFDocument, StandardFonts } from 'pdf-lib';
 import fs from 'node:fs/promises';
+import { Document, HeadingLevel, Packer, Paragraph, TextRun } from 'docx';
+import * as XLSX from 'xlsx';
+import mammoth from 'mammoth';
+
+/** A real .docx file with a heading and a paragraph containing a bold word. */
+export async function makeDocx({ heading = 'Test Heading', plain = 'Hello ', bold = 'world' } = {}) {
+    const doc = new Document({
+        sections: [{
+            children: [
+                new Paragraph({ text: heading, heading: HeadingLevel.HEADING_1 }),
+                new Paragraph({ children: [new TextRun(plain), new TextRun({ text: bold, bold: true })] }),
+            ],
+        }],
+    });
+    return Buffer.from(await Packer.toBuffer(doc));
+}
+
+/** A real .xlsx workbook with one sheet built from `rows` (array of arrays). */
+export function makeXlsx(rows) {
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, XLSX.utils.aoa_to_sheet(rows), 'Sheet1');
+    return Buffer.from(XLSX.write(workbook, { type: 'buffer', bookType: 'xlsx' }));
+}
+
+/** Reads back an .xlsx workbook's first sheet as an array of arrays. */
+export function readXlsx(buffer) {
+    const workbook = XLSX.read(buffer, { type: 'buffer' });
+    const sheet = workbook.Sheets[workbook.SheetNames[0]];
+    return XLSX.utils.sheet_to_json(sheet, { header: 1, raw: false, defval: '' });
+}
+
+/** Plain text of a .docx file, read with the real `mammoth` package. */
+export async function readDocxText(buffer) {
+    return (await mammoth.extractRawText({ buffer })).value;
+}
+
+/** A single-page PDF with `rows` of cells drawn at fixed grid positions (for row/column extraction tests). */
+export async function makeTabularPdf(rows, { x0 = 40, colWidth = 100, y0 = 350, rowHeight = 24 } = {}) {
+    const doc = await PDFDocument.create();
+    const font = await doc.embedFont(StandardFonts.Helvetica);
+    const page = doc.addPage([500, 400]);
+    rows.forEach((row, r) => {
+        row.forEach((cell, c) => {
+            page.drawText(String(cell), { x: x0 + c * colWidth, y: y0 - r * rowHeight, size: 12, font });
+        });
+    });
+    return Buffer.from(await doc.save());
+}
 
 /** A real PDF with `pages` numbered pages. */
 export async function makePdf(pages, label = 'Doc') {
@@ -141,5 +189,44 @@ export async function checkPdfPassword(page, bytes, password) {
             };
         },
         { bytesB64: Buffer.from(bytes).toString('base64'), password, pdfjsUrl: PDFJS_MJS_URL, workerUrl: PDFJS_WORKER_URL },
+    );
+}
+
+/** Routes pdfjs-dist from node_modules through a fake origin, same as checkPdfPassword. */
+export async function routePdfJs(page) {
+    await page.route(PDFJS_MJS_URL, async (route) => {
+        route.fulfill({
+            body: await fs.readFile('node_modules/pdfjs-dist/legacy/build/pdf.mjs'),
+            contentType: 'text/javascript',
+            headers: { 'Access-Control-Allow-Origin': '*' },
+        });
+    });
+    await page.route(PDFJS_WORKER_URL, async (route) => {
+        route.fulfill({
+            body: await fs.readFile('node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs'),
+            contentType: 'text/javascript',
+            headers: { 'Access-Control-Allow-Origin': '*' },
+        });
+    });
+}
+
+/** All of a real PDF's text content (every page joined with a space), read with a real pdf.js instance. */
+export async function extractPdfText(page, bytes) {
+    await routePdfJs(page);
+    return page.evaluate(
+        async ({ bytesB64, pdfjsUrl, workerUrl }) => {
+            const pdfjsLib = await import(pdfjsUrl);
+            pdfjsLib.GlobalWorkerOptions.workerSrc = workerUrl;
+            const data = Uint8Array.from(atob(bytesB64), (c) => c.charCodeAt(0));
+            const doc = await pdfjsLib.getDocument({ data }).promise;
+            let text = '';
+            for (let i = 1; i <= doc.numPages; i++) {
+                const page = await doc.getPage(i);
+                const content = await page.getTextContent();
+                text += content.items.map((it) => it.str).join(' ') + ' ';
+            }
+            return text.replace(/\s+/g, ' ').trim();
+        },
+        { bytesB64: Buffer.from(bytes).toString('base64'), pdfjsUrl: PDFJS_MJS_URL, workerUrl: PDFJS_WORKER_URL },
     );
 }

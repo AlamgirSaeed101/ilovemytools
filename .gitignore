@@ -31,3 +31,4 @@ yarn-error.log
 /database/*.sqlite
 /database/*.sqlite-journal
 /database/*.sqlite.bak-*
+playwright.local.config.js

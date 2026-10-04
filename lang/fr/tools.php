@@ -1856,4 +1856,224 @@ return [
             ],
         ],
     ],
+
+    'pdf-to-word' => [
+        'name' => 'PDF en Word',
+        'title' => 'Convertisseur PDF en Word - Gratuit et Privé',
+        'description' => 'Convertissez un PDF en Word en ligne gratuitement. Le texte, les paragraphes et les titres deviennent un fichier .docx modifiable, créé dans votre navigateur.',
+        'h1' => 'Convertisseur PDF en Word',
+        'tagline' => 'Transformez un PDF en document Word modifiable, directement dans votre navigateur.',
+        'keywords' => [
+            'pdf en word',
+            'convertir pdf en word',
+            'convertisseur pdf en word',
+            'pdf en docx',
+            'pdf en word gratuit',
+        ],
+        'intro' => 'Un convertisseur PDF en Word transforme le texte d\'un PDF en un fichier .docx modifiable que vous pouvez ouvrir dans Microsoft Word, Google Docs ou LibreOffice. Cet outil lit le texte de votre PDF et le reconstruit sous forme de paragraphes et de titres, pour que vous puissiez modifier le contenu sans tout retaper. Le PDF est lu entièrement dans votre navigateur et n\'est jamais envoyé à un serveur.',
+        'steps' => [
+            'Choisissez ou déposez le PDF à convertir.',
+            'Cliquez sur Convertir en Word.',
+            'Téléchargez le fichier .docx et ouvrez-le dans Word, Google Docs ou LibreOffice.',
+        ],
+        'features' => [
+            'Extrait le texte en paragraphes réellement modifiables',
+            'Détecte les titres selon la taille du texte, à titre d\'estimation',
+            'Conserve les retours à la ligne et l\'ordre de lecture',
+            'Privé : le PDF n\'est jamais envoyé',
+            'Pas d\'inscription, pas de filigrane',
+        ],
+        'content' => [
+            [
+                'heading' => 'Ce qui est converti, et ce qui ne l\'est pas',
+                'body' => 'Un PDF n\'a pas de vraie structure de paragraphes, de tableaux ou de titres : seulement du texte positionné sur une page. Cet outil reconstruit des paragraphes et des titres à partir de ce texte, ce qui fonctionne bien pour des documents simples comme des lettres, des rapports ou des articles. Les tableaux, les mises en page à plusieurs colonnes, les zones de texte, les images et les polices ou espacements exacts ne sont pas conservés : le résultat est un document lisible et modifiable, pas une copie exacte au pixel près.',
+            ],
+            [
+                'heading' => 'Pourquoi un PDF scanné ne peut-il pas être converti ?',
+                'body' => 'Un PDF scanné est en réalité une photographie d\'une page, sans texte sélectionnable en dessous que le navigateur puisse lire. Le convertir nécessiterait d\'abord l\'OCR (reconnaissance optique de caractères) pour reconnaître les lettres, ce que cet outil ne fait pas ; si votre lecteur de PDF vous permet de sélectionner et copier le texte, la conversion devrait fonctionner normalement.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'La mise en forme sera-t-elle exactement la même que dans le PDF d\'origine ?', 'a' => 'Pas exactement. Le texte, les titres de base et les retours à la ligne sont conservés, mais les tableaux, colonnes, images et polices ou espacements exacts ne le sont pas. L\'objectif est de vous donner du texte modifiable, pas une copie au pixel près.'],
+            ['q' => 'Puis-je convertir un PDF scanné ?', 'a' => 'Seulement s\'il contient déjà du texte sélectionnable. Une page scannée sans couche de texte n\'a rien que cet outil puisse extraire, puisqu\'il ne fait pas d\'OCR.'],
+            ['q' => 'Mon PDF est-il envoyé quelque part ?', 'a' => 'Non. Toute la conversion se fait dans votre navigateur avec JavaScript, et le fichier ne quitte jamais votre appareil.'],
+            ['q' => 'Quel fichier obtiens-je ?', 'a' => 'Un fichier .docx standard qui s\'ouvre dans Microsoft Word, Google Docs, LibreOffice Writer et la plupart des autres traitements de texte.'],
+        ],
+    ],
+
+    'word-to-pdf' => [
+        'name' => 'Word en PDF',
+        'title' => 'Convertisseur Word en PDF - Gratuit et Privé',
+        'description' => 'Convertissez un document Word (.docx) en PDF en ligne gratuitement. Garde titres, paragraphes, listes, gras/italique et images, dans votre navigateur.',
+        'h1' => 'Convertisseur Word en PDF',
+        'tagline' => 'Transformez un document Word en PDF, en toute confidentialité dans votre navigateur.',
+        'keywords' => [
+            'word en pdf',
+            'convertir word en pdf',
+            'docx en pdf',
+            'convertisseur word en pdf',
+            'word en pdf gratuit',
+        ],
+        'intro' => 'Convertir Word en PDF transforme un fichier .docx modifiable en un PDF figé qui s\'affiche de la même façon sur tous les appareils et ne peut pas être facilement modifié. Cet outil lit votre document Word et reconstruit ses titres, paragraphes, listes, texte en gras ou italique et images sous forme d\'un nouveau PDF, tout cela dans votre navigateur : le document n\'est jamais envoyé où que ce soit.',
+        'steps' => [
+            'Choisissez ou déposez le fichier Word (.docx) à convertir.',
+            'Choisissez le format de page A4 ou Lettre.',
+            'Cliquez sur Convertir en PDF et téléchargez le résultat.',
+        ],
+        'features' => [
+            'Conserve les titres, paragraphes et retours à la ligne',
+            'Conserve les listes à puces et numérotées',
+            'Conserve le texte en gras et en italique',
+            'Conserve les images du document',
+            'Privé : votre document n\'est jamais envoyé',
+        ],
+        'content' => [
+            [
+                'heading' => 'Ce qui est conservé, et ce qui ne l\'est pas',
+                'body' => 'Les titres, paragraphes, retours à la ligne, listes à puces et numérotées, texte en gras et en italique, et la plupart des images sont reconstruits dans le PDF. Les tableaux, mises en page à plusieurs colonnes, zones de texte, en-têtes et pieds de page, suivi des modifications, ainsi que les polices ou la position exactes du document Word original ne sont pas conservés : le résultat garde le contenu et l\'ordre de lecture plutôt que de reproduire la page au pixel près.',
+            ],
+            [
+                'heading' => 'Seuls les fichiers .docx sont pris en charge',
+                'body' => 'Cet outil lit le format moderne de Word (.docx). L\'ancien format .doc de Word 2003 et antérieur n\'est pas pris en charge ; ouvrez-le dans Word et utilisez « Enregistrer sous » pour créer d\'abord une copie .docx.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Mon document Word ressemblera-t-il exactement au PDF ?', 'a' => 'Les titres, paragraphes, listes, gras/italique et images sont conservés, mais les tableaux, colonnes, zones de texte et polices ou espacements exacts ne le sont pas. Pour la plupart des lettres, rapports et articles, le résultat ressemble beaucoup à l\'original.'],
+            ['q' => 'Cela fonctionne-t-il avec les fichiers .doc ?', 'a' => 'Non, uniquement avec le format moderne .docx. Les anciens fichiers .doc doivent d\'abord être enregistrés en .docx dans Word.'],
+            ['q' => 'Mon document est-il envoyé quelque part ?', 'a' => 'Non. Toute la conversion se fait dans votre navigateur avec JavaScript, et le fichier ne quitte jamais votre appareil.'],
+            ['q' => 'Quel format de page le PDF utilise-t-il ?', 'a' => 'Choisissez A4 ou Lettre avant de convertir ; le contenu s\'adapte au format choisi.'],
+        ],
+    ],
+
+    'excel-to-pdf' => [
+        'name' => 'Excel en PDF',
+        'title' => 'Convertisseur Excel en PDF - Gratuit et Privé',
+        'description' => 'Convertissez Excel (.xlsx, .xls) ou CSV en PDF en ligne gratuitement. Chaque feuille devient un tableau clair et paginé, sans envoi : tout dans le navigateur.',
+        'h1' => 'Convertisseur Excel en PDF',
+        'tagline' => 'Transformez une feuille de calcul en un tableau PDF clair et paginé.',
+        'keywords' => [
+            'excel en pdf',
+            'convertir excel en pdf',
+            'xlsx en pdf',
+            'feuille de calcul en pdf',
+            'csv en pdf',
+        ],
+        'intro' => 'Un convertisseur Excel en PDF transforme une feuille de calcul en un document figé qui s\'ouvre de la même façon sur tout appareil, sans avoir besoin d\'Excel installé. Cet outil lit votre fichier .xlsx, .xls ou .csv et dessine chaque feuille comme un tableau avec bordures, le divisant sur autant de pages que nécessaire, avec la ligne d\'en-tête répétée sur chaque page. Le fichier est lu entièrement dans votre navigateur et n\'est jamais envoyé.',
+        'steps' => [
+            'Choisissez ou déposez votre fichier Excel (.xlsx, .xls) ou CSV.',
+            'Choisissez le format de page et l\'orientation (portrait ou paysage).',
+            'Cliquez sur Convertir en PDF et téléchargez le résultat.',
+        ],
+        'features' => [
+            'Convertit les fichiers .xlsx, .xls et .csv',
+            'Chaque feuille devient son propre tableau, avec l\'en-tête répété sur chaque page',
+            'Portrait ou paysage, A4 ou Lettre',
+            'Les colonnes s\'ajustent automatiquement au contenu',
+            'Privé : votre feuille de calcul n\'est jamais envoyée',
+        ],
+        'content' => [
+            [
+                'heading' => 'À quoi ressemble une feuille large dans le PDF',
+                'body' => 'Les colonnes s\'ajustent à leur contenu et sont réduites pour tenir dans la largeur de la page si possible. Si une feuille a encore trop de colonnes, le texte qui ne tient pas dans sa colonne est raccourci avec des points de suspension (« … ») plutôt que de chevaucher la colonne suivante. Passer en orientation paysage donne généralement plus de place aux feuilles larges.',
+            ],
+            [
+                'heading' => 'Ce qui n\'est pas conservé',
+                'body' => 'Cet outil se concentre sur la clarté des données sur la page : les couleurs de fond de cellule, les polices personnalisées, les formules (la dernière valeur calculée est utilisée à la place), les graphiques et les cellules fusionnées ne sont pas conservés.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Puis-je aussi convertir un fichier CSV ?', 'a' => 'Oui. Les fichiers CSV fonctionnent comme les .xlsx et .xls : choisissez le fichier et il devient un tableau PDF sur une seule feuille.'],
+            ['q' => 'Que se passe-t-il pour une feuille avec beaucoup de colonnes ?', 'a' => 'La largeur des colonnes est réduite pour tenir sur la page, et passer en orientation paysage donne plus de place aux tableaux larges. Le texte qui ne tient toujours pas dans sa colonne est raccourci avec « … ».'],
+            ['q' => 'Les formules ou les graphiques sont-ils conservés ?', 'a' => 'Les formules affichent leur dernière valeur calculée sous forme de texte, pas la formule elle-même, et les graphiques ne sont pas inclus dans le PDF.'],
+            ['q' => 'Ma feuille de calcul est-elle envoyée quelque part ?', 'a' => 'Non. Toute la conversion se fait dans votre navigateur avec JavaScript, et le fichier ne quitte jamais votre appareil.'],
+        ],
+    ],
+
+    'pdf-to-excel' => [
+        'name' => 'PDF en Excel',
+        'title' => 'Convertisseur PDF en Excel - Gratuit et Privé',
+        'description' => 'Convertissez un PDF en Excel en ligne gratuitement. Le texte est regroupé en lignes et colonnes, de façon estimée, dans un fichier .xlsx.',
+        'h1' => 'Convertisseur PDF en Excel',
+        'tagline' => 'Transformez les tableaux d\'un PDF en feuille de calcul, de façon approximative.',
+        'keywords' => [
+            'pdf en excel',
+            'convertir pdf en excel',
+            'pdf en xlsx',
+            'pdf en feuille de calcul',
+            'tableau pdf en excel',
+        ],
+        'intro' => 'Un PDF n\'a pas de vraies lignes ni colonnes, seulement du texte positionné sur une page, donc le transformer en feuille de calcul reste toujours une estimation. Cet outil regroupe le texte qui partage la même position verticale en une ligne, puis aligne les positions horizontales similaires sur la page en colonnes, et enregistre le résultat en fichier .xlsx avec une feuille par page. Cela fonctionne mieux sur des PDF qui ressemblent déjà à un tableau, comme des factures ou des rapports exportés, et tout se lit dans votre navigateur.',
+        'steps' => [
+            'Choisissez ou déposez le PDF à convertir.',
+            'Cliquez sur Convertir en Excel.',
+            'Téléchargez le fichier .xlsx et ouvrez-le dans Excel, Google Sheets ou LibreOffice Calc.',
+        ],
+        'features' => [
+            'Regroupe automatiquement le texte en lignes et colonnes',
+            'Une feuille par page du PDF',
+            'Fonctionne bien sur les factures et rapports exportés déjà tabulaires',
+            'Privé : le PDF n\'est jamais envoyé',
+            'Pas d\'inscription, pas de filigrane',
+        ],
+        'content' => [
+            [
+                'heading' => 'Quand cela fonctionne bien, et quand cela ne fonctionne pas',
+                'body' => 'Les PDF qui ressemblent déjà à un tableau (factures, relevés bancaires, rapports exportés avec des colonnes claires) se convertissent bien, car leur texte s\'aligne nettement en lignes et colonnes. Le texte libre, comme des lettres ou des articles, n\'a pas de vraies colonnes à détecter, donc il finit souvent dans une seule colonne. Les cellules fusionnées, les cellules à plusieurs lignes et les pages scannées (image seule) ne sont pas prises en charge.',
+            ],
+            [
+                'heading' => 'Pourquoi un PDF scanné ne se convertira pas',
+                'body' => 'Un PDF scanné est une photographie d\'une page sans texte sélectionnable en dessous, donc il n\'y a rien que cet outil puisse lire. Convertir un scan nécessite d\'abord l\'OCR (reconnaissance optique de caractères), ce que cet outil ne fait pas ; si vous pouvez sélectionner et copier le texte dans votre lecteur de PDF, la conversion devrait fonctionner.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Les colonnes seront-elles parfaitement alignées ?', 'a' => 'Sur des PDF qui ressemblent déjà à un tableau, généralement oui. Sur du texte libre, il n\'y a pas de vraies colonnes à détecter, donc les résultats sont beaucoup moins fiables : c\'est toujours une extraction approximative, pas un lecteur de tableaux exact.'],
+            ['q' => 'Puis-je convertir un PDF scanné ?', 'a' => 'Seulement s\'il contient déjà du texte sélectionnable. Une page scannée sans couche de texte n\'a rien que cet outil puisse extraire, puisqu\'il ne fait pas d\'OCR.'],
+            ['q' => 'Comment les pages multiples sont-elles gérées ?', 'a' => 'Chaque page du PDF devient sa propre feuille dans le classeur, nommée « Page 1 », « Page 2 », et ainsi de suite.'],
+            ['q' => 'Mon PDF est-il envoyé quelque part ?', 'a' => 'Non. Toute la conversion se fait dans votre navigateur avec JavaScript, et le fichier ne quitte jamais votre appareil.'],
+        ],
+    ],
+
+    'html-to-pdf' => [
+        'name' => 'HTML en PDF',
+        'title' => 'Convertisseur HTML en PDF - Gratuit et Privé',
+        'description' => 'Convertissez du HTML ou du texte brut en PDF en ligne gratuitement. Collez du code ou du texte et téléchargez un PDF avec titres, listes et mise en forme.',
+        'h1' => 'Convertisseur HTML en PDF',
+        'tagline' => 'Collez du HTML ou du texte brut et téléchargez-le en PDF.',
+        'keywords' => [
+            'html en pdf',
+            'convertir html en pdf',
+            'convertisseur html en pdf',
+            'texte en pdf',
+            'html en pdf gratuit',
+        ],
+        'intro' => 'Ce convertisseur HTML en PDF transforme du HTML collé, ou simplement du texte brut, en PDF téléchargeable. Il comprend les balises courantes comme les titres, paragraphes, retours à la ligne, listes, texte en gras et en italique, et images, et les met en page sur des pages A4 ou Lettre. Il ne va jamais chercher un autre site web : seul le HTML ou le texte que vous collez est utilisé, et le PDF est créé entièrement dans votre navigateur.',
+        'steps' => [
+            'Collez du HTML ou du texte brut dans la zone.',
+            'Choisissez le format de page A4 ou Lettre.',
+            'Cliquez sur Convertir en PDF et téléchargez le résultat.',
+        ],
+        'features' => [
+            'Prend en charge les titres, paragraphes et retours à la ligne',
+            'Prend en charge les listes à puces et numérotées',
+            'Prend en charge le texte en gras et en italique',
+            'Prend en charge les images données en URL de données',
+            'Ne va jamais chercher d\'autres sites web : seul votre contenu collé est utilisé',
+        ],
+        'content' => [
+            [
+                'heading' => 'Quel HTML est pris en charge',
+                'body' => 'Les titres (h1-h6), paragraphes, retours à la ligne, listes à puces et numérotées, texte en gras/strong et italique/em, et images données en URL de données sont mis en page dans le PDF. Les balises que cet outil ne comprend pas spécifiquement, comme les tableaux, les liens ou les styles personnalisés, sont ignorées, mais leur texte reste conservé pour que rien ne soit perdu silencieusement.',
+            ],
+            [
+                'heading' => 'Pourquoi ne peut-il pas récupérer des images ou des pages depuis une URL ?',
+                'body' => 'Cet outil ne fait jamais de requêtes réseau en votre nom, donc une balise <img src="https://..."> pointant vers un autre site web ne s\'affichera pas : seules les images déjà intégrées en URL de données sont affichées. Cela garde l\'outil privé et évite de contacter un site web sans votre action directe.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Puis-je convertir du texte brut, pas seulement du HTML ?', 'a' => 'Oui. Un texte sans aucune balise est traité comme un seul paragraphe, vous pouvez donc coller du texte brut directement.'],
+            ['q' => 'Mon style CSS et mes couleurs seront-ils conservés ?', 'a' => 'Non. Cet outil se concentre sur la structure et le contenu lisible - titres, paragraphes, listes, gras/italique et images - plutôt que sur les couleurs, polices ou mise en page CSS exactes.'],
+            ['q' => 'Peut-il convertir une page web depuis une URL ?', 'a' => 'Non, seulement du HTML ou du texte que vous collez vous-même. Il ne va jamais chercher d\'autres sites web, ce qui garde tout privé et prévisible.'],
+            ['q' => 'Mon contenu collé est-il envoyé quelque part ?', 'a' => 'Non. Toute la conversion se fait dans votre navigateur avec JavaScript, et rien de ce que vous collez ne quitte jamais votre appareil.'],
+        ],
+    ],
 ];

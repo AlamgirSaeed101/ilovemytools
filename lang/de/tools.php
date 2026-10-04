@@ -1856,4 +1856,224 @@ return [
             ],
         ],
     ],
+
+    'pdf-to-word' => [
+        'name' => 'PDF zu Word',
+        'title' => 'PDF-zu-Word-Konverter - Kostenlos und Privat',
+        'description' => 'Konvertiere PDF online kostenlos zu Word. Text, Absätze und Überschriften werden zu einer bearbeitbaren .docx-Datei, erstellt direkt in deinem Browser.',
+        'h1' => 'PDF-zu-Word-Konverter',
+        'tagline' => 'Verwandle ein PDF in ein bearbeitbares Word-Dokument, direkt in deinem Browser.',
+        'keywords' => [
+            'pdf zu word',
+            'pdf in word umwandeln',
+            'pdf zu word konverter',
+            'pdf zu docx',
+            'pdf zu word kostenlos',
+        ],
+        'intro' => 'Ein PDF-zu-Word-Konverter verwandelt den Text eines PDFs in eine bearbeitbare .docx-Datei, die du in Microsoft Word, Google Docs oder LibreOffice öffnen kannst. Dieses Tool liest den Text deines PDFs und baut ihn als Absätze und Überschriften neu auf, damit du den Inhalt bearbeiten kannst, ohne alles neu zu tippen. Das PDF wird vollständig in deinem Browser gelesen und niemals an einen Server gesendet.',
+        'steps' => [
+            'Wähle das PDF aus oder lege es ab.',
+            'Klicke auf In Word umwandeln.',
+            'Lade die .docx-Datei herunter und öffne sie in Word, Google Docs oder LibreOffice.',
+        ],
+        'features' => [
+            'Extrahiert Text in echte, bearbeitbare Absätze',
+            'Erkennt Überschriften anhand der Schriftgröße, als Schätzung',
+            'Behält Zeilenumbrüche und Lesereihenfolge bei',
+            'Privat: das PDF wird nie hochgeladen',
+            'Keine Anmeldung, kein Wasserzeichen',
+        ],
+        'content' => [
+            [
+                'heading' => 'Was umgewandelt wird, und was nicht',
+                'body' => 'Ein PDF hat keine echte Struktur aus Absätzen, Tabellen oder Überschriften - nur Text, der auf einer Seite platziert ist. Dieses Tool baut Absätze und Überschriften aus diesem Text neu auf, was bei einfachen Dokumenten wie Briefen, Berichten und Artikeln gut funktioniert. Tabellen, mehrspaltige Layouts, Textfelder, Bilder sowie exakte Schriftarten oder Abstände bleiben nicht erhalten - das Ergebnis ist ein lesbares, bearbeitbares Dokument, keine pixelgenaue Kopie.',
+            ],
+            [
+                'heading' => 'Warum kann ein gescanntes PDF nicht umgewandelt werden?',
+                'body' => 'Ein gescanntes PDF ist eigentlich ein Foto einer Seite, ohne darunterliegenden auswählbaren Text, den der Browser lesen könnte. Die Umwandlung würde zuerst OCR (optische Zeichenerkennung) erfordern, um die Buchstaben zu erkennen - das macht dieses Tool nicht; wenn du den Text in deinem PDF-Reader auswählen und kopieren kannst, sollte die Umwandlung normal funktionieren.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Sieht die Formatierung genau wie im Original-PDF aus?', 'a' => 'Nicht genau. Text, einfache Überschriften und Zeilenumbrüche bleiben erhalten, aber Tabellen, Spalten, Bilder sowie exakte Schriftarten oder Abstände nicht. Ziel ist bearbeitbarer Text, keine pixelgenaue Kopie.'],
+            ['q' => 'Kann ich ein gescanntes PDF umwandeln?', 'a' => 'Nur, wenn es bereits auswählbaren Text enthält. Eine gescannte Seite ohne Textebene hat nichts, was dieses Tool extrahieren könnte, da es keine OCR durchführt.'],
+            ['q' => 'Wird mein PDF irgendwohin hochgeladen?', 'a' => 'Nein. Die gesamte Umwandlung läuft in deinem Browser mit JavaScript, und die Datei verlässt niemals dein Gerät.'],
+            ['q' => 'Welche Datei bekomme ich?', 'a' => 'Eine normale .docx-Datei, die sich in Microsoft Word, Google Docs, LibreOffice Writer und den meisten anderen Textverarbeitungen öffnen lässt.'],
+        ],
+    ],
+
+    'word-to-pdf' => [
+        'name' => 'Word zu PDF',
+        'title' => 'Word-zu-PDF-Konverter - Kostenlos und Privat',
+        'description' => 'Konvertiere Word (.docx) online kostenlos zu PDF. Überschriften, Absätze, Listen, Fett-/Kursivtext und Bilder bleiben erhalten - direkt im Browser.',
+        'h1' => 'Word-zu-PDF-Konverter',
+        'tagline' => 'Verwandle ein Word-Dokument in ein PDF, privat in deinem Browser.',
+        'keywords' => [
+            'word zu pdf',
+            'word in pdf umwandeln',
+            'docx zu pdf',
+            'word zu pdf konverter',
+            'word zu pdf kostenlos',
+        ],
+        'intro' => 'Word zu PDF verwandelt eine bearbeitbare .docx-Datei in ein festes PDF, das auf jedem Gerät gleich aussieht und nicht leicht bearbeitet werden kann. Dieses Tool liest dein Word-Dokument und baut seine Überschriften, Absätze, Listen, Fett- oder Kursivtext und Bilder als neues PDF nach - alles in deinem Browser: Das Dokument wird nirgendwohin hochgeladen.',
+        'steps' => [
+            'Wähle die Word-Datei (.docx) aus oder lege sie ab.',
+            'Wähle die Seitengröße A4 oder Letter.',
+            'Klicke auf In PDF umwandeln und lade das Ergebnis herunter.',
+        ],
+        'features' => [
+            'Behält Überschriften, Absätze und Zeilenumbrüche bei',
+            'Behält Aufzählungen und nummerierte Listen bei',
+            'Behält Fett- und Kursivtext bei',
+            'Behält Bilder aus dem Dokument bei',
+            'Privat: dein Dokument wird nie hochgeladen',
+        ],
+        'content' => [
+            [
+                'heading' => 'Was erhalten bleibt, und was nicht',
+                'body' => 'Überschriften, Absätze, Zeilenumbrüche, Aufzählungen und nummerierte Listen, Fett- und Kursivtext sowie die meisten Bilder werden im PDF nachgebaut. Tabellen, mehrspaltige Layouts, Textfelder, Kopf- und Fußzeilen, nachverfolgte Änderungen sowie exakte Schriftarten oder die genaue Position des Original-Word-Dokuments bleiben nicht erhalten - das Ergebnis behält Inhalt und Lesereihenfolge, statt die Seite pixelgenau nachzubilden.',
+            ],
+            [
+                'heading' => 'Nur .docx-Dateien werden unterstützt',
+                'body' => 'Dieses Tool liest das moderne Word-Format (.docx). Das ältere .doc-Format von Word 2003 und früher wird nicht unterstützt; öffne die Datei in Word und nutze „Speichern als“, um zuerst eine .docx-Kopie zu erstellen.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Sieht mein Word-Dokument als PDF genau gleich aus?', 'a' => 'Überschriften, Absätze, Listen, Fett-/Kursivtext und Bilder bleiben erhalten, aber Tabellen, Spalten, Textfelder sowie exakte Schriftarten oder Abstände nicht. Bei den meisten Briefen, Berichten und Artikeln liest sich das Ergebnis sehr nah am Original.'],
+            ['q' => 'Funktioniert das mit .doc-Dateien?', 'a' => 'Nein, nur mit dem modernen .docx-Format. Ältere .doc-Dateien müssen zuerst in Word als .docx gespeichert werden.'],
+            ['q' => 'Wird mein Dokument irgendwohin hochgeladen?', 'a' => 'Nein. Die gesamte Umwandlung läuft in deinem Browser mit JavaScript, und die Datei verlässt niemals dein Gerät.'],
+            ['q' => 'Welche Seitengröße verwendet das PDF?', 'a' => 'Wähle vor der Umwandlung A4 oder Letter; der Inhalt wird an die gewählte Seite angepasst.'],
+        ],
+    ],
+
+    'excel-to-pdf' => [
+        'name' => 'Excel zu PDF',
+        'title' => 'Excel-zu-PDF-Konverter - Kostenlos und Privat',
+        'description' => 'Konvertiere Excel (.xlsx, .xls) oder CSV online kostenlos zu PDF. Jedes Tabellenblatt wird eine klare, paginierte Tabelle - direkt im Browser.',
+        'h1' => 'Excel-zu-PDF-Konverter',
+        'tagline' => 'Verwandle eine Tabelle in eine klare, paginierte PDF-Tabelle.',
+        'keywords' => [
+            'excel zu pdf',
+            'excel in pdf umwandeln',
+            'xlsx zu pdf',
+            'tabelle zu pdf',
+            'csv zu pdf',
+        ],
+        'intro' => 'Ein Excel-zu-PDF-Konverter verwandelt eine Tabelle in ein festes Dokument, das auf jedem Gerät gleich aussieht, ohne dass Excel installiert sein muss. Dieses Tool liest deine .xlsx-, .xls- oder .csv-Datei und zeichnet jedes Tabellenblatt als Tabelle mit Rahmen, aufgeteilt auf so viele Seiten wie nötig, wobei die Kopfzeile auf jeder Seite wiederholt wird. Die Datei wird vollständig in deinem Browser gelesen und niemals hochgeladen.',
+        'steps' => [
+            'Wähle deine Excel-Datei (.xlsx, .xls) oder CSV-Datei aus oder lege sie ab.',
+            'Wähle Seitengröße und Ausrichtung (Hoch- oder Querformat).',
+            'Klicke auf In PDF umwandeln und lade das Ergebnis herunter.',
+        ],
+        'features' => [
+            'Konvertiert .xlsx-, .xls- und .csv-Dateien',
+            'Jedes Tabellenblatt wird zur eigenen Tabelle, mit auf jeder Seite wiederholter Kopfzeile',
+            'Hoch- oder Querformat, A4 oder Letter',
+            'Spalten passen sich automatisch an den Inhalt an',
+            'Privat: deine Tabelle wird nie hochgeladen',
+        ],
+        'content' => [
+            [
+                'heading' => 'Wie eine breite Tabelle im PDF aussieht',
+                'body' => 'Spalten werden an ihren Inhalt angepasst und, wo möglich, verkleinert, damit sie in die Seitenbreite passen. Hat ein Blatt immer noch zu viele Spalten, wird Text, der nicht in seine Spalte passt, mit Auslassungspunkten („…“) gekürzt, statt die nächste Spalte zu überlappen. Das Querformat gibt breiten Tabellen meist mehr Platz.',
+            ],
+            [
+                'heading' => 'Was nicht erhalten bleibt',
+                'body' => 'Dieses Tool konzentriert sich darauf, die Daten klar auf der Seite darzustellen: Zellhintergrundfarben, eigene Schriftarten, Formeln (stattdessen wird der zuletzt berechnete Wert verwendet), Diagramme und verbundene Zellen bleiben nicht erhalten.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Kann ich auch eine CSV-Datei konvertieren?', 'a' => 'Ja. CSV-Dateien funktionieren genauso wie .xlsx und .xls: Wähle die Datei aus, und sie wird zu einer einseitigen PDF-Tabelle.'],
+            ['q' => 'Was passiert mit einem Tabellenblatt mit vielen Spalten?', 'a' => 'Die Spaltenbreite wird verkleinert, um auf die Seite zu passen, und das Querformat gibt breiten Tabellen mehr Platz. Text, der immer noch nicht in seine Spalte passt, wird mit „…“ gekürzt.'],
+            ['q' => 'Bleiben Formeln oder Diagramme erhalten?', 'a' => 'Formeln zeigen ihren zuletzt berechneten Wert als Text an, nicht die Formel selbst, und Diagramme werden nicht ins PDF übernommen.'],
+            ['q' => 'Wird meine Tabelle irgendwohin hochgeladen?', 'a' => 'Nein. Die gesamte Umwandlung läuft in deinem Browser mit JavaScript, und die Datei verlässt niemals dein Gerät.'],
+        ],
+    ],
+
+    'pdf-to-excel' => [
+        'name' => 'PDF zu Excel',
+        'title' => 'PDF-zu-Excel-Konverter - Kostenlos und Privat',
+        'description' => 'Konvertiere PDF online kostenlos zu Excel. Text wird bestmöglich in Zeilen und Spalten gruppiert, in einer .xlsx-Datei direkt in deinem Browser.',
+        'h1' => 'PDF-zu-Excel-Konverter',
+        'tagline' => 'Verwandle die Tabellen eines PDFs bestmöglich in eine Tabelle.',
+        'keywords' => [
+            'pdf zu excel',
+            'pdf in excel umwandeln',
+            'pdf zu xlsx',
+            'pdf zu tabelle',
+            'pdf tabelle zu excel',
+        ],
+        'intro' => 'Ein PDF hat keine echten Zeilen oder Spalten, nur auf einer Seite platzierten Text - die Umwandlung in eine Tabelle ist also immer eine Schätzung. Dieses Tool gruppiert Text, der dieselbe vertikale Position teilt, zu einer Zeile, ordnet dann ähnliche horizontale Startpositionen über die Seite hinweg zu Spalten und speichert das Ergebnis als .xlsx-Datei mit einem Tabellenblatt pro Seite. Das funktioniert am besten bei PDFs, die bereits wie eine Tabelle aussehen, etwa Rechnungen oder exportierte Berichte, und wird vollständig in deinem Browser gelesen.',
+        'steps' => [
+            'Wähle das PDF aus oder lege es ab.',
+            'Klicke auf In Excel umwandeln.',
+            'Lade die .xlsx-Datei herunter und öffne sie in Excel, Google Sheets oder LibreOffice Calc.',
+        ],
+        'features' => [
+            'Gruppiert Text automatisch in Zeilen und Spalten',
+            'Ein Tabellenblatt pro PDF-Seite',
+            'Funktioniert gut bei Rechnungen und bereits tabellenartigen exportierten Berichten',
+            'Privat: das PDF wird nie hochgeladen',
+            'Keine Anmeldung, kein Wasserzeichen',
+        ],
+        'content' => [
+            [
+                'heading' => 'Wann es gut funktioniert, und wann nicht',
+                'body' => 'PDFs, die bereits wie eine Tabelle aussehen (Rechnungen, Kontoauszüge, exportierte Berichte mit klaren Spalten), werden gut umgewandelt, da sich ihr Text sauber in Zeilen und Spalten einordnet. Fließtext, etwa aus Briefen oder Artikeln, hat keine echten Spalten zu erkennen und landet daher oft in einer einzigen Spalte. Verbundene Zellen, mehrzeilige Zellen und gescannte (reine Bild-)Seiten werden nicht unterstützt.',
+            ],
+            [
+                'heading' => 'Warum ein gescanntes PDF nicht umgewandelt wird',
+                'body' => 'Ein gescanntes PDF ist ein Foto einer Seite ohne darunterliegenden auswählbaren Text, also gibt es nichts, was dieses Tool lesen könnte. Die Umwandlung eines Scans erfordert zuerst OCR (optische Zeichenerkennung), das macht dieses Tool nicht; wenn du den Text in deinem PDF-Reader auswählen und kopieren kannst, sollte die Umwandlung funktionieren.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Werden die Spalten perfekt ausgerichtet sein?', 'a' => 'Bei PDFs, die bereits wie eine Tabelle aussehen, meist ja. Bei Fließtext gibt es keine echten Spalten zu erkennen, daher sind die Ergebnisse viel weniger zuverlässig - das ist immer eine bestmögliche Extraktion, kein exakter Tabellen-Reader.'],
+            ['q' => 'Kann ich ein gescanntes PDF umwandeln?', 'a' => 'Nur, wenn es bereits auswählbaren Text enthält. Eine gescannte Seite ohne Textebene hat nichts, was dieses Tool extrahieren könnte, da es keine OCR durchführt.'],
+            ['q' => 'Wie werden mehrere Seiten gehandhabt?', 'a' => 'Jede Seite des PDFs wird zu einem eigenen Tabellenblatt in der Arbeitsmappe, benannt „Page 1“, „Page 2“ und so weiter.'],
+            ['q' => 'Wird mein PDF irgendwohin hochgeladen?', 'a' => 'Nein. Die gesamte Umwandlung läuft in deinem Browser mit JavaScript, und die Datei verlässt niemals dein Gerät.'],
+        ],
+    ],
+
+    'html-to-pdf' => [
+        'name' => 'HTML zu PDF',
+        'title' => 'HTML-zu-PDF-Konverter - Kostenlos und Privat',
+        'description' => 'Konvertiere HTML oder einfachen Text online kostenlos zu PDF. Code oder Text einfügen und ein PDF mit Überschriften, Listen und Formatierung herunterladen.',
+        'h1' => 'HTML-zu-PDF-Konverter',
+        'tagline' => 'Füge HTML oder einfachen Text ein und lade ihn als PDF herunter.',
+        'keywords' => [
+            'html zu pdf',
+            'html in pdf umwandeln',
+            'html zu pdf konverter',
+            'text zu pdf',
+            'html zu pdf kostenlos',
+        ],
+        'intro' => 'Dieser HTML-zu-PDF-Konverter verwandelt eingefügtes HTML, oder einfach nur Text, in ein herunterladbares PDF. Er versteht gängige Tags wie Überschriften, Absätze, Zeilenumbrüche, Listen, Fett- und Kursivtext sowie Bilder und ordnet sie auf A4- oder Letter-Seiten an. Er ruft nie eine andere Website ab - nur das von dir eingefügte HTML oder der Text wird verwendet, und das PDF entsteht vollständig in deinem Browser.',
+        'steps' => [
+            'Füge HTML oder einfachen Text in das Feld ein.',
+            'Wähle die Seitengröße A4 oder Letter.',
+            'Klicke auf In PDF umwandeln und lade das Ergebnis herunter.',
+        ],
+        'features' => [
+            'Unterstützt Überschriften, Absätze und Zeilenumbrüche',
+            'Unterstützt Aufzählungen und nummerierte Listen',
+            'Unterstützt Fett- und Kursivtext',
+            'Unterstützt Bilder als data:-URLs',
+            'Ruft nie andere Websites ab - nur dein eingefügter Inhalt wird verwendet',
+        ],
+        'content' => [
+            [
+                'heading' => 'Welches HTML unterstützt wird',
+                'body' => 'Überschriften (h1-h6), Absätze, Zeilenumbrüche, Aufzählungen und nummerierte Listen, Fett-/Strong- und Kursiv-/Em-Text sowie Bilder als data:-URLs werden im PDF angeordnet. Tags, die dieses Tool nicht speziell versteht, wie Tabellen, Links oder eigene Formatierungen, werden ignoriert - ihr Text bleibt aber erhalten, damit nichts stillschweigend verloren geht.',
+            ],
+            [
+                'heading' => 'Warum kann es keine Bilder oder Seiten von einer URL abrufen?',
+                'body' => 'Dieses Tool stellt nie Netzwerkanfragen in deinem Namen, daher wird ein <img src="https://...">-Tag, das auf eine andere Website zeigt, nicht angezeigt - nur bereits als data:-URL eingebettete Bilder werden gezeigt. Das hält das Tool privat und verhindert, dass ohne deine direkte Aktion eine Website kontaktiert wird.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Kann ich auch einfachen Text konvertieren, nicht nur HTML?', 'a' => 'Ja. Text ohne jegliche Tags wird als ein einzelner Absatz behandelt, du kannst also einfachen Text direkt einfügen.'],
+            ['q' => 'Bleiben meine CSS-Stile und Farben erhalten?', 'a' => 'Nein. Dieses Tool konzentriert sich auf Struktur und lesbaren Inhalt - Überschriften, Absätze, Listen, Fett-/Kursivtext und Bilder - statt auf exakte Farben, Schriftarten oder CSS-Layout.'],
+            ['q' => 'Kann es eine Webseite von einer URL umwandeln?', 'a' => 'Nein, nur HTML oder Text, den du selbst einfügst. Es ruft nie andere Websites ab, was alles privat und vorhersehbar hält.'],
+            ['q' => 'Wird mein eingefügter Inhalt irgendwohin hochgeladen?', 'a' => 'Nein. Die gesamte Umwandlung läuft in deinem Browser mit JavaScript, und nichts, was du einfügst, verlässt jemals dein Gerät.'],
+        ],
+    ],
 ];

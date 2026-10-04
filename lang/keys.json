@@ -24,6 +24,12 @@
     ]
   },
   {
+    "key": "\"{name}\" could not be read. It may be damaged or not a real Word (.docx) document.",
+    "files": [
+      "resources/js/lib/wordToPdf.js"
+    ]
+  },
+  {
     "key": "\"{name}\" does not have a password. There is nothing to unlock.",
     "files": [
       "resources/js/tools/UnlockPdf.jsx"
@@ -45,6 +51,12 @@
     "key": "\"{name}\" is larger than 200 MB.",
     "files": [
       "resources/js/lib/pdf.js"
+    ]
+  },
+  {
+    "key": "\"{name}\" is larger than 50 MB.",
+    "files": [
+      "resources/js/lib/wordToPdf.js"
     ]
   },
   {
@@ -202,7 +214,9 @@
       "resources/js/tools/JpgToPdf.jsx",
       "resources/js/tools/MergePdf.jsx",
       "resources/js/tools/OrganizePdf.jsx",
+      "resources/js/tools/PdfToExcel.jsx",
       "resources/js/tools/PdfToImage.jsx",
+      "resources/js/tools/PdfToWord.jsx",
       "resources/js/tools/ProtectPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
       "resources/js/tools/SplitPdf.jsx",
@@ -1096,6 +1110,13 @@
     ]
   },
   {
+    "key": "Choose another file",
+    "files": [
+      "resources/js/tools/ExcelToPdf.jsx",
+      "resources/js/tools/WordToPdf.jsx"
+    ]
+  },
+  {
     "key": "Choose another image",
     "files": [
       "resources/js/tools/ImageResizer.jsx"
@@ -1107,7 +1128,9 @@
       "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/DeletePdfPages.jsx",
       "resources/js/tools/OrganizePdf.jsx",
+      "resources/js/tools/PdfToExcel.jsx",
       "resources/js/tools/PdfToImage.jsx",
+      "resources/js/tools/PdfToWord.jsx",
       "resources/js/tools/ProtectPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
       "resources/js/tools/SplitPdf.jsx",
@@ -1317,6 +1340,12 @@
     ]
   },
   {
+    "key": "continued",
+    "files": [
+      "resources/js/lib/excelToPdf.js"
+    ]
+  },
+  {
     "key": "Conversion failed: {message}",
     "files": [
       "resources/js/tools/PdfToImage.jsx"
@@ -1341,9 +1370,24 @@
     ]
   },
   {
+    "key": "Convert to Excel",
+    "files": [
+      "resources/js/tools/PdfToExcel.jsx"
+    ]
+  },
+  {
     "key": "Convert to PDF",
     "files": [
-      "resources/js/tools/JpgToPdf.jsx"
+      "resources/js/tools/ExcelToPdf.jsx",
+      "resources/js/tools/HtmlToPdf.jsx",
+      "resources/js/tools/JpgToPdf.jsx",
+      "resources/js/tools/WordToPdf.jsx"
+    ]
+  },
+  {
+    "key": "Convert to Word",
+    "files": [
+      "resources/js/tools/PdfToWord.jsx"
     ]
   },
   {
@@ -1361,8 +1405,13 @@
   {
     "key": "Converting…",
     "files": [
+      "resources/js/tools/ExcelToPdf.jsx",
+      "resources/js/tools/HtmlToPdf.jsx",
       "resources/js/tools/ImageConverter.jsx",
-      "resources/js/tools/JpgToPdf.jsx"
+      "resources/js/tools/JpgToPdf.jsx",
+      "resources/js/tools/PdfToExcel.jsx",
+      "resources/js/tools/PdfToWord.jsx",
+      "resources/js/tools/WordToPdf.jsx"
     ]
   },
   {
@@ -1448,6 +1497,12 @@
     "files": [
       "resources/js/tools/ImageCompressor.jsx",
       "resources/js/tools/ImageConverter.jsx"
+    ]
+  },
+  {
+    "key": "Could not load the fonts needed to build this PDF. Check your connection and try again.",
+    "files": [
+      "resources/js/lib/pdfFonts.js"
     ]
   },
   {
@@ -1727,6 +1782,26 @@
     ]
   },
   {
+    "key": "Done! Your PDF is ready.",
+    "files": [
+      "resources/js/tools/ExcelToPdf.jsx",
+      "resources/js/tools/HtmlToPdf.jsx",
+      "resources/js/tools/WordToPdf.jsx"
+    ]
+  },
+  {
+    "key": "Done! Your spreadsheet is ready.",
+    "files": [
+      "resources/js/tools/PdfToExcel.jsx"
+    ]
+  },
+  {
+    "key": "Done! Your Word document is ready.",
+    "files": [
+      "resources/js/tools/PdfToWord.jsx"
+    ]
+  },
+  {
     "key": "Download",
     "files": [
       "resources/js/tools/ImageCompressor.jsx",
@@ -1773,10 +1848,13 @@
     "files": [
       "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/DeletePdfPages.jsx",
+      "resources/js/tools/ExcelToPdf.jsx",
+      "resources/js/tools/HtmlToPdf.jsx",
       "resources/js/tools/JpgToPdf.jsx",
       "resources/js/tools/OrganizePdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
-      "resources/js/tools/SplitPdf.jsx"
+      "resources/js/tools/SplitPdf.jsx",
+      "resources/js/tools/WordToPdf.jsx"
     ]
   },
   {
@@ -1793,6 +1871,12 @@
     ]
   },
   {
+    "key": "Download spreadsheet",
+    "files": [
+      "resources/js/tools/PdfToExcel.jsx"
+    ]
+  },
+  {
     "key": "Download SVG",
     "files": [
       "resources/js/tools/QrCodeGenerator.jsx"
@@ -1802,6 +1886,12 @@
     "key": "Download unlocked PDF",
     "files": [
       "resources/js/tools/UnlockPdf.jsx"
+    ]
+  },
+  {
+    "key": "Download Word document",
+    "files": [
+      "resources/js/tools/PdfToWord.jsx"
     ]
   },
   {
@@ -1835,10 +1925,24 @@
       "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/DeletePdfPages.jsx",
       "resources/js/tools/OrganizePdf.jsx",
+      "resources/js/tools/PdfToExcel.jsx",
       "resources/js/tools/PdfToImage.jsx",
+      "resources/js/tools/PdfToWord.jsx",
       "resources/js/tools/ProtectPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
       "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
+    "key": "Drop a spreadsheet here or click to choose",
+    "files": [
+      "resources/js/tools/ExcelToPdf.jsx"
+    ]
+  },
+  {
+    "key": "Drop a Word (.docx) file here or click to choose",
+    "files": [
+      "resources/js/tools/WordToPdf.jsx"
     ]
   },
   {
@@ -1889,6 +1993,18 @@
     "key": "Each image is made as good as possible while staying under this size.",
     "files": [
       "resources/js/tools/ImageCompressor.jsx"
+    ]
+  },
+  {
+    "key": "Each page becomes a sheet, with text grouped into rows and columns as a best effort. This works well for already-tabular PDFs such as invoices or exported reports, and poorly for free-flowing text, merged cells or scanned pages.",
+    "files": [
+      "resources/js/tools/PdfToExcel.jsx"
+    ]
+  },
+  {
+    "key": "Each sheet becomes a table spread across one or more pages, with the header row repeated. Cell colours, formulas, charts and merged cells are not preserved, and text too wide for its column is shortened with \"…\".",
+    "files": [
+      "resources/js/tools/ExcelToPdf.jsx"
     ]
   },
   {
@@ -2482,6 +2598,18 @@
     ]
   },
   {
+    "key": "Headings, paragraphs, line breaks, lists, bold/italic text and images (as data: URLs) are supported. Tables, columns, custom fonts and other styling are not preserved. Nothing is uploaded or fetched - the PDF is built entirely in your browser.",
+    "files": [
+      "resources/js/tools/HtmlToPdf.jsx"
+    ]
+  },
+  {
+    "key": "Headings, paragraphs, lists, bold/italic text and images are kept. Tables, columns, text boxes, tracked changes and exact fonts or positioning are not preserved.",
+    "files": [
+      "resources/js/tools/WordToPdf.jsx"
+    ]
+  },
+  {
     "key": "heads",
     "files": [
       "resources/js/tools/CoinFlip.jsx"
@@ -2602,6 +2730,12 @@
       "app/Support/Seo.php",
       "resources/js/pages/ToolPage.jsx",
       "resources/views/pages/tool.blade.php"
+    ]
+  },
+  {
+    "key": "HTML or plain text",
+    "files": [
+      "resources/js/tools/HtmlToPdf.jsx"
     ]
   },
   {
@@ -2813,6 +2947,7 @@
   {
     "key": "Landscape",
     "files": [
+      "resources/js/tools/ExcelToPdf.jsx",
       "resources/js/tools/JpgToPdf.jsx"
     ]
   },
@@ -2907,7 +3042,10 @@
   {
     "key": "Letter",
     "files": [
-      "resources/js/tools/JpgToPdf.jsx"
+      "resources/js/tools/ExcelToPdf.jsx",
+      "resources/js/tools/HtmlToPdf.jsx",
+      "resources/js/tools/JpgToPdf.jsx",
+      "resources/js/tools/WordToPdf.jsx"
     ]
   },
   {
@@ -3360,6 +3498,13 @@
     ]
   },
   {
+    "key": "No text was found in this PDF. Scanned pages without selectable text cannot be converted.",
+    "files": [
+      "resources/js/lib/pdfToExcel.js",
+      "resources/js/lib/pdfToWord.js"
+    ]
+  },
+  {
     "key": "No tools match “{query}”. Try another word.",
     "files": [
       "resources/js/components/CommandPalette.jsx"
@@ -3433,6 +3578,18 @@
     ]
   },
   {
+    "key": "One .docx file · max 50 MB",
+    "files": [
+      "resources/js/tools/WordToPdf.jsx"
+    ]
+  },
+  {
+    "key": "One .xlsx, .xls or .csv file · max 50 MB",
+    "files": [
+      "resources/js/tools/ExcelToPdf.jsx"
+    ]
+  },
+  {
     "key": "One click to confirm your subscription.",
     "files": [
       "resources/views/emails/confirm.blade.php"
@@ -3444,7 +3601,9 @@
       "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/DeletePdfPages.jsx",
       "resources/js/tools/OrganizePdf.jsx",
+      "resources/js/tools/PdfToExcel.jsx",
       "resources/js/tools/PdfToImage.jsx",
+      "resources/js/tools/PdfToWord.jsx",
       "resources/js/tools/ProtectPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
       "resources/js/tools/SplitPdf.jsx",
@@ -3484,6 +3643,7 @@
   {
     "key": "Orientation",
     "files": [
+      "resources/js/tools/ExcelToPdf.jsx",
       "resources/js/tools/JpgToPdf.jsx"
     ]
   },
@@ -3557,6 +3717,7 @@
   {
     "key": "Page {number}",
     "files": [
+      "resources/js/lib/pdfToExcel.js",
       "resources/js/tools/OrganizePdf.jsx"
     ]
   },
@@ -3588,7 +3749,10 @@
   {
     "key": "Page size",
     "files": [
-      "resources/js/tools/JpgToPdf.jsx"
+      "resources/js/tools/ExcelToPdf.jsx",
+      "resources/js/tools/HtmlToPdf.jsx",
+      "resources/js/tools/JpgToPdf.jsx",
+      "resources/js/tools/WordToPdf.jsx"
     ]
   },
   {
@@ -3661,6 +3825,12 @@
     "key": "Paste at least {min} words of English text…",
     "files": [
       "resources/js/tools/AiDetector.jsx"
+    ]
+  },
+  {
+    "key": "Paste HTML (<h1>, <p>, <ul>, <b>, <img>...) or just plain text here.",
+    "files": [
+      "resources/js/tools/HtmlToPdf.jsx"
     ]
   },
   {
@@ -3773,11 +3943,25 @@
       "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/DeletePdfPages.jsx",
       "resources/js/tools/OrganizePdf.jsx",
+      "resources/js/tools/PdfToExcel.jsx",
       "resources/js/tools/PdfToImage.jsx",
+      "resources/js/tools/PdfToWord.jsx",
       "resources/js/tools/ProtectPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
       "resources/js/tools/SplitPdf.jsx",
       "resources/js/tools/UnlockPdf.jsx"
+    ]
+  },
+  {
+    "key": "Please choose a Word .docx file. Older .doc files are not supported.",
+    "files": [
+      "resources/js/tools/WordToPdf.jsx"
+    ]
+  },
+  {
+    "key": "Please choose an Excel (.xlsx, .xls) or CSV file.",
+    "files": [
+      "resources/js/tools/ExcelToPdf.jsx"
     ]
   },
   {
@@ -3869,6 +4053,7 @@
   {
     "key": "Portrait",
     "files": [
+      "resources/js/tools/ExcelToPdf.jsx",
       "resources/js/tools/JpgToPdf.jsx"
     ]
   },
@@ -4090,7 +4275,9 @@
       "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/DeletePdfPages.jsx",
       "resources/js/tools/OrganizePdf.jsx",
+      "resources/js/tools/PdfToExcel.jsx",
       "resources/js/tools/PdfToImage.jsx",
+      "resources/js/tools/PdfToWord.jsx",
       "resources/js/tools/ProtectPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
       "resources/js/tools/SplitPdf.jsx",
@@ -4998,6 +5185,12 @@
     ]
   },
   {
+    "key": "Text, paragraphs and basic headings are extracted into an editable Word document. Complex layouts, tables, columns and images are not preserved, and scanned (image-only) pages have no text to extract.",
+    "files": [
+      "resources/js/tools/PdfToWord.jsx"
+    ]
+  },
+  {
     "key": "Thanks for signing up! Click the button below to confirm your email address. We will then send you one short email whenever we add a new free tool.",
     "files": [
       "resources/views/emails/confirm.blade.php"
@@ -5184,6 +5377,12 @@
     ]
   },
   {
+    "key": "There is nothing to convert. Add some text or HTML first.",
+    "files": [
+      "resources/js/lib/htmlToPdf.js"
+    ]
+  },
+  {
     "key": "These formulas were designed for English text; scores for other languages are only a rough guide.",
     "files": [
       "resources/js/tools/ReadabilityChecker.jsx"
@@ -5199,6 +5398,12 @@
     "key": "This domain’s extension does not have an RDAP service yet.",
     "files": [
       "resources/js/tools/DomainAgeChecker.jsx"
+    ]
+  },
+  {
+    "key": "This file could not be read. It may be damaged or not a real spreadsheet.",
+    "files": [
+      "resources/js/lib/excelToPdf.js"
     ]
   },
   {
@@ -5254,6 +5459,12 @@
     "key": "This Privacy Policy explains how {name} (“we”, “us”) handles information when you use {url} (the “Site”). Please also read the section about advertising cookies below.",
     "files": [
       "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "This spreadsheet has no data to convert.",
+    "files": [
+      "resources/js/lib/excelToPdf.js"
     ]
   },
   {

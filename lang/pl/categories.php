@@ -38,18 +38,21 @@ return [
     'pdf-tools' => [
         'name' => 'Narzędzia PDF',
         'short' => 'PDF',
-        'subtitle' => 'Łącz, dziel i konwertuj pliki PDF',
-        'title' => 'Darmowe narzędzia PDF - łączenie i dzielenie plików PDF',
-        'description' => 'Łącz i dziel pliki PDF online za darmo. Bez wysyłania plików, bez znaków wodnych i bez rejestracji. Pliki PDF są przetwarzane prywatnie w Twojej przeglądarce.',
-        'intro' => 'Połącz kilka plików PDF w jeden albo wyciągnij tylko potrzebne strony. Pliki są przetwarzane na Twoim urządzeniu, bez znaku wodnego i bez sztucznych ograniczeń rozmiaru.',
+        'subtitle' => 'Łącz, konwertuj, kompresuj i chroń pliki PDF',
+        'title' => 'Darmowe narzędzia PDF - łączenie, konwersja, edycja',
+        'description' => 'Łącz, dziel, konwertuj, kompresuj i chroń pliki PDF online za darmo. Bez wysyłania plików, bez znaków wodnych, bez rejestracji - wszystko w przeglądarce.',
+        'intro' => 'Pełny zestaw narzędzi PDF, który nigdy nie wysyła Twoich plików: łącz albo dziel dokumenty, obracaj, zmieniaj kolejność i usuwaj strony, zmieniaj PDF-y w JPG, PNG, Worda albo Excela (i odwrotnie), konwertuj HTML albo zwykły tekst do PDF, zmniejszaj duże pliki oraz dodawaj albo usuwaj hasło otwierania. Każde narzędzie przetwarza Twój dokument na Twoim własnym urządzeniu, bez znaku wodnego, bez limitu stron i bez sztucznych ograniczeń rozmiaru.',
         'content' => [
-            ['heading' => 'Łączyć czy dzielić: którego narzędzia PDF potrzebuję?', 'body' => 'Użyj „Połącz PDF”, aby zebrać kilka plików w jeden dokument w wybranej kolejności, na przykład CV, list motywacyjny i certyfikaty do podania o pracę. Użyj „Podziel PDF”, aby zrobić odwrotnie: wyodrębnić wybrane strony do nowego pliku, podzielić dokument na zakresy albo zapisać każdą stronę jako osobny PDF.'],
-            ['heading' => 'Czy edytowanie PDF online jest bezpieczne?', 'body' => 'Na większości witryn z PDF Twój dokument jest wysyłany na serwer. Tutaj obydwa narzędzia działają w Twojej przeglądarce, więc umowy, wyciągi bankowe i inne poufne pliki nigdy nie opuszczają Twojego urządzenia, a wynik nie ma znaku wodnego ani limitu stron.'],
+            ['heading' => 'Którego narzędzia PDF potrzebuję?', 'body' => 'Użyj „Połącz PDF”, aby zebrać kilka plików w jeden dokument w wybranej kolejności, na przykład CV, list motywacyjny i certyfikaty do podania o pracę, oraz „Podziel PDF”, aby zrobić odwrotnie: wyodrębnić strony do nowego pliku, podzielić dokument na zakresy albo zapisać każdą stronę jako osobny PDF. „Obróć PDF” naprawia przekrzywione strony, „Usuń strony PDF” usuwa niepotrzebne, a „Organizuj PDF” zmienia kolejność całego dokumentu przez przeciąganie miniatur stron. „Kompresuj PDF” zmniejsza plik za duży do wysłania e-mailem, a „Zabezpiecz PDF” / „Odblokuj PDF” dodają albo usuwają hasło otwierania.'],
+            ['heading' => 'Konwersja PDF na inne formaty i z powrotem', 'body' => '„PDF do Worda” i „PDF do Excela” wyodrębniają tekst (a w Excelu także wiersze i kolumny) z PDF-a do edytowalnego pliku .docx albo .xlsx, a „Word do PDF” i „Excel do PDF” robią odwrotnie: zamieniają dokument Word albo arkusz kalkulacyjny w stały PDF, który wygląda tak samo wszędzie. „PDF do JPG” i „PDF do PNG” zapisują strony jako obrazy, a „HTML do PDF” zamienia wklejony HTML albo zwykły tekst w PDF do pobrania. Te konwersje są orientacyjne: tekst i podstawowa struktura są dobrze zachowywane, ale dokładny układ, tabele, wykresy i czcionki nie zawsze są zachowywane - strona każdego narzędzia wyjaśnia, czego się spodziewać.'],
+            ['heading' => 'Czy edytowanie PDF online jest bezpieczne?', 'body' => 'Na większości witryn z PDF Twój dokument jest wysyłany na serwer, zanim coś z nim się stanie. Tutaj każde narzędzie działa w Twojej przeglądarce za pomocą JavaScript, więc umowy, wyciągi bankowe, dokumenty Word i arkusze kalkulacyjne nigdy nie opuszczają Twojego urządzenia, a wyniki nie mają znaku wodnego ani limitu stron.'],
         ],
         'faqs' => [
             ['q' => 'Jak połączyć pliki PDF w jeden?', 'a' => 'Otwórz „Połącz PDF”, dodaj dwa lub więcej plików, ustaw je w odpowiedniej kolejności strzałkami i kliknij „Połącz PDF”. Połączony plik od razu się pobiera.'],
             ['q' => 'Jak wyodrębnić strony z PDF?', 'a' => 'Otwórz „Podziel PDF”, wybierz „Wyodrębnij strony”, wpisz potrzebne strony, na przykład 1-3, 5, i kliknij „Podziel PDF”.'],
-            ['q' => 'Czy mogę połączyć pliki PDF chronione hasłem?', 'a' => 'Nie bezpośrednio. Otwórz plik przy użyciu hasła, zapisz lub wydrukuj niechronioną kopię, a potem połącz tę kopię.'],
+            ['q' => 'Czy mogę przekonwertować PDF na edytowalny plik Word albo Excel?', 'a' => 'Tak: „PDF do Worda” i „PDF do Excela” wyodrębniają tekst (a w Excelu także wiersze i kolumny) w sposób orientacyjny. Złożone układy, tabele, kolumny i obrazy nie zawsze są zachowywane, co wyjaśnia strona każdego narzędzia.'],
+            ['q' => 'Czy mogę połączyć pliki PDF chronione hasłem?', 'a' => 'Nie bezpośrednio. Otwórz plik przy użyciu hasła, zapisz lub wydrukuj niechronioną kopię, a potem połącz tę kopię. Możesz też najpierw użyć „Odblokuj PDF”, jeśli znasz hasło.'],
+            ['q' => 'Czy moje pliki są wysyłane na serwer?', 'a' => 'Nie. Wszystkie narzędzia PDF na tej stronie przetwarzają Twoje pliki lokalnie w przeglądarce za pomocą JavaScript, więc nigdy nie są wysyłane ani przechowywane.'],
         ],
     ],
     'calculators' => [

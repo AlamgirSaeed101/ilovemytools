@@ -1,6 +1,9 @@
 import { expect, test } from '@playwright/test';
 import JSZip from 'jszip';
-import { checkPdfPassword, makeImage, makePdf, makePdfWithImage, mockQpdfCdn, openTool, pdfPageCount, pdfPageRotations, readDownload, trackErrors } from './helpers.js';
+import {
+    checkPdfPassword, extractPdfText, makeDocx, makeImage, makePdf, makePdfWithImage, makeTabularPdf, makeXlsx,
+    mockQpdfCdn, openTool, pdfPageCount, pdfPageRotations, readDocxText, readDownload, readXlsx, trackErrors,
+} from './helpers.js';
 
 let errors;
 test.beforeEach(({ page }) => {
@@ -492,6 +495,78 @@ test.describe('PDF tools', () => {
         await openTool(page, 'unlock-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'plain.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
         await expect(page.getByText('does not have a password')).toBeVisible();
+    });
+
+    test('HTML to PDF converts pasted HTML with headings, bold text and lists', async ({ page }) => {
+        await openTool(page, 'html-to-pdf');
+        await page.getByLabel('HTML or plain text').fill('<h1>Report Title</h1><p>Hello <b>World</b></p><ul><li>First item</li><li>Second item</li></ul>');
+        await page.getByRole('button', { name: 'Convert to PDF' }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(file.suggestedFilename()).toBe('document.pdf');
+        const text = await extractPdfText(page, await readDownload(file));
+        expect(text).toContain('Report Title');
+        expect(text).toContain('World');
+        expect(text).toContain('First item');
+        expect(text).toContain('Second item');
+    });
+
+    test('Word to PDF keeps headings and bold text from a real .docx file', async ({ page }) => {
+        await openTool(page, 'word-to-pdf');
+        const docx = await makeDocx({ heading: 'Report Title', plain: 'Hello ', bold: 'World' });
+        await page.getByTestId('file-input').setInputFiles({
+            name: 'report.docx',
+            mimeType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            buffer: docx,
+        });
+        await expect(page.getByText('report.docx', { exact: true })).toBeVisible();
+        await page.getByRole('button', { name: 'Convert to PDF' }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(file.suggestedFilename()).toBe('report.pdf');
+        const text = await extractPdfText(page, await readDownload(file));
+        expect(text).toContain('Report Title');
+        expect(text).toContain('World');
+    });
+
+    test('PDF to Word extracts text into a real, editable .docx file', async ({ page }) => {
+        await openTool(page, 'pdf-to-word');
+        await page.getByTestId('file-input').setInputFiles({ name: 'report.pdf', mimeType: 'application/pdf', buffer: await makePdf(1, 'Report') });
+        await expect(page.getByText('report.pdf', { exact: true })).toBeVisible();
+        await page.getByRole('button', { name: 'Convert to Word' }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download Word document' }).click()]);
+        expect(file.suggestedFilename()).toBe('report.docx');
+        const text = await readDocxText(await readDownload(file));
+        expect(text).toContain('Report page 1');
+    });
+
+    test('Excel to PDF turns a spreadsheet into a paginated PDF table', async ({ page }) => {
+        await openTool(page, 'excel-to-pdf');
+        const xlsx = makeXlsx([['Name', 'Age'], ['Alice', '30'], ['Bob', '25']]);
+        await page.getByTestId('file-input').setInputFiles({
+            name: 'people.xlsx',
+            mimeType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            buffer: xlsx,
+        });
+        await expect(page.getByText('people.xlsx', { exact: true })).toBeVisible();
+        await page.getByRole('button', { name: 'Convert to PDF' }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(file.suggestedFilename()).toBe('people.pdf');
+        const text = await extractPdfText(page, await readDownload(file));
+        expect(text).toContain('Alice');
+        expect(text).toContain('Bob');
+    });
+
+    test('PDF to Excel groups text into rows and columns of a real .xlsx file', async ({ page }) => {
+        await openTool(page, 'pdf-to-excel');
+        const pdf = await makeTabularPdf([['Name', 'Age'], ['Alice', '30'], ['Bob', '25']]);
+        await page.getByTestId('file-input').setInputFiles({ name: 'table.pdf', mimeType: 'application/pdf', buffer: pdf });
+        await expect(page.getByText('table.pdf', { exact: true })).toBeVisible();
+        await page.getByRole('button', { name: 'Convert to Excel' }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download spreadsheet' }).click()]);
+        expect(file.suggestedFilename()).toBe('table.xlsx');
+        const rows = readXlsx(await readDownload(file));
+        expect(rows[0]).toEqual(['Name', 'Age']);
+        expect(rows[1][0]).toBe('Alice');
+        expect(rows[2][0]).toBe('Bob');
     });
 });
 
