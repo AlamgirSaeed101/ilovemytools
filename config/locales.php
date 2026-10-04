@@ -31,6 +31,7 @@ return [
         'it' => ['name' => 'Italian', 'native' => 'Italiano', 'dir' => 'ltr', 'og' => 'it_IT'],
         'pl' => ['name' => 'Polish', 'native' => 'Polski', 'dir' => 'ltr', 'og' => 'pl_PL'],
         'ur' => ['name' => 'Urdu', 'native' => 'اردو', 'dir' => 'rtl', 'og' => 'ur_PK'],
+        'ko' => ['name' => 'Korean', 'native' => '한국어', 'dir' => 'ltr', 'og' => 'ko_KR'],
     ],
 
 ];
