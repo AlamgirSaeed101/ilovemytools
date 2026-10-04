@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Support\HomeFaq;
 use App\Support\Locale;
 use App\Support\Seo;
 use App\Support\SiteData;
@@ -34,7 +35,8 @@ class PageController extends Controller
                     'name' => $tool['name'],
                     'url' => Locale::url($tool['slug']),
                 ])->all(),
-            ]);
+            ])
+            ->faqs(HomeFaq::all());
 
         return $this->render('home', $seo, 'pages.home', [
             'categories' => $this->registry->categories(),
@@ -139,6 +141,9 @@ class PageController extends Controller
         [$title, $description, $label] = SiteData::pageMeta($page);
         $path = SiteData::PAGE_PATHS[$page];
         $seo = Seo::make($title, $description, $path)->breadcrumbs([[$label, $path]]);
+        if ($page === 'about') {
+            $seo->about();
+        }
 
         return $this->render($page, $seo, 'pages.'.$page, ['pageTitle' => $label]);
     }

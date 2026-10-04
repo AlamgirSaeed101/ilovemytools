@@ -89,11 +89,15 @@ const NAV_ORDER = ['pdf-tools', 'image-tools', 'text-tools', 'calculators', 'dev
 const NAV_VISIBLE = 5;
 
 /** One header dropdown: a category's tools, plus a link to the category page. */
+const NAV_MENU_TOOLS = 5;
+
 function CategoryMenu({ category, tools, label, children }) {
     const [open, setOpen] = useState(false);
     const ref = useRef(null);
     usePopup(open, setOpen, ref);
-    const items = category ? category.tools.map((slug) => tools.find((x) => x.slug === slug)).filter(Boolean) : [];
+    const all = category ? category.tools.map((slug) => tools.find((x) => x.slug === slug)).filter(Boolean) : [];
+    // At most NAV_MENU_TOOLS per menu, popular tools first; the link below leads to the whole category.
+    const items = [...all].sort((a, b) => Number(b.popular) - Number(a.popular)).slice(0, NAV_MENU_TOOLS);
 
     return (
         <div className="relative" ref={ref} style={category ? { '--accent': category.accent, '--accent2': category.accent2 } : undefined}>
@@ -120,7 +124,7 @@ function CategoryMenu({ category, tools, label, children }) {
                                 className="mt-1 flex items-center justify-between rounded-xl border-t border-line px-2.5 pt-2.5 pb-1.5 text-[0.8rem] font-bold text-brand no-underline hover:text-brand-strong"
                                 to={`/category/${category.slug}`}
                             >
-                                {t('View all')} {category.name} <Icon name="arrow" className="icon size-4 rtl:-scale-x-100" />
+                                {t('View all {count} tools', { count: all.length })} <Icon name="arrow" className="icon size-4 rtl:-scale-x-100" />
                             </Link>
                         </>
                     )}

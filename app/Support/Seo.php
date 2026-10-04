@@ -137,6 +137,8 @@ class Seo
 
     public function tool(array $tool): self
     {
+        $this->image = $this->toolImage($tool['slug'] ?? '');
+
         $this->schemas[] = [
             '@context' => 'https://schema.org',
             '@type' => 'WebApplication',
@@ -151,7 +153,9 @@ class Seo
             'featureList' => implode(', ', $tool['features']),
             'dateModified' => $tool['updated'] ?? null,
             'inLanguage' => Locale::hreflang(Locale::current()),
-            'publisher' => ['@type' => 'Organization', 'name' => config('site.name'), 'url' => self::absoluteUrl('/')],
+            'image' => $this->toolImage($tool['slug'] ?? ''),
+            'author' => ['@id' => self::absoluteUrl('/').'#organization'],
+            'publisher' => ['@id' => self::absoluteUrl('/').'#organization'],
         ];
 
         // The page itself, with the parts a voice assistant can read aloud.
@@ -164,6 +168,8 @@ class Seo
             'inLanguage' => Locale::hreflang(Locale::current()),
             'dateModified' => $tool['updated'] ?? null,
             'isPartOf' => ['@id' => self::absoluteUrl('/').'#website'],
+            'publisher' => ['@id' => self::absoluteUrl('/').'#organization'],
+            'primaryImageOfPage' => $this->image,
             'speakable' => ['@type' => 'SpeakableSpecification', 'cssSelector' => ['h1', '.tool-intro']],
             'citation' => array_map(fn ($source) => ['@type' => 'CreativeWork', 'name' => $source['title'], 'url' => $source['url']], $tool['sources'] ?? []) ?: null,
         ], fn ($value) => $value !== null);
@@ -173,7 +179,7 @@ class Seo
             $this->schemas[] = [
                 '@context' => 'https://schema.org',
                 '@type' => 'HowTo',
-                'name' => Locale::t('How to use the {name}', ['name' => $tool['name']]),
+                'name' => Locale::t('How to use {name}', ['name' => $tool['name']]),
                 'description' => $tool['tagline'] ?? $tool['description'],
                 'tool' => ['@type' => 'HowToTool', 'name' => $tool['name']],
                 'totalTime' => 'PT1M',
@@ -188,6 +194,30 @@ class Seo
         }
 
         return $this;
+    }
+
+    /** The About page describes the organization behind the site. */
+    public function about(): self
+    {
+        $this->schemas[] = [
+            '@context' => 'https://schema.org',
+            '@type' => 'AboutPage',
+            'name' => $this->title,
+            'url' => $this->canonical,
+            'inLanguage' => Locale::hreflang(Locale::current()),
+            'isPartOf' => ['@id' => self::absoluteUrl('/').'#website'],
+            'mainEntity' => ['@id' => self::absoluteUrl('/').'#organization'],
+        ];
+
+        return $this;
+    }
+
+    /** A tool's own 1200x630 share image, or the default one. */
+    private function toolImage(string $slug): string
+    {
+        $path = '/images/og/'.$slug.'.jpg';
+
+        return self::absoluteUrl($slug !== '' && is_file(public_path($path)) ? $path : (string) config('site.og_image'));
     }
 
     /** JSON-LD safe for inline <script>: "</script>" can never break out. */
@@ -254,9 +284,13 @@ class Seo
                 'email' => config('site.contact_email'),
                 'availableLanguage' => array_values(array_map(fn ($l) => $l['name'], Locale::all())),
             ],
-            'sameAs' => array_values(array_filter([
+            'foundingDate' => config('site.founded'),
+            'founder' => ($founder = config('site.founder')) ? array_filter(['@type' => 'Person', 'name' => $founder['name'] ?? null, 'url' => $founder['url'] ?? null]) : null,
+            'knowsAbout' => ['PDF', 'Image compression', 'Image conversion', 'Word count', 'Readability', 'QR codes', 'Mortgage calculation', 'JSON', 'SEO'],
+            'sameAs' => array_values(array_unique(array_filter([
+                ...(array) config('site.same_as', []),
                 config('site.twitter_handle') ? 'https://x.com/'.ltrim((string) config('site.twitter_handle'), '@') : null,
-            ])),
+            ]))),
         ], fn ($value) => $value !== [] && $value !== '' && $value !== null);
     }
 

@@ -24,8 +24,22 @@ return [
     // Used in JSON-LD and the Twitter card. Leave empty if you have none.
     'twitter_handle' => env('TWITTER_HANDLE', ''),
 
-    // Default social share image (1200x630) inside /public.
+    // Default social share image (1200x630) inside /public. Tools use /images/og/{slug}.jpg
+    // when it exists (made by `node scripts/og-images.mjs`).
     'og_image' => '/images/og-default.png',
+
+    // Year the site launched (About page and Organization schema).
+    'founded' => '2026',
+
+    // The site's own public profiles (AlternativeTo, Product Hunt, GitHub, LinkedIn, X...).
+    // They become "sameAs" links that tell Google and AI engines these profiles are the same brand.
+    // Add each URL here as soon as the listing is live.
+    'same_as' => [
+    ],
+
+    // The person behind the site, shown on the About page and in the schema once filled in,
+    // e.g. ['name' => 'Jane Doe', 'url' => 'https://www.linkedin.com/in/janedoe'].
+    'founder' => null,
 
     'theme_color' => '#4f46e5',
 

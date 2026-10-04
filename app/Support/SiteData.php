@@ -69,6 +69,9 @@ class SiteData
             'contactEmail' => (string) config('site.contact_email'),
             'url' => Seo::absoluteUrl('/'),
             'legalUpdated' => self::LEGAL_UPDATED,
+            'homeFaqs' => HomeFaq::all(),
+            'founded' => (string) config('site.founded'),
+            'founder' => (string) (config('site.founder')['name'] ?? ''),
             'ads' => [
                 'client' => Ads::liveClient(),
                 'placeholders' => Ads::showPlaceholders(),

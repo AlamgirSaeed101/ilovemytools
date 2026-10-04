@@ -108,13 +108,13 @@ test.describe('App shell', () => {
         const site = await (await page.request.get('/api/site')).json();
         await page.goto('/');
         const nav = page.getByRole('navigation', { name: 'Main' });
+        // Each menu lists at most 5 tools (popular first), then "View all N tools".
+        const pdfTools = site.categories.find((c) => c.slug === 'pdf-tools').tools.length;
         await nav.getByRole('button', { name: 'PDF' }).click();
-        await nav.getByRole('link', { name: 'Split PDF' }).click();
-        await expect(page).toHaveURL(/\/split-pdf$/);
-
-        await nav.getByRole('button', { name: 'Calculators' }).click();
-        await nav.getByRole('link', { name: 'Percentage Calculator' }).click();
-        await expect(page).toHaveURL(/\/percentage-calculator$/);
+        await expect(nav.locator('ul a')).toHaveCount(Math.min(5, pdfTools));
+        await expect(nav.getByRole('link', { name: `View all ${pdfTools} tools` })).toBeVisible();
+        await nav.getByRole('link', { name: 'Merge PDF' }).click();
+        await expect(page).toHaveURL(/\/merge-pdf$/);
 
         await nav.getByRole('button', { name: 'Calculators' }).click();
         await nav.getByRole('link', { name: /View all/ }).click();

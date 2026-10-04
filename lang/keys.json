@@ -359,7 +359,8 @@
   {
     "key": "{name} is a free collection of simple, fast and private online tools. We built it because most “free” tools online are slow, covered in pop-ups, add watermarks, or quietly upload your files to their servers.",
     "files": [
-      "resources/js/pages/InfoPages.jsx"
+      "resources/js/pages/InfoPages.jsx",
+      "resources/views/pages/about.blade.php"
     ]
   },
   {
@@ -367,6 +368,26 @@
     "files": [
       "resources/js/pages/Home.jsx",
       "resources/views/pages/home.blade.php"
+    ]
+  },
+  {
+    "key": "{name} is available in {count} languages: {languages}.",
+    "files": [
+      "app/Support/HomeFaq.php"
+    ]
+  },
+  {
+    "key": "{name} launched in {year}. Everything on the site is free to use and is paid for by advertising.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx",
+      "resources/views/pages/about.blade.php"
+    ]
+  },
+  {
+    "key": "{name} was founded by {founder}.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx",
+      "resources/views/pages/about.blade.php"
     ]
   },
   {
@@ -659,14 +680,8 @@
   {
     "key": "About {name}",
     "files": [
-      "resources/js/pages/InfoPages.jsx"
-    ]
-  },
-  {
-    "key": "About the {name}",
-    "files": [
-      "resources/js/pages/ToolPage.jsx",
-      "resources/views/pages/tool.blade.php"
+      "resources/js/pages/InfoPages.jsx",
+      "resources/views/pages/about.blade.php"
     ]
   },
   {
@@ -860,6 +875,18 @@
     ]
   },
   {
+    "key": "Are my files uploaded to a server?",
+    "files": [
+      "app/Support/HomeFaq.php"
+    ]
+  },
+  {
+    "key": "Are these online tools really free?",
+    "files": [
+      "app/Support/HomeFaq.php"
+    ]
+  },
+  {
     "key": "Ask about advertising or partnerships",
     "files": [
       "resources/js/pages/InfoPages.jsx"
@@ -943,6 +970,13 @@
     "key": "Bedtime",
     "files": [
       "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Before every release, automated tests open every tool in every language and check real results, for example that a merged PDF has the right pages or that a compressed image is smaller.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx",
+      "resources/views/pages/about.blade.php"
     ]
   },
   {
@@ -1338,7 +1372,8 @@
   {
     "key": "contact page",
     "files": [
-      "resources/js/pages/InfoPages.jsx"
+      "resources/js/pages/InfoPages.jsx",
+      "resources/views/pages/about.blade.php"
     ]
   },
   {
@@ -1481,6 +1516,13 @@
     "key": "Copy laps",
     "files": [
       "resources/js/tools/Stopwatch.jsx"
+    ]
+  },
+  {
+    "key": "Corrections",
+    "files": [
+      "resources/js/pages/InfoPages.jsx",
+      "resources/views/pages/about.blade.php"
     ]
   },
   {
@@ -1723,6 +1765,12 @@
     "key": "Disabled",
     "files": [
       "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Do I need to install anything or sign up?",
+    "files": [
+      "app/Support/HomeFaq.php"
     ]
   },
   {
@@ -2061,6 +2109,7 @@
   {
     "key": "Each tool does one job well, loads quickly and works on phones, tablets and computers.",
     "files": [
+      "resources/views/pages/about.blade.php",
       "scripts/i18n-extract.mjs"
     ]
   },
@@ -2300,6 +2349,7 @@
   {
     "key": "Every tool is free with no account, no daily limit and no watermark. The site is supported by unobtrusive advertising.",
     "files": [
+      "resources/views/pages/about.blade.php",
       "scripts/i18n-extract.mjs"
     ]
   },
@@ -2379,6 +2429,7 @@
   {
     "key": "Fast and simple",
     "files": [
+      "resources/views/pages/about.blade.php",
       "scripts/i18n-extract.mjs"
     ]
   },
@@ -2523,6 +2574,13 @@
     ]
   },
   {
+    "key": "Formulas and facts on our pages come from published standards and research, listed under “Sources” on each tool page.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx",
+      "resources/views/pages/about.blade.php"
+    ]
+  },
+  {
     "key": "Free",
     "files": [
       "resources/js/pages/Home.jsx",
@@ -2532,6 +2590,7 @@
   {
     "key": "Free forever",
     "files": [
+      "resources/views/pages/about.blade.php",
       "scripts/i18n-extract.mjs"
     ]
   },
@@ -2585,8 +2644,10 @@
     "key": "Frequently asked questions",
     "files": [
       "resources/js/pages/Category.jsx",
+      "resources/js/pages/Home.jsx",
       "resources/js/pages/ToolPage.jsx",
       "resources/views/pages/category.blade.php",
+      "resources/views/pages/home.blade.php",
       "resources/views/pages/tool.blade.php"
     ]
   },
@@ -2623,7 +2684,8 @@
   {
     "key": "Get in touch",
     "files": [
-      "resources/js/pages/InfoPages.jsx"
+      "resources/js/pages/InfoPages.jsx",
+      "resources/views/pages/about.blade.php"
     ]
   },
   {
@@ -2689,7 +2751,8 @@
   {
     "key": "Have an idea for a new tool or found a bug? We would love to hear from you on our {link}.",
     "files": [
-      "resources/js/pages/InfoPages.jsx"
+      "resources/js/pages/InfoPages.jsx",
+      "resources/views/pages/about.blade.php"
     ]
   },
   {
@@ -2808,6 +2871,12 @@
     ]
   },
   {
+    "key": "How can I suggest a new tool or report a problem?",
+    "files": [
+      "app/Support/HomeFaq.php"
+    ]
+  },
+  {
     "key": "how Google uses information from sites that use its services",
     "files": [
       "resources/js/pages/InfoPages.jsx"
@@ -2820,17 +2889,31 @@
     ]
   },
   {
+    "key": "How to check that your files stay private",
+    "files": [
+      "resources/js/pages/InfoPages.jsx",
+      "resources/views/pages/about.blade.php"
+    ]
+  },
+  {
     "key": "How to pick pages",
     "files": [
       "resources/js/tools/DeletePdfPages.jsx"
     ]
   },
   {
-    "key": "How to use the {name}",
+    "key": "How to use {name}",
     "files": [
       "app/Support/Seo.php",
       "resources/js/pages/ToolPage.jsx",
       "resources/views/pages/tool.blade.php"
+    ]
+  },
+  {
+    "key": "How we build and test our tools",
+    "files": [
+      "resources/js/pages/InfoPages.jsx",
+      "resources/views/pages/about.blade.php"
     ]
   },
   {
@@ -2867,6 +2950,13 @@
     "key": "If you did not sign up, just ignore this email and you will not hear from us again.",
     "files": [
       "resources/views/emails/confirm.blade.php"
+    ]
+  },
+  {
+    "key": "If you find a mistake in a result or on a page, please tell us and we will correct it. Each tool page shows when it was last updated.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx",
+      "resources/views/pages/about.blade.php"
     ]
   },
   {
@@ -3137,7 +3227,8 @@
     "key": "Last updated: {date}",
     "files": [
       "resources/js/pages/InfoPages.jsx",
-      "resources/js/pages/ToolPage.jsx"
+      "resources/js/pages/ToolPage.jsx",
+      "resources/views/pages/tool.blade.php"
     ]
   },
   {
@@ -3642,6 +3733,18 @@
     ]
   },
   {
+    "key": "No. PDFs, images and text are processed inside your browser and never leave your device. Only the few tools that must look something up online, such as the Broken Link Checker, contact our server, and they say so on the page.",
+    "files": [
+      "app/Support/HomeFaq.php"
+    ]
+  },
+  {
+    "key": "No. The tools work in any modern browser on Windows, Mac, Linux, Android and iPhone, with nothing to install and no sign up.",
+    "files": [
+      "app/Support/HomeFaq.php"
+    ]
+  },
+  {
     "key": "None",
     "files": [
       "resources/js/tools/JpgToPdf.jsx"
@@ -3766,6 +3869,13 @@
     ]
   },
   {
+    "key": "Open your browser’s developer tools, choose the Network tab and use any tool: you will see that your file is never sent anywhere. The few tools that need to look something up online, such as the Broken Link Checker, say so clearly on the page.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx",
+      "resources/views/pages/about.blade.php"
+    ]
+  },
+  {
     "key": "Operating system",
     "files": [
       "resources/js/tools/WhatIsMyIp.jsx"
@@ -3812,7 +3922,8 @@
   {
     "key": "Our tools",
     "files": [
-      "resources/js/pages/InfoPages.jsx"
+      "resources/js/pages/InfoPages.jsx",
+      "resources/views/pages/about.blade.php"
     ]
   },
   {
@@ -3822,8 +3933,16 @@
     ]
   },
   {
+    "key": "Our tools are built on well-known open-source libraries, such as PDF.js from Mozilla and pdf-lib for PDFs, and run inside your browser.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx",
+      "resources/views/pages/about.blade.php"
+    ]
+  },
+  {
     "key": "Our tools process your files and text directly in your web browser. PDFs, images and documents never leave your device.",
     "files": [
+      "resources/views/pages/about.blade.php",
       "scripts/i18n-extract.mjs"
     ]
   },
@@ -4264,6 +4383,7 @@
     "key": "Privacy first",
     "files": [
       "resources/js/pages/Home.jsx",
+      "resources/views/pages/about.blade.php",
       "scripts/i18n-extract.mjs"
     ]
   },
@@ -6006,13 +6126,13 @@
   {
     "key": "View all",
     "files": [
-      "resources/js/components/Layout.jsx",
       "resources/views/pages/home.blade.php"
     ]
   },
   {
     "key": "View all {count} tools",
     "files": [
+      "resources/js/components/Layout.jsx",
       "resources/js/pages/Home.jsx"
     ]
   },
@@ -6050,7 +6170,8 @@
   {
     "key": "We currently offer {tools} free tools across {categories} categories, including a word counter, PDF merger, image compressor, QR code generator, calculators, games, timers and developer utilities, and we add new tools regularly.",
     "files": [
-      "resources/js/pages/InfoPages.jsx"
+      "resources/js/pages/InfoPages.jsx",
+      "resources/views/pages/about.blade.php"
     ]
   },
   {
@@ -6144,6 +6265,13 @@
     ]
   },
   {
+    "key": "What is {name}?",
+    "files": [
+      "resources/js/pages/ToolPage.jsx",
+      "resources/views/pages/tool.blade.php"
+    ]
+  },
+  {
     "key": "What is X% of Y?",
     "files": [
       "resources/js/tools/PercentageCalculator.jsx"
@@ -6166,6 +6294,12 @@
     "key": "When reporting a problem, please tell us which tool you used, your browser (for example Chrome or Safari) and your device, so we can fix it quickly.",
     "files": [
       "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Which languages is {name} available in?",
+    "files": [
+      "app/Support/HomeFaq.php"
     ]
   },
   {
@@ -6243,6 +6377,12 @@
     ]
   },
   {
+    "key": "Write to us through the contact page. We read every message and add new tools regularly.",
+    "files": [
+      "app/Support/HomeFaq.php"
+    ]
+  },
+  {
     "key": "X is what percent of Y?",
     "files": [
       "resources/js/tools/PercentageCalculator.jsx"
@@ -6258,6 +6398,12 @@
     "key": "Year",
     "files": [
       "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Yes. Every tool on {name} is free to use, with no account, no daily limit and no watermark. The site is paid for by advertising.",
+    "files": [
+      "app/Support/HomeFaq.php"
     ]
   },
   {

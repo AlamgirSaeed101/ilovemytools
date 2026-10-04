@@ -339,6 +339,25 @@ export default function Home() {
                         {t('{name} is a free web app for everyday tasks with PDFs, images, text and data. Every tool runs in your browser, so your work stays private and results appear instantly.', { name: site.name })}
                     </p>
                 </section>
+
+                {site.homeFaqs?.length > 0 && (
+                    <section className="prose mx-auto mb-10 max-w-[760px]" aria-labelledby="home-faq-heading">
+                        <h2 id="home-faq-heading" className={`${sectionTitle} mb-4 text-center`}>
+                            {t('Frequently asked questions')}
+                        </h2>
+                        <div className="faq">
+                            {site.homeFaqs.map((faq, i) => (
+                                <details className="faq__item" key={faq.q} open={i === 0}>
+                                    <summary>
+                                        <h3 className="faq__q">{faq.q}</h3>
+                                        <Icon name="chevron" className="icon faq__chev" />
+                                    </summary>
+                                    <p>{faq.a}</p>
+                                </details>
+                            ))}
+                        </div>
+                    </section>
+                )}
             </div>
         </>
     );

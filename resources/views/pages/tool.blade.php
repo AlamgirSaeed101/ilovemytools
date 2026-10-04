@@ -21,11 +21,14 @@
                 </section>
 
                 <article class="prose tool-article">
-                    <h2>{{ t('About the {name}', ['name' => $tool['name']]) }}</h2>
+                    <h2>{{ t('What is {name}?', ['name' => $tool['name']]) }}</h2>
                     <p class="tool-intro">{{ $tool['intro'] }}</p>
+                    @if (! empty($tool['updated']))
+                        <p class="text-sm text-muted"><time datetime="{{ $tool['updated'] }}">{{ t('Last updated: {date}', ['date' => \Illuminate\Support\Carbon::parse($tool['updated'])->locale(\App\Support\Locale::current())->isoFormat('LL')]) }}</time></p>
+                    @endif
 
                     @if ($tool['steps'] !== [])
-                        <h2 id="how-to">{{ t('How to use the {name}', ['name' => $tool['name']]) }}</h2>
+                        <h2 id="how-to">{{ t('How to use {name}', ['name' => $tool['name']]) }}</h2>
                         <ol class="steps">
                             @foreach ($tool['steps'] as $step)
                                 <li>{{ $step }}</li>

@@ -110,6 +110,9 @@ return [
             ['q' => 'Is there a limit on text length?', 'a' => 'No practical limit. Conversion happens in your browser, so even long documents convert instantly.'],
             ['q' => 'Does it work with accented letters?', 'a' => 'Yes. Accented and non-English letters such as é, ü and ñ are converted correctly.'],
         ],
+        'sources' => [
+            ['title' => 'Unicode Consortium, FAQ: Character Properties, Case Mappings and Names', 'url' => 'https://www.unicode.org/faq/casemap_charprop.html'],
+        ],
         'related' => ['word-counter', 'base64-encoder-decoder', 'json-formatter'],
     ],
 
@@ -388,6 +391,11 @@ return [
             ['q' => 'What does the margin setting do?', 'a' => 'It adds blank space around each image on the page. Choose None for the image to reach the edges, or a bigger margin for a more document-like look.'],
             ['q' => 'Is my image quality reduced?', 'a' => 'JPG and PNG images are embedded at their original quality. WebP images are converted to PNG first, which keeps them lossless.'],
         ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+            ['title' => 'JPEG committee, Overview of JPEG', 'url' => 'https://jpeg.org/jpeg/'],
+        ],
         'related' => ['pdf-to-jpg', 'merge-pdf', 'image-compressor'],
     ],
 
@@ -479,6 +487,11 @@ return [
             ['q' => 'Which quality should I choose?', 'a' => 'The default of 92% looks the same as the original. Around 80% gives noticeably smaller files with little visible change.'],
             ['q' => 'Can I convert many PNGs at once?', 'a' => 'Yes. Drop up to 30 images at a time and download them all together as a ZIP file.'],
         ],
+        'sources' => [
+            ['title' => 'W3C, Portable Network Graphics (PNG) Specification', 'url' => 'https://www.w3.org/TR/png/'],
+            ['title' => 'JPEG committee, Overview of JPEG', 'url' => 'https://jpeg.org/jpeg/'],
+            ['title' => 'MDN, Pixel manipulation with canvas', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas'],
+        ],
         'related' => ['jpg-to-png', 'webp-to-png', 'image-compressor', 'image-resizer'],
     ],
 
@@ -522,6 +535,11 @@ return [
             ['q' => 'Is there a difference between JPG and JPEG?', 'a' => 'No. They are two names for the same format, and both convert the same way.'],
             ['q' => 'Why is the PNG file bigger?', 'a' => 'PNG is lossless, so it keeps every pixel exactly. JPG saves space by discarding detail, which makes its files smaller.'],
             ['q' => 'Are my photos uploaded?', 'a' => 'No. Everything happens in your browser and your photos never leave your device.'],
+        ],
+        'sources' => [
+            ['title' => 'JPEG committee, Overview of JPEG', 'url' => 'https://jpeg.org/jpeg/'],
+            ['title' => 'W3C, Portable Network Graphics (PNG) Specification', 'url' => 'https://www.w3.org/TR/png/'],
+            ['title' => 'MDN, Pixel manipulation with canvas', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas'],
         ],
         'related' => ['png-to-jpg', 'webp-to-png', 'image-resizer', 'image-compressor'],
     ],
@@ -567,6 +585,10 @@ return [
             ['q' => 'How many PDFs can I merge?', 'a' => 'Up to 50 files at a time. The practical limit depends on your device memory, and most devices handle a few hundred pages easily.'],
             ['q' => 'Will links and bookmarks be kept?', 'a' => 'Page content, images and text are kept exactly. Some interactive features such as bookmarks and form fields may not carry over.'],
         ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+        ],
         'related' => ['jpg-to-pdf', 'split-pdf', 'rotate-pdf', 'compress-pdf'],
     ],
 
@@ -607,6 +629,10 @@ return [
             ['q' => 'Are my files uploaded?', 'a' => 'No. The PDF is split locally in your browser and never leaves your device.'],
             ['q' => 'Does splitting reduce quality?', 'a' => 'No. Pages are copied exactly as they are, so text and images keep their original quality.'],
         ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+        ],
         'related' => ['merge-pdf', 'rotate-pdf', 'compress-pdf'],
     ],
 
@@ -645,6 +671,9 @@ return [
             ['q' => 'Can I calculate age on a specific date?', 'a' => 'Yes. Change the "Age at" date to see how old someone was or will be on that day, which is useful for school admissions and exam eligibility.'],
             ['q' => 'How are leap years handled?', 'a' => 'Leap years are counted exactly. For a 29 February birthday, the next birthday in a non-leap year is shown as 28 February.'],
             ['q' => 'Is my date of birth stored?', 'a' => 'No. The calculation runs in your browser and nothing is saved or sent anywhere.'],
+        ],
+        'sources' => [
+            ['title' => 'ECMAScript Language Specification, Date objects', 'url' => 'https://tc39.es/ecma262/#sec-date-objects'],
         ],
         'related' => ['percentage-calculator', 'word-counter', 'password-generator'],
     ],
@@ -1463,6 +1492,9 @@ return [
             ['q' => 'Can a human text score as AI?', 'a' => 'Yes. Very formal, even writing with phrases like "furthermore" can score high even when a person wrote it. That is why the score is only a guide.'],
             ['q' => 'Is my text stored?', 'a' => 'No. The analysis runs in your browser and your text is never sent anywhere.'],
         ],
+        'sources' => [
+            ['title' => 'Liang et al. (2023), "GPT detectors are biased against non-native English writers", arXiv:2304.02819', 'url' => 'https://arxiv.org/abs/2304.02819'],
+        ],
         'related' => ['readability-checker', 'word-counter', 'case-converter'],
     ],
 
@@ -1699,6 +1731,10 @@ return [
             ['q' => 'Is my PDF uploaded to a server?', 'a' => 'No. The PDF is opened and rotated entirely in your browser with JavaScript and is never sent anywhere.'],
             ['q' => 'Will this add a watermark or reduce quality?', 'a' => 'No. Rotating only changes each page\'s orientation. No watermark, logo or extra pages are added, and no image or text quality is lost.'],
         ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+        ],
         'related' => ['organize-pdf', 'delete-pdf-pages', 'merge-pdf', 'split-pdf'],
     ],
 
@@ -1742,6 +1778,10 @@ return [
             ['q' => 'Can I delete every page in the PDF?', 'a' => 'No. At least one page must remain, so the Delete pages button stays disabled if your selection would remove them all.'],
             ['q' => 'Is my PDF uploaded anywhere?', 'a' => 'No. Pages are removed entirely in your browser with JavaScript, and the file is never sent to a server.'],
             ['q' => 'Will the remaining pages lose quality?', 'a' => 'No. The pages you keep are copied exactly as they are, with no recompression, watermark or added pages.'],
+        ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
         ],
         'related' => ['organize-pdf', 'rotate-pdf', 'split-pdf', 'merge-pdf'],
     ],
@@ -1787,6 +1827,11 @@ return [
             ['q' => 'Is my PDF uploaded to a server?', 'a' => 'No. The PDF is opened and reordered entirely in your browser with JavaScript and is never sent anywhere.'],
             ['q' => 'Can I also delete or rotate pages here?', 'a' => 'This tool only reorders pages. Use Delete PDF Pages or Rotate PDF for those, either before or after organizing the order.'],
         ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+            ['title' => 'PDF.js, the PDF renderer by Mozilla', 'url' => 'https://mozilla.github.io/pdf.js/'],
+        ],
         'related' => ['delete-pdf-pages', 'rotate-pdf', 'merge-pdf', 'split-pdf'],
     ],
 
@@ -1830,6 +1875,11 @@ return [
             ['q' => 'What DPI should I use for printing?', 'a' => '300 DPI gives a sharp result for printing. 150 DPI is enough for most screens, and 72 DPI is the smallest file, best for quick previews.'],
             ['q' => 'Is my PDF uploaded to a server?', 'a' => 'No. Pages are rendered to images entirely in your browser with JavaScript, and the file is never sent anywhere.'],
             ['q' => 'Can I convert just one page instead of the whole PDF?', 'a' => 'This tool converts every page. To get a single page, use Split PDF\'s "Extract pages" mode first, then convert the resulting one-page PDF here.'],
+        ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'PDF.js, the PDF renderer by Mozilla', 'url' => 'https://mozilla.github.io/pdf.js/'],
+            ['title' => 'JPEG committee, Overview of JPEG', 'url' => 'https://jpeg.org/jpeg/'],
         ],
         'related' => ['pdf-to-png', 'jpg-to-pdf', 'split-pdf', 'image-compressor'],
     ],
@@ -1875,6 +1925,11 @@ return [
             ['q' => 'Is my PDF uploaded to a server?', 'a' => 'No. Pages are rendered to images entirely in your browser with JavaScript, and the file is never sent anywhere.'],
             ['q' => 'What DPI should I use for printing?', 'a' => '300 DPI gives a sharp result for printing. 150 DPI is enough for most screens, and 72 DPI is the smallest file, best for quick previews.'],
         ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'PDF.js, the PDF renderer by Mozilla', 'url' => 'https://mozilla.github.io/pdf.js/'],
+            ['title' => 'W3C, Portable Network Graphics (PNG) Specification', 'url' => 'https://www.w3.org/TR/png/'],
+        ],
         'related' => ['pdf-to-jpg', 'jpg-to-pdf', 'split-pdf', 'image-compressor'],
     ],
 
@@ -1918,6 +1973,11 @@ return [
             ['q' => 'Will I still be able to select text after compressing?', 'a' => 'Yes, with Recommended mode. Strong mode rasterises every page into one image, so text can no longer be selected, searched or copied - only choose it when file size matters more than that.'],
             ['q' => 'What happens if the compressed file is not smaller?', 'a' => 'The original file is kept and offered for download unchanged, so you are never left with a result that is bigger than what you started with.'],
             ['q' => 'Is my PDF uploaded to a server?', 'a' => 'No. Compression happens entirely in your browser with JavaScript, and the file is never sent anywhere.'],
+        ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'PDF.js, the PDF renderer by Mozilla', 'url' => 'https://mozilla.github.io/pdf.js/'],
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
         ],
         'related' => ['protect-pdf', 'merge-pdf', 'split-pdf', 'image-compressor'],
     ],
@@ -1963,6 +2023,10 @@ return [
             ['q' => 'Can I remove the password later?', 'a' => 'Yes. Use the Unlock PDF tool with the password you set to produce a copy without it.'],
             ['q' => 'Will the password-protected PDF open in any PDF reader?', 'a' => 'Yes. It uses the standard PDF encryption format supported by Adobe Acrobat, browsers and most other PDF readers, which will prompt for the password before opening it.'],
         ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'QPDF documentation (PDF encryption and decryption)', 'url' => 'https://qpdf.readthedocs.io/'],
+        ],
         'related' => ['unlock-pdf', 'compress-pdf', 'merge-pdf', 'split-pdf'],
     ],
 
@@ -2007,6 +2071,10 @@ return [
             ['q' => 'What if I enter the wrong password?', 'a' => 'You will see an "Incorrect password" message and can try again. The file itself is never altered until the correct password successfully unlocks it.'],
             ['q' => 'Does unlocking change anything else in the PDF?', 'a' => 'No. Only the password protection is removed; the pages, text and images stay exactly as they were.'],
         ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'QPDF documentation (PDF encryption and decryption)', 'url' => 'https://qpdf.readthedocs.io/'],
+        ],
         'related' => ['protect-pdf', 'compress-pdf', 'merge-pdf', 'split-pdf'],
     ],
 
@@ -2049,6 +2117,12 @@ return [
             ['q' => 'Can I convert a scanned PDF?', 'a' => 'Only if it already has selectable text. A scanned page with no text layer has nothing for this tool to extract, since it does not perform OCR.'],
             ['q' => 'Is my PDF uploaded anywhere?', 'a' => 'No. The whole conversion runs in your browser using JavaScript, and the file never leaves your device.'],
             ['q' => 'What file do I get?', 'a' => 'A standard .docx file that opens in Microsoft Word, Google Docs, LibreOffice Writer and most other word processors.'],
+        ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'PDF.js, the PDF renderer by Mozilla', 'url' => 'https://mozilla.github.io/pdf.js/'],
+            ['title' => 'Ecma International, ECMA-376 Office Open XML file formats (.docx, .xlsx)', 'url' => 'https://ecma-international.org/publications-and-standards/standards/ecma-376/'],
+            ['title' => 'docx, generate .docx files with JavaScript', 'url' => 'https://docx.js.org/'],
         ],
         'related' => ['word-to-pdf', 'merge-pdf', 'split-pdf', 'compress-pdf'],
     ],
@@ -2093,6 +2167,11 @@ return [
             ['q' => 'Is my document uploaded anywhere?', 'a' => 'No. The whole conversion runs in your browser using JavaScript, and the file never leaves your device.'],
             ['q' => 'What page size does the PDF use?', 'a' => 'Choose A4 or Letter before converting; the content is laid out to fit the page you pick.'],
         ],
+        'sources' => [
+            ['title' => 'Ecma International, ECMA-376 Office Open XML file formats (.docx, .xlsx)', 'url' => 'https://ecma-international.org/publications-and-standards/standards/ecma-376/'],
+            ['title' => 'Mammoth, .docx to HTML converter', 'url' => 'https://github.com/mwilliamson/mammoth.js'],
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+        ],
         'related' => ['pdf-to-word', 'merge-pdf', 'compress-pdf', 'html-to-pdf'],
     ],
 
@@ -2135,6 +2214,11 @@ return [
             ['q' => 'What happens to a spreadsheet with lots of columns?', 'a' => 'Column widths shrink to fit the page, and switching to landscape orientation gives wide tables more room. Text that still does not fit its column is shortened with "…".'],
             ['q' => 'Are formulas or charts kept?', 'a' => 'Formulas show their last calculated value as text, not the formula itself, and charts are not included in the PDF.'],
             ['q' => 'Is my spreadsheet uploaded anywhere?', 'a' => 'No. The whole conversion runs in your browser using JavaScript, and the file never leaves your device.'],
+        ],
+        'sources' => [
+            ['title' => 'Ecma International, ECMA-376 Office Open XML file formats (.docx, .xlsx)', 'url' => 'https://ecma-international.org/publications-and-standards/standards/ecma-376/'],
+            ['title' => 'SheetJS documentation (spreadsheet parsing)', 'url' => 'https://docs.sheetjs.com/'],
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
         ],
         'related' => ['pdf-to-excel', 'merge-pdf', 'compress-pdf'],
     ],
@@ -2179,6 +2263,12 @@ return [
             ['q' => 'How are multiple pages handled?', 'a' => 'Each page of the PDF becomes its own sheet in the spreadsheet, named "Page 1", "Page 2" and so on.'],
             ['q' => 'Is my PDF uploaded anywhere?', 'a' => 'No. The whole conversion runs in your browser using JavaScript, and the file never leaves your device.'],
         ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'PDF.js, the PDF renderer by Mozilla', 'url' => 'https://mozilla.github.io/pdf.js/'],
+            ['title' => 'Ecma International, ECMA-376 Office Open XML file formats (.docx, .xlsx)', 'url' => 'https://ecma-international.org/publications-and-standards/standards/ecma-376/'],
+            ['title' => 'SheetJS documentation (spreadsheet parsing)', 'url' => 'https://docs.sheetjs.com/'],
+        ],
         'related' => ['excel-to-pdf', 'pdf-to-word', 'split-pdf'],
     ],
 
@@ -2221,6 +2311,10 @@ return [
             ['q' => 'Will my CSS styling and colours be kept?', 'a' => 'No. This tool focuses on structure and readable content - headings, paragraphs, lists, bold/italic and images - rather than exact colours, fonts or CSS layout.'],
             ['q' => 'Can it convert a web page from a URL?', 'a' => 'No, only HTML or text you paste in yourself. It never fetches other websites, which keeps everything private and predictable.'],
             ['q' => 'Is my pasted content uploaded anywhere?', 'a' => 'No. The whole conversion runs in your browser using JavaScript, and nothing you paste ever leaves your device.'],
+        ],
+        'sources' => [
+            ['title' => 'WHATWG, HTML Living Standard', 'url' => 'https://html.spec.whatwg.org/multipage/'],
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
         ],
         'related' => ['word-to-pdf', 'pdf-to-word', 'merge-pdf'],
     ],
@@ -2272,6 +2366,9 @@ return [
             ['q' => 'What is a typical mortgage term?', 'a' => '30 years is most common in the US; 25 years is more typical in the UK and Ireland. Shorter terms (10-20 years) mean a higher monthly payment but much less total interest.'],
             ['q' => 'Is a down payment the same as a deposit?', 'a' => 'Yes - "down payment" is the US term and "deposit" is the UK/Ireland term for the same upfront amount paid toward a home.'],
             ['q' => 'Why does my bank\'s quote differ from this calculator?', 'a' => 'Lenders add property tax, insurance, PMI, fees and their own rounding, and your actual rate depends on your credit, lender and loan type. This calculator shows the underlying principal and interest math so you can compare scenarios quickly.'],
+        ],
+        'sources' => [
+            ['title' => 'Consumer Financial Protection Bureau, Buying a house: tools and resources', 'url' => 'https://www.consumerfinance.gov/owning-a-home/'],
         ],
         'related' => ['percentage-calculator', 'tip-calculator', 'age-calculator'],
         'table' => [

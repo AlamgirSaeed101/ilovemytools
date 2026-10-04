@@ -218,4 +218,37 @@ class PagesTest extends TestCase
             ->assertSee('"name": "About Us"', false);
         $this->get('/es/contact')->assertSee('Contacto: informa de un error o sugiere una herramienta', false);
     }
+    public function test_every_tool_has_its_own_share_image(): void
+    {
+        foreach (array_keys(config('tools')) as $slug) {
+            $this->assertFileExists(public_path("images/og/{$slug}.jpg"), "Run: node scripts/og-images.mjs ({$slug})");
+        }
+        $this->get('/merge-pdf')->assertSee('<meta property="og:image" content="'.config('app.url').'/images/og/merge-pdf.jpg">', false);
+    }
+
+    public function test_tool_pages_show_question_headings_and_the_update_date(): void
+    {
+        $this->get('/merge-pdf')
+            ->assertSee('What is Merge PDF?')
+            ->assertSee('How to use Merge PDF')
+            ->assertSee('<time datetime="', false)
+            ->assertSee('"@id": "'.config('app.url').'/#organization"', false);
+        $this->get('/de/merge-pdf')->assertSee('Was ist');
+    }
+
+    public function test_home_page_answers_common_questions_with_faq_schema(): void
+    {
+        $this->get('/')->assertSee('"@type": "FAQPage"', false)->assertSee('Are my files uploaded to a server?');
+        $this->get('/fr')->assertSee('Mes fichiers sont-ils envoyés sur un serveur ?', false);
+    }
+
+    public function test_about_page_explains_who_runs_the_site_in_every_language(): void
+    {
+        $this->get('/about')
+            ->assertSee('"@type": "AboutPage"', false)
+            ->assertSee('"foundingDate": "'.config('site.founded').'"', false)
+            ->assertSee('How we build and test our tools')
+            ->assertSee('Corrections');
+        $this->get('/es/about')->assertSee('Cómo creamos y probamos nuestras herramientas');
+    }
 }
