@@ -1,13 +1,18 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { Link, Outlet, ScrollRestoration, useLocation, useNavigation } from 'react-router';
 import AdSlot from './AdSlot.jsx';
-import AdblockNotice from './AdblockNotice.jsx';
-import CommandPalette from './CommandPalette.jsx';
 import Icon from './Icon.jsx';
-import NewsletterForm, { NewsletterNotice } from './Newsletter.jsx';
 import { getSite } from '../lib/api.js';
 import { t } from '../lib/i18n.js';
 import { usePageMotion } from '../lib/pageMotion.js';
+
+// Not needed for first paint, so they're kept out of the main bundle: the command palette is
+// closed until opened, the newsletter form sits below the fold, and the ad-block notice only
+// ever renders something after its own 3 s detection delay.
+const AdblockNotice = lazy(() => import('./AdblockNotice.jsx'));
+const CommandPalette = lazy(() => import('./CommandPalette.jsx'));
+const NewsletterForm = lazy(() => import('./Newsletter.jsx'));
+const NewsletterNotice = lazy(() => import('./Newsletter.jsx').then((m) => ({ default: m.NewsletterNotice })));
 
 const isMac = typeof navigator !== 'undefined' && /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
 
@@ -341,7 +346,9 @@ function Footer() {
         <footer className="mt-12 border-t border-line bg-surface pt-10 pb-6 text-[0.92rem]">
             <div className="shell">
                 <div className="rounded-2xl border border-line bg-surface-2 p-5 sm:p-6">
-                    <NewsletterForm compact />
+                    <Suspense fallback={null}>
+                        <NewsletterForm compact />
+                    </Suspense>
                 </div>
 
                 <div className="mt-10 grid gap-8 lg:grid-cols-[250px_1fr] lg:gap-12">
@@ -489,16 +496,22 @@ export default function Layout() {
             <ProgressBar />
             <Header onSearch={openPalette} />
             <main id="main" className="flex-1 pb-12 outline-none" tabIndex={-1} ref={mainRef}>
-                <NewsletterNotice />
+                <Suspense fallback={null}>
+                    <NewsletterNotice />
+                </Suspense>
                 <Outlet />
             </main>
             <div className="shell">
                 <AdSlot key={`footer-${location.pathname}`} position="footer" />
             </div>
             <Footer />
-            <CommandPalette open={paletteOpen} onClose={closePalette} />
+            <Suspense fallback={null}>
+                <CommandPalette open={paletteOpen} onClose={closePalette} />
+            </Suspense>
             <BackToTop />
-            <AdblockNotice />
+            <Suspense fallback={null}>
+                <AdblockNotice />
+            </Suspense>
             <ScrollRestoration />
         </>
     );

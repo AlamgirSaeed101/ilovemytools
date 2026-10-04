@@ -1,12 +1,14 @@
-import { useRef, useState } from 'react';
+import { lazy, Suspense, useRef, useState } from 'react';
 import { Link } from 'react-router';
 import AdSlot from '../components/AdSlot.jsx';
 import Icon from '../components/Icon.jsx';
-import NewsletterForm from '../components/Newsletter.jsx';
 import ToolCard, { categoryOf } from '../components/ToolCard.jsx';
 import { getSite } from '../lib/api.js';
 import { formatNumber, t, tn } from '../lib/i18n.js';
 import { useMeta } from '../lib/meta.js';
+
+// Well below the fold (after the hero, categories and popular tools), so not needed for first paint.
+const NewsletterForm = lazy(() => import('../components/Newsletter.jsx'));
 
 const PROMISE = [
     'Your PDFs, photos and documents never leave your browser',
@@ -325,7 +327,9 @@ export default function Home() {
                     </div>
                 </section>
 
-                <NewsletterForm />
+                <Suspense fallback={null}>
+                    <NewsletterForm />
+                </Suspense>
 
                 <section className="mb-6 text-center" aria-labelledby="trusted-heading">
                     <h2 id="trusted-heading" className={`${sectionTitle} mb-4`}>
