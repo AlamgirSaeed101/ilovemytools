@@ -629,6 +629,33 @@ test.describe('Calculators', () => {
         await page.getByLabel('Number of people').fill('0');
         await expect(page.getByRole('alert')).toContainText('at least 1 person');
     });
+
+    test('mortgage calculator computes payment, interest and extra-payment savings', async ({ page }) => {
+        await openTool(page, 'mortgage-calculator');
+        const mcStat = (label) => page.locator('.stat').filter({ has: page.locator('.stat__label', { hasText: label }) }).locator('.stat__value');
+
+        // Defaults: $350,000 home, 20% down, 6.5% interest, 30-year term -> $280,000 loan.
+        await expect(mcStat('Monthly payment (principal & interest)')).toHaveText('$1,769.79');
+        await expect(mcStat('Loan amount')).toHaveText('$280,000.00');
+        await expect(mcStat('Total interest')).toHaveText('$357,124.57');
+        await expect(mcStat('Total cost (price + interest)')).toHaveText('$707,124.57');
+        await expect(page.getByText('Paid off in 30 years.')).toBeVisible();
+
+        await page.getByRole('button', { name: '15 years' }).click();
+        await expect(mcStat('Monthly payment (principal & interest)')).toHaveText('$2,439.10');
+
+        await page.getByRole('button', { name: '30 years' }).click();
+        await page.getByLabel('Extra monthly payment (optional)').fill('300');
+        await expect(page.getByText('Paying $300.00 extra each month pays off the loan 9 years, 7 months sooner and saves $131,511.88 in interest.')).toBeVisible();
+
+        await page.getByText('Show the year-by-year amortization schedule').click();
+        const table = page.getByTestId('mortgage-table');
+        await expect(table.locator('tbody tr').first().locator('th')).toHaveText('1');
+
+        await page.getByLabel('Extra monthly payment (optional)').fill('0');
+        await page.getByLabel('Home price').fill('0');
+        await expect(page.getByRole('alert')).toContainText('home price');
+    });
 });
 
 test.describe('Developer tools', () => {

@@ -2076,4 +2076,66 @@ return [
             ['q' => 'Meu conteúdo colado é enviado para algum lugar?', 'a' => 'Não. Toda a conversão acontece no seu navegador usando JavaScript, e nada do que você cola sai do seu dispositivo.'],
         ],
     ],
+
+    'mortgage-calculator' => [
+        'name' => 'Calculadora de financiamento imobiliário',
+        'title' => 'Calculadora de Financiamento - Parcela e Amortização',
+        'description' => 'Calculadora de financiamento gratuita: informe o preço, a entrada, a taxa e o prazo para ver a parcela mensal, os juros totais e a amortização.',
+        'h1' => 'Calculadora de financiamento imobiliário',
+        'tagline' => 'Veja sua parcela mensal, os juros totais e o cronograma de amortização ano a ano.',
+        'keywords' => [
+            'calculadora de financiamento imobiliário',
+            'calculadora de parcela de financiamento',
+            'calculadora de financiamento da casa própria',
+            'calculadora de amortização',
+            'calculadora de financiamento com amortização extra',
+        ],
+        'intro' => 'Uma calculadora de financiamento imobiliário calcula a parcela mensal de principal e juros de um empréstimo para comprar um imóvel a partir do preço do imóvel, da entrada, da taxa de juros e do prazo do empréstimo. Informe seus números abaixo para ver a parcela mensal, os juros totais pagos ao longo de todo o empréstimo e um cronograma de amortização completo, ano a ano, mostrando quanto de cada parcela vai para o principal e quanto vai para os juros. Um pagamento mensal extra opcional mostra quanto antes o empréstimo é quitado e quanto isso economiza em juros.',
+        'steps' => [
+            'Informe o preço do imóvel e escolha uma moeda.',
+            'Defina a entrada, como porcentagem ou como valor fixo.',
+            'Informe a taxa de juros anual e escolha um prazo (10 a 30 anos, ou digite um prazo personalizado).',
+            'Opcionalmente, informe um pagamento mensal extra para ver quanto antes o empréstimo é quitado.',
+            'Veja a parcela mensal, os juros e o custo total, e abra o cronograma de amortização para o detalhamento ano a ano.',
+        ],
+        'features' => [
+            'Parcela mensal de principal e juros, juros totais e custo total',
+            'Entrada por porcentagem ou por valor fixo',
+            'Cronograma de amortização completo, ano a ano',
+            'Pagamentos extras mostram o tempo e os juros economizados',
+            'Funciona com qualquer moeda e qualquer prazo de 1 a 50 anos',
+            'Funciona totalmente no seu navegador - nada do que você informa é enviado para lugar nenhum',
+        ],
+        'content' => [
+            [
+                'heading' => 'Como a parcela mensal é calculada',
+                'body' => 'A calculadora usa a fórmula padrão de amortização de taxa fixa: M = P x r / (1 - (1 + r)^-n), em que P é o valor do empréstimo (preço do imóvel menos a entrada), r é a taxa de juros mensal (a taxa anual dividida por 12) e n é o número total de parcelas mensais (o prazo em anos multiplicado por 12). É a mesma fórmula usada pelos bancos em um financiamento de taxa fixa, e ela cobre apenas principal e juros - imposto sobre a propriedade (IPTU), seguro residencial, seguro do empréstimo (PMI) e taxas de condomínio não estão incluídos, pois variam de acordo com o local e o credor.',
+            ],
+            [
+                'heading' => 'Por que pagamentos extras economizam tanto em juros',
+                'body' => 'Cada real extra pago no principal deixa de gerar juros pelo resto do empréstimo, então pagar a mais no início do empréstimo - quando o saldo e a parte de juros de cada parcela são maiores - tem o maior efeito. A calculadora compara o cronograma com e sem o pagamento extra para mostrar exatamente quantos meses antes o empréstimo é quitado e quantos juros totais são evitados.',
+            ],
+            [
+                'heading' => 'Entrada: o "deposit" no Reino Unido',
+                'body' => 'O valor inicial pago por um imóvel, que reduz o empréstimo necessário, é chamado de "down payment" nos EUA e de "deposit" no Reino Unido, na Irlanda e em vários outros países - aqui ambos significam a mesma coisa que a entrada. Uma entrada maior significa um empréstimo menor, uma parcela mensal mais baixa e menos juros pagos no total, embora os credores também possam ter sua própria entrada mínima e outras regras de elegibilidade que esta calculadora não cobre.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'O que está incluído nessa parcela de financiamento?', 'a' => 'Apenas principal e juros. Imposto sobre a propriedade (IPTU), seguro residencial, seguro do empréstimo (PMI) e taxas de condomínio não estão incluídos porque variam de acordo com o local, o credor e a seguradora.'],
+            ['q' => 'Como um pagamento mensal extra ajuda?', 'a' => 'O dinheiro extra vai direto para o principal do empréstimo, então deixa de gerar juros pelo resto do empréstimo. A calculadora mostra exatamente quantos meses antes o empréstimo é quitado e quantos juros totais são economizados.'],
+            ['q' => 'Qual é um prazo típico de financiamento?', 'a' => '30 anos é o mais comum nos EUA; 25 anos é mais típico no Reino Unido e na Irlanda. Prazos mais curtos (10 a 20 anos) significam uma parcela mensal mais alta, mas bem menos juros totais.'],
+            ['q' => 'Entrada é a mesma coisa que "deposit"?', 'a' => 'Sim - "down payment" é o termo usado nos EUA e "deposit" é o termo usado no Reino Unido/Irlanda para o mesmo valor inicial pago por um imóvel.'],
+            ['q' => 'Por que a proposta do meu banco é diferente desta calculadora?', 'a' => 'Os credores somam imposto sobre a propriedade, seguro, PMI, taxas e seus próprios arredondamentos, e sua taxa real depende do seu crédito, do credor e do tipo de empréstimo. Esta calculadora mostra a matemática de principal e juros por trás disso para você comparar cenários rapidamente.'],
+        ],
+        'table' => [
+            'caption' => 'Parcela mensal e juros totais de um empréstimo de $300,000 a 6,5% por prazo (apenas principal e juros)',
+            'headers' => ['Prazo do empréstimo', 'Parcela mensal', 'Juros totais pagos'],
+            'rows' => [
+                ['15 anos', '$2,613.32', '$170,397.98'],
+                ['20 anos', '$2,236.72', '$236,812.66'],
+                ['25 anos', '$2,025.62', '$307,686.45'],
+                ['30 anos', '$1,896.20', '$382,633.47'],
+            ],
+        ],
+    ],
 ];

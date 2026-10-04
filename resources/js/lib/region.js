@@ -34,3 +34,17 @@ export function tipPresets(region = visitorRegion()) {
     if (region && /^(AT|BE|CH|DE|DK|ES|FI|FR|GR|IT|LU|NL|NO|PL|PT|SE|CZ|HU|RO)$/.test(region)) return [5, 10, 15, 20];
     return [10, 15, 18, 20];
 }
+
+/** Currency symbol: the UK uses pounds, the eurozone euros, everyone else defaults to US dollars. */
+export function defaultCurrency(region = visitorRegion()) {
+    if (region === 'GB') return '£';
+    if (region === 'CA') return 'C$';
+    if (['AU', 'NZ'].includes(region)) return 'A$';
+    if (region && /^(AT|BE|CY|DE|EE|ES|FI|FR|GR|IE|IT|LT|LU|LV|MT|NL|PT|SI|SK)$/.test(region)) return '€';
+    return '$';
+}
+
+/** Typical mortgage term: 30-year loans are the US norm, 25 years is more common in the UK/Ireland. */
+export function defaultMortgageTermYears(region = visitorRegion()) {
+    return ['GB', 'IE'].includes(region) ? 25 : 30;
+}

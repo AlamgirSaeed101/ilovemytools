@@ -2076,4 +2076,66 @@ return [
             ['q' => 'Wird mein eingefügter Inhalt irgendwohin hochgeladen?', 'a' => 'Nein. Die gesamte Umwandlung läuft in deinem Browser mit JavaScript, und nichts, was du einfügst, verlässt jemals dein Gerät.'],
         ],
     ],
+
+    'mortgage-calculator' => [
+        'name' => 'Baufinanzierungsrechner',
+        'title' => 'Baufinanzierungsrechner - Monatsrate & Tilgungsplan',
+        'description' => 'Kostenloser Baufinanzierungsrechner: Kaufpreis, Anzahlung, Zinssatz und Laufzeit eingeben und Monatsrate, Zinsen und Tilgungsplan sehen.',
+        'h1' => 'Baufinanzierungsrechner',
+        'tagline' => 'Sieh deine Monatsrate, die Gesamtzinsen und den Tilgungsplan Jahr für Jahr.',
+        'keywords' => [
+            'baufinanzierungsrechner',
+            'immobilienkredit rechner',
+            'hypothekenrechner',
+            'tilgungsplan rechner',
+            'baufinanzierungsrechner mit sondertilgung',
+        ],
+        'intro' => 'Ein Baufinanzierungsrechner ermittelt die monatliche Rate aus Tilgung und Zinsen für einen Immobilienkredit anhand des Kaufpreises, der Anzahlung, des Zinssatzes und der Laufzeit. Gib unten deine Zahlen ein, um die Monatsrate, die über die gesamte Laufzeit gezahlten Gesamtzinsen und einen vollständigen Tilgungsplan Jahr für Jahr zu sehen, der zeigt, wie viel jeder Rate auf Tilgung und wie viel auf Zinsen entfällt. Eine optionale monatliche Sondertilgung zeigt, wie viel früher das Darlehen abbezahlt ist und wie viele Zinsen dadurch gespart werden.',
+        'steps' => [
+            'Gib den Kaufpreis ein und wähle eine Währung.',
+            'Lege die Anzahlung fest, entweder als Prozentsatz oder als festen Betrag.',
+            'Gib den jährlichen Zinssatz ein und wähle eine Laufzeit (10-30 Jahre, oder trage eine eigene Laufzeit ein).',
+            'Trage optional eine monatliche Sondertilgung ein, um zu sehen, wie viel früher das Darlehen abbezahlt ist.',
+            'Lies die Monatsrate, die Zinsen und die Gesamtkosten ab und öffne den Tilgungsplan für die Aufschlüsselung Jahr für Jahr.',
+        ],
+        'features' => [
+            'Monatliche Rate aus Tilgung und Zinsen, Gesamtzinsen und Gesamtkosten',
+            'Anzahlung in Prozent oder als fester Betrag',
+            'Vollständiger Tilgungsplan Jahr für Jahr',
+            'Sondertilgungen zeigen die gesparte Zeit und die gesparten Zinsen',
+            'Funktioniert mit jeder Währung und jeder Laufzeit von 1 bis 50 Jahren',
+            'Läuft komplett in deinem Browser - nichts von dem, was du eingibst, wird irgendwohin gesendet',
+        ],
+        'content' => [
+            [
+                'heading' => 'So wird die Monatsrate berechnet',
+                'body' => 'Der Rechner nutzt die übliche Formel für die Tilgung bei festem Zinssatz: M = P x r / (1 - (1 + r)^-n), wobei P der Darlehensbetrag ist (Kaufpreis minus Anzahlung), r der monatliche Zinssatz (der Jahreszins geteilt durch 12) und n die Gesamtzahl der Monatsraten (die Laufzeit in Jahren mal 12). Das ist dieselbe Formel, die Banken bei einer Festzinsfinanzierung verwenden, und sie deckt nur Tilgung und Zinsen ab - Grundsteuer, Wohngebäudeversicherung, Kreditausfallversicherung (PMI) und Hausgeld sind nicht enthalten, da sie je nach Lage und Kreditgeber unterschiedlich sind.',
+            ],
+            [
+                'heading' => 'Warum Sondertilgungen so viele Zinsen sparen',
+                'body' => 'Jeder zusätzliche Euro, der auf die Tilgung gezahlt wird, erzeugt für den Rest des Darlehens keine Zinsen mehr. Deshalb hat eine Sondertilgung früh in der Laufzeit - wenn die Restschuld und der Zinsanteil jeder Rate am größten sind - die größte Wirkung. Der Rechner vergleicht den Tilgungsplan mit und ohne die Sondertilgung, um genau zu zeigen, um wie viele Monate das Darlehen früher abbezahlt ist und wie viele Zinsen insgesamt gespart werden.',
+            ],
+            [
+                'heading' => 'Anzahlung: das "deposit" in Großbritannien',
+                'body' => 'Der am Anfang gezahlte Betrag für eine Immobilie, der das benötigte Darlehen verringert, heißt in den USA "down payment" und in Großbritannien, Irland und mehreren anderen Ländern "deposit" - beide meinen hier dasselbe wie die Anzahlung. Eine höhere Anzahlung bedeutet ein kleineres Darlehen, eine niedrigere Monatsrate und insgesamt weniger gezahlte Zinsen, auch wenn Kreditgeber zusätzlich eigene Mindestanzahlungen und andere Zulassungsregeln haben können, die dieser Rechner nicht abdeckt.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Was ist in dieser Monatsrate enthalten?', 'a' => 'Nur Tilgung und Zinsen. Grundsteuer, Wohngebäudeversicherung, Kreditausfallversicherung (PMI) und Hausgeld sind nicht enthalten, da sie je nach Lage, Kreditgeber und Versicherer unterschiedlich sind.'],
+            ['q' => 'Wie hilft eine monatliche Sondertilgung?', 'a' => 'Das zusätzliche Geld fließt direkt in die Tilgung des Darlehens und erzeugt dadurch für den Rest der Laufzeit keine Zinsen mehr. Der Rechner zeigt genau, um wie viele Monate das Darlehen früher abbezahlt ist und wie viele Zinsen insgesamt gespart werden.'],
+            ['q' => 'Was ist eine typische Laufzeit bei einer Baufinanzierung?', 'a' => '30 Jahre sind in den USA am gängigsten; in Großbritannien und Irland sind 25 Jahre üblicher. Kürzere Laufzeiten (10-20 Jahre) bedeuten eine höhere Monatsrate, aber deutlich weniger Zinsen insgesamt.'],
+            ['q' => 'Ist eine Anzahlung dasselbe wie ein "deposit"?', 'a' => 'Ja - "down payment" ist der US-Begriff und "deposit" der im Vereinigten Königreich und in Irland verwendete Begriff für denselben am Anfang gezahlten Betrag für eine Immobilie.'],
+            ['q' => 'Warum weicht das Angebot meiner Bank von diesem Rechner ab?', 'a' => 'Kreditgeber rechnen Grundsteuer, Versicherung, PMI, Gebühren und ihre eigenen Rundungen hinzu, und dein tatsächlicher Zinssatz hängt von deiner Bonität, deinem Kreditgeber und der Darlehensart ab. Dieser Rechner zeigt die zugrunde liegende Tilgungs- und Zinsrechnung, damit du Szenarien schnell vergleichen kannst.'],
+        ],
+        'table' => [
+            'caption' => 'Monatsrate und Gesamtzinsen für ein Darlehen über $300,000 bei 6,5 % nach Laufzeit (nur Tilgung und Zinsen)',
+            'headers' => ['Laufzeit', 'Monatsrate', 'Gezahlte Gesamtzinsen'],
+            'rows' => [
+                ['15 Jahre', '$2,613.32', '$170,397.98'],
+                ['20 Jahre', '$2,236.72', '$236,812.66'],
+                ['25 Jahre', '$2,025.62', '$307,686.45'],
+                ['30 Jahre', '$1,896.20', '$382,633.47'],
+            ],
+        ],
+    ],
 ];

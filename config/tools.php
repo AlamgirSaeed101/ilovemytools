@@ -2225,4 +2225,65 @@ return [
         'related' => ['word-to-pdf', 'pdf-to-word', 'merge-pdf'],
     ],
 
+    'mortgage-calculator' => [
+        'name' => 'Mortgage Calculator',
+        'category' => 'calculators',
+        'icon' => 'home',
+        'popular' => true,
+        'updated' => '2026-10-04',
+        'title' => 'Mortgage Calculator - Monthly Payment & Amortization',
+        'description' => 'Free mortgage calculator: enter the home price, down payment, rate and term to see the monthly payment, total interest and an amortization schedule.',
+        'h1' => 'Mortgage Calculator',
+        'tagline' => 'See your monthly payment, total interest and a year-by-year amortization schedule.',
+        'keywords' => ['mortgage calculator', 'mortgage payment calculator', 'home loan calculator', 'amortization calculator', 'mortgage calculator with extra payments'],
+        'intro' => 'A mortgage calculator works out the monthly principal and interest payment on a home loan from the home price, down payment, interest rate and loan term. Enter your numbers below to see the monthly payment, the total interest paid over the life of the loan, and a full year-by-year amortization schedule showing how much of each payment goes to principal versus interest. An optional extra monthly payment shows how much sooner the loan is paid off and how much interest that saves.',
+        'steps' => [
+            'Enter the home price and choose a currency.',
+            'Set the down payment, either as a percentage or a fixed amount.',
+            'Enter the annual interest rate and choose a loan term (10-30 years, or type a custom term).',
+            'Optionally enter an extra monthly payment to see how much sooner the loan is paid off.',
+            'Read the monthly payment, total interest and cost, and open the amortization schedule for the year-by-year breakdown.',
+        ],
+        'features' => [
+            'Monthly principal & interest payment, total interest and total cost',
+            'Down payment by percentage or by a fixed amount',
+            'Full year-by-year amortization schedule',
+            'Extra monthly payments show the time and interest saved',
+            'Works with any currency and any loan term from 1 to 50 years',
+            'Runs entirely in your browser - nothing you enter is sent anywhere',
+        ],
+        'content' => [
+            [
+                'heading' => 'How the monthly payment is calculated',
+                'body' => 'The calculator uses the standard fixed-rate amortization formula: M = P x r / (1 - (1 + r)^-n), where P is the loan amount (home price minus down payment), r is the monthly interest rate (the annual rate divided by 12), and n is the total number of monthly payments (the loan term in years multiplied by 12). This is the same formula banks use for a fixed-rate mortgage, and it only covers principal and interest - property tax, homeowners insurance, mortgage insurance (PMI) and HOA fees are not included, since those vary by location and lender.',
+            ],
+            [
+                'heading' => 'Why extra payments save so much interest',
+                'body' => 'Every extra dollar paid toward the principal stops accruing interest for the rest of the loan, so paying extra early in a loan - when the balance and the interest portion of each payment are largest - has the biggest effect. The calculator compares the schedule with and without the extra payment to show exactly how many months sooner the loan is paid off and how much total interest is avoided.',
+            ],
+            [
+                'heading' => 'Down payment: "deposit" in the UK',
+                'body' => 'The upfront amount paid toward a home, reducing the loan needed, is called a "down payment" in the US and a "deposit" in the UK, Ireland and several other countries - both mean the same thing here. A larger down payment means a smaller loan, a lower monthly payment and less interest paid overall, though lenders may also have their own minimum down payment and other eligibility rules not covered by this calculator.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'What is included in this mortgage payment?', 'a' => 'Only principal and interest. Property tax, homeowners insurance, mortgage insurance (PMI) and HOA fees are not included because they vary by location, lender and insurer.'],
+            ['q' => 'How does an extra monthly payment help?', 'a' => 'Extra money goes straight to the loan\'s principal, so it stops accruing interest for the rest of the loan. The calculator shows exactly how many months sooner the loan is paid off and how much total interest is saved.'],
+            ['q' => 'What is a typical mortgage term?', 'a' => '30 years is most common in the US; 25 years is more typical in the UK and Ireland. Shorter terms (10-20 years) mean a higher monthly payment but much less total interest.'],
+            ['q' => 'Is a down payment the same as a deposit?', 'a' => 'Yes - "down payment" is the US term and "deposit" is the UK/Ireland term for the same upfront amount paid toward a home.'],
+            ['q' => 'Why does my bank\'s quote differ from this calculator?', 'a' => 'Lenders add property tax, insurance, PMI, fees and their own rounding, and your actual rate depends on your credit, lender and loan type. This calculator shows the underlying principal and interest math so you can compare scenarios quickly.'],
+        ],
+        'related' => ['percentage-calculator', 'tip-calculator', 'age-calculator'],
+        'table' => [
+            'caption' => 'Monthly payment and total interest on a $300,000 loan at 6.5% by term (principal & interest only)',
+            'headers' => ['Loan term', 'Monthly payment', 'Total interest paid'],
+            'rows' => [
+                ['15 years', '$2,613.32', '$170,397.98'],
+                ['20 years', '$2,236.72', '$236,812.66'],
+                ['25 years', '$2,025.62', '$307,686.45'],
+                ['30 years', '$1,896.20', '$382,633.47'],
+            ],
+        ],
+    ],
+
 ];

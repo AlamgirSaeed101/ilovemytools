@@ -1971,4 +1971,66 @@ return [
             ['q' => '¿Se sube mi contenido pegado a algún sitio?', 'a' => 'No. Toda la conversión se realiza en tu navegador con JavaScript, y nada de lo que pegas sale nunca de tu dispositivo.'],
         ],
     ],
+
+    'mortgage-calculator' => [
+        'name' => 'Calculadora de hipoteca',
+        'title' => 'Calculadora de Hipoteca - Cuota Mensual y Amortización',
+        'description' => 'Calculadora de hipoteca gratis: introduce el precio, el pago inicial, el interés y el plazo para ver la cuota mensual, los intereses totales y la amortización.',
+        'h1' => 'Calculadora de hipoteca',
+        'tagline' => 'Consulta tu cuota mensual, los intereses totales y el calendario de amortización año por año.',
+        'keywords' => [
+            'calculadora de hipoteca',
+            'calculadora de cuota hipotecaria',
+            'calculadora de préstamo hipotecario',
+            'calculadora de amortización',
+            'calculadora de hipoteca con pagos extra',
+        ],
+        'intro' => 'Una calculadora de hipoteca calcula la cuota mensual de capital e intereses de un préstamo hipotecario a partir del precio de la vivienda, el pago inicial, el tipo de interés y el plazo del préstamo. Introduce tus datos a continuación para ver la cuota mensual, los intereses totales pagados durante toda la vida del préstamo y un calendario de amortización completo, año por año, que muestra cuánto de cada pago va a capital y cuánto a intereses. Un pago mensual extra opcional muestra cuánto antes se salda el préstamo y cuánto se ahorra en intereses.',
+        'steps' => [
+            'Introduce el precio de la vivienda y elige una moneda.',
+            'Define el pago inicial, como porcentaje o como importe fijo.',
+            'Introduce el tipo de interés anual y elige un plazo (10-30 años, o escribe un plazo personalizado).',
+            'Opcionalmente, introduce un pago mensual extra para ver cuánto antes se salda el préstamo.',
+            'Consulta la cuota mensual, los intereses y el coste total, y abre el calendario de amortización para ver el desglose año por año.',
+        ],
+        'features' => [
+            'Cuota mensual de capital e intereses, intereses totales y coste total',
+            'Pago inicial por porcentaje o por un importe fijo',
+            'Calendario de amortización completo, año por año',
+            'Los pagos extra muestran el tiempo y los intereses ahorrados',
+            'Funciona con cualquier moneda y cualquier plazo de 1 a 50 años',
+            'Funciona por completo en tu navegador: nada de lo que introduces se envía a ningún sitio',
+        ],
+        'content' => [
+            [
+                'heading' => 'Cómo se calcula la cuota mensual',
+                'body' => 'La calculadora usa la fórmula estándar de amortización a tipo fijo: M = P x r / (1 - (1 + r)^-n), donde P es el importe del préstamo (precio de la vivienda menos el pago inicial), r es el tipo de interés mensual (el tipo anual dividido entre 12) y n es el número total de cuotas mensuales (el plazo en años multiplicado por 12). Es la misma fórmula que usan los bancos para una hipoteca a tipo fijo, y solo cubre capital e intereses: el impuesto sobre la propiedad, el seguro de hogar, el seguro hipotecario (PMI) y las cuotas de comunidad no están incluidos, ya que varían según la ubicación y el prestamista.',
+            ],
+            [
+                'heading' => 'Por qué los pagos extra ahorran tantos intereses',
+                'body' => 'Cada euro extra destinado al capital deja de generar intereses durante el resto del préstamo, así que pagar de más al principio del préstamo -cuando el saldo y la parte de intereses de cada cuota son mayores- tiene el mayor efecto. La calculadora compara el calendario con y sin el pago extra para mostrar exactamente cuántos meses antes se salda el préstamo y cuántos intereses totales se evitan.',
+            ],
+            [
+                'heading' => 'Pago inicial: el "depósito" en el Reino Unido',
+                'body' => 'El importe inicial pagado por una vivienda, que reduce el préstamo necesario, se llama "down payment" en EE. UU. y "deposit" (depósito) en el Reino Unido, Irlanda y otros países; aquí ambos significan lo mismo. Un pago inicial mayor supone un préstamo menor, una cuota mensual más baja y menos intereses pagados en total, aunque los prestamistas también pueden tener su propio pago inicial mínimo y otras condiciones de elegibilidad que esta calculadora no cubre.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => '¿Qué incluye esta cuota hipotecaria?', 'a' => 'Solo capital e intereses. El impuesto sobre la propiedad, el seguro de hogar, el seguro hipotecario (PMI) y las cuotas de comunidad no están incluidos porque varían según la ubicación, el prestamista y la aseguradora.'],
+            ['q' => '¿Cómo ayuda un pago mensual extra?', 'a' => 'El dinero extra va directo al capital del préstamo, así que deja de generar intereses durante el resto del préstamo. La calculadora muestra exactamente cuántos meses antes se salda el préstamo y cuántos intereses totales se ahorran.'],
+            ['q' => '¿Cuál es un plazo hipotecario típico?', 'a' => '30 años es lo más común en EE. UU.; 25 años es más habitual en el Reino Unido e Irlanda. Los plazos más cortos (10-20 años) suponen una cuota mensual más alta pero muchos menos intereses totales.'],
+            ['q' => '¿Es lo mismo el pago inicial que el depósito?', 'a' => 'Sí: "down payment" es el término de EE. UU. y "deposit" (depósito) es el término del Reino Unido e Irlanda para el mismo importe inicial pagado por una vivienda.'],
+            ['q' => '¿Por qué la oferta de mi banco es distinta a esta calculadora?', 'a' => 'Los prestamistas añaden impuesto sobre la propiedad, seguro, PMI, comisiones y sus propios redondeos, y tu tipo real depende de tu perfil crediticio, tu prestamista y el tipo de préstamo. Esta calculadora muestra las matemáticas de capital e intereses subyacentes para que puedas comparar escenarios rápidamente.'],
+        ],
+        'table' => [
+            'caption' => 'Cuota mensual e intereses totales de un préstamo de $300,000 al 6.5% según el plazo (solo capital e intereses)',
+            'headers' => ['Plazo del préstamo', 'Cuota mensual', 'Intereses totales pagados'],
+            'rows' => [
+                ['15 años', '$2,613.32', '$170,397.98'],
+                ['20 años', '$2,236.72', '$236,812.66'],
+                ['25 años', '$2,025.62', '$307,686.45'],
+                ['30 años', '$1,896.20', '$382,633.47'],
+            ],
+        ],
+    ],
 ];

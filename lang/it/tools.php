@@ -2076,4 +2076,66 @@ return [
             ['q' => 'Il mio contenuto incollato viene caricato da qualche parte?', 'a' => 'No. Tutta la conversione avviene nel tuo browser con JavaScript, e nulla di ciò che incolli lascia mai il tuo dispositivo.'],
         ],
     ],
+
+    'mortgage-calculator' => [
+        'name' => 'Calcolatore di mutuo',
+        'title' => 'Calcolatore di Mutuo - Rata Mensile e Ammortamento',
+        'description' => 'Calcolatore di mutuo gratuito: inserisci prezzo, acconto, tasso e durata per vedere la rata mensile, gli interessi totali e il piano di ammortamento.',
+        'h1' => 'Calcolatore di mutuo',
+        'tagline' => 'Scopri la rata mensile, gli interessi totali e il piano di ammortamento anno per anno.',
+        'keywords' => [
+            'calcolatore di mutuo',
+            'calcolatore rata mutuo',
+            'simulatore mutuo casa',
+            'calcolatore di ammortamento',
+            'calcolatore di mutuo con rimborso anticipato',
+        ],
+        'intro' => 'Un calcolatore di mutuo determina la rata mensile di capitale e interessi di un mutuo per la casa a partire dal prezzo dell\'immobile, dall\'acconto, dal tasso di interesse e dalla durata del mutuo. Inserisci i tuoi dati qui sotto per vedere la rata mensile, gli interessi totali pagati per tutta la durata del mutuo e un piano di ammortamento completo, anno per anno, che mostra quanto di ogni rata va al capitale e quanto agli interessi. Un pagamento mensile extra facoltativo mostra di quanto prima viene estinto il mutuo e quanti interessi si risparmiano.',
+        'steps' => [
+            'Inserisci il prezzo dell\'immobile e scegli una valuta.',
+            'Imposta l\'acconto, in percentuale oppure come importo fisso.',
+            'Inserisci il tasso di interesse annuo e scegli una durata (10-30 anni, oppure digita una durata personalizzata).',
+            'Facoltativamente, inserisci un pagamento mensile extra per vedere di quanto prima viene estinto il mutuo.',
+            'Leggi la rata mensile, gli interessi e il costo totale, e apri il piano di ammortamento per il dettaglio anno per anno.',
+        ],
+        'features' => [
+            'Rata mensile di capitale e interessi, interessi totali e costo totale',
+            'Acconto in percentuale o come importo fisso',
+            'Piano di ammortamento completo, anno per anno',
+            'I pagamenti extra mostrano il tempo e gli interessi risparmiati',
+            'Funziona con qualsiasi valuta e qualsiasi durata del mutuo da 1 a 50 anni',
+            'Funziona interamente nel tuo browser - nulla di ciò che inserisci viene inviato da nessuna parte',
+        ],
+        'content' => [
+            [
+                'heading' => 'Come viene calcolata la rata mensile',
+                'body' => 'Il calcolatore usa la formula standard di ammortamento a tasso fisso: M = P x r / (1 - (1 + r)^-n), dove P è l\'importo del mutuo (prezzo dell\'immobile meno l\'acconto), r è il tasso di interesse mensile (il tasso annuo diviso per 12) e n è il numero totale di rate mensili (la durata in anni moltiplicata per 12). È la stessa formula usata dalle banche per un mutuo a tasso fisso, e copre solo capitale e interessi - l\'imposta sulla proprietà, l\'assicurazione sulla casa, l\'assicurazione sul mutuo (PMI) e le spese condominiali non sono incluse, perché variano in base alla località e al prestatore.',
+            ],
+            [
+                'heading' => 'Perché i pagamenti extra fanno risparmiare così tanti interessi',
+                'body' => 'Ogni euro extra versato sul capitale smette di generare interessi per il resto del mutuo, quindi pagare di più all\'inizio del mutuo - quando il saldo e la quota di interessi di ogni rata sono più alti - ha l\'effetto maggiore. Il calcolatore confronta il piano con e senza il pagamento extra per mostrare esattamente di quanti mesi prima viene estinto il mutuo e quanti interessi totali si evitano.',
+            ],
+            [
+                'heading' => 'Acconto: il "deposit" nel Regno Unito',
+                'body' => 'La somma versata inizialmente per una casa, che riduce il mutuo necessario, si chiama "down payment" negli Stati Uniti e "deposit" nel Regno Unito, in Irlanda e in diversi altri paesi - qui entrambi indicano la stessa cosa dell\'acconto. Un acconto più alto significa un mutuo più piccolo, una rata mensile più bassa e meno interessi pagati in totale, anche se i prestatori possono avere anche un proprio acconto minimo e altre regole di idoneità non coperte da questo calcolatore.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Cosa include questa rata del mutuo?', 'a' => 'Solo capitale e interessi. L\'imposta sulla proprietà, l\'assicurazione sulla casa, l\'assicurazione sul mutuo (PMI) e le spese condominiali non sono incluse perché variano in base alla località, al prestatore e all\'assicuratore.'],
+            ['q' => 'Come aiuta un pagamento mensile extra?', 'a' => 'Il denaro extra va direttamente al capitale del mutuo, quindi smette di generare interessi per il resto del mutuo. Il calcolatore mostra esattamente di quanti mesi prima viene estinto il mutuo e quanti interessi totali si risparmiano.'],
+            ['q' => 'Qual è una durata tipica del mutuo?', 'a' => '30 anni è la durata più comune negli Stati Uniti; 25 anni è più tipica nel Regno Unito e in Irlanda. Durate più brevi (10-20 anni) comportano una rata mensile più alta ma molti meno interessi totali.'],
+            ['q' => 'L\'acconto è la stessa cosa del "deposit"?', 'a' => 'Sì - "down payment" è il termine statunitense e "deposit" è il termine usato nel Regno Unito e in Irlanda per la stessa somma versata inizialmente per una casa.'],
+            ['q' => 'Perché il preventivo della mia banca è diverso da questo calcolatore?', 'a' => 'I prestatori aggiungono imposta sulla proprietà, assicurazione, PMI, commissioni e i propri arrotondamenti, e il tuo tasso reale dipende dal tuo merito creditizio, dal prestatore e dal tipo di mutuo. Questo calcolatore mostra il calcolo di capitale e interessi sottostante, così puoi confrontare rapidamente diversi scenari.'],
+        ],
+        'table' => [
+            'caption' => 'Rata mensile e interessi totali di un mutuo di $300,000 al 6,5% in base alla durata (solo capitale e interessi)',
+            'headers' => ['Durata del mutuo', 'Rata mensile', 'Interessi totali pagati'],
+            'rows' => [
+                ['15 anni', '$2,613.32', '$170,397.98'],
+                ['20 anni', '$2,236.72', '$236,812.66'],
+                ['25 anni', '$2,025.62', '$307,686.45'],
+                ['30 anni', '$1,896.20', '$382,633.47'],
+            ],
+        ],
+    ],
 ];

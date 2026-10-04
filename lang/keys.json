@@ -176,7 +176,8 @@
     "key": "{count} months",
     "one": "{count} month",
     "files": [
-      "resources/js/tools/AgeCalculator.jsx"
+      "resources/js/tools/AgeCalculator.jsx",
+      "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
   {
@@ -271,7 +272,8 @@
     "key": "{count} years",
     "one": "{count} year",
     "files": [
-      "resources/js/tools/AgeCalculator.jsx"
+      "resources/js/tools/AgeCalculator.jsx",
+      "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
   {
@@ -438,6 +440,12 @@
     "key": "{words} words · {sentences} sentences analysed",
     "files": [
       "resources/js/tools/AiDetector.jsx"
+    ]
+  },
+  {
+    "key": "{years}, {months}",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
   {
@@ -828,6 +836,12 @@
     ]
   },
   {
+    "key": "Amortization schedule",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
     "key": "Analytics cookies (if enabled) such as Google Analytics, to understand how visitors use the Site in aggregate.",
     "files": [
       "resources/js/pages/InfoPages.jsx"
@@ -1007,9 +1021,16 @@
     ]
   },
   {
+    "key": "By amount",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
     "key": "By percentage",
     "files": [
-      "resources/js/tools/ImageResizer.jsx"
+      "resources/js/tools/ImageResizer.jsx",
+      "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
   {
@@ -1555,9 +1576,21 @@
     ]
   },
   {
+    "key": "Currency",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
     "key": "Curry",
     "files": [
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Custom loan term (years)",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
   {
@@ -1799,6 +1832,24 @@
     "key": "Done! Your Word document is ready.",
     "files": [
       "resources/js/tools/PdfToWord.jsx"
+    ]
+  },
+  {
+    "key": "Down payment",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Down payment amount",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Down payment percentage",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
   {
@@ -2087,6 +2138,31 @@
     ]
   },
   {
+    "key": "Enter a down payment of 0 or more.",
+    "files": [
+      "resources/js/lib/mortgage.js"
+    ]
+  },
+  {
+    "key": "Enter a home price greater than 0.",
+    "files": [
+      "resources/js/lib/mortgage.js"
+    ]
+  },
+  {
+    "key": "Enter a home price, down payment, interest rate and loan term to see the monthly payment.",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Enter a loan term between 1 and 50 years.",
+    "files": [
+      "resources/js/lib/mortgage.js",
+      "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
     "key": "Enter a percentage greater than 0.",
     "files": [
       "resources/js/tools/ImageResizer.jsx"
@@ -2126,6 +2202,19 @@
     "key": "Enter a width and height of at least 1 pixel.",
     "files": [
       "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Enter an extra payment of 0 or more.",
+    "files": [
+      "resources/js/lib/mortgage.js",
+      "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Enter an interest rate between 0% and 100%.",
+    "files": [
+      "resources/js/lib/mortgage.js"
     ]
   },
   {
@@ -2254,6 +2343,12 @@
     "key": "External",
     "files": [
       "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
+    "key": "Extra monthly payment (optional)",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
   {
@@ -2689,6 +2784,12 @@
     ]
   },
   {
+    "key": "Home price",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
     "key": "Hours",
     "files": [
       "resources/js/tools/CountdownTimer.jsx"
@@ -2857,6 +2958,18 @@
     "key": "Instant results - no waiting in an upload or download queue",
     "files": [
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Interest paid",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Interest rate (annual %)",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
   {
@@ -3118,6 +3231,18 @@
     ]
   },
   {
+    "key": "Loan amount",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Loan term",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
     "key": "Local storage in your browser to remember your light/dark theme and recently used tools. This never leaves your device.",
     "files": [
       "resources/js/pages/InfoPages.jsx"
@@ -3275,6 +3400,12 @@
     "files": [
       "resources/js/components/Layout.jsx",
       "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Monthly payment (principal & interest)",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
   {
@@ -3780,6 +3911,12 @@
     ]
   },
   {
+    "key": "Paid off in {time}.",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
     "key": "Paragraphs",
     "files": [
       "resources/js/tools/WordCounter.jsx"
@@ -3843,6 +3980,12 @@
     "key": "Paused",
     "files": [
       "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "Paying {extra} extra each month pays off the loan {time} sooner and saves {saved} in interest.",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
   {
@@ -4112,6 +4255,12 @@
     ]
   },
   {
+    "key": "Principal paid",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
     "key": "Privacy first",
     "files": [
       "resources/js/pages/Home.jsx",
@@ -4374,6 +4523,12 @@
     "key": "REM",
     "files": [
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Remaining balance",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
   {
@@ -4777,6 +4932,12 @@
     "key": "Show passwords",
     "files": [
       "resources/js/tools/ProtectPdf.jsx"
+    ]
+  },
+  {
+    "key": "Show the year-by-year amortization schedule",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
   {
@@ -5395,6 +5556,12 @@
     ]
   },
   {
+    "key": "This covers principal and interest only. It does not include property tax, homeowners insurance, mortgage insurance (PMI) or HOA fees, which vary by location and lender.",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
     "key": "This domain’s extension does not have an RDAP service yet.",
     "files": [
       "resources/js/tools/DomainAgeChecker.jsx"
@@ -5631,6 +5798,12 @@
     ]
   },
   {
+    "key": "Total cost (price + interest)",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
     "key": "Total days",
     "files": [
       "resources/js/tools/AgeCalculator.jsx"
@@ -5646,6 +5819,12 @@
     "key": "Total hours (approx.)",
     "files": [
       "resources/js/tools/AgeCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Total interest",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
   {
@@ -6076,6 +6255,12 @@
     ]
   },
   {
+    "key": "Year",
+    "files": [
+      "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
     "key": "You agree not to misuse the Site, including attempting to disrupt it, overload it with automated requests, or use it for unlawful purposes.",
     "files": [
       "resources/js/pages/InfoPages.jsx"
@@ -6176,6 +6361,12 @@
     "key": "Your browser does not support image processing (Canvas).",
     "files": [
       "resources/js/lib/image.js"
+    ]
+  },
+  {
+    "key": "Your down payment covers the full home price, so no loan is needed.",
+    "files": [
+      "resources/js/lib/mortgage.js"
     ]
   },
   {

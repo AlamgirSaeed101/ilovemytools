@@ -1958,4 +1958,66 @@ return [
             ['q' => 'Czy moja wklejona treść jest gdzieś wysyłana?', 'a' => 'Nie. Cała konwersja odbywa się w Twojej przeglądarce za pomocą JavaScript, a nic z tego, co wklejasz, nigdy nie opuszcza Twojego urządzenia.'],
         ],
     ],
+
+    'mortgage-calculator' => [
+        'name' => 'Kalkulator kredytu hipotecznego',
+        'title' => 'Kalkulator Kredytu Hipotecznego - Rata i Harmonogram Spłat',
+        'description' => 'Darmowy kalkulator kredytu hipotecznego: podaj cenę, wkład własny, oprocentowanie i okres, aby zobaczyć ratę, odsetki i harmonogram spłat.',
+        'h1' => 'Kalkulator kredytu hipotecznego',
+        'tagline' => 'Sprawdź ratę miesięczną, łączne odsetki i harmonogram spłat rok po roku.',
+        'keywords' => [
+            'kalkulator kredytu hipotecznego',
+            'kalkulator raty kredytu',
+            'kalkulator kredytu mieszkaniowego',
+            'kalkulator harmonogramu spłat',
+            'kalkulator kredytu hipotecznego z nadpłatą',
+        ],
+        'intro' => 'Kalkulator kredytu hipotecznego wylicza miesięczną ratę kapitałowo-odsetkową kredytu na podstawie ceny nieruchomości, wkładu własnego, oprocentowania i okresu kredytowania. Podaj swoje dane poniżej, aby zobaczyć ratę miesięczną, łączne odsetki zapłacone przez cały okres kredytu oraz pełny harmonogram spłat rok po roku, pokazujący, ile z każdej raty trafia na kapitał, a ile na odsetki. Opcjonalna dodatkowa nadpłata miesięczna pokazuje, o ile wcześniej kredyt zostanie spłacony i ile odsetek dzięki temu zaoszczędzisz.',
+        'steps' => [
+            'Podaj cenę nieruchomości i wybierz walutę.',
+            'Ustaw wkład własny, procentowo lub jako stałą kwotę.',
+            'Podaj roczne oprocentowanie i wybierz okres kredytowania (10-30 lat albo wpisz własny okres).',
+            'Opcjonalnie podaj dodatkową nadpłatę miesięczną, aby zobaczyć, o ile wcześniej kredyt zostanie spłacony.',
+            'Sprawdź ratę miesięczną, odsetki i całkowity koszt, a następnie otwórz harmonogram spłat, aby zobaczyć podział rok po roku.',
+        ],
+        'features' => [
+            'Rata miesięczna kapitału i odsetek, odsetki łączne i koszt całkowity',
+            'Wkład własny procentowo lub jako stała kwota',
+            'Pełny harmonogram spłat rok po roku',
+            'Dodatkowe nadpłaty pokazują zaoszczędzony czas i odsetki',
+            'Działa z dowolną walutą i okresem kredytowania od 1 do 50 lat',
+            'Działa w całości w przeglądarce - nic, co wpiszesz, nigdzie nie jest wysyłane',
+        ],
+        'content' => [
+            [
+                'heading' => 'Jak obliczana jest rata miesięczna',
+                'body' => 'Kalkulator korzysta ze standardowego wzoru na ratę kredytu o stałym oprocentowaniu: M = P x r / (1 - (1 + r)^-n), gdzie P to kwota kredytu (cena nieruchomości minus wkład własny), r to miesięczne oprocentowanie (oprocentowanie roczne podzielone przez 12), a n to łączna liczba rat miesięcznych (okres kredytowania w latach razy 12). To ten sam wzór, którego banki używają przy kredycie o stałym oprocentowaniu, i obejmuje on wyłącznie kapitał i odsetki - podatek od nieruchomości, ubezpieczenie domu, ubezpieczenie kredytu (PMI) i czynsz wspólnoty nie są uwzględnione, ponieważ zależą od lokalizacji i kredytodawcy.',
+            ],
+            [
+                'heading' => 'Dlaczego nadpłaty oszczędzają tak dużo odsetek',
+                'body' => 'Każda dodatkowa złotówka wpłacona na poczet kapitału przestaje generować odsetki przez resztę okresu kredytowania, więc nadpłacanie na początku kredytu - gdy saldo i odsetkowa część każdej raty są największe - ma największy wpływ. Kalkulator porównuje harmonogram z nadpłatą i bez niej, pokazując dokładnie, o ile miesięcy wcześniej kredyt zostanie spłacony i ile łącznych odsetek uda się uniknąć.',
+            ],
+            [
+                'heading' => 'Wkład własny: "deposit" w Wielkiej Brytanii',
+                'body' => 'Kwota wpłacana z góry za nieruchomość, zmniejszająca potrzebny kredyt, w USA nazywana jest "down payment", a w Wielkiej Brytanii, Irlandii i kilku innych krajach - "deposit"; oba terminy oznaczają tu to samo co wkład własny. Wyższy wkład własny oznacza mniejszy kredyt, niższą ratę miesięczną i mniej odsetek zapłaconych łącznie, choć kredytodawcy mogą mieć też własny minimalny wkład własny i inne zasady przyznawania kredytu, których ten kalkulator nie uwzględnia.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Co obejmuje ta rata kredytu hipotecznego?', 'a' => 'Tylko kapitał i odsetki. Podatek od nieruchomości, ubezpieczenie domu, ubezpieczenie kredytu (PMI) i czynsz wspólnoty nie są uwzględnione, ponieważ zależą od lokalizacji, kredytodawcy i ubezpieczyciela.'],
+            ['q' => 'Jak pomaga dodatkowa nadpłata miesięczna?', 'a' => 'Dodatkowe pieniądze trafiają bezpośrednio na kapitał kredytu, więc przestają generować odsetki przez resztę okresu kredytowania. Kalkulator pokazuje dokładnie, o ile miesięcy wcześniej kredyt zostanie spłacony i ile łącznych odsetek zaoszczędzisz.'],
+            ['q' => 'Jaki jest typowy okres kredytowania?', 'a' => 'W USA najczęściej spotykane jest 30 lat; w Wielkiej Brytanii i Irlandii bardziej typowe jest 25 lat. Krótsze okresy (10-20 lat) oznaczają wyższą ratę miesięczną, ale znacznie mniej odsetek łącznie.'],
+            ['q' => 'Czy wkład własny to to samo co "deposit"?', 'a' => 'Tak - "down payment" to amerykański termin, a "deposit" to termin używany w Wielkiej Brytanii i Irlandii na tę samą kwotę wpłacaną z góry za nieruchomość.'],
+            ['q' => 'Dlaczego oferta mojego banku różni się od tego kalkulatora?', 'a' => 'Kredytodawcy doliczają podatek od nieruchomości, ubezpieczenie, PMI, opłaty i własne zaokrąglenia, a Twoje rzeczywiste oprocentowanie zależy od zdolności kredytowej, kredytodawcy i rodzaju kredytu. Ten kalkulator pokazuje podstawowe wyliczenia kapitału i odsetek, dzięki czemu możesz szybko porównać różne scenariusze.'],
+        ],
+        'table' => [
+            'caption' => 'Rata miesięczna i łączne odsetki kredytu w wysokości $300,000 przy 6,5% w zależności od okresu (tylko kapitał i odsetki)',
+            'headers' => ['Okres kredytowania', 'Rata miesięczna', 'Łączne zapłacone odsetki'],
+            'rows' => [
+                ['15 lat', '$2,613.32', '$170,397.98'],
+                ['20 lat', '$2,236.72', '$236,812.66'],
+                ['25 lat', '$2,025.62', '$307,686.45'],
+                ['30 lat', '$1,896.20', '$382,633.47'],
+            ],
+        ],
+    ],
 ];

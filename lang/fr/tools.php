@@ -2076,4 +2076,66 @@ return [
             ['q' => 'Mon contenu collé est-il envoyé quelque part ?', 'a' => 'Non. Toute la conversion se fait dans votre navigateur avec JavaScript, et rien de ce que vous collez ne quitte jamais votre appareil.'],
         ],
     ],
+
+    'mortgage-calculator' => [
+        'name' => 'Calculateur de prêt immobilier',
+        'title' => 'Calculateur de Prêt Immobilier - Mensualité et Amortissement',
+        'description' => 'Calculateur de prêt immobilier gratuit : indiquez le prix, l\'apport, le taux et la durée pour voir la mensualité, les intérêts totaux et l\'amortissement.',
+        'h1' => 'Calculateur de prêt immobilier',
+        'tagline' => 'Consultez votre mensualité, vos intérêts totaux et le tableau d\'amortissement année par année.',
+        'keywords' => [
+            'calculateur de prêt immobilier',
+            'calculateur de mensualité de prêt',
+            'simulateur de crédit immobilier',
+            'calculateur d\'amortissement',
+            'calculateur de prêt immobilier avec remboursement anticipé',
+        ],
+        'intro' => 'Un calculateur de prêt immobilier détermine la mensualité de capital et d\'intérêts d\'un crédit immobilier à partir du prix du bien, de l\'apport personnel, du taux d\'intérêt et de la durée du prêt. Saisissez vos chiffres ci-dessous pour voir la mensualité, le total des intérêts payés sur toute la durée du prêt, et un tableau d\'amortissement complet, année par année, montrant la part de chaque mensualité qui va au capital et celle qui va aux intérêts. Un paiement mensuel supplémentaire facultatif montre de combien le prêt est remboursé plus tôt et combien d\'intérêts cela permet d\'économiser.',
+        'steps' => [
+            'Indiquez le prix du bien et choisissez une devise.',
+            'Définissez l\'apport personnel, en pourcentage ou en montant fixe.',
+            'Indiquez le taux d\'intérêt annuel et choisissez une durée (10 à 30 ans, ou saisissez une durée personnalisée).',
+            'Indiquez éventuellement un paiement mensuel supplémentaire pour voir de combien le prêt est remboursé plus tôt.',
+            'Consultez la mensualité, les intérêts et le coût total, puis ouvrez le tableau d\'amortissement pour le détail année par année.',
+        ],
+        'features' => [
+            'Mensualité de capital et d\'intérêts, intérêts totaux et coût total',
+            'Apport personnel en pourcentage ou en montant fixe',
+            'Tableau d\'amortissement complet, année par année',
+            'Les paiements supplémentaires montrent le temps et les intérêts économisés',
+            'Fonctionne avec n\'importe quelle devise et une durée de prêt de 1 à 50 ans',
+            'Fonctionne entièrement dans votre navigateur - rien de ce que vous saisissez n\'est envoyé où que ce soit',
+        ],
+        'content' => [
+            [
+                'heading' => 'Comment la mensualité est calculée',
+                'body' => 'Le calculateur utilise la formule d\'amortissement standard à taux fixe : M = P x r / (1 - (1 + r)^-n), où P est le montant du prêt (prix du bien moins l\'apport personnel), r est le taux d\'intérêt mensuel (le taux annuel divisé par 12) et n est le nombre total de mensualités (la durée du prêt en années multipliée par 12). C\'est la même formule utilisée par les banques pour un prêt à taux fixe, et elle ne couvre que le capital et les intérêts - la taxe foncière, l\'assurance habitation, l\'assurance prêt (PMI) et les charges de copropriété ne sont pas incluses, car elles varient selon le lieu et le prêteur.',
+            ],
+            [
+                'heading' => 'Pourquoi les paiements supplémentaires économisent autant d\'intérêts',
+                'body' => 'Chaque euro supplémentaire versé sur le capital cesse de générer des intérêts pour le reste du prêt, donc payer en plus tôt dans la vie du prêt - quand le solde et la part d\'intérêts de chaque mensualité sont les plus élevés - a le plus grand effet. Le calculateur compare le tableau d\'amortissement avec et sans le paiement supplémentaire pour montrer exactement de combien de mois le prêt est remboursé plus tôt et combien d\'intérêts totaux sont évités.',
+            ],
+            [
+                'heading' => 'Apport personnel : le "deposit" au Royaume-Uni',
+                'body' => 'La somme versée au départ pour un bien, qui réduit le prêt nécessaire, s\'appelle "down payment" aux États-Unis et "deposit" au Royaume-Uni, en Irlande et dans plusieurs autres pays - les deux désignent ici la même chose que l\'apport personnel. Un apport plus important signifie un prêt plus petit, une mensualité plus basse et moins d\'intérêts payés au total, même si les prêteurs peuvent aussi avoir leur propre apport minimum et d\'autres critères d\'éligibilité que ce calculateur ne couvre pas.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Que couvre cette mensualité de prêt immobilier ?', 'a' => 'Seulement le capital et les intérêts. La taxe foncière, l\'assurance habitation, l\'assurance prêt (PMI) et les charges de copropriété ne sont pas incluses car elles varient selon le lieu, le prêteur et l\'assureur.'],
+            ['q' => 'En quoi un paiement mensuel supplémentaire aide-t-il ?', 'a' => 'L\'argent supplémentaire va directement au capital du prêt, qui cesse donc de générer des intérêts pour le reste du prêt. Le calculateur montre exactement de combien de mois le prêt est remboursé plus tôt et combien d\'intérêts totaux sont économisés.'],
+            ['q' => 'Quelle est une durée de prêt immobilier typique ?', 'a' => '30 ans est le plus courant aux États-Unis ; 25 ans est plus habituel au Royaume-Uni et en Irlande. Des durées plus courtes (10 à 20 ans) signifient une mensualité plus élevée mais beaucoup moins d\'intérêts au total.'],
+            ['q' => 'L\'apport personnel est-il la même chose que le "deposit" ?', 'a' => 'Oui - "down payment" est le terme américain et "deposit" est le terme utilisé au Royaume-Uni et en Irlande pour désigner la même somme versée au départ pour un bien.'],
+            ['q' => 'Pourquoi l\'offre de ma banque diffère-t-elle de ce calculateur ?', 'a' => 'Les prêteurs ajoutent la taxe foncière, l\'assurance, le PMI, des frais et leurs propres arrondis, et votre taux réel dépend de votre profil de crédit, de votre prêteur et du type de prêt. Ce calculateur montre le calcul de capital et d\'intérêts sous-jacent pour comparer rapidement des scénarios.'],
+        ],
+        'table' => [
+            'caption' => 'Mensualité et intérêts totaux d\'un prêt de $300,000 à 6,5 % selon la durée (capital et intérêts uniquement)',
+            'headers' => ['Durée du prêt', 'Mensualité', 'Intérêts totaux payés'],
+            'rows' => [
+                ['15 ans', '$2,613.32', '$170,397.98'],
+                ['20 ans', '$2,236.72', '$236,812.66'],
+                ['25 ans', '$2,025.62', '$307,686.45'],
+                ['30 ans', '$1,896.20', '$382,633.47'],
+            ],
+        ],
+    ],
 ];
