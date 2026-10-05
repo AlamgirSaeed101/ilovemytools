@@ -32,6 +32,7 @@ return [
         'pl' => ['name' => 'Polish', 'native' => 'Polski', 'dir' => 'ltr', 'og' => 'pl_PL'],
         'ur' => ['name' => 'Urdu', 'native' => 'اردو', 'dir' => 'rtl', 'og' => 'ur_PK'],
         'ko' => ['name' => 'Korean', 'native' => '한국어', 'dir' => 'ltr', 'og' => 'ko_KR'],
+        'zh' => ['name' => 'Chinese (Traditional)', 'native' => '繁體中文', 'dir' => 'ltr', 'og' => 'zh_HK', 'hreflang' => 'zh-Hant'],
     ],
 
 ];

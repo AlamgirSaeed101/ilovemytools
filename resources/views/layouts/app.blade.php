@@ -53,9 +53,19 @@
             }, true);
             if (document.documentElement.lang.slice(0, 2) !== 'en' || localStorage.getItem(KEY)) return;
             if (/bot|crawl|spider|slurp|lighthouse|inspectiontool|preview|headlesschrome/i.test(navigator.userAgent)) return;
-            var first = ((navigator.languages && navigator.languages[0]) || navigator.language || '').slice(0, 2).toLowerCase();
-            if (first === 'en') return;
-            var alt = document.querySelector('link[rel="alternate"][hreflang="' + first + '"]');
+            var first = ((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
+            if (first.slice(0, 2) === 'en') return;
+            var code = first.slice(0, 2);
+            if (code === 'zh') {
+                // Only Traditional Chinese variants redirect; zh-CN and zh-SG (Simplified) never do.
+                if (['zh-tw', 'zh-hk', 'zh-mo', 'zh-hant'].indexOf(first) === -1) return;
+                code = 'zh-hant';
+            }
+            var links = document.querySelectorAll('link[rel="alternate"][hreflang]');
+            var alt = null;
+            for (var i = 0; i < links.length; i++) {
+                if (links[i].getAttribute('hreflang').toLowerCase().indexOf(code) === 0) { alt = links[i]; break; }
+            }
             if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
         })();
     </script>

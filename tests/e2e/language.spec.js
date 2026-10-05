@@ -22,6 +22,23 @@ test.describe('Automatic language on first visit', () => {
         await ctx.close();
     });
 
+    test('a Traditional Chinese (zh-TW) browser opening an English page gets the Chinese page', async ({ browser, baseURL }) => {
+        const ctx = await browser.newContext({ locale: 'zh-TW', baseURL });
+        const page = await ctx.newPage();
+        await page.goto('/merge-pdf');
+        await expect(page).toHaveURL(/\/zh\/merge-pdf$/);
+        await expect(page.locator('html')).toHaveAttribute('lang', /^zh-Hant/);
+        await ctx.close();
+    });
+
+    test('a Simplified Chinese (zh-CN) browser is never redirected to the Traditional Chinese page', async ({ browser, baseURL }) => {
+        const ctx = await browser.newContext({ locale: 'zh-CN', baseURL });
+        const page = await ctx.newPage();
+        await page.goto('/merge-pdf');
+        await expect(page).toHaveURL(/\/merge-pdf$/);
+        await ctx.close();
+    });
+
     test('Urdu pages are right-to-left', async ({ page }) => {
         await page.goto('/ur');
         await expect(page.locator('html')).toHaveAttribute('lang', /^ur/);
