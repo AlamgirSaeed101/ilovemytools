@@ -27,7 +27,7 @@ return [
         'category' => 'text-tools',
         'icon' => 'text',
         'popular' => true,
-        'updated' => '2026-09-30',
+        'updated' => '2026-10-05',
         'title' => 'Word Counter - Count Words & Characters Online Free',
         'description' => 'Free online word counter. Count words, characters, sentences and paragraphs instantly, and see reading time and keyword density. No sign up needed.',
         'h1' => 'Word Counter',
