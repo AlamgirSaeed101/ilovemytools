@@ -18,6 +18,16 @@ export function track(name, params = {}) {
     }
 }
 
+/** Called when a tool produced something (a download or a copy): records it and lets the page suggest a next step. */
+export function toolDone(name, params = {}) {
+    track(name, params);
+    try {
+        window.dispatchEvent(new CustomEvent('tool:done', { detail: { kind: name } }));
+    } catch {
+        // never break a tool
+    }
+}
+
 /** "photo-no-bg.png" -> "png" */
 export function fileType(filename) {
     return /\.([a-z0-9]{1,5})$/i.exec(String(filename || ''))?.[1]?.toLowerCase() || 'other';

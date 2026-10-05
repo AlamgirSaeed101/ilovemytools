@@ -47,6 +47,11 @@ test.describe('Text tools', () => {
         const [download] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download .txt' }).click()]);
         expect(download.suggestedFilename()).toBe('converted-text.txt');
         expect((await readDownload(download)).toString()).toBe('THEQUICKBROWNFOXOFTHEFOREST');
+
+        // A finished tool suggests a next step instead of ending the visit.
+        const next = page.getByRole('region', { name: 'Done! What would you like to do next?' });
+        await expect(next).toBeVisible();
+        await expect(next.getByRole('link')).not.toHaveCount(0);
     });
 });
 

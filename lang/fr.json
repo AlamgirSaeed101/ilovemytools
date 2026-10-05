@@ -1111,5 +1111,6 @@
     "How to check that your files stay private": "Comment vérifier que vos fichiers restent privés",
     "Open your browser’s developer tools, choose the Network tab and use any tool: you will see that your file is never sent anywhere. The few tools that need to look something up online, such as the Broken Link Checker, say so clearly on the page.": "Ouvrez les outils de développement de votre navigateur, choisissez l’onglet Réseau et utilisez n’importe quel outil : vous verrez que votre fichier n’est envoyé nulle part. Les quelques outils qui doivent consulter quelque chose en ligne, comme le Vérificateur de liens cassés, l’indiquent clairement sur la page.",
     "Corrections": "Corrections",
-    "If you find a mistake in a result or on a page, please tell us and we will correct it. Each tool page shows when it was last updated.": "Si vous trouvez une erreur dans un résultat ou sur une page, dites-le-nous et nous la corrigerons. Chaque page d’outil indique sa date de dernière mise à jour."
+    "If you find a mistake in a result or on a page, please tell us and we will correct it. Each tool page shows when it was last updated.": "Si vous trouvez une erreur dans un résultat ou sur une page, dites-le-nous et nous la corrigerons. Chaque page d’outil indique sa date de dernière mise à jour.",
+    "Done! What would you like to do next?": "Terminé ! Que voulez-vous faire ensuite ?"
 }

@@ -1,4 +1,4 @@
-import { Suspense, useCallback, useEffect, useRef } from 'react';
+import { Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { Link, useLoaderData } from 'react-router';
 import AdSlot from '../components/AdSlot.jsx';
 import Breadcrumbs from '../components/Breadcrumbs.jsx';
@@ -26,6 +26,27 @@ const badges = [
     ['zap', 'No sign up'],
 ];
 
+/** "Done! What next?" card shown once a tool has produced a result. */
+function NextSteps({ tools: next }) {
+    return (
+        <section className="next-steps animate-pop mt-5 rounded-2xl border border-line bg-surface-2 p-4 sm:p-5" aria-labelledby="next-steps-heading" aria-live="polite">
+            <h2 id="next-steps-heading" className="m-0 mb-3 flex items-center gap-2 text-[1.05rem] font-bold [&_svg]:text-success">
+                <Icon name="check" /> {t('Done! What would you like to do next?')}
+            </h2>
+            <ul className="m-0 grid list-none gap-2 p-0 sm:grid-cols-3">
+                {next.map((x) => (
+                    <li key={x.slug}>
+                        <Link className="flex h-full items-center gap-2.5 rounded-xl border border-line bg-surface px-3 py-2.5 text-[0.9rem] font-semibold text-ink no-underline transition-colors hover:border-line-strong" to={`/${x.slug}`}>
+                            <IconTile icon={x.icon} size="sm" />
+                            {x.name}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </section>
+    );
+}
+
 export default function ToolPage() {
     const tool = useLoaderData();
     const site = getSite();
@@ -34,8 +55,14 @@ export default function ToolPage() {
 
     // Count the first interaction with the tool on each page view as "tool_use" in Analytics.
     const used = useRef(false);
+    // After a download or copy, suggest what to do next instead of letting the visit end there.
+    const [done, setDone] = useState(false);
     useEffect(() => {
         used.current = false;
+        setDone(false);
+        const onDone = () => setDone(true);
+        window.addEventListener('tool:done', onDone);
+        return () => window.removeEventListener('tool:done', onDone);
     }, [tool.slug]);
     const markUse = useCallback(() => {
         if (used.current) return;
@@ -93,6 +120,8 @@ export default function ToolPage() {
                             ? t('This tool asks our server to fetch the address you enter. We don’t store the address or the results.')
                             : t('Private: this tool runs in your browser. Your data is never uploaded.')}
                     </p>
+
+                    {done && related.length > 0 && <NextSteps tools={related.slice(0, 3)} />}
 
                     <AdSlot key={`${tool.slug}-below`} position="below_tool" />
 

@@ -1839,6 +1839,12 @@
     ]
   },
   {
+    "key": "Done! What would you like to do next?",
+    "files": [
+      "resources/js/pages/ToolPage.jsx"
+    ]
+  },
+  {
     "key": "Done! Your merged PDF has {pages} ({size}).",
     "files": [
       "resources/js/tools/MergePdf.jsx"

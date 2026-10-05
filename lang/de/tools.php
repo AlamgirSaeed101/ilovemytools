@@ -182,11 +182,11 @@ return [
 
     'image-compressor' => [
         'name' => 'Bild komprimieren',
-        'title' => 'Bild komprimieren: JPG, PNG und WebP online verkleinern',
-        'description' => 'Komprimiere JPG-, PNG- und WebP-Bilder kostenlos. Verkleinere Fotos auf 100 KB ohne sichtbaren Qualitätsverlust. Nichts verlässt dein Gerät.',
-        'h1' => 'Bild komprimieren',
+        'title' => 'Bild verkleinern online: JPG & PNG Größe reduzieren',
+        'description' => 'JPG, PNG und WebP online verkleinern: Bildgröße kostenlos reduzieren, z. B. auf 100 KB, ohne sichtbaren Qualitätsverlust. Nichts verlässt dein Gerät.',
+        'h1' => 'Bild verkleinern & komprimieren',
         'tagline' => 'Verkleinere JPG-, PNG- und WebP-Dateien – sogar auf eine exakte Größe wie 100 KB.',
-        'keywords' => ['bild komprimieren', 'bild verkleinern', 'bild auf 100kb komprimieren', 'bildgröße reduzieren', 'jpg komprimieren'],
+        'keywords' => ['bild verkleinern', 'jpg verkleinern online', 'png verkleinern', 'png größe verkleinern', 'bild komprimieren', 'bild auf 100kb komprimieren', 'bildgröße reduzieren', 'jpg komprimieren'],
         'intro' => 'Ein Bildkomprimierer ist ein Tool, das Bilddateien verkleinert, ohne dass sie sichtbar schlechter aussehen. Mach deine Bilder kleiner, ohne sichtbar an Qualität zu verlieren. Lege eine oder mehrere JPG-, PNG- oder WebP-Dateien ab, wähle eine Qualitätsstufe oder eine Zielgröße wie 100 KB und lade die komprimierten Bilder herunter. Die Komprimierung passiert in deinem Browser, deine Fotos werden also nie hochgeladen.',
         'steps' => [
             'Bilder per Drag & Drop ablegen oder zum Auswählen klicken (JPG, PNG oder WebP).',
@@ -216,7 +216,7 @@ return [
             ['q' => 'Wie komprimiere ich ein Bild auf 100 KB?', 'a' => 'Wähle „Zielgröße“, gib 100 ein und klicke auf Komprimieren. Das Tool findet die beste Qualität unter 100 KB und verkleinert die Abmessungen nur, wenn es nötig ist.'],
             ['q' => 'Werden meine Bilder auf einen Server hochgeladen?', 'a' => 'Nein. Die Bilder werden in deinem Browser mit der Canvas-API komprimiert. Sie verlassen nie dein Gerät.'],
             ['q' => 'Verringert die Komprimierung die Qualität?', 'a' => 'Bei der Standardqualität (75 %) sehen die meisten keinen Unterschied, während die Dateigröße oft um 50-80 % sinkt.'],
-            ['q' => 'Warum ist mein PNG kaum kleiner geworden?', 'a' => 'PNG ist ein verlustfreies Format. Für große Einsparungen wähle WebP oder JPG als Ausgabeformat. Nimm WebP, wenn die Transparenz erhalten bleiben soll.'],
+            ['q' => 'Wie kann ich die Größe einer PNG verkleinern?', 'a' => 'PNG ist ein verlustfreies Format und wird allein kaum kleiner. Für große Einsparungen wähle WebP oder JPG als Ausgabeformat. Nimm WebP, wenn die Transparenz erhalten bleiben soll.'],
             ['q' => 'Gibt es eine Größenbeschränkung?', 'a' => 'Jedes Bild darf bis zu 50 MB groß sein. Sehr große Fotos können auf älteren Smartphones ein paar Sekunden dauern.'],
         ],
         'table' => [

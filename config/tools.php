@@ -238,7 +238,7 @@ return [
         'category' => 'image-tools',
         'icon' => 'image',
         'popular' => true,
-        'updated' => '2026-09-30',
+        'updated' => '2026-10-05',
         'title' => 'Image Compressor - Compress JPG, PNG & WebP Online',
         'description' => 'Compress JPG, PNG and WebP images online for free. Reduce image size to 100KB or any target size with no visible quality loss. Images never leave your device.',
         'h1' => 'Image Compressor',
