@@ -1,17 +1,15 @@
-// Sends the owner a WhatsApp message after a successful deploy, through the free CallMeBot API.
-// Needs the GitHub secrets WHATSAPP_PHONE (international format, e.g. +923001234567) and
-// WHATSAPP_APIKEY (from CallMeBot). Does nothing when they are not set.
+// Tells the owner on their phone after a successful deploy. Uses whichever is configured (GitHub secrets):
+//   Twilio:    TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_FROM (an SMS number like +15551234567, or
+//              "whatsapp:+14155238886" for a WhatsApp sender) and NOTIFY_TO (your number, +923001234567)
+//   CallMeBot: WHATSAPP_PHONE and WHATSAPP_APIKEY (free WhatsApp API)
+// Does nothing when neither is set. Never fails the deploy.
 import { execFileSync } from 'node:child_process';
 
-const phone = process.env.WA_PHONE?.trim();
-const apikey = process.env.WA_KEY?.trim();
-if (!phone || !apikey) {
-    console.log('WhatsApp not configured (WHATSAPP_PHONE / WHATSAPP_APIKEY secrets) - skipped.');
-    process.exit(0);
-}
+const env = (k) => process.env[k]?.trim() || '';
 
 // The commits in this deploy, in plain words: "fix(responsive): no sideways..." -> "No sideways...".
-const range = process.env.BEFORE && !/^0+$/.test(process.env.BEFORE) ? `${process.env.BEFORE}..HEAD` : '-1';
+const before = env('BEFORE');
+const range = before && !/^0+$/.test(before) ? `${before}..HEAD` : '-1';
 let subjects = [];
 try {
     subjects = execFileSync('git', ['log', '--format=%s', range], { encoding: 'utf8' }).trim().split('\n').filter(Boolean);
@@ -23,13 +21,37 @@ const plain = subjects
     .map((s) => s.replace(/^[a-z]+(\([^)]*\))?!?:\s*/i, ''))
     .map((s) => `• ${s.charAt(0).toUpperCase()}${s.slice(1)}`);
 const more = subjects.length > 6 ? `\n…and ${subjects.length - 6} more` : '';
-
 const text = `✅ ilovemytools.store is updated\n\n${plain.join('\n') || '• Site updated'}${more}\n\nhttps://ilovemytools.store`;
-const url = `https://api.callmebot.com/whatsapp.php?phone=${encodeURIComponent(phone)}&text=${encodeURIComponent(text)}&apikey=${encodeURIComponent(apikey)}`;
+
+async function twilio() {
+    const sid = env('TWILIO_ACCOUNT_SID');
+    const token = env('TWILIO_AUTH_TOKEN');
+    const from = env('TWILIO_FROM');
+    let to = env('NOTIFY_TO');
+    if (!sid || !token || !from || !to) return false;
+    if (from.startsWith('whatsapp:') && !to.startsWith('whatsapp:')) to = `whatsapp:${to}`;
+    const res = await fetch(`https://api.twilio.com/2010-04-01/Accounts/${sid}/Messages.json`, {
+        method: 'POST',
+        headers: { Authorization: `Basic ${Buffer.from(`${sid}:${token}`).toString('base64')}`, 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ From: from, To: to, Body: text.slice(0, 1500) }),
+    });
+    const body = await res.json().catch(() => ({}));
+    console.log(`Twilio: HTTP ${res.status}${body.message ? ` - ${body.message}` : ''}`);
+    return true;
+}
+
+async function callMeBot() {
+    const phone = env('WA_PHONE');
+    const apikey = env('WA_KEY');
+    if (!phone || !apikey) return false;
+    const res = await fetch(`https://api.callmebot.com/whatsapp.php?phone=${encodeURIComponent(phone)}&text=${encodeURIComponent(text)}&apikey=${encodeURIComponent(apikey)}`);
+    console.log(`CallMeBot: HTTP ${res.status}`);
+    return true;
+}
 
 try {
-    const res = await fetch(url);
-    console.log(`WhatsApp notification: HTTP ${res.status}`);
+    const sent = [await twilio(), await callMeBot()].some(Boolean);
+    if (!sent) console.log('No phone notification configured (Twilio or CallMeBot secrets) - skipped.');
 } catch (e) {
-    console.log(`WhatsApp notification failed: ${e.message}`);
+    console.log(`Phone notification failed: ${e.message}`);
 }
