@@ -20,6 +20,8 @@ jobs:
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 30 # recent history for the WhatsApp update message
 
       - uses: shivammathur/setup-php@v2
         with:
@@ -114,3 +116,11 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         run: node scripts/warm-cache.mjs
+
+      - name: WhatsApp the owner
+        continue-on-error: true
+        env:
+          WA_PHONE: ${{ secrets.WHATSAPP_PHONE }}
+          WA_KEY: ${{ secrets.WHATSAPP_APIKEY }}
+          BEFORE: ${{ github.event.before }}
+        run: node scripts/notify-whatsapp.mjs
