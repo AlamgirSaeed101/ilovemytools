@@ -83,7 +83,7 @@ export default function NewsletterForm({ compact = false }) {
                     />
                     {/* Bots fill in every field; this one is invisible to people and screen readers. */}
                     <input
-                        className="absolute left-[-9999px] size-px opacity-0"
+                        className="pointer-events-none absolute start-0 top-0 size-px overflow-hidden opacity-0 [clip-path:inset(50%)]"
                         type="text"
                         name="website"
                         tabIndex={-1}

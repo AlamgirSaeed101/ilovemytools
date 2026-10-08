@@ -38,7 +38,8 @@ function baitHidden() {
     const bait = document.createElement('div');
     bait.className = 'adsbox ad-banner ad-placement textads banner-ads';
     bait.setAttribute('aria-hidden', 'true');
-    bait.style.cssText = 'position:absolute;left:-9999px;top:-9999px;width:2px;height:2px;';
+    // Kept on screen (an off-screen element would widen right-to-left pages), just invisible.
+    bait.style.cssText = 'position:absolute;left:0;top:0;width:2px;height:2px;opacity:0;pointer-events:none;';
     bait.innerHTML = '&nbsp;';
     document.body.appendChild(bait);
     return new Promise((resolve) => {

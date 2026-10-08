@@ -113,8 +113,18 @@ class SeoFilesController extends Controller
 
     public function robots(): Response
     {
+        // Every crawler is welcome: search engines, AI search/answer engines and SEO tools (backlink
+        // and DR data). The named groups say so explicitly; each repeats the /api/ rule because a
+        // bot that matches a named group ignores the "*" group.
+        $bots = ['Googlebot', 'Google-Extended', 'Bingbot', 'Applebot', 'Applebot-Extended', 'DuckDuckBot', 'YandexBot',
+            'GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'Claude-User', 'PerplexityBot',
+            'Perplexity-User', 'CCBot', 'Amazonbot', 'meta-externalagent', 'AhrefsBot', 'SemrushBot', 'MJ12bot', 'DotBot', '*'];
+        $groups = [];
+        foreach ($bots as $bot) {
+            $groups[] = "User-agent: {$bot}\nAllow: /\nDisallow: /api/";
+        }
         $lines = app()->environment('production')
-            ? ['User-agent: *', 'Allow: /', 'Disallow: /api/', '', 'Sitemap: '.Seo::absoluteUrl('sitemap.xml')]
+            ? [implode("\n\n", $groups), '', 'Sitemap: '.Seo::absoluteUrl('sitemap.xml')]
             // Keep staging / local copies out of Google.
             : ['User-agent: *', 'Disallow: /'];
 

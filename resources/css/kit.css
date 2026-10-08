@@ -63,12 +63,25 @@
 
 /* Urdu has no glyphs in the Latin font above, and its script needs extra
    line-height (Nastaliq's diagonal flow and loops clip at Latin line-heights). */
+/* Long words (German compounds, URLs) wrap instead of widening the page on small phones. */
+body {
+    overflow-wrap: break-word;
+}
+:where(h1, h2, h3, p, li, td, th, dd, figcaption, .tool-card, .line-clamp-3) {
+    overflow-wrap: anywhere;
+    hyphens: auto;
+}
+
 :root:lang(ur) {
     --font: 'Noto Nastaliq Urdu', 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
 }
 
 html:lang(ur) body {
     line-height: 2.1;
+}
+/* Nastaliq letters are tall: headings need more line spacing than Latin text or lines overlap. */
+html:lang(ur) :is(h1, h2, h3, h4, .hero__title) {
+    line-height: 1.85 !important;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1713,7 +1726,10 @@ fieldset.grid-2 .check:has(input:checked) {
 
 .stat__value {
     color: var(--text);
-    font-size: 1.6rem;
+    /* Shrinks on small phones so a figure like £280.000,00 is never split across lines. */
+    font-size: clamp(1.15rem, 5vw, 1.6rem);
+    overflow-wrap: normal;
+    word-break: keep-all;
     font-weight: 800;
     font-variant-numeric: tabular-nums;
     letter-spacing: -0.03em;
