@@ -1090,8 +1090,6 @@
     "Total interest": "Juros totais",
     "Year": "Ano",
     "Your down payment covers the full home price, so no loan is needed.": "Sua entrada cobre todo o preço do imóvel, então nenhum empréstimo é necessário.",
-    "What is {name}?": "O que é {name}?",
-    "How to use {name}": "Como usar {name}",
     "Are these online tools really free?": "Estas ferramentas online são mesmo gratuitas?",
     "Yes. Every tool on {name} is free to use, with no account, no daily limit and no watermark. The site is paid for by advertising.": "Sim. Todas as ferramentas do {name} são gratuitas, sem conta, sem limite diário e sem marca d’água. O site é pago pela publicidade.",
     "Are my files uploaded to a server?": "Os meus arquivos são enviados para um servidor?",
@@ -1112,5 +1110,7 @@
     "Open your browser’s developer tools, choose the Network tab and use any tool: you will see that your file is never sent anywhere. The few tools that need to look something up online, such as the Broken Link Checker, say so clearly on the page.": "Abra as ferramentas de desenvolvedor do navegador, escolha a aba Rede e use qualquer ferramenta: verá que o seu arquivo nunca é enviado para lugar nenhum. As poucas ferramentas que precisam consultar algo na internet, como o Verificador de links quebrados, indicam isso claramente na página.",
     "Corrections": "Correções",
     "If you find a mistake in a result or on a page, please tell us and we will correct it. Each tool page shows when it was last updated.": "Se encontrar um erro num resultado ou numa página, avise-nos e vamos corrigi-lo. Cada ferramenta mostra quando foi atualizada pela última vez.",
-    "Done! What would you like to do next?": "Pronto! O que quer fazer agora?"
+    "Done! What would you like to do next?": "Pronto! O que quer fazer agora?",
+    "What is the {name} tool?": "O que é a ferramenta {name}?",
+    "How to use the {name} tool": "Como usar a ferramenta {name}"
 }

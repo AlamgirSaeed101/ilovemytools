@@ -1136,8 +1136,6 @@
     "Total interest": "Odsetki łącznie",
     "Year": "Rok",
     "Your down payment covers the full home price, so no loan is needed.": "Twój wkład własny pokrywa całą cenę nieruchomości, więc kredyt nie jest potrzebny.",
-    "What is {name}?": "Czym jest {name}?",
-    "How to use {name}": "Jak używać: {name}",
     "Are these online tools really free?": "Czy te narzędzia online są naprawdę darmowe?",
     "Yes. Every tool on {name} is free to use, with no account, no daily limit and no watermark. The site is paid for by advertising.": "Tak. Każde narzędzie w {name} jest darmowe – bez konta, bez dziennego limitu i bez znaku wodnego. Stronę finansują reklamy.",
     "Are my files uploaded to a server?": "Czy moje pliki są wysyłane na serwer?",
@@ -1158,5 +1156,7 @@
     "Open your browser’s developer tools, choose the Network tab and use any tool: you will see that your file is never sent anywhere. The few tools that need to look something up online, such as the Broken Link Checker, say so clearly on the page.": "Otwórz narzędzia deweloperskie przeglądarki, wybierz kartę Sieć i użyj dowolnego narzędzia: zobaczysz, że plik nie jest nigdzie wysyłany. Nieliczne narzędzia, które muszą coś sprawdzić w internecie, np. sprawdzanie niedziałających linków, wyraźnie informują o tym na stronie.",
     "Corrections": "Poprawki",
     "If you find a mistake in a result or on a page, please tell us and we will correct it. Each tool page shows when it was last updated.": "Jeśli znajdziesz błąd w wyniku lub na stronie, daj nam znać, a go poprawimy. Każde narzędzie pokazuje datę ostatniej aktualizacji.",
-    "Done! What would you like to do next?": "Gotowe! Co chcesz zrobić dalej?"
+    "Done! What would you like to do next?": "Gotowe! Co chcesz zrobić dalej?",
+    "What is the {name} tool?": "Czym jest narzędzie „{name}”?",
+    "How to use the {name} tool": "Jak używać narzędzia „{name}”"
 }

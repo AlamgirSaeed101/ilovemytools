@@ -179,7 +179,7 @@ class Seo
             $this->schemas[] = [
                 '@context' => 'https://schema.org',
                 '@type' => 'HowTo',
-                'name' => Locale::t('How to use {name}', ['name' => $tool['name']]),
+                'name' => Locale::t('How to use the {name} tool', ['name' => $tool['name']]),
                 'description' => $tool['tagline'] ?? $tool['description'],
                 'tool' => ['@type' => 'HowToTool', 'name' => $tool['name']],
                 'totalTime' => 'PT1M',

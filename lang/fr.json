@@ -1090,8 +1090,6 @@
     "Total interest": "Intérêts totaux",
     "Year": "Année",
     "Your down payment covers the full home price, so no loan is needed.": "Votre apport personnel couvre la totalité du prix du bien, aucun prêt n’est donc nécessaire.",
-    "What is {name}?": "Qu’est-ce que {name} ?",
-    "How to use {name}": "Comment utiliser {name}",
     "Are these online tools really free?": "Ces outils en ligne sont-ils vraiment gratuits ?",
     "Yes. Every tool on {name} is free to use, with no account, no daily limit and no watermark. The site is paid for by advertising.": "Oui. Tous les outils de {name} sont gratuits, sans compte, sans limite quotidienne et sans filigrane. Le site est financé par la publicité.",
     "Are my files uploaded to a server?": "Mes fichiers sont-ils envoyés sur un serveur ?",
@@ -1112,5 +1110,7 @@
     "Open your browser’s developer tools, choose the Network tab and use any tool: you will see that your file is never sent anywhere. The few tools that need to look something up online, such as the Broken Link Checker, say so clearly on the page.": "Ouvrez les outils de développement de votre navigateur, choisissez l’onglet Réseau et utilisez n’importe quel outil : vous verrez que votre fichier n’est envoyé nulle part. Les quelques outils qui doivent consulter quelque chose en ligne, comme le Vérificateur de liens cassés, l’indiquent clairement sur la page.",
     "Corrections": "Corrections",
     "If you find a mistake in a result or on a page, please tell us and we will correct it. Each tool page shows when it was last updated.": "Si vous trouvez une erreur dans un résultat ou sur une page, dites-le-nous et nous la corrigerons. Chaque page d’outil indique sa date de dernière mise à jour.",
-    "Done! What would you like to do next?": "Terminé ! Que voulez-vous faire ensuite ?"
+    "Done! What would you like to do next?": "Terminé ! Que voulez-vous faire ensuite ?",
+    "What is the {name} tool?": "Qu’est-ce que l’outil {name} ?",
+    "How to use the {name} tool": "Comment utiliser l’outil {name}"
 }

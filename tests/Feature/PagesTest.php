@@ -229,11 +229,11 @@ class PagesTest extends TestCase
     public function test_tool_pages_show_question_headings_and_the_update_date(): void
     {
         $this->get('/merge-pdf')
-            ->assertSee('What is Merge PDF?')
-            ->assertSee('How to use Merge PDF')
+            ->assertSee('What is the Merge PDF tool?')
+            ->assertSee('How to use the Merge PDF tool')
             ->assertSee('<time datetime="', false)
             ->assertSee('"@id": "'.config('app.url').'/#organization"', false);
-        $this->get('/de/merge-pdf')->assertSee('Was ist');
+        $this->get('/de/merge-pdf')->assertSee('Was ist das Tool „PDF zusammenfügen“?', false);
     }
 
     public function test_home_page_answers_common_questions_with_faq_schema(): void

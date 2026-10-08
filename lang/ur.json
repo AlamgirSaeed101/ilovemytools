@@ -1090,8 +1090,6 @@
     "Total interest": "کل سود",
     "Year": "سال",
     "Your down payment covers the full home price, so no loan is needed.": "آپ کی پیشگی رقم گھر کی پوری قیمت پورا کر دیتی ہے، اس لیے کسی قرض کی ضرورت نہیں۔",
-    "What is {name}?": "{name} کیا ہے؟",
-    "How to use {name}": "{name} استعمال کرنے کا طریقہ",
     "Are these online tools really free?": "کیا یہ آن لائن ٹولز واقعی مفت ہیں؟",
     "Yes. Every tool on {name} is free to use, with no account, no daily limit and no watermark. The site is paid for by advertising.": "جی ہاں۔ {name} کا ہر ٹول مفت ہے: نہ اکاؤنٹ، نہ روزانہ کی حد اور نہ واٹر مارک۔ سائٹ کا خرچ اشتہارات سے چلتا ہے۔",
     "Are my files uploaded to a server?": "کیا میری فائلیں کسی سرور پر اپ لوڈ ہوتی ہیں؟",
@@ -1112,5 +1110,7 @@
     "Open your browser’s developer tools, choose the Network tab and use any tool: you will see that your file is never sent anywhere. The few tools that need to look something up online, such as the Broken Link Checker, say so clearly on the page.": "اپنے براؤزر کے ڈیولپر ٹولز کھولیں، نیٹ ورک ٹیب منتخب کریں اور کوئی بھی ٹول استعمال کریں: آپ دیکھیں گے کہ آپ کی فائل کہیں نہیں بھیجی جاتی۔ جن چند ٹولز کو آن لائن کچھ دیکھنا ہوتا ہے، جیسے ٹوٹے لنکس چیک کرنے والا ٹول، وہ صفحے پر یہ بات واضح لکھتے ہیں۔",
     "Corrections": "تصحیحات",
     "If you find a mistake in a result or on a page, please tell us and we will correct it. Each tool page shows when it was last updated.": "اگر آپ کو کسی نتیجے یا صفحے میں غلطی ملے تو ہمیں بتائیں، ہم اسے درست کر دیں گے۔ ہر ٹول کے صفحے پر آخری اپ ڈیٹ کی تاریخ درج ہے۔",
-    "Done! What would you like to do next?": "ہو گیا! اب آپ کیا کرنا چاہیں گے؟"
+    "Done! What would you like to do next?": "ہو گیا! اب آپ کیا کرنا چاہیں گے؟",
+    "What is the {name} tool?": "{name} ٹول کیا ہے؟",
+    "How to use the {name} tool": "{name} ٹول استعمال کرنے کا طریقہ"
 }

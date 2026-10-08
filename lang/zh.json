@@ -497,7 +497,6 @@
     "How many": "數量",
     "How to check that your files stay private": "如何確認你的檔案保持私密",
     "How to pick pages": "如何選擇頁面",
-    "How to use {name}": "如何使用 {name}",
     "How we build and test our tools": "我們如何建置與測試工具",
     "HTML or plain text": "HTML 或純文字",
     "https:// is added automatically if you leave it out.": "若省略不填,系統會自動加上 https://。",
@@ -1041,7 +1040,6 @@
     "Went to bed at": "就寢於",
     "What do you want to work out?": "你想計算什麼?",
     "What is": "什麼是",
-    "What is {name}?": "{name} 是什麼?",
     "What is X% of Y?": "X 是 Y 的百分之幾?",
     "What it does": "這項工具的功能",
     "Wheel with {count} entries": "有 {count} 個項目的轉盤",
@@ -1089,5 +1087,7 @@
     "Your public IP address": "你的公開 IP 位址",
     "Your QR code will appear here.": "你的 QR Code 將顯示於此",
     "Your text": "你的文字",
-    "Done! What would you like to do next?": "完成了！接下來想做什麼？"
+    "Done! What would you like to do next?": "完成了！接下來想做什麼？",
+    "What is the {name} tool?": "{name} 工具是什麼？",
+    "How to use the {name} tool": "如何使用 {name} 工具"
 }

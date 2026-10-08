@@ -2908,7 +2908,7 @@
     ]
   },
   {
-    "key": "How to use {name}",
+    "key": "How to use the {name} tool",
     "files": [
       "app/Support/Seo.php",
       "resources/js/pages/ToolPage.jsx",
@@ -6271,7 +6271,7 @@
     ]
   },
   {
-    "key": "What is {name}?",
+    "key": "What is the {name} tool?",
     "files": [
       "resources/js/pages/ToolPage.jsx",
       "resources/views/pages/tool.blade.php"

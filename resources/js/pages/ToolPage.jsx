@@ -126,7 +126,7 @@ export default function ToolPage() {
                     <AdSlot key={`${tool.slug}-below`} position="below_tool" />
 
                     <article className="prose tool-article">
-                        <h2>{t('What is {name}?', { name: tool.name })}</h2>
+                        <h2>{t('What is the {name} tool?', { name: tool.name })}</h2>
                         <p className="tool-intro">{tool.intro}</p>
                         {tool.updated && (
                             <p className="text-sm text-muted">
@@ -136,7 +136,7 @@ export default function ToolPage() {
 
                         {tool.steps.length > 0 && (
                             <>
-                                <h2 id="how-to">{t('How to use {name}', { name: tool.name })}</h2>
+                                <h2 id="how-to">{t('How to use the {name} tool', { name: tool.name })}</h2>
                                 <ol className="steps">
                                     {tool.steps.map((step) => (
                                         <li key={step}>{step}</li>
