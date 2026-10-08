@@ -4,9 +4,22 @@ import { getSite } from '../lib/api.js';
 import { t } from '../lib/i18n.js';
 
 // A website cannot switch off a visitor's ad blocker (extensions run outside the page),
-// so we detect it and block the site until the visitor allows ads and reloads (owner's choice).
+// so we detect it and ask the visitor to allow ads. They can close the request; it then stays
+// away for a week on that browser, so nobody is locked out of a tool they came for.
 // Search engine crawlers never see it: Google demotes pages hidden behind interstitials.
 const BOTS = /bot|crawl|spider|slurp|lighthouse|headlesschrome|google-inspectiontool|bingpreview|facebookexternalhit|embedly/i;
+
+const DISMISS_KEY = 'adblock-dismissed';
+const DISMISS_DAYS = 7;
+
+function recentlyDismissed() {
+    try {
+        const at = Number(localStorage.getItem(DISMISS_KEY));
+        return at > 0 && Date.now() - at < DISMISS_DAYS * 86400000;
+    } catch {
+        return false;
+    }
+}
 
 const AD_SCRIPT = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
 
@@ -53,7 +66,8 @@ export default function AdblockNotice() {
 
     useEffect(() => {
         // Only when real ads are configured, and well after the page has loaded.
-        if (!getSite().ads?.client || BOTS.test(navigator.userAgent)) return;
+        // Off until AdSense has approved the site (config site.ads.adblock_notice).
+        if (!getSite().ads?.client || !getSite().ads?.adblockNotice || BOTS.test(navigator.userAgent) || recentlyDismissed()) return;
         let cancelled = false;
         const timer = setTimeout(() => {
             detectBlocker().then((found) => !cancelled && setReasons(found));
@@ -64,24 +78,35 @@ export default function AdblockNotice() {
         };
     }, []);
 
+    const dismiss = () => {
+        try {
+            localStorage.setItem(DISMISS_KEY, String(Date.now()));
+        } catch {
+            // private mode: it just shows again next visit
+        }
+        setReasons([]);
+    };
+
     useEffect(() => {
         if (!open) return undefined;
         dialogRef.current?.focus();
-        // The page behind the wall can't be scrolled or used.
         const previous = document.body.style.overflow;
         document.body.style.overflow = 'hidden';
+        const onKey = (e) => e.key === 'Escape' && dismiss();
+        document.addEventListener('keydown', onKey);
         return () => {
             document.body.style.overflow = previous;
+            document.removeEventListener('keydown', onKey);
         };
     }, [open]);
 
     if (!open) return null;
 
     return (
-        <div className="fixed inset-0 z-[90] grid place-items-center bg-[rgb(15_23_42/0.7)] p-4 backdrop-blur-sm">
+        <div className="fixed inset-0 z-[90] grid place-items-center bg-[rgb(15_23_42/0.7)] p-4 backdrop-blur-sm" onClick={(e) => e.target === e.currentTarget && dismiss()}>
             <div
                 ref={dialogRef}
-                className="w-full max-w-[440px] rounded-[24px] bg-surface p-6 text-center shadow-2xl outline-none sm:p-8"
+                className="relative w-full max-w-[440px] rounded-[24px] bg-surface p-6 text-center shadow-2xl outline-none sm:p-8"
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby="adblock-title"
@@ -89,6 +114,14 @@ export default function AdblockNotice() {
                 tabIndex={-1}
                 data-testid="adblock-notice"
             >
+                <button
+                    type="button"
+                    className="absolute end-3 top-3 grid size-9 cursor-pointer place-items-center rounded-full border-0 bg-transparent text-muted transition-colors hover:bg-surface-2 hover:text-ink [&_svg]:size-5"
+                    aria-label={t('Close')}
+                    onClick={dismiss}
+                >
+                    <Icon name="x" />
+                </button>
                 <span className="mx-auto mb-4 grid size-14 place-items-center rounded-2xl bg-[linear-gradient(135deg,#3b82f6,#7c3aed)] text-white [&_svg]:size-7" aria-hidden="true">
                     <Icon name="shield" />
                 </span>
@@ -111,6 +144,9 @@ export default function AdblockNotice() {
                 </p>
                 <button className="btn btn--primary btn--lg w-full rounded-full" type="button" onClick={() => window.location.reload()}>
                     {t("I've turned it off - reload")}
+                </button>
+                <button type="button" className="mt-3 cursor-pointer border-0 bg-transparent p-1 text-[0.88rem] text-muted underline underline-offset-2 hover:text-ink" onClick={dismiss}>
+                    {t('Continue without allowing ads')}
                 </button>
             </div>
         </div>

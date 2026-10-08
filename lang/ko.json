@@ -1089,5 +1089,6 @@
     "If you find a mistake in a result or on a page, please tell us and we will correct it. Each tool page shows when it was last updated.": "결과나 페이지에서 오류를 발견하면 알려 주세요. 바로 수정하겠습니다. 각 도구 페이지에는 마지막으로 업데이트된 날짜가 표시됩니다.",
     "Done! What would you like to do next?": "완료되었습니다! 다음에 무엇을 하시겠어요?",
     "What is the {name} tool?": "{name} 도구란 무엇인가요?",
-    "How to use the {name} tool": "{name} 도구 사용 방법"
+    "How to use the {name} tool": "{name} 도구 사용 방법",
+    "Continue without allowing ads": "광고 허용 없이 계속하기"
 }

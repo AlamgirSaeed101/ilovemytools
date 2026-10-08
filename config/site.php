@@ -73,6 +73,9 @@ return [
     */
     'ads' => [
         'client' => env('ADSENSE_CLIENT', ''),
+        // Ask visitors to turn off their ad blocker. Keep false until Google AdSense has approved
+        // the site (before that there are no ads to block); then set to true and deploy.
+        'adblock_notice' => false,
         'show_placeholders' => env('ADS_SHOW_PLACEHOLDERS', null),
         'slots' => [
             'header' => env('ADSENSE_SLOT_HEADER', ''),       // below the navigation

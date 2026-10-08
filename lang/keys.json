@@ -1249,6 +1249,7 @@
   {
     "key": "Close",
     "files": [
+      "resources/js/components/AdblockNotice.jsx",
       "resources/js/components/Newsletter.jsx"
     ]
   },
@@ -1393,6 +1394,12 @@
     "key": "Contact Us - Report a Bug or Suggest a Tool",
     "files": [
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Continue without allowing ads",
+    "files": [
+      "resources/js/components/AdblockNotice.jsx"
     ]
   },
   {

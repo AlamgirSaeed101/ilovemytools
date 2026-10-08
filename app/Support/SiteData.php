@@ -76,6 +76,7 @@ class SiteData
                 'client' => Ads::liveClient(),
                 'placeholders' => Ads::showPlaceholders(),
                 'slots' => array_map('strval', (array) config('site.ads.slots', [])),
+                'adblockNotice' => (bool) config('site.ads.adblock_notice'),
             ],
             'meta' => [
                 'home' => $this->meta(self::tagline(), self::description()),

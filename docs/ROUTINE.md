@@ -47,6 +47,8 @@ Read Parts 1-2 of `TOOLS_SPEC_PROMPT.md` (architecture, SEO rules: lines 1-87) b
 
 ## Backlog (in priority order)
 
+- [ ] *(owner input)* When the owner says Google AdSense has **approved** the site, set `site.ads.adblock_notice` to `true` in `config/site.php` (the ad-block request, closable for 7 days) and deploy. Keep it `false` until then.
+
 Ranked by search demand (what iLovePDF, Smallpdf, FreeConvert and the big calculator sites put first) and
 by whether the tool works well entirely in the browser.
 
