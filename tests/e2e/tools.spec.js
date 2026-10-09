@@ -661,6 +661,32 @@ test.describe('Calculators', () => {
         await page.getByLabel('Home price').fill('0');
         await expect(page.getByRole('alert')).toContainText('home price');
     });
+
+    test('loan calculator computes payment, interest and extra-payment savings', async ({ page }) => {
+        await openTool(page, 'loan-calculator');
+        const lcStat = (label) => page.locator('.stat').filter({ has: page.locator('.stat__label', { hasText: label }) }).locator('.stat__value');
+
+        // Defaults: $20,000 loan, 7% interest, 5-year term.
+        await expect(lcStat('Monthly payment')).toHaveText('$396.02');
+        await expect(lcStat('Total interest')).toHaveText('$3,761.44');
+        await expect(lcStat('Total repayment (loan + interest)')).toHaveText('$23,761.44');
+        await expect(page.getByText('Paid off in 5 years.')).toBeVisible();
+
+        await page.getByRole('button', { name: '2 years' }).click();
+        await expect(lcStat('Monthly payment')).toHaveText('$895.45');
+
+        await page.getByRole('button', { name: '5 years' }).click();
+        await page.getByLabel('Extra monthly payment (optional)').fill('100');
+        await expect(page.getByText('Paying $100.00 extra each month pays off the loan 1 year, 1 month sooner and saves $893.72 in interest.')).toBeVisible();
+
+        await page.getByText('Show the year-by-year amortization schedule').click();
+        const table = page.getByTestId('loan-table');
+        await expect(table.locator('tbody tr').first().locator('th')).toHaveText('1');
+
+        await page.getByLabel('Extra monthly payment (optional)').fill('0');
+        await page.getByLabel('Loan amount').fill('0');
+        await expect(page.getByRole('alert')).toContainText('loan amount');
+    });
 });
 
 test.describe('Developer tools', () => {

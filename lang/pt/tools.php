@@ -2138,4 +2138,61 @@ return [
             ],
         ],
     ],
+
+    'loan-calculator' => [
+        'name' => 'Calculadora de empréstimo',
+        'title' => 'Calculadora de Empréstimo - Parcela e Amortização',
+        'description' => 'Calculadora de empréstimo gratuita: informe o valor, a taxa de juros e o prazo para ver a parcela mensal, os juros totais e o cronograma.',
+        'h1' => 'Calculadora de empréstimo',
+        'tagline' => 'Veja a parcela mensal, os juros totais e um cronograma de amortização ano a ano para qualquer empréstimo de taxa fixa.',
+        'keywords' => [
+            'calculadora de empréstimo',
+            'calculadora de parcela de empréstimo',
+            'calculadora de empréstimo pessoal',
+            'calculadora de financiamento de carro',
+            'calculadora de amortização',
+        ],
+        'intro' => 'Uma calculadora de empréstimo calcula a parcela mensal fixa de um empréstimo a partir do valor tomado, da taxa de juros e do prazo. Informe seus números abaixo para ver a parcela mensal, os juros totais pagos ao longo de todo o empréstimo e um cronograma de amortização completo, ano a ano, mostrando quanto de cada parcela vai para o principal e quanto vai para os juros. Funciona para um empréstimo pessoal, um financiamento de carro, um empréstimo estudantil ou qualquer outro empréstimo de taxa fixa e prazo fixo - um pagamento mensal extra opcional mostra quanto antes ele é quitado e quanto isso economiza em juros.',
+        'steps' => [
+            'Informe o valor do empréstimo e escolha uma moeda.',
+            'Informe a taxa de juros anual e escolha um prazo (2 a 10 anos, ou digite um prazo personalizado).',
+            'Opcionalmente, informe um pagamento mensal extra para ver quanto antes o empréstimo é quitado.',
+            'Veja a parcela mensal, os juros totais e o total pago, e abra o cronograma de amortização para o detalhamento ano a ano.',
+        ],
+        'features' => [
+            'Parcela mensal, juros totais e total pago',
+            'Funciona para empréstimos pessoais, financiamento de carro, empréstimo estudantil ou qualquer outro empréstimo de taxa fixa',
+            'Cronograma de amortização completo, ano a ano',
+            'Pagamentos extras mostram o tempo e os juros economizados',
+            'Funciona com qualquer moeda e qualquer prazo de 1 a 50 anos',
+            'Funciona totalmente no seu navegador - nada do que você informa é enviado para lugar nenhum',
+        ],
+        'content' => [
+            [
+                'heading' => 'Como a parcela mensal é calculada',
+                'body' => 'A calculadora usa a fórmula padrão de amortização de taxa fixa: M = P x r / (1 - (1 + r)^-n), em que P é o valor do empréstimo, r é a taxa de juros mensal (a taxa anual dividida por 12) e n é o número total de parcelas mensais (o prazo em anos multiplicado por 12). É a mesma fórmula usada pelos credores em um empréstimo de taxa fixa e prazo fixo - pessoal, de carro, estudantil ou outro - e ela cobre apenas principal e juros: taxas do credor, custos de abertura ou seguros não estão incluídos, pois variam de acordo com o credor e o tipo de empréstimo.',
+            ],
+            [
+                'heading' => 'Por que pagamentos extras economizam tanto em juros',
+                'body' => 'Cada real extra pago no principal deixa de gerar juros pelo resto do empréstimo, então pagar a mais no início - quando o saldo e a parte de juros de cada parcela são maiores - tem o maior efeito. A calculadora compara o cronograma com e sem o pagamento extra para mostrar exatamente quantos meses antes o empréstimo é quitado e quantos juros totais são evitados. Confira seu contrato antes: alguns credores cobram multa por quitação antecipada.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'O que está incluído nessa parcela do empréstimo?', 'a' => 'Apenas principal e juros. Taxas do credor, custos de abertura e seguros não estão incluídos porque variam de acordo com o credor e o tipo de empréstimo.'],
+            ['q' => 'Posso usar para um financiamento de carro ou empréstimo pessoal, não só para a casa própria?', 'a' => 'Sim. O cálculo é o mesmo para qualquer empréstimo de taxa fixa e prazo fixo - pessoal, de carro, estudantil ou outro. Para um financiamento imobiliário com entrada, use a Calculadora de financiamento imobiliário.'],
+            ['q' => 'Como um pagamento mensal extra ajuda?', 'a' => 'O dinheiro extra vai direto para o principal do empréstimo, então deixa de gerar juros pelo resto do empréstimo. A calculadora mostra exatamente quantos meses antes ele é quitado e quantos juros totais são economizados.'],
+            ['q' => 'Por que a proposta do meu credor é diferente desta calculadora?', 'a' => 'Os credores somam taxas, seguros e seus próprios arredondamentos, e sua taxa real depende do seu crédito, do credor e do tipo de empréstimo. Esta calculadora mostra a matemática de principal e juros por trás disso para você comparar propostas rapidamente.'],
+            ['q' => 'Existe multa por quitar um empréstimo antes do prazo?', 'a' => 'Depende do credor e do contrato - alguns empréstimos de taxa fixa cobram multa por quitação antecipada. Confira seu contrato antes de fazer pagamentos extras.'],
+        ],
+        'table' => [
+            'caption' => 'Parcela mensal e juros totais de um empréstimo de $20,000 a 7% por prazo (apenas principal e juros)',
+            'headers' => ['Prazo', 'Parcela mensal', 'Juros totais pagos'],
+            'rows' => [
+                ['2 anos', '$895.45', '$1,490.84'],
+                ['3 anos', '$617.54', '$2,231.51'],
+                ['5 anos', '$396.02', '$3,761.44'],
+                ['7 anos', '$301.85', '$5,355.70'],
+            ],
+        ],
+    ],
 ];

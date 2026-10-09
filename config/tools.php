@@ -2383,4 +2383,60 @@ return [
         ],
     ],
 
+    'loan-calculator' => [
+        'name' => 'Loan Calculator',
+        'category' => 'calculators',
+        'icon' => 'calculator',
+        'popular' => false,
+        'updated' => '2026-10-09',
+        'title' => 'Loan Calculator - Payment & Amortization Schedule',
+        'description' => 'Free loan calculator: enter the loan amount, interest rate and term to see the monthly payment, total interest and a year-by-year amortization schedule.',
+        'h1' => 'Loan Calculator',
+        'tagline' => 'See the monthly payment, total interest and a year-by-year amortization schedule for any fixed-rate loan.',
+        'keywords' => ['loan calculator', 'loan payment calculator', 'personal loan calculator', 'auto loan calculator', 'loan amortization calculator'],
+        'intro' => 'A loan calculator works out the fixed monthly payment on a loan from the amount borrowed, the interest rate and the term. Enter your numbers below to see the monthly payment, the total interest paid over the life of the loan, and a full year-by-year amortization schedule showing how much of each payment goes to principal versus interest. It works for a personal loan, auto loan, student loan or any other fixed-rate, fixed-term loan - an optional extra monthly payment shows how much sooner it is paid off and how much interest that saves.',
+        'steps' => [
+            'Enter the loan amount and choose a currency.',
+            'Enter the annual interest rate and choose a loan term (2-10 years, or type a custom term).',
+            'Optionally enter an extra monthly payment to see how much sooner the loan is paid off.',
+            'Read the monthly payment, total interest and total repayment, and open the amortization schedule for the year-by-year breakdown.',
+        ],
+        'features' => [
+            'Monthly payment, total interest and total repayment',
+            'Works for personal, auto, student or any other fixed-rate loan',
+            'Full year-by-year amortization schedule',
+            'Extra monthly payments show the time and interest saved',
+            'Works with any currency and any loan term from 1 to 50 years',
+            'Runs entirely in your browser - nothing you enter is sent anywhere',
+        ],
+        'content' => [
+            [
+                'heading' => 'How the monthly payment is calculated',
+                'body' => 'The calculator uses the standard fixed-rate amortization formula: M = P x r / (1 - (1 + r)^-n), where P is the loan amount, r is the monthly interest rate (the annual rate divided by 12), and n is the total number of monthly payments (the loan term in years multiplied by 12). This is the same formula lenders use for a fixed-rate, fixed-term loan - personal, auto, student or otherwise - and it covers principal and interest only; any lender fees, origination charges or insurance are not included, since those vary by lender and loan type.',
+            ],
+            [
+                'heading' => 'Why extra payments save so much interest',
+                'body' => 'Every extra dollar paid toward the principal stops accruing interest for the rest of the loan, so paying extra early in the loan - when the balance and the interest portion of each payment are largest - has the biggest effect. The calculator compares the schedule with and without the extra payment to show exactly how many months sooner the loan is paid off and how much total interest is avoided. Check your loan agreement first: some lenders charge a prepayment penalty.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'What is included in this loan payment?', 'a' => 'Only principal and interest. Lender fees, origination charges and insurance are not included because they vary by lender and loan type.'],
+            ['q' => 'Can I use this for a car loan or personal loan, not just a mortgage?', 'a' => 'Yes. The math is the same for any fixed-rate, fixed-term loan - personal, auto, student or otherwise. For a home loan with a down payment, use the Mortgage Calculator instead.'],
+            ['q' => 'How does an extra monthly payment help?', 'a' => 'Extra money goes straight to the loan\'s principal, so it stops accruing interest for the rest of the loan. The calculator shows exactly how many months sooner the loan is paid off and how much total interest is saved.'],
+            ['q' => 'Why does my lender\'s quote differ from this calculator?', 'a' => 'Lenders add fees, insurance and their own rounding, and your actual rate depends on your credit, lender and loan type. This calculator shows the underlying principal and interest math so you can compare offers quickly.'],
+            ['q' => 'Is there a penalty for paying off a loan early?', 'a' => 'It depends on the lender and loan agreement - some fixed-rate loans charge a prepayment penalty. Check your loan agreement before making extra payments.'],
+        ],
+        'related' => ['mortgage-calculator', 'percentage-calculator', 'tip-calculator'],
+        'table' => [
+            'caption' => 'Monthly payment and total interest on a $20,000 loan at 7% by term (principal & interest only)',
+            'headers' => ['Loan term', 'Monthly payment', 'Total interest paid'],
+            'rows' => [
+                ['2 years', '$895.45', '$1,490.84'],
+                ['3 years', '$617.54', '$2,231.51'],
+                ['5 years', '$396.02', '$3,761.44'],
+                ['7 years', '$301.85', '$5,355.70'],
+            ],
+        ],
+    ],
+
 ];

@@ -2020,4 +2020,61 @@ return [
             ],
         ],
     ],
+
+    'loan-calculator' => [
+        'name' => 'Kalkulator kredytu',
+        'title' => 'Kalkulator Kredytu - Rata i Harmonogram Spłat',
+        'description' => 'Darmowy kalkulator kredytu: podaj kwotę kredytu, oprocentowanie i okres, aby zobaczyć ratę miesięczną, łączne odsetki i harmonogram spłat rok po roku.',
+        'h1' => 'Kalkulator kredytu',
+        'tagline' => 'Sprawdź ratę miesięczną, łączne odsetki i harmonogram spłat rok po roku dla każdego kredytu o stałym oprocentowaniu.',
+        'keywords' => [
+            'kalkulator kredytu',
+            'kalkulator raty kredytu',
+            'kalkulator kredytu gotówkowego',
+            'kalkulator kredytu samochodowego',
+            'kalkulator harmonogramu spłat',
+        ],
+        'intro' => 'Kalkulator kredytu wylicza stałą ratę miesięczną kredytu na podstawie pożyczonej kwoty, oprocentowania i okresu kredytowania. Podaj swoje dane poniżej, aby zobaczyć ratę miesięczną, łączne odsetki zapłacone przez cały okres kredytu oraz pełny harmonogram spłat rok po roku, pokazujący, ile z każdej raty trafia na kapitał, a ile na odsetki. Działa dla kredytu gotówkowego, kredytu samochodowego, kredytu studenckiego i każdego innego kredytu o stałym oprocentowaniu i stałym okresie - opcjonalna dodatkowa nadpłata miesięczna pokazuje, o ile wcześniej zostanie spłacony i ile odsetek dzięki temu zaoszczędzisz.',
+        'steps' => [
+            'Podaj kwotę kredytu i wybierz walutę.',
+            'Podaj roczne oprocentowanie i wybierz okres kredytowania (2-10 lat albo wpisz własny okres).',
+            'Opcjonalnie podaj dodatkową nadpłatę miesięczną, aby zobaczyć, o ile wcześniej kredyt zostanie spłacony.',
+            'Sprawdź ratę miesięczną, łączne odsetki i całkowitą spłatę, a następnie otwórz harmonogram spłat, aby zobaczyć podział rok po roku.',
+        ],
+        'features' => [
+            'Rata miesięczna, odsetki łączne i całkowita spłata',
+            'Działa dla kredytu gotówkowego, samochodowego, studenckiego i każdego innego kredytu o stałym oprocentowaniu',
+            'Pełny harmonogram spłat rok po roku',
+            'Dodatkowe nadpłaty pokazują zaoszczędzony czas i odsetki',
+            'Działa z dowolną walutą i okresem od 1 do 50 lat',
+            'Działa w całości w przeglądarce - nic, co wpiszesz, nigdzie nie jest wysyłane',
+        ],
+        'content' => [
+            [
+                'heading' => 'Jak obliczana jest rata miesięczna',
+                'body' => 'Kalkulator korzysta ze standardowego wzoru na ratę kredytu o stałym oprocentowaniu: M = P x r / (1 - (1 + r)^-n), gdzie P to kwota kredytu, r to miesięczne oprocentowanie (oprocentowanie roczne podzielone przez 12), a n to łączna liczba rat miesięcznych (okres kredytowania w latach razy 12). To ten sam wzór, którego kredytodawcy używają przy kredycie o stałym oprocentowaniu i stałym okresie - gotówkowym, samochodowym, studenckim lub innym - i obejmuje on wyłącznie kapitał i odsetki: opłaty kredytodawcy, koszty udzielenia kredytu czy ubezpieczenia nie są uwzględnione, ponieważ zależą od kredytodawcy i rodzaju kredytu.',
+            ],
+            [
+                'heading' => 'Dlaczego nadpłaty oszczędzają tak dużo odsetek',
+                'body' => 'Każda dodatkowa złotówka wpłacona na poczet kapitału przestaje generować odsetki przez resztę okresu kredytowania, więc nadpłacanie na początku - gdy saldo i odsetkowa część każdej raty są największe - ma największy wpływ. Kalkulator porównuje harmonogram z nadpłatą i bez niej, pokazując dokładnie, o ile miesięcy wcześniej kredyt zostanie spłacony i ile łącznych odsetek uda się uniknąć. Sprawdź najpierw umowę kredytową: niektórzy kredytodawcy naliczają opłatę za wcześniejszą spłatę.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Co obejmuje ta rata kredytu?', 'a' => 'Tylko kapitał i odsetki. Opłaty kredytodawcy, koszty udzielenia kredytu i ubezpieczenia nie są uwzględnione, ponieważ zależą od kredytodawcy i rodzaju kredytu.'],
+            ['q' => 'Czy mogę go użyć do kredytu samochodowego lub gotówkowego, nie tylko hipotecznego?', 'a' => 'Tak. Wyliczenia są takie same dla każdego kredytu o stałym oprocentowaniu i stałym okresie - gotówkowego, samochodowego, studenckiego lub innego. Do kredytu hipotecznego z wkładem własnym użyj Kalkulatora kredytu hipotecznego.'],
+            ['q' => 'Jak pomaga dodatkowa nadpłata miesięczna?', 'a' => 'Dodatkowe pieniądze trafiają bezpośrednio na kapitał kredytu, więc przestają generować odsetki przez resztę okresu kredytowania. Kalkulator pokazuje dokładnie, o ile miesięcy wcześniej zostanie spłacony i ile łącznych odsetek zaoszczędzisz.'],
+            ['q' => 'Dlaczego oferta mojego kredytodawcy różni się od tego kalkulatora?', 'a' => 'Kredytodawcy doliczają opłaty, ubezpieczenie i własne zaokrąglenia, a Twoje rzeczywiste oprocentowanie zależy od zdolności kredytowej, kredytodawcy i rodzaju kredytu. Ten kalkulator pokazuje podstawowe wyliczenia kapitału i odsetek, dzięki czemu możesz szybko porównać oferty.'],
+            ['q' => 'Czy jest opłata za wcześniejszą spłatę kredytu?', 'a' => 'To zależy od kredytodawcy i umowy - niektóre kredyty o stałym oprocentowaniu przewidują opłatę za wcześniejszą spłatę. Sprawdź swoją umowę przed dokonaniem nadpłat.'],
+        ],
+        'table' => [
+            'caption' => 'Rata miesięczna i łączne odsetki kredytu na 20 000 $ przy 7% w zależności od okresu (tylko kapitał i odsetki)',
+            'headers' => ['Okres kredytowania', 'Rata miesięczna', 'Łączne odsetki'],
+            'rows' => [
+                ['2 lata', '$895.45', '$1,490.84'],
+                ['3 lata', '$617.54', '$2,231.51'],
+                ['5 lat', '$396.02', '$3,761.44'],
+                ['7 lat', '$301.85', '$5,355.70'],
+            ],
+        ],
+    ],
 ];

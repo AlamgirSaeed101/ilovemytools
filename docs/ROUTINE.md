@@ -60,7 +60,7 @@ and FAQs. When the owner adds new Semrush exports there, re-rank the unchecked i
 Finance topics have much higher ad prices in the US/UK/EU than file tools. Before building each one, check
 volume and CPC in Semrush (`us`, `uk`, `de`) and save the data in `docs/keywords/`.
 - [x] **Mortgage Calculator** `/mortgage-calculator` (monthly payment, amortization table, extra payments; US and UK wording).
-- [ ] **Loan Calculator** `/loan-calculator` (payment, total interest, amortization schedule).
+- [x] **Loan Calculator** `/loan-calculator` (payment, total interest, amortization schedule).
 - [ ] **Compound Interest Calculator** `/compound-interest-calculator` (monthly contributions, chart, table).
 - [ ] **VAT Calculator** `/vat-calculator` (add/remove VAT; UK and EU country rates from official sources, dated).
 - [ ] **Salary to Hourly Calculator** `/salary-calculator` (hourly, weekly, monthly, yearly; no tax estimates).
@@ -122,8 +122,11 @@ Not planned: PDF↔PowerPoint (no permissively-licensed in-browser library rende
 - [ ] *(owner input)* About page: real founder name, bio and founding date; Person schema linked as Organization.founder.
 - [ ] *(owner input)* Brand social profiles in Organization.sameAs and the footer.
 - [x] German "verkleinern" (shrink/resize) query cluster on `/de/image-compressor` - real Search Console demand (~39 impressions/28 days across "jpg verkleinern online", "png größe verkleinern", "png verkleinern", "jpg größe verkleinern" and 8 more variants, mostly position 13-28). Same pattern as the `/de/word-counter` fix done 5 Oct 2026: check the German title/H1/description foreground "verkleinern" clearly, and that the FAQs cover the exact phrases above. See `docs/search-console.md` 2026-10-05 entry for the full list.
+- [ ] `/domain-authority-checker` CTR anomaly (9 Oct 2026): 241 Search Console impressions/28 days across 14 "bulk domain authority ..." query variants at a genuinely good average position (7.8, several at 2.6-6.6), but 0 clicks total. Title/description/H1/FAQ already lead with the exact phrase, so this isn't an obvious wording fix - worth checking the rendered SERP snippet (rich result markup, favicon, any truncation Search Console doesn't show) and whether the impressions are rank-tracking bots rather than people, before changing anything. See `docs/search-console.md` 2026-10-09 entry.
 
 ## Log
 
 Older entries: `docs/routine-log.md` (do NOT read it unless a task needs history; append new entries there, newest at the bottom).
 Each entry is ONE line of at most 300 characters: date · what changed · URLs. Details belong in the commit message.
+
+- 2026-10-09: New Loan Calculator at ilovemytools.store/loan-calculator (10 languages): payment, interest, amortization schedule. Organic Search sessions: 10 this week (first time >1). Flagged a 0-click/good-position /domain-authority-checker anomaly for a future run.

@@ -2138,4 +2138,61 @@ return [
             ],
         ],
     ],
+
+    'loan-calculator' => [
+        'name' => 'Kreditrechner',
+        'title' => 'Kreditrechner - Monatliche Rate & Tilgungsplan',
+        'description' => 'Kostenloser Kreditrechner: Gib Kreditbetrag, Zinssatz und Laufzeit ein, um die Monatsrate, die Gesamtzinsen und einen Tilgungsplan Jahr für Jahr zu sehen.',
+        'h1' => 'Kreditrechner',
+        'tagline' => 'Sieh die Monatsrate, die Gesamtzinsen und einen Tilgungsplan Jahr für Jahr für jeden Kredit mit festem Zinssatz.',
+        'keywords' => [
+            'kreditrechner',
+            'ratenkredit rechner',
+            'privatkredit rechner',
+            'autokredit rechner',
+            'tilgungsplan rechner',
+        ],
+        'intro' => 'Ein Kreditrechner ermittelt die feste Monatsrate für einen Kredit anhand des Kreditbetrags, des Zinssatzes und der Laufzeit. Gib unten deine Zahlen ein, um die Monatsrate, die über die gesamte Laufzeit gezahlten Gesamtzinsen und einen vollständigen Tilgungsplan Jahr für Jahr zu sehen, der zeigt, wie viel jeder Rate auf Tilgung und wie viel auf Zinsen entfällt. Er funktioniert für einen Privatkredit, einen Autokredit, einen Studienkredit oder jeden anderen Kredit mit festem Zinssatz und fester Laufzeit - eine optionale monatliche Sondertilgung zeigt, wie viel früher er abbezahlt ist und wie viele Zinsen dadurch gespart werden.',
+        'steps' => [
+            'Gib den Kreditbetrag ein und wähle eine Währung.',
+            'Gib den jährlichen Zinssatz ein und wähle eine Laufzeit (2-10 Jahre, oder trage eine eigene Laufzeit ein).',
+            'Trage optional eine monatliche Sondertilgung ein, um zu sehen, wie viel früher der Kredit abbezahlt ist.',
+            'Lies die Monatsrate, die Gesamtzinsen und die Gesamtrückzahlung ab und öffne den Tilgungsplan für die Aufschlüsselung Jahr für Jahr.',
+        ],
+        'features' => [
+            'Monatliche Rate, Gesamtzinsen und Gesamtrückzahlung',
+            'Funktioniert für Privatkredite, Autokredite, Studienkredite und jeden anderen Kredit mit festem Zinssatz',
+            'Vollständiger Tilgungsplan Jahr für Jahr',
+            'Sondertilgungen zeigen die gesparte Zeit und die gesparten Zinsen',
+            'Funktioniert mit jeder Währung und jeder Laufzeit von 1 bis 50 Jahren',
+            'Läuft komplett in deinem Browser - nichts von dem, was du eingibst, wird irgendwohin gesendet',
+        ],
+        'content' => [
+            [
+                'heading' => 'So wird die Monatsrate berechnet',
+                'body' => 'Der Rechner nutzt die übliche Formel für die Tilgung bei festem Zinssatz: M = P x r / (1 - (1 + r)^-n), wobei P der Kreditbetrag ist, r der monatliche Zinssatz (der Jahreszins geteilt durch 12) und n die Gesamtzahl der Monatsraten (die Laufzeit in Jahren mal 12). Das ist dieselbe Formel, die Kreditgeber bei einem Kredit mit festem Zinssatz und fester Laufzeit verwenden - privat, Auto, Studium oder sonstig - und sie deckt nur Tilgung und Zinsen ab. Etwaige Kreditgebühren, Bearbeitungsgebühren oder Versicherungen sind nicht enthalten, da sie je nach Kreditgeber und Kreditart unterschiedlich sind.',
+            ],
+            [
+                'heading' => 'Warum Sondertilgungen so viele Zinsen sparen',
+                'body' => 'Jeder zusätzliche Euro, der auf die Tilgung gezahlt wird, erzeugt für den Rest des Kredits keine Zinsen mehr. Deshalb hat eine Sondertilgung früh in der Laufzeit - wenn die Restschuld und der Zinsanteil jeder Rate am größten sind - die größte Wirkung. Der Rechner vergleicht den Tilgungsplan mit und ohne die Sondertilgung, um genau zu zeigen, um wie viele Monate der Kredit früher abbezahlt ist und wie viele Zinsen insgesamt gespart werden. Prüfe vorher deinen Kreditvertrag: manche Kreditgeber verlangen eine Vorfälligkeitsentschädigung.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Was ist in dieser Kreditrate enthalten?', 'a' => 'Nur Tilgung und Zinsen. Kreditgebühren, Bearbeitungsgebühren und Versicherungen sind nicht enthalten, da sie je nach Kreditgeber und Kreditart unterschiedlich sind.'],
+            ['q' => 'Kann ich das auch für einen Autokredit oder Privatkredit nutzen, nicht nur für eine Baufinanzierung?', 'a' => 'Ja. Die Rechnung ist für jeden Kredit mit festem Zinssatz und fester Laufzeit gleich - privat, Auto, Studium oder sonstig. Für eine Baufinanzierung mit Anzahlung nutze stattdessen den Baufinanzierungsrechner.'],
+            ['q' => 'Wie hilft eine monatliche Sondertilgung?', 'a' => 'Das zusätzliche Geld fließt direkt in die Tilgung des Kredits und erzeugt dadurch für den Rest der Laufzeit keine Zinsen mehr. Der Rechner zeigt genau, um wie viele Monate der Kredit früher abbezahlt ist und wie viele Zinsen insgesamt gespart werden.'],
+            ['q' => 'Warum weicht das Angebot meines Kreditgebers von diesem Rechner ab?', 'a' => 'Kreditgeber rechnen Gebühren, Versicherung und ihre eigenen Rundungen hinzu, und dein tatsächlicher Zinssatz hängt von deiner Bonität, deinem Kreditgeber und der Kreditart ab. Dieser Rechner zeigt die zugrunde liegende Tilgungs- und Zinsrechnung, damit du Angebote schnell vergleichen kannst.'],
+            ['q' => 'Gibt es eine Vorfälligkeitsentschädigung bei einem Kredit?', 'a' => 'Das hängt vom Kreditgeber und Kreditvertrag ab - manche Kredite mit festem Zinssatz sehen eine Vorfälligkeitsentschädigung vor. Prüfe deinen Kreditvertrag, bevor du Sondertilgungen leistest.'],
+        ],
+        'table' => [
+            'caption' => 'Monatliche Rate und Gesamtzinsen eines Kredits über 20.000 $ bei 7 % nach Laufzeit (nur Tilgung und Zinsen)',
+            'headers' => ['Laufzeit', 'Monatliche Rate', 'Gesamtzinsen'],
+            'rows' => [
+                ['2 Jahre', '$895.45', '$1,490.84'],
+                ['3 Jahre', '$617.54', '$2,231.51'],
+                ['5 Jahre', '$396.02', '$3,761.44'],
+                ['7 Jahre', '$301.85', '$5,355.70'],
+            ],
+        ],
+    ],
 ];

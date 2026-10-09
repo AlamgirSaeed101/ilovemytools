@@ -6,6 +6,49 @@ real data; entries note when there isn't enough data yet rather than guessing.
 
 <!-- One entry per run, newest first -->
 
+## 2026-10-09
+
+**Search Console (last 28 days): 1,275 impressions, 0 clicks** across the sample pulled
+(573 query/country/page rows). Top 10 queries by impressions:
+1. "bulk domain authority check" - 66 impr, avg position 5.4, `/domain-authority-checker`
+2. "bulk domain authority checker" - 48 impr, position 6.0, `/domain-authority-checker`
+3. "wortzähler" - 48 impr, position 52.9, `/de/word-counter`
+4. "wortzähler online" - 30 impr, position 19.4, `/de/word-counter`
+5. "bulk domain authority checker free" - 25 impr, position 24.2, `/domain-authority-checker`
+6. "free bulk domain authority checker" - 21 impr, position 5.5, `/domain-authority-checker`
+7. "jpg verkleinern online" - 20 impr, position 13.6, `/de/image-compressor`
+8. "wörter zähle" - 19 impr, position 9.5, `/de/word-counter`
+9. "avif to webp" - 18 impr, position 3.8, (AVIF converter page)
+10. "mass domain authority checker" - 16 impr, position 6.6, `/domain-authority-checker`
+
+Top countries by impressions: Germany 500, United States 199, Italy 154, France 128, Ukraine
+66, Spain 44, Brazil 43, Poland 22.
+
+**`/domain-authority-checker` stands out:** 241 impressions across 14 "bulk domain authority
+..." query variants, average position **7.8** (several variants at position 2.6-6.6, squarely
+good), but **zero clicks on any of them**. Title/description/H1/FAQ already lead with the
+exact "bulk domain authority checker" phrase, so this doesn't look like a simple on-page
+wording fix - added a backlog note to look into it on a future run (rich-result/snippet
+appearance, or whether these impressions are rank-tracking bots rather than people) rather
+than guessing at a change today.
+
+Pages at average position 5-20 otherwise: `/de/merge-pdf` (29 impr, pos 11.3), `/de/image-
+resizer` (27 impr, pos 12.9), `/de/age-calculator` (23 impr, pos 9.2), `/fr/age-calculator`
+(22 impr, pos 5.0), `/fr/image-resizer` (20 impr, pos 13.2), `/es/avif-to-png` (16 impr, pos
+7.4) - none with a large enough gap between real variant phrasing and current title/FAQ to
+be worth a dedicated change yet (small sample, mixed variants).
+
+**Analytics (last 7 days):** 175 sessions. By channel: Direct 142 (42% engaged), Organic
+Search 10 (60% engaged - the first time this has read as more than a single session),
+Referral 9, Unassigned 8, AI Assistant 5, Cross-network 1. By country: United States 90 (42%
+engaged), Pakistan 25 (48%), Germany 23 (39%), India 7, Canada/China/Spain 3 each. Tool
+events (last 7 days): `tool_use` 17, `tool_download` 3, `tool_copy` 0, `sign_up` 0.
+
+**Read as:** Organic Search sessions (10, 60% engaged) are a real signal for the first time -
+still small, but no longer a single session per rule 2. No single page/query combination here
+needed an urgent SEO fix beyond the domain-authority-checker CTR question already noted
+above, so today's work is the next item in the Backlog (Loan Calculator) instead.
+
 ## 2026-10-05
 
 **Search Console now has real data for the first time** (it returned 0 rows on 2026-10-04,

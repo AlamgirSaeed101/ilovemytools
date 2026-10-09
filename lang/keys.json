@@ -177,6 +177,7 @@
     "one": "{count} month",
     "files": [
       "resources/js/tools/AgeCalculator.jsx",
+      "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
@@ -273,6 +274,7 @@
     "one": "{count} year",
     "files": [
       "resources/js/tools/AgeCalculator.jsx",
+      "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
@@ -466,6 +468,7 @@
   {
     "key": "{years}, {months}",
     "files": [
+      "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
@@ -853,6 +856,7 @@
   {
     "key": "Amortization schedule",
     "files": [
+      "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
@@ -1627,6 +1631,7 @@
   {
     "key": "Currency",
     "files": [
+      "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
@@ -1639,6 +1644,7 @@
   {
     "key": "Custom loan term (years)",
     "files": [
+      "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
@@ -2218,9 +2224,23 @@
     ]
   },
   {
+    "key": "Enter a loan amount greater than 0.",
+    "files": [
+      "resources/js/lib/loan.js"
+    ]
+  },
+  {
+    "key": "Enter a loan amount, interest rate and loan term to see the monthly payment.",
+    "files": [
+      "resources/js/tools/LoanCalculator.jsx"
+    ]
+  },
+  {
     "key": "Enter a loan term between 1 and 50 years.",
     "files": [
+      "resources/js/lib/loan.js",
       "resources/js/lib/mortgage.js",
+      "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
@@ -2269,13 +2289,16 @@
   {
     "key": "Enter an extra payment of 0 or more.",
     "files": [
+      "resources/js/lib/loan.js",
       "resources/js/lib/mortgage.js",
+      "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
   {
     "key": "Enter an interest rate between 0% and 100%.",
     "files": [
+      "resources/js/lib/loan.js",
       "resources/js/lib/mortgage.js"
     ]
   },
@@ -2411,6 +2434,7 @@
   {
     "key": "Extra monthly payment (optional)",
     "files": [
+      "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
@@ -3066,12 +3090,14 @@
   {
     "key": "Interest paid",
     "files": [
+      "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
   {
     "key": "Interest rate (annual %)",
     "files": [
+      "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
@@ -3337,12 +3363,14 @@
   {
     "key": "Loan amount",
     "files": [
+      "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
   {
     "key": "Loan term",
     "files": [
+      "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
@@ -3504,6 +3532,12 @@
     "files": [
       "resources/js/components/Layout.jsx",
       "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Monthly payment",
+    "files": [
+      "resources/js/tools/LoanCalculator.jsx"
     ]
   },
   {
@@ -4045,6 +4079,7 @@
   {
     "key": "Paid off in {time}.",
     "files": [
+      "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
@@ -4117,6 +4152,7 @@
   {
     "key": "Paying {extra} extra each month pays off the loan {time} sooner and saves {saved} in interest.",
     "files": [
+      "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
@@ -4389,6 +4425,7 @@
   {
     "key": "Principal paid",
     "files": [
+      "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
@@ -4661,6 +4698,7 @@
   {
     "key": "Remaining balance",
     "files": [
+      "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
@@ -5070,6 +5108,7 @@
   {
     "key": "Show the year-by-year amortization schedule",
     "files": [
+      "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
@@ -5762,6 +5801,12 @@
     ]
   },
   {
+    "key": "This shows the loan repayment with interest only. It does not include lender fees, origination charges or insurance, which vary by lender.",
+    "files": [
+      "resources/js/tools/LoanCalculator.jsx"
+    ]
+  },
+  {
     "key": "This spreadsheet has no data to convert.",
     "files": [
       "resources/js/lib/excelToPdf.js"
@@ -5957,6 +6002,7 @@
   {
     "key": "Total interest",
     "files": [
+      "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
     ]
   },
@@ -5970,6 +6016,12 @@
     "key": "Total per person",
     "files": [
       "resources/js/tools/TipCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Total repayment (loan + interest)",
+    "files": [
+      "resources/js/tools/LoanCalculator.jsx"
     ]
   },
   {
@@ -6410,6 +6462,7 @@
   {
     "key": "Year",
     "files": [
+      "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
     ]
   },

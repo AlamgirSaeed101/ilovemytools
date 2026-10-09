@@ -2138,4 +2138,61 @@ return [
             ],
         ],
     ],
+
+    'loan-calculator' => [
+        'name' => 'Calcolatore di prestito',
+        'title' => 'Calcolatore di Prestito - Rata e Piano di Ammortamento',
+        'description' => 'Calcolatore di prestito gratuito: inserisci importo, tasso e durata per vedere la rata mensile, gli interessi totali e il piano di ammortamento anno per anno.',
+        'h1' => 'Calcolatore di prestito',
+        'tagline' => 'Scopri la rata mensile, gli interessi totali e il piano di ammortamento anno per anno per qualsiasi prestito a tasso fisso.',
+        'keywords' => [
+            'calcolatore di prestito',
+            'calcolatore rata prestito',
+            'calcolatore prestito personale',
+            'calcolatore prestito auto',
+            'calcolatore di ammortamento',
+        ],
+        'intro' => 'Un calcolatore di prestito determina la rata mensile fissa di un prestito a partire dall\'importo preso in prestito, dal tasso di interesse e dalla durata. Inserisci i tuoi dati qui sotto per vedere la rata mensile, gli interessi totali pagati per tutta la durata del prestito e un piano di ammortamento completo, anno per anno, che mostra quanto di ogni rata va al capitale e quanto agli interessi. Funziona per un prestito personale, un prestito auto, un prestito studentesco o qualsiasi altro prestito a tasso fisso e durata fissa - un pagamento mensile extra facoltativo mostra di quanto prima viene estinto e quanti interessi si risparmiano.',
+        'steps' => [
+            'Inserisci l\'importo del prestito e scegli una valuta.',
+            'Inserisci il tasso di interesse annuo e scegli una durata (2-10 anni, oppure digita una durata personalizzata).',
+            'Facoltativamente, inserisci un pagamento mensile extra per vedere di quanto prima viene estinto il prestito.',
+            'Leggi la rata mensile, gli interessi totali e il rimborso totale, e apri il piano di ammortamento per il dettaglio anno per anno.',
+        ],
+        'features' => [
+            'Rata mensile, interessi totali e rimborso totale',
+            'Funziona per prestiti personali, auto, studenteschi o qualsiasi altro prestito a tasso fisso',
+            'Piano di ammortamento completo, anno per anno',
+            'I pagamenti extra mostrano il tempo e gli interessi risparmiati',
+            'Funziona con qualsiasi valuta e qualsiasi durata da 1 a 50 anni',
+            'Funziona interamente nel tuo browser - nulla di ciò che inserisci viene inviato da nessuna parte',
+        ],
+        'content' => [
+            [
+                'heading' => 'Come viene calcolata la rata mensile',
+                'body' => 'Il calcolatore usa la formula standard di ammortamento a tasso fisso: M = P x r / (1 - (1 + r)^-n), dove P è l\'importo del prestito, r è il tasso di interesse mensile (il tasso annuo diviso per 12) e n è il numero totale di rate mensili (la durata in anni moltiplicata per 12). È la stessa formula usata dai prestatori per un prestito a tasso fisso e durata fissa - personale, auto, studentesco o altro - e copre solo capitale e interessi: eventuali commissioni del prestatore, spese di apertura o assicurazioni non sono incluse, perché variano in base al prestatore e al tipo di prestito.',
+            ],
+            [
+                'heading' => 'Perché i pagamenti extra fanno risparmiare così tanti interessi',
+                'body' => 'Ogni euro extra versato sul capitale smette di generare interessi per il resto del prestito, quindi pagare di più all\'inizio - quando il saldo e la quota di interessi di ogni rata sono più alti - ha l\'effetto maggiore. Il calcolatore confronta il piano con e senza il pagamento extra per mostrare esattamente di quanti mesi prima viene estinto il prestito e quanti interessi totali si evitano. Controlla prima il tuo contratto: alcuni prestatori applicano una penale per l\'estinzione anticipata.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Cosa include questa rata del prestito?', 'a' => 'Solo capitale e interessi. Le commissioni del prestatore, le spese di apertura e le assicurazioni non sono incluse perché variano in base al prestatore e al tipo di prestito.'],
+            ['q' => 'Posso usarlo per un prestito auto o personale, non solo per un mutuo?', 'a' => 'Sì. Il calcolo è lo stesso per qualsiasi prestito a tasso fisso e durata fissa - personale, auto, studentesco o altro. Per un mutuo casa con acconto, usa invece il Calcolatore di mutuo.'],
+            ['q' => 'Come aiuta un pagamento mensile extra?', 'a' => 'Il denaro extra va direttamente al capitale del prestito, quindi smette di generare interessi per il resto del prestito. Il calcolatore mostra esattamente di quanti mesi prima viene estinto e quanti interessi totali si risparmiano.'],
+            ['q' => 'Perché il preventivo del mio prestatore è diverso da questo calcolatore?', 'a' => 'I prestatori aggiungono commissioni, assicurazioni e i propri arrotondamenti, e il tuo tasso reale dipende dal tuo merito creditizio, dal prestatore e dal tipo di prestito. Questo calcolatore mostra il calcolo di capitale e interessi sottostante, così puoi confrontare rapidamente diverse offerte.'],
+            ['q' => 'C\'è una penale per l\'estinzione anticipata di un prestito?', 'a' => 'Dipende dal prestatore e dal contratto - alcuni prestiti a tasso fisso prevedono una penale per l\'estinzione anticipata. Controlla il tuo contratto prima di fare pagamenti extra.'],
+        ],
+        'table' => [
+            'caption' => 'Rata mensile e interessi totali di un prestito di $20.000 al 7% in base alla durata (solo capitale e interessi)',
+            'headers' => ['Durata', 'Rata mensile', 'Interessi totali pagati'],
+            'rows' => [
+                ['2 anni', '$895.45', '$1,490.84'],
+                ['3 anni', '$617.54', '$2,231.51'],
+                ['5 anni', '$396.02', '$3,761.44'],
+                ['7 anni', '$301.85', '$5,355.70'],
+            ],
+        ],
+    ],
 ];

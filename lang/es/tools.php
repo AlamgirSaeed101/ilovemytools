@@ -2033,4 +2033,61 @@ return [
             ],
         ],
     ],
+
+    'loan-calculator' => [
+        'name' => 'Calculadora de préstamo',
+        'title' => 'Calculadora de Préstamo - Cuota y Amortización',
+        'description' => 'Calculadora de préstamo gratuita: introduce el importe, el tipo de interés y el plazo para ver la cuota mensual, los intereses y el calendario.',
+        'h1' => 'Calculadora de préstamo',
+        'tagline' => 'Consulta la cuota mensual, los intereses totales y un calendario de amortización año por año para cualquier préstamo a tipo fijo.',
+        'keywords' => [
+            'calculadora de préstamo',
+            'calculadora de cuota de préstamo',
+            'calculadora de préstamo personal',
+            'calculadora de préstamo de coche',
+            'calculadora de amortización',
+        ],
+        'intro' => 'Una calculadora de préstamo calcula la cuota mensual fija de un préstamo a partir del importe solicitado, el tipo de interés y el plazo. Introduce tus datos a continuación para ver la cuota mensual, los intereses totales pagados durante toda la vida del préstamo y un calendario de amortización completo, año por año, que muestra cuánto de cada cuota va a capital y cuánto a intereses. Funciona para un préstamo personal, un préstamo de coche, un préstamo de estudios o cualquier otro préstamo a tipo fijo y plazo fijo: un pago mensual extra opcional muestra cuánto antes se salda y cuánto se ahorra en intereses.',
+        'steps' => [
+            'Introduce el importe del préstamo y elige una moneda.',
+            'Introduce el tipo de interés anual y elige un plazo (2-10 años, o escribe un plazo personalizado).',
+            'Opcionalmente, introduce un pago mensual extra para ver cuánto antes se salda el préstamo.',
+            'Consulta la cuota mensual, los intereses totales y el reembolso total, y abre el calendario de amortización para ver el desglose año por año.',
+        ],
+        'features' => [
+            'Cuota mensual, intereses totales y reembolso total',
+            'Funciona para préstamos personales, de coche, de estudios o cualquier otro préstamo a tipo fijo',
+            'Calendario de amortización completo, año por año',
+            'Los pagos extra muestran el tiempo y los intereses ahorrados',
+            'Funciona con cualquier moneda y cualquier plazo de 1 a 50 años',
+            'Funciona por completo en tu navegador: nada de lo que introduces se envía a ningún sitio',
+        ],
+        'content' => [
+            [
+                'heading' => 'Cómo se calcula la cuota mensual',
+                'body' => 'La calculadora usa la fórmula estándar de amortización a tipo fijo: M = P x r / (1 - (1 + r)^-n), donde P es el importe del préstamo, r es el tipo de interés mensual (el tipo anual dividido entre 12) y n es el número total de cuotas mensuales (el plazo en años multiplicado por 12). Es la misma fórmula que usan los prestamistas para un préstamo a tipo fijo y plazo fijo -personal, de coche, de estudios o de otro tipo- y solo cubre capital e intereses: las comisiones del prestamista, los gastos de apertura o los seguros no están incluidos, ya que varían según el prestamista y el tipo de préstamo.',
+            ],
+            [
+                'heading' => 'Por qué los pagos extra ahorran tantos intereses',
+                'body' => 'Cada euro extra destinado al capital deja de generar intereses durante el resto del préstamo, así que pagar de más al principio -cuando el saldo y la parte de intereses de cada cuota son mayores- tiene el mayor efecto. La calculadora compara el calendario con y sin el pago extra para mostrar exactamente cuántos meses antes se salda el préstamo y cuántos intereses totales se evitan. Revisa antes tu contrato: algunos prestamistas cobran una penalización por amortización anticipada.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => '¿Qué incluye esta cuota del préstamo?', 'a' => 'Solo capital e intereses. Las comisiones del prestamista, los gastos de apertura y los seguros no están incluidos porque varían según el prestamista y el tipo de préstamo.'],
+            ['q' => '¿Puedo usarla para un préstamo de coche o personal, no solo para una hipoteca?', 'a' => 'Sí. El cálculo es el mismo para cualquier préstamo a tipo fijo y plazo fijo: personal, de coche, de estudios o de otro tipo. Para un préstamo hipotecario con pago inicial, usa la Calculadora de hipoteca.'],
+            ['q' => '¿Cómo ayuda un pago mensual extra?', 'a' => 'El dinero extra va directo al capital del préstamo, así que deja de generar intereses durante el resto del préstamo. La calculadora muestra exactamente cuántos meses antes se salda y cuántos intereses totales se ahorran.'],
+            ['q' => '¿Por qué la oferta de mi prestamista es distinta a esta calculadora?', 'a' => 'Los prestamistas añaden comisiones, seguros y sus propios redondeos, y tu tipo real depende de tu perfil crediticio, tu prestamista y el tipo de préstamo. Esta calculadora muestra las matemáticas de capital e intereses subyacentes para que puedas comparar ofertas rápidamente.'],
+            ['q' => '¿Hay penalización por saldar un préstamo antes de tiempo?', 'a' => 'Depende del prestamista y del contrato: algunos préstamos a tipo fijo cobran una penalización por amortización anticipada. Revisa tu contrato antes de hacer pagos extra.'],
+        ],
+        'table' => [
+            'caption' => 'Cuota mensual e intereses totales de un préstamo de $20,000 al 7% según el plazo (solo capital e intereses)',
+            'headers' => ['Plazo', 'Cuota mensual', 'Intereses totales pagados'],
+            'rows' => [
+                ['2 años', '$895.45', '$1,490.84'],
+                ['3 años', '$617.54', '$2,231.51'],
+                ['5 años', '$396.02', '$3,761.44'],
+                ['7 años', '$301.85', '$5,355.70'],
+            ],
+        ],
+    ],
 ];

@@ -2138,4 +2138,61 @@ return [
             ],
         ],
     ],
+
+    'loan-calculator' => [
+        'name' => 'Calculateur de prêt',
+        'title' => 'Calculateur de Prêt - Mensualité et Amortissement',
+        'description' => 'Calculateur de prêt gratuit : saisissez le montant, le taux d\'intérêt et la durée pour voir la mensualité, les intérêts et le tableau.',
+        'h1' => 'Calculateur de prêt',
+        'tagline' => 'Consultez la mensualité, les intérêts totaux et un tableau d\'amortissement année par année pour n\'importe quel prêt à taux fixe.',
+        'keywords' => [
+            'calculateur de prêt',
+            'calculateur de mensualité de prêt',
+            'calculateur de prêt personnel',
+            'calculateur de crédit auto',
+            'calculateur d\'amortissement',
+        ],
+        'intro' => 'Un calculateur de prêt détermine la mensualité fixe d\'un prêt à partir du montant emprunté, du taux d\'intérêt et de la durée. Saisissez vos chiffres ci-dessous pour voir la mensualité, le total des intérêts payés sur toute la durée du prêt, et un tableau d\'amortissement complet, année par année, montrant la part de chaque mensualité qui va au capital et celle qui va aux intérêts. Il fonctionne pour un prêt personnel, un crédit auto, un prêt étudiant ou tout autre prêt à taux fixe et durée fixe - un paiement mensuel supplémentaire facultatif montre de combien il est remboursé plus tôt et combien d\'intérêts cela permet d\'économiser.',
+        'steps' => [
+            'Indiquez le montant du prêt et choisissez une devise.',
+            'Indiquez le taux d\'intérêt annuel et choisissez une durée (2 à 10 ans, ou saisissez une durée personnalisée).',
+            'Indiquez éventuellement un paiement mensuel supplémentaire pour voir de combien le prêt est remboursé plus tôt.',
+            'Consultez la mensualité, les intérêts totaux et le remboursement total, puis ouvrez le tableau d\'amortissement pour le détail année par année.',
+        ],
+        'features' => [
+            'Mensualité, intérêts totaux et remboursement total',
+            'Fonctionne pour un prêt personnel, un crédit auto, un prêt étudiant ou tout autre prêt à taux fixe',
+            'Tableau d\'amortissement complet, année par année',
+            'Les paiements supplémentaires montrent le temps et les intérêts économisés',
+            'Fonctionne avec n\'importe quelle devise et une durée de 1 à 50 ans',
+            'Fonctionne entièrement dans votre navigateur - rien de ce que vous saisissez n\'est envoyé où que ce soit',
+        ],
+        'content' => [
+            [
+                'heading' => 'Comment la mensualité est calculée',
+                'body' => 'Le calculateur utilise la formule d\'amortissement standard à taux fixe : M = P x r / (1 - (1 + r)^-n), où P est le montant du prêt, r est le taux d\'intérêt mensuel (le taux annuel divisé par 12) et n est le nombre total de mensualités (la durée en années multipliée par 12). C\'est la même formule utilisée par les prêteurs pour un prêt à taux fixe et durée fixe - personnel, auto, étudiant ou autre - et elle ne couvre que le capital et les intérêts : les frais du prêteur, frais de dossier ou assurances ne sont pas inclus, car ils varient selon le prêteur et le type de prêt.',
+            ],
+            [
+                'heading' => 'Pourquoi les paiements supplémentaires économisent autant d\'intérêts',
+                'body' => 'Chaque euro supplémentaire versé sur le capital cesse de générer des intérêts pour le reste du prêt, donc payer en plus tôt dans la vie du prêt - quand le solde et la part d\'intérêts de chaque mensualité sont les plus élevés - a le plus grand effet. Le calculateur compare le tableau d\'amortissement avec et sans le paiement supplémentaire pour montrer exactement de combien de mois le prêt est remboursé plus tôt et combien d\'intérêts totaux sont évités. Vérifiez d\'abord votre contrat : certains prêteurs appliquent des pénalités de remboursement anticipé.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Que couvre cette mensualité de prêt ?', 'a' => 'Seulement le capital et les intérêts. Les frais du prêteur, frais de dossier et assurances ne sont pas inclus car ils varient selon le prêteur et le type de prêt.'],
+            ['q' => 'Puis-je l\'utiliser pour un crédit auto ou un prêt personnel, pas seulement un prêt immobilier ?', 'a' => 'Oui. Le calcul est le même pour tout prêt à taux fixe et durée fixe - personnel, auto, étudiant ou autre. Pour un prêt immobilier avec apport personnel, utilisez plutôt le Calculateur de prêt immobilier.'],
+            ['q' => 'En quoi un paiement mensuel supplémentaire aide-t-il ?', 'a' => 'L\'argent supplémentaire va directement au capital du prêt, qui cesse donc de générer des intérêts pour le reste du prêt. Le calculateur montre exactement de combien de mois il est remboursé plus tôt et combien d\'intérêts totaux sont économisés.'],
+            ['q' => 'Pourquoi l\'offre de mon prêteur diffère-t-elle de ce calculateur ?', 'a' => 'Les prêteurs ajoutent des frais, une assurance et leurs propres arrondis, et votre taux réel dépend de votre profil de crédit, de votre prêteur et du type de prêt. Ce calculateur montre le calcul de capital et d\'intérêts sous-jacent pour comparer rapidement des offres.'],
+            ['q' => 'Y a-t-il une pénalité pour remboursement anticipé d\'un prêt ?', 'a' => 'Cela dépend du prêteur et du contrat - certains prêts à taux fixe appliquent une pénalité de remboursement anticipé. Vérifiez votre contrat avant de faire des paiements supplémentaires.'],
+        ],
+        'table' => [
+            'caption' => 'Mensualité et intérêts totaux d\'un prêt de 20 000 $ à 7 % selon la durée (capital et intérêts seulement)',
+            'headers' => ['Durée', 'Mensualité', 'Intérêts totaux payés'],
+            'rows' => [
+                ['2 ans', '$895.45', '$1,490.84'],
+                ['3 ans', '$617.54', '$2,231.51'],
+                ['5 ans', '$396.02', '$3,761.44'],
+                ['7 ans', '$301.85', '$5,355.70'],
+            ],
+        ],
+    ],
 ];
