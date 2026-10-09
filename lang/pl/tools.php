@@ -1959,6 +1959,41 @@ return [
         ],
     ],
 
+    'sign-pdf' => [
+        'name' => 'Podpisz PDF',
+        'title' => 'Podpisz PDF Online Bezpłatnie - Dodaj Podpis',
+        'description' => 'Podpisz PDF bezpłatnie online. Narysuj, wpisz lub wgraj podpis i umieść go na stronie. Podpis elektroniczny, nie certyfikat. Bez wgrywania plików.',
+        'h1' => 'Podpisz PDF',
+        'tagline' => 'Narysuj, wpisz lub wgraj swój podpis i umieść go na każdej stronie - prosto w przeglądarce.',
+        'keywords' => ['podpisz pdf', 'podpisz pdf online', 'podpis pdf', 'elektroniczny podpis pdf', 'dodaj podpis do pdf'],
+        'intro' => 'To narzędzie do podpisywania PDF dodaje Twój podpis do dokumentu bez drukowania, skanowania czy instalowania czegokolwiek. Narysuj go myszką lub palcem, wpisz swoje imię i nazwisko czcionką przypominającą podpis albo wgraj zdjęcie swojego podpisu, a potem przeciągnij go na wybrane miejsce na dowolnej stronie i pobierz podpisany plik. Powstaje podpis elektroniczny - obraz umieszczony na stronie - a nie podpis cyfrowy oparty na certyfikacie, a wszystko dzieje się na Twoim urządzeniu.',
+        'steps' => [
+            'Wybierz PDF, który chcesz podpisać.',
+            'Narysuj, wpisz lub wgraj swój podpis.',
+            'Kliknij „Dodaj podpis do tej strony", a potem przeciągnij go lub zmień jego rozmiar.',
+            'Zmień stronę, aby dodać podpis ponownie, jeśli musisz podpisać więcej niż jedną stronę.',
+            'Opcjonalnie zaznacz „Dodaj dzisiejszą datę", a potem kliknij Podpisz PDF i pobierz plik.',
+        ],
+        'features' => [
+            'Rysuj myszką lub palcem, wpisuj tekst albo wgraj obraz podpisu',
+            'Przeciągaj i zmieniaj rozmiar podpisu na każdej stronie',
+            'Podpisz kilka stron w jednym PDF',
+            'Opcjonalna data pod podpisem',
+            'Prywatność - Twój PDF i podpis nigdy nie opuszczają Twojego urządzenia',
+        ],
+        'content' => [
+            ['heading' => 'Jaki to rodzaj podpisu?', 'body' => 'To narzędzie tworzy podpis elektroniczny: obraz Twojego narysowanego, wpisanego lub wgranego podpisu umieszczony na stronie, tak jak podpisałbyś odręcznie wydrukowany formularz. Nie jest to podpis cyfrowy oparty na certyfikacie, zabezpieczony kluczem publicznym i weryfikacją tożsamości, i nie dodaje do pliku żadnego dowodu kryptograficznego. Do codziennych ustaleń to zwykle wystarcza, ale sprawdź, czego wymaga konkretna umowa lub urząd, zanim oprzesz na nim coś prawnie istotnego.'],
+            ['heading' => 'Jak uzyskać czysto wyglądający podpis', 'body' => 'Rysuj powoli i trochę większy niż potrzebujesz - podpis można potem zmniejszyć lub powiększyć bez utraty szczegółów. Jeśli wgrywasz zdjęcie swojego podpisu, zadbaj o dobre światło i jednolite białe tło, a potem dokładnie je przycinaj; PNG z przezroczystym tłem najbardziej naturalnie wkomponowuje się w treść strony.'],
+        ],
+        'faqs' => [
+            ['q' => 'Czy to prawnie wiążący podpis cyfrowy?', 'a' => 'To narzędzie tworzy podpis elektroniczny - obraz podpisu umieszczony na PDF - a nie podpis cyfrowy oparty na certyfikacie z weryfikacją tożsamości. Wiele codziennych umów akceptuje podpisy elektroniczne, ale w sprawach prawnie istotnych sprawdź najpierw, czego wymaga druga strona lub właściwy urząd.'],
+            ['q' => 'Czy mogę podpisać więcej niż jedną stronę?', 'a' => 'Tak. Przejdź do innej strony za pomocą nawigacji stron i kliknij ponownie „Dodaj podpis do tej strony"; każdy umieszczony podpis można przesuwać i zmieniać jego rozmiar niezależnie.'],
+            ['q' => 'Czy mój PDF i podpis są gdzieś wysyłane?', 'a' => 'Nie. PDF jest otwierany, podpisywany i zapisywany całkowicie w Twojej przeglądarce za pomocą JavaScript, a nic nie jest wysyłane na serwer.'],
+            ['q' => 'Czy mogę przesunąć, zmienić rozmiar lub usunąć podpis po jego umieszczeniu?', 'a' => 'Tak. Przeciągnij, aby go przesunąć, przeciągnij uchwyt w rogu, aby zmienić rozmiar, albo kliknij przycisk ×, aby go usunąć - wszystko przed kliknięciem Podpisz PDF.'],
+            ['q' => 'Jakie formaty obrazów mogę wgrać jako podpis?', 'a' => 'PNG, JPG i WebP. PNG z przezroczystym tłem zwykle wygląda najlepiej, bo nie zakrywa treści strony białym prostokątem.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Kalkulator kredytu hipotecznego',
         'title' => 'Kalkulator Kredytu Hipotecznego - Rata i Harmonogram Spłat',

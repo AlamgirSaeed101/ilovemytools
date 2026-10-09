@@ -2319,6 +2319,56 @@ return [
         'related' => ['word-to-pdf', 'pdf-to-word', 'merge-pdf'],
     ],
 
+    'sign-pdf' => [
+        'name' => 'Sign PDF',
+        'category' => 'pdf-tools',
+        'icon' => 'pdf',
+        'popular' => false,
+        'updated' => '2026-10-09',
+        'title' => 'Sign PDF Online Free - Add Your Signature',
+        'description' => 'Sign a PDF online for free. Draw, type or upload your signature and place it on the page. An electronic signature, not a certificate. No upload, no sign up.',
+        'h1' => 'Sign PDF',
+        'tagline' => 'Draw, type or upload your signature and place it on any page - right in your browser.',
+        'keywords' => ['sign pdf', 'sign pdf online', 'pdf signature', 'electronic signature pdf', 'add signature to pdf'],
+        'intro' => 'This sign PDF tool adds your signature to a PDF without printing, scanning or installing anything. Draw it with your mouse or finger, type your name in a signature-style font, or upload a photo of your signature, then drag it into place on any page and download the signed file. It creates an electronic signature - an image placed on the page - not a certificate-based digital signature, and everything happens on your device.',
+        'steps' => [
+            'Choose the PDF you want to sign.',
+            'Draw, type or upload your signature.',
+            'Click "Add signature to this page", then drag or resize it into place.',
+            'Switch pages to add the signature again if you need to sign more than one page.',
+            'Optionally tick "Add today\'s date", then click Sign PDF and download the file.',
+        ],
+        'features' => [
+            'Draw with a mouse or finger, type, or upload a signature image',
+            'Drag and resize the signature on any page',
+            'Sign several pages in one PDF',
+            'Optional date stamped under the signature',
+            'Private - your PDF and signature never leave your device',
+        ],
+        'content' => [
+            [
+                'heading' => 'What kind of signature is this?',
+                'body' => 'This tool creates an electronic signature: an image of your drawn, typed or uploaded signature placed onto the page, the same way you might sign a printed form by hand. It is not a certificate-based digital signature backed by a public key and identity check, and it does not add any cryptographic proof to the file. For everyday agreements this is usually enough, but check what a specific contract or authority requires before relying on it for anything legally sensitive.',
+            ],
+            [
+                'heading' => 'Tips for a clean-looking signature',
+                'body' => 'Draw slowly and a little larger than you need - the signature can be resized afterwards without losing detail. If you upload a photo of your signature, use good lighting and a plain white background and crop it closely; a PNG with a transparent background places most naturally onto page content.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Is this a legally binding digital signature?', 'a' => 'It creates an electronic signature - a signature image placed on the PDF - not a certificate-based digital signature with identity verification. Many everyday agreements accept electronic signatures, but for anything legally sensitive check what the other party or authority requires first.'],
+            ['q' => 'Can I sign more than one page?', 'a' => 'Yes. Switch to another page with the page navigator and click "Add signature to this page" again; each placement can be moved and resized independently.'],
+            ['q' => 'Are my PDF and signature uploaded anywhere?', 'a' => 'No. The PDF is opened, signed and saved entirely in your browser with JavaScript, and nothing is sent to a server.'],
+            ['q' => 'Can I move, resize or remove a signature after placing it?', 'a' => 'Yes. Drag it to move, drag the corner handle to resize, or click the × button to remove it, all before you click Sign PDF.'],
+            ['q' => 'What image formats can I upload for my signature?', 'a' => 'PNG, JPG and WebP. A PNG with a transparent background usually looks best since it does not cover the page behind it with a white box.'],
+        ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+        ],
+        'related' => ['rotate-pdf', 'merge-pdf', 'compress-pdf', 'protect-pdf'],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Mortgage Calculator',
         'category' => 'calculators',

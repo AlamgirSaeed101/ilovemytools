@@ -56,3 +56,47 @@ export function usePdfPageThumbnails(file) {
 
     return state;
 }
+
+/**
+ * Loads one PDF file into both a pdf-lib document (for editing) and a pdfjs render document,
+ * without pre-rendering any thumbnails. Used by tools that show one full-size page at a time
+ * (Sign / Redact / Edit PDF) instead of a thumbnail grid.
+ */
+export function usePdfDoc(file) {
+    const [state, setState] = useState({ status: 'idle', doc: null, renderDoc: null, pageCount: 0, error: '' });
+    const renderDocRef = useRef(null);
+
+    useEffect(() => {
+        renderDocRef.current?.destroy();
+        renderDocRef.current = null;
+        if (!file) {
+            setState({ status: 'idle', doc: null, renderDoc: null, pageCount: 0, error: '' });
+            return;
+        }
+
+        let cancelled = false;
+        setState({ status: 'loading', doc: null, renderDoc: null, pageCount: 0, error: '' });
+
+        (async () => {
+            const { doc, pageCount } = await loadPdf(file);
+            const bytes = await file.arrayBuffer();
+            const renderDoc = await loadRenderDoc(new Uint8Array(bytes));
+            if (cancelled) {
+                renderDoc.destroy();
+                return;
+            }
+            renderDocRef.current = renderDoc;
+            setState({ status: 'ready', doc, renderDoc, pageCount, error: '' });
+        })().catch((e) => {
+            if (!cancelled) setState({ status: 'error', doc: null, renderDoc: null, pageCount: 0, error: e.message });
+        });
+
+        return () => {
+            cancelled = true;
+        };
+    }, [file]);
+
+    useEffect(() => () => renderDocRef.current?.destroy(), []);
+
+    return state;
+}

@@ -1972,6 +1972,41 @@ return [
         ],
     ],
 
+    'sign-pdf' => [
+        'name' => 'Firmar PDF',
+        'title' => 'Firmar PDF Online Gratis - Añade Tu Firma',
+        'description' => 'Firma un PDF gratis online. Dibuja, escribe o sube tu firma y colócala en la página. Firma electrónica, no un certificado. Sin subir archivos, sin registro.',
+        'h1' => 'Firmar PDF',
+        'tagline' => 'Dibuja, escribe o sube tu firma y colócala en cualquier página, directamente en tu navegador.',
+        'keywords' => ['firmar pdf', 'firmar pdf online', 'firma pdf', 'firma electrónica pdf', 'añadir firma a pdf'],
+        'intro' => 'Esta herramienta para firmar PDF añade tu firma a un documento sin imprimir, escanear ni instalar nada. Dibújala con el ratón o el dedo, escribe tu nombre con una tipografía de firma o sube una foto de tu firma, luego arrástrala hasta la posición deseada en cualquier página y descarga el archivo firmado. Crea una firma electrónica -una imagen colocada sobre la página- no una firma digital con certificado, y todo ocurre en tu dispositivo.',
+        'steps' => [
+            'Elige el PDF que quieres firmar.',
+            'Dibuja, escribe o sube tu firma.',
+            'Haz clic en "Añadir firma a esta página" y luego arrástrala o cambia su tamaño.',
+            'Cambia de página para añadir la firma de nuevo si necesitas firmar más de una página.',
+            'Si quieres, marca "Añadir la fecha de hoy", luego haz clic en Firmar PDF y descarga el archivo.',
+        ],
+        'features' => [
+            'Dibuja con el ratón o el dedo, escribe o sube una imagen de tu firma',
+            'Arrastra y cambia el tamaño de la firma en cualquier página',
+            'Firma varias páginas en un mismo PDF',
+            'Fecha opcional debajo de la firma',
+            'Privado: tu PDF y tu firma nunca salen de tu dispositivo',
+        ],
+        'content' => [
+            ['heading' => '¿Qué tipo de firma es esta?', 'body' => 'Esta herramienta crea una firma electrónica: una imagen de tu firma dibujada, escrita o subida que se coloca sobre la página, igual que firmarías a mano un formulario impreso. No es una firma digital con certificado respaldada por una clave pública y una verificación de identidad, y no añade ninguna prueba criptográfica al archivo. Para acuerdos cotidianos suele ser suficiente, pero comprueba qué exige un contrato o una autoridad concretos antes de confiar en ella para algo legalmente delicado.'],
+            ['heading' => 'Consejos para una firma limpia', 'body' => 'Dibuja despacio y un poco más grande de lo necesario: la firma se puede redimensionar después sin perder detalle. Si subes una foto de tu firma, usa buena iluminación y un fondo blanco liso, y recórtala bien ajustada; un PNG con fondo transparente se integra de forma más natural con el contenido de la página.'],
+        ],
+        'faqs' => [
+            ['q' => '¿Es esta una firma digital con validez legal?', 'a' => 'Crea una firma electrónica -una imagen de firma colocada en el PDF- no una firma digital con certificado y verificación de identidad. Muchos acuerdos cotidianos aceptan firmas electrónicas, pero para algo legalmente delicado comprueba primero qué exige la otra parte o la autoridad correspondiente.'],
+            ['q' => '¿Puedo firmar más de una página?', 'a' => 'Sí. Cambia a otra página con el navegador de páginas y vuelve a hacer clic en "Añadir firma a esta página"; cada firma colocada se puede mover y redimensionar de forma independiente.'],
+            ['q' => '¿Se suben mi PDF y mi firma a algún sitio?', 'a' => 'No. El PDF se abre, se firma y se guarda totalmente en tu navegador con JavaScript, y nada se envía a un servidor.'],
+            ['q' => '¿Puedo mover, redimensionar o eliminar una firma después de colocarla?', 'a' => 'Sí. Arrástrala para moverla, arrastra la esquina para cambiar su tamaño, o haz clic en el botón × para eliminarla, todo antes de hacer clic en Firmar PDF.'],
+            ['q' => '¿Qué formatos de imagen puedo subir para mi firma?', 'a' => 'PNG, JPG y WebP. Un PNG con fondo transparente suele quedar mejor porque no cubre el contenido de la página con un recuadro blanco.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Calculadora de hipoteca',
         'title' => 'Calculadora de Hipoteca - Cuota Mensual y Amortización',

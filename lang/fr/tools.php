@@ -2077,6 +2077,41 @@ return [
         ],
     ],
 
+    'sign-pdf' => [
+        'name' => 'Signer un PDF',
+        'title' => 'Signer un PDF en Ligne Gratuit - Votre Signature',
+        'description' => 'Signez un PDF gratuitement. Dessinez, tapez ou importez votre signature et placez-la sur la page. Signature électronique, pas un certificat. Sans envoi.',
+        'h1' => 'Signer un PDF',
+        'tagline' => "Dessinez, tapez ou importez votre signature et placez-la sur n'importe quelle page, directement dans votre navigateur.",
+        'keywords' => ['signer pdf', 'signer pdf en ligne', 'signature pdf', 'signature électronique pdf', 'ajouter une signature à un pdf'],
+        'intro' => "Cet outil pour signer un PDF ajoute votre signature à un document sans imprimer, scanner ni rien installer. Dessinez-la avec la souris ou le doigt, tapez votre nom dans une police de signature, ou importez une photo de votre signature, puis faites-la glisser à l'endroit voulu sur n'importe quelle page et téléchargez le fichier signé. Il crée une signature électronique - une image placée sur la page - et non une signature numérique certifiée, et tout se passe sur votre appareil.",
+        'steps' => [
+            'Choisissez le PDF que vous voulez signer.',
+            'Dessinez, tapez ou importez votre signature.',
+            'Cliquez sur « Ajouter la signature à cette page », puis faites-la glisser ou redimensionnez-la.',
+            'Changez de page pour ajouter de nouveau la signature si vous devez signer plusieurs pages.',
+            'Cochez éventuellement « Ajouter la date du jour », puis cliquez sur Signer le PDF et téléchargez le fichier.',
+        ],
+        'features' => [
+            'Dessinez avec la souris ou le doigt, tapez ou importez une image de signature',
+            "Faites glisser et redimensionnez la signature sur n'importe quelle page",
+            'Signez plusieurs pages dans un même PDF',
+            'Date optionnelle ajoutée sous la signature',
+            'Privé : votre PDF et votre signature ne quittent jamais votre appareil',
+        ],
+        'content' => [
+            ['heading' => 'Quel type de signature est-ce ?', 'body' => "Cet outil crée une signature électronique : une image de votre signature dessinée, tapée ou importée, placée sur la page, comme vous signeriez à la main un formulaire imprimé. Ce n'est pas une signature numérique certifiée adossée à une clé publique et à une vérification d'identité, et aucune preuve cryptographique n'est ajoutée au fichier. Pour un accord courant, cela suffit généralement, mais vérifiez ce qu'exige un contrat ou une autorité précise avant de vous y fier pour quelque chose de juridiquement sensible."],
+            ['heading' => 'Conseils pour une signature nette', 'body' => "Dessinez lentement et un peu plus grand que nécessaire : la signature peut être redimensionnée ensuite sans perdre en netteté. Si vous importez une photo de votre signature, utilisez un bon éclairage et un fond blanc uni, puis recadrez-la au plus près ; un PNG à fond transparent s'intègre le plus naturellement au contenu de la page."],
+        ],
+        'faqs' => [
+            ['q' => 'Est-ce une signature numérique ayant une valeur légale ?', 'a' => "Cet outil crée une signature électronique - une image de signature placée sur le PDF - et non une signature numérique certifiée avec vérification d'identité. De nombreux accords courants acceptent les signatures électroniques, mais pour tout ce qui est juridiquement sensible, vérifiez d'abord ce qu'exige l'autre partie ou l'autorité concernée."],
+            ['q' => 'Puis-je signer plusieurs pages ?', 'a' => 'Oui. Changez de page avec le navigateur de pages et cliquez à nouveau sur « Ajouter la signature à cette page » ; chaque signature placée peut être déplacée et redimensionnée indépendamment.'],
+            ['q' => 'Mon PDF et ma signature sont-ils envoyés quelque part ?', 'a' => "Non. Le PDF est ouvert, signé et enregistré entièrement dans votre navigateur avec JavaScript, et rien n'est envoyé à un serveur."],
+            ['q' => "Puis-je déplacer, redimensionner ou supprimer une signature après l'avoir placée ?", 'a' => 'Oui. Faites-la glisser pour la déplacer, tirez la poignée d\'angle pour la redimensionner, ou cliquez sur le bouton × pour la supprimer, tout cela avant de cliquer sur Signer le PDF.'],
+            ['q' => "Quels formats d'image puis-je importer pour ma signature ?", 'a' => 'PNG, JPG et WebP. Un PNG à fond transparent donne généralement le meilleur résultat car il ne recouvre pas le contenu de la page avec un cadre blanc.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Calculateur de prêt immobilier',
         'title' => 'Calculateur de Prêt Immobilier - Mensualité et Amortissement',

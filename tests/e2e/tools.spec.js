@@ -573,6 +573,49 @@ test.describe('PDF tools', () => {
         expect(rows[1][0]).toBe('Alice');
         expect(rows[2][0]).toBe('Bob');
     });
+
+    test('sign PDF draws a signature, places it on the page and signs the file', async ({ page }) => {
+        await openTool(page, 'sign-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'contract.pdf', mimeType: 'application/pdf', buffer: await makePdf(2) });
+        await expect(page.getByText('contract.pdf', { exact: true })).toBeVisible();
+
+        // Draw a signature on the pad, then use it.
+        const pad = page.locator('.signature-pad');
+        await pad.scrollIntoViewIfNeeded();
+        const box = await pad.boundingBox();
+        await page.mouse.move(box.x + 20, box.y + box.height / 2);
+        await page.mouse.down();
+        await page.mouse.move(box.x + box.width - 20, box.y + box.height / 2 - 20, { steps: 5 });
+        await page.mouse.up();
+        await expect(page.getByRole('button', { name: 'Use this signature' })).toBeEnabled();
+        await page.getByRole('button', { name: 'Use this signature' }).click();
+        await expect(page.getByText('Signature ready.')).toBeVisible();
+
+        // Add a date, place the signature, then drag it to a new position.
+        await page.getByLabel("Add today's date under the signature").check();
+        await page.getByRole('button', { name: 'Add signature to this page' }).click();
+        const overlay = page.locator('.pdf-editor__overlay');
+        await expect(overlay).toHaveCount(1);
+        await expect(page.locator('.pdf-editor__date')).toBeVisible();
+        await overlay.scrollIntoViewIfNeeded();
+
+        const before = await overlay.boundingBox();
+        await page.mouse.move(before.x + before.width / 2, before.y + before.height / 2);
+        await page.mouse.down();
+        await page.mouse.move(before.x + 60, before.y + 40, { steps: 5 });
+        await page.mouse.up();
+        const after = await overlay.boundingBox();
+        expect(after.x).not.toBeCloseTo(before.x, 0);
+
+        // Sign and download; the file keeps its page count and grows (the signature image was embedded).
+        const originalBytes = await makePdf(2);
+        await page.getByRole('button', { name: 'Sign PDF', exact: true }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(file.suggestedFilename()).toBe('contract-signed.pdf');
+        const signedBytes = await readDownload(file);
+        expect(await pdfPageCount(signedBytes)).toBe(2);
+        expect(signedBytes.length).toBeGreaterThan(originalBytes.length);
+    });
 });
 
 test.describe('Calculators', () => {

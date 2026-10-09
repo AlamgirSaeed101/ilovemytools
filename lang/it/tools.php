@@ -2077,6 +2077,41 @@ return [
         ],
     ],
 
+    'sign-pdf' => [
+        'name' => 'Firma PDF',
+        'title' => 'Firma PDF Online Gratis - Aggiungi la Tua Firma',
+        'description' => 'Firma un PDF gratis online. Disegna, digita o carica la tua firma e posizionala sulla pagina. Firma elettronica, non un certificato. Nessun upload.',
+        'h1' => 'Firma PDF',
+        'tagline' => 'Disegna, digita o carica la tua firma e posizionala su qualsiasi pagina, direttamente nel browser.',
+        'keywords' => ['firma pdf', 'firmare pdf online', 'firma elettronica pdf', 'aggiungere firma a pdf', 'firma digitale pdf'],
+        'intro' => "Questo strumento per firmare un PDF aggiunge la tua firma a un documento senza stampare, scansionare o installare nulla. Disegnala con il mouse o il dito, digita il tuo nome con un carattere da firma, oppure carica una foto della tua firma, poi trascinala nella posizione desiderata su qualsiasi pagina e scarica il file firmato. Crea una firma elettronica - un'immagine posizionata sulla pagina - non una firma digitale basata su certificato, e tutto avviene sul tuo dispositivo.",
+        'steps' => [
+            'Scegli il PDF che vuoi firmare.',
+            'Disegna, digita o carica la tua firma.',
+            'Clicca su "Aggiungi la firma a questa pagina", poi trascinala o ridimensionala.',
+            'Cambia pagina per aggiungere di nuovo la firma se devi firmare più di una pagina.',
+            'Se vuoi, spunta "Aggiungi la data di oggi", poi clicca su Firma PDF e scarica il file.',
+        ],
+        'features' => [
+            "Disegna con il mouse o il dito, digita o carica un'immagine della firma",
+            'Trascina e ridimensiona la firma su qualsiasi pagina',
+            'Firma più pagine in un unico PDF',
+            'Data opzionale sotto la firma',
+            'Privato - il tuo PDF e la tua firma non lasciano mai il tuo dispositivo',
+        ],
+        'content' => [
+            ['heading' => 'Che tipo di firma è questa?', 'body' => "Questo strumento crea una firma elettronica: un'immagine della tua firma disegnata, digitata o caricata, posizionata sulla pagina, proprio come firmeresti a mano un modulo stampato. Non è una firma digitale basata su certificato, garantita da una chiave pubblica e da una verifica d'identità, e non aggiunge alcuna prova crittografica al file. Per accordi quotidiani è di solito sufficiente, ma verifica cosa richiede un contratto o un'autorità specifica prima di farci affidamento per qualcosa di legalmente delicato."],
+            ['heading' => 'Consigli per una firma pulita', 'body' => "Disegna lentamente e un po' più grande del necessario: la firma può essere ridimensionata in seguito senza perdere dettagli. Se carichi una foto della tua firma, usa una buona illuminazione e uno sfondo bianco uniforme, poi ritagliala con precisione; un PNG con sfondo trasparente si integra nel modo più naturale con il contenuto della pagina."],
+        ],
+        'faqs' => [
+            ['q' => 'È una firma digitale legalmente vincolante?', 'a' => "Crea una firma elettronica - un'immagine di firma posizionata sul PDF - non una firma digitale basata su certificato con verifica d'identità. Molti accordi quotidiani accettano firme elettroniche, ma per qualcosa di legalmente delicato verifica prima cosa richiede la controparte o l'autorità competente."],
+            ['q' => 'Posso firmare più di una pagina?', 'a' => 'Sì. Passa a un\'altra pagina con il navigatore delle pagine e clicca di nuovo su "Aggiungi la firma a questa pagina"; ogni firma posizionata può essere spostata e ridimensionata in modo indipendente.'],
+            ['q' => 'Il mio PDF e la mia firma vengono caricati da qualche parte?', 'a' => 'No. Il PDF viene aperto, firmato e salvato interamente nel tuo browser con JavaScript, e nulla viene inviato a un server.'],
+            ['q' => 'Posso spostare, ridimensionare o rimuovere una firma dopo averla posizionata?', 'a' => 'Sì. Trascinala per spostarla, trascina la maniglia d\'angolo per ridimensionarla, oppure clicca sul pulsante × per rimuoverla, tutto prima di cliccare su Firma PDF.'],
+            ['q' => 'Quali formati immagine posso caricare per la mia firma?', 'a' => 'PNG, JPG e WebP. Un PNG con sfondo trasparente di solito è il migliore perché non copre il contenuto della pagina con un riquadro bianco.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Calcolatore di mutuo',
         'title' => 'Calcolatore di Mutuo - Rata Mensile e Ammortamento',

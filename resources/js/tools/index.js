@@ -60,6 +60,7 @@ const tools = {
     'stopwatch': lazy(() => import('./Stopwatch.jsx')),
     'countdown-timer': lazy(() => import('./CountdownTimer.jsx')),
     'sleep-calculator': lazy(() => import('./SleepCalculator.jsx')),
+    'sign-pdf': lazy(() => import('./SignPdf.jsx')),
 };
 
 export default tools;

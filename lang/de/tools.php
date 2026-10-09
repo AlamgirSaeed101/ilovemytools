@@ -2077,6 +2077,41 @@ return [
         ],
     ],
 
+    'sign-pdf' => [
+        'name' => 'PDF unterschreiben',
+        'title' => 'PDF Online Unterschreiben - Unterschrift Hinzufügen',
+        'description' => 'PDF kostenlos unterschreiben. Zeichnen, tippen oder hochladen Sie Ihre Unterschrift und platzieren Sie sie auf der Seite. Elektronisch, kein Zertifikat.',
+        'h1' => 'PDF unterschreiben',
+        'tagline' => 'Zeichnen, tippen oder laden Sie Ihre Unterschrift hoch und platzieren Sie sie auf jeder Seite - direkt im Browser.',
+        'keywords' => ['pdf unterschreiben', 'pdf online unterschreiben', 'pdf signatur', 'elektronische unterschrift pdf', 'unterschrift zu pdf hinzufügen'],
+        'intro' => 'Dieses Werkzeug zum PDF unterschreiben fügt Ihre Unterschrift zu einem Dokument hinzu, ohne zu drucken, zu scannen oder etwas zu installieren. Zeichnen Sie sie mit der Maus oder dem Finger, tippen Sie Ihren Namen in einer Unterschriftenschrift, oder laden Sie ein Foto Ihrer Unterschrift hoch, ziehen Sie sie dann an die gewünschte Stelle auf einer beliebigen Seite und laden Sie die unterschriebene Datei herunter. Es entsteht eine elektronische Unterschrift - ein auf die Seite platziertes Bild - keine zertifikatsbasierte digitale Signatur, und alles geschieht auf Ihrem Gerät.',
+        'steps' => [
+            'Wählen Sie das PDF aus, das Sie unterschreiben möchten.',
+            'Zeichnen, tippen oder laden Sie Ihre Unterschrift hoch.',
+            'Klicken Sie auf „Unterschrift zu dieser Seite hinzufügen" und ziehen oder vergrößern Sie sie dann in Position.',
+            'Wechseln Sie die Seite, um die Unterschrift erneut hinzuzufügen, wenn Sie mehr als eine Seite unterschreiben müssen.',
+            'Aktivieren Sie optional „Heutiges Datum hinzufügen", klicken Sie dann auf PDF unterschreiben und laden Sie die Datei herunter.',
+        ],
+        'features' => [
+            'Zeichnen mit Maus oder Finger, Tippen oder Hochladen eines Unterschriftsbilds',
+            'Unterschrift auf jeder Seite verschieben und in der Größe anpassen',
+            'Mehrere Seiten in einem PDF unterschreiben',
+            'Optionales Datum unter der Unterschrift',
+            'Privat - Ihr PDF und Ihre Unterschrift verlassen niemals Ihr Gerät',
+        ],
+        'content' => [
+            ['heading' => 'Was für eine Unterschrift ist das?', 'body' => 'Dieses Werkzeug erstellt eine elektronische Unterschrift: ein Bild Ihrer gezeichneten, getippten oder hochgeladenen Unterschrift, das auf die Seite platziert wird - genau wie Sie ein gedrucktes Formular von Hand unterschreiben würden. Es ist keine zertifikatsbasierte digitale Signatur, die durch einen öffentlichen Schlüssel und eine Identitätsprüfung abgesichert ist, und es wird kein kryptografischer Nachweis zur Datei hinzugefügt. Für alltägliche Vereinbarungen reicht das meist aus, prüfen Sie aber vorher, was ein bestimmter Vertrag oder eine Behörde verlangt, bevor Sie sich bei etwas rechtlich Heiklem darauf verlassen.'],
+            ['heading' => 'Tipps für eine saubere Unterschrift', 'body' => 'Zeichnen Sie langsam und etwas größer als nötig - die Unterschrift kann anschließend ohne Qualitätsverlust in der Größe angepasst werden. Wenn Sie ein Foto Ihrer Unterschrift hochladen, nutzen Sie gutes Licht und einen schlichten weißen Hintergrund und schneiden Sie es eng zu; ein PNG mit transparentem Hintergrund fügt sich am natürlichsten in den Seiteninhalt ein.'],
+        ],
+        'faqs' => [
+            ['q' => 'Ist das eine rechtlich bindende digitale Signatur?', 'a' => 'Es entsteht eine elektronische Unterschrift - ein auf das PDF platziertes Unterschriftsbild - keine zertifikatsbasierte digitale Signatur mit Identitätsprüfung. Viele alltägliche Vereinbarungen akzeptieren elektronische Unterschriften, aber prüfen Sie bei etwas rechtlich Heiklem zuerst, was die andere Partei oder Behörde verlangt.'],
+            ['q' => 'Kann ich mehr als eine Seite unterschreiben?', 'a' => 'Ja. Wechseln Sie mit der Seitennavigation zu einer anderen Seite und klicken Sie erneut auf „Unterschrift zu dieser Seite hinzufügen"; jede platzierte Unterschrift kann unabhängig verschoben und in der Größe angepasst werden.'],
+            ['q' => 'Werden mein PDF und meine Unterschrift irgendwohin hochgeladen?', 'a' => 'Nein. Das PDF wird vollständig in Ihrem Browser mit JavaScript geöffnet, unterschrieben und gespeichert, und nichts wird an einen Server gesendet.'],
+            ['q' => 'Kann ich eine Unterschrift nach dem Platzieren verschieben, in der Größe ändern oder entfernen?', 'a' => 'Ja. Ziehen Sie sie, um sie zu verschieben, ziehen Sie den Eckgriff, um die Größe zu ändern, oder klicken Sie auf die Schaltfläche ×, um sie zu entfernen - alles bevor Sie auf PDF unterschreiben klicken.'],
+            ['q' => 'Welche Bildformate kann ich für meine Unterschrift hochladen?', 'a' => 'PNG, JPG und WebP. Ein PNG mit transparentem Hintergrund sieht meist am besten aus, da es den Seiteninhalt nicht mit einem weißen Kasten verdeckt.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Baufinanzierungsrechner',
         'title' => 'Baufinanzierungsrechner - Monatsrate & Tilgungsplan',

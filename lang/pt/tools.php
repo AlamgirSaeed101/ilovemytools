@@ -2077,6 +2077,41 @@ return [
         ],
     ],
 
+    'sign-pdf' => [
+        'name' => 'Assinar PDF',
+        'title' => 'Assinar PDF Online Grátis - Adicione Sua Assinatura',
+        'description' => 'Assine um PDF grátis online. Desenhe, digite ou envie sua assinatura e posicione-a na página. Assinatura eletrônica, não certificado digital. Sem upload.',
+        'h1' => 'Assinar PDF',
+        'tagline' => 'Desenhe, digite ou envie sua assinatura e posicione-a em qualquer página, direto no navegador.',
+        'keywords' => ['assinar pdf', 'assinar pdf online', 'assinatura pdf', 'assinatura eletrônica pdf', 'adicionar assinatura ao pdf'],
+        'intro' => 'Esta ferramenta para assinar PDF adiciona sua assinatura a um documento sem imprimir, escanear ou instalar nada. Desenhe-a com o mouse ou o dedo, digite seu nome em uma fonte de assinatura, ou envie uma foto da sua assinatura, depois arraste-a até a posição certa em qualquer página e baixe o arquivo assinado. Ela cria uma assinatura eletrônica - uma imagem colocada sobre a página - e não uma assinatura digital com certificado, e tudo acontece no seu dispositivo.',
+        'steps' => [
+            'Escolha o PDF que você quer assinar.',
+            'Desenhe, digite ou envie sua assinatura.',
+            'Clique em "Adicionar assinatura a esta página" e depois arraste-a ou redimensione-a.',
+            'Troque de página para adicionar a assinatura de novo se precisar assinar mais de uma página.',
+            'Se quiser, marque "Adicionar a data de hoje", depois clique em Assinar PDF e baixe o arquivo.',
+        ],
+        'features' => [
+            'Desenhe com o mouse ou o dedo, digite ou envie uma imagem de assinatura',
+            'Arraste e redimensione a assinatura em qualquer página',
+            'Assine várias páginas em um mesmo PDF',
+            'Data opcional abaixo da assinatura',
+            'Privado - seu PDF e sua assinatura nunca saem do seu dispositivo',
+        ],
+        'content' => [
+            ['heading' => 'Que tipo de assinatura é esta?', 'body' => 'Esta ferramenta cria uma assinatura eletrônica: uma imagem da sua assinatura desenhada, digitada ou enviada, colocada sobre a página, da mesma forma que você assinaria um formulário impresso à mão. Não é uma assinatura digital com certificado apoiada em uma chave pública e verificação de identidade, e não adiciona nenhuma prova criptográfica ao arquivo. Para acordos do dia a dia costuma ser suficiente, mas verifique o que um contrato ou órgão específico exige antes de confiar nela para algo legalmente sensível.'],
+            ['heading' => 'Dicas para uma assinatura limpa', 'body' => 'Desenhe devagar e um pouco maior do que precisa - a assinatura pode ser redimensionada depois sem perder detalhes. Se enviar uma foto da sua assinatura, use boa iluminação e um fundo branco liso, e recorte-a bem rente; um PNG com fundo transparente se encaixa de forma mais natural no conteúdo da página.'],
+        ],
+        'faqs' => [
+            ['q' => 'É uma assinatura digital com validade legal?', 'a' => 'Ela cria uma assinatura eletrônica - uma imagem de assinatura colocada no PDF - não uma assinatura digital com certificado e verificação de identidade. Muitos acordos do dia a dia aceitam assinaturas eletrônicas, mas para algo legalmente sensível verifique antes o que a outra parte ou o órgão responsável exige.'],
+            ['q' => 'Posso assinar mais de uma página?', 'a' => 'Sim. Troque de página com o navegador de páginas e clique novamente em "Adicionar assinatura a esta página"; cada assinatura colocada pode ser movida e redimensionada de forma independente.'],
+            ['q' => 'Meu PDF e minha assinatura são enviados para algum lugar?', 'a' => 'Não. O PDF é aberto, assinado e salvo inteiramente no seu navegador com JavaScript, e nada é enviado a um servidor.'],
+            ['q' => 'Posso mover, redimensionar ou remover uma assinatura depois de colocá-la?', 'a' => 'Sim. Arraste para mover, arraste a alça do canto para redimensionar, ou clique no botão × para remover, tudo antes de clicar em Assinar PDF.'],
+            ['q' => 'Quais formatos de imagem posso enviar para minha assinatura?', 'a' => 'PNG, JPG e WebP. Um PNG com fundo transparente costuma ficar melhor porque não cobre o conteúdo da página com uma caixa branca.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Calculadora de financiamento imobiliário',
         'title' => 'Calculadora de Financiamento - Parcela e Amortização',
