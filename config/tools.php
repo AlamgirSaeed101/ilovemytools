@@ -2366,7 +2366,56 @@ return [
             ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
             ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
         ],
-        'related' => ['rotate-pdf', 'merge-pdf', 'compress-pdf', 'protect-pdf'],
+        'related' => ['redact-pdf', 'rotate-pdf', 'merge-pdf', 'compress-pdf'],
+    ],
+
+    'redact-pdf' => [
+        'name' => 'Redact PDF',
+        'category' => 'pdf-tools',
+        'icon' => 'pdf',
+        'popular' => false,
+        'updated' => '2026-10-09',
+        'title' => 'Redact PDF Online Free - Permanently Remove Text',
+        'description' => 'Redact a PDF online for free. Draw boxes over text or images to permanently remove them - real redaction, not just a black box. No upload, no sign up.',
+        'h1' => 'Redact PDF',
+        'tagline' => 'Draw a box over anything you need to hide and remove it for good - right in your browser.',
+        'keywords' => ['redact pdf', 'redact pdf online', 'black out pdf text', 'remove text from pdf', 'pdf redaction tool'],
+        'intro' => 'Redacting a PDF means permanently removing sensitive text or images, not just covering them up. Draw a box over anything you need to hide - a name, an account number, a photo - and this tool rebuilds that page as a flattened image, so the original content underneath is genuinely gone and can\'t be copied, searched or recovered. Pages you don\'t mark keep their real, selectable text. Everything runs in your browser; the file is never uploaded.',
+        'steps' => [
+            'Choose the PDF you want to redact.',
+            'Draw a box over anything on the page you want to permanently remove.',
+            'Add more boxes on this page, or switch pages to redact more.',
+            'Click Redact PDF and download the file.',
+        ],
+        'features' => [
+            'Draw boxes directly over the page preview',
+            'True redaction: marked pages are flattened into images',
+            'Pages without a box keep their real, selectable text',
+            'Move, resize or remove a box before redacting',
+            'Private - your PDF never leaves your device',
+        ],
+        'content' => [
+            [
+                'heading' => 'Why a black box alone isn\'t enough',
+                'body' => 'Simply drawing a black rectangle on top of a PDF in many editors only covers the text visually - the real text is still in the file underneath and can be copied, searched or extracted with the right tool. This tool instead renders every page you mark as a flattened image, so the original text and vector content for that page is discarded completely, not just hidden behind a shape.',
+            ],
+            [
+                'heading' => 'What changes on a redacted page',
+                'body' => 'Once you redact at least one spot on a page, that whole page becomes a picture: what you see is exactly what stays, but none of its text can be selected, searched or copied anymore, even outside the areas you marked. Pages you don\'t mark are left completely untouched, with their original real text and quality intact.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Does this really remove the text, or just hide it under a box?', 'a' => 'It really removes it. Any page with at least one redaction box is rendered to an image and that image replaces the page, so the original text and any content under or around your box is gone from the file - not just covered up.'],
+            ['q' => 'Will pages without a redaction box still have selectable text?', 'a' => 'Yes. Only pages you mark are turned into images; every other page keeps its original text, images and quality untouched.'],
+            ['q' => 'Can I move or resize a box before redacting?', 'a' => 'Yes. Drag a box to move it, drag its corner handle to resize it, or click the × button to remove it, all before you click Redact PDF.'],
+            ['q' => 'Is my PDF uploaded to a server?', 'a' => 'No. The whole redaction process, including rendering the page to an image, happens in your browser with JavaScript and nothing is sent anywhere.'],
+            ['q' => 'Why do redacted pages look slightly different from the original?', 'a' => 'Because they are now images instead of live text and vector graphics, very fine text or thin lines can look marginally softer on close zoom - the trade-off for making sure nothing underneath can be recovered.'],
+        ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+        ],
+        'related' => ['sign-pdf', 'merge-pdf', 'compress-pdf', 'protect-pdf'],
     ],
 
     'mortgage-calculator' => [

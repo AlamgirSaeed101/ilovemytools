@@ -61,6 +61,7 @@ const tools = {
     'countdown-timer': lazy(() => import('./CountdownTimer.jsx')),
     'sleep-calculator': lazy(() => import('./SleepCalculator.jsx')),
     'sign-pdf': lazy(() => import('./SignPdf.jsx')),
+    'redact-pdf': lazy(() => import('./RedactPdf.jsx')),
 };
 
 export default tools;

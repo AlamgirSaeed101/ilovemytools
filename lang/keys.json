@@ -208,6 +208,12 @@
     ]
   },
   {
+    "key": "{count} page(s) will become images",
+    "files": [
+      "resources/js/tools/RedactPdf.jsx"
+    ]
+  },
+  {
     "key": "{count} pages",
     "one": "{count} page",
     "files": [
@@ -1221,6 +1227,7 @@
       "resources/js/tools/PdfToImage.jsx",
       "resources/js/tools/PdfToWord.jsx",
       "resources/js/tools/ProtectPdf.jsx",
+      "resources/js/tools/RedactPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
       "resources/js/tools/SignPdf.jsx",
       "resources/js/tools/SplitPdf.jsx",
@@ -1873,6 +1880,7 @@
     "files": [
       "resources/js/tools/OrganizePdf.jsx",
       "resources/js/tools/PdfToImage.jsx",
+      "resources/js/tools/RedactPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
       "resources/js/tools/SignPdf.jsx",
       "resources/js/tools/SplitPdf.jsx"
@@ -2009,6 +2017,7 @@
       "resources/js/tools/HtmlToPdf.jsx",
       "resources/js/tools/JpgToPdf.jsx",
       "resources/js/tools/OrganizePdf.jsx",
+      "resources/js/tools/RedactPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
       "resources/js/tools/SignPdf.jsx",
       "resources/js/tools/SplitPdf.jsx",
@@ -2072,6 +2081,12 @@
     ]
   },
   {
+    "key": "Draw a box over anything to redact",
+    "files": [
+      "resources/js/tools/RedactPdf.jsx"
+    ]
+  },
+  {
     "key": "Draw your signature here",
     "files": [
       "resources/js/tools/SignPdf.jsx"
@@ -2099,6 +2114,7 @@
       "resources/js/tools/PdfToImage.jsx",
       "resources/js/tools/PdfToWord.jsx",
       "resources/js/tools/ProtectPdf.jsx",
+      "resources/js/tools/RedactPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
       "resources/js/tools/SignPdf.jsx",
       "resources/js/tools/SplitPdf.jsx"
@@ -3750,6 +3766,7 @@
   {
     "key": "Next page",
     "files": [
+      "resources/js/tools/RedactPdf.jsx",
       "resources/js/tools/SignPdf.jsx"
     ]
   },
@@ -3951,6 +3968,7 @@
       "resources/js/tools/PdfToImage.jsx",
       "resources/js/tools/PdfToWord.jsx",
       "resources/js/tools/ProtectPdf.jsx",
+      "resources/js/tools/RedactPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
       "resources/js/tools/SignPdf.jsx",
       "resources/js/tools/SplitPdf.jsx",
@@ -4080,6 +4098,7 @@
   {
     "key": "Page {current} of {total}",
     "files": [
+      "resources/js/tools/RedactPdf.jsx",
       "resources/js/tools/SignPdf.jsx"
     ]
   },
@@ -4330,6 +4349,7 @@
       "resources/js/tools/PdfToImage.jsx",
       "resources/js/tools/PdfToWord.jsx",
       "resources/js/tools/ProtectPdf.jsx",
+      "resources/js/tools/RedactPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
       "resources/js/tools/SignPdf.jsx",
       "resources/js/tools/SplitPdf.jsx",
@@ -4492,6 +4512,7 @@
   {
     "key": "Previous page",
     "files": [
+      "resources/js/tools/RedactPdf.jsx",
       "resources/js/tools/SignPdf.jsx"
     ]
   },
@@ -4683,6 +4704,7 @@
       "resources/js/tools/PdfToImage.jsx",
       "resources/js/tools/PdfToWord.jsx",
       "resources/js/tools/ProtectPdf.jsx",
+      "resources/js/tools/RedactPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
       "resources/js/tools/SignPdf.jsx",
       "resources/js/tools/SplitPdf.jsx",
@@ -4712,6 +4734,30 @@
     "key": "Recommended",
     "files": [
       "resources/js/tools/SleepCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Redact PDF",
+    "files": [
+      "resources/js/tools/RedactPdf.jsx"
+    ]
+  },
+  {
+    "key": "Redacting failed: {message}",
+    "files": [
+      "resources/js/tools/RedactPdf.jsx"
+    ]
+  },
+  {
+    "key": "Redacting…",
+    "files": [
+      "resources/js/tools/RedactPdf.jsx"
+    ]
+  },
+  {
+    "key": "Redaction box - drag to move",
+    "files": [
+      "resources/js/tools/RedactPdf.jsx"
     ]
   },
   {
@@ -4825,6 +4871,12 @@
     "key": "Remove the winner after each spin",
     "files": [
       "resources/js/tools/SpinWheel.jsx"
+    ]
+  },
+  {
+    "key": "Remove this box",
+    "files": [
+      "resources/js/tools/RedactPdf.jsx"
     ]
   },
   {
@@ -5908,6 +5960,12 @@
     "key": "This is not valid Base64: the length is wrong (it may be cut off).",
     "files": [
       "resources/js/lib/base64.js"
+    ]
+  },
+  {
+    "key": "This is true redaction: every page you mark becomes a flattened image, so the covered text is permanently gone and cannot be copied, searched or recovered - not just hidden under a black box.",
+    "files": [
+      "resources/js/tools/RedactPdf.jsx"
     ]
   },
   {

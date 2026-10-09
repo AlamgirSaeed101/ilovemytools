@@ -1994,6 +1994,40 @@ return [
         ],
     ],
 
+    'redact-pdf' => [
+        'name' => 'Zaczernij PDF',
+        'title' => 'Zaczernij PDF Online Bezpłatnie - Usuń Tekst',
+        'description' => 'Zaczernij PDF bezpłatnie online. Narysuj pola nad tekstem lub obrazami, aby usunąć je na stałe - prawdziwa redakcja, nie tylko czarny prostokąt.',
+        'h1' => 'Zaczernij PDF',
+        'tagline' => 'Narysuj pole nad tym, co trzeba ukryć, i usuń to na zawsze - prosto w przeglądarce.',
+        'keywords' => ['zaczernij pdf', 'redakcja pdf online', 'usuń tekst z pdf', 'zaciemnij tekst pdf', 'narzędzie do redakcji pdf'],
+        'intro' => 'Zaczernienie PDF oznacza trwałe usunięcie wrażliwego tekstu lub obrazów, a nie tylko ich zakrycie. Narysuj pole nad tym, co trzeba ukryć - nazwiskiem, numerem konta, zdjęciem - a to narzędzie odbuduje tę stronę jako spłaszczony obraz, dzięki czemu oryginalna zawartość pod spodem naprawdę znika i nie można jej skopiować, wyszukać ani odzyskać. Strony, których nie zaznaczysz, zachowują swój prawdziwy, zaznaczalny tekst. Wszystko dzieje się w przeglądarce; plik nigdy nie jest wysyłany.',
+        'steps' => [
+            'Wybierz PDF, który chcesz zaczernić.',
+            'Narysuj pole nad tym, co chcesz trwale usunąć ze strony.',
+            'Dodaj więcej pól na tej stronie lub zmień stronę, aby zaczernić więcej.',
+            'Kliknij Zaczernij PDF i pobierz plik.',
+        ],
+        'features' => [
+            'Rysuj pola bezpośrednio na podglądzie strony',
+            'Prawdziwa redakcja: zaznaczone strony są spłaszczane do obrazów',
+            'Strony bez pola zachowują swój prawdziwy, zaznaczalny tekst',
+            'Przesuń, zmień rozmiar lub usuń pole przed zaczernieniem',
+            'Prywatność - Twój PDF nigdy nie opuszcza Twojego urządzenia',
+        ],
+        'content' => [
+            ['heading' => 'Dlaczego sam czarny prostokąt nie wystarczy', 'body' => 'Narysowanie czarnego prostokąta na PDF w wielu edytorach zakrywa tekst tylko wizualnie - prawdziwy tekst nadal znajduje się w pliku pod spodem i można go skopiować, wyszukać lub wydobyć odpowiednim narzędziem. To narzędzie zamiast tego zamienia każdą zaznaczoną stronę w spłaszczony obraz, dzięki czemu oryginalny tekst i zawartość wektorowa tej strony są całkowicie odrzucane, a nie tylko ukryte za kształtem.'],
+            ['heading' => 'Co się zmienia na zaczernionej stronie', 'body' => 'Gdy zaczernisz choć jedno miejsce na stronie, cała strona staje się obrazem: to, co widzisz, jest dokładnie tym, co zostaje, ale żaden tekst nie da się już zaznaczyć, wyszukać ani skopiować, nawet poza zaznaczonymi obszarami. Strony, których nie zaznaczasz, pozostają całkowicie nietknięte, z oryginalnym tekstem i jakością.'],
+        ],
+        'faqs' => [
+            ['q' => 'Czy to naprawdę usuwa tekst, czy tylko ukrywa go pod polem?', 'a' => 'Naprawdę go usuwa. Każda strona z co najmniej jednym polem redakcji jest zamieniana w obraz, który zastępuje stronę, więc oryginalny tekst i cała zawartość pod polem lub wokół niego znika z pliku - a nie jest tylko zakryta.'],
+            ['q' => 'Czy strony bez pola redakcji nadal będą miały zaznaczalny tekst?', 'a' => 'Tak. Tylko zaznaczone strony stają się obrazami; wszystkie pozostałe zachowują oryginalny tekst, obrazy i jakość bez zmian.'],
+            ['q' => 'Czy mogę przesunąć lub zmienić rozmiar pola przed zaczernieniem?', 'a' => 'Tak. Przeciągnij pole, aby je przesunąć, przeciągnij uchwyt w rogu, aby zmienić rozmiar, albo kliknij przycisk ×, aby je usunąć - wszystko przed kliknięciem Zaczernij PDF.'],
+            ['q' => 'Czy mój PDF jest wysyłany na serwer?', 'a' => 'Nie. Cały proces redakcji, łącznie ze zamianą strony w obraz, odbywa się w Twojej przeglądarce za pomocą JavaScript, a nic nie jest nigdzie wysyłane.'],
+            ['q' => 'Dlaczego zaczernione strony wyglądają nieco inaczej niż oryginał?', 'a' => 'Ponieważ są teraz obrazami zamiast prawdziwego tekstu i grafiki wektorowej, bardzo drobny tekst lub cienkie linie mogą wyglądać nieco mniej ostro przy dużym przybliżeniu - to cena za pewność, że nic pod spodem nie da się odzyskać.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Kalkulator kredytu hipotecznego',
         'title' => 'Kalkulator Kredytu Hipotecznego - Rata i Harmonogram Spłat',

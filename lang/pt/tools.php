@@ -2112,6 +2112,40 @@ return [
         ],
     ],
 
+    'redact-pdf' => [
+        'name' => 'Redigir PDF',
+        'title' => 'Redigir PDF Online Grátis - Remova Texto',
+        'description' => 'Redija um PDF online grátis. Desenhe caixas sobre texto ou imagens para removê-los de forma permanente, não apenas tapar. Sem upload, sem cadastro.',
+        'h1' => 'Redigir PDF',
+        'tagline' => 'Desenhe uma caixa sobre o que precisa ocultar e remova para sempre - direto no seu navegador.',
+        'keywords' => ['redigir pdf', 'redigir pdf online', 'tarjar texto pdf', 'remover texto do pdf', 'ferramenta de redação de pdf'],
+        'intro' => 'Redigir um PDF significa remover texto ou imagens sensíveis permanentemente, não apenas cobri-los. Desenhe uma caixa sobre o que precisa ocultar - um nome, um número de conta, uma foto - e esta ferramenta reconstrói aquela página como uma imagem achatada, então o conteúdo original por baixo realmente desaparece e não pode ser copiado, pesquisado ou recuperado. Páginas que você não marcar mantêm seu texto real e selecionável. Tudo acontece no seu navegador; o arquivo nunca é enviado.',
+        'steps' => [
+            'Escolha o PDF que você quer redigir.',
+            'Desenhe uma caixa sobre o que quer remover permanentemente na página.',
+            'Adicione mais caixas nesta página ou troque de página para redigir mais.',
+            'Clique em Redigir PDF e baixe o arquivo.',
+        ],
+        'features' => [
+            'Desenhe caixas diretamente sobre a pré-visualização da página',
+            'Redação real: as páginas marcadas são achatadas em imagens',
+            'Páginas sem caixa mantêm seu texto real e selecionável',
+            'Mova, redimensione ou remova uma caixa antes de redigir',
+            'Privado - seu PDF nunca sai do seu dispositivo',
+        ],
+        'content' => [
+            ['heading' => 'Por que uma caixa preta sozinha não basta', 'body' => 'Simplesmente desenhar um retângulo preto sobre um PDF em muitos editores só cobre o texto visualmente - o texto real continua no arquivo por baixo e pode ser copiado, pesquisado ou extraído com a ferramenta certa. Esta ferramenta, em vez disso, transforma cada página que você marcar em uma imagem achatada, de modo que o texto original e o conteúdo vetorial daquela página sejam descartados por completo, não apenas escondidos atrás de uma forma.'],
+            ['heading' => 'O que muda em uma página redigida', 'body' => 'Assim que você redige pelo menos um ponto de uma página, a página inteira se torna uma imagem: o que você vê é exatamente o que permanece, mas nenhum texto dela pode mais ser selecionado, pesquisado ou copiado, mesmo fora das áreas marcadas. Páginas que você não marca ficam completamente intactas, com seu texto real original e sua qualidade.'],
+        ],
+        'faqs' => [
+            ['q' => 'Isso realmente remove o texto, ou só esconde embaixo de uma caixa?', 'a' => 'Remove mesmo. Qualquer página com pelo menos uma caixa de redação é transformada em imagem e essa imagem substitui a página, então o texto original e qualquer conteúdo sob ou ao redor da sua caixa desaparece do arquivo - não é só coberto.'],
+            ['q' => 'Páginas sem caixa de redação ainda terão texto selecionável?', 'a' => 'Sim. Só as páginas que você marca viram imagens; todas as outras mantêm seu texto, imagens e qualidade originais sem alteração.'],
+            ['q' => 'Posso mover ou redimensionar uma caixa antes de redigir?', 'a' => 'Sim. Arraste a caixa para movê-la, arraste o canto para redimensioná-la, ou clique no botão × para removê-la, tudo antes de clicar em Redigir PDF.'],
+            ['q' => 'Meu PDF é enviado para um servidor?', 'a' => 'Não. Todo o processo de redação, incluindo transformar a página em imagem, acontece no seu navegador com JavaScript e nada é enviado a lugar nenhum.'],
+            ['q' => 'Por que páginas redigidas parecem um pouco diferentes do original?', 'a' => 'Porque agora são imagens em vez de texto real e gráficos vetoriais, textos muito finos ou linhas finas podem parecer um pouco menos nítidos num zoom bem próximo - o preço de garantir que nada por baixo possa ser recuperado.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Calculadora de financiamento imobiliário',
         'title' => 'Calculadora de Financiamento - Parcela e Amortização',

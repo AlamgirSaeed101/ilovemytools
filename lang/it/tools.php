@@ -2112,6 +2112,40 @@ return [
         ],
     ],
 
+    'redact-pdf' => [
+        'name' => 'Redigi PDF',
+        'title' => 'Redigi PDF Online Gratis - Rimuovi Testo',
+        'description' => "Redigi un PDF online gratis. Disegna riquadri su testo o immagini per rimuoverli in modo permanente - redazione vera, non solo un riquadro nero.",
+        'h1' => 'Redigi PDF',
+        'tagline' => 'Disegna un riquadro su ciò che devi nascondere e rimuovilo per sempre - direttamente nel browser.',
+        'keywords' => ['redigi pdf', 'redazione pdf online', 'oscurare testo pdf', 'rimuovere testo da pdf', 'strumento di redazione pdf'],
+        'intro' => "Redigere un PDF significa rimuovere permanentemente testo o immagini sensibili, non solo coprirli. Disegna un riquadro su ciò che devi nascondere - un nome, un numero di conto, una foto - e questo strumento ricostruisce quella pagina come un'immagine appiattita, così il contenuto originale sottostante scompare davvero e non può essere copiato, cercato o recuperato. Le pagine che non segni mantengono il loro testo reale e selezionabile. Tutto avviene nel tuo browser; il file non viene mai caricato.",
+        'steps' => [
+            'Scegli il PDF che vuoi redigere.',
+            'Disegna un riquadro su ciò che vuoi rimuovere permanentemente dalla pagina.',
+            'Aggiungi altri riquadri su questa pagina, o cambia pagina per redigerne altre.',
+            'Clicca su Redigi PDF e scarica il file.',
+        ],
+        'features' => [
+            "Disegna riquadri direttamente sull'anteprima della pagina",
+            'Redazione vera: le pagine segnate vengono appiattite in immagini',
+            'Le pagine senza riquadro mantengono il loro testo reale e selezionabile',
+            'Sposta, ridimensiona o rimuovi un riquadro prima di redigere',
+            'Privato - il tuo PDF non lascia mai il tuo dispositivo',
+        ],
+        'content' => [
+            ['heading' => 'Perché un riquadro nero da solo non basta', 'body' => "Disegnare semplicemente un rettangolo nero sopra un PDF in molti editor copre il testo solo visivamente - il testo vero resta nel file sottostante e può essere copiato, cercato o estratto con lo strumento giusto. Questo strumento trasforma invece ogni pagina che segni in un'immagine appiattita, così il testo originale e il contenuto vettoriale di quella pagina vengono scartati completamente, non solo nascosti dietro una forma."],
+            ['heading' => 'Cosa cambia in una pagina redatta', 'body' => "Non appena rediggi almeno un punto di una pagina, l'intera pagina diventa un'immagine: quello che vedi è esattamente ciò che resta, ma nessun testo può più essere selezionato, cercato o copiato, nemmeno fuori dalle zone segnate. Le pagine che non segni restano completamente intatte, con il loro testo reale originale e la loro qualità."],
+        ],
+        'faqs' => [
+            ['q' => 'Questo rimuove davvero il testo, o lo nasconde solo sotto un riquadro?', 'a' => "Lo rimuove davvero. Qualsiasi pagina con almeno un riquadro di redazione viene trasformata in un'immagine che sostituisce la pagina, così il testo originale e qualsiasi contenuto sotto o intorno al tuo riquadro scompare dal file - non viene solo coperto."],
+            ['q' => 'Le pagine senza riquadro di redazione avranno ancora testo selezionabile?', 'a' => 'Sì. Solo le pagine che segni diventano immagini; tutte le altre mantengono il loro testo, le immagini e la qualità originali senza modifiche.'],
+            ['q' => 'Posso spostare o ridimensionare un riquadro prima di redigere?', 'a' => "Sì. Trascina un riquadro per spostarlo, trascina la sua maniglia d'angolo per ridimensionarlo, oppure clicca sul pulsante × per rimuoverlo, tutto prima di cliccare su Redigi PDF."],
+            ['q' => 'Il mio PDF viene caricato su un server?', 'a' => "No. L'intero processo di redazione, compresa la trasformazione della pagina in immagine, avviene nel tuo browser con JavaScript e nulla viene inviato da nessuna parte."],
+            ['q' => "Perché le pagine redatte sembrano leggermente diverse dall'originale?", 'a' => "Perché ora sono immagini invece di testo reale e grafica vettoriale, il testo molto fine o le linee sottili possono apparire leggermente meno nitidi con uno zoom ravvicinato - il prezzo da pagare per garantire che nulla sotto possa essere recuperato."],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Calcolatore di mutuo',
         'title' => 'Calcolatore di Mutuo - Rata Mensile e Ammortamento',

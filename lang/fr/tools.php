@@ -2112,6 +2112,40 @@ return [
         ],
     ],
 
+    'redact-pdf' => [
+        'name' => 'Caviarder un PDF',
+        'title' => 'Caviarder un PDF Gratuit - Supprimer du Texte',
+        'description' => "Caviardez un PDF gratuitement en ligne. Dessinez des zones sur du texte ou des images pour les supprimer définitivement, pas juste les masquer.",
+        'h1' => 'Caviarder un PDF',
+        'tagline' => 'Dessinez une zone sur ce que vous devez masquer et supprimez-le pour de bon - directement dans votre navigateur.',
+        'keywords' => ['caviarder pdf', 'caviarder pdf en ligne', 'masquer texte pdf', "supprimer du texte d'un pdf", 'outil de caviardage pdf'],
+        'intro' => "Caviarder un PDF signifie supprimer définitivement du texte ou des images sensibles, pas seulement les recouvrir. Dessinez une zone sur ce que vous devez masquer - un nom, un numéro de compte, une photo - et cet outil reconstruit cette page sous forme d'image aplatie, afin que le contenu original en dessous disparaisse réellement et ne puisse être copié, recherché ou récupéré. Les pages que vous ne marquez pas conservent leur vrai texte, sélectionnable. Tout se passe dans votre navigateur ; le fichier n'est jamais envoyé.",
+        'steps' => [
+            'Choisissez le PDF que vous voulez caviarder.',
+            'Dessinez une zone sur ce que vous voulez supprimer définitivement sur la page.',
+            "Ajoutez d'autres zones sur cette page, ou changez de page pour en caviarder davantage.",
+            'Cliquez sur Caviarder le PDF et téléchargez le fichier.',
+        ],
+        'features' => [
+            "Dessinez des zones directement sur l'aperçu de la page",
+            'Caviardage réel : les pages marquées sont aplaties en images',
+            'Les pages sans zone conservent leur vrai texte, sélectionnable',
+            'Déplacez, redimensionnez ou supprimez une zone avant de caviarder',
+            'Privé : votre PDF ne quitte jamais votre appareil',
+        ],
+        'content' => [
+            ['heading' => 'Pourquoi une simple zone noire ne suffit pas', 'body' => "Dessiner un simple rectangle noir sur un PDF dans de nombreux éditeurs ne fait que masquer le texte visuellement - le vrai texte reste présent dans le fichier en dessous et peut être copié, recherché ou extrait avec le bon outil. Cet outil transforme au contraire chaque page que vous marquez en une image aplatie, de sorte que le texte original et le contenu vectoriel de cette page soient entièrement supprimés, pas seulement cachés derrière une forme."],
+            ['heading' => 'Ce qui change sur une page caviardée', 'body' => "Dès que vous caviardez au moins un endroit d'une page, toute la page devient une image : ce que vous voyez est exactement ce qui reste, mais aucun texte ne peut plus y être sélectionné, recherché ou copié, même en dehors des zones marquées. Les pages que vous ne marquez pas restent totalement intactes, avec leur vrai texte original et leur qualité."],
+        ],
+        'faqs' => [
+            ['q' => 'Est-ce que cela supprime vraiment le texte, ou le cache-t-il juste sous une zone ?', 'a' => 'Il le supprime vraiment. Toute page comportant au moins une zone de caviardage est transformée en image, et cette image remplace la page, de sorte que le texte original et tout contenu sous ou autour de votre zone disparaissent du fichier - pas seulement recouverts.'],
+            ['q' => 'Les pages sans zone de caviardage garderont-elles un texte sélectionnable ?', 'a' => "Oui. Seules les pages que vous marquez sont transformées en images ; toutes les autres conservent leur texte, leurs images et leur qualité d'origine, inchangés."],
+            ['q' => 'Puis-je déplacer ou redimensionner une zone avant de caviarder ?', 'a' => "Oui. Faites-la glisser pour la déplacer, tirez sa poignée d'angle pour la redimensionner, ou cliquez sur le bouton × pour la supprimer, tout cela avant de cliquer sur Caviarder le PDF."],
+            ['q' => 'Mon PDF est-il envoyé à un serveur ?', 'a' => "Non. Tout le processus de caviardage, y compris la transformation de la page en image, se déroule dans votre navigateur avec JavaScript, et rien n'est envoyé nulle part."],
+            ['q' => "Pourquoi les pages caviardées paraissent-elles légèrement différentes de l'original ?", 'a' => "Comme ce sont désormais des images et non plus du texte et des graphiques vectoriels réels, un texte très fin ou des lignes fines peuvent paraître un peu moins nets en zoomant de près - le prix à payer pour garantir que rien en dessous ne puisse être récupéré."],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Calculateur de prêt immobilier',
         'title' => 'Calculateur de Prêt Immobilier - Mensualité et Amortissement',

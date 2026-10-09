@@ -616,6 +616,43 @@ test.describe('PDF tools', () => {
         expect(await pdfPageCount(signedBytes)).toBe(2);
         expect(signedBytes.length).toBeGreaterThan(originalBytes.length);
     });
+
+    test('redact PDF burns a box into the page so the covered text can no longer be extracted', async ({ page }) => {
+        await openTool(page, 'redact-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'secret.pdf', mimeType: 'application/pdf', buffer: await makePdf(2, 'Secret') });
+        await expect(page.getByText('secret.pdf', { exact: true })).toBeVisible();
+        await expect(page.getByRole('button', { name: 'Redact PDF', exact: true })).toBeDisabled();
+
+        // Draw a box, remove it, then draw it again (exercises the remove button too).
+        const stage = page.locator('.pdf-editor__stage');
+        await stage.scrollIntoViewIfNeeded();
+        const box = await stage.boundingBox();
+        const draw = async () => {
+            await page.mouse.move(box.x + 30, box.y + 30);
+            await page.mouse.down();
+            await page.mouse.move(box.x + 150, box.y + 90, { steps: 5 });
+            await page.mouse.up();
+        };
+        await draw();
+        await expect(page.locator('.pdf-editor__overlay')).toHaveCount(1);
+        await expect(page.getByText('1 page(s) will become images')).toBeVisible();
+        await page.getByRole('button', { name: 'Remove this box' }).click();
+        await expect(page.locator('.pdf-editor__overlay')).toHaveCount(0);
+        await expect(page.getByRole('button', { name: 'Redact PDF', exact: true })).toBeDisabled();
+        await draw();
+        await expect(page.locator('.pdf-editor__overlay')).toHaveCount(1);
+
+        await page.getByRole('button', { name: 'Redact PDF', exact: true }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(file.suggestedFilename()).toBe('secret-redacted.pdf');
+        const redactedBytes = await readDownload(file);
+        expect(await pdfPageCount(redactedBytes)).toBe(2);
+
+        // The redacted page's text is really gone (rendered to an image), not just hidden; the untouched page keeps real text.
+        const text = await extractPdfText(page, redactedBytes);
+        expect(text).not.toContain('Secret page 1');
+        expect(text).toContain('Secret page 2');
+    });
 });
 
 test.describe('Calculators', () => {

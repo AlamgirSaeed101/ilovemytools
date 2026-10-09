@@ -2007,6 +2007,40 @@ return [
         ],
     ],
 
+    'redact-pdf' => [
+        'name' => 'Redactar PDF',
+        'title' => 'Redactar PDF Online Gratis - Elimina Texto',
+        'description' => 'Redacta un PDF online gratis. Dibuja recuadros sobre texto o imágenes para eliminarlos de forma permanente, no solo taparlos. Sin subir archivos, sin registro.',
+        'h1' => 'Redactar PDF',
+        'tagline' => 'Dibuja un recuadro sobre lo que necesites ocultar y elimínalo para siempre - directamente en tu navegador.',
+        'keywords' => ['redactar pdf', 'redactar pdf online', 'tachar texto pdf', 'eliminar texto de pdf', 'herramienta de redacción pdf'],
+        'intro' => 'Redactar un PDF significa eliminar texto o imágenes sensibles de forma permanente, no solo taparlos. Dibuja un recuadro sobre lo que necesites ocultar - un nombre, un número de cuenta, una foto - y esta herramienta reconstruye esa página como una imagen aplanada, de modo que el contenido original debajo realmente desaparece y no se puede copiar, buscar ni recuperar. Las páginas que no marques conservan su texto real y seleccionable. Todo ocurre en tu navegador; el archivo nunca se sube.',
+        'steps' => [
+            'Elige el PDF que quieres redactar.',
+            'Dibuja un recuadro sobre lo que quieras eliminar permanentemente en la página.',
+            'Añade más recuadros en esta página o cambia de página para redactar más.',
+            'Haz clic en Redactar PDF y descarga el archivo.',
+        ],
+        'features' => [
+            'Dibuja recuadros directamente sobre la vista previa de la página',
+            'Redacción real: las páginas marcadas se aplanan en imágenes',
+            'Las páginas sin recuadro conservan su texto real y seleccionable',
+            'Mueve, redimensiona o elimina un recuadro antes de redactar',
+            'Privado: tu PDF nunca sale de tu dispositivo',
+        ],
+        'content' => [
+            ['heading' => 'Por qué un recuadro negro no es suficiente', 'body' => 'Dibujar simplemente un rectángulo negro sobre un PDF en muchos editores solo tapa el texto visualmente - el texto real sigue estando en el archivo debajo y se puede copiar, buscar o extraer con la herramienta adecuada. Esta herramienta en cambio convierte cada página que marques en una imagen aplanada, de modo que el texto original y el contenido vectorial de esa página se descartan por completo, no solo se ocultan detrás de una forma.'],
+            ['heading' => 'Qué cambia en una página redactada', 'body' => 'En cuanto redactas al menos un punto de una página, esa página entera se convierte en una imagen: lo que ves es exactamente lo que queda, pero ya no se puede seleccionar, buscar ni copiar ningún texto, ni siquiera fuera de las zonas que marcaste. Las páginas que no marcas quedan completamente intactas, con su texto real original y su calidad.'],
+        ],
+        'faqs' => [
+            ['q' => '¿Esto elimina realmente el texto, o solo lo oculta bajo un recuadro?', 'a' => 'Lo elimina de verdad. Cualquier página con al menos un recuadro de redacción se convierte en una imagen y esa imagen sustituye a la página, de modo que el texto original y cualquier contenido debajo o alrededor de tu recuadro desaparece del archivo, no solo se tapa.'],
+            ['q' => '¿Las páginas sin recuadro de redacción seguirán teniendo texto seleccionable?', 'a' => 'Sí. Solo las páginas que marcas se convierten en imágenes; el resto conserva su texto, imágenes y calidad originales sin cambios.'],
+            ['q' => '¿Puedo mover o redimensionar un recuadro antes de redactar?', 'a' => 'Sí. Arrastra un recuadro para moverlo, arrastra su esquina para cambiar su tamaño, o haz clic en el botón × para eliminarlo, todo antes de hacer clic en Redactar PDF.'],
+            ['q' => '¿Se sube mi PDF a un servidor?', 'a' => 'No. Todo el proceso de redacción, incluida la conversión de la página en imagen, ocurre en tu navegador con JavaScript y nada se envía a ningún sitio.'],
+            ['q' => '¿Por qué las páginas redactadas se ven ligeramente distintas del original?', 'a' => 'Porque ahora son imágenes en lugar de texto real y gráficos vectoriales, el texto muy fino o las líneas delgadas pueden verse algo menos nítidos al ampliar mucho - es el precio de asegurarse de que nada debajo se pueda recuperar.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Calculadora de hipoteca',
         'title' => 'Calculadora de Hipoteca - Cuota Mensual y Amortización',

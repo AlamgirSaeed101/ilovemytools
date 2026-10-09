@@ -2112,6 +2112,40 @@ return [
         ],
     ],
 
+    'redact-pdf' => [
+        'name' => 'PDF schwärzen',
+        'title' => 'PDF Online Schwärzen - Text Dauerhaft Entfernen',
+        'description' => 'Schwärzen Sie ein PDF kostenlos online. Zeichnen Sie Felder über Text oder Bilder, um sie dauerhaft zu entfernen - echte Schwärzung, kein Kasten.',
+        'h1' => 'PDF schwärzen',
+        'tagline' => 'Zeichnen Sie ein Feld über alles, was verschwinden soll, und entfernen Sie es endgültig - direkt im Browser.',
+        'keywords' => ['pdf schwärzen', 'pdf online schwärzen', 'text aus pdf entfernen', 'pdf text unkenntlich machen', 'pdf schwärzungs-tool'],
+        'intro' => 'Ein PDF zu schwärzen bedeutet, sensiblen Text oder Bilder dauerhaft zu entfernen, nicht nur zu überdecken. Zeichnen Sie ein Feld über alles, was verschwinden soll - einen Namen, eine Kontonummer, ein Foto - und dieses Werkzeug baut diese Seite als abgeflachtes Bild neu auf, sodass der ursprüngliche Inhalt darunter wirklich verschwindet und nicht kopiert, durchsucht oder wiederhergestellt werden kann. Seiten, die Sie nicht markieren, behalten ihren echten, auswählbaren Text. Alles geschieht in Ihrem Browser; die Datei wird nie hochgeladen.',
+        'steps' => [
+            'Wählen Sie das PDF aus, das Sie schwärzen möchten.',
+            'Zeichnen Sie ein Feld über alles auf der Seite, das Sie dauerhaft entfernen möchten.',
+            'Fügen Sie weitere Felder auf dieser Seite hinzu, oder wechseln Sie die Seite, um mehr zu schwärzen.',
+            'Klicken Sie auf PDF schwärzen und laden Sie die Datei herunter.',
+        ],
+        'features' => [
+            'Felder direkt über der Seitenvorschau zeichnen',
+            'Echte Schwärzung: markierte Seiten werden zu Bildern abgeflacht',
+            'Seiten ohne Feld behalten ihren echten, auswählbaren Text',
+            'Ein Feld vor dem Schwärzen verschieben, vergrößern oder entfernen',
+            'Privat - Ihr PDF verlässt niemals Ihr Gerät',
+        ],
+        'content' => [
+            ['heading' => 'Warum ein schwarzer Kasten allein nicht reicht', 'body' => 'Ein schwarzes Rechteck einfach über ein PDF zu zeichnen, deckt in vielen Editoren den Text nur optisch ab - der echte Text steckt weiterhin in der Datei darunter und kann mit dem richtigen Werkzeug kopiert, durchsucht oder extrahiert werden. Dieses Werkzeug macht aus jeder markierten Seite stattdessen ein abgeflachtes Bild, sodass der ursprüngliche Text und Vektorinhalt dieser Seite vollständig verworfen wird, statt nur hinter einer Form versteckt zu sein.'],
+            ['heading' => 'Was sich auf einer geschwärzten Seite ändert', 'body' => 'Sobald Sie mindestens eine Stelle auf einer Seite schwärzen, wird die ganze Seite zu einem Bild: Was Sie sehen, bleibt genau so erhalten, aber kein Text darauf lässt sich mehr auswählen, durchsuchen oder kopieren, auch nicht außerhalb der markierten Bereiche. Seiten, die Sie nicht markieren, bleiben vollständig unverändert, mit ihrem echten Originaltext und ihrer Qualität.'],
+        ],
+        'faqs' => [
+            ['q' => 'Wird der Text wirklich entfernt, oder nur unter einem Kasten versteckt?', 'a' => 'Er wird wirklich entfernt. Jede Seite mit mindestens einem Schwärzungsfeld wird in ein Bild umgewandelt, das die Seite ersetzt, sodass der ursprüngliche Text und jeder Inhalt unter oder um Ihr Feld aus der Datei verschwindet - nicht nur überdeckt wird.'],
+            ['q' => 'Haben Seiten ohne Schwärzungsfeld noch auswählbaren Text?', 'a' => 'Ja. Nur die Seiten, die Sie markieren, werden zu Bildern; alle anderen behalten ihren Originaltext, ihre Bilder und ihre Qualität unverändert.'],
+            ['q' => 'Kann ich ein Feld vor dem Schwärzen verschieben oder in der Größe ändern?', 'a' => 'Ja. Ziehen Sie ein Feld, um es zu verschieben, ziehen Sie seinen Eckgriff, um die Größe zu ändern, oder klicken Sie auf die Schaltfläche ×, um es zu entfernen - alles bevor Sie auf PDF schwärzen klicken.'],
+            ['q' => 'Wird mein PDF auf einen Server hochgeladen?', 'a' => 'Nein. Der gesamte Schwärzungsprozess, einschließlich der Umwandlung der Seite in ein Bild, geschieht in Ihrem Browser mit JavaScript, und nichts wird irgendwohin gesendet.'],
+            ['q' => 'Warum sehen geschwärzte Seiten leicht anders aus als das Original?', 'a' => 'Weil sie jetzt Bilder statt echtem Text und Vektorgrafiken sind, können sehr feiner Text oder dünne Linien bei starkem Zoom etwas weicher wirken - der Preis dafür, dass nichts darunter wiederhergestellt werden kann.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Baufinanzierungsrechner',
         'title' => 'Baufinanzierungsrechner - Monatsrate & Tilgungsplan',
