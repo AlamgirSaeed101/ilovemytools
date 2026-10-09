@@ -196,6 +196,28 @@ class Seo
         return $this;
     }
 
+    /** A hand-written guide: Article schema with a named author. */
+    public function article(array $guide, string $author): self
+    {
+        $this->schemas[] = [
+            '@context' => 'https://schema.org',
+            '@type' => 'Article',
+            'headline' => $guide['h1'],
+            'description' => $guide['description'],
+            'url' => $this->canonical,
+            'image' => $this->image,
+            'inLanguage' => 'en',
+            'datePublished' => $guide['published'],
+            'dateModified' => $guide['updated'],
+            'author' => ['@type' => 'Person', 'name' => $author, 'url' => self::absoluteUrl('/about')],
+            'publisher' => ['@id' => self::absoluteUrl('/').'#organization'],
+            'mainEntityOfPage' => $this->canonical,
+            'citation' => array_map(fn ($s) => ['@type' => 'CreativeWork', 'name' => $s['title'], 'url' => $s['url']], $guide['sources'] ?? []),
+        ];
+
+        return $this;
+    }
+
     /** The About page describes the organization behind the site. */
     public function about(): self
     {

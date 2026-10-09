@@ -3,11 +3,12 @@ import { createRoot } from 'react-dom/client';
 import { createBrowserRouter } from 'react-router';
 import { RouterProvider } from 'react-router/dom';
 import Layout from './components/Layout.jsx';
-import { getSite, initialPage, loadCategory, loadSite, loadTool, NotFoundError } from './lib/api.js';
+import { getJson, getSite, initialPage, loadCategory, loadSite, loadTool, NotFoundError } from './lib/api.js';
 import { initI18n } from './lib/i18n.js';
 import Category from './pages/Category.jsx';
 import Home from './pages/Home.jsx';
 import { About, Contact, Privacy, Terms } from './pages/InfoPages.jsx';
+import { GuideArticle, GuideIndex } from './pages/Guides.jsx';
 import NotFound, { RouteError } from './pages/NotFound.jsx';
 import ToolPage from './pages/ToolPage.jsx';
 
@@ -25,6 +26,16 @@ const routes = [
                     { path: 'contact', element: <Contact /> },
                     { path: 'privacy-policy', element: <Privacy /> },
                     { path: 'terms', element: <Terms /> },
+                    { path: 'guides', element: <GuideIndex /> },
+                    {
+                        id: 'guide',
+                        path: 'guides/:slug',
+                        loader: ({ params }) => {
+                            if (!(getSite().guides ?? []).some((g) => g.slug === params.slug)) throw new NotFoundError();
+                            return getJson(`/api/guides/${params.slug}`);
+                        },
+                        element: <GuideArticle />,
+                    },
                     {
                         id: 'category',
                         path: 'category/:slug',
@@ -52,7 +63,7 @@ const routes = [
 function hydrationData() {
     if (!initialPage) return undefined;
     const { type, data } = initialPage;
-    if ((type === 'tool' || type === 'category') && data) return { loaderData: { [type]: data } };
+    if ((type === 'tool' || type === 'category' || type === 'guide') && data) return { loaderData: { [type]: data } };
     // A one-segment URL like /nope (or /es/nope) matches the tool route, which Laravel already said is a 404.
     const prefix = getSite().prefix || '';
     const path = prefix && window.location.pathname.startsWith(prefix) ? window.location.pathname.slice(prefix.length) || '/' : window.location.pathname;

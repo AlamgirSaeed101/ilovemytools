@@ -17,6 +17,7 @@ Route::middleware('throttle:120,1,api')->group(function () {
     Route::get('/site', [SiteController::class, 'site'])->name('api.site');
     Route::get('/tools/{slug}', [SiteController::class, 'tool'])->name('api.tool');
     Route::get('/categories/{slug}', [SiteController::class, 'category'])->name('api.category');
+    Route::get('/guides/{guide}', [\App\Http\Controllers\GuideController::class, 'api'])->name('api.guide');
 });
 
 Route::get('/ip', [IpController::class, 'show'])

@@ -409,6 +409,9 @@ function Footer() {
                         <li><Link className={link} to="/contact">{t('Contact')}</Link></li>
                         <li><Link className={link} to="/privacy-policy">{t('Privacy Policy')}</Link></li>
                         <li><Link className={link} to="/terms">{t('Terms of Use')}</Link></li>
+                        {site.locale === site.defaultLocale && (
+                            <li><Link className={link} to="/guides">Guides</Link></li>
+                        )}
                         <li><a className={link} href="/sitemap.xml">{t('Sitemap')}</a></li>
                         {site.productHunt && (
                             <li>

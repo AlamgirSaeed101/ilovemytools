@@ -70,6 +70,7 @@ class SiteData
             'url' => Seo::absoluteUrl('/'),
             'legalUpdated' => self::LEGAL_UPDATED,
             'homeFaqs' => HomeFaq::all(),
+            'guides' => Guides::all()->map(fn (array $g) => Guides::summary($g))->values()->all(),
             'founded' => (string) config('site.founded'),
             'productHunt' => (string) config('site.product_hunt'),
             'founder' => (string) (config('site.founder')['name'] ?? ''),

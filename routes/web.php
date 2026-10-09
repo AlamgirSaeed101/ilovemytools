@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\GuideController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\SeoFilesController;
 use App\Support\Locale;
@@ -45,6 +46,20 @@ $pages = function () use ($toolSlugs) {
             ->name('tool');
     }
 };
+
+// Guides are hand-written in English only (no machine translations).
+$guideSlugs = implode('|', array_map(fn ($slug) => preg_quote($slug, '/'), array_keys(config('guides', []))));
+Route::middleware('locale:'.Locale::default())->group(function () use ($guideSlugs) {
+    Route::get('/guides', [GuideController::class, 'index'])->name('guides');
+    if ($guideSlugs !== '') {
+        Route::get('/guides/{guide}', [GuideController::class, 'show'])->where('guide', $guideSlugs)->name('guide');
+    }
+});
+foreach (Locale::codes() as $code) {
+    if ($code !== Locale::default()) {
+        Route::get('/'.$code.'/guides/{guide?}', fn (?string $guide = null) => redirect('/guides'.($guide ? '/'.$guide : ''), 302));
+    }
+}
 
 Route::middleware('locale:'.Locale::default())->group($pages);
 

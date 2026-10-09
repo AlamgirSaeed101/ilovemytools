@@ -65,6 +65,18 @@ class SeoFilesController extends Controller
                 $xml->endElement();
             }
         }
+        // Guides exist in English only.
+        $xml->startElement('url');
+        $xml->writeElement('loc', Seo::absoluteUrl('/guides'));
+        $xml->writeElement('priority', '0.6');
+        $xml->endElement();
+        foreach (\App\Support\Guides::all() as $guide) {
+            $xml->startElement('url');
+            $xml->writeElement('loc', Seo::absoluteUrl('/guides/'.$guide['slug']));
+            $xml->writeElement('lastmod', $guide['updated']);
+            $xml->writeElement('priority', '0.7');
+            $xml->endElement();
+        }
         $xml->endElement();
         $xml->endDocument();
 
@@ -98,6 +110,13 @@ class SeoFilesController extends Controller
             foreach ($this->registry->inCategory($category['slug']) as $tool) {
                 $lines[] = '- ['.$tool['name'].']('.Seo::absoluteUrl($tool['slug']).'): '.$tool['tagline'];
             }
+        }
+
+        $lines[] = '';
+        $lines[] = '## Guides';
+        $lines[] = '';
+        foreach (\App\Support\Guides::all() as $guide) {
+            $lines[] = '- ['.$guide['h1'].']('.Seo::absoluteUrl('guides/'.$guide['slug']).'): '.$guide['description'];
         }
 
         $lines[] = '';
