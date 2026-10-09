@@ -45,7 +45,7 @@ return [
 
     // The person behind the site, shown on the About page and in the schema once filled in,
     // e.g. ['name' => 'Jane Doe', 'url' => 'https://www.linkedin.com/in/janedoe'].
-    'founder' => null,
+    'founder' => ['name' => 'M Alamgir Saeed'],
 
     'theme_color' => '#4f46e5',
 
