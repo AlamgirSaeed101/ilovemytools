@@ -7,7 +7,7 @@ test, commit, push to `main`, and add ONE short line (max 300 characters) to `do
 
 Read Parts 1-2 of `TOOLS_SPEC_PROMPT.md` (architecture, SEO rules: lines 1-87) before changing anything. Read Part 3/4 only for the one tool you are working on (grep its name), not the whole file.
 
-**Save tokens:** keep command output short (`| tail -20`, `--reporter=line`, `-q`), read only the files and line ranges you need, never print whole lang files or build output, and work alone (no subagents).
+**Save tokens (weekly limit):** never create reports, screenshots or extra docs; images only when a new tool needs its share image (scripts/og-images.mjs, new tools only, never --force). keep command output short (`| tail -20`, `--reporter=line`, `-q`), read only the files and line ranges you need, never print whole lang files or build output, and work alone (no subagents).
 
 ## Rules (never break these)
 
