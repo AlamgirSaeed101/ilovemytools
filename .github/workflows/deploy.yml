@@ -20,8 +20,6 @@ jobs:
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 30 # recent history for the WhatsApp update message
 
       - uses: shivammathur/setup-php@v2
         with:
@@ -116,15 +114,3 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         run: node scripts/warm-cache.mjs
-
-      - name: Tell the owner on their phone
-        continue-on-error: true
-        env:
-          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
-          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
-          TWILIO_FROM: ${{ secrets.TWILIO_FROM }}
-          NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
-          WA_PHONE: ${{ secrets.WHATSAPP_PHONE }}
-          WA_KEY: ${{ secrets.WHATSAPP_APIKEY }}
-          BEFORE: ${{ github.event.before }}
-        run: node scripts/notify-whatsapp.mjs
