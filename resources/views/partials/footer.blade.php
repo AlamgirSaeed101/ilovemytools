@@ -28,6 +28,9 @@
                 <li><a href="{{ lurl('contact') }}">{{ t('Contact') }}</a></li>
                 <li><a href="{{ lurl('privacy-policy') }}">{{ t('Privacy Policy') }}</a></li>
                 <li><a href="{{ lurl('terms') }}">{{ t('Terms of Use') }}</a></li>
+                @if (config('site.product_hunt'))
+                    <li><a href="{{ config('site.product_hunt') }}" target="_blank" rel="noopener">★ {{ t('Review us on Product Hunt') }}</a></li>
+                @endif
                 <li><a href="{{ url('sitemap.xml') }}">{{ t('Sitemap') }}</a></li>
             </ul>
         </div>

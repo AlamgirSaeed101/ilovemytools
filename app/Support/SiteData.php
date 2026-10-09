@@ -71,6 +71,7 @@ class SiteData
             'legalUpdated' => self::LEGAL_UPDATED,
             'homeFaqs' => HomeFaq::all(),
             'founded' => (string) config('site.founded'),
+            'productHunt' => (string) config('site.product_hunt'),
             'founder' => (string) (config('site.founder')['name'] ?? ''),
             'ads' => [
                 'client' => Ads::liveClient(),

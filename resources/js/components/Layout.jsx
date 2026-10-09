@@ -410,6 +410,13 @@ function Footer() {
                         <li><Link className={link} to="/privacy-policy">{t('Privacy Policy')}</Link></li>
                         <li><Link className={link} to="/terms">{t('Terms of Use')}</Link></li>
                         <li><a className={link} href="/sitemap.xml">{t('Sitemap')}</a></li>
+                        {site.productHunt && (
+                            <li>
+                                <a className={link} href={site.productHunt} target="_blank" rel="noopener">
+                                    ★ {t('Review us on Product Hunt')}
+                                </a>
+                            </li>
+                        )}
                     </ul>
                 </div>
                 <p className="mt-4 mb-0 text-[0.85rem] text-muted">
