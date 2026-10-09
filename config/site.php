@@ -36,10 +36,9 @@ return [
     // They become "sameAs" links that tell Google and AI engines these profiles are the same brand.
     // Add each URL here as soon as the listing is live.
     // Shown as a review link in the footer.
-    'product_hunt' => 'https://www.producthunt.com/products/ilovetools-3',
+    'product_hunt' => '',
 
     'same_as' => [
-        'https://www.producthunt.com/products/ilovetools-3',
         'https://www.uneed.best/tool/ilovemytools',
     ],
 

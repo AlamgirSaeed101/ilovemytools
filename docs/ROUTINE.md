@@ -44,6 +44,7 @@ Read Parts 1-2 of `TOOLS_SPEC_PROMPT.md` (architecture, SEO rules: lines 1-87) b
     prefer tools whose keywords have a high CPC (finance calculators earn far more per ad than file tools);
     use local conventions via `resources/js/lib/region.js` (Letter vs A4, tipping, US vs metric units); and
     for money tools be exact: show formulas, cite official sources (e.g. EU/HMRC VAT rates) and never give tax advice.
+13. **LinkedIn draft (only after a real release).** If today's push added a new tool or a fix visitors will notice, and CI passed and it is live, add a LinkedIn draft at the end of the rule 11 comment, under `**LinkedIn draft (not posted)**`. The owner posts it himself from his profile (M Alamgir Saeed, Founder & CEO). Rules: under 120 words; first line says what is new; one line on why it helps (from the tool's tagline in `config/tools.php`); end with `ilovemytools.store/<slug>` and 2-4 hashtags. Only describe what is live today; never planned work, never user numbers. Image note: "use the tool page screenshot" (do not create images). No release, no draft: skip it, and never repeat a draft for something already announced.
 
 ## Backlog (in priority order)
 
