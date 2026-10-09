@@ -36,6 +36,7 @@ return [
     // They become "sameAs" links that tell Google and AI engines these profiles are the same brand.
     // Add each URL here as soon as the listing is live.
     'same_as' => [
+        'https://www.producthunt.com/products/ilovetools-3',
     ],
 
     // The person behind the site, shown on the About page and in the schema once filled in,
