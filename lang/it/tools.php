@@ -2146,6 +2146,41 @@ return [
         ],
     ],
 
+    'edit-pdf' => [
+        'name' => 'Modifica PDF',
+        'title' => 'Modifica PDF Online Gratis - Aggiungi Testo',
+        'description' => 'Modifica un PDF online gratis. Aggiungi testo, immagini, evidenziazioni e disegni su qualsiasi pagina. Aggiunge contenuto, non modifica il testo esistente.',
+        'h1' => 'Modifica PDF',
+        'tagline' => 'Aggiungi testo, immagini, evidenziazioni e disegni a mano libera su qualsiasi pagina - direttamente nel browser.',
+        'keywords' => ['modifica pdf', 'modificare pdf online', 'aggiungere testo a pdf', 'annotare pdf', 'editor pdf gratuito'],
+        'intro' => 'Questo editor di PDF ti permette di aggiungere nuovo testo, le tue immagini, passaggi evidenziati e disegni a mano libera su qualsiasi pagina, per poi salvare il risultato. Scegli cosa aggiungere, posizionalo dove serve, trascinalo o ridimensionalo, e annulla se cambi idea. Aggiunge nuovo contenuto sulla pagina - come scrivere su un foglio stampato - invece di modificare il testo già presente nel PDF. Tutto avviene nel tuo browser; il file non viene mai caricato.',
+        'steps' => [
+            'Scegli il PDF che vuoi modificare.',
+            'Scegli Testo, Immagine, Evidenziazione o Disegno e imposta dimensione o colore.',
+            'Clicca su "Aggiungi ... alla pagina", poi trascina, ridimensiona o rimuovi.',
+            'Cambia pagina o aggiungi altri elementi - Annulla rimuove l\'ultimo se cambi idea.',
+            'Clicca su Salva PDF e scarica il file.',
+        ],
+        'features' => [
+            'Aggiungi testo in qualsiasi dimensione e colore',
+            'Aggiungi le tue immagini',
+            'Evidenzia qualsiasi parte di una pagina',
+            'Disegna a mano libera con il mouse o il dito',
+            'Annulla l\'ultima modifica, o rimuovi qualsiasi elemento singolarmente',
+        ],
+        'content' => [
+            ['heading' => 'Cosa può e non può fare questo strumento', 'body' => 'Tutto ciò che aggiungi - testo, immagini, evidenziazioni, disegni - viene posizionato sulla pagina come nuovo contenuto. Questo strumento non può selezionare, spostare o modificare il testo già presente nel PDF; aggiunge solo nuovi elementi sopra ciò che già c\'è, come attaccare un post-it o un\'etichetta stampata su un documento di carta.'],
+            ['heading' => 'Usi utili per aggiungere contenuto a un PDF', 'body' => 'Aggiungi una nota, un timbro, una sigla, un passaggio evidenziato, un dettaglio cerchiato o una freccia che indica qualcosa - utile per annotare un documento, rivedere una bozza o compilare un semplice campo di modulo che non ne ha già uno. Per modificare testo già presente nel documento, serve invece il file originale.'],
+        ],
+        'faqs' => [
+            ['q' => 'Posso modificare il testo già presente nel PDF?', 'a' => 'No. Questo strumento aggiunge solo nuovo testo, immagini, evidenziazioni e disegni sulla pagina; non può selezionare o modificare il testo già presente. Pensalo come aggiungere qualcosa a una pagina stampata, non come aprire un elaboratore di testi.'],
+            ['q' => 'Posso annullare un errore?', 'a' => 'Sì. Clicca su Annulla per rimuovere l\'elemento aggiunto più di recente, oppure clicca sulla × di qualsiasi elemento per rimuovere proprio quello, tutto prima di cliccare su Salva PDF.'],
+            ['q' => 'Posso spostare o ridimensionare ciò che ho aggiunto?', 'a' => 'Sì. Trascina qualsiasi testo, immagine o evidenziazione per spostarlo; immagini ed evidenziazioni hanno anche una maniglia d\'angolo per ridimensionarli. Anche i disegni a mano libera possono essere trascinati.'],
+            ['q' => 'Il mio PDF viene caricato su un server?', 'a' => 'No. Tutto - aggiungere, spostare, ridimensionare e salvare - avviene nel tuo browser con JavaScript e nulla viene inviato da nessuna parte.'],
+            ['q' => 'Quali formati immagine posso aggiungere?', 'a' => 'PNG, JPG e WebP.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Calcolatore di mutuo',
         'title' => 'Calcolatore di Mutuo - Rata Mensile e Ammortamento',

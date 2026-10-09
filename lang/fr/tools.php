@@ -2146,6 +2146,41 @@ return [
         ],
     ],
 
+    'edit-pdf' => [
+        'name' => 'Modifier un PDF',
+        'title' => 'Modifier un PDF Gratuit - Ajouter du Texte',
+        'description' => "Modifiez un PDF gratuitement. Ajoutez texte, images, surlignages et dessins sur n'importe quelle page. Ajoute du contenu, ne modifie pas le texte existant.",
+        'h1' => 'Modifier un PDF',
+        'tagline' => "Ajoutez du texte, des images, des surlignages et des dessins à main levée sur n'importe quelle page - directement dans votre navigateur.",
+        'keywords' => ['modifier pdf', 'modifier pdf en ligne', 'ajouter du texte à un pdf', 'annoter pdf', 'éditeur pdf gratuit'],
+        'intro' => "Cet éditeur de PDF vous permet d'ajouter du texte, vos propres images, des passages surlignés et des dessins à main levée sur n'importe quelle page, puis d'enregistrer le résultat. Choisissez quoi ajouter, placez-le où vous en avez besoin, faites-le glisser ou redimensionnez-le, et annulez si vous changez d'avis. Il ajoute du nouveau contenu sur la page - comme écrire sur une page imprimée - plutôt que de modifier le texte déjà présent dans le PDF. Tout se passe dans votre navigateur ; le fichier n'est jamais envoyé.",
+        'steps' => [
+            'Choisissez le PDF que vous voulez modifier.',
+            'Choisissez Texte, Image, Surlignage ou Dessin et réglez sa taille ou sa couleur.',
+            'Cliquez sur « Ajouter ... à la page », puis faites-le glisser, redimensionnez-le ou supprimez-le.',
+            "Changez de page ou ajoutez d'autres éléments - Annuler supprime le dernier si vous changez d'avis.",
+            'Cliquez sur Enregistrer le PDF et téléchargez le fichier.',
+        ],
+        'features' => [
+            "Ajoutez du texte dans n'importe quelle taille et couleur",
+            'Ajoutez vos propres images',
+            "Surlignez n'importe quelle partie d'une page",
+            'Dessinez à main levée avec la souris ou votre doigt',
+            'Annulez la dernière modification, ou supprimez n\'importe quel élément individuellement',
+        ],
+        'content' => [
+            ['heading' => 'Ce que cet outil peut et ne peut pas faire', 'body' => "Tout ce que vous ajoutez - texte, images, surlignages, dessins - se place sur la page comme nouveau contenu. Cet outil ne peut pas sélectionner, déplacer ou modifier le texte déjà présent dans le PDF ; il ajoute seulement de nouveaux éléments par-dessus ce qui existe déjà, comme coller une note ou une étiquette imprimée sur un document papier."],
+            ['heading' => 'Bons usages pour ajouter du contenu à un PDF', 'body' => "Ajoutez une note, un tampon, une initiale, un passage surligné, un détail entouré ou une flèche pour signaler quelque chose - utile pour annoter un document, relire un brouillon ou remplir un simple champ de formulaire qui n'en a pas déjà un. Pour modifier du texte déjà présent dans le document, il vous faut le fichier source original."],
+        ],
+        'faqs' => [
+            ['q' => 'Puis-je modifier le texte déjà présent dans le PDF ?', 'a' => "Non. Cet outil ajoute seulement du nouveau texte, des images, des surlignages et des dessins sur la page ; il ne peut pas sélectionner ni modifier le texte déjà présent. Voyez cela comme ajouter quelque chose à une page imprimée, pas comme ouvrir un traitement de texte."],
+            ['q' => 'Puis-je annuler une erreur ?', 'a' => "Oui. Cliquez sur Annuler pour supprimer l'élément ajouté le plus récemment, ou cliquez sur le × de n'importe quel élément pour supprimer celui-là en particulier, le tout avant de cliquer sur Enregistrer le PDF."],
+            ['q' => "Puis-je déplacer ou redimensionner ce que j'ai ajouté ?", 'a' => "Oui. Faites glisser n'importe quel texte, image ou surlignage pour le déplacer ; les images et les surlignages ont aussi une poignée d'angle pour les redimensionner. Les dessins à main levée peuvent aussi être déplacés."],
+            ['q' => 'Mon PDF est-il envoyé à un serveur ?', 'a' => "Non. Tout - ajouter, déplacer, redimensionner et enregistrer - se passe dans votre navigateur avec JavaScript, et rien n'est envoyé nulle part."],
+            ['q' => "Quels formats d'image puis-je ajouter ?", 'a' => 'PNG, JPG et WebP.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Calculateur de prêt immobilier',
         'title' => 'Calculateur de Prêt Immobilier - Mensualité et Amortissement',

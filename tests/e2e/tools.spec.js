@@ -653,6 +653,56 @@ test.describe('PDF tools', () => {
         expect(text).not.toContain('Secret page 1');
         expect(text).toContain('Secret page 2');
     });
+
+    test('edit PDF adds text, a highlight and a drawing, supports undo, and saves real selectable text', async ({ page }) => {
+        await openTool(page, 'edit-pdf');
+        const originalBytes = await makePdf(1);
+        await page.getByTestId('file-input').setInputFiles({ name: 'notes.pdf', mimeType: 'application/pdf', buffer: originalBytes });
+        await expect(page.getByText('notes.pdf', { exact: true })).toBeVisible();
+        await expect(page.getByRole('button', { name: 'Save PDF', exact: true })).toBeDisabled();
+
+        // Add text, then drag it.
+        await page.getByLabel('Text to add').fill('Hello World');
+        await page.getByRole('button', { name: 'Add text to page' }).click();
+        const overlay = page.locator('.pdf-editor__overlay');
+        await expect(overlay).toHaveCount(1);
+        await overlay.first().scrollIntoViewIfNeeded();
+        const before = await overlay.first().boundingBox();
+        await page.mouse.move(before.x + before.width / 2, before.y + before.height / 2);
+        await page.mouse.down();
+        await page.mouse.move(before.x + 40, before.y + 30, { steps: 5 });
+        await page.mouse.up();
+        const after = await overlay.first().boundingBox();
+        expect(after.x).not.toBeCloseTo(before.x, 0);
+
+        // Add a highlight.
+        await page.getByRole('tab', { name: 'Highlight' }).click();
+        await page.getByRole('button', { name: 'Add highlight to page' }).click();
+        await expect(overlay).toHaveCount(2);
+
+        // Draw a freehand stroke directly on the page, then undo it.
+        await page.getByRole('tab', { name: 'Draw' }).click();
+        const stage = page.locator('.pdf-editor__stage');
+        const stageBox = await stage.boundingBox();
+        await page.mouse.move(stageBox.x + 20, stageBox.y + 20);
+        await page.mouse.down();
+        await page.mouse.move(stageBox.x + 80, stageBox.y + 60, { steps: 5 });
+        await page.mouse.up();
+        await expect(overlay).toHaveCount(3);
+        await page.getByRole('button', { name: 'Undo' }).click();
+        await expect(overlay).toHaveCount(2);
+
+        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(file.suggestedFilename()).toBe('notes-edited.pdf');
+        const editedBytes = await readDownload(file);
+        expect(await pdfPageCount(editedBytes)).toBe(1);
+        expect(editedBytes.length).toBeGreaterThan(originalBytes.length);
+
+        // The added text is real, selectable text (drawn with pdf-lib), not a picture.
+        const text = await extractPdfText(page, editedBytes);
+        expect(text).toContain('Hello World');
+    });
 });
 
 test.describe('Calculators', () => {

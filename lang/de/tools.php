@@ -2146,6 +2146,41 @@ return [
         ],
     ],
 
+    'edit-pdf' => [
+        'name' => 'PDF bearbeiten',
+        'title' => 'PDF Online Bearbeiten - Text und Bilder Hinzufügen',
+        'description' => 'Bearbeiten Sie ein PDF kostenlos online. Fügen Sie Text, Bilder, Markierungen und Zeichnungen auf jeder Seite hinzu. Fügt Inhalt hinzu, bearbeitet keinen Text.',
+        'h1' => 'PDF bearbeiten',
+        'tagline' => 'Fügen Sie Text, Bilder, Markierungen und Freihandzeichnungen zu jeder Seite hinzu - direkt im Browser.',
+        'keywords' => ['pdf bearbeiten', 'pdf online bearbeiten', 'text zu pdf hinzufügen', 'pdf kommentieren', 'pdf editor kostenlos'],
+        'intro' => 'Mit diesem PDF-Editor fügen Sie neuen Text, eigene Bilder, markierte Passagen und Freihandzeichnungen auf jeder Seite hinzu und speichern anschließend das Ergebnis. Wählen Sie aus, was Sie hinzufügen möchten, platzieren Sie es, ziehen Sie es oder ändern Sie die Größe, und machen Sie es rückgängig, falls Sie Ihre Meinung ändern. Es fügt neuen Inhalt auf der Seite hinzu - so, wie Sie auf eine gedruckte Seite schreiben würden - statt Text zu bearbeiten, der bereits im PDF steht. Alles geschieht in Ihrem Browser; die Datei wird nie hochgeladen.',
+        'steps' => [
+            'Wählen Sie das PDF aus, das Sie bearbeiten möchten.',
+            'Wählen Sie Text, Bild, Markierung oder Zeichnen und stellen Sie Größe oder Farbe ein.',
+            'Klicken Sie auf „... zur Seite hinzufügen", dann ziehen, vergrößern oder entfernen Sie es.',
+            'Wechseln Sie die Seite oder fügen Sie weitere Elemente hinzu - Rückgängig entfernt das letzte, falls Sie Ihre Meinung ändern.',
+            'Klicken Sie auf PDF speichern und laden Sie die Datei herunter.',
+        ],
+        'features' => [
+            'Text in jeder Größe und Farbe hinzufügen',
+            'Eigene Bilder hinzufügen',
+            'Jeden Teil einer Seite markieren',
+            'Freihand mit der Maus oder dem Finger zeichnen',
+            'Die letzte Änderung rückgängig machen oder jedes Element einzeln entfernen',
+        ],
+        'content' => [
+            ['heading' => 'Was dieses Werkzeug kann und was nicht', 'body' => 'Alles, was Sie hinzufügen - Text, Bilder, Markierungen, Zeichnungen - wird als neuer Inhalt auf die Seite gelegt. Dieses Werkzeug kann Text, der bereits im PDF stand, nicht auswählen, verschieben oder ändern; es fügt nur neue Elemente über dem bereits Vorhandenen hinzu, so wie Sie eine Notiz oder ein gedrucktes Etikett auf ein Papierdokument kleben würden.'],
+            ['heading' => 'Gute Verwendungen, um Inhalte zu einem PDF hinzuzufügen', 'body' => 'Fügen Sie eine Notiz, einen Stempel, ein Kürzel, eine markierte Passage, ein eingekreistes Detail oder einen Pfeil hinzu, der auf etwas zeigt - nützlich, um ein Dokument zu kommentieren, einen Entwurf zu überprüfen oder ein einfaches Formularfeld auszufüllen, das noch keins hat. Um bereits vorhandenen Text im Dokument zu ändern, benötigen Sie stattdessen die ursprüngliche Quelldatei.'],
+        ],
+        'faqs' => [
+            ['q' => 'Kann ich Text bearbeiten, der schon im PDF steht?', 'a' => 'Nein. Dieses Werkzeug fügt nur neuen Text, Bilder, Markierungen und Zeichnungen auf der Seite hinzu; es kann Text, der bereits dort stand, nicht auswählen oder ändern. Betrachten Sie es als Ergänzung einer gedruckten Seite, nicht als Öffnen eines Textverarbeitungsdokuments.'],
+            ['q' => 'Kann ich einen Fehler rückgängig machen?', 'a' => 'Ja. Klicken Sie auf Rückgängig, um das zuletzt hinzugefügte Element zu entfernen, oder klicken Sie auf das × eines beliebigen Elements, um genau dieses zu entfernen - alles bevor Sie auf PDF speichern klicken.'],
+            ['q' => 'Kann ich verschieben oder in der Größe ändern, was ich hinzugefügt habe?', 'a' => 'Ja. Ziehen Sie Text, Bild oder Markierung, um sie zu verschieben; Bilder und Markierungen haben außerdem einen Eckgriff zum Ändern der Größe. Freihandzeichnungen lassen sich ebenfalls verschieben.'],
+            ['q' => 'Wird mein PDF auf einen Server hochgeladen?', 'a' => 'Nein. Alles - Hinzufügen, Verschieben, Größenänderung und Speichern - geschieht in Ihrem Browser mit JavaScript, und nichts wird irgendwohin gesendet.'],
+            ['q' => 'Welche Bildformate kann ich hinzufügen?', 'a' => 'PNG, JPG und WebP.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Baufinanzierungsrechner',
         'title' => 'Baufinanzierungsrechner - Monatsrate & Tilgungsplan',

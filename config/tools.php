@@ -2366,7 +2366,7 @@ return [
             ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
             ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
         ],
-        'related' => ['redact-pdf', 'rotate-pdf', 'merge-pdf', 'compress-pdf'],
+        'related' => ['redact-pdf', 'edit-pdf', 'rotate-pdf', 'merge-pdf'],
     ],
 
     'redact-pdf' => [
@@ -2415,7 +2415,57 @@ return [
             ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
             ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
         ],
-        'related' => ['sign-pdf', 'merge-pdf', 'compress-pdf', 'protect-pdf'],
+        'related' => ['sign-pdf', 'edit-pdf', 'merge-pdf', 'compress-pdf'],
+    ],
+
+    'edit-pdf' => [
+        'name' => 'Edit PDF',
+        'category' => 'pdf-tools',
+        'icon' => 'pdf',
+        'popular' => false,
+        'updated' => '2026-10-09',
+        'title' => 'Edit PDF Online Free - Add Text and Images',
+        'description' => 'Edit a PDF online for free. Add text, images, highlights and drawings on top of any page. It adds content, it does not edit existing text. No upload.',
+        'h1' => 'Edit PDF',
+        'tagline' => 'Add text, images, highlights and freehand drawings to any page - right in your browser.',
+        'keywords' => ['edit pdf', 'edit pdf online', 'add text to pdf', 'annotate pdf', 'pdf editor free'],
+        'intro' => 'This PDF editor lets you add new text, your own images, highlighted passages and freehand drawings on top of any page, then save the result. Pick what to add, place it where you need it, drag or resize it, and undo if you change your mind. It adds new content over the page - the same way writing on a printed page would - rather than editing text that is already in the PDF. Everything happens in your browser; the file is never uploaded.',
+        'steps' => [
+            'Choose the PDF you want to edit.',
+            'Pick Text, Image, Highlight or Draw and set its size or colour.',
+            'Click "Add ... to page", then drag, resize or remove it as needed.',
+            'Switch pages or add more elements - Undo removes the last one if you change your mind.',
+            'Click Save PDF and download the file.',
+        ],
+        'features' => [
+            'Add text in any size and colour',
+            'Add your own images',
+            'Highlight any part of a page',
+            'Draw freehand with the mouse or your finger',
+            'Undo the last change, or remove any element individually',
+        ],
+        'content' => [
+            [
+                'heading' => 'What this tool can and can\'t do',
+                'body' => 'Everything you add - text, images, highlights, drawings - sits on top of the page as new content. This tool cannot select, move or change text that was already in the PDF; it only adds new elements over what is already there, the same way sticking a note or a printed label onto a paper document would.',
+            ],
+            [
+                'heading' => 'Good uses for adding content to a PDF',
+                'body' => 'Add a note, a stamp, an initial, a highlighted passage, a circled detail or an arrow pointing something out - useful for marking up a document, reviewing a draft or filling in a simple form field that doesn\'t already have one. To change text that is already in the document, you need the original source file instead.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Can I edit text that\'s already in the PDF?', 'a' => 'No. This tool only adds new text, images, highlights and drawings on top of the page; it cannot select or change text that was already there. Think of it as adding to a printed page, not opening a word processor document.'],
+            ['q' => 'Can I undo a mistake?', 'a' => 'Yes. Click Undo to remove the most recently added element, or click the × on any element to remove that one specifically, all before you click Save PDF.'],
+            ['q' => 'Can I move or resize what I\'ve added?', 'a' => 'Yes. Drag any text, image or highlight to move it; images and highlights also have a corner handle to resize them. Freehand drawings can be dragged too.'],
+            ['q' => 'Is my PDF uploaded to a server?', 'a' => 'No. Everything - adding, moving, resizing and saving - happens in your browser with JavaScript and nothing is sent anywhere.'],
+            ['q' => 'What image formats can I add?', 'a' => 'PNG, JPG and WebP.'],
+        ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+        ],
+        'related' => ['sign-pdf', 'redact-pdf', 'merge-pdf', 'rotate-pdf'],
     ],
 
     'mortgage-calculator' => [

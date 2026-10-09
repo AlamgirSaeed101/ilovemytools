@@ -2041,6 +2041,41 @@ return [
         ],
     ],
 
+    'edit-pdf' => [
+        'name' => 'Editar PDF',
+        'title' => 'Editar PDF Online Gratis - Añadir Texto',
+        'description' => 'Edita un PDF online gratis. Añade texto, imágenes, resaltados y dibujos sobre cualquier página. Añade contenido, no edita texto existente. Sin subir archivos.',
+        'h1' => 'Editar PDF',
+        'tagline' => 'Añade texto, imágenes, resaltados y dibujos a mano alzada en cualquier página - directamente en tu navegador.',
+        'keywords' => ['editar pdf', 'editar pdf online', 'añadir texto a pdf', 'anotar pdf', 'editor de pdf gratis'],
+        'intro' => 'Este editor de PDF te permite añadir texto nuevo, tus propias imágenes, pasajes resaltados y dibujos a mano alzada sobre cualquier página, y luego guardar el resultado. Elige qué añadir, colócalo donde lo necesites, arrástralo o redimensiónalo, y deshaz el cambio si te equivocas. Añade contenido nuevo sobre la página - igual que escribir sobre una página impresa - en lugar de editar el texto que ya está en el PDF. Todo ocurre en tu navegador; el archivo nunca se sube.',
+        'steps' => [
+            'Elige el PDF que quieres editar.',
+            'Elige Texto, Imagen, Resaltado o Dibujar y ajusta su tamaño o color.',
+            'Haz clic en "Añadir ... a la página" y luego arrástralo, redimensiónalo o elimínalo.',
+            'Cambia de página o añade más elementos - Deshacer elimina el último si cambias de idea.',
+            'Haz clic en Guardar PDF y descarga el archivo.',
+        ],
+        'features' => [
+            'Añade texto en cualquier tamaño y color',
+            'Añade tus propias imágenes',
+            'Resalta cualquier parte de una página',
+            'Dibuja a mano alzada con el ratón o el dedo',
+            'Deshace el último cambio, o elimina cualquier elemento individualmente',
+        ],
+        'content' => [
+            ['heading' => 'Qué puede y qué no puede hacer esta herramienta', 'body' => 'Todo lo que añades - texto, imágenes, resaltados, dibujos - se coloca sobre la página como contenido nuevo. Esta herramienta no puede seleccionar, mover ni cambiar el texto que ya estaba en el PDF; solo añade elementos nuevos sobre lo que ya hay, igual que pegar una nota o una etiqueta impresa sobre un documento en papel.'],
+            ['heading' => 'Buenos usos para añadir contenido a un PDF', 'body' => 'Añade una nota, un sello, una inicial, un pasaje resaltado, un detalle rodeado con un círculo o una flecha que señale algo - útil para marcar un documento, revisar un borrador o rellenar un campo de formulario sencillo que no tenga ya uno. Para cambiar texto que ya está en el documento, necesitas el archivo original.'],
+        ],
+        'faqs' => [
+            ['q' => '¿Puedo editar el texto que ya está en el PDF?', 'a' => 'No. Esta herramienta solo añade texto, imágenes, resaltados y dibujos nuevos sobre la página; no puede seleccionar ni cambiar el texto que ya estaba ahí. Piensa en ello como añadir algo a una página impresa, no como abrir un procesador de texto.'],
+            ['q' => '¿Puedo deshacer un error?', 'a' => 'Sí. Haz clic en Deshacer para eliminar el elemento añadido más recientemente, o haz clic en la × de cualquier elemento para eliminar ese en concreto, todo antes de hacer clic en Guardar PDF.'],
+            ['q' => '¿Puedo mover o redimensionar lo que he añadido?', 'a' => 'Sí. Arrastra cualquier texto, imagen o resaltado para moverlo; las imágenes y los resaltados también tienen una esquina para redimensionarlos. Los dibujos a mano alzada también se pueden arrastrar.'],
+            ['q' => '¿Se sube mi PDF a un servidor?', 'a' => 'No. Todo - añadir, mover, redimensionar y guardar - ocurre en tu navegador con JavaScript y nada se envía a ningún sitio.'],
+            ['q' => '¿Qué formatos de imagen puedo añadir?', 'a' => 'PNG, JPG y WebP.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Calculadora de hipoteca',
         'title' => 'Calculadora de Hipoteca - Cuota Mensual y Amortización',

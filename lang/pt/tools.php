@@ -2146,6 +2146,41 @@ return [
         ],
     ],
 
+    'edit-pdf' => [
+        'name' => 'Editar PDF',
+        'title' => 'Editar PDF Online Grátis - Adicione Texto',
+        'description' => 'Edite um PDF online grátis. Adicione texto, imagens, realces e desenhos sobre qualquer página. Adiciona conteúdo, não edita o texto existente. Sem upload.',
+        'h1' => 'Editar PDF',
+        'tagline' => 'Adicione texto, imagens, realces e desenhos à mão livre em qualquer página - direto no seu navegador.',
+        'keywords' => ['editar pdf', 'editar pdf online', 'adicionar texto ao pdf', 'anotar pdf', 'editor de pdf grátis'],
+        'intro' => 'Este editor de PDF permite adicionar texto novo, suas próprias imagens, trechos realçados e desenhos à mão livre sobre qualquer página, e depois salvar o resultado. Escolha o que adicionar, posicione onde precisar, arraste ou redimensione, e desfaça se mudar de ideia. Ele adiciona conteúdo novo sobre a página - do mesmo jeito que escrever numa página impressa - em vez de editar o texto que já está no PDF. Tudo acontece no seu navegador; o arquivo nunca é enviado.',
+        'steps' => [
+            'Escolha o PDF que você quer editar.',
+            'Escolha Texto, Imagem, Realce ou Desenho e ajuste o tamanho ou a cor.',
+            'Clique em "Adicionar ... à página" e depois arraste, redimensione ou remova.',
+            'Troque de página ou adicione mais elementos - Desfazer remove o último se você mudar de ideia.',
+            'Clique em Salvar PDF e baixe o arquivo.',
+        ],
+        'features' => [
+            'Adicione texto em qualquer tamanho e cor',
+            'Adicione suas próprias imagens',
+            'Realce qualquer parte de uma página',
+            'Desenhe à mão livre com o mouse ou o dedo',
+            'Desfaça a última alteração, ou remova qualquer elemento individualmente',
+        ],
+        'content' => [
+            ['heading' => 'O que esta ferramenta pode e não pode fazer', 'body' => 'Tudo o que você adiciona - texto, imagens, realces, desenhos - fica sobre a página como conteúdo novo. Esta ferramenta não pode selecionar, mover ou mudar o texto que já estava no PDF; ela só adiciona novos elementos sobre o que já existe, do mesmo jeito que colar um adesivo ou uma etiqueta impressa num documento em papel.'],
+            ['heading' => 'Bons usos para adicionar conteúdo a um PDF', 'body' => 'Adicione uma nota, um carimbo, uma rubrica, um trecho realçado, um detalhe circulado ou uma seta apontando algo - útil para marcar um documento, revisar um rascunho ou preencher um campo simples de formulário que ainda não tem um. Para mudar texto que já está no documento, você precisa do arquivo original.'],
+        ],
+        'faqs' => [
+            ['q' => 'Posso editar o texto que já está no PDF?', 'a' => 'Não. Esta ferramenta só adiciona texto, imagens, realces e desenhos novos sobre a página; ela não consegue selecionar ou mudar o texto que já estava lá. Pense nisso como adicionar algo a uma página impressa, não como abrir um processador de texto.'],
+            ['q' => 'Posso desfazer um erro?', 'a' => 'Sim. Clique em Desfazer para remover o elemento adicionado mais recentemente, ou clique no × de qualquer elemento para remover só esse, tudo antes de clicar em Salvar PDF.'],
+            ['q' => 'Posso mover ou redimensionar o que adicionei?', 'a' => 'Sim. Arraste qualquer texto, imagem ou realce para movê-lo; imagens e realces também têm um canto para redimensioná-los. Desenhos à mão livre também podem ser arrastados.'],
+            ['q' => 'Meu PDF é enviado para um servidor?', 'a' => 'Não. Tudo - adicionar, mover, redimensionar e salvar - acontece no seu navegador com JavaScript e nada é enviado a lugar nenhum.'],
+            ['q' => 'Quais formatos de imagem posso adicionar?', 'a' => 'PNG, JPG e WebP.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Calculadora de financiamento imobiliário',
         'title' => 'Calculadora de Financiamento - Parcela e Amortização',

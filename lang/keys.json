@@ -761,6 +761,18 @@
     ]
   },
   {
+    "key": "Add highlight to page",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Add image to page",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Add more images",
     "files": [
       "resources/js/tools/JpgToPdf.jsx"
@@ -776,6 +788,12 @@
     "key": "Add signature to this page",
     "files": [
       "resources/js/tools/SignPdf.jsx"
+    ]
+  },
+  {
+    "key": "Add text to page",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -1222,6 +1240,7 @@
     "files": [
       "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/DeletePdfPages.jsx",
+      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/OrganizePdf.jsx",
       "resources/js/tools/PdfToExcel.jsx",
       "resources/js/tools/PdfToImage.jsx",
@@ -1643,6 +1662,12 @@
     ]
   },
   {
+    "key": "Could not read that image.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Could not read this file.",
     "files": [
       "resources/js/tools/Base64Tool.jsx"
@@ -1878,6 +1903,7 @@
   {
     "key": "Done!",
     "files": [
+      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/OrganizePdf.jsx",
       "resources/js/tools/PdfToImage.jsx",
       "resources/js/tools/RedactPdf.jsx",
@@ -2013,6 +2039,7 @@
     "files": [
       "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/DeletePdfPages.jsx",
+      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/ExcelToPdf.jsx",
       "resources/js/tools/HtmlToPdf.jsx",
       "resources/js/tools/JpgToPdf.jsx",
@@ -2077,6 +2104,7 @@
   {
     "key": "Draw",
     "files": [
+      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/SignPdf.jsx"
     ]
   },
@@ -2087,9 +2115,27 @@
     ]
   },
   {
+    "key": "Draw directly on the page below",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Draw your signature here",
     "files": [
       "resources/js/tools/SignPdf.jsx"
+    ]
+  },
+  {
+    "key": "Drawing - drag to move",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Drawing colour",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -2109,6 +2155,7 @@
     "files": [
       "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/DeletePdfPages.jsx",
+      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/OrganizePdf.jsx",
       "resources/js/tools/PdfToExcel.jsx",
       "resources/js/tools/PdfToImage.jsx",
@@ -2143,6 +2190,12 @@
     "files": [
       "resources/js/tools/BackgroundRemover.jsx",
       "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Drop an image or click to choose",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -2211,6 +2264,12 @@
     "key": "Easy",
     "files": [
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Editing failed: {message}",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -2668,6 +2727,12 @@
     ]
   },
   {
+    "key": "Font size",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Format / Beautify",
     "files": [
       "resources/js/tools/JsonFormatter.jsx"
@@ -2952,6 +3017,24 @@
     ]
   },
   {
+    "key": "Highlight",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Highlight - drag to move",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Highlight colour",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Home",
     "files": [
       "app/Support/Seo.php",
@@ -3092,7 +3175,14 @@
   {
     "key": "Image",
     "files": [
-      "resources/js/tools/BrokenLinkChecker.jsx"
+      "resources/js/tools/BrokenLinkChecker.jsx",
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Image - drag to move",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -3394,6 +3484,12 @@
     "key": "Likely human-written",
     "files": [
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Line thickness",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -3766,6 +3862,7 @@
   {
     "key": "Next page",
     "files": [
+      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/RedactPdf.jsx",
       "resources/js/tools/SignPdf.jsx"
     ]
@@ -3963,6 +4060,7 @@
     "files": [
       "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/DeletePdfPages.jsx",
+      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/OrganizePdf.jsx",
       "resources/js/tools/PdfToExcel.jsx",
       "resources/js/tools/PdfToImage.jsx",
@@ -4098,6 +4196,7 @@
   {
     "key": "Page {current} of {total}",
     "files": [
+      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/RedactPdf.jsx",
       "resources/js/tools/SignPdf.jsx"
     ]
@@ -4344,6 +4443,7 @@
     "files": [
       "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/DeletePdfPages.jsx",
+      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/OrganizePdf.jsx",
       "resources/js/tools/PdfToExcel.jsx",
       "resources/js/tools/PdfToImage.jsx",
@@ -4359,6 +4459,7 @@
   {
     "key": "Please choose a PNG, JPG or WebP image.",
     "files": [
+      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/SignPdf.jsx"
     ]
   },
@@ -4448,6 +4549,12 @@
     ]
   },
   {
+    "key": "PNG, JPG or WebP",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Popular tools",
     "files": [
       "resources/js/pages/NotFound.jsx",
@@ -4512,6 +4619,7 @@
   {
     "key": "Previous page",
     "files": [
+      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/RedactPdf.jsx",
       "resources/js/tools/SignPdf.jsx"
     ]
@@ -4699,6 +4807,7 @@
     "files": [
       "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/DeletePdfPages.jsx",
+      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/OrganizePdf.jsx",
       "resources/js/tools/PdfToExcel.jsx",
       "resources/js/tools/PdfToImage.jsx",
@@ -4877,6 +4986,30 @@
     "key": "Remove this box",
     "files": [
       "resources/js/tools/RedactPdf.jsx"
+    ]
+  },
+  {
+    "key": "Remove this drawing",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Remove this highlight",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Remove this image",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Remove this text",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -5096,8 +5229,15 @@
     ]
   },
   {
+    "key": "Save PDF",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Saving…",
     "files": [
+      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/OrganizePdf.jsx"
     ]
   },
@@ -5700,8 +5840,27 @@
     "key": "Text",
     "files": [
       "resources/js/tools/Base64Tool.jsx",
+      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/QrCodeGenerator.jsx",
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Text - drag to move",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Text colour",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Text to add",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -5918,6 +6077,12 @@
     "key": "This address can’t be checked. Only public websites on normal web ports are supported.",
     "files": [
       "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
+    "key": "This adds new text, images, highlights and drawings on top of the page - it cannot change or remove text that was already in the PDF.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -6285,6 +6450,12 @@
     ]
   },
   {
+    "key": "Undo",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Uniform sentence lengths",
     "files": [
       "scripts/i18n-extract.mjs"
@@ -6576,6 +6747,12 @@
     "files": [
       "resources/js/pages/Category.jsx",
       "resources/views/pages/category.blade.php"
+    ]
+  },
+  {
+    "key": "What to add",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {

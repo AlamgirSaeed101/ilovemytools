@@ -2028,6 +2028,41 @@ return [
         ],
     ],
 
+    'edit-pdf' => [
+        'name' => 'Edytuj PDF',
+        'title' => 'Edytuj PDF Online Bezpłatnie - Dodaj Tekst',
+        'description' => 'Edytuj PDF bezpłatnie online. Dodaj tekst, obrazy, zakreślenia i rysunki na dowolnej stronie. Dodaje treść, nie edytuje istniejącego tekstu. Bez wgrywania.',
+        'h1' => 'Edytuj PDF',
+        'tagline' => 'Dodaj tekst, obrazy, zakreślenia i odręczne rysunki na dowolnej stronie - prosto w przeglądarce.',
+        'keywords' => ['edytuj pdf', 'edytuj pdf online', 'dodaj tekst do pdf', 'adnotacje w pdf', 'darmowy edytor pdf'],
+        'intro' => 'Ten edytor PDF pozwala dodać nowy tekst, własne obrazy, zakreślone fragmenty i odręczne rysunki na dowolnej stronie, a następnie zapisać wynik. Wybierz, co dodać, umieść to tam, gdzie trzeba, przeciągnij lub zmień rozmiar, i cofnij, jeśli zmienisz zdanie. Narzędzie dodaje nową treść na stronie - tak jak pisanie na wydrukowanej kartce - zamiast edytować tekst, który już jest w PDF. Wszystko dzieje się w przeglądarce; plik nigdy nie jest wysyłany.',
+        'steps' => [
+            'Wybierz PDF, który chcesz edytować.',
+            'Wybierz Tekst, Obraz, Zakreślenie lub Rysunek i ustaw rozmiar lub kolor.',
+            'Kliknij „Dodaj ... do strony", a potem przeciągnij, zmień rozmiar lub usuń.',
+            'Zmień stronę lub dodaj więcej elementów - Cofnij usuwa ostatni, jeśli zmienisz zdanie.',
+            'Kliknij Zapisz PDF i pobierz plik.',
+        ],
+        'features' => [
+            'Dodaj tekst w dowolnym rozmiarze i kolorze',
+            'Dodaj własne obrazy',
+            'Zakreśl dowolną część strony',
+            'Rysuj odręcznie myszką lub palcem',
+            'Cofnij ostatnią zmianę lub usuń dowolny element osobno',
+        ],
+        'content' => [
+            ['heading' => 'Co to narzędzie potrafi, a czego nie', 'body' => 'Wszystko, co dodajesz - tekst, obrazy, zakreślenia, rysunki - ląduje na stronie jako nowa treść. To narzędzie nie może zaznaczyć, przesunąć ani zmienić tekstu, który już był w PDF; dodaje tylko nowe elementy na tym, co już istnieje, tak jak przyklejenie karteczki lub wydrukowanej etykiety na papierowym dokumencie.'],
+            ['heading' => 'Dobre zastosowania dodawania treści do PDF', 'body' => 'Dodaj notatkę, pieczątkę, parafkę, zakreślony fragment, zaznaczony okręgiem szczegół albo strzałkę wskazującą coś - przydatne do opisywania dokumentu, przeglądania wersji roboczej albo wypełnienia prostego pola formularza, którego jeszcze nie ma. Aby zmienić tekst już obecny w dokumencie, potrzebny jest oryginalny plik źródłowy.'],
+        ],
+        'faqs' => [
+            ['q' => 'Czy mogę edytować tekst, który już jest w PDF?', 'a' => 'Nie. To narzędzie dodaje tylko nowy tekst, obrazy, zakreślenia i rysunki na stronie; nie może zaznaczyć ani zmienić tekstu, który już tam był. Traktuj to jako dopisanie czegoś do wydrukowanej strony, a nie otwieranie edytora tekstu.'],
+            ['q' => 'Czy mogę cofnąć błąd?', 'a' => 'Tak. Kliknij Cofnij, aby usunąć ostatnio dodany element, albo kliknij × na dowolnym elemencie, aby usunąć akurat ten - wszystko przed kliknięciem Zapisz PDF.'],
+            ['q' => 'Czy mogę przesunąć lub zmienić rozmiar tego, co dodałem/am?', 'a' => 'Tak. Przeciągnij dowolny tekst, obraz lub zakreślenie, aby go przesunąć; obrazy i zakreślenia mają też uchwyt w rogu do zmiany rozmiaru. Odręczne rysunki też można przeciągać.'],
+            ['q' => 'Czy mój PDF jest wysyłany na serwer?', 'a' => 'Nie. Wszystko - dodawanie, przesuwanie, zmiana rozmiaru i zapisywanie - odbywa się w Twojej przeglądarce za pomocą JavaScript, a nic nie jest nigdzie wysyłane.'],
+            ['q' => 'Jakie formaty obrazów mogę dodać?', 'a' => 'PNG, JPG i WebP.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Kalkulator kredytu hipotecznego',
         'title' => 'Kalkulator Kredytu Hipotecznego - Rata i Harmonogram Spłat',

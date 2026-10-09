@@ -62,6 +62,7 @@ const tools = {
     'sleep-calculator': lazy(() => import('./SleepCalculator.jsx')),
     'sign-pdf': lazy(() => import('./SignPdf.jsx')),
     'redact-pdf': lazy(() => import('./RedactPdf.jsx')),
+    'edit-pdf': lazy(() => import('./EditPdf.jsx')),
 };
 
 export default tools;
