@@ -1,4 +1,4 @@
-# ILoveTools (ilovemytools.store)
+# ILoveMyTools (ilovemytools.store)
 
 Free online tools site: Laravel 12 (PHP 8.3) serves SEO pages and a small JSON API; React 19 + React Router + Tailwind v4 (Vite) runs the tools in the browser. Languages: en (root), es, pt, fr, de, it (URL prefix `/es/...`).
 

@@ -10,7 +10,8 @@
 
 return [
 
-    'name' => env('APP_NAME', 'ILoveTools'),
+    // Shown everywhere except the logo image; matches the domain ilovemytools.store.
+    'name' => env('APP_NAME', 'ILoveMyTools'),
 
     'tagline' => env('SITE_TAGLINE', 'Free Online Tools - Fast, Private, No Sign Up'),
 

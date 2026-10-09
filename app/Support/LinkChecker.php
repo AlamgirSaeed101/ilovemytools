@@ -22,7 +22,7 @@ class LinkChecker
 
     private const MAX_REDIRECTS = 5;
 
-    private const USER_AGENT = 'Mozilla/5.0 (compatible; ILoveToolsLinkChecker/1.0; +https://ilovemytools.store/broken-link-checker)';
+    private const USER_AGENT = 'Mozilla/5.0 (compatible; ILoveMyToolsLinkChecker/1.0; +https://ilovemytools.store/broken-link-checker)';
 
     public function __construct(private SafeUrl $guard)
     {

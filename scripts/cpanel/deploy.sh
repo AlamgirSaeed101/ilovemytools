@@ -35,6 +35,10 @@ set_env() {
     fi
 }
 
+# The site name everywhere except the logo image (matches the domain).
+set_env APP_NAME ILoveMyTools
+export APP_NAME=ILoveMyTools
+
 echo "== 3b. Newsletter email account"
 if [ -n "$MAIL_PASSWORD_IN" ]; then
     set_env MAIL_USERNAME newsletter@ilovemytools.store

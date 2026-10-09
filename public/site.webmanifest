@@ -1,6 +1,6 @@
 {
-    "name": "ILoveTools - Free Online Tools",
-    "short_name": "ILoveTools",
+    "name": "ILoveMyTools - Free Online Tools",
+    "short_name": "ILoveMyTools",
     "description": "Free online tools that run in your browser. No sign up, no uploads.",
     "start_url": "/",
     "display": "standalone",

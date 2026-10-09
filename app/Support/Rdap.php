@@ -21,7 +21,7 @@ class Rdap
 
     private const CACHE_HOURS = 24;
 
-    private const USER_AGENT = 'Mozilla/5.0 (compatible; ILoveToolsDomainAge/1.0; +https://ilovemytools.store/domain-age-checker)';
+    private const USER_AGENT = 'Mozilla/5.0 (compatible; ILoveMyToolsDomainAge/1.0; +https://ilovemytools.store/domain-age-checker)';
 
     public function __construct(private SafeUrl $guard)
     {
