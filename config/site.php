@@ -40,6 +40,7 @@ return [
 
     'same_as' => [
         'https://www.producthunt.com/products/ilovetools-3',
+        'https://www.uneed.best/tool/ilovemytools',
     ],
 
     // The person behind the site, shown on the About page and in the schema once filled in,
