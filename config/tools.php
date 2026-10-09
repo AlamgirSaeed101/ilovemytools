@@ -2575,6 +2575,9 @@ return [
             ['q' => 'Why does my lender\'s quote differ from this calculator?', 'a' => 'Lenders add fees, insurance and their own rounding, and your actual rate depends on your credit, lender and loan type. This calculator shows the underlying principal and interest math so you can compare offers quickly.'],
             ['q' => 'Is there a penalty for paying off a loan early?', 'a' => 'It depends on the lender and loan agreement - some fixed-rate loans charge a prepayment penalty. Check your loan agreement before making extra payments.'],
         ],
+        'sources' => [
+            ['title' => 'Consumer Financial Protection Bureau, What is amortization?', 'url' => 'https://www.consumerfinance.gov/ask-cfpb/what-is-amortization-and-how-could-it-affect-my-auto-loan-en-755/'],
+        ],
         'related' => ['mortgage-calculator', 'percentage-calculator', 'tip-calculator'],
         'table' => [
             'caption' => 'Monthly payment and total interest on a $20,000 loan at 7% by term (principal & interest only)',

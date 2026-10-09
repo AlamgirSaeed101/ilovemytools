@@ -84,6 +84,7 @@ class PageController extends Controller
 
         $seo = Seo::make($data['title'], $data['description'], $path)
             ->breadcrumbs([[$data['name'], $path]])
+            ->shareImage('category-'.$category)
             ->faqs($data['faqs'] ?? [])
             ->addSchema([
                 '@context' => 'https://schema.org',

@@ -22,4 +22,18 @@ foreach (config('tools') as $slug => $tool) {
     ];
 }
 
+foreach ($categories as $slug => $category) {
+    $count = count(array_filter(config('tools'), fn ($t) => $t['category'] === $slug));
+    $out[] = [
+        'slug' => 'category-'.$slug,
+        'name' => $category['title_short'] ?? ('Free '.$category['name']),
+        'tagline' => $count.' free tools: '.($category['subtitle'] ?? ''),
+        'category' => $category['name'],
+        'accent' => $category['accent'] ?? '#4f46e5',
+        'accent2' => $category['accent2'] ?? '#6366f1',
+        'icon' => App\Support\Icon::svg($category['icon'] ?? 'sparkles'),
+        'server' => false,
+    ];
+}
+
 echo json_encode(['site' => config('site.name'), 'tools' => $out], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);

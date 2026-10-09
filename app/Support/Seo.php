@@ -212,6 +212,14 @@ class Seo
         return $this;
     }
 
+    /** Use public/images/og/{name}.jpg as the share image when it exists. */
+    public function shareImage(string $name): self
+    {
+        $this->image = $this->toolImage($name);
+
+        return $this;
+    }
+
     /** A tool's own 1200x630 share image, or the default one. */
     private function toolImage(string $slug): string
     {
