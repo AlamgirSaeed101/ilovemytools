@@ -262,4 +262,312 @@ return [
             ['title' => 'Common App, First-year essay prompts', 'url' => 'https://www.commonapp.org/apply/essay-prompts'],
         ],
     ],
+    'how-to-remove-background-from-image' => [
+        'title' => 'How to Remove the Background From an Image (Free)',
+        'description' => 'Remove a photo background in seconds without uploading it: how AI cut-outs work, how to get clean edges on hair and products, and when to use PNG or WebP.',
+        'h1' => 'How to remove the background from an image',
+        'intro' => 'A clean cut-out makes a product photo, a profile picture or a slide look far more professional. Doing it by hand in an editor takes patience; AI can now do most of the work in a few seconds. This guide explains how automatic background removal works, how to get the best result, and how to keep your photos private while you do it.',
+        'tool' => 'remove-background',
+        'related' => ['image-compressor', 'image-resizer', 'webp-to-png'],
+        'published' => '2026-10-10',
+        'updated' => '2026-10-10',
+        'sections' => [
+            [
+                'heading' => 'How automatic background removal works',
+                'paragraphs' => [
+                    'Background removers use a type of AI model trained to find the main subject in a picture, a task researchers call salient object detection. The model looks at the whole image and produces a mask: a grey-scale map where white means "keep" and black means "remove". The mask is then used to make the background transparent.',
+                    'Older tools sent your photo to a server to run the model. The Background Remover on this site runs the model inside your web browser instead, so the picture never leaves your device. The first run downloads the model once; after that it works quickly.',
+                ],
+            ],
+            [
+                'heading' => 'Step by step',
+                'list' => [
+                    'Open the Background Remover and drop in a JPG, PNG or WebP image.',
+                    'Wait a few seconds while the AI finds the subject; the preview shows the cut-out on a checkerboard pattern, which means transparent.',
+                    'If your device supports it, try the high-quality mode for difficult edges such as hair and fur.',
+                    'Download the result as a PNG, which keeps the transparency.',
+                ],
+            ],
+            [
+                'heading' => 'Tips for a cleaner cut-out',
+                'paragraphs' => [
+                    'The AI does best when it can clearly tell the subject from the background. A few habits make a big difference before you even take the photo.',
+                ],
+                'list' => [
+                    'Use good, even light so the edges of the subject are visible.',
+                    'Choose a background that contrasts with the subject: a dark product on a light wall, for example.',
+                    'Keep the subject sharp and in focus; motion blur confuses the edges.',
+                    'Leave a little space around the subject instead of cropping it at the frame edge.',
+                    'Start from the largest original you have; tiny images give jagged edges.',
+                ],
+            ],
+            [
+                'heading' => 'Which format should I save it in?',
+                'paragraphs' => [
+                    'Save cut-outs as PNG when you need them to work everywhere, for example in documents, presentations and marketplaces. PNG keeps full transparency. For a website, WebP also keeps transparency and is usually much smaller. Do not save a cut-out as JPG: JPG cannot be transparent, so the background turns white again.',
+                    'If the PNG is large, run it through the Image Compressor and choose WebP output to shrink it while keeping the transparent background.',
+                ],
+            ],
+            [
+                'heading' => 'What background removal cannot do well',
+                'paragraphs' => [
+                    'Fine, semi-transparent details are the hardest part: wispy hair, glass, smoke and lace. The AI may leave a faint halo or cut a little too much. For a product listing that matters, check the edges at full size. Very busy scenes with several people or objects can also confuse the model about which one is the subject; cropping the photo around your subject first usually fixes that.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Is it free to remove a background here?', 'a' => 'Yes. There is no sign up, no watermark and no limit on the number of images.'],
+            ['q' => 'Are my photos uploaded?', 'a' => 'No. The AI model runs in your browser, so the image stays on your device.'],
+            ['q' => 'Why does the first image take longer?', 'a' => 'The AI model is downloaded the first time you use the tool. After that it is ready, and each image only takes a few seconds.'],
+        ],
+        'sources' => [
+            ['title' => 'Qin et al. (2020), "U2-Net: Going Deeper with Nested U-Structure for Salient Object Detection", arXiv:2005.09007', 'url' => 'https://arxiv.org/abs/2005.09007'],
+        ],
+    ],
+
+    'how-to-create-a-strong-password' => [
+        'title' => 'How to Create a Strong Password: Current Guidance',
+        'description' => 'What makes a password strong today, based on the latest NIST guidance: length over complexity, passphrases, no forced changes, and why a password manager helps.',
+        'h1' => 'How to create a strong password',
+        'intro' => 'For years we were told to mix capitals, numbers and symbols and change our passwords every few months. Security guidance has changed: length matters far more than odd characters, and forced changes often make passwords weaker. Here is what current advice from the US National Institute of Standards and Technology (NIST) says, in plain English.',
+        'tool' => 'password-generator',
+        'related' => ['random-number-generator', 'qr-code-generator', 'base64-encoder-decoder'],
+        'published' => '2026-10-10',
+        'updated' => '2026-10-10',
+        'sections' => [
+            [
+                'heading' => 'Length beats complexity',
+                'paragraphs' => [
+                    'Every extra character multiplies the number of guesses an attacker needs. That is why NIST\'s digital identity guidelines (SP 800-63B) now say that a password used on its own, without a second factor, should be at least 15 characters long, and that websites should allow passwords of at least 64 characters.',
+                    'Complexity rules such as "one capital, one number, one symbol" are no longer required by that guidance. They tend to produce predictable patterns, like a capital at the start and "1!" at the end, which attackers already try first.',
+                ],
+            ],
+            [
+                'heading' => 'Use a passphrase or a generated password',
+                'paragraphs' => [
+                    'There are two good ways to get a long password. The first is a passphrase: four or more random, unrelated words, such as "copper lantern meadow orbit". It is long and surprisingly easy to remember. Pick the words at random rather than using a quote, a song lyric or a phrase about yourself.',
+                    'The second is a random password from a generator, which is ideal when a password manager remembers it for you. The Password Generator on this site creates passwords with your browser\'s cryptographic random number generator, and nothing is sent or stored.',
+                ],
+            ],
+            [
+                'heading' => 'Never reuse a password',
+                'paragraphs' => [
+                    'Reuse is the biggest real-world risk. When one website is breached, attackers try the leaked email and password on email, banking and shopping sites. A unique password for every account stops one breach from spreading. NIST also advises services to check new passwords against lists of passwords known to be compromised.',
+                ],
+            ],
+            [
+                'heading' => 'Change passwords when there is a reason, not on a schedule',
+                'paragraphs' => [
+                    'The same guidance says services should not force people to change passwords periodically. Forced changes lead to small, guessable edits such as "Summer2025" becoming "Autumn2025". Change a password when there is evidence it may be compromised, for example after a breach notice, if you shared it, or if you typed it on a device you do not trust.',
+                ],
+            ],
+            [
+                'heading' => 'A simple checklist',
+                'list' => [
+                    'At least 15 characters for any important account.',
+                    'A random passphrase or a generated password, never personal details.',
+                    'A different password for every account.',
+                    'A password manager to store them.',
+                    'Two-factor authentication on email, banking and social accounts.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'How long should a password be?', 'a' => 'At least 15 characters if it is the only thing protecting the account. Longer is better, and a passphrase of four or more random words reaches that easily.'],
+            ['q' => 'Do I still need symbols and numbers?', 'a' => 'Not according to current NIST guidance, although some websites still require them. Length and uniqueness matter much more.'],
+            ['q' => 'Is a password generator safe to use online?', 'a' => 'This one creates passwords in your browser with a cryptographic random number generator; nothing is sent to a server or saved.'],
+        ],
+        'sources' => [
+            ['title' => 'NIST Special Publication 800-63B-4, Digital Identity Guidelines: Authentication and Authenticator Management', 'url' => 'https://pages.nist.gov/800-63-4/sp800-63b.html'],
+        ],
+    ],
+
+    'how-to-convert-pdf-to-word' => [
+        'title' => 'How to Convert PDF to Word and Keep the Formatting',
+        'description' => 'Turn a PDF into an editable Word document: what converts well, what does not, how to handle scanned PDFs, and how to do it without uploading your file.',
+        'h1' => 'How to convert a PDF to Word',
+        'intro' => 'PDFs are designed to look the same everywhere, which is exactly why they are hard to edit. Converting one to a Word document lets you change the text, reuse paragraphs or fill in a form you only received as a PDF. This guide explains what to expect from a conversion and how to get the cleanest result.',
+        'tool' => 'pdf-to-word',
+        'related' => ['word-to-pdf', 'compress-pdf', 'pdf-to-excel'],
+        'published' => '2026-10-10',
+        'updated' => '2026-10-10',
+        'sections' => [
+            [
+                'heading' => 'Why PDF to Word is never perfect',
+                'paragraphs' => [
+                    'A Word document stores text as paragraphs, headings and tables that flow from page to page. A PDF stores something quite different: individual pieces of text placed at exact positions on a page, like letters pinned to a board. A converter has to guess which pieces belong to the same line, paragraph or column.',
+                    'Simple documents such as letters, reports and essays convert very well. Complex layouts with several columns, text boxes, decorative fonts or tables drawn as lines are harder, and usually need some tidying afterwards.',
+                ],
+            ],
+            [
+                'heading' => 'Step by step',
+                'list' => [
+                    'Open PDF to Word and drop in your PDF. The file is processed in your browser and not uploaded.',
+                    'Wait while the text, paragraphs and headings are detected.',
+                    'Download the .docx file and open it in Microsoft Word, Google Docs or LibreOffice.',
+                    'Check headings, lists and tables, and fix any line breaks that landed in the wrong place.',
+                ],
+            ],
+            [
+                'heading' => 'What converts well, and what does not',
+                'table' => [
+                    'headers' => ['Content', 'Result'],
+                    'rows' => [
+                        ['Normal paragraphs of text', 'Converts well'],
+                        ['Headings', 'Usually detected from the font size'],
+                        ['Simple lists', 'Kept as separate lines'],
+                        ['Multi-column layouts', 'May need re-arranging'],
+                        ['Complex tables', 'Often need fixing by hand'],
+                        ['Scanned pages (photos of text)', 'No text to extract'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'What about scanned PDFs?',
+                'paragraphs' => [
+                    'A scanned PDF is just a picture of a page. There is no actual text inside it, only pixels, so a normal converter has nothing to extract. To edit a scanned document you need OCR (optical character recognition), which reads the letters in the image. A quick test: if you cannot select a word in the PDF with your mouse, it is a scan.',
+                ],
+            ],
+            [
+                'heading' => 'Keeping your document private',
+                'paragraphs' => [
+                    'PDFs often contain contracts, CVs, bank statements and other personal information. Many online converters upload the file to their servers. This converter reads the PDF and builds the Word file entirely in your browser, using the open-source PDF.js library from Mozilla, so the document stays on your device.',
+                    'When you have finished editing, Word to PDF turns the document back into a PDF that looks the same on every device.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Will the Word file look exactly like the PDF?', 'a' => 'Simple documents come close. Complex layouts, tables and special fonts usually need some adjustment after conversion.'],
+            ['q' => 'Can I convert a scanned PDF to Word?', 'a' => 'Not directly: a scan contains images of text, not text. It needs OCR first.'],
+            ['q' => 'Is there a page limit?', 'a' => 'There is no fixed limit. Very large PDFs simply take longer, because the work happens on your own device.'],
+        ],
+        'sources' => [
+            ['title' => 'PDF.js, the PDF renderer by Mozilla', 'url' => 'https://mozilla.github.io/pdf.js/'],
+            ['title' => 'Ecma International, ECMA-376 Office Open XML file formats (.docx)', 'url' => 'https://ecma-international.org/publications-and-standards/standards/ecma-376/'],
+        ],
+    ],
+
+    'how-to-make-a-qr-code' => [
+        'title' => 'How to Make a QR Code That Always Scans',
+        'description' => 'Create a QR code for a link, Wi-Fi or contact details, choose the right size and error correction level, and test it before you print, all for free.',
+        'h1' => 'How to make a QR code that always scans',
+        'intro' => 'QR codes are everywhere: on menus, posters, business cards and parcels. Making one takes seconds, but a code that is too small, too low-contrast or printed without testing can fail at the worst moment. Here is how to create one that works every time.',
+        'tool' => 'qr-code-generator',
+        'related' => ['password-generator', 'image-resizer', 'jpg-to-pdf'],
+        'published' => '2026-10-10',
+        'updated' => '2026-10-10',
+        'sections' => [
+            [
+                'heading' => 'What a QR code is',
+                'paragraphs' => [
+                    'QR stands for "Quick Response". The format was invented in 1994 by Denso Wave, a Japanese company, to track car parts, and it was later made an international standard. A QR code stores text, such as a web address, in a square grid of black and white modules that any phone camera can read.',
+                ],
+            ],
+            [
+                'heading' => 'Step by step',
+                'list' => [
+                    'Open the QR Code Generator and choose what the code should contain: a link, plain text, Wi-Fi details or contact information.',
+                    'Type or paste the content. The code updates as you type.',
+                    'Choose the size and, if you like, the colours. Keep strong contrast: dark code on a light background.',
+                    'Download it as PNG for screens and documents, or SVG for printing at any size.',
+                    'Scan it with at least two different phones before you print anything.',
+                ],
+            ],
+            [
+                'heading' => 'Error correction: why some damage is fine',
+                'paragraphs' => [
+                    'QR codes contain extra data so they still scan when part of the code is dirty, torn or covered. There are four levels: L restores about 7 percent of the code, M about 15 percent, Q about 25 percent and H about 30 percent. Level M is the most common choice. A higher level makes the code denser but tougher, which is useful for codes that will be printed on packaging or placed outdoors.',
+                ],
+            ],
+            [
+                'heading' => 'Size, contrast and placement',
+                'list' => [
+                    'Print it large enough: about 2 x 2 cm is a practical minimum for a short link held close to the camera; bigger for posters seen from a distance.',
+                    'Keep a quiet zone, a plain margin around the code, so the camera can find its edges.',
+                    'Use dark modules on a light background. Inverted or low-contrast codes fail on many phones.',
+                    'Keep the content short. A short link produces a simpler code that scans faster.',
+                ],
+            ],
+            [
+                'heading' => 'Static codes never expire',
+                'paragraphs' => [
+                    'The codes made here are static: the link or text is stored inside the code itself, so the code works forever and does not depend on any service staying online. The trade-off is that you cannot change the destination after printing. If you might need to, point the code at a page on your own website that you can update.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Do these QR codes expire?', 'a' => 'No. The content is stored inside the code, so it keeps working as long as the link it points to works.'],
+            ['q' => 'Can I add a logo to a QR code?', 'a' => 'A small logo in the centre can work with a high error correction level, but always test it on several phones before printing.'],
+            ['q' => 'PNG or SVG?', 'a' => 'PNG for websites and documents, SVG for printing because it stays sharp at any size.'],
+        ],
+        'sources' => [
+            ['title' => 'DENSO WAVE, History of QR Code', 'url' => 'https://www.qrcode.com/en/history/'],
+            ['title' => 'DENSO WAVE, QR Code error correction feature', 'url' => 'https://www.qrcode.com/en/about/error_correction.html'],
+        ],
+    ],
+
+    'how-to-calculate-percentages' => [
+        'title' => 'How to Calculate Percentages: Formulas and Examples',
+        'description' => 'The three percentage formulas you actually need, with worked examples for discounts, tips, grades and percentage change, plus common mistakes to avoid.',
+        'h1' => 'How to calculate percentages',
+        'intro' => 'Percentages show up in shopping discounts, restaurant tips, exam scores, pay rises and price increases. Almost every percentage question is one of three simple calculations. Learn those three and you can handle nearly anything, with or without a calculator.',
+        'tool' => 'percentage-calculator',
+        'related' => ['tip-calculator', 'loan-calculator', 'mortgage-calculator'],
+        'published' => '2026-10-10',
+        'updated' => '2026-10-10',
+        'sections' => [
+            [
+                'heading' => 'What "percent" means',
+                'paragraphs' => [
+                    'Percent means "per hundred". 25 percent is 25 out of every 100, which is the same as the fraction 25/100 or the decimal 0.25. To turn a percentage into a decimal, divide it by 100; to turn a decimal into a percentage, multiply by 100.',
+                ],
+            ],
+            [
+                'heading' => '1. What is X% of a number?',
+                'paragraphs' => [
+                    'Multiply the number by the percentage and divide by 100. 20% of 80 is 80 x 20 / 100 = 16. A quick mental trick: 10% is the number divided by 10, so 20% is twice that, and 5% is half of it.',
+                ],
+                'table' => [
+                    'headers' => ['Question', 'Calculation', 'Answer'],
+                    'rows' => [
+                        ['20% of 80', '80 x 20 / 100', '16'],
+                        ['15% tip on 42', '42 x 15 / 100', '6.30'],
+                        ['8% of 1,250', '1,250 x 8 / 100', '100'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => '2. X is what percent of Y?',
+                'paragraphs' => [
+                    'Divide the part by the whole and multiply by 100. If you scored 42 out of 50 on a test, your score is 42 / 50 x 100 = 84%. The same formula tells you what share of a budget went on rent, or what fraction of a task is finished.',
+                ],
+            ],
+            [
+                'heading' => '3. Percentage increase or decrease',
+                'paragraphs' => [
+                    'Subtract the old value from the new value, divide by the old value and multiply by 100. A price that goes from 50 to 60 has risen by (60 - 50) / 50 x 100 = 20%. A price that falls from 60 to 45 has dropped by (45 - 60) / 60 x 100 = -25%, a 25% decrease.',
+                ],
+            ],
+            [
+                'heading' => 'Common mistakes',
+                'list' => [
+                    'A rise and a fall of the same percentage do not cancel out: 100 up 10% is 110, and 110 down 10% is 99.',
+                    'Always divide by the original value when working out a change, not the new one.',
+                    'Two discounts multiply, they do not add: 20% off then another 10% off is 28% off in total, not 30%.',
+                    'Percentage points are not percent: an interest rate moving from 3% to 4% is a rise of 1 percentage point, but 33% in relative terms.',
+                ],
+            ],
+            [
+                'heading' => 'Let the calculator do it',
+                'paragraphs' => [
+                    'The Percentage Calculator on this site has a box for each of these three questions and shows the formula it used, so you can check the working. For splitting a bill, the Tip Calculator does the percentage and the division in one go.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'How do I work out 15% of a number in my head?', 'a' => 'Find 10% by dividing by 10, then add half of that again. For 60: 10% is 6, half of 6 is 3, so 15% is 9.'],
+            ['q' => 'How do I calculate a discount price?', 'a' => 'Multiply the price by (100 - discount) / 100. A 25% discount on 80 is 80 x 0.75 = 60.'],
+            ['q' => 'What is the difference between percent and percentage points?', 'a' => 'Percentage points measure the gap between two percentages (3% to 4% is 1 point). Percent change measures it relative to the start (a 33% increase).'],
+        ],
+    ],
 ];
