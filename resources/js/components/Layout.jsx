@@ -413,6 +413,11 @@ function Footer() {
                             <li><Link className={link} to="/guides">Guides</Link></li>
                         )}
                         <li><a className={link} href="/sitemap.xml">{t('Sitemap')}</a></li>
+                        {site.linkedin && (
+                            <li>
+                                <a className={link} href={site.linkedin} target="_blank" rel="noopener">LinkedIn</a>
+                            </li>
+                        )}
                         {site.productHunt && (
                             <li>
                                 <a className={link} href={site.productHunt} target="_blank" rel="noopener">

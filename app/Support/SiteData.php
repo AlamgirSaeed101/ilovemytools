@@ -73,6 +73,7 @@ class SiteData
             'guides' => Guides::all()->map(fn (array $g) => Guides::summary($g))->values()->all(),
             'founded' => (string) config('site.founded'),
             'productHunt' => (string) config('site.product_hunt'),
+            'linkedin' => (string) config('site.linkedin'),
             'founder' => (string) (config('site.founder')['name'] ?? ''),
             'ads' => [
                 'client' => Ads::liveClient(),

@@ -38,13 +38,17 @@ return [
     // Shown as a review link in the footer.
     'product_hunt' => '',
 
+    // The company's LinkedIn page, shown as a footer link.
+    'linkedin' => 'https://www.linkedin.com/company/ilovemytools',
+
     'same_as' => [
         'https://www.uneed.best/tool/ilovemytools',
+        'https://www.linkedin.com/company/ilovemytools',
     ],
 
     // The person behind the site, shown on the About page and in the schema once filled in,
     // e.g. ['name' => 'Jane Doe', 'url' => 'https://www.linkedin.com/in/janedoe'].
-    'founder' => ['name' => 'M Alamgir Saeed'],
+    'founder' => ['name' => 'M Alamgir Saeed', 'url' => 'https://www.linkedin.com/in/alamgir-saeed-bse161020'],
 
     'theme_color' => '#4f46e5',
 

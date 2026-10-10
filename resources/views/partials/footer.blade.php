@@ -34,6 +34,9 @@
                 @if (config('site.product_hunt'))
                     <li><a href="{{ config('site.product_hunt') }}" target="_blank" rel="noopener">★ {{ t('Review us on Product Hunt') }}</a></li>
                 @endif
+                @if (config('site.linkedin'))
+                    <li><a href="{{ config('site.linkedin') }}" target="_blank" rel="noopener">LinkedIn</a></li>
+                @endif
                 <li><a href="{{ url('sitemap.xml') }}">{{ t('Sitemap') }}</a></li>
             </ul>
         </div>
