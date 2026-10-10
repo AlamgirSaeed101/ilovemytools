@@ -44,7 +44,7 @@ Read Parts 1-2 of `TOOLS_SPEC_PROMPT.md` (architecture, SEO rules: lines 1-87) b
     prefer tools whose keywords have a high CPC (finance calculators earn far more per ad than file tools);
     use local conventions via `resources/js/lib/region.js` (Letter vs A4, tipping, US vs metric units); and
     for money tools be exact: show formulas, cite official sources (e.g. EU/HMRC VAT rates) and never give tax advice.
-13. **LinkedIn draft (Mon-Fri).** End the rule 11 comment with `**LinkedIn draft (not posted) - post at 1:00 pm PKT (9 am UK)**`. The owner posts it himself from his profile (M Alamgir Saeed, Founder & CEO); nothing is ever posted automatically. If today's push added a new tool or a fix visitors will notice, and CI passed and it is live, the draft announces it. Otherwise it spotlights one live tool: the first tool in `config/tools.php` not yet listed in `docs/linkedin-log.md`, then append `<date> <slug>` to that file (create it if missing) so no tool repeats. Rules: under 120 words; open with the everyday problem the tool solves; 2-3 short lines or steps from its tagline and FAQ in `config/tools.php`; end with `ilovemytools.store/<slug>` and 2-4 hashtags. Only describe what is live today; never planned work, never user numbers. Image note: "use the tool page screenshot" (do not create images). Skip Saturday and Sunday.
+13. **LinkedIn.** Do nothing for LinkedIn. A separate routine (trig_01VFS234jmvk89a4DutEGqbd, weekdays 08:00 UTC) posts to the owner's profile via Zapier and keeps `docs/linkedin-log.md`. Never edit that log yourself.
 
 ## Backlog (in priority order)
 
