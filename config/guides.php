@@ -570,4 +570,97 @@ return [
             ['q' => 'What is the difference between percent and percentage points?', 'a' => 'Percentage points measure the gap between two percentages (3% to 4% is 1 point). Percent change measures it relative to the start (a 33% increase).'],
         ],
     ],
+
+    'how-to-merge-pdf-files' => [
+        'title' => 'How to Merge PDF Files Into One Document (Free)',
+        'description' => 'Combine several PDFs into a single file in the right order, keep the quality intact, and avoid common mistakes, all without uploading your documents anywhere.',
+        'h1' => 'How to merge PDF files into one',
+        'intro' => 'A job application wants one file, not five. A tax return needs the form plus every receipt behind it. A school project needs each student\'s page in order. Merging PDFs solves all of these in a few clicks, but getting the order right, keeping quality intact and handling a locked file each trip people up. Here is how to do it properly.',
+        'tool' => 'merge-pdf',
+        'related' => ['split-pdf', 'compress-pdf', 'pdf-to-word'],
+        'published' => '2026-10-10',
+        'updated' => '2026-10-10',
+        'sections' => [
+            [
+                'heading' => 'Why people merge PDFs',
+                'paragraphs' => [
+                    'Most forms, portals and inboxes are built around a single attachment, not a folder of files. A recruiter wants a CV, cover letter and certificates together; a mortgage lender wants a pay slip and bank statement in one upload; a court or government portal often rejects a submission with more than one PDF attached. Scanning paperwork page by page also tends to create one file per page, which then needs putting back together in the right order.',
+                ],
+                'list' => [
+                    'Job applications: CV, cover letter and references as one file.',
+                    'Tax and expense claims: the form plus each receipt or invoice.',
+                    'Contracts: the main agreement plus signed amendments.',
+                    'School and university work: a cover page, essay and appendix.',
+                    'Scanned paperwork: single-page scans combined into one document.',
+                ],
+            ],
+            [
+                'heading' => 'How to merge PDF files step by step',
+                'paragraphs' => [
+                    'The Merge PDF tool on this site combines files inside your browser, so nothing is uploaded to a server. That matters for anything with personal details, such as payslips, IDs or signed contracts.',
+                ],
+                'list' => [
+                    'Open the Merge PDF tool and drop in every file you want to combine, or click to browse for them.',
+                    'Check the list: each file shows its page count, so you can confirm nothing is missing.',
+                    'Put the files in the order you want using the up and down arrows. The first file in the list becomes the first pages of the result.',
+                    'Remove any file you added by mistake before merging, rather than after.',
+                    'Click Merge PDF, then download the combined file and open it once to check every page is there and in order.',
+                ],
+            ],
+            [
+                'heading' => 'Getting the order right the first time',
+                'paragraphs' => [
+                    'The most common mistake is merging files in the order they were added rather than the order they need to appear. Decide the final order before you start, and name files with a number prefix (01-cv.pdf, 02-cover-letter.pdf) if you are going to merge the same set more than once, so the correct order is obvious at a glance.',
+                ],
+                'table' => [
+                    'headers' => ['Document', 'Typical order', 'Why'],
+                    'rows' => [
+                        ['Job application', 'Cover letter, CV, certificates', 'Reader sees your pitch first'],
+                        ['Expense claim', 'Claim form, then receipts in date order', 'Matches how the approver checks it'],
+                        ['Contract', 'Main agreement, then signed amendments', 'Amendments reference clauses above them'],
+                        ['Scanned book or report', 'Cover, then pages in page-number order', 'Keeps the document readable start to finish'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'Does merging lose quality or change the file size?',
+                'paragraphs' => [
+                    'No. Merging copies the pages exactly as they are; it does not re-compress images or re-render text, so there is no loss of quality. The combined file is roughly the sum of the originals\' sizes, give or take a small amount of overhead from the file structure. If the result is too large to email, run it through the Compress PDF tool afterwards rather than before, so you only need to compress once.',
+                ],
+            ],
+            [
+                'heading' => 'Password-protected and scanned PDFs',
+                'paragraphs' => [
+                    'A PDF that is locked with a password cannot be merged until the protection is removed, because the merger cannot read pages it cannot open. Open the file in a PDF reader with the password, then save or print a copy without protection, and merge that copy instead. Scanned pages merge perfectly well as images; merging does not add or remove text, so if a scan has no selectable text before merging, it will not have any afterwards either.',
+                    'If a scanned page needs to be searchable or copyable, run it through optical character recognition (OCR) before merging, not after. Adding OCR text afterwards means reprocessing the whole combined file instead of just the pages that need it.',
+                ],
+            ],
+            [
+                'heading' => 'Mixed page sizes and orientations',
+                'paragraphs' => [
+                    'Not every page in a merge has to be the same size. A merger that works page by page, rather than forcing every file onto one template, will happily combine a US Letter contract with an A4 invoice and a landscape spreadsheet printout: each page keeps its own dimensions and rotation inside the finished file. The only downside is appearance, not function - a reader will notice the page size change as they scroll, the way it would in a stapled paper bundle.',
+                    'If a consistent look matters more than speed, for example in a polished proposal, rotate any sideways pages first with Rotate PDF so every page reads the same way, and consider resizing scans to match the rest of the document before merging rather than after.',
+                ],
+            ],
+            [
+                'heading' => 'Checklist before you send the merged file',
+                'list' => [
+                    'Open the final PDF and scroll through every page, not just the first and last.',
+                    'Check the page count matches what you expect (sum of the originals).',
+                    'Confirm the order matches what the recipient asked for.',
+                    'Check the file size against the recipient\'s limit; compress afterwards if needed.',
+                    'Rename the file something clear, such as smith-application-2026.pdf, instead of leaving it as merged.pdf.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Does merging PDFs reduce quality?', 'a' => 'No. Pages are copied exactly as they are, with no re-compression, so text and images look identical to the originals.'],
+            ['q' => 'Can I merge a password-protected PDF?', 'a' => 'Not directly. Remove the password first by opening the file with it and saving an unprotected copy, then merge that copy.'],
+            ['q' => 'Is there a limit to how many PDFs I can merge?', 'a' => 'This tool allows up to 50 files in one go. Everything runs on your own device, so very large batches depend on your device\'s memory rather than a server limit.'],
+        ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+        ],
+    ],
 ];
