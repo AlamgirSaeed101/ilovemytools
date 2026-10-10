@@ -6,3 +6,4 @@ Tools already announced on LinkedIn (one per line: date and slug). The daily rou
 2026-10-11 sign-pdf
 2026-10-11 redact-pdf
 2026-10-11 edit-pdf
+2026-10-11 word-counter
