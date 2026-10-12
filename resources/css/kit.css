@@ -1311,6 +1311,16 @@ h3 {
     line-height: 0;
 }
 
+/* Same switch as the logo: dark is the default, the light image shows in light mode. */
+.footer-badge__img--light,
+:root[data-theme='light'] .footer-badge__img--dark {
+    display: none;
+}
+
+:root[data-theme='light'] .footer-badge__img--light {
+    display: block;
+}
+
 .footer-legal {
     display: flex;
     flex-wrap: wrap;

@@ -431,7 +431,8 @@ function Footer() {
                     <div className="mt-4 flex flex-wrap items-center gap-3">
                         {site.badges.map((b) => (
                             <a key={b.url} className="inline-block leading-none" href={b.url} target="_blank" rel="noopener noreferrer">
-                                <img src={b.img} alt={b.alt} height={b.height} style={{ height: b.height, width: 'auto' }} loading="lazy" />
+                                <img className="block dark:hidden" src={b.light} alt={b.alt} height={b.height} style={{ height: b.height, width: 'auto' }} loading="lazy" />
+                                <img className="hidden dark:block" src={b.dark} alt={b.alt} height={b.height} style={{ height: b.height, width: 'auto' }} loading="lazy" />
                             </a>
                         ))}
                     </div>

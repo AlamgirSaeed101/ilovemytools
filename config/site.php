@@ -41,10 +41,24 @@ return [
     // The company's LinkedIn page, shown as a footer link.
     'linkedin' => 'https://www.linkedin.com/company/ilovemytools',
 
-    // Launch/directory badges shown in the footer (link, image, alt text, display height in px).
+    // Launch/directory badges shown in the footer: link, one image per theme, alt text and
+    // display height in px. Each directory's own image is kept for the theme it was made for
+    // (they check for it); the other theme uses a recoloured copy in public/images/badges.
     'badges' => [
-        ['url' => 'https://startupbase.io/products/ilovemytools?utm_source=startupbase&utm_medium=badge&utm_campaign=launch-badge-dark', 'img' => 'https://statics.startupbase.io/site/badges/launched-on-sb-dark.svg', 'alt' => 'Launched on StartupBase', 'height' => 55],
-        ['url' => 'https://circlesaasboard.com/startup/ilovemytools-431315', 'img' => 'https://circlesaasboard.com/badge.svg', 'alt' => 'Featured on CircleSaaS', 'height' => 55],
+        [
+            'url' => 'https://startupbase.io/products/ilovemytools?utm_source=startupbase&utm_medium=badge&utm_campaign=launch-badge-dark',
+            'light' => '/images/badges/startupbase-light.svg',
+            'dark' => 'https://statics.startupbase.io/site/badges/launched-on-sb-dark.svg',
+            'alt' => 'Launched on StartupBase',
+            'height' => 55,
+        ],
+        [
+            'url' => 'https://circlesaasboard.com/startup/ilovemytools-431315',
+            'light' => 'https://circlesaasboard.com/badge.svg',
+            'dark' => '/images/badges/circlesaas-dark.svg',
+            'alt' => 'Featured on CircleSaaS',
+            'height' => 55,
+        ],
     ],
 
     'same_as' => [

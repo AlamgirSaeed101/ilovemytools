@@ -43,7 +43,8 @@
                 <div class="footer-badges">
                     @foreach (config('site.badges') as $badge)
                         <a class="footer-badge" href="{{ $badge['url'] }}" target="_blank" rel="noopener noreferrer">
-                            <img src="{{ $badge['img'] }}" alt="{{ $badge['alt'] }}" height="{{ $badge['height'] }}" style="height:{{ $badge['height'] }}px;width:auto;" loading="lazy">
+                            <img class="footer-badge__img--light" src="{{ $badge['light'] }}" alt="{{ $badge['alt'] }}" height="{{ $badge['height'] }}" style="height:{{ $badge['height'] }}px;width:auto;" loading="lazy">
+                            <img class="footer-badge__img--dark" src="{{ $badge['dark'] }}" alt="{{ $badge['alt'] }}" height="{{ $badge['height'] }}" style="height:{{ $badge['height'] }}px;width:auto;" loading="lazy">
                         </a>
                     @endforeach
                 </div>
