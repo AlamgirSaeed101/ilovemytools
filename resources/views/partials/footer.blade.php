@@ -39,10 +39,14 @@
                 @endif
                 <li><a href="{{ url('sitemap.xml') }}">{{ t('Sitemap') }}</a></li>
             </ul>
-            @if (config('site.startupbase'))
-                <a class="footer-badge" href="{{ config('site.startupbase') }}" target="_blank" rel="noopener noreferrer">
-                    <img src="https://statics.startupbase.io/site/badges/launched-on-sb-dark.svg" alt="Launched on StartupBase" height="55" style="height:55px;width:auto;" loading="lazy">
-                </a>
+            @if (config('site.badges'))
+                <div class="footer-badges">
+                    @foreach (config('site.badges') as $badge)
+                        <a class="footer-badge" href="{{ $badge['url'] }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ $badge['img'] }}" alt="{{ $badge['alt'] }}" height="{{ $badge['height'] }}" style="height:{{ $badge['height'] }}px;width:auto;" loading="lazy">
+                        </a>
+                    @endforeach
+                </div>
             @endif
         </div>
     </div>

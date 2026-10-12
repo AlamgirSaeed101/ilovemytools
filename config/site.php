@@ -41,13 +41,17 @@ return [
     // The company's LinkedIn page, shown as a footer link.
     'linkedin' => 'https://www.linkedin.com/company/ilovemytools',
 
-    // The StartupBase listing, shown as a "Launched on StartupBase" badge in the footer.
-    'startupbase' => 'https://startupbase.io/products/ilovemytools?utm_source=startupbase&utm_medium=badge&utm_campaign=launch-badge-dark',
+    // Launch/directory badges shown in the footer (link, image, alt text, display height in px).
+    'badges' => [
+        ['url' => 'https://startupbase.io/products/ilovemytools?utm_source=startupbase&utm_medium=badge&utm_campaign=launch-badge-dark', 'img' => 'https://statics.startupbase.io/site/badges/launched-on-sb-dark.svg', 'alt' => 'Launched on StartupBase', 'height' => 55],
+        ['url' => 'https://circlesaasboard.com/startup/ilovemytools-431315', 'img' => 'https://circlesaasboard.com/badge.svg', 'alt' => 'Featured on CircleSaaS', 'height' => 55],
+    ],
 
     'same_as' => [
         'https://www.uneed.best/tool/ilovemytools',
         'https://www.linkedin.com/company/ilovemytools',
         'https://startupbase.io/products/ilovemytools',
+        'https://circlesaasboard.com/startup/ilovemytools-431315',
     ],
 
     // The person behind the site, shown on the About page and in the schema once filled in,

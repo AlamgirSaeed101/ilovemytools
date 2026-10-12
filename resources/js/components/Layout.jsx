@@ -427,16 +427,14 @@ function Footer() {
                         )}
                     </ul>
                 </div>
-                {site.startupbase && (
-                    <a className="mt-4 inline-block" href={site.startupbase} target="_blank" rel="noopener noreferrer">
-                        <img
-                            src="https://statics.startupbase.io/site/badges/launched-on-sb-dark.svg"
-                            alt="Launched on StartupBase"
-                            height="55"
-                            style={{ height: 55, width: 'auto' }}
-                            loading="lazy"
-                        />
-                    </a>
+                {site.badges?.length > 0 && (
+                    <div className="mt-4 flex flex-wrap items-center gap-3">
+                        {site.badges.map((b) => (
+                            <a key={b.url} className="inline-block leading-none" href={b.url} target="_blank" rel="noopener noreferrer">
+                                <img src={b.img} alt={b.alt} height={b.height} style={{ height: b.height, width: 'auto' }} loading="lazy" />
+                            </a>
+                        ))}
+                    </div>
                 )}
                 <p className="mt-4 mb-0 text-[0.85rem] text-muted">
                     © {new Date().getFullYear()} {site.name}. {t('All rights reserved.')}
