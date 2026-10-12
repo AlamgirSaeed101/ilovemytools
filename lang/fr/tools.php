@@ -2212,15 +2212,15 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Comment la mensualité est calculée',
+                'heading' => 'Comment la mensualité est-elle calculée ?',
                 'body' => 'Le calculateur utilise la formule d\'amortissement standard à taux fixe : M = P x r / (1 - (1 + r)^-n), où P est le montant du prêt (prix du bien moins l\'apport personnel), r est le taux d\'intérêt mensuel (le taux annuel divisé par 12) et n est le nombre total de mensualités (la durée du prêt en années multipliée par 12). C\'est la même formule utilisée par les banques pour un prêt à taux fixe, et elle ne couvre que le capital et les intérêts - la taxe foncière, l\'assurance habitation, l\'assurance prêt (PMI) et les charges de copropriété ne sont pas incluses, car elles varient selon le lieu et le prêteur.',
             ],
             [
-                'heading' => 'Pourquoi les paiements supplémentaires économisent autant d\'intérêts',
+                'heading' => 'Pourquoi les paiements supplémentaires économisent-ils autant d\'intérêts ?',
                 'body' => 'Chaque euro supplémentaire versé sur le capital cesse de générer des intérêts pour le reste du prêt, donc payer en plus tôt dans la vie du prêt - quand le solde et la part d\'intérêts de chaque mensualité sont les plus élevés - a le plus grand effet. Le calculateur compare le tableau d\'amortissement avec et sans le paiement supplémentaire pour montrer exactement de combien de mois le prêt est remboursé plus tôt et combien d\'intérêts totaux sont évités.',
             ],
             [
-                'heading' => 'Apport personnel : le "deposit" au Royaume-Uni',
+                'heading' => 'L\'apport personnel est-il le même que le "deposit" au Royaume-Uni ?',
                 'body' => 'La somme versée au départ pour un bien, qui réduit le prêt nécessaire, s\'appelle "down payment" aux États-Unis et "deposit" au Royaume-Uni, en Irlande et dans plusieurs autres pays - les deux désignent ici la même chose que l\'apport personnel. Un apport plus important signifie un prêt plus petit, une mensualité plus basse et moins d\'intérêts payés au total, même si les prêteurs peuvent aussi avoir leur propre apport minimum et d\'autres critères d\'éligibilité que ce calculateur ne couvre pas.',
             ],
         ],
@@ -2273,11 +2273,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Comment la mensualité est calculée',
+                'heading' => 'Comment la mensualité est-elle calculée ?',
                 'body' => 'Le calculateur utilise la formule d\'amortissement standard à taux fixe : M = P x r / (1 - (1 + r)^-n), où P est le montant du prêt, r est le taux d\'intérêt mensuel (le taux annuel divisé par 12) et n est le nombre total de mensualités (la durée en années multipliée par 12). C\'est la même formule utilisée par les prêteurs pour un prêt à taux fixe et durée fixe - personnel, auto, étudiant ou autre - et elle ne couvre que le capital et les intérêts : les frais du prêteur, frais de dossier ou assurances ne sont pas inclus, car ils varient selon le prêteur et le type de prêt.',
             ],
             [
-                'heading' => 'Pourquoi les paiements supplémentaires économisent autant d\'intérêts',
+                'heading' => 'Pourquoi les paiements supplémentaires économisent-ils autant d\'intérêts ?',
                 'body' => 'Chaque euro supplémentaire versé sur le capital cesse de générer des intérêts pour le reste du prêt, donc payer en plus tôt dans la vie du prêt - quand le solde et la part d\'intérêts de chaque mensualité sont les plus élevés - a le plus grand effet. Le calculateur compare le tableau d\'amortissement avec et sans le paiement supplémentaire pour montrer exactement de combien de mois le prêt est remboursé plus tôt et combien d\'intérêts totaux sont évités. Vérifiez d\'abord votre contrat : certains prêteurs appliquent des pénalités de remboursement anticipé.',
             ],
         ],

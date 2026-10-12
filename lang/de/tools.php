@@ -2212,15 +2212,15 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'So wird die Monatsrate berechnet',
+                'heading' => 'Wie wird die Monatsrate berechnet?',
                 'body' => 'Der Rechner nutzt die übliche Formel für die Tilgung bei festem Zinssatz: M = P x r / (1 - (1 + r)^-n), wobei P der Darlehensbetrag ist (Kaufpreis minus Anzahlung), r der monatliche Zinssatz (der Jahreszins geteilt durch 12) und n die Gesamtzahl der Monatsraten (die Laufzeit in Jahren mal 12). Das ist dieselbe Formel, die Banken bei einer Festzinsfinanzierung verwenden, und sie deckt nur Tilgung und Zinsen ab - Grundsteuer, Wohngebäudeversicherung, Kreditausfallversicherung (PMI) und Hausgeld sind nicht enthalten, da sie je nach Lage und Kreditgeber unterschiedlich sind.',
             ],
             [
-                'heading' => 'Warum Sondertilgungen so viele Zinsen sparen',
+                'heading' => 'Warum sparen Sondertilgungen so viele Zinsen?',
                 'body' => 'Jeder zusätzliche Euro, der auf die Tilgung gezahlt wird, erzeugt für den Rest des Darlehens keine Zinsen mehr. Deshalb hat eine Sondertilgung früh in der Laufzeit - wenn die Restschuld und der Zinsanteil jeder Rate am größten sind - die größte Wirkung. Der Rechner vergleicht den Tilgungsplan mit und ohne die Sondertilgung, um genau zu zeigen, um wie viele Monate das Darlehen früher abbezahlt ist und wie viele Zinsen insgesamt gespart werden.',
             ],
             [
-                'heading' => 'Anzahlung: das "deposit" in Großbritannien',
+                'heading' => 'Ist die Anzahlung dasselbe wie das "deposit" in Großbritannien?',
                 'body' => 'Der am Anfang gezahlte Betrag für eine Immobilie, der das benötigte Darlehen verringert, heißt in den USA "down payment" und in Großbritannien, Irland und mehreren anderen Ländern "deposit" - beide meinen hier dasselbe wie die Anzahlung. Eine höhere Anzahlung bedeutet ein kleineres Darlehen, eine niedrigere Monatsrate und insgesamt weniger gezahlte Zinsen, auch wenn Kreditgeber zusätzlich eigene Mindestanzahlungen und andere Zulassungsregeln haben können, die dieser Rechner nicht abdeckt.',
             ],
         ],
@@ -2273,11 +2273,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'So wird die Monatsrate berechnet',
+                'heading' => 'Wie wird die Monatsrate berechnet?',
                 'body' => 'Der Rechner nutzt die übliche Formel für die Tilgung bei festem Zinssatz: M = P x r / (1 - (1 + r)^-n), wobei P der Kreditbetrag ist, r der monatliche Zinssatz (der Jahreszins geteilt durch 12) und n die Gesamtzahl der Monatsraten (die Laufzeit in Jahren mal 12). Das ist dieselbe Formel, die Kreditgeber bei einem Kredit mit festem Zinssatz und fester Laufzeit verwenden - privat, Auto, Studium oder sonstig - und sie deckt nur Tilgung und Zinsen ab. Etwaige Kreditgebühren, Bearbeitungsgebühren oder Versicherungen sind nicht enthalten, da sie je nach Kreditgeber und Kreditart unterschiedlich sind.',
             ],
             [
-                'heading' => 'Warum Sondertilgungen so viele Zinsen sparen',
+                'heading' => 'Warum sparen Sondertilgungen so viele Zinsen?',
                 'body' => 'Jeder zusätzliche Euro, der auf die Tilgung gezahlt wird, erzeugt für den Rest des Kredits keine Zinsen mehr. Deshalb hat eine Sondertilgung früh in der Laufzeit - wenn die Restschuld und der Zinsanteil jeder Rate am größten sind - die größte Wirkung. Der Rechner vergleicht den Tilgungsplan mit und ohne die Sondertilgung, um genau zu zeigen, um wie viele Monate der Kredit früher abbezahlt ist und wie viele Zinsen insgesamt gespart werden. Prüfe vorher deinen Kreditvertrag: manche Kreditgeber verlangen eine Vorfälligkeitsentschädigung.',
             ],
         ],

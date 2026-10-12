@@ -2497,15 +2497,15 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'How the monthly payment is calculated',
+                'heading' => 'How is the monthly payment calculated?',
                 'body' => 'The calculator uses the standard fixed-rate amortization formula: M = P x r / (1 - (1 + r)^-n), where P is the loan amount (home price minus down payment), r is the monthly interest rate (the annual rate divided by 12), and n is the total number of monthly payments (the loan term in years multiplied by 12). This is the same formula banks use for a fixed-rate mortgage, and it only covers principal and interest - property tax, homeowners insurance, mortgage insurance (PMI) and HOA fees are not included, since those vary by location and lender.',
             ],
             [
-                'heading' => 'Why extra payments save so much interest',
+                'heading' => 'Why do extra payments save so much interest?',
                 'body' => 'Every extra dollar paid toward the principal stops accruing interest for the rest of the loan, so paying extra early in a loan - when the balance and the interest portion of each payment are largest - has the biggest effect. The calculator compares the schedule with and without the extra payment to show exactly how many months sooner the loan is paid off and how much total interest is avoided.',
             ],
             [
-                'heading' => 'Down payment: "deposit" in the UK',
+                'heading' => 'Is a down payment the same as a "deposit" in the UK?',
                 'body' => 'The upfront amount paid toward a home, reducing the loan needed, is called a "down payment" in the US and a "deposit" in the UK, Ireland and several other countries - both mean the same thing here. A larger down payment means a smaller loan, a lower monthly payment and less interest paid overall, though lenders may also have their own minimum down payment and other eligibility rules not covered by this calculator.',
             ],
         ],
@@ -2560,11 +2560,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'How the monthly payment is calculated',
+                'heading' => 'How is the monthly payment calculated?',
                 'body' => 'The calculator uses the standard fixed-rate amortization formula: M = P x r / (1 - (1 + r)^-n), where P is the loan amount, r is the monthly interest rate (the annual rate divided by 12), and n is the total number of monthly payments (the loan term in years multiplied by 12). This is the same formula lenders use for a fixed-rate, fixed-term loan - personal, auto, student or otherwise - and it covers principal and interest only; any lender fees, origination charges or insurance are not included, since those vary by lender and loan type.',
             ],
             [
-                'heading' => 'Why extra payments save so much interest',
+                'heading' => 'Why do extra payments save so much interest?',
                 'body' => 'Every extra dollar paid toward the principal stops accruing interest for the rest of the loan, so paying extra early in the loan - when the balance and the interest portion of each payment are largest - has the biggest effect. The calculator compares the schedule with and without the extra payment to show exactly how many months sooner the loan is paid off and how much total interest is avoided. Check your loan agreement first: some lenders charge a prepayment penalty.',
             ],
         ],

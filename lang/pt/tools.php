@@ -2212,15 +2212,15 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Como a parcela mensal é calculada',
+                'heading' => 'Como é calculada a parcela mensal?',
                 'body' => 'A calculadora usa a fórmula padrão de amortização de taxa fixa: M = P x r / (1 - (1 + r)^-n), em que P é o valor do empréstimo (preço do imóvel menos a entrada), r é a taxa de juros mensal (a taxa anual dividida por 12) e n é o número total de parcelas mensais (o prazo em anos multiplicado por 12). É a mesma fórmula usada pelos bancos em um financiamento de taxa fixa, e ela cobre apenas principal e juros - imposto sobre a propriedade (IPTU), seguro residencial, seguro do empréstimo (PMI) e taxas de condomínio não estão incluídos, pois variam de acordo com o local e o credor.',
             ],
             [
-                'heading' => 'Por que pagamentos extras economizam tanto em juros',
+                'heading' => 'Por que pagamentos extras economizam tanto em juros?',
                 'body' => 'Cada real extra pago no principal deixa de gerar juros pelo resto do empréstimo, então pagar a mais no início do empréstimo - quando o saldo e a parte de juros de cada parcela são maiores - tem o maior efeito. A calculadora compara o cronograma com e sem o pagamento extra para mostrar exatamente quantos meses antes o empréstimo é quitado e quantos juros totais são evitados.',
             ],
             [
-                'heading' => 'Entrada: o "deposit" no Reino Unido',
+                'heading' => 'A entrada é o mesmo que o "deposit" no Reino Unido?',
                 'body' => 'O valor inicial pago por um imóvel, que reduz o empréstimo necessário, é chamado de "down payment" nos EUA e de "deposit" no Reino Unido, na Irlanda e em vários outros países - aqui ambos significam a mesma coisa que a entrada. Uma entrada maior significa um empréstimo menor, uma parcela mensal mais baixa e menos juros pagos no total, embora os credores também possam ter sua própria entrada mínima e outras regras de elegibilidade que esta calculadora não cobre.',
             ],
         ],
@@ -2273,11 +2273,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Como a parcela mensal é calculada',
+                'heading' => 'Como é calculada a parcela mensal?',
                 'body' => 'A calculadora usa a fórmula padrão de amortização de taxa fixa: M = P x r / (1 - (1 + r)^-n), em que P é o valor do empréstimo, r é a taxa de juros mensal (a taxa anual dividida por 12) e n é o número total de parcelas mensais (o prazo em anos multiplicado por 12). É a mesma fórmula usada pelos credores em um empréstimo de taxa fixa e prazo fixo - pessoal, de carro, estudantil ou outro - e ela cobre apenas principal e juros: taxas do credor, custos de abertura ou seguros não estão incluídos, pois variam de acordo com o credor e o tipo de empréstimo.',
             ],
             [
-                'heading' => 'Por que pagamentos extras economizam tanto em juros',
+                'heading' => 'Por que pagamentos extras economizam tanto em juros?',
                 'body' => 'Cada real extra pago no principal deixa de gerar juros pelo resto do empréstimo, então pagar a mais no início - quando o saldo e a parte de juros de cada parcela são maiores - tem o maior efeito. A calculadora compara o cronograma com e sem o pagamento extra para mostrar exatamente quantos meses antes o empréstimo é quitado e quantos juros totais são evitados. Confira seu contrato antes: alguns credores cobram multa por quitação antecipada.',
             ],
         ],

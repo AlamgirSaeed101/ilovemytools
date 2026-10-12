@@ -2212,15 +2212,15 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Come viene calcolata la rata mensile',
+                'heading' => 'Come viene calcolata la rata mensile?',
                 'body' => 'Il calcolatore usa la formula standard di ammortamento a tasso fisso: M = P x r / (1 - (1 + r)^-n), dove P è l\'importo del mutuo (prezzo dell\'immobile meno l\'acconto), r è il tasso di interesse mensile (il tasso annuo diviso per 12) e n è il numero totale di rate mensili (la durata in anni moltiplicata per 12). È la stessa formula usata dalle banche per un mutuo a tasso fisso, e copre solo capitale e interessi - l\'imposta sulla proprietà, l\'assicurazione sulla casa, l\'assicurazione sul mutuo (PMI) e le spese condominiali non sono incluse, perché variano in base alla località e al prestatore.',
             ],
             [
-                'heading' => 'Perché i pagamenti extra fanno risparmiare così tanti interessi',
+                'heading' => 'Perché i pagamenti extra fanno risparmiare così tanti interessi?',
                 'body' => 'Ogni euro extra versato sul capitale smette di generare interessi per il resto del mutuo, quindi pagare di più all\'inizio del mutuo - quando il saldo e la quota di interessi di ogni rata sono più alti - ha l\'effetto maggiore. Il calcolatore confronta il piano con e senza il pagamento extra per mostrare esattamente di quanti mesi prima viene estinto il mutuo e quanti interessi totali si evitano.',
             ],
             [
-                'heading' => 'Acconto: il "deposit" nel Regno Unito',
+                'heading' => 'L\'acconto è lo stesso del "deposit" nel Regno Unito?',
                 'body' => 'La somma versata inizialmente per una casa, che riduce il mutuo necessario, si chiama "down payment" negli Stati Uniti e "deposit" nel Regno Unito, in Irlanda e in diversi altri paesi - qui entrambi indicano la stessa cosa dell\'acconto. Un acconto più alto significa un mutuo più piccolo, una rata mensile più bassa e meno interessi pagati in totale, anche se i prestatori possono avere anche un proprio acconto minimo e altre regole di idoneità non coperte da questo calcolatore.',
             ],
         ],
@@ -2273,11 +2273,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Come viene calcolata la rata mensile',
+                'heading' => 'Come viene calcolata la rata mensile?',
                 'body' => 'Il calcolatore usa la formula standard di ammortamento a tasso fisso: M = P x r / (1 - (1 + r)^-n), dove P è l\'importo del prestito, r è il tasso di interesse mensile (il tasso annuo diviso per 12) e n è il numero totale di rate mensili (la durata in anni moltiplicata per 12). È la stessa formula usata dai prestatori per un prestito a tasso fisso e durata fissa - personale, auto, studentesco o altro - e copre solo capitale e interessi: eventuali commissioni del prestatore, spese di apertura o assicurazioni non sono incluse, perché variano in base al prestatore e al tipo di prestito.',
             ],
             [
-                'heading' => 'Perché i pagamenti extra fanno risparmiare così tanti interessi',
+                'heading' => 'Perché i pagamenti extra fanno risparmiare così tanti interessi?',
                 'body' => 'Ogni euro extra versato sul capitale smette di generare interessi per il resto del prestito, quindi pagare di più all\'inizio - quando il saldo e la quota di interessi di ogni rata sono più alti - ha l\'effetto maggiore. Il calcolatore confronta il piano con e senza il pagamento extra per mostrare esattamente di quanti mesi prima viene estinto il prestito e quanti interessi totali si evitano. Controlla prima il tuo contratto: alcuni prestatori applicano una penale per l\'estinzione anticipata.',
             ],
         ],

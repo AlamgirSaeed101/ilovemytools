@@ -2107,15 +2107,15 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Cómo se calcula la cuota mensual',
+                'heading' => '¿Cómo se calcula la cuota mensual?',
                 'body' => 'La calculadora usa la fórmula estándar de amortización a tipo fijo: M = P x r / (1 - (1 + r)^-n), donde P es el importe del préstamo (precio de la vivienda menos el pago inicial), r es el tipo de interés mensual (el tipo anual dividido entre 12) y n es el número total de cuotas mensuales (el plazo en años multiplicado por 12). Es la misma fórmula que usan los bancos para una hipoteca a tipo fijo, y solo cubre capital e intereses: el impuesto sobre la propiedad, el seguro de hogar, el seguro hipotecario (PMI) y las cuotas de comunidad no están incluidos, ya que varían según la ubicación y el prestamista.',
             ],
             [
-                'heading' => 'Por qué los pagos extra ahorran tantos intereses',
+                'heading' => '¿Por qué los pagos extra ahorran tantos intereses?',
                 'body' => 'Cada euro extra destinado al capital deja de generar intereses durante el resto del préstamo, así que pagar de más al principio del préstamo -cuando el saldo y la parte de intereses de cada cuota son mayores- tiene el mayor efecto. La calculadora compara el calendario con y sin el pago extra para mostrar exactamente cuántos meses antes se salda el préstamo y cuántos intereses totales se evitan.',
             ],
             [
-                'heading' => 'Pago inicial: el "depósito" en el Reino Unido',
+                'heading' => '¿Es el pago inicial lo mismo que el "depósito" en el Reino Unido?',
                 'body' => 'El importe inicial pagado por una vivienda, que reduce el préstamo necesario, se llama "down payment" en EE. UU. y "deposit" (depósito) en el Reino Unido, Irlanda y otros países; aquí ambos significan lo mismo. Un pago inicial mayor supone un préstamo menor, una cuota mensual más baja y menos intereses pagados en total, aunque los prestamistas también pueden tener su propio pago inicial mínimo y otras condiciones de elegibilidad que esta calculadora no cubre.',
             ],
         ],
@@ -2168,11 +2168,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Cómo se calcula la cuota mensual',
+                'heading' => '¿Cómo se calcula la cuota mensual?',
                 'body' => 'La calculadora usa la fórmula estándar de amortización a tipo fijo: M = P x r / (1 - (1 + r)^-n), donde P es el importe del préstamo, r es el tipo de interés mensual (el tipo anual dividido entre 12) y n es el número total de cuotas mensuales (el plazo en años multiplicado por 12). Es la misma fórmula que usan los prestamistas para un préstamo a tipo fijo y plazo fijo -personal, de coche, de estudios o de otro tipo- y solo cubre capital e intereses: las comisiones del prestamista, los gastos de apertura o los seguros no están incluidos, ya que varían según el prestamista y el tipo de préstamo.',
             ],
             [
-                'heading' => 'Por qué los pagos extra ahorran tantos intereses',
+                'heading' => '¿Por qué los pagos extra ahorran tantos intereses?',
                 'body' => 'Cada euro extra destinado al capital deja de generar intereses durante el resto del préstamo, así que pagar de más al principio -cuando el saldo y la parte de intereses de cada cuota son mayores- tiene el mayor efecto. La calculadora compara el calendario con y sin el pago extra para mostrar exactamente cuántos meses antes se salda el préstamo y cuántos intereses totales se evitan. Revisa antes tu contrato: algunos prestamistas cobran una penalización por amortización anticipada.',
             ],
         ],
