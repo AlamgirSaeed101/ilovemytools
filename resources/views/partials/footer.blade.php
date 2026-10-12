@@ -39,6 +39,11 @@
                 @endif
                 <li><a href="{{ url('sitemap.xml') }}">{{ t('Sitemap') }}</a></li>
             </ul>
+            @if (config('site.startupbase'))
+                <a class="footer-badge" href="{{ config('site.startupbase') }}" target="_blank" rel="noopener noreferrer">
+                    <img src="https://statics.startupbase.io/site/badges/launched-on-sb-dark.svg" alt="Launched on StartupBase" height="55" style="height:55px;width:auto;" loading="lazy">
+                </a>
+            @endif
         </div>
     </div>
 </footer>

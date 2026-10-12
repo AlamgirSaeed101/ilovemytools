@@ -41,9 +41,13 @@ return [
     // The company's LinkedIn page, shown as a footer link.
     'linkedin' => 'https://www.linkedin.com/company/ilovemytools',
 
+    // The StartupBase listing, shown as a "Launched on StartupBase" badge in the footer.
+    'startupbase' => 'https://startupbase.io/products/ilovemytools?utm_source=startupbase&utm_medium=badge&utm_campaign=launch-badge-dark',
+
     'same_as' => [
         'https://www.uneed.best/tool/ilovemytools',
         'https://www.linkedin.com/company/ilovemytools',
+        'https://startupbase.io/products/ilovemytools',
     ],
 
     // The person behind the site, shown on the About page and in the schema once filled in,

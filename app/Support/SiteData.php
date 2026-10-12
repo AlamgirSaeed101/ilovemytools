@@ -74,6 +74,7 @@ class SiteData
             'founded' => (string) config('site.founded'),
             'productHunt' => (string) config('site.product_hunt'),
             'linkedin' => (string) config('site.linkedin'),
+            'startupbase' => (string) config('site.startupbase'),
             'founder' => (string) (config('site.founder')['name'] ?? ''),
             'ads' => [
                 'client' => Ads::liveClient(),

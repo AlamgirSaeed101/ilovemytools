@@ -427,6 +427,17 @@ function Footer() {
                         )}
                     </ul>
                 </div>
+                {site.startupbase && (
+                    <a className="mt-4 inline-block" href={site.startupbase} target="_blank" rel="noopener noreferrer">
+                        <img
+                            src="https://statics.startupbase.io/site/badges/launched-on-sb-dark.svg"
+                            alt="Launched on StartupBase"
+                            height="55"
+                            style={{ height: 55, width: 'auto' }}
+                            loading="lazy"
+                        />
+                    </a>
+                )}
                 <p className="mt-4 mb-0 text-[0.85rem] text-muted">
                     © {new Date().getFullYear()} {site.name}. {t('All rights reserved.')}
                 </p>

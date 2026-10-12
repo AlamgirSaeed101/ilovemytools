@@ -1299,6 +1299,11 @@ h3 {
     margin: 0;
 }
 
+.footer-badge {
+    display: inline-flex;
+    line-height: 0;
+}
+
 .footer-legal {
     display: flex;
     flex-wrap: wrap;
