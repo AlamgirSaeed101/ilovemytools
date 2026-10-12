@@ -4791,6 +4791,13 @@
     ]
   },
   {
+    "key": "Read the guide",
+    "files": [
+      "resources/js/pages/ToolPage.jsx",
+      "resources/views/pages/tool.blade.php"
+    ]
+  },
+  {
     "key": "Readability scores",
     "files": [
       "resources/js/tools/ReadabilityChecker.jsx"

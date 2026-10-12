@@ -100,6 +100,20 @@
                     @endif
                 </article>
 
+                @if (! empty($guides))
+                    <section class="section" aria-labelledby="guides-heading">
+                        <h2 id="guides-heading" class="section__title">{{ t('Read the guide') }}</h2>
+                        <ul class="guide-links">
+                            @foreach ($guides as $guide)
+                                <li>
+                                    <a href="{{ url('/guides/'.$guide['slug']) }}">{{ $guide['title'] }}</a>
+                                    <p>{{ $guide['description'] }}</p>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </section>
+                @endif
+
                 @if ($related->isNotEmpty())
                     <section class="section" aria-labelledby="related-heading">
                         <h2 id="related-heading" class="section__title">{{ t('Related tools') }}</h2>

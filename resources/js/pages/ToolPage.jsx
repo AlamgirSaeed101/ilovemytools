@@ -231,6 +231,22 @@ export default function ToolPage() {
                         )}
                     </article>
 
+                    {tool.guides?.length > 0 && (
+                        <section className="my-11" aria-labelledby="guides-heading">
+                            <h2 id="guides-heading" className="m-0 mb-4 text-[1.35rem] font-bold">
+                                {t('Read the guide')}
+                            </h2>
+                            <ul className="guide-links">
+                                {tool.guides.map((g) => (
+                                    <li key={g.slug}>
+                                        <Link to={`/guides/${g.slug}`}>{g.title}</Link>
+                                        <p>{g.description}</p>
+                                    </li>
+                                ))}
+                            </ul>
+                        </section>
+                    )}
+
                     {related.length > 0 && (
                         <section className="my-11" aria-labelledby="related-heading">
                             <h2 id="related-heading" className="m-0 mb-4 text-[1.35rem] font-bold">

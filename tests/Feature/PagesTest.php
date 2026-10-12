@@ -251,4 +251,16 @@ class PagesTest extends TestCase
             ->assertSee('Corrections');
         $this->get('/es/about')->assertSee('Cómo creamos y probamos nuestras herramientas');
     }
+
+    public function test_tool_pages_link_to_their_guide_in_english_only(): void
+    {
+        foreach (config('guides') as $slug => $guide) {
+            $this->get('/'.$guide['tool'])
+                ->assertSee('Read the guide')
+                ->assertSee('href="https://toolzy.test/guides/'.$slug.'"', false);
+        }
+
+        $tool = collect(config('guides'))->first()['tool'];
+        $this->get('/de/'.$tool)->assertOk()->assertDontSee('/guides/', false);
+    }
 }

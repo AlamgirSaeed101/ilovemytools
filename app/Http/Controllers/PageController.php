@@ -69,6 +69,7 @@ class PageController extends Controller
             'tool' => $data,
             'category' => $category,
             'related' => $this->registry->related($data),
+            'guides' => $pageData['guides'] ?? [],
         ], $tool, $pageData);
     }
 

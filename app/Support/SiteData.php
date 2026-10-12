@@ -125,8 +125,30 @@ class SiteData
             'server' => (bool) ($tool['server'] ?? false),
             'updated' => $tool['updated'] ?? null,
             'related' => $this->registry->related($tool)->keys()->all(),
+            'guides' => $this->guidesFor($tool['slug']),
             'meta' => $this->meta($tool['title'], $tool['description']),
         ];
+    }
+
+    /**
+     * The hand-written guides about a tool (its own guide first, then guides that list it as
+     * related), so tool pages link to the longer articles. Guides are English only.
+     *
+     * @return list<array{slug: string, title: string, description: string}>
+     */
+    public function guidesFor(string $slug): array
+    {
+        if (Locale::current() !== 'en') {
+            return [];
+        }
+
+        $guides = collect(config('guides', []));
+        $own = $guides->filter(fn (array $g) => ($g['tool'] ?? null) === $slug);
+        $mentions = $guides->filter(fn (array $g) => ($g['tool'] ?? null) !== $slug && in_array($slug, $g['related'] ?? [], true));
+
+        return $own->union($mentions)->take(2)
+            ->map(fn (array $g, string $key) => ['slug' => $key, 'title' => $g['h1'] ?? $g['title'], 'description' => $g['description']])
+            ->values()->all();
     }
 
     public function category(string $slug): ?array

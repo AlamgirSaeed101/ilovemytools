@@ -49,6 +49,7 @@ Read Parts 1-2 of `TOOLS_SPEC_PROMPT.md` (architecture, SEO rules: lines 1-87) b
 
 ## Backlog (in priority order)
 
+- AdSense was **rejected for "Low value content" on 12 Oct 2026**. The plan: a new guide every 2 days until 30 Nov (guide routine), tool pages link to their guides, and steady Search Console growth. The owner requests a review in December, not before. Never add thin pages, doorway pages or auto-generated text to pad the site.
 - [ ] *(owner input)* When the owner says Google AdSense has **approved** the site, set `site.ads.adblock_notice` to `true` in `config/site.php` (the ad-block request, closable for 7 days) and deploy. Keep it `false` until then.
 
 Ranked by search demand (what iLovePDF, Smallpdf, FreeConvert and the big calculator sites put first) and
