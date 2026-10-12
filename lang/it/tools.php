@@ -253,11 +253,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Dimensioni comuni delle immagini',
+                'heading' => 'Che dimensione dovrebbe avere la mia immagine?',
                 'body' => 'I post di Instagram rendono bene a 1080 x 1080 pixel, le immagini condivise su Facebook e LinkedIn a 1200 x 630, le miniature di YouTube a 1280 x 720, e le immagini principali dei siti di solito non superano i 1920 pixel di larghezza.',
             ],
             [
-                'heading' => 'Convertire PNG in JPG',
+                'heading' => 'Come convertire PNG in JPG?',
                 'body' => 'Il JPG non supporta la trasparenza, quindi le aree trasparenti diventano bianche quando converti un PNG in JPG. Se devi mantenere la trasparenza, scegli PNG o WebP come formato di output.',
             ],
         ],

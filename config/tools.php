@@ -318,11 +318,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Common image sizes',
+                'heading' => 'What size should my image be?',
                 'body' => 'Instagram posts work well at 1080 x 1080 pixels, Facebook and LinkedIn share images at 1200 x 630, YouTube thumbnails at 1280 x 720, and website hero images usually need no more than 1920 pixels wide.',
             ],
             [
-                'heading' => 'Converting PNG to JPG',
+                'heading' => 'How do I convert PNG to JPG?',
                 'body' => 'JPG does not support transparency, so transparent areas are filled with white when you convert a PNG to JPG. If you need to keep transparency, choose PNG or WebP as the output format.',
             ],
         ],

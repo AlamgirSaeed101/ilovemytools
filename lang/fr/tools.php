@@ -253,11 +253,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Tailles d’image courantes',
+                'heading' => 'Quelle taille donner à mon image ?',
                 'body' => 'Les publications Instagram rendent bien en 1080 x 1080 pixels, les images partagées sur Facebook et LinkedIn en 1200 x 630, les miniatures YouTube en 1280 x 720, et les grandes images de sites web ne dépassent généralement pas 1920 pixels de large.',
             ],
             [
-                'heading' => 'Convertir un PNG en JPG',
+                'heading' => 'Comment convertir un PNG en JPG ?',
                 'body' => 'Le JPG ne gère pas la transparence : les zones transparentes deviennent blanches quand vous convertissez un PNG en JPG. Pour conserver la transparence, choisissez PNG ou WebP comme format de sortie.',
             ],
         ],

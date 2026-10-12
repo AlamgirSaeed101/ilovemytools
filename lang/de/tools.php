@@ -253,11 +253,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Übliche Bildgrößen',
+                'heading' => 'Welche Bildgröße sollte ich wählen?',
                 'body' => 'Instagram-Posts funktionieren gut mit 1080 x 1080 Pixeln, geteilte Bilder auf Facebook und LinkedIn mit 1200 x 630, YouTube-Thumbnails mit 1280 x 720, und große Website-Bilder brauchen meist nicht mehr als 1920 Pixel Breite.',
             ],
             [
-                'heading' => 'PNG in JPG umwandeln',
+                'heading' => 'Wie wandle ich PNG in JPG um?',
                 'body' => 'JPG unterstützt keine Transparenz, deshalb werden transparente Bereiche beim Umwandeln von PNG in JPG weiß gefüllt. Wenn die Transparenz erhalten bleiben soll, wähle PNG oder WebP als Ausgabeformat.',
             ],
         ],

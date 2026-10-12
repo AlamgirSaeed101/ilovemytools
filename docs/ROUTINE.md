@@ -115,7 +115,7 @@ Not planned: PDF↔PowerPoint (no permissively-licensed in-browser library rende
 - [x] Cite real sources with outbound links for factual claims (sleep hours, coin-flip bias study, Base64 spec…). Only cite pages you fetched and checked.
 - [x] Show "Last updated" on tool pages and add `dateModified` to the WebApplication schema.
 - [x] Per-tool Open Graph images (tool name + icon, generated at build time). **Done** — `scripts/og-images.mjs` already draws one per tool (name, icon, category, tagline) into `public/images/og/{slug}.jpg`; verified all 52 tools have one.
-- [ ] Rephrase statement H2s as questions where natural (e.g. "Common image sizes" -> "What size should my image be?"), all languages. (Intro definitions are done.) **In progress** — Mortgage Calculator and Loan Calculator done 12 Oct 2026 (highest-revenue pages). ~40 tools still have statement H2s; continue a few per run.
+- [ ] Rephrase statement H2s as questions where natural (e.g. "Common image sizes" -> "What size should my image be?"), all languages. (Intro definitions are done.) **In progress** — Mortgage Calculator and Loan Calculator done 12 Oct 2026 (highest-revenue pages); Image Resizer done 12 Oct 2026. ~38 tools still have statement H2s; continue a few per run.
 - [x] HowTo and SpeakableSpecification schema on tool pages.
 - [ ] Homepage FAQ (4-5 questions such as "Are these tools really free?", "Are my files uploaded?") with FAQPage schema, all languages. *(quick audit 30 Sep)*
 - [ ] Tools without them get a one-line definition, a reference table and 2-3 cited sources, like /image-compressor (start with /merge-pdf, /split-pdf). *(quick audit 30 Sep)*

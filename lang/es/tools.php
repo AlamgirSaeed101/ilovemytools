@@ -222,8 +222,8 @@ return [
             'Vista previa con el nuevo tamaño de archivo',
         ],
         'content' => [
-            ['heading' => 'Tamaños de imagen habituales', 'body' => 'Las publicaciones de Instagram quedan bien a 1080 x 1080 píxeles, las imágenes para compartir en Facebook y LinkedIn a 1200 x 630, las miniaturas de YouTube a 1280 x 720, y las imágenes principales de una web no suelen necesitar más de 1920 píxeles de ancho.'],
-            ['heading' => 'Convertir PNG a JPG', 'body' => 'JPG no admite transparencia, así que al convertir un PNG a JPG las zonas transparentes se rellenan de blanco. Si necesitas mantener la transparencia, elige PNG o WebP como formato de salida.'],
+            ['heading' => '¿Qué tamaño debe tener mi imagen?', 'body' => 'Las publicaciones de Instagram quedan bien a 1080 x 1080 píxeles, las imágenes para compartir en Facebook y LinkedIn a 1200 x 630, las miniaturas de YouTube a 1280 x 720, y las imágenes principales de una web no suelen necesitar más de 1920 píxeles de ancho.'],
+            ['heading' => '¿Cómo convierto un PNG a JPG?', 'body' => 'JPG no admite transparencia, así que al convertir un PNG a JPG las zonas transparentes se rellenan de blanco. Si necesitas mantener la transparencia, elige PNG o WebP como formato de salida.'],
         ],
         'faqs' => [
             ['q' => '¿Cómo cambio el tamaño de una imagen sin deformarla?', 'a' => 'Deja marcada la opción "Mantener proporción". Al cambiar el ancho, el alto se ajusta solo para conservar las proporciones originales.'],
