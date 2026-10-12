@@ -45,7 +45,7 @@ Read Parts 1-2 of `TOOLS_SPEC_PROMPT.md` (architecture, SEO rules: lines 1-87) b
     use local conventions via `resources/js/lib/region.js` (Letter vs A4, tipping, US vs metric units); and
     for money tools be exact: show formulas, cite official sources (e.g. EU/HMRC VAT rates) and never give tax advice.
 13. **LinkedIn.** Do nothing for LinkedIn. A separate routine (trig_01VFS234jmvk89a4DutEGqbd, weekdays 08:00 UTC) posts to the owner's profile via Zapier and keeps `docs/linkedin-log.md`. Never edit that log yourself.
-14. **SEO / GEO / AEO has its own routine.** A separate routine (trig_01N2Jft7zA1zDR56Mm9R9ntm, every 3 hours at :47 UTC (00:47, 03:47 … 21:47); one improvement per run) owns the "SEO / GEO / AEO" section of the backlog and logs its audits in `docs/seo-audit.md`. The daily routine skips that section and does the other backlog items and Search Console fixes.
+14. **SEO / GEO / AEO has its own routine.** A separate routine (trig_01N2Jft7zA1zDR56Mm9R9ntm, 4 times a day at 00:47, 05:47, 12:47 and 18:47 UTC; one improvement per run, log-only commits use [skip ci]) owns the "SEO / GEO / AEO" section of the backlog and logs its audits in `docs/seo-audit.md`. The daily routine skips that section and does the other backlog items and Search Console fixes.
 
 ## Backlog (in priority order)
 
