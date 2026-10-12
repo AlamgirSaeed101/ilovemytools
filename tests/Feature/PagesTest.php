@@ -252,6 +252,11 @@ class PagesTest extends TestCase
         $this->get('/es/about')->assertSee('Cómo creamos y probamos nuestras herramientas');
     }
 
+    public function test_primary_image_of_page_is_an_image_object(): void
+    {
+        $this->get('/coin-flip')->assertSee('"primaryImageOfPage": {', false)->assertSee('"@type": "ImageObject"', false);
+    }
+
     public function test_tool_pages_link_to_their_guide_in_english_only(): void
     {
         foreach (config('guides') as $slug => $guide) {

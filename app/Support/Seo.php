@@ -169,7 +169,8 @@ class Seo
             'dateModified' => $tool['updated'] ?? null,
             'isPartOf' => ['@id' => self::absoluteUrl('/').'#website'],
             'publisher' => ['@id' => self::absoluteUrl('/').'#organization'],
-            'primaryImageOfPage' => $this->image,
+            // schema.org expects an ImageObject here, not a bare URL.
+            'primaryImageOfPage' => ['@type' => 'ImageObject', 'url' => $this->image, 'width' => 1200, 'height' => 630],
             'speakable' => ['@type' => 'SpeakableSpecification', 'cssSelector' => ['h1', '.tool-intro']],
             'citation' => array_map(fn ($source) => ['@type' => 'CreativeWork', 'name' => $source['title'], 'url' => $source['url']], $tool['sources'] ?? []) ?: null,
         ], fn ($value) => $value !== null);
