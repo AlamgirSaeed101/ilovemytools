@@ -62,7 +62,7 @@ return [
     ],
 
     'same_as' => [
-        'https://www.uneed.best/tool/ilovemytools',
+        'https://www.uneed.best/tool/ilovetools',
         'https://www.linkedin.com/company/ilovemytools',
         'https://startupbase.io/products/ilovemytools',
         'https://circlesaasboard.com/startup/ilovemytools-431315',
