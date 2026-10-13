@@ -52,20 +52,12 @@ return [
             'alt' => 'Launched on StartupBase',
             'height' => 55,
         ],
-        [
-            'url' => 'https://circlesaasboard.com/startup/ilovemytools-431315',
-            'light' => 'https://circlesaasboard.com/badge.svg',
-            'dark' => '/images/badges/circlesaas-dark.svg',
-            'alt' => 'Featured on CircleSaaS',
-            'height' => 55,
-        ],
     ],
 
     'same_as' => [
         'https://www.uneed.best/tool/ilovetools',
         'https://www.linkedin.com/company/ilovemytools',
         'https://startupbase.io/products/ilovemytools',
-        'https://circlesaasboard.com/startup/ilovemytools-431315',
     ],
 
     // The person behind the site, shown on the About page and in the schema once filled in,
