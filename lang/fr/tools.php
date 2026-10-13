@@ -106,7 +106,7 @@ return [
                 'body' => 'La longueur compte le plus. Chaque caractère supplémentaire multiplie le nombre de combinaisons possibles. Un mot de passe de 16 caractères avec majuscules, minuscules, chiffres et symboles dépasse 100 bits d’entropie, ce qui demanderait des milliards d’années à casser par force brute avec le matériel actuel.',
             ],
             [
-                'heading' => 'Conseils de sécurité',
+                'heading' => 'Comment protéger mes mots de passe ?',
                 'body' => 'Utilisez un mot de passe différent pour chaque compte, conservez-les dans un gestionnaire de mots de passe et activez la double authentification partout où c’est possible. Ne réutilisez jamais un mot de passe apparu dans une fuite de données.',
             ],
         ],
@@ -153,11 +153,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Comment créer un QR code Wi-Fi',
+                'heading' => 'Comment créer un QR code Wi-Fi ?',
                 'body' => 'Choisissez le type Wi-Fi et saisissez le nom du réseau (SSID), le mot de passe et le type de sécurité. Vos invités n’ont plus qu’à scanner le code avec l’appareil photo de leur téléphone pour se connecter sans taper le mot de passe : idéal pour la maison, les cafés et les bureaux.',
             ],
             [
-                'heading' => 'Conseils pour des QR codes toujours lisibles',
+                'heading' => 'Comment créer un QR code toujours lisible ?',
                 'body' => 'Gardez un contraste fort avec un code sombre sur fond clair, laissez la marge blanche autour du code et imprimez-le en au moins 2 x 2 cm. Choisissez un niveau de correction d’erreurs plus élevé si le code risque d’être rayé ou sali.',
             ],
         ],

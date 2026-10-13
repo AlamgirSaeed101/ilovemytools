@@ -146,7 +146,7 @@ return [
                 'body' => 'Length matters most. Every extra character multiplies the number of possible combinations. A 16 character password using upper and lowercase letters, numbers and symbols has more than 100 bits of entropy, which would take billions of years to brute-force with current hardware.',
             ],
             [
-                'heading' => 'Password safety tips',
+                'heading' => 'How do I keep my passwords safe?',
                 'body' => 'Use a different password for every account, store them in a password manager, and turn on two-factor authentication wherever it is offered. Never reuse a password that has appeared in a data breach.',
             ],
         ],
@@ -202,11 +202,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'How to make a Wi-Fi QR code',
+                'heading' => 'How do I make a Wi-Fi QR code?',
                 'body' => 'Choose the Wi-Fi type, enter your network name (SSID), password and security type. Guests can then scan the code with their phone camera to join your network without typing the password, which is perfect for homes, cafés and offices.',
             ],
             [
-                'heading' => 'Tips for QR codes that always scan',
+                'heading' => 'How do I make a QR code that always scans?',
                 'body' => 'Keep strong contrast with a dark code on a light background, leave the quiet-zone margin around the code, and print it at least 2 x 2 cm (0.8 x 0.8 inches). Use a higher error correction level if the code may get scratched or dirty.',
             ],
         ],

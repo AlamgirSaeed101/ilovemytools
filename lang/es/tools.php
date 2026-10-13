@@ -90,7 +90,7 @@ return [
         ],
         'content' => [
             ['heading' => '¿Qué hace fuerte a una contraseña?', 'body' => 'Lo que más importa es la longitud. Cada carácter extra multiplica el número de combinaciones posibles. Una contraseña de 16 caracteres con mayúsculas, minúsculas, números y símbolos tiene más de 100 bits de entropía, y descifrarla por fuerza bruta llevaría miles de millones de años con el hardware actual.'],
-            ['heading' => 'Consejos de seguridad', 'body' => 'Usa una contraseña distinta para cada cuenta, guárdalas en un gestor de contraseñas y activa la verificación en dos pasos siempre que puedas. No reutilices nunca una contraseña que haya aparecido en una filtración de datos.'],
+            ['heading' => '¿Cómo mantengo mis contraseñas seguras?', 'body' => 'Usa una contraseña distinta para cada cuenta, guárdalas en un gestor de contraseñas y activa la verificación en dos pasos siempre que puedas. No reutilices nunca una contraseña que haya aparecido en una filtración de datos.'],
         ],
         'faqs' => [
             ['q' => '¿Es seguro este generador de contraseñas?', 'a' => 'Sí. Las contraseñas se generan en tu navegador con la Web Crypto API. No se envía, registra ni guarda nada en nuestro servidor.'],
@@ -134,8 +134,8 @@ return [
             'Códigos estáticos que nunca caducan y sin rastreo',
         ],
         'content' => [
-            ['heading' => 'Cómo crear un código QR de Wi-Fi', 'body' => 'Elige el tipo Wi-Fi e introduce el nombre de la red (SSID), la contraseña y el tipo de seguridad. Tus invitados podrán escanear el código con la cámara del móvil y conectarse sin escribir la contraseña, ideal para casas, cafeterías y oficinas.'],
-            ['heading' => 'Consejos para que el QR siempre se lea', 'body' => 'Mantén un buen contraste con un código oscuro sobre fondo claro, deja el margen de seguridad alrededor del código e imprímelo con al menos 2 x 2 cm. Usa un nivel de corrección de errores más alto si el código puede rayarse o ensuciarse.'],
+            ['heading' => '¿Cómo creo un código QR de Wi-Fi?', 'body' => 'Elige el tipo Wi-Fi e introduce el nombre de la red (SSID), la contraseña y el tipo de seguridad. Tus invitados podrán escanear el código con la cámara del móvil y conectarse sin escribir la contraseña, ideal para casas, cafeterías y oficinas.'],
+            ['heading' => '¿Cómo consigo que el QR siempre se lea?', 'body' => 'Mantén un buen contraste con un código oscuro sobre fondo claro, deja el margen de seguridad alrededor del código e imprímelo con al menos 2 x 2 cm. Usa un nivel de corrección de errores más alto si el código puede rayarse o ensuciarse.'],
         ],
         'faqs' => [
             ['q' => '¿Estos códigos QR caducan?', 'a' => 'No. Son códigos QR estáticos con tus datos codificados directamente, así que funcionan para siempre y no dependen de nuestra web.'],

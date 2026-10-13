@@ -106,7 +106,7 @@ return [
                 'body' => 'O tamanho é o que mais importa. Cada caractere a mais multiplica o número de combinações possíveis. Uma senha de 16 caracteres com letras maiúsculas e minúsculas, números e símbolos tem mais de 100 bits de entropia, o que levaria bilhões de anos para ser quebrado por força bruta com o hardware atual.',
             ],
             [
-                'heading' => 'Dicas de segurança para senhas',
+                'heading' => 'Como mantenho minhas senhas seguras?',
                 'body' => 'Use uma senha diferente para cada conta, guarde-as em um gerenciador de senhas e ative a verificação em duas etapas sempre que possível. Nunca reutilize uma senha que já apareceu em um vazamento de dados.',
             ],
         ],
@@ -153,11 +153,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Como criar um QR code de Wi-Fi',
+                'heading' => 'Como crio um QR code de Wi-Fi?',
                 'body' => 'Escolha o tipo Wi-Fi e informe o nome da rede (SSID), a senha e o tipo de segurança. Assim, os visitantes podem escanear o código com a câmera do celular para entrar na rede sem digitar a senha, o que é perfeito para casas, cafés e escritórios.',
             ],
             [
-                'heading' => 'Dicas para QR codes que sempre funcionam',
+                'heading' => 'Como faço um QR code que sempre funciona?',
                 'body' => 'Mantenha um bom contraste, com código escuro sobre fundo claro, deixe a margem de respiro em volta do código e imprima com pelo menos 2 x 2 cm. Use um nível de correção de erros mais alto se o código puder ser riscado ou sujar.',
             ],
         ],

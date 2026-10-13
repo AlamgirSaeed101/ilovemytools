@@ -106,7 +106,7 @@ return [
                 'body' => 'Conta soprattutto la lunghezza. Ogni carattere in più moltiplica il numero di combinazioni possibili. Una password di 16 caratteri con maiuscole, minuscole, numeri e simboli supera i 100 bit di entropia: con l’hardware attuale servirebbero miliardi di anni per forzarla.',
             ],
             [
-                'heading' => 'Consigli per la sicurezza delle password',
+                'heading' => 'Come posso proteggere le mie password?',
                 'body' => 'Usa una password diversa per ogni account, conservale in un password manager e attiva l’autenticazione a due fattori ovunque sia disponibile. Non riutilizzare mai una password comparsa in una fuga di dati.',
             ],
         ],
@@ -153,11 +153,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Come creare un codice QR per il Wi-Fi',
+                'heading' => 'Come creo un codice QR per il Wi-Fi?',
                 'body' => 'Scegli il tipo Wi-Fi e inserisci nome della rete (SSID), password e tipo di sicurezza. Gli ospiti potranno inquadrare il codice con la fotocamera del telefono per collegarsi senza digitare la password: perfetto per casa, bar e uffici.',
             ],
             [
-                'heading' => 'Consigli per codici QR sempre leggibili',
+                'heading' => 'Come creo un codice QR sempre leggibile?',
                 'body' => 'Mantieni un contrasto forte con codice scuro su sfondo chiaro, lascia il margine vuoto intorno al codice e stampalo di almeno 2 x 2 cm. Usa un livello di correzione degli errori più alto se il codice potrebbe graffiarsi o sporcarsi.',
             ],
         ],

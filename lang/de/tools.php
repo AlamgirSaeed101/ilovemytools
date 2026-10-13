@@ -106,7 +106,7 @@ return [
                 'body' => 'Am wichtigsten ist die Länge. Jedes zusätzliche Zeichen vervielfacht die Zahl der möglichen Kombinationen. Ein 16-stelliges Passwort mit Groß- und Kleinbuchstaben, Ziffern und Sonderzeichen hat über 100 Bit Entropie – mit heutiger Hardware würde ein Brute-Force-Angriff Milliarden Jahre dauern.',
             ],
             [
-                'heading' => 'Tipps für sichere Passwörter',
+                'heading' => 'Wie halte ich meine Passwörter sicher?',
                 'body' => 'Verwende für jedes Konto ein anderes Passwort, speichere sie in einem Passwort-Manager und aktiviere die Zwei-Faktor-Authentifizierung, wo immer sie angeboten wird. Verwende nie ein Passwort erneut, das in einem Datenleck aufgetaucht ist.',
             ],
         ],
@@ -153,11 +153,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'So erstellst du einen WLAN-QR-Code',
+                'heading' => 'Wie erstelle ich einen WLAN-QR-Code?',
                 'body' => 'Wähle den Typ WLAN und gib Netzwerknamen (SSID), Passwort und Sicherheitstyp ein. Gäste können den Code dann mit der Handykamera scannen und sich ohne Passworteingabe verbinden – ideal für Zuhause, Cafés und Büros.',
             ],
             [
-                'heading' => 'Tipps für QR-Codes, die immer funktionieren',
+                'heading' => 'Wie erstelle ich einen QR-Code, der immer funktioniert?',
                 'body' => 'Achte auf starken Kontrast mit dunklem Code auf hellem Hintergrund, lass den Ruherand um den Code frei und drucke ihn mindestens 2 x 2 cm groß. Wähle eine höhere Fehlerkorrektur, wenn der Code zerkratzt oder schmutzig werden könnte.',
             ],
         ],
