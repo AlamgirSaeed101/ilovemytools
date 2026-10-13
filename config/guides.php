@@ -663,4 +663,97 @@ return [
             ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
         ],
     ],
+
+    'how-to-calculate-a-mortgage-payment' => [
+        'title' => 'How to Calculate Your Mortgage Payment by Hand',
+        'description' => 'The exact formula lenders use to work out a mortgage payment, a worked example you can check by hand, and the costs - tax, insurance, PMI - it never includes.',
+        'h1' => 'How to calculate your mortgage payment',
+        'intro' => 'A lender\'s pre-approval letter, a real estate listing and an online calculator can all show a different "monthly payment" for the same home, and it is rarely obvious why. Most of the gap comes down to one thing: the core mortgage formula only covers principal and interest. Everything else - property tax, insurance, PMI - gets added on top by whoever is quoting you. Here is the actual formula, a worked example you can check by hand, and a list of what typically gets left out.',
+        'tool' => 'mortgage-calculator',
+        'related' => ['loan-calculator', 'percentage-calculator', 'tip-calculator'],
+        'published' => '2026-10-13',
+        'updated' => '2026-10-13',
+        'sections' => [
+            [
+                'heading' => 'The formula lenders actually use',
+                'paragraphs' => [
+                    'A fixed-rate mortgage payment comes from one formula: M = P x r / (1 - (1 + r)^-n). M is the monthly payment, P is the loan amount (the home price minus the down payment, not the home price itself), r is the monthly interest rate, and n is the total number of monthly payments.',
+                    'Two details trip people up every time. First, r is the annual rate divided by 12, not the annual rate itself - a 6.5% annual rate is 0.065 / 12 = 0.0054167 per month. Second, n is the term in years multiplied by 12, so a 30-year mortgage has n = 360, not 30. Get either of those wrong and the result is off by a huge margin, not a rounding error.',
+                ],
+            ],
+            [
+                'heading' => 'A worked example',
+                'paragraphs' => [
+                    'Take a $300,000 loan (after the down payment) at a 6.5% annual rate. The monthly rate is 0.065 / 12 = 0.0054167, and a 30-year term gives n = 360 monthly payments. Plugging those into the formula gives a monthly principal-and-interest payment of $1,896.20, with $382,633.47 paid in interest over the full 30 years.',
+                    'Shortening the term raises the monthly payment but cuts the total interest sharply, because the loan is outstanding for far fewer months. The table below uses the same $300,000 loan at the same 6.5% rate so only the term changes.',
+                ],
+                'table' => [
+                    'headers' => ['Loan term', 'Monthly payment (P&I)', 'Total interest paid'],
+                    'rows' => [
+                        ['15 years', '$2,613.32', '$170,397.98'],
+                        ['20 years', '$2,236.72', '$236,812.66'],
+                        ['25 years', '$2,025.62', '$307,686.45'],
+                        ['30 years', '$1,896.20', '$382,633.47'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'What this payment does not include',
+                'paragraphs' => [
+                    'The formula only produces principal and interest. Lenders and listings usually quote a larger number called PITI - Principal, Interest, Taxes and Insurance - plus mortgage insurance if your down payment is small. None of these follow a fixed formula, because they depend on where the home is and who insures it.',
+                ],
+                'list' => [
+                    'Property tax: set by the local county or municipality, often paid monthly into an escrow account.',
+                    'Homeowners insurance: required by the lender, priced by the insurer based on the home and area.',
+                    'Private mortgage insurance (PMI): usually required in the US when the down payment is under 20%, and it drops off once enough equity builds up.',
+                    'HOA or condo fees: a fixed monthly charge in some buildings and communities, unrelated to the loan itself.',
+                ],
+            ],
+            [
+                'heading' => 'Common mistakes when estimating a payment',
+                'paragraphs' => [
+                    'Most "my calculation does not match the bank" complaints trace back to one of a handful of slips.',
+                ],
+                'list' => [
+                    'Using the annual rate as r instead of dividing it by 12 first.',
+                    'Using the number of years as n instead of multiplying by 12.',
+                    'Using the home price as P instead of the home price minus the down payment.',
+                    'Comparing a principal-and-interest estimate to a lender\'s PITI quote and assuming the formula is wrong.',
+                    'Forgetting that the rate a lender actually offers depends on credit score, loan type and current market rates, so it will not match a rate guessed from an old article or a friend\'s loan.',
+                ],
+            ],
+            [
+                'heading' => 'Why extra payments move the numbers so much',
+                'paragraphs' => [
+                    'Every dollar paid above the required monthly amount reduces the principal immediately, so it stops accruing interest for every remaining month of the loan. Because interest is largest early in the loan - when the outstanding balance is largest - extra payments made in the first few years save far more interest than the same extra payment made near the end.',
+                ],
+            ],
+            [
+                'heading' => 'Checklist: comparing two mortgage quotes fairly',
+                'list' => [
+                    'Confirm both quotes use the same loan amount (home price minus down payment, not the home price).',
+                    'Confirm both quotes use the same term in years.',
+                    'Check whether each quote is principal-and-interest only or a full PITI figure.',
+                    'Ask whether PMI is included and when it is scheduled to end.',
+                    'Compare the APR, not just the headline interest rate - the APR folds in certain lender fees.',
+                ],
+            ],
+            [
+                'heading' => 'Let the calculator do the arithmetic',
+                'paragraphs' => [
+                    'The Mortgage Calculator on this site runs the exact formula above, shows a full year-by-year amortization schedule, and lets you add an extra monthly payment to see how many months sooner the loan is paid off. For a loan that is not tied to a home purchase - a car, personal or student loan - the Loan Calculator uses the same math without a down payment field.',
+                    'Both calculators run entirely in your browser, so the numbers you enter - loan amount, rate, term - are never sent to a server. That makes them a quick, private way to sanity-check a lender\'s pre-approval letter or compare two offers side by side before you commit to either one.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'What is the formula for a mortgage payment?', 'a' => 'M = P x r / (1 - (1 + r)^-n), where P is the loan amount, r is the annual interest rate divided by 12, and n is the loan term in years multiplied by 12. It gives principal and interest only.'],
+            ['q' => 'Why is my lender\'s quote higher than my own calculation?', 'a' => 'Your calculation likely covers principal and interest only. Lenders usually quote PITI - principal, interest, property tax and insurance - plus PMI if the down payment is under 20%, none of which follow the payment formula.'],
+            ['q' => 'Does paying a little extra each month really make a difference?', 'a' => 'Yes. Extra payments go straight to the principal and stop accruing interest for every month left on the loan, so even a modest extra amount paid consistently from early in the loan can cut years and a large amount of interest off a 30-year mortgage.'],
+        ],
+        'sources' => [
+            ['title' => 'Consumer Financial Protection Bureau, Buying a house: tools and resources', 'url' => 'https://www.consumerfinance.gov/owning-a-home/'],
+            ['title' => 'Consumer Financial Protection Bureau, What is amortization?', 'url' => 'https://www.consumerfinance.gov/ask-cfpb/what-is-amortization-and-how-could-it-affect-my-auto-loan-en-755/'],
+        ],
+    ],
 ];
