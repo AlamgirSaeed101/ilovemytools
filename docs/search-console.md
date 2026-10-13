@@ -6,6 +6,60 @@ real data; entries note when there isn't enough data yet rather than guessing.
 
 <!-- One entry per run, newest first -->
 
+## 2026-10-13
+
+**Search Console (last 28 days): 1,893 impressions, 0 clicks** across 852 query/country/page
+rows - the whole 28-day window had zero real clicks, not just one page. Top 10 queries by
+impressions:
+1. "bulk domain authority check" - 66 impr, position 5, `/domain-authority-checker`
+2. "wortzähler" - 50 impr, position 53, `/de/word-counter`
+3. "bulk domain authority checker" - 49 impr, position 8, `/domain-authority-checker`
+4. "wortzähler online" - 36 impr, position 17, `/de/word-counter`
+5. "bulk domain authority checker free" - 29 impr, position 33, `/domain-authority-checker`
+6. "was ist meine öffentliche ipv4 adresse" - 29 impr, position 68, `/de/what-is-my-ip`
+7. "wörter zähle" - 29 impr, position 8, `/de/word-counter`
+8. "meine öffentliche ip" - 27 impr, position 77, `/de/what-is-my-ip`
+9. "ilovemytools.store" (brand) - 24 impr, position 31
+10. "free bulk domain authority checker" - 23 impr, position 13, `/domain-authority-checker`
+
+Top countries by impressions: Germany 737, United States 279, Italy 240, France 153, Ukraine
+67, Spain 57, Brazil 56, Poland 45, Austria 36, Switzerland 36.
+
+Top pages by impressions: `/domain-authority-checker` 254 (pos 11), `/de/word-counter` 198
+(pos 46), `/de/what-is-my-ip` 187 (pos 52), `/de/image-compressor` 135 (pos 17). Pages at
+average position 5-20 with 15+ impressions: `/domain-authority-checker` (254, pos 11),
+`/de/image-compressor` (135, pos 17), `/de/merge-pdf` (50, pos 13), `/de/image-resizer` (27,
+pos 13), `/de/age-calculator` (26, pos 10), `/fr/age-calculator` (26, pos 5), `/es/avif-to-png`
+(23, pos 7), `/de/percentage-calculator` (22, pos 14), `/es/unlock-pdf` (20, pos 11),
+`/fr/image-resizer` (20, pos 13), `/de/jpg-to-pdf` (16, pos 11), `/de/delete-pdf-pages` (15,
+pos 11) - no single one stands out enough over a small, mixed-variant sample to justify a
+dedicated on-page change today.
+
+**`/domain-authority-checker` CTR anomaly (first flagged 9 Oct) persists and has grown:** 254
+impressions at average position 11 (several query variants at position 5-9), still **zero
+clicks**. Checked this run whether it could be a technical bug rather than a wording problem:
+`App\Support\Seo` defaults every tool page to `robots: index, follow` (confirmed in
+`app/Support/Seo.php`) and only sets `noindex` for 404-style pages, so this isn't a noindex or
+canonical misconfiguration. Could not fetch the live SERP/rendered snippet this run (outbound
+HTTPS to the live domain is blocked from this sandbox). Combined with the sitewide 0-click
+pattern across hundreds of near-duplicate "bulk domain authority check(er)..." phrasings at
+suspiciously good, stable positions, this reads more like automated rank-tracking queries
+(SEO tools checking where this page ranks) than real visitors who saw the result and chose not
+to click - not something an on-page wording change would fix. Leaving the backlog item open
+but not re-investigating further without real click or SERP-appearance data.
+
+**Analytics (last 7 days): 111 sessions.** By channel: Direct 69 (highest), Unassigned 14,
+Organic Search 11 (55% engaged), Referral 10, AI Assistant 6, Organic Social 1. By country:
+United States 51, Pakistan 13, Germany 12, United Kingdom 5, others 1-3 each. Tool events:
+`tool_use` 24, `tool_download` 1, `tool_copy` 1, `sign_up` 0.
+
+**Read as:** Organic Search sessions (11, 55% engaged) stayed in the same small-but-real range
+as 9 Oct (10 sessions, 60% engaged) - still too small to draw conclusions from, per rule 2.
+Semrush keyword lookups again returned `no_api_units` (same as every recent run), so kept using
+the existing bulk export for keyword data (see `docs/keywords/compound-interest-calculator.json`).
+No urgent SEO fix stood out beyond the domain-authority-checker question already covered above,
+so today's work is the next item in the Backlog (Compound Interest Calculator) instead.
+
 ## 2026-10-09
 
 **Search Console (last 28 days): 1,275 impressions, 0 clicks** across the sample pulled

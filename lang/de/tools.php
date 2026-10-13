@@ -2299,4 +2299,61 @@ return [
             ],
         ],
     ],
+
+    'compound-interest-calculator' => [
+        'name' => 'Zinseszinsrechner',
+        'title' => 'Zinseszinsrechner - Wachstumsdiagramm & Tabelle',
+        'description' => 'Kostenloser Zinseszinsrechner. Sieh, wie ein Startbetrag und monatliche Einzahlungen wachsen, mit jeder Zinsperiode, einem Diagramm und einer Tabelle.',
+        'h1' => 'Zinseszinsrechner',
+        'tagline' => 'Sieh, wie ein Startbetrag und monatliche Einzahlungen mit der Zeit wachsen, mit einem Diagramm und einer Tabelle Jahr für Jahr.',
+        'keywords' => [
+            'zinseszinsrechner',
+            'zinseszinsrechner mit monatlicher einzahlung',
+            'anlagewachstum rechner',
+            'zinsrechner',
+            'täglicher zinseszinsrechner',
+        ],
+        'intro' => 'Zinseszins ist Zins, der sowohl auf dein ursprüngliches Geld als auch auf die bereits verdienten Zinsen gezahlt wird, sodass ein Guthaben umso schneller wächst, je länger es verzinst wird. Gib einen Startbetrag, einen jährlichen Zinssatz, die Anzahl der Jahre und die Häufigkeit der Verzinsung ein und füge optional eine monatliche Einzahlung hinzu. Der Rechner zeigt das Endguthaben, die Summe deiner Einzahlungen, die insgesamt verdienten Zinsen, ein Wachstumsdiagramm und eine Tabelle Jahr für Jahr.',
+        'steps' => [
+            'Gib einen Startbetrag ein und wähle eine Währung.',
+            'Gib den jährlichen Zinssatz, die Anzahl der Jahre und die Häufigkeit der Verzinsung ein (jährlich, halbjährlich, vierteljährlich, monatlich oder täglich).',
+            'Trage optional eine monatliche Einzahlung ein, um zu sehen, wie regelmäßige Einzahlungen das Wachstum verstärken.',
+            'Lies das Endguthaben, die Summe der Einzahlungen und die insgesamt verdienten Zinsen ab und öffne die Tabelle Jahr für Jahr für die vollständige Aufschlüsselung.',
+        ],
+        'features' => [
+            'Endguthaben, Summe der Einzahlungen und insgesamt verdiente Zinsen',
+            'Wachstumsdiagramm, das Einzahlungen im Vergleich zu verdienten Zinsen zeigt',
+            'Jede Zinsperiode: jährlich, halbjährlich, vierteljährlich, monatlich oder täglich',
+            'Optionale monatliche Einzahlungen zusätzlich zu einem Startbetrag',
+            'Vollständige Guthabentabelle Jahr für Jahr',
+            'Läuft komplett in deinem Browser - nichts von dem, was du eingibst, wird irgendwohin gesendet',
+        ],
+        'content' => [
+            [
+                'heading' => 'Wie wird Zinseszins berechnet?',
+                'body' => 'Jedes Mal, wenn Zinsen verzinst werden, werden sie dem Guthaben hinzugefügt, und die nächste Zinsrunde wird auf diesen größeren Betrag berechnet, nicht nur auf das ursprüngliche Geld. Je häufiger Zinsen verzinst werden (zum Beispiel täglich statt jährlich) und je länger das Geld wachsen darf, desto größer ist der Effekt, weil jede Zinsperiode etwas mehr „Zins auf Zins" enthält als die vorherige.',
+            ],
+            [
+                'heading' => 'Warum machen monatliche Einzahlungen einen so großen Unterschied?',
+                'body' => 'Jede Einzahlung, die du hinzufügst, beginnt ab dem Tag der Einzahlung zu verzinsen, sodass Geld, das früh in der Laufzeit eingezahlt wird, viel länger wachsen kann als Geld, das kurz vor Ende eingezahlt wird. Über viele Jahre können gleichmäßige monatliche Einzahlungen mehr zum Endguthaben beitragen als der Startbetrag selbst.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Welche Zinsperiode sollte ich wählen?', 'a' => 'Nutze die Angabe deiner Bank, Anleihe oder deines Anlagekontos - Sparkonten werden oft täglich oder monatlich verzinst, während manche Anleihen halbjährlich oder jährlich verzinst werden. Wenn du unsicher bist, ist monatlich ein gängiger Standard, und der Unterschied zwischen den Perioden ist meist klein im Vergleich zum Zinssatz selbst.'],
+            ['q' => 'Ist das eine garantierte Rendite?', 'a' => 'Nein. Dieser Rechner projiziert das Wachstum mit einem festen Zinssatz, den du wählst. Tatsächliche Spar- und Anlagerenditen schwanken von Jahr zu Jahr, und Anlagen können an Wert verlieren - betrachte das Ergebnis also als Schätzung, nicht als Versprechen.'],
+            ['q' => 'Berücksichtigt das Steuern oder Inflation?', 'a' => 'Nein. Das Ergebnis ist das Rohwachstum deines Geldes vor etwaigen Steuern auf Zinsen oder Anlagegewinne und ohne Anpassung an die Inflation. Deine tatsächliche Kaufkraft in der Zukunft wird niedriger sein als das hier gezeigte Rohguthaben.'],
+            ['q' => 'Was ist der Unterschied zwischen diesem Rechner und dem Kreditrechner?', 'a' => 'Dieses Tool lässt ein Guthaben wachsen, wobei die Zinsen für dich arbeiten (Ersparnisse und Anlagen). Der Kreditrechner zeigt ein Guthaben, das mit der Zeit abnimmt, wobei die Zinsen gegen dich arbeiten (Kredite und Baufinanzierungen).'],
+            ['q' => 'Kann ich das für die Altersvorsorge nutzen?', 'a' => 'Ja, es funktioniert für jeden Einmalbetrag plus regelmäßige Einzahlungen - ein Sparkonto, ein Anlagekonto oder ein Altersvorsorgekonto. Verwende einfach eine realistische geschätzte Jahresrendite und denke daran, dass es sich um eine Projektion handelt, keine Garantie.'],
+        ],
+        'table' => [
+            'caption' => 'Wie 10.000 $ bei 6 % Jahreszins, monatlich verzinst, ohne weitere Einzahlungen wachsen',
+            'headers' => ['Jahre', 'Guthaben', 'Verdiente Zinsen'],
+            'rows' => [
+                ['5 Jahre', '$13,488.50', '$3,488.50'],
+                ['10 Jahre', '$18,193.97', '$8,193.97'],
+                ['20 Jahre', '$33,102.04', '$23,102.04'],
+                ['30 Jahre', '$60,225.75', '$50,225.75'],
+            ],
+        ],
+    ],
 ];

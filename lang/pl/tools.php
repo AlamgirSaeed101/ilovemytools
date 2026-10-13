@@ -2181,4 +2181,61 @@ return [
             ],
         ],
     ],
+
+    'compound-interest-calculator' => [
+        'name' => 'Kalkulator odsetek składanych',
+        'title' => 'Kalkulator Odsetek Składanych - Wykres i Tabela',
+        'description' => 'Darmowy kalkulator odsetek składanych. Sprawdź, jak kwota początkowa i wpłaty miesięczne rosną w czasie, z wykresem i tabelą rok po roku.',
+        'h1' => 'Kalkulator odsetek składanych',
+        'tagline' => 'Sprawdź, jak kwota początkowa i miesięczne wpłaty rosną w czasie, z wykresem i tabelą rok po roku.',
+        'keywords' => [
+            'kalkulator odsetek składanych',
+            'kalkulator odsetek składanych z miesięcznymi wpłatami',
+            'kalkulator wzrostu inwestycji',
+            'kalkulator odsetek',
+            'kalkulator dziennych odsetek składanych',
+        ],
+        'intro' => 'Odsetki składane to odsetki naliczane zarówno od Twoich pierwotnych pieniędzy, jak i od odsetek, które już wygenerowały, więc saldo rośnie szybciej, im dłużej pozostaje kapitalizowane. Podaj kwotę początkową, roczną stopę odsetek, liczbę lat wzrostu i częstotliwość kapitalizacji odsetek, a opcjonalnie dodaj miesięczną wpłatę. Kalkulator pokazuje saldo końcowe, łączną sumę wpłat, łączne zarobione odsetki, wykres wzrostu i tabelę rok po roku.',
+        'steps' => [
+            'Podaj kwotę początkową i wybierz walutę.',
+            'Podaj roczną stopę odsetek, liczbę lat i częstotliwość kapitalizacji (rocznie, półrocznie, kwartalnie, miesięcznie lub dziennie).',
+            'Opcjonalnie podaj miesięczną wpłatę, aby zobaczyć, jak regularne depozyty zwiększają wzrost.',
+            'Sprawdź saldo końcowe, łączną sumę wpłat i łączne zarobione odsetki, a następnie otwórz tabelę rok po roku, aby zobaczyć pełny podział.',
+        ],
+        'features' => [
+            'Saldo końcowe, łączna suma wpłat i łączne zarobione odsetki',
+            'Wykres wzrostu pokazujący wpłaty w porównaniu z zarobionymi odsetkami',
+            'Każda częstotliwość kapitalizacji: rocznie, półrocznie, kwartalnie, miesięcznie lub dziennie',
+            'Opcjonalne miesięczne wpłaty oprócz kwoty początkowej',
+            'Pełna tabela salda rok po roku',
+            'Działa w całości w przeglądarce - nic, co wpiszesz, nigdzie nie jest wysyłane',
+        ],
+        'content' => [
+            [
+                'heading' => 'Jak obliczane są odsetki składane',
+                'body' => 'Każdy raz, gdy odsetki są kapitalizowane, zostają dodane do salda, a kolejna runda odsetek jest naliczana od tej większej kwoty, nie tylko od pierwotnych pieniędzy. Im częściej odsetki są kapitalizowane (na przykład dziennie, a nie rocznie) i im dłużej pieniądze mogą rosnąć, tym większy jest efekt, ponieważ każdy okres kapitalizacji zawiera trochę więcej "odsetek od odsetek" niż poprzedni.',
+            ],
+            [
+                'heading' => 'Dlaczego miesięczne wpłaty robią taką różnicę',
+                'body' => 'Każda dodana wpłata zaczyna być kapitalizowana od dnia jej wpłacenia, więc pieniądze wpłacone na początku okresu mają znacznie więcej czasu na wzrost niż te wpłacone bliżej końca. Przez wiele lat regularne miesięczne wpłaty mogą dodać do salda końcowego więcej niż sama kwota początkowa.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Jaką częstotliwość kapitalizacji powinienem wybrać?', 'a' => 'Użyj tej, którą podaje Twój bank, obligacja lub konto inwestycyjne - konta oszczędnościowe są często kapitalizowane dziennie lub miesięcznie, a niektóre obligacje kapitalizują się półrocznie lub rocznie. Jeśli nie jesteś pewien, miesięczna jest typowym domyślnym wyborem, a różnica między częstotliwościami jest zwykle niewielka w porównaniu z samą stopą odsetek.'],
+            ['q' => 'Czy to gwarantowany zwrot?', 'a' => 'Nie. Ten kalkulator prognozuje wzrost przy stałej stopie odsetek, którą wybierasz. Rzeczywiste zwroty z oszczędności i inwestycji zmieniają się z roku na rok, a inwestycje mogą tracić na wartości, więc traktuj wynik jako szacunek, a nie obietnicę.'],
+            ['q' => 'Czy uwzględnia podatki lub inflację?', 'a' => 'Nie. Wynik to surowy wzrost Twoich pieniędzy przed opodatkowaniem odsetek lub zysków inwestycyjnych i bez korekty o inflację. Twoja rzeczywista siła nabywcza w przyszłości będzie niższa niż surowe saldo pokazane tutaj.'],
+            ['q' => 'Jaka jest różnica między tym a Kalkulatorem kredytu?', 'a' => 'To narzędzie zwiększa saldo, w którym odsetki działają na Twoją korzyść (oszczędności i inwestycje). Kalkulator kredytu pokazuje saldo zmniejszające się w czasie, w którym odsetki działają na Twoją niekorzyść (kredyty i hipoteki).'],
+            ['q' => 'Czy mogę go użyć do oszczędności na emeryturę?', 'a' => 'Tak, działa dla każdej jednorazowej kwoty wraz z regularnymi wpłatami - konta oszczędnościowego, konta inwestycyjnego lub konta emerytalnego. Po prostu użyj realistycznego szacowanego rocznego zwrotu i pamiętaj, że to prognoza, a nie gwarancja.'],
+        ],
+        'table' => [
+            'caption' => 'Jak 10 000 $ rośnie przy 6% rocznych odsetek, kapitalizowanych miesięcznie, bez dalszych wpłat',
+            'headers' => ['Lata', 'Saldo', 'Zarobione odsetki'],
+            'rows' => [
+                ['5 lat', '$13,488.50', '$3,488.50'],
+                ['10 lat', '$18,193.97', '$8,193.97'],
+                ['20 lat', '$33,102.04', '$23,102.04'],
+                ['30 lat', '$60,225.75', '$50,225.75'],
+            ],
+        ],
+    ],
 ];

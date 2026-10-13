@@ -2194,4 +2194,61 @@ return [
             ],
         ],
     ],
+
+    'compound-interest-calculator' => [
+        'name' => 'Calculadora de interés compuesto',
+        'title' => 'Calculadora de Interés Compuesto - Gráfico y Tabla',
+        'description' => 'Calculadora de interés compuesto gratuita. Descubre cómo crecen un importe inicial y las aportaciones mensuales, con cualquier frecuencia, gráfico y tabla.',
+        'h1' => 'Calculadora de interés compuesto',
+        'tagline' => 'Descubre cómo crece un importe inicial y las aportaciones mensuales con el tiempo, con un gráfico y una tabla año por año.',
+        'keywords' => [
+            'calculadora de interés compuesto',
+            'calculadora de interés compuesto con aportaciones mensuales',
+            'calculadora de crecimiento de inversión',
+            'calculadora de interés',
+            'calculadora de interés compuesto diario',
+        ],
+        'intro' => 'El interés compuesto es el interés que se gana tanto sobre tu dinero original como sobre el interés que ya ha generado, así que un saldo crece más rápido cuanto más tiempo se deja capitalizar. Introduce un importe inicial, un tipo de interés anual, cuántos años quieres que crezca y con qué frecuencia se capitaliza el interés, y opcionalmente añade una aportación mensual. La calculadora muestra el saldo final, el total aportado, el interés total generado, un gráfico de crecimiento y una tabla año por año.',
+        'steps' => [
+            'Introduce un importe inicial y elige una moneda.',
+            'Introduce el tipo de interés anual, el número de años y la frecuencia de capitalización (anual, semestral, trimestral, mensual o diaria).',
+            'Opcionalmente, introduce una aportación mensual para ver cómo los depósitos periódicos suman al crecimiento.',
+            'Consulta el saldo final, el total aportado y el interés total generado, y abre la tabla año por año para ver el desglose completo.',
+        ],
+        'features' => [
+            'Saldo final, total aportado e interés total generado',
+            'Gráfico de crecimiento que muestra las aportaciones frente al interés generado',
+            'Cualquier frecuencia de capitalización: anual, semestral, trimestral, mensual o diaria',
+            'Aportaciones mensuales opcionales además de un importe inicial',
+            'Tabla completa del saldo año por año',
+            'Funciona por completo en tu navegador: nada de lo que introduces se envía a ningún sitio',
+        ],
+        'content' => [
+            [
+                'heading' => '¿Cómo se calcula el interés compuesto?',
+                'body' => 'Cada vez que el interés se capitaliza, se añade al saldo, y la siguiente ronda de interés se genera sobre esa cantidad mayor, no solo sobre el dinero original. Cuanto más a menudo se capitaliza el interés (a diario en lugar de anualmente, por ejemplo) y cuanto más tiempo se deja crecer el dinero, mayor es el efecto, porque cada periodo de capitalización incluye un poco más de interés sobre interés que el anterior.',
+            ],
+            [
+                'heading' => '¿Por qué las aportaciones mensuales marcan tanta diferencia?',
+                'body' => 'Cada aportación que añades empieza a capitalizarse desde el día en que se ingresa, así que el dinero aportado al principio del plazo tiene mucho más tiempo para crecer que el aportado cerca del final. A lo largo de muchos años, unas aportaciones mensuales constantes pueden sumar más al saldo final que el propio importe inicial.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => '¿Qué frecuencia de capitalización debería elegir?', 'a' => 'Usa la que indique tu banco, bono o cuenta de inversión: las cuentas de ahorro suelen capitalizarse a diario o mensualmente, mientras que algunos bonos lo hacen semestral o anualmente. Si no estás seguro, mensual es una opción habitual y la diferencia entre frecuencias suele ser pequeña comparada con el propio tipo de interés.'],
+            ['q' => '¿Es esto un rendimiento garantizado?', 'a' => 'No. Esta calculadora proyecta el crecimiento con un tipo de interés fijo que tú eliges. Los rendimientos reales de ahorro e inversión varían de un año a otro, y las inversiones pueden perder valor, así que trata el resultado como una estimación, no como una promesa.'],
+            ['q' => '¿Tiene en cuenta los impuestos o la inflación?', 'a' => 'No. El resultado es el crecimiento bruto de tu dinero antes de cualquier impuesto sobre los intereses o las ganancias de inversión, y sin ajustar por inflación. Tu poder de compra real en el futuro será menor que el saldo bruto que se muestra aquí.'],
+            ['q' => '¿Cuál es la diferencia entre esta calculadora y la Calculadora de préstamo?', 'a' => 'Esta herramienta hace crecer un saldo con el interés trabajando a tu favor (ahorros e inversiones). La Calculadora de préstamo muestra un saldo que se reduce con el tiempo con el interés trabajando en tu contra (préstamos e hipotecas).'],
+            ['q' => '¿Puedo usarla para el ahorro de jubilación?', 'a' => 'Sí, funciona para cualquier importe único más aportaciones periódicas: una cuenta de ahorro, una cuenta de inversión o una cuenta de jubilación. Solo usa un rendimiento anual estimado realista y recuerda que es una proyección, no una garantía.'],
+        ],
+        'table' => [
+            'caption' => 'Cómo crecen $10,000 al 6% de interés anual, capitalizado mensualmente, sin aportaciones adicionales',
+            'headers' => ['Años', 'Saldo', 'Interés generado'],
+            'rows' => [
+                ['5 años', '$13,488.50', '$3,488.50'],
+                ['10 años', '$18,193.97', '$8,193.97'],
+                ['20 años', '$33,102.04', '$23,102.04'],
+                ['30 años', '$60,225.75', '$50,225.75'],
+            ],
+        ],
+    ],
 ];

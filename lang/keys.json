@@ -921,6 +921,12 @@
     ]
   },
   {
+    "key": "Annually",
+    "files": [
+      "resources/js/tools/CompoundInterestCalculator.jsx"
+    ]
+  },
+  {
     "key": "Any file · max 10 MB · images get a ready-to-use data URL",
     "files": [
       "resources/js/tools/Base64Tool.jsx"
@@ -1010,6 +1016,12 @@
     "key": "Background removed",
     "files": [
       "resources/js/tools/BackgroundRemover.jsx"
+    ]
+  },
+  {
+    "key": "Balance",
+    "files": [
+      "resources/js/tools/CompoundInterestCalculator.jsx"
     ]
   },
   {
@@ -1162,6 +1174,12 @@
     ]
   },
   {
+    "key": "Chart of balance growth from {start} to {end} over {years} years.",
+    "files": [
+      "resources/js/tools/CompoundInterestCalculator.jsx"
+    ]
+  },
+  {
     "key": "Check authority",
     "files": [
       "resources/js/tools/DomainAuthority.jsx"
@@ -1251,6 +1269,12 @@
       "resources/js/tools/SignPdf.jsx",
       "resources/js/tools/SplitPdf.jsx",
       "resources/js/tools/UnlockPdf.jsx"
+    ]
+  },
+  {
+    "key": "Choose how often interest compounds.",
+    "files": [
+      "resources/js/lib/compoundInterest.js"
     ]
   },
   {
@@ -1355,6 +1379,12 @@
     "key": "Complex words (3+ syllables)",
     "files": [
       "resources/js/tools/ReadabilityChecker.jsx"
+    ]
+  },
+  {
+    "key": "Compound frequency",
+    "files": [
+      "resources/js/tools/CompoundInterestCalculator.jsx"
     ]
   },
   {
@@ -1701,6 +1731,7 @@
   {
     "key": "Currency",
     "files": [
+      "resources/js/tools/CompoundInterestCalculator.jsx",
       "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
     ]
@@ -1728,6 +1759,12 @@
     "key": "Customise colours, size and quality",
     "files": [
       "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Daily",
+    "files": [
+      "resources/js/tools/CompoundInterestCalculator.jsx"
     ]
   },
   {
@@ -2379,9 +2416,41 @@
     ]
   },
   {
+    "key": "Enter a monthly contribution of 0 or more.",
+    "files": [
+      "resources/js/lib/compoundInterest.js",
+      "resources/js/tools/CompoundInterestCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Enter a number of years between 1 and 50.",
+    "files": [
+      "resources/js/lib/compoundInterest.js",
+      "resources/js/tools/CompoundInterestCalculator.jsx"
+    ]
+  },
+  {
     "key": "Enter a percentage greater than 0.",
     "files": [
       "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Enter a starting amount of 0 or more.",
+    "files": [
+      "resources/js/lib/compoundInterest.js"
+    ]
+  },
+  {
+    "key": "Enter a starting amount or a monthly contribution greater than 0.",
+    "files": [
+      "resources/js/lib/compoundInterest.js"
+    ]
+  },
+  {
+    "key": "Enter a starting amount, interest rate and number of years to see how your money grows.",
+    "files": [
+      "resources/js/tools/CompoundInterestCalculator.jsx"
     ]
   },
   {
@@ -2432,6 +2501,7 @@
   {
     "key": "Enter an interest rate between 0% and 100%.",
     "files": [
+      "resources/js/lib/compoundInterest.js",
       "resources/js/lib/loan.js",
       "resources/js/lib/mortgage.js"
     ]
@@ -2676,6 +2746,12 @@
     "key": "Filter by category",
     "files": [
       "resources/js/pages/Home.jsx"
+    ]
+  },
+  {
+    "key": "Final balance",
+    "files": [
+      "resources/js/tools/CompoundInterestCalculator.jsx"
     ]
   },
   {
@@ -3253,6 +3329,12 @@
     ]
   },
   {
+    "key": "Interest earned",
+    "files": [
+      "resources/js/tools/CompoundInterestCalculator.jsx"
+    ]
+  },
+  {
     "key": "Interest paid",
     "files": [
       "resources/js/tools/LoanCalculator.jsx",
@@ -3262,6 +3344,7 @@
   {
     "key": "Interest rate (annual %)",
     "files": [
+      "resources/js/tools/CompoundInterestCalculator.jsx",
       "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
     ]
@@ -3706,6 +3789,18 @@
     ]
   },
   {
+    "key": "Monthly",
+    "files": [
+      "resources/js/tools/CompoundInterestCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Monthly contribution (optional)",
+    "files": [
+      "resources/js/tools/CompoundInterestCalculator.jsx"
+    ]
+  },
+  {
     "key": "Monthly payment",
     "files": [
       "resources/js/tools/LoanCalculator.jsx"
@@ -4010,6 +4105,12 @@
     "key": "Number of people",
     "files": [
       "resources/js/tools/TipCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Number of years",
+    "files": [
+      "resources/js/tools/CompoundInterestCalculator.jsx"
     ]
   },
   {
@@ -4743,6 +4844,12 @@
     ]
   },
   {
+    "key": "Quarterly",
+    "files": [
+      "resources/js/tools/CompoundInterestCalculator.jsx"
+    ]
+  },
+  {
     "key": "Quartile (25%)",
     "files": [
       "resources/js/tools/QrCodeGenerator.jsx"
@@ -5353,6 +5460,12 @@
     ]
   },
   {
+    "key": "Semi-annually",
+    "files": [
+      "resources/js/tools/CompoundInterestCalculator.jsx"
+    ]
+  },
+  {
     "key": "Send privacy or legal requests",
     "files": [
       "resources/js/pages/InfoPages.jsx"
@@ -5408,6 +5521,12 @@
     "files": [
       "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Show the year-by-year balance",
+    "files": [
+      "resources/js/tools/CompoundInterestCalculator.jsx"
     ]
   },
   {
@@ -5668,6 +5787,12 @@
     "key": "Start typing or paste your text here…",
     "files": [
       "resources/js/tools/WordCounter.jsx"
+    ]
+  },
+  {
+    "key": "Starting amount",
+    "files": [
+      "resources/js/tools/CompoundInterestCalculator.jsx"
     ]
   },
   {
@@ -6123,6 +6248,12 @@
     ]
   },
   {
+    "key": "This is a projection based on a fixed interest rate. Real investment returns vary year to year and are not guaranteed.",
+    "files": [
+      "resources/js/tools/CompoundInterestCalculator.jsx"
+    ]
+  },
+  {
     "key": "This is not valid Base64: it contains characters outside A-Z, a-z, 0-9, +, / and =.",
     "files": [
       "resources/js/lib/base64.js"
@@ -6353,6 +6484,12 @@
     ]
   },
   {
+    "key": "Total contributed",
+    "files": [
+      "resources/js/tools/CompoundInterestCalculator.jsx"
+    ]
+  },
+  {
     "key": "Total cost (price + interest)",
     "files": [
       "resources/js/tools/MortgageCalculator.jsx"
@@ -6381,6 +6518,12 @@
     "files": [
       "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Total interest earned",
+    "files": [
+      "resources/js/tools/CompoundInterestCalculator.jsx"
     ]
   },
   {
@@ -6875,8 +7018,15 @@
   {
     "key": "Year",
     "files": [
+      "resources/js/tools/CompoundInterestCalculator.jsx",
       "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Year-by-year balance",
+    "files": [
+      "resources/js/tools/CompoundInterestCalculator.jsx"
     ]
   },
   {

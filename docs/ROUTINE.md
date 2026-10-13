@@ -64,7 +64,7 @@ Finance topics have much higher ad prices in the US/UK/EU than file tools. Befor
 volume and CPC in Semrush (`us`, `uk`, `de`) and save the data in `docs/keywords/`.
 - [x] **Mortgage Calculator** `/mortgage-calculator` (monthly payment, amortization table, extra payments; US and UK wording).
 - [x] **Loan Calculator** `/loan-calculator` (payment, total interest, amortization schedule).
-- [ ] **Compound Interest Calculator** `/compound-interest-calculator` (monthly contributions, chart, table).
+- [x] **Compound Interest Calculator** `/compound-interest-calculator` (monthly contributions, chart, table).
 - [ ] **VAT Calculator** `/vat-calculator` (add/remove VAT; UK and EU country rates from official sources, dated).
 - [ ] **Salary to Hourly Calculator** `/salary-calculator` (hourly, weekly, monthly, yearly; no tax estimates).
 
@@ -83,7 +83,7 @@ Ranked by real US search volume and keyword difficulty (KD 0-100, lower is easie
 - [ ] **Barcode Generator** `/barcode-generator` (JsBarcode: CODE128, EAN-13, UPC-A, CODE39; PNG/SVG). *823K (KD 60).*
 - [ ] **HEIC to JPG** `/heic-to-jpg` (heic2any, batch, ZIP). *246K (KD 71).*
 - [x] **Compress PDF** `/compress-pdf` (object-stream re-save + optional re-render at chosen quality; before/after size; warn that strong mode rasterises text). *110K "compress pdf" (KD 74) + 74K "pdf compressor" (KD 67).*
-- [ ] **Compound Interest Calculator** `/compound-interest-calculator` (principal, rate, years, compounding, monthly contributions, yearly table). *1.22M (KD 66).*
+- [x] **Compound Interest Calculator** `/compound-interest-calculator` (principal, rate, years, compounding, monthly contributions, yearly table). *1.22M (KD 66).* Done 13 Oct 2026 - see the High-revenue tools item above.
 - [ ] **Date Calculator** `/date-calculator` (days between dates, add/subtract days, business days). *368K (KD 63) + "days between dates" 90.5K.*
 - [ ] **TDEE Calculator** `/tdee-calculator` (Mifflin-St Jeor with activity levels; cite the formula's source; not medical advice). *368K (KD 57).*
 - [ ] **Invoice Generator** `/invoice-generator` (form, live preview, PDF via pdf-lib, data only in memory). *673K (KD 63).*
@@ -133,3 +133,4 @@ Older entries: `docs/routine-log.md` (do NOT read it unless a task needs history
 Each entry is ONE line of at most 300 characters: date · what changed · URLs. Details belong in the commit message.
 
 - 2026-10-09: New Loan Calculator at ilovemytools.store/loan-calculator (10 languages): payment, interest, amortization schedule. Organic Search sessions: 10 this week (first time >1). Flagged a 0-click/good-position /domain-authority-checker anomaly for a future run.
+- 2026-10-13: New Compound Interest Calculator at ilovemytools.store/compound-interest-calculator (10 languages): contributions, any compounding frequency, growth chart, table. Checked /domain-authority-checker CTR anomaly again (still 0 clicks); ruled out a noindex bug, likely rank-tracker traffic.

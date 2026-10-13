@@ -817,6 +817,35 @@ test.describe('Calculators', () => {
         await page.getByLabel('Loan amount').fill('0');
         await expect(page.getByRole('alert')).toContainText('loan amount');
     });
+
+    test('compound interest calculator computes growth with contributions and compounding frequency', async ({ page }) => {
+        await openTool(page, 'compound-interest-calculator');
+        const ciStat = (label) => page.locator('.stat').filter({ has: page.locator('.stat__label', { hasText: label }) }).locator('.stat__value');
+
+        // Defaults: $10,000 starting amount, 6% interest, 20 years, monthly compounding, $200/month.
+        await expect(ciStat('Final balance')).toHaveText('$125,510.22');
+        await expect(ciStat('Total contributed')).toHaveText('$48,000.00');
+        await expect(ciStat('Total interest earned')).toHaveText('$67,510.22');
+
+        await page.getByLabel('Number of years').fill('10');
+        await expect(ciStat('Final balance')).toHaveText('$50,969.84');
+
+        await page.getByLabel('Number of years').fill('20');
+        await page.getByLabel('Compound frequency').selectOption('365');
+        await expect(ciStat('Final balance')).toHaveText('$125,989.48');
+
+        await page.getByLabel('Compound frequency').selectOption('1');
+        await expect(ciStat('Final balance')).toHaveText('$120,356.77');
+
+        await page.getByLabel('Compound frequency').selectOption('12');
+        await page.getByText('Show the year-by-year balance').click();
+        const table = page.getByTestId('compound-interest-table');
+        await expect(table.locator('tbody tr').first().locator('th')).toHaveText('1');
+
+        await page.getByLabel('Monthly contribution (optional)').fill('0');
+        await page.getByLabel('Starting amount').fill('0');
+        await expect(page.getByRole('alert')).toContainText('starting amount or a monthly contribution');
+    });
 });
 
 test.describe('Developer tools', () => {

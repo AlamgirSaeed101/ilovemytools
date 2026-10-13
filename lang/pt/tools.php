@@ -2299,4 +2299,61 @@ return [
             ],
         ],
     ],
+
+    'compound-interest-calculator' => [
+        'name' => 'Calculadora de juros compostos',
+        'title' => 'Calculadora de Juros Compostos - Gráfico e Tabela',
+        'description' => 'Calculadora de juros compostos gratuita. Veja como um valor inicial e os aportes mensais crescem, com qualquer capitalização, gráfico e tabela.',
+        'h1' => 'Calculadora de juros compostos',
+        'tagline' => 'Veja como um valor inicial e os aportes mensais crescem com o tempo, com um gráfico e uma tabela ano a ano.',
+        'keywords' => [
+            'calculadora de juros compostos',
+            'calculadora de juros compostos com aportes mensais',
+            'calculadora de crescimento de investimento',
+            'calculadora de juros',
+            'calculadora de juros compostos diários',
+        ],
+        'intro' => 'Juros compostos são os juros ganhos tanto sobre o seu dinheiro original quanto sobre os juros que ele já gerou, então um saldo cresce mais rápido quanto mais tempo for deixado para capitalizar. Informe um valor inicial, uma taxa de juros anual, quantos anos ele vai crescer e com que frequência os juros capitalizam, e, opcionalmente, adicione um aporte mensal. A calculadora mostra o saldo final, o total aportado, os juros totais ganhos, um gráfico de crescimento e uma tabela ano a ano.',
+        'steps' => [
+            'Informe um valor inicial e escolha uma moeda.',
+            'Informe a taxa de juros anual, o número de anos e a frequência de capitalização (anual, semestral, trimestral, mensal ou diária).',
+            'Opcionalmente, informe um aporte mensal para ver como os depósitos regulares aumentam o crescimento.',
+            'Veja o saldo final, o total aportado e os juros totais ganhos, e abra a tabela ano a ano para o detalhamento completo.',
+        ],
+        'features' => [
+            'Saldo final, total aportado e juros totais ganhos',
+            'Gráfico de crescimento mostrando os aportes em comparação com os juros ganhos',
+            'Qualquer frequência de capitalização: anual, semestral, trimestral, mensal ou diária',
+            'Aportes mensais opcionais além de um valor inicial',
+            'Tabela completa do saldo ano a ano',
+            'Funciona totalmente no seu navegador - nada do que você digita é enviado a lugar nenhum',
+        ],
+        'content' => [
+            [
+                'heading' => 'Como os juros compostos são calculados?',
+                'body' => 'Cada vez que os juros capitalizam, eles são somados ao saldo, e a próxima rodada de juros é calculada sobre esse valor maior, não apenas sobre o dinheiro original. Quanto mais vezes os juros capitalizam (diariamente em vez de anualmente, por exemplo) e quanto mais tempo o dinheiro é deixado para crescer, maior é o efeito, porque cada período de capitalização inclui um pouco mais de "juros sobre juros" do que o anterior.',
+            ],
+            [
+                'heading' => 'Por que os aportes mensais fazem tanta diferença?',
+                'body' => 'Cada aporte que você adiciona começa a capitalizar a partir do dia em que entra, então o dinheiro aportado no início do prazo tem muito mais tempo para crescer do que o aportado perto do fim. Ao longo de muitos anos, aportes mensais constantes podem somar mais ao saldo final do que o próprio valor inicial.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Qual frequência de capitalização devo escolher?', 'a' => 'Use a que o seu banco, título ou conta de investimento indicar - contas de poupança costumam capitalizar diária ou mensalmente, enquanto alguns títulos capitalizam semestral ou anualmente. Se não tiver certeza, mensal é um padrão comum, e a diferença entre as frequências costuma ser pequena comparada à própria taxa de juros.'],
+            ['q' => 'Isso é um retorno garantido?', 'a' => 'Não. Esta calculadora projeta o crescimento com uma taxa de juros fixa que você escolhe. Os retornos reais de poupança e investimento variam de ano para ano, e investimentos podem perder valor, então trate o resultado como uma estimativa, não uma promessa.'],
+            ['q' => 'Isso considera impostos ou inflação?', 'a' => 'Não. O resultado é o crescimento bruto do seu dinheiro antes de qualquer imposto sobre os juros ou ganhos de investimento, e sem ajuste pela inflação. Seu poder de compra real no futuro será menor do que o saldo bruto mostrado aqui.'],
+            ['q' => 'Qual é a diferença entre esta calculadora e a Calculadora de Empréstimo?', 'a' => 'Esta ferramenta faz um saldo crescer com os juros trabalhando a seu favor (poupança e investimentos). A Calculadora de Empréstimo mostra um saldo diminuindo com o tempo, com os juros trabalhando contra você (empréstimos e financiamentos).'],
+            ['q' => 'Posso usar isso para a poupança de aposentadoria?', 'a' => 'Sim, funciona para qualquer valor único mais aportes regulares - uma conta de poupança, uma conta de investimento ou uma conta de aposentadoria. Basta usar um retorno anual estimado realista e lembrar que é uma projeção, não uma garantia.'],
+        ],
+        'table' => [
+            'caption' => 'Como $10,000 crescem a 6% de juros anuais, capitalizados mensalmente, sem novos aportes',
+            'headers' => ['Anos', 'Saldo', 'Juros ganhos'],
+            'rows' => [
+                ['5 anos', '$13,488.50', '$3,488.50'],
+                ['10 anos', '$18,193.97', '$8,193.97'],
+                ['20 anos', '$33,102.04', '$23,102.04'],
+                ['30 anos', '$60,225.75', '$50,225.75'],
+            ],
+        ],
+    ],
 ];

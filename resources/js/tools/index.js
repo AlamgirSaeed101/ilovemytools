@@ -50,6 +50,7 @@ const tools = {
     'tip-calculator': lazy(() => import('./TipCalculator.jsx')),
     'mortgage-calculator': lazy(() => import('./MortgageCalculator.jsx')),
     'loan-calculator': lazy(() => import('./LoanCalculator.jsx')),
+    'compound-interest-calculator': lazy(() => import('./CompoundInterestCalculator.jsx')),
     'json-formatter': lazy(() => import('./JsonFormatter.jsx')),
     'base64-encoder-decoder': lazy(() => import('./Base64Tool.jsx')),
     'what-is-my-ip': lazy(() => import('./WhatIsMyIp.jsx')),

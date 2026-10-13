@@ -2374,6 +2374,15 @@ fieldset.grid-2 .check:has(input:checked) {
 }
 
 /* Comparison tables on category pages (scroll sideways on narrow phones). */
+.chart {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+}
+
 .table-wrap {
     overflow-x: auto;
     margin: 0.5rem 0 1.5rem;
