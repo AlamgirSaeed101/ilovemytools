@@ -32,3 +32,6 @@ yarn-error.log
 /database/*.sqlite-journal
 /database/*.sqlite.bak-*
 playwright.local.config.js
+
+# Full report from scripts/seo-health.mjs
+/storage/seo-health.json
