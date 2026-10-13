@@ -14,9 +14,9 @@ Read Parts 1-2 of `TOOLS_SPEC_PROMPT.md` (architecture, SEO rules: lines 1-87) b
 1. **Start with CI.** Run `gh run list --limit 3`. If the latest run on `main` failed, fixing it is today's task: open the log (`gh run view <id> --log-failed`), fix the cause, and push. Nothing else until CI is green.
 2. **One item per run.** One new tool, or one SEO item. Small, finished, tested changes. Never leave half-built work on `main`.
 3. **Everything runs in the browser.** No paid APIs, no API keys, no server-side file processing, no new server endpoints. Heavy libraries are lazy-loaded inside the tool.
-4. **All 6 languages.** Every new or changed text needs English plus es, pt, fr, de and it:
+4. **Every language in `config/locales.php` (now 10: en, es, pt, fr, de, it, pl, ko, zh, ur).** Every new or CHANGED text (including reworded headings, titles, descriptions and FAQs) must be updated in ALL of them, not only es, pt, fr, de and it. Urdu is right-to-left; Chinese is Traditional (Taiwan/Hong Kong):
    - share image: run `node scripts/og-images.mjs` (draws public/images/og/{slug}.jpg; PagesTest fails without it); add real `sources` (standards, specs, research) where facts or formulas are used;
-   - interface strings: `t('...')` in JSX, then `node scripts/i18n-extract.mjs` and add each new key to `lang/{es,pt,fr,de,it}.json` (plural objects where needed, keep `{placeholders}`);
+   - interface strings: `t('...')` in JSX, then `node scripts/i18n-extract.mjs` and add each new key to `lang/{es,pt,fr,de,it,pl,ko,zh,ur}.json` (plural objects where needed, keep `{placeholders}`);
    - page content: add the tool to `lang/{code}/tools.php` with the same number of steps, features, content sections and FAQs as `config/tools.php`.
    The translation tests fail if anything is missing. Write natural, native-quality translations; don't copy English.
 5. **Honest content only.** Never invent people, reviews, ratings, user counts, awards, testimonials, statistics or sources. Only cite sources you actually fetched. Items that need facts from the owner (for example real names or social profiles) are marked *(owner input)*. Skip those and leave them unchecked.
@@ -29,7 +29,7 @@ Read Parts 1-2 of `TOOLS_SPEC_PROMPT.md` (architecture, SEO rules: lines 1-87) b
     ```
     ### <date>
     **Changed today**
-    - <what visitors will notice, e.g. "New Tip Calculator at ilovemytools.store/tip-calculator (6 languages)">
+    - <what visitors will notice, e.g. "New Tip Calculator at ilovemytools.store/tip-calculator (10 languages)">
     **Status:** CI <passed/failed> · live <yes/no>
     **Coming next**
     - <the next 2-3 unchecked backlog items>
@@ -117,7 +117,7 @@ Not planned: PDF↔PowerPoint (no permissively-licensed in-browser library rende
 - [x] Per-tool Open Graph images (tool name + icon, generated at build time). **Done** — `scripts/og-images.mjs` already draws one per tool (name, icon, category, tagline) into `public/images/og/{slug}.jpg`; verified all 52 tools have one.
 - [ ] Rephrase statement H2s as questions where natural (e.g. "Common image sizes" -> "What size should my image be?"), all languages. (Intro definitions are done.) **In progress** — Mortgage Calculator and Loan Calculator done 12 Oct 2026 (highest-revenue pages); Image Resizer done 12 Oct 2026; Word Counter and Case Converter done 13 Oct 2026; Password Generator and QR Code Generator done 13 Oct 2026; JPG to PDF and Merge PDF done 13 Oct 2026; Percentage Calculator and JSON Formatter done 13 Oct 2026. ~30 tools still have statement H2s; continue a few per run.
 - [x] HowTo and SpeakableSpecification schema on tool pages.
-- [ ] Homepage FAQ (4-5 questions such as "Are these tools really free?", "Are my files uploaded?") with FAQPage schema, all languages. *(quick audit 30 Sep)*
+- [x] Homepage FAQ (4-5 questions such as "Are these tools really free?", "Are my files uploaded?") with FAQPage schema, all languages. *(quick audit 30 Sep)* **Done** — `AppSupportHomeFaq` with FAQPage schema on every language home page (checked live 13 Oct 2026).
 - [ ] Tools without them get a one-line definition, a reference table and 2-3 cited sources, like /image-compressor (start with /merge-pdf, /split-pdf). *(quick audit 30 Sep)*
 - [x] *(owner input)* OPcache enabled (3 Oct 2026): uncached pages went from ~1.8 s to ~0.6 s to first byte, the same as a static file. What remains is distance to the Singapore server (moving hosting to the US would help US visitors).
 - [x] *(owner input, REMIND on 4 Oct 2026)* Connect **Google Search Console** to Windsor.ai while logged in to the Windsor account **talibhussain.monzo@gmail.com** (Google account mas032746@gmail.com is fine): https://onboard.windsor.ai/connect?connector=searchconsole&next=/searchconsole/authorize then tick ilovemytools.store and Finish. It was connected to a different Windsor account (mas032746). **Done by 4 Oct 2026** — confirmed connected (account `sc-domain:ilovemytools.store`), though it's returning 0 rows for the last 28 days so far (see `docs/search-console.md`).

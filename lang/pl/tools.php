@@ -25,11 +25,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Czemu liczba słów ma znaczenie',
+                'heading' => 'Dlaczego liczba słów ma znaczenie?',
                 'body' => 'Szkoły, uczelnie i wydawnictwa często narzucają ścisłe limity słów, a platformy społecznościowe ograniczają liczbę znaków w poście. Wyszukiwarki pokazują zwykle około 155-160 znaków meta opisu, a tytuł strony powinien mieścić się w około 60 znakach. Znając dokładną liczbę, trafiasz w te limity bez zgadywania.',
             ],
             [
-                'heading' => 'Jak liczone są słowa',
+                'heading' => 'Jak liczone są słowa?',
                 'body' => 'Słowem jest każda grupa liter lub cyfr oddzielona spacjami lub końcem wiersza. Same znaki interpunkcyjne nie są liczone jako słowo. Zdania liczone są na podstawie znaków kończących (. ! ?), a akapity na podstawie pustych wierszy, więc wyniki odpowiadają temu, co pokazują edytory tekstu, takie jak Microsoft Word i Google Docs.',
             ],
         ],
@@ -64,11 +64,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Jak W Tytule a Jak w zdaniu',
+                'heading' => 'Jak W Tytule czy Jak w zdaniu: czym się różnią?',
                 'body' => 'Zapis Jak W Tytule pisze wielką literą główne słowa nagłówka („Szybki Przewodnik po SEO”), a krótkie słowa, takie jak i, w, z i na, zostają małe, jeśli nie zaczynają tytułu. Zapis Jak w zdaniu pisze wielką literą tylko pierwsze słowo zdania („Szybki przewodnik po SEO”), co wiele nowoczesnych witryn preferuje dla lepszej czytelności. W polskich tytułach wielką literą pisze się tylko pierwsze słowo - sprawdź wynik pod kątem polskich zasad.',
             ],
             [
-                'heading' => 'Zapisy programistyczne',
+                'heading' => 'Jakie są zapisy programistyczne?',
                 'body' => 'camelCase jest typowy dla zmiennych w JavaScript, PascalCase dla nazw klas, snake_case dla Pythona i kolumn baz danych, kebab-case dla adresów URL i klas CSS, a CONSTANT_CASE dla stałych i zmiennych środowiskowych.',
             ],
         ],
@@ -106,7 +106,7 @@ return [
                 'body' => 'Najważniejsza jest długość. Każdy dodatkowy znak wielokrotnie zwiększa liczbę możliwych kombinacji. Hasło o długości 16 znaków, z wielkimi i małymi literami, cyframi i symbolami, ma ponad 100 bitów entropii, co przy obecnym sprzęcie oznacza miliardy lat potrzebne na złamanie metodą brute-force.',
             ],
             [
-                'heading' => 'Wskazówki dotyczące bezpieczeństwa haseł',
+                'heading' => 'Jak dbać o bezpieczeństwo haseł?',
                 'body' => 'Używaj innego hasła dla każdego konta, przechowuj je w menedżerze haseł i włącz weryfikację dwuetapową, gdziekolwiek jest dostępna. Nigdy nie używaj ponownie hasła, które wyciekło w jakimś naruszeniu danych.',
             ],
         ],
@@ -153,11 +153,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Jak zrobić kod QR do Wi-Fi',
+                'heading' => 'Jak zrobić kod QR do Wi-Fi?',
                 'body' => 'Wybierz typ Wi-Fi, wpisz nazwę swojej sieci (SSID), hasło i typ zabezpieczeń. Goście mogą zeskanować kod aparatem telefonu i połączyć się z siecią bez wpisywania hasła, co jest idealne w domu, kawiarni czy biurze.',
             ],
             [
-                'heading' => 'Jak zrobić kod QR, który zawsze się skanuje',
+                'heading' => 'Jak zrobić kod QR, który zawsze się skanuje?',
                 'body' => 'Zachowaj silny kontrast, z ciemnym kodem na jasnym tle, zostaw margines wokół kodu i wydrukuj go przynajmniej w rozmiarze 2 x 2 cm. Użyj wyższego poziomu korekcji błędów, jeśli kod może się porysować albo zabrudzić.',
             ],
         ],
@@ -253,11 +253,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Popularne rozmiary obrazów',
+                'heading' => 'Jaki rozmiar powinien mieć mój obraz?',
                 'body' => 'Posty na Instagramie dobrze wyglądają w rozmiarze 1080 x 1080 pikseli, Facebook i LinkedIn udostępniają obrazy w 1200 x 630, miniatury YouTube w 1280 x 720, a główne zdjęcia na stronie zwykle nie wymagają więcej niż 1920 pikseli szerokości.',
             ],
             [
-                'heading' => 'Konwersja PNG na JPG',
+                'heading' => 'Jak przekonwertować PNG na JPG?',
                 'body' => 'JPG nie wspiera przezroczystości, dlatego przezroczyste obszary są wypełniane białym kolorem przy konwersji PNG na JPG. Jeśli chcesz zachować przezroczystość, wybierz PNG albo WebP jako format wyjściowy.',
             ],
         ],
@@ -303,7 +303,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Wybór rozmiaru strony',
+                'heading' => 'Jaki rozmiar strony wybrać?',
                 'body' => 'A4 i Letter dodają biały margines wokół zdjęć, które nie pasują do kształtu strony, co dobrze sprawdza się w dokumentach i druku. Opcja Dopasuj do obrazu ustawia rozmiar strony PDF tak, aby odpowiadał każdemu zdjęciu, zachowując cały obraz widoczny bez białych ramek - przydatne, gdy potrzebujesz tylko szybkiej kopii zdjęcia w PDF.',
             ],
             [
@@ -464,7 +464,7 @@ return [
                 'body' => 'Wiele podań o pracę, formularzy wizowych i portali uniwersyteckich przyjmuje tylko jeden plik. Połączenie CV, listu motywacyjnego i certyfikatów w jeden PDF utrzymuje wszystko razem i w odpowiedniej kolejności.',
             ],
             [
-                'heading' => 'Pliki PDF chronione hasłem',
+                'heading' => 'Czy można połączyć PDF chroniony hasłem?',
                 'body' => 'Zaszyfrowanych plików PDF nie można połączyć, dopóki nie zostanie usunięta ochrona hasłem. Otwórz plik w swoim czytniku PDF za pomocą hasła i zapisz lub wydrukuj kopię bez ochrony, a potem połącz tę kopię.',
             ],
         ],
@@ -568,7 +568,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Wzory procentowe',
+                'heading' => 'Jaki jest wzór na procent?',
                 'body' => 'X% z Y = (X / 100) x Y. X jako procent Y = (X / Y) x 100. Zmiana procentowa z A do B = ((B - A) / |A|) x 100. Dodatni wynik to wzrost, a ujemny to spadek.',
             ],
         ],
@@ -666,7 +666,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Najczęstsze błędy JSON',
+                'heading' => 'Jakie są najczęstsze błędy JSON?',
                 'body' => 'Najczęstsze błędy to nadmiarowe przecinki po ostatnim elemencie, pojedyncze cudzysłowy zamiast podwójnych, klucze bez cudzysłowów i komentarze, z których żaden nie jest dopuszczony w standardowym JSON.',
             ],
         ],
@@ -2094,15 +2094,15 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Jak obliczana jest rata miesięczna',
+                'heading' => 'Jak obliczana jest rata miesięczna?',
                 'body' => 'Kalkulator korzysta ze standardowego wzoru na ratę kredytu o stałym oprocentowaniu: M = P x r / (1 - (1 + r)^-n), gdzie P to kwota kredytu (cena nieruchomości minus wkład własny), r to miesięczne oprocentowanie (oprocentowanie roczne podzielone przez 12), a n to łączna liczba rat miesięcznych (okres kredytowania w latach razy 12). To ten sam wzór, którego banki używają przy kredycie o stałym oprocentowaniu, i obejmuje on wyłącznie kapitał i odsetki - podatek od nieruchomości, ubezpieczenie domu, ubezpieczenie kredytu (PMI) i czynsz wspólnoty nie są uwzględnione, ponieważ zależą od lokalizacji i kredytodawcy.',
             ],
             [
-                'heading' => 'Dlaczego nadpłaty oszczędzają tak dużo odsetek',
+                'heading' => 'Dlaczego nadpłaty oszczędzają tak dużo odsetek?',
                 'body' => 'Każda dodatkowa złotówka wpłacona na poczet kapitału przestaje generować odsetki przez resztę okresu kredytowania, więc nadpłacanie na początku kredytu - gdy saldo i odsetkowa część każdej raty są największe - ma największy wpływ. Kalkulator porównuje harmonogram z nadpłatą i bez niej, pokazując dokładnie, o ile miesięcy wcześniej kredyt zostanie spłacony i ile łącznych odsetek uda się uniknąć.',
             ],
             [
-                'heading' => 'Wkład własny: "deposit" w Wielkiej Brytanii',
+                'heading' => 'Czy wkład własny to w Wielkiej Brytanii "deposit"?',
                 'body' => 'Kwota wpłacana z góry za nieruchomość, zmniejszająca potrzebny kredyt, w USA nazywana jest "down payment", a w Wielkiej Brytanii, Irlandii i kilku innych krajach - "deposit"; oba terminy oznaczają tu to samo co wkład własny. Wyższy wkład własny oznacza mniejszy kredyt, niższą ratę miesięczną i mniej odsetek zapłaconych łącznie, choć kredytodawcy mogą mieć też własny minimalny wkład własny i inne zasady przyznawania kredytu, których ten kalkulator nie uwzględnia.',
             ],
         ],
@@ -2155,11 +2155,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Jak obliczana jest rata miesięczna',
+                'heading' => 'Jak obliczana jest rata miesięczna?',
                 'body' => 'Kalkulator korzysta ze standardowego wzoru na ratę kredytu o stałym oprocentowaniu: M = P x r / (1 - (1 + r)^-n), gdzie P to kwota kredytu, r to miesięczne oprocentowanie (oprocentowanie roczne podzielone przez 12), a n to łączna liczba rat miesięcznych (okres kredytowania w latach razy 12). To ten sam wzór, którego kredytodawcy używają przy kredycie o stałym oprocentowaniu i stałym okresie - gotówkowym, samochodowym, studenckim lub innym - i obejmuje on wyłącznie kapitał i odsetki: opłaty kredytodawcy, koszty udzielenia kredytu czy ubezpieczenia nie są uwzględnione, ponieważ zależą od kredytodawcy i rodzaju kredytu.',
             ],
             [
-                'heading' => 'Dlaczego nadpłaty oszczędzają tak dużo odsetek',
+                'heading' => 'Dlaczego nadpłaty oszczędzają tak dużo odsetek?',
                 'body' => 'Każda dodatkowa złotówka wpłacona na poczet kapitału przestaje generować odsetki przez resztę okresu kredytowania, więc nadpłacanie na początku - gdy saldo i odsetkowa część każdej raty są największe - ma największy wpływ. Kalkulator porównuje harmonogram z nadpłatą i bez niej, pokazując dokładnie, o ile miesięcy wcześniej kredyt zostanie spłacony i ile łącznych odsetek uda się uniknąć. Sprawdź najpierw umowę kredytową: niektórzy kredytodawcy naliczają opłatę za wcześniejszą spłatę.',
             ],
         ],
