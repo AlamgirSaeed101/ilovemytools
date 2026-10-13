@@ -1307,8 +1307,8 @@ return [
 
     'domain-authority-checker' => [
         'name' => 'Masowy sprawdzacz autorytetu domeny',
-        'title' => 'Sprawdzacz autorytetu domeny - darmowy, do 100 na raz',
-        'description' => 'Darmowy masowy sprawdzacz autorytetu domeny: zobacz wynik autorytetu, globalną rangę i domeny odsyłające dla do 100 witryn na raz, eksportuj do CSV.',
+        'title' => 'Sprawdzacz autorytetu domeny - darmowy, bez rejestracji',
+        'description' => 'Darmowy masowy sprawdzacz autorytetu domeny: wynik autorytetu, globalna ranga i domeny odsyłające dla do 100 witryn na raz, bez rejestracji, natychmiast.',
         'h1' => 'Masowy sprawdzacz autorytetu domeny',
         'tagline' => 'Porównaj autorytet do 100 witryn w kilka sekund.',
         'keywords' => ['sprawdzacz autorytetu domeny', 'masowy sprawdzacz autorytetu domeny', 'masowy sprawdzacz da', 'sprawdzacz autorytetu witryny', 'sprawdzacz domain rating', 'sprawdź autorytet domeny'],
