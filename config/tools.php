@@ -376,7 +376,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Choosing a page size',
+                'heading' => 'What page size should I choose?',
                 'body' => "A4 and Letter add white space around photos that don't match the page shape, which suits documents and printing. Fit image sizes the PDF page to match each photo exactly, keeping the full image visible with no white borders - useful when you just need a quick PDF copy of a photo.",
             ],
             [
@@ -575,7 +575,7 @@ return [
                 'body' => 'Many job applications, visa forms and university portals only accept a single file. Merging your CV, cover letter and certificates into one PDF keeps everything together and in the right order.',
             ],
             [
-                'heading' => 'Password-protected PDFs',
+                'heading' => 'Can I merge a password-protected PDF?',
                 'body' => 'Encrypted PDFs cannot be merged until the password protection is removed. Open the file in your PDF reader with the password and save or print a copy without protection, then merge that copy.',
             ],
         ],

@@ -303,7 +303,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Choisir un format de page',
+                'heading' => 'Quel format de page choisir ?',
                 'body' => 'A4 et Lettre US ajoutent de l’espace blanc autour des photos qui ne correspondent pas à la forme de la page, ce qui convient aux documents et à l’impression. Ajuster à l’image règle la taille de la page PDF exactement sur chaque photo, en gardant l’image entière visible sans bordure blanche : pratique quand vous avez juste besoin d’une copie PDF rapide d’une photo.',
             ],
             [
@@ -464,7 +464,7 @@ return [
                 'body' => 'Beaucoup de candidatures, de demandes de visa et de portails universitaires n’acceptent qu’un seul fichier. Fusionner votre CV, votre lettre de motivation et vos certificats en un seul PDF garde tout ensemble et dans le bon ordre.',
             ],
             [
-                'heading' => 'PDF protégés par mot de passe',
+                'heading' => 'Puis-je fusionner un PDF protégé par mot de passe ?',
                 'body' => 'Les PDF chiffrés ne peuvent pas être fusionnés tant que la protection n’est pas retirée. Ouvrez le fichier dans votre lecteur PDF avec le mot de passe, enregistrez ou imprimez une copie sans protection, puis fusionnez cette copie.',
             ],
         ],

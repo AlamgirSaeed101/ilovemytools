@@ -303,7 +303,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Como escolher o tamanho da página',
+                'heading' => 'Que tamanho de página devo escolher?',
                 'body' => 'A4 e Carta adicionam espaço em branco ao redor de fotos que não têm a mesma forma da página, o que é útil para documentos e impressão. Ajustar à imagem faz a página do PDF corresponder exatamente a cada foto, mantendo toda a imagem visível sem bordas brancas; útil quando você só precisa de uma cópia rápida em PDF de uma foto.',
             ],
             [
@@ -464,7 +464,7 @@ return [
                 'body' => 'Muitas candidaturas de emprego, pedidos de visto e portais de universidades só aceitam um único arquivo. Juntar o currículo, a carta de apresentação e os certificados em um só PDF mantém tudo junto e na ordem certa.',
             ],
             [
-                'heading' => 'PDFs protegidos por senha',
+                'heading' => 'Posso juntar um PDF protegido por senha?',
                 'body' => 'PDFs criptografados não podem ser unidos até que a proteção por senha seja removida. Abra o arquivo no seu leitor de PDF com a senha e salve ou imprima uma cópia sem proteção; depois junte essa cópia.',
             ],
         ],

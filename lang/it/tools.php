@@ -303,7 +303,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Come scegliere il formato pagina',
+                'heading' => 'Che formato pagina devo scegliere?',
                 'body' => 'A4 e Letter aggiungono spazio bianco intorno alle foto che non corrispondono alla forma della pagina, utile per documenti e stampa. Adatta all’immagine imposta la pagina del PDF esattamente sulle dimensioni di ogni foto, mantenendo l’intera immagine visibile senza bordi bianchi: utile quando serve solo una copia PDF rapida di una foto.',
             ],
             [
@@ -464,7 +464,7 @@ return [
                 'body' => 'Molte candidature di lavoro, richieste di visto e portali universitari accettano un solo file. Unire curriculum, lettera di presentazione e certificati in un unico PDF tiene tutto insieme e nell’ordine giusto.',
             ],
             [
-                'heading' => 'PDF protetti da password',
+                'heading' => 'Posso unire un PDF protetto da password?',
                 'body' => 'I PDF crittografati non si possono unire finché non si rimuove la protezione. Apri il file nel lettore PDF con la password, salva o stampa una copia senza protezione e poi unisci quella copia.',
             ],
         ],

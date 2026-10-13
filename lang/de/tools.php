@@ -303,7 +303,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Die richtige Seitengröße wählen',
+                'heading' => 'Welche Seitengröße sollte ich wählen?',
                 'body' => 'A4 und Letter fügen um Fotos, die nicht zur Seitenform passen, weißen Rand hinzu – das eignet sich für Dokumente und den Druck. An Bild anpassen richtet die PDF-Seite exakt an jedem Foto aus, sodass das ganze Bild ohne weiße Ränder sichtbar bleibt – praktisch, wenn du nur schnell eine PDF-Kopie eines Fotos brauchst.',
             ],
             [
@@ -464,7 +464,7 @@ return [
                 'body' => 'Viele Bewerbungsportale, Visumanträge und Hochschulportale akzeptieren nur eine einzige Datei. Wenn du Lebenslauf, Anschreiben und Zeugnisse zu einem PDF zusammenfügst, bleibt alles beisammen und in der richtigen Reihenfolge.',
             ],
             [
-                'heading' => 'Passwortgeschützte PDFs',
+                'heading' => 'Kann ich ein passwortgeschütztes PDF zusammenfügen?',
                 'body' => 'Verschlüsselte PDFs können erst zusammengefügt werden, wenn der Passwortschutz entfernt ist. Öffne die Datei mit dem Passwort in deinem PDF-Reader, speichere oder drucke eine ungeschützte Kopie und füge dann diese Kopie zusammen.',
             ],
         ],

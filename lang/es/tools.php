@@ -267,7 +267,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Cómo elegir el tamaño de página',
+                'heading' => '¿Qué tamaño de página debo elegir?',
                 'body' => 'A4 y Carta añaden espacio en blanco alrededor de las fotos que no coinciden con la forma de la página, lo que resulta útil para documentos e impresión. Ajustar a la imagen hace que la página del PDF coincida exactamente con cada foto, manteniendo toda la imagen visible sin bordes blancos; útil cuando solo necesitas una copia rápida en PDF de una foto.',
             ],
             [
@@ -424,7 +424,7 @@ return [
         ],
         'content' => [
             ['heading' => '¿Por qué unir PDF?', 'body' => 'Muchas ofertas de empleo, solicitudes de visado y portales universitarios solo aceptan un único archivo. Unir tu CV, carta de presentación y certificados en un solo PDF lo mantiene todo junto y en el orden correcto.'],
-            ['heading' => 'PDF protegidos con contraseña', 'body' => 'Los PDF cifrados no se pueden unir hasta quitar la protección. Abre el archivo en tu lector de PDF con la contraseña, guarda o imprime una copia sin protección y une esa copia.'],
+            ['heading' => '¿Puedo unir un PDF protegido con contraseña?', 'body' => 'Los PDF cifrados no se pueden unir hasta quitar la protección. Abre el archivo en tu lector de PDF con la contraseña, guarda o imprime una copia sin protección y une esa copia.'],
         ],
         'faqs' => [
             ['q' => '¿Es seguro unir PDF aquí?', 'a' => 'Sí. Los archivos se procesan localmente en tu navegador con JavaScript y nunca se suben, así que siguen siendo totalmente privados.'],
