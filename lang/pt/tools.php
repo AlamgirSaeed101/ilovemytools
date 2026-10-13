@@ -25,11 +25,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Por que a contagem de palavras importa',
+                'heading' => 'Por que a contagem de palavras é importante?',
                 'body' => 'Escolas, universidades e editoras costumam definir limites rígidos de palavras, e as redes sociais limitam o número de caracteres por post. Os buscadores geralmente mostram cerca de 155-160 caracteres de uma meta descrição, e a tag de título deve ficar abaixo de uns 60 caracteres. Saber a contagem exata ajuda a atingir essas metas sem chute.',
             ],
             [
-                'heading' => 'Como as palavras são contadas',
+                'heading' => 'Como as palavras são contadas?',
                 'body' => 'Uma palavra é qualquer grupo de letras ou números separado por espaços ou quebras de linha. Pontuação sozinha não conta como palavra. As frases são contadas pela pontuação final (. ! ?) e os parágrafos pelas linhas em branco, então os números batem com o que você esperaria de editores como o Microsoft Word e o Google Docs.',
             ],
         ],
@@ -64,11 +64,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Tipo Título ou Tipo frase',
+                'heading' => 'Tipo Título ou Tipo frase: qual a diferença?',
                 'body' => 'O Tipo Título coloca em maiúscula as palavras principais de um título ("O Guia Rápido de SEO"), enquanto palavras curtas como o, e, de e para ficam em minúsculas, a não ser que abram o título. O Tipo frase só coloca em maiúscula a primeira palavra de cada frase ("O guia rápido de SEO"), o que muitos sites modernos preferem pela legibilidade.',
             ],
             [
-                'heading' => 'Estilos de escrita em programação',
+                'heading' => 'Quais são os estilos de maiúsculas usados em programação?',
                 'body' => 'camelCase é comum em variáveis JavaScript, PascalCase em nomes de classes, snake_case em Python e colunas de bancos de dados, kebab-case em URLs e classes CSS, e CONSTANT_CASE em constantes e variáveis de ambiente.',
             ],
         ],

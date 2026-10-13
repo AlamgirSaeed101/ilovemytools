@@ -24,8 +24,8 @@ return [
             'Funciona sin conexión una vez cargado: tu texto nunca se sube',
         ],
         'content' => [
-            ['heading' => 'Por qué importa el número de palabras', 'body' => 'Colegios, universidades y editoriales suelen fijar límites estrictos de palabras, y las redes sociales limitan los caracteres de cada publicación. Los buscadores suelen mostrar unos 155-160 caracteres de la meta descripción, y el título conviene que no pase de unos 60 caracteres. Conocer el recuento exacto te ayuda a cumplirlos sin adivinar.'],
-            ['heading' => 'Cómo se cuentan las palabras', 'body' => 'Una palabra es cualquier grupo de letras o números separado por espacios o saltos de línea. Los signos de puntuación sueltos no cuentan como palabras. Las frases se cuentan por la puntuación final (. ! ?) y los párrafos por las líneas en blanco, así que los números coinciden con lo que esperarías de procesadores de texto como Microsoft Word o Google Docs.'],
+            ['heading' => '¿Por qué importa el número de palabras?', 'body' => 'Colegios, universidades y editoriales suelen fijar límites estrictos de palabras, y las redes sociales limitan los caracteres de cada publicación. Los buscadores suelen mostrar unos 155-160 caracteres de la meta descripción, y el título conviene que no pase de unos 60 caracteres. Conocer el recuento exacto te ayuda a cumplirlos sin adivinar.'],
+            ['heading' => '¿Cómo se cuentan las palabras?', 'body' => 'Una palabra es cualquier grupo de letras o números separado por espacios o saltos de línea. Los signos de puntuación sueltos no cuentan como palabras. Las frases se cuentan por la puntuación final (. ! ?) y los párrafos por las líneas en blanco, así que los números coinciden con lo que esperarías de procesadores de texto como Microsoft Word o Google Docs.'],
         ],
         'faqs' => [
             ['q' => '¿Este contador de palabras es gratis?', 'a' => 'Sí. Es totalmente gratis, sin registro y sin límite en la cantidad de texto que pegues.'],
@@ -57,8 +57,8 @@ return [
             'Copia o descarga el resultado',
         ],
         'content' => [
-            ['heading' => 'Tipo Título frente a tipo oración', 'body' => 'El Tipo Título pone en mayúscula las palabras principales de un titular ("The Quick Guide to SEO"), mientras que las palabras cortas como a, and, of y the quedan en minúscula salvo que abran el título. El tipo oración solo pone en mayúscula la primera palabra de cada frase ("The quick guide to SEO"), algo que muchas webs modernas prefieren por legibilidad. En español lo habitual es el tipo oración.'],
-            ['heading' => 'Estilos de programación', 'body' => 'camelCase es habitual en variables de JavaScript, PascalCase en nombres de clases, snake_case en Python y columnas de bases de datos, kebab-case en URL y clases CSS, y CONSTANT_CASE en constantes y variables de entorno.'],
+            ['heading' => '¿Qué diferencia hay entre Tipo Título y tipo oración?', 'body' => 'El Tipo Título pone en mayúscula las palabras principales de un titular ("The Quick Guide to SEO"), mientras que las palabras cortas como a, and, of y the quedan en minúscula salvo que abran el título. El tipo oración solo pone en mayúscula la primera palabra de cada frase ("The quick guide to SEO"), algo que muchas webs modernas prefieren por legibilidad. En español lo habitual es el tipo oración.'],
+            ['heading' => '¿Qué estilos de mayúsculas se usan en programación?', 'body' => 'camelCase es habitual en variables de JavaScript, PascalCase en nombres de clases, snake_case en Python y columnas de bases de datos, kebab-case en URL y clases CSS, y CONSTANT_CASE en constantes y variables de entorno.'],
         ],
         'faqs' => [
             ['q' => '¿Cómo paso de mayúsculas a minúsculas?', 'a' => 'Pega tu texto y pulsa "minúsculas". Todas las letras se convierten al instante y puedes copiar el resultado con un clic.'],

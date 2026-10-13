@@ -25,11 +25,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Perché conta il numero di parole',
+                'heading' => 'Perché conta il numero di parole?',
                 'body' => 'Scuole, università ed editori fissano spesso limiti di parole rigidi, e i social network limitano i caratteri per post. I motori di ricerca mostrano di solito circa 155-160 caratteri di una meta description, e il tag title dovrebbe restare sotto i 60 caratteri circa. Conoscere il conteggio esatto ti aiuta a rispettare questi limiti senza andare a occhio.',
             ],
             [
-                'heading' => 'Come vengono contate le parole',
+                'heading' => 'Come vengono contate le parole?',
                 'body' => 'Una parola è qualsiasi gruppo di lettere o numeri separato da spazi o a capo. La punteggiatura da sola non conta come parola. Le frasi si contano dalla punteggiatura finale (. ! ?) e i paragrafi dalle righe vuote, quindi i numeri coincidono con quelli di programmi come Microsoft Word e Google Documenti.',
             ],
         ],
@@ -64,11 +64,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Iniziali maiuscole o maiuscola iniziale',
+                'heading' => 'Iniziali maiuscole o maiuscola iniziale: qual è la differenza?',
                 'body' => 'Le Iniziali Maiuscole mettono la maiuscola alle parole principali di un titolo (“The Quick Guide to SEO”), mentre le parole brevi come a, and, of e the restano minuscole se non aprono il titolo: è lo stile dei titoli in inglese. La maiuscola iniziale mette la maiuscola solo alla prima parola di ogni frase (“The quick guide to SEO”), lo stile preferito da molti siti moderni e quello normale in italiano.',
             ],
             [
-                'heading' => 'Stili usati nella programmazione',
+                'heading' => 'Quali stili si usano nella programmazione?',
                 'body' => 'Il camelCase è comune per le variabili JavaScript, il PascalCase per i nomi delle classi, lo snake_case in Python e per le colonne dei database, il kebab-case per URL e classi CSS, e il CONSTANT_CASE per costanti e variabili d’ambiente.',
             ],
         ],

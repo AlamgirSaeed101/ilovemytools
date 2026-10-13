@@ -25,11 +25,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Warum die Wortzahl wichtig ist',
+                'heading' => 'Warum ist die Wortzahl wichtig?',
                 'body' => 'Schulen, Hochschulen und Verlage setzen oft strenge Wortgrenzen, und soziale Netzwerke begrenzen die Zeichenzahl pro Beitrag. Suchmaschinen zeigen meist etwa 155-160 Zeichen einer Meta-Beschreibung an, und ein Title-Tag sollte unter etwa 60 Zeichen bleiben. Wenn du die genaue Zahl kennst, triffst du diese Vorgaben ohne Raten.',
             ],
             [
-                'heading' => 'Wie Wörter gezählt werden',
+                'heading' => 'Wie werden Wörter gezählt?',
                 'body' => 'Ein Wort ist jede Gruppe von Buchstaben oder Ziffern, die durch Leerzeichen oder Zeilenumbrüche getrennt ist. Satzzeichen allein zählen nicht als Wort. Sätze werden anhand der Schlusszeichen (. ! ?) gezählt, Absätze anhand von Leerzeilen – die Zahlen entsprechen also dem, was du von Textverarbeitungen wie Microsoft Word und Google Docs kennst.',
             ],
         ],
@@ -64,11 +64,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Titelschreibung oder Satzanfang groß',
+                'heading' => 'Titelschreibung oder Satzanfang groß: Was ist der Unterschied?',
                 'body' => 'Die Titelschreibung schreibt die Hauptwörter einer Überschrift groß („The Quick Guide to SEO“), während kurze Wörter wie a, and, of und the klein bleiben, außer am Anfang. Bei „Satzanfang groß“ wird nur das erste Wort jedes Satzes großgeschrieben („The quick guide to SEO“), was viele moderne Websites wegen der Lesbarkeit bevorzugen. Im Deutschen bleiben Substantive natürlich immer großgeschrieben – prüfe das Ergebnis also kurz.',
             ],
             [
-                'heading' => 'Schreibweisen in der Programmierung',
+                'heading' => 'Welche Schreibweisen gibt es in der Programmierung?',
                 'body' => 'camelCase ist bei JavaScript-Variablen üblich, PascalCase bei Klassennamen, snake_case in Python und bei Datenbankspalten, kebab-case bei URLs und CSS-Klassen und CONSTANT_CASE bei Konstanten und Umgebungsvariablen.',
             ],
         ],

@@ -49,11 +49,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Why word count matters',
+                'heading' => 'Why does word count matter?',
                 'body' => 'Schools, universities and publishers often set strict word limits, and social platforms cap the number of characters you can post. Search engines typically show around 155-160 characters of a meta description, and a title tag should stay under about 60 characters. Knowing your exact count helps you hit these targets without guesswork.',
             ],
             [
-                'heading' => 'How words are counted',
+                'heading' => 'How are words counted?',
                 'body' => 'A word is any group of letters or numbers separated by spaces or line breaks. Punctuation on its own is not counted as a word. Sentences are counted by ending punctuation (. ! ?) and paragraphs by blank lines, so the numbers match what you would expect from word processors like Microsoft Word and Google Docs.',
             ],
         ],
@@ -96,11 +96,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Title Case vs Sentence case',
+                'heading' => 'Title Case or Sentence case: what\'s the difference?',
                 'body' => 'Title Case capitalises the main words of a heading ("The Quick Guide to SEO"), while short words such as a, and, of and the stay lowercase unless they start the title. Sentence case only capitalises the first word of each sentence ("The quick guide to SEO"), which many modern websites prefer for readability.',
             ],
             [
-                'heading' => 'Programming case styles',
+                'heading' => 'What are the programming case styles?',
                 'body' => 'camelCase is common for JavaScript variables, PascalCase for class names, snake_case for Python and database columns, kebab-case for URLs and CSS classes, and CONSTANT_CASE for constants and environment variables.',
             ],
         ],

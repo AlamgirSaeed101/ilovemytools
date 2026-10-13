@@ -25,11 +25,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Pourquoi le nombre de mots compte',
+                'heading' => 'Pourquoi le nombre de mots compte-t-il ?',
                 'body' => 'Écoles, universités et éditeurs imposent souvent des limites de mots strictes, et les réseaux sociaux plafonnent le nombre de caractères par publication. Les moteurs de recherche affichent en général environ 155-160 caractères d’une méta-description, et une balise title devrait rester sous 60 caractères environ. Connaître votre nombre exact vous aide à atteindre ces objectifs sans deviner.',
             ],
             [
-                'heading' => 'Comment les mots sont comptés',
+                'heading' => 'Comment les mots sont-ils comptés ?',
                 'body' => 'Un mot est un groupe de lettres ou de chiffres séparé par des espaces ou des retours à la ligne. La ponctuation seule ne compte pas comme un mot. Les phrases sont comptées grâce à la ponctuation finale (. ! ?) et les paragraphes grâce aux lignes vides : les chiffres correspondent donc à ceux de traitements de texte comme Microsoft Word et Google Docs.',
             ],
         ],
@@ -64,11 +64,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Casse Titre ou casse Phrase',
+                'heading' => 'Casse Titre ou casse Phrase : quelle est la différence ?',
                 'body' => 'La casse Titre met une majuscule aux mots principaux d’un titre (« Le Guide Rapide du SEO »), tandis que les petits mots comme le, et, de et du restent en minuscules sauf en début de titre. La casse Phrase ne met une majuscule qu’au premier mot de chaque phrase (« Le guide rapide du SEO »), ce que préfèrent de nombreux sites modernes pour la lisibilité. En français, c’est d’ailleurs la norme typographique.',
             ],
             [
-                'heading' => 'Casses utilisées en programmation',
+                'heading' => 'Quelles casses sont utilisées en programmation ?',
                 'body' => 'Le camelCase est courant pour les variables JavaScript, le PascalCase pour les noms de classes, le snake_case en Python et pour les colonnes de bases de données, le kebab-case pour les URL et les classes CSS, et le CONSTANT_CASE pour les constantes et les variables d’environnement.',
             ],
         ],
