@@ -568,7 +568,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Formules de pourcentage',
+                'heading' => 'Quelle est la formule pour calculer un pourcentage ?',
                 'body' => 'X % de Y = (X / 100) x Y. X en pourcentage de Y = (X / Y) x 100. Variation en pourcentage de A à B = ((B - A) / |A|) x 100. Un résultat positif est une hausse, un résultat négatif une baisse.',
             ],
         ],
@@ -665,7 +665,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Erreurs JSON courantes',
+                'heading' => 'Quelles sont les erreurs JSON les plus courantes ?',
                 'body' => 'Les erreurs les plus fréquentes sont les virgules en trop après le dernier élément, les apostrophes au lieu des guillemets doubles, les clés sans guillemets et les commentaires, qui sont tous interdits en JSON standard.',
             ],
         ],

@@ -7,3 +7,4 @@ Written by the daily SEO/GEO/AEO routine (rule 14 of `docs/ROUTINE.md`). One lin
 - 2026-10-13 01:47 UTC · continued H2-to-question rephrasing · /word-counter and /case-converter had 4 statement H2s · rephrased as questions (all 6 languages).
 - 2026-10-13 05:47 UTC · continued H2-to-question rephrasing · /password-generator and /qr-code-generator had 3 statement H2s · rephrased as questions (all 6 languages).
 - 2026-10-13 12:47 UTC · continued H2-to-question rephrasing · /jpg-to-pdf and /merge-pdf had 2 statement H2s · rephrased as questions (all 6 languages).
+- 2026-10-13 19:19 UTC · continued H2-to-question rephrasing · /percentage-calculator and /json-formatter had 2 statement H2s · rephrased as questions (all 6 languages).

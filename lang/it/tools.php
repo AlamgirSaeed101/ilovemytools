@@ -568,7 +568,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Formule delle percentuali',
+                'heading' => 'Qual è la formula per calcolare una percentuale?',
                 'body' => 'X% di Y = (X / 100) x Y. X come percentuale di Y = (X / Y) x 100. Variazione percentuale da A a B = ((B - A) / |A|) x 100. Un risultato positivo è un aumento, uno negativo una diminuzione.',
             ],
         ],
@@ -665,7 +665,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Errori JSON comuni',
+                'heading' => 'Quali sono gli errori JSON più comuni?',
                 'body' => 'Gli errori più frequenti sono le virgole finali dopo l’ultimo elemento, gli apici singoli al posto delle virgolette doppie, le chiavi senza virgolette e i commenti: nessuno di questi è ammesso nel JSON standard.',
             ],
         ],

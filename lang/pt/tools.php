@@ -568,7 +568,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Fórmulas de porcentagem',
+                'heading' => 'Qual é a fórmula para calcular uma porcentagem?',
                 'body' => 'X% de Y = (X / 100) x Y. X como porcentagem de Y = (X / Y) x 100. Variação percentual de A para B = ((B - A) / |A|) x 100. Um resultado positivo é um aumento e um resultado negativo é uma redução.',
             ],
         ],
@@ -665,7 +665,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Erros comuns em JSON',
+                'heading' => 'Quais são os erros mais comuns em JSON?',
                 'body' => 'Os erros mais comuns são vírgulas sobrando depois do último item, aspas simples em vez de duplas, chaves sem aspas e comentários, nada disso permitido no JSON padrão.',
             ],
         ],

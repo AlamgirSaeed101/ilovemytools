@@ -568,7 +568,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Prozentformeln',
+                'heading' => 'Wie lautet die Formel für einen Prozentsatz?',
                 'body' => 'X % von Y = (X / 100) x Y. X als Prozent von Y = (X / Y) x 100. Prozentuale Veränderung von A nach B = ((B - A) / |A|) x 100. Ein positives Ergebnis ist eine Zunahme, ein negatives eine Abnahme.',
             ],
         ],
@@ -665,7 +665,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Häufige JSON-Fehler',
+                'heading' => 'Was sind die häufigsten JSON-Fehler?',
                 'body' => 'Die häufigsten Fehler sind überzählige Kommas nach dem letzten Element, einfache statt doppelte Anführungszeichen, Schlüssel ohne Anführungszeichen und Kommentare – all das ist in Standard-JSON nicht erlaubt.',
             ],
         ],

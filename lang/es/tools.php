@@ -519,7 +519,7 @@ return [
             'Fórmula visible en cada respuesta',
         ],
         'content' => [
-            ['heading' => 'Fórmulas de porcentajes', 'body' => 'X% de Y = (X / 100) x Y. X como porcentaje de Y = (X / Y) x 100. Variación porcentual de A a B = ((B - A) / |A|) x 100. Un resultado positivo es un aumento y uno negativo, una disminución.'],
+            ['heading' => '¿Cuál es la fórmula para calcular un porcentaje?', 'body' => 'X% de Y = (X / 100) x Y. X como porcentaje de Y = (X / Y) x 100. Variación porcentual de A a B = ((B - A) / |A|) x 100. Un resultado positivo es un aumento y uno negativo, una disminución.'],
         ],
         'faqs' => [
             ['q' => '¿Cómo calculo el porcentaje de un número?', 'a' => 'Divide el porcentaje entre 100 y multiplícalo por el número. Por ejemplo, el 15% de 200 = 0,15 x 200 = 30.'],
@@ -613,7 +613,7 @@ return [
             'Copia y descarga como .json',
         ],
         'content' => [
-            ['heading' => 'Errores comunes en JSON', 'body' => 'Los fallos más habituales son las comas finales después del último elemento, las comillas simples en lugar de dobles, las claves sin comillas y los comentarios, nada de lo cual se permite en el JSON estándar.'],
+            ['heading' => '¿Cuáles son los errores más comunes en JSON?', 'body' => 'Los fallos más habituales son las comas finales después del último elemento, las comillas simples en lugar de dobles, las claves sin comillas y los comentarios, nada de lo cual se permite en el JSON estándar.'],
         ],
         'faqs' => [
             ['q' => '¿Se envía mi JSON a un servidor?', 'a' => 'No. El formateo y la validación se hacen en tu navegador, así que las claves de API y los datos privados se quedan en tu equipo.'],

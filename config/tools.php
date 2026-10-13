@@ -705,7 +705,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Percentage formulas',
+                'heading' => 'What is the formula for a percentage?',
                 'body' => 'X% of Y = (X / 100) x Y. X as a percent of Y = (X / Y) x 100. Percentage change from A to B = ((B - A) / |A|) x 100. A positive result is an increase and a negative result is a decrease.',
             ],
         ],
@@ -812,7 +812,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Common JSON errors',
+                'heading' => 'What are the most common JSON errors?',
                 'body' => 'The most common mistakes are trailing commas after the last item, single quotes instead of double quotes, unquoted keys, and comments, none of which are allowed in standard JSON.',
             ],
         ],
