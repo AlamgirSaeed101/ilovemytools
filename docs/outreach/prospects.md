@@ -8,7 +8,7 @@ marks it) · `followed-up <date>` · `linked (dofollow|nofollow) <date>` · `dec
 |---|---|---|---|---|---|---|
 | 2026-10-14 | [72 Free Online Tools for Teachers in 2025](https://www.growthengineering.co.uk/?p=39292) | skip (Semrush: no API units) | unknown (page fetch blocked, see note) | contact@growthengineering.co.uk | word-counter | skip (list has no word/PDF tools; contact address unverified) |
 | 2026-10-14 | [Top Tools for Remote Study](https://hud.libguides.com/studyingonline/toptools) (University of Huddersfield Library) | skip (Semrush: no API units) | unknown (page fetch blocked, see note) | library@hud.ac.uk | merge-pdf | skip (page now 404) |
-| 2026-10-14 | [20+ Free iLovePDF Alternatives in 2026 – Privacy Scores](https://techshali.com/ilovepdf-alternatives/) (Deepak Gupta, Aug 2026) | n/a | nofollow | dgdeepak000@gmail.com (About section) | merge-pdf | new |
+| 2026-10-14 | [20+ Free iLovePDF Alternatives in 2026 – Privacy Scores](https://techshali.com/ilovepdf-alternatives/) (Deepak Gupta, Aug 2026) | n/a | nofollow | dgdeepak000@gmail.com (About section) | merge-pdf | sent 2026-10-14 (hello@) |
 | 2026-10-14 | [The 10 Best Free Character and Word Counters](https://www.papertrue.com/blog/character-and-word-counters/) (Tanvi, Apr 2025) | n/a | nofollow | support@papertrue.com | word-counter | new |
 | 2026-10-14 | [5 Best Free Word Counter Tools Online](https://fossbytes.com/best-free-word-counter-tool-online-with-character-sentence-counter/) (Manisha Priyadarshini, Oct 2024) | n/a | nofollow | form: https://fossbytes.com/contact-us/ | word-counter | new |
 
