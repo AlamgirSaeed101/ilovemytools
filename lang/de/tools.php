@@ -766,6 +766,7 @@ return [
             ['q' => 'Warum ändert sich meine IP-Adresse?', 'a' => 'Die meisten Internetanbieter vergeben dynamische IP-Adressen, die sich beim Neustart des Routers ändern können. IPs im Mobilfunk ändern sich häufig.'],
             ['q' => 'Wie kann ich meine IP-Adresse verbergen?', 'a' => 'Nutze ein VPN oder ein Anonymisierungsnetzwerk wie Tor. Websites sehen dann die IP-Adresse des VPN statt deiner.'],
             ['q' => 'Speichert ihr meine IP-Adresse?', 'a' => 'Nein. Dieses Tool zeigt dir deine IP-Adresse nur an und speichert sie in keiner Datenbank.'],
+            ['q' => 'Wie finde ich meine öffentliche IPv4-Adresse heraus?', 'a' => 'Öffne einfach diese Seite – deine öffentliche IP-Adresse wird oben sofort angezeigt, ganz ohne Anmeldung oder zusätzlichen Klick. Die meisten Heim- und Mobilfunkverbindungen nutzen IPv4; falls deine Verbindung IPv6 nutzt, zeigt diese Seite stattdessen diese Adresse.'],
         ],
     ],
 

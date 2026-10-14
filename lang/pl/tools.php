@@ -767,6 +767,7 @@ return [
             ['q' => 'Czemu mój adres IP się zmienia?', 'a' => 'Większość domowych dostawców internetu przypisuje dynamiczne adresy IP, które mogą się zmienić po ponownym uruchomieniu routera. Adresy IP w internecie mobilnym zmieniają się często.'],
             ['q' => 'Jak mogę ukryć swój adres IP?', 'a' => 'Użyj VPN albo sieci prywatności, takiej jak Tor. Strony wtedy widzą adres IP VPN, a nie Twój.'],
             ['q' => 'Czy zapisujecie mój adres IP?', 'a' => 'Nie. To narzędzie tylko wyświetla Twój adres IP Tobie i nie zapisuje go w żadnej bazie danych.'],
+            ['q' => 'Jak sprawdzić mój publiczny adres IPv4?', 'a' => 'Po prostu otwórz tę stronę – Twój publiczny adres IP pojawi się u góry natychmiast, bez rejestracji i dodatkowych kliknięć. Większość domowych i mobilnych połączeń korzysta z IPv4; jeśli Twoje łącze używa IPv6, strona pokaże ten adres.'],
         ],
     ],
 

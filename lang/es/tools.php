@@ -703,6 +703,7 @@ return [
             ['q' => '¿Por qué cambia mi dirección IP?', 'a' => 'La mayoría de los proveedores domésticos asignan IP dinámicas que pueden cambiar al reiniciar el router. Las IP de datos móviles cambian a menudo.'],
             ['q' => '¿Cómo puedo ocultar mi dirección IP?', 'a' => 'Usa una VPN o una red de privacidad como Tor. Las webs verán entonces la IP de la VPN en lugar de la tuya.'],
             ['q' => '¿Guardáis mi dirección IP?', 'a' => 'No. Esta herramienta solo te muestra tu IP y no la guarda en ninguna base de datos.'],
+            ['q' => '¿Cómo averiguo mi dirección IP pública (IPv4)?', 'a' => 'Abre esta página y tu dirección IP pública aparece arriba al instante, sin registrarte ni hacer clics adicionales. La mayoría de las conexiones domésticas y móviles usan IPv4; si la tuya usa IPv6, esta página mostrará esa dirección en su lugar.'],
         ],
     ],
 
