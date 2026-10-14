@@ -44,20 +44,11 @@ return [
     // Launch/directory badges shown in the footer: link, one image per theme, alt text and
     // display height in px. Each directory's own image is kept for the theme it was made for
     // (they check for it); the other theme uses a recoloured copy in public/images/badges.
-    'badges' => [
-        [
-            'url' => 'https://startupbase.io/products/ilovemytools?utm_source=startupbase&utm_medium=badge&utm_campaign=launch-badge-dark',
-            'light' => '/images/badges/startupbase-light.svg',
-            'dark' => 'https://statics.startupbase.io/site/badges/launched-on-sb-dark.svg',
-            'alt' => 'Launched on StartupBase',
-            'height' => 55,
-        ],
-    ],
+    'badges' => [],
 
     'same_as' => [
         'https://www.uneed.best/tool/ilovetools',
         'https://www.linkedin.com/company/ilovemytools',
-        'https://startupbase.io/products/ilovemytools',
     ],
 
     // The person behind the site, shown on the About page and in the schema once filled in,
