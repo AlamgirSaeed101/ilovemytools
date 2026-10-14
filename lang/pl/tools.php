@@ -513,8 +513,8 @@ return [
 
     'age-calculator' => [
         'name' => 'Kalkulator wieku',
-        'title' => 'Kalkulator wieku - oblicz dokładny wiek z daty urodzenia',
-        'description' => 'Oblicz swój dokładny wiek w latach, miesiącach i dniach na podstawie daty urodzenia. Zobacz liczbę dni życia i odliczanie do urodzin. Darmowy i szybki.',
+        'title' => 'Kalkulator wieku: wiek w latach, miesiącach i dniach',
+        'description' => 'Oblicz swój dokładny wiek w latach, miesiącach, dniach i godzinach na podstawie daty urodzenia, plus odliczanie do urodzin. Darmowy i szybki.',
         'h1' => 'Kalkulator wieku',
         'tagline' => 'Sprawdź dokładny wiek w latach, miesiącach i dniach, plus kolejne urodziny.',
         'keywords' => ['kalkulator wieku', 'oblicz wiek', 'kalkulator daty urodzenia', 'ile mam lat', 'kalkulator wieku z daty urodzenia'],

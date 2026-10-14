@@ -513,8 +513,8 @@ return [
 
     'age-calculator' => [
         'name' => 'Calcolatore di età',
-        'title' => 'Calcolatore di età: età esatta dalla data di nascita',
-        'description' => 'Calcola la tua età esatta in anni, mesi e giorni dalla data di nascita, con i giorni vissuti e il conto alla rovescia per il compleanno.',
+        'title' => 'Calcolatore di età: età in anni, mesi e giorni',
+        'description' => 'Calcola la tua età esatta in anni, mesi, giorni e ore dalla data di nascita, con il conto alla rovescia per il prossimo compleanno. Gratis e immediato.',
         'h1' => 'Calcolatore di età',
         'tagline' => 'Scopri la tua età esatta in anni, mesi e giorni e il prossimo compleanno.',
         'keywords' => ['calcolatore età', 'calcolare età', 'calcolo data di nascita', 'quanti anni ho', 'calcolo età da data di nascita'],

@@ -468,8 +468,8 @@ return [
 
     'age-calculator' => [
         'name' => 'Calculadora de edad',
-        'title' => 'Calculadora de edad: edad exacta por fecha de nacimiento',
-        'description' => 'Calcula tu edad exacta en años, meses y días desde tu fecha de nacimiento. Ve los días vividos y la cuenta atrás para tu próximo cumpleaños.',
+        'title' => 'Calculadora de edad: edad en años, meses y días',
+        'description' => 'Calcula tu edad exacta en años, meses, días y horas desde tu fecha de nacimiento, con la cuenta atrás para tu próximo cumpleaños. Gratis e instantáneo.',
         'h1' => 'Calculadora de edad',
         'tagline' => 'Descubre tu edad exacta en años, meses y días, y tu próximo cumpleaños.',
         'keywords' => ['calculadora de edad', 'calcular edad', 'calcular edad por fecha de nacimiento', 'cuántos años tengo', 'edad exacta'],

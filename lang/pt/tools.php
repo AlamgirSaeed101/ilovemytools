@@ -513,8 +513,8 @@ return [
 
     'age-calculator' => [
         'name' => 'Calculadora de idade',
-        'title' => 'Calculadora de idade: idade exata pela data de nascimento',
-        'description' => 'Calcule sua idade exata em anos, meses e dias pela data de nascimento. Veja os dias vividos e a contagem para o próximo aniversário.',
+        'title' => 'Calculadora de idade: idade em anos, meses e dias',
+        'description' => 'Calcule sua idade exata em anos, meses, dias e horas pela data de nascimento, com a contagem para o próximo aniversário. Grátis e instantâneo.',
         'h1' => 'Calculadora de idade',
         'tagline' => 'Descubra sua idade exata em anos, meses e dias, além do próximo aniversário.',
         'keywords' => ['calculadora de idade', 'calcular idade', 'calculadora de data de nascimento', 'quantos anos eu tenho', 'calcular idade pela data de nascimento'],
