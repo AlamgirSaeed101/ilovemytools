@@ -14,9 +14,9 @@ Read Parts 1-2 of `TOOLS_SPEC_PROMPT.md` (architecture, SEO rules: lines 1-87) b
 1. **Start with CI.** Run `gh run list --limit 3`. If the latest run on `main` failed, fixing it is today's task: open the log (`gh run view <id> --log-failed`), fix the cause, and push. Nothing else until CI is green.
 2. **One item per run.** One new tool, or one SEO item. Small, finished, tested changes. Never leave half-built work on `main`.
 3. **Everything runs in the browser.** No paid APIs, no API keys, no server-side file processing, no new server endpoints. Heavy libraries are lazy-loaded inside the tool.
-4. **All 6 languages.** Every new or changed text needs English plus es, pt, fr, de and it:
+4. **Every language in `config/locales.php` (now 10: en, es, pt, fr, de, it, pl, ko, zh, ur).** Every new or CHANGED text (including reworded headings, titles, descriptions and FAQs) must be updated in ALL of them, not only es, pt, fr, de and it. Urdu is right-to-left; Chinese is Traditional (Taiwan/Hong Kong):
    - share image: run `node scripts/og-images.mjs` (draws public/images/og/{slug}.jpg; PagesTest fails without it); add real `sources` (standards, specs, research) where facts or formulas are used;
-   - interface strings: `t('...')` in JSX, then `node scripts/i18n-extract.mjs` and add each new key to `lang/{es,pt,fr,de,it}.json` (plural objects where needed, keep `{placeholders}`);
+   - interface strings: `t('...')` in JSX, then `node scripts/i18n-extract.mjs` and add each new key to `lang/{es,pt,fr,de,it,pl,ko,zh,ur}.json` (plural objects where needed, keep `{placeholders}`);
    - page content: add the tool to `lang/{code}/tools.php` with the same number of steps, features, content sections and FAQs as `config/tools.php`.
    The translation tests fail if anything is missing. Write natural, native-quality translations; don't copy English.
 5. **Honest content only.** Never invent people, reviews, ratings, user counts, awards, testimonials, statistics or sources. Only cite sources you actually fetched. Items that need facts from the owner (for example real names or social profiles) are marked *(owner input)*. Skip those and leave them unchecked.
@@ -29,7 +29,7 @@ Read Parts 1-2 of `TOOLS_SPEC_PROMPT.md` (architecture, SEO rules: lines 1-87) b
     ```
     ### <date>
     **Changed today**
-    - <what visitors will notice, e.g. "New Tip Calculator at ilovemytools.store/tip-calculator (6 languages)">
+    - <what visitors will notice, e.g. "New Tip Calculator at ilovemytools.store/tip-calculator (10 languages)">
     **Status:** CI <passed/failed> · live <yes/no>
     **Coming next**
     - <the next 2-3 unchecked backlog items>
@@ -45,7 +45,8 @@ Read Parts 1-2 of `TOOLS_SPEC_PROMPT.md` (architecture, SEO rules: lines 1-87) b
     use local conventions via `resources/js/lib/region.js` (Letter vs A4, tipping, US vs metric units); and
     for money tools be exact: show formulas, cite official sources (e.g. EU/HMRC VAT rates) and never give tax advice.
 13. **LinkedIn.** Do nothing for LinkedIn. A separate routine (trig_01VFS234jmvk89a4DutEGqbd, weekdays 08:00 UTC) posts to the owner's profile via Zapier and keeps `docs/linkedin-log.md`. Never edit that log yourself.
-14. **SEO / GEO / AEO has its own routine.** A separate routine (trig_01N2Jft7zA1zDR56Mm9R9ntm, 4 times a day at 00:47, 05:47, 12:47 and 18:47 UTC; one improvement per run, log-only commits use [skip ci]) owns the "SEO / GEO / AEO" section of the backlog and logs its audits in `docs/seo-audit.md`. The daily routine skips that section and does the other backlog items and Search Console fixes.
+14. **SEO / GEO / AEO on top pages (hourly).** Routine trig_01N2Jft7zA1zDR56Mm9R9ntm runs every hour at :37 UTC but deploys only 3 times a day (runs in the 02, 10 and 18 UTC hours; the others commit with [skip ci]), because every deploy clears the site caches and briefly risks 5xx errors. It refreshes `docs/seo-targets.md` once a day from Search Console + GA4 (top 15 pages by clicks, then impressions, with their top queries), improves ONE of those pages per run in every language, and logs it in `docs/seo-audit.md`. Pages with no impressions are not worked on. The daily new-tools routine (trig_0121zRuvBajgQns77NiGBoRy) is paused since 13 Oct 2026 so all effort goes to pages people already find.
+15. **Site-health guard (daily).** Routine trig_01RTgXMSXLZtSQh5P6SGrXKp (05:07 UTC, when no deploy runs) runs `node scripts/seo-health.mjs` (crawls every sitemap page plus every internal and outbound link) and treats every ranking risk as its job. It FIXES on its own, in every language: redirecting or non-200 sitemap URLs, wrong canonicals, hreflang to missing pages, invalid or wrongly-typed JSON-LD, titles over 60 / descriptions outside 110-160 chars (CJK may be shorter), missing or extra H1s, images without alt, broken internal links, and outbound links that are dead (404/410/DNS) on 3 daily runs in a row (`docs/health-state.json` counts the days; one bad day never removes anything). It also REMOVES from the site any badge or `same_as` profile whose listing is dead, no longer links to the site, or is a paid/spam directory (sponsored + nofollow only, or flagged as spam); it never removes a whole page, tool, language or guide, and never adds `noindex` without the owner. Things only the owner can change (DNS, hosting speed, the GoDaddy/Sucuri firewall or injected scripts, disavowing bad inbound links, unfinished directory listings) go under "Waiting on you" in the daily issue #1 comment, once, not every day.
 
 ## Backlog (in priority order)
 
@@ -64,7 +65,7 @@ Finance topics have much higher ad prices in the US/UK/EU than file tools. Befor
 volume and CPC in Semrush (`us`, `uk`, `de`) and save the data in `docs/keywords/`.
 - [x] **Mortgage Calculator** `/mortgage-calculator` (monthly payment, amortization table, extra payments; US and UK wording).
 - [x] **Loan Calculator** `/loan-calculator` (payment, total interest, amortization schedule).
-- [ ] **Compound Interest Calculator** `/compound-interest-calculator` (monthly contributions, chart, table).
+- [x] **Compound Interest Calculator** `/compound-interest-calculator` (monthly contributions, chart, table).
 - [ ] **VAT Calculator** `/vat-calculator` (add/remove VAT; UK and EU country rates from official sources, dated).
 - [ ] **Salary to Hourly Calculator** `/salary-calculator` (hourly, weekly, monthly, yearly; no tax estimates).
 
@@ -83,7 +84,7 @@ Ranked by real US search volume and keyword difficulty (KD 0-100, lower is easie
 - [ ] **Barcode Generator** `/barcode-generator` (JsBarcode: CODE128, EAN-13, UPC-A, CODE39; PNG/SVG). *823K (KD 60).*
 - [ ] **HEIC to JPG** `/heic-to-jpg` (heic2any, batch, ZIP). *246K (KD 71).*
 - [x] **Compress PDF** `/compress-pdf` (object-stream re-save + optional re-render at chosen quality; before/after size; warn that strong mode rasterises text). *110K "compress pdf" (KD 74) + 74K "pdf compressor" (KD 67).*
-- [ ] **Compound Interest Calculator** `/compound-interest-calculator` (principal, rate, years, compounding, monthly contributions, yearly table). *1.22M (KD 66).*
+- [x] **Compound Interest Calculator** `/compound-interest-calculator` (principal, rate, years, compounding, monthly contributions, yearly table). *1.22M (KD 66).* Done 13 Oct 2026 - see the High-revenue tools item above.
 - [ ] **Date Calculator** `/date-calculator` (days between dates, add/subtract days, business days). *368K (KD 63) + "days between dates" 90.5K.*
 - [ ] **TDEE Calculator** `/tdee-calculator` (Mifflin-St Jeor with activity levels; cite the formula's source; not medical advice). *368K (KD 57).*
 - [ ] **Invoice Generator** `/invoice-generator` (form, live preview, PDF via pdf-lib, data only in memory). *673K (KD 63).*
@@ -115,9 +116,9 @@ Not planned: PDF↔PowerPoint (no permissively-licensed in-browser library rende
 - [x] Cite real sources with outbound links for factual claims (sleep hours, coin-flip bias study, Base64 spec…). Only cite pages you fetched and checked.
 - [x] Show "Last updated" on tool pages and add `dateModified` to the WebApplication schema.
 - [x] Per-tool Open Graph images (tool name + icon, generated at build time). **Done** — `scripts/og-images.mjs` already draws one per tool (name, icon, category, tagline) into `public/images/og/{slug}.jpg`; verified all 52 tools have one.
-- [ ] Rephrase statement H2s as questions where natural (e.g. "Common image sizes" -> "What size should my image be?"), all languages. (Intro definitions are done.) **In progress** — Mortgage Calculator and Loan Calculator done 12 Oct 2026 (highest-revenue pages); Image Resizer done 12 Oct 2026; Word Counter and Case Converter done 13 Oct 2026; Password Generator and QR Code Generator done 13 Oct 2026. ~34 tools still have statement H2s; continue a few per run.
+- [ ] Rephrase statement H2s as questions where natural (e.g. "Common image sizes" -> "What size should my image be?"), all languages. (Intro definitions are done.) **In progress** — Mortgage Calculator and Loan Calculator done 12 Oct 2026 (highest-revenue pages); Image Resizer done 12 Oct 2026; Word Counter and Case Converter done 13 Oct 2026; Password Generator and QR Code Generator done 13 Oct 2026; JPG to PDF and Merge PDF done 13 Oct 2026; Percentage Calculator and JSON Formatter done 13 Oct 2026. ~30 tools still have statement H2s; continue a few per run.
 - [x] HowTo and SpeakableSpecification schema on tool pages.
-- [ ] Homepage FAQ (4-5 questions such as "Are these tools really free?", "Are my files uploaded?") with FAQPage schema, all languages. *(quick audit 30 Sep)*
+- [x] Homepage FAQ (4-5 questions such as "Are these tools really free?", "Are my files uploaded?") with FAQPage schema, all languages. *(quick audit 30 Sep)* **Done** — `AppSupportHomeFaq` with FAQPage schema on every language home page (checked live 13 Oct 2026).
 - [ ] Tools without them get a one-line definition, a reference table and 2-3 cited sources, like /image-compressor (start with /merge-pdf, /split-pdf). *(quick audit 30 Sep)*
 - [x] *(owner input)* OPcache enabled (3 Oct 2026): uncached pages went from ~1.8 s to ~0.6 s to first byte, the same as a static file. What remains is distance to the Singapore server (moving hosting to the US would help US visitors).
 - [x] *(owner input, REMIND on 4 Oct 2026)* Connect **Google Search Console** to Windsor.ai while logged in to the Windsor account **talibhussain.monzo@gmail.com** (Google account mas032746@gmail.com is fine): https://onboard.windsor.ai/connect?connector=searchconsole&next=/searchconsole/authorize then tick ilovemytools.store and Finish. It was connected to a different Windsor account (mas032746). **Done by 4 Oct 2026** — confirmed connected (account `sc-domain:ilovemytools.store`), though it's returning 0 rows for the last 28 days so far (see `docs/search-console.md`).
@@ -133,3 +134,4 @@ Older entries: `docs/routine-log.md` (do NOT read it unless a task needs history
 Each entry is ONE line of at most 300 characters: date · what changed · URLs. Details belong in the commit message.
 
 - 2026-10-09: New Loan Calculator at ilovemytools.store/loan-calculator (10 languages): payment, interest, amortization schedule. Organic Search sessions: 10 this week (first time >1). Flagged a 0-click/good-position /domain-authority-checker anomaly for a future run.
+- 2026-10-13: New Compound Interest Calculator at ilovemytools.store/compound-interest-calculator (10 languages): contributions, any compounding frequency, growth chart, table. Checked /domain-authority-checker CTR anomaly again (still 0 clicks); ruled out a noindex bug, likely rank-tracker traffic.

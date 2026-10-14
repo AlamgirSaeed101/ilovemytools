@@ -303,7 +303,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Como escolher o tamanho da página',
+                'heading' => 'Que tamanho de página devo escolher?',
                 'body' => 'A4 e Carta adicionam espaço em branco ao redor de fotos que não têm a mesma forma da página, o que é útil para documentos e impressão. Ajustar à imagem faz a página do PDF corresponder exatamente a cada foto, mantendo toda a imagem visível sem bordas brancas; útil quando você só precisa de uma cópia rápida em PDF de uma foto.',
             ],
             [
@@ -464,7 +464,7 @@ return [
                 'body' => 'Muitas candidaturas de emprego, pedidos de visto e portais de universidades só aceitam um único arquivo. Juntar o currículo, a carta de apresentação e os certificados em um só PDF mantém tudo junto e na ordem certa.',
             ],
             [
-                'heading' => 'PDFs protegidos por senha',
+                'heading' => 'Posso juntar um PDF protegido por senha?',
                 'body' => 'PDFs criptografados não podem ser unidos até que a proteção por senha seja removida. Abra o arquivo no seu leitor de PDF com a senha e salve ou imprima uma cópia sem proteção; depois junte essa cópia.',
             ],
         ],
@@ -568,7 +568,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Fórmulas de porcentagem',
+                'heading' => 'Qual é a fórmula para calcular uma porcentagem?',
                 'body' => 'X% de Y = (X / 100) x Y. X como porcentagem de Y = (X / Y) x 100. Variação percentual de A para B = ((B - A) / |A|) x 100. Um resultado positivo é um aumento e um resultado negativo é uma redução.',
             ],
         ],
@@ -665,7 +665,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Erros comuns em JSON',
+                'heading' => 'Quais são os erros mais comuns em JSON?',
                 'body' => 'Os erros mais comuns são vírgulas sobrando depois do último item, aspas simples em vez de duplas, chaves sem aspas e comentários, nada disso permitido no JSON padrão.',
             ],
         ],
@@ -1382,7 +1382,7 @@ return [
     'domain-authority-checker' => [
         'name' => 'Verificador de autoridade de domínio',
         'title' => 'Verificador de autoridade de domínio em massa grátis',
-        'description' => 'Verificador de autoridade de domínio grátis: veja a pontuação de autoridade, o ranking global e os domínios de referência de até 100 sites e exporte um CSV.',
+        'description' => 'Verificador de autoridade de domínio em massa: pontuação de autoridade, ranking global e domínios de referência de até 100 sites, grátis, sem cadastro.',
         'h1' => 'Verificador de autoridade de domínio em massa',
         'tagline' => 'Compare a autoridade de até 100 sites em segundos.',
         'keywords' => [
@@ -2297,6 +2297,63 @@ return [
                 ['3 anos', '$617.54', '$2,231.51'],
                 ['5 anos', '$396.02', '$3,761.44'],
                 ['7 anos', '$301.85', '$5,355.70'],
+            ],
+        ],
+    ],
+
+    'compound-interest-calculator' => [
+        'name' => 'Calculadora de juros compostos',
+        'title' => 'Calculadora de Juros Compostos - Gráfico e Tabela',
+        'description' => 'Calculadora de juros compostos gratuita. Veja como um valor inicial e os aportes mensais crescem, com qualquer capitalização, gráfico e tabela.',
+        'h1' => 'Calculadora de juros compostos',
+        'tagline' => 'Veja como um valor inicial e os aportes mensais crescem com o tempo, com um gráfico e uma tabela ano a ano.',
+        'keywords' => [
+            'calculadora de juros compostos',
+            'calculadora de juros compostos com aportes mensais',
+            'calculadora de crescimento de investimento',
+            'calculadora de juros',
+            'calculadora de juros compostos diários',
+        ],
+        'intro' => 'Juros compostos são os juros ganhos tanto sobre o seu dinheiro original quanto sobre os juros que ele já gerou, então um saldo cresce mais rápido quanto mais tempo for deixado para capitalizar. Informe um valor inicial, uma taxa de juros anual, quantos anos ele vai crescer e com que frequência os juros capitalizam, e, opcionalmente, adicione um aporte mensal. A calculadora mostra o saldo final, o total aportado, os juros totais ganhos, um gráfico de crescimento e uma tabela ano a ano.',
+        'steps' => [
+            'Informe um valor inicial e escolha uma moeda.',
+            'Informe a taxa de juros anual, o número de anos e a frequência de capitalização (anual, semestral, trimestral, mensal ou diária).',
+            'Opcionalmente, informe um aporte mensal para ver como os depósitos regulares aumentam o crescimento.',
+            'Veja o saldo final, o total aportado e os juros totais ganhos, e abra a tabela ano a ano para o detalhamento completo.',
+        ],
+        'features' => [
+            'Saldo final, total aportado e juros totais ganhos',
+            'Gráfico de crescimento mostrando os aportes em comparação com os juros ganhos',
+            'Qualquer frequência de capitalização: anual, semestral, trimestral, mensal ou diária',
+            'Aportes mensais opcionais além de um valor inicial',
+            'Tabela completa do saldo ano a ano',
+            'Funciona totalmente no seu navegador - nada do que você digita é enviado a lugar nenhum',
+        ],
+        'content' => [
+            [
+                'heading' => 'Como os juros compostos são calculados?',
+                'body' => 'Cada vez que os juros capitalizam, eles são somados ao saldo, e a próxima rodada de juros é calculada sobre esse valor maior, não apenas sobre o dinheiro original. Quanto mais vezes os juros capitalizam (diariamente em vez de anualmente, por exemplo) e quanto mais tempo o dinheiro é deixado para crescer, maior é o efeito, porque cada período de capitalização inclui um pouco mais de "juros sobre juros" do que o anterior.',
+            ],
+            [
+                'heading' => 'Por que os aportes mensais fazem tanta diferença?',
+                'body' => 'Cada aporte que você adiciona começa a capitalizar a partir do dia em que entra, então o dinheiro aportado no início do prazo tem muito mais tempo para crescer do que o aportado perto do fim. Ao longo de muitos anos, aportes mensais constantes podem somar mais ao saldo final do que o próprio valor inicial.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Qual frequência de capitalização devo escolher?', 'a' => 'Use a que o seu banco, título ou conta de investimento indicar - contas de poupança costumam capitalizar diária ou mensalmente, enquanto alguns títulos capitalizam semestral ou anualmente. Se não tiver certeza, mensal é um padrão comum, e a diferença entre as frequências costuma ser pequena comparada à própria taxa de juros.'],
+            ['q' => 'Isso é um retorno garantido?', 'a' => 'Não. Esta calculadora projeta o crescimento com uma taxa de juros fixa que você escolhe. Os retornos reais de poupança e investimento variam de ano para ano, e investimentos podem perder valor, então trate o resultado como uma estimativa, não uma promessa.'],
+            ['q' => 'Isso considera impostos ou inflação?', 'a' => 'Não. O resultado é o crescimento bruto do seu dinheiro antes de qualquer imposto sobre os juros ou ganhos de investimento, e sem ajuste pela inflação. Seu poder de compra real no futuro será menor do que o saldo bruto mostrado aqui.'],
+            ['q' => 'Qual é a diferença entre esta calculadora e a Calculadora de Empréstimo?', 'a' => 'Esta ferramenta faz um saldo crescer com os juros trabalhando a seu favor (poupança e investimentos). A Calculadora de Empréstimo mostra um saldo diminuindo com o tempo, com os juros trabalhando contra você (empréstimos e financiamentos).'],
+            ['q' => 'Posso usar isso para a poupança de aposentadoria?', 'a' => 'Sim, funciona para qualquer valor único mais aportes regulares - uma conta de poupança, uma conta de investimento ou uma conta de aposentadoria. Basta usar um retorno anual estimado realista e lembrar que é uma projeção, não uma garantia.'],
+        ],
+        'table' => [
+            'caption' => 'Como $10,000 crescem a 6% de juros anuais, capitalizados mensalmente, sem novos aportes',
+            'headers' => ['Anos', 'Saldo', 'Juros ganhos'],
+            'rows' => [
+                ['5 anos', '$13,488.50', '$3,488.50'],
+                ['10 anos', '$18,193.97', '$8,193.97'],
+                ['20 anos', '$33,102.04', '$23,102.04'],
+                ['30 anos', '$60,225.75', '$50,225.75'],
             ],
         ],
     ],

@@ -25,11 +25,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Czemu liczba słów ma znaczenie',
+                'heading' => 'Dlaczego liczba słów ma znaczenie?',
                 'body' => 'Szkoły, uczelnie i wydawnictwa często narzucają ścisłe limity słów, a platformy społecznościowe ograniczają liczbę znaków w poście. Wyszukiwarki pokazują zwykle około 155-160 znaków meta opisu, a tytuł strony powinien mieścić się w około 60 znakach. Znając dokładną liczbę, trafiasz w te limity bez zgadywania.',
             ],
             [
-                'heading' => 'Jak liczone są słowa',
+                'heading' => 'Jak liczone są słowa?',
                 'body' => 'Słowem jest każda grupa liter lub cyfr oddzielona spacjami lub końcem wiersza. Same znaki interpunkcyjne nie są liczone jako słowo. Zdania liczone są na podstawie znaków kończących (. ! ?), a akapity na podstawie pustych wierszy, więc wyniki odpowiadają temu, co pokazują edytory tekstu, takie jak Microsoft Word i Google Docs.',
             ],
         ],
@@ -64,11 +64,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Jak W Tytule a Jak w zdaniu',
+                'heading' => 'Jak W Tytule czy Jak w zdaniu: czym się różnią?',
                 'body' => 'Zapis Jak W Tytule pisze wielką literą główne słowa nagłówka („Szybki Przewodnik po SEO”), a krótkie słowa, takie jak i, w, z i na, zostają małe, jeśli nie zaczynają tytułu. Zapis Jak w zdaniu pisze wielką literą tylko pierwsze słowo zdania („Szybki przewodnik po SEO”), co wiele nowoczesnych witryn preferuje dla lepszej czytelności. W polskich tytułach wielką literą pisze się tylko pierwsze słowo - sprawdź wynik pod kątem polskich zasad.',
             ],
             [
-                'heading' => 'Zapisy programistyczne',
+                'heading' => 'Jakie są zapisy programistyczne?',
                 'body' => 'camelCase jest typowy dla zmiennych w JavaScript, PascalCase dla nazw klas, snake_case dla Pythona i kolumn baz danych, kebab-case dla adresów URL i klas CSS, a CONSTANT_CASE dla stałych i zmiennych środowiskowych.',
             ],
         ],
@@ -106,7 +106,7 @@ return [
                 'body' => 'Najważniejsza jest długość. Każdy dodatkowy znak wielokrotnie zwiększa liczbę możliwych kombinacji. Hasło o długości 16 znaków, z wielkimi i małymi literami, cyframi i symbolami, ma ponad 100 bitów entropii, co przy obecnym sprzęcie oznacza miliardy lat potrzebne na złamanie metodą brute-force.',
             ],
             [
-                'heading' => 'Wskazówki dotyczące bezpieczeństwa haseł',
+                'heading' => 'Jak dbać o bezpieczeństwo haseł?',
                 'body' => 'Używaj innego hasła dla każdego konta, przechowuj je w menedżerze haseł i włącz weryfikację dwuetapową, gdziekolwiek jest dostępna. Nigdy nie używaj ponownie hasła, które wyciekło w jakimś naruszeniu danych.',
             ],
         ],
@@ -153,11 +153,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Jak zrobić kod QR do Wi-Fi',
+                'heading' => 'Jak zrobić kod QR do Wi-Fi?',
                 'body' => 'Wybierz typ Wi-Fi, wpisz nazwę swojej sieci (SSID), hasło i typ zabezpieczeń. Goście mogą zeskanować kod aparatem telefonu i połączyć się z siecią bez wpisywania hasła, co jest idealne w domu, kawiarni czy biurze.',
             ],
             [
-                'heading' => 'Jak zrobić kod QR, który zawsze się skanuje',
+                'heading' => 'Jak zrobić kod QR, który zawsze się skanuje?',
                 'body' => 'Zachowaj silny kontrast, z ciemnym kodem na jasnym tle, zostaw margines wokół kodu i wydrukuj go przynajmniej w rozmiarze 2 x 2 cm. Użyj wyższego poziomu korekcji błędów, jeśli kod może się porysować albo zabrudzić.',
             ],
         ],
@@ -253,11 +253,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Popularne rozmiary obrazów',
+                'heading' => 'Jaki rozmiar powinien mieć mój obraz?',
                 'body' => 'Posty na Instagramie dobrze wyglądają w rozmiarze 1080 x 1080 pikseli, Facebook i LinkedIn udostępniają obrazy w 1200 x 630, miniatury YouTube w 1280 x 720, a główne zdjęcia na stronie zwykle nie wymagają więcej niż 1920 pikseli szerokości.',
             ],
             [
-                'heading' => 'Konwersja PNG na JPG',
+                'heading' => 'Jak przekonwertować PNG na JPG?',
                 'body' => 'JPG nie wspiera przezroczystości, dlatego przezroczyste obszary są wypełniane białym kolorem przy konwersji PNG na JPG. Jeśli chcesz zachować przezroczystość, wybierz PNG albo WebP jako format wyjściowy.',
             ],
         ],
@@ -303,7 +303,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Wybór rozmiaru strony',
+                'heading' => 'Jaki rozmiar strony wybrać?',
                 'body' => 'A4 i Letter dodają biały margines wokół zdjęć, które nie pasują do kształtu strony, co dobrze sprawdza się w dokumentach i druku. Opcja Dopasuj do obrazu ustawia rozmiar strony PDF tak, aby odpowiadał każdemu zdjęciu, zachowując cały obraz widoczny bez białych ramek - przydatne, gdy potrzebujesz tylko szybkiej kopii zdjęcia w PDF.',
             ],
             [
@@ -464,7 +464,7 @@ return [
                 'body' => 'Wiele podań o pracę, formularzy wizowych i portali uniwersyteckich przyjmuje tylko jeden plik. Połączenie CV, listu motywacyjnego i certyfikatów w jeden PDF utrzymuje wszystko razem i w odpowiedniej kolejności.',
             ],
             [
-                'heading' => 'Pliki PDF chronione hasłem',
+                'heading' => 'Czy można połączyć PDF chroniony hasłem?',
                 'body' => 'Zaszyfrowanych plików PDF nie można połączyć, dopóki nie zostanie usunięta ochrona hasłem. Otwórz plik w swoim czytniku PDF za pomocą hasła i zapisz lub wydrukuj kopię bez ochrony, a potem połącz tę kopię.',
             ],
         ],
@@ -568,7 +568,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Wzory procentowe',
+                'heading' => 'Jaki jest wzór na procent?',
                 'body' => 'X% z Y = (X / 100) x Y. X jako procent Y = (X / Y) x 100. Zmiana procentowa z A do B = ((B - A) / |A|) x 100. Dodatni wynik to wzrost, a ujemny to spadek.',
             ],
         ],
@@ -666,7 +666,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Najczęstsze błędy JSON',
+                'heading' => 'Jakie są najczęstsze błędy JSON?',
                 'body' => 'Najczęstsze błędy to nadmiarowe przecinki po ostatnim elemencie, pojedyncze cudzysłowy zamiast podwójnych, klucze bez cudzysłowów i komentarze, z których żaden nie jest dopuszczony w standardowym JSON.',
             ],
         ],
@@ -1308,8 +1308,8 @@ return [
 
     'domain-authority-checker' => [
         'name' => 'Masowy sprawdzacz autorytetu domeny',
-        'title' => 'Sprawdzacz autorytetu domeny - darmowy, do 100 na raz',
-        'description' => 'Darmowy masowy sprawdzacz autorytetu domeny: zobacz wynik autorytetu, globalną rangę i domeny odsyłające dla do 100 witryn na raz, eksportuj do CSV.',
+        'title' => 'Sprawdzacz autorytetu domeny - darmowy, bez rejestracji',
+        'description' => 'Darmowy masowy sprawdzacz autorytetu domeny: wynik autorytetu, globalna ranga i domeny odsyłające dla do 100 witryn na raz, bez rejestracji, natychmiast.',
         'h1' => 'Masowy sprawdzacz autorytetu domeny',
         'tagline' => 'Porównaj autorytet do 100 witryn w kilka sekund.',
         'keywords' => ['sprawdzacz autorytetu domeny', 'masowy sprawdzacz autorytetu domeny', 'masowy sprawdzacz da', 'sprawdzacz autorytetu witryny', 'sprawdzacz domain rating', 'sprawdź autorytet domeny'],
@@ -2095,15 +2095,15 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Jak obliczana jest rata miesięczna',
+                'heading' => 'Jak obliczana jest rata miesięczna?',
                 'body' => 'Kalkulator korzysta ze standardowego wzoru na ratę kredytu o stałym oprocentowaniu: M = P x r / (1 - (1 + r)^-n), gdzie P to kwota kredytu (cena nieruchomości minus wkład własny), r to miesięczne oprocentowanie (oprocentowanie roczne podzielone przez 12), a n to łączna liczba rat miesięcznych (okres kredytowania w latach razy 12). To ten sam wzór, którego banki używają przy kredycie o stałym oprocentowaniu, i obejmuje on wyłącznie kapitał i odsetki - podatek od nieruchomości, ubezpieczenie domu, ubezpieczenie kredytu (PMI) i czynsz wspólnoty nie są uwzględnione, ponieważ zależą od lokalizacji i kredytodawcy.',
             ],
             [
-                'heading' => 'Dlaczego nadpłaty oszczędzają tak dużo odsetek',
+                'heading' => 'Dlaczego nadpłaty oszczędzają tak dużo odsetek?',
                 'body' => 'Każda dodatkowa złotówka wpłacona na poczet kapitału przestaje generować odsetki przez resztę okresu kredytowania, więc nadpłacanie na początku kredytu - gdy saldo i odsetkowa część każdej raty są największe - ma największy wpływ. Kalkulator porównuje harmonogram z nadpłatą i bez niej, pokazując dokładnie, o ile miesięcy wcześniej kredyt zostanie spłacony i ile łącznych odsetek uda się uniknąć.',
             ],
             [
-                'heading' => 'Wkład własny: "deposit" w Wielkiej Brytanii',
+                'heading' => 'Czy wkład własny to w Wielkiej Brytanii "deposit"?',
                 'body' => 'Kwota wpłacana z góry za nieruchomość, zmniejszająca potrzebny kredyt, w USA nazywana jest "down payment", a w Wielkiej Brytanii, Irlandii i kilku innych krajach - "deposit"; oba terminy oznaczają tu to samo co wkład własny. Wyższy wkład własny oznacza mniejszy kredyt, niższą ratę miesięczną i mniej odsetek zapłaconych łącznie, choć kredytodawcy mogą mieć też własny minimalny wkład własny i inne zasady przyznawania kredytu, których ten kalkulator nie uwzględnia.',
             ],
         ],
@@ -2156,11 +2156,11 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Jak obliczana jest rata miesięczna',
+                'heading' => 'Jak obliczana jest rata miesięczna?',
                 'body' => 'Kalkulator korzysta ze standardowego wzoru na ratę kredytu o stałym oprocentowaniu: M = P x r / (1 - (1 + r)^-n), gdzie P to kwota kredytu, r to miesięczne oprocentowanie (oprocentowanie roczne podzielone przez 12), a n to łączna liczba rat miesięcznych (okres kredytowania w latach razy 12). To ten sam wzór, którego kredytodawcy używają przy kredycie o stałym oprocentowaniu i stałym okresie - gotówkowym, samochodowym, studenckim lub innym - i obejmuje on wyłącznie kapitał i odsetki: opłaty kredytodawcy, koszty udzielenia kredytu czy ubezpieczenia nie są uwzględnione, ponieważ zależą od kredytodawcy i rodzaju kredytu.',
             ],
             [
-                'heading' => 'Dlaczego nadpłaty oszczędzają tak dużo odsetek',
+                'heading' => 'Dlaczego nadpłaty oszczędzają tak dużo odsetek?',
                 'body' => 'Każda dodatkowa złotówka wpłacona na poczet kapitału przestaje generować odsetki przez resztę okresu kredytowania, więc nadpłacanie na początku - gdy saldo i odsetkowa część każdej raty są największe - ma największy wpływ. Kalkulator porównuje harmonogram z nadpłatą i bez niej, pokazując dokładnie, o ile miesięcy wcześniej kredyt zostanie spłacony i ile łącznych odsetek uda się uniknąć. Sprawdź najpierw umowę kredytową: niektórzy kredytodawcy naliczają opłatę za wcześniejszą spłatę.',
             ],
         ],
@@ -2179,6 +2179,63 @@ return [
                 ['3 lata', '$617.54', '$2,231.51'],
                 ['5 lat', '$396.02', '$3,761.44'],
                 ['7 lat', '$301.85', '$5,355.70'],
+            ],
+        ],
+    ],
+
+    'compound-interest-calculator' => [
+        'name' => 'Kalkulator odsetek składanych',
+        'title' => 'Kalkulator Odsetek Składanych - Wykres i Tabela',
+        'description' => 'Darmowy kalkulator odsetek składanych. Sprawdź, jak kwota początkowa i wpłaty miesięczne rosną w czasie, z wykresem i tabelą rok po roku.',
+        'h1' => 'Kalkulator odsetek składanych',
+        'tagline' => 'Sprawdź, jak kwota początkowa i miesięczne wpłaty rosną w czasie, z wykresem i tabelą rok po roku.',
+        'keywords' => [
+            'kalkulator odsetek składanych',
+            'kalkulator odsetek składanych z miesięcznymi wpłatami',
+            'kalkulator wzrostu inwestycji',
+            'kalkulator odsetek',
+            'kalkulator dziennych odsetek składanych',
+        ],
+        'intro' => 'Odsetki składane to odsetki naliczane zarówno od Twoich pierwotnych pieniędzy, jak i od odsetek, które już wygenerowały, więc saldo rośnie szybciej, im dłużej pozostaje kapitalizowane. Podaj kwotę początkową, roczną stopę odsetek, liczbę lat wzrostu i częstotliwość kapitalizacji odsetek, a opcjonalnie dodaj miesięczną wpłatę. Kalkulator pokazuje saldo końcowe, łączną sumę wpłat, łączne zarobione odsetki, wykres wzrostu i tabelę rok po roku.',
+        'steps' => [
+            'Podaj kwotę początkową i wybierz walutę.',
+            'Podaj roczną stopę odsetek, liczbę lat i częstotliwość kapitalizacji (rocznie, półrocznie, kwartalnie, miesięcznie lub dziennie).',
+            'Opcjonalnie podaj miesięczną wpłatę, aby zobaczyć, jak regularne depozyty zwiększają wzrost.',
+            'Sprawdź saldo końcowe, łączną sumę wpłat i łączne zarobione odsetki, a następnie otwórz tabelę rok po roku, aby zobaczyć pełny podział.',
+        ],
+        'features' => [
+            'Saldo końcowe, łączna suma wpłat i łączne zarobione odsetki',
+            'Wykres wzrostu pokazujący wpłaty w porównaniu z zarobionymi odsetkami',
+            'Każda częstotliwość kapitalizacji: rocznie, półrocznie, kwartalnie, miesięcznie lub dziennie',
+            'Opcjonalne miesięczne wpłaty oprócz kwoty początkowej',
+            'Pełna tabela salda rok po roku',
+            'Działa w całości w przeglądarce - nic, co wpiszesz, nigdzie nie jest wysyłane',
+        ],
+        'content' => [
+            [
+                'heading' => 'Jak obliczane są odsetki składane',
+                'body' => 'Każdy raz, gdy odsetki są kapitalizowane, zostają dodane do salda, a kolejna runda odsetek jest naliczana od tej większej kwoty, nie tylko od pierwotnych pieniędzy. Im częściej odsetki są kapitalizowane (na przykład dziennie, a nie rocznie) i im dłużej pieniądze mogą rosnąć, tym większy jest efekt, ponieważ każdy okres kapitalizacji zawiera trochę więcej "odsetek od odsetek" niż poprzedni.',
+            ],
+            [
+                'heading' => 'Dlaczego miesięczne wpłaty robią taką różnicę',
+                'body' => 'Każda dodana wpłata zaczyna być kapitalizowana od dnia jej wpłacenia, więc pieniądze wpłacone na początku okresu mają znacznie więcej czasu na wzrost niż te wpłacone bliżej końca. Przez wiele lat regularne miesięczne wpłaty mogą dodać do salda końcowego więcej niż sama kwota początkowa.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Jaką częstotliwość kapitalizacji powinienem wybrać?', 'a' => 'Użyj tej, którą podaje Twój bank, obligacja lub konto inwestycyjne - konta oszczędnościowe są często kapitalizowane dziennie lub miesięcznie, a niektóre obligacje kapitalizują się półrocznie lub rocznie. Jeśli nie jesteś pewien, miesięczna jest typowym domyślnym wyborem, a różnica między częstotliwościami jest zwykle niewielka w porównaniu z samą stopą odsetek.'],
+            ['q' => 'Czy to gwarantowany zwrot?', 'a' => 'Nie. Ten kalkulator prognozuje wzrost przy stałej stopie odsetek, którą wybierasz. Rzeczywiste zwroty z oszczędności i inwestycji zmieniają się z roku na rok, a inwestycje mogą tracić na wartości, więc traktuj wynik jako szacunek, a nie obietnicę.'],
+            ['q' => 'Czy uwzględnia podatki lub inflację?', 'a' => 'Nie. Wynik to surowy wzrost Twoich pieniędzy przed opodatkowaniem odsetek lub zysków inwestycyjnych i bez korekty o inflację. Twoja rzeczywista siła nabywcza w przyszłości będzie niższa niż surowe saldo pokazane tutaj.'],
+            ['q' => 'Jaka jest różnica między tym a Kalkulatorem kredytu?', 'a' => 'To narzędzie zwiększa saldo, w którym odsetki działają na Twoją korzyść (oszczędności i inwestycje). Kalkulator kredytu pokazuje saldo zmniejszające się w czasie, w którym odsetki działają na Twoją niekorzyść (kredyty i hipoteki).'],
+            ['q' => 'Czy mogę go użyć do oszczędności na emeryturę?', 'a' => 'Tak, działa dla każdej jednorazowej kwoty wraz z regularnymi wpłatami - konta oszczędnościowego, konta inwestycyjnego lub konta emerytalnego. Po prostu użyj realistycznego szacowanego rocznego zwrotu i pamiętaj, że to prognoza, a nie gwarancja.'],
+        ],
+        'table' => [
+            'caption' => 'Jak 10 000 $ rośnie przy 6% rocznych odsetek, kapitalizowanych miesięcznie, bez dalszych wpłat',
+            'headers' => ['Lata', 'Saldo', 'Zarobione odsetki'],
+            'rows' => [
+                ['5 lat', '$13,488.50', '$3,488.50'],
+                ['10 lat', '$18,193.97', '$8,193.97'],
+                ['20 lat', '$33,102.04', '$23,102.04'],
+                ['30 lat', '$60,225.75', '$50,225.75'],
             ],
         ],
     ],

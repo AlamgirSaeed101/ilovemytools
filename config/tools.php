@@ -376,7 +376,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Choosing a page size',
+                'heading' => 'What page size should I choose?',
                 'body' => "A4 and Letter add white space around photos that don't match the page shape, which suits documents and printing. Fit image sizes the PDF page to match each photo exactly, keeping the full image visible with no white borders - useful when you just need a quick PDF copy of a photo.",
             ],
             [
@@ -575,7 +575,7 @@ return [
                 'body' => 'Many job applications, visa forms and university portals only accept a single file. Merging your CV, cover letter and certificates into one PDF keeps everything together and in the right order.',
             ],
             [
-                'heading' => 'Password-protected PDFs',
+                'heading' => 'Can I merge a password-protected PDF?',
                 'body' => 'Encrypted PDFs cannot be merged until the password protection is removed. Open the file in your PDF reader with the password and save or print a copy without protection, then merge that copy.',
             ],
         ],
@@ -705,7 +705,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Percentage formulas',
+                'heading' => 'What is the formula for a percentage?',
                 'body' => 'X% of Y = (X / 100) x Y. X as a percent of Y = (X / Y) x 100. Percentage change from A to B = ((B - A) / |A|) x 100. A positive result is an increase and a negative result is a decrease.',
             ],
         ],
@@ -812,7 +812,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Common JSON errors',
+                'heading' => 'What are the most common JSON errors?',
                 'body' => 'The most common mistakes are trailing commas after the last item, single quotes instead of double quotes, unquoted keys, and comments, none of which are allowed in standard JSON.',
             ],
         ],
@@ -1596,9 +1596,9 @@ return [
         'icon' => 'gauge',
         'popular' => false,
         'server' => true,
-        'updated' => '2026-10-02',
-        'title' => 'Bulk Domain Authority Checker - Free, 100 at Once',
-        'description' => 'Free bulk domain authority checker: see the authority score, global rank and referring domains of up to 100 websites at once, and export the list as CSV.',
+        'updated' => '2026-10-13',
+        'title' => 'Bulk Domain Authority Checker - 100 Free, No Signup',
+        'description' => 'Bulk domain authority checker: check up to 100 websites at once for free, no sign up. See the authority score, global rank and referring domains instantly.',
         'h1' => 'Bulk Domain Authority Checker',
         'tagline' => 'Compare the authority of up to 100 websites in seconds.',
         'keywords' => ['domain authority checker', 'bulk domain authority checker', 'bulk da checker', 'website authority checker', 'domain rating checker', 'check domain authority'],
@@ -2588,6 +2588,65 @@ return [
                 ['3 years', '$617.54', '$2,231.51'],
                 ['5 years', '$396.02', '$3,761.44'],
                 ['7 years', '$301.85', '$5,355.70'],
+            ],
+        ],
+    ],
+
+    'compound-interest-calculator' => [
+        'name' => 'Compound Interest Calculator',
+        'category' => 'calculators',
+        'icon' => 'calculator',
+        'popular' => false,
+        'updated' => '2026-10-13',
+        'title' => 'Compound Interest Calculator - Growth Chart & Table',
+        'description' => 'Free compound interest calculator. See how a starting amount and monthly contributions grow over time, with any compounding frequency, a chart and table.',
+        'h1' => 'Compound Interest Calculator',
+        'tagline' => 'See how a starting amount and monthly contributions grow over time, with a chart and year-by-year table.',
+        'keywords' => ['compound interest calculator', 'compound interest calculator with monthly contributions', 'investment growth calculator', 'interest calculator', 'daily compound interest calculator'],
+        'intro' => 'Compound interest is interest earned on both your original money and on the interest it has already earned, so a balance grows faster the longer it is left to compound. Enter a starting amount, an annual interest rate, how many years to grow it and how often interest compounds, and optionally add a monthly contribution. The calculator shows the final balance, the total you contributed, the total interest earned, a growth chart and a year-by-year table.',
+        'steps' => [
+            'Enter a starting amount and choose a currency.',
+            'Enter the annual interest rate, the number of years and how often interest compounds (annually, semi-annually, quarterly, monthly or daily).',
+            'Optionally enter a monthly contribution to see how regular deposits add to the growth.',
+            'Read the final balance, total contributed and total interest earned, and open the year-by-year table for the full breakdown.',
+        ],
+        'features' => [
+            'Final balance, total contributed and total interest earned',
+            'Growth chart showing contributions versus interest earned',
+            'Any compounding frequency: annually, semi-annually, quarterly, monthly or daily',
+            'Optional monthly contributions on top of a starting amount',
+            'Full year-by-year balance table',
+            'Runs entirely in your browser - nothing you enter is sent anywhere',
+        ],
+        'content' => [
+            [
+                'heading' => 'How is compound interest calculated?',
+                'body' => 'Each time interest compounds, it is added to the balance, and the next round of interest is earned on that larger amount, not just on the original money. The more often interest compounds (daily instead of annually, for example) and the longer the money is left to grow, the bigger the effect, because each compounding period includes a little more interest-on-interest than the one before.',
+            ],
+            [
+                'heading' => 'Why do monthly contributions make such a difference?',
+                'body' => 'Every contribution you add starts compounding from the day it goes in, so money contributed early in the term has far longer to grow than money contributed near the end. Over many years, steady monthly contributions can add up to more of the final balance than the starting amount itself.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'What compounding frequency should I choose?', 'a' => 'Use whatever your bank, bond or investment account states - savings accounts are often compounded daily or monthly, while some bonds compound semi-annually or annually. If you are not sure, monthly is a common default and the difference between frequencies is usually small compared to the interest rate itself.'],
+            ['q' => 'Is this a guaranteed return?', 'a' => 'No. This calculator projects growth at a fixed interest rate that you choose. Real savings and investment returns vary year to year, and investments can lose value, so treat the result as an estimate, not a promise.'],
+            ['q' => 'Does this account for taxes or inflation?', 'a' => 'No. The result is the raw growth of your money before any taxes on interest or investment gains, and without adjusting for inflation. Your actual spending power in the future will be lower than the raw balance shown here.'],
+            ['q' => 'What is the difference between this and the Loan Calculator?', 'a' => 'This tool grows a balance upward with interest working for you (savings and investments). The Loan Calculator shows a balance paying down over time with interest working against you (loans and mortgages).'],
+            ['q' => 'Can I use this for retirement savings?', 'a' => 'Yes, it works for any lump sum plus regular contributions - a savings account, an investment account or a retirement account. Just use a realistic estimated annual return and remember it is a projection, not a guarantee.'],
+        ],
+        'sources' => [
+            ['title' => 'U.S. Securities and Exchange Commission, Compound Interest Calculator', 'url' => 'https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator'],
+        ],
+        'related' => ['loan-calculator', 'mortgage-calculator', 'percentage-calculator'],
+        'table' => [
+            'caption' => 'How $10,000 grows at 6% annual interest, compounded monthly, with no further contributions',
+            'headers' => ['Years', 'Balance', 'Interest earned'],
+            'rows' => [
+                ['5 years', '$13,488.50', '$3,488.50'],
+                ['10 years', '$18,193.97', '$8,193.97'],
+                ['20 years', '$33,102.04', '$23,102.04'],
+                ['30 years', '$60,225.75', '$50,225.75'],
             ],
         ],
     ],

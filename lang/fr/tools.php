@@ -303,7 +303,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Choisir un format de page',
+                'heading' => 'Quel format de page choisir ?',
                 'body' => 'A4 et Lettre US ajoutent de l’espace blanc autour des photos qui ne correspondent pas à la forme de la page, ce qui convient aux documents et à l’impression. Ajuster à l’image règle la taille de la page PDF exactement sur chaque photo, en gardant l’image entière visible sans bordure blanche : pratique quand vous avez juste besoin d’une copie PDF rapide d’une photo.',
             ],
             [
@@ -464,7 +464,7 @@ return [
                 'body' => 'Beaucoup de candidatures, de demandes de visa et de portails universitaires n’acceptent qu’un seul fichier. Fusionner votre CV, votre lettre de motivation et vos certificats en un seul PDF garde tout ensemble et dans le bon ordre.',
             ],
             [
-                'heading' => 'PDF protégés par mot de passe',
+                'heading' => 'Puis-je fusionner un PDF protégé par mot de passe ?',
                 'body' => 'Les PDF chiffrés ne peuvent pas être fusionnés tant que la protection n’est pas retirée. Ouvrez le fichier dans votre lecteur PDF avec le mot de passe, enregistrez ou imprimez une copie sans protection, puis fusionnez cette copie.',
             ],
         ],
@@ -568,7 +568,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Formules de pourcentage',
+                'heading' => 'Quelle est la formule pour calculer un pourcentage ?',
                 'body' => 'X % de Y = (X / 100) x Y. X en pourcentage de Y = (X / Y) x 100. Variation en pourcentage de A à B = ((B - A) / |A|) x 100. Un résultat positif est une hausse, un résultat négatif une baisse.',
             ],
         ],
@@ -665,7 +665,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Erreurs JSON courantes',
+                'heading' => 'Quelles sont les erreurs JSON les plus courantes ?',
                 'body' => 'Les erreurs les plus fréquentes sont les virgules en trop après le dernier élément, les apostrophes au lieu des guillemets doubles, les clés sans guillemets et les commentaires, qui sont tous interdits en JSON standard.',
             ],
         ],
@@ -1382,7 +1382,7 @@ return [
     'domain-authority-checker' => [
         'name' => 'Vérificateur d’autorité de domaine',
         'title' => 'Vérificateur d’autorité de domaine en masse gratuit',
-        'description' => 'Vérificateur d’autorité de domaine gratuit : score d’autorité, rang mondial et domaines référents de 100 sites à la fois, avec export de la liste en CSV.',
+        'description' => 'Vérificateur d’autorité de domaine en masse : score d’autorité, rang mondial et domaines référents de 100 sites à la fois, gratuit, sans inscription.',
         'h1' => 'Vérificateur d’autorité de domaine en masse',
         'tagline' => 'Comparez l’autorité de 100 sites en quelques secondes.',
         'keywords' => [
@@ -2297,6 +2297,63 @@ return [
                 ['3 ans', '$617.54', '$2,231.51'],
                 ['5 ans', '$396.02', '$3,761.44'],
                 ['7 ans', '$301.85', '$5,355.70'],
+            ],
+        ],
+    ],
+
+    'compound-interest-calculator' => [
+        'name' => 'Calculateur d\'intérêts composés',
+        'title' => 'Calculateur d\'Intérêts Composés - Graphique et Tableau',
+        'description' => 'Calculateur d\'intérêts composés gratuit. Découvrez comment un montant initial et des versements mensuels évoluent, avec graphique et tableau.',
+        'h1' => 'Calculateur d\'intérêts composés',
+        'tagline' => 'Découvrez comment un montant initial et des versements mensuels évoluent avec le temps, avec un graphique et un tableau année par année.',
+        'keywords' => [
+            'calculateur d\'intérêts composés',
+            'calculateur d\'intérêts composés avec versements mensuels',
+            'calculateur de croissance d\'investissement',
+            'calculateur d\'intérêts',
+            'calculateur d\'intérêts composés quotidiens',
+        ],
+        'intro' => 'Les intérêts composés sont des intérêts gagnés à la fois sur votre argent initial et sur les intérêts qu\'il a déjà générés, si bien qu\'un solde croît plus vite plus longtemps il est laissé à capitaliser. Indiquez un montant initial, un taux d\'intérêt annuel, le nombre d\'années de croissance et la fréquence de capitalisation, et ajoutez éventuellement un versement mensuel. Le calculateur affiche le solde final, le total versé, les intérêts totaux gagnés, un graphique de croissance et un tableau année par année.',
+        'steps' => [
+            'Indiquez un montant initial et choisissez une devise.',
+            'Indiquez le taux d\'intérêt annuel, le nombre d\'années et la fréquence de capitalisation (annuelle, semestrielle, trimestrielle, mensuelle ou quotidienne).',
+            'Indiquez éventuellement un versement mensuel pour voir comment des dépôts réguliers s\'ajoutent à la croissance.',
+            'Consultez le solde final, le total versé et les intérêts totaux gagnés, puis ouvrez le tableau année par année pour le détail complet.',
+        ],
+        'features' => [
+            'Solde final, total versé et intérêts totaux gagnés',
+            'Graphique de croissance montrant les versements par rapport aux intérêts gagnés',
+            'N\'importe quelle fréquence de capitalisation : annuelle, semestrielle, trimestrielle, mensuelle ou quotidienne',
+            'Versements mensuels facultatifs en plus d\'un montant initial',
+            'Tableau complet du solde année par année',
+            'Fonctionne entièrement dans votre navigateur - rien de ce que vous saisissez n\'est envoyé où que ce soit',
+        ],
+        'content' => [
+            [
+                'heading' => 'Comment les intérêts composés sont-ils calculés ?',
+                'body' => 'Chaque fois que les intérêts se capitalisent, ils s\'ajoutent au solde, et le tour suivant d\'intérêts est calculé sur ce montant plus élevé, pas seulement sur l\'argent initial. Plus les intérêts se capitalisent souvent (quotidiennement plutôt qu\'annuellement, par exemple) et plus l\'argent est laissé à croître longtemps, plus l\'effet est important, car chaque période de capitalisation contient un peu plus d\'« intérêts sur intérêts » que la précédente.',
+            ],
+            [
+                'heading' => 'Pourquoi les versements mensuels font-ils une telle différence ?',
+                'body' => 'Chaque versement que vous ajoutez commence à se capitaliser dès le jour où il est effectué, donc l\'argent versé en début de période a bien plus de temps pour croître que celui versé en fin de période. Sur de nombreuses années, des versements mensuels réguliers peuvent représenter une part du solde final plus importante que le montant initial lui-même.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Quelle fréquence de capitalisation dois-je choisir ?', 'a' => 'Utilisez celle indiquée par votre banque, obligation ou compte d\'investissement - les comptes d\'épargne se capitalisent souvent quotidiennement ou mensuellement, tandis que certaines obligations se capitalisent semestriellement ou annuellement. En cas de doute, mensuelle est un choix courant, et la différence entre les fréquences est généralement faible comparée au taux d\'intérêt lui-même.'],
+            ['q' => 'Est-ce un rendement garanti ?', 'a' => 'Non. Ce calculateur projette la croissance à un taux d\'intérêt fixe que vous choisissez. Les rendements réels de l\'épargne et des investissements varient d\'une année à l\'autre, et les investissements peuvent perdre de la valeur, alors considérez le résultat comme une estimation, pas une promesse.'],
+            ['q' => 'Cela tient-il compte des impôts ou de l\'inflation ?', 'a' => 'Non. Le résultat est la croissance brute de votre argent avant tout impôt sur les intérêts ou les gains d\'investissement, et sans ajustement pour l\'inflation. Votre pouvoir d\'achat réel dans le futur sera inférieur au solde brut affiché ici.'],
+            ['q' => 'Quelle est la différence entre ceci et le Calculateur de prêt ?', 'a' => 'Cet outil fait croître un solde avec les intérêts travaillant en votre faveur (épargne et investissements). Le Calculateur de prêt montre un solde qui diminue avec le temps, avec les intérêts travaillant contre vous (prêts et hypothèques).'],
+            ['q' => 'Puis-je l\'utiliser pour l\'épargne retraite ?', 'a' => 'Oui, il fonctionne pour n\'importe quel montant unique associé à des versements réguliers - un compte d\'épargne, un compte d\'investissement ou un compte retraite. Utilisez simplement un rendement annuel estimé réaliste et rappelez-vous qu\'il s\'agit d\'une projection, pas d\'une garantie.'],
+        ],
+        'table' => [
+            'caption' => 'Comment 10 000 $ évoluent à 6 % d\'intérêt annuel, capitalisés mensuellement, sans versement supplémentaire',
+            'headers' => ['Années', 'Solde', 'Intérêts gagnés'],
+            'rows' => [
+                ['5 ans', '$13,488.50', '$3,488.50'],
+                ['10 ans', '$18,193.97', '$8,193.97'],
+                ['20 ans', '$33,102.04', '$23,102.04'],
+                ['30 ans', '$60,225.75', '$50,225.75'],
             ],
         ],
     ],

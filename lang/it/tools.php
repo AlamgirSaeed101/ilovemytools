@@ -303,7 +303,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Come scegliere il formato pagina',
+                'heading' => 'Che formato pagina devo scegliere?',
                 'body' => 'A4 e Letter aggiungono spazio bianco intorno alle foto che non corrispondono alla forma della pagina, utile per documenti e stampa. Adatta all’immagine imposta la pagina del PDF esattamente sulle dimensioni di ogni foto, mantenendo l’intera immagine visibile senza bordi bianchi: utile quando serve solo una copia PDF rapida di una foto.',
             ],
             [
@@ -464,7 +464,7 @@ return [
                 'body' => 'Molte candidature di lavoro, richieste di visto e portali universitari accettano un solo file. Unire curriculum, lettera di presentazione e certificati in un unico PDF tiene tutto insieme e nell’ordine giusto.',
             ],
             [
-                'heading' => 'PDF protetti da password',
+                'heading' => 'Posso unire un PDF protetto da password?',
                 'body' => 'I PDF crittografati non si possono unire finché non si rimuove la protezione. Apri il file nel lettore PDF con la password, salva o stampa una copia senza protezione e poi unisci quella copia.',
             ],
         ],
@@ -568,7 +568,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Formule delle percentuali',
+                'heading' => 'Qual è la formula per calcolare una percentuale?',
                 'body' => 'X% di Y = (X / 100) x Y. X come percentuale di Y = (X / Y) x 100. Variazione percentuale da A a B = ((B - A) / |A|) x 100. Un risultato positivo è un aumento, uno negativo una diminuzione.',
             ],
         ],
@@ -665,7 +665,7 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'Errori JSON comuni',
+                'heading' => 'Quali sono gli errori JSON più comuni?',
                 'body' => 'Gli errori più frequenti sono le virgole finali dopo l’ultimo elemento, gli apici singoli al posto delle virgolette doppie, le chiavi senza virgolette e i commenti: nessuno di questi è ammesso nel JSON standard.',
             ],
         ],
@@ -1382,7 +1382,7 @@ return [
     'domain-authority-checker' => [
         'name' => 'Controllo autorità di dominio',
         'title' => 'Controllo autorità di dominio in blocco gratis',
-        'description' => 'Controllo autorità di dominio gratis: punteggio di autorità, posizione globale e domini di riferimento di 100 siti alla volta, con esportazione in CSV.',
+        'description' => 'Controllo autorità di dominio in blocco: punteggio, posizione globale e domini di riferimento di 100 siti alla volta, gratis e senza registrazione.',
         'h1' => 'Controllo autorità di dominio in blocco',
         'tagline' => 'Confronta l’autorità di 100 siti in pochi secondi.',
         'keywords' => [
@@ -2297,6 +2297,63 @@ return [
                 ['3 anni', '$617.54', '$2,231.51'],
                 ['5 anni', '$396.02', '$3,761.44'],
                 ['7 anni', '$301.85', '$5,355.70'],
+            ],
+        ],
+    ],
+
+    'compound-interest-calculator' => [
+        'name' => 'Calcolatore di interesse composto',
+        'title' => 'Calcolatore di Interesse Composto - Grafico e Tabella',
+        'description' => 'Calcolatore di interesse composto gratuito. Scopri come crescono un importo iniziale e i versamenti mensili, con grafico e tabella anno per anno.',
+        'h1' => 'Calcolatore di interesse composto',
+        'tagline' => 'Scopri come crescono nel tempo un importo iniziale e i versamenti mensili, con un grafico e una tabella anno per anno.',
+        'keywords' => [
+            'calcolatore di interesse composto',
+            'calcolatore di interesse composto con versamenti mensili',
+            'calcolatore di crescita degli investimenti',
+            'calcolatore di interessi',
+            'calcolatore di interesse composto giornaliero',
+        ],
+        'intro' => 'L\'interesse composto è l\'interesse guadagnato sia sul tuo capitale iniziale sia sugli interessi già generati, quindi un saldo cresce più velocemente quanto più tempo viene lasciato capitalizzare. Inserisci un importo iniziale, un tasso di interesse annuo, per quanti anni farlo crescere e con quale frequenza si capitalizza l\'interesse, e facoltativamente aggiungi un versamento mensile. Il calcolatore mostra il saldo finale, il totale versato, gli interessi totali guadagnati, un grafico di crescita e una tabella anno per anno.',
+        'steps' => [
+            'Inserisci un importo iniziale e scegli una valuta.',
+            'Inserisci il tasso di interesse annuo, il numero di anni e la frequenza di capitalizzazione (annuale, semestrale, trimestrale, mensile o giornaliera).',
+            'Facoltativamente, inserisci un versamento mensile per vedere come i depositi regolari si aggiungono alla crescita.',
+            'Leggi il saldo finale, il totale versato e gli interessi totali guadagnati, e apri la tabella anno per anno per il dettaglio completo.',
+        ],
+        'features' => [
+            'Saldo finale, totale versato e interessi totali guadagnati',
+            'Grafico di crescita che mostra i versamenti rispetto agli interessi guadagnati',
+            'Qualsiasi frequenza di capitalizzazione: annuale, semestrale, trimestrale, mensile o giornaliera',
+            'Versamenti mensili facoltativi oltre a un importo iniziale',
+            'Tabella completa del saldo anno per anno',
+            'Funziona interamente nel tuo browser - nulla di ciò che inserisci viene inviato da nessuna parte',
+        ],
+        'content' => [
+            [
+                'heading' => 'Come viene calcolato l\'interesse composto?',
+                'body' => 'Ogni volta che l\'interesse si capitalizza, viene aggiunto al saldo, e il round successivo di interessi viene calcolato su quell\'importo maggiore, non solo sul capitale iniziale. Più spesso l\'interesse si capitalizza (giornalmente invece che annualmente, ad esempio) e più tempo il denaro viene lasciato crescere, maggiore è l\'effetto, perché ogni periodo di capitalizzazione include un po\' più di "interesse sull\'interesse" rispetto al precedente.',
+            ],
+            [
+                'heading' => 'Perché i versamenti mensili fanno così tanta differenza?',
+                'body' => 'Ogni versamento che aggiungi inizia a capitalizzarsi dal giorno in cui viene effettuato, quindi il denaro versato all\'inizio del periodo ha molto più tempo per crescere rispetto a quello versato verso la fine. Nel corso di molti anni, versamenti mensili costanti possono contribuire al saldo finale più dell\'importo iniziale stesso.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Quale frequenza di capitalizzazione dovrei scegliere?', 'a' => 'Usa quella indicata dalla tua banca, obbligazione o conto di investimento - i conti di risparmio spesso capitalizzano giornalmente o mensilmente, mentre alcune obbligazioni capitalizzano semestralmente o annualmente. Se non sei sicuro, mensile è una scelta comune, e la differenza tra le frequenze è di solito piccola rispetto al tasso di interesse stesso.'],
+            ['q' => 'Si tratta di un rendimento garantito?', 'a' => 'No. Questo calcolatore proietta la crescita a un tasso di interesse fisso che tu scegli. I rendimenti reali di risparmi e investimenti variano di anno in anno, e gli investimenti possono perdere valore, quindi considera il risultato una stima, non una promessa.'],
+            ['q' => 'Tiene conto di tasse o inflazione?', 'a' => 'No. Il risultato è la crescita lorda del tuo denaro prima di eventuali tasse sugli interessi o sulle plusvalenze da investimento, e senza aggiustamento per l\'inflazione. Il tuo reale potere d\'acquisto futuro sarà inferiore al saldo lordo mostrato qui.'],
+            ['q' => 'Qual è la differenza tra questo e il Calcolatore di prestito?', 'a' => 'Questo strumento fa crescere un saldo con l\'interesse che lavora a tuo favore (risparmi e investimenti). Il Calcolatore di prestito mostra un saldo che diminuisce nel tempo, con l\'interesse che lavora contro di te (prestiti e mutui).'],
+            ['q' => 'Posso usarlo per i risparmi pensionistici?', 'a' => 'Sì, funziona per qualsiasi importo unico più versamenti regolari - un conto di risparmio, un conto di investimento o un conto pensionistico. Usa semplicemente un rendimento annuo stimato realistico e ricorda che è una proiezione, non una garanzia.'],
+        ],
+        'table' => [
+            'caption' => 'Come crescono $10.000 al 6% di interesse annuo, capitalizzato mensilmente, senza ulteriori versamenti',
+            'headers' => ['Anni', 'Saldo', 'Interessi guadagnati'],
+            'rows' => [
+                ['5 anni', '$13,488.50', '$3,488.50'],
+                ['10 anni', '$18,193.97', '$8,193.97'],
+                ['20 anni', '$33,102.04', '$23,102.04'],
+                ['30 anni', '$60,225.75', '$50,225.75'],
             ],
         ],
     ],
