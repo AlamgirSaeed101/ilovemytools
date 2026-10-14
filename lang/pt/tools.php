@@ -975,6 +975,7 @@ return [
             ['q' => 'Como registro uma volta?', 'a' => 'Toque em Volta com o cronômetro rodando ou pressione a tecla L. Cada volta mostra seu próprio tempo e o tempo total.'],
             ['q' => 'Posso usar o teclado?', 'a' => 'Sim. Espaço inicia e para, L registra uma volta e R zera quando está parado.'],
             ['q' => 'Posso salvar meus tempos de volta?', 'a' => 'Toque em Copiar voltas para copiar todos os tempos de volta e totais e cole-os em uma planilha, nota ou mensagem.'],
+            ['q' => 'Um cronômetro é o mesmo que um timer?', 'a' => 'Não. Um cronômetro, como esta ferramenta, conta para frente a partir de zero para medir quanto tempo algo leva. Um timer faz a contagem regressiva a partir de um tempo definido e dispara um alarme ao chegar a zero - é para isso que serve o Timer.'],
         ],
     ],
 

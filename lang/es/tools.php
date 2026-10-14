@@ -882,6 +882,7 @@ return [
             ['q' => '¿Cómo registro una vuelta?', 'a' => 'Pulsa Vuelta mientras el cronómetro está en marcha, o pulsa la tecla L. Cada vuelta muestra su tiempo y el tiempo total.'],
             ['q' => '¿Puedo usar el teclado?', 'a' => 'Sí. Espacio inicia y para, L registra una vuelta y R reinicia cuando está parado.'],
             ['q' => '¿Puedo guardar mis tiempos de vuelta?', 'a' => 'Pulsa Copiar vueltas para copiar todos los tiempos de vuelta y totales, y pégalos en una hoja de cálculo, una nota o un mensaje.'],
+            ['q' => '¿Un cronómetro es lo mismo que un temporizador?', 'a' => 'No. Un cronómetro, como esta herramienta, cuenta hacia delante desde cero para medir cuánto dura algo. Un temporizador cuenta hacia atrás desde un tiempo fijado y hace sonar una alarma al llegar a cero; para eso está el Temporizador.'],
         ],
     ],
 
