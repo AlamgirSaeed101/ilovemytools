@@ -807,7 +807,7 @@ return [
             ['q' => 'Czy rzuty kością są naprawdę losowe?', 'a' => 'Tak. Rzuty korzystają z kryptograficznie bezpiecznego generatora liczb losowych Twojej przeglądarki, więc każda strona jest równie prawdopodobna, a wyników nie można przewidzieć.'],
             ['q' => 'Czy mogę rzucić K20 do Dungeons & Dragons?', 'a' => 'Tak. Wybierz K20 z typów kości i naciśnij Rzuć. Dostępne są też K4, K8, K10, K12 i K100.'],
             ['q' => 'Czy mogę używać rzutu kością bez animacji?', 'a' => 'Jeśli Twoje urządzenie ma ustawione ograniczenie animacji, wyniki pojawiają się natychmiast bez animacji rzutu.'],
-            ['q' => 'Czy rzut kością działa na telefonach?', 'a' => 'Tak. Działa w każdej nowoczesnej przeglądarce na telefonach, tabletach i komputerach, a kości rzucasz dotykiem.'],
+            ['q' => 'Co to jest generator kości online?', 'a' => 'Generator kości online (czyli rzut kością) zastępuje fizyczne kości symulowanym rzutem na ekranie: wybierasz typ kości i ich liczbę, a każdy rzut natychmiast pokazuje sprawiedliwy, losowy wynik, bez niczego do rzucania czy podnoszenia.'],
         ],
         'table' => [
             'caption' => 'Typy kości i ich zastosowanie',

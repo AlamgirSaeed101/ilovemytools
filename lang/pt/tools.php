@@ -806,7 +806,7 @@ return [
             ['q' => 'As jogadas são realmente aleatórias?', 'a' => 'Sim. As jogadas usam o gerador de números aleatórios criptograficamente seguro do seu navegador, então todas as faces têm a mesma chance e os resultados não podem ser previstos.'],
             ['q' => 'Posso jogar um D20 para Dungeons & Dragons?', 'a' => 'Sim. Escolha D20 nos tipos de dado e toque em Jogar. Também há D4, D8, D10, D12 e D100.'],
             ['q' => 'Posso usar os dados sem a animação?', 'a' => 'Se o seu dispositivo estiver configurado para reduzir movimento, os resultados aparecem na hora, sem a animação.'],
-            ['q' => 'Os dados virtuais funcionam no celular?', 'a' => 'Sim. Funcionam em qualquer navegador moderno no celular, tablet ou computador, e você pode tocar nos dados para jogar.'],
+            ['q' => 'O que é um gerador de dados online?', 'a' => 'Um gerador de dados online (ou dados virtuais) substitui os dados físicos por uma jogada simulada na tela: você escolhe o tipo de dado e quantos jogar, e cada jogada mostra na hora um resultado justo e aleatório, sem nada para lançar ou recolher.'],
         ],
         'table' => [
             'caption' => 'Tipos de dados e para que servem',

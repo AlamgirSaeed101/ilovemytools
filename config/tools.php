@@ -977,7 +977,7 @@ return [
             ['q' => 'Are the dice rolls truly random?', 'a' => 'Yes. Rolls use your browser\'s cryptographically secure random number generator, so every face is equally likely and results cannot be predicted.'],
             ['q' => 'Can I roll a D20 for Dungeons & Dragons?', 'a' => 'Yes. Choose D20 from the dice types and press Roll. D4, D8, D10, D12 and D100 are available too.'],
             ['q' => 'Can I use the dice roller without the animation?', 'a' => 'If your device is set to reduce motion, results appear instantly without the rolling animation.'],
-            ['q' => 'Does the dice roller work on phones?', 'a' => 'Yes. It works in any modern browser on phones, tablets and computers, and you can tap the dice to roll.'],
+            ['q' => 'What is an online dice generator?', 'a' => 'An online dice generator (or dice roller) replaces physical dice with a simulated roll on screen: pick the die type and how many to roll, then each roll shows a fair, random result instantly, with nothing to throw or pick up.'],
         ],
         'sources' => [
             ['title' => 'MDN: Crypto.getRandomValues()', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues'],

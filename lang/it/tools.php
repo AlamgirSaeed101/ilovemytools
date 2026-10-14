@@ -806,7 +806,7 @@ return [
             ['q' => 'I lanci sono davvero casuali?', 'a' => 'Sì. I lanci usano il generatore di numeri casuali crittograficamente sicuro del browser, quindi ogni faccia è ugualmente probabile e i risultati sono imprevedibili.'],
             ['q' => 'Posso lanciare un D20 per Dungeons & Dragons?', 'a' => 'Sì. Scegli D20 tra i tipi di dado e premi Lancia. Ci sono anche D4, D8, D10, D12 e D100.'],
             ['q' => 'Posso lanciare i dadi senza animazione?', 'a' => 'Se il tuo dispositivo è impostato per ridurre il movimento, i risultati appaiono subito senza animazione.'],
-            ['q' => 'Il lancio dei dadi funziona sul telefono?', 'a' => 'Sì. Funziona in qualsiasi browser moderno su telefoni, tablet e computer, e puoi toccare i dadi per lanciarli.'],
+            ['q' => 'Cos’è un generatore di dadi online?', 'a' => 'Un generatore di dadi online (o lancio dadi) sostituisce i dadi fisici con un lancio simulato sullo schermo: scegli il tipo di dado e quanti lanciarne, e ogni lancio mostra subito un risultato equo e casuale, senza nulla da lanciare o raccogliere.'],
         ],
         'table' => [
             'caption' => 'Tipi di dadi e a cosa servono',
