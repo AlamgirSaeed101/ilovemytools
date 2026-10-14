@@ -274,7 +274,7 @@ return [
             ['q' => 'Are my images uploaded to a server?', 'a' => 'No. Images are compressed inside your browser using the Canvas API. They never leave your device.'],
             ['q' => 'Will compression reduce quality?', 'a' => 'At the default quality (75%) most people cannot see a difference, while file size often drops by 50-80%.'],
             ['q' => 'Why did my PNG barely get smaller?', 'a' => 'PNG is a lossless format. For big savings, set the output format to WebP or JPG. Use WebP if you need to keep transparency.'],
-            ['q' => 'Is there a file size limit?', 'a' => 'Each image can be up to 50MB. Very large photos may take a few seconds on older phones.'],
+            ['q' => 'How do I shrink a JPG online?', 'a' => 'Upload your JPG, pick "Target size" or a quality level around 60-80%, and click Compress. For photos, a JPG quality of 70-80% is usually enough to shrink the file size noticeably with no visible loss.'],
         ],
         'sources' => [
             ['title' => 'Google for Developers: An image format for the Web (WebP)', 'url' => 'https://developers.google.com/speed/webp'],

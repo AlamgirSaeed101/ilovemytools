@@ -217,7 +217,7 @@ return [
             ['q' => 'Mes images sont-elles envoyées sur un serveur ?', 'a' => 'Non. Les images sont compressées dans votre navigateur grâce à l’API Canvas. Elles ne quittent jamais votre appareil.'],
             ['q' => 'La compression réduit-elle la qualité ?', 'a' => 'À la qualité par défaut (75 %), la plupart des gens ne voient aucune différence, alors que le poids baisse souvent de 50 à 80 %.'],
             ['q' => 'Pourquoi mon PNG a-t-il à peine diminué ?', 'a' => 'Le PNG est un format sans perte. Pour un gain important, choisissez WebP ou JPG comme format de sortie. Prenez WebP si vous devez conserver la transparence.'],
-            ['q' => 'Y a-t-il une limite de taille ?', 'a' => 'Chaque image peut peser jusqu’à 50 Mo. Les très grandes photos peuvent prendre quelques secondes sur les téléphones anciens.'],
+            ['q' => 'Comment réduire la taille d’un JPG en ligne ?', 'a' => 'Importez votre JPG, choisissez « Taille cible » ou une qualité autour de 60-80 %, puis cliquez sur Compresser. Pour une photo, une qualité JPG de 70-80 % suffit généralement à réduire nettement le poids sans perte visible.'],
         ],
         'table' => [
             'caption' => 'Quel format d’image choisir',

@@ -217,7 +217,7 @@ return [
             ['q' => 'Werden meine Bilder auf einen Server hochgeladen?', 'a' => 'Nein. Die Bilder werden in deinem Browser mit der Canvas-API komprimiert. Sie verlassen nie dein Gerät.'],
             ['q' => 'Verringert die Komprimierung die Qualität?', 'a' => 'Bei der Standardqualität (75 %) sehen die meisten keinen Unterschied, während die Dateigröße oft um 50-80 % sinkt.'],
             ['q' => 'Wie kann ich die Größe einer PNG verkleinern?', 'a' => 'PNG ist ein verlustfreies Format und wird allein kaum kleiner. Für große Einsparungen wähle WebP oder JPG als Ausgabeformat. Nimm WebP, wenn die Transparenz erhalten bleiben soll.'],
-            ['q' => 'Gibt es eine Größenbeschränkung?', 'a' => 'Jedes Bild darf bis zu 50 MB groß sein. Sehr große Fotos können auf älteren Smartphones ein paar Sekunden dauern.'],
+            ['q' => 'Wie verkleinere ich ein JPG online?', 'a' => 'Lade dein JPG hoch, wähle „Zielgröße“ oder eine Qualität von etwa 60-80 % und klicke auf Komprimieren. Bei Fotos reicht meist eine JPG-Qualität von 70-80 %, um die Dateigröße deutlich zu verkleinern, ohne dass du einen Unterschied siehst.'],
         ],
         'table' => [
             'caption' => 'Welches Bildformat passt',

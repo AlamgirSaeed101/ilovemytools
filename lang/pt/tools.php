@@ -217,7 +217,7 @@ return [
             ['q' => 'Minhas imagens são enviadas a um servidor?', 'a' => 'Não. As imagens são comprimidas dentro do seu navegador com a Canvas API. Elas nunca saem do seu dispositivo.'],
             ['q' => 'A compressão reduz a qualidade?', 'a' => 'Na qualidade padrão (75%), a maioria das pessoas não vê diferença, e o arquivo costuma ficar 50-80% menor.'],
             ['q' => 'Por que meu PNG quase não diminuiu?', 'a' => 'PNG é um formato sem perdas. Para economizar bastante, escolha WebP ou JPG como formato de saída. Use WebP se precisar manter a transparência.'],
-            ['q' => 'Existe limite de tamanho de arquivo?', 'a' => 'Cada imagem pode ter até 50MB. Fotos muito grandes podem levar alguns segundos em celulares mais antigos.'],
+            ['q' => 'Como eu reduzo o tamanho de um JPG online?', 'a' => 'Envie seu JPG, escolha "Tamanho desejado" ou uma qualidade entre 60-80% e clique em Comprimir. Para fotos, uma qualidade JPG de 70-80% costuma bastar para reduzir bastante o tamanho sem perda visível.'],
         ],
         'table' => [
             'caption' => 'Qual formato de imagem usar',
