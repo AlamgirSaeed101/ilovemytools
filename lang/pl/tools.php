@@ -858,6 +858,7 @@ return [
             ['q' => 'Czy mogę rzucić więcej niż jedną monetą?', 'a' => 'Tak. Wybierz 2, 5, 10, 25 albo 100 monet, a wszystkie zostaną rzucone na raz, z liczbą orłów i reszek.'],
             ['q' => 'Czemu wypadł mi orzeł pięć razy z rzędu?', 'a' => 'Serie są normalną częścią losowości. Szansa na pięć orłów z rzędu wynosi około 3%, więc zdarza się to regularnie przy wielu rzutach.'],
             ['q' => 'Czy narzędzie zapisuje moje wyniki?', 'a' => 'Sumy i Twoja seria są zachowywane, póki strona jest otwarta. Nic nie jest wysyłane na serwer, a Resetuj statystyki je czyści.'],
+            ['q' => 'Czy to tak jak poprosić asystenta głosowego o rzut monetą?', 'a' => 'Tak: otrzymujesz ten sam sprawiedliwy wynik 50/50 jak przy prośbie do asystenta głosowego, ale tutaj widzisz realistyczną animację 3D, możesz rzucić do 100 monet na raz, a gra liczy orły, reszki i Twoją serię.'],
         ],
     ],
 

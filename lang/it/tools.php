@@ -857,6 +857,7 @@ return [
             ['q' => 'Posso lanciare più di una moneta?', 'a' => 'Sì. Scegli 2, 5, 10, 25 o 100 monete: vengono lanciate tutte insieme, con il conteggio di teste e croci.'],
             ['q' => 'Perché ho ottenuto testa cinque volte di fila?', 'a' => 'Le serie fanno parte del caso. La probabilità di cinque teste di fila è di circa il 3%, quindi succede regolarmente su molti lanci.'],
             ['q' => 'I miei risultati vengono conservati?', 'a' => 'Totali e serie restano finché la pagina è aperta. Niente viene inviato a un server, e Azzera statistiche li cancella.'],
+            ['q' => 'È come giocare a testa o croce con un assistente vocale?', 'a' => 'Sì: ottieni lo stesso risultato equo al 50/50 di un lancio chiesto a un assistente vocale, ma qui vedi l’animazione 3D della moneta, puoi lanciarne fino a 100 insieme e il gioco tiene il conteggio di teste, croci e della tua serie.'],
         ],
     ],
 

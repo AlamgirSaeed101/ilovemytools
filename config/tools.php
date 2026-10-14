@@ -1036,6 +1036,7 @@ return [
             ['q' => 'Can I flip more than one coin?', 'a' => 'Yes. Choose 2, 5, 10, 25 or 100 coins and they are all flipped at once, with a count of heads and tails.'],
             ['q' => 'Why did I get heads five times in a row?', 'a' => 'Streaks are a normal part of randomness. The chance of five heads in a row is about 3%, so it happens regularly over many flips.'],
             ['q' => 'Does it keep my results?', 'a' => 'Totals and your streak are kept while the page is open. Nothing is sent to a server, and Reset stats clears them.'],
+            ['q' => 'Is this the same as asking a voice assistant to flip a coin?', 'a' => 'Yes - you get the same fair 50/50 result as asking a voice assistant, but here you see a realistic 3D coin toss, can flip up to 100 at once, and the game keeps count of heads, tails and your streak.'],
         ],
         'sources' => [
             ['title' => 'Bartoš et al. (2023), "Fair coins tend to land on the same side they started: evidence from 350,757 flips"', 'url' => 'https://arxiv.org/abs/2310.04153'],

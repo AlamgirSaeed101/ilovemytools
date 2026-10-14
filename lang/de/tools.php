@@ -857,6 +857,7 @@ return [
             ['q' => 'Kann ich mehr als eine Münze werfen?', 'a' => 'Ja. Wähle 2, 5, 10, 25 oder 100 Münzen – alle werden auf einmal geworfen, mit Zählung von Kopf und Zahl.'],
             ['q' => 'Warum kam fünfmal hintereinander Kopf?', 'a' => 'Serien gehören zum Zufall dazu. Die Chance auf fünfmal Kopf in Folge liegt bei etwa 3 %, das passiert bei vielen Würfen also regelmäßig.'],
             ['q' => 'Werden meine Ergebnisse gespeichert?', 'a' => 'Summen und Serie bleiben erhalten, solange die Seite geöffnet ist. Nichts wird an einen Server gesendet, und Statistik zurücksetzen löscht sie.'],
+            ['q' => 'Ist das wie einen Sprachassistenten nach Kopf oder Zahl zu fragen?', 'a' => 'Ja: Du bekommst das gleiche faire 50/50-Ergebnis wie bei einem Sprachassistenten, siehst hier aber eine realistische 3D-Animation, kannst bis zu 100 Münzen auf einmal werfen, und das Spiel zählt Kopf, Zahl und deine Serie.'],
         ],
     ],
 
