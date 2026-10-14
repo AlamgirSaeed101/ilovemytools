@@ -31,7 +31,7 @@ return [
             ['q' => '¿Este contador de palabras es gratis?', 'a' => 'Sí. Es totalmente gratis, sin registro y sin límite en la cantidad de texto que pegues.'],
             ['q' => '¿Se guarda o se sube mi texto?', 'a' => 'No. El recuento se hace por completo en tu navegador. Tu texto nunca se envía a nuestro servidor ni se guarda en ningún sitio.'],
             ['q' => '¿Cómo se calcula el tiempo de lectura?', 'a' => 'El tiempo de lectura usa una velocidad media de lectura silenciosa en adultos de 238 palabras por minuto. El tiempo de habla usa 150 palabras por minuto, un ritmo típico en presentaciones.'],
-            ['q' => '¿Cuántas palabras tiene un trabajo de 5 páginas?', 'a' => 'Con interlineado doble y letra de 12 puntos, una página tiene unas 250-300 palabras, así que un trabajo de 5 páginas tiene unas 1250-1500 palabras.'],
+            ['q' => '¿Es lo mismo un "contador de palabras" que un "contador de texto"?', 'a' => 'Sí. Contador de palabras, contador de texto y contador de caracteres son distintos nombres para la misma herramienta: cuenta las palabras, caracteres, frases y párrafos de tu texto.'],
             ['q' => '¿Cuenta los caracteres con espacios?', 'a' => 'Sí. Obtienes los caracteres con espacios y sin espacios, que es a lo que suelen referirse los límites de caracteres.'],
         ],
     ],

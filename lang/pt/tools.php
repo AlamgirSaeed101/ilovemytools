@@ -37,7 +37,7 @@ return [
             ['q' => 'Este contador de palavras é grátis?', 'a' => 'Sim. O contador de palavras é totalmente grátis, sem cadastro e sem limite de quanto texto você pode colar.'],
             ['q' => 'Meu texto é salvo ou enviado?', 'a' => 'Não. A contagem acontece inteiramente no seu navegador. Seu texto nunca é enviado ao nosso servidor nem armazenado em lugar nenhum.'],
             ['q' => 'Como o tempo de leitura é calculado?', 'a' => 'O tempo de leitura usa a velocidade média de leitura silenciosa de um adulto, 238 palavras por minuto. O tempo de fala usa 150 palavras por minuto, um ritmo típico de apresentações.'],
-            ['q' => 'Quantas palavras tem uma redação de 5 páginas?', 'a' => 'Com espaçamento duplo e fonte 12, uma página tem cerca de 250-300 palavras, então uma redação de 5 páginas tem entre 1.250 e 1.500 palavras.'],
+            ['q' => 'Um "contador de palavras" é o mesmo que um "contador de texto"?', 'a' => 'Sim. Contador de palavras, contador de texto e contador de caracteres são nomes diferentes para a mesma ferramenta: ela conta as palavras, caracteres, frases e parágrafos do seu texto.'],
             ['q' => 'Ele conta caracteres com espaços?', 'a' => 'Sim. Você vê os caracteres com espaços e sem espaços, que é o que a maioria dos limites de caracteres considera.'],
         ],
     ],

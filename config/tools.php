@@ -27,7 +27,7 @@ return [
         'category' => 'text-tools',
         'icon' => 'text',
         'popular' => true,
-        'updated' => '2026-10-05',
+        'updated' => '2026-10-14',
         'title' => 'Word Counter - Count Words & Characters Online Free',
         'description' => 'Free online word counter. Count words, characters, sentences and paragraphs instantly, and see reading time and keyword density. No sign up needed.',
         'h1' => 'Word Counter',
@@ -61,7 +61,7 @@ return [
             ['q' => 'Is this word counter free?', 'a' => 'Yes. The word counter is completely free with no sign up and no limits on how much text you paste.'],
             ['q' => 'Is my text saved or uploaded?', 'a' => 'No. Counting happens entirely in your browser. Your text is never sent to our server or stored anywhere.'],
             ['q' => 'How is reading time calculated?', 'a' => 'Reading time uses an average adult silent reading speed of 238 words per minute. Speaking time uses 150 words per minute, a typical pace for presentations.'],
-            ['q' => 'How many words is a 5 page essay?', 'a' => 'With double spacing and a 12pt font, one page is roughly 250-300 words, so a 5 page essay is about 1,250-1,500 words.'],
+            ['q' => 'Is a "word counter" the same as a "words counter"?', 'a' => 'Yes. Word counter, words counter, word count tool and text counter all describe the same tool: it counts the words, characters, sentences and paragraphs in your text.'],
             ['q' => 'Does it count characters with spaces?', 'a' => 'Yes. You get both characters with spaces and characters without spaces, which is what most character limits refer to.'],
         ],
         'sources' => [

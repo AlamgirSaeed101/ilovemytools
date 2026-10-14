@@ -37,7 +37,7 @@ return [
             ['q' => 'Czy ten licznik słów jest darmowy?', 'a' => 'Tak. Licznik słów jest całkowicie darmowy, bez rejestracji i bez limitu długości wklejanego tekstu.'],
             ['q' => 'Czy mój tekst jest zapisywany albo wysyłany?', 'a' => 'Nie. Liczenie odbywa się całkowicie w Twojej przeglądarce. Twój tekst nigdy nie jest wysyłany na nasz serwer ani nigdzie zapisywany.'],
             ['q' => 'Jak obliczany jest czas czytania?', 'a' => 'Czas czytania przyjmuje średnią prędkość czytania w myślach dorosłej osoby, czyli 238 słów na minutę. Czas mówienia zakłada 150 słów na minutę, typowe tempo prezentacji.'],
-            ['q' => 'Ile słów ma wypracowanie na 5 stron?', 'a' => 'Z podwójnymi interliniami i czcionką 12pt jedna strona to około 250-300 słów, więc wypracowanie na 5 stron to około 1250-1500 słów.'],
+            ['q' => 'Czy "licznik słów" to to samo co "licznik tekstu"?', 'a' => 'Tak. Licznik słów, licznik tekstu i licznik znaków to różne nazwy tego samego narzędzia: liczy słowa, znaki, zdania i akapity w Twoim tekście.'],
             ['q' => 'Czy liczy znaki ze spacjami?', 'a' => 'Tak. Otrzymujesz liczbę znaków ze spacjami i bez spacji, a to właśnie liczby bez spacji dotyczą zwykle limitów znaków.'],
         ],
     ],

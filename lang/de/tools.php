@@ -37,7 +37,7 @@ return [
             ['q' => 'Ist dieser Wortzähler kostenlos?', 'a' => 'Ja. Der Wortzähler ist völlig kostenlos, ohne Anmeldung und ohne Begrenzung der Textmenge.'],
             ['q' => 'Wird mein Text gespeichert oder hochgeladen?', 'a' => 'Nein. Die Zählung findet vollständig in deinem Browser statt. Dein Text wird nie an unseren Server gesendet oder irgendwo gespeichert.'],
             ['q' => 'Wie wird die Lesezeit berechnet?', 'a' => 'Die Lesezeit basiert auf einer durchschnittlichen stillen Lesegeschwindigkeit Erwachsener von 238 Wörtern pro Minute. Die Sprechzeit nutzt 150 Wörter pro Minute, ein typisches Tempo für Präsentationen.'],
-            ['q' => 'Wie viele Wörter hat ein 5-seitiger Aufsatz?', 'a' => 'Mit doppeltem Zeilenabstand und 12-Punkt-Schrift hat eine Seite etwa 250-300 Wörter, ein 5-seitiger Aufsatz also etwa 1.250-1.500 Wörter.'],
+            ['q' => 'Ist ein Wortzähler dasselbe wie ein Wörterzähler?', 'a' => 'Ja. Wortzähler und Wörterzähler sind zwei gängige Bezeichnungen für dasselbe Tool: Es zählt Wörter, Zeichen, Sätze und Absätze in deinem Text.'],
             ['q' => 'Zählt er Zeichen mit Leerzeichen?', 'a' => 'Ja. Du bekommst die Zeichen mit und ohne Leerzeichen – letztere meinen die meisten Zeichenbegrenzungen.'],
         ],
     ],

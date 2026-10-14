@@ -37,7 +37,7 @@ return [
             ['q' => 'Questo contaparole è gratuito?', 'a' => 'Sì. Il contaparole è completamente gratuito, senza registrazione e senza limiti sulla quantità di testo che incolli.'],
             ['q' => 'Il mio testo viene salvato o caricato?', 'a' => 'No. Il conteggio avviene interamente nel tuo browser. Il testo non viene mai inviato al nostro server né salvato da nessuna parte.'],
             ['q' => 'Come si calcola il tempo di lettura?', 'a' => 'Il tempo di lettura si basa su una velocità media di lettura silenziosa di un adulto di 238 parole al minuto. Il tempo di esposizione usa 150 parole al minuto, un ritmo tipico delle presentazioni.'],
-            ['q' => 'Quante parole ha un tema di 5 pagine?', 'a' => 'Con interlinea doppia e carattere 12, una pagina contiene circa 250-300 parole, quindi un tema di 5 pagine ne ha circa 1.250-1.500.'],
+            ['q' => 'Un "contaparole" è lo stesso di un "contatore di testo"?', 'a' => 'Sì. Contaparole, contatore di testo e contatore di caratteri sono nomi diversi per lo stesso strumento: conta le parole, i caratteri, le frasi e i paragrafi del tuo testo.'],
             ['q' => 'Conta i caratteri con gli spazi?', 'a' => 'Sì. Ottieni sia i caratteri con spazi sia quelli senza spazi, che sono quelli a cui si riferisce la maggior parte dei limiti.'],
         ],
     ],

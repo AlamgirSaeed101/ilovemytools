@@ -37,7 +37,7 @@ return [
             ['q' => 'Ce compteur de mots est-il gratuit ?', 'a' => 'Oui. Le compteur de mots est entièrement gratuit, sans inscription et sans limite sur la quantité de texte collé.'],
             ['q' => 'Mon texte est-il enregistré ou envoyé ?', 'a' => 'Non. Le comptage se fait entièrement dans votre navigateur. Votre texte n’est jamais envoyé à notre serveur ni stocké nulle part.'],
             ['q' => 'Comment le temps de lecture est-il calculé ?', 'a' => 'Le temps de lecture se base sur une vitesse moyenne de lecture silencieuse de 238 mots par minute chez l’adulte. Le temps de parole utilise 150 mots par minute, un rythme typique pour une présentation.'],
-            ['q' => 'Combien de mots fait une dissertation de 5 pages ?', 'a' => 'Avec un interligne double et une police de 12 points, une page compte environ 250 à 300 mots : une dissertation de 5 pages fait donc environ 1 250 à 1 500 mots.'],
+            ['q' => 'Un « compteur de mots » est-il la même chose qu\'un « compteur de texte » ?', 'a' => 'Oui. Compteur de mots, compteur de texte et compteur de caractères désignent le même outil : il compte les mots, caractères, phrases et paragraphes de votre texte.'],
             ['q' => 'Compte-t-il les caractères avec les espaces ?', 'a' => 'Oui. Vous obtenez les caractères avec espaces et sans espaces, ce à quoi se réfèrent la plupart des limites de caractères.'],
         ],
     ],
