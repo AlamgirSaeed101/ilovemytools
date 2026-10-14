@@ -1518,6 +1518,10 @@ return [
                 'q' => 'Posso verificar qualquer extensão de domínio?',
                 'a' => 'A maioria das extensões comuns (incluindo .com, .net, .org, .io, .co.uk, .de e .pl) tem registro RDAP. Um pequeno número de extensões de país menores ainda não implantou o RDAP; essas aparecem como não suportadas em vez de serem adivinhadas.',
             ],
+            [
+                'q' => 'Quando um domínio foi registrado?',
+                'a' => 'O registro RDAP de um domínio guarda a data de criação: o dia em que ele foi registrado pela primeira vez, mesmo que tenha mudado de proprietário desde então. Digite o domínio acima e o verificador lê essa data exata direto do registro, junto com a idade em anos, meses e dias.',
+            ],
         ],
         'table' => [
             'caption' => 'Tipos de evento RDAP exibidos',

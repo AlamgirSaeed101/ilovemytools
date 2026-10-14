@@ -1400,6 +1400,10 @@ return [
                 'q' => 'Czy mogę sprawdzić dowolne rozszerzenie domeny?',
                 'a' => 'Większość popularnych rozszerzeń (w tym .com, .net, .org, .io, .co.uk, .de i .pl) ma rekordy RDAP. Niewielka liczba mniejszych rozszerzeń krajowych nie wdrożyła jeszcze RDAP; takie domeny są pokazywane jako niewspierane, zamiast zgadywać dane.',
             ],
+            [
+                'q' => 'Kiedy domena została zarejestrowana?',
+                'a' => 'Rekord RDAP domeny przechowuje datę utworzenia: dzień, w którym została zarejestrowana po raz pierwszy, nawet jeśli od tego czasu zmieniła właściciela. Wpisz domenę powyżej, a narzędzie odczyta tę dokładną datę bezpośrednio z rejestru, wraz z wiekiem w latach, miesiącach i dniach.',
+            ],
         ],
         'table' => [
             'caption' => 'Pokazywane typy zdarzeń RDAP',

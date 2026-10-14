@@ -1518,6 +1518,10 @@ return [
                 'q' => 'Puis-je vérifier n’importe quelle extension de domaine ?',
                 'a' => 'La plupart des extensions courantes (dont .com, .net, .org, .io, .co.uk, .de et .pl) ont un enregistrement RDAP. Un petit nombre d’extensions nationales plus confidentielles n’ont pas encore déployé le RDAP ; elles sont affichées comme non prises en charge plutôt que devinées.',
             ],
+            [
+                'q' => 'Quand un domaine a-t-il été enregistré ?',
+                'a' => 'L’enregistrement RDAP d’un domaine conserve une date de création : le jour où il a été enregistré pour la première fois, même s’il a changé de propriétaire depuis. Entrez le domaine ci-dessus et le vérificateur lit cette date exacte directement dans le registre, avec son âge en années, mois et jours.',
+            ],
         ],
         'table' => [
             'caption' => 'Types d’événements RDAP affichés',

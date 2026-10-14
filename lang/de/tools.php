@@ -1518,6 +1518,10 @@ return [
                 'q' => 'Kann ich jede Domainendung prüfen?',
                 'a' => 'Die meisten gängigen Endungen (darunter .com, .net, .org, .io, .co.uk, .de und .pl) haben RDAP-Einträge. Eine kleine Zahl kleinerer Länderendungen hat RDAP noch nicht eingeführt; diese werden als nicht unterstützt angezeigt, statt geraten zu werden.',
             ],
+            [
+                'q' => 'Wann wurde eine Domain registriert?',
+                'a' => 'Der RDAP-Eintrag einer Domain speichert ein Erstellungsdatum: den Tag, an dem sie zum ersten Mal registriert wurde, auch wenn sie seitdem den Besitzer gewechselt hat. Gib die Domain oben ein, und die Prüfung liest dieses genaue Datum direkt aus der Registry aus, zusammen mit dem Alter in Jahren, Monaten und Tagen.',
+            ],
         ],
         'table' => [
             'caption' => 'Angezeigte RDAP-Ereignistypen',
