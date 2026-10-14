@@ -57,7 +57,11 @@ jobs:
 
       - name: Browser tests (Playwright)
         run: |
-          npx playwright install --with-deps chrome
+          for i in 1 2 3; do
+            npx playwright install --with-deps chrome && break
+            echo "Chrome install failed (attempt $i), retrying..."
+            sleep 10
+          done
           npx playwright test
 
       - name: Upload test report on failure
