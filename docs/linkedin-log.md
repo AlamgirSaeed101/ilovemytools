@@ -11,3 +11,5 @@ Tools already announced on LinkedIn (one per line: date and slug). The daily rou
 2026-10-12 password-generator
 2026-10-13 qr-code-generator
 2026-10-14 image-compressor
+2026-10-15 image-resizer personal
+2026-10-15 image-resizer company
