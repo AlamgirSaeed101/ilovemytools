@@ -14,8 +14,8 @@
 <html lang="{{ \App\Support\Locale::hreflang(\App\Support\Locale::current()) }}" dir="{{ \App\Support\Locale::dir() }}" class="no-js" data-theme="light">
 <head>
     @if ($ga4 !== '')
-        {{-- Google tag (gtag.js). GA4 enhanced measurement also records in-app page changes. --}}
-        <script async src="https://www.googletagmanager.com/gtag/js?id={{ $ga4 }}"></script>
+        {{-- Google tag (gtag.js). The library script itself loads later (see the deferred
+             loader at the end of body); events queue in dataLayer until then, so nothing is lost. --}}
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -137,10 +137,10 @@
     @viteReactRefresh
     @vite(['resources/css/app.css', 'resources/js/app.jsx'])
 
-    {{-- Google AdSense (loads async so it never blocks the page) --}}
+    {{-- Google AdSense: only a preconnect here. The library script loads later (see the
+         deferred loader at the end of body) so it never competes for the main thread during startup. --}}
     @if ($adClient !== '')
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ $adClient }}" crossorigin="anonymous" onerror="window.__adsBlocked=true"></script>
     @endif
 </head>
 <body>
@@ -158,5 +158,44 @@
     </div>
 
     <script id="boot-data" type="application/json">{!! json_encode($boot, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) !!}</script>
+
+    @if ($ga4 !== '' || $adClient !== '')
+        {{-- Analytics and ads never need to be ready for the first paint. Load their scripts
+             once the page is idle, or sooner on the visitor's first interaction, so they never
+             compete with the app for the main thread while it starts up. --}}
+        <script>
+            (function () {
+                var started = false;
+                function loadDeferredScripts() {
+                    if (started) return;
+                    started = true;
+                    @if ($ga4 !== '')
+                        var gtagScript = document.createElement('script');
+                        gtagScript.async = true;
+                        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id={{ $ga4 }}';
+                        document.head.appendChild(gtagScript);
+                    @endif
+                    @if ($adClient !== '')
+                        var adsScript = document.createElement('script');
+                        adsScript.async = true;
+                        adsScript.crossOrigin = 'anonymous';
+                        adsScript.onerror = function () { window.__adsBlocked = true; };
+                        adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ $adClient }}';
+                        document.head.appendChild(adsScript);
+                    @endif
+                }
+                ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach(function (type) {
+                    window.addEventListener(type, loadDeferredScripts, { once: true, passive: true });
+                });
+                // Capped well under the ad-blocker notice's 3 s detection delay (resources/js/components/AdblockNotice.jsx),
+                // so window.__adsBlocked is already set by the time it checks.
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(loadDeferredScripts, { timeout: 1800 });
+                } else {
+                    window.addEventListener('load', function () { setTimeout(loadDeferredScripts, 800); });
+                }
+            })();
+        </script>
+    @endif
 {{-- </body> and </html> are left out on purpose: both are optional in HTML5, and GoDaddy's cPanel
      hosting injects a redirecting tracking script (tccl.min.js) next to them on every page. --}}
