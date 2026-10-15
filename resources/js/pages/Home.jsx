@@ -201,7 +201,11 @@ export default function Home() {
                                     {top && (
                                         <div className="flex items-center justify-between gap-2 px-4 py-3">
                                             <span className="text-[0.62rem] font-extrabold tracking-wider text-muted uppercase">{t('Featured:')}</span>
-                                            <Link to={`/${top.slug}`} className="truncate text-[0.78rem] font-extrabold no-underline" style={{ color: c.accent }}>
+                                            <Link
+                                                to={`/${top.slug}`}
+                                                className="truncate text-[0.78rem] font-extrabold no-underline"
+                                                style={{ color: `color-mix(in srgb, ${c.accent} 80%, black)` }}
+                                            >
                                                 {top.name}
                                             </Link>
                                         </div>
