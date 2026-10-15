@@ -1343,6 +1343,10 @@ return [
                 'q' => 'Werden die Seite oder meine Ergebnisse gespeichert?',
                 'a' => 'Nein. Unser Server ruft die Seite und die Links nur zur Prüfung ab und speichert weder die Adresse noch die Ergebnisse.',
             ],
+            [
+                'q' => 'Ist ein „Dead Link Checker“ dasselbe wie dieser Broken-Link-Checker?',
+                'a' => 'Ja. „Dead Link Checker“, „Broken Link Checker“, „404-Checker“ und „tote Links finden“ meinen alle dasselbe: ein Tool, das die Links einer Seite prüft und zeigt, welche nicht mehr funktionieren (tote Links) oder einen Fehler wie 404 liefern. Dieses Tool deckt genau diese Fälle ab.',
+            ],
         ],
         'table' => [
             'caption' => 'Häufige HTTP-Statuscodes',

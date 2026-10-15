@@ -1238,6 +1238,10 @@ return [
                 'q' => '¿Se guarda la página o mis resultados?',
                 'a' => 'No. Nuestro servidor descarga la página y los enlaces solo para comprobarlos y no guarda la dirección ni los resultados.',
             ],
+            [
+                'q' => '¿Un «dead link checker» es lo mismo que este comprobador de enlaces rotos?',
+                'a' => 'Sí. «Dead link checker», «comprobador de enlaces rotos», «error 404» y «buscador de enlaces muertos» describen el mismo tipo de herramienta: una que revisa los enlaces de una página y muestra cuáles ya no funcionan (enlaces muertos) o devuelven un error como el 404. Esta herramienta cubre todos esos casos.',
+            ],
         ],
         'table' => [
             'caption' => 'Códigos de estado HTTP habituales',

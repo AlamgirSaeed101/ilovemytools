@@ -1574,6 +1574,7 @@ return [
             ['q' => 'Does it check the whole website?', 'a' => 'It checks every link and image on the page you enter, up to 300. To check other pages, enter their addresses one by one.'],
             ['q' => 'Why are some links marked Blocked?', 'a' => 'Some websites refuse automated requests or require a login, answering with status 401, 403 or 429. The link may still work in a normal browser, so open it to check.'],
             ['q' => 'Is the page or my results stored?', 'a' => 'No. Our server fetches the page and the links only to check them and does not save the address or the results.'],
+            ['q' => 'Is a "dead link checker" the same as this broken link checker?', 'a' => 'Yes. "Dead link checker", "broken link checker", "404 checker" and "broken links checker" all describe the same kind of tool: one that tests the links on a page and shows which no longer work (dead links) or return an error such as 404. This tool covers every one of those cases.'],
         ],
         'table' => [
             'caption' => 'Common HTTP status codes',

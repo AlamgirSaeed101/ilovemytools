@@ -1343,6 +1343,10 @@ return [
                 'q' => 'A página ou meus resultados são guardados?',
                 'a' => 'Não. Nosso servidor acessa a página e os links só para verificá-los e não guarda o endereço nem os resultados.',
             ],
+            [
+                'q' => 'Um «dead link checker» é o mesmo que este verificador de links quebrados?',
+                'a' => 'Sim. «Dead link checker», «verificador de links quebrados», «erro 404» e «localizador de links mortos» descrevem o mesmo tipo de ferramenta: uma que verifica os links de uma página e mostra quais não funcionam mais (links mortos) ou retornam um erro como 404. Esta ferramenta cobre todos esses casos.',
+            ],
         ],
         'table' => [
             'caption' => 'Códigos de status HTTP comuns',

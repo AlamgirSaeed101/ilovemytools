@@ -1343,6 +1343,10 @@ return [
                 'q' => 'La pagina o i miei risultati vengono salvati?',
                 'a' => 'No. Il nostro server scarica la pagina e i link solo per controllarli e non salva né l’indirizzo né i risultati.',
             ],
+            [
+                'q' => 'Un «dead link checker» è lo stesso di questo controllo link non funzionanti?',
+                'a' => 'Sì. «Dead link checker», «controllo link rotti», «errore 404» e «trova link morti» descrivono lo stesso tipo di strumento: uno che controlla i link di una pagina e mostra quali non funzionano più (link morti) o restituiscono un errore come 404. Questo strumento copre tutti questi casi.',
+            ],
         ],
         'table' => [
             'caption' => 'Codici di stato HTTP comuni',

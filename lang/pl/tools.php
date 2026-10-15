@@ -1294,6 +1294,7 @@ return [
             ['q' => 'Czy sprawdza całą witrynę?', 'a' => 'Sprawdza każdy link i obraz na podanej stronie, do 300. Aby sprawdzić inne strony, wpisz ich adresy po kolei.'],
             ['q' => 'Czemu niektóre linki są oznaczone jako Zablokowane?', 'a' => 'Niektóre strony odmawiają automatycznych zapytań albo wymagają logowania, odpowiadając statusem 401, 403 lub 429. Link może wciąż działać w normalnej przeglądarce, więc otwórz go, aby sprawdzić.'],
             ['q' => 'Czy strona albo moje wyniki są zapisywane?', 'a' => 'Nie. Nasz serwer pobiera stronę i linki tylko, aby je sprawdzić, i nie zapisuje adresu ani wyników.'],
+            ['q' => 'Czy „dead link checker” to to samo co to sprawdzanie uszkodzonych linków?', 'a' => 'Tak. „Dead link checker”, „sprawdzanie uszkodzonych linków”, „błąd 404” i „wykrywacz martwych linków” opisują ten sam rodzaj narzędzia: takie, które sprawdza linki na stronie i pokazuje, które już nie działają (martwe linki) albo zwracają błąd, taki jak 404. To narzędzie obejmuje wszystkie te przypadki.'],
         ],
         'table' => [
             'caption' => 'Częste kody statusu HTTP',

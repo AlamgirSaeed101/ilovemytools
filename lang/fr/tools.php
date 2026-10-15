@@ -1343,6 +1343,10 @@ return [
                 'q' => 'La page ou mes résultats sont-ils conservés ?',
                 'a' => 'Non. Notre serveur récupère la page et les liens uniquement pour les vérifier et n’enregistre ni l’adresse ni les résultats.',
             ],
+            [
+                'q' => 'Un « dead link checker » est-il la même chose que ce vérificateur de liens cassés ?',
+                'a' => 'Oui. « Dead link checker », « vérificateur de liens cassés », « erreur 404 » et « détecteur de liens morts » décrivent le même type d’outil : un outil qui teste les liens d’une page et indique lesquels ne fonctionnent plus (liens morts) ou renvoient une erreur comme 404. Cet outil couvre tous ces cas.',
+            ],
         ],
         'table' => [
             'caption' => 'Codes de statut HTTP courants',
