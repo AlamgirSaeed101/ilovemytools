@@ -577,6 +577,7 @@ return [
             ['q' => 'Comment calculer une hausse en pourcentage ?', 'a' => 'Soustrayez l’ancienne valeur de la nouvelle, divisez par l’ancienne valeur et multipliez par 100. De 80 à 100 : (100 - 80) / 80 x 100 = 25 %.'],
             ['q' => 'Comment calculer une remise ?', 'a' => 'Utilisez « Diminuer un nombre d’un pourcentage ». Pour 20 % de remise sur 50 €, le prix soldé est 50 € x (1 - 0,20) = 40 €.'],
             ['q' => 'Pourquoi ne puis-je pas calculer une variation à partir de zéro ?', 'a' => 'La variation en pourcentage divise par la valeur de départ, et la division par zéro n’est pas définie : une variation à partir de 0 ne peut donc pas s’exprimer en pourcentage.'],
+            ['q' => 'Puis-je calculer un pourcentage en ligne sans rien télécharger ?', 'a' => 'Oui. Tout se passe dans votre navigateur : saisissez les nombres et le résultat avec la formule s’affiche instantanément, sans application, inscription ni envoi de fichier.'],
         ],
         'table' => [
             'caption' => 'Formules de pourcentage avec exemples',

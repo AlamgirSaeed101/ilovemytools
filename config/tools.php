@@ -714,6 +714,7 @@ return [
             ['q' => 'How do I calculate percentage increase?', 'a' => 'Subtract the old value from the new value, divide by the old value and multiply by 100. From 80 to 100: (100 - 80) / 80 x 100 = 25%.'],
             ['q' => 'How do I work out a discount?', 'a' => 'Use "Decrease a number by a percentage". For 20% off $50, the sale price is $50 x (1 - 0.20) = $40.'],
             ['q' => 'Why can\'t I calculate change from zero?', 'a' => 'Percentage change divides by the starting value, and dividing by zero is undefined, so a change from 0 cannot be expressed as a percentage.'],
+            ['q' => 'Can I calculate percentages online without downloading anything?', 'a' => 'Yes. Everything runs in your browser: type the numbers and the result and formula appear instantly, with no app, sign-up or file upload needed.'],
         ],
         'related' => ['age-calculator', 'tip-calculator', 'word-counter'],
         'table' => [
