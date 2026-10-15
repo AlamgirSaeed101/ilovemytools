@@ -158,5 +158,5 @@
     </div>
 
     <script id="boot-data" type="application/json">{!! json_encode($boot, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) !!}</script>
-</body>
-</html>
+{{-- </body> and </html> are left out on purpose: both are optional in HTML5, and GoDaddy's cPanel
+     hosting injects a redirecting tracking script (tccl.min.js) next to them on every page. --}}
