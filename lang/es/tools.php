@@ -202,7 +202,7 @@ return [
 
     'image-resizer' => [
         'name' => 'Redimensionar imagen',
-        'title' => 'Redimensionar y convertir imágenes JPG, PNG y WebP gratis',
+        'title' => 'Redimensionar imagen online: JPG, PNG y WebP gratis',
         'description' => 'Redimensiona imágenes a píxeles exactos o por porcentaje y convierte entre JPG, PNG y WebP. Gratis, en línea y sin subir tus fotos.',
         'h1' => 'Redimensionar y convertir imágenes',
         'tagline' => 'Redimensiona a píxeles exactos o por porcentaje y convierte JPG, PNG y WebP.',

@@ -240,7 +240,7 @@ return [
 
     'image-resizer' => [
         'name' => '이미지 크기 조절',
-        'title' => '이미지 크기 조절 - JPG, PNG, WebP 무료 변환',
+        'title' => '이미지 크기 조절 온라인 - JPG, PNG, WebP 무료 변환',
         'description' => '이미지를 정확한 픽셀이나 비율로 크기를 조절하고 JPG, PNG, WebP 간에 변환하세요. 사진을 안전하게 지켜 주는 무료 온라인 이미지 크기 조절기입니다.',
         'h1' => '이미지 크기 조절 & 변환',
         'tagline' => '정확한 픽셀이나 비율로 크기를 조절하고 JPG, PNG, WebP를 변환하세요.',

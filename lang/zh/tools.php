@@ -232,7 +232,7 @@ return [
 
     'image-resizer' => [
         'name' => '圖片尺寸調整',
-        'title' => '圖片尺寸調整 - 免費調整並轉換 JPG、PNG、WebP',
+        'title' => '圖片尺寸調整線上工具 - 免費轉換 JPG、PNG、WebP',
         'description' => '免費線上依精確像素或百分比調整圖片大小,並在 JPG、PNG 與 WebP 之間互相轉換。所有處理都在瀏覽器中完成,保護你照片的隱私與安全。',
         'h1' => '圖片尺寸調整與轉換',
         'tagline' => '依精確像素或百分比調整大小,並轉換 JPG、PNG 與 WebP。',

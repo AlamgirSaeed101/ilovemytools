@@ -232,7 +232,7 @@ return [
 
     'image-resizer' => [
         'name' => 'Zmiana rozmiaru obrazu',
-        'title' => 'Zmiana rozmiaru obrazu - skaluj i konwertuj JPG, PNG, WebP',
+        'title' => 'Zmiana rozmiaru obrazu online - JPG, PNG, WebP',
         'description' => 'Zmień rozmiar obrazów na konkretne piksele lub procent i konwertuj między JPG, PNG i WebP. Darmowe narzędzie, które zachowuje prywatność Twoich zdjęć.',
         'h1' => 'Zmiana rozmiaru i konwersja obrazu',
         'tagline' => 'Zmień rozmiar na konkretne piksele albo procent i konwertuj JPG, PNG i WebP.',

@@ -232,7 +232,7 @@ return [
 
     'image-resizer' => [
         'name' => 'Redimensionner une image',
-        'title' => 'Redimensionner une image : JPG, PNG, WebP gratuit',
+        'title' => 'Redimensionner une image en ligne : JPG, PNG, WebP gratuit',
         'description' => 'Redimensionnez une image au pixel près ou en pourcentage et convertissez JPG, PNG et WebP. Gratuit, en ligne et sans envoyer vos photos.',
         'h1' => 'Redimensionner et convertir une image',
         'tagline' => 'Redimensionnez au pixel près ou en pourcentage, et convertissez JPG, PNG et WebP.',
