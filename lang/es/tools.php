@@ -1334,6 +1334,10 @@ return [
                 'q' => '¿Por qué una web aparece como No encontrada?',
                 'a' => 'Las webs muy nuevas o muy pequeñas pueden no tener todavía suficientes enlaces en el grafo web para recibir una puntuación.',
             ],
+            [
+                'q' => '¿Hay un comprobador de autoridad de dominio masivo?',
+                'a' => 'Sí: esta herramienta comprueba la autoridad de dominio de forma masiva, en bloque: pega hasta 100 dominios a la vez y ve todas las puntuaciones juntas, en lugar de consultarlas una por una.',
+            ],
         ],
         'table' => [
             'caption' => 'Métricas de autoridad comparadas',

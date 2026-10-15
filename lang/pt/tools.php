@@ -1439,6 +1439,10 @@ return [
                 'q' => 'Por que um site aparece como Não encontrado?',
                 'a' => 'Sites muito novos ou muito pequenos podem ainda não ter links suficientes no grafo web para receber uma pontuação.',
             ],
+            [
+                'q' => 'Existe um verificador de autoridade de domínio em massa?',
+                'a' => 'Sim: esta ferramenta verifica a autoridade de domínio em massa, em lote: cole até 100 domínios de uma vez e veja todas as pontuações juntas, em vez de consultar uma a uma.',
+            ],
         ],
         'table' => [
             'caption' => 'Métricas de autoridade comparadas',

@@ -1338,6 +1338,7 @@ return [
             ['q' => 'Skąd pochodzą wyniki?', 'a' => 'Z OpenPageRank, który wylicza autorytet z grafu Common Crawl, publicznego indeksu miliardów stron internetowych. Wyniki są aktualizowane co miesiąc.'],
             ['q' => 'Jak mogę zwiększyć swój wynik?', 'a' => 'Zdobywaj linki z poważanych witryn w swojej branży: wartościowe treści, wpisy w dobrych katalogach, gościnne artykuły i wzmianki w mediach. Linki z wielu różnych witryn liczą się bardziej niż wiele linków z jednej.'],
             ['q' => 'Czemu witryna pokazuje Nie znaleziono?', 'a' => 'Bardzo nowe albo bardzo małe witryny mogą nie mieć jeszcze wystarczającej liczby linków w grafie, aby otrzymać wynik.'],
+            ['q' => 'Czy istnieje masowy sprawdzacz autorytetu domeny?', 'a' => 'Tak - to narzędzie sprawdza autorytet domeny masowo, zbiorczo: wklej do 100 domen na raz i zobacz wszystkie wyniki razem, zamiast sprawdzać każdą z osobna.'],
         ],
         'table' => [
             'caption' => 'Porównanie metryk autorytetu',

@@ -1439,6 +1439,10 @@ return [
                 'q' => 'Warum steht bei einer Website Nicht gefunden?',
                 'a' => 'Sehr neue oder sehr kleine Websites haben im Web-Graphen eventuell noch nicht genug Links, um einen Wert zu erhalten.',
             ],
+            [
+                'q' => 'Gibt es einen Massen-Domain-Authority-Checker?',
+                'a' => 'Ja – dieses Tool prüft die Domain Authority im Bulk- bzw. Massen-Modus: Fügen Sie bis zu 100 Domains gleichzeitig ein und sehen Sie alle Werte zusammen, statt jede einzeln nachzuschlagen.',
+            ],
         ],
         'table' => [
             'caption' => 'Autoritätswerte im Vergleich',

@@ -1439,6 +1439,10 @@ return [
                 'q' => 'Pourquoi un site est-il marqué Introuvable ?',
                 'a' => 'Les sites très récents ou très petits n’ont parfois pas encore assez de liens dans le graphe web pour obtenir un score.',
             ],
+            [
+                'q' => 'Existe-t-il un vérificateur d’autorité de domaine en masse ?',
+                'a' => 'Oui : cet outil vérifie l’autorité de domaine en masse, en lot : collez jusqu’à 100 domaines à la fois et consultez tous les scores ensemble, au lieu de les chercher un par un.',
+            ],
         ],
         'table' => [
             'caption' => 'Comparaison des indicateurs d’autorité',

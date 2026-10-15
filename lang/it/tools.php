@@ -1439,6 +1439,10 @@ return [
                 'q' => 'Perché un sito risulta Non trovato?',
                 'a' => 'I siti molto nuovi o molto piccoli potrebbero non avere ancora abbastanza link nel grafo web per ricevere un punteggio.',
             ],
+            [
+                'q' => 'Esiste un controllo autorità di dominio di massa?',
+                'a' => 'Sì: questo strumento controlla l’autorità di dominio in blocco, di massa: incolla fino a 100 domini insieme e vedi tutti i punteggi contemporaneamente, invece di cercarli uno per uno.',
+            ],
         ],
         'table' => [
             'caption' => 'Metriche di autorità a confronto',

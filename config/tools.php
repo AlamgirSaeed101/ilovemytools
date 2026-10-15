@@ -1627,6 +1627,7 @@ return [
             ['q' => 'Where do the scores come from?', 'a' => 'From OpenPageRank, which calculates authority from the Common Crawl web graph, a public crawl of billions of web pages. The scores are updated monthly.'],
             ['q' => 'How can I increase my score?', 'a' => 'Earn links from respected websites in your field: useful content, listings in quality directories, guest articles and mentions in the press. Links from many different sites count more than many links from one site.'],
             ['q' => 'Why does a site show Not found?', 'a' => 'Very new or very small sites may not have enough links in the web graph yet to receive a score.'],
+            ['q' => 'Is there a mass domain authority checker?', 'a' => 'Yes, this tool checks authority in bulk, also called mass checking: paste up to 100 domains at once and see every score together instead of looking each one up separately.'],
         ],
         'table' => [
             'caption' => 'Authority metrics compared',
