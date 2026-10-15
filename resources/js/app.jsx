@@ -6,8 +6,6 @@ import Layout from './components/Layout.jsx';
 import { getJson, getSite, initialPage, loadCategory, loadSite, loadTool, NotFoundError } from './lib/api.js';
 import { initI18n } from './lib/i18n.js';
 import Category from './pages/Category.jsx';
-import Home from './pages/Home.jsx';
-import { About, Contact, Privacy, Terms } from './pages/InfoPages.jsx';
 import { GuideArticle, GuideIndex } from './pages/Guides.jsx';
 import NotFound, { RouteError } from './pages/NotFound.jsx';
 import ToolPage from './pages/ToolPage.jsx';
@@ -20,12 +18,15 @@ const routes = [
             {
                 id: 'pages',
                 errorElement: <RouteError />,
+                // Keeps Layout (header, footer, command palette) mounted immediately on a full page
+                // load while the matched page's own lazy chunk and loader are still resolving.
+                HydrateFallback: () => null,
                 children: [
-                    { index: true, element: <Home /> },
-                    { path: 'about', element: <About /> },
-                    { path: 'contact', element: <Contact /> },
-                    { path: 'privacy-policy', element: <Privacy /> },
-                    { path: 'terms', element: <Terms /> },
+                    { index: true, lazy: () => import('./pages/Home.jsx').then((m) => ({ Component: m.default })) },
+                    { path: 'about', lazy: () => import('./pages/InfoPages.jsx').then((m) => ({ Component: m.About })) },
+                    { path: 'contact', lazy: () => import('./pages/InfoPages.jsx').then((m) => ({ Component: m.Contact })) },
+                    { path: 'privacy-policy', lazy: () => import('./pages/InfoPages.jsx').then((m) => ({ Component: m.Privacy })) },
+                    { path: 'terms', lazy: () => import('./pages/InfoPages.jsx').then((m) => ({ Component: m.Terms })) },
                     { path: 'guides', element: <GuideIndex /> },
                     {
                         id: 'guide',
