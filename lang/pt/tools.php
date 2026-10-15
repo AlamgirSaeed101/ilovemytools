@@ -473,6 +473,7 @@ return [
             ['q' => 'O resultado tem marca d\'água?', 'a' => 'Não. O PDF unido não tem marca d\'água, logotipo nem páginas adicionadas.'],
             ['q' => 'Quantos PDFs posso juntar?', 'a' => 'Até 50 arquivos de cada vez. O limite prático depende da memória do seu dispositivo, e a maioria lida facilmente com algumas centenas de páginas.'],
             ['q' => 'Links e marcadores são mantidos?', 'a' => 'O conteúdo das páginas, as imagens e o texto são mantidos exatamente. Alguns recursos interativos, como marcadores e campos de formulário, podem não ser mantidos.'],
+            ['q' => 'Juntar PDF aqui é totalmente grátis?', 'a' => 'Sim. Não há custo, limite de arquivos, conta nem cadastro: você pode juntar PDF online grátis quantas vezes quiser, direto no navegador.'],
         ],
     ],
 

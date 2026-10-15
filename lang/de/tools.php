@@ -473,6 +473,7 @@ return [
             ['q' => 'Gibt es ein Wasserzeichen?', 'a' => 'Nein. Das zusammengefügte PDF hat kein Wasserzeichen, kein Logo und keine zusätzlichen Seiten.'],
             ['q' => 'Wie viele PDFs kann ich zusammenfügen?', 'a' => 'Bis zu 50 Dateien auf einmal. Die praktische Grenze hängt vom Speicher deines Geräts ab; die meisten Geräte schaffen problemlos einige hundert Seiten.'],
             ['q' => 'Bleiben Links und Lesezeichen erhalten?', 'a' => 'Seiteninhalte, Bilder und Text bleiben exakt erhalten. Manche interaktiven Funktionen wie Lesezeichen und Formularfelder werden eventuell nicht übernommen.'],
+            ['q' => 'Ist PDF zusammenfügen hier wirklich kostenlos?', 'a' => 'Ja. Es gibt keine Kosten, kein Dateilimit, kein Konto und keine Anmeldung – du kannst beliebig oft kostenlos PDFs online zusammenfügen, direkt in deinem Browser.'],
         ],
     ],
 

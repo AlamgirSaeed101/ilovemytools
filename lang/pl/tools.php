@@ -473,6 +473,7 @@ return [
             ['q' => 'Czy jest znak wodny?', 'a' => 'Nie. Połączony PDF nie ma znaku wodnego, logo ani dodanych stron.'],
             ['q' => 'Ile plików PDF mogę połączyć?', 'a' => 'Do 50 plików na raz. Praktyczny limit zależy od pamięci Twojego urządzenia, a większość urządzeń bez problemu obsługuje kilkaset stron.'],
             ['q' => 'Czy linki i zakładki zostaną zachowane?', 'a' => 'Treść stron, obrazy i tekst są zachowane dokładnie. Niektóre funkcje interaktywne, takie jak zakładki i pola formularzy, mogą się nie przenieść.'],
+            ['q' => 'Czy łączenie PDF-ów tutaj jest całkowicie bezpłatne?', 'a' => 'Tak. Nie ma kosztów, limitu plików, konta ani rejestracji - możesz łączyć pliki PDF online za darmo tyle razy, ile chcesz, bezpośrednio w przeglądarce.'],
         ],
     ],
 

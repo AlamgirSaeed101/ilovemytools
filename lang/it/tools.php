@@ -473,6 +473,7 @@ return [
             ['q' => 'C’è una filigrana?', 'a' => 'No. Il PDF unito non ha filigrane, loghi o pagine aggiunte.'],
             ['q' => 'Quanti PDF posso unire?', 'a' => 'Fino a 50 file alla volta. Il limite pratico dipende dalla memoria del dispositivo, e la maggior parte gestisce facilmente qualche centinaio di pagine.'],
             ['q' => 'Link e segnalibri vengono mantenuti?', 'a' => 'Contenuto delle pagine, immagini e testo restano identici. Alcune funzioni interattive, come segnalibri e campi dei moduli, potrebbero non essere mantenute.'],
+            ['q' => 'Unire i PDF qui è davvero gratuito?', 'a' => 'Sì. Non ci sono costi, limiti di file, account o registrazione: puoi unire PDF online gratis tutte le volte che vuoi, direttamente nel browser.'],
         ],
     ],
 

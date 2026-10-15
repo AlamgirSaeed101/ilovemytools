@@ -431,6 +431,7 @@ return [
             ['q' => '¿Lleva marca de agua?', 'a' => 'No. El PDF unido no lleva marca de agua, logotipo ni páginas añadidas.'],
             ['q' => '¿Cuántos PDF puedo unir?', 'a' => 'Hasta 50 archivos a la vez. El límite práctico depende de la memoria de tu dispositivo, y la mayoría maneja sin problema unos cientos de páginas.'],
             ['q' => '¿Se conservan los enlaces y marcadores?', 'a' => 'El contenido, las imágenes y el texto de las páginas se conservan exactamente. Algunas funciones interactivas, como los marcadores y los campos de formulario, pueden no conservarse.'],
+            ['q' => '¿Es totalmente gratis unir PDF aquí?', 'a' => 'Sí. No hay coste, límite de archivos, cuenta ni registro: puedes unir PDF en línea gratis las veces que quieras, directamente en tu navegador.'],
         ],
     ],
 

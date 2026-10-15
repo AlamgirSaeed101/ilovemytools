@@ -584,6 +584,7 @@ return [
             ['q' => 'Is there a watermark?', 'a' => 'No. The merged PDF has no watermark, logo or added pages.'],
             ['q' => 'How many PDFs can I merge?', 'a' => 'Up to 50 files at a time. The practical limit depends on your device memory, and most devices handle a few hundred pages easily.'],
             ['q' => 'Will links and bookmarks be kept?', 'a' => 'Page content, images and text are kept exactly. Some interactive features such as bookmarks and form fields may not carry over.'],
+            ['q' => 'Is merging PDFs online here completely free?', 'a' => 'Yes. There is no cost, no file limit, no account and no sign-up - merge as many PDFs as you like, for free, directly in your browser.'],
         ],
         'sources' => [
             ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],

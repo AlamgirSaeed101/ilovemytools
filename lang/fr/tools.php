@@ -473,6 +473,7 @@ return [
             ['q' => 'Y a-t-il un filigrane ?', 'a' => 'Non. Le PDF fusionné n’a ni filigrane, ni logo, ni pages ajoutées.'],
             ['q' => 'Combien de PDF puis-je fusionner ?', 'a' => 'Jusqu’à 50 fichiers à la fois. La limite pratique dépend de la mémoire de votre appareil, et la plupart gèrent facilement quelques centaines de pages.'],
             ['q' => 'Les liens et signets sont-ils conservés ?', 'a' => 'Le contenu des pages, les images et le texte sont conservés à l’identique. Certaines fonctions interactives, comme les signets et les champs de formulaire, peuvent ne pas être reprises.'],
+            ['q' => 'Fusionner des PDF ici est-il entièrement gratuit ?', 'a' => 'Oui. Il n’y a aucun coût, aucune limite de fichiers, aucun compte ni inscription : vous pouvez fusionner des PDF en ligne gratuitement autant de fois que vous le souhaitez, directement dans votre navigateur.'],
         ],
     ],
 
