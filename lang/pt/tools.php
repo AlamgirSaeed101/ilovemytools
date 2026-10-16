@@ -768,7 +768,7 @@ return [
             ['q' => 'Por que meu endereço IP muda?', 'a' => 'A maioria dos provedores residenciais atribui endereços IP dinâmicos, que podem mudar quando o roteador reinicia. IPs de dados móveis mudam com frequência.'],
             ['q' => 'Como posso esconder meu endereço IP?', 'a' => 'Use uma VPN ou uma rede de privacidade como o Tor. Assim, os sites veem o endereço IP da VPN em vez do seu.'],
             ['q' => 'Vocês guardam meu endereço IP?', 'a' => 'Não. Esta ferramenta apenas mostra seu endereço IP para você e não o salva em nenhum banco de dados.'],
-            ['q' => 'Como descubro meu endereço IP público (IPv4)?', 'a' => 'Basta abrir esta página: seu endereço IP público aparece no topo instantaneamente, sem cadastro nem cliques extras. A maioria das conexões residenciais e móveis usa IPv4; se a sua usar IPv6, esta página mostrará esse endereço.'],
+            ['q' => 'Como descubro meu endereço IP público?', 'a' => 'Basta abrir esta página: seu endereço IP público aparece no topo instantaneamente, sem cadastro, download ou cliques extras. Você verá se é um endereço IPv4 (como 203.0.113.42) ou IPv6: exatamente o número que outros sites e serviços veem quando você se conecta.'],
         ],
     ],
 

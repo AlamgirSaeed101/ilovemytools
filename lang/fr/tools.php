@@ -768,7 +768,7 @@ return [
             ['q' => 'Pourquoi mon adresse IP change-t-elle ?', 'a' => 'La plupart des fournisseurs d’accès attribuent des adresses IP dynamiques qui peuvent changer au redémarrage de la box. Les IP des données mobiles changent souvent.'],
             ['q' => 'Comment masquer mon adresse IP ?', 'a' => 'Utilisez un VPN ou un réseau d’anonymisation comme Tor. Les sites voient alors l’adresse IP du VPN à la place de la vôtre.'],
             ['q' => 'Conservez-vous mon adresse IP ?', 'a' => 'Non. Cet outil affiche seulement votre adresse IP et ne l’enregistre dans aucune base de données.'],
-            ['q' => 'Comment trouver mon adresse IP publique (IPv4) ?', 'a' => 'Ouvrez simplement cette page : votre adresse IP publique s’affiche en haut instantanément, sans inscription ni clic supplémentaire. La plupart des connexions domestiques et mobiles utilisent l’IPv4 ; si la vôtre utilise l’IPv6, cette page affichera cette adresse à la place.'],
+            ['q' => 'Comment trouver mon adresse IP publique ?', 'a' => 'Ouvrez simplement cette page : votre adresse IP publique s’affiche en haut instantanément, sans inscription, téléchargement ni clic supplémentaire. Vous voyez si c’est une adresse IPv4 (comme 203.0.113.42) ou IPv6 : exactement le numéro que voient les autres sites et services quand vous vous connectez.'],
         ],
     ],
 

@@ -931,7 +931,7 @@ return [
             ['q' => 'Why does my IP address change?', 'a' => 'Most home internet providers assign dynamic IP addresses that can change when your router restarts. Mobile data IPs change frequently.'],
             ['q' => 'How can I hide my IP address?', 'a' => 'Use a VPN or a privacy network such as Tor. Websites then see the VPN\'s IP address instead of yours.'],
             ['q' => 'Do you store my IP address?', 'a' => 'No. This tool only displays your IP address to you and does not save it in a database.'],
-            ['q' => 'How do I find my public IPv4 address?', 'a' => 'Open this page and your public IP address appears at the top within a second, no sign-up, download or extra click needed. Most home and mobile connections use IPv4; if yours uses IPv6 instead, this page shows that address.'],
+            ['q' => 'How do I find my public IP address?', 'a' => 'Open this page and your public IP address appears at the top within a second, no sign-up, download or extra click needed. It shows whether that address is IPv4 (like 203.0.113.42) or IPv6, exactly the number other websites and services see when you connect.'],
         ],
         'sources' => [
             ['title' => 'ARIN: IPv4 address depletion', 'url' => 'https://www.arin.net/resources/guide/ipv4/'],
