@@ -739,7 +739,7 @@ return [
             ['q' => '¿Las tiradas son realmente aleatorias?', 'a' => 'Sí. Las tiradas usan el generador de números aleatorios criptográficamente seguro de tu navegador, así que todas las caras son igual de probables y los resultados no se pueden predecir.'],
             ['q' => '¿Puedo tirar un D20 para Dungeons & Dragons?', 'a' => 'Sí. Elige D20 en el tipo de dado y pulsa Tirar. También tienes D4, D8, D10, D12 y D100.'],
             ['q' => '¿Puedo usarlo sin la animación?', 'a' => 'Si tu dispositivo tiene activada la opción de reducir el movimiento, los resultados aparecen al instante sin animación.'],
-            ['q' => '¿Qué es un generador de dados online?', 'a' => 'Un generador de dados online (o lanzador de dados) sustituye los dados físicos por una tirada simulada en la pantalla: eliges el tipo de dado y cuántos tirar, y cada tirada muestra al instante un resultado justo y aleatorio, sin nada que lanzar ni recoger.'],
+            ['q' => '¿Es lo mismo un dado online que un simulador de dados?', 'a' => 'Sí. «Dado online», «dados virtuales», «simulador de dados» y «dado digital» describen la misma herramienta: dados que lanza el generador de números aleatorios de tu navegador en lugar de lanzarlos a mano. Para un dado normal, elige D6 en el tipo de dado.'],
         ],
         'table' => [
             'caption' => 'Tipos de dados y para qué se usan',

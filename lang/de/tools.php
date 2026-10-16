@@ -808,7 +808,7 @@ return [
             ['q' => 'Sind die Würfe wirklich zufällig?', 'a' => 'Ja. Die Würfe nutzen den kryptografisch sicheren Zufallszahlengenerator deines Browsers, jede Seite ist also gleich wahrscheinlich und die Ergebnisse sind nicht vorhersehbar.'],
             ['q' => 'Kann ich einen D20 für Dungeons & Dragons werfen?', 'a' => 'Ja. Wähle D20 bei den Würfeltypen und tippe auf Würfeln. D4, D8, D10, D12 und D100 gibt es auch.'],
             ['q' => 'Kann ich ohne Animation würfeln?', 'a' => 'Wenn dein Gerät auf „Bewegung reduzieren“ eingestellt ist, erscheinen die Ergebnisse sofort ohne Rollanimation.'],
-            ['q' => 'Was ist ein Online-Würfelgenerator?', 'a' => 'Ein Online-Würfelgenerator (oder Online-Würfel) ersetzt echte Würfel durch einen simulierten Wurf auf dem Bildschirm: Du wählst den Würfeltyp und wie viele geworfen werden, und jeder Wurf zeigt sofort ein faires, zufälliges Ergebnis – ohne etwas werfen oder aufheben zu müssen.'],
+            ['q' => 'Ist „Onlinewürfel“ dasselbe wie „Online-Würfel“?', 'a' => 'Ja. „Onlinewürfel“ (ein Wort), „Online-Würfel“, „digitaler Würfel“ und die Falschschreibung „Würffel“ meinen alle dasselbe Tool: einen virtuellen Würfel, der im Browser geworfen wird, statt einen echten zu werfen. Für einen normalen Würfel bis 6 wählst du einfach D6 als Würfeltyp.'],
         ],
         'table' => [
             'caption' => 'Würfeltypen und wofür sie genutzt werden',
