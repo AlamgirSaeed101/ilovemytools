@@ -216,7 +216,7 @@ return [
             ['q' => 'Jak skompresować obraz do 100KB?', 'a' => 'Wybierz „Rozmiar docelowy”, wpisz 100 i kliknij Kompresuj. Narzędzie znajduje najlepszą jakość, która zmieści się w limicie, i zmniejsza wymiary tylko, jeśli to konieczne.'],
             ['q' => 'Czy moje obrazy są wysyłane na serwer?', 'a' => 'Nie. Obrazy są kompresowane w Twojej przeglądarce za pomocą Canvas API. Nigdy nie opuszczają Twojego urządzenia.'],
             ['q' => 'Czy kompresja zmniejszy jakość?', 'a' => 'Przy domyślnej jakości (75%) większość ludzi nie zauważa różnicy, a rozmiar plików często spada o 50-80%.'],
-            ['q' => 'Czemu mój PNG zmniejszył się tylko odrobinę?', 'a' => 'PNG jest formatem bezstratnym. Aby znacząco zmniejszyć rozmiar, wybierz WebP albo JPG jako format wyjściowy. Użyj WebP, jeśli potrzebujesz zachować przezroczystość.'],
+            ['q' => 'Jak zmniejszyć rozmiar obrazu PNG?', 'a' => 'PNG jest formatem bezstratnym, więc samo kompresowanie niewiele pomaga. Aby naprawdę zmniejszyć rozmiar PNG, wybierz WebP (zachowuje przezroczystość) lub JPG (jeśli przezroczystość nie jest potrzebna) jako format wyjściowy - obie opcje znacznie zmniejszają rozmiar pliku PNG bez widocznej utraty jakości.'],
             ['q' => 'Jak zmniejszyć rozmiar JPG online?', 'a' => 'Wgraj swój JPG, wybierz „Rozmiar docelowy” lub jakość około 60-80% i kliknij Kompresuj. Dla zdjęć jakość JPG 70-80% zwykle wystarcza, by znacznie zmniejszyć rozmiar bez widocznej utraty jakości.'],
         ],
         'table' => [

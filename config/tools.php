@@ -273,7 +273,7 @@ return [
             ['q' => 'How do I compress an image to 100KB?', 'a' => 'Choose "Target size", enter 100 and click Compress. The tool finds the best quality that fits under 100KB and only scales the image down if it has to.'],
             ['q' => 'Are my images uploaded to a server?', 'a' => 'No. Images are compressed inside your browser using the Canvas API. They never leave your device.'],
             ['q' => 'Will compression reduce quality?', 'a' => 'At the default quality (75%) most people cannot see a difference, while file size often drops by 50-80%.'],
-            ['q' => 'Why did my PNG barely get smaller?', 'a' => 'PNG is a lossless format. For big savings, set the output format to WebP or JPG. Use WebP if you need to keep transparency.'],
+            ['q' => 'How do I reduce a PNG image size?', 'a' => 'PNG is a lossless format, so compressing it alone saves little. To actually shrink a PNG image size, set the output format to WebP (keeps transparency) or JPG (if you don\'t need transparency) - both cut PNG file sizes dramatically with no visible quality loss.'],
             ['q' => 'How do I shrink a JPG online?', 'a' => 'Upload your JPG, pick "Target size" or a quality level around 60-80%, and click Compress. For photos, a JPG quality of 70-80% is usually enough to shrink the file size noticeably with no visible loss.'],
         ],
         'sources' => [

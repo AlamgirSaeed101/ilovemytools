@@ -216,7 +216,7 @@ return [
             ['q' => 'Come comprimo un’immagine a 100 KB?', 'a' => 'Scegli “Dimensione obiettivo”, inserisci 100 e clicca Comprimi. Lo strumento trova la qualità migliore che resta sotto i 100 KB e riduce le dimensioni dell’immagine solo se necessario.'],
             ['q' => 'Le mie immagini vengono caricate su un server?', 'a' => 'No. Le immagini vengono compresse nel browser con l’API Canvas. Non lasciano mai il tuo dispositivo.'],
             ['q' => 'La compressione riduce la qualità?', 'a' => 'Con la qualità predefinita (75%) quasi nessuno nota differenze, mentre il peso spesso cala del 50-80%.'],
-            ['q' => 'Perché il mio PNG si è ridotto pochissimo?', 'a' => 'Il PNG è un formato senza perdita. Per un grande risparmio imposta WebP o JPG come formato di output. Usa WebP se devi mantenere la trasparenza.'],
+            ['q' => 'Come riduco le dimensioni di un\'immagine PNG?', 'a' => 'Il PNG è un formato senza perdita, quindi comprimerlo da solo aiuta poco. Per ridurre davvero le dimensioni di un PNG, imposta WebP (mantiene la trasparenza) o JPG (se non serve la trasparenza) come formato di output: entrambi riducono molto il peso del PNG senza perdita di qualità visibile.'],
             ['q' => 'Come riduco le dimensioni di un JPG online?', 'a' => 'Carica il tuo JPG, scegli “Dimensione obiettivo” o una qualità intorno al 60-80% e clicca Comprimi. Per le foto, una qualità JPG del 70-80% basta di solito a ridurre il peso in modo netto senza perdita visibile.'],
         ],
         'table' => [

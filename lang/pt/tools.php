@@ -216,7 +216,7 @@ return [
             ['q' => 'Como comprimo uma imagem para 100KB?', 'a' => 'Escolha "Tamanho desejado", digite 100 e clique em Comprimir. A ferramenta encontra a melhor qualidade que cabe em 100KB e só reduz as dimensões da imagem se for necessário.'],
             ['q' => 'Minhas imagens são enviadas a um servidor?', 'a' => 'Não. As imagens são comprimidas dentro do seu navegador com a Canvas API. Elas nunca saem do seu dispositivo.'],
             ['q' => 'A compressão reduz a qualidade?', 'a' => 'Na qualidade padrão (75%), a maioria das pessoas não vê diferença, e o arquivo costuma ficar 50-80% menor.'],
-            ['q' => 'Por que meu PNG quase não diminuiu?', 'a' => 'PNG é um formato sem perdas. Para economizar bastante, escolha WebP ou JPG como formato de saída. Use WebP se precisar manter a transparência.'],
+            ['q' => 'Como eu reduzo o tamanho de uma imagem PNG?', 'a' => 'PNG é um formato sem perdas, então comprimi-lo sozinho ajuda pouco. Para realmente reduzir o tamanho de um PNG, escolha WebP (mantém a transparência) ou JPG (se não precisar de transparência) como formato de saída - os dois reduzem bastante o tamanho do arquivo PNG sem perda visível de qualidade.'],
             ['q' => 'Como eu reduzo o tamanho de um JPG online?', 'a' => 'Envie seu JPG, escolha "Tamanho desejado" ou uma qualidade entre 60-80% e clique em Comprimir. Para fotos, uma qualidade JPG de 70-80% costuma bastar para reduzir bastante o tamanho sem perda visível.'],
         ],
         'table' => [

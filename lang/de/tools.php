@@ -216,7 +216,7 @@ return [
             ['q' => 'Wie komprimiere ich ein Bild auf 100 KB?', 'a' => 'Wähle „Zielgröße“, gib 100 ein und klicke auf Komprimieren. Das Tool findet die beste Qualität unter 100 KB und verkleinert die Abmessungen nur, wenn es nötig ist.'],
             ['q' => 'Werden meine Bilder auf einen Server hochgeladen?', 'a' => 'Nein. Die Bilder werden in deinem Browser mit der Canvas-API komprimiert. Sie verlassen nie dein Gerät.'],
             ['q' => 'Verringert die Komprimierung die Qualität?', 'a' => 'Bei der Standardqualität (75 %) sehen die meisten keinen Unterschied, während die Dateigröße oft um 50-80 % sinkt.'],
-            ['q' => 'Wie kann ich die Größe einer PNG verkleinern?', 'a' => 'PNG ist ein verlustfreies Format und wird allein kaum kleiner. Für große Einsparungen wähle WebP oder JPG als Ausgabeformat. Nimm WebP, wenn die Transparenz erhalten bleiben soll.'],
+            ['q' => 'Wie verkleinere ich eine PNG-Bildgröße?', 'a' => 'PNG ist ein verlustfreies Format, daher bringt reines Komprimieren wenig. Um eine PNG wirklich zu verkleinern, stelle WebP (behält Transparenz) oder JPG (ohne Transparenz) als Ausgabeformat ein - beide verkleinern die PNG-Bildgröße deutlich, ohne sichtbaren Qualitätsverlust.'],
             ['q' => 'Wie verkleinere ich ein JPG online?', 'a' => 'Lade dein JPG hoch, wähle „Zielgröße“ oder eine Qualität von etwa 60-80 % und klicke auf Komprimieren. Bei Fotos reicht meist eine JPG-Qualität von 70-80 %, um die Dateigröße deutlich zu verkleinern, ohne dass du einen Unterschied siehst.'],
         ],
         'table' => [
