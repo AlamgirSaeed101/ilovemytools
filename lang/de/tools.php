@@ -514,8 +514,8 @@ return [
 
     'age-calculator' => [
         'name' => 'Altersrechner',
-        'title' => 'Altersrechner: Alter berechnen in Jahren, Monaten, Tagen',
-        'description' => 'Berechne dein genaues Alter in Jahren, Monaten, Tagen und Stunden aus dem Geburtsdatum – mit gelebten Tagen und Countdown zum nächsten Geburtstag.',
+        'title' => 'Altersrechner: Alter aus dem Geburtsdatum berechnen',
+        'description' => 'Gib dein Geburtsdatum ein und erhalte dein genaues Alter in Jahren, Monaten, Tagen und Stunden, mit Countdown zum nächsten Geburtstag. Kostenlos.',
         'h1' => 'Altersrechner',
         'tagline' => 'Finde dein genaues Alter in Jahren, Monaten und Tagen – plus deinen nächsten Geburtstag.',
         'keywords' => ['altersrechner', 'alter berechnen', 'geburtsdatum rechner', 'wie alt bin ich', 'alter berechnen mit geburtsdatum'],

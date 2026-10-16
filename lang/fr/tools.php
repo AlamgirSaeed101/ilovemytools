@@ -514,8 +514,8 @@ return [
 
     'age-calculator' => [
         'name' => 'Calculateur d’âge',
-        'title' => 'Calcul d’âge : âge exact en années, mois et jours',
-        'description' => 'Calculez votre âge exact en années, mois, jours et heures depuis votre date de naissance, avec le compte à rebours de votre anniversaire. Gratuit.',
+        'title' => 'Calcul d’âge : âge exact depuis votre date de naissance',
+        'description' => 'Indiquez votre date de naissance pour connaître votre âge exact en années, mois et jours, avec le compte à rebours de votre anniversaire. Gratuit.',
         'h1' => 'Calculateur d’âge',
         'tagline' => 'Trouvez votre âge exact en années, mois et jours, et votre prochain anniversaire.',
         'keywords' => ['calculateur d’âge', 'calculer son âge', 'calcul date de naissance', 'quel âge ai-je', 'calcul âge avec date de naissance'],

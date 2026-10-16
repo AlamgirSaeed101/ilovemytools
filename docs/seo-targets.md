@@ -1,12 +1,12 @@
-Updated 2026-10-15
+Updated 2026-10-16
 
-1 · /domain-authority-checker · 0 clicks · 254 impr · pos 10.9 · CTR 0.0% · bulk domain authority check (5.4), bulk domain authority checker (7.6), bulk domain authority checker free (32.8), free bulk domain authority checker (12.9), mass domain authority checker (8.8)
-2 · /de/what-is-my-ip · 0 clicks · 209 impr · pos 54.9 · CTR 0.0% · meine öffentliche ip (77.7), was ist meine öffentliche ipv4 adresse (69.9), öffentliche ip adresse herausfinden (94.2), öffentliche ip herausfinden (90.3), wie ist meine ip (17.4)
+1 · /domain-authority-checker · 0 clicks · 256 impr · pos 11.5 · CTR 0.0% · bulk domain authority check (5.4), bulk domain authority checker (7.6), bulk domain authority checker free (32.8), free bulk domain authority checker (12.9), mass domain authority checker (8.8)
+2 · /de/what-is-my-ip · 0 clicks · 236 impr · pos 58.5 · CTR 0.0% · meine öffentliche ip (77.8), was ist meine öffentliche ipv4 adresse (72.6), öffentliche ip herausfinden (90.9), öffentliche ip adresse herausfinden (94.0), wie ist meine ip (17.4)
 3 · /de/word-counter · 0 clicks · 198 impr · pos 45.5 · CTR 0.0% · wortzähler (52.7), wortzähler online (16.7), wörter zähle (8.2), wörterzähler (86.9), word zähler (81.5)
 4 · /de/image-compressor · 0 clicks · 135 impr · pos 17.3 · CTR 0.0% · jpg verkleinern online (13.6), png größe verkleinern (18.9), png bildgröße verkleinern (11.5), jpg größe verkleinern (18.6), png verkleinern (21.6)
-5 · /it/word-counter · 0 clicks · 68 impr · pos 66.2 · CTR 0.0% · conta parole (8.8), conta caratteri (82.2), contatore caratteri (80.8), contacaratteri (82.8), conta caratteri online (55.0)
-6 · /domain-age-checker · 0 clicks · 54 impr · pos 81.8 · CTR 0.0% · when was a domain registered (78.7), when was a domain name registered (82.0), when was domain registered (84.4), when a domain was registered (92.5), when was domain name registered (80.8)
-7 · /it/percentage-calculator · 0 clicks · 51 impr · pos 66.7 · CTR 0.0% · calcolare la percentuale tra due numeri online (51.3), calcolo percentuale (45.7), calcolo delle percentuali (26.0), calcolo delle percentuali online (5.5), calcolo percentuale aumento (48.5)
+5 · /domain-age-checker · 0 clicks · 82 impr · pos 80.1 · CTR 0.0% · when was a domain name registered (80.0), when was a domain registered (77.4), when was domain registered (81.1), when a domain was registered (89.8), when was domain name registered (80.4)
+6 · /it/word-counter · 0 clicks · 69 impr · pos 66.4 · CTR 0.0% · conta parole (8.8), conta caratteri (82.2), contatore caratteri (80.8), contacaratteri (82.8), conta caratteri online (55.0)
+7 · /it/percentage-calculator · 0 clicks · 52 impr · pos 67.0 · CTR 0.0% · calcolare la percentuale tra due numeri online (51.3), calcolo percentuale (45.7), calcolatrice percentuali (86.0), calcolo delle percentuali (26.0), calcolo delle percentuali online (5.5)
 8 · /de/merge-pdf · 0 clicks · 50 impr · pos 12.9 · CTR 0.0% · pdf zusammenfügen online (14.8), pdf zusammenfügen kostenlos online (9.0), pdf zusammenfügen kostenlos (9.1), pdf zusammenfügen online kostenlos (15.3), pdfs zusammenfügen kostenlos (11.0)
 9 · /fr/dice-roller · 0 clicks · 48 impr · pos 72.8 · CTR 0.0% · dé en ligne (79.5), jet de dés (70.0), lancé de dés (72.3), générateur de dés (49.0), lancer de dé (93.0)
 10 · /it/coin-flip · 0 clicks · 40 impr · pos 59.6 · CTR 0.0% · testa o croce online (39.3), lancia una moneta (37.7), lancio moneta (84.3), ehi google lancia una moneta (61.0), gioco testa o croce (77.0)
@@ -14,4 +14,4 @@ Updated 2026-10-15
 12 · /de/image-resizer · 0 clicks · 27 impr · pos 12.9 · CTR 0.0% · jpg größe ändern online (5.9), jpg bilder größe ändern (2.3), png format ändern (25.0), größe jpg ändern (10.5), größe von webp bild ändern (73.5)
 13 · /de/age-calculator · 0 clicks · 26 impr · pos 9.7 · CTR 0.0% · altersrechner (12.8), alter berechnen (15.0), alter in tagen (1.0), altersrechner geburtsdatum (9.0), alter aus geburtsdatum berechnen (11.0)
 14 · /fr/age-calculator · 0 clicks · 26 impr · pos 5.4 · CTR 0.0% · calcul age (7.3), connaitre age avec date de naissance (1.0), calcul age date de naissance (6.5), age calcul (6.0), age et date de naissance (6.0)
-15 · /de/broken-link-checker · 0 clicks · 23 impr · pos 72.3 · CTR 0.0% · dead link checker (77.4), broken link check (83.0), tote links finden (66.0), 404 checker (71.5), broken links checker (69.5)
+15 · /de/dice-roller · 0 clicks · 25 impr · pos 50.4 · CTR 0.0% · online würfel (28.8), würffel (71.7), onlinewürfel (4.5), digital würfel (63.0), online würfel bis 6 (68.0)
