@@ -47,7 +47,6 @@ return [
     'badges' => [],
 
     'same_as' => [
-        'https://www.uneed.best/tool/ilovetools',
         'https://www.linkedin.com/company/ilovemytools',
     ],
 
