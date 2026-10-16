@@ -5,7 +5,7 @@ return [
     'word-counter' => [
         'name' => 'Contaparole',
         'title' => 'Contaparole: conta parole e caratteri online gratis',
-        'description' => 'Contaparole online gratuito. Conta subito parole, caratteri, frasi e paragrafi e vedi tempo di lettura e parole chiave. Senza registrazione.',
+        'description' => 'Contaparole online gratuito: conta parole, caratteri, frasi e paragrafi in tempo reale, con tempo di lettura e parole chiave. Senza registrazione.',
         'h1' => 'Contaparole',
         'tagline' => 'Conta subito parole, caratteri, frasi e tempo di lettura.',
         'keywords' => ['contaparole', 'conta caratteri', 'contare parole', 'contare parole online', 'calcolo tempo di lettura'],
