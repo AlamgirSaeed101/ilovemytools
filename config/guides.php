@@ -756,4 +756,86 @@ return [
             ['title' => 'Consumer Financial Protection Bureau, What is amortization?', 'url' => 'https://www.consumerfinance.gov/ask-cfpb/what-is-amortization-and-how-could-it-affect-my-auto-loan-en-755/'],
         ],
     ],
+
+    'how-to-resize-an-image-for-social-media' => [
+        'title' => 'How to Resize an Image for Social Media (All Sizes)',
+        'description' => 'The pixel sizes Instagram, Facebook, LinkedIn, X and YouTube actually use for posts, covers and thumbnails, plus a free way to resize any photo to fit.',
+        'h1' => 'How to resize an image for social media',
+        'intro' => 'Post the same photo to Instagram and paste it as a Facebook link, and one looks fine while the other gets cropped strangely or padded with grey bars. Every network resizes and crops whatever you upload to fit its own layout, so if your file is not close to the right shape, the platform decides what to cut - and it is not always kind to faces, logos or text near the edge. Here are the pixel sizes that matter today and a step-by-step way to hit them exactly.',
+        'tool' => 'image-resizer',
+        'related' => ['image-compressor', 'png-to-jpg', 'webp-to-png'],
+        'published' => '2026-10-17',
+        'updated' => '2026-10-17',
+        'sections' => [
+            [
+                'heading' => 'Why the "right" size keeps changing',
+                'paragraphs' => [
+                    'Sizes vary by placement, not just by platform. A square Instagram grid post, a vertical Story and a YouTube thumbnail are three completely different shapes, and the same photo cannot fill all three without being resized for each one. Platforms also update their recommended dimensions from time to time, so treat any list - including this one - as a close current guide rather than a permanent spec, and double check on the platform\'s own help page before a campaign that really matters.',
+                    'What does not change is the underlying problem: upload a photo whose proportions do not match the slot, and the platform will crop it from the center, stretch it, or letterbox it with bars. None of those outcomes look intentional.',
+                ],
+            ],
+            [
+                'heading' => 'Common social media image sizes',
+                'paragraphs' => [
+                    'These are the dimensions most creators and official help pages currently recommend for the most common placements.',
+                ],
+                'table' => [
+                    'headers' => ['Platform & placement', 'Recommended size (pixels)', 'Shape'],
+                    'rows' => [
+                        ['Instagram feed - square post', '1080 x 1080', '1:1'],
+                        ['Instagram feed - portrait post', '1080 x 1350', '4:5'],
+                        ['Instagram Story / Reels cover', '1080 x 1920', '9:16'],
+                        ['Facebook / LinkedIn shared link image', '1200 x 630', 'about 1.91:1'],
+                        ['YouTube thumbnail', '1280 x 720', '16:9'],
+                        ['X (Twitter) post image', '1200 x 675', '16:9'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'What actually happens if you upload the wrong shape',
+                'paragraphs' => [
+                    'YouTube\'s own thumbnail guidelines ask for an image at least 640 pixels wide with a 16:9 ratio; upload something narrower or a different shape and YouTube crops or pads it to fit the thumbnail slot shown in search and recommendations, which often cuts off whatever was near the edges of your original image.',
+                    'Meta\'s sharing guidelines for Facebook recommend 1200 x 630 pixels for a shared link image, with a minimum of 200 x 200 pixels. A photo with a different aspect ratio gets cropped to fit that roughly 1.91:1 frame, which is why a tall portrait photo often loses the top and bottom of a logo or a face when it is pasted into a Facebook or LinkedIn link preview.',
+                ],
+            ],
+            [
+                'heading' => 'How to resize an image for a specific platform',
+                'paragraphs' => [
+                    'The Image Resizer on this site resizes to an exact pixel width and height, or by percentage, and converts between JPG, PNG and WebP - all in your browser, so the original photo is never uploaded anywhere.',
+                ],
+                'list' => [
+                    'Pick the placement you are posting to and note its pixel size from the table above - for example 1080 x 1080 for an Instagram grid post.',
+                    'If your original photo is already close to that shape, open the Image Resizer, drop the file in, and keep "Lock aspect ratio" switched on so nothing stretches.',
+                    'If the shapes do not match - a landscape photo going into a square slot - crop the photo to the right proportions first in any photo editor. The resizer changes pixel size, not framing, so skipping this step squeezes faces and logos out of shape instead of cropping them cleanly.',
+                    'Enter the exact width and height from the table, choose JPG for a photo or PNG if you need to keep transparency, and click Download.',
+                    'Open the downloaded file at full size before you post. Most platforms still re-encode images on upload, so start from a sharp, correctly-sized file rather than one that has already been resized and saved more than once.',
+                ],
+            ],
+            [
+                'heading' => 'Why your image looks blurry after uploading',
+                'paragraphs' => [
+                    'Most platforms re-compress photos on upload to save bandwidth, and there is nothing you can do about that step. What you do control is the source file: resizing a photo down to a platform\'s target size keeps it sharp, because the resizer only removes detail that is already there. Stretching a small image up to fill a much bigger slot blurs it instead, because no new detail can be invented to fill the extra pixels. If a photo looks soft after resizing, check whether the original was actually smaller than the target size before assuming the tool is at fault.',
+                ],
+            ],
+            [
+                'heading' => 'Checklist before you post',
+                'list' => [
+                    'Pixel size matches the placement\'s recommended dimensions, not just the original photo\'s size.',
+                    'Aspect ratio matches the slot, or the image was cropped first rather than stretched to fit.',
+                    'File format is JPG for a plain photo, or PNG/WebP if you need to keep transparency.',
+                    'Original file was at or above the target pixel size, so nothing had to be scaled up.',
+                    'Preview opened at full size before publishing, checking faces, logos and text near the edges.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'What size should my Instagram post be?', 'a' => 'A square grid post is commonly sized at 1080 x 1080 pixels, a portrait post at 1080 x 1350, and a Story or Reels cover at 1080 x 1920. Keep the photo close to that shape before uploading so Instagram does not crop it for you.'],
+            ['q' => 'Why does my Facebook link preview image look cropped?', 'a' => 'Meta\'s sharing guidelines recommend a 1200 x 630 pixel image for a shared link, close to a 1.91:1 rectangle. A photo with a different shape - a tall portrait, for instance - gets cropped from the center to fit that frame, which can cut off a face or logo near the top or bottom.'],
+            ['q' => 'Will resizing an image make it blurry?', 'a' => 'Only when you scale it up. Resizing a photo down to a smaller target size keeps it sharp because you are only removing detail, not creating it. Enlarging a small photo to fill a much bigger slot is what causes blur.'],
+        ],
+        'sources' => [
+            ['title' => 'Google, YouTube Help: Thumbnail guidelines', 'url' => 'https://support.google.com/youtube/answer/72431'],
+            ['title' => 'Meta for Developers, Sharing: Images', 'url' => 'https://developers.facebook.com/docs/sharing/webmasters/images'],
+        ],
+    ],
 ];
