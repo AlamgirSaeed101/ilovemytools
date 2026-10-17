@@ -35,3 +35,4 @@ Written by the daily SEO/GEO/AEO routine (rule 14 of `docs/ROUTINE.md`). One lin
 - 2026-10-16 19:13 UTC · /de/word-counter (#3, 0 clicks, 198 impr, pos 45.5) · wörter zähle (pos 8.2) · reworded title+description so "Wörter zählen" sits adjacent, matching the top-10 query exactly.
 - 2026-10-16 21:54 UTC · /it/word-counter (#6, 0 clicks, 69 impr, pos 66.4) · conta parole (pos 8.2) · reworded description so "conta parole" sits adjacent, matching the top-10 query exactly (same pattern as de/word-counter).
 - 2026-10-17 01:09 UTC · /fr/dice-roller (#9, 0 clicks, 48 impr, pos 72.8) · jet de dés, lancé de dés, générateur de dés, dé en ligne · reworded the synonym FAQ to directly name "jet de dés"/"lancé de dés", unanswered before.
+- 2026-10-17 04:57 UTC · /es/dice-roller (#14, 0 clicks, 27 impr, pos 67.3) · tirador de dados, tirar dado, dado 20 online · reworded the synonym FAQ to directly name "tirador de dados"/"tirar dado", unanswered before.
