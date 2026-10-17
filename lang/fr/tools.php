@@ -1532,7 +1532,7 @@ return [
             ],
             [
                 'q' => 'Quand un domaine a-t-il été enregistré ?',
-                'a' => 'L’enregistrement RDAP d’un domaine conserve une date de création : le jour où il a été enregistré pour la première fois, même s’il a changé de propriétaire depuis. Entrez le domaine ci-dessus et le vérificateur lit cette date exacte directement dans le registre, avec son âge en années, mois et jours.',
+                'a' => 'L’enregistrement RDAP d’un nom de domaine conserve une date de création : le jour exact où ce nom de domaine a été enregistré pour la première fois, même s’il a changé de propriétaire depuis. Entrez le domaine ci-dessus et le vérificateur lit cette date directement dans le registre, avec son âge en années, mois et jours.',
             ],
         ],
         'table' => [

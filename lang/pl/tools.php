@@ -1408,7 +1408,7 @@ return [
             ],
             [
                 'q' => 'Kiedy domena została zarejestrowana?',
-                'a' => 'Rekord RDAP domeny przechowuje datę utworzenia: dzień, w którym została zarejestrowana po raz pierwszy, nawet jeśli od tego czasu zmieniła właściciela. Wpisz domenę powyżej, a narzędzie odczyta tę dokładną datę bezpośrednio z rejestru, wraz z wiekiem w latach, miesiącach i dniach.',
+                'a' => 'Rekord RDAP nazwy domeny przechowuje datę utworzenia: dokładny dzień, w którym ta nazwa domeny została zarejestrowana po raz pierwszy, nawet jeśli od tego czasu zmieniła właściciela. Wpisz domenę powyżej, a narzędzie odczyta tę datę bezpośrednio z rejestru, wraz z wiekiem w latach, miesiącach i dniach.',
             ],
         ],
         'table' => [

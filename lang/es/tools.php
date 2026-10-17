@@ -1427,7 +1427,7 @@ return [
             ],
             [
                 'q' => '¿Cuándo se registró un dominio?',
-                'a' => 'El registro RDAP de un dominio guarda la fecha de creación: el día en que se registró por primera vez, aunque haya cambiado de propietario desde entonces. Introduce el dominio arriba y el comprobador lee esa fecha exacta directamente del registro, junto con su antigüedad en años, meses y días.',
+                'a' => 'El registro RDAP de un nombre de dominio guarda la fecha de creación: el día exacto en que ese nombre de dominio se registró por primera vez, aunque haya cambiado de propietario desde entonces. Introduce el dominio arriba y el comprobador lee esa fecha directamente del registro, junto con su antigüedad en años, meses y días.',
             ],
         ],
         'table' => [

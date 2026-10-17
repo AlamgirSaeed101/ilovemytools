@@ -1532,7 +1532,7 @@ return [
             ],
             [
                 'q' => 'Quando è stato registrato un dominio?',
-                'a' => 'Il record RDAP di un dominio conserva una data di creazione: il giorno in cui è stato registrato per la prima volta, anche se da allora ha cambiato proprietario. Inserisci il dominio sopra e il controllo legge questa data esatta direttamente dal registro, insieme all’età in anni, mesi e giorni.',
+                'a' => 'Il record RDAP di un nome di dominio conserva una data di creazione: il giorno esatto in cui quel nome di dominio è stato registrato per la prima volta, anche se da allora ha cambiato proprietario. Inserisci il dominio sopra e il controllo legge questa data direttamente dal registro, insieme all’età in anni, mesi e giorni.',
             ],
         ],
         'table' => [

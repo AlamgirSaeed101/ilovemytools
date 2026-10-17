@@ -1532,7 +1532,7 @@ return [
             ],
             [
                 'q' => 'Wann wurde eine Domain registriert?',
-                'a' => 'Der RDAP-Eintrag einer Domain speichert ein Erstellungsdatum: den Tag, an dem sie zum ersten Mal registriert wurde, auch wenn sie seitdem den Besitzer gewechselt hat. Gib die Domain oben ein, und die Prüfung liest dieses genaue Datum direkt aus der Registry aus, zusammen mit dem Alter in Jahren, Monaten und Tagen.',
+                'a' => 'Der RDAP-Eintrag eines Domainnamens speichert ein Erstellungsdatum: den genauen Tag, an dem dieser Domainname zum ersten Mal registriert wurde, auch wenn er seitdem den Besitzer gewechselt hat. Gib die Domain oben ein, und die Prüfung liest dieses Datum direkt aus der Registry aus, zusammen mit dem Alter in Jahren, Monaten und Tagen.',
             ],
         ],
         'table' => [

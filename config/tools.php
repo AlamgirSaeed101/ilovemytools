@@ -1680,7 +1680,7 @@ return [
             ['q' => 'Is this the same information as a WHOIS lookup?', 'a' => 'Yes, it is the same registration data, but read from RDAP, the structured, keyless protocol that is replacing WHOIS. Dates, registrar and nameservers come from the same registry record either way.'],
             ['q' => 'Why does Expiry date matter?', 'a' => 'A domain that is not renewed before its expiry date can enter a grace period and then be released for anyone to register. Checking a site\'s expiry date is a quick way to judge how actively it is maintained.'],
             ['q' => 'Can I check any domain extension?', 'a' => 'Most common extensions (including .com, .net, .org, .io, .co.uk, .de and .pl) have RDAP records. A small number of smaller country-code extensions have not deployed RDAP yet; these are shown as not supported rather than guessed at.'],
-            ['q' => 'When was a domain registered?', 'a' => 'A domain\'s RDAP record stores a Created (registration) date: the day it was first registered to anyone, even if it has changed owners since. Enter the domain above and the checker reads that exact date straight from the registry, along with its age in years, months and days.'],
+            ['q' => 'When was a domain registered?', 'a' => 'A domain name\'s RDAP record stores a Created (registration) date: the exact day that domain name was first registered to anyone, even if it has changed owners since. Enter the domain above and the checker reads that date straight from the registry, along with its age in years, months and days.'],
         ],
         'table' => [
             'caption' => 'RDAP event types shown',
