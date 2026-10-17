@@ -944,7 +944,7 @@ return [
         'category' => 'games',
         'icon' => 'dice',
         'popular' => true,
-        'updated' => '2026-09-30',
+        'updated' => '2026-10-17',
         'title' => 'Dice Roller - Roll Virtual Dice Online (D6, D20 & More)',
         'description' => 'Roll 1 to 10 virtual dice online: D4, D6, D8, D10, D12, D20 or D100. Fair, random results with a 3D rolling animation, totals and roll history. Free.',
         'h1' => 'Dice Roller',

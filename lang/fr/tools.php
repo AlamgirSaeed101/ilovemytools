@@ -808,7 +808,7 @@ return [
             ['q' => 'Les lancers sont-ils vraiment aléatoires ?', 'a' => 'Oui. Ils utilisent le générateur de nombres aléatoires cryptographiquement sûr de votre navigateur : chaque face a la même probabilité et les résultats sont imprévisibles.'],
             ['q' => 'Puis-je lancer un D20 pour Donjons & Dragons ?', 'a' => 'Oui. Choisissez D20 parmi les types de dés et appuyez sur Lancer. Les D4, D8, D10, D12 et D100 sont aussi disponibles.'],
             ['q' => 'Puis-je lancer les dés sans animation ?', 'a' => 'Si votre appareil est réglé pour réduire les animations, les résultats s’affichent instantanément sans animation.'],
-            ['q' => 'Un générateur de dés en ligne, c’est la même chose qu’un dé virtuel ?', 'a' => 'Oui. « Générateur de dés en ligne », « dé en ligne », « dé virtuel » et « dé numérique » décrivent le même outil : des dés lancés par le générateur aléatoire de votre navigateur plutôt qu’à la main. Pour un dé classique, choisissez D6 dans le type de dé.'],
+            ['q' => 'Qu’est-ce qu’un jet de dés en ligne ?', 'a' => 'Un jet de dés (ou lancé de dés) en ligne reproduit un lancer réel sans rien à lancer : ce générateur de dés en ligne utilise le générateur aléatoire sécurisé de votre navigateur pour afficher aussitôt un résultat équitable, comme un dé en ligne classique. « Dé virtuel » et « dé numérique » désignent le même outil. Pour un dé classique, choisissez D6 dans le type de dé.'],
         ],
         'table' => [
             'caption' => 'Types de dés et leurs usages',
