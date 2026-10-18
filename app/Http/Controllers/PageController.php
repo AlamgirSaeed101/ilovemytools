@@ -36,7 +36,8 @@ class PageController extends Controller
                     'url' => Locale::url($tool['slug']),
                 ])->all(),
             ])
-            ->faqs(HomeFaq::all());
+            ->faqs(HomeFaq::all())
+            ->speakable(['h1', '.hero__lead']);
 
         return $this->render('home', $seo, 'pages.home', [
             'categories' => $this->registry->categories(),

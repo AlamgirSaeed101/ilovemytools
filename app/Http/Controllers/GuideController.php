@@ -41,7 +41,8 @@ class GuideController extends Controller
             ->breadcrumbs([['Guides', '/guides'], [$data['h1'], $path]])
             ->shareImage($data['tool'])
             ->faqs($data['faqs'])
-            ->article($data, Guides::author());
+            ->article($data, Guides::author())
+            ->speakable(['h1', '.guide-article .lead']);
         $seo->ogType = 'article';
         $seo->path = null;
 

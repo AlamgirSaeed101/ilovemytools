@@ -135,6 +135,20 @@ class Seo
         return $this;
     }
 
+    /** Marks which parts of the page a voice assistant / AI answer engine can read aloud. */
+    public function speakable(array $cssSelector): self
+    {
+        $this->schemas[] = [
+            '@context' => 'https://schema.org',
+            '@type' => 'WebPage',
+            'name' => $this->title,
+            'url' => $this->canonical,
+            'speakable' => ['@type' => 'SpeakableSpecification', 'cssSelector' => $cssSelector],
+        ];
+
+        return $this;
+    }
+
     public function tool(array $tool): self
     {
         $this->image = $this->toolImage($tool['slug'] ?? '');
