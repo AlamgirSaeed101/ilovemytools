@@ -1721,6 +1721,17 @@ fieldset.grid-2 .check:has(input:checked) {
     color: var(--warn);
 }
 
+/* Only shown while <html> still has "no-js" - i.e. to real browsers with JavaScript off and to
+   crawlers/AI engines that don't run it. The inline script in layouts.app removes "no-js" as soon
+   as it runs, before anything else paints. */
+.no-js-notice {
+    display: none;
+}
+
+.no-js .no-js-notice {
+    display: block;
+}
+
 .notice.row {
     display: flex;
 }
