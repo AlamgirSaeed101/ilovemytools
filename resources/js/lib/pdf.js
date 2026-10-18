@@ -1,7 +1,12 @@
 import { t } from './i18n.js';
-// PDF helpers built on pdf-lib (runs fully in the browser).
-import { degrees, PDFDocument } from 'pdf-lib';
 import { drawScaled, imageTypeOf, loadImage } from './image.js';
+
+// PDF helpers built on pdf-lib (runs fully in the browser). pdf-lib is sizeable, so it's
+// loaded only when a page actually needs it (e.g. on file drop), not on every page's first load.
+let pdfLibPromise;
+function pdfLib() {
+    return pdfLibPromise ?? (pdfLibPromise = import('pdf-lib'));
+}
 
 export const MAX_PDF_BYTES = 200 * 1024 * 1024;
 
@@ -19,6 +24,7 @@ export async function loadPdf(file) {
     if (file.size > MAX_PDF_BYTES) throw new Error(t('"{name}" is larger than 200 MB.', { name: file.name }));
     const bytes = await file.arrayBuffer();
     try {
+        const { PDFDocument } = await pdfLib();
         const doc = await PDFDocument.load(bytes, { updateMetadata: false });
         const pageCount = doc.getPageCount();
         if (pageCount === 0) {
@@ -42,6 +48,7 @@ export async function loadPdf(file) {
 
 /** Build a new PDF from [{ doc, indexes }] parts, in order. */
 export async function buildPdf(parts) {
+    const { PDFDocument } = await pdfLib();
     const out = await PDFDocument.create();
     for (const { doc, indexes } of parts) {
         const pages = await out.copyPages(doc, indexes ?? doc.getPageIndices());
@@ -126,6 +133,7 @@ export function addRotation(base, delta) {
 
 /** Set each page's absolute rotation (degrees, one entry per page index) and save. */
 export async function buildRotatedPdf(doc, targetRotations) {
+    const { degrees } = await pdfLib();
     doc.getPages().forEach((page, i) => {
         if (targetRotations[i] != null) page.setRotation(degrees(targetRotations[i]));
     });
@@ -135,6 +143,7 @@ export async function buildRotatedPdf(doc, targetRotations) {
 
 /** Build a PDF with one image per page from a list of image Files. */
 export async function buildImagePdf(files, options = {}) {
+    const { PDFDocument } = await pdfLib();
     const pdfDoc = await PDFDocument.create();
     for (const file of files) {
         const image = await embedImageForPdf(pdfDoc, file);

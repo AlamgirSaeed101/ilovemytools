@@ -5,7 +5,6 @@ import { isPdf, loadPdf } from '../lib/pdf.js';
 import { decryptPdf } from '../lib/qpdf.js';
 import { baseName, downloadBlob, formatBytes, safeFilename } from '../lib/util.js';
 import { t, tn } from '../lib/i18n.js';
-import { PDFDocument } from 'pdf-lib';
 
 export default function UnlockPdf() {
     const [file, setFile] = useState(null);
@@ -43,6 +42,7 @@ export default function UnlockPdf() {
         try {
             const bytes = await file.arrayBuffer();
             const decrypted = await decryptPdf(new Uint8Array(bytes), password);
+            const { PDFDocument } = await import('pdf-lib');
             const doc = await PDFDocument.load(decrypted, { ignoreEncryption: true });
             const blob = new Blob([decrypted], { type: 'application/pdf' });
             setResult({ blob, pages: doc.getPageCount(), name: safeFilename(`${baseName(file.name)}-unlocked.pdf`) });

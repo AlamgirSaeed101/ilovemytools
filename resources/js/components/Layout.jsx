@@ -491,10 +491,24 @@ function usePageFocus() {
     return mainRef;
 }
 
+/** True once the browser is idle (or after a short timeout), so heavy below-the-fold
+ *  content like the full footer link grid isn't part of the first, time-critical render. */
+function useIdle() {
+    const [idle, setIdle] = useState(false);
+    useEffect(() => {
+        const ric = window.requestIdleCallback || ((cb) => setTimeout(cb, 300));
+        const cic = window.cancelIdleCallback || clearTimeout;
+        const id = ric(() => setIdle(true), { timeout: 1500 });
+        return () => cic(id);
+    }, []);
+    return idle;
+}
+
 export default function Layout() {
     const [paletteOpen, setPaletteOpen] = useState(false);
     const location = useLocation();
     const mainRef = usePageFocus();
+    const idle = useIdle();
     usePageMotion(location.pathname, mainRef);
     const openPalette = useCallback(() => setPaletteOpen(true), []);
     const closePalette = useCallback(() => setPaletteOpen(false), []);
@@ -533,7 +547,7 @@ export default function Layout() {
             <div className="shell">
                 <AdSlot key={`footer-${location.pathname}`} position="footer" />
             </div>
-            <Footer />
+            {idle && <Footer />}
             <Suspense fallback={null}>
                 <CommandPalette open={paletteOpen} onClose={closePalette} />
             </Suspense>
