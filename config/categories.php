@@ -82,7 +82,7 @@ return [
         'icon' => 'calculator',
         'accent' => '#d97706',
         'accent2' => '#f59e0b',
-        'title' => 'Free Online Calculators - Age & Percentage Calculator',
+        'title' => 'Age, Loan, Mortgage & Compound Interest Calculators',
         'description' => 'Free online calculators for age, percentages, percentage change and more. Accurate, instant answers with the formula and working shown for every result.',
         'intro' => 'Quick, accurate calculators for everyday maths: exact age, percentages, increases and decreases.',
         'content' => [

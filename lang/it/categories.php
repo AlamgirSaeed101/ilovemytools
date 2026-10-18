@@ -59,7 +59,7 @@ return [
         'name' => 'Calcolatrici',
         'short' => 'Calcolatrici',
         'subtitle' => 'I calcoli di tutti i giorni',
-        'title' => 'Calcolatrici online gratuite: età e percentuali',
+        'title' => 'Calcolatrici: età, prestito, mutuo e interesse composto',
         'description' => 'Calcolatrici online gratuite per età, percentuali, variazioni percentuali e altro. Risposte esatte e immediate con il calcolo spiegato.',
         'intro' => 'Calcolatrici veloci e precise per i conti di tutti i giorni: età esatta, percentuali, aumenti e sconti.',
         'content' => [

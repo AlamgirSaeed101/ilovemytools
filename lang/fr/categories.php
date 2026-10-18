@@ -59,7 +59,7 @@ return [
         'name' => 'Calculatrices',
         'short' => 'Calculatrices',
         'subtitle' => 'Les calculs du quotidien',
-        'title' => 'Calculatrices en ligne gratuites : âge et pourcentages',
+        'title' => 'Calculatrices : âge, prêt, hypothèque et intérêts composés',
         'description' => 'Calculatrices en ligne gratuites : âge, pourcentages, variations en pourcentage et plus. Réponses exactes et instantanées, calcul détaillé.',
         'intro' => 'Des calculatrices rapides et précises pour les calculs du quotidien : âge exact, pourcentages, hausses et remises.',
         'content' => [

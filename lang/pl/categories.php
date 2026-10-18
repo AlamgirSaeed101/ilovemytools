@@ -59,7 +59,7 @@ return [
         'name' => 'Kalkulatory',
         'short' => 'Kalkulatory',
         'subtitle' => 'Rozwiązuj codzienne obliczenia',
-        'title' => 'Darmowe kalkulatory online - wiek i procenty',
+        'title' => 'Kalkulatory: wiek, pożyczka, hipoteka i odsetki składane',
         'description' => 'Darmowe kalkulatory online do wieku, procentów, zmiany procentowej i więcej. Dokładne, natychmiastowe wyniki z pokazanym wzorem dla każdego rezultatu.',
         'intro' => 'Szybkie i dokładne kalkulatory do codziennych obliczeń: dokładny wiek, procenty, wzrosty i spadki.',
         'content' => [

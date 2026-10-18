@@ -59,7 +59,7 @@ return [
         'name' => 'Rechner',
         'short' => 'Rechner',
         'subtitle' => 'Alltagsrechnungen lösen',
-        'title' => 'Kostenlose Online-Rechner: Alter und Prozent',
+        'title' => 'Rechner: Alter, Kredit, Hypothek und Zinseszins',
         'description' => 'Kostenlose Online-Rechner für Alter, Prozente, prozentuale Veränderung und mehr. Sofort exakte Ergebnisse mit erklärtem Rechenweg.',
         'intro' => 'Schnelle, genaue Rechner für alltägliche Rechnungen: exaktes Alter, Prozente, Aufschläge und Rabatte.',
         'content' => [

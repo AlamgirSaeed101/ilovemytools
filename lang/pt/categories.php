@@ -59,7 +59,7 @@ return [
         'name' => 'Calculadoras',
         'short' => 'Calculadoras',
         'subtitle' => 'Resolva as contas do dia a dia',
-        'title' => 'Calculadoras online grátis: idade e porcentagem',
+        'title' => 'Calculadoras de idade, empréstimo, hipoteca e juro composto',
         'description' => 'Calculadoras online grátis de idade, porcentagem, variação percentual e mais. Respostas exatas na hora, com a fórmula e o cálculo explicados.',
         'intro' => 'Calculadoras rápidas e precisas para as contas do dia a dia: idade exata, porcentagens, aumentos e descontos.',
         'content' => [

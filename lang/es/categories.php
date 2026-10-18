@@ -59,7 +59,7 @@ return [
         'name' => 'Calculadoras',
         'short' => 'Calculadoras',
         'subtitle' => 'Resuelve cuentas del día a día',
-        'title' => 'Calculadoras en línea gratis: edad y porcentajes',
+        'title' => 'Calculadoras de edad, préstamo, hipoteca e interés compuesto',
         'description' => 'Calculadoras en línea gratuitas de edad, porcentajes, variación porcentual y más. Respuestas exactas al instante con el cálculo explicado.',
         'intro' => 'Calculadoras rápidas y precisas para las cuentas de cada día: edad exacta, porcentajes, aumentos y descuentos.',
         'content' => [
