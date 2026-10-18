@@ -74,24 +74,10 @@ function hydrationData() {
     return undefined;
 }
 
-/** Resolves once the page has finished loading (or immediately if it already has) and the
- *  browser is idle, so the server-rendered page gets its real first paint - including the
- *  LCP text - before React takes over, instead of competing with it for the main thread. */
-function whenIdleAfterLoad() {
-    return new Promise((resolve) => {
-        const idle = () => {
-            const ric = window.requestIdleCallback || ((cb) => setTimeout(cb, 0));
-            ric(resolve, { timeout: 1000 });
-        };
-        if (document.readyState === 'complete') idle();
-        else window.addEventListener('load', idle, { once: true });
-    });
-}
-
 async function start() {
     const container = document.getElementById('app');
     if (!container) return;
-    const [site] = await Promise.all([loadSite(), whenIdleAfterLoad()]);
+    const site = await loadSite();
     initI18n(site);
 
     // The language prefix (/es) is the router's basename, so every <Link to="/merge-pdf">
