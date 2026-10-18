@@ -1,4 +1,4 @@
-import { StrictMode } from 'react';
+import { StrictMode, startTransition } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter } from 'react-router';
 import { RouterProvider } from 'react-router/dom';
@@ -84,11 +84,17 @@ async function start() {
     // stays in the current language automatically.
     const router = createBrowserRouter(routes, { basename: site.prefix || '/', hydrationData: hydrationData() });
 
-    createRoot(container).render(
-        <StrictMode>
-            <RouterProvider router={router} />
-        </StrictMode>,
-    );
+    // Rendered as a transition so React works in small slices and yields to the browser between them:
+    // the server-rendered page stays painted and responsive instead of the main thread freezing for
+    // the whole render (this was the largest long task on phones).
+    const root = createRoot(container);
+    startTransition(() => {
+        root.render(
+            <StrictMode>
+                <RouterProvider router={router} />
+            </StrictMode>,
+        );
+    });
 }
 
 start().catch((error) => {

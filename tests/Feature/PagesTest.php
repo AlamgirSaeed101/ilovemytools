@@ -143,10 +143,10 @@ class PagesTest extends TestCase
         $this->assertStringContainsString("gtag('config', \"G-GMWZ0PJW1R\");", $html);
         // The dataLayer/gtag stub (so early events queue correctly) is the first thing in <head>...
         $this->assertMatchesRegularExpression('#<head>\s*<script>\s*window\.dataLayer#', $html);
-        // ...but the gtag.js library itself loads later, deferred until the page is idle or the
-        // visitor's first interaction, so analytics never competes with the app for the main thread.
-        $this->assertStringContainsString("gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-GMWZ0PJW1R'", $html);
-        $this->assertStringContainsString('requestIdleCallback', $html);
+        // ...but the gtag.js library itself loads later: on the visitor's first interaction, or 7 s
+        // after the page has loaded, so analytics never competes with the app for the main thread.
+        $this->assertStringContainsString("loadScript('https://www.googletagmanager.com/gtag/js?id=G-GMWZ0PJW1R')", $html);
+        $this->assertStringContainsString('setTimeout(loadAnalytics, 7000)', $html);
     }
 
     public function test_malformed_adsense_id_is_ignored(): void

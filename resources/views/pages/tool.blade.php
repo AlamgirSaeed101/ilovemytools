@@ -16,7 +16,8 @@
             <div class="layout__main">
                 {{-- The React app renders the working tool here. --}}
                 <section class="tool-panel" aria-label="{{ $tool['name'] }}">
-                    <p class="notice notice--warn">{{ t('This tool needs JavaScript. Please enable JavaScript in your browser settings to use the {name}.', ['name' => $tool['name']]) }}</p>
+                    {{-- In <noscript> so crawlers and AI engines that do not run JavaScript read the tool's description first. --}}
+                    <noscript><p class="notice notice--warn">{{ t('This tool needs JavaScript. Please enable JavaScript in your browser settings to use the {name}.', ['name' => $tool['name']]) }}</p></noscript>
                     <p class="privacy-note">{!! \App\Support\Icon::svg('shield') !!} {{ ! empty($tool['server']) ? t('This tool asks our server to fetch the address you enter. We don’t store the address or the results.') : t('Private: this tool runs in your browser. Your data is never uploaded.') }}</p>
                 </section>
 

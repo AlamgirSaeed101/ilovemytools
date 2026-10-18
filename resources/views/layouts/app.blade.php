@@ -160,40 +160,43 @@
     <script id="boot-data" type="application/json">{!! json_encode($boot, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) !!}</script>
 
     @if ($ga4 !== '' || $adClient !== '')
-        {{-- Analytics and ads never need to be ready for the first paint. Load their scripts
-             once the page is idle, or sooner on the visitor's first interaction, so they never
-             compete with the app for the main thread while it starts up. --}}
+        {{-- Analytics and ads never need to be ready for the first paint. Ads (and Google's consent
+             script that comes with them) cost about 1 s of main-thread time on a phone, so they load only
+             once the visitor interacts: ad slots sit below the first screen anyway. Analytics loads on the
+             first interaction too, or 7 s after the page has loaded for visitors who only read; events
+             queue in dataLayer until then, so nothing is lost. --}}
         <script>
             (function () {
-                var started = false;
-                function loadDeferredScripts() {
-                    if (started) return;
-                    started = true;
+                var gtagLoaded = false, adsLoaded = false;
+                function loadScript(src, extra) {
+                    var s = document.createElement('script');
+                    s.async = true;
+                    s.src = src;
+                    if (extra) extra(s);
+                    document.head.appendChild(s);
+                }
+                function loadAnalytics() {
                     @if ($ga4 !== '')
-                        var gtagScript = document.createElement('script');
-                        gtagScript.async = true;
-                        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id={{ $ga4 }}';
-                        document.head.appendChild(gtagScript);
+                        if (gtagLoaded) return;
+                        gtagLoaded = true;
+                        loadScript('https://www.googletagmanager.com/gtag/js?id={{ $ga4 }}');
                     @endif
+                }
+                function onInteraction() {
+                    loadAnalytics();
                     @if ($adClient !== '')
-                        var adsScript = document.createElement('script');
-                        adsScript.async = true;
-                        adsScript.crossOrigin = 'anonymous';
-                        adsScript.onerror = function () { window.__adsBlocked = true; };
-                        adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ $adClient }}';
-                        document.head.appendChild(adsScript);
+                        if (adsLoaded) return;
+                        adsLoaded = true;
+                        loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ $adClient }}', function (s) {
+                            s.crossOrigin = 'anonymous';
+                            s.onerror = function () { window.__adsBlocked = true; };
+                        });
                     @endif
                 }
-                ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach(function (type) {
-                    window.addEventListener(type, loadDeferredScripts, { once: true, passive: true });
+                ['pointerdown', 'keydown', 'touchstart', 'scroll', 'mousemove'].forEach(function (type) {
+                    window.addEventListener(type, onInteraction, { once: true, passive: true });
                 });
-                // Capped well under the ad-blocker notice's 3 s detection delay (resources/js/components/AdblockNotice.jsx),
-                // so window.__adsBlocked is already set by the time it checks.
-                if ('requestIdleCallback' in window) {
-                    requestIdleCallback(loadDeferredScripts, { timeout: 1800 });
-                } else {
-                    window.addEventListener('load', function () { setTimeout(loadDeferredScripts, 800); });
-                }
+                window.addEventListener('load', function () { setTimeout(loadAnalytics, 7000); });
             })();
         </script>
     @endif
