@@ -514,6 +514,12 @@ export default function Layout() {
     const closePalette = useCallback(() => setPaletteOpen(false), []);
 
     useEffect(() => {
+        // Ctrl+K (or "/") may have been pressed before this effect could attach its own
+        // listener below - app.jsx catches that case as early as it can and flags it here.
+        if (window.__earlyPaletteIntent) {
+            window.__earlyPaletteIntent = false;
+            setPaletteOpen(true);
+        }
         const onKey = (e) => {
             if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
                 e.preventDefault();

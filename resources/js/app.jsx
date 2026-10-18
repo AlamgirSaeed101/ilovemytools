@@ -74,6 +74,26 @@ function hydrationData() {
     return undefined;
 }
 
+// Ctrl+K / Cmd+K / "/" can be pressed (by a keyboard user, or this exact sequence in a test)
+// before React has mounted and attached its own listener in Layout, especially now that the
+// first render runs inside startTransition and so can be deprioritised. Catch it here, as early
+// as this module itself runs, and let Layout open the palette for it once it mounts.
+window.__earlyPaletteIntent = false;
+document.addEventListener(
+    'keydown',
+    (e) => {
+        const mod = e.ctrlKey || e.metaKey;
+        if (mod && e.key.toLowerCase() === 'k') {
+            window.__earlyPaletteIntent = true;
+        } else if (e.key === '/' && !mod && !e.altKey) {
+            const el = e.target;
+            const typing = el instanceof HTMLElement && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName));
+            if (!typing) window.__earlyPaletteIntent = true;
+        }
+    },
+    { capture: true },
+);
+
 async function start() {
     const container = document.getElementById('app');
     if (!container) return;
