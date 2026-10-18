@@ -826,8 +826,8 @@ return [
 
     'coin-flip' => [
         'name' => 'Rzut monetą',
-        'title' => 'Rzut monetą online - orzeł czy reszka?',
-        'description' => 'Rzuć monetą online na orła czy reszkę z realistyczną animacją 3D. Rzuć do 100 monet na raz i śledź sumy oraz serie. Sprawiedliwe, darmowe i natychmiastowe.',
+        'title' => 'Generator Rzutu Monetą online - orzeł czy reszka?',
+        'description' => 'Generator rzutu monetą online na orła czy reszkę z realistyczną animacją 3D. Rzuć do 100 monet na raz i śledź sumy oraz serie. Darmowe i natychmiastowe.',
         'h1' => 'Rzuć monetą',
         'tagline' => 'Orzeł czy reszka? Podrzuć monetę 3D albo rzuć do 100 na raz i zobacz statystyki.',
         'keywords' => ['rzut monetą', 'podrzuć monetę', 'orzeł czy reszka', 'rzut monetą online', 'wirtualna moneta'],

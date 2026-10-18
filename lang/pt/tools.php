@@ -825,8 +825,8 @@ return [
 
     'coin-flip' => [
         'name' => 'Cara ou coroa',
-        'title' => 'Cara ou coroa: lance uma moeda online',
-        'description' => 'Tire cara ou coroa online com uma animação 3D realista. Lance até 100 moedas de uma vez e acompanhe totais e sequências. Justo, grátis e na hora.',
+        'title' => 'Gerador de Cara ou Coroa: lance uma moeda online',
+        'description' => 'Gerador de cara ou coroa online com animação 3D realista. Lance até 100 moedas de uma vez e acompanhe totais e sequências. Justo, grátis e na hora.',
         'h1' => 'Cara ou coroa',
         'tagline' => 'Cara ou coroa? Lance uma moeda 3D ou até 100 de uma vez e veja as estatísticas.',
         'keywords' => ['cara ou coroa', 'lançar moeda', 'jogar moeda', 'cara ou coroa online', 'moeda virtual'],

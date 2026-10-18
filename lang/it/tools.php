@@ -825,8 +825,8 @@ return [
 
     'coin-flip' => [
         'name' => 'Testa o croce',
-        'title' => 'Testa o croce: lancia una moneta online',
-        'description' => 'Fai testa o croce online con un’animazione 3D realistica. Lancia fino a 100 monete insieme e segui totali e serie. Equo, gratis e immediato.',
+        'title' => 'Generatore Testa o Croce: lancia una moneta online',
+        'description' => 'Generatore di testa o croce online con animazione 3D realistica. Lancia fino a 100 monete insieme e segui totali e serie. Equo, gratis e immediato.',
         'h1' => 'Testa o croce',
         'tagline' => 'Testa o croce? Lancia una moneta 3D o fino a 100 insieme e guarda le statistiche.',
         'keywords' => ['testa o croce', 'lancia una moneta', 'lancio moneta', 'testa o croce online', 'moneta virtuale'],

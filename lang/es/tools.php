@@ -756,8 +756,8 @@ return [
 
     'coin-flip' => [
         'name' => 'Cara o cruz',
-        'title' => 'Cara o cruz: lanza una moneda online gratis',
-        'description' => 'Lanza una moneda a cara o cruz online con una animación 3D realista. Lanza hasta 100 monedas a la vez y sigue totales y rachas. Gratis.',
+        'title' => 'Generador de Cara o Cruz: lanza una moneda online',
+        'description' => 'Generador de cara o cruz online con animación 3D realista. Lanza hasta 100 monedas a la vez y sigue totales y rachas. Gratis y sin registro.',
         'h1' => 'Lanzar una moneda',
         'tagline' => '¿Cara o cruz? Lanza una moneda en 3D o hasta 100 a la vez y consulta las estadísticas.',
         'keywords' => ['cara o cruz', 'lanzar moneda', 'tirar una moneda', 'moneda online', 'cara o sello'],

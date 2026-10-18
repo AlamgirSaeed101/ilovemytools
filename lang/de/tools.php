@@ -825,8 +825,8 @@ return [
 
     'coin-flip' => [
         'name' => 'Münzwurf',
-        'title' => 'Münzwurf: Kopf oder Zahl online werfen',
-        'description' => 'Wirf online eine Münze für Kopf oder Zahl mit realistischer 3D-Animation. Bis zu 100 Münzen auf einmal, mit Summen und Serien. Kostenlos.',
+        'title' => 'Münzwurf-Generator: Kopf oder Zahl online werfen',
+        'description' => 'Münzwurf-Generator für Kopf oder Zahl: wirf online eine realistische 3D-Münze oder bis zu 100 auf einmal, mit Summen und Serien. Kostenlos, ohne Anmeldung.',
         'h1' => 'Münze werfen',
         'tagline' => 'Kopf oder Zahl? Wirf eine 3D-Münze oder bis zu 100 auf einmal und sieh die Statistik.',
         'keywords' => ['münzwurf', 'münze werfen', 'kopf oder zahl', 'münze werfen online', 'virtuelle münze'],

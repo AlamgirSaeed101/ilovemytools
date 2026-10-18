@@ -825,8 +825,8 @@ return [
 
     'coin-flip' => [
         'name' => 'Pile ou face',
-        'title' => 'Pile ou face : lancer une pièce en ligne',
-        'description' => 'Jouez à pile ou face en ligne avec une animation 3D réaliste. Lancez jusqu’à 100 pièces à la fois et suivez totaux et séries. Gratuit.',
+        'title' => 'Générateur Pile ou Face : lancer une pièce en ligne',
+        'description' => 'Générateur de pile ou face en ligne avec animation 3D réaliste. Lancez jusqu’à 100 pièces à la fois et suivez totaux et séries. Gratuit, sans inscription.',
         'h1' => 'Pile ou face',
         'tagline' => 'Pile ou face ? Lancez une pièce en 3D, ou jusqu’à 100 à la fois, et voyez les stats.',
         'keywords' => ['pile ou face', 'lancer une pièce', 'pile ou face en ligne', 'tirage pile ou face', 'pièce virtuelle'],
