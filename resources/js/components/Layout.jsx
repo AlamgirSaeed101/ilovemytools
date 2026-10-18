@@ -375,11 +375,11 @@ function Footer() {
                     <nav className="columns-2 gap-x-6 sm:columns-3 xl:columns-4" aria-label={t('All tools')}>
                         {site.categories.map((c) => (
                             <div key={c.slug} className="mb-6 break-inside-avoid">
-                                <h2 className="m-0 mb-2 text-[0.8rem] font-bold tracking-wider uppercase">
+                                <p className="m-0 mb-2 text-[0.8rem] font-bold tracking-wider uppercase">
                                     <Link className="text-ink no-underline hover:text-brand" to={`/category/${c.slug}`}>
                                         {c.name}
                                     </Link>
-                                </h2>
+                                </p>
                                 <ul className="m-0 list-none space-y-1 p-0">
                                     {toolsIn(c).map((x) => (
                                         <li key={x.slug}>

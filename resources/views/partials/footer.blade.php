@@ -11,7 +11,7 @@
 
             @foreach ($registry->categories() as $slug => $category)
                 <div class="footer-col">
-                    <h2 class="footer-col__title"><a href="{{ lurl('category/'.$slug) }}">{{ $category['name'] }}</a></h2>
+                    <p class="footer-col__title"><a href="{{ lurl('category/'.$slug) }}">{{ $category['name'] }}</a></p>
                     <ul>
                         @foreach ($registry->inCategory($slug) as $toolSlug => $footerTool)
                             <li><a href="{{ lurl($toolSlug) }}">{{ $footerTool['name'] }}</a></li>
