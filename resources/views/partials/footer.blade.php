@@ -4,7 +4,7 @@
             <div class="footer-brand">
                 <a class="logo" href="{{ lurl('/') }}">
                     <img class="logo__img logo__img--light" src="/images/logo.svg?v=3" alt="{{ config('site.name') }}" width="1103" height="234">
-                    <img class="logo__img logo__img--dark" src="/images/logo-white.svg?v=3" alt="" width="1103" height="234">
+                    <img class="logo__img logo__img--dark" src="/images/logo-white.svg?v=3" alt="{{ config('site.name') }}" width="1103" height="234">
                 </a>
                 <p>{{ t('Free online tools that run in your browser. No sign up, no uploads, no watermarks.') }}</p>
             </div>

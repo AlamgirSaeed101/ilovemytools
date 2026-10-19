@@ -78,8 +78,8 @@ function Logo({ name, footer = false }) {
     const h = footer ? 'h-9' : 'h-[30px] sm:h-10';
     return (
         <Link className="inline-flex shrink-0 items-center no-underline" to="/" aria-label={t('{name} home', { name })}>
-            <img className={`${h} w-auto block dark:hidden`} src="/images/logo.svg?v=3" alt="" width="1103" height="234" />
-            <img className={`${h} w-auto hidden dark:block`} src="/images/logo-white.svg?v=3" alt="" width="1103" height="234" />
+            <img className={`${h} w-auto block dark:hidden`} src="/images/logo.svg?v=3" alt={name} width="1103" height="234" />
+            <img className={`${h} w-auto hidden dark:block`} src="/images/logo-white.svg?v=3" alt={name} width="1103" height="234" />
         </Link>
     );
 }

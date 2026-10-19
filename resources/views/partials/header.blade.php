@@ -2,7 +2,7 @@
     <div class="shell site-header__inner">
         <a class="logo" href="{{ lurl('/') }}" aria-label="{{ t('{name} home', ['name' => config('site.name')]) }}">
             <img class="logo__img logo__img--light" src="/images/logo.svg?v=3" alt="{{ config('site.name') }}" width="1103" height="234">
-            <img class="logo__img logo__img--dark" src="/images/logo-white.svg?v=3" alt="" width="1103" height="234">
+            <img class="logo__img logo__img--dark" src="/images/logo-white.svg?v=3" alt="{{ config('site.name') }}" width="1103" height="234">
         </a>
 
         <nav id="site-nav" class="site-nav" aria-label="{{ t('Main') }}">
