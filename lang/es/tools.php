@@ -1285,7 +1285,7 @@ return [
     'domain-authority-checker' => [
         'name' => 'Comprobador de autoridad de dominio',
         'title' => 'Comprobador de autoridad de dominio masivo gratis',
-        'description' => 'Comprobador de autoridad de dominio masivo: puntuación de autoridad, ranking global y dominios de referencia de hasta 100 webs, gratis y sin registro.',
+        'description' => 'Comprobador de autoridad de dominio gratis: puntuación de autoridad, ranking global y dominios de referencia de hasta 100 webs, con exportación a CSV.',
         'h1' => 'Comprobador de autoridad de dominio masivo',
         'tagline' => 'Compara la autoridad de hasta 100 webs en segundos.',
         'keywords' => [

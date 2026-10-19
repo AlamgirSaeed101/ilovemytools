@@ -936,7 +936,7 @@ return [
         'sources' => [
             ['title' => 'ARIN: IPv4 address depletion', 'url' => 'https://www.arin.net/resources/guide/ipv4/'],
         ],
-        'related' => ['password-generator', 'json-formatter', 'base64-encoder-decoder'],
+        'related' => ['domain-authority-checker', 'domain-age-checker', 'password-generator', 'json-formatter'],
     ],
 
     'dice-roller' => [
@@ -1592,7 +1592,7 @@ return [
         'sources' => [
             ['title' => 'MDN: HTTP response status codes', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status'],
         ],
-        'related' => ['json-formatter', 'what-is-my-ip', 'readability-checker', 'domain-age-checker'],
+        'related' => ['domain-authority-checker', 'domain-age-checker', 'what-is-my-ip', 'json-formatter'],
     ],
 
     'domain-authority-checker' => [
@@ -1601,9 +1601,9 @@ return [
         'icon' => 'gauge',
         'popular' => false,
         'server' => true,
-        'updated' => '2026-10-13',
-        'title' => 'Bulk Domain Authority Checker - 100 Free, No Signup',
-        'description' => 'Bulk domain authority checker: check up to 100 websites at once for free, no sign up. See the authority score, global rank and referring domains instantly.',
+        'updated' => '2026-10-02',
+        'title' => 'Bulk Domain Authority Checker - Free, 100 at Once',
+        'description' => 'Free bulk domain authority checker: see the authority score, global rank and referring domains of up to 100 websites at once, and export the list as CSV.',
         'h1' => 'Bulk Domain Authority Checker',
         'tagline' => 'Compare the authority of up to 100 websites in seconds.',
         'keywords' => ['domain authority checker', 'bulk domain authority checker', 'bulk da checker', 'website authority checker', 'domain rating checker', 'check domain authority'],

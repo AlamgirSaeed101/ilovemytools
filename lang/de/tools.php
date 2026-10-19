@@ -1389,8 +1389,8 @@ return [
 
     'domain-authority-checker' => [
         'name' => 'Domain-Authority-Checker',
-        'title' => 'Domain Authority Checker - kostenlos, ohne Anmeldung',
-        'description' => 'Domain-Authority-Checker: Autoritätswert, globaler Rang und verweisende Domains von bis zu 100 Websites sofort und kostenlos prüfen, ohne Anmeldung.',
+        'title' => 'Domain Authority Checker kostenlos - 100 auf einmal',
+        'description' => 'Kostenloser Domain-Authority-Checker: Autoritätswert, globaler Rang und verweisende Domains von bis zu 100 Websites auf einmal – mit CSV-Export der Liste.',
         'h1' => 'Domain-Authority-Checker für viele Domains',
         'tagline' => 'Vergleichen Sie die Autorität von bis zu 100 Websites in Sekunden.',
         'keywords' => [
