@@ -136,13 +136,14 @@ await pool(pages, async (url) => {
     const t = Date.now();
     let res = await request(url);
     const ms = Date.now() - t;
-    if (res.status >= 500 || res.status === 0) {
-        // A deploy clears the app caches for a moment; try again later before calling it broken.
+    if (res.status >= 500 || res.status === 0 || res.status === 403 || res.status === 429 || (res.status >= 300 && res.status < 400)) {
+        // A deploy clears the app caches for a moment, and the Sucuri firewall briefly
+        // rate-limits a fast crawl (403/429/redirect-to-challenge); try again later before calling it broken.
         recheck.push(url);
         return;
     }
     if (res.status !== 200) {
-        issues.push({ type: res.status >= 300 && res.status < 400 ? 'sitemap-redirect' : 'sitemap-not-200', url, detail: `${res.status} ${res.headers.location || res.error || ''}`.trim() });
+        issues.push({ type: 'sitemap-not-200', url, detail: `${res.status} ${res.error || ''}`.trim() });
         return;
     }
     if (ms > 3000) slow.push({ url, ms });
@@ -162,8 +163,11 @@ if (recheck.length) {
     await new Promise((r) => setTimeout(r, 90000));
     await pool(recheck, async (url) => {
         const res = await request(url);
-        if (res.status !== 200) issues.push({ type: 'sitemap-not-200', url, detail: `${res.status} ${res.error || ''} (twice, 90s apart)`.trim() });
-        else issues.push({ type: 'server-error-transient', url, detail: 'returned 5xx, then 200 after 90s' });
+        if (res.status !== 200) {
+            issues.push({ type: res.status >= 300 && res.status < 400 ? 'sitemap-redirect' : 'sitemap-not-200', url, detail: `${res.status} ${res.headers.location || res.error || ''} (twice, 90s apart)`.trim() });
+        } else {
+            issues.push({ type: 'server-error-transient', url, detail: 'returned non-200, then 200 after 90s' });
+        }
     });
 }
 
