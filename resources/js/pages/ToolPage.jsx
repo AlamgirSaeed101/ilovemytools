@@ -1,4 +1,4 @@
-import { Suspense, useCallback, useEffect, useRef, useState } from 'react';
+import { Suspense, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link, useLoaderData } from 'react-router';
 import AdSlot from '../components/AdSlot.jsx';
 import Breadcrumbs from '../components/Breadcrumbs.jsx';
@@ -73,7 +73,9 @@ export default function ToolPage() {
     const related = tool.related.map((slug) => site.tools.find((x) => x.slug === slug)).filter(Boolean);
 
     useMeta({ ...tool.meta, path: `/${tool.slug}` }, site.url);
-    useEffect(() => addRecent(tool.slug), [tool.slug]);
+    // useLayoutEffect (not useEffect) so this is written before the next paint,
+    // not racing a navigation away from the page that happens right after mount.
+    useLayoutEffect(() => addRecent(tool.slug), [tool.slug]);
 
     return (
         <div className="shell" style={{ '--accent': category?.accent, '--accent2': category?.accent2 }}>
