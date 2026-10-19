@@ -13,6 +13,95 @@
 
 return [
 
+    'how-to-calculate-a-tip-and-split-a-bill' => [
+        'title' => 'How to Calculate a Tip and Split a Bill Correctly',
+        'description' => 'Calculate the right tip and split a bill by hand or with a tip calculator, including rounding tricks, tipping on tax, and large-group splits. No sign up.',
+        'h1' => 'How to calculate a tip and split a bill',
+        'intro' => 'The bill arrives, everyone starts doing math in their head, and someone always gets it wrong. Working out a tip is simple arithmetic, but doing it fast, doing it fairly when a group is splitting the bill, and knowing whether to tip before or after tax trips people up more than it should. Here is how to do it correctly, by hand or with a calculator.',
+        'tool' => 'tip-calculator',
+        'related' => ['percentage-calculator', 'loan-calculator', 'mortgage-calculator'],
+        'published' => '2026-10-19',
+        'updated' => '2026-10-19',
+        'sections' => [
+            [
+                'heading' => 'The quick mental-math method',
+                'paragraphs' => [
+                    'You do not need a calculator for a rough tip. Move the decimal point one place left to get 10% of the bill, then scale from there. On a $64 bill, 10% is $6.40. Double it for 20% ($12.80), or add half of the 10% figure to itself for 15% ($6.40 + $3.20 = $9.60).',
+                    'This works because 10%, 15% and 20% are the three percentages almost everyone reaches for, and each one is a simple multiple of the easiest figure to find, 10%. The only place it goes wrong is on odd bill totals like $47.83, where it is faster to round the bill up to $48 first, tip on that, and treat the extra cents as part of the tip.',
+                ],
+            ],
+            [
+                'heading' => 'Tip percentage: a quick reference',
+                'paragraphs' => [
+                    'What counts as a "normal" tip depends on the country and the type of service. In the United States, 15-20% of the bill is the standard range for restaurant table service, and tipping is expected because service staff are often paid a lower base wage that assumes tips make up the difference. In most of Europe, a service charge is frequently already included in the bill, and an additional tip, if given at all, is usually a smaller rounding-up rather than a fixed percentage.',
+                ],
+                'table' => [
+                    'headers' => ['Service', 'Typical US tip', 'Notes'],
+                    'rows' => [
+                        ['Restaurant, table service', '15-20%', '20% for good service is common; check if a service charge is already added'],
+                        ['Bar / counter service', '$1-2 per drink, or 10-15%', 'Lower than table service'],
+                        ['Food delivery', '10-15%, or a flat $3-5', 'Add more in bad weather or for a long drive'],
+                        ['Taxi / rideshare', '10-15%', 'Round up to the nearest dollar is also common'],
+                        ['Hairdresser / salon', '15-20%', 'Tip the person who did the work, not just the shop'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'Do you tip before or after tax?',
+                'paragraphs' => [
+                    'Tip on the subtotal, before sales tax is added, if you want to follow the most common etiquette advice. Sales tax goes to the government, not the server, so tipping on it just makes the tip a little larger without any real reason. In practice the difference is small: on a $40 meal with 8% tax, tipping 18% on the subtotal gives $7.20, while tipping 18% on the post-tax total of $43.20 gives $7.78, a difference of less than a dollar.',
+                    'Because the amounts are so close, many people simply tip on the total shown at the bottom of the receipt and nobody minds. Use whichever is faster for you; the subtotal is the more "correct" choice, not the only acceptable one.',
+                ],
+            ],
+            [
+                'heading' => 'How to split a bill between a group',
+                'paragraphs' => [
+                    'Splitting fairly gets harder as the group gets bigger, especially if people ordered different amounts. There are two honest ways to do it.',
+                ],
+                'list' => [
+                    'Even split: add the bill and tip together, divide by the number of people. Fast and fair only when everyone ate and drank roughly the same amount.',
+                    'Itemized split: each person adds up only what they personally ordered, then applies the same tip percentage to their own subtotal. Fairer when orders are very different in price, but it takes longer and needs the itemized receipt.',
+                    'For a group that ordered similarly, decide on one tip percentage first, then divide the bill plus tip evenly rather than letting each person pick their own percentage, which never adds up to the total.',
+                    'If the total does not divide evenly in whole dollars or cents, round each person\'s share up rather than down, so the group does not come up short, and let the rounding go into the tip.',
+                ],
+            ],
+            [
+                'heading' => 'Using the Tip Calculator',
+                'paragraphs' => [
+                    'If you would rather not do the math at the table, the Tip Calculator on this site does it for you and works entirely in your browser.',
+                ],
+                'list' => [
+                    'Enter the bill amount shown on the receipt (the subtotal, if you want to tip before tax).',
+                    'Pick a preset tip percentage (15%, 18%, 20% or 25%) or type a custom one.',
+                    'Set "Number of people" to how many are splitting the bill; leave it at 1 if nobody is.',
+                    'Turn on "Round up" if you want each person\'s share to land on a whole dollar instead of an awkward amount with cents.',
+                    'Read off the tip amount, the total with tip, and what each person owes.',
+                ],
+            ],
+            [
+                'heading' => 'Common mistakes',
+                'paragraphs' => [
+                    'A few habits cause most tipping disputes and short-changed servers.',
+                ],
+                'list' => [
+                    'Tipping on a discounted total after a coupon or gift card, rather than on what the meal would normally have cost: the server did the same work either way.',
+                    'Forgetting that a printed "service charge" or "gratuity" line on the bill, common for large groups, may already be the tip, so an extra 20% on top can mean tipping twice.',
+                    'Splitting the bill evenly when one person ordered a $12 salad and another ordered a $45 steak: it feels fair in the moment but regularly annoys the lighter eater.',
+                    'Using the tax-inclusive total for a "quick 10%" estimate on a bill with a high local sales tax, which can inflate the tip more than intended.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'What is a normal tip percentage in the US?', 'a' => 'For restaurant table service, 15-20% of the bill is the standard range, with 20% commonly given for good service. Delivery, bars and taxis typically run a bit lower, often 10-15%.'],
+            ['q' => 'Should I tip on the pre-tax or post-tax amount?', 'a' => 'Most etiquette guidance says to tip on the subtotal before sales tax, since tax does not go to the staff. The dollar difference is usually small, so tipping on the final total is also widely accepted.'],
+            ['q' => 'How do I split a bill fairly when people ordered different amounts?', 'a' => 'Have each person total up only their own items and apply the same tip percentage to their own subtotal. An even split across the whole group is faster but only fair when everyone ordered a similar amount.'],
+        ],
+        'sources' => [
+            ['title' => 'Consumer Financial Protection Bureau, What is tipping and how much should I tip?', 'url' => 'https://www.consumerfinance.gov/ask-cfpb/what-is-tipping-and-how-much-should-i-tip-en-2104/'],
+            ['title' => 'IRS, Tip Recordkeeping and Reporting', 'url' => 'https://www.irs.gov/businesses/small-businesses-self-employed/tip-recordkeeping-and-reporting'],
+        ],
+    ],
+
     'how-to-compress-pdf-for-email' => [
         'title' => 'How to Compress a PDF for Email (Without Losing Quality)',
         'description' => 'Email attachment limits explained, plus a step-by-step way to shrink a PDF in your browser so it sends first time. No upload, no sign up, no watermark.',
