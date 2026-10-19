@@ -41,6 +41,17 @@ class SeoFilesTest extends TestCase
             ->assertSee('Sitemap: https://toolzy.test/sitemap.xml');
     }
 
+    public function test_robots_welcomes_ai_crawlers_in_production(): void
+    {
+        $this->app['env'] = 'production';
+        $robots = $this->get('/robots.txt')->getContent();
+
+        foreach (['GPTBot', 'OAI-SearchBot', 'ClaudeBot', 'PerplexityBot', 'Google-Extended', 'Applebot-Extended', 'DuckAssistBot', 'meta-externalagent'] as $bot) {
+            $this->assertStringContainsString("User-agent: {$bot}\nAllow: /\nDisallow: /api/", $robots);
+        }
+        $this->assertStringNotContainsString("Disallow: /\n", $robots);
+    }
+
     public function test_ads_txt(): void
     {
         $this->get('/ads.txt')->assertNotFound();

@@ -135,9 +135,18 @@ class SeoFilesController extends Controller
         // Every crawler is welcome: search engines, AI search/answer engines and SEO tools (backlink
         // and DR data). The named groups say so explicitly; each repeats the /api/ rule because a
         // bot that matches a named group ignores the "*" group.
-        $bots = ['Googlebot', 'Google-Extended', 'Bingbot', 'Applebot', 'Applebot-Extended', 'DuckDuckBot', 'YandexBot',
-            'GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'Claude-User', 'PerplexityBot',
-            'Perplexity-User', 'CCBot', 'Amazonbot', 'meta-externalagent', 'AhrefsBot', 'SemrushBot', 'MJ12bot', 'DotBot', '*'];
+        $bots = [
+            // Search engines (incl. Naver/Daum for the Korean pages)
+            'Googlebot', 'GoogleOther', 'Bingbot', 'Applebot', 'DuckDuckBot', 'YandexBot', 'Yeti', 'Daumoa', 'SeznamBot',
+            // AI search, assistants and model training
+            'Google-Extended', 'Google-CloudVertexBot', 'Applebot-Extended', 'GPTBot', 'OAI-SearchBot', 'ChatGPT-User',
+            'ClaudeBot', 'Claude-SearchBot', 'Claude-User', 'Claude-Web', 'anthropic-ai', 'PerplexityBot', 'Perplexity-User',
+            'DuckAssistBot', 'MistralAI-User', 'YouBot', 'cohere-ai', 'meta-externalagent', 'Meta-ExternalFetcher',
+            'FacebookBot', 'Amazonbot', 'Bytespider', 'PetalBot', 'CCBot', 'Diffbot',
+            // SEO tools (backlink and authority data)
+            'AhrefsBot', 'AhrefsSiteAudit', 'SemrushBot', 'MJ12bot', 'DotBot',
+            '*',
+        ];
         $groups = [];
         foreach ($bots as $bot) {
             $groups[] = "User-agent: {$bot}\nAllow: /\nDisallow: /api/";
