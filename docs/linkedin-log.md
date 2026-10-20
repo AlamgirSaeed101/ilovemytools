@@ -17,3 +17,5 @@ Tools already announced on LinkedIn (one per line: date and slug). The daily rou
 2026-10-16 jpg-to-pdf company
 2026-10-19 webp-to-png personal
 2026-10-19 webp-to-png company
+2026-10-20 png-to-jpg personal
+2026-10-20 png-to-jpg company
