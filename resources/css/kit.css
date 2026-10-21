@@ -5,6 +5,17 @@
    - No web fonts (system stack) for the fastest possible first paint.
    ========================================================================== */
 
+/* A local font scaled to Plus Jakarta Sans' width and line metrics (measured in Chromium), so text
+   doesn't re-wrap and push the page down when the web font arrives (CLS). Liberation Sans is
+   Arial's metric twin on Linux. */
+@font-face {
+    font-family: 'Plus Jakarta Sans Fallback';
+    src: local('Arial'), local('Liberation Sans'), local('Helvetica'), local('Roboto');
+    size-adjust: 103.5%;
+    ascent-override: 100.5%;
+    descent-override: 21.3%;
+    line-gap-override: 0%;
+}
 
 :root {
     color-scheme: light;
@@ -53,7 +64,7 @@
     --shadow-lg: 0 20px 48px -12px rgb(15 23 42 / 0.2), 0 8px 20px -8px rgb(15 23 42 / 0.1);
     --ring: 0 0 0 3px color-mix(in srgb, var(--brand) 35%, transparent);
 
-    --font: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    --font: 'Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
     --mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
 
     --container: 1200px;
@@ -73,7 +84,7 @@ body {
 }
 
 :root:lang(ur) {
-    --font: 'Noto Nastaliq Urdu', 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    --font: 'Noto Nastaliq Urdu', 'Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
 }
 
 html:lang(ur) body {
