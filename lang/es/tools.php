@@ -999,8 +999,8 @@ return [
 
     'avif-to-png' => [
         'name' => 'AVIF a PNG',
-        'title' => 'Convertir AVIF a PNG gratis, con transparencia',
-        'description' => 'Convierte AVIF a PNG en línea gratis. Se mantienen los fondos transparentes, hasta 30 imágenes por lote y descarga en ZIP. No se sube nada.',
+        'title' => 'Convertir de AVIF a PNG gratis, con transparencia',
+        'description' => 'Convierte de AVIF a PNG en línea gratis, con los fondos transparentes. Convierte hasta 30 imágenes por lote y descarga en ZIP. No se sube nada.',
         'h1' => 'Convertidor de AVIF a PNG',
         'tagline' => 'Convierte imágenes AVIF a PNG conservando la transparencia.',
         'keywords' => ['avif a png', 'convertir avif a png', 'convertidor avif a png', 'convertidor avif', 'avif a png transparente'],
