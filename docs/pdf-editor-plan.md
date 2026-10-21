@@ -72,3 +72,14 @@ full font (Arial/Helvetica, Times, Courier or their free equivalents) with a not
 - Undo and redo
 - Keyboard shortcuts
 - Works by touch on phones
+
+## Promotion (owner request, 21 Oct 2026)
+
+Only features ticked [x] above are ever promoted; nothing is announced before it is live.
+
+- LinkedIn routine: announces each `feat(pdf-editor):` release on the personal profile and the company page, then posts about a live PDF feature every Monday and Thursday.
+- Guide routine: writes a guide for each live feature first (add a watermark, edit PDF text, fill PDF forms, white out a PDF, free Sejda alternative).
+- Backlink prospector: once anything is live, at least half of each day's outreach targets "best free PDF editor", "Sejda/Smallpdf/iLovePDF alternatives" and "watermark a PDF" pages.
+- SEO routine: the new pages join its list as soon as they get Google impressions.
+- Build order step 7: a landing page per mode (add text, whiteout, edit text, annotate, fill forms, Sejda alternative) in all 10 languages.
+- Owner: Product Hunt and AlternativeTo listings (GTM Engineer fills the forms; the owner submits) should lead with the PDF editor once step 3 is live.
