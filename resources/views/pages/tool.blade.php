@@ -1,14 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="shell">
+    {{-- Same markup and classes as the React ToolPage header, so the first paint and React's render
+         are the same size: nothing re-renders larger (LCP) or moves (CLS) when the app takes over. --}}
+    <div class="shell" @if (! empty($category['accent'])) style="--accent: {{ $category['accent'] }}; --accent2: {{ $category['accent2'] ?? $category['accent'] }}" @endif>
         @include('partials.breadcrumbs')
 
-        <header class="tool-header">
-            <span class="tool-header__icon">{!! \App\Support\Icon::svg($tool['icon'] ?? 'sparkles') !!}</span>
-            <div>
-                <h1 class="tool-header__title">{{ $tool['h1'] }}</h1>
-                <p class="tool-header__tagline">{{ $tool['tagline'] }}</p>
+        <header class="mb-6 flex items-start gap-3 sm:gap-[1.1rem]">
+            <span class="icon-tile icon-tile--lg">{!! \App\Support\Icon::svg($tool['icon'] ?? 'sparkles') !!}</span>
+            <div class="min-w-0">
+                <h1 class="m-0 mb-1 text-[clamp(1.6rem,4vw,2.5rem)] font-extrabold tracking-tight [overflow-wrap:anywhere] hyphens-auto">{{ $tool['h1'] }}</h1>
+                <p class="m-0 text-[1.08rem] text-ink-2">{{ $tool['tagline'] }}</p>
+                <ul class="mt-3 flex list-none flex-wrap gap-1.5 p-0">
+                    @foreach ([['gift', 'Free'], ['shield', 'Runs in your browser'], ['zap', 'No sign up']] as [$badgeIcon, $badgeLabel])
+                        <li class="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-2.5 py-1 text-[0.8rem] font-semibold text-ink-2 [&_svg]:text-success">{!! \App\Support\Icon::svg($badgeIcon) !!} {{ t($badgeLabel) }}</li>
+                    @endforeach
+                </ul>
             </div>
         </header>
 

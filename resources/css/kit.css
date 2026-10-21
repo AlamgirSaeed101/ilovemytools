@@ -330,6 +330,21 @@ h3 {
     display: none;
 }
 
+/* The plain language links are for crawlers and visitors without JavaScript. With JavaScript the
+   app's language menu replaces them, so they would only flash a long list in the first paint. */
+.ssr .lang-list ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.js .ssr .lang-list {
+    display: none;
+}
+
 /* ---------- Progress bar (in-app navigation) ---------- */
 
 .progress {

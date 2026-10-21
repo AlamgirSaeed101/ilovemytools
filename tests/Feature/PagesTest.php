@@ -35,7 +35,7 @@ class PagesTest extends TestCase
             $response = $this->get('/'.$slug);
 
             $response->assertOk()
-                ->assertSee('<h1 class="tool-header__title">'.e($tool['h1']).'</h1>', false)
+                ->assertSee('hyphens-auto">'.e($tool['h1']).'</h1>', false)
                 ->assertSee('<link rel="canonical" href="https://toolzy.test/'.$slug.'">', false)
                 ->assertSee('<div id="app">', false)
                 ->assertSee('"type":"tool","slug":"'.$slug.'"', false)
