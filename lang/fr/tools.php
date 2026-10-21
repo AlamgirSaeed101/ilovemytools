@@ -1412,6 +1412,7 @@ return [
             'Score d’autorité de 0 à 10, rang mondial et domaines référents',
             'Accepte les URL complètes et retire le www automatiquement',
             'Export CSV gratuit, sans inscription',
+            'Détails de chaque domaine : registraire, dates d’enregistrement et d’expiration, réseau d’hébergement, fournisseurs DNS et e-mail, certificat HTTPS',
         ],
         'content' => [
             [
@@ -1421,6 +1422,10 @@ return [
             [
                 'heading' => 'Qu’est-ce qu’un bon score ?',
                 'body' => 'L’échelle est logarithmique : passer de 2 à 3 demande bien moins de liens que passer de 8 à 9. Les nouveaux sites démarrent souvent près de 0, les petits sites établis obtiennent souvent 2 à 4, les marques connues 5 à 7, et seuls les plus grands sites d’internet atteignent 9 ou 10. Comparez un site avec d’autres de sa thématique plutôt qu’avec les géants du web.',
+            ],
+            [
+                'heading' => 'Que montrent les détails du domaine ?',
+                'body' => 'Cliquez sur Détails à côté d’un domaine (le panneau s’ouvre seul si vous n’en vérifiez qu’un) pour voir son registraire, sa date d’enregistrement et d’expiration, son âge, l’adresse IP et le réseau qui l’héberge, ses fournisseurs DNS et e-mail, et si son certificat HTTPS est valide et quand il expire. Les données proviennent de l’enregistrement RDAP public du registre, du DNS public et du certificat du site : elles sont gratuites et sans inscription.',
             ],
         ],
         'faqs' => [

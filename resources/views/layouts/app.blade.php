@@ -135,7 +135,15 @@
     @endforeach
 
     @viteReactRefresh
-    @vite(['resources/css/app.css', 'resources/js/app.jsx'])
+    {{-- The stylesheet is inlined in production: as a separate file it was a second round trip
+         through the firewall to the origin (~2 s on a cache miss) before anything could paint. --}}
+    @php($inlineCss = \Illuminate\Support\Facades\Vite::isRunningHot() ? null : rescue(fn () => \Illuminate\Support\Facades\Vite::content('resources/css/app.css'), null, false))
+    @if ($inlineCss)
+        <style>{!! $inlineCss !!}</style>
+        @vite('resources/js/app.jsx')
+    @else
+        @vite(['resources/css/app.css', 'resources/js/app.jsx'])
+    @endif
 
     {{-- Google AdSense: only a preconnect here. The library script loads later (see the
          deferred loader at the end of body) so it never competes for the main thread during startup. --}}

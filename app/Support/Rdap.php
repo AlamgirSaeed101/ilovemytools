@@ -44,7 +44,7 @@ class Rdap
             return $cached;
         }
 
-        $result = $this->fetch($domain);
+        $result = $this->fetch(self::ENTRY_URL.$domain, self::parse(...));
         // Cache stable outcomes (a record, or a confirmed miss); not transient failures, so a
         // visitor can simply try again instead of being stuck with "unavailable" for a day.
         if (! isset($result['error']) || in_array($result['error'], ['not-found', 'tld-not-supported'], true)) {
@@ -54,10 +54,36 @@ class Rdap
         return $result;
     }
 
-    /** @return array{created: ?string, expires: ?string, updated: ?string, registrar: ?string, status: list<string>, nameservers: list<string>}|array{error: string} */
-    private function fetch(string $domain): array
+    /**
+     * Owner of the network an IP address belongs to (the hosting company), from the regional
+     * internet registry's RDAP record. Cached for a day like domains.
+     *
+     * @return array{network: ?string, handle: ?string, country: ?string}|array{error: string}
+     */
+    public function network(string $ip): array
     {
-        $url = self::ENTRY_URL.$domain;
+        if (! SafeUrl::isPublicIp($ip)) {
+            return ['error' => 'not-found'];
+        }
+
+        $cached = Cache::get("rdap-ip:$ip");
+        if ($cached !== null) {
+            return $cached;
+        }
+        $result = $this->fetch('https://rdap.org/ip/'.$ip, self::parseNetwork(...));
+        if (! isset($result['error'])) {
+            Cache::put("rdap-ip:$ip", $result, now()->addHours(self::CACHE_HOURS));
+        }
+
+        return $result;
+    }
+
+    /**
+     * @param  callable(array): array  $parse
+     * @return array<string, mixed>
+     */
+    private function fetch(string $url, callable $parse): array
+    {
         $redirected = false;
 
         for ($hop = 0; $hop <= self::MAX_REDIRECTS; $hop++) {
@@ -87,7 +113,7 @@ class Rdap
             if ($res->successful()) {
                 $json = $res->json();
 
-                return is_array($json) ? self::parse($json) : ['error' => 'unavailable'];
+                return is_array($json) ? $parse($json) : ['error' => 'unavailable'];
             }
             if ($res->status() === 404) {
                 // A 404 straight from rdap.org (never redirected) means it found no RDAP
@@ -119,6 +145,29 @@ class Rdap
                 CURLOPT_RESOLVE => ["{$target['host']}:{$target['port']}:{$ip}"],
                 CURLOPT_MAXFILESIZE => 1_000_000,
             ],
+        ];
+    }
+
+    /** @return array{network: ?string, handle: ?string, country: ?string} */
+    private static function parseNetwork(array $json): array
+    {
+        $owner = null;
+        foreach ((array) ($json['entities'] ?? []) as $entity) {
+            if (! in_array('registrant', (array) ($entity['roles'] ?? []), true)) {
+                continue;
+            }
+            foreach ((array) ($entity['vcardArray'][1] ?? []) as $property) {
+                if (($property[0] ?? '') === 'fn' && ! empty($property[3])) {
+                    $owner = (string) $property[3];
+                    break 2;
+                }
+            }
+        }
+
+        return [
+            'network' => $owner ?? (isset($json['name']) ? (string) $json['name'] : null),
+            'handle' => isset($json['name']) ? (string) $json['name'] : null,
+            'country' => isset($json['country']) && preg_match('/^[A-Z]{2}$/', (string) $json['country']) ? (string) $json['country'] : null,
         ];
     }
 

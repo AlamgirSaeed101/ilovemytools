@@ -1307,6 +1307,7 @@ return [
             'Puntuación de autoridad de 0 a 10, ranking global y dominios de referencia',
             'Acepta URL completas y quita el www automáticamente',
             'Exportación CSV gratis y sin registro',
+            'Detalles de cualquier dominio: registrador, fechas de registro y caducidad, red de alojamiento, proveedor de DNS y de correo, certificado HTTPS',
         ],
         'content' => [
             [
@@ -1316,6 +1317,10 @@ return [
             [
                 'heading' => '¿Qué es una buena puntuación?',
                 'body' => 'La escala es logarítmica: pasar de 2 a 3 requiere muchos menos enlaces que pasar de 8 a 9. Las webs nuevas suelen empezar cerca de 0, los sitios pequeños consolidados suelen tener entre 2 y 4, las marcas conocidas entre 5 y 7, y solo los sitios más grandes de internet llegan a 9 o 10. Compara una web con otras de su mismo sector, no con las más grandes.',
+            ],
+            [
+                'heading' => '¿Qué muestran los detalles del dominio?',
+                'body' => 'Haz clic en Detalles junto a cualquier dominio (se abre solo cuando compruebas uno) para ver su registrador, cuándo se registró y cuándo caduca, su antigüedad, la dirección IP y la red que lo aloja, sus proveedores de DNS y de correo, y si su certificado HTTPS es válido y cuándo caduca. Los datos proceden del registro RDAP público, del DNS público y del propio certificado del sitio, así que son gratuitos y no requieren registro.',
             ],
         ],
         'faqs' => [

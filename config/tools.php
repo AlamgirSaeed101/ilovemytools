@@ -1601,7 +1601,7 @@ return [
         'icon' => 'gauge',
         'popular' => false,
         'server' => true,
-        'updated' => '2026-10-02',
+        'updated' => '2026-10-21',
         'title' => 'Bulk Domain Authority Checker - Free, 100 at Once',
         'description' => 'Free bulk domain authority checker: see the authority score, global rank and referring domains of up to 100 websites at once, and export the list as CSV.',
         'h1' => 'Bulk Domain Authority Checker',
@@ -1618,10 +1618,12 @@ return [
             'Authority score from 0 to 10, global rank and referring domains',
             'Accepts full URLs and removes www automatically',
             'Free CSV export, no sign up',
+            'Details for any domain: registrar, registration and expiry dates, hosting network, DNS and email provider, HTTPS certificate',
         ],
         'content' => [
             ['heading' => 'Is this the same as Moz Domain Authority?', 'body' => 'No. Domain Authority (DA) is a 0-100 score owned by Moz, and Domain Rating (DR) belongs to Ahrefs. This tool shows OpenPageRank, a 0-10 score calculated from the public Common Crawl web graph with the PageRank method. All of these measure the same idea, the strength of a site\'s links, but they are calculated differently, so the numbers can\'t be converted into each other.'],
             ['heading' => 'What is a good score?', 'body' => 'The scale is logarithmic: moving from 2 to 3 takes far fewer links than moving from 8 to 9. New websites usually start near 0, small established sites often score 2-4, well-known brands 5-7, and only the largest sites on the internet reach 9 or 10. Compare a site with others in the same niche rather than with the biggest websites.'],
+            ['heading' => 'What do the domain details show?', 'body' => 'Click Details next to any domain (it opens by itself when you check just one) to see its registrar, when it was registered and when it expires, its age, the IP address and the network that hosts it, its DNS and email providers, and whether its HTTPS certificate is valid and when it expires. The details come from the registry\'s public RDAP record, public DNS and the site\'s own certificate, so they are free and need no sign up.'],
         ],
         'faqs' => [
             ['q' => 'How do I check the domain authority of a website?', 'a' => 'Paste the domain into the box and click Check authority. You can check up to 100 domains at once.'],

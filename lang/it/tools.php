@@ -1412,6 +1412,7 @@ return [
             'Punteggio di autorità da 0 a 10, posizione globale e domini di riferimento',
             'Accetta URL completi e rimuove il www automaticamente',
             'Esportazione CSV gratis, senza registrazione',
+            'Dettagli di ogni dominio: registrar, date di registrazione e scadenza, rete di hosting, provider DNS ed email, certificato HTTPS',
         ],
         'content' => [
             [
@@ -1421,6 +1422,10 @@ return [
             [
                 'heading' => 'Qual è un buon punteggio?',
                 'body' => 'La scala è logaritmica: passare da 2 a 3 richiede molti meno link che passare da 8 a 9. I siti nuovi partono di solito vicino a 0, i piccoli siti già avviati hanno spesso 2-4, i marchi noti 5-7, e solo i siti più grandi di internet arrivano a 9 o 10. Confronta un sito con altri del suo settore, non con i giganti.',
+            ],
+            [
+                'heading' => 'Cosa mostrano i dettagli del dominio?',
+                'body' => 'Fai clic su Dettagli accanto a un dominio (si apre da solo quando ne controlli uno soltanto) per vedere il registrar, quando è stato registrato e quando scade, l’età, l’indirizzo IP e la rete che lo ospita, i provider DNS ed email, e se il certificato HTTPS è valido e quando scade. I dati provengono dal record RDAP pubblico del registro, dal DNS pubblico e dal certificato del sito, quindi sono gratuiti e senza registrazione.',
             ],
         ],
         'faqs' => [

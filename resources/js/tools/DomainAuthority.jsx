@@ -1,4 +1,5 @@
-import { useMemo, useState } from 'react';
+import { Fragment, useMemo, useState } from 'react';
+import DomainDetails from '../components/DomainDetails.jsx';
 import { Notice, Stat } from '../components/ui.jsx';
 import { formatDate, formatNumber, t } from '../lib/i18n.js';
 import { toCsv } from '../lib/links.js';
@@ -30,6 +31,8 @@ export default function DomainAuthority() {
     const [busy, setBusy] = useState(false);
     const [error, setError] = useState('');
     const [sort, setSort] = useState('score');
+    // Domain whose details panel is open (one at a time; opened automatically for a single domain).
+    const [open, setOpen] = useState(null);
 
     const lines = useMemo(() => text.split(/[\n,;\s]+/).map((s) => s.trim()).filter(Boolean), [text]);
 
@@ -49,7 +52,10 @@ export default function DomainAuthority() {
             });
             const json = await res.json().catch(() => ({}));
             if (!res.ok || json.error) setError(errorText(res.status, json.error));
-            else setData(json);
+            else {
+                setData(json);
+                setOpen(json.results?.length === 1 ? json.results[0].domain : null);
+            }
         } catch {
             setError(t('The score service is not available right now. Please try again later.'));
         } finally {
@@ -95,7 +101,7 @@ export default function DomainAuthority() {
                 <button type="button" className="btn btn--primary" onClick={check} disabled={busy || lines.length === 0}>
                     {busy ? t('Checking…') : t('Check authority')}
                 </button>
-                <button type="button" className="btn btn--danger" onClick={() => { setText(''); setData(null); setError(''); }} disabled={!text && !data}>
+                <button type="button" className="btn btn--danger" onClick={() => { setText(''); setData(null); setError(''); setOpen(null); }} disabled={!text && !data}>
                     {t('Clear')}
                 </button>
             </div>
@@ -135,34 +141,54 @@ export default function DomainAuthority() {
                                     <th scope="col">{t('Score (0-10)')}</th>
                                     <th scope="col">{t('Global rank')}</th>
                                     <th scope="col">{t('Referring domains')}</th>
+                                    <th scope="col"><span className="sr-only">{t('Details')}</span></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {rows.map((r) => (
-                                    <tr key={r.domain}>
-                                        <th scope="row" className="[overflow-wrap:anywhere]">{r.domain}</th>
-                                        <td className="min-w-[150px]">
-                                            {r.score === null ? (
-                                                <span className="text-muted">{t('Not found')}</span>
-                                            ) : (
-                                                <span className="flex items-center gap-2">
-                                                    <strong className="w-10 tabular-nums">{formatNumber(r.score)}</strong>
-                                                    <span className="h-2 flex-1 overflow-hidden rounded-full bg-surface-2" aria-hidden="true">
-                                                        <span className="block h-full rounded-full" style={{ width: `${r.score * 10}%`, background: tone(r.score) }} />
+                                    <Fragment key={r.domain}>
+                                        <tr>
+                                            <th scope="row" className="[overflow-wrap:anywhere]">{r.domain}</th>
+                                            <td className="min-w-[150px]">
+                                                {r.score === null ? (
+                                                    <span className="text-muted">{t('Not found')}</span>
+                                                ) : (
+                                                    <span className="flex items-center gap-2">
+                                                        <strong className="w-10 tabular-nums">{formatNumber(r.score)}</strong>
+                                                        <span className="h-2 flex-1 overflow-hidden rounded-full bg-surface-2" aria-hidden="true">
+                                                            <span className="block h-full rounded-full" style={{ width: `${r.score * 10}%`, background: tone(r.score) }} />
+                                                        </span>
                                                     </span>
-                                                </span>
-                                            )}
-                                        </td>
-                                        <td className="tabular-nums">{r.rank ? `#${formatNumber(r.rank)}` : '–'}</td>
-                                        <td className="tabular-nums">{r.referring_domains ? formatNumber(r.referring_domains) : '–'}</td>
-                                    </tr>
+                                                )}
+                                            </td>
+                                            <td className="tabular-nums">{r.rank ? `#${formatNumber(r.rank)}` : '–'}</td>
+                                            <td className="tabular-nums">{r.referring_domains ? formatNumber(r.referring_domains) : '–'}</td>
+                                            <td>
+                                                <button
+                                                    type="button"
+                                                    className="btn btn--sm"
+                                                    aria-expanded={open === r.domain}
+                                                    onClick={() => setOpen(open === r.domain ? null : r.domain)}
+                                                >
+                                                    {open === r.domain ? t('Hide details') : t('Details')}
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        {open === r.domain && (
+                                            <tr>
+                                                <td colSpan={5}>
+                                                    <DomainDetails domain={r.domain} />
+                                                </td>
+                                            </tr>
+                                        )}
+                                    </Fragment>
                                 ))}
                             </tbody>
                         </table>
                     </div>
 
                     <p className="field__hint">
-                        {t('Scores: OpenPageRank (0-10), based on the Common Crawl link graph.')}
+                        {t('Scores: OpenPageRank (0-10), based on the Common Crawl link graph.')} {t('Details: registry RDAP records, public DNS and the site’s HTTPS certificate.')}
                         {data.as_of ? ` ${t('Data from {date}.', { date: formatDate(data.as_of) })}` : ''}
                     </p>
                 </>

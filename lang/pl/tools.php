@@ -1329,10 +1329,12 @@ return [
             'Wynik autorytetu od 0 do 10, globalna ranga i domeny odsyłające',
             'Przyjmuje pełne adresy URL i automatycznie usuwa www',
             'Darmowy eksport do CSV, bez rejestracji',
+            'Szczegóły każdej domeny: rejestrator, daty rejestracji i wygaśnięcia, sieć hostingowa, dostawca DNS i poczty, certyfikat HTTPS',
         ],
         'content' => [
             ['heading' => 'Czy to to samo co Moz Domain Authority?', 'body' => 'Nie. Domain Authority (DA) to wynik od 0 do 100 należący do Moz, a Domain Rating (DR) należy do Ahrefs. To narzędzie pokazuje OpenPageRank, wynik od 0 do 10 wyliczany z publicznego grafu linków Common Crawl metodą PageRank. Wszystkie te metryki mierzą tę samą ideę, czyli siłę linków witryny, ale są wyliczane inaczej, więc liczb nie można przeliczyć jednej na drugą.'],
             ['heading' => 'Jaki wynik jest dobry?', 'body' => 'Skala jest logarytmiczna: przejście z 2 na 3 wymaga dużo mniej linków niż przejście z 8 na 9. Nowe witryny zwykle zaczynają blisko 0, małe ugruntowane witryny często mają 2-4, znane marki 5-7, a tylko największe witryny w internecie osiągają 9 lub 10. Porównuj witrynę z innymi w tej samej niszy, a nie z największymi witrynami.'],
+            ['heading' => 'Co pokazują szczegóły domeny?', 'body' => 'Kliknij Szczegóły obok dowolnej domeny (przy sprawdzaniu jednej domeny otwierają się same), aby zobaczyć rejestratora, datę rejestracji i wygaśnięcia, wiek domeny, adres IP i sieć, która ją hostuje, dostawców DNS i poczty oraz to, czy certyfikat HTTPS jest ważny i kiedy wygasa. Dane pochodzą z publicznego rekordu RDAP rejestru, publicznego DNS i certyfikatu witryny, więc są bezpłatne i nie wymagają rejestracji.'],
         ],
         'faqs' => [
             ['q' => 'Jak sprawdzić autorytet domeny witryny?', 'a' => 'Wklej domenę do pola i kliknij Sprawdź autorytet. Możesz sprawdzić do 100 domen na raz.'],

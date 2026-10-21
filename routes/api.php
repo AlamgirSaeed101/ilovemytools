@@ -36,6 +36,8 @@ Route::post('/links/check', [LinkCheckerController::class, 'check'])->middleware
 
 // Domain Authority Checker (OpenPageRank API, cached; the daily cap is in config/site.php).
 Route::post('/domain-authority', [DomainAuthorityController::class, 'check'])->middleware('throttle:10,1,domain-authority')->name('api.domain-authority');
+// Its per-domain "Details" panel: RDAP, DNS, hosting network (Team Cymru), HTTPS; cached 6 hours.
+Route::post('/domain-details', [DomainAuthorityController::class, 'details'])->middleware('throttle:20,1,domain-details')->name('api.domain-details');
 
 // Domain Age Checker: the server fetches RDAP (rdap.org and the registry it redirects to), cached for a day.
 Route::post('/domain-age', [DomainAgeController::class, 'check'])->middleware('throttle:20,1,domain-age')->name('api.domain-age');

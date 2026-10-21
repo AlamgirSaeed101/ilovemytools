@@ -1412,6 +1412,7 @@ return [
             'Autoritätswert von 0 bis 10, globaler Rang und verweisende Domains',
             'Akzeptiert vollständige URLs und entfernt www automatisch',
             'Kostenloser CSV-Export, ohne Anmeldung',
+            'Details zu jeder Domain: Registrar, Registrierungs- und Ablaufdatum, Hosting-Netzwerk, DNS- und E-Mail-Anbieter, HTTPS-Zertifikat',
         ],
         'content' => [
             [
@@ -1421,6 +1422,10 @@ return [
             [
                 'heading' => 'Was ist ein guter Wert?',
                 'body' => 'Die Skala ist logarithmisch: Von 2 auf 3 braucht es viel weniger Links als von 8 auf 9. Neue Websites starten meist nahe 0, kleine etablierte Websites liegen oft bei 2 bis 4, bekannte Marken bei 5 bis 7, und nur die größten Websites im Internet erreichen 9 oder 10. Vergleichen Sie eine Website mit anderen aus derselben Branche statt mit den Riesen.',
+            ],
+            [
+                'heading' => 'Was zeigen die Domain-Details?',
+                'body' => 'Klicken Sie neben einer Domain auf Details (bei nur einer Domain öffnet sich die Ansicht automatisch), um den Registrar, das Registrierungs- und Ablaufdatum, das Alter, die IP-Adresse und das Netzwerk, das die Website hostet, die DNS- und E-Mail-Anbieter sowie Gültigkeit und Ablauf des HTTPS-Zertifikats zu sehen. Die Angaben stammen aus dem öffentlichen RDAP-Eintrag der Registry, dem öffentlichen DNS und dem Zertifikat der Website – kostenlos und ohne Anmeldung.',
             ],
         ],
         'faqs' => [

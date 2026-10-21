@@ -487,6 +487,7 @@
   {
     "key": "{years}y {months}m {days}d",
     "files": [
+      "resources/js/components/DomainDetails.jsx",
       "resources/js/tools/DomainAgeChecker.jsx"
     ]
   },
@@ -829,6 +830,7 @@
   {
     "key": "Age",
     "files": [
+      "resources/js/components/DomainDetails.jsx",
       "resources/js/tools/DomainAgeChecker.jsx"
     ]
   },
@@ -954,6 +956,12 @@
     "key": "Ask about advertising or partnerships",
     "files": [
       "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "ASN",
+    "files": [
+      "resources/js/components/DomainDetails.jsx"
     ]
   },
   {
@@ -1147,6 +1155,24 @@
     "key": "By using {name} (the “Site”) you agree to these terms. If you do not agree, please do not use the Site.",
     "files": [
       "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Certificate expires",
+    "files": [
+      "resources/js/components/DomainDetails.jsx"
+    ]
+  },
+  {
+    "key": "Certificate issuer",
+    "files": [
+      "resources/js/components/DomainDetails.jsx"
+    ]
+  },
+  {
+    "key": "Certificate problem",
+    "files": [
+      "resources/js/components/DomainDetails.jsx"
     ]
   },
   {
@@ -1627,6 +1653,7 @@
   {
     "key": "Could not be checked right now. Please try again.",
     "files": [
+      "resources/js/components/DomainDetails.jsx",
       "resources/js/tools/DomainAgeChecker.jsx"
     ]
   },
@@ -1718,6 +1745,7 @@
   {
     "key": "Created",
     "files": [
+      "resources/js/components/DomainDetails.jsx",
       "resources/js/tools/DomainAgeChecker.jsx"
     ]
   },
@@ -1858,6 +1886,18 @@
     ]
   },
   {
+    "key": "Details",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
+    "key": "Details: registry RDAP records, public DNS and the site’s HTTPS certificate.",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
     "key": "Device type",
     "files": [
       "resources/js/tools/WhatIsMyIp.jsx"
@@ -1885,6 +1925,18 @@
     "key": "Disabled",
     "files": [
       "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "DNS and email",
+    "files": [
+      "resources/js/components/DomainDetails.jsx"
+    ]
+  },
+  {
+    "key": "DNS provider",
+    "files": [
+      "resources/js/components/DomainDetails.jsx"
     ]
   },
   {
@@ -2323,6 +2375,12 @@
     ]
   },
   {
+    "key": "Email provider",
+    "files": [
+      "resources/js/components/DomainDetails.jsx"
+    ]
+  },
+  {
     "key": "Email us at",
     "files": [
       "resources/js/pages/InfoPages.jsx"
@@ -2620,6 +2678,7 @@
   {
     "key": "Expires",
     "files": [
+      "resources/js/components/DomainDetails.jsx",
       "resources/js/tools/DomainAgeChecker.jsx"
     ]
   },
@@ -2950,6 +3009,7 @@
   {
     "key": "Global rank",
     "files": [
+      "resources/js/components/DomainDetails.jsx",
       "resources/js/tools/DomainAuthority.jsx"
     ]
   },
@@ -3069,6 +3129,12 @@
     ]
   },
   {
+    "key": "Hide details",
+    "files": [
+      "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
     "key": "High (30%)",
     "files": [
       "resources/js/tools/QrCodeGenerator.jsx"
@@ -3121,6 +3187,18 @@
     "key": "Home price",
     "files": [
       "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Hosting",
+    "files": [
+      "resources/js/components/DomainDetails.jsx"
+    ]
+  },
+  {
+    "key": "Hosting network",
+    "files": [
+      "resources/js/components/DomainDetails.jsx"
     ]
   },
   {
@@ -3191,6 +3269,12 @@
     "key": "HTML or plain text",
     "files": [
       "resources/js/tools/HtmlToPdf.jsx"
+    ]
+  },
+  {
+    "key": "HTTPS",
+    "files": [
+      "resources/js/components/DomainDetails.jsx"
     ]
   },
   {
@@ -3362,6 +3446,12 @@
     ]
   },
   {
+    "key": "IP address",
+    "files": [
+      "resources/js/components/DomainDetails.jsx"
+    ]
+  },
+  {
     "key": "is",
     "files": [
       "resources/js/tools/PercentageCalculator.jsx"
@@ -3507,6 +3597,7 @@
   {
     "key": "Last updated",
     "files": [
+      "resources/js/components/DomainDetails.jsx",
       "resources/js/tools/DomainAgeChecker.jsx"
     ]
   },
@@ -3600,6 +3691,12 @@
     ]
   },
   {
+    "key": "Loading details…",
+    "files": [
+      "resources/js/components/DomainDetails.jsx"
+    ]
+  },
+  {
     "key": "Loading the AI model… {percent}%",
     "files": [
       "resources/js/tools/BackgroundRemover.jsx"
@@ -3680,6 +3777,12 @@
     "key": "Lowercase (a-z)",
     "files": [
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Mail servers",
+    "files": [
+      "resources/js/components/DomainDetails.jsx"
     ]
   },
   {
@@ -3885,6 +3988,7 @@
   {
     "key": "Nameservers",
     "files": [
+      "resources/js/components/DomainDetails.jsx",
       "resources/js/tools/DomainAgeChecker.jsx"
     ]
   },
@@ -3993,6 +4097,18 @@
     ]
   },
   {
+    "key": "No HTTPS",
+    "files": [
+      "resources/js/components/DomainDetails.jsx"
+    ]
+  },
+  {
+    "key": "No mail servers",
+    "files": [
+      "resources/js/components/DomainDetails.jsx"
+    ]
+  },
+  {
     "key": "No pages selected - rotation applies to every page",
     "files": [
       "resources/js/tools/RotatePdf.jsx"
@@ -4019,6 +4135,7 @@
   {
     "key": "No RDAP record was found (it may be unregistered or very new).",
     "files": [
+      "resources/js/components/DomainDetails.jsx",
       "resources/js/tools/DomainAgeChecker.jsx"
     ]
   },
@@ -5004,6 +5121,7 @@
   {
     "key": "Referring domains",
     "files": [
+      "resources/js/components/DomainDetails.jsx",
       "resources/js/tools/DomainAuthority.jsx"
     ]
   },
@@ -5022,7 +5140,14 @@
   {
     "key": "Registrar",
     "files": [
+      "resources/js/components/DomainDetails.jsx",
       "resources/js/tools/DomainAgeChecker.jsx"
+    ]
+  },
+  {
+    "key": "Registration",
+    "files": [
+      "resources/js/components/DomainDetails.jsx"
     ]
   },
   {
@@ -5364,6 +5489,7 @@
   {
     "key": "Score (0-10)",
     "files": [
+      "resources/js/components/DomainDetails.jsx",
       "resources/js/tools/DomainAuthority.jsx"
     ]
   },
@@ -5415,6 +5541,12 @@
     "key": "Security",
     "files": [
       "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Security and authority",
+    "files": [
+      "resources/js/components/DomainDetails.jsx"
     ]
   },
   {
@@ -5482,6 +5614,12 @@
     "files": [
       "resources/js/tools/ReadabilityChecker.jsx",
       "resources/js/tools/WordCounter.jsx"
+    ]
+  },
+  {
+    "key": "Server country",
+    "files": [
+      "resources/js/components/DomainDetails.jsx"
     ]
   },
   {
@@ -5804,6 +5942,7 @@
   {
     "key": "Status",
     "files": [
+      "resources/js/components/DomainDetails.jsx",
       "resources/js/tools/BrokenLinkChecker.jsx",
       "resources/js/tools/DomainAgeChecker.jsx"
     ]
@@ -6230,8 +6369,15 @@
     ]
   },
   {
+    "key": "This domain does not point to a server.",
+    "files": [
+      "resources/js/components/DomainDetails.jsx"
+    ]
+  },
+  {
     "key": "This domain’s extension does not have an RDAP service yet.",
     "files": [
+      "resources/js/components/DomainDetails.jsx",
       "resources/js/tools/DomainAgeChecker.jsx"
     ]
   },
@@ -6706,6 +6852,12 @@
     "key": "User agent",
     "files": [
       "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Valid certificate",
+    "files": [
+      "resources/js/components/DomainDetails.jsx"
     ]
   },
   {

@@ -1114,6 +1114,37 @@ test.describe('Domain authority checker', () => {
         expect(csv.suggestedFilename()).toBe('domain-authority.csv');
         expect((await readDownload(csv)).toString()).toContain('github.com,9.67,30,282833');
     });
+
+    test('opens the details panel automatically for a single domain', async ({ page }) => {
+        await page.route('**/api/domain-authority', (route) =>
+            route.fulfill({ json: { as_of: '2026-09-01', invalid: [], results: [{ domain: 'github.com', found: true, score: 9.67, rank: 30, referring_domains: 282833 }] } }),
+        );
+        await page.route('**/api/domain-details', (route) =>
+            route.fulfill({
+                json: {
+                    domain: 'github.com',
+                    resolves: true,
+                    registration: { created: '2007-10-09T18:20:50Z', expires: '2028-10-09T18:20:50Z', updated: null, registrar: 'MarkMonitor Inc.', status: [], nameservers: [] },
+                    dns: { ipv4: ['140.82.121.4'], ipv6: [], nameservers: ['dns1.p08.nsone.net'], dns_provider: 'NS1', mx: ['aspmx.l.google.com'], mail_provider: 'Google Workspace' },
+                    hosting: { ip: '140.82.121.4', asn: 36459, network: 'GITHUB', prefix: '140.82.121.0/24', country: 'US' },
+                    https: { valid: true, issuer: 'Sectigo Limited', expires: '2027-02-05T23:59:59Z' },
+                    score: { domain: 'github.com', found: true, score: 9.67, rank: 30, referring_domains: 282833 },
+                },
+            }),
+        );
+        await openTool(page, 'domain-authority-checker');
+        await page.getByLabel(/Domains \(one per line/).fill('github.com');
+        await page.getByRole('button', { name: 'Check authority' }).click();
+
+        const details = page.getByTestId('domain-details');
+        await expect(details).toContainText('MarkMonitor Inc.');
+        await expect(details).toContainText('GITHUB');
+        await expect(details).toContainText('AS36459');
+        await expect(details).toContainText('Google Workspace');
+        await expect(details).toContainText('Valid certificate');
+        await page.getByRole('button', { name: 'Hide details' }).click();
+        await expect(details).toHaveCount(0);
+    });
 });
 
 test.describe('Domain age checker', () => {

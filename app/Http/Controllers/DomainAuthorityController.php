@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Support\DomainInfo;
 use App\Support\OpenPageRank;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -46,5 +47,17 @@ class DomainAuthorityController extends Controller
         }
 
         return response()->json($result + ['invalid' => $invalid])->header('Cache-Control', 'no-store');
+    }
+
+    /** One domain's full report: registration, DNS, hosting network, HTTPS and score. */
+    public function details(Request $request, DomainInfo $info): JsonResponse
+    {
+        $data = $request->validate(['domain' => ['required', 'string', 'max:2048']]);
+        $domain = OpenPageRank::normalize($data['domain']);
+        if ($domain === null) {
+            return response()->json(['error' => 'invalid'], 422);
+        }
+
+        return response()->json($info->lookup($domain))->header('Cache-Control', 'no-store');
     }
 }

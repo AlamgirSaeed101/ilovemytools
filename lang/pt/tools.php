@@ -1412,6 +1412,7 @@ return [
             'Pontuação de autoridade de 0 a 10, ranking global e domínios de referência',
             'Aceita URLs completas e remove o www automaticamente',
             'Exportação CSV grátis, sem cadastro',
+            'Detalhes de qualquer domínio: registrador, datas de registro e expiração, rede de hospedagem, provedor de DNS e de e-mail, certificado HTTPS',
         ],
         'content' => [
             [
@@ -1421,6 +1422,10 @@ return [
             [
                 'heading' => 'O que é uma boa pontuação?',
                 'body' => 'A escala é logarítmica: subir de 2 para 3 exige muito menos links do que subir de 8 para 9. Sites novos costumam começar perto de 0, sites pequenos já estabelecidos ficam entre 2 e 4, marcas conhecidas entre 5 e 7, e só os maiores sites da internet chegam a 9 ou 10. Compare um site com outros do mesmo nicho, não com os gigantes.',
+            ],
+            [
+                'heading' => 'O que mostram os detalhes do domínio?',
+                'body' => 'Clique em Detalhes ao lado de qualquer domínio (abre sozinho quando você verifica apenas um) para ver o registrador, quando foi registrado e quando expira, a idade, o endereço IP e a rede que o hospeda, os provedores de DNS e de e-mail, e se o certificado HTTPS é válido e quando expira. Os dados vêm do registro RDAP público, do DNS público e do próprio certificado do site, por isso são gratuitos e não exigem cadastro.',
             ],
         ],
         'faqs' => [
