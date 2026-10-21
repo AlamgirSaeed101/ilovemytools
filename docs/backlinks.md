@@ -117,3 +117,4 @@ packages: they are link farms that Google ignores or punishes.
 | Date | Done | Result |
 |---|---|---|
 | | | |
+- 2026-10-21 SaaSHub: https://www.saashub.com/pdf2word (owner account 'ilovemytools'). The listing already existed under the wrong name 'Pdf2Word'; renamed to ILoveMyTools, description updated, Free Trial removed (Free only), LinkedIn and founder added. Status: pending SaaSHub approval. Do not submit again (it would be a duplicate).
