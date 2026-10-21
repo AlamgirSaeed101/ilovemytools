@@ -1,0 +1,74 @@
+# PDF editor and watermark plan (owner request, 21 Oct 2026)
+
+Goal: an editor as capable as sejda.com's, plus an Add Watermark tool. Everything runs in the
+browser (pdf.js + pdf-lib, already in the project); files are never uploaded; free, no limits, no
+sign-up, all 10 languages. Each finished step ships with tests, translations (rule 4) and a
+re-run of `node scripts/measure-panels.mjs`.
+
+Status: not started. Tick items as they ship.
+
+## Build order
+
+1. [ ] Add Watermark to PDF (new tool, own page)
+2. [ ] Editor phase 1: whiteout, shapes, strikethrough/underline, links, move/resize/rotate, zoom, thumbnails
+3. [ ] Edit existing text with the same font, plus find and replace
+4. [ ] Session: auto-save and unsaved-changes warnings
+5. [ ] Fill PDF forms (new page) and create form fields
+6. [ ] Page tools and signature inside the editor
+7. [ ] Landing pages for each mode: add text to PDF, whiteout PDF, edit PDF text, PDF annotator, fill PDF form, Sejda alternative
+
+## Features
+
+### Editing what's already in the PDF
+- Edit existing text: click any text and change it
+- Same font family as the original, read from the PDF's embedded font
+- Font size matches the original by default and can be adjusted
+- Bold, italic, colour and position match the original by default
+- Find and replace text across the document
+- Whiteout: cover existing content
+
+Font limit (tell users): PDFs usually embed only the letters they use. Letters already in the
+document use the exact embedded font; a letter the PDF never contained falls back to the closest
+full font (Arial/Helvetica, Times, Courier or their free equivalents) with a notice.
+
+### Adding content
+- Text: font, size, colour, bold, italic, alignment, multi-line
+- Images
+- Links to a website or another page
+- Shapes: rectangle, ellipse, line, arrow (border and fill colour)
+- Freehand drawing
+- Signature
+
+### Marking up
+- Highlight, strikethrough, underline
+
+### Forms
+- Fill existing form fields
+- Create fields: text box, checkbox, dropdown, signature
+
+### Watermark (own tool and an editor option)
+- Text watermark: font, size, colour, bold
+- Image or logo watermark (transparent PNG supported)
+- Behind the content (background) or on top
+- Opacity and rotation (diagonal by default)
+- Position: centre, corners or tiled across the page
+- Pages: all, a range, odd or even, skip the first
+- Live preview of the first page
+- Optional flatten so the watermark is merged into the page and hard to remove
+
+### Pages
+- Thumbnails sidebar, zoom
+- Insert a blank page; delete, rotate and reorder pages
+
+### Session
+- Work stays active until the user downloads, cancels or uploads a new file
+- Auto-saved in the browser (IndexedDB): a refresh, closed tab or crash reopens it where it was
+- With unsaved changes, warn before leaving or closing the page, uploading a different file or pressing Cancel
+- Download or cancel clears the saved session
+- Nothing leaves the device
+
+### Ease of use
+- Move, resize, rotate and delete any element
+- Undo and redo
+- Keyboard shortcuts
+- Works by touch on phones
