@@ -783,7 +783,7 @@ return [
             ['q' => '¿Este cara o cruz es justo?', 'a' => 'Sí. Cada lanzamiento tiene exactamente un 50% de probabilidad de cara y un 50% de cruz, generados con la aleatoriedad criptográficamente segura de tu navegador.'],
             ['q' => '¿Puedo lanzar más de una moneda?', 'a' => 'Sí. Elige 2, 5, 10, 25 o 100 monedas y se lanzarán todas a la vez, con el recuento de caras y cruces.'],
             ['q' => '¿Por qué me salió cara cinco veces seguidas?', 'a' => 'Las rachas forman parte normal del azar. La probabilidad de cinco caras seguidas es de alrededor del 3%, así que ocurre a menudo en muchos lanzamientos.'],
-            ['q' => '¿Se guardan mis resultados?', 'a' => 'Los totales y tu racha se mantienen mientras la página está abierta. No se envía nada a ningún servidor, y Reiniciar estadísticas los borra.'],
+            ['q' => '¿Es un simulador de cara o cruz?', 'a' => 'Sí, este es un simulador de cara o cruz gratuito: reproduce un lanzamiento real con una probabilidad auténtica de 50/50, una animación 3D realista y la opción de lanzar hasta 100 monedas a la vez.'],
             ['q' => '¿Es como pedirle a un asistente de voz que lance una moneda?', 'a' => 'Sí: obtienes el mismo resultado justo de 50/50 que al pedírselo a un asistente de voz, pero aquí ves una animación 3D realista, puedes lanzar hasta 100 monedas a la vez y el juego lleva el recuento de caras, cruces y tu racha.'],
         ],
     ],

@@ -858,7 +858,7 @@ return [
             ['q' => 'Ist dieser Münzwurf fair?', 'a' => 'Ja. Jeder Wurf hat genau 50 % Chance auf Kopf und 50 % auf Zahl, erzeugt durch den kryptografisch sicheren Zufall deines Browsers.'],
             ['q' => 'Kann ich mehr als eine Münze werfen?', 'a' => 'Ja. Wähle 2, 5, 10, 25 oder 100 Münzen – alle werden auf einmal geworfen, mit Zählung von Kopf und Zahl.'],
             ['q' => 'Warum kam fünfmal hintereinander Kopf?', 'a' => 'Serien gehören zum Zufall dazu. Die Chance auf fünfmal Kopf in Folge liegt bei etwa 3 %, das passiert bei vielen Würfen also regelmäßig.'],
-            ['q' => 'Werden meine Ergebnisse gespeichert?', 'a' => 'Summen und Serie bleiben erhalten, solange die Seite geöffnet ist. Nichts wird an einen Server gesendet, und Statistik zurücksetzen löscht sie.'],
+            ['q' => 'Ist das ein Münzwurf-Simulator?', 'a' => 'Ja, das ist ein kostenloser Münzwurf-Simulator: Er bildet einen echten Wurf mit echter 50/50-Wahrscheinlichkeit nach, zeigt eine realistische 3D-Animation und lässt dich bis zu 100 Münzen gleichzeitig werfen.'],
             ['q' => 'Ist das wie einen Sprachassistenten nach Kopf oder Zahl zu fragen?', 'a' => 'Ja: Du bekommst das gleiche faire 50/50-Ergebnis wie bei einem Sprachassistenten, siehst hier aber eine realistische 3D-Animation, kannst bis zu 100 Münzen auf einmal werfen, und das Spiel zählt Kopf, Zahl und deine Serie.'],
         ],
     ],

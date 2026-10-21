@@ -858,7 +858,7 @@ return [
             ['q' => 'Ce pile ou face est-il équitable ?', 'a' => 'Oui. Chaque lancer a exactement 50 % de chances de tomber sur face et 50 % sur pile, grâce à l’aléa cryptographiquement sûr de votre navigateur.'],
             ['q' => 'Puis-je lancer plusieurs pièces ?', 'a' => 'Oui. Choisissez 2, 5, 10, 25 ou 100 pièces : elles sont toutes lancées d’un coup, avec le décompte des faces et des piles.'],
             ['q' => 'Pourquoi ai-je obtenu face cinq fois de suite ?', 'a' => 'Les séries font partie du hasard. La probabilité d’obtenir cinq faces d’affilée est d’environ 3 % : cela arrive régulièrement sur de nombreux lancers.'],
-            ['q' => 'Mes résultats sont-ils conservés ?', 'a' => 'Les totaux et votre série sont conservés tant que la page est ouverte. Rien n’est envoyé à un serveur, et Réinitialiser les stats les efface.'],
+            ['q' => 'Est-ce un simulateur de pile ou face ?', 'a' => 'Oui, c’est un simulateur de pile ou face gratuit : il reproduit un vrai lancer avec une probabilité réelle de 50/50, une animation 3D réaliste et la possibilité de lancer jusqu’à 100 pièces à la fois.'],
             ['q' => 'Est-ce comme demander à un assistant vocal de jouer à pile ou face ?', 'a' => 'Oui : vous obtenez le même résultat équitable de 50/50 qu’en le demandant à un assistant vocal, mais ici vous voyez une animation 3D réaliste, pouvez lancer jusqu’à 100 pièces à la fois, et le jeu compte faces, piles et votre série.'],
         ],
     ],

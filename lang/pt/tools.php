@@ -858,7 +858,7 @@ return [
             ['q' => 'Este cara ou coroa é justo?', 'a' => 'Sim. Cada lançamento tem exatamente 50% de chance de cara e 50% de coroa, gerados pela aleatoriedade criptograficamente segura do seu navegador.'],
             ['q' => 'Posso lançar mais de uma moeda?', 'a' => 'Sim. Escolha 2, 5, 10, 25 ou 100 moedas e todas são lançadas de uma vez, com a contagem de caras e coroas.'],
             ['q' => 'Por que tirei cara cinco vezes seguidas?', 'a' => 'Sequências fazem parte da aleatoriedade. A chance de cinco caras seguidas é de cerca de 3%, então isso acontece com frequência em muitos lançamentos.'],
-            ['q' => 'Meus resultados ficam guardados?', 'a' => 'Os totais e sua sequência ficam guardados enquanto a página estiver aberta. Nada é enviado a um servidor, e Zerar estatísticas apaga tudo.'],
+            ['q' => 'É um simulador de cara ou coroa?', 'a' => 'Sim, este é um simulador de cara ou coroa gratuito: reproduz um lançamento real com uma probabilidade verdadeira de 50/50, uma animação 3D realista e a opção de lançar até 100 moedas de uma vez.'],
             ['q' => 'É como pedir a um assistente de voz para jogar cara ou coroa?', 'a' => 'Sim: você tem o mesmo resultado justo de 50/50 que pedindo a um assistente de voz, mas aqui vê uma animação 3D realista, pode lançar até 100 moedas de uma vez e o jogo guarda a contagem de caras, coroas e sua sequência.'],
         ],
     ],
