@@ -548,8 +548,8 @@ return [
 
     'percentage-calculator' => [
         'name' => 'Prozentrechner',
-        'title' => 'Prozentrechner: Prozent, Veränderung und Zunahme berechnen',
-        'description' => 'Kostenloser Prozentrechner: X % von Y, wie viel Prozent X von Y ist, prozentuale Zu- oder Abnahme und Prozent aufschlagen oder abziehen. Mit Formel.',
+        'title' => 'Prozentrechner mit Formel: Prozent & Veränderung',
+        'description' => 'Kostenloser Prozentrechner, der bei jedem Ergebnis die Formel zeigt: X % von Y, wie viel Prozent X von Y ist, prozentuale Zu- oder Abnahme und mehr.',
         'h1' => 'Prozentrechner',
         'tagline' => 'Alle gängigen Prozentrechnungen an einem Ort, mit Formel.',
         'keywords' => ['prozentrechner', 'prozent berechnen', 'prozentuale veränderung berechnen', 'prozentuale zunahme berechnen', 'wie viel prozent'],

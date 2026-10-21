@@ -500,8 +500,8 @@ return [
 
     'percentage-calculator' => [
         'name' => 'Calculadora de porcentajes',
-        'title' => 'Calculadora de porcentajes: porcentaje, variación y aumento',
-        'description' => 'Calculadora de porcentajes gratis: el X% de Y, qué porcentaje es X de Y, aumento o descuento porcentual y más. Con la fórmula de cada resultado.',
+        'title' => 'Calculadora de porcentajes con fórmula: % y variación',
+        'description' => 'Calculadora de porcentajes gratis que muestra la fórmula de cada resultado: el X% de Y, qué porcentaje es X de Y, aumento o descuento porcentual y más.',
         'h1' => 'Calculadora de porcentajes',
         'tagline' => 'Todos los cálculos de porcentajes habituales en un solo lugar, con la fórmula.',
         'keywords' => ['calculadora de porcentajes', 'calcular porcentaje', 'porcentaje de aumento', 'calcular descuento', 'qué porcentaje es'],

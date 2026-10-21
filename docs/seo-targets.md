@@ -1,4 +1,4 @@
-Updated 2026-10-20
+Updated 2026-10-21
 
 1 · https://ilovemytools.store/de/what-is-my-ip · 0 clicks · 326 impr · pos 66.0 · CTR 0.0% · meine öffentliche ip (78.2), was ist meine öffentliche ipv4 adresse (77.6), öffentliche ip herausfinden (91.8), öffentliche ip adresse herausfinden (93.6), wie ist meine ip (16.8)
 2 · https://ilovemytools.store/domain-authority-checker · 0 clicks · 263 impr · pos 13.4 · CTR 0.0% · bulk domain authority check (5.4), bulk domain authority checker (7.6), bulk domain authority checker free (39.0), free bulk domain authority checker (12.9), mass domain authority checker (12.4)
@@ -15,3 +15,18 @@ Updated 2026-10-20
 13 · https://ilovemytools.store/de/dice-roller · 0 clicks · 31 impr · pos 54.9 · CTR 0.0% · online würfel (35.8), würffel (71.7), onlinewürfel (4.5), d20 würfel online (69.0), digital würfel (63.0)
 14 · https://ilovemytools.store/es/dice-roller · 0 clicks · 28 impr · pos 67.7 · CTR 0.0% · dados online (61.8), dados virtuales (77.5), tirador de dados (70.0), tirar dado (89.5), dado 20 online (56.0)
 15 · https://ilovemytools.store/de/image-resizer · 0 clicks · 27 impr · pos 12.9 · CTR 0.0% · jpg größe ändern online (5.9), jpg bilder größe ändern (2.3), png format ändern (25.0), größe jpg ändern (10.5), größe von webp bild ändern (73.5)
+16 · https://ilovemytools.store/de/percentage-calculator · 0 clicks · 27 impr · pos 27.9 · CTR 0.0% · prozentrechner formel (4.5), rechner prozent (12.5), online-rechner prozent (11.0), prozent steigerung berechnen (89.5), prozentuale veränderung berechnen (50.5)
+17 · https://ilovemytools.store/de/age-calculator · 0 clicks · 26 impr · pos 9.7 · CTR 0.0% · altersrechner (12.8), alter berechnen (15.0), alter in tagen (1.0), altersrechner geburtsdatum (9.0), alter aus geburtsdatum berechnen (11.0)
+18 · https://ilovemytools.store/fr/age-calculator · 0 clicks · 26 impr · pos 5.4 · CTR 0.0% · calcul age (7.3), connaitre age avec date de naissance (1.0), calcul age date de naissance (6.5), age calcul (6.0), age et date de naissance (6.0)
+19 · https://ilovemytools.store/de/broken-link-checker · 0 clicks · 23 impr · pos 72.3 · CTR 0.0% · dead link checker (77.4), broken link check (83.0), tote links finden (66.0), 404 checker (71.5), broken links checker (69.5)
+20 · https://ilovemytools.store/es/avif-to-png · 0 clicks · 23 impr · pos 7.3 · CTR 0.0% · convertir avif a png (5.8), de avif a png (8.5), avif a png (9.7), avig a png (6.0), convertir de avif a png (3.0)
+21 · https://ilovemytools.store/pt/image-resizer · 0 clicks · 23 impr · pos 23.3 · CTR 0.0% · redimensionar imagem png (26.8), redimensionar imagem jpg (8.2), redimensionar png (66.3), png redimensionar (8.0), redimensionar imagem png online (15.0)
+22 · https://ilovemytools.store/rotate-pdf · 0 clicks · 23 impr · pos 50.7 · CTR 0.0% · pdf orientation change (51.5), rotate pdf free (34.2), pdf landscape to portrait (75.0), change pdf orientation (53.0), pdf portrait to landscape (57.5)
+23 · https://ilovemytools.store/de/domain-age-checker · 0 clicks · 21 impr · pos 58.8 · CTR 0.0% · domain age (75.7), domain alter prüfen (36.2), domain registrierung prüfen (81.7), alter einer webseite herausfinden (61.0), domain alter (66.0)
+24 · https://ilovemytools.store/es/unlock-pdf · 0 clicks · 20 impr · pos 11.1 · CTR 0.0% · i love desbloquear pdf (9.2), desbloquear pdf ilove (10.0), i love desbloquear (8.0), i love pdf desbloquear pdf (47.0)
+25 · https://ilovemytools.store/fr/image-resizer · 0 clicks · 20 impr · pos 13.2 · CTR 0.0% · redimensionner une photo jpg (8.2), comment redimensionner une photo jpg (9.8), redimensionner png (13.2), redimensionner image webp (68.0), redimensionner jpg (11.0)
+26 · https://ilovemytools.store/de/jpg-to-pdf · 0 clicks · 19 impr · pos 15.8 · CTR 0.0% · wie wandle ich jpg in pdf um (4.7), wie wandle ich ein bild in eine pdf datei um (13.5), foto datei in pdf umwandeln (8.0), fotos zu pdf zusammenfügen (9.0), img in pdf umwandeln -- kostenlos (85.0)
+27 · https://ilovemytools.store/avif-to-webp · 0 clicks · 16 impr · pos 3.2 · CTR 0.0% · avif to webp (3.2)
+28 · https://ilovemytools.store/de/random-number-generator · 0 clicks · 16 impr · pos 54.9 · CTR 0.0% · zahlengenerator (60.7), zufallszahlen (63.3), zahl zufallsgenerator (77.0), lottozahlen selber ziehen (5.0), lottozahlen statistik rechner (3.0)
+29 · https://ilovemytools.store/fr/jpg-to-pdf · 0 clicks · 16 impr · pos 24.2 · CTR 0.0% · combiner jpeg en pdf (9.5), jpeg en pdf gratuit (13.3), convertir jpeg en pdf gratuit (18.5), convertir gratuitement jpg en pdf (12.0), convertir jpg en pdf en ligne gratuitement (27.0)
+30 · https://ilovemytools.store/readability-checker · 0 clicks · 16 impr · pos 44.4 · CTR 0.0% · readability free (47.7), readability score free (43.4), readability checker free (39.5), writing level checker (49.0)

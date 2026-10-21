@@ -548,8 +548,8 @@ return [
 
     'percentage-calculator' => [
         'name' => 'Kalkulator procentowy',
-        'title' => 'Kalkulator procentowy - procent, zmiana i wzrost',
-        'description' => 'Darmowy kalkulator procentowy: znajdź X% z Y, jaki procent X stanowi Y, wzrost lub spadek procentowy oraz dodaj lub odejmij procent. Pokazuje wzór.',
+        'title' => 'Kalkulator procentowy ze wzorem: procent i zmiana',
+        'description' => 'Darmowy kalkulator procentowy, który pokazuje wzór przy każdym wyniku: znajdź X% z Y, jaki procent X stanowi Y, wzrost lub spadek procentowy i więcej.',
         'h1' => 'Kalkulator procentowy',
         'tagline' => 'Każde popularne obliczenie procentowe w jednym miejscu, z pokazanym wzorem.',
         'keywords' => ['kalkulator procentowy', 'kalkulator procentów', 'kalkulator zmiany procentowej', 'kalkulator wzrostu procentowego', 'jaki procent z'],

@@ -548,8 +548,8 @@ return [
 
     'percentage-calculator' => [
         'name' => 'Calculadora de porcentagem',
-        'title' => 'Calculadora de porcentagem: porcentagem, variação e aumento',
-        'description' => 'Calculadora de porcentagem grátis: X% de Y, quantos por cento X é de Y, aumento ou redução percentual e mais. Com a fórmula de cada conta.',
+        'title' => 'Calculadora de porcentagem com fórmula: % e variação',
+        'description' => 'Calculadora de porcentagem grátis que mostra a fórmula de cada conta: X% de Y, quantos por cento X é de Y, aumento ou redução percentual e mais.',
         'h1' => 'Calculadora de porcentagem',
         'tagline' => 'Todos os cálculos de porcentagem comuns em um só lugar, com a fórmula.',
         'keywords' => ['calculadora de porcentagem', 'calcular porcentagem', 'calculadora de variação percentual', 'calculadora de aumento percentual', 'quantos por cento'],

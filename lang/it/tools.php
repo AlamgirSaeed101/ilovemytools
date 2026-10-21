@@ -548,8 +548,8 @@ return [
 
     'percentage-calculator' => [
         'name' => 'Calcolatore di percentuali',
-        'title' => 'Calcolo percentuale: percentuale, variazione e aumento',
-        'description' => 'Calcolatore di percentuali gratis: il X% di Y, che percentuale è X di Y, aumento o diminuzione percentuale e altro, con la formula spiegata chiaramente.',
+        'title' => 'Calcolo percentuale con formula: percentuale e variazione',
+        'description' => 'Calcolatore di percentuali gratis che mostra la formula di ogni risultato: il X% di Y, che percentuale è X di Y, aumento o diminuzione percentuale e altro.',
         'h1' => 'Calcolatore di percentuali',
         'tagline' => 'Tutti i calcoli percentuali più comuni in un unico posto, con la formula.',
         'keywords' => ['calcolatore percentuali', 'calcolo percentuale', 'calcolo variazione percentuale', 'calcolo aumento percentuale', 'che percentuale è'],

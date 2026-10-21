@@ -548,8 +548,8 @@ return [
 
     'percentage-calculator' => [
         'name' => 'Calculateur de pourcentage',
-        'title' => 'Calcul de pourcentage : pourcentage, variation, hausse',
-        'description' => 'Calcul de pourcentage gratuit : X % de Y, quel pourcentage X représente de Y, hausse ou baisse en pourcentage et plus. Formule affichée.',
+        'title' => 'Calcul de pourcentage avec formule : % et variation',
+        'description' => 'Calcul de pourcentage gratuit avec la formule affichée pour chaque résultat : X % de Y, quel pourcentage X représente de Y, hausse ou baisse et plus.',
         'h1' => 'Calculateur de pourcentage',
         'tagline' => 'Tous les calculs de pourcentage courants au même endroit, avec la formule.',
         'keywords' => ['calcul pourcentage', 'calculateur de pourcentage', 'calcul de variation en pourcentage', 'calcul augmentation pourcentage', 'quel pourcentage de'],
