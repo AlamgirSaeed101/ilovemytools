@@ -127,6 +127,7 @@ class SiteData
             'updated' => $tool['updated'] ?? null,
             'related' => $this->registry->related($tool)->keys()->all(),
             'guides' => $this->guidesFor($tool['slug']),
+            'panel' => self::panelHeight($tool['slug']),
             'meta' => $this->meta($tool['title'], $tool['description']),
         ];
     }
@@ -137,6 +138,21 @@ class SiteData
      *
      * @return list<array{slug: string, title: string, description: string}>
      */
+    /**
+     * Rendered height of the tool's panel on a phone (sm) and a desktop (lg), measured by
+     * scripts/measure-panels.mjs. The page reserves it so nothing jumps when the tool loads.
+     *
+     * @return array{sm: int, lg: int}|null
+     */
+    public static function panelHeight(string $slug): ?array
+    {
+        static $heights = null;
+        $heights ??= json_decode((string) @file_get_contents(resource_path('data/tool-panels.json')), true) ?: [];
+        $panel = $heights[$slug] ?? null;
+
+        return isset($panel['sm'], $panel['lg']) ? ['sm' => (int) $panel['sm'], 'lg' => (int) $panel['lg']] : null;
+    }
+
     public function guidesFor(string $slug): array
     {
         if (Locale::current() !== 'en') {

@@ -9,3 +9,4 @@ Free online tools site: Laravel 12 (PHP 8.3) serves SEO pages and a small JSON A
 Commands:
 - `npm run build` · `npm test` (Vitest) · `php artisan test` (PHPUnit) · `npx playwright test` (e2e, needs a build and Chrome)
 - `node scripts/i18n-extract.mjs` regenerates `lang/keys.json` after adding `t('...')` strings.
+- `node scripts/measure-panels.mjs` (with a build served on :8123) re-measures each tool's panel height into `resources/data/tool-panels.json` after adding a tool or changing its layout; the page reserves that height so it doesn't jump (CLS).

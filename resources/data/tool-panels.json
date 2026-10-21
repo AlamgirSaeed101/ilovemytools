@@ -1,0 +1,214 @@
+{
+    "age-calculator": {
+        "sm": 340,
+        "lg": 340
+    },
+    "ai-content-detector": {
+        "sm": 402,
+        "lg": 423
+    },
+    "avif-to-jpg": {
+        "sm": 388,
+        "lg": 364
+    },
+    "avif-to-png": {
+        "sm": 340,
+        "lg": 340
+    },
+    "avif-to-webp": {
+        "sm": 388,
+        "lg": 364
+    },
+    "base64-encoder-decoder": {
+        "sm": 691,
+        "lg": 663
+    },
+    "broken-link-checker": {
+        "sm": 340,
+        "lg": 340
+    },
+    "case-converter": {
+        "sm": 708,
+        "lg": 503
+    },
+    "coin-flip": {
+        "sm": 578,
+        "lg": 599
+    },
+    "compound-interest-calculator": {
+        "sm": 1050,
+        "lg": 856
+    },
+    "compress-pdf": {
+        "sm": 340,
+        "lg": 340
+    },
+    "countdown-timer": {
+        "sm": 686,
+        "lg": 574
+    },
+    "delete-pdf-pages": {
+        "sm": 340,
+        "lg": 340
+    },
+    "dice-roller": {
+        "sm": 614,
+        "lg": 511
+    },
+    "domain-age-checker": {
+        "sm": 402,
+        "lg": 401
+    },
+    "domain-authority-checker": {
+        "sm": 402,
+        "lg": 401
+    },
+    "edit-pdf": {
+        "sm": 340,
+        "lg": 340
+    },
+    "excel-to-pdf": {
+        "sm": 449,
+        "lg": 372
+    },
+    "html-to-pdf": {
+        "sm": 739,
+        "lg": 689
+    },
+    "image-compressor": {
+        "sm": 622,
+        "lg": 530
+    },
+    "image-resizer": {
+        "sm": 340,
+        "lg": 340
+    },
+    "jpg-to-pdf": {
+        "sm": 556,
+        "lg": 438
+    },
+    "jpg-to-png": {
+        "sm": 340,
+        "lg": 340
+    },
+    "json-formatter": {
+        "sm": 485,
+        "lg": 457
+    },
+    "loan-calculator": {
+        "sm": 1004,
+        "lg": 618
+    },
+    "merge-pdf": {
+        "sm": 340,
+        "lg": 340
+    },
+    "mortgage-calculator": {
+        "sm": 1188,
+        "lg": 779
+    },
+    "organize-pdf": {
+        "sm": 340,
+        "lg": 340
+    },
+    "password-generator": {
+        "sm": 660,
+        "lg": 556
+    },
+    "pdf-to-excel": {
+        "sm": 422,
+        "lg": 372
+    },
+    "pdf-to-jpg": {
+        "sm": 340,
+        "lg": 340
+    },
+    "pdf-to-png": {
+        "sm": 340,
+        "lg": 340
+    },
+    "pdf-to-word": {
+        "sm": 422,
+        "lg": 348
+    },
+    "percentage-calculator": {
+        "sm": 1282,
+        "lg": 1321
+    },
+    "png-to-jpg": {
+        "sm": 388,
+        "lg": 364
+    },
+    "protect-pdf": {
+        "sm": 340,
+        "lg": 340
+    },
+    "qr-code-generator": {
+        "sm": 631,
+        "lg": 456
+    },
+    "random-number-generator": {
+        "sm": 419,
+        "lg": 340
+    },
+    "readability-checker": {
+        "sm": 433,
+        "lg": 432
+    },
+    "redact-pdf": {
+        "sm": 340,
+        "lg": 340
+    },
+    "remove-background": {
+        "sm": 454,
+        "lg": 361
+    },
+    "rotate-pdf": {
+        "sm": 340,
+        "lg": 340
+    },
+    "sign-pdf": {
+        "sm": 340,
+        "lg": 340
+    },
+    "sleep-calculator": {
+        "sm": 940,
+        "lg": 779
+    },
+    "spin-the-wheel": {
+        "sm": 964,
+        "lg": 572
+    },
+    "split-pdf": {
+        "sm": 340,
+        "lg": 340
+    },
+    "stopwatch": {
+        "sm": 481,
+        "lg": 507
+    },
+    "tip-calculator": {
+        "sm": 694,
+        "lg": 466
+    },
+    "unlock-pdf": {
+        "sm": 340,
+        "lg": 340
+    },
+    "webp-to-png": {
+        "sm": 340,
+        "lg": 340
+    },
+    "what-is-my-ip": {
+        "sm": 766,
+        "lg": 703
+    },
+    "word-counter": {
+        "sm": 729,
+        "lg": 545
+    },
+    "word-to-pdf": {
+        "sm": 402,
+        "lg": 348
+    }
+}

@@ -15,7 +15,8 @@
         <div class="layout">
             <div class="layout__main">
                 {{-- The React app renders the working tool here. --}}
-                <section class="tool-panel" aria-label="{{ $tool['name'] }}">
+                @php($panel = \App\Support\SiteData::panelHeight($tool['slug']))
+                <section class="tool-panel" aria-label="{{ $tool['name'] }}" @if ($panel) style="--panel-sm: {{ $panel['sm'] }}px; --panel-lg: {{ $panel['lg'] }}px" @endif>
                     {{-- Hidden by CSS once the page's own inline script marks <html> as "js" (see layouts.app), so it's only
                          ever shown to real browsers with JavaScript off and to crawlers/AI engines that don't run JS. --}}
                     <p class="notice notice--warn no-js-notice">{{ t('This tool needs JavaScript. Please enable JavaScript in your browser settings to use the {name}.', ['name' => $tool['name']]) }}</p>

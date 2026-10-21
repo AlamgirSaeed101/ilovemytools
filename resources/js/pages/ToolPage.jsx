@@ -105,7 +105,14 @@ export default function ToolPage() {
 
             <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_290px]">
                 <div className="min-w-0">
-                    <section className="tool-panel" aria-label={tool.name} onPointerDownCapture={markUse} onInputCapture={markUse} onDropCapture={markUse}>
+                    <section
+                        className="tool-panel"
+                        aria-label={tool.name}
+                        style={tool.panel ? { '--panel-sm': `${tool.panel.sm}px`, '--panel-lg': `${tool.panel.lg}px` } : undefined}
+                        onPointerDownCapture={markUse}
+                        onInputCapture={markUse}
+                        onDropCapture={markUse}
+                    >
                         {Tool ? (
                             <ErrorBoundary key={tool.slug}>
                                 <Suspense fallback={<ToolLoading name={tool.name} />}>

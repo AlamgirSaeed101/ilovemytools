@@ -827,7 +827,9 @@ h3 {
 
 .tool-panel {
     position: relative;
-    min-height: 340px;
+    /* Per-tool heights (--panel-sm/lg, from resources/data/tool-panels.json) reserve the space the
+       tool needs before its JavaScript loads, so the page below doesn't jump. */
+    min-height: var(--panel-lg, 340px);
     padding: clamp(1.1rem, 3vw, 1.75rem);
     border: 1px solid var(--border);
     border-radius: var(--radius-xl);
@@ -2328,6 +2330,12 @@ fieldset.grid-2 .check:has(input:checked) {
 
 .tool-panel {
     overflow: clip;
+}
+
+@media (max-width: 639px) {
+    .tool-panel {
+        min-height: var(--panel-sm, 340px);
+    }
 }
 
 :root[data-theme='dark'] .ad__placeholder {
