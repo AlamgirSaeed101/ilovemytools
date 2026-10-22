@@ -526,7 +526,7 @@ return [
             ['q' => '¿Cómo calculo el porcentaje de un número?', 'a' => 'Divide el porcentaje entre 100 y multiplícalo por el número. Por ejemplo, el 15% de 200 = 0,15 x 200 = 30.'],
             ['q' => '¿Cómo calculo un aumento porcentual?', 'a' => 'Resta el valor antiguo al nuevo, divide entre el valor antiguo y multiplica por 100. De 80 a 100: (100 - 80) / 80 x 100 = 25%.'],
             ['q' => '¿Cómo calculo un descuento?', 'a' => 'Usa "Aumentar o disminuir un número en un porcentaje" con Disminuir. Con un 20% de descuento sobre 50 €, el precio final es 50 x (1 - 0,20) = 40 €.'],
-            ['q' => '¿Por qué no puedo calcular la variación desde cero?', 'a' => 'La variación porcentual divide entre el valor inicial, y dividir entre cero no está definido, así que un cambio desde 0 no se puede expresar como porcentaje.'],
+            ['q' => '¿Es lo mismo una "calculadora de porcentajes" que una "calculadora de porcentaje"?', 'a' => 'Sí, son el mismo tipo de herramienta. Esta calculadora obtiene el aumento, la disminución o la variación porcentual entre dos números cualesquiera, directamente en tu navegador y sin descargar nada.'],
             ['q' => '¿Puedo calcular porcentajes online sin descargar nada?', 'a' => 'Sí. Todo funciona en tu navegador: escribe los números y el resultado con la fórmula aparece al instante, sin aplicación, registro ni subir archivos.'],
         ],
         'table' => [

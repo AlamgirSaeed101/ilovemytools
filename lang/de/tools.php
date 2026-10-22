@@ -577,7 +577,7 @@ return [
             ['q' => 'Wie berechne ich den Prozentsatz einer Zahl?', 'a' => 'Teile den Prozentsatz durch 100 und multipliziere mit der Zahl. Beispiel: 15 % von 200 = 0,15 x 200 = 30.'],
             ['q' => 'Wie berechne ich eine prozentuale Zunahme?', 'a' => 'Ziehe den alten Wert vom neuen ab, teile durch den alten Wert und multipliziere mit 100. Von 80 auf 100: (100 - 80) / 80 x 100 = 25 %.'],
             ['q' => 'Wie berechne ich einen Rabatt?', 'a' => 'Nutze „Eine Zahl um einen Prozentsatz verringern“. Bei 20 % Rabatt auf 50 € beträgt der Preis 50 € x (1 - 0,20) = 40 €.'],
-            ['q' => 'Warum kann ich keine Veränderung ausgehend von null berechnen?', 'a' => 'Die prozentuale Veränderung teilt durch den Anfangswert, und die Division durch null ist nicht definiert. Eine Veränderung ausgehend von 0 lässt sich daher nicht in Prozent ausdrücken.'],
+            ['q' => 'Ist ein „Prozentrechner“ dasselbe wie ein „Prozentsatzrechner“?', 'a' => 'Ja, beide Begriffe meinen dasselbe Werkzeug. Es berechnet die Zunahme, Abnahme oder prozentuale Veränderung zwischen zwei beliebigen Zahlen, direkt im Browser und ohne Download.'],
             ['q' => 'Kann ich Prozente online berechnen, ohne etwas herunterzuladen?', 'a' => 'Ja. Alles läuft in deinem Browser: Gib die Zahlen ein, und das Ergebnis samt Formel erscheint sofort, ohne App, Anmeldung oder Datei-Upload.'],
         ],
         'table' => [

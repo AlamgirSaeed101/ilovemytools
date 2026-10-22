@@ -714,7 +714,7 @@ return [
             ['q' => 'How do I calculate a percentage of a number?', 'a' => 'Divide the percentage by 100 and multiply by the number. For example, 15% of 200 = 0.15 x 200 = 30.'],
             ['q' => 'How do I calculate percentage increase?', 'a' => 'Subtract the old value from the new value, divide by the old value and multiply by 100. From 80 to 100: (100 - 80) / 80 x 100 = 25%.'],
             ['q' => 'How do I work out a discount?', 'a' => 'Use "Decrease a number by a percentage". For 20% off $50, the sale price is $50 x (1 - 0.20) = $40.'],
-            ['q' => 'Why can\'t I calculate change from zero?', 'a' => 'Percentage change divides by the starting value, and dividing by zero is undefined, so a change from 0 cannot be expressed as a percentage.'],
+            ['q' => 'Is a "percentage calculator" the same as a "percent calculator"?', 'a' => 'Yes, the names are interchangeable. This calculator works out the increase, decrease or percentage change between any two numbers, right in your browser, with no download.'],
             ['q' => 'Can I calculate percentages online without downloading anything?', 'a' => 'Yes. Everything runs in your browser: type the numbers and the result and formula appear instantly, with no app, sign-up or file upload needed.'],
         ],
         'related' => ['age-calculator', 'tip-calculator', 'word-counter'],

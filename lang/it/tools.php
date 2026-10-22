@@ -577,7 +577,7 @@ return [
             ['q' => 'Come si calcola la percentuale di un numero?', 'a' => 'Dividi la percentuale per 100 e moltiplica per il numero. Ad esempio, il 15% di 200 = 0,15 x 200 = 30.'],
             ['q' => 'Come si calcola l’aumento percentuale?', 'a' => 'Sottrai il valore vecchio da quello nuovo, dividi per il valore vecchio e moltiplica per 100. Da 80 a 100: (100 - 80) / 80 x 100 = 25%.'],
             ['q' => 'Come si calcola uno sconto?', 'a' => 'Usa “Diminuire un numero di una percentuale”. Con il 20% di sconto su 50 €, il prezzo scontato è 50 € x (1 - 0,20) = 40 €.'],
-            ['q' => 'Perché non posso calcolare la variazione partendo da zero?', 'a' => 'La variazione percentuale divide per il valore iniziale, e la divisione per zero non è definita: una variazione da 0 non si può esprimere in percentuale.'],
+            ['q' => 'Calcolatrice o calcolatore di percentuali: sono la stessa cosa?', 'a' => 'Sì, sono sinonimi. Questo strumento calcola l’incremento, la diminuzione o la variazione percentuale tra due numeri qualsiasi, online e senza scaricare nulla.'],
             ['q' => 'Posso fare il calcolo delle percentuali online senza scaricare nulla?', 'a' => 'Sì. Tutto funziona nel tuo browser: inserisci i numeri e il risultato con la formula appare subito, senza app, registrazione o caricamento di file.'],
         ],
         'table' => [

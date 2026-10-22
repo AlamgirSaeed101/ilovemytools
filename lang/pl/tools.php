@@ -577,7 +577,7 @@ return [
             ['q' => 'Jak obliczyć procent z liczby?', 'a' => 'Podziel procent przez 100 i pomnóż przez liczbę. Na przykład 15% z 200 = 0,15 x 200 = 30.'],
             ['q' => 'Jak obliczyć wzrost procentowy?', 'a' => 'Odejmij starą wartość od nowej, podziel przez starą wartość i pomnóż przez 100. Z 80 do 100: (100 - 80) / 80 x 100 = 25%.'],
             ['q' => 'Jak obliczyć rabat?', 'a' => 'Użyj „Zmniejsz liczbę o procent”. Dla rabatu 20% na 50 zł, cena po rabacie to 50 zł x (1 - 0,20) = 40 zł.'],
-            ['q' => 'Czemu nie mogę obliczyć zmiany od zera?', 'a' => 'Zmiana procentowa dzieli przez wartość początkową, a dzielenie przez zero jest niezdefiniowane, więc zmiany od 0 nie da się wyrazić procentowo.'],
+            ['q' => 'Czy "kalkulator procentowy" to to samo co "kalkulator procentów"?', 'a' => 'Tak, to ta sama funkcja pod inną nazwą. Oblicza wzrost, spadek lub zmianę procentową między dowolnymi dwiema liczbami, prosto w przeglądarce i bez pobierania niczego.'],
             ['q' => 'Czy mogę obliczyć procent online bez pobierania czegokolwiek?', 'a' => 'Tak. Wszystko działa w Twojej przeglądarce: wpisz liczby, a wynik razem ze wzorem pojawi się natychmiast, bez aplikacji, rejestracji czy wysyłania plików.'],
         ],
         'related' => ['age-calculator', 'tip-calculator', 'word-counter'],
