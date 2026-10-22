@@ -64,6 +64,7 @@ const tools = {
     'sign-pdf': lazy(() => import('./SignPdf.jsx')),
     'redact-pdf': lazy(() => import('./RedactPdf.jsx')),
     'edit-pdf': lazy(() => import('./EditPdf.jsx')),
+    'watermark-pdf': lazy(() => import('./WatermarkPdf.jsx')),
 };
 
 export default tools;

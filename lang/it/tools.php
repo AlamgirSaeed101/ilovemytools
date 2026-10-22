@@ -2203,6 +2203,42 @@ return [
         ],
     ],
 
+    'watermark-pdf' => [
+        'name' => 'Filigrana PDF',
+        'title' => 'Filigrana PDF - Testo o Logo Gratis',
+        'description' => 'Aggiungi una filigrana di testo o immagine a un PDF online gratis. Scegli posizione, opacità, rotazione e pagine, con anteprima dal vivo.',
+        'h1' => 'Filigrana PDF',
+        'tagline' => 'Applica una filigrana di testo o logo su qualsiasi PDF - privato, gratis, senza registrazione.',
+        'keywords' => ['filigrana pdf', 'aggiungere filigrana a pdf', 'filigrana pdf online', 'filigrana testo pdf', 'filigrana immagine pdf'],
+        'intro' => 'Aggiungere una filigrana a un PDF significa applicare un testo (come "RISERVATO" o "BOZZA") o il logo di un\'azienda sulle pagine, di solito con poca opacità, per segnalare proprietà, stato o fase di bozza del documento. Scrivi una o due parole, oppure carica un logo in PNG o JPG, e imposta colore o dimensione, opacità, rotazione e posizione. Un\'anteprima dal vivo mostra esattamente come apparirà la prima pagina prima di applicarla a tutto il documento. Tutto avviene nel tuo browser, quindi il PDF non viene mai caricato.',
+        'steps' => [
+            'Scegli il PDF a cui aggiungere la filigrana.',
+            'Scegli Testo o Logo/Immagine e imposta il testo, il colore o carica un\'immagine.',
+            'Imposta opacità, rotazione e posizione (centro, un angolo o a mosaico su tutta la pagina).',
+            'Controlla l\'anteprima dal vivo, poi scegli quali pagine riceveranno la filigrana.',
+            'Clicca su Aggiungi filigrana e scarica il risultato.',
+        ],
+        'features' => [
+            'Filigrana di testo con la tua scritta, colore, dimensione e grassetto',
+            'Filigrana di immagine o logo da un file PNG o JPG',
+            'Opacità e rotazione, diagonale per impostazione predefinita',
+            'Posizione: centro, qualsiasi angolo o a mosaico su tutta la pagina',
+            'Applicala a tutte le pagine, pari, dispari, un intervallo di pagine o tutte tranne la prima',
+            'Anteprima dal vivo della prima pagina prima di scaricare',
+        ],
+        'content' => [
+            ['heading' => 'Perché aggiungere una filigrana a un PDF?', 'body' => 'Una filigrana segnala che un documento è una bozza, riservato, un campione o di proprietà di una persona o azienda prima di condividerlo. Un timbro diagonale e leggero su ogni pagina è difficile da non notare ma non blocca il contenuto sottostante, per questo opacità bassa e angolo ruotato sono le impostazioni predefinite più comuni.'],
+            ['heading' => 'Filigrana di testo o di immagine - quale scegliere?', 'body' => 'Una parola o una breve frase (BOZZA, RISERVATO, CAMPIONE, il nome di un\'azienda) funziona bene come testo, non richiede alcun file immagine e si adatta alla tipografia del resto del documento se resta semplice. Un\'immagine di logo è migliore quando la filigrana deve mostrare un marchio specifico - un PNG con sfondo trasparente dà il risultato più pulito, perché non c\'è alcun riquadro colorato attorno.'],
+        ],
+        'faqs' => [
+            ['q' => 'Posso controllare quanto è visibile la filigrana?', 'a' => 'Sì. Il cursore dell\'opacità va da quasi invisibile a completamente solido, e l\'anteprima dal vivo mostra il risultato prima di scaricare.'],
+            ['q' => 'La filigrana viene aggiunta a tutte le pagine?', 'a' => 'Per impostazione predefinita sì. Puoi applicarla anche solo alle pagine pari o dispari, a tutte tranne la prima, o a un intervallo specifico come 1-3, 5.'],
+            ['q' => 'Posso usare il mio logo come filigrana?', 'a' => 'Sì. Carica un\'immagine PNG o JPG e imposta quale percentuale della larghezza della pagina deve occupare. Un PNG trasparente dà il risultato migliore, perché non c\'è un riquadro di sfondo attorno al logo.'],
+            ['q' => 'Il mio PDF viene caricato su un server?', 'a' => 'No. La filigrana viene disegnata interamente nel tuo browser con JavaScript, e il PDF non viene mai inviato da nessuna parte.'],
+            ['q' => 'Questo strumento aggiunge una propria filigrana o logo?', 'a' => 'No. L\'unica filigrana aggiunta è il testo o l\'immagine che scegli tu; lo strumento non applica mai un proprio marchio al tuo documento.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Calcolatore di mutuo',
         'title' => 'Calcolatore di Mutuo - Rata Mensile e Ammortamento',

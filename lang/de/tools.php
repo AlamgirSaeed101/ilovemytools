@@ -2203,6 +2203,42 @@ return [
         ],
     ],
 
+    'watermark-pdf' => [
+        'name' => 'PDF-Wasserzeichen',
+        'title' => 'PDF-Wasserzeichen - Text oder Logo, Kostenlos',
+        'description' => 'Fügen Sie kostenlos ein Text- oder Bild-Wasserzeichen zu einem PDF hinzu. Wählen Sie Position, Deckkraft, Drehung und Seiten, mit Vorschau.',
+        'h1' => 'PDF-Wasserzeichen',
+        'tagline' => 'Setzen Sie ein Text- oder Logo-Wasserzeichen auf jedes PDF - privat, kostenlos, ohne Anmeldung.',
+        'keywords' => ['pdf wasserzeichen', 'wasserzeichen zu pdf hinzufügen', 'pdf wasserzeichen online', 'text wasserzeichen pdf', 'bild wasserzeichen pdf'],
+        'intro' => 'Ein Wasserzeichen in ein PDF einzufügen bedeutet, Text (etwa „VERTRAULICH" oder „ENTWURF") oder ein Firmenlogo über die Seiten zu legen, meist mit geringer Deckkraft, um Eigentum, Status oder Entwurfsstadium des Dokuments zu kennzeichnen. Geben Sie ein oder zwei Wörter ein oder laden Sie ein Logo als PNG oder JPG hoch, und stellen Sie dessen Farbe oder Größe, die Deckkraft, die Drehung und die Position ein. Eine Live-Vorschau zeigt genau, wie die erste Seite aussehen wird, bevor Sie es auf das ganze Dokument anwenden. Alles läuft in Ihrem Browser, das PDF wird also nie hochgeladen.',
+        'steps' => [
+            'Wählen Sie das PDF aus, das ein Wasserzeichen erhalten soll.',
+            'Wählen Sie Text oder Logo/Bild und legen Sie Text, Farbe oder ein hochgeladenes Bild fest.',
+            'Stellen Sie Deckkraft, Drehung und Position ein (Mitte, eine Ecke oder als Kachelmuster über die ganze Seite).',
+            'Prüfen Sie die Live-Vorschau und wählen Sie, welche Seiten das Wasserzeichen erhalten.',
+            'Klicken Sie auf Wasserzeichen hinzufügen und laden Sie das Ergebnis herunter.',
+        ],
+        'features' => [
+            'Text-Wasserzeichen mit eigenem Wortlaut, Farbe, Größe und Fettdruck',
+            'Bild- oder Logo-Wasserzeichen aus einer PNG- oder JPG-Datei',
+            'Deckkraft und Drehung, standardmäßig diagonal',
+            'Position: Mitte, jede Ecke oder als Kachelmuster über die ganze Seite',
+            'Anwendbar auf alle Seiten, gerade, ungerade, einen Seitenbereich oder alle außer der ersten',
+            'Live-Vorschau der ersten Seite vor dem Herunterladen',
+        ],
+        'content' => [
+            ['heading' => 'Warum einem PDF ein Wasserzeichen hinzufügen?', 'body' => 'Ein Wasserzeichen kennzeichnet ein Dokument vor der Weitergabe als Entwurf, vertraulich, als Muster oder als Eigentum einer Person oder Firma. Ein blasser diagonaler Stempel auf jeder Seite fällt kaum zu übersehen auf, verdeckt aber nicht den Inhalt darunter - deshalb sind geringe Deckkraft und ein gedrehter Winkel die üblichen Standardwerte.'],
+            ['heading' => 'Text- oder Bild-Wasserzeichen - welches eignet sich?', 'body' => 'Ein kurzes Wort oder eine kurze Phrase (ENTWURF, VERTRAULICH, MUSTER, ein Firmenname) funktioniert gut als Text, benötigt keine Bilddatei und passt sich der übrigen Typografie des Dokuments an, solange sie schlicht bleibt. Ein Logo-Bild eignet sich besser, wenn das Wasserzeichen eine bestimmte Marke zeigen soll - ein PNG mit transparentem Hintergrund wirkt am saubersten, da kein farbiger Kasten darum liegt.'],
+        ],
+        'faqs' => [
+            ['q' => 'Kann ich einstellen, wie sichtbar das Wasserzeichen ist?', 'a' => 'Ja. Der Deckkraft-Regler reicht von kaum sichtbar bis vollständig deckend, und die Live-Vorschau zeigt das Ergebnis vor dem Herunterladen.'],
+            ['q' => 'Wird das Wasserzeichen auf jede Seite angewendet?', 'a' => 'Standardmäßig ja. Sie können es auch nur auf gerade oder ungerade Seiten, auf alle außer der ersten, oder auf einen bestimmten Bereich wie 1-3, 5 anwenden.'],
+            ['q' => 'Kann ich mein eigenes Logo als Wasserzeichen verwenden?', 'a' => 'Ja. Laden Sie ein PNG- oder JPG-Bild hoch und legen Sie fest, welchen Prozentsatz der Seitenbreite es einnehmen soll. Ein transparentes PNG wirkt am besten, da kein Hintergrundkasten um das Logo liegt.'],
+            ['q' => 'Wird mein PDF auf einen Server hochgeladen?', 'a' => 'Nein. Das Wasserzeichen wird vollständig in Ihrem Browser mit JavaScript gezeichnet, und das PDF wird nie irgendwohin gesendet.'],
+            ['q' => 'Fügt dieses Werkzeug ein eigenes Wasserzeichen oder Logo hinzu?', 'a' => 'Nein. Das einzige hinzugefügte Wasserzeichen ist der Text oder das Bild, das Sie selbst wählen; das Werkzeug stempelt nie seine eigene Marke auf Ihr Dokument.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Baufinanzierungsrechner',
         'title' => 'Baufinanzierungsrechner - Monatsrate & Tilgungsplan',

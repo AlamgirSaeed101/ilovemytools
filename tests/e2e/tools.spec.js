@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 import JSZip from 'jszip';
 import {
     checkPdfPassword, extractPdfText, makeDocx, makeImage, makePdf, makePdfWithImage, makeTabularPdf, makeXlsx,
-    mockQpdfCdn, openTool, pdfPageCount, pdfPageRotations, readDocxText, readDownload, readXlsx, trackErrors,
+    mockQpdfCdn, openTool, pdfPageCount, pdfPageRotations, pdfPageTexts, readDocxText, readDownload, readXlsx, trackErrors,
 } from './helpers.js';
 
 let errors;
@@ -702,6 +702,36 @@ test.describe('PDF tools', () => {
         // The added text is real, selectable text (drawn with pdf-lib), not a picture.
         const text = await extractPdfText(page, editedBytes);
         expect(text).toContain('Hello World');
+    });
+
+    test('watermark PDF stamps text onto only the pages chosen, matching the live preview', async ({ page }) => {
+        await openTool(page, 'watermark-pdf');
+        const originalBytes = await makePdf(3);
+        await page.getByTestId('file-input').setInputFiles({ name: 'report.pdf', mimeType: 'application/pdf', buffer: originalBytes });
+        await expect(page.getByText('report.pdf', { exact: true })).toBeVisible();
+        await expect(page.getByRole('button', { name: 'Add watermark' })).toBeDisabled();
+
+        await page.getByLabel('Watermark text').fill('CONFIDENTIAL');
+        await expect(page.getByRole('button', { name: 'Add watermark' })).toBeEnabled();
+
+        // The live preview renders the real watermarked page 1 before any page is chosen.
+        const preview = page.locator('canvas[aria-label="Preview of page 1"]');
+        await expect(preview).toBeVisible();
+        await expect.poll(async () => (await preview.boundingBox())?.height ?? 0).toBeGreaterThan(0);
+
+        await page.getByLabel('Pages').selectOption({ label: 'All pages except the first' });
+        await page.getByRole('button', { name: 'Add watermark' }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(file.suggestedFilename()).toBe('report-watermarked.pdf');
+        const watermarkedBytes = await readDownload(file);
+        expect(await pdfPageCount(watermarkedBytes)).toBe(3);
+        expect(watermarkedBytes.length).toBeGreaterThan(originalBytes.length);
+
+        // Real, selectable text (drawn with pdf-lib) only on the pages the "except the first" scope targets.
+        const texts = await pdfPageTexts(page, watermarkedBytes);
+        expect(texts[0]).not.toContain('CONFIDENTIAL');
+        expect(texts[1]).toContain('CONFIDENTIAL');
+        expect(texts[2]).toContain('CONFIDENTIAL');
     });
 });
 

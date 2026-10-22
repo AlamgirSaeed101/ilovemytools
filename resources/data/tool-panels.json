@@ -195,13 +195,17 @@
         "sm": 340,
         "lg": 340
     },
+    "watermark-pdf": {
+        "sm": 340,
+        "lg": 340
+    },
     "webp-to-png": {
         "sm": 340,
         "lg": 340
     },
     "what-is-my-ip": {
-        "sm": 766,
-        "lg": 703
+        "sm": 858,
+        "lg": 770
     },
     "word-counter": {
         "sm": 729,

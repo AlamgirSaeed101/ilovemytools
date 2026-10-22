@@ -5,11 +5,11 @@ browser (pdf.js + pdf-lib, already in the project); files are never uploaded; fr
 sign-up, all 10 languages. Each finished step ships with tests, translations (rule 4) and a
 re-run of `node scripts/measure-panels.mjs`.
 
-Status: not started. Tick items as they ship.
+Status: in progress. Tick items as they ship.
 
 ## Build order
 
-1. [ ] Add Watermark to PDF (new tool, own page)
+1. [x] Add Watermark to PDF (new tool, own page)
 2. [ ] Editor phase 1: whiteout, shapes, strikethrough/underline, links, move/resize/rotate, zoom, thumbnails
 3. [ ] Edit existing text with the same font, plus find and replace
 4. [ ] Session: auto-save and unsaved-changes warnings

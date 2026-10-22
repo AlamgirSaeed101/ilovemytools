@@ -2203,6 +2203,42 @@ return [
         ],
     ],
 
+    'watermark-pdf' => [
+        'name' => 'Filigrane PDF',
+        'title' => 'Filigrane PDF - Texte ou Logo Gratuit',
+        'description' => "Ajoutez un filigrane de texte ou d'image à un PDF gratuitement en ligne. Choisissez la position, l'opacité, la rotation et les pages, avec un aperçu en direct.",
+        'h1' => 'Filigrane PDF',
+        'tagline' => 'Apposez un filigrane de texte ou de logo sur n\'importe quel PDF - privé, gratuit, sans inscription.',
+        'keywords' => ['filigrane pdf', 'ajouter un filigrane à un pdf', 'filigrane pdf en ligne', 'filigrane texte pdf', 'filigrane image pdf'],
+        'intro' => 'Mettre un filigrane sur un PDF consiste à apposer un texte (comme « CONFIDENTIEL » ou « BROUILLON ») ou le logo d\'une entreprise sur les pages, généralement avec une faible opacité, pour indiquer la propriété, le statut ou l\'état de brouillon du document. Tapez un ou deux mots, ou importez un logo en PNG ou JPG, puis réglez sa couleur ou sa taille, l\'opacité, la rotation et la position. Un aperçu en direct montre exactement à quoi ressemblera la première page avant de l\'appliquer à tout le document. Tout se passe dans votre navigateur, le PDF n\'est donc jamais envoyé.',
+        'steps' => [
+            'Choisissez le PDF auquel vous voulez ajouter un filigrane.',
+            'Choisissez Texte ou Logo/Image et définissez son texte, sa couleur ou importez une image.',
+            'Réglez l\'opacité, la rotation et la position (centre, un coin, ou en mosaïque sur toute la page).',
+            'Vérifiez l\'aperçu en direct, puis choisissez les pages qui recevront le filigrane.',
+            'Cliquez sur Ajouter un filigrane et téléchargez le résultat.',
+        ],
+        'features' => [
+            'Filigrane de texte avec votre propre message, sa couleur, sa taille et le gras',
+            'Filigrane d\'image ou de logo à partir d\'un fichier PNG ou JPG',
+            'Opacité et rotation, diagonale par défaut',
+            'Position : centre, n\'importe quel coin, ou en mosaïque sur toute la page',
+            'Appliquez-le à toutes les pages, aux pages paires ou impaires, à une plage de pages, ou à toutes sauf la première',
+            'Aperçu en direct de la première page avant de télécharger',
+        ],
+        'content' => [
+            ['heading' => 'Pourquoi ajouter un filigrane à un PDF ?', 'body' => 'Un filigrane indique qu\'un document est un brouillon, confidentiel, un échantillon ou la propriété d\'une personne ou d\'une entreprise avant d\'être partagé. Un tampon diagonal discret sur chaque page est difficile à manquer mais ne bloque pas le contenu en dessous, c\'est pourquoi une faible opacité et un angle incliné sont les réglages par défaut habituels.'],
+            ['heading' => 'Filigrane de texte ou d\'image - lequel choisir ?', 'body' => 'Un mot ou une courte phrase (BROUILLON, CONFIDENTIEL, ÉCHANTILLON, le nom d\'une entreprise) fonctionne bien en texte, ne nécessite aucun fichier image et s\'accorde avec la typographie du reste du document s\'il reste simple. Une image de logo est préférable quand le filigrane doit afficher une marque précise - un PNG à fond transparent donne le résultat le plus net, car aucun cadre de couleur n\'apparaît autour.'],
+        ],
+        'faqs' => [
+            ['q' => 'Puis-je régler la visibilité du filigrane ?', 'a' => 'Oui. Le curseur d\'opacité va de presque invisible à totalement opaque, et l\'aperçu en direct montre le résultat avant de télécharger.'],
+            ['q' => 'Le filigrane est-il ajouté à toutes les pages ?', 'a' => 'Par défaut, oui. Vous pouvez aussi l\'appliquer seulement aux pages paires ou impaires, à toutes sauf la première, ou à une plage précise comme 1-3, 5.'],
+            ['q' => 'Puis-je utiliser mon propre logo comme filigrane ?', 'a' => 'Oui. Importez une image PNG ou JPG et indiquez le pourcentage de la largeur de la page qu\'elle doit occuper. Un PNG transparent donne le meilleur résultat, car aucun cadre de fond n\'apparaît autour du logo.'],
+            ['q' => 'Mon PDF est-il envoyé à un serveur ?', 'a' => 'Non. Le filigrane est dessiné entièrement dans votre navigateur avec JavaScript, et le PDF n\'est jamais envoyé nulle part.'],
+            ['q' => 'Cet outil ajoute-t-il son propre filigrane ou logo ?', 'a' => 'Non. Le seul filigrane ajouté est le texte ou l\'image que vous choisissez vous-même ; l\'outil n\'appose jamais sa propre marque sur votre document.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Calculateur de prêt immobilier',
         'title' => 'Calculateur de Prêt Immobilier - Mensualité et Amortissement',

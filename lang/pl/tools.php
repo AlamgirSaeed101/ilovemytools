@@ -2076,6 +2076,42 @@ return [
         ],
     ],
 
+    'watermark-pdf' => [
+        'name' => 'Znak wodny PDF',
+        'title' => 'Znak Wodny PDF - Tekst lub Logo, Bezpłatnie',
+        'description' => 'Dodaj znak wodny tekstowy lub graficzny do PDF bezpłatnie online. Wybierz pozycję, przezroczystość, obrót i strony, z podglądem na żywo. Bez wgrywania plików.',
+        'h1' => 'Znak wodny PDF',
+        'tagline' => 'Nałóż tekstowy lub graficzny znak wodny na każdy PDF - prywatnie, bezpłatnie, bez rejestracji.',
+        'keywords' => ['znak wodny pdf', 'dodaj znak wodny do pdf', 'znak wodny pdf online', 'tekstowy znak wodny pdf', 'graficzny znak wodny pdf'],
+        'intro' => 'Dodanie znaku wodnego do PDF to nałożenie tekstu (np. "POUFNE" lub "WERSJA ROBOCZA") albo logo firmy na strony, zwykle z niską przezroczystością, aby oznaczyć własność, status lub etap wersji roboczej dokumentu. Wpisz jedno lub dwa słowa albo wgraj logo w formacie PNG lub JPG, a następnie ustaw jego kolor lub rozmiar, przezroczystość, obrót i pozycję. Podgląd na żywo pokazuje dokładnie, jak będzie wyglądać pierwsza strona, zanim zastosujesz znak do całego dokumentu. Wszystko dzieje się w przeglądarce, więc PDF nigdy nie jest wgrywany.',
+        'steps' => [
+            'Wybierz PDF, do którego chcesz dodać znak wodny.',
+            'Wybierz Tekst lub Logo/Obraz i ustaw tekst, kolor lub wgraj obraz.',
+            'Ustaw przezroczystość, obrót i pozycję (środek, róg lub kafelkowo na całej stronie).',
+            'Sprawdź podgląd na żywo, a potem wybierz, które strony otrzymają znak wodny.',
+            'Kliknij Dodaj znak wodny i pobierz wynik.',
+        ],
+        'features' => [
+            'Tekstowy znak wodny z własnym tekstem, kolorem, rozmiarem i pogrubieniem',
+            'Graficzny znak wodny lub logo z pliku PNG lub JPG',
+            'Przezroczystość i obrót, domyślnie po przekątnej',
+            'Pozycja: środek, każdy róg lub kafelkowo na całej stronie',
+            'Zastosuj do wszystkich stron, parzystych, nieparzystych, zakresu stron lub wszystkich oprócz pierwszej',
+            'Podgląd na żywo pierwszej strony przed pobraniem',
+        ],
+        'content' => [
+            ['heading' => 'Po co dodawać znak wodny do PDF?', 'body' => 'Znak wodny oznacza dokument jako wersję roboczą, poufny, próbkę albo własność osoby czy firmy, zanim zostanie udostępniony. Blady, ukośny stempel na każdej stronie trudno przegapić, ale nie zasłania treści pod nim - dlatego niska przezroczystość i obrócony kąt to zwykłe wartości domyślne.'],
+            ['heading' => 'Tekstowy czy graficzny znak wodny - co wybrać?', 'body' => 'Krótkie słowo lub fraza (WERSJA ROBOCZA, POUFNE, PRÓBKA, nazwa firmy) dobrze działa jako tekst, nie wymaga żadnego pliku graficznego i pasuje do typografii resztę dokumentu, jeśli zostanie prosta. Logo w formie obrazu lepiej się sprawdza, gdy znak wodny musi pokazywać konkretny znak marki - przezroczysty PNG wygląda najczyściej, bo nie ma wokół niego kolorowego prostokąta.'],
+        ],
+        'faqs' => [
+            ['q' => 'Czy mogę kontrolować widoczność znaku wodnego?', 'a' => 'Tak. Suwak przezroczystości ma zakres od ledwo widocznego do w pełni pełnego, a podgląd na żywo pokazuje wynik przed pobraniem.'],
+            ['q' => 'Czy znak wodny trafia na każdą stronę?', 'a' => 'Domyślnie tak. Możesz go też zastosować tylko do stron parzystych lub nieparzystych, do wszystkich oprócz pierwszej, albo do konkretnego zakresu, np. 1-3, 5.'],
+            ['q' => 'Czy mogę użyć własnego logo jako znaku wodnego?', 'a' => 'Tak. Wgraj obraz PNG lub JPG i ustaw, jaki procent szerokości strony powinien zajmować. Przezroczysty PNG działa najlepiej, bo wokół logo nie ma prostokąta tła.'],
+            ['q' => 'Czy mój PDF jest wysyłany na serwer?', 'a' => 'Nie. Znak wodny jest rysowany w całości w Twojej przeglądarce za pomocą JavaScript, a PDF nigdy nie jest nigdzie wysyłany.'],
+            ['q' => 'Czy to narzędzie dodaje własny znak wodny lub logo?', 'a' => 'Nie. Jedynym dodawanym znakiem wodnym jest tekst lub obraz, który wybierzesz sam; narzędzie nigdy nie umieszcza na dokumencie własnej marki.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Kalkulator kredytu hipotecznego',
         'title' => 'Kalkulator Kredytu Hipotecznego - Rata i Harmonogram Spłat',

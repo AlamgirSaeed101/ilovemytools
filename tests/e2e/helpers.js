@@ -230,3 +230,24 @@ export async function extractPdfText(page, bytes) {
         { bytesB64: Buffer.from(bytes).toString('base64'), pdfjsUrl: PDFJS_MJS_URL, workerUrl: PDFJS_WORKER_URL },
     );
 }
+
+/** A real PDF's text content per page (one string per page, in order), read with a real pdf.js instance. */
+export async function pdfPageTexts(page, bytes) {
+    await routePdfJs(page);
+    return page.evaluate(
+        async ({ bytesB64, pdfjsUrl, workerUrl }) => {
+            const pdfjsLib = await import(pdfjsUrl);
+            pdfjsLib.GlobalWorkerOptions.workerSrc = workerUrl;
+            const data = Uint8Array.from(atob(bytesB64), (c) => c.charCodeAt(0));
+            const doc = await pdfjsLib.getDocument({ data }).promise;
+            const texts = [];
+            for (let i = 1; i <= doc.numPages; i++) {
+                const page = await doc.getPage(i);
+                const content = await page.getTextContent();
+                texts.push(content.items.map((it) => it.str).join(' ').replace(/\s+/g, ' ').trim());
+            }
+            return texts;
+        },
+        { bytesB64: Buffer.from(bytes).toString('base64'), pdfjsUrl: PDFJS_MJS_URL, workerUrl: PDFJS_WORKER_URL },
+    );
+}

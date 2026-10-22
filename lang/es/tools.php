@@ -2098,6 +2098,42 @@ return [
         ],
     ],
 
+    'watermark-pdf' => [
+        'name' => 'Marca de agua en PDF',
+        'title' => 'Marca de Agua en PDF - Texto o Logotipo Gratis',
+        'description' => 'Añade una marca de agua de texto o imagen a un PDF gratis online. Elige posición, opacidad, rotación y páginas, con vista previa. Sin subir archivos.',
+        'h1' => 'Marca de agua en PDF',
+        'tagline' => 'Estampa una marca de agua de texto o logotipo en cualquier PDF - privado, gratis, sin registro.',
+        'keywords' => ['marca de agua pdf', 'añadir marca de agua a pdf', 'marca de agua pdf online', 'marca de agua de texto pdf', 'marca de agua de imagen pdf'],
+        'intro' => 'Poner una marca de agua en un PDF consiste en estampar un texto (como "CONFIDENCIAL" o "BORRADOR") o el logotipo de una empresa sobre las páginas, normalmente con poca opacidad, para marcar la propiedad, el estado o la fase de borrador del documento. Escribe una o dos palabras, o sube un logotipo en PNG o JPG, y ajusta su color o tamaño, la opacidad, la rotación y la posición. Una vista previa en vivo muestra exactamente cómo quedará la primera página antes de aplicarlo a todo el documento. Todo ocurre en tu navegador, así que el PDF nunca se sube.',
+        'steps' => [
+            'Elige el PDF al que quieres añadir la marca de agua.',
+            'Elige Texto o Logotipo/Imagen y define su texto, color o sube una imagen.',
+            'Ajusta la opacidad, la rotación y la posición (centro, una esquina o en mosaico por toda la página).',
+            'Revisa la vista previa en vivo y elige qué páginas recibirán la marca de agua.',
+            'Haz clic en Añadir marca de agua y descarga el resultado.',
+        ],
+        'features' => [
+            'Marca de agua de texto con tu propio mensaje, color, tamaño y negrita',
+            'Marca de agua de imagen o logotipo a partir de un archivo PNG o JPG',
+            'Opacidad y rotación, diagonal por defecto',
+            'Posición: centro, cualquier esquina o en mosaico por toda la página',
+            'Aplícala a todas las páginas, pares, impares, un rango de páginas o todas menos la primera',
+            'Vista previa en vivo de la primera página antes de descargar',
+        ],
+        'content' => [
+            ['heading' => '¿Por qué añadir una marca de agua a un PDF?', 'body' => 'Una marca de agua marca un documento como borrador, confidencial, de muestra o propiedad de una persona o empresa antes de compartirlo. Un sello diagonal y tenue en cada página es difícil de pasar por alto pero no bloquea el contenido de debajo, por eso la opacidad baja y el ángulo rotado son los valores habituales por defecto.'],
+            ['heading' => '¿Marca de agua de texto o de imagen? ¿Cuál elegir?', 'body' => 'Una palabra o frase corta (BORRADOR, CONFIDENCIAL, MUESTRA, el nombre de una empresa) funciona bien como texto, no necesita ningún archivo de imagen y combina con la tipografía del resto del documento si se mantiene sencilla. Una imagen de logotipo es mejor cuando la marca de agua debe mostrar un distintivo de marca concreto - un PNG con fondo transparente queda más limpio porque no hay ningún recuadro de color alrededor.'],
+        ],
+        'faqs' => [
+            ['q' => '¿Puedo controlar lo visible que es la marca de agua?', 'a' => 'Sí. El control deslizante de opacidad va desde apenas visible hasta totalmente sólida, y la vista previa en vivo muestra el resultado antes de descargar.'],
+            ['q' => '¿La marca de agua se añade a todas las páginas?', 'a' => 'Por defecto, sí. También puedes aplicarla solo a las páginas pares o impares, a todas menos la primera, o a un rango concreto como 1-3, 5.'],
+            ['q' => '¿Puedo usar mi propio logotipo como marca de agua?', 'a' => 'Sí. Sube una imagen PNG o JPG y define qué porcentaje del ancho de la página debe ocupar. Un PNG transparente queda mejor, ya que no hay un recuadro de fondo alrededor del logotipo.'],
+            ['q' => '¿Se sube mi PDF a un servidor?', 'a' => 'No. La marca de agua se dibuja completamente en tu navegador con JavaScript, y el PDF nunca se envía a ningún sitio.'],
+            ['q' => '¿Esta herramienta añade su propia marca de agua o logotipo?', 'a' => 'No. La única marca de agua que se añade es el texto o la imagen que tú elijas; la herramienta nunca estampa su propia marca en tu documento.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Calculadora de hipoteca',
         'title' => 'Calculadora de Hipoteca - Cuota Mensual y Amortización',

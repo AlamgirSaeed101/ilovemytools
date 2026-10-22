@@ -2478,6 +2478,57 @@ return [
         'related' => ['sign-pdf', 'redact-pdf', 'merge-pdf', 'rotate-pdf'],
     ],
 
+    'watermark-pdf' => [
+        'name' => 'Watermark PDF',
+        'category' => 'pdf-tools',
+        'icon' => 'pdf',
+        'popular' => false,
+        'updated' => '2026-10-22',
+        'title' => 'Watermark PDF - Add a Text or Logo Watermark Free',
+        'description' => 'Add a text or image watermark to a PDF online for free. Choose the position, opacity, rotation and which pages, with a live preview. No upload, no sign up.',
+        'h1' => 'Watermark PDF',
+        'tagline' => 'Stamp a text or logo watermark across any PDF - private, free, no sign up.',
+        'keywords' => ['watermark pdf', 'add watermark to pdf', 'pdf watermark online', 'text watermark pdf', 'image watermark pdf'],
+        'intro' => 'Watermarking a PDF stamps text (such as "CONFIDENTIAL" or "DRAFT") or a logo image across the pages, usually at low opacity, to mark ownership, status or draft stage. Type a word or two, or upload a PNG or JPG logo, then set its colour or size, opacity, rotation and position. A live preview shows exactly how the first page will look before you apply it to the whole document. Everything runs in your browser, so the PDF is never uploaded.',
+        'steps' => [
+            'Choose the PDF you want to watermark.',
+            'Pick Text or Logo/Image and set its text, colour or upload an image.',
+            'Set the opacity, rotation and position (centre, a corner, or tiled across the page).',
+            'Check the live preview, then choose which pages get the watermark.',
+            'Click Add Watermark and download the result.',
+        ],
+        'features' => [
+            'Text watermark with your own wording, colour, size and bold',
+            'Image or logo watermark from a PNG or JPG file',
+            'Opacity and rotation, diagonal by default',
+            'Position: centre, any corner, or tiled across the page',
+            'Apply to all pages, odd or even pages, a page range, or every page but the first',
+            'Live preview of the first page before you download',
+        ],
+        'content' => [
+            [
+                'heading' => 'Why add a watermark to a PDF?',
+                'body' => 'A watermark marks a document as a draft, confidential, sample or the property of a person or company before it is shared. A faint diagonal stamp across every page is hard to miss but does not block the content underneath, which is why low opacity and a rotated angle are the usual defaults.',
+            ],
+            [
+                'heading' => 'Text or image watermark - which to choose?',
+                'body' => 'A short word or phrase (DRAFT, CONFIDENTIAL, SAMPLE, a company name) works well as text, needs no image file, and matches the rest of the document\'s typography when kept plain. A logo image is better when the watermark needs to show a specific brand mark - a PNG with a transparent background looks cleanest since there is no coloured box around it.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Can I control how visible the watermark is?', 'a' => 'Yes. The opacity slider goes from barely visible to fully solid, and the live preview shows the result before you download.'],
+            ['q' => 'Does the watermark go on every page?', 'a' => 'By default, yes. You can also apply it to only odd or even pages, every page except the first, or a specific range like 1-3, 5.'],
+            ['q' => 'Can I use my own logo as the watermark?', 'a' => 'Yes. Upload a PNG or JPG image and set what percentage of the page width it should take up. A transparent PNG works best, since there is no background box around the logo.'],
+            ['q' => 'Is my PDF uploaded to a server?', 'a' => 'No. The watermark is drawn entirely in your browser with JavaScript, and the PDF is never sent anywhere.'],
+            ['q' => 'Does this tool add its own watermark or logo to my file?', 'a' => 'No. The only watermark added is the text or image you choose yourself; the tool never stamps its own branding on your document.'],
+        ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+        ],
+        'related' => ['edit-pdf', 'sign-pdf', 'compress-pdf', 'merge-pdf'],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Mortgage Calculator',
         'category' => 'calculators',
