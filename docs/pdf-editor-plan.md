@@ -10,6 +10,7 @@ Status: in progress. Tick items as they ship.
 ## Build order
 
 1. [x] Add Watermark to PDF (new tool, own page)
+1a. [ ] Watermark follow-up (missing from the first release): 'Behind the content' option (background watermark, customer request: draw it before the page's existing content stream so text stays on top and fully readable) next to 'On top', plus the optional 'Flatten' setting that merges the watermark into the page content. Both in all 10 languages, with tests.
 2. [ ] Editor phase 1: whiteout, shapes, strikethrough/underline, links, move/resize/rotate, zoom, thumbnails
 3. [ ] Edit existing text with the same font, plus find and replace
 4. [ ] Session: auto-save and unsaved-changes warnings
