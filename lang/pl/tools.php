@@ -976,7 +976,7 @@ return [
         'faqs' => [
             ['q' => 'Czy stoper działa dalej na innej karcie?', 'a' => 'Tak. Mierzy rzeczywisty upływający czas, więc odczyt jest poprawny, nawet gdy karta była w tle.'],
             ['q' => 'Jak zapisać okrążenie?', 'a' => 'Naciśnij Okrążenie, gdy stoper działa, albo wciśnij klawisz L. Każde okrążenie pokazuje swój czas i czas łączny.'],
-            ['q' => 'Czy mogę używać klawiatury?', 'a' => 'Tak. Spacja startuje i zatrzymuje, L zapisuje okrążenie, a R resetuje po zatrzymaniu.'],
+            ['q' => 'Czy ten stoper online jest naprawdę darmowy?', 'a' => 'Tak, jest całkowicie darmowy: bez rejestracji, bez pobierania i bez limitu czasu. Działa prosto w przeglądarce.'],
             ['q' => 'Czy mogę zapisać swoje czasy okrążeń?', 'a' => 'Naciśnij Kopiuj okrążenia, aby skopiować wszystkie czasy okrążeń i łączne, a potem wklej je do arkusza, notatki albo wiadomości.'],
             ['q' => 'Czy stoper to to samo co minutnik?', 'a' => 'Nie. Stoper, taki jak to narzędzie, liczy czas od zera w górę, aby zmierzyć, jak długo coś trwa. Minutnik odlicza czas w dół od ustawionej wartości i na końcu włącza alarm - do tego służy Minutnik.'],
         ],

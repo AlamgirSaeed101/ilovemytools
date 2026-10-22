@@ -975,7 +975,7 @@ return [
         'faqs' => [
             ['q' => 'Il cronometro continua a funzionare in un’altra scheda?', 'a' => 'Sì. Misura il tempo reale trascorso, quindi la lettura è corretta anche dopo che la scheda è stata in background.'],
             ['q' => 'Come registro un giro?', 'a' => 'Premi Giro mentre il cronometro è in funzione, o il tasto L. Ogni giro mostra il proprio tempo e il tempo totale.'],
-            ['q' => 'Posso usare la tastiera?', 'a' => 'Sì. Spazio avvia e ferma, L registra un giro e R azzera quando è fermo.'],
+            ['q' => 'Il cronometro online è davvero gratis?', 'a' => 'Sì, è completamente gratis: nessuna registrazione, nessun download e nessun limite di tempo. Funziona interamente nel browser.'],
             ['q' => 'Posso salvare i tempi sul giro?', 'a' => 'Premi Copia giri per copiare tutti i tempi sul giro e totali, poi incollali in un foglio di calcolo, una nota o un messaggio.'],
             ['q' => 'Cronometro, contasecondi e timer sono la stessa cosa?', 'a' => 'Cronometro e contasecondi sono due nomi per questo stesso strumento: contano in avanti da zero per misurare quanto dura qualcosa. Un timer, invece, conta alla rovescia da un tempo impostato e fa suonare un allarme quando arriva a zero: per quello usa il Timer.'],
         ],

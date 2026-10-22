@@ -1178,7 +1178,7 @@ return [
         'faqs' => [
             ['q' => 'Does the stopwatch keep running in another tab?', 'a' => 'Yes. It measures real elapsed time, so the reading is correct even after the tab has been in the background.'],
             ['q' => 'How do I record a lap?', 'a' => 'Press Lap while the stopwatch is running, or press the L key. Each lap shows its own time and the total time.'],
-            ['q' => 'Can I use the keyboard?', 'a' => 'Yes. Space starts and stops, L records a lap and R resets when stopped.'],
+            ['q' => 'Is this online stopwatch really free?', 'a' => 'Yes, it is completely free: no sign-up, no download and no time limit. It runs entirely in your browser.'],
             ['q' => 'Can I save my lap times?', 'a' => 'Press Copy laps to copy all lap and total times, then paste them into a spreadsheet, note or message.'],
             ['q' => 'Is a stopwatch the same as a timer?', 'a' => 'No. A stopwatch, like this tool, counts up from zero to measure how long something takes. A timer counts down from a set time and sounds an alarm at zero - use the Countdown Timer for that.'],
         ],

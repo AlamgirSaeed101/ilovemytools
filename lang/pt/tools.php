@@ -975,7 +975,7 @@ return [
         'faqs' => [
             ['q' => 'O cronômetro continua rodando em outra aba?', 'a' => 'Sim. Ele mede o tempo real decorrido, então a leitura fica certa mesmo depois que a aba ficou em segundo plano.'],
             ['q' => 'Como registro uma volta?', 'a' => 'Toque em Volta com o cronômetro rodando ou pressione a tecla L. Cada volta mostra seu próprio tempo e o tempo total.'],
-            ['q' => 'Posso usar o teclado?', 'a' => 'Sim. Espaço inicia e para, L registra uma volta e R zera quando está parado.'],
+            ['q' => 'Este cronômetro online é realmente grátis?', 'a' => 'Sim, é totalmente grátis: sem cadastro, sem download e sem limite de tempo. Funciona direto no navegador.'],
             ['q' => 'Posso salvar meus tempos de volta?', 'a' => 'Toque em Copiar voltas para copiar todos os tempos de volta e totais e cole-os em uma planilha, nota ou mensagem.'],
             ['q' => 'Um cronômetro é o mesmo que um timer?', 'a' => 'Não. Um cronômetro, como esta ferramenta, conta para frente a partir de zero para medir quanto tempo algo leva. Um timer faz a contagem regressiva a partir de um tempo definido e dispara um alarme ao chegar a zero - é para isso que serve o Timer.'],
         ],

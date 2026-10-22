@@ -975,7 +975,7 @@ return [
         'faqs' => [
             ['q' => 'Läuft die Stoppuhr in einem anderen Tab weiter?', 'a' => 'Ja. Sie misst die tatsächlich vergangene Zeit, die Anzeige stimmt also auch, nachdem der Tab im Hintergrund war.'],
             ['q' => 'Wie speichere ich eine Runde?', 'a' => 'Drücke Runde, während die Stoppuhr läuft, oder die Taste L. Jede Runde zeigt ihre eigene Zeit und die Gesamtzeit.'],
-            ['q' => 'Kann ich die Tastatur nutzen?', 'a' => 'Ja. Die Leertaste startet und stoppt, L speichert eine Runde und R setzt im gestoppten Zustand zurück.'],
+            ['q' => 'Ist diese Online-Stoppuhr wirklich kostenlos?', 'a' => 'Ja, sie ist komplett kostenlos: keine Anmeldung, kein Download und kein Zeitlimit. Sie läuft direkt im Browser.'],
             ['q' => 'Kann ich meine Rundenzeiten speichern?', 'a' => 'Drücke Runden kopieren, um alle Runden- und Gesamtzeiten zu kopieren, und füge sie in eine Tabelle, Notiz oder Nachricht ein.'],
             ['q' => 'Ist eine Stoppuhr dasselbe wie ein Timer?', 'a' => 'Nein. Eine Stoppuhr zählt wie dieses Tool von null an aufwärts, um zu messen, wie lange etwas dauert. Ein Timer zählt von einer eingestellten Zeit abwärts und löst am Ende einen Alarm aus – dafür gibt es den Countdown-Timer.'],
         ],

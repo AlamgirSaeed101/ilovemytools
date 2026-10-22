@@ -975,7 +975,7 @@ return [
         'faqs' => [
             ['q' => 'Le chronomètre continue-t-il dans un autre onglet ?', 'a' => 'Oui. Il mesure le temps réellement écoulé : la mesure est juste même si l’onglet est resté en arrière-plan.'],
             ['q' => 'Comment enregistrer un tour ?', 'a' => 'Appuyez sur Tour pendant que le chronomètre tourne, ou sur la touche L. Chaque tour affiche son propre temps et le temps total.'],
-            ['q' => 'Puis-je utiliser le clavier ?', 'a' => 'Oui. Espace démarre et arrête, L enregistre un tour et R réinitialise à l’arrêt.'],
+            ['q' => 'Ce chronomètre en ligne est-il vraiment gratuit ?', 'a' => 'Oui, il est entièrement gratuit : sans inscription, sans téléchargement et sans limite de temps. Il fonctionne directement dans le navigateur.'],
             ['q' => 'Puis-je enregistrer mes temps au tour ?', 'a' => 'Appuyez sur Copier les tours pour copier tous les temps au tour et totaux, puis collez-les dans un tableur, une note ou un message.'],
             ['q' => 'Un chrono est-il la même chose qu’un minuteur ?', 'a' => 'Non. Un chronomètre, comme cet outil (aussi appelé chrono), compte en montant depuis zéro pour mesurer la durée d’une action. Un minuteur compte à rebours depuis une durée choisie et sonne une alarme à la fin : c’est à cela que sert le Minuteur.'],
         ],
