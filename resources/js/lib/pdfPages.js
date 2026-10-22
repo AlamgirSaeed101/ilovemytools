@@ -62,7 +62,7 @@ export function usePdfPageThumbnails(file) {
  * without pre-rendering any thumbnails. Used by tools that show one full-size page at a time
  * (Sign / Redact / Edit PDF) instead of a thumbnail grid.
  */
-export function usePdfDoc(file) {
+export function usePdfDoc(file, { keepFonts = false } = {}) {
     const [state, setState] = useState({ status: 'idle', doc: null, renderDoc: null, pageCount: 0, error: '' });
     const renderDocRef = useRef(null);
 
@@ -80,7 +80,7 @@ export function usePdfDoc(file) {
         (async () => {
             const { doc, pageCount } = await loadPdf(file);
             const bytes = await file.arrayBuffer();
-            const renderDoc = await loadRenderDoc(new Uint8Array(bytes));
+            const renderDoc = await loadRenderDoc(new Uint8Array(bytes), { keepFonts });
             if (cancelled) {
                 renderDoc.destroy();
                 return;

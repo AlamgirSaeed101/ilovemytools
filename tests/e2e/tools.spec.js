@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test';
 import JSZip from 'jszip';
+import { PDFDocument, PDFName } from 'pdf-lib';
 import {
     checkPdfPassword, extractPdfText, makeDocx, makeImage, makePdf, makePdfWithImage, makeTabularPdf, makeXlsx,
     mockQpdfCdn, openTool, pdfPageCount, pdfPageRotations, pdfPageTexts, readDocxText, readDownload, readXlsx, trackErrors,
@@ -661,7 +662,8 @@ test.describe('PDF tools', () => {
         await expect(page.getByText('notes.pdf', { exact: true })).toBeVisible();
         await expect(page.getByRole('button', { name: 'Save PDF', exact: true })).toBeDisabled();
 
-        // Add text, then drag it.
+        // Add text (Edit text is the default tab now), then drag it.
+        await page.getByRole('tab', { name: 'Add text' }).click();
         await page.getByLabel('Text to add').fill('Hello World');
         await page.getByRole('button', { name: 'Add text to page' }).click();
         const overlay = page.locator('.pdf-editor__overlay');
@@ -704,6 +706,77 @@ test.describe('PDF tools', () => {
         expect(text).toContain('Hello World');
     });
 
+    test('edit PDF changes existing text in place, and find and replace works across pages', async ({ page }) => {
+        await openTool(page, 'edit-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'contract.pdf', mimeType: 'application/pdf', buffer: await makePdf(2) });
+        await expect(page.getByRole('tab', { name: 'Edit text' })).toHaveAttribute('aria-selected', 'true');
+
+        // Every line of the PDF's own text can be clicked and retyped.
+        await page.getByRole('button', { name: 'Edit text: Doc page 1' }).click();
+        const input = page.getByLabel('Edit this text');
+        await expect(input).toHaveValue('Doc page 1');
+        await input.fill('Signed page 1');
+        await page.getByRole('button', { name: 'Done' }).click();
+
+        // Find and replace reaches page 2 as well.
+        await page.getByLabel('Find').fill('Doc');
+        await page.getByLabel('Replace with').fill('Report');
+        await page.getByRole('button', { name: 'Replace all' }).click();
+        await expect(page.getByText('Replaced 1 time.')).toBeVisible();
+
+        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        const texts = await pdfPageTexts(page, await readDownload(file));
+        // The old wording is removed from the file, not just covered: it can't be found any more.
+        expect(texts[0]).toContain('Signed page 1');
+        expect(texts[0]).not.toContain('Doc page 1');
+        expect(texts[1]).toContain('Report page 2');
+        expect(texts[1]).not.toContain('Doc page 2');
+    });
+
+    test('edit PDF: whiteout, an arrow and a clickable link are dragged onto the page and saved', async ({ page }) => {
+        await openTool(page, 'edit-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'form.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
+        const stage = page.locator('.pdf-editor__stage');
+        const overlay = page.locator('.pdf-editor__overlay');
+        await expect.poll(async () => (await page.locator('.pdf-editor__canvas').boundingBox())?.height ?? 0).toBeGreaterThan(100);
+        // Re-measured on every drag (switching tools changes the toolbar height, which moves the page);
+        // drags start well below the top so the sticky site header never covers them.
+        const drag = async (x0, y0, x1, y1) => {
+            await stage.scrollIntoViewIfNeeded();
+            const box = await stage.boundingBox();
+            await page.mouse.move(box.x + x0, box.y + y0);
+            await page.mouse.down();
+            await page.mouse.move(box.x + x1, box.y + y1, { steps: 6 });
+            await page.mouse.up();
+        };
+
+        await page.getByRole('tab', { name: 'Whiteout' }).click();
+        await drag(30, 150, 150, 190);
+        await expect(page.getByRole('button', { name: 'Whiteout - drag to move' })).toBeVisible();
+
+        await page.getByRole('tab', { name: 'Shapes' }).click();
+        await page.getByLabel('Shape', { exact: true }).selectOption({ label: 'Arrow' });
+        await drag(40, 230, 200, 270);
+        await expect(page.getByRole('button', { name: 'Shape - drag to move' })).toBeVisible();
+
+        // A link needs a valid address before it can be placed.
+        await page.getByRole('tab', { name: 'Link' }).click();
+        await drag(40, 310, 180, 340);
+        await expect(page.getByText('Type a valid link address first')).toBeVisible();
+        await page.getByLabel('Link address').fill('ilovemytools.store/merge-pdf');
+        await drag(40, 310, 180, 340);
+        await expect(overlay).toHaveCount(3);
+
+        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        const saved = await PDFDocument.load(await readDownload(file));
+        const annots = saved.getPage(0).node.Annots().asArray().map((ref) => saved.context.lookup(ref));
+        expect(annots).toHaveLength(1);
+        const action = saved.context.lookup(annots[0].get(PDFName.of('A')));
+        expect(action.get(PDFName.of('URI')).decodeText()).toBe('https://ilovemytools.store/merge-pdf');
+    });
+
     test('watermark PDF stamps text onto only the pages chosen, matching the live preview', async ({ page }) => {
         await openTool(page, 'watermark-pdf');
         const originalBytes = await makePdf(3);
@@ -719,7 +792,7 @@ test.describe('PDF tools', () => {
         await expect(preview).toBeVisible();
         await expect.poll(async () => (await preview.boundingBox())?.height ?? 0).toBeGreaterThan(0);
 
-        await page.getByLabel('Pages').selectOption({ label: 'All pages except the first' });
+        await page.getByLabel('Pages', { exact: true }).selectOption({ label: 'All pages except the first' });
         await page.getByRole('button', { name: 'Add watermark' }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         expect(file.suggestedFilename()).toBe('report-watermarked.pdf');
@@ -732,6 +805,31 @@ test.describe('PDF tools', () => {
         expect(texts[0]).not.toContain('CONFIDENTIAL');
         expect(texts[1]).toContain('CONFIDENTIAL');
         expect(texts[2]).toContain('CONFIDENTIAL');
+        // On top (the default): drawn after the page's own text.
+        expect(texts[1].indexOf('CONFIDENTIAL')).toBeGreaterThan(texts[1].indexOf('Doc page 2'));
+    });
+
+    test('watermark PDF can go behind the content, and flatten makes it permanent', async ({ page }) => {
+        await openTool(page, 'watermark-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'report.pdf', mimeType: 'application/pdf', buffer: await makePdf(2) });
+        await page.getByLabel('Watermark text').fill('DRAFT');
+        await page.getByLabel('Layer').selectOption({ label: 'Behind the content (background)' });
+        await expect(page.getByText('can hide a watermark placed behind the content')).toBeVisible();
+
+        await page.getByRole('button', { name: 'Add watermark' }).click();
+        const [behind] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        // pdf.js lists text in drawing order: the background watermark is painted before the page text.
+        const texts = await pdfPageTexts(page, await readDownload(behind));
+        expect(texts[0].indexOf('DRAFT')).toBeGreaterThanOrEqual(0);
+        expect(texts[0].indexOf('DRAFT')).toBeLessThan(texts[0].indexOf('Doc page 1'));
+
+        // Flatten: same pages, but every page is now one image, so nothing (watermark included) is editable text.
+        await page.getByLabel('Flatten pages so the watermark can’t be removed').check();
+        await page.getByRole('button', { name: 'Add watermark' }).click();
+        const [flat] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        const flatBytes = await readDownload(flat);
+        expect(await pdfPageCount(flatBytes)).toBe(2);
+        expect(await pdfPageTexts(page, flatBytes)).toEqual(['', '']);
     });
 });
 

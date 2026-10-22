@@ -20,9 +20,10 @@ async function loadPdfjs() {
  * for editing). pdfjs only exposes `destroy()` on the loading task, not on the resolved document,
  * so it's attached here to make the returned document disposable on its own.
  */
-export async function loadRenderDoc(bytes) {
+export async function loadRenderDoc(bytes, { keepFonts = false } = {}) {
     const pdfjsLib = await loadPdfjs();
-    const loadingTask = pdfjsLib.getDocument({ data: bytes });
+    // keepFonts: keep each embedded font's file after it loads, so Edit PDF can reuse it for new text.
+    const loadingTask = pdfjsLib.getDocument({ data: bytes, fontExtraProperties: keepFonts });
     const doc = await loadingTask.promise;
     doc.destroy = () => loadingTask.destroy();
     return doc;

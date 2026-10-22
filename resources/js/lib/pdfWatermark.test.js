@@ -1,5 +1,14 @@
+import { PDFDocument } from 'pdf-lib';
 import { describe, expect, it } from 'vitest';
-import { imageWatermarkSize, rotatedDrawOrigin, watermarkCenters, watermarkPageIndexes } from './pdfWatermark.js';
+import {
+    buildWatermarkedPdf,
+    contentStreamRefs,
+    imageWatermarkSize,
+    moveNewContentToBack,
+    rotatedDrawOrigin,
+    watermarkCenters,
+    watermarkPageIndexes,
+} from './pdfWatermark.js';
 
 describe('watermarkPageIndexes', () => {
     it('returns every page for "all"', () => {
@@ -77,5 +86,42 @@ describe('imageWatermarkSize', () => {
     it('clamps the percentage to a sane 5-90 range', () => {
         expect(imageWatermarkSize(600, 400, 400, 1)).toEqual({ width: 30, height: 30 });
         expect(imageWatermarkSize(600, 400, 400, 500)).toEqual({ width: 540, height: 540 });
+    });
+});
+
+describe('background (behind the content) watermark', () => {
+    // A 1x1 transparent PNG.
+    const PNG = Uint8Array.from(atob('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='), (c) => c.charCodeAt(0));
+    const options = (layer) => ({ pageIndexes: [0], position: 'center', opacity: 0.3, rotation: 0, layer, content: { kind: 'image', bytes: PNG, width: 20, height: 20 } });
+
+    async function pageWithContent() {
+        const doc = await PDFDocument.create();
+        const page = doc.addPage([200, 200]);
+        page.drawRectangle({ x: 10, y: 10, width: 50, height: 50 }); // the page's "own" content
+        return { doc, page, original: contentStreamRefs(page) };
+    }
+
+    it('draws the watermark first, so the page content stays on top', async () => {
+        const { doc, page, original } = await pageWithContent();
+        await buildWatermarkedPdf(doc, options('under'));
+        const refs = contentStreamRefs(page);
+        expect(original.includes(refs[0])).toBe(false);
+        expect(refs.slice(-original.length)).toEqual(original);
+    });
+
+    it('leaves the page content first when placed on top (the watermark is appended after it)', async () => {
+        const { doc, page, original } = await pageWithContent();
+        await buildWatermarkedPdf(doc, options('over'));
+        expect(contentStreamRefs(page).slice(0, original.length)).toEqual(original);
+    });
+
+    it('moveNewContentToBack keeps the order of the moved streams', async () => {
+        const { doc, page, original } = await pageWithContent();
+        const a = doc.context.register(doc.context.stream(''));
+        const b = doc.context.register(doc.context.stream(''));
+        page.node.addContentStream(a);
+        page.node.addContentStream(b);
+        moveNewContentToBack(page, original);
+        expect(contentStreamRefs(page)).toEqual([a, b, ...original]);
     });
 });

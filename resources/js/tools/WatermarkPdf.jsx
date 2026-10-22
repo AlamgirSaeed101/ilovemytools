@@ -7,7 +7,7 @@ import { isPdf } from '../lib/pdf.js';
 import { computeDisplayScale } from '../lib/pdfOverlay.js';
 import { usePdfDoc } from '../lib/pdfPages.js';
 import { loadRenderDoc, renderPageToCanvas } from '../lib/pdfRender.js';
-import { buildWatermarkedPdf, imageWatermarkSize, watermarkPageIndexes } from '../lib/pdfWatermark.js';
+import { buildWatermarkedPdf, flattenPdf, imageWatermarkSize, watermarkPageIndexes } from '../lib/pdfWatermark.js';
 import { baseName, downloadBlob, formatBytes, safeFilename } from '../lib/util.js';
 
 const TEXT_SIZES = [24, 32, 48, 64, 96];
@@ -18,6 +18,10 @@ const POSITIONS = [
     { id: 'bottom-left', label: () => t('Bottom left') },
     { id: 'bottom-right', label: () => t('Bottom right') },
     { id: 'tile', label: () => t('Tiled across the page') },
+];
+const LAYERS = [
+    { id: 'over', label: () => t('On top of the content') },
+    { id: 'under', label: () => t('Behind the content (background)') },
 ];
 const SCOPES = [
     { id: 'all', label: () => t('All pages') },
@@ -39,6 +43,9 @@ export default function WatermarkPdf() {
     const [opacityPct, setOpacityPct] = useState(30);
     const [rotation, setRotation] = useState(-45);
     const [position, setPosition] = useState('center');
+    const [layer, setLayer] = useState('over');
+    const [flatten, setFlatten] = useState(false);
+    const [progress, setProgress] = useState('');
     const [scope, setScope] = useState('all');
     const [rangeText, setRangeText] = useState('');
     const [error, setError] = useState('');
@@ -105,7 +112,7 @@ export default function WatermarkPdf() {
                 const previewDoc = await PDFDocument.create();
                 const [copied] = await previewDoc.copyPages(doc, [0]);
                 previewDoc.addPage(copied);
-                const blob = await buildWatermarkedPdf(previewDoc, { pageIndexes: [0], position, opacity: opacityPct / 100, rotation, content });
+                const blob = await buildWatermarkedPdf(previewDoc, { pageIndexes: [0], position, opacity: opacityPct / 100, rotation, layer, content });
                 const bytes = new Uint8Array(await blob.arrayBuffer());
                 if (cancelled) return;
                 ownRenderDoc = await loadRenderDoc(bytes);
@@ -129,7 +136,7 @@ export default function WatermarkPdf() {
             cancelled = true;
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [doc, renderDoc, kind, text, textSize, textColor, textBold, pendingImage, imageScalePct, opacityPct, rotation, position]);
+    }, [doc, renderDoc, kind, text, textSize, textColor, textBold, pendingImage, imageScalePct, opacityPct, rotation, position, layer]);
 
     useEffect(() => () => previewRenderDocRef.current?.destroy(), []);
 
@@ -137,7 +144,7 @@ export default function WatermarkPdf() {
     useEffect(() => {
         setResult(null);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [kind, text, textSize, textColor, textBold, pendingImage, imageScalePct, opacityPct, rotation, position, scope, rangeText]);
+    }, [kind, text, textSize, textColor, textBold, pendingImage, imageScalePct, opacityPct, rotation, position, layer, flatten, scope, rangeText]);
 
     async function apply() {
         if (!doc || working) return;
@@ -151,12 +158,18 @@ export default function WatermarkPdf() {
         setError('');
         try {
             const pageIndexes = watermarkPageIndexes(pageCount, scope, rangeText);
-            const blob = await buildWatermarkedPdf(doc, { pageIndexes, position, opacity: opacityPct / 100, rotation, content });
+            let blob = await buildWatermarkedPdf(doc, { pageIndexes, position, opacity: opacityPct / 100, rotation, layer, content });
+            if (flatten) {
+                blob = await flattenPdf(new Uint8Array(await blob.arrayBuffer()), {
+                    onProgress: (page, total) => setProgress(t('Flattening page {page} of {total}…', { page, total })),
+                });
+            }
             setResult({ blob, name: safeFilename(`${baseName(file.name)}-watermarked.pdf`) });
         } catch (e) {
             setError(t('Adding the watermark failed: {message}', { message: e.message }));
         } finally {
             setWorking(false);
+            setProgress('');
         }
     }
 
@@ -264,6 +277,16 @@ export default function WatermarkPdf() {
                     </div>
 
                     <div className="field">
+                        <label className="field__label" htmlFor="wm-layer">{t('Layer')}</label>
+                        <select id="wm-layer" className="select" value={layer} onChange={(e) => setLayer(e.target.value)}>
+                            {LAYERS.map((l) => <option key={l.id} value={l.id}>{l.label()}</option>)}
+                        </select>
+                        {layer === 'under' && (
+                            <p className="field__hint">{t('A scanned page or a page with a solid background can hide a watermark placed behind the content.')}</p>
+                        )}
+                    </div>
+
+                    <div className="field">
                         <label className="field__label" htmlFor="wm-scope">{t('Pages')}</label>
                         <select id="wm-scope" className="select" value={scope} onChange={(e) => setScope(e.target.value)}>
                             {SCOPES.map((s) => <option key={s.id} value={s.id}>{s.label()}</option>)}
@@ -278,6 +301,13 @@ export default function WatermarkPdf() {
                                 aria-label={t('Page range')}
                             />
                         )}
+                    </div>
+
+                    <div className="field">
+                        <label className="check">
+                            <input type="checkbox" checked={flatten} onChange={(e) => setFlatten(e.target.checked)} /> {t('Flatten pages so the watermark can’t be removed')}
+                        </label>
+                        <p className="field__hint">{t('Each page becomes an image: the watermark can no longer be deleted, but the text is no longer selectable or searchable and the file may be larger.')}</p>
                     </div>
                 </div>
 
@@ -298,7 +328,7 @@ export default function WatermarkPdf() {
                 </div>
             ) : (
                 <button type="button" className="btn btn--primary btn--lg" onClick={apply} disabled={working || !canApply}>
-                    {working ? t('Adding watermark…') : t('Add watermark')}
+                    {working ? progress || t('Adding watermark…') : t('Add watermark')}
                 </button>
             )}
         </div>

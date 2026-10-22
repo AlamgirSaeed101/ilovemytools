@@ -680,6 +680,12 @@
     ]
   },
   {
+    "key": "A scanned page or a page with a solid background can hide a watermark placed behind the content.",
+    "files": [
+      "resources/js/tools/WatermarkPdf.jsx"
+    ]
+  },
+  {
     "key": "A small margin can make the code hard to scan when printed on a busy background.",
     "files": [
       "resources/js/tools/QrCodeGenerator.jsx"
@@ -790,6 +796,12 @@
     "key": "Add signature to this page",
     "files": [
       "resources/js/tools/SignPdf.jsx"
+    ]
+  },
+  {
+    "key": "Add text",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -984,6 +996,12 @@
     ]
   },
   {
+    "key": "Arrow",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Ask about advertising or partnerships",
     "files": [
       "resources/js/pages/InfoPages.jsx"
@@ -1086,6 +1104,12 @@
     "files": [
       "resources/js/pages/InfoPages.jsx",
       "resources/views/pages/about.blade.php"
+    ]
+  },
+  {
+    "key": "Behind the content (background)",
+    "files": [
+      "resources/js/tools/WatermarkPdf.jsx"
     ]
   },
   {
@@ -1424,6 +1448,12 @@
     "key": "Click a page to mark it for deletion.",
     "files": [
       "resources/js/tools/DeletePdfPages.jsx"
+    ]
+  },
+  {
+    "key": "Click any text on the page to change it.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -2071,6 +2101,12 @@
     ]
   },
   {
+    "key": "Done",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Done!",
     "files": [
       "resources/js/tools/EditPdf.jsx",
@@ -2274,6 +2310,30 @@
     ]
   },
   {
+    "key": "Drag across the text to strike it through.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Drag across the text to underline it.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Drag on the page to cover content with white.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Drag on the page to draw the shape.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Draw",
     "files": [
       "resources/js/tools/EditPdf.jsx",
@@ -2434,6 +2494,12 @@
     ]
   },
   {
+    "key": "Each page becomes an image: the watermark can no longer be deleted, but the text is no longer selectable or searchable and the file may be larger.",
+    "files": [
+      "resources/js/tools/WatermarkPdf.jsx"
+    ]
+  },
+  {
     "key": "Each sheet becomes a table spread across one or more pages, with the header row repeated. Cell colours, formulas, charts and merged cells are not preserved, and text too wide for its column is shortened with \"…\".",
     "files": [
       "resources/js/tools/ExcelToPdf.jsx"
@@ -2453,7 +2519,31 @@
     ]
   },
   {
+    "key": "Edit text",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Edit text: {text}",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Edit this text",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Editing failed: {message}",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Ellipse",
     "files": [
       "resources/js/tools/EditPdf.jsx"
     ]
@@ -2905,6 +2995,12 @@
     ]
   },
   {
+    "key": "Filled",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Filter by category",
     "files": [
       "resources/js/pages/Home.jsx"
@@ -2923,9 +3019,27 @@
     ]
   },
   {
+    "key": "Find",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Fit image",
     "files": [
       "resources/js/tools/JpgToPdf.jsx"
+    ]
+  },
+  {
+    "key": "Flatten pages so the watermark can’t be removed",
+    "files": [
+      "resources/js/tools/WatermarkPdf.jsx"
+    ]
+  },
+  {
+    "key": "Flattening page {page} of {total}…",
+    "files": [
+      "resources/js/tools/WatermarkPdf.jsx"
     ]
   },
   {
@@ -3714,6 +3828,12 @@
     ]
   },
   {
+    "key": "Layer",
+    "files": [
+      "resources/js/tools/WatermarkPdf.jsx"
+    ]
+  },
+  {
     "key": "Learn about {name}: a free collection of fast, private online tools for PDFs, images, text and maths that run in your browser with no sign up.",
     "files": [
       "scripts/i18n-extract.mjs"
@@ -3765,6 +3885,18 @@
     ]
   },
   {
+    "key": "Line",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Line colour",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Line thickness",
     "files": [
       "resources/js/tools/EditPdf.jsx"
@@ -3779,7 +3911,20 @@
   {
     "key": "Link",
     "files": [
-      "resources/js/tools/BrokenLinkChecker.jsx"
+      "resources/js/tools/BrokenLinkChecker.jsx",
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Link - drag to move",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Link address",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -4213,6 +4358,12 @@
     ]
   },
   {
+    "key": "No editable text was found on this page (it may be a scanned image).",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "No HTTPS",
     "files": [
       "resources/js/components/DomainDetails.jsx"
@@ -4222,6 +4373,12 @@
     "key": "No mail servers",
     "files": [
       "resources/js/components/DomainDetails.jsx"
+    ]
+  },
+  {
+    "key": "No matches found.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -4375,6 +4532,12 @@
     "files": [
       "resources/js/tools/BrokenLinkChecker.jsx",
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "On top of the content",
+    "files": [
+      "resources/js/tools/WatermarkPdf.jsx"
     ]
   },
   {
@@ -5239,6 +5402,12 @@
     ]
   },
   {
+    "key": "Rectangle",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Redact PDF",
     "files": [
       "resources/js/tools/RedactPdf.jsx"
@@ -5408,7 +5577,37 @@
     ]
   },
   {
+    "key": "Remove this link",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Remove this shape",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Remove this strikethrough",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Remove this text",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Remove this underline",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Remove this whiteout",
     "files": [
       "resources/js/tools/EditPdf.jsx"
     ]
@@ -5429,6 +5628,25 @@
     "key": "Repetitive vocabulary",
     "files": [
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Replace all",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Replace with",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Replaced {count} times.",
+    "one": "Replaced {count} time.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -5491,6 +5709,12 @@
     "key": "Resizing…",
     "files": [
       "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Restore original",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -5807,6 +6031,30 @@
     "files": [
       "resources/js/tools/ImageCompressor.jsx",
       "resources/js/tools/ImageConverter.jsx"
+    ]
+  },
+  {
+    "key": "Shape",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Shape - drag to move",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Shape colour",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Shapes",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -6141,6 +6389,18 @@
     ]
   },
   {
+    "key": "Strikethrough",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Strikethrough - drag to move",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Strong",
     "files": [
       "resources/js/lib/password.js"
@@ -6279,7 +6539,6 @@
     "key": "Text",
     "files": [
       "resources/js/tools/Base64Tool.jsx",
-      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/QrCodeGenerator.jsx",
       "resources/js/tools/WatermarkPdf.jsx",
       "scripts/i18n-extract.mjs"
@@ -6425,6 +6684,12 @@
     ]
   },
   {
+    "key": "The PDF’s own font doesn’t include {letters}, so this line will use a similar font.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "The percentage cannot be 0 (division by zero).",
     "files": [
       "resources/js/lib/percent.js"
@@ -6497,6 +6762,12 @@
     ]
   },
   {
+    "key": "Then drag on the page over the area that should open the link.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "There are only {range} different numbers between {min} and {max}, so you cannot pick {count} without duplicates.",
     "files": [
       "resources/js/lib/random.js"
@@ -6521,7 +6792,7 @@
     ]
   },
   {
-    "key": "This adds new text, images, highlights and drawings on top of the page - it cannot change or remove text that was already in the PDF.",
+    "key": "This adds new content on top of the page. To replace text that is already in the PDF, cover it with Whiteout and add new text over it.",
     "files": [
       "resources/js/tools/EditPdf.jsx"
     ]
@@ -6910,6 +7181,12 @@
     ]
   },
   {
+    "key": "Type a valid link address first, for example https://example.com",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Type of dice",
     "files": [
       "resources/js/tools/DiceRoller.jsx"
@@ -6937,6 +7214,18 @@
     "key": "Type your name",
     "files": [
       "resources/js/tools/SignPdf.jsx"
+    ]
+  },
+  {
+    "key": "Underline",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Underline - drag to move",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -7292,6 +7581,18 @@
     "key": "White",
     "files": [
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Whiteout",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Whiteout - drag to move",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {

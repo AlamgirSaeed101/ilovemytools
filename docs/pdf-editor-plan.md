@@ -7,12 +7,20 @@ re-run of `node scripts/measure-panels.mjs`.
 
 Status: in progress. Tick items as they ship.
 
+## Owner decision (22 Oct 2026): one editor
+
+Every feature lives inside the ONE "Edit PDF" tool (resources/js/tools/EditPdf.jsx), as tabs/modes of the
+same editor. Separate pages (/watermark-pdf and the step 7 landing pages) only open Edit PDF with the
+matching mode preselected; they never get their own editor. Top priority: extract the PDF's existing
+text and change it in place, in the same font.
+
 ## Build order
 
 1. [x] Add Watermark to PDF (new tool, own page)
-1a. [ ] Watermark follow-up (missing from the first release): 'Behind the content' option (background watermark, customer request: draw it before the page's existing content stream so text stays on top and fully readable) next to 'On top', plus the optional 'Flatten' setting that merges the watermark into the page content. Both in all 10 languages, with tests.
-2. [ ] Editor phase 1: whiteout, shapes, strikethrough/underline, links, move/resize/rotate, zoom, thumbnails
-3. [ ] Edit existing text with the same font, plus find and replace
+1a. [x] Watermark follow-up (missing from the first release): 'Behind the content' option (background watermark, customer request: draw it before the page's existing content stream so text stays on top and fully readable) next to 'On top', plus the optional 'Flatten' setting that merges the watermark into the page content. Both in all 10 languages, with tests.
+2. [x] Edit existing text in the same font (moved up, owner priority; shipped 22 Oct: original text removed from the content stream, not just covered): extract every text run with pdf.js, click to edit in place, keep font family/size/bold/italic/colour, cover the old run with its own background colour; plus find and replace
+2b. [ ] Watermark inside Edit PDF as a Watermark tab; /watermark-pdf opens Edit PDF in that mode (same settings and output as today)
+2c. [ ] Editor phase 1 remainder: zoom, page thumbnails, rotate elements, redo (whiteout, shapes, underline/strikethrough and links shipped 22 Oct)
 4. [ ] Session: auto-save and unsaved-changes warnings
 5. [ ] Fill PDF forms (new page) and create form fields
 6. [ ] Page tools and signature inside the editor
