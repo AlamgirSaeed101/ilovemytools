@@ -21,3 +21,5 @@ Tools already announced on LinkedIn (one per line: date and slug). The daily rou
 2026-10-20 png-to-jpg company
 2026-10-21 jpg-to-png personal
 2026-10-21 jpg-to-png company
+2026-10-23 edit-pdf personal
+2026-10-23 edit-pdf company
