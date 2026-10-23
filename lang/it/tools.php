@@ -1389,8 +1389,8 @@ return [
 
     'domain-authority-checker' => [
         'name' => 'Controllo autorità di dominio',
-        'title' => 'Controllo autorità di dominio in blocco gratis',
-        'description' => 'Controllo autorità di dominio gratis: punteggio di autorità, posizione globale e domini di riferimento di 100 siti alla volta, con esportazione in CSV.',
+        'title' => 'Controllo autorità di dominio gratis, senza registrazione',
+        'description' => 'Controllo autorità di dominio gratis e senza registrazione: punteggio di autorità, posizione globale e domini di riferimento di 100 siti, esporta in CSV.',
         'h1' => 'Controllo autorità di dominio in blocco',
         'tagline' => 'Confronta l’autorità di 100 siti in pochi secondi.',
         'keywords' => [

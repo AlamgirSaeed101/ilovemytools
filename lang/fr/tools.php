@@ -1389,8 +1389,8 @@ return [
 
     'domain-authority-checker' => [
         'name' => 'Vérificateur d’autorité de domaine',
-        'title' => 'Vérificateur d’autorité de domaine en masse gratuit',
-        'description' => 'Vérificateur d’autorité de domaine gratuit : score d’autorité, rang mondial et domaines référents de 100 sites à la fois, avec export de la liste en CSV.',
+        'title' => 'Vérificateur d’autorité de domaine gratuit, sans inscription',
+        'description' => 'Vérificateur d’autorité de domaine gratuit, sans inscription : score d’autorité, rang mondial et domaines référents de 100 sites à la fois, export CSV.',
         'h1' => 'Vérificateur d’autorité de domaine en masse',
         'tagline' => 'Comparez l’autorité de 100 sites en quelques secondes.',
         'keywords' => [

@@ -1389,8 +1389,8 @@ return [
 
     'domain-authority-checker' => [
         'name' => 'Verificador de autoridade de domínio',
-        'title' => 'Verificador de autoridade de domínio em massa grátis',
-        'description' => 'Verificador de autoridade de domínio grátis: veja a pontuação de autoridade, o ranking global e os domínios de referência de até 100 sites e exporte um CSV.',
+        'title' => 'Verificador de autoridade de domínio grátis, sem cadastro',
+        'description' => 'Verificador de autoridade de domínio grátis e sem cadastro: pontuação de autoridade, ranking global e domínios de referência de até 100 sites em CSV.',
         'h1' => 'Verificador de autoridade de domínio em massa',
         'tagline' => 'Compare a autoridade de até 100 sites em segundos.',
         'keywords' => [
