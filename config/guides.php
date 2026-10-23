@@ -927,4 +927,98 @@ return [
             ['title' => 'Meta for Developers, Sharing: Images', 'url' => 'https://developers.facebook.com/docs/sharing/webmasters/images'],
         ],
     ],
+
+    'how-to-add-a-watermark-to-a-pdf' => [
+        'title' => 'How to Add a Watermark to a PDF for Free',
+        'description' => 'Add a text or logo watermark to a PDF for free: pick the right opacity and position, and avoid the mistakes that make watermarks unreadable or useless.',
+        'h1' => 'How to add a watermark to a PDF',
+        'intro' => 'A watermark is the fastest way to tell people what a PDF is before they read a word of it: a draft, a sample, confidential, or property of a named person or company. Done badly, it either blocks the text underneath or is so faint nobody notices it is there. Here is how to get it right, including the settings people get wrong the first time.',
+        'tool' => 'watermark-pdf',
+        'related' => ['edit-pdf', 'sign-pdf', 'merge-pdf'],
+        'published' => '2026-10-23',
+        'updated' => '2026-10-23',
+        'sections' => [
+            [
+                'heading' => 'Why watermark a PDF',
+                'paragraphs' => [
+                    'A watermark communicates the status of a document at a glance, without anyone having to open a cover page or read a footer. "DRAFT" tells a reviewer not to treat the wording as final. "CONFIDENTIAL" or "INTERNAL USE ONLY" sets expectations before a document is forwarded somewhere it should not go. A company name or logo across a sample report, course handout or price list marks it as the source\'s own work before it gets screenshotted and shared out of context.',
+                ],
+                'list' => [
+                    'Draft contracts and proposals, so nobody signs the wrong version.',
+                    'Confidential HR, legal or financial documents shared for review.',
+                    'Sample reports, portfolios or course materials given out for free.',
+                    'Scanned IDs or certificates shared with a third party, marked "COPY" so they cannot pass as the original.',
+                    'Press kits and pre-release materials marked with an embargo date.',
+                ],
+            ],
+            [
+                'heading' => 'How to add a watermark step by step',
+                'paragraphs' => [
+                    'The Watermark PDF tool on this site runs entirely in your browser: the file is opened, watermarked and saved on your own device, and is never uploaded anywhere. That matters for anything confidential, since a draft contract or HR letter is exactly the kind of file you are watermarking in the first place.',
+                ],
+                'list' => [
+                    'Open the Watermark PDF tool and choose your file.',
+                    'Pick Text or Logo/Image. For text, type the wording and set its colour, size and whether it is bold; for a logo, upload a PNG or JPG.',
+                    'Set the opacity and rotation. Lower opacity and a diagonal angle (the default) keep the watermark visible without hiding the content.',
+                    'Choose a position: centre, a corner, or tiled repeatedly across the page.',
+                    'Check the live preview of the first page before deciding anything else - it shows exactly what you will get.',
+                    'Choose which pages: all of them, odd or even only, a range such as 1-3,5, or every page except the first (useful for a cover page).',
+                    'Click Add Watermark and download the result, then open it and scroll through more than just the first page.',
+                ],
+            ],
+            [
+                'heading' => 'Text or logo - which one to use',
+                'paragraphs' => [
+                    'A short word or phrase works for status markers: DRAFT, CONFIDENTIAL, SAMPLE, COPY, or a company name. It needs no image file and reads clearly at any size. A logo earns its place when the watermark needs to show a specific brand mark rather than a word - for instance, marketing a sample document as yours at a glance. Use a PNG with a transparent background rather than a JPG: a JPG logo carries its own white or coloured rectangle, which shows up as a faint box behind the watermark instead of a clean shape.',
+                ],
+            ],
+            [
+                'heading' => 'The opacity and rotation mistake almost everyone makes the first time',
+                'paragraphs' => [
+                    'The most common result on a first attempt is a watermark that is either unreadable text underneath it, or so faint it is barely there. Both come from skipping the live preview. Opacity around 10-20% keeps body text fully legible while still being obviously present; anything above 40% starts to interfere with reading, especially over small print or dense tables. A diagonal rotation (commonly 45 degrees) is the default for a reason: a horizontal watermark sits in the gaps between paragraphs and can look like it belongs to the layout, while a diagonal one unmistakably reads as something stamped on top.',
+                    'Tiling the watermark across the whole page, rather than placing one copy in the centre, matters most for anything that might get cropped or screenshotted - a single centred mark is trivial to crop out of a photo of the screen, while a tiled pattern survives almost any crop.',
+                ],
+            ],
+            [
+                'heading' => 'Behind the content or on top',
+                'paragraphs' => [
+                    'On top draws the watermark over the existing page, which is the simplest option and works well at low opacity. Behind the content draws the watermark first and the page\'s original text and images on top of it, so body text stays fully readable even with a stronger, more visible watermark - useful when the watermark needs to stand out more than a faint overlay allows, such as a bold "SAMPLE" across a document still meant to be read in full.',
+                ],
+            ],
+            [
+                'heading' => 'Flattening: when you need it and when you don\'t',
+                'paragraphs' => [
+                    'By default, the watermark sits in the PDF like any other content on the page. Flatten merges it into the page itself so it cannot be selected, moved or deleted as a separate element by someone editing the file afterwards. Skip it for an internal draft that is going to be revised and re-watermarked anyway; use it before sending a document outside your organisation, where you want the marking to stick.',
+                ],
+                'table' => [
+                    'headers' => ['Goal', 'Type', 'Opacity', 'Position'],
+                    'rows' => [
+                        ['Mark a draft for internal review', 'Text ("DRAFT")', '15-20%', 'Centre, diagonal'],
+                        ['Protect a confidential document', 'Text ("CONFIDENTIAL")', '10-15%, behind content', 'Tiled'],
+                        ['Brand a free sample or portfolio', 'Logo (transparent PNG)', '20-30%', 'Corner or tiled'],
+                        ['Mark a scanned ID or certificate as a copy', 'Text ("COPY")', '25-35%', 'Centre or tiled, flattened'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'Checklist before you share a watermarked PDF',
+                'list' => [
+                    'Open the downloaded file and check every page, not just the first - a page range or "except the first" setting can leave pages out by accident.',
+                    'Read a paragraph of body text through the watermark to confirm it is still comfortable to read.',
+                    'Zoom in on a corner of the logo (if used) to check there is no unwanted white box around it.',
+                    'Flatten the watermark if the file is going outside your organisation or to someone who might try to remove it.',
+                    'Rename the file so the watermark status is obvious without opening it, for example proposal-DRAFT.pdf.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Will the watermark cover up my text?', 'a' => 'Not if you keep the opacity low (around 10-20%) and check the live preview before downloading. For body-heavy documents, Behind the content keeps your original text fully readable even with a more visible watermark.'],
+            ['q' => 'Can I remove a watermark after adding it?', 'a' => 'If you have not flattened it, the watermark is still a separate layer in the PDF and can be edited out with a PDF editor. Flattening merges it permanently into the page content, which is the point of using it before sharing a file outside your control.'],
+            ['q' => 'Is my PDF uploaded anywhere to add the watermark?', 'a' => 'No. The watermark is drawn entirely in your browser with JavaScript, and the file never leaves your device.'],
+        ],
+        'sources' => [
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+            ['title' => 'Library of Congress, Sustainability of Digital Formats: PDF', 'url' => 'https://www.loc.gov/preservation/digital/formats/fdd/fdd000030.shtml'],
+        ],
+    ],
 ];
