@@ -187,7 +187,7 @@ return [
         'h1' => 'Bild verkleinern & komprimieren',
         'tagline' => 'Verkleinere JPG-, PNG- und WebP-Dateien – sogar auf eine exakte Größe wie 100 KB.',
         'keywords' => ['bild verkleinern', 'jpg verkleinern online', 'png verkleinern', 'png größe verkleinern', 'bild komprimieren', 'bild auf 100kb komprimieren', 'bildgröße reduzieren', 'jpg komprimieren'],
-        'intro' => 'Ein Bildkomprimierer ist ein Tool, das Bilddateien verkleinert, ohne dass sie sichtbar schlechter aussehen. Mach deine Bilder kleiner, ohne sichtbar an Qualität zu verlieren. Lege eine oder mehrere JPG-, PNG- oder WebP-Dateien ab, wähle eine Qualitätsstufe oder eine Zielgröße wie 100 KB und lade die komprimierten Bilder herunter. Die Komprimierung passiert in deinem Browser, deine Fotos werden also nie hochgeladen.',
+        'intro' => 'Mit diesem Tool kannst du ein JPG verkleinern oder ein PNG verkleinern, ohne dass die Bilder sichtbar schlechter aussehen. Mach deine Bilder kleiner, ohne sichtbar an Qualität zu verlieren. Lege eine oder mehrere JPG-, PNG- oder WebP-Dateien ab, wähle eine Qualitätsstufe oder eine Zielgröße wie 100 KB und lade die komprimierten Bilder herunter. Die Komprimierung passiert in deinem Browser, deine Fotos werden also nie hochgeladen.',
         'steps' => [
             'Bilder per Drag & Drop ablegen oder zum Auswählen klicken (JPG, PNG oder WebP).',
             'Eine Qualitätsstufe wählen oder eine Zielgröße wie 100 KB festlegen.',
