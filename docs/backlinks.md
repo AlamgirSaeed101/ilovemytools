@@ -112,6 +112,23 @@ packages: they are link farms that Google ignores or punishes.
   genuinely solves the question, and say it's your site.
 - When the newsletter has subscribers, ask happy users to mention the site.
 
+## Free listings tracker (owner request 24 Oct 2026: list on every genuine free site)
+
+Claude fills these in Chrome where the owner is already signed in (Claude never creates accounts
+or enters passwords). Lead with Edit PDF (docs/launch/edit-pdf-launch.md copy): generic "free tools"
+sites get declined as near-duplicates. Never pay for a queue skip, badge or "100+ directories" pack.
+
+| Site | Status |
+|---|---|
+| SaaSHub | listed, pending approval |
+| AlternativeTo | priority review (owner paid), duplicate merge note sent |
+| Product Hunt | relaunch request pending moderation |
+| LinkedIn company page | live |
+| Uneed | declined (near-identical category); only paid queue left - skip. Owner may reply to Uneed's decline email asking for a re-look as a PDF editor |
+| Fazier | blocked for the Chrome extension; owner submits |
+| Indie Hackers, DEV, Peerlist, Microlaunch, TinyLaunch, Launching Next, SideProjectors, StackShare, SaaSworthy, Crunchbase, GitHub README | to check: owner signed in? |
+| Hacker News (Show HN), Reddit r/SideProject | owner posts personally (community rules: maker posts himself) |
+
 ## Progress
 
 | Date | Done | Result |
