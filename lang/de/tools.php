@@ -232,8 +232,8 @@ return [
 
     'image-resizer' => [
         'name' => 'Bildgröße ändern',
-        'title' => 'Bildgröße online ändern: JPG, PNG und WebP umwandeln',
-        'description' => 'Ändere die Bildgröße auf exakte Pixel oder prozentual und wandle zwischen JPG, PNG und WebP um. Kostenloses Online-Tool, bei dem deine Fotos privat bleiben.',
+        'title' => 'JPG Bilder Größe ändern - Online, PNG & WebP umwandeln',
+        'description' => 'Ändere die Größe von JPG-Bildern (und PNG, WebP) online auf exakte Pixel oder prozentual, kostenlos. Deine Fotos bleiben privat und werden nie hochgeladen.',
         'h1' => 'Bildgröße ändern & umwandeln',
         'tagline' => 'Skaliere auf exakte Pixel oder prozentual und wandle JPG, PNG und WebP um.',
         'keywords' => ['bildgröße ändern', 'bild skalieren', 'png in jpg', 'jpg in png', 'webp in jpg', 'bild konverter'],
