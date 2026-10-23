@@ -774,8 +774,8 @@ return [
 
     'dice-roller' => [
         'name' => 'Würfel',
-        'title' => 'Online-Würfel: virtuelle Würfel werfen (D6, D20 und mehr)',
-        'description' => 'Wirf 1 bis 10 virtuelle Würfel online: D4, D6, D8, D10, D12, D20 oder D100. Faire Zufallsergebnisse mit 3D-Animation, Summe und Wurfverlauf. Kostenlos.',
+        'title' => 'Onlinewürfel: virtuelle Würfel werfen (D6, D20 und mehr)',
+        'description' => 'Onlinewürfel zum Werfen: 1 bis 10 virtuelle Würfel online, D4 bis D100. Faire Zufallsergebnisse mit 3D-Animation, Summe und Wurfverlauf. Kostenlos.',
         'h1' => 'Online-Würfel',
         'tagline' => 'Wirf bis zu 10 Würfel, von D4 bis D100, mit 3D-Animation und Summe.',
         'keywords' => ['würfel online', 'online würfeln', 'virtueller würfel', 'w20 würfel', 'zufallswürfel'],
