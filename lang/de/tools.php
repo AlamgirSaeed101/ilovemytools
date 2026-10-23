@@ -441,7 +441,7 @@ return [
         'name' => 'PDF zusammenfügen',
         'title' => 'PDF zusammenfügen: PDF-Dateien online kostenlos kombinieren',
         'description' => 'Füge PDF-Dateien kostenlos zu einem Dokument zusammen. Reihenfolge ändern, ohne Wasserzeichen und Anmeldung. Nichts wird hochgeladen.',
-        'h1' => 'PDF-Dateien zusammenfügen',
+        'h1' => 'PDF-Dateien online zusammenfügen',
         'tagline' => 'Mehrere PDFs zu einer Datei kombinieren – ohne Wasserzeichen, ohne Upload.',
         'keywords' => ['pdf zusammenfügen', 'pdf kombinieren', 'pdf dateien zusammenführen', 'pdf merger', 'pdf zusammenfügen kostenlos online'],
         'intro' => 'PDFs zusammenfügen bedeutet, mehrere PDF-Dateien zu einem einzigen Dokument zu kombinieren. Kombiniere mehrere PDF-Dateien in der gewünschten Reihenfolge zu einem einzigen Dokument. Anders als bei vielen PDF-Websites werden deine Dateien in deinem Browser zusammengefügt – vertrauliche Dokumente berühren nie einen Server, und das Ergebnis hat kein Wasserzeichen.',

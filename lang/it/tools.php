@@ -441,7 +441,7 @@ return [
         'name' => 'Unisci PDF',
         'title' => 'Unisci PDF: combina file PDF online gratis',
         'description' => 'Unisci file PDF in un unico documento online e gratis. Riordina i file, senza filigrana e senza registrazione. Nulla viene caricato.',
-        'h1' => 'Unisci file PDF',
+        'h1' => 'Unisci file PDF online',
         'tagline' => 'Combina più PDF in un solo file, senza filigrana e senza caricamenti.',
         'keywords' => ['unire pdf', 'unisci pdf', 'combinare pdf', 'unire file pdf', 'unire pdf online gratis'],
         'intro' => 'Unire i PDF significa combinare più file PDF in un unico documento. Combina più file PDF in un unico documento nell’ordine che preferisci. A differenza di molti siti per PDF, i file vengono uniti nel tuo browser: i documenti riservati non passano mai da un server e il risultato non ha filigrane.',

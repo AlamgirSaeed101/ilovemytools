@@ -441,7 +441,7 @@ return [
         'name' => 'Fusionner des PDF',
         'title' => 'Fusionner PDF : combiner des fichiers PDF gratuitement',
         'description' => 'Fusionnez des fichiers PDF en un seul document, gratuitement. Réorganisez l’ordre, sans filigrane ni inscription. Rien n’est envoyé.',
-        'h1' => 'Fusionner des fichiers PDF',
+        'h1' => 'Fusionner des fichiers PDF en ligne',
         'tagline' => 'Combinez plusieurs PDF en un seul fichier, sans filigrane et sans envoi.',
         'keywords' => ['fusionner pdf', 'combiner pdf', 'assembler des pdf', 'fusion pdf', 'fusionner pdf en ligne gratuit'],
         'intro' => 'Fusionner des PDF consiste à réunir plusieurs fichiers PDF en un seul document. Combinez plusieurs fichiers PDF en un seul document, dans l’ordre de votre choix. Contrairement à beaucoup de sites PDF, vos fichiers sont fusionnés dans votre navigateur : les documents confidentiels ne passent jamais par un serveur, et le résultat n’a pas de filigrane.',

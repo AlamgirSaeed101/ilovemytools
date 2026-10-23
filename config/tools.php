@@ -552,7 +552,7 @@ return [
         'updated' => '2026-09-30',
         'title' => 'Merge PDF - Combine PDF Files Online Free',
         'description' => 'Merge PDF files into one document online for free. Reorder files, no watermark, no sign up. PDFs are combined in your browser and never uploaded.',
-        'h1' => 'Merge PDF Files',
+        'h1' => 'Merge PDF Files Online',
         'tagline' => 'Combine multiple PDFs into one file - no watermark, no upload.',
         'keywords' => ['merge pdf', 'combine pdf', 'join pdf files', 'pdf merger', 'merge pdf online free'],
         'intro' => 'Merging PDFs means combining several PDF files into a single document. Combine several PDF files into a single document in the order you choose. Unlike many PDF sites, your files are merged inside your browser, so confidential documents never touch a server, and there is no watermark on the result.',

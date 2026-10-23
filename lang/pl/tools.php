@@ -441,7 +441,7 @@ return [
         'name' => 'Połącz PDF',
         'title' => 'Połącz PDF - scal pliki PDF online za darmo',
         'description' => 'Połącz pliki PDF w jeden dokument online za darmo. Zmień kolejność plików, bez znaku wodnego, bez rejestracji. PDF-y łączone w Twojej przeglądarce.',
-        'h1' => 'Połącz pliki PDF',
+        'h1' => 'Połącz pliki PDF online',
         'tagline' => 'Scal wiele plików PDF w jeden - bez znaku wodnego, bez wysyłania na serwer.',
         'keywords' => ['połącz pdf', 'scal pdf', 'łączenie plików pdf', 'łączenie pdf online', 'scalanie pdf za darmo'],
         'intro' => 'Łączenie PDF-ów oznacza scalenie kilku plików PDF w jeden dokument. Scal kilka plików PDF w jeden dokument w wybranej przez Ciebie kolejności. W przeciwieństwie do wielu witryn z PDF-ami, Twoje pliki są łączone w Twojej przeglądarce, więc poufne dokumenty nigdy nie trafiają na serwer, a wynik nie ma znaku wodnego.',

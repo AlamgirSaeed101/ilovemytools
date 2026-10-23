@@ -405,7 +405,7 @@ return [
         'name' => 'Unir PDF',
         'title' => 'Unir PDF: combina archivos PDF en línea gratis',
         'description' => 'Une archivos PDF en un solo documento en línea gratis. Reordena archivos, sin marca de agua ni registro. Los PDF se combinan en tu navegador y nunca se suben.',
-        'h1' => 'Unir archivos PDF',
+        'h1' => 'Unir archivos PDF en línea',
         'tagline' => 'Combina varios PDF en un solo archivo, sin marca de agua y sin subirlos.',
         'keywords' => ['unir pdf', 'juntar pdf', 'combinar pdf', 'unir archivos pdf', 'unir pdf online gratis'],
         'intro' => 'Unir PDF significa combinar varios archivos PDF en un solo documento. Combina varios archivos PDF en un solo documento en el orden que elijas. A diferencia de muchas webs de PDF, tus archivos se unen dentro de tu navegador, así que los documentos confidenciales nunca pasan por un servidor y el resultado no lleva marca de agua.',

@@ -58,7 +58,7 @@ test.describe('App shell', () => {
 
         await page.locator('main a.tool-card[href="/merge-pdf"]').first().click();
         await expect(page).toHaveURL(/\/merge-pdf$/);
-        await expect(page.getByRole('heading', { level: 1 })).toHaveText('Merge PDF Files');
+        await expect(page.getByRole('heading', { level: 1 })).toHaveText('Merge PDF Files Online');
         expect(await page.evaluate(() => window.__spaMarker)).toBe('still-here');
         await expect(page).toHaveTitle(/Merge PDF/);
         await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', /\/merge-pdf$/);
@@ -192,7 +192,7 @@ test.describe('App shell', () => {
         const context = await browser.newContext({ javaScriptEnabled: false });
         const page = await context.newPage();
         await page.goto('/merge-pdf');
-        await expect(page.getByRole('heading', { level: 1 })).toHaveText('Merge PDF Files');
+        await expect(page.getByRole('heading', { level: 1 })).toHaveText('Merge PDF Files Online');
         await expect(page.getByText('This tool needs JavaScript')).toBeVisible();
         await expect(page.getByRole('heading', { name: 'Frequently asked questions' })).toBeVisible();
         await context.close();

@@ -441,7 +441,7 @@ return [
         'name' => 'Juntar PDF',
         'title' => 'Juntar PDF: combine arquivos PDF online grátis',
         'description' => 'Junte arquivos PDF em um só documento online e grátis. Reordene os arquivos, sem marca d\'água e sem cadastro. Nada é enviado a servidores.',
-        'h1' => 'Juntar arquivos PDF',
+        'h1' => 'Juntar arquivos PDF online',
         'tagline' => 'Combine vários PDFs em um só arquivo, sem marca d\'água e sem upload.',
         'keywords' => ['juntar pdf', 'combinar pdf', 'unir arquivos pdf', 'mesclar pdf', 'juntar pdf online grátis'],
         'intro' => 'Juntar PDF significa combinar vários arquivos PDF em um único documento. Combine vários arquivos PDF em um único documento, na ordem que você escolher. Ao contrário de muitos sites de PDF, seus arquivos são unidos dentro do navegador, então documentos confidenciais nunca passam por um servidor, e o resultado não tem marca d\'água.',
