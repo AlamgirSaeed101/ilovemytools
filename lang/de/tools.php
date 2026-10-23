@@ -9,7 +9,7 @@ return [
         'h1' => 'Wortzähler Online',
         'tagline' => 'Zähle Wörter, Zeichen, Sätze und Lesezeit sofort.',
         'keywords' => ['wortzähler online', 'wortzähler', 'zeichenzähler', 'wörter zählen', 'lesezeit berechnen'],
-        'intro' => 'Ein Wortzähler ist ein Tool, das die Wörter, Zeichen, Sätze und Absätze eines Textes zählt. Füge deinen Text unten ein oder tippe ihn, um Wörter, Zeichen, Sätze und Absätze beim Schreiben zu zählen. Der Wortzähler zeigt außerdem die geschätzte Lese- und Sprechzeit sowie deine häufigsten Schlüsselwörter – praktisch für Aufsätze, Blogartikel, Social-Media-Posts und SEO-Meta-Beschreibungen.',
+        'intro' => 'Mit diesem Wortzähler online zählst du Wörter, Zeichen, Sätze und Absätze eines Textes sofort. Füge deinen Text unten ein oder tippe ihn, um die Zahlen beim Schreiben live zu sehen. Der Wortzähler zeigt außerdem die geschätzte Lese- und Sprechzeit sowie deine häufigsten Schlüsselwörter – praktisch für Aufsätze, Blogartikel, Social-Media-Posts und SEO-Meta-Beschreibungen.',
         'steps' => [
             'Tippe deinen Text in das Feld oder füge ihn ein.',
             'Sieh zu, wie sich die Zahl der Wörter, Zeichen, Sätze und Absätze live aktualisiert.',
