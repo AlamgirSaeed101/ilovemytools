@@ -514,8 +514,8 @@ return [
 
     'age-calculator' => [
         'name' => 'Calculadora de idade',
-        'title' => 'Calculadora de idade: idade pela data de nascimento',
-        'description' => 'Informe sua data de nascimento para obter sua idade exata em anos, meses, dias e horas, com a contagem para o próximo aniversário. Grátis e rápido.',
+        'title' => 'Calculadora de idade: sua idade em dias, meses e anos',
+        'description' => 'Informe sua data de nascimento para obter sua idade exata em dias, meses e anos, com o total de semanas e horas vividas e a contagem até seu aniversário.',
         'h1' => 'Calculadora de idade',
         'tagline' => 'Descubra sua idade exata em anos, meses e dias, além do próximo aniversário.',
         'keywords' => ['calculadora de idade', 'calcular idade', 'calculadora de data de nascimento', 'quantos anos eu tenho', 'calcular idade pela data de nascimento'],
@@ -543,6 +543,7 @@ return [
             ['q' => 'Posso calcular a idade em uma data específica?', 'a' => 'Sim. Mude a data de "Idade na data de" para ver quantos anos alguém tinha ou terá nesse dia, o que é útil para matrículas escolares e requisitos de concursos.'],
             ['q' => 'Como os anos bissextos são tratados?', 'a' => 'Os anos bissextos são contados com exatidão. Para quem faz aniversário em 29 de fevereiro, o próximo aniversário em um ano não bissexto aparece como 28 de fevereiro.'],
             ['q' => 'Minha data de nascimento é armazenada?', 'a' => 'Não. O cálculo é feito no seu navegador e nada é salvo nem enviado para lugar nenhum.'],
+            ['q' => 'Como calcular a idade a partir da data de nascimento?', 'a' => 'A calculadora de idade usa sua data de nascimento para calcular sua idade exata em anos, meses e dias — basta informá-la e o resultado aparece na hora.'],
         ],
     ],
 

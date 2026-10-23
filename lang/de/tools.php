@@ -514,8 +514,8 @@ return [
 
     'age-calculator' => [
         'name' => 'Altersrechner',
-        'title' => 'Altersrechner: Alter aus dem Geburtsdatum berechnen',
-        'description' => 'Gib dein Geburtsdatum ein und erhalte dein genaues Alter in Jahren, Monaten, Tagen und Stunden, mit Countdown zum nächsten Geburtstag. Kostenlos.',
+        'title' => 'Altersrechner: Alter in Tagen, Monaten & Jahren berechnen',
+        'description' => 'Berechne dein Alter in Tagen, Monaten und Jahren aus dem Geburtsdatum – mit Gesamtzahl der Tage, Wochen und Stunden sowie Countdown zum Geburtstag.',
         'h1' => 'Altersrechner',
         'tagline' => 'Finde dein genaues Alter in Jahren, Monaten und Tagen – plus deinen nächsten Geburtstag.',
         'keywords' => ['altersrechner', 'alter berechnen', 'geburtsdatum rechner', 'wie alt bin ich', 'alter berechnen mit geburtsdatum'],
@@ -543,6 +543,7 @@ return [
             ['q' => 'Kann ich das Alter an einem bestimmten Datum berechnen?', 'a' => 'Ja. Ändere das Datum bei „Alter am“, um zu sehen, wie alt jemand an diesem Tag war oder sein wird – nützlich für Schulanmeldungen und Altersvoraussetzungen bei Prüfungen.'],
             ['q' => 'Wie werden Schaltjahre behandelt?', 'a' => 'Schaltjahre werden exakt gezählt. Bei einem Geburtstag am 29. Februar wird der nächste Geburtstag in einem Nicht-Schaltjahr als 28. Februar angezeigt.'],
             ['q' => 'Wird mein Geburtsdatum gespeichert?', 'a' => 'Nein. Die Berechnung läuft in deinem Browser, und nichts wird gespeichert oder irgendwohin gesendet.'],
+            ['q' => 'Wie berechnet man das Alter aus dem Geburtsdatum?', 'a' => 'Der Altersrechner nutzt dein Geburtsdatum, um dein genaues Alter in Jahren, Monaten und Tagen zu berechnen – einfach eingeben und das Ergebnis sofort ablesen.'],
         ],
     ],
 

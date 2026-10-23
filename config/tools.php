@@ -643,8 +643,8 @@ return [
         'icon' => 'calendar',
         'popular' => true,
         'updated' => '2026-09-30',
-        'title' => 'Age Calculator: Age From Your Date of Birth',
-        'description' => 'Enter your date of birth to get your exact age in years, months, days and hours, plus a live countdown to your next birthday. Free and instant.',
+        'title' => 'Age Calculator: Your Exact Age in Days, Months & Years',
+        'description' => 'Enter your date of birth to get your exact age in days, months and years, plus total weeks and hours lived and a countdown to your next birthday. Free.',
         'h1' => 'Age Calculator',
         'tagline' => 'Find your exact age in years, months and days, plus your next birthday.',
         'keywords' => ['age calculator', 'calculate age', 'date of birth calculator', 'how old am i', 'age calculator by date of birth'],
@@ -672,6 +672,7 @@ return [
             ['q' => 'Can I calculate age on a specific date?', 'a' => 'Yes. Change the "Age at" date to see how old someone was or will be on that day, which is useful for school admissions and exam eligibility.'],
             ['q' => 'How are leap years handled?', 'a' => 'Leap years are counted exactly. For a 29 February birthday, the next birthday in a non-leap year is shown as 28 February.'],
             ['q' => 'Is my date of birth stored?', 'a' => 'No. The calculation runs in your browser and nothing is saved or sent anywhere.'],
+            ['q' => 'How do you calculate age from a date of birth?', 'a' => 'The age calculator uses your date of birth to work out your exact age in years, months and days – just enter it and the result shows instantly.'],
         ],
         'sources' => [
             ['title' => 'ECMAScript Language Specification, Date objects', 'url' => 'https://tc39.es/ecma262/#sec-date-objects'],

@@ -469,8 +469,8 @@ return [
 
     'age-calculator' => [
         'name' => 'Calculadora de edad',
-        'title' => 'Calculadora de edad: edad desde tu fecha de nacimiento',
-        'description' => 'Indica tu fecha de nacimiento para obtener tu edad exacta en años, meses, días y horas, con la cuenta atrás para tu próximo cumpleaños. Gratis.',
+        'title' => 'Calculadora de edad: tu edad en días, meses y años',
+        'description' => 'Indica tu fecha de nacimiento para obtener tu edad exacta en días, meses y años, con semanas y horas vividas y la cuenta atrás a tu cumpleaños.',
         'h1' => 'Calculadora de edad',
         'tagline' => 'Descubre tu edad exacta en años, meses y días, y tu próximo cumpleaños.',
         'keywords' => ['calculadora de edad', 'calcular edad', 'calcular edad por fecha de nacimiento', 'cuántos años tengo', 'edad exacta'],
@@ -495,6 +495,7 @@ return [
             ['q' => '¿Puedo calcular la edad en una fecha concreta?', 'a' => 'Sí. Cambia la fecha de cálculo para ver qué edad tenía o tendrá alguien ese día, algo útil para admisiones escolares y requisitos de exámenes.'],
             ['q' => '¿Cómo se tratan los años bisiestos?', 'a' => 'Los años bisiestos se cuentan con exactitud. Para un cumpleaños el 29 de febrero, el próximo cumpleaños en un año no bisiesto se muestra el 28 de febrero.'],
             ['q' => '¿Se guarda mi fecha de nacimiento?', 'a' => 'No. El cálculo se hace en tu navegador y no se guarda ni se envía nada.'],
+            ['q' => '¿Cómo se calcula la edad a partir de la fecha de nacimiento?', 'a' => 'La calculadora de edad usa tu fecha de nacimiento para calcular tu edad exacta en años, meses y días: solo tienes que introducirla y el resultado aparece al instante.'],
         ],
     ],
 

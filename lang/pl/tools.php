@@ -514,8 +514,8 @@ return [
 
     'age-calculator' => [
         'name' => 'Kalkulator wieku',
-        'title' => 'Kalkulator wieku: wiek na podstawie daty urodzenia',
-        'description' => 'Podaj datę urodzenia, aby obliczyć dokładny wiek w latach, miesiącach, dniach i godzinach, plus odliczanie do urodzin. Darmowy i natychmiastowy.',
+        'title' => 'Kalkulator wieku: Twój wiek w dniach, miesiącach i latach',
+        'description' => 'Podaj datę urodzenia, aby obliczyć dokładny wiek w dniach, miesiącach i latach, plus łączną liczbę tygodni i godzin oraz odliczanie do urodzin. Darmowy.',
         'h1' => 'Kalkulator wieku',
         'tagline' => 'Sprawdź dokładny wiek w latach, miesiącach i dniach, plus kolejne urodziny.',
         'keywords' => ['kalkulator wieku', 'oblicz wiek', 'kalkulator daty urodzenia', 'ile mam lat', 'kalkulator wieku z daty urodzenia'],
@@ -543,6 +543,7 @@ return [
             ['q' => 'Czy mogę obliczyć wiek na konkretną datę?', 'a' => 'Tak. Zmień datę „wiek w dniu”, aby zobaczyć, ile lat ktoś miał albo będzie miał tego dnia, co jest przydatne w przypadku naboru do szkół i uprawnień do egzaminów.'],
             ['q' => 'Jak traktowane są lata przestępne?', 'a' => 'Lata przestępne są liczone dokładnie. Dla urodzin 29 lutego kolejne urodziny w roku nieprzestępnym są pokazywane jako 28 lutego.'],
             ['q' => 'Czy moja data urodzenia jest zapisywana?', 'a' => 'Nie. Obliczenia odbywają się w Twojej przeglądarce i nic nie jest zapisywane ani wysyłane.'],
+            ['q' => 'Jak obliczyć wiek na podstawie daty urodzenia?', 'a' => 'Kalkulator wieku wykorzystuje Twoją datę urodzenia, aby obliczyć dokładny wiek w latach, miesiącach i dniach – wystarczy ją podać, a wynik pojawi się natychmiast.'],
         ],
     ],
 

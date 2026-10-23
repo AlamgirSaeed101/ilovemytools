@@ -514,8 +514,8 @@ return [
 
     'age-calculator' => [
         'name' => 'Calcolatore di età',
-        'title' => 'Calcolatore di età: età dalla data di nascita',
-        'description' => 'Inserisci la tua data di nascita per ottenere la tua età esatta in anni, mesi, giorni e ore, con il conto alla rovescia per il compleanno. Gratis.',
+        'title' => 'Calcolatore di età: la tua età in giorni, mesi e anni',
+        'description' => 'Inserisci la tua data di nascita per ottenere la tua età esatta in giorni, mesi e anni, con il conto alla rovescia per il compleanno. Gratis.',
         'h1' => 'Calcolatore di età',
         'tagline' => 'Scopri la tua età esatta in anni, mesi e giorni e il prossimo compleanno.',
         'keywords' => ['calcolatore età', 'calcolare età', 'calcolo data di nascita', 'quanti anni ho', 'calcolo età da data di nascita'],
@@ -543,6 +543,7 @@ return [
             ['q' => 'Posso calcolare l’età a una data specifica?', 'a' => 'Sì. Cambia la data “Età alla data del” per vedere quanti anni aveva o avrà una persona quel giorno: utile per iscrizioni scolastiche e requisiti di età per concorsi.'],
             ['q' => 'Come vengono gestiti gli anni bisestili?', 'a' => 'Gli anni bisestili vengono contati con precisione. Per chi compie gli anni il 29 febbraio, il prossimo compleanno in un anno non bisestile viene mostrato il 28 febbraio.'],
             ['q' => 'La mia data di nascita viene salvata?', 'a' => 'No. Il calcolo avviene nel tuo browser e nulla viene salvato o inviato.'],
+            ['q' => 'Come si calcola l’età dalla data di nascita?', 'a' => 'Il calcolatore di età usa la tua data di nascita per calcolare la tua età esatta in anni, mesi e giorni: basta inserirla per vedere subito il risultato.'],
         ],
     ],
 

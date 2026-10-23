@@ -514,8 +514,8 @@ return [
 
     'age-calculator' => [
         'name' => 'Calculateur d’âge',
-        'title' => 'Calcul d’âge : âge exact depuis votre date de naissance',
-        'description' => 'Indiquez votre date de naissance pour connaître votre âge exact en années, mois et jours, avec le compte à rebours de votre anniversaire. Gratuit.',
+        'title' => 'Calcul d’âge : votre âge en jours, mois et années',
+        'description' => 'Indiquez votre date de naissance pour connaître votre âge exact en jours, mois et années, avec le compte à rebours de votre anniversaire. Gratuit.',
         'h1' => 'Calculateur d’âge',
         'tagline' => 'Trouvez votre âge exact en années, mois et jours, et votre prochain anniversaire.',
         'keywords' => ['calculateur d’âge', 'calculer son âge', 'calcul date de naissance', 'quel âge ai-je', 'calcul âge avec date de naissance'],
@@ -543,6 +543,7 @@ return [
             ['q' => 'Puis-je calculer un âge à une date précise ?', 'a' => 'Oui. Changez la date « Âge à la date du » pour voir l’âge qu’une personne avait ou aura ce jour-là, pratique pour les inscriptions scolaires et les conditions d’âge des concours.'],
             ['q' => 'Comment les années bissextiles sont-elles gérées ?', 'a' => 'Elles sont comptées exactement. Pour un anniversaire le 29 février, le prochain anniversaire d’une année non bissextile s’affiche au 28 février.'],
             ['q' => 'Ma date de naissance est-elle enregistrée ?', 'a' => 'Non. Le calcul se fait dans votre navigateur et rien n’est enregistré ni envoyé.'],
+            ['q' => 'Comment calculer l’âge à partir de la date de naissance ?', 'a' => 'Le calculateur d’âge utilise votre date de naissance pour déterminer votre âge exact en années, mois et jours : il suffit de la saisir pour voir le résultat instantanément.'],
         ],
     ],
 
