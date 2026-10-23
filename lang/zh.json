@@ -1268,7 +1268,6 @@
     "Strikethrough": "刪除線",
     "Strikethrough - drag to move": "刪除線 - 拖曳以移動",
     "Then drag on the page over the area that should open the link.": "然後在頁面上拖曳出要開啟連結的區域。",
-    "This adds new content on top of the page. To replace text that is already in the PDF, cover it with Whiteout and add new text over it.": "這會在頁面上方加入新內容。若要取代 PDF 中原有的文字，請先用白色遮蓋，再在上面加入新文字。",
     "Type a valid link address first, for example https://example.com": "請先輸入有效的連結網址，例如 https://example.com",
     "Underline": "底線",
     "Underline - drag to move": "底線 - 拖曳以移動",
@@ -1289,5 +1288,6 @@
         "other": "已取代 {count} 處。"
     },
     "Restore original": "還原原文",
-    "The PDF’s own font doesn’t include {letters}, so this line will use a similar font.": "PDF 內嵌的字型不含 {letters}，因此這一行會改用相似的字型。"
+    "The PDF’s own font doesn’t include {letters}, so this line will use a similar font.": "PDF 內嵌的字型不含 {letters}，因此這一行會改用相似的字型。",
+    "This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.": "這會在頁面上方加入新內容。若要修改 PDF 中原有的文字，請使用「編輯文字」分頁。"
 }

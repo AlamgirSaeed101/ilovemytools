@@ -6792,7 +6792,7 @@
     ]
   },
   {
-    "key": "This adds new content on top of the page. To replace text that is already in the PDF, cover it with Whiteout and add new text over it.",
+    "key": "This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.",
     "files": [
       "resources/js/tools/EditPdf.jsx"
     ]

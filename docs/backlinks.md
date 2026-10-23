@@ -118,3 +118,5 @@ packages: they are link farms that Google ignores or punishes.
 |---|---|---|
 | | | |
 - 2026-10-21 SaaSHub: https://www.saashub.com/pdf2word (owner account 'ilovemytools'). The listing already existed under the wrong name 'Pdf2Word'; renamed to ILoveMyTools, description updated, Free Trial removed (Free only), LinkedIn and founder added. Status: pending SaaSHub approval. Do not submit again (it would be a duplicate).
+- 2026-10-23 AlternativeTo: https://alternativeto.net/software/ilovemytools/ submitted (free queue; paid priority review declined), tagged pdf-editor/pdf-tools/privacy-focused/add-watermarks/no-watermark/pdf-converter, alternatives suggested: Sejda, Smallpdf, iLovePDF, PDF24 Tools, BentoPDF, Stirling PDF, LightPDF. An older pending submission 'ILoveTools' from the same account also exists. Product Hunt: the product already exists (producthunt.com/products/ilovetools-3, launched 3 and 4 Oct). An orphan draft with the locked URL 'ilovemytools.stote' must not be scheduled.
+- 2026-10-24 Product Hunt: relaunch requested as a major update (Edit PDF) on the existing product; waiting for PH moderation. Details in docs/launch/edit-pdf-launch.md.

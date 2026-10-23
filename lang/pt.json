@@ -1291,7 +1291,6 @@
     "Strikethrough": "Tachado",
     "Strikethrough - drag to move": "Tachado: arraste para mover",
     "Then drag on the page over the area that should open the link.": "Depois arraste sobre a área da página que deve abrir o link.",
-    "This adds new content on top of the page. To replace text that is already in the PDF, cover it with Whiteout and add new text over it.": "Isto adiciona conteúdo novo sobre a página. Para substituir um texto que já está no PDF, cubra-o com o corretivo branco e adicione o texto novo por cima.",
     "Type a valid link address first, for example https://example.com": "Digite primeiro um endereço de link válido, por exemplo https://example.com",
     "Underline": "Sublinhado",
     "Underline - drag to move": "Sublinhado: arraste para mover",
@@ -1313,5 +1312,6 @@
         "other": "Substituído {count} vezes."
     },
     "Restore original": "Restaurar original",
-    "The PDF’s own font doesn’t include {letters}, so this line will use a similar font.": "A fonte do próprio PDF não inclui {letters}, então esta linha usará uma fonte parecida."
+    "The PDF’s own font doesn’t include {letters}, so this line will use a similar font.": "A fonte do próprio PDF não inclui {letters}, então esta linha usará uma fonte parecida.",
+    "This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.": "Isto adiciona conteúdo novo sobre a página. Para alterar um texto que já está no PDF, use a aba Editar texto."
 }

@@ -20,6 +20,12 @@ const SHAPES = [
 ];
 // Modes where dragging on the page creates the element (instead of an "Add" button).
 const DRAG_MODES = ['whiteout', 'shape', 'underline', 'strike', 'link'];
+// CSS stand-ins for the fonts pdfTextEdit.fontForEdit() falls back to (DejaVu Sans, Times, Courier).
+const FALLBACK_CSS = {
+    sans: '"DejaVu Sans", Verdana, Arial, sans-serif',
+    serif: '"Times New Roman", Times, serif',
+    mono: '"Courier New", Courier, monospace',
+};
 const OVERLAY_LABELS = {
     text: { drag: () => t('Text - drag to move'), remove: () => t('Remove this text') },
     image: { drag: () => t('Image - drag to move'), remove: () => t('Remove this image') },
@@ -106,7 +112,12 @@ export default function EditPdf() {
             return;
         }
         let cancelled = false;
-        missingGlyphs(editing.run.fontData, editing.text).then((list) => !cancelled && setMissing(list));
+        missingGlyphs(editing.run.fontData, editing.text).then((letters) => {
+            if (cancelled) return;
+            setMissing(letters);
+            // The saved PDF draws this line in a fallback font when letters are missing; preview it the same way.
+            setElements((list) => list.map((el) => (el.id === editing.id ? { ...el, fallback: letters.length > 0 } : el)));
+        });
         return () => {
             cancelled = true;
         };
@@ -157,8 +168,9 @@ export default function EditPdf() {
                     const before = current?.text ?? run.str;
                     const text = before.split(findText).join(replaceText);
                     count += before.split(findText).length - 1;
-                    if (current) added.push({ ...current, text });
-                    else added.push({ id: nextId.current++, ...textEditFor(run, n - 1, canvas, 1, text) });
+                    const fallback = (await missingGlyphs(run.fontData, text)).length > 0;
+                    if (current) added.push({ ...current, text, fallback });
+                    else added.push({ id: nextId.current++, ...textEditFor(run, n - 1, canvas, 1, text), fallback });
                 }
             }
             setElements((list) => [...list.filter((el) => !added.some((a) => a.id === el.id)), ...added]);
@@ -438,7 +450,7 @@ export default function EditPdf() {
     return (
         <div className="stack">
             {mode !== 'edittext' && (
-                <Notice type="info">{t('This adds new content on top of the page. To replace text that is already in the PDF, cover it with Whiteout and add new text over it.')}</Notice>
+                <Notice type="info">{t('This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.')}</Notice>
             )}
 
             <div className="row row--between">
@@ -612,12 +624,14 @@ export default function EditPdf() {
                     {currentElements.map((el) => {
                         if (el.type === 'textedit') {
                             const selected = el.id === editingId;
+                            // The PDF's own font while it has every letter, otherwise the fallback the saved file will use.
+                            const own = el.run.fontData && !el.fallback;
                             const fontStyle = {
-                                fontFamily: el.run.cssFamily,
+                                fontFamily: own ? el.run.cssFamily : FALLBACK_CSS[el.run.family] ?? FALLBACK_CSS.sans,
                                 fontSize: el.size * scale,
                                 color: el.color,
-                                fontWeight: el.run.fontData ? undefined : el.run.bold ? 700 : 400,
-                                fontStyle: !el.run.fontData && el.run.italic ? 'italic' : undefined,
+                                fontWeight: own ? undefined : el.run.bold ? 700 : 400,
+                                fontStyle: !own && el.run.italic ? 'italic' : undefined,
                             };
                             return (
                                 <div

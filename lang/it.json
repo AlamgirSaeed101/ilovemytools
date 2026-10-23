@@ -1291,7 +1291,6 @@
     "Strikethrough": "Barrato",
     "Strikethrough - drag to move": "Barratura: trascina per spostare",
     "Then drag on the page over the area that should open the link.": "Poi trascina sull’area della pagina che deve aprire il link.",
-    "This adds new content on top of the page. To replace text that is already in the PDF, cover it with Whiteout and add new text over it.": "Questo strumento aggiunge nuovi contenuti sopra la pagina. Per sostituire un testo già presente nel PDF, coprilo con il bianco e aggiungi il nuovo testo sopra.",
     "Type a valid link address first, for example https://example.com": "Scrivi prima un indirizzo di link valido, per esempio https://example.com",
     "Underline": "Sottolineato",
     "Underline - drag to move": "Sottolineatura: trascina per spostare",
@@ -1313,5 +1312,6 @@
         "other": "Sostituito {count} volte."
     },
     "Restore original": "Ripristina originale",
-    "The PDF’s own font doesn’t include {letters}, so this line will use a similar font.": "Il carattere del PDF non contiene {letters}, quindi questa riga userà un carattere simile."
+    "The PDF’s own font doesn’t include {letters}, so this line will use a similar font.": "Il carattere del PDF non contiene {letters}, quindi questa riga userà un carattere simile.",
+    "This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.": "Questo strumento aggiunge nuovi contenuti sopra la pagina. Per modificare un testo già presente nel PDF, usa la scheda Modifica testo."
 }

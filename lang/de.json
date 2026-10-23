@@ -1291,7 +1291,6 @@
     "Strikethrough": "Durchgestrichen",
     "Strikethrough - drag to move": "Durchstreichung – zum Verschieben ziehen",
     "Then drag on the page over the area that should open the link.": "Ziehen Sie dann über den Bereich der Seite, der den Link öffnen soll.",
-    "This adds new content on top of the page. To replace text that is already in the PDF, cover it with Whiteout and add new text over it.": "Damit fügen Sie neue Inhalte über der Seite ein. Um Text zu ersetzen, der schon im PDF steht, decken Sie ihn weiß ab und setzen den neuen Text darüber.",
     "Type a valid link address first, for example https://example.com": "Geben Sie zuerst eine gültige Link-Adresse ein, zum Beispiel https://example.com",
     "Underline": "Unterstreichen",
     "Underline - drag to move": "Unterstreichung – zum Verschieben ziehen",
@@ -1313,5 +1312,6 @@
         "other": "{count}-mal ersetzt."
     },
     "Restore original": "Original wiederherstellen",
-    "The PDF’s own font doesn’t include {letters}, so this line will use a similar font.": "Die Schriftart des PDFs enthält {letters} nicht, daher verwendet diese Zeile eine ähnliche Schrift."
+    "The PDF’s own font doesn’t include {letters}, so this line will use a similar font.": "Die Schriftart des PDFs enthält {letters} nicht, daher verwendet diese Zeile eine ähnliche Schrift.",
+    "This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.": "Damit fügen Sie neue Inhalte über der Seite ein. Um Text zu ändern, der schon im PDF steht, nutzen Sie den Tab „Text bearbeiten“."
 }

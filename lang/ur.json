@@ -1291,7 +1291,6 @@
     "Strikethrough": "کٹی ہوئی لکیر",
     "Strikethrough - drag to move": "کٹی ہوئی لکیر - منتقل کرنے کے لیے ڈریگ کریں",
     "Then drag on the page over the area that should open the link.": "پھر صفحے کے اس حصے پر ڈریگ کریں جس سے لنک کھلنا چاہیے۔",
-    "This adds new content on top of the page. To replace text that is already in the PDF, cover it with Whiteout and add new text over it.": "یہ صفحے کے اوپر نیا مواد شامل کرتا ہے۔ PDF میں پہلے سے موجود متن بدلنے کے لیے اسے سفید پردے سے ڈھانپیں اور اوپر نیا متن شامل کریں۔",
     "Type a valid link address first, for example https://example.com": "پہلے درست لنک کا پتہ لکھیں، مثال کے طور پر https://example.com",
     "Underline": "انڈر لائن",
     "Underline - drag to move": "انڈر لائن - منتقل کرنے کے لیے ڈریگ کریں",
@@ -1313,5 +1312,6 @@
         "other": "{count} بار بدلا گیا۔"
     },
     "Restore original": "اصل بحال کریں",
-    "The PDF’s own font doesn’t include {letters}, so this line will use a similar font.": "PDF کے اپنے فونٹ میں {letters} شامل نہیں، اس لیے یہ لائن ملتا جلتا فونٹ استعمال کرے گی۔"
+    "The PDF’s own font doesn’t include {letters}, so this line will use a similar font.": "PDF کے اپنے فونٹ میں {letters} شامل نہیں، اس لیے یہ لائن ملتا جلتا فونٹ استعمال کرے گی۔",
+    "This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.": "یہ صفحے کے اوپر نیا مواد شامل کرتا ہے۔ PDF میں پہلے سے موجود متن بدلنے کے لیے متن میں ترمیم والا ٹیب استعمال کریں۔"
 }
