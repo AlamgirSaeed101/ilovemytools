@@ -759,8 +759,8 @@ return [
                 'body' => 'IPv4-Adressen sehen aus wie 203.0.113.42, und es gibt nur etwa 4,3 Milliarden davon. IPv6-Adressen wie 2001:db8::1 wurden eingeführt, weil die IPv4-Adressen ausgingen. Viele Verbindungen unterstützen heute beides.',
             ],
             [
-                'heading' => 'Öffentliche oder private IP-Adresse',
-                'body' => 'Dein Router gibt jedem Gerät zu Hause eine private IP-Adresse (oft 192.168.x.x). Das ganze Netzwerk teilt sich im Internet eine öffentliche IP-Adresse – das ist die auf dieser Seite angezeigte.',
+                'heading' => 'Was ist meine öffentliche IP-Adresse?',
+                'body' => 'Deine öffentliche IP-Adresse ist die oben auf dieser Seite angezeigte Adresse – die Nummer, die jede Website und jeder Dienst sieht, wenn du dich verbindest, und die sich dein ganzes Heimnetzwerk teilt. Dein Router vergibt dann jedem Gerät in diesem Netzwerk seine eigene private IP-Adresse (oft 192.168.x.x), die vom Internet aus nicht sichtbar ist.',
             ],
         ],
         'faqs' => [

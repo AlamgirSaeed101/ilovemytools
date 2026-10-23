@@ -760,8 +760,8 @@ return [
                 'body' => 'Adresy IPv4 wyglądają jak 203.0.113.42 i jest ich tylko około 4,3 miliarda. Adresy IPv6, takie jak 2001:db8::1, zostały wprowadzone, bo adresy IPv4 się wyczerpały. Wiele połączeń wspiera już oba.',
             ],
             [
-                'heading' => 'Publiczny a prywatny adres IP',
-                'body' => 'Twój router przypisuje każdemu urządzeniu w domu prywatny adres IP (często 192.168.x.x). Cała sieć dzieli jeden publiczny adres IP w internecie, który jest pokazany na tej stronie.',
+                'heading' => 'Jaki jest mój publiczny adres IP?',
+                'body' => 'Twój publiczny adres IP to ten widoczny na górze tej strony - adres, który widzi każda strona i usługa, gdy się łączysz, współdzielony przez całą Twoją sieć domową. Twój router przypisuje następnie każdemu urządzeniu w tej sieci własny prywatny adres IP (często 192.168.x.x), niewidoczny z zewnątrz internetu.',
             ],
         ],
         'faqs' => [

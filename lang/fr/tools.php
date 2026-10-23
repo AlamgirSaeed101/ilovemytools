@@ -759,8 +759,8 @@ return [
                 'body' => 'Les adresses IPv4 ressemblent à 203.0.113.42 et il n’en existe qu’environ 4,3 milliards. Les adresses IPv6, comme 2001:db8::1, ont été créées parce que les adresses IPv4 venaient à manquer. Beaucoup de connexions prennent désormais en charge les deux.',
             ],
             [
-                'heading' => 'Adresse IP publique ou privée',
-                'body' => 'Votre box donne à chaque appareil de la maison une adresse IP privée (souvent 192.168.x.x). Tout le réseau partage une seule adresse IP publique sur Internet : c’est celle affichée sur cette page.',
+                'heading' => 'Quelle est mon adresse IP publique ?',
+                'body' => 'Votre adresse IP publique est celle affichée en haut de cette page : l’adresse que voit n’importe quel site ou service quand vous vous connectez, partagée par tout votre réseau domestique. Votre box attribue ensuite à chaque appareil de ce réseau sa propre adresse IP privée (souvent 192.168.x.x), invisible depuis l’extérieur d’Internet.',
             ],
         ],
         'faqs' => [

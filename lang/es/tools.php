@@ -698,7 +698,7 @@ return [
         ],
         'content' => [
             ['heading' => 'IPv4 frente a IPv6', 'body' => 'Las direcciones IPv4 tienen este aspecto: 203.0.113.42, y solo hay unos 4300 millones. Las direcciones IPv6, como 2001:db8::1, se crearon porque las IPv4 se agotaron. Hoy muchas conexiones admiten ambas.'],
-            ['heading' => 'IP pública frente a IP privada', 'body' => 'Tu router da a cada dispositivo de casa una IP privada (a menudo 192.168.x.x). Toda la red comparte una única IP pública en internet, que es la que aparece en esta página.'],
+            ['heading' => '¿Cuál es mi IP pública?', 'body' => 'Tu IP pública es la que aparece arriba en esta página: la dirección que ve cualquier web o servicio cuando te conectas, y que comparte toda tu red doméstica. Tu router asigna después a cada dispositivo de esa red su propia IP privada (a menudo 192.168.x.x), invisible desde fuera de internet.'],
         ],
         'faqs' => [
             ['q' => '¿Para qué se usa mi dirección IP?', 'a' => 'Las webs y servicios usan tu IP para enviarte los datos de vuelta. También puede revelar tu ciudad aproximada y tu proveedor de internet.'],

@@ -759,8 +759,8 @@ return [
                 'body' => 'Gli indirizzi IPv4 sono come 203.0.113.42 e ne esistono solo circa 4,3 miliardi. Gli indirizzi IPv6, come 2001:db8::1, sono stati introdotti perché gli IPv4 stavano finendo. Oggi molte connessioni supportano entrambi.',
             ],
             [
-                'heading' => 'Indirizzo IP pubblico o privato',
-                'body' => 'Il router assegna a ogni dispositivo di casa un indirizzo IP privato (spesso 192.168.x.x). Tutta la rete condivide un unico indirizzo IP pubblico su Internet, che è quello mostrato in questa pagina.',
+                'heading' => 'Qual è il mio IP pubblico?',
+                'body' => 'Il tuo IP pubblico è l’indirizzo mostrato in alto in questa pagina: l’indirizzo che qualsiasi sito o servizio vede quando ti connetti, condiviso da tutta la tua rete domestica. Il router assegna poi a ogni dispositivo di quella rete il proprio IP privato (spesso 192.168.x.x), invisibile dall’esterno di Internet.',
             ],
         ],
         'faqs' => [

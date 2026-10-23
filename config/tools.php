@@ -897,7 +897,7 @@ return [
         'category' => 'developer-tools',
         'icon' => 'globe',
         'popular' => true,
-        'updated' => '2026-09-30',
+        'updated' => '2026-10-23',
         'title' => 'What Is My IP Address? Check Your Public IP Instantly',
         'description' => 'See your public IP address instantly, check if it is IPv4 or IPv6, and view your browser, operating system, screen size and time zone. Free IP lookup.',
         'h1' => 'What Is My IP Address?',
@@ -922,8 +922,8 @@ return [
                 'body' => 'IPv4 addresses look like 203.0.113.42 and there are only about 4.3 billion of them. IPv6 addresses, such as 2001:db8::1, were introduced because IPv4 addresses ran out. Many connections now support both.',
             ],
             [
-                'heading' => 'Public vs private IP address',
-                'body' => 'Your router gives each device at home a private IP address (often 192.168.x.x). The whole network shares one public IP address on the internet, which is the one shown on this page.',
+                'heading' => 'What is my public IP address?',
+                'body' => 'Your public IP address is the one shown at the top of this page - the address every website and service sees when you connect, shared by your whole home network. Your router then gives each device inside that network its own private IP address (often 192.168.x.x), which stays invisible to the outside internet.',
             ],
         ],
         'faqs' => [

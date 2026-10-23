@@ -759,8 +759,8 @@ return [
                 'body' => 'Endereços IPv4 são como 203.0.113.42, e existem apenas cerca de 4,3 bilhões deles. Os endereços IPv6, como 2001:db8::1, foram criados porque os endereços IPv4 acabaram. Muitas conexões hoje suportam os dois.',
             ],
             [
-                'heading' => 'IP público ou IP privado',
-                'body' => 'Seu roteador dá a cada dispositivo da casa um endereço IP privado (muitas vezes 192.168.x.x). A rede toda compartilha um único endereço IP público na internet, que é o mostrado nesta página.',
+                'heading' => 'Qual é o meu IP público?',
+                'body' => 'Seu IP público é o endereço mostrado no topo desta página: o endereço que qualquer site ou serviço vê quando você se conecta, compartilhado por toda a sua rede doméstica. Seu roteador então dá a cada dispositivo dessa rede seu próprio IP privado (muitas vezes 192.168.x.x), invisível de fora da internet.',
             ],
         ],
         'faqs' => [
