@@ -50,5 +50,5 @@ docs/launch/images/ (1270x760 @2x): 1-click-any-text, 2-edit-in-the-same-font, 3
 | Channel | Status |
 |---|---|
 | SaaSHub | Listed (saashub.com/pdf2word, renamed ILoveMyTools), pending approval |
-| AlternativeTo | 21 Oct admin denial (collection of tools); 24 Oct converted to 'ILoveMyTools PDF Editor' (/edit-pdf), admin asked. Earlier: Submitted 23 Oct: alternativeto.net/software/ilovemytools/ (free review queue), 7 alternatives linked |
+| AlternativeTo | DENIED (21 + 24 Oct): tool collection, then PDF editor judged below their quality/benefit bar; no appeal; don't resubmit before 2027-03. Earlier: Submitted 23 Oct: alternativeto.net/software/ilovemytools/ (free review queue), 7 alternatives linked |
 | Product Hunt | Product exists: producthunt.com/products/ilovetools-3 (website ilovemytools.store, launches 3 and 4 Oct). 24 Oct: relaunch requested as a major update (Edit PDF); PH moderation reviews it and emails the owner. Once approved: New launch from that product, fill with this kit (logo, images 3/1/4, link /edit-pdf, category PDF Editor, tags Productivity/Privacy/Web App, pricing Free, "I made this", maker comment), schedule Tue-Thu 00:01 PT. The orphan draft on 'ilovemytools.stote' (locked wrong URL) is filled but must NOT be scheduled; owner can delete it |

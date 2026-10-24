@@ -121,7 +121,7 @@ sites get declined as near-duplicates. Never pay for a queue skip, badge or "100
 | Site | Status |
 |---|---|
 | SaaSHub | listed, pending approval |
-| AlternativeTo | priority review (owner paid), duplicate merge note sent |
+| AlternativeTo | denied 24 Oct (tool collection; PDF editor 'quality and benefits'); no appeal; revisit 2027-03 only with real traction |
 | Product Hunt | relaunch request pending moderation |
 | LinkedIn company page | live |
 | Uneed | declined (near-identical category); only paid queue left - skip. Owner may reply to Uneed's decline email asking for a re-look as a PDF editor |
@@ -149,3 +149,4 @@ Account-free directories are rare (a 2026 survey found 21 of 341); most "free" l
 - 2026-10-24 Product Hunt: relaunch requested as a major update (Edit PDF) on the existing product; waiting for PH moderation. Details in docs/launch/edit-pdf-launch.md.
 - 2026-10-24 AlternativeTo: owner paid priority review for both 'ILoveMyTools' and the old duplicate 'ILoveTools' (paid entries can't be deleted). ILoveMyTools edit added 10 languages, LinkedIn and a find-and-replace screenshot; ILoveTools got a reviewer note asking to merge it into alternativeto.net/software/ilovemytools/. Don't buy the $10/$15 listing-help upsell.
 - 2026-10-24 AlternativeTo: admin Paul (POX) had messaged on 21 Oct that ILoveMyTools was DENIED: their FAQ declines collections of simple online tools (and single-function pages). Fix: the pending submission is now 'ILoveMyTools PDF Editor' (ilovemytools.store/edit-pdf), editor-only tags/features; replied to Paul asking if that qualifies and to disregard the old 'ILoveTools' entry. Lesson for every directory: submit the PDF editor as a product, never the tools collection.
+- 2026-10-24 AlternativeTo FINAL: admin denied both 'ILoveMyTools PDF Editor' ('doesn't meet the quality and benefits we require') and 'ILoveTools' (collection of tools). FAQ: approval at admins' discretion, no appeal process, paid priority review does not buy approval. Do NOT resubmit or DM the admin again. Revisit no earlier than 2027-03 and only if the editor has real traction (reviews, press, users) or a standalone app (desktop app / browser extension).
