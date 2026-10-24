@@ -126,7 +126,12 @@ sites get declined as near-duplicates. Never pay for a queue skip, badge or "100
 | LinkedIn company page | live |
 | Uneed | declined (near-identical category); only paid queue left - skip. Owner may reply to Uneed's decline email asking for a re-look as a PDF editor |
 | Fazier | blocked for the Chrome extension; owner submits |
-| Indie Hackers, DEV, Peerlist, Microlaunch, TinyLaunch, Launching Next, SideProjectors, StackShare, SaaSworthy, Crunchbase, GitHub README | to check: owner signed in? |
+| Indie Hackers | live 24 Oct: indiehackers.com/product/ilovemytools (directory details filled) |
+| GitHub repo | 24 Oct: github.com/AlamgirSaeed101/ilovemytools About now links ilovemytools.store, topics added |
+| Launching Next | form filled 24 Oct; owner answers the anti-bot "2+3" check and clicks Submit (free queue; skip the $99 upgrade) |
+| DEV Community | blocked for the Chrome extension; owner posts |
+| Microlaunch | site down (SSL 526) on 24 Oct; retry later |
+| Peerlist, Crunchbase, SideProjectors, TinyLaunch, Medium, SaaSworthy | owner signs up (Claude can't create accounts), then Claude fills and submits |
 | Hacker News (Show HN), Reddit r/SideProject | owner posts personally (community rules: maker posts himself) |
 
 ## Progress
