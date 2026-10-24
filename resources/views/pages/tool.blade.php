@@ -111,7 +111,7 @@
                 </article>
 
                 @if (! empty($guides))
-                    <section class="section" aria-labelledby="guides-heading">
+                    <section class="section cv-auto" aria-labelledby="guides-heading">
                         <h2 id="guides-heading" class="section__title">{{ t('Read the guide') }}</h2>
                         <ul class="guide-links">
                             @foreach ($guides as $guide)
@@ -125,7 +125,7 @@
                 @endif
 
                 @if ($related->isNotEmpty())
-                    <section class="section" aria-labelledby="related-heading">
+                    <section class="section cv-auto" aria-labelledby="related-heading">
                         <h2 id="related-heading" class="section__title">{{ t('Related tools') }}</h2>
                         <div class="tool-grid">
                             @foreach ($related as $card)

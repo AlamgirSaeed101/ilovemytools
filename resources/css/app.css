@@ -87,3 +87,16 @@
         }
     }
 }
+
+/* Below-the-fold blocks skip style, layout and paint until they near the viewport. On phones
+   the whole page used to be laid out up front (twice: the server copy, then React's), which was
+   most of the main-thread time. `auto` remembers each block's real height once rendered. */
+@layer components {
+    .cv-auto,
+    .tool-article,
+    .site-footer,
+    #app footer {
+        content-visibility: auto;
+        contain-intrinsic-size: auto 900px;
+    }
+}

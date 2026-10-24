@@ -241,7 +241,7 @@ export default function ToolPage() {
                     </article>
 
                     {tool.guides?.length > 0 && (
-                        <section className="my-11" aria-labelledby="guides-heading">
+                        <section className="cv-auto my-11" aria-labelledby="guides-heading">
                             <h2 id="guides-heading" className="m-0 mb-4 text-[1.35rem] font-bold">
                                 {t('Read the guide')}
                             </h2>
@@ -257,7 +257,7 @@ export default function ToolPage() {
                     )}
 
                     {related.length > 0 && (
-                        <section className="my-11" aria-labelledby="related-heading">
+                        <section className="cv-auto my-11" aria-labelledby="related-heading">
                             <h2 id="related-heading" className="m-0 mb-4 text-[1.35rem] font-bold">
                                 {t('Related tools')}
                             </h2>

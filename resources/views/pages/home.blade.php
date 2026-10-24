@@ -24,12 +24,12 @@
             </section>
         @endforeach
 
-        <section class="section prose" aria-labelledby="why-heading">
+        <section class="section prose cv-auto" aria-labelledby="why-heading">
             <h2 id="why-heading">{{ t('Free tools people can trust') }}</h2>
             <p>{{ t('{name} is a free web app for everyday tasks with PDFs, images, text and data. Every tool runs in your browser, so your work stays private and results appear instantly.', ['name' => config('site.name')]) }}</p>
         </section>
 
-        <section class="section prose" aria-labelledby="home-faq-heading">
+        <section class="section prose cv-auto" aria-labelledby="home-faq-heading">
             <h2 id="home-faq-heading">{{ t('Frequently asked questions') }}</h2>
             <div class="faq">
                 @foreach (\App\Support\HomeFaq::all() as $faq)

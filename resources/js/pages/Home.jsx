@@ -302,7 +302,7 @@ export default function Home() {
                 <AdSlot key="home-in-content" position="in_content" />
 
                 {/* ---------- Privacy promise ---------- */}
-                <section className="my-14" aria-labelledby="promise-heading">
+                <section className="cv-auto my-14" aria-labelledby="promise-heading">
                     <div className="grid items-center gap-8 rounded-[28px] border border-line bg-[linear-gradient(135deg,var(--bg-grad-1),var(--bg-grad-2))] p-[clamp(1.75rem,5vw,3.5rem)] md:grid-cols-[1.4fr_1fr]">
                         <div className="min-w-0">
                             <p className={eyebrow}>{t('Privacy first')}</p>
@@ -335,7 +335,7 @@ export default function Home() {
                     <NewsletterForm />
                 </Suspense>
 
-                <section className="mb-6 text-center" aria-labelledby="trusted-heading">
+                <section className="cv-auto mb-6 text-center" aria-labelledby="trusted-heading">
                     <h2 id="trusted-heading" className={`${sectionTitle} mb-4`}>
                         {t('Free tools people can trust')}
                     </h2>
@@ -345,7 +345,7 @@ export default function Home() {
                 </section>
 
                 {site.homeFaqs?.length > 0 && (
-                    <section className="prose mx-auto mb-10 max-w-[760px]" aria-labelledby="home-faq-heading">
+                    <section className="cv-auto prose mx-auto mb-10 max-w-[760px]" aria-labelledby="home-faq-heading">
                         <h2 id="home-faq-heading" className={`${sectionTitle} mb-4 text-center`}>
                             {t('Frequently asked questions')}
                         </h2>
