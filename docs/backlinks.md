@@ -128,11 +128,13 @@ sites get declined as near-duplicates. Never pay for a queue skip, badge or "100
 | Fazier | blocked for the Chrome extension; owner submits |
 | Indie Hackers | live 24 Oct: indiehackers.com/product/ilovemytools (directory details filled) |
 | GitHub repo | 24 Oct: github.com/AlamgirSaeed101/ilovemytools About now links ilovemytools.store, topics added |
-| Launching Next | submitted 24 Oct (free queue, owner did the anti-bot check); they email if published. Skip the $99 one-day upgrade |
+| Launching Next | submitted 24 Oct (free queue, owner did the anti-bot check); they email if published (2-4 month queue). Skip the paid one-day upgrade |
 | DEV Community | blocked for the Chrome extension; owner posts |
 | Microlaunch | site down (SSL 526) on 24 Oct; retry later |
 | Peerlist, Crunchbase, SideProjectors, TinyLaunch, Medium, SaaSworthy | owner signs up (Claude can't create accounts), then Claude fills and submits |
 | Hacker News (Show HN), Reddit r/SideProject | owner posts personally (community rules: maker posts himself) |
+
+Account-free directories are rare (a 2026 survey found 21 of 341); most "free" lists are AI-tool directories or paid. Don't mass-submit to low-quality directories: a few relevant listings beat hundreds of junk links.
 
 ## Progress
 
