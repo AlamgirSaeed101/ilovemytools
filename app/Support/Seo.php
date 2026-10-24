@@ -330,7 +330,7 @@ class Seo
                 'availableLanguage' => array_values(array_map(fn ($l) => $l['name'], Locale::all())),
             ],
             'foundingDate' => config('site.founded'),
-            'founder' => ($founder = config('site.founder')) ? array_filter(['@type' => 'Person', 'name' => $founder['name'] ?? null, 'url' => $founder['url'] ?? null]) : null,
+            'founder' => ($founder = config('site.founder')) ? array_filter(['@type' => 'Person', 'name' => $founder['name'] ?? null, 'url' => $founder['url'] ?? null, 'sameAs' => $founder['same_as'] ?? null]) : null,
             'knowsAbout' => ['PDF', 'Image compression', 'Image conversion', 'Word count', 'Readability', 'QR codes', 'Mortgage calculation', 'JSON', 'SEO'],
             'sameAs' => array_values(array_unique(array_filter([
                 ...(array) config('site.same_as', []),

@@ -48,11 +48,22 @@ return [
 
     'same_as' => [
         'https://www.linkedin.com/company/ilovemytools',
+        'https://www.crunchbase.com/organization/ilovemytools',
+        'https://www.producthunt.com/products/ilovetools-3',
+        'https://www.indiehackers.com/product/ilovemytools',
+        'https://github.com/AlamgirSaeed101/ilovemytools',
     ],
 
     // The person behind the site, shown on the About page and in the schema once filled in,
     // e.g. ['name' => 'Jane Doe', 'url' => 'https://www.linkedin.com/in/janedoe'].
-    'founder' => ['name' => 'M Alamgir Saeed', 'url' => 'https://www.linkedin.com/in/alamgir-saeed-bse161020'],
+    'founder' => [
+        'name' => 'M Alamgir Saeed',
+        'url' => 'https://www.linkedin.com/in/alamgir-saeed-bse161020',
+        'same_as' => [
+            'https://www.linkedin.com/in/alamgir-saeed-bse161020',
+            'https://www.crunchbase.com/person/muhammad-alamgir-saeed',
+        ],
+    ],
 
     'theme_color' => '#4f46e5',
 
