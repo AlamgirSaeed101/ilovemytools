@@ -133,7 +133,7 @@ sites get declined as near-duplicates. Never pay for a queue skip, badge or "100
 | Microlaunch | site down (SSL 526) on 24 Oct; retry later |
 | TinyLaunch, Medium, SaaSworthy | owner signs up (Claude can't create accounts), then Claude fills and submits |
 | Peerlist, SideProjectors | now blocked for the Chrome extension (24 Oct); owner submits |
-| Crunchbase | live 24 Oct: crunchbase.com/organization/ilovemytools (Islamabad HQ, industries, website, LinkedIn). Logo and founder profile still to add (owner) |
+| Crunchbase | live 24 Oct: crunchbase.com/organization/ilovemytools (Islamabad HQ, industries, website, LinkedIn). logo added by owner; no founder profile yet |
 | Hacker News (Show HN), Reddit r/SideProject | owner posts personally (community rules: maker posts himself) |
 
 Account-free directories are rare (a 2026 survey found 21 of 341); most "free" lists are AI-tool directories or paid. Don't mass-submit to low-quality directories: a few relevant listings beat hundreds of junk links.
