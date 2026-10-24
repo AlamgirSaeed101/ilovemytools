@@ -13,11 +13,11 @@ Status: `ready` (no account needed) · `needs sign-up` · `submitted <date>` · 
 | Added | Site | Market | Submit URL | Account? | Link type | Status |
 |---|---|---|---|---|---|---|
 | 2026-10-24 | Puromarketing (Herramientas de Marketing) | ES | https://www.puromarketing.com/herramientas-marketing/nuevo | Yes, free signup ("regístrate gratis") | not stated | needs sign-up |
-| 2026-10-24 | EvaluandoSoftware (directorio) | AR (LatAm, Spanish-language B2B software consultancy) | https://www.evaluandosoftware.com/pre-registro/ | No login; pre-registration form, a rep then validates and lists the company | not stated | ready |
+| 2026-10-24 | EvaluandoSoftware (directorio) | AR (LatAm, Spanish-language B2B software consultancy) | https://www.evaluandosoftware.com/pre-registro/ | No login; pre-registration form, a rep then validates and lists the company | not stated | skip (enterprise ERP/CRM directory, needs phone + sales call; poor fit) |
 | 2026-10-24 | ComparaSoftware | MX (LatAm, Spanish/Portuguese B2B software marketplace, HQ Santiago de Chile) | https://comparasoftware.lovable.app/registro (linked from comparasoftware.com's "Publica tu software" / "Regístrate como fabricante") | Yes, free signup (email + password) | not stated | needs sign-up |
 | 2026-10-24 | CazaProducto ("the PH for LATAM") | LatAm (regional product-launch directory) | https://www.cazaproducto.com/productos/new | Yes, sign up ("No waitlist. No credit card.") | not stated | needs sign-up |
 | 2026-10-24 | SoftwareSuggest | International (free vendor listing, business email required, not gmail/outlook) | https://www.softwaresuggest.com/vendors | Yes, free signup | not stated | needs sign-up |
-| 2026-10-24 | LaunchFree.io (The Runway) | International | https://launchfree.io/submit.html | No login; 4-step form + verification challenge, ~24h review | not stated | ready |
+| 2026-10-24 | LaunchFree.io (The Runway) | International | https://launchfree.io/submit.html | No login; 4-step form + verification challenge, ~24h review | not stated | submitted 2026-10-24 (free dofollow, ~24h review) |
 | 2026-10-24 | SmolLaunch | International | https://smollaunch.com/submit | Yes, free plan but signup required to finish | not stated | needs sign-up |
 | 2026-10-24 | PitchWall | International | https://pitchwall.co/submit (select the Free Launch plan) | Yes, sign in with Google/GitHub/Microsoft/Discord | not stated | needs sign-up |
 
