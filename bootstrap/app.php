@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\PageCache;
 use App\Http\Middleware\SecurityHeaders;
 use App\Http\Middleware\SetLocale;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
@@ -32,6 +33,8 @@ return Application::configure(basePath: dirname(__DIR__))
             ShareErrorsFromSession::class,
             ValidateCsrfToken::class,
         ]);
+
+        $middleware->web(append: [PageCache::class]);
 
         $middleware->alias(['locale' => SetLocale::class]);
         $middleware->api(append: [SetLocale::class]);
