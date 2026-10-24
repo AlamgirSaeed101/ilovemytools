@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { PDFDocument } from 'pdf-lib';
 import Dropzone from '../components/Dropzone.jsx';
 import PdfPageCanvas from '../components/PdfPageCanvas.jsx';
 import { Notice, Tabs } from '../components/ui.jsx';
@@ -8,9 +7,13 @@ import { isPdf } from '../lib/pdf.js';
 import { usePdfDoc } from '../lib/pdfPages.js';
 import { canvasRectToPdfRect, clampRect, computeDisplayScale, pdfRectToCanvasRect, rectFromPoints } from '../lib/pdfOverlay.js';
 import { loadRenderDoc, renderPageToCanvas } from '../lib/pdfRender.js';
-import { colorsFromCanvas, coverRect, extractPageRuns, missingGlyphs } from '../lib/pdfTextEdit.js';
-import { arrowHeadLines, buildEditedPdf, normalizeLinkUrl, pointsToPdf, strokeBoundingBox, undoLast } from '../lib/pdfEdit.js';
-import { buildWatermarkedPdf, flattenPdf, imageWatermarkSize, watermarkPageIndexes } from '../lib/pdfWatermark.js';
+import { colorsFromCanvas, coverRect, extractPageRuns, missingGlyphs } from '../lib/pdfTextRuns.js';
+import { arrowHeadLines, normalizeLinkUrl, pointsToPdf, strokeBoundingBox, undoLast } from '../lib/pdfEditShapes.js';
+import { imageWatermarkSize, watermarkPageIndexes } from '../lib/pdfWatermarkLayout.js';
+
+// pdf-lib (~165 KB) only loads when a PDF is previewed or saved, not with the page.
+const loadWatermark = () => import('../lib/pdfWatermark.js');
+const loadEdit = () => import('../lib/pdfEdit.js');
 import { baseName, downloadBlob, formatBytes, safeFilename } from '../lib/util.js';
 
 const TEXT_SIZES = [12, 14, 18, 24, 32, 48];
@@ -210,9 +213,11 @@ export default function EditPdf({ initialMode } = {}) {
             let sourceRenderDoc = renderDoc;
             let ownRenderDoc = null;
             if (content) {
+                const { PDFDocument } = await import('pdf-lib');
                 const previewDoc = await PDFDocument.create();
                 const [copied] = await previewDoc.copyPages(doc, [0]);
                 previewDoc.addPage(copied);
+                const { buildWatermarkedPdf } = await loadWatermark();
                 const blob = await buildWatermarkedPdf(previewDoc, { pageIndexes: [0], position: wmPosition, opacity: wmOpacityPct / 100, rotation: wmRotation, layer: wmLayer, content });
                 const bytes = new Uint8Array(await blob.arrayBuffer());
                 if (cancelled) return;
@@ -259,6 +264,7 @@ export default function EditPdf({ initialMode } = {}) {
         setError('');
         try {
             const pageIndexes = watermarkPageIndexes(pageCount, wmScope, wmRangeText);
+            const { buildWatermarkedPdf, flattenPdf } = await loadWatermark();
             let blob = await buildWatermarkedPdf(doc, { pageIndexes, position: wmPosition, opacity: wmOpacityPct / 100, rotation: wmRotation, layer: wmLayer, content });
             if (wmFlatten) {
                 blob = await flattenPdf(new Uint8Array(await blob.arrayBuffer()), {
@@ -557,6 +563,7 @@ export default function EditPdf({ initialMode } = {}) {
                 }
                 return { ...el, thickness: el.thickness / scaleForPage, rectPdf: canvasRectToPdfRect(el, scaleForPage, size.height) };
             });
+            const { buildEditedPdf } = await loadEdit();
             const blob = await buildEditedPdf(doc, toBuild);
             setResult({ blob, name: safeFilename(`${baseName(file.name)}-edited.pdf`) });
         } catch (e) {

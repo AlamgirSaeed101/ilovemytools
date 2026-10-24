@@ -5,11 +5,9 @@
 import { PDFDocument, PDFName, PDFNumber, PDFRawStream } from 'pdf-lib';
 import { canvasToBlob, dpiToScale, renderPageToCanvas } from './pdfRender.js';
 
-export const RECOMMENDED_QUALITY = 0.6;
-export const RECOMMENDED_MAX_DIMENSION = 1600;
-export const STRONG_QUALITY = 0.75;
-export const STRONG_DPI_OPTIONS = [72, 100, 150, 200];
-export const STRONG_DEFAULT_DPI = 100;
+import { RECOMMENDED_MAX_DIMENSION, RECOMMENDED_QUALITY, STRONG_DEFAULT_DPI, STRONG_DPI_OPTIONS, STRONG_QUALITY } from './pdfCompressOptions.js';
+
+export { RECOMMENDED_MAX_DIMENSION, RECOMMENDED_QUALITY, STRONG_DEFAULT_DPI, STRONG_DPI_OPTIONS, STRONG_QUALITY };
 
 const RECOMPRESSIBLE_COLOR_SPACES = ['DeviceRGB', 'DeviceGray'];
 

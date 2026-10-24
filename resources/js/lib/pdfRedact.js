@@ -5,10 +5,9 @@ import { canvasToBlob, renderPageToCanvas } from './pdfRender.js';
 /** CSS/canvas pixels per PDF point used when rasterising a redacted page (about 216 DPI). */
 export const REDACT_RASTER_SCALE = 3;
 
-/** Pure: the sorted, de-duplicated list of 0-based page indexes that have at least one box. */
-export function pagesWithBoxes(boxes) {
-    return [...new Set(boxes.map((b) => b.page))].sort((a, b) => a - b);
-}
+import { pagesWithBoxes } from './pdfRedactBoxes.js';
+
+export { pagesWithBoxes };
 
 /**
  * True redaction: every page with at least one box is rendered to a raster image with the boxes

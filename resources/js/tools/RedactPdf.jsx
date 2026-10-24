@@ -6,7 +6,7 @@ import { t } from '../lib/i18n.js';
 import { isPdf } from '../lib/pdf.js';
 import { usePdfDoc } from '../lib/pdfPages.js';
 import { canvasRectToPdfRect, clampRect, computeDisplayScale, rectFromPoints } from '../lib/pdfOverlay.js';
-import { buildRedactedPdf, pagesWithBoxes } from '../lib/pdfRedact.js';
+import { pagesWithBoxes } from '../lib/pdfRedactBoxes.js';
 import { baseName, downloadBlob, formatBytes, safeFilename } from '../lib/util.js';
 
 const MIN_BOX = 12;
@@ -125,6 +125,8 @@ export default function RedactPdf() {
                 const scale = computeDisplayScale(size.width, size.height);
                 return { page: b.page, rectPdf: canvasRectToPdfRect(b, scale, size.height) };
             });
+            // pdf-lib loads only when the redacted PDF is built, not with the page.
+            const { buildRedactedPdf } = await import('../lib/pdfRedact.js');
             const blob = await buildRedactedPdf(doc, renderDoc, toBuild);
             setResult({ blob, name: safeFilename(`${baseName(file.name)}-redacted.pdf`) });
         } catch (e) {

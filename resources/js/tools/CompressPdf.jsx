@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Dropzone from '../components/Dropzone.jsx';
 import { Notice, Tabs } from '../components/ui.jsx';
 import { isPdf, loadPdf } from '../lib/pdf.js';
-import { compressPdfRecommended, compressPdfStrong, STRONG_DEFAULT_DPI, STRONG_DPI_OPTIONS } from '../lib/pdfCompress.js';
+import { STRONG_DEFAULT_DPI, STRONG_DPI_OPTIONS } from '../lib/pdfCompressOptions.js';
 import { loadRenderDoc } from '../lib/pdfRender.js';
 import { baseName, downloadBlob, formatBytes, safeFilename } from '../lib/util.js';
 import { t, tn } from '../lib/i18n.js';
@@ -48,6 +48,8 @@ export default function CompressPdf() {
         const base = safeFilename(baseName(file.name));
         try {
             const bytes = new Uint8Array(await file.arrayBuffer());
+            // pdf-lib loads only when a file is compressed, not with the page.
+            const { compressPdfRecommended, compressPdfStrong } = await import('../lib/pdfCompress.js');
             let outputBytes;
             if (mode === 'recommended') {
                 const { bytes: compressed } = await compressPdfRecommended(bytes);
