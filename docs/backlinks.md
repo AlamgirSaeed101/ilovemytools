@@ -131,7 +131,9 @@ sites get declined as near-duplicates. Never pay for a queue skip, badge or "100
 | Launching Next | submitted 24 Oct (free queue, owner did the anti-bot check); they email if published (2-4 month queue). Skip the paid one-day upgrade |
 | DEV Community | blocked for the Chrome extension; owner posts |
 | Microlaunch | site down (SSL 526) on 24 Oct; retry later |
-| Peerlist, Crunchbase, SideProjectors, TinyLaunch, Medium, SaaSworthy | owner signs up (Claude can't create accounts), then Claude fills and submits |
+| TinyLaunch, Medium, SaaSworthy | owner signs up (Claude can't create accounts), then Claude fills and submits |
+| Peerlist, SideProjectors | now blocked for the Chrome extension (24 Oct); owner submits |
+| Crunchbase | Cloudflare bot check blocks Claude; owner submits |
 | Hacker News (Show HN), Reddit r/SideProject | owner posts personally (community rules: maker posts himself) |
 
 Account-free directories are rare (a 2026 survey found 21 of 341); most "free" lists are AI-tool directories or paid. Don't mass-submit to low-quality directories: a few relevant listings beat hundreds of junk links.
