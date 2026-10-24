@@ -131,7 +131,8 @@ sites get declined as near-duplicates. Never pay for a queue skip, badge or "100
 | Launching Next | submitted 24 Oct (free queue, owner did the anti-bot check); they email if published (2-4 month queue). Skip the paid one-day upgrade |
 | DEV Community | blocked for the Chrome extension; owner posts |
 | Microlaunch | site down (SSL 526) on 24 Oct; retry later |
-| TinyLaunch, Medium, SaaSworthy | owner signs up (Claude can't create accounts), then Claude fills and submits |
+| TinyLaunch | free launch scheduled 24 Oct: waiting for approval, goes live Mon 23 Nov 2026 00:00 PT. Free plan gives the backlink only for a top-3 finish plus their badge embedded; ask for upvotes that day; skip the $39 premium |
+| Medium, SaaSworthy | owner signs up (Claude can't create accounts), then Claude fills and submits |
 | Peerlist, SideProjectors | now blocked for the Chrome extension (24 Oct); owner submits |
 | Crunchbase | live 24 Oct: crunchbase.com/organization/ilovemytools (Islamabad HQ, industries, website, LinkedIn). logo added by owner; founder profile crunchbase.com/person/muhammad-alamgir-saeed linked as founder (24 Oct) |
 | Hacker News (Show HN), Reddit r/SideProject | owner posts personally (community rules: maker posts himself) |
