@@ -2067,7 +2067,7 @@ return [
     'edit-pdf' => [
         'name' => 'Editar PDF',
         'title' => 'Editar PDF Online Gratis - Añadir Texto',
-        'description' => 'Edita un PDF online gratis: cambia el texto existente con la fuente del propio PDF, añade texto, imágenes, formas y enlaces, o tapa contenido. Sin subidas.',
+        'description' => 'Edita un PDF online gratis: cambia el texto con la fuente del propio PDF, añade texto, imágenes, formas, enlaces o una marca de agua, o tapa contenido.',
         'h1' => 'Editar PDF',
         'tagline' => 'Cambia el texto que ya tiene tu PDF o añade texto, imágenes, formas y enlaces, directamente en el navegador.',
         'keywords' => ['editar pdf', 'editar pdf online', 'añadir texto a pdf', 'anotar pdf', 'editor de pdf gratis'],
@@ -2089,6 +2089,7 @@ return [
             'Formas: rectángulo, elipse, línea y flecha',
             'Subrayado y tachado',
             'Enlaces clicables a cualquier sitio web',
+            'Añade una marca de agua de texto o logotipo, encima de la página o detrás',
         ],
         'content' => [
             ['heading' => 'Cómo funciona la edición del texto existente', 'body' => 'Haz clic en una línea de texto y escribe. El texto antiguo se cubre con el color que hay detrás y el nuevo se dibuja en la misma posición, tamaño y color, con la fuente incrustada en el PDF. Los PDF suelen incrustar solo las letras que usan, así que si tu texto nuevo necesita una letra que el archivo nunca contuvo, esa línea pasa a la fuente estándar más parecida y el editor te indica qué letras lo causaron. Las páginas escaneadas son imágenes sin texto editable; ahí usa el corrector blanco y Añadir texto.'],
@@ -2100,6 +2101,7 @@ return [
             ['q' => '¿Puedo mover o redimensionar lo que he añadido?', 'a' => 'Sí. Arrastra cualquier texto, imagen o resaltado para moverlo; las imágenes y los resaltados también tienen una esquina para redimensionarlos. Los dibujos a mano alzada también se pueden arrastrar.'],
             ['q' => '¿Se sube mi PDF a un servidor?', 'a' => 'No. Todo - añadir, mover, redimensionar y guardar - ocurre en tu navegador con JavaScript y nada se envía a ningún sitio.'],
             ['q' => '¿Qué formatos de imagen puedo añadir?', 'a' => 'PNG, JPG y WebP.'],
+            ['q' => '¿Puedo añadir una marca de agua?', 'a' => 'Sí. Abre la pestaña Marca de agua para estampar texto o un logotipo sobre la página, con su propia opacidad, rotación, posición y páginas - la misma herramienta que usa la página Marca de agua en PDF.'],
         ],
     ],
 

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { PDFDocument } from 'pdf-lib';
 import Dropzone from '../components/Dropzone.jsx';
 import PdfPageCanvas from '../components/PdfPageCanvas.jsx';
 import { Notice, Tabs } from '../components/ui.jsx';
@@ -6,9 +7,10 @@ import { t, tn } from '../lib/i18n.js';
 import { isPdf } from '../lib/pdf.js';
 import { usePdfDoc } from '../lib/pdfPages.js';
 import { canvasRectToPdfRect, clampRect, computeDisplayScale, pdfRectToCanvasRect, rectFromPoints } from '../lib/pdfOverlay.js';
-import { renderPageToCanvas } from '../lib/pdfRender.js';
+import { loadRenderDoc, renderPageToCanvas } from '../lib/pdfRender.js';
 import { colorsFromCanvas, coverRect, extractPageRuns, missingGlyphs } from '../lib/pdfTextEdit.js';
 import { arrowHeadLines, buildEditedPdf, normalizeLinkUrl, pointsToPdf, strokeBoundingBox, undoLast } from '../lib/pdfEdit.js';
+import { buildWatermarkedPdf, flattenPdf, imageWatermarkSize, watermarkPageIndexes } from '../lib/pdfWatermark.js';
 import { baseName, downloadBlob, formatBytes, safeFilename } from '../lib/util.js';
 
 const TEXT_SIZES = [12, 14, 18, 24, 32, 48];
@@ -17,6 +19,26 @@ const SHAPES = [
     { id: 'ellipse', label: () => t('Ellipse') },
     { id: 'line', label: () => t('Line') },
     { id: 'arrow', label: () => t('Arrow') },
+];
+const WATERMARK_TEXT_SIZES = [24, 32, 48, 64, 96];
+const WATERMARK_POSITIONS = [
+    { id: 'center', label: () => t('Centre') },
+    { id: 'top-left', label: () => t('Top left') },
+    { id: 'top-right', label: () => t('Top right') },
+    { id: 'bottom-left', label: () => t('Bottom left') },
+    { id: 'bottom-right', label: () => t('Bottom right') },
+    { id: 'tile', label: () => t('Tiled across the page') },
+];
+const WATERMARK_LAYERS = [
+    { id: 'over', label: () => t('On top of the content') },
+    { id: 'under', label: () => t('Behind the content (background)') },
+];
+const WATERMARK_SCOPES = [
+    { id: 'all', label: () => t('All pages') },
+    { id: 'odd', label: () => t('Odd pages') },
+    { id: 'even', label: () => t('Even pages') },
+    { id: 'skip-first', label: () => t('All pages except the first') },
+    { id: 'range', label: () => t('Choose pages') },
 ];
 // Modes where dragging on the page creates the element (instead of an "Add" button).
 const DRAG_MODES = ['whiteout', 'shape', 'underline', 'strike', 'link'];
@@ -53,11 +75,11 @@ function measureText(text, pxSize) {
     return Math.max(10, ctx.measureText(text).width);
 }
 
-export default function EditPdf() {
+export default function EditPdf({ initialMode } = {}) {
     const [file, setFile] = useState(null);
     const [currentPage, setCurrentPage] = useState(0);
     const [elements, setElements] = useState([]);
-    const [mode, setMode] = useState('edittext');
+    const [mode, setMode] = useState(initialMode ?? 'edittext');
     const [pageRuns, setPageRuns] = useState([]);
     const [runsReady, setRunsReady] = useState(false);
     const [editingId, setEditingId] = useState(null);
@@ -81,11 +103,28 @@ export default function EditPdf() {
     const [pendingImage, setPendingImage] = useState(null);
     const [drawingPoints, setDrawingPoints] = useState(null);
     const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
+    const [wmKind, setWmKind] = useState('text');
+    const [wmText, setWmText] = useState('');
+    const [wmTextSize, setWmTextSize] = useState(48);
+    const [wmTextColor, setWmTextColor] = useState('#6b7280');
+    const [wmTextBold, setWmTextBold] = useState(true);
+    const [wmPendingImage, setWmPendingImage] = useState(null);
+    const [wmImageScalePct, setWmImageScalePct] = useState(30);
+    const [wmOpacityPct, setWmOpacityPct] = useState(30);
+    const [wmRotation, setWmRotation] = useState(-45);
+    const [wmPosition, setWmPosition] = useState('center');
+    const [wmLayer, setWmLayer] = useState('over');
+    const [wmFlatten, setWmFlatten] = useState(false);
+    const [wmScope, setWmScope] = useState('all');
+    const [wmRangeText, setWmRangeText] = useState('');
+    const [wmProgress, setWmProgress] = useState('');
     const [error, setError] = useState('');
     const [working, setWorking] = useState(false);
     const [result, setResult] = useState(null);
     const stageRef = useRef(null);
     const nextId = useRef(1);
+    const wmPreviewCanvasRef = useRef(null);
+    const wmPreviewRenderDocRef = useRef(null);
     const { status, doc, renderDoc, pageCount } = usePdfDoc(file, { keepFonts: true });
 
     // The editable text runs of the page on screen (pdf.js text + the PDF's own fonts).
@@ -122,6 +161,118 @@ export default function EditPdf() {
             cancelled = true;
         };
     }, [editing?.id, editing?.text]);
+
+    function wmContentFor(pageWidth) {
+        if (wmKind === 'text') {
+            if (!wmText.trim()) return null;
+            return { kind: 'text', text: wmText, size: wmTextSize, bold: wmTextBold, color: wmTextColor };
+        }
+        if (!wmPendingImage) return null;
+        const { width, height } = imageWatermarkSize(pageWidth, wmPendingImage.width, wmPendingImage.height, wmImageScalePct);
+        return { kind: 'image', bytes: wmPendingImage.bytes, width, height };
+    }
+
+    function handleWatermarkImageFile([picked]) {
+        const img = new Image();
+        const url = URL.createObjectURL(picked);
+        img.onload = () => {
+            const canvas = document.createElement('canvas');
+            canvas.width = img.naturalWidth;
+            canvas.height = img.naturalHeight;
+            canvas.getContext('2d').drawImage(img, 0, 0);
+            URL.revokeObjectURL(url);
+            canvas.toBlob(async (blob) => {
+                if (!blob) {
+                    setError(t('Could not read that image.'));
+                    return;
+                }
+                const bytes = new Uint8Array(await blob.arrayBuffer());
+                setWmPendingImage({ dataUrl: canvas.toDataURL('image/png'), bytes, width: canvas.width, height: canvas.height });
+                setResult(null);
+            }, 'image/png');
+        };
+        img.onerror = () => {
+            URL.revokeObjectURL(url);
+            setError(t('Could not read that image.'));
+        };
+        img.src = url;
+    }
+
+    // Live preview: builds a real one-page watermarked PDF for page 1 and renders it with pdf.js,
+    // so the preview always matches exactly what downloading will produce.
+    useEffect(() => {
+        if (mode !== 'watermark' || !doc || !renderDoc) return;
+        let cancelled = false;
+        const { width: pageWidth, height: pageHeight } = doc.getPage(0).getSize();
+        const scaleForPreview = computeDisplayScale(pageWidth, pageHeight);
+        (async () => {
+            const content = wmContentFor(pageWidth);
+            let sourceRenderDoc = renderDoc;
+            let ownRenderDoc = null;
+            if (content) {
+                const previewDoc = await PDFDocument.create();
+                const [copied] = await previewDoc.copyPages(doc, [0]);
+                previewDoc.addPage(copied);
+                const blob = await buildWatermarkedPdf(previewDoc, { pageIndexes: [0], position: wmPosition, opacity: wmOpacityPct / 100, rotation: wmRotation, layer: wmLayer, content });
+                const bytes = new Uint8Array(await blob.arrayBuffer());
+                if (cancelled) return;
+                ownRenderDoc = await loadRenderDoc(bytes);
+                if (cancelled) {
+                    ownRenderDoc.destroy();
+                    return;
+                }
+                sourceRenderDoc = ownRenderDoc;
+            }
+            const canvas = await renderPageToCanvas(sourceRenderDoc, 1, { scale: scaleForPreview, background: '#ffffff' });
+            wmPreviewRenderDocRef.current?.destroy();
+            wmPreviewRenderDocRef.current = ownRenderDoc;
+            if (cancelled || !wmPreviewCanvasRef.current) return;
+            wmPreviewCanvasRef.current.width = canvas.width;
+            wmPreviewCanvasRef.current.height = canvas.height;
+            wmPreviewCanvasRef.current.getContext('2d').drawImage(canvas, 0, 0);
+        })().catch(() => {
+            // The preview is a convenience; a failure here never blocks the real download below.
+        });
+        return () => {
+            cancelled = true;
+        };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [mode, doc, renderDoc, wmKind, wmText, wmTextSize, wmTextColor, wmTextBold, wmPendingImage, wmImageScalePct, wmOpacityPct, wmRotation, wmPosition, wmLayer]);
+
+    useEffect(() => () => wmPreviewRenderDocRef.current?.destroy(), []);
+
+    // A finished watermark download no longer matches the settings once any of them change.
+    useEffect(() => {
+        setResult(null);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [wmKind, wmText, wmTextSize, wmTextColor, wmTextBold, wmPendingImage, wmImageScalePct, wmOpacityPct, wmRotation, wmPosition, wmLayer, wmFlatten, wmScope, wmRangeText]);
+
+    async function applyWatermark() {
+        if (!doc || working) return;
+        const pageWidth = doc.getPage(0).getSize().width;
+        const content = wmContentFor(pageWidth);
+        if (!content) {
+            setError(wmKind === 'text' ? t('Type the watermark text first.') : t('Choose a logo or image first.'));
+            return;
+        }
+        setWorking(true);
+        setError('');
+        try {
+            const pageIndexes = watermarkPageIndexes(pageCount, wmScope, wmRangeText);
+            let blob = await buildWatermarkedPdf(doc, { pageIndexes, position: wmPosition, opacity: wmOpacityPct / 100, rotation: wmRotation, layer: wmLayer, content });
+            if (wmFlatten) {
+                blob = await flattenPdf(new Uint8Array(await blob.arrayBuffer()), {
+                    onProgress: (page, total) => setWmProgress(t('Flattening page {page} of {total}…', { page, total })),
+                });
+            }
+            setResult({ blob, name: safeFilename(`${baseName(file.name)}-watermarked.pdf`) });
+        } catch (e) {
+            setError(t('Adding the watermark failed: {message}', { message: e.message }));
+        } finally {
+            setWorking(false);
+            setWmProgress('');
+        }
+    }
 
     /** A text-edit element for `run`, with the colours sampled from `canvas` (rendered at `atScale`). */
     function textEditFor(run, page, canvas, atScale, text) {
@@ -189,6 +340,7 @@ export default function EditPdf() {
         setCurrentPage(0);
         setElements([]);
         setPendingImage(null);
+        setWmPendingImage(null);
         setEditingId(null);
         setReplaceInfo('');
         setFile(picked);
@@ -449,7 +601,7 @@ export default function EditPdf() {
 
     return (
         <div className="stack">
-            {mode !== 'edittext' && (
+            {mode !== 'edittext' && mode !== 'watermark' && (
                 <Notice type="info">{t('This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.')}</Notice>
             )}
 
@@ -476,9 +628,118 @@ export default function EditPdf() {
                         { id: 'shape', label: t('Shapes') },
                         { id: 'link', label: t('Link') },
                         { id: 'draw', label: t('Draw') },
+                        { id: 'watermark', label: t('Watermark') },
                     ]}
                 />
 
+                {mode === 'watermark' ? (
+                <div className="grid-2" style={{ marginTop: '0.7rem' }}>
+                    <div className="field">
+                        <Tabs
+                            label={t('Watermark type')}
+                            value={wmKind}
+                            onChange={setWmKind}
+                            tabs={[{ id: 'text', label: t('Text') }, { id: 'image', label: t('Logo or image') }]}
+                        />
+
+                        {wmKind === 'text' ? (
+                            <div className="stack" style={{ gap: '.6rem', marginTop: '.7rem' }}>
+                                <input
+                                    className="input"
+                                    value={wmText}
+                                    onChange={(e) => setWmText(e.target.value)}
+                                    placeholder={t('e.g. CONFIDENTIAL, DRAFT, Your Company')}
+                                    aria-label={t('Watermark text')}
+                                />
+                                <div className="row">
+                                    <select className="select" style={{ maxWidth: '110px' }} value={wmTextSize} onChange={(e) => setWmTextSize(Number(e.target.value))} aria-label={t('Font size')}>
+                                        {WATERMARK_TEXT_SIZES.map((s) => <option key={s} value={s}>{s}px</option>)}
+                                    </select>
+                                    <input type="color" value={wmTextColor} onChange={(e) => setWmTextColor(e.target.value)} aria-label={t('Text colour')} />
+                                    <label className="check">
+                                        <input type="checkbox" checked={wmTextBold} onChange={(e) => setWmTextBold(e.target.checked)} /> {t('Bold')}
+                                    </label>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="stack" style={{ gap: '.6rem', marginTop: '.7rem' }}>
+                                <Dropzone
+                                    accept="image/png,image/jpeg,image/webp"
+                                    isAccepted={(f) => /^image\/(png|jpeg|webp)$/.test(f.type)}
+                                    onFiles={handleWatermarkImageFile}
+                                    onReject={() => setError(t('Please choose a PNG, JPG or WebP image.'))}
+                                    title={wmPendingImage ? t('Choose a different image') : t('Drop an image or click to choose')}
+                                    hint={t('PNG, JPG or WebP · a transparent PNG logo works best')}
+                                    compact
+                                />
+                                <div className="field">
+                                    <label className="field__label" htmlFor="wm-image-size">{t('Logo size: {value}% of the page width', { value: wmImageScalePct })}</label>
+                                    <input id="wm-image-size" className="range" type="range" min={5} max={80} step={5} value={wmImageScalePct} onChange={(e) => setWmImageScalePct(Number(e.target.value))} />
+                                </div>
+                            </div>
+                        )}
+
+                        <div className="field">
+                            <label className="field__label" htmlFor="wm-opacity">{t('Opacity: {value}%', { value: wmOpacityPct })}</label>
+                            <input id="wm-opacity" className="range" type="range" min={5} max={100} step={5} value={wmOpacityPct} onChange={(e) => setWmOpacityPct(Number(e.target.value))} />
+                        </div>
+
+                        <div className="field">
+                            <label className="field__label" htmlFor="wm-rotation">{t('Rotation: {value}°', { value: wmRotation })}</label>
+                            <input id="wm-rotation" className="range" type="range" min={-180} max={180} step={5} value={wmRotation} onChange={(e) => setWmRotation(Number(e.target.value))} />
+                        </div>
+
+                        <div className="field">
+                            <label className="field__label" htmlFor="wm-position">{t('Position')}</label>
+                            <select id="wm-position" className="select" value={wmPosition} onChange={(e) => setWmPosition(e.target.value)}>
+                                {WATERMARK_POSITIONS.map((p) => <option key={p.id} value={p.id}>{p.label()}</option>)}
+                            </select>
+                        </div>
+
+                        <div className="field">
+                            <label className="field__label" htmlFor="wm-layer">{t('Layer')}</label>
+                            <select id="wm-layer" className="select" value={wmLayer} onChange={(e) => setWmLayer(e.target.value)}>
+                                {WATERMARK_LAYERS.map((l) => <option key={l.id} value={l.id}>{l.label()}</option>)}
+                            </select>
+                            {wmLayer === 'under' && (
+                                <p className="field__hint">{t('A scanned page or a page with a solid background can hide a watermark placed behind the content.')}</p>
+                            )}
+                        </div>
+
+                        <div className="field">
+                            <label className="field__label" htmlFor="wm-scope">{t('Pages')}</label>
+                            <select id="wm-scope" className="select" value={wmScope} onChange={(e) => setWmScope(e.target.value)}>
+                                {WATERMARK_SCOPES.map((s) => <option key={s.id} value={s.id}>{s.label()}</option>)}
+                            </select>
+                            {wmScope === 'range' && (
+                                <input
+                                    className="input"
+                                    style={{ marginTop: '.5rem' }}
+                                    value={wmRangeText}
+                                    onChange={(e) => setWmRangeText(e.target.value)}
+                                    placeholder={t('e.g. 1-3, 5')}
+                                    aria-label={t('Page range')}
+                                />
+                            )}
+                        </div>
+
+                        <div className="field">
+                            <label className="check">
+                                <input type="checkbox" checked={wmFlatten} onChange={(e) => setWmFlatten(e.target.checked)} /> {t('Flatten pages so the watermark can’t be removed')}
+                            </label>
+                            <p className="field__hint">{t('Each page becomes an image: the watermark can no longer be deleted, but the text is no longer selectable or searchable and the file may be larger.')}</p>
+                        </div>
+                    </div>
+
+                    <div className="field">
+                        <span className="field__label">{t('Preview of page 1')}</span>
+                        <div className="pdf-editor__stage" style={{ cursor: 'default' }}>
+                            <canvas ref={wmPreviewCanvasRef} className="pdf-editor__canvas" aria-label={t('Preview of page 1')} />
+                        </div>
+                    </div>
+                </div>
+                ) : (
+                <>
                 <div className="pdf-editor__toolbar" style={{ marginTop: '0.7rem' }}>
                     {mode === 'text' && (
                         <>
@@ -765,6 +1026,8 @@ export default function EditPdf() {
                         </svg>
                     )}
                 </div>
+                </>
+                )}
             </div>
 
             <Notice type="error">{error}</Notice>
@@ -774,6 +1037,10 @@ export default function EditPdf() {
                     <span>{t('Done!')} {formatBytes(result.blob.size)}</span>
                     <button type="button" className="btn btn--primary" onClick={() => downloadBlob(result.blob, result.name)}>{t('Download PDF')}</button>
                 </div>
+            ) : mode === 'watermark' ? (
+                <button type="button" className="btn btn--primary btn--lg" onClick={applyWatermark} disabled={working || !(wmKind === 'text' ? wmText.trim() : wmPendingImage)}>
+                    {working ? wmProgress || t('Adding watermark…') : t('Add watermark')}
+                </button>
             ) : (
                 <button type="button" className="btn btn--primary btn--lg" onClick={apply} disabled={working || elements.length === 0}>
                     {working ? t('Saving…') : t('Save PDF')}

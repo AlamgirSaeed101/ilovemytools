@@ -8,6 +8,11 @@ const converter = (to) =>
 const pdfToImage = (format) =>
     lazy(() => import('./PdfToImage.jsx').then((m) => ({ default: (props) => createElement(m.default, { ...props, format }) })));
 
+// Every PDF editing feature lives in the one Edit PDF tool; a separate page like /watermark-pdf
+// just opens it with that mode preselected instead of getting its own editor.
+const editPdfMode = (initialMode) =>
+    lazy(() => import('./EditPdf.jsx').then((m) => ({ default: (props) => createElement(m.default, { ...props, initialMode }) })));
+
 // Slug (must match the key in config/tools.php) => React component.
 // Each tool is lazy-loaded into its own small JavaScript file.
 const tools = {
@@ -64,7 +69,7 @@ const tools = {
     'sign-pdf': lazy(() => import('./SignPdf.jsx')),
     'redact-pdf': lazy(() => import('./RedactPdf.jsx')),
     'edit-pdf': lazy(() => import('./EditPdf.jsx')),
-    'watermark-pdf': lazy(() => import('./WatermarkPdf.jsx')),
+    'watermark-pdf': editPdfMode('watermark'),
 };
 
 export default tools;

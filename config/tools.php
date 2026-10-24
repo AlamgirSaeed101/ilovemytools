@@ -2434,9 +2434,9 @@ return [
         'category' => 'pdf-tools',
         'icon' => 'pdf',
         'popular' => false,
-        'updated' => '2026-10-22',
+        'updated' => '2026-10-24',
         'title' => 'Edit PDF Online Free - Add Text and Images',
-        'description' => 'Edit a PDF online for free: change existing text in the PDF\'s own font, add text, images, shapes and links, or white out content. No upload, no sign up.',
+        'description' => 'Edit a PDF online for free: change text in its own font, add text, images, shapes, links or a watermark, or white out content. No upload, no sign up.',
         'h1' => 'Edit PDF',
         'tagline' => 'Change the text already in your PDF, or add text, images, shapes and links - right in your browser.',
         'keywords' => ['edit pdf', 'edit pdf online', 'add text to pdf', 'annotate pdf', 'pdf editor free'],
@@ -2458,6 +2458,7 @@ return [
             'Shapes: rectangle, ellipse, line and arrow',
             'Underline and strikethrough',
             'Clickable links to any website',
+            'Add a text or logo watermark, on top of the page or behind it',
         ],
         'content' => [
             [
@@ -2475,12 +2476,13 @@ return [
             ['q' => 'Can I move or resize what I\'ve added?', 'a' => 'Yes. Drag any text, image or highlight to move it; images and highlights also have a corner handle to resize them. Freehand drawings can be dragged too.'],
             ['q' => 'Is my PDF uploaded to a server?', 'a' => 'No. Everything - adding, moving, resizing and saving - happens in your browser with JavaScript and nothing is sent anywhere.'],
             ['q' => 'What image formats can I add?', 'a' => 'PNG, JPG and WebP.'],
+            ['q' => 'Can I add a watermark?', 'a' => 'Yes. Open the Watermark tab to stamp text or a logo image across the page, with its own opacity, rotation, position and page range - the same tool the Watermark PDF page uses.'],
         ],
         'sources' => [
             ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
             ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
         ],
-        'related' => ['sign-pdf', 'redact-pdf', 'merge-pdf', 'rotate-pdf'],
+        'related' => ['sign-pdf', 'redact-pdf', 'watermark-pdf', 'merge-pdf'],
     ],
 
     'watermark-pdf' => [

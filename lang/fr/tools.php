@@ -2172,7 +2172,7 @@ return [
     'edit-pdf' => [
         'name' => 'Modifier un PDF',
         'title' => 'Modifier un PDF Gratuit - Ajouter du Texte',
-        'description' => 'Modifiez un PDF en ligne gratuitement : changez le texte existant avec la police du PDF, ajoutez texte, images, formes et liens, ou masquez du contenu.',
+        'description' => 'Modifiez un PDF en ligne gratuitement : changez le texte avec la police du PDF, ajoutez texte, images, formes, liens ou un filigrane, ou masquez du contenu.',
         'h1' => 'Modifier un PDF',
         'tagline' => 'Modifiez le texte déjà présent dans votre PDF ou ajoutez texte, images, formes et liens, directement dans le navigateur.',
         'keywords' => ['modifier pdf', 'modifier pdf en ligne', 'ajouter du texte à un pdf', 'annoter pdf', 'éditeur pdf gratuit'],
@@ -2194,6 +2194,7 @@ return [
             'Formes : rectangle, ellipse, ligne et flèche',
             'Soulignement et texte barré',
             'Liens cliquables vers n’importe quel site',
+            'Ajoutez un filigrane de texte ou de logo, au-dessus de la page ou derrière',
         ],
         'content' => [
             ['heading' => 'Comment fonctionne la modification du texte existant', 'body' => 'Cliquez sur une ligne de texte et tapez. L’ancienne formulation est recouverte de la couleur qui se trouve derrière, et la nouvelle est dessinée à la même position, dans la même taille et la même couleur, avec la police intégrée au PDF. Les PDF n’intègrent généralement que les lettres qu’ils utilisent : si votre nouveau texte demande une lettre que le fichier ne contenait pas, cette ligne passe à la police standard la plus proche et l’éditeur vous indique quelles lettres en sont la cause. Les pages numérisées sont des images sans texte modifiable ; utilisez-y le masquage blanc et Ajouter du texte.'],
@@ -2205,6 +2206,7 @@ return [
             ['q' => "Puis-je déplacer ou redimensionner ce que j'ai ajouté ?", 'a' => "Oui. Faites glisser n'importe quel texte, image ou surlignage pour le déplacer ; les images et les surlignages ont aussi une poignée d'angle pour les redimensionner. Les dessins à main levée peuvent aussi être déplacés."],
             ['q' => 'Mon PDF est-il envoyé à un serveur ?', 'a' => "Non. Tout - ajouter, déplacer, redimensionner et enregistrer - se passe dans votre navigateur avec JavaScript, et rien n'est envoyé nulle part."],
             ['q' => "Quels formats d'image puis-je ajouter ?", 'a' => 'PNG, JPG et WebP.'],
+            ['q' => 'Puis-je ajouter un filigrane ?', 'a' => "Oui. Ouvrez l'onglet Filigrane pour tamponner du texte ou un logo sur la page, avec son opacité, sa rotation, sa position et ses pages propres - le même outil que celui de la page Filigrane PDF."],
         ],
     ],
 

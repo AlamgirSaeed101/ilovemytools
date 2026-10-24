@@ -2045,7 +2045,7 @@ return [
     'edit-pdf' => [
         'name' => 'Edytuj PDF',
         'title' => 'Edytuj PDF Online Bezpłatnie - Dodaj Tekst',
-        'description' => 'Edytuj PDF online za darmo: zmieniaj istniejący tekst czcionką z PDF, dodawaj tekst, obrazy, kształty i linki albo zakrywaj treść. Bez przesyłania.',
+        'description' => 'Edytuj PDF online za darmo: zmieniaj tekst czcionką z PDF, dodawaj tekst, obrazy, kształty, linki lub znak wodny albo zakrywaj treść. Bez przesyłania.',
         'h1' => 'Edytuj PDF',
         'tagline' => 'Zmieniaj tekst, który już jest w PDF, albo dodawaj tekst, obrazy, kształty i linki – prosto w przeglądarce.',
         'keywords' => ['edytuj pdf', 'edytuj pdf online', 'dodaj tekst do pdf', 'adnotacje w pdf', 'darmowy edytor pdf'],
@@ -2067,6 +2067,7 @@ return [
             'Kształty: prostokąt, elipsa, linia i strzałka',
             'Podkreślenie i przekreślenie',
             'Klikalne linki do dowolnej strony',
+            'Dodaj znak wodny z tekstu lub logo, nad stroną albo pod nią',
         ],
         'content' => [
             ['heading' => 'Jak działa edycja istniejącego tekstu', 'body' => 'Kliknij wiersz tekstu i pisz. Stare brzmienie zostaje zakryte kolorem, który jest pod nim, a nowe jest rysowane w tym samym miejscu, rozmiarze i kolorze, czcionką osadzoną w PDF. Pliki PDF zwykle osadzają tylko używane litery, więc jeśli nowy tekst wymaga litery, której plik nigdy nie zawierał, ten wiersz przełącza się na najbliższą standardową czcionkę, a edytor pokazuje, które litery są przyczyną. Zeskanowane strony to obrazy bez tekstu do edycji; użyj tam zakrywania na biało i dodawania tekstu.'],
@@ -2078,6 +2079,7 @@ return [
             ['q' => 'Czy mogę przesunąć lub zmienić rozmiar tego, co dodałem/am?', 'a' => 'Tak. Przeciągnij dowolny tekst, obraz lub zakreślenie, aby go przesunąć; obrazy i zakreślenia mają też uchwyt w rogu do zmiany rozmiaru. Odręczne rysunki też można przeciągać.'],
             ['q' => 'Czy mój PDF jest wysyłany na serwer?', 'a' => 'Nie. Wszystko - dodawanie, przesuwanie, zmiana rozmiaru i zapisywanie - odbywa się w Twojej przeglądarce za pomocą JavaScript, a nic nie jest nigdzie wysyłane.'],
             ['q' => 'Jakie formaty obrazów mogę dodać?', 'a' => 'PNG, JPG i WebP.'],
+            ['q' => 'Czy mogę dodać znak wodny?', 'a' => 'Tak. Otwórz zakładkę Znak wodny, aby nałożyć na stronę tekst lub logo, z własną przezroczystością, obrotem, pozycją i zakresem stron - tym samym narzędziem, co strona Znak wodny PDF.'],
         ],
     ],
 

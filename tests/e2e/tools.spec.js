@@ -831,6 +831,39 @@ test.describe('PDF tools', () => {
         expect(await pdfPageCount(flatBytes)).toBe(2);
         expect(await pdfPageTexts(page, flatBytes)).toEqual(['', '']);
     });
+
+    test('watermark lives inside Edit PDF as its own tab, alongside the other editing tools', async ({ page }) => {
+        await openTool(page, 'edit-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'notes.pdf', mimeType: 'application/pdf', buffer: await makePdf(2) });
+        await expect(page.getByRole('tab', { name: 'Edit text' })).toHaveAttribute('aria-selected', 'true');
+
+        await page.getByRole('tab', { name: 'Watermark' }).click();
+        await expect(page.getByRole('button', { name: 'Add watermark' })).toBeDisabled();
+        await page.getByLabel('Watermark text').fill('SAMPLE');
+        await expect(page.getByRole('button', { name: 'Add watermark' })).toBeEnabled();
+
+        await page.getByRole('button', { name: 'Add watermark' }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(file.suggestedFilename()).toBe('notes-watermarked.pdf');
+        const texts = await pdfPageTexts(page, await readDownload(file));
+        expect(texts[0]).toContain('SAMPLE');
+        expect(texts[1]).toContain('SAMPLE');
+
+        // Switching back to Edit text still edits the page's own text, unaffected by the watermark tab.
+        await page.getByRole('tab', { name: 'Edit text' }).click();
+        await expect(page.getByRole('button', { name: 'Edit text: Doc page 1' })).toBeVisible();
+    });
+
+    test('watermark-pdf opens Edit PDF with the Watermark tab preselected, and the full editor stays reachable', async ({ page }) => {
+        await openTool(page, 'watermark-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'report.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
+        await expect(page.getByRole('tab', { name: 'Watermark' })).toHaveAttribute('aria-selected', 'true');
+        await expect(page.getByLabel('Watermark text')).toBeVisible();
+
+        // The one editor is still underneath: every other tab is reachable from this page too.
+        await expect(page.getByRole('tab', { name: 'Edit text' })).toBeVisible();
+        await expect(page.getByRole('tab', { name: 'Shapes' })).toBeVisible();
+    });
 });
 
 test.describe('Calculators', () => {

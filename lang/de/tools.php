@@ -2172,7 +2172,7 @@ return [
     'edit-pdf' => [
         'name' => 'PDF bearbeiten',
         'title' => 'PDF Online Bearbeiten - Text und Bilder Hinzufügen',
-        'description' => 'PDF online kostenlos bearbeiten: vorhandenen Text in der PDF-eigenen Schrift ändern, Text, Bilder, Formen und Links einfügen oder Inhalte abdecken.',
+        'description' => 'PDF online kostenlos bearbeiten: Text in der PDF-eigenen Schrift ändern, Text, Bilder, Formen, Links oder ein Wasserzeichen einfügen oder Inhalte abdecken.',
         'h1' => 'PDF bearbeiten',
         'tagline' => 'Ändern Sie den Text, der schon im PDF steht, oder fügen Sie Text, Bilder, Formen und Links ein – direkt im Browser.',
         'keywords' => ['pdf bearbeiten', 'pdf online bearbeiten', 'text zu pdf hinzufügen', 'pdf kommentieren', 'pdf editor kostenlos'],
@@ -2194,6 +2194,7 @@ return [
             'Formen: Rechteck, Ellipse, Linie und Pfeil',
             'Unterstreichen und Durchstreichen',
             'Anklickbare Links zu jeder Website',
+            'Text- oder Logo-Wasserzeichen hinzufügen, über der Seite oder dahinter',
         ],
         'content' => [
             ['heading' => 'So funktioniert das Bearbeiten von vorhandenem Text', 'body' => 'Klicken Sie auf eine Textzeile und tippen Sie. Der alte Wortlaut wird mit der Farbe dahinter abgedeckt und der neue an derselben Position, in derselben Größe und Farbe mit der im PDF eingebetteten Schrift gezeichnet. PDFs betten meist nur die verwendeten Buchstaben ein: Braucht Ihr neuer Text einen Buchstaben, den die Datei nie enthielt, wechselt diese Zeile zur ähnlichsten Standardschrift, und der Editor zeigt an, welche Buchstaben der Grund sind. Gescannte Seiten sind Bilder ohne bearbeitbaren Text; nutzen Sie dort Weiß abdecken und Text hinzufügen.'],
@@ -2205,6 +2206,7 @@ return [
             ['q' => 'Kann ich verschieben oder in der Größe ändern, was ich hinzugefügt habe?', 'a' => 'Ja. Ziehen Sie Text, Bild oder Markierung, um sie zu verschieben; Bilder und Markierungen haben außerdem einen Eckgriff zum Ändern der Größe. Freihandzeichnungen lassen sich ebenfalls verschieben.'],
             ['q' => 'Wird mein PDF auf einen Server hochgeladen?', 'a' => 'Nein. Alles - Hinzufügen, Verschieben, Größenänderung und Speichern - geschieht in Ihrem Browser mit JavaScript, und nichts wird irgendwohin gesendet.'],
             ['q' => 'Welche Bildformate kann ich hinzufügen?', 'a' => 'PNG, JPG und WebP.'],
+            ['q' => 'Kann ich ein Wasserzeichen hinzufügen?', 'a' => 'Ja. Öffnen Sie den Reiter Wasserzeichen, um Text oder ein Logo auf die Seite zu stempeln, mit eigener Deckkraft, Drehung, Position und Seitenbereich - demselben Werkzeug wie auf der Seite PDF-Wasserzeichen.'],
         ],
     ],
 

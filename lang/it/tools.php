@@ -2172,7 +2172,7 @@ return [
     'edit-pdf' => [
         'name' => 'Modifica PDF',
         'title' => 'Modifica PDF Online Gratis - Aggiungi Testo',
-        'description' => 'Modifica un PDF online gratis: cambia il testo esistente con il carattere del PDF, aggiungi testo, immagini, forme e link, o copri contenuti. Senza upload.',
+        'description' => 'Modifica un PDF online gratis: cambia il testo con il carattere del PDF, aggiungi testo, immagini, forme, link o una filigrana, o copri contenuti.',
         'h1' => 'Modifica PDF',
         'tagline' => 'Modifica il testo già presente nel tuo PDF o aggiungi testo, immagini, forme e link, direttamente nel browser.',
         'keywords' => ['modifica pdf', 'modificare pdf online', 'aggiungere testo a pdf', 'annotare pdf', 'editor pdf gratuito'],
@@ -2194,6 +2194,7 @@ return [
             'Forme: rettangolo, ellisse, linea e freccia',
             'Sottolineato e barrato',
             'Link cliccabili verso qualsiasi sito',
+            'Aggiungi una filigrana di testo o logo, sopra la pagina o dietro di essa',
         ],
         'content' => [
             ['heading' => 'Come funziona la modifica del testo esistente', 'body' => 'Fai clic su una riga di testo e scrivi. La vecchia formulazione viene coperta con il colore che le sta dietro e la nuova viene disegnata nella stessa posizione, dimensione e colore, usando il carattere incorporato nel PDF. I PDF di solito incorporano solo le lettere che usano: se il nuovo testo richiede una lettera che il file non conteneva, quella riga passa al carattere standard più simile e l’editor ti dice quali lettere lo hanno causato. Le pagine scansionate sono immagini senza testo modificabile; lì usa Copri con bianco e Aggiungi testo.'],
@@ -2205,6 +2206,7 @@ return [
             ['q' => 'Posso spostare o ridimensionare ciò che ho aggiunto?', 'a' => 'Sì. Trascina qualsiasi testo, immagine o evidenziazione per spostarlo; immagini ed evidenziazioni hanno anche una maniglia d\'angolo per ridimensionarli. Anche i disegni a mano libera possono essere trascinati.'],
             ['q' => 'Il mio PDF viene caricato su un server?', 'a' => 'No. Tutto - aggiungere, spostare, ridimensionare e salvare - avviene nel tuo browser con JavaScript e nulla viene inviato da nessuna parte.'],
             ['q' => 'Quali formati immagine posso aggiungere?', 'a' => 'PNG, JPG e WebP.'],
+            ['q' => 'Posso aggiungere una filigrana?', 'a' => 'Sì. Apri la scheda Filigrana per stampare testo o un logo sulla pagina, con opacità, rotazione, posizione e pagine proprie - lo stesso strumento usato dalla pagina Filigrana PDF.'],
         ],
     ],
 
