@@ -128,7 +128,7 @@ sites get declined as near-duplicates. Never pay for a queue skip, badge or "100
 | Fazier | blocked for the Chrome extension; owner submits |
 | Indie Hackers | live 24 Oct: indiehackers.com/product/ilovemytools (directory details filled) |
 | GitHub repo | 24 Oct: github.com/AlamgirSaeed101/ilovemytools About now links ilovemytools.store, topics added |
-| Launching Next | form filled 24 Oct; owner answers the anti-bot "2+3" check and clicks Submit (free queue; skip the $99 upgrade) |
+| Launching Next | submitted 24 Oct (free queue, owner did the anti-bot check); they email if published. Skip the $99 one-day upgrade |
 | DEV Community | blocked for the Chrome extension; owner posts |
 | Microlaunch | site down (SSL 526) on 24 Oct; retry later |
 | Peerlist, Crunchbase, SideProjectors, TinyLaunch, Medium, SaaSworthy | owner signs up (Claude can't create accounts), then Claude fills and submits |
