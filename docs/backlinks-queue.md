@@ -5,7 +5,7 @@ profiles). Separate from guest posting (docs/outreach/). The backlink researcher
 sites a day; Claude submits the `ready` ones in Chrome when the owner says "listings"; sites that need
 an account wait until the owner signs up (Claude never creates accounts).
 
-Copy for every form: docs/launch/listing-kit.md. Never pay, never buy a "skip the queue" or badge, never
+Copy for every form: docs/launch/listing-kit.md. Curated software directories (AlternativeTo and similar) decline 'collections of tools': there, submit ILoveMyTools PDF Editor (/edit-pdf) as the product. Never pay, never buy a "skip the queue" or badge, never
 add a fake address, never post the same link twice on one site.
 
 Status: `ready` (no account needed) · `needs sign-up` · `submitted <date>` · `live <date> (dofollow|nofollow)` · `rejected` · `skip (<reason>)`
