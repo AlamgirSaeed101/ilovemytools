@@ -1021,4 +1021,81 @@ return [
             ['title' => 'Library of Congress, Sustainability of Digital Formats: PDF', 'url' => 'https://www.loc.gov/preservation/digital/formats/fdd/fdd000030.shtml'],
         ],
     ],
+
+    'how-to-edit-text-in-a-pdf' => [
+        'title' => 'How to Edit Text in a PDF for Free',
+        'description' => 'Edit the text already inside a PDF for free, right in your browser: fix a typo, change a price, replace a word everywhere, and know when it will not work.',
+        'h1' => 'How to edit text in a PDF',
+        'intro' => 'Most "PDF editors" only let you draw a white box over the old text and type new text on top, which looks fine until someone zooms in and sees the mismatched font or the edge of the cover-up. Editing the text itself - in its own font, at its own size, in the same spot - is a different and much harder job, and it only works at all if the PDF actually contains real text rather than a scanned image of text. Here is how it works, what it can and cannot fix, and the mistakes that cause a strange-looking result.',
+        'tool' => 'edit-pdf',
+        'related' => ['watermark-pdf', 'sign-pdf', 'redact-pdf'],
+        'published' => '2026-10-25',
+        'updated' => '2026-10-25',
+        'sections' => [
+            [
+                'heading' => 'Why editing PDF text is different from editing a Word document',
+                'paragraphs' => [
+                    'A PDF does not store text as paragraphs you can click into like a word processor. It stores a sequence of drawing instructions: put this exact glyph, from this exact font, at this exact x/y position on the page. A PDF editor has to read those instructions, work out which glyphs belong to the line you clicked, cover them, and draw replacement glyphs from the same font at the same position - essentially reverse-engineering a layout that was never meant to be edited. That is also why editing a PDF is slower and more limited than editing the original Word, Google Docs or InDesign file: if you still have the source document, edit that and re-export to PDF instead.',
+                    'The other wrinkle is that a PDF usually does not embed a whole font, only the handful of letters, numbers and symbols the document actually uses. A contract that never needed the character "@" simply does not have it stored anywhere inside the file, even though the Calibri or Times font it uses obviously supports it.',
+                ],
+            ],
+            [
+                'heading' => 'Editing text already in the PDF, step by step',
+                'paragraphs' => [
+                    'This runs in your browser with no upload: the file is opened, edited and saved on your own device, which matters for anything with a name, address or financial figure in it.',
+                ],
+                'list' => [
+                    'Open the Edit PDF tool and choose your file.',
+                    'Click directly on the line of text you want to change. The editor finds the matching text run and opens it for editing.',
+                    'Type the new wording. It is drawn in the PDF\'s own embedded font, at the same size, colour and position as the text it replaces; the old wording is covered first with the colour that was behind it.',
+                    'To change the same word everywhere - a company name, a wrong date - use Find and replace instead of editing each line by hand.',
+                    'If you need to remove something rather than retype it, switch to Whiteout, which covers the area without needing replacement text.',
+                    'Click Save PDF and download the result, then open it and check every page you touched at 100% zoom.',
+                ],
+            ],
+            [
+                'heading' => 'When it will not work: scanned pages and missing letters',
+                'paragraphs' => [
+                    'If a page came from a scanner or a "print to PDF" of a photo, there is no text to click - the whole page is one image, and what looks like letters is just pixels. Clicking won\'t select a line because there is no line object to select. For a scanned page, use Whiteout to cover the old content and Add text to type the replacement in a font you choose, rather than trying to edit "in place".',
+                    'The second limit shows up even on a real text PDF: if your replacement wording needs a letter, accent or symbol that never appeared anywhere in the original document, that specific line switches to the closest standard font (Arial/Helvetica, Times or Courier, or their free equivalents) because the embedded font has no glyph to draw. A good editor will tell you which letters triggered this, rather than silently swapping the font and leaving you to spot it later.',
+                ],
+                'table' => [
+                    'headers' => ['Situation', 'Can you edit the text in place?', 'What to do instead'],
+                    'rows' => [
+                        ['Normal PDF exported from Word, Docs or a web page', 'Yes, click and retype', '-'],
+                        ['Scanned page or photo saved as PDF', 'No - it is one image', 'Whiteout + Add text'],
+                        ['New wording uses a letter/symbol not in the original', 'Partially - that line falls back to a standard font', 'Check the line after editing; retype in a different font if the mismatch bothers you'],
+                        ['Need to change the same word on every page', 'Yes, faster with Find and replace', 'Use Find and replace, not line-by-line edits'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'Three things that go wrong the first time',
+                'paragraphs' => [
+                    'New text runs into the margin or the next column. The replacement is drawn at the original font size, so a shorter original word replaced with a much longer one can overflow its old space - the same problem you would have retyping a label on a printed form. Shorten the wording or reduce the size manually if it does not fit.',
+                    'The cover-up leaves a visible edge. The old text is covered with the colour sampled from behind it, which works cleanly on a plain white or solid-colour background but can leave a faint rectangle on a gradient, a background image, or text sitting over a photo. For those cases, Whiteout with a manually matched colour, or redoing the whole block as an image edit, gives a cleaner result.',
+                    'A date, name or number is changed in the visible text but an old copy survives elsewhere in the file - in a form field, a bookmark, or document metadata like the title or author. Always check the PDF\'s own Properties/metadata panel in a PDF reader after editing anything sensitive, and use Find and replace across the whole document rather than page by page so you do not miss a second mention.',
+                ],
+            ],
+            [
+                'heading' => 'Checklist before you send the edited PDF',
+                'list' => [
+                    'Open the saved file and zoom to 100% on every page you edited - small font-mismatch or overflow issues are easy to miss when the page is shrunk to fit the screen.',
+                    'Search the document for the old wording to confirm you caught every instance, not just the one you saw first.',
+                    'Check the file\'s metadata (title, author, subject) in your PDF reader if the document\'s origin matters.',
+                    'For anything scanned, confirm you used Whiteout and Add text rather than expecting to click-and-edit an image.',
+                    'Keep the original file until you have confirmed the edited copy looks right - edits are not reversible once you have saved over the only copy you have.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Can I edit any PDF\'s text this way?', 'a' => 'Only if the page has real, selectable text rather than a scanned image. A PDF exported from Word, Docs, a web page or most design tools qualifies; a scanned document or a photo saved as PDF does not, since the whole page is one image with no text to click.'],
+            ['q' => 'Will the new text look exactly like the original?', 'a' => 'Usually yes, because the replacement is drawn in the PDF\'s own embedded font at the same size, colour and position. It can switch to a standard fallback font only on a line where your new wording needs a letter the original document never used.'],
+            ['q' => 'Is my file uploaded to edit it?', 'a' => 'No. Opening, editing and saving all happen in your browser with JavaScript, and the PDF is never sent to a server.'],
+        ],
+        'sources' => [
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+            ['title' => 'Mozilla, PDF.js - a PDF renderer and text extraction library', 'url' => 'https://mozilla.github.io/pdf.js/'],
+        ],
+    ],
 ];
