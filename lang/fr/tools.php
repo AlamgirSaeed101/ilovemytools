@@ -2189,7 +2189,7 @@ return [
             'Ajoutez vos propres images',
             "Surlignez n'importe quelle partie d'une page",
             'Dessinez à main levée avec la souris ou votre doigt',
-            'Annulez la dernière modification, ou supprimez n\'importe quel élément individuellement',
+            'Annulez ou rétablissez n\'importe quelle modification, ou supprimez n\'importe quel élément individuellement',
             'Masquage blanc pour couvrir du texte ou des images existants',
             'Formes : rectangle, ellipse, ligne et flèche',
             'Soulignement et texte barré',

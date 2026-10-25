@@ -1402,7 +1402,7 @@
   {
     "key": "Choose which pages to watermark.",
     "files": [
-      "resources/js/lib/pdfWatermark.js"
+      "resources/js/lib/pdfWatermarkLayout.js"
     ]
   },
   {
@@ -5435,6 +5435,12 @@
     "key": "redirects to {url}",
     "files": [
       "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
+    "key": "Redo",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {

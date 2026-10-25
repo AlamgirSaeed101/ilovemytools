@@ -85,3 +85,4 @@ Written by the daily SEO/GEO/AEO routine (rule 14 of `docs/ROUTINE.md`). One lin
 - 2026-10-24 health · 684 pages, 55 outbound links checked · 0 issues · nothing to fix; LinkedIn same_as link confirmed live/linked; badges list empty; Semrush backlinks check skipped (no API units).
 - 2026-10-24 10:54 UTC · pdf-editor · Watermark moved into Edit PDF as its own tab (same pdf-lib logic, settings and output as the old Watermark PDF tool); /watermark-pdf now opens Edit PDF with that tab preselected and the rest of the editor still reachable, in all 10 languages.
 - 2026-10-25 health · 684 pages, 55 outbound links checked · 0 issues · nothing to fix; same_as/badges checked, all live, no dead or spam listings; Semrush backlinks skipped (no API units).
+- 2026-10-25 10:44 UTC · pdf-editor · Edit PDF: added a Redo button next to Undo (restores the most recently undone element; any new edit clears the redo history), in all 10 languages.

@@ -2062,7 +2062,7 @@ return [
             'Dodaj własne obrazy',
             'Zakreśl dowolną część strony',
             'Rysuj odręcznie myszką lub palcem',
-            'Cofnij ostatnią zmianę lub usuń dowolny element osobno',
+            'Cofnij lub przywróć dowolną zmianę, lub usuń dowolny element osobno',
             'Zakrywanie na biało istniejącego tekstu lub obrazów',
             'Kształty: prostokąt, elipsa, linia i strzałka',
             'Podkreślenie i przekreślenie',

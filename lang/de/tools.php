@@ -2189,7 +2189,7 @@ return [
             'Eigene Bilder hinzufügen',
             'Jeden Teil einer Seite markieren',
             'Freihand mit der Maus oder dem Finger zeichnen',
-            'Die letzte Änderung rückgängig machen oder jedes Element einzeln entfernen',
+            'Jede Änderung rückgängig machen oder wiederholen, oder jedes Element einzeln entfernen',
             'Weiß abdecken, um vorhandenen Text oder Bilder zu verbergen',
             'Formen: Rechteck, Ellipse, Linie und Pfeil',
             'Unterstreichen und Durchstreichen',

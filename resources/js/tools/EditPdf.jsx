@@ -82,6 +82,7 @@ export default function EditPdf({ initialMode } = {}) {
     const [file, setFile] = useState(null);
     const [currentPage, setCurrentPage] = useState(0);
     const [elements, setElements] = useState([]);
+    const [redoStack, setRedoStack] = useState([]);
     const [mode, setMode] = useState(initialMode ?? 'edittext');
     const [pageRuns, setPageRuns] = useState([]);
     const [runsReady, setRunsReady] = useState(false);
@@ -304,6 +305,7 @@ export default function EditPdf({ initialMode } = {}) {
 
     function updateElement(id, changes) {
         setElements((list) => list.map((el) => (el.id === id ? { ...el, ...changes } : el)));
+        setRedoStack([]);
         setResult(null);
     }
 
@@ -331,6 +333,7 @@ export default function EditPdf({ initialMode } = {}) {
                 }
             }
             setElements((list) => [...list.filter((el) => !added.some((a) => a.id === el.id)), ...added]);
+            setRedoStack([]);
             setResult(null);
             setReplaceInfo(count ? tn('Replaced {count} time.', 'Replaced {count} times.', count) : t('No matches found.'));
         } catch (e) {
@@ -349,6 +352,7 @@ export default function EditPdf({ initialMode } = {}) {
         setWmPendingImage(null);
         setEditingId(null);
         setReplaceInfo('');
+        setRedoStack([]);
         setFile(picked);
     }
 
@@ -358,16 +362,27 @@ export default function EditPdf({ initialMode } = {}) {
 
     function pushElement(el) {
         setElements((list) => [...list, { id: nextId.current++, page: currentPage, ...el }]);
+        setRedoStack([]);
         setResult(null);
     }
 
     function undo() {
+        if (elements.length === 0) return;
+        setRedoStack((stack) => [...stack, elements[elements.length - 1]]);
         setElements((list) => undoLast(list));
+        setResult(null);
+    }
+
+    function redo() {
+        if (redoStack.length === 0) return;
+        setElements((list) => [...list, redoStack[redoStack.length - 1]]);
+        setRedoStack((stack) => stack.slice(0, -1));
         setResult(null);
     }
 
     function removeElement(id) {
         setElements((list) => list.filter((el) => el.id !== id));
+        setRedoStack([]);
         setResult(null);
     }
 
@@ -503,6 +518,7 @@ export default function EditPdf({ initialMode } = {}) {
                 const dx = p.x - startPoint.x;
                 const dy = p.y - startPoint.y;
                 setElements((list) => list.map((item) => (item.id === id ? { ...item, points: startPoints.map((pt) => ({ x: pt.x + dx, y: pt.y + dy })) } : item)));
+                setRedoStack([]);
                 setResult(null);
             };
             const handleUp = () => {
@@ -533,6 +549,7 @@ export default function EditPdf({ initialMode } = {}) {
                     return { ...item, ...clampRect({ x: startRect.x, y: startRect.y, width: startRect.width + dx, height: startRect.height + dy }, natural.width, natural.height, 12) };
                 })
             );
+            setRedoStack([]);
             setResult(null);
         };
         const handleUp = () => {
@@ -839,6 +856,7 @@ export default function EditPdf({ initialMode } = {}) {
                         </>
                     )}
                     <button type="button" className="btn btn--sm" onClick={undo} disabled={elements.length === 0}>{t('Undo')}</button>
+                    <button type="button" className="btn btn--sm" onClick={redo} disabled={redoStack.length === 0}>{t('Redo')}</button>
                 </div>
 
                 {mode === 'edittext' && editing && missing.length > 0 && (

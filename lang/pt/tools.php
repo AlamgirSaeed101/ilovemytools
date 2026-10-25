@@ -2189,7 +2189,7 @@ return [
             'Adicione suas próprias imagens',
             'Realce qualquer parte de uma página',
             'Desenhe à mão livre com o mouse ou o dedo',
-            'Desfaça a última alteração, ou remova qualquer elemento individualmente',
+            'Desfaça ou refaça qualquer alteração, ou remova qualquer elemento individualmente',
             'Corretivo branco para cobrir texto ou imagens existentes',
             'Formas: retângulo, elipse, linha e seta',
             'Sublinhado e tachado',

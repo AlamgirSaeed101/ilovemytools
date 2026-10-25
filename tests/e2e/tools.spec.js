@@ -691,8 +691,16 @@ test.describe('PDF tools', () => {
         await page.mouse.move(stageBox.x + 80, stageBox.y + 60, { steps: 5 });
         await page.mouse.up();
         await expect(overlay).toHaveCount(3);
+        await expect(page.getByRole('button', { name: 'Redo' })).toBeDisabled();
         await page.getByRole('button', { name: 'Undo' }).click();
         await expect(overlay).toHaveCount(2);
+
+        // Redo brings the drawing back; undo removes it again before saving.
+        await page.getByRole('button', { name: 'Redo' }).click();
+        await expect(overlay).toHaveCount(3);
+        await page.getByRole('button', { name: 'Undo' }).click();
+        await expect(overlay).toHaveCount(2);
+        await expect(page.getByRole('button', { name: 'Redo' })).toBeEnabled();
 
         await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);

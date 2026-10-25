@@ -21,6 +21,7 @@ text and change it in place, in the same font.
 2. [x] Edit existing text in the same font (moved up, owner priority; shipped 22 Oct: original text removed from the content stream, not just covered): extract every text run with pdf.js, click to edit in place, keep font family/size/bold/italic/colour, cover the old run with its own background colour; plus find and replace
 2b. [x] Watermark inside Edit PDF as a Watermark tab; /watermark-pdf opens Edit PDF in that mode (same settings and output as today)
 2c. [ ] Editor phase 1 remainder: zoom, page thumbnails, rotate elements, redo (whiteout, shapes, underline/strikethrough and links shipped 22 Oct)
+  - [x] Redo: a Redo button next to Undo restores the most recently undone element; any new edit (add, move, resize, retype, find & replace, explicit remove) clears the redo history, matching standard editor behaviour.
 4. [ ] Session: auto-save and unsaved-changes warnings
 5. [ ] Fill PDF forms (new page) and create form fields
 6. [ ] Page tools and signature inside the editor

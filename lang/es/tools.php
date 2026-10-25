@@ -2084,7 +2084,7 @@ return [
             'Añade tus propias imágenes',
             'Resalta cualquier parte de una página',
             'Dibuja a mano alzada con el ratón o el dedo',
-            'Deshace el último cambio, o elimina cualquier elemento individualmente',
+            'Deshace o rehace cualquier cambio, o elimina cualquier elemento individualmente',
             'Corrector blanco para cubrir texto o imágenes existentes',
             'Formas: rectángulo, elipse, línea y flecha',
             'Subrayado y tachado',

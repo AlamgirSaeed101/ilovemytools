@@ -2189,7 +2189,7 @@ return [
             'Aggiungi le tue immagini',
             'Evidenzia qualsiasi parte di una pagina',
             'Disegna a mano libera con il mouse o il dito',
-            'Annulla l\'ultima modifica, o rimuovi qualsiasi elemento singolarmente',
+            'Annulla o ripeti qualsiasi modifica, o rimuovi qualsiasi elemento singolarmente',
             'Copertura bianca per nascondere testo o immagini esistenti',
             'Forme: rettangolo, ellisse, linea e freccia',
             'Sottolineato e barrato',
