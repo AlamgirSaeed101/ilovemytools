@@ -1,0 +1,49 @@
+# Measures the live site's mobile Lighthouse scores after every successful deploy (and on demand)
+# and commits them to docs/perf-scores.md. Owner target: performance 90+ on every page.
+name: Mobile speed scores
+
+on:
+  workflow_run:
+    workflows: ['Test and deploy']
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: perf-scores
+  cancel-in-progress: true
+
+jobs:
+  lighthouse:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Lighthouse
+        run: npm install -g lighthouse@12.2.1
+
+      - name: Let the cache warm up after the deploy
+        if: github.event_name == 'workflow_run'
+        run: sleep 120
+
+      - name: Measure
+        run: node scripts/perf-scores.mjs
+
+      - name: Commit the scores
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/perf-scores.md
+          git diff --cached --quiet && exit 0
+          git commit -m 'docs(perf): mobile Lighthouse scores [skip ci]'
+          for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 5; done
