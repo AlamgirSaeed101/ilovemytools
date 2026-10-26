@@ -1291,5 +1291,9 @@
     },
     "Restore original": "還原原文",
     "The PDF’s own font doesn’t include {letters}, so this line will use a similar font.": "PDF 內嵌的字型不含 {letters}，因此這一行會改用相似的字型。",
-    "This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.": "這會在頁面上方加入新內容。若要修改 PDF 中原有的文字，請使用「編輯文字」分頁。"
+    "This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.": "這會在頁面上方加入新內容。若要修改 PDF 中原有的文字，請使用「編輯文字」分頁。",
+    "Zoom in": "放大",
+    "Zoom out": "縮小",
+    "Zoom: {value}%": "縮放:{value}%",
+    "Reset zoom": "重設縮放"
 }

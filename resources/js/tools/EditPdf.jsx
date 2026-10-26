@@ -17,6 +17,9 @@ const loadEdit = () => import('../lib/pdfEdit.js');
 import { baseName, downloadBlob, formatBytes, safeFilename } from '../lib/util.js';
 
 const TEXT_SIZES = [12, 14, 18, 24, 32, 48];
+const ZOOM_MIN = 50;
+const ZOOM_MAX = 200;
+const ZOOM_STEP = 25;
 const SHAPES = [
     { id: 'rect', label: () => t('Rectangle') },
     { id: 'ellipse', label: () => t('Ellipse') },
@@ -107,6 +110,7 @@ export default function EditPdf({ initialMode } = {}) {
     const [pendingImage, setPendingImage] = useState(null);
     const [drawingPoints, setDrawingPoints] = useState(null);
     const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
+    const [zoomPct, setZoomPct] = useState(100);
     const [wmKind, setWmKind] = useState('text');
     const [wmText, setWmText] = useState('');
     const [wmTextSize, setWmTextSize] = useState(48);
@@ -353,6 +357,7 @@ export default function EditPdf({ initialMode } = {}) {
         setEditingId(null);
         setReplaceInfo('');
         setRedoStack([]);
+        setZoomPct(100);
         setFile(picked);
     }
 
@@ -622,6 +627,7 @@ export default function EditPdf({ initialMode } = {}) {
     const currentPageSize = doc.getPage(currentPage).getSize();
     const scale = computeDisplayScale(currentPageSize.width, currentPageSize.height);
     const currentElements = elements.filter((el) => el.page === currentPage);
+    const zoomFactor = zoomPct / 100;
 
     return (
         <div className="stack">
@@ -881,13 +887,33 @@ export default function EditPdf({ initialMode } = {}) {
                             {t('Next page')}
                         </button>
                     </div>
+                    <div className="pdf-editor__zoom">
+                        <button type="button" className="btn btn--sm" onClick={() => setZoomPct((z) => Math.max(ZOOM_MIN, z - ZOOM_STEP))} disabled={zoomPct <= ZOOM_MIN} aria-label={t('Zoom out')}>
+                            −
+                        </button>
+                        <span className="pdf-editor__zoom-label" aria-live="polite">{t('Zoom: {value}%', { value: zoomPct })}</span>
+                        <button type="button" className="btn btn--sm" onClick={() => setZoomPct((z) => Math.min(ZOOM_MAX, z + ZOOM_STEP))} disabled={zoomPct >= ZOOM_MAX} aria-label={t('Zoom in')}>
+                            +
+                        </button>
+                        {zoomPct !== 100 && (
+                            <button type="button" className="btn btn--sm btn--ghost" onClick={() => setZoomPct(100)}>{t('Reset zoom')}</button>
+                        )}
+                    </div>
                 </div>
 
+                <div
+                    className="pdf-editor__zoomport"
+                    style={{ width: canvasSize.width ? canvasSize.width * zoomFactor : undefined, height: canvasSize.height ? canvasSize.height * zoomFactor : undefined }}
+                >
                 <div
                     className="pdf-editor__stage"
                     ref={stageRef}
                     onPointerDown={startDraw}
-                    style={mode === 'draw' || DRAG_MODES.includes(mode) ? { touchAction: 'none', cursor: 'crosshair' } : undefined}
+                    style={{
+                        transformOrigin: 'top left',
+                        ...(zoomFactor !== 1 ? { transform: `scale(${zoomFactor})` } : null),
+                        ...(mode === 'draw' || DRAG_MODES.includes(mode) ? { touchAction: 'none', cursor: 'crosshair' } : null),
+                    }}
                 >
                     <PdfPageCanvas renderDoc={renderDoc} pageNumber={currentPage + 1} scale={scale} className="pdf-editor__canvas" onReady={onPageReady} />
                     {mode === 'edittext' &&
@@ -1050,6 +1076,7 @@ export default function EditPdf({ initialMode } = {}) {
                             <polyline points={drawingPoints.map((p) => `${p.x},${p.y}`).join(' ')} fill="none" stroke={drawColor} strokeWidth={drawThickness} strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                     )}
+                </div>
                 </div>
                 </>
                 )}

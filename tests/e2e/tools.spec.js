@@ -785,6 +785,45 @@ test.describe('PDF tools', () => {
         expect(action.get(PDFName.of('URI')).decodeText()).toBe('https://ilovemytools.store/merge-pdf');
     });
 
+    test('edit PDF: zoom scales the page view without breaking drags or the saved file', async ({ page }) => {
+        await openTool(page, 'edit-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'zoomed.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
+        const stage = page.locator('.pdf-editor__stage');
+        await expect.poll(async () => (await page.locator('.pdf-editor__canvas').boundingBox())?.height ?? 0).toBeGreaterThan(100);
+        const baseBox = await stage.boundingBox();
+
+        await expect(page.getByText('Zoom: 100%')).toBeVisible();
+        await expect(page.getByRole('button', { name: 'Zoom out' })).toBeEnabled();
+        await page.getByRole('button', { name: 'Zoom in' }).click();
+        await expect(page.getByText('Zoom: 125%')).toBeVisible();
+        const zoomedBox = await stage.boundingBox();
+        expect(zoomedBox.width).toBeGreaterThan(baseBox.width * 1.1);
+
+        // Add text, then drag it while zoomed in: the pointer math must still map onto the page correctly.
+        await page.getByRole('tab', { name: 'Add text' }).click();
+        await page.getByLabel('Text to add').fill('Zoomed text');
+        await page.getByRole('button', { name: 'Add text to page' }).click();
+        const overlay = page.locator('.pdf-editor__overlay');
+        await expect(overlay).toHaveCount(1);
+        await overlay.first().scrollIntoViewIfNeeded();
+        const before = await overlay.first().boundingBox();
+        await page.mouse.move(before.x + before.width / 2, before.y + before.height / 2);
+        await page.mouse.down();
+        await page.mouse.move(before.x + 50, before.y + 40, { steps: 5 });
+        await page.mouse.up();
+        const after = await overlay.first().boundingBox();
+        expect(after.x).not.toBeCloseTo(before.x, 0);
+
+        await page.getByRole('button', { name: 'Reset zoom' }).click();
+        await expect(page.getByText('Zoom: 100%')).toBeVisible();
+        await expect(page.getByRole('button', { name: 'Reset zoom' })).toHaveCount(0);
+
+        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        const text = await extractPdfText(page, await readDownload(file));
+        expect(text).toContain('Zoomed text');
+    });
+
     test('watermark PDF stamps text onto only the pages chosen, matching the live preview', async ({ page }) => {
         await openTool(page, 'watermark-pdf');
         const originalBytes = await makePdf(3);

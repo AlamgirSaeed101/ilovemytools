@@ -1315,5 +1315,9 @@
     },
     "Restore original": "اصل بحال کریں",
     "The PDF’s own font doesn’t include {letters}, so this line will use a similar font.": "PDF کے اپنے فونٹ میں {letters} شامل نہیں، اس لیے یہ لائن ملتا جلتا فونٹ استعمال کرے گی۔",
-    "This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.": "یہ صفحے کے اوپر نیا مواد شامل کرتا ہے۔ PDF میں پہلے سے موجود متن بدلنے کے لیے متن میں ترمیم والا ٹیب استعمال کریں۔"
+    "This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.": "یہ صفحے کے اوپر نیا مواد شامل کرتا ہے۔ PDF میں پہلے سے موجود متن بدلنے کے لیے متن میں ترمیم والا ٹیب استعمال کریں۔",
+    "Zoom in": "زوم ان کریں",
+    "Zoom out": "زوم آؤٹ کریں",
+    "Zoom: {value}%": "زوم: {value}%",
+    "Reset zoom": "زوم ری سیٹ کریں"
 }

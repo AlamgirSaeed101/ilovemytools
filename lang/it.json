@@ -1315,5 +1315,9 @@
     },
     "Restore original": "Ripristina originale",
     "The PDF’s own font doesn’t include {letters}, so this line will use a similar font.": "Il carattere del PDF non contiene {letters}, quindi questa riga userà un carattere simile.",
-    "This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.": "Questo strumento aggiunge nuovi contenuti sopra la pagina. Per modificare un testo già presente nel PDF, usa la scheda Modifica testo."
+    "This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.": "Questo strumento aggiunge nuovi contenuti sopra la pagina. Per modificare un testo già presente nel PDF, usa la scheda Modifica testo.",
+    "Zoom in": "Aumenta zoom",
+    "Zoom out": "Riduci zoom",
+    "Zoom: {value}%": "Zoom: {value}%",
+    "Reset zoom": "Ripristina zoom"
 }

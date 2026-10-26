@@ -5670,6 +5670,12 @@
     ]
   },
   {
+    "key": "Reset zoom",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Resize image",
     "files": [
       "resources/js/tools/ImageResizer.jsx"
@@ -7844,6 +7850,24 @@
       "resources/js/tools/CaseConverter.jsx",
       "resources/js/tools/ReadabilityChecker.jsx",
       "resources/js/tools/WordCounter.jsx"
+    ]
+  },
+  {
+    "key": "Zoom in",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Zoom out",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Zoom: {value}%",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   }
 ]

@@ -2535,6 +2535,32 @@ fieldset.grid-2 .check:has(input:checked) {
     text-align: center;
 }
 
+.pdf-editor__zoom {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.pdf-editor__zoom-label {
+    min-width: 4.5rem;
+    text-align: center;
+    font-weight: 650;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Reserves the zoomed-in/out visual size of .pdf-editor__stage and scrolls it when it no longer
+   fits; the stage itself keeps its native (unzoomed) layout box and is scaled with a CSS
+   transform, which getBoundingClientRect() (used to map pointer events) already accounts for. */
+.pdf-editor__zoomport {
+    display: inline-block;
+    max-width: 100%;
+    overflow: auto;
+}
+
+.pdf-editor__zoomport .pdf-editor__stage {
+    max-width: none;
+}
+
 .pdf-editor__stage {
     position: relative;
     display: inline-block;

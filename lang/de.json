@@ -1315,5 +1315,9 @@
     },
     "Restore original": "Original wiederherstellen",
     "The PDF’s own font doesn’t include {letters}, so this line will use a similar font.": "Die Schriftart des PDFs enthält {letters} nicht, daher verwendet diese Zeile eine ähnliche Schrift.",
-    "This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.": "Damit fügen Sie neue Inhalte über der Seite ein. Um Text zu ändern, der schon im PDF steht, nutzen Sie den Tab „Text bearbeiten“."
+    "This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.": "Damit fügen Sie neue Inhalte über der Seite ein. Um Text zu ändern, der schon im PDF steht, nutzen Sie den Tab „Text bearbeiten“.",
+    "Zoom in": "Vergrößern",
+    "Zoom out": "Verkleinern",
+    "Zoom: {value}%": "Zoom: {value} %",
+    "Reset zoom": "Zoom zurücksetzen"
 }

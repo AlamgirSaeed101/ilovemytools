@@ -2195,6 +2195,7 @@ return [
             'Unterstreichen und Durchstreichen',
             'Anklickbare Links zu jeder Website',
             'Text- oder Logo-Wasserzeichen hinzufügen, über der Seite oder dahinter',
+            'Zoomen Sie hinein oder heraus, um alles präzise zu platzieren',
         ],
         'content' => [
             ['heading' => 'So funktioniert das Bearbeiten von vorhandenem Text', 'body' => 'Klicken Sie auf eine Textzeile und tippen Sie. Der alte Wortlaut wird mit der Farbe dahinter abgedeckt und der neue an derselben Position, in derselben Größe und Farbe mit der im PDF eingebetteten Schrift gezeichnet. PDFs betten meist nur die verwendeten Buchstaben ein: Braucht Ihr neuer Text einen Buchstaben, den die Datei nie enthielt, wechselt diese Zeile zur ähnlichsten Standardschrift, und der Editor zeigt an, welche Buchstaben der Grund sind. Gescannte Seiten sind Bilder ohne bearbeitbaren Text; nutzen Sie dort Weiß abdecken und Text hinzufügen.'],

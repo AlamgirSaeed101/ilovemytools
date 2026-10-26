@@ -22,6 +22,7 @@ text and change it in place, in the same font.
 2b. [x] Watermark inside Edit PDF as a Watermark tab; /watermark-pdf opens Edit PDF in that mode (same settings and output as today)
 2c. [ ] Editor phase 1 remainder: zoom, page thumbnails, rotate elements, redo (whiteout, shapes, underline/strikethrough and links shipped 22 Oct)
   - [x] Redo: a Redo button next to Undo restores the most recently undone element; any new edit (add, move, resize, retype, find & replace, explicit remove) clears the redo history, matching standard editor behaviour.
+  - [x] Zoom: +/- controls and a Reset zoom button scale the page view from 50% to 200% (25% steps) with a CSS transform; pointer placement, dragging and the saved PDF stay correct at every zoom level since element coordinates are unaffected by the view scale.
 4. [ ] Session: auto-save and unsaved-changes warnings
 5. [ ] Fill PDF forms (new page) and create form fields
 6. [ ] Page tools and signature inside the editor

@@ -2459,6 +2459,7 @@ return [
             'Underline and strikethrough',
             'Clickable links to any website',
             'Add a text or logo watermark, on top of the page or behind it',
+            'Zoom in or out to place things precisely',
         ],
         'content' => [
             [

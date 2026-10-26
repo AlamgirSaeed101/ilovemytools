@@ -1363,5 +1363,9 @@
     },
     "Restore original": "Przywróć oryginał",
     "The PDF’s own font doesn’t include {letters}, so this line will use a similar font.": "Czcionka tego PDF nie zawiera {letters}, więc ten wiersz użyje podobnej czcionki.",
-    "This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.": "Narzędzie dodaje nową treść na wierzchu strony. Aby zmienić tekst, który już jest w PDF, użyj karty Edytuj tekst."
+    "This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.": "Narzędzie dodaje nową treść na wierzchu strony. Aby zmienić tekst, który już jest w PDF, użyj karty Edytuj tekst.",
+    "Zoom in": "Powiększ",
+    "Zoom out": "Zmniejsz",
+    "Zoom: {value}%": "Powiększenie: {value}%",
+    "Reset zoom": "Resetuj powiększenie"
 }

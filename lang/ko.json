@@ -1291,5 +1291,9 @@
     },
     "Restore original": "원래대로 되돌리기",
     "The PDF’s own font doesn’t include {letters}, so this line will use a similar font.": "PDF에 포함된 글꼴에 {letters}이(가) 없어 이 줄에는 비슷한 글꼴이 사용됩니다.",
-    "This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.": "페이지 위에 새 내용을 추가합니다. PDF에 이미 있는 텍스트를 바꾸려면 텍스트 편집 탭을 사용하세요."
+    "This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.": "페이지 위에 새 내용을 추가합니다. PDF에 이미 있는 텍스트를 바꾸려면 텍스트 편집 탭을 사용하세요.",
+    "Zoom in": "확대",
+    "Zoom out": "축소",
+    "Zoom: {value}%": "확대/축소: {value}%",
+    "Reset zoom": "확대/축소 초기화"
 }

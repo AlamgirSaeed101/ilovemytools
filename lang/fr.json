@@ -1315,5 +1315,9 @@
     },
     "Restore original": "Rétablir l’original",
     "The PDF’s own font doesn’t include {letters}, so this line will use a similar font.": "La police du PDF ne contient pas {letters} : cette ligne utilisera donc une police proche.",
-    "This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.": "Cet outil ajoute du contenu par-dessus la page. Pour modifier un texte déjà présent dans le PDF, utilisez l’onglet Modifier le texte."
+    "This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.": "Cet outil ajoute du contenu par-dessus la page. Pour modifier un texte déjà présent dans le PDF, utilisez l’onglet Modifier le texte.",
+    "Zoom in": "Zoomer",
+    "Zoom out": "Dézoomer",
+    "Zoom: {value}%": "Zoom : {value} %",
+    "Reset zoom": "Réinitialiser le zoom"
 }

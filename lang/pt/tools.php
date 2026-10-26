@@ -2195,6 +2195,7 @@ return [
             'Sublinhado e tachado',
             'Links clicáveis para qualquer site',
             'Adicione uma marca de água de texto ou logotipo, por cima da página ou atrás dela',
+            'Aproxime ou afaste a visualização para posicionar tudo com precisão',
         ],
         'content' => [
             ['heading' => 'Como funciona a edição do texto existente', 'body' => 'Clique em uma linha de texto e digite. O texto antigo é coberto com a cor que está atrás dele e o novo é desenhado na mesma posição, tamanho e cor, usando a fonte incorporada ao PDF. Os PDFs costumam incorporar apenas as letras que usam; se o novo texto precisar de uma letra que o arquivo nunca teve, essa linha passa para a fonte padrão mais parecida e o editor informa quais letras causaram isso. Páginas digitalizadas são imagens sem texto editável; nelas, use o corretivo branco e Adicionar texto.'],

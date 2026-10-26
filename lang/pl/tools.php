@@ -2068,6 +2068,7 @@ return [
             'Podkreślenie i przekreślenie',
             'Klikalne linki do dowolnej strony',
             'Dodaj znak wodny z tekstu lub logo, nad stroną albo pod nią',
+            'Powiększaj lub zmniejszaj widok, aby precyzyjnie rozmieszczać elementy',
         ],
         'content' => [
             ['heading' => 'Jak działa edycja istniejącego tekstu', 'body' => 'Kliknij wiersz tekstu i pisz. Stare brzmienie zostaje zakryte kolorem, który jest pod nim, a nowe jest rysowane w tym samym miejscu, rozmiarze i kolorze, czcionką osadzoną w PDF. Pliki PDF zwykle osadzają tylko używane litery, więc jeśli nowy tekst wymaga litery, której plik nigdy nie zawierał, ten wiersz przełącza się na najbliższą standardową czcionkę, a edytor pokazuje, które litery są przyczyną. Zeskanowane strony to obrazy bez tekstu do edycji; użyj tam zakrywania na biało i dodawania tekstu.'],
