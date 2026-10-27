@@ -1098,4 +1098,82 @@ return [
             ['title' => 'Mozilla, PDF.js - a PDF renderer and text extraction library', 'url' => 'https://mozilla.github.io/pdf.js/'],
         ],
     ],
+
+    'how-to-white-out-text-in-a-pdf' => [
+        'title' => 'How to White Out Text in a PDF for Free',
+        'description' => 'White out text, a stamp or an image in a PDF for free, right in your browser, and learn why whiteout is not the same as secure redaction before you rely on it.',
+        'h1' => 'How to white out text in a PDF',
+        'intro' => 'Sometimes you just want to cover something on a PDF page - an old signature block, a stray mark, a line of a form you no longer need - without retyping anything or removing a whole page. Whiteout does exactly that: it draws an opaque box over the area you choose. It is quick and it looks clean in the final file, but it is also the setting people most often reach for when what they actually need is proper redaction. Here is how whiteout works, when it is the right tool, and when it is not.',
+        'tool' => 'edit-pdf',
+        'related' => ['redact-pdf', 'edit-pdf', 'sign-pdf'],
+        'published' => '2026-10-27',
+        'updated' => '2026-10-27',
+        'sections' => [
+            [
+                'heading' => 'What whiteout actually does',
+                'paragraphs' => [
+                    'Whiteout draws a solid rectangle in a colour you choose - usually white, to match the page - on top of the existing content at the position and size you set. It does not touch what is underneath: the original text, image or drawing instructions stay in the PDF\'s content stream exactly as they were, just covered by the new shape sitting above them in the page\'s stacking order.',
+                    'That is the opposite of how the Edit PDF tool\'s in-place text editing works. When you click a line of real text and retype it, the old glyphs are deleted from the content stream and new ones are drawn in their place, so there is nothing left behind. Whiteout is simpler and works on anything - text, a logo, a signature, a scanned stamp - because it does not need to understand what it is covering, it only needs to know where to draw a box.',
+                ],
+            ],
+            [
+                'heading' => 'Whiting out something on a page, step by step',
+                'paragraphs' => [
+                    'This runs entirely in your browser; the PDF is opened, edited and saved on your own device and never uploaded.',
+                ],
+                'list' => [
+                    'Open the Edit PDF tool and choose your file.',
+                    'Switch to the Whiteout tool and drag a rectangle over the area you want hidden.',
+                    'Resize or move the rectangle until it fully covers the content, with a small margin on each side rather than an exact fit.',
+                    'If the page background is not plain white, pick a matching colour so the covered area does not stand out as an obvious patch.',
+                    'Repeat for any other area, on this page or others - each whiteout box is its own element, so you can undo or remove just one.',
+                    'Click Save PDF and download the result, then zoom in on each covered area to confirm nothing peeks out from under the edge.',
+                ],
+            ],
+            [
+                'heading' => 'Whiteout vs. redaction: the distinction that matters',
+                'paragraphs' => [
+                    'A white box only changes how the page looks when it is viewed or printed normally. The content underneath is still inside the file, which matters because a PDF can be read in more ways than one viewer window: copying the "blank" area and pasting it elsewhere can lift the hidden text, selecting all text on the page can include it, and some PDF tools or scripts can extract every text run in a file regardless of what is drawn above it. None of that requires special skill - it is the same copy-paste anyone already knows how to do.',
+                    'Proper redaction is a different operation: it has to delete the hidden content from the file, not just draw over it, which is what the Redact PDF tool is for. Use whiteout for anything cosmetic - cleaning up a scan, removing an old date stamp, hiding a logo on a sample document you are sharing internally. Use redaction, not whiteout, the moment the hidden content is a name, account number, address, signature or anything else that would matter if someone else recovered it.',
+                ],
+                'table' => [
+                    'headers' => ['Situation', 'Use whiteout', 'Use redaction instead'],
+                    'rows' => [
+                        ['Covering a stray mark or old stamp on a scan', 'Yes', '-'],
+                        ['Hiding a logo before sharing a sample internally', 'Yes', '-'],
+                        ['Hiding a social security number, account number or signature', 'No', 'Yes - the data must be deleted, not covered'],
+                        ['Sharing the file outside your own team or company', 'Only for non-sensitive cosmetic fixes', 'Yes for anything personal or confidential'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'Three mistakes that undo a whiteout',
+                'paragraphs' => [
+                    'The box is too small. A rectangle that matches the text exactly can leave a sliver of a letter visible along the edge once the file is viewed at a different zoom level. Always leave a small margin.',
+                    'The colour does not match the page. A whiteout coloured pure white on a page that is slightly off-white, textured or part of a scanned image leaves a visible, obviously edited patch - draw attention to exactly what you were trying to hide.',
+                    'It is used on something that needed real redaction. If what you covered has any value to someone else - financial details, a password, personal information - treat the file as still containing it until you have used an actual redaction tool, not a white rectangle.',
+                ],
+            ],
+            [
+                'heading' => 'Checklist before you share a whited-out PDF',
+                'list' => [
+                    'Confirm what you are covering is cosmetic, not sensitive - if in doubt, use Redact PDF instead.',
+                    'Zoom to 100% on every page you edited and check the edges of each whiteout box.',
+                    'Try selecting and copying text from the covered area in a PDF reader to make sure nothing hidden comes through.',
+                    'Check the file\'s metadata (title, author, subject) separately - whiteout does not touch metadata at all.',
+                    'Keep the original file until you are certain the edited copy is correct.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Is whiting out text the same as redacting it?', 'a' => 'No. Whiteout draws an opaque box over content that is still present in the file underneath; redaction removes the content itself. Use Redact PDF, not whiteout, for anything sensitive.'],
+            ['q' => 'Can I undo a whiteout box after adding it?', 'a' => 'Yes, as long as you have not saved yet. Click Undo to remove the most recent element, or remove a specific whiteout box individually before clicking Save PDF.'],
+            ['q' => 'Does whiteout work on a scanned PDF?', 'a' => 'Yes - unlike in-place text editing, whiteout only draws a shape, so it works the same way on a scanned page, a photo saved as PDF, or a normal text PDF.'],
+        ],
+        'sources' => [
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+            ['title' => 'Mozilla, PDF.js - a PDF renderer and text extraction library', 'url' => 'https://mozilla.github.io/pdf.js/'],
+            ['title' => 'Library of Congress, Sustainability of Digital Formats: PDF', 'url' => 'https://www.loc.gov/preservation/digital/formats/fdd/fdd000030.shtml'],
+        ],
+    ],
 ];
