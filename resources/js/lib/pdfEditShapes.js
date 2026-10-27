@@ -52,3 +52,29 @@ export function arrowHeadLines(start, end, size) {
 export function markupLineY(kind, y, height) {
     return kind === 'strike' ? y + height * 0.45 : y + height * 0.08;
 }
+
+/**
+ * The clockwise angle (0-359, screen degrees) from `center` up to `point`, for a rotate handle
+ * that starts directly above the element: dragging it to `point` rotates the element to match.
+ */
+export function angleFromCenter(center, point) {
+    const deg = (Math.atan2(point.x - center.x, center.y - point.y) * 180) / Math.PI;
+    return ((deg % 360) + 360) % 360;
+}
+
+/**
+ * The bottom-left `x, y` (and matching pdf-lib `rotate` degrees) to pass to a corner-anchored
+ * pdf-lib draw call (drawRectangle, drawImage, drawText) so a `width` x `height` box rotates
+ * around its own centre (`cx`, `cy`) instead of around that corner. `rotationDeg` is the
+ * on-screen clockwise angle (as CSS `rotate()` uses it); pdf-lib's rotation is counter-clockwise
+ * in PDF's bottom-left, y-up space, so the sign is flipped before use.
+ */
+export function rotatedBoxOrigin(cx, cy, width, height, rotationDeg) {
+    const rotateDeg = rotationDeg ? -rotationDeg : 0;
+    const rad = (rotateDeg * Math.PI) / 180;
+    const cos = Math.cos(rad);
+    const sin = Math.sin(rad);
+    const hw = width / 2;
+    const hh = height / 2;
+    return { x: cx - (hw * cos - hh * sin), y: cy - (hw * sin + hh * cos), rotateDeg };
+}

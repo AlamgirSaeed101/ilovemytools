@@ -1,6 +1,6 @@
 import { PDFDocument, PDFName } from 'pdf-lib';
 import { describe, expect, it } from 'vitest';
-import { arrowHeadLines, buildEditedPdf, markupLineY, normalizeLinkUrl, pointsToPdf, strokeBoundingBox, undoLast } from './pdfEdit.js';
+import { angleFromCenter, arrowHeadLines, buildEditedPdf, markupLineY, normalizeLinkUrl, pointsToPdf, rotatedBoxOrigin, strokeBoundingBox, undoLast } from './pdfEdit.js';
 
 describe('pointsToPdf', () => {
     it('converts canvas-space points to PDF-space, flipping the y axis', () => {
@@ -91,5 +91,52 @@ describe('buildEditedPdf', () => {
         expect(annots[0].get(PDFName.of('Subtype')).toString()).toBe('/Link');
         const action = saved.context.lookup(annots[0].get(PDFName.of('A')));
         expect(action.get(PDFName.of('URI')).decodeText()).toBe('https://ilovemytools.store/');
+    });
+
+    it('rotates a shape and a highlight around their own centre without throwing', async () => {
+        const doc = await PDFDocument.create();
+        doc.addPage([300, 300]);
+        const rectPdf = { x: 50, y: 50, width: 80, height: 40 };
+        const blob = await buildEditedPdf(doc, [
+            { type: 'shape', shape: 'rect', page: 0, color: '#dc2626', thickness: 2, fill: true, rotation: 30, rectPdf },
+            { type: 'shape', shape: 'ellipse', page: 0, color: '#2563eb', thickness: 2, fill: false, rotation: 45, rectPdf },
+            { type: 'highlight', page: 0, color: '#fde047', rotation: 15, rectPdf },
+        ]);
+        const saved = await PDFDocument.load(new Uint8Array(await blob.arrayBuffer()));
+        expect(saved.getPageCount()).toBe(1);
+    });
+});
+
+describe('angleFromCenter', () => {
+    const center = { x: 100, y: 100 };
+    it('is 0 directly above the centre and increases clockwise', () => {
+        expect(angleFromCenter(center, { x: 100, y: 40 })).toBeCloseTo(0);
+        expect(angleFromCenter(center, { x: 160, y: 100 })).toBeCloseTo(90);
+        expect(angleFromCenter(center, { x: 100, y: 160 })).toBeCloseTo(180);
+        expect(angleFromCenter(center, { x: 40, y: 100 })).toBeCloseTo(270);
+    });
+});
+
+describe('rotatedBoxOrigin', () => {
+    it('keeps the box centred: rotating the local centre by the same transform lands back on cx, cy', () => {
+        const width = 80;
+        const height = 40;
+        const cx = 150;
+        const cy = 200;
+        for (const screenDeg of [0, 30, 90, 180, 227]) {
+            const { x, y, rotateDeg } = rotatedBoxOrigin(cx, cy, width, height, screenDeg);
+            const rad = (rotateDeg * Math.PI) / 180;
+            const cos = Math.cos(rad);
+            const sin = Math.sin(rad);
+            // pdf-lib's CTM: pageP = R * localP + (x, y), R = [[cos, -sin], [sin, cos]] applied to (width/2, height/2).
+            const pageX = width / 2 * cos - height / 2 * sin + x;
+            const pageY = width / 2 * sin + height / 2 * cos + y;
+            expect(pageX).toBeCloseTo(cx);
+            expect(pageY).toBeCloseTo(cy);
+        }
+    });
+
+    it('returns the unrotated corner and no rotation when rotationDeg is 0', () => {
+        expect(rotatedBoxOrigin(100, 100, 80, 40, 0)).toEqual({ x: 60, y: 80, rotateDeg: 0 });
     });
 });

@@ -1,11 +1,18 @@
-import { LineCapStyle, PDFString, rgb } from 'pdf-lib';
+import { degrees, LineCapStyle, PDFString, rgb } from 'pdf-lib';
 import { embedDocumentFonts } from './pdfFonts.js';
 import { hexToRgb01 } from './pdfOverlay.js';
 import { removeRunsFromPage } from './pdfContentEdit.js';
 import { coverRect, fontForEdit } from './pdfTextEdit.js';
-import { pointsToPdf, undoLast, strokeBoundingBox, normalizeLinkUrl, arrowHeadLines, markupLineY } from './pdfEditShapes.js';
+import { angleFromCenter, pointsToPdf, undoLast, strokeBoundingBox, normalizeLinkUrl, arrowHeadLines, markupLineY, rotatedBoxOrigin } from './pdfEditShapes.js';
 
-export { pointsToPdf, undoLast, strokeBoundingBox, normalizeLinkUrl, arrowHeadLines, markupLineY };
+export { angleFromCenter, pointsToPdf, undoLast, strokeBoundingBox, normalizeLinkUrl, arrowHeadLines, markupLineY, rotatedBoxOrigin };
+
+/** A corner-anchored rect (pdf-lib x/y/width/height) rotated around its own centre by `rotationDeg` (on-screen clockwise degrees), or the rect unchanged when there is no rotation. */
+function rotatedRect({ x, y, width, height }, rotationDeg) {
+    if (!rotationDeg) return { x, y, width, height, rotate: undefined };
+    const { x: rx, y: ry, rotateDeg } = rotatedBoxOrigin(x + width / 2, y + height / 2, width, height, rotationDeg);
+    return { x: rx, y: ry, width, height, rotate: degrees(rotateDeg) };
+}
 
 /**
  * Draws every added element onto `doc` with pdf-lib and returns the finished PDF as a Blob.
@@ -48,8 +55,8 @@ export async function buildEditedPdf(doc, elements) {
         } else if (el.type === 'shape' && (el.shape === 'rect' || el.shape === 'ellipse')) {
             const { x, y, width, height } = el.rectPdf;
             const style = { borderColor: rgb(r, g, b), borderWidth: el.thickness, color: el.fill ? rgb(r, g, b) : undefined };
-            if (el.shape === 'rect') page.drawRectangle({ x, y, width, height, ...style });
-            else page.drawEllipse({ x: x + width / 2, y: y + height / 2, xScale: width / 2, yScale: height / 2, ...style });
+            if (el.shape === 'rect') page.drawRectangle({ ...rotatedRect({ x, y, width, height }, el.rotation), ...style });
+            else page.drawEllipse({ x: x + width / 2, y: y + height / 2, xScale: width / 2, yScale: height / 2, ...style, rotate: el.rotation ? degrees(-el.rotation) : undefined });
         } else if (el.type === 'shape') {
             const [start, end] = el.points;
             const lines = [{ start, end }, ...(el.shape === 'arrow' ? arrowHeadLines(start, end, Math.max(8, el.thickness * 4)) : [])];
@@ -72,12 +79,13 @@ export async function buildEditedPdf(doc, elements) {
             page.node.addAnnot(annot);
         } else if (el.type === 'text') {
             fonts ??= await embedDocumentFonts(doc);
-            page.drawText(el.text, { x: el.x, y: el.y, size: el.size, font: fonts.regular, color: rgb(r, g, b) });
+            const { x, y, rotate } = rotatedRect({ x: el.x, y: el.y, width: el.width, height: el.height }, el.rotation);
+            page.drawText(el.text, { x, y, size: el.size, font: fonts.regular, color: rgb(r, g, b), rotate });
         } else if (el.type === 'image') {
             const image = el.format === 'jpg' ? await doc.embedJpg(el.bytes) : await doc.embedPng(el.bytes);
-            page.drawImage(image, el.rectPdf);
+            page.drawImage(image, rotatedRect(el.rectPdf, el.rotation));
         } else if (el.type === 'highlight') {
-            page.drawRectangle({ ...el.rectPdf, color: rgb(r, g, b), opacity: 0.4 });
+            page.drawRectangle({ ...rotatedRect(el.rectPdf, el.rotation), color: rgb(r, g, b), opacity: 0.4 });
         } else if (el.type === 'stroke') {
             for (let i = 1; i < el.points.length; i++) {
                 page.drawLine({ start: el.points[i - 1], end: el.points[i], thickness: el.thickness, color: rgb(r, g, b) });

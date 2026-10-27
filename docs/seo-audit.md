@@ -89,3 +89,4 @@ Written by the daily SEO/GEO/AEO routine (rule 14 of `docs/ROUTINE.md`). One lin
 - 2026-10-26 health · 685 pages, 36 outbound links checked · 0 real issues (257 server-error-transient during the crawl, all recovered within 90s - firewall rate-limiting, not a code bug) · nothing to fix; same_as/badges checked, all live; Semrush backlinks skipped (no API units).
 - 2026-10-26 10:51 UTC · pdf-editor · Edit PDF: added Zoom (+/-, 50-200% in 25% steps, Reset zoom) to the page view, in all 10 languages.
 - 2026-10-27 health · 685 pages, 37 outbound links checked · 0 real issues (435 server-error-transient, recovered within 90s - firewall rate-limiting) · nothing to fix; same_as all live (403/999 = anti-bot blocks); badges empty; Semrush skipped (no API units).
+- 2026-10-27 10:40 UTC · pdf-editor · Edit PDF: added a Rotate handle to text, images, highlights and rectangle/ellipse shapes (drag to spin to any angle), in all 10 languages.

@@ -824,6 +824,36 @@ test.describe('PDF tools', () => {
         expect(text).toContain('Zoomed text');
     });
 
+    test('edit PDF: dragging an element\'s rotate handle spins it in place and the saved PDF still reads its text', async ({ page }) => {
+        await openTool(page, 'edit-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'rotated.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
+        await page.getByRole('tab', { name: 'Add text' }).click();
+        await page.getByLabel('Text to add').fill('Rotated text');
+        await page.getByRole('button', { name: 'Add text to page' }).click();
+
+        const overlay = page.locator('.pdf-editor__overlay');
+        await expect(overlay).toHaveCount(1);
+        await overlay.first().scrollIntoViewIfNeeded();
+        const before = await overlay.first().boundingBox();
+        const centerX = before.x + before.width / 2;
+        const centerY = before.y + before.height / 2;
+
+        // The rotate handle starts directly above the element's centre; dragging it to one side rotates it.
+        const handle = page.locator('.pdf-editor__rotate-handle');
+        await expect(handle).toBeVisible();
+        const handleBox = await handle.boundingBox();
+        await page.mouse.move(handleBox.x + handleBox.width / 2, handleBox.y + handleBox.height / 2);
+        await page.mouse.down();
+        await page.mouse.move(centerX + 60, centerY, { steps: 6 });
+        await page.mouse.up();
+        await expect(overlay.first()).toHaveCSS('transform', /matrix/);
+
+        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        const text = await extractPdfText(page, await readDownload(file));
+        expect(text).toContain('Rotated text');
+    });
+
     test('watermark PDF stamps text onto only the pages chosen, matching the live preview', async ({ page }) => {
         await openTool(page, 'watermark-pdf');
         const originalBytes = await makePdf(3);

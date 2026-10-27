@@ -8,7 +8,7 @@ import { usePdfDoc } from '../lib/pdfPages.js';
 import { canvasRectToPdfRect, clampRect, computeDisplayScale, pdfRectToCanvasRect, rectFromPoints } from '../lib/pdfOverlay.js';
 import { loadRenderDoc, renderPageToCanvas } from '../lib/pdfRender.js';
 import { colorsFromCanvas, coverRect, extractPageRuns, missingGlyphs } from '../lib/pdfTextRuns.js';
-import { arrowHeadLines, normalizeLinkUrl, pointsToPdf, strokeBoundingBox, undoLast } from '../lib/pdfEditShapes.js';
+import { angleFromCenter, arrowHeadLines, normalizeLinkUrl, pointsToPdf, strokeBoundingBox, undoLast } from '../lib/pdfEditShapes.js';
 import { imageWatermarkSize, watermarkPageIndexes } from '../lib/pdfWatermarkLayout.js';
 
 // pdf-lib (~165 KB) only loads when a PDF is previewed or saved, not with the page.
@@ -65,6 +65,8 @@ const OVERLAY_LABELS = {
     link: { drag: () => t('Link - drag to move'), remove: () => t('Remove this link') },
 };
 const isLine = (el) => el.type === 'stroke' || (el.type === 'shape' && (el.shape === 'line' || el.shape === 'arrow'));
+// Elements with a fixed x/y/width/height box that a rotate handle can spin around its own centre.
+const canRotate = (el) => el.type === 'text' || el.type === 'image' || el.type === 'highlight' || (el.type === 'shape' && !isLine(el));
 
 function pointerPoint(e, el, natural) {
     const rect = el.getBoundingClientRect();
@@ -397,7 +399,7 @@ export default function EditPdf({ initialMode } = {}) {
         const width = measureText(textValue, pxSize) + 10;
         const height = pxSize * 1.35;
         const rect = clampRect({ x: (canvasSize.width - width) / 2, y: (canvasSize.height - height) / 2, width, height }, canvasSize.width, canvasSize.height, 10);
-        pushElement({ type: 'text', text: textValue, size: textSize, color: textColor, ...rect });
+        pushElement({ type: 'text', text: textValue, size: textSize, color: textColor, rotation: 0, ...rect });
     }
 
     function addImage() {
@@ -410,7 +412,7 @@ export default function EditPdf({ initialMode } = {}) {
             canvasSize.height,
             20
         );
-        pushElement({ type: 'image', dataUrl: pendingImage.dataUrl, bytes: pendingImage.bytes, format: 'png', ...rect });
+        pushElement({ type: 'image', dataUrl: pendingImage.dataUrl, bytes: pendingImage.bytes, format: 'png', rotation: 0, ...rect });
     }
 
     function addHighlight() {
@@ -418,7 +420,7 @@ export default function EditPdf({ initialMode } = {}) {
         const width = Math.min(220, canvasSize.width * 0.5);
         const height = 28;
         const rect = clampRect({ x: (canvasSize.width - width) / 2, y: (canvasSize.height - height) / 2, width, height }, canvasSize.width, canvasSize.height, 10);
-        pushElement({ type: 'highlight', color: highlightColor, ...rect });
+        pushElement({ type: 'highlight', color: highlightColor, rotation: 0, ...rect });
     }
 
     function handleImageFile([picked]) {
@@ -467,7 +469,7 @@ export default function EditPdf({ initialMode } = {}) {
             else if (mode === 'underline' || mode === 'strike') pushElement({ type: 'markup', kind: mode, color: markupColor, ...rect, height: Math.max(8, rect.height) });
             else if (mode === 'link') pushElement({ type: 'link', url: normalizeLinkUrl(linkUrl), ...rect });
             else if (shapeKind === 'line' || shapeKind === 'arrow') pushElement({ type: 'shape', shape: shapeKind, color: shapeColor, thickness: shapeThickness, points: [start, end] });
-            else pushElement({ type: 'shape', shape: shapeKind, color: shapeColor, thickness: shapeThickness, fill: shapeFill, ...rect });
+            else pushElement({ type: 'shape', shape: shapeKind, color: shapeColor, thickness: shapeThickness, fill: shapeFill, rotation: 0, ...rect });
         }
         window.addEventListener('pointermove', handleMove);
         window.addEventListener('pointerup', handleUp);
@@ -565,6 +567,29 @@ export default function EditPdf({ initialMode } = {}) {
         window.addEventListener('pointerup', handleUp);
     }
 
+    function startRotate(e, id) {
+        e.preventDefault();
+        e.stopPropagation();
+        const stage = stageRef.current;
+        const natural = canvasSize;
+        const el = elements.find((x) => x.id === id);
+        if (!stage || !el) return;
+        const center = { x: el.x + el.width / 2, y: el.y + el.height / 2 };
+
+        const handleMove = (ev) => {
+            const rotation = angleFromCenter(center, pointerPoint(ev, stage, natural));
+            setElements((list) => list.map((item) => (item.id === id ? { ...item, rotation } : item)));
+            setRedoStack([]);
+            setResult(null);
+        };
+        const handleUp = () => {
+            window.removeEventListener('pointermove', handleMove);
+            window.removeEventListener('pointerup', handleUp);
+        };
+        window.addEventListener('pointermove', handleMove);
+        window.addEventListener('pointerup', handleUp);
+    }
+
     async function apply() {
         if (!doc || working || elements.length === 0) return;
         setWorking(true);
@@ -575,7 +600,7 @@ export default function EditPdf({ initialMode } = {}) {
                 const scaleForPage = computeDisplayScale(size.width, size.height);
                 if (el.type === 'text') {
                     const rectPdf = canvasRectToPdfRect(el, scaleForPage, size.height);
-                    return { type: 'text', page: el.page, text: el.text, size: el.size, color: el.color, x: rectPdf.x, y: rectPdf.y };
+                    return { type: 'text', page: el.page, text: el.text, size: el.size, color: el.color, rotation: el.rotation, ...rectPdf };
                 }
                 if (el.type === 'textedit') {
                     return { type: 'textedit', page: el.page, run: el.run, text: el.text, size: el.size, color: el.color, background: el.background };
@@ -1009,6 +1034,7 @@ export default function EditPdf({ initialMode } = {}) {
                                     background: el.type === 'highlight' ? el.color : el.type === 'whiteout' ? '#ffffff' : el.type === 'link' ? 'rgba(37, 99, 235, 0.08)' : undefined,
                                     borderStyle: el.type === 'text' || el.type === 'markup' || el.type === 'shape' ? 'none' : undefined,
                                     borderColor: el.type === 'link' ? '#2563eb' : undefined,
+                                    ...(canRotate(el) && el.rotation ? { transform: `rotate(${el.rotation}deg)`, transformOrigin: 'center' } : null),
                                 }}
                                 onPointerDown={(e) => startDrag(e, el.id, 'move')}
                                 role="button"
@@ -1056,6 +1082,7 @@ export default function EditPdf({ initialMode } = {}) {
                                     ×
                                 </button>
                                 {el.type !== 'text' && <span className="pdf-editor__handle" onPointerDown={(e) => startDrag(e, el.id, 'resize')} aria-hidden="true" />}
+                                {canRotate(el) && <span className="pdf-editor__rotate-handle" onPointerDown={(e) => startRotate(e, el.id)} aria-hidden="true" />}
                             </div>
                         );
                     })}

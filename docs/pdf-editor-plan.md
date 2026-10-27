@@ -23,6 +23,7 @@ text and change it in place, in the same font.
 2c. [ ] Editor phase 1 remainder: zoom, page thumbnails, rotate elements, redo (whiteout, shapes, underline/strikethrough and links shipped 22 Oct)
   - [x] Redo: a Redo button next to Undo restores the most recently undone element; any new edit (add, move, resize, retype, find & replace, explicit remove) clears the redo history, matching standard editor behaviour.
   - [x] Zoom: +/- controls and a Reset zoom button scale the page view from 50% to 200% (25% steps) with a CSS transform; pointer placement, dragging and the saved PDF stay correct at every zoom level since element coordinates are unaffected by the view scale.
+  - [x] Rotate: a handle above added text, images, highlights and rectangle/ellipse shapes drags to spin the element around its own centre (any angle); the saved PDF rotates it the same way with pdf-lib, anchored to match. Lines, arrows, whiteout, underline/strikethrough and links are unaffected (not part of this pass). Still open in 2c: page thumbnails.
 4. [ ] Session: auto-save and unsaved-changes warnings
 5. [ ] Fill PDF forms (new page) and create form fields
 6. [ ] Page tools and signature inside the editor
