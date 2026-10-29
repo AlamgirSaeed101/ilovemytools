@@ -3,24 +3,61 @@ import { loadPdf } from './pdf.js';
 import { loadRenderDoc, renderThumbnail } from './pdfRender.js';
 
 /**
+ * Progressively renders a thumbnail for every page of an already-loaded render doc. Shared by
+ * `usePdfPageThumbnails` below and Edit PDF's page strip, which reuses the render doc it already
+ * has open instead of loading the file a second time.
+ */
+export function usePageThumbnails(renderDoc, pageCount) {
+    const [thumbs, setThumbs] = useState([]);
+
+    useEffect(() => {
+        if (!renderDoc || !pageCount) {
+            setThumbs([]);
+            return;
+        }
+        let cancelled = false;
+        const thumbs = new Array(pageCount).fill(null);
+        setThumbs([...thumbs]);
+
+        (async () => {
+            for (let i = 0; i < pageCount; i++) {
+                if (cancelled) return;
+                try {
+                    thumbs[i] = await renderThumbnail(renderDoc, i + 1);
+                } catch {
+                    thumbs[i] = { url: '', width: 0, height: 0, rotation: 0 };
+                }
+                if (!cancelled) setThumbs([...thumbs]);
+            }
+        })();
+
+        return () => {
+            cancelled = true;
+        };
+    }, [renderDoc, pageCount]);
+
+    return thumbs;
+}
+
+/**
  * Loads one PDF file and renders a thumbnail for every page. Shared by the tools that show a
  * page grid (Rotate / Delete / Organize PDF). `doc` is the pdf-lib document used to build the
  * edited output; thumbnails are rendered separately with pdfjs-dist from the same bytes.
  */
 export function usePdfPageThumbnails(file) {
-    const [state, setState] = useState({ status: 'idle', doc: null, renderDoc: null, pageCount: 0, thumbs: [], error: '' });
+    const [state, setState] = useState({ status: 'idle', doc: null, renderDoc: null, pageCount: 0, error: '' });
     const renderDocRef = useRef(null);
 
     useEffect(() => {
         renderDocRef.current?.destroy();
         renderDocRef.current = null;
         if (!file) {
-            setState({ status: 'idle', doc: null, renderDoc: null, pageCount: 0, thumbs: [], error: '' });
+            setState({ status: 'idle', doc: null, renderDoc: null, pageCount: 0, error: '' });
             return;
         }
 
         let cancelled = false;
-        setState({ status: 'loading', doc: null, renderDoc: null, pageCount: 0, thumbs: [], error: '' });
+        setState({ status: 'loading', doc: null, renderDoc: null, pageCount: 0, error: '' });
 
         (async () => {
             const { doc, pageCount } = await loadPdf(file);
@@ -31,20 +68,9 @@ export function usePdfPageThumbnails(file) {
                 return;
             }
             renderDocRef.current = renderDoc;
-            const thumbs = new Array(pageCount).fill(null);
-            setState({ status: 'ready', doc, renderDoc, pageCount, thumbs: [...thumbs], error: '' });
-
-            for (let i = 0; i < pageCount; i++) {
-                if (cancelled) return;
-                try {
-                    thumbs[i] = await renderThumbnail(renderDoc, i + 1);
-                } catch {
-                    thumbs[i] = { url: '', width: 0, height: 0, rotation: 0 };
-                }
-                if (!cancelled) setState((s) => ({ ...s, thumbs: [...thumbs] }));
-            }
+            setState({ status: 'ready', doc, renderDoc, pageCount, error: '' });
         })().catch((e) => {
-            if (!cancelled) setState({ status: 'error', doc: null, renderDoc: null, pageCount: 0, thumbs: [], error: e.message });
+            if (!cancelled) setState({ status: 'error', doc: null, renderDoc: null, pageCount: 0, error: e.message });
         });
 
         return () => {
@@ -54,7 +80,9 @@ export function usePdfPageThumbnails(file) {
 
     useEffect(() => () => renderDocRef.current?.destroy(), []);
 
-    return state;
+    const thumbs = usePageThumbnails(state.renderDoc, state.pageCount);
+
+    return { ...state, thumbs };
 }
 
 /**

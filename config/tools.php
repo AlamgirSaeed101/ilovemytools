@@ -2461,6 +2461,7 @@ return [
             'Add a text or logo watermark, on top of the page or behind it',
             'Zoom in or out to place things precisely',
             'Rotate text, images, highlights and shapes to any angle',
+            'Page thumbnails to jump straight to any page',
         ],
         'content' => [
             [

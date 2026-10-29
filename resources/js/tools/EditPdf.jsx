@@ -4,7 +4,7 @@ import PdfPageCanvas from '../components/PdfPageCanvas.jsx';
 import { Notice, Tabs } from '../components/ui.jsx';
 import { t, tn } from '../lib/i18n.js';
 import { isPdf } from '../lib/pdf.js';
-import { usePdfDoc } from '../lib/pdfPages.js';
+import { usePageThumbnails, usePdfDoc } from '../lib/pdfPages.js';
 import { canvasRectToPdfRect, clampRect, computeDisplayScale, pdfRectToCanvasRect, rectFromPoints } from '../lib/pdfOverlay.js';
 import { loadRenderDoc, renderPageToCanvas } from '../lib/pdfRender.js';
 import { colorsFromCanvas, coverRect, extractPageRuns, missingGlyphs } from '../lib/pdfTextRuns.js';
@@ -136,6 +136,7 @@ export default function EditPdf({ initialMode } = {}) {
     const wmPreviewCanvasRef = useRef(null);
     const wmPreviewRenderDocRef = useRef(null);
     const { status, doc, renderDoc, pageCount } = usePdfDoc(file, { keepFonts: true });
+    const thumbs = usePageThumbnails(renderDoc, pageCount);
 
     // The editable text runs of the page on screen (pdf.js text + the PDF's own fonts).
     useEffect(() => {
@@ -900,6 +901,25 @@ export default function EditPdf({ initialMode } = {}) {
                         <button type="button" className="btn btn--sm" onClick={replaceAll} disabled={!findText || working}>{t('Replace all')}</button>
                         {replaceInfo && <span className="field__hint" style={{ margin: 0 }} aria-live="polite">{replaceInfo}</span>}
                     </div>
+                )}
+
+                {pageCount > 1 && (
+                    <ul className="pdf-editor__thumbs" aria-label={t('Pages')}>
+                        {thumbs.map((thumb, i) => (
+                            <li key={i}>
+                                <button
+                                    type="button"
+                                    className={`pdf-editor__thumb${i === currentPage ? ' is-selected' : ''}`}
+                                    onClick={() => setCurrentPage(i)}
+                                    aria-current={i === currentPage ? 'true' : undefined}
+                                    aria-label={t('Go to page {number}', { number: i + 1 })}
+                                >
+                                    {thumb?.url ? <img src={thumb.url} alt="" /> : <span className="field__hint">{t('Loading…')}</span>}
+                                    <span className="pdf-editor__thumb-number">{i + 1}</span>
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
                 )}
 
                 <div className="pdf-editor__toolbar">

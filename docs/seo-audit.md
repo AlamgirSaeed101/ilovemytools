@@ -91,3 +91,4 @@ Written by the daily SEO/GEO/AEO routine (rule 14 of `docs/ROUTINE.md`). One lin
 - 2026-10-27 health · 685 pages, 37 outbound links checked · 0 real issues (435 server-error-transient, recovered within 90s - firewall rate-limiting) · nothing to fix; same_as all live (403/999 = anti-bot blocks); badges empty; Semrush skipped (no API units).
 - 2026-10-27 10:40 UTC · pdf-editor · Edit PDF: added a Rotate handle to text, images, highlights and rectangle/ellipse shapes (drag to spin to any angle), in all 10 languages.
 - 2026-10-29 health · 686 pages, 55 outbound links checked · 0 issues · fixed flaky CI test (dice chi-square threshold too tight, p 0.001→0.0001); same_as live (LinkedIn/GitHub; 3 blocked by anti-bot WAFs); badges empty; Semrush skipped (no API units).
+- 2026-10-29 10:59 UTC · pdf-editor · Edit PDF: added a page-thumbnail filmstrip above the stage to jump straight to any page, completing editor phase 1 (2c), in all 10 languages.

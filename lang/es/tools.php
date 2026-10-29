@@ -2092,6 +2092,7 @@ return [
             'Añade una marca de agua de texto o logotipo, encima de la página o detrás',
             'Acerca o aleja la vista para colocar todo con precisión',
             'Rota texto, imágenes, resaltados y formas a cualquier ángulo',
+            'Miniaturas de página para saltar directamente a cualquier página',
         ],
         'content' => [
             ['heading' => 'Cómo funciona la edición del texto existente', 'body' => 'Haz clic en una línea de texto y escribe. El texto antiguo se cubre con el color que hay detrás y el nuevo se dibuja en la misma posición, tamaño y color, con la fuente incrustada en el PDF. Los PDF suelen incrustar solo las letras que usan, así que si tu texto nuevo necesita una letra que el archivo nunca contuvo, esa línea pasa a la fuente estándar más parecida y el editor te indica qué letras lo causaron. Las páginas escaneadas son imágenes sin texto editable; ahí usa el corrector blanco y Añadir texto.'],

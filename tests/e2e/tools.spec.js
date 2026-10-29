@@ -854,6 +854,28 @@ test.describe('PDF tools', () => {
         expect(text).toContain('Rotated text');
     });
 
+    test('edit PDF: page thumbnails jump straight to a page and track which one is open', async ({ page }) => {
+        await openTool(page, 'edit-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'multi.pdf', mimeType: 'application/pdf', buffer: await makePdf(3) });
+        await expect(page.getByText('Page 1 of 3')).toBeVisible();
+
+        const thumbs = page.locator('.pdf-editor__thumb');
+        await expect(thumbs).toHaveCount(3);
+        await expect(thumbs.nth(0)).toHaveAttribute('aria-current', 'true');
+        // Thumbnails render progressively; wait for a real image before clicking one.
+        await expect.poll(async () => await thumbs.locator('img').count()).toBeGreaterThan(0);
+
+        await thumbs.nth(2).click();
+        await expect(page.getByText('Page 3 of 3')).toBeVisible();
+        await expect(thumbs.nth(2)).toHaveAttribute('aria-current', 'true');
+        await expect(thumbs.nth(0)).not.toHaveAttribute('aria-current', 'true');
+
+        // The usual Previous/Next buttons still work alongside the thumbnails.
+        await page.getByRole('button', { name: 'Previous page' }).click();
+        await expect(page.getByText('Page 2 of 3')).toBeVisible();
+        await expect(thumbs.nth(1)).toHaveAttribute('aria-current', 'true');
+    });
+
     test('watermark PDF stamps text onto only the pages chosen, matching the live preview', async ({ page }) => {
         await openTool(page, 'watermark-pdf');
         const originalBytes = await makePdf(3);

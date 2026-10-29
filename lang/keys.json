@@ -3236,6 +3236,12 @@
     ]
   },
   {
+    "key": "Go to page {number}",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Good",
     "files": [
       "resources/js/lib/password.js"
@@ -3947,6 +3953,7 @@
     "key": "Loading…",
     "files": [
       "resources/js/tools/DeletePdfPages.jsx",
+      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/OrganizePdf.jsx",
       "resources/js/tools/PdfToImage.jsx",
       "resources/js/tools/RotatePdf.jsx"
