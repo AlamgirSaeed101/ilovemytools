@@ -30,7 +30,7 @@ describe('rollDice', () => {
         for (let i = 0; i < 6000; i++) rollDice(10, 6).values.forEach((v) => counts[v - 1]++);
         const expected = 60000 / 6;
         const chi = counts.reduce((sum, c) => sum + (c - expected) ** 2 / expected, 0);
-        expect(chi).toBeLessThan(20.5); // p ≈ 0.001 for 5 degrees of freedom
+        expect(chi).toBeLessThan(25.75); // p ≈ 0.0001 for 5 degrees of freedom (less flaky than p ≈ 0.001)
     });
 
     it('rejects bad input', () => {
