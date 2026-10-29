@@ -1176,4 +1176,81 @@ return [
             ['title' => 'Library of Congress, Sustainability of Digital Formats: PDF', 'url' => 'https://www.loc.gov/preservation/digital/formats/fdd/fdd000030.shtml'],
         ],
     ],
+
+    'how-to-redact-a-pdf-properly' => [
+        'title' => 'How to Redact a PDF Properly (Free & Permanent)',
+        'description' => 'Learn why a black box is not real redaction, and how to permanently remove sensitive text or images from a PDF for free, right in your browser.',
+        'h1' => 'How to redact a PDF properly',
+        'intro' => 'Redacting a PDF means permanently removing something sensitive - a name, an account number, a photo - not just hiding it under a black rectangle. A huge number of real-world privacy leaks have come from exactly that mistake: someone drew a box over text in a PDF viewer, shared the file, and the original text was still sitting underneath, ready to be copied out or extracted with a script. Here is what actually makes redaction permanent, and how to do it correctly without uploading the file anywhere.',
+        'tool' => 'redact-pdf',
+        'related' => ['edit-pdf', 'sign-pdf', 'merge-pdf'],
+        'published' => '2026-10-29',
+        'updated' => '2026-10-29',
+        'sections' => [
+            [
+                'heading' => 'Why covering text with a box usually fails',
+                'paragraphs' => [
+                    'A PDF page is not a flat picture - it is a set of instructions: draw this text at this position, in this font, then draw this shape, then draw more text on top. When you add a black rectangle "over" a line of text in a typical PDF viewer or editor, you are only adding one more instruction to that list; the original text instruction is still there, underneath, in the exact same file. Open the file in a different viewer, select all the text, zoom in at a different scale, or run a script that reads text positions, and the "redacted" words can reappear - because they were never removed, only drawn over.',
+                    'This is not a theoretical risk. It is the single most common way redaction fails in practice, because the black box looks completely convincing to the human eye while doing nothing to the underlying content. The only way to be sure something is actually gone is to remove the instructions that drew it in the first place, not add a new instruction on top of them.',
+                ],
+            ],
+            [
+                'heading' => 'What real redaction has to do',
+                'paragraphs' => [
+                    'Proper redaction has to delete the original content from the page, not cover it. One reliable way to guarantee that is to flatten the page: render it to a plain image and replace the page\'s content with that image. Once a page is an image, there is no text to select, no vector shape to extract and no font data to read - what you see pixel-for-pixel is all that remains, and the box you drew is now part of the picture rather than a separate layer sitting on top of recoverable text.',
+                    'The trade-off is that a flattened page loses its selectable, searchable text entirely, even in the parts you did not mark. That is an acceptable cost for a page that contains something sensitive, and it is why a proper redaction tool only flattens the pages you actually mark, leaving every other page exactly as it was - full quality, real text, nothing lost.',
+                ],
+            ],
+            [
+                'heading' => 'Redacting a PDF, step by step',
+                'paragraphs' => [
+                    'This runs entirely in your browser - the file is opened, redacted and saved on your own device and never sent to a server.',
+                ],
+                'list' => [
+                    'Open the Redact PDF tool and choose your file.',
+                    'Draw a box over anything on the current page you need to permanently remove - a line of text, a signature, a photo.',
+                    'Add as many boxes as you need on that page, then move to the next page and repeat for anything else that needs removing.',
+                    'Move, resize, or remove a box before you finish, if you drew it slightly off.',
+                    'Click Redact PDF - every page with at least one box is flattened into an image; every other page is left untouched.',
+                    'Download the result and verify it (see the checklist below) before you share or delete the original.',
+                ],
+            ],
+            [
+                'heading' => 'Checking your work before you share the file',
+                'paragraphs' => [
+                    'A redacted file deserves a second look before it goes anywhere, because the whole point is that a mistake here cannot be quietly fixed later - once you have shared the file, whatever was supposed to be removed may already be out.',
+                ],
+                'list' => [
+                    'Open the downloaded file and try to select text over a redacted area in your PDF reader - on a properly flattened page, nothing should be selectable anywhere on that page, including outside your box.',
+                    'Zoom in on the edges of every box to confirm the covered area is fully inside it, with a small margin, not trimmed right to the pixel.',
+                    'Check the file\'s document properties (title, author, subject, keywords) separately - redacting page content does not touch metadata, and a name or company in the "Author" field can leak the same information you just removed from the page.',
+                    'Keep the original file somewhere private until you are certain the redacted copy is correct; do not overwrite your only copy before checking.',
+                ],
+            ],
+            [
+                'heading' => 'Redaction vs. other ways to hide content',
+                'paragraphs' => [
+                    'Not every cover-up needs full redaction, and it helps to know when a lighter tool is actually appropriate.',
+                ],
+                'table' => [
+                    'headers' => ['What you are hiding', 'Right tool', 'Why'],
+                    'rows' => [
+                        ['A social security, account or passport number', 'Redact PDF', 'Must be deleted from the file, not just covered'],
+                        ['A signature or a photo of a person', 'Redact PDF', 'Same risk as above - the image data stays recoverable if only covered'],
+                        ['An old stamp or a mark on a scan you are keeping internally', 'Whiteout (inside Edit PDF)', 'Cosmetic only - nothing sensitive underneath'],
+                        ['A watermark or stamp you want added, not removed', 'Watermark PDF or Edit PDF', 'A different job entirely - adding, not hiding'],
+                    ],
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Is drawing a black box over text in a PDF the same as redacting it?', 'a' => 'No. A box drawn in most editors only sits on top of the original content, which is usually still present underneath and can be copied, selected or extracted. Real redaction has to remove that content, typically by flattening the page into an image.'],
+            ['q' => 'Does redacting a page affect the rest of the document?', 'a' => 'No. Only the pages you mark are flattened into images; every page without a redaction box keeps its original text, images and quality exactly as they were.'],
+            ['q' => 'Does redaction remove hidden metadata, like the author name?', 'a' => 'No. Redacting page content and clearing document metadata are two separate things. Check the file\'s properties (title, author, subject) separately if that information also needs to go.'],
+        ],
+        'sources' => [
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+            ['title' => 'Mozilla, PDF.js - a PDF renderer and text extraction library', 'url' => 'https://mozilla.github.io/pdf.js/'],
+        ],
+    ],
 ];
