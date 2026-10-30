@@ -59,6 +59,12 @@ export function applyMeta({ title, description, path, noindex = false, englishOn
     }
     if (path !== undefined && siteUrl) {
         const url = localUrl(siteUrl, path, site.locale, site);
+        // A 404 is served without a canonical; add one when the visitor moves on to a real page.
+        if (!document.head.querySelector('link[rel="canonical"]')) {
+            const link = document.createElement('link');
+            link.rel = 'canonical';
+            document.head.append(link);
+        }
         setMeta('link[rel="canonical"]', 'href', url);
         setMeta('meta[property="og:url"]', 'content', url);
     }

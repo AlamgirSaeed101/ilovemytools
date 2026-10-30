@@ -11,12 +11,12 @@
             @foreach ($guide['sections'] as $section)
                 <h2>{{ $section['heading'] }}</h2>
                 @foreach ($section['paragraphs'] ?? [] as $paragraph)
-                    <p>{{ $paragraph }}</p>
+                    <p>{{ \App\Support\Guides::inline($paragraph) }}</p>
                 @endforeach
                 @if (! empty($section['list']))
                     <ul>
                         @foreach ($section['list'] as $item)
-                            <li>{{ $item }}</li>
+                            <li>{{ \App\Support\Guides::inline($item) }}</li>
                         @endforeach
                     </ul>
                 @endif

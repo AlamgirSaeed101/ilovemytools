@@ -16,6 +16,9 @@ class Seo
 
     public string $canonical;
 
+    /** False on error pages: a URL that doesn't exist has no canonical. */
+    public bool $hasCanonical = true;
+
     public string $robots = 'index, follow, max-image-preview:large';
 
     public string $ogType = 'website';

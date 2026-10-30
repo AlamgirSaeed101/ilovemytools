@@ -132,6 +132,16 @@ class SeoFilesController extends Controller
             $lines[] = '- ['.$guide['h1'].']('.Seo::absoluteUrl('guides/'.$guide['slug']).'): '.$guide['description'];
         }
 
+        $founder = config('site.founder');
+        $lines[] = '';
+        $lines[] = '## Facts';
+        $lines[] = '';
+        $lines[] = "- Name: {$name} (".Seo::absoluteUrl('').')';
+        $lines[] = '- Founded: '.config('site.founded').', in Islamabad, Pakistan';
+        $lines[] = '- Founder: '.$founder['name'].' ('.$founder['url'].')';
+        $lines[] = '- Tools: '.count($tools).' free online tools, no sign up, ad-supported';
+        $lines[] = '- Guides: '.\App\Support\Guides::all()->count().', in English';
+
         $lines[] = '';
         $lines[] = '## About';
         $lines[] = '';
@@ -139,6 +149,20 @@ class SeoFilesController extends Controller
         $lines[] = '- [Privacy policy]('.Seo::absoluteUrl('privacy-policy').'): how data, cookies and advertising are handled';
         $lines[] = '- [Contact]('.Seo::absoluteUrl('contact').'): '.config('site.contact_email');
         $lines[] = '- [Sitemap]('.Seo::absoluteUrl('sitemap.xml').')';
+
+        return response(implode("\n", $lines)."\n", 200, ['Content-Type' => 'text/plain; charset=UTF-8']);
+    }
+
+    /** RFC 9116: where to report a security problem. Expires a year ahead, so it never goes stale. */
+    public function security(): Response
+    {
+        $lines = [
+            'Contact: mailto:'.config('site.contact_email'),
+            'Contact: '.Seo::absoluteUrl('contact'),
+            'Expires: '.now()->addYear()->startOfDay()->toIso8601ZuluString(),
+            'Preferred-Languages: en',
+            'Canonical: '.Seo::absoluteUrl('.well-known/security.txt'),
+        ];
 
         return response(implode("\n", $lines)."\n", 200, ['Content-Type' => 'text/plain; charset=UTF-8']);
     }

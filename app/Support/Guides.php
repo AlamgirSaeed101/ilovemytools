@@ -63,6 +63,32 @@ class Guides
             ->values()->all();
     }
 
+    /**
+     * Guide text with inline links: "[anchor](/tool-slug)" becomes a link to that page; everything else
+     * is escaped. Unknown paths stay plain text, so a typo never ships a broken link.
+     */
+    public static function inline(string $text): \Illuminate\Support\HtmlString
+    {
+        $parts = preg_split('#\[([^\]]+)\]\((/[a-z0-9/-]*)\)#', $text, -1, PREG_SPLIT_DELIM_CAPTURE);
+        $html = '';
+        foreach ($parts as $i => $part) {
+            $html .= match ($i % 3) {
+                0 => e($part),
+                1 => self::linkable($parts[$i + 1]) ? '<a href="'.e(url($parts[$i + 1])).'">'.e($part).'</a>' : e($part),
+                default => '',
+            };
+        }
+
+        return new \Illuminate\Support\HtmlString($html);
+    }
+
+    private static function linkable(string $path): bool
+    {
+        $slug = ltrim($path, '/');
+
+        return array_key_exists($slug, config('tools', [])) || str_starts_with($slug, 'guides/') && self::find(substr($slug, 7)) !== null;
+    }
+
     public static function author(): string
     {
         return (string) (config('site.founder')['name'] ?? config('site.name'));

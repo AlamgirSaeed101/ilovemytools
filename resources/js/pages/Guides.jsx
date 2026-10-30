@@ -6,6 +6,21 @@ import { useMeta } from '../lib/meta.js';
 
 // Hand-written English guides (/guides, /guides/:slug). Content comes from config/guides.php.
 
+// "[anchor](/tool-slug)" in guide text is a link (the server checks the slug; see Guides::inline).
+const LINK = /\[([^\]]+)\]\((\/[a-z0-9/-]*)\)/g;
+
+export function GuideText({ text }) {
+    const out = [];
+    let last = 0;
+    for (const m of text.matchAll(LINK)) {
+        out.push(text.slice(last, m.index));
+        out.push(<a key={m.index} href={m[2]}>{m[1]}</a>);
+        last = m.index + m[0].length;
+    }
+    out.push(text.slice(last));
+    return out;
+}
+
 export function GuideIndex() {
     const site = getSite();
     useMeta({ title: `Guides - How to Get More Out of Free Online Tools | ${site.name}`, description: 'Practical, step-by-step guides on PDFs, images and writing.', path: '/guides', englishOnly: true }, site.url);
@@ -45,12 +60,12 @@ export function GuideArticle() {
                     <section key={s.heading}>
                         <h2>{s.heading}</h2>
                         {(s.paragraphs ?? []).map((p) => (
-                            <p key={p.slice(0, 40)}>{p}</p>
+                            <p key={p.slice(0, 40)}><GuideText text={p} /></p>
                         ))}
                         {s.list && (
                             <ul>
                                 {s.list.map((item) => (
-                                    <li key={item}>{item}</li>
+                                    <li key={item}><GuideText text={item} /></li>
                                 ))}
                             </ul>
                         )}

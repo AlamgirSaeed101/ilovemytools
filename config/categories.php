@@ -82,7 +82,7 @@ return [
         'icon' => 'calculator',
         'accent' => '#d97706',
         'accent2' => '#f59e0b',
-        'title' => 'Age, Loan, Mortgage & Compound Interest Calculators',
+        'title' => 'Free Online Calculators: Age, Percentage, Loan & Mortgage',
         'description' => 'Free calculators for age, percentages, tips, loans, mortgages and compound interest. Instant, accurate answers with the formula and working shown.',
         'intro' => 'Quick, accurate calculators for everyday maths and money: exact age, percentages, tips, loan and mortgage repayments, and compound interest.',
         'content' => [

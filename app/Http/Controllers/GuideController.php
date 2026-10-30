@@ -24,13 +24,29 @@ class GuideController extends Controller
 
     public function index(): Response
     {
+        $guides = Guides::all();
         $seo = Seo::make('Guides - How to Get More Out of Free Online Tools', 'Practical, step-by-step guides on PDFs, images and writing: how to compress files for email, which image format to use, how many words fit on a page and more.', '/guides')
-            ->breadcrumbs([['Guides', '/guides']]);
+            ->breadcrumbs([['Guides', '/guides']])
+            ->addSchema([
+                '@context' => 'https://schema.org',
+                '@type' => 'CollectionPage',
+                'name' => 'Guides',
+                'url' => url('/guides'),
+                'mainEntity' => [
+                    '@type' => 'ItemList',
+                    'numberOfItems' => $guides->count(),
+                    'itemListElement' => $guides->values()->map(fn (array $guide, int $i) => [
+                        '@type' => 'ListItem',
+                        'position' => $i + 1,
+                        'url' => url('/guides/'.$guide['slug']),
+                        'name' => $guide['h1'],
+                    ])->all(),
+                ],
+            ]);
         // English only: no hreflang, and the language links go to each language's home page.
         $seo->path = null;
-        $seo->path = null; // English only: no hreflang alternates
 
-        return $this->render('guides', $seo, 'pages.guides', ['guides' => Guides::all()]);
+        return $this->render('guides', $seo, 'pages.guides', ['guides' => $guides]);
     }
 
     public function show(string $guide): Response

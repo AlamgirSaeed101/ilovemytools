@@ -148,6 +148,39 @@ class IndexingTest extends TestCase
         $this->assertSame(3, preg_match_all('#<a href="[^"]*/guides/(?!'.preg_quote($first['slug'], '#').'")[a-z0-9-]+">#', explode('More guides', $html, 2)[1] ?? ''));
     }
 
+    public function test_guides_link_related_tools_in_their_text_and_the_hub_lists_them(): void
+    {
+        foreach (Guides::all() as $guide) {
+            $html = $this->get('/guides/'.$guide['slug'])->assertOk()->getContent();
+            $body = explode('</article>', explode('<article', $html, 2)[1] ?? '', 2)[0];
+            $this->assertStringNotContainsString('](/', $body, "{$guide['slug']} shows raw link markup.");
+            // Plain in-text links (the "Try the free ..." button has a class, the byline links /about).
+            preg_match_all('#<a href="[^"]+/([a-z0-9-]+)">#', $body, $m);
+            $tools = array_intersect($m[1], array_keys(config('tools')));
+            $this->assertGreaterThanOrEqual(2, count(array_unique($tools)), "{$guide['slug']} links at least 2 tools inside its text.");
+        }
+
+        $hub = $this->get('/guides')->getContent();
+        $this->assertStringContainsString('"@type": "ItemList"', str_replace('"@type":"ItemList"', '"@type": "ItemList"', $hub));
+        $this->assertMatchesRegularExpression('#"numberOfItems":\s*'.Guides::all()->count().'#', $hub);
+    }
+
+    public function test_unknown_urls_are_404_noindex_without_a_canonical(): void
+    {
+        $html = $this->get('/no-such-page-xyz')->assertNotFound()->getContent();
+
+        $this->assertStringContainsString('noindex', $html);
+        $this->assertStringNotContainsString('rel="canonical"', $html);
+    }
+
+    public function test_security_txt_follows_rfc_9116(): void
+    {
+        $body = $this->get('/.well-known/security.txt')->assertOk()->assertHeader('Content-Type', 'text/plain; charset=UTF-8')->getContent();
+
+        $this->assertStringContainsString('Contact: mailto:'.config('site.contact_email'), $body);
+        $this->assertMatchesRegularExpression('#^Expires: \d{4}-\d\d-\d\dT00:00:00Z$#m', $body);
+    }
+
     public function test_english_about_page_answers_who_what_why_with_faq_schema(): void
     {
         $html = $this->get('/about')->assertOk()->getContent();

@@ -1,6 +1,6 @@
 @php
     // Error pages (404 etc.) don't come from a controller, so give them safe defaults.
-    $seo = $seo ?? \App\Support\Seo::make('Page not found', 'The page you are looking for could not be found.')->noindex();
+    $seo = $seo ?? tap(\App\Support\Seo::make('Page not found', 'The page you are looking for could not be found.')->noindex(), fn ($s) => $s->hasCanonical = false);
     $boot = $boot ?? [
         'site' => app(\App\Support\SiteData::class)->site(),
         'page' => ['type' => 'notfound', 'slug' => null, 'data' => null],
@@ -31,7 +31,9 @@
     <title>{{ $seo->title }}</title>
     <meta name="description" content="{{ $seo->description }}">
     <meta name="robots" content="{{ $seo->robots }}">
-    <link rel="canonical" href="{{ $seo->canonical }}">
+    @if ($seo->hasCanonical)
+        <link rel="canonical" href="{{ $seo->canonical }}">
+    @endif
     @foreach ($seo->alternates() as $alt)
         <link rel="alternate" hreflang="{{ $alt['hreflang'] }}" href="{{ $alt['href'] }}">
     @endforeach

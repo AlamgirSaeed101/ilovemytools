@@ -68,7 +68,7 @@ return [
             [
                 'heading' => 'Using the Tip Calculator',
                 'paragraphs' => [
-                    'If you would rather not do the math at the table, the Tip Calculator on this site does it for you and works entirely in your browser.',
+                    'If you would rather not do the math at the table, the [Tip Calculator](/tip-calculator) on this site does it for you and works entirely in your browser.',
                 ],
                 'list' => [
                     'Enter the bill amount shown on the receipt (the subtotal, if you want to tip before tax).',
@@ -82,6 +82,7 @@ return [
                 'heading' => 'Common mistakes',
                 'paragraphs' => [
                     'A few habits cause most tipping disputes and short-changed servers.',
+                    'For percentages that are not tips, such as a discount or a pay rise, the [Percentage Calculator](/percentage-calculator) shows the answer and the formula.',
                 ],
                 'list' => [
                     'Tipping on a discounted total after a coupon or gift card, rather than on what the meal would normally have cost: the server did the same work either way.',
@@ -138,7 +139,7 @@ return [
             [
                 'heading' => 'How to compress a PDF step by step',
                 'paragraphs' => [
-                    'The Compress PDF tool on this site works entirely in your web browser, so the document is never uploaded anywhere. That matters for contracts, invoices, medical letters and anything else you would rather not hand to a stranger\'s server.',
+                    'The [Compress PDF](/compress-pdf) tool on this site works entirely in your web browser, so the document is never uploaded anywhere. That matters for contracts, invoices, medical letters and anything else you would rather not hand to a stranger\'s server.',
                 ],
                 'list' => [
                     'Open the Compress PDF tool and drop your file onto the page (or click to choose it).',
@@ -173,6 +174,7 @@ return [
                 'paragraphs' => [
                     'It depends on the website. Many online compressors upload your file to their servers, process it there and keep it for a while. With a browser-based tool like this one, the work happens on your own computer or phone and the file never leaves your device. You can check this yourself: open your browser\'s developer tools, choose the Network tab and compress a file, and you will see that the PDF is not sent anywhere.',
                     'If a PDF is confidential, you can also add a password with Protect PDF after compressing it. Send the password separately, for example by text message, not in the same email.',
+                    'When the recipient only needs to see a page or two, converting them with [PDF to JPG](/pdf-to-jpg) often gives a much smaller attachment than the whole PDF. Going the other way, [Merge PDF](/merge-pdf) combines several compressed files into one attachment.',
                 ],
             ],
         ],
@@ -255,7 +257,8 @@ return [
             [
                 'heading' => 'How to convert or shrink an image',
                 'paragraphs' => [
-                    'All the converters on this site run inside your browser, so your pictures are never uploaded. Drop several files at once and download them together as a ZIP. To keep the same format but make the file smaller, use the Image Compressor, which can also aim for an exact size such as 100 KB.',
+                    'All the converters on this site run inside your browser, so your pictures are never uploaded. Drop several files at once and download them together as a ZIP. To keep the same format but make the file smaller, use the [Image Compressor](/image-compressor), which can also aim for an exact size such as 100 KB.',
+                    'To switch an image to the format you need, use [WebP to PNG](/webp-to-png), [AVIF to WebP](/avif-to-webp) or [PNG to JPG](/png-to-jpg). Each runs in your browser, so the images are not uploaded.',
                 ],
             ],
         ],
@@ -336,8 +339,9 @@ return [
             [
                 'heading' => 'How to count your words',
                 'paragraphs' => [
-                    'Paste your text into the Word Counter on this site. It shows words, characters with and without spaces, sentences, paragraphs, reading time and speaking time as you type, and it never uploads your text. Word processors such as Microsoft Word and Google Docs also have a built-in word count, usually under the Tools or Review menu.',
-                    'If you need to cut words, look for filler phrases first: "in order to" becomes "to", "due to the fact that" becomes "because". The Readability Checker can then show you which long sentences are worth splitting.',
+                    'Paste your text into the [Word Counter](/word-counter) on this site. It shows words, characters with and without spaces, sentences, paragraphs, reading time and speaking time as you type, and it never uploads your text. Word processors such as Microsoft Word and Google Docs also have a built-in word count, usually under the Tools or Review menu.',
+                    'If you need to cut words, look for filler phrases first: "in order to" becomes "to", "due to the fact that" becomes "because". The [Readability Checker](/readability-checker) can then show you which long sentences are worth splitting.',
+                    'If your text arrives in capitals, or a heading needs title case, the [Case Converter](/case-converter) fixes it without retyping.',
                 ],
             ],
         ],
@@ -365,7 +369,7 @@ return [
                 'heading' => 'How automatic background removal works',
                 'paragraphs' => [
                     'Background removers use a type of AI model trained to find the main subject in a picture, a task researchers call salient object detection. The model looks at the whole image and produces a mask: a grey-scale map where white means "keep" and black means "remove". The mask is then used to make the background transparent.',
-                    'Older tools sent your photo to a server to run the model. The Background Remover on this site runs the model inside your web browser instead, so the picture never leaves your device. The first run downloads the model once; after that it works quickly.',
+                    'Older tools sent your photo to a server to run the model. The [Background Remover](/remove-background) on this site runs the model inside your web browser instead, so the picture never leaves your device. The first run downloads the model once; after that it works quickly.',
                 ],
             ],
             [
@@ -401,6 +405,7 @@ return [
                 'heading' => 'What background removal cannot do well',
                 'paragraphs' => [
                     'Fine, semi-transparent details are the hardest part: wispy hair, glass, smoke and lace. The AI may leave a faint halo or cut a little too much. For a product listing that matters, check the edges at full size. Very busy scenes with several people or objects can also confuse the model about which one is the subject; cropping the photo around your subject first usually fixes that.',
+                    'The cut-out downloads as a PNG with a transparent background. To fit it to the exact size a profile or shop listing asks for, use the [Image Resizer](/image-resizer); to change other JPG images to PNG without removing anything, use [JPG to PNG](/jpg-to-png).',
                 ],
             ],
         ],
@@ -435,7 +440,7 @@ return [
                 'heading' => 'Use a passphrase or a generated password',
                 'paragraphs' => [
                     'There are two good ways to get a long password. The first is a passphrase: four or more random, unrelated words, such as "copper lantern meadow orbit". It is long and surprisingly easy to remember. Pick the words at random rather than using a quote, a song lyric or a phrase about yourself.',
-                    'The second is a random password from a generator, which is ideal when a password manager remembers it for you. The Password Generator on this site creates passwords with your browser\'s cryptographic random number generator, and nothing is sent or stored.',
+                    'The second is a random password from a generator, which is ideal when a password manager remembers it for you. The [Password Generator](/password-generator) on this site creates passwords with your browser\'s cryptographic random number generator, and nothing is sent or stored.',
                 ],
             ],
             [
@@ -448,6 +453,7 @@ return [
                 'heading' => 'Change passwords when there is a reason, not on a schedule',
                 'paragraphs' => [
                     'The same guidance says services should not force people to change passwords periodically. Forced changes lead to small, guessable edits such as "Summer2025" becoming "Autumn2025". Change a password when there is evidence it may be compromised, for example after a breach notice, if you shared it, or if you typed it on a device you do not trust.',
+                    'Strong passwords protect files too: [Protect PDF](/protect-pdf) locks a PDF with a password so only the people you share it with can open it.',
                 ],
             ],
             [
@@ -491,7 +497,7 @@ return [
             [
                 'heading' => 'Step by step',
                 'list' => [
-                    'Open PDF to Word and drop in your PDF. The file is processed in your browser and not uploaded.',
+                    'Open [PDF to Word](/pdf-to-word) and drop in your PDF. The file is processed in your browser and not uploaded.',
                     'Wait while the text, paragraphs and headings are detected.',
                     'Download the .docx file and open it in Microsoft Word, Google Docs or LibreOffice.',
                     'Check headings, lists and tables, and fix any line breaks that landed in the wrong place.',
@@ -521,7 +527,8 @@ return [
                 'heading' => 'Keeping your document private',
                 'paragraphs' => [
                     'PDFs often contain contracts, CVs, bank statements and other personal information. Many online converters upload the file to their servers. This converter reads the PDF and builds the Word file entirely in your browser, using the open-source PDF.js library from Mozilla, so the document stays on your device.',
-                    'When you have finished editing, Word to PDF turns the document back into a PDF that looks the same on every device.',
+                    'When you have finished editing, [Word to PDF](/word-to-pdf) turns the document back into a PDF that looks the same on every device.',
+                    'For a small fix, such as a typo or a date, you may not need Word at all: [Edit PDF](/edit-pdf) changes the existing text directly in the PDF, in its own font.',
                 ],
             ],
         ],
@@ -555,7 +562,7 @@ return [
             [
                 'heading' => 'Step by step',
                 'list' => [
-                    'Open the QR Code Generator and choose what the code should contain: a link, plain text, Wi-Fi details or contact information.',
+                    'Open the [QR Code Generator](/qr-code-generator) and choose what the code should contain: a link, plain text, Wi-Fi details or contact information.',
                     'Type or paste the content. The code updates as you type.',
                     'Choose the size and, if you like, the colours. Keep strong contrast: dark code on a light background.',
                     'Download it as PNG for screens and documents, or SVG for printing at any size.',
@@ -581,6 +588,7 @@ return [
                 'heading' => 'Static codes never expire',
                 'paragraphs' => [
                     'The codes made here are static: the link or text is stored inside the code itself, so the code works forever and does not depend on any service staying online. The trade-off is that you cannot change the destination after printing. If you might need to, point the code at a page on your own website that you can update.',
+                    'If you need the QR code at an exact pixel size for a slide or a print layout, resize the downloaded image with the [Image Resizer](/image-resizer).',
                 ],
             ],
         ],
@@ -649,7 +657,7 @@ return [
             [
                 'heading' => 'Let the calculator do it',
                 'paragraphs' => [
-                    'The Percentage Calculator on this site has a box for each of these three questions and shows the formula it used, so you can check the working. For splitting a bill, the Tip Calculator does the percentage and the division in one go.',
+                    'The [Percentage Calculator](/percentage-calculator) on this site has a box for each of these three questions and shows the formula it used, so you can check the working. For splitting a bill, the [Tip Calculator](/tip-calculator) does the percentage and the division in one go.',
                 ],
             ],
         ],
@@ -714,7 +722,7 @@ return [
             [
                 'heading' => 'Does merging lose quality or change the file size?',
                 'paragraphs' => [
-                    'No. Merging copies the pages exactly as they are; it does not re-compress images or re-render text, so there is no loss of quality. The combined file is roughly the sum of the originals\' sizes, give or take a small amount of overhead from the file structure. If the result is too large to email, run it through the Compress PDF tool afterwards rather than before, so you only need to compress once.',
+                    'No. Merging copies the pages exactly as they are; it does not re-compress images or re-render text, so there is no loss of quality. The combined file is roughly the sum of the originals\' sizes, give or take a small amount of overhead from the file structure. If the result is too large to email, run it through the [Compress PDF](/compress-pdf) tool afterwards rather than before, so you only need to compress once.',
                 ],
             ],
             [
@@ -729,6 +737,7 @@ return [
                 'paragraphs' => [
                     'Not every page in a merge has to be the same size. A merger that works page by page, rather than forcing every file onto one template, will happily combine a US Letter contract with an A4 invoice and a landscape spreadsheet printout: each page keeps its own dimensions and rotation inside the finished file. The only downside is appearance, not function - a reader will notice the page size change as they scroll, the way it would in a stapled paper bundle.',
                     'If a consistent look matters more than speed, for example in a polished proposal, rotate any sideways pages first with Rotate PDF so every page reads the same way, and consider resizing scans to match the rest of the document before merging rather than after.',
+                    'If a file has pages in the wrong order, or pages you do not need, fix it first with [Organize PDF](/organize-pdf). Photos or scans saved as images can become PDF pages with [JPG to PDF](/jpg-to-pdf) and then be merged like any other file.',
                 ],
             ],
             [
@@ -830,8 +839,9 @@ return [
             [
                 'heading' => 'Let the calculator do the arithmetic',
                 'paragraphs' => [
-                    'The Mortgage Calculator on this site runs the exact formula above, shows a full year-by-year amortization schedule, and lets you add an extra monthly payment to see how many months sooner the loan is paid off. For a loan that is not tied to a home purchase - a car, personal or student loan - the Loan Calculator uses the same math without a down payment field.',
+                    'The [Mortgage Calculator](/mortgage-calculator) on this site runs the exact formula above, shows a full year-by-year amortization schedule, and lets you add an extra monthly payment to see how many months sooner the loan is paid off. For a loan that is not tied to a home purchase - a car, personal or student loan - the [Loan Calculator](/loan-calculator) uses the same math without a down payment field.',
                     'Both calculators run entirely in your browser, so the numbers you enter - loan amount, rate, term - are never sent to a server. That makes them a quick, private way to sanity-check a lender\'s pre-approval letter or compare two offers side by side before you commit to either one.',
+                    'To see how the same money would grow if you saved or invested it instead, try the [Compound Interest Calculator](/compound-interest-calculator).',
                 ],
             ],
         ],
@@ -890,7 +900,7 @@ return [
             [
                 'heading' => 'How to resize an image for a specific platform',
                 'paragraphs' => [
-                    'The Image Resizer on this site resizes to an exact pixel width and height, or by percentage, and converts between JPG, PNG and WebP - all in your browser, so the original photo is never uploaded anywhere.',
+                    'The [Image Resizer](/image-resizer) on this site resizes to an exact pixel width and height, or by percentage, and converts between JPG, PNG and WebP - all in your browser, so the original photo is never uploaded anywhere.',
                 ],
                 'list' => [
                     'Pick the placement you are posting to and note its pixel size from the table above - for example 1080 x 1080 for an Instagram grid post.',
@@ -904,6 +914,7 @@ return [
                 'heading' => 'Why your image looks blurry after uploading',
                 'paragraphs' => [
                     'Most platforms re-compress photos on upload to save bandwidth, and there is nothing you can do about that step. What you do control is the source file: resizing a photo down to a platform\'s target size keeps it sharp, because the resizer only removes detail that is already there. Stretching a small image up to fill a much bigger slot blurs it instead, because no new detail can be invented to fill the extra pixels. If a photo looks soft after resizing, check whether the original was actually smaller than the target size before assuming the tool is at fault.',
+                    'If a platform still rejects the file for its size, shrink it with the [Image Compressor](/image-compressor). For a profile picture or product photo with a busy background, the [Background Remover](/remove-background) cuts the subject out first.',
                 ],
             ],
             [
@@ -954,7 +965,7 @@ return [
             [
                 'heading' => 'How to add a watermark step by step',
                 'paragraphs' => [
-                    'The Watermark PDF tool on this site runs entirely in your browser: the file is opened, watermarked and saved on your own device, and is never uploaded anywhere. That matters for anything confidential, since a draft contract or HR letter is exactly the kind of file you are watermarking in the first place.',
+                    'The [Watermark PDF](/watermark-pdf) tool on this site runs entirely in your browser: the file is opened, watermarked and saved on your own device, and is never uploaded anywhere. That matters for anything confidential, since a draft contract or HR letter is exactly the kind of file you are watermarking in the first place.',
                 ],
                 'list' => [
                     'Open the Watermark PDF tool and choose your file.',
@@ -989,6 +1000,7 @@ return [
                 'heading' => 'Flattening: when you need it and when you don\'t',
                 'paragraphs' => [
                     'By default, the watermark sits in the PDF like any other content on the page. Flatten merges it into the page itself so it cannot be selected, moved or deleted as a separate element by someone editing the file afterwards. Skip it for an internal draft that is going to be revised and re-watermarked anyway; use it before sending a document outside your organisation, where you want the marking to stick.',
+                    'A watermark discourages copying but does not stop anyone opening the file; to control who can open it, add a password with [Protect PDF](/protect-pdf). To watermark several documents in one go, combine them first with [Merge PDF](/merge-pdf).',
                 ],
                 'table' => [
                     'headers' => ['Goal', 'Type', 'Opacity', 'Position'],
@@ -1045,7 +1057,7 @@ return [
                     'This runs in your browser with no upload: the file is opened, edited and saved on your own device, which matters for anything with a name, address or financial figure in it.',
                 ],
                 'list' => [
-                    'Open the Edit PDF tool and choose your file.',
+                    'Open the [Edit PDF](/edit-pdf) tool and choose your file.',
                     'Click directly on the line of text you want to change. The editor finds the matching text run and opens it for editing.',
                     'Type the new wording. It is drawn in the PDF\'s own embedded font, at the same size, colour and position as the text it replaces; the old wording is covered first with the colour that was behind it.',
                     'To change the same word everywhere - a company name, a wrong date - use Find and replace instead of editing each line by hand.',
@@ -1075,6 +1087,7 @@ return [
                     'New text runs into the margin or the next column. The replacement is drawn at the original font size, so a shorter original word replaced with a much longer one can overflow its old space - the same problem you would have retyping a label on a printed form. Shorten the wording or reduce the size manually if it does not fit.',
                     'The cover-up leaves a visible edge. The old text is covered with the colour sampled from behind it, which works cleanly on a plain white or solid-colour background but can leave a faint rectangle on a gradient, a background image, or text sitting over a photo. For those cases, Whiteout with a manually matched colour, or redoing the whole block as an image edit, gives a cleaner result.',
                     'A date, name or number is changed in the visible text but an old copy survives elsewhere in the file - in a form field, a bookmark, or document metadata like the title or author. Always check the PDF\'s own Properties/metadata panel in a PDF reader after editing anything sensitive, and use Find and replace across the whole document rather than page by page so you do not miss a second mention.',
+                    'If the document needs a signature after your edits, add it with [Sign PDF](/sign-pdf). To hide sensitive text for good rather than change it, use [Redact PDF](/redact-pdf), which removes the text instead of only covering it.',
                 ],
             ],
             [
@@ -1113,7 +1126,7 @@ return [
                 'heading' => 'What whiteout actually does',
                 'paragraphs' => [
                     'Whiteout draws a solid rectangle in a colour you choose - usually white, to match the page - on top of the existing content at the position and size you set. It does not touch what is underneath: the original text, image or drawing instructions stay in the PDF\'s content stream exactly as they were, just covered by the new shape sitting above them in the page\'s stacking order.',
-                    'That is the opposite of how the Edit PDF tool\'s in-place text editing works. When you click a line of real text and retype it, the old glyphs are deleted from the content stream and new ones are drawn in their place, so there is nothing left behind. Whiteout is simpler and works on anything - text, a logo, a signature, a scanned stamp - because it does not need to understand what it is covering, it only needs to know where to draw a box.',
+                    'That is the opposite of how the [Edit PDF](/edit-pdf) tool\'s in-place text editing works. When you click a line of real text and retype it, the old glyphs are deleted from the content stream and new ones are drawn in their place, so there is nothing left behind. Whiteout is simpler and works on anything - text, a logo, a signature, a scanned stamp - because it does not need to understand what it is covering, it only needs to know where to draw a box.',
                 ],
             ],
             [
@@ -1134,7 +1147,7 @@ return [
                 'heading' => 'Whiteout vs. redaction: the distinction that matters',
                 'paragraphs' => [
                     'A white box only changes how the page looks when it is viewed or printed normally. The content underneath is still inside the file, which matters because a PDF can be read in more ways than one viewer window: copying the "blank" area and pasting it elsewhere can lift the hidden text, selecting all text on the page can include it, and some PDF tools or scripts can extract every text run in a file regardless of what is drawn above it. None of that requires special skill - it is the same copy-paste anyone already knows how to do.',
-                    'Proper redaction is a different operation: it has to delete the hidden content from the file, not just draw over it, which is what the Redact PDF tool is for. Use whiteout for anything cosmetic - cleaning up a scan, removing an old date stamp, hiding a logo on a sample document you are sharing internally. Use redaction, not whiteout, the moment the hidden content is a name, account number, address, signature or anything else that would matter if someone else recovered it.',
+                    'Proper redaction is a different operation: it has to delete the hidden content from the file, not just draw over it, which is what the [Redact PDF](/redact-pdf) tool is for. Use whiteout for anything cosmetic - cleaning up a scan, removing an old date stamp, hiding a logo on a sample document you are sharing internally. Use redaction, not whiteout, the moment the hidden content is a name, account number, address, signature or anything else that would matter if someone else recovered it.',
                 ],
                 'table' => [
                     'headers' => ['Situation', 'Use whiteout', 'Use redaction instead'],
@@ -1152,6 +1165,7 @@ return [
                     'The box is too small. A rectangle that matches the text exactly can leave a sliver of a letter visible along the edge once the file is viewed at a different zoom level. Always leave a small margin.',
                     'The colour does not match the page. A whiteout coloured pure white on a page that is slightly off-white, textured or part of a scanned image leaves a visible, obviously edited patch - draw attention to exactly what you were trying to hide.',
                     'It is used on something that needed real redaction. If what you covered has any value to someone else - financial details, a password, personal information - treat the file as still containing it until you have used an actual redaction tool, not a white rectangle.',
+                    'To mark a document as a draft or confidential instead of hiding parts of it, stamp text across every page with [Watermark PDF](/watermark-pdf).',
                 ],
             ],
             [
@@ -1207,7 +1221,7 @@ return [
                     'This runs entirely in your browser - the file is opened, redacted and saved on your own device and never sent to a server.',
                 ],
                 'list' => [
-                    'Open the Redact PDF tool and choose your file.',
+                    'Open the [Redact PDF](/redact-pdf) tool and choose your file.',
                     'Draw a box over anything on the current page you need to permanently remove - a line of text, a signature, a photo.',
                     'Add as many boxes as you need on that page, then move to the next page and repeat for anything else that needs removing.',
                     'Move, resize, or remove a box before you finish, if you drew it slightly off.',
@@ -1231,6 +1245,7 @@ return [
                 'heading' => 'Redaction vs. other ways to hide content',
                 'paragraphs' => [
                     'Not every cover-up needs full redaction, and it helps to know when a lighter tool is actually appropriate.',
+                    'Before you share the redacted file, you can also lock it with a password using [Protect PDF](/protect-pdf). If you only need to correct wording rather than remove it, [Edit PDF](/edit-pdf) is the right tool.',
                 ],
                 'table' => [
                     'headers' => ['What you are hiding', 'Right tool', 'Why'],
