@@ -51,6 +51,18 @@ export function About() {
             <p>{t('{name} launched in {year}. Everything on the site is free to use and is paid for by advertising.', { name, year: site.founded })}</p>
             {site.founder && <p>{t('{name} was founded by {founder}.', { name, founder: site.founder })}</p>}
 
+            {site.brandFaqs?.length > 0 && (
+                <>
+                    <h2>{name} at a glance</h2>
+                    {site.brandFaqs.map((faq) => (
+                        <div key={faq.q}>
+                            <h3>{faq.q}</h3>
+                            <p>{faq.a}</p>
+                        </div>
+                    ))}
+                </>
+            )}
+
             <div className="feature-list">
                 {items.map(([icon, title, text]) => (
                     <div className="feature-item" key={title}>

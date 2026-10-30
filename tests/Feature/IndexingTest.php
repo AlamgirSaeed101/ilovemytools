@@ -147,4 +147,17 @@ class IndexingTest extends TestCase
         $html = $this->get('/guides/'.$first['slug'])->getContent();
         $this->assertSame(3, preg_match_all('#<a href="[^"]*/guides/(?!'.preg_quote($first['slug'], '#').'")[a-z0-9-]+">#', explode('More guides', $html, 2)[1] ?? ''));
     }
+
+    public function test_english_about_page_answers_who_what_why_with_faq_schema(): void
+    {
+        $html = $this->get('/about')->assertOk()->getContent();
+
+        $this->assertStringContainsString('at a glance', $html);
+        $this->assertStringContainsString('Who makes', $html);
+        $this->assertStringContainsString('"@type": "FAQPage"', str_replace('"@type":"FAQPage"', '"@type": "FAQPage"', $html));
+        $this->assertStringContainsString('foundingLocation', $html);
+
+        // Translated About pages are noindex and keep their own copy.
+        $this->assertStringNotContainsString('at a glance', $this->get('/de/about')->getContent());
+    }
 }

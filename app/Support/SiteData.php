@@ -78,6 +78,8 @@ class SiteData
             'linkedin' => (string) config('site.linkedin'),
             'badges' => array_values(config('site.badges', [])),
             'founder' => (string) (config('site.founder')['name'] ?? ''),
+            // English About page only (the indexed version): plain answers about the brand.
+            'brandFaqs' => Locale::current() === Locale::default() ? BrandFaq::all() : [],
             'ads' => [
                 'client' => Ads::liveClient(),
                 'placeholders' => Ads::showPlaceholders(),

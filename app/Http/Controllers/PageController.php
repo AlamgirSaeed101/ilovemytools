@@ -147,6 +147,9 @@ class PageController extends Controller
         $seo = Seo::make($title, $description, $path)->breadcrumbs([[$label, $path]])->englishOnly();
         if ($page === 'about') {
             $seo->about();
+            if (Locale::current() === Locale::default()) {
+                $seo->faqs(\App\Support\BrandFaq::all());
+            }
         }
 
         return $this->render($page, $seo, 'pages.'.$page, ['pageTitle' => $label]);

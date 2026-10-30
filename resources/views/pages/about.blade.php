@@ -12,6 +12,14 @@
                 <p>{{ t('{name} was founded by {founder}.', ['name' => $name, 'founder' => $founder['name']]) }}</p>
             @endif
 
+            @if (\App\Support\Locale::current() === \App\Support\Locale::default())
+                <h2>{{ $name }} at a glance</h2>
+                @foreach (\App\Support\BrandFaq::all() as $faq)
+                    <h3>{{ $faq['q'] }}</h3>
+                    <p>{{ $faq['a'] }}</p>
+                @endforeach
+            @endif
+
             <h2>{{ t('Privacy first') }}</h2>
             <p>{{ t('Our tools process your files and text directly in your web browser. PDFs, images and documents never leave your device.') }}</p>
             <h2>{{ t('Free forever') }}</h2>
