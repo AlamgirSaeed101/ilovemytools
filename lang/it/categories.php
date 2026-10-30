@@ -60,7 +60,7 @@ return [
         'short' => 'Calcolatrici',
         'subtitle' => 'I calcoli di tutti i giorni',
         'title' => 'Calcolatrici: età, prestito, mutuo e interesse composto',
-        'description' => 'Calcolatrici online gratuite per età, percentuali, variazioni percentuali e altro. Risposte esatte e immediate con il calcolo spiegato.',
+        'description' => 'Calcolatrici online gratuite per età, percentuali, mance, prestiti, mutui e interesse composto. Risposte esatte e immediate con il calcolo spiegato.',
         'intro' => 'Calcolatrici veloci e precise per i conti di tutti i giorni: età esatta, percentuali, aumenti e sconti.',
         'content' => [
             ['heading' => 'Cosa calcolano queste calcolatrici?', 'body' => 'Il Calcolatore di età fornisce l’età esatta in anni, mesi e giorni da una data di nascita, il giorno della settimana in cui sei nato e il conto alla rovescia per il prossimo compleanno, tenendo conto degli anni bisestili. Il Calcolatore di percentuali riunisce le domande più comuni: il X% di Y, che percentuale è X di Y, l’aumento o la diminuzione percentuale tra due numeri e l’aggiunta o la sottrazione di una percentuale, come uno sconto o una tassa.'],

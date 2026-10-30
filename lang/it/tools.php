@@ -1160,6 +1160,7 @@ return [
         'faqs' => [
             ['q' => 'Come converto un AVIF in WebP?', 'a' => 'Trascina il file AVIF nel riquadro qui sopra, scegli la qualità e scarica il WebP con un clic.'],
             ['q' => 'La trasparenza viene mantenuta?', 'a' => 'Sì. Il WebP supporta la trasparenza, quindi le zone trasparenti restano tali.'],
+            ['q' => 'Posso convertire più file AVIF insieme?', 'a' => 'Sì. Trascina fino a 30 immagini AVIF insieme e scarica ogni WebP singolarmente o tutte in un unico file ZIP.'],
             ['q' => 'Quali browser lo supportano?', 'a' => 'Le versioni attuali di Chrome, Edge, Firefox e Safari sanno leggere AVIF e salvare WebP, quindi il convertitore funziona in tutti.'],
             ['q' => 'Le mie immagini vengono caricate online?', 'a' => 'No. Tutto avviene nel browser e le tue immagini non lasciano mai il dispositivo.'],
         ],
@@ -1416,6 +1417,7 @@ return [
             'Dettagli di ogni dominio: registrar, date di registrazione e scadenza, rete di hosting, provider DNS ed email, certificato HTTPS',
         ],
         'content' => [
+            ['heading' => 'Come controllo l’autorità di dominio in blocco?', 'body' => 'Incolla fino a 100 domini o URL, uno per riga, e fai clic su Controlla autorità. Il punteggio OpenPageRank, la posizione globale e i domini di riferimento di ogni sito compaiono insieme in una tabella ordinabile che puoi scaricare in CSV. Non serve registrarsi né cercare ogni dominio separatamente.'],
             [
                 'heading' => 'È lo stesso della Domain Authority di Moz?',
                 'body' => 'No. La Domain Authority (DA) è un punteggio da 0 a 100 di proprietà di Moz, e il Domain Rating (DR) appartiene ad Ahrefs. Questo strumento mostra OpenPageRank, un punteggio da 0 a 10 calcolato dal grafo web pubblico di Common Crawl con il metodo PageRank. Misurano tutti la stessa idea, la forza dei link di un sito, ma sono calcolati in modo diverso, quindi i numeri non si possono convertire tra loro.',

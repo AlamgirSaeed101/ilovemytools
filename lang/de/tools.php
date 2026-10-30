@@ -4,12 +4,12 @@ return [
 
     'word-counter' => [
         'name' => 'Wortzähler',
-        'title' => 'Wortzähler Online: Wörter zählen, Zeichen & mehr',
+        'title' => 'Wörter zählen online – Wortzähler kostenlos, ohne Anmeldung',
         'description' => 'Kostenloser Wortzähler: Wörter zählen, Zeichen, Sätze und Absätze sofort – inklusive Lesezeit, Sprechzeit und Keyword-Dichte. Ohne Anmeldung.',
         'h1' => 'Wortzähler Online',
         'tagline' => 'Zähle Wörter, Zeichen, Sätze und Lesezeit sofort.',
         'keywords' => ['wortzähler online', 'wortzähler', 'zeichenzähler', 'wörter zählen', 'lesezeit berechnen'],
-        'intro' => 'Mit diesem Wortzähler online zählst du Wörter, Zeichen, Sätze und Absätze eines Textes sofort. Füge deinen Text unten ein oder tippe ihn, um die Zahlen beim Schreiben live zu sehen. Der Wortzähler zeigt außerdem die geschätzte Lese- und Sprechzeit sowie deine häufigsten Schlüsselwörter – praktisch für Aufsätze, Blogartikel, Social-Media-Posts und SEO-Meta-Beschreibungen.',
+        'intro' => 'Ein Wortzähler zählt die Wörter, Zeichen, Sätze und Absätze eines Textes automatisch. Mit diesem Wortzähler online zählst du Wörter, Zeichen, Sätze und Absätze eines Textes sofort. Füge deinen Text unten ein oder tippe ihn, um die Zahlen beim Schreiben live zu sehen. Der Wortzähler zeigt außerdem die geschätzte Lese- und Sprechzeit sowie deine häufigsten Schlüsselwörter – praktisch für Aufsätze, Blogartikel, Social-Media-Posts und SEO-Meta-Beschreibungen.',
         'steps' => [
             'Tippe deinen Text in das Feld oder füge ihn ein.',
             'Sieh zu, wie sich die Zahl der Wörter, Zeichen, Sätze und Absätze live aktualisiert.',
@@ -182,12 +182,12 @@ return [
 
     'image-compressor' => [
         'name' => 'Bild komprimieren',
-        'title' => 'Bild verkleinern online: JPG & PNG Größe reduzieren',
+        'title' => 'JPG verkleinern online – Bildgröße kostenlos reduzieren',
         'description' => 'JPG, PNG und WebP online verkleinern: Bildgröße kostenlos reduzieren, z. B. auf 100 KB, ohne sichtbaren Qualitätsverlust. Nichts verlässt dein Gerät.',
         'h1' => 'Bild verkleinern & komprimieren',
         'tagline' => 'Verkleinere JPG-, PNG- und WebP-Dateien – sogar auf eine exakte Größe wie 100 KB.',
         'keywords' => ['bild verkleinern', 'jpg verkleinern online', 'png verkleinern', 'png größe verkleinern', 'bild komprimieren', 'bild auf 100kb komprimieren', 'bildgröße reduzieren', 'jpg komprimieren'],
-        'intro' => 'Mit diesem Tool kannst du ein JPG verkleinern oder ein PNG verkleinern, ohne dass die Bilder sichtbar schlechter aussehen. Mach deine Bilder kleiner, ohne sichtbar an Qualität zu verlieren. Lege eine oder mehrere JPG-, PNG- oder WebP-Dateien ab, wähle eine Qualitätsstufe oder eine Zielgröße wie 100 KB und lade die komprimierten Bilder herunter. Die Komprimierung passiert in deinem Browser, deine Fotos werden also nie hochgeladen.',
+        'intro' => 'Ein JPG verkleinern heißt, die Dateigröße des Bildes zu reduzieren, damit es schneller lädt und leichter zu versenden ist. Mit diesem Tool kannst du ein JPG verkleinern oder ein PNG verkleinern, ohne dass die Bilder sichtbar schlechter aussehen. Mach deine Bilder kleiner, ohne sichtbar an Qualität zu verlieren. Lege eine oder mehrere JPG-, PNG- oder WebP-Dateien ab, wähle eine Qualitätsstufe oder eine Zielgröße wie 100 KB und lade die komprimierten Bilder herunter. Die Komprimierung passiert in deinem Browser, deine Fotos werden also nie hochgeladen.',
         'steps' => [
             'Bilder per Drag & Drop ablegen oder zum Auswählen klicken (JPG, PNG oder WebP).',
             'Eine Qualitätsstufe wählen oder eine Zielgröße wie 100 KB festlegen.',
@@ -439,8 +439,8 @@ return [
 
     'merge-pdf' => [
         'name' => 'PDF zusammenfügen',
-        'title' => 'PDF zusammenfügen: PDF-Dateien online kostenlos kombinieren',
-        'description' => 'Füge PDF-Dateien kostenlos zu einem Dokument zusammen. Reihenfolge ändern, ohne Wasserzeichen und Anmeldung. Nichts wird hochgeladen.',
+        'title' => 'PDF zusammenfügen online – kostenlos, ohne Anmeldung',
+        'description' => 'PDF zusammenfügen online: mehrere PDF-Dateien kostenlos zu einem Dokument kombinieren, Reihenfolge ändern, ohne Wasserzeichen. Nichts wird hochgeladen.',
         'h1' => 'PDF-Dateien online zusammenfügen',
         'tagline' => 'Mehrere PDFs zu einer Datei kombinieren – ohne Wasserzeichen, ohne Upload.',
         'keywords' => ['pdf zusammenfügen', 'pdf kombinieren', 'pdf dateien zusammenführen', 'pdf merger', 'pdf zusammenfügen kostenlos online'],
@@ -1160,6 +1160,7 @@ return [
         'faqs' => [
             ['q' => 'Wie wandle ich AVIF in WebP um?', 'a' => 'Ziehen Sie die AVIF-Datei in das Feld oben, wählen Sie die Qualität und laden Sie das WebP mit einem Klick herunter.'],
             ['q' => 'Bleibt die Transparenz erhalten?', 'a' => 'Ja. WebP unterstützt Transparenz, daher bleiben transparente Bereiche erhalten.'],
+            ['q' => 'Kann ich mehrere AVIF-Dateien auf einmal umwandeln?', 'a' => 'Ja. Lege bis zu 30 AVIF-Bilder gleichzeitig ab und lade jedes WebP einzeln oder alle zusammen als ZIP-Datei herunter.'],
             ['q' => 'Welche Browser können das?', 'a' => 'Aktuelle Versionen von Chrome, Edge, Firefox und Safari können AVIF lesen und WebP speichern, daher funktioniert der Konverter in allen.'],
             ['q' => 'Werden meine Bilder hochgeladen?', 'a' => 'Nein. Alles passiert in Ihrem Browser und Ihre Bilder verlassen nie Ihr Gerät.'],
         ],
@@ -1416,6 +1417,7 @@ return [
             'Details zu jeder Domain: Registrar, Registrierungs- und Ablaufdatum, Hosting-Netzwerk, DNS- und E-Mail-Anbieter, HTTPS-Zertifikat',
         ],
         'content' => [
+            ['heading' => 'Wie prüfe ich die Domain Authority in großen Mengen?', 'body' => 'Füge bis zu 100 Domains oder URLs ein, eine pro Zeile, und klicke auf Autorität prüfen. Der OpenPageRank-Wert, der globale Rang und die verweisenden Domains jeder Website erscheinen zusammen in einer sortierbaren Tabelle, die du als CSV herunterladen kannst. Eine Anmeldung ist nicht nötig, und du musst nicht jede Domain einzeln nachschlagen.'],
             [
                 'heading' => 'Ist das dasselbe wie Moz Domain Authority?',
                 'body' => 'Nein. Domain Authority (DA) ist ein Wert von 0 bis 100 der Firma Moz, Domain Rating (DR) gehört zu Ahrefs. Dieses Tool zeigt OpenPageRank, einen Wert von 0 bis 10, der mit dem PageRank-Verfahren aus dem öffentlichen Web-Graphen von Common Crawl berechnet wird. Alle messen dieselbe Idee – die Stärke der Links einer Website –, werden aber unterschiedlich berechnet, daher lassen sich die Zahlen nicht ineinander umrechnen.',

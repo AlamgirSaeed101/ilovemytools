@@ -1161,6 +1161,7 @@ return [
         'faqs' => [
             ['q' => 'Jak przekonwertować AVIF na WebP?', 'a' => 'Upuść plik AVIF do pola powyżej, wybierz jakość i pobierz plik WebP jednym kliknięciem.'],
             ['q' => 'Czy przezroczystość jest zachowana?', 'a' => 'Tak. WebP wspiera przezroczystość, więc przezroczyste obszary zostają przezroczyste.'],
+            ['q' => 'Czy mogę przekonwertować kilka plików AVIF naraz?', 'a' => 'Tak. Upuść do 30 obrazów AVIF jednocześnie i pobierz każdy plik WebP osobno albo wszystkie w jednym pliku ZIP.'],
             ['q' => 'Które przeglądarki to obsługują?', 'a' => 'Aktualne wersje Chrome, Edge, Firefox i Safari mogą dekodować AVIF i zapisywać WebP, więc konwerter działa w nich wszystkich.'],
             ['q' => 'Czy moje obrazy są wysyłane?', 'a' => 'Nie. Wszystko odbywa się w Twojej przeglądarce i Twoje obrazy nigdy nie opuszczają Twojego urządzenia.'],
         ],
@@ -1333,6 +1334,7 @@ return [
             'Szczegóły każdej domeny: rejestrator, daty rejestracji i wygaśnięcia, sieć hostingowa, dostawca DNS i poczty, certyfikat HTTPS',
         ],
         'content' => [
+            ['heading' => 'Jak sprawdzić autorytet wielu domen naraz?', 'body' => 'Wklej do 100 domen lub adresów URL, po jednym w wierszu, i kliknij Sprawdź autorytet. Wynik OpenPageRank, globalna pozycja i domeny odsyłające każdej witryny pojawią się razem w tabeli, którą możesz sortować i pobrać jako CSV. Nie potrzebujesz rejestracji ani sprawdzania każdej domeny osobno.'],
             ['heading' => 'Czy to to samo co Moz Domain Authority?', 'body' => 'Nie. Domain Authority (DA) to wynik od 0 do 100 należący do Moz, a Domain Rating (DR) należy do Ahrefs. To narzędzie pokazuje OpenPageRank, wynik od 0 do 10 wyliczany z publicznego grafu linków Common Crawl metodą PageRank. Wszystkie te metryki mierzą tę samą ideę, czyli siłę linków witryny, ale są wyliczane inaczej, więc liczb nie można przeliczyć jednej na drugą.'],
             ['heading' => 'Jaki wynik jest dobry?', 'body' => 'Skala jest logarytmiczna: przejście z 2 na 3 wymaga dużo mniej linków niż przejście z 8 na 9. Nowe witryny zwykle zaczynają blisko 0, małe ugruntowane witryny często mają 2-4, znane marki 5-7, a tylko największe witryny w internecie osiągają 9 lub 10. Porównuj witrynę z innymi w tej samej niszy, a nie z największymi witrynami.'],
             ['heading' => 'Co pokazują szczegóły domeny?', 'body' => 'Kliknij Szczegóły obok dowolnej domeny (przy sprawdzaniu jednej domeny otwierają się same), aby zobaczyć rejestratora, datę rejestracji i wygaśnięcia, wiek domeny, adres IP i sieć, która ją hostuje, dostawców DNS i poczty oraz to, czy certyfikat HTTPS jest ważny i kiedy wygasa. Dane pochodzą z publicznego rekordu RDAP rejestru, publicznego DNS i certyfikatu witryny, więc są bezpłatne i nie wymagają rejestracji.'],

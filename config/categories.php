@@ -83,8 +83,8 @@ return [
         'accent' => '#d97706',
         'accent2' => '#f59e0b',
         'title' => 'Age, Loan, Mortgage & Compound Interest Calculators',
-        'description' => 'Free online calculators for age, percentages, percentage change and more. Accurate, instant answers with the formula and working shown for every result.',
-        'intro' => 'Quick, accurate calculators for everyday maths: exact age, percentages, increases and decreases.',
+        'description' => 'Free calculators for age, percentages, tips, loans, mortgages and compound interest. Instant, accurate answers with the formula and working shown.',
+        'intro' => 'Quick, accurate calculators for everyday maths and money: exact age, percentages, tips, loan and mortgage repayments, and compound interest.',
         'content' => [
             ['heading' => 'What can these calculators work out?', 'body' => 'The Age Calculator gives an exact age in years, months and days from a date of birth, the day of the week you were born and a countdown to your next birthday, and it handles leap years. The Percentage Calculator covers the common questions in one place: X% of Y, what percent X is of Y, the percentage increase or decrease between two numbers, and adding or removing a percentage such as a discount or tax.'],
             ['heading' => 'How do I check the answer?', 'body' => 'Every result shows the formula it used, so you can follow the working for homework, discounts, pay rises or reports. For example, the percentage change from 80 to 100 is (100 - 80) / 80 x 100 = 25%.'],

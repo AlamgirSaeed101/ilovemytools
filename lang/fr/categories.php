@@ -60,7 +60,7 @@ return [
         'short' => 'Calculatrices',
         'subtitle' => 'Les calculs du quotidien',
         'title' => 'Calculatrices : âge, prêt, hypothèque et intérêts composés',
-        'description' => 'Calculatrices en ligne gratuites : âge, pourcentages, variations en pourcentage et plus. Réponses exactes et instantanées, calcul détaillé.',
+        'description' => 'Calculatrices gratuites : âge, pourcentages, pourboire, prêt, hypothèque et intérêts composés. Réponses exactes et instantanées, calcul détaillé.',
         'intro' => 'Des calculatrices rapides et précises pour les calculs du quotidien : âge exact, pourcentages, hausses et remises.',
         'content' => [
             ['heading' => 'Que permettent de calculer ces calculatrices ?', 'body' => 'Le Calculateur d’âge donne l’âge exact en années, mois et jours à partir d’une date de naissance, le jour de la semaine de votre naissance et un compte à rebours jusqu’au prochain anniversaire, en tenant compte des années bissextiles. Le Calculateur de pourcentage réunit les questions courantes : X % de Y, quel pourcentage X représente de Y, la hausse ou la baisse en pourcentage entre deux nombres, et l’ajout ou le retrait d’un pourcentage comme une remise ou une taxe.'],

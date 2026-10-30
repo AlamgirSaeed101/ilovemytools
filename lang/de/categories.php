@@ -60,7 +60,7 @@ return [
         'short' => 'Rechner',
         'subtitle' => 'Alltagsrechnungen lösen',
         'title' => 'Rechner: Alter, Kredit, Hypothek und Zinseszins',
-        'description' => 'Kostenlose Online-Rechner für Alter, Prozente, prozentuale Veränderung und mehr. Sofort exakte Ergebnisse mit erklärtem Rechenweg.',
+        'description' => 'Kostenlose Online-Rechner für Alter, Prozente, Trinkgeld, Kredit, Hypothek und Zinseszins. Sofort exakte Ergebnisse mit erklärtem Rechenweg.',
         'intro' => 'Schnelle, genaue Rechner für alltägliche Rechnungen: exaktes Alter, Prozente, Aufschläge und Rabatte.',
         'content' => [
             ['heading' => 'Was berechnen diese Rechner?', 'body' => 'Der Altersrechner ermittelt aus einem Geburtsdatum das genaue Alter in Jahren, Monaten und Tagen, den Wochentag der Geburt und einen Countdown bis zum nächsten Geburtstag, und er berücksichtigt Schaltjahre. Der Prozentrechner vereint die häufigsten Fragen: X % von Y, wie viel Prozent X von Y ist, die prozentuale Zu- oder Abnahme zwischen zwei Zahlen und das Aufschlagen oder Abziehen eines Prozentsatzes wie Rabatt oder Steuer.'],

@@ -101,14 +101,19 @@ class SeoFilesController extends Controller
     public function llms(): Response
     {
         $name = (string) config('site.name');
+        $tools = config('tools', []);
+        // Same facts as the About page and the listings: one tool count, and the lookup tools named.
+        $lookups = collect($tools)->filter(fn ($tool) => ! empty($tool['server']))->pluck('name')->push('What Is My IP')->all();
         $lines = [
             "# {$name}",
             '',
             '> '.config('site.description'),
             '',
-            "{$name} is a collection of free online tools. Every tool runs entirely in the visitor's browser: files and text are never uploaded, there is no sign up, no daily limit and no watermark.",
+            "{$name} is a free website with ".count($tools).' online tools for PDFs, images, text, calculations and developers. File and text tools run entirely in the visitor\'s browser: files and text are never uploaded. There is no sign up, no daily limit and no watermark.',
             '',
-            'Languages: '.collect(Locale::all())->map(fn ($l, $code) => $l['name'].' ('.Locale::url('/', $code).')')->implode(', ').'. Every page exists in each language under the same path with the language prefix.',
+            'Lookup tools that need the internet ('.implode(', ', $lookups).') send the address you enter, or read your IP address, through our server; nothing is stored.',
+            '',
+            'Languages indexed by search engines: '.collect(Locale::indexable())->map(fn ($code) => Locale::all()[$code]['name'].' ('.Locale::url('/', $code).')')->implode(', ').'. Each page exists in these languages under the same path with the language prefix. Guides are in English only.',
         ];
 
         foreach ($this->registry->categories() as $category) {
@@ -116,7 +121,7 @@ class SeoFilesController extends Controller
             $lines[] = '## '.$category['name'];
             $lines[] = '';
             foreach ($this->registry->inCategory($category['slug']) as $tool) {
-                $lines[] = '- ['.$tool['name'].']('.Seo::absoluteUrl($tool['slug']).'): '.$tool['tagline'];
+                $lines[] = '- ['.$tool['name'].']('.Seo::absoluteUrl($tool['slug']).'): '.$tool['tagline'].(empty($tool['server']) ? '' : ' (looks the address up through our server)');
             }
         }
 

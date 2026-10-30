@@ -81,6 +81,13 @@ class SeoFilesTest extends TestCase
         foreach (array_keys(config('tools')) as $slug) {
             $this->assertStringContainsString('/'.$slug.')', $body, "llms.txt is missing $slug");
         }
+
+        // Brand facts match the About page: the real tool count, the lookup tools named, indexed languages only.
+        $this->assertStringContainsString(count(config('tools')).' online tools', $body);
+        $this->assertStringContainsString('Bulk Domain Authority Checker', explode('## ', $body, 2)[0]);
+        foreach (array_diff(\App\Support\Locale::codes(), \App\Support\Locale::indexable()) as $code) {
+            $this->assertStringNotContainsString(\App\Support\Locale::url('/', $code).')', $body);
+        }
     }
 
     public function test_responses_do_not_expose_php_version(): void

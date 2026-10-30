@@ -60,7 +60,7 @@ return [
         'short' => 'Calculadoras',
         'subtitle' => 'Resolva as contas do dia a dia',
         'title' => 'Calculadoras de idade, empréstimo, hipoteca e juro composto',
-        'description' => 'Calculadoras online grátis de idade, porcentagem, variação percentual e mais. Respostas exatas na hora, com a fórmula e o cálculo explicados.',
+        'description' => 'Calculadoras online grátis de idade, porcentagem, gorjeta, empréstimo, hipoteca e juro composto. Respostas exatas na hora, com o cálculo explicado.',
         'intro' => 'Calculadoras rápidas e precisas para as contas do dia a dia: idade exata, porcentagens, aumentos e descontos.',
         'content' => [
             ['heading' => 'O que essas calculadoras calculam?', 'body' => 'A Calculadora de idade mostra a idade exata em anos, meses e dias a partir de uma data de nascimento, o dia da semana em que você nasceu e a contagem para o próximo aniversário, e considera os anos bissextos. A Calculadora de porcentagem reúne as perguntas mais comuns: X% de Y, quantos por cento X é de Y, o aumento ou a redução percentual entre dois números e somar ou subtrair uma porcentagem, como um desconto ou um imposto.'],

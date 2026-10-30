@@ -1055,6 +1055,7 @@ return [
         'faqs' => [
             ['q' => '¿Cómo convierto AVIF a WebP?', 'a' => 'Suelta el archivo AVIF en el recuadro de arriba, elige la calidad y descarga el WebP con un clic.'],
             ['q' => '¿Se mantiene la transparencia?', 'a' => 'Sí. WebP admite transparencia, así que las zonas transparentes se conservan.'],
+            ['q' => '¿Puedo convertir varios archivos AVIF a la vez?', 'a' => 'Sí. Suelta hasta 30 imágenes AVIF juntas y descarga cada WebP por separado o todas en un solo archivo ZIP.'],
             ['q' => '¿Qué navegadores pueden hacerlo?', 'a' => 'Las versiones actuales de Chrome, Edge, Firefox y Safari pueden leer AVIF y guardar WebP, así que el convertidor funciona en todos ellos.'],
             ['q' => '¿Se suben mis imágenes?', 'a' => 'No. Todo ocurre en tu navegador y tus imágenes nunca salen de tu dispositivo.'],
         ],
@@ -1311,6 +1312,7 @@ return [
             'Detalles de cualquier dominio: registrador, fechas de registro y caducidad, red de alojamiento, proveedor de DNS y de correo, certificado HTTPS',
         ],
         'content' => [
+            ['heading' => '¿Cómo compruebo la autoridad de dominio en bloque?', 'body' => 'Pega hasta 100 dominios o URL, uno por línea, y haz clic en Comprobar autoridad. La puntuación OpenPageRank, el ranking global y los dominios de referencia de cada sitio aparecen juntos en una tabla ordenable que puedes descargar como CSV. No hace falta registrarse ni buscar cada dominio por separado.'],
             [
                 'heading' => '¿Es lo mismo que el Domain Authority de Moz?',
                 'body' => 'No. El Domain Authority (DA) es una puntuación de 0 a 100 propiedad de Moz, y el Domain Rating (DR) pertenece a Ahrefs. Esta herramienta muestra OpenPageRank, una puntuación de 0 a 10 calculada a partir del grafo web público de Common Crawl con el método PageRank. Todas miden la misma idea, la fuerza de los enlaces de un sitio, pero se calculan de forma distinta, así que sus números no se pueden convertir entre sí.',

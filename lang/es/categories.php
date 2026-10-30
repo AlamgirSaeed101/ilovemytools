@@ -60,7 +60,7 @@ return [
         'short' => 'Calculadoras',
         'subtitle' => 'Resuelve cuentas del día a día',
         'title' => 'Calculadoras de edad, préstamo, hipoteca e interés compuesto',
-        'description' => 'Calculadoras en línea gratuitas de edad, porcentajes, variación porcentual y más. Respuestas exactas al instante con el cálculo explicado.',
+        'description' => 'Calculadoras gratuitas de edad, porcentajes, propinas, préstamos, hipotecas e interés compuesto. Respuestas exactas al instante con el cálculo explicado.',
         'intro' => 'Calculadoras rápidas y precisas para las cuentas de cada día: edad exacta, porcentajes, aumentos y descuentos.',
         'content' => [
             ['heading' => '¿Qué pueden calcular estas calculadoras?', 'body' => 'La Calculadora de edad da la edad exacta en años, meses y días a partir de una fecha de nacimiento, el día de la semana en que naciste y la cuenta atrás para tu próximo cumpleaños, y tiene en cuenta los años bisiestos. La Calculadora de porcentajes reúne las preguntas más comunes: el X% de Y, qué porcentaje es X de Y, el aumento o descenso porcentual entre dos números y sumar o restar un porcentaje, como un descuento o un impuesto.'],

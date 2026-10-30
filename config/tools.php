@@ -1405,6 +1405,7 @@ return [
         'faqs' => [
             ['q' => 'How do I convert AVIF to WebP?', 'a' => 'Drop the AVIF file into the box above, choose a quality and download the WebP with one click.'],
             ['q' => 'Is transparency kept?', 'a' => 'Yes. WebP supports transparency, so transparent areas stay transparent.'],
+            ['q' => 'Can I convert several AVIF files at once?', 'a' => 'Yes. Drop up to 30 AVIF images together, then download each WebP on its own or all of them in one ZIP file.'],
             ['q' => 'Which browsers can do this?', 'a' => 'Current versions of Chrome, Edge, Firefox and Safari can decode AVIF and save WebP, so the converter works in all of them.'],
             ['q' => 'Are my images uploaded?', 'a' => 'No. Everything happens in your browser and your images never leave your device.'],
         ],
@@ -1603,7 +1604,7 @@ return [
         'popular' => false,
         'server' => true,
         'updated' => '2026-10-23',
-        'title' => 'Bulk Domain Authority Checker - 100 Free, No Sign-Up',
+        'title' => 'Bulk Domain Authority Checker: Check 100 Sites Free',
         'description' => 'Free bulk domain authority checker, no sign-up: see the authority score, global rank and referring domains of up to 100 websites at once, export as CSV.',
         'h1' => 'Bulk Domain Authority Checker',
         'tagline' => 'Compare the authority of up to 100 websites in seconds.',
@@ -1622,6 +1623,7 @@ return [
             'Details for any domain: registrar, registration and expiry dates, hosting network, DNS and email provider, HTTPS certificate',
         ],
         'content' => [
+            ['heading' => 'How do I check domain authority in bulk?', 'body' => 'Paste up to 100 domains or URLs, one per line, and click Check authority. Every site\'s OpenPageRank score, global rank and referring domains appear together in one sortable table, which you can download as a CSV. There is no sign-up, and you do not need to look each domain up separately.'],
             ['heading' => 'Is this the same as Moz Domain Authority?', 'body' => 'No. Domain Authority (DA) is a 0-100 score owned by Moz, and Domain Rating (DR) belongs to Ahrefs. This tool shows OpenPageRank, a 0-10 score calculated from the public Common Crawl web graph with the PageRank method. All of these measure the same idea, the strength of a site\'s links, but they are calculated differently, so the numbers can\'t be converted into each other.'],
             ['heading' => 'What is a good score?', 'body' => 'The scale is logarithmic: moving from 2 to 3 takes far fewer links than moving from 8 to 9. New websites usually start near 0, small established sites often score 2-4, well-known brands 5-7, and only the largest sites on the internet reach 9 or 10. Compare a site with others in the same niche rather than with the biggest websites.'],
             ['heading' => 'What do the domain details show?', 'body' => 'Click Details next to any domain (it opens by itself when you check just one) to see its registrar, when it was registered and when it expires, its age, the IP address and the network that hosts it, its DNS and email providers, and whether its HTTPS certificate is valid and when it expires. The details come from the registry\'s public RDAP record, public DNS and the site\'s own certificate, so they are free and need no sign up.'],

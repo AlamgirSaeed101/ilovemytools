@@ -1160,6 +1160,7 @@ return [
         'faqs' => [
             ['q' => 'Comment convertir un AVIF en WebP ?', 'a' => 'Déposez le fichier AVIF dans le cadre ci-dessus, choisissez la qualité et téléchargez le WebP en un clic.'],
             ['q' => 'La transparence est-elle conservée ?', 'a' => 'Oui. Le WebP gère la transparence : les zones transparentes restent transparentes.'],
+            ['q' => 'Puis-je convertir plusieurs fichiers AVIF à la fois ?', 'a' => 'Oui. Déposez jusqu’à 30 images AVIF en même temps, puis téléchargez chaque WebP séparément ou toutes dans un seul fichier ZIP.'],
             ['q' => 'Quels navigateurs peuvent le faire ?', 'a' => 'Les versions actuelles de Chrome, Edge, Firefox et Safari savent lire l’AVIF et enregistrer du WebP : le convertisseur fonctionne donc dans tous ces navigateurs.'],
             ['q' => 'Mes images sont-elles envoyées sur un serveur ?', 'a' => 'Non. Tout se passe dans votre navigateur et vos images ne quittent jamais votre appareil.'],
         ],
@@ -1416,6 +1417,7 @@ return [
             'Détails de chaque domaine : registraire, dates d’enregistrement et d’expiration, réseau d’hébergement, fournisseurs DNS et e-mail, certificat HTTPS',
         ],
         'content' => [
+            ['heading' => 'Comment vérifier l’autorité de domaine en masse ?', 'body' => 'Collez jusqu’à 100 domaines ou URL, un par ligne, puis cliquez sur Vérifier l’autorité. Le score OpenPageRank, le classement mondial et les domaines référents de chaque site s’affichent ensemble dans un tableau triable, téléchargeable en CSV. Aucune inscription n’est nécessaire et vous n’avez pas à chercher chaque domaine séparément.'],
             [
                 'heading' => 'Est-ce la même chose que le Domain Authority de Moz ?',
                 'body' => 'Non. Le Domain Authority (DA) est un score de 0 à 100 appartenant à Moz, et le Domain Rating (DR) appartient à Ahrefs. Cet outil affiche OpenPageRank, un score de 0 à 10 calculé à partir du graphe web public de Common Crawl avec la méthode PageRank. Tous mesurent la même idée, la force des liens d’un site, mais avec des calculs différents : leurs valeurs ne sont donc pas convertibles.',
