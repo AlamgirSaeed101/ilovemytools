@@ -10,6 +10,7 @@ import { loadRenderDoc, renderPageToCanvas } from '../lib/pdfRender.js';
 import { colorsFromCanvas, coverRect, extractPageRuns, missingGlyphs } from '../lib/pdfTextRuns.js';
 import { angleFromCenter, arrowHeadLines, normalizeLinkUrl, pointsToPdf, strokeBoundingBox, undoLast } from '../lib/pdfEditShapes.js';
 import { imageWatermarkSize, watermarkPageIndexes } from '../lib/pdfWatermarkLayout.js';
+import { clearSession, fileFromSession, hasUnsavedChanges, loadSession, saveSession } from '../lib/pdfSession.js';
 
 // pdf-lib (~165 KB) only loads when a PDF is previewed or saved, not with the page.
 const loadWatermark = () => import('../lib/pdfWatermark.js');
@@ -131,12 +132,88 @@ export default function EditPdf({ initialMode } = {}) {
     const [error, setError] = useState('');
     const [working, setWorking] = useState(false);
     const [result, setResult] = useState(null);
+    const [savedSession, setSavedSession] = useState(null);
     const stageRef = useRef(null);
     const nextId = useRef(1);
+    const fileBytesRef = useRef(null);
+    const autosaveTimerRef = useRef(null);
     const wmPreviewCanvasRef = useRef(null);
     const wmPreviewRenderDocRef = useRef(null);
     const { status, doc, renderDoc, pageCount } = usePdfDoc(file, { keepFonts: true });
     const thumbs = usePageThumbnails(renderDoc, pageCount);
+
+    // A previous visit left unfinished work: offer to resume it before the dropzone is shown.
+    useEffect(() => {
+        loadSession()
+            .then((session) => setSavedSession(session))
+            .catch(() => setSavedSession(null));
+    }, []);
+
+    // Caches the open file's bytes once, so auto-save doesn't re-read a possibly large file on every edit.
+    useEffect(() => {
+        fileBytesRef.current = null;
+        if (!file) return;
+        let cancelled = false;
+        file.arrayBuffer().then((buf) => {
+            if (!cancelled) fileBytesRef.current = buf;
+        });
+        return () => {
+            cancelled = true;
+        };
+    }, [file]);
+
+    // Auto-saves to IndexedDB as the user works, and clears the save once there is nothing left to lose.
+    useEffect(() => {
+        if (!file) return;
+        if (!hasUnsavedChanges(elements)) {
+            clearSession().catch(() => {});
+            return;
+        }
+        autosaveTimerRef.current = setTimeout(() => {
+            if (!fileBytesRef.current) return;
+            saveSession({ fileName: file.name, fileType: file.type, fileBytes: fileBytesRef.current, elements, currentPage, mode }).catch(() => {});
+        }, 800);
+        return () => clearTimeout(autosaveTimerRef.current);
+    }, [file, elements, currentPage, mode]);
+
+    // Warns before the tab closes or navigates away while there is unsaved work.
+    useEffect(() => {
+        if (!hasUnsavedChanges(elements)) return;
+        function onBeforeUnload(e) {
+            e.preventDefault();
+            e.returnValue = '';
+        }
+        window.addEventListener('beforeunload', onBeforeUnload);
+        return () => window.removeEventListener('beforeunload', onBeforeUnload);
+    }, [elements]);
+
+    function resumeSession() {
+        if (!savedSession) return;
+        const restored = fileFromSession(savedSession);
+        nextId.current = 1 + Math.max(0, ...savedSession.elements.map((el) => el.id));
+        setElements(savedSession.elements);
+        setCurrentPage(savedSession.currentPage || 0);
+        setMode(savedSession.mode || 'edittext');
+        setSavedSession(null);
+        setFile(restored);
+    }
+
+    function discardSavedSession() {
+        clearSession().catch(() => {});
+        setSavedSession(null);
+    }
+
+    /** Confirms before anything that would discard unsaved work (a new upload, or picking another PDF). */
+    function confirmDiscard() {
+        return !hasUnsavedChanges(elements) || window.confirm(t('Discard your unsaved changes to this PDF?'));
+    }
+
+    function downloadResult() {
+        if (!result) return;
+        downloadBlob(result.blob, result.name);
+        clearTimeout(autosaveTimerRef.current);
+        clearSession().catch(() => {});
+    }
 
     // The editable text runs of the page on screen (pdf.js text + the PDF's own fonts).
     useEffect(() => {
@@ -351,6 +428,7 @@ export default function EditPdf({ initialMode } = {}) {
     }
 
     function openFile([picked]) {
+        if (savedSession) discardSavedSession();
         setError('');
         setResult(null);
         setCurrentPage(0);
@@ -624,6 +702,15 @@ export default function EditPdf({ initialMode } = {}) {
     if (!file) {
         return (
             <div className="stack">
+                {savedSession && (
+                    <div className="notice notice--info row row--between">
+                        <span>{t('Resume editing {name}?', { name: savedSession.fileName })}</span>
+                        <span className="row">
+                            <button type="button" className="btn btn--sm btn--primary" onClick={resumeSession}>{t('Resume')}</button>
+                            <button type="button" className="btn btn--sm" onClick={discardSavedSession}>{t('Discard')}</button>
+                        </span>
+                    </div>
+                )}
                 <Dropzone
                     accept=".pdf,application/pdf"
                     isAccepted={isPdf}
@@ -645,7 +732,7 @@ export default function EditPdf({ initialMode } = {}) {
         return (
             <div className="stack">
                 <Notice type="error">{error}</Notice>
-                <button type="button" className="btn" onClick={() => openFile([])}>{t('Choose another PDF')}</button>
+                <button type="button" className="btn" onClick={() => confirmDiscard() && openFile([])}>{t('Choose another PDF')}</button>
             </div>
         );
     }
@@ -665,7 +752,7 @@ export default function EditPdf({ initialMode } = {}) {
                 <p className="field__hint" style={{ margin: 0 }}>
                     <strong>{file.name}</strong> · {formatBytes(file.size)}
                 </p>
-                <button type="button" className="btn btn--sm" onClick={() => openFile([])}>{t('Choose another PDF')}</button>
+                <button type="button" className="btn btn--sm" onClick={() => confirmDiscard() && openFile([])}>{t('Choose another PDF')}</button>
             </div>
 
             <div className="field">
@@ -1134,7 +1221,7 @@ export default function EditPdf({ initialMode } = {}) {
             {result ? (
                 <div className="notice notice--success row row--between">
                     <span>{t('Done!')} {formatBytes(result.blob.size)}</span>
-                    <button type="button" className="btn btn--primary" onClick={() => downloadBlob(result.blob, result.name)}>{t('Download PDF')}</button>
+                    <button type="button" className="btn btn--primary" onClick={downloadResult}>{t('Download PDF')}</button>
                 </div>
             ) : mode === 'watermark' ? (
                 <button type="button" className="btn btn--primary btn--lg" onClick={applyWatermark} disabled={working || !(wmKind === 'text' ? wmText.trim() : wmPendingImage)}>

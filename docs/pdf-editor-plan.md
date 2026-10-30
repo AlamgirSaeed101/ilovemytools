@@ -25,7 +25,7 @@ text and change it in place, in the same font.
   - [x] Zoom: +/- controls and a Reset zoom button scale the page view from 50% to 200% (25% steps) with a CSS transform; pointer placement, dragging and the saved PDF stay correct at every zoom level since element coordinates are unaffected by the view scale.
   - [x] Rotate: a handle above added text, images, highlights and rectangle/ellipse shapes drags to spin the element around its own centre (any angle); the saved PDF rotates it the same way with pdf-lib, anchored to match. Lines, arrows, whiteout, underline/strikethrough and links are unaffected (not part of this pass).
   - [x] Page thumbnails: a horizontal filmstrip above the stage (scrolls on its own, never the page) shows a thumbnail per page, rendered progressively from the same pdfjs document the editor already has open; clicking one jumps straight to that page, alongside the existing Previous/Next buttons.
-4. [ ] Session: auto-save and unsaved-changes warnings
+4. [x] Session: auto-save and unsaved-changes warnings
 5. [ ] Fill PDF forms (new page) and create form fields
 6. [ ] Page tools and signature inside the editor
 7. [ ] Landing pages for each mode: add text to PDF, whiteout PDF, edit PDF text, PDF annotator, fill PDF form, Sejda alternative

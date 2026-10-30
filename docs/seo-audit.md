@@ -93,3 +93,4 @@ Written by the daily SEO/GEO/AEO routine (rule 14 of `docs/ROUTINE.md`). One lin
 - 2026-10-29 health · 686 pages, 55 outbound links checked · 0 issues · fixed flaky CI test (dice chi-square threshold too tight, p 0.001→0.0001); same_as live (LinkedIn/GitHub; 3 blocked by anti-bot WAFs); badges empty; Semrush skipped (no API units).
 - 2026-10-29 10:59 UTC · pdf-editor · Edit PDF: added a page-thumbnail filmstrip above the stage to jump straight to any page, completing editor phase 1 (2c), in all 10 languages.
 - 2026-10-30 health · 687 pages, 55 outbound links checked · 0 issues · same_as live (LinkedIn/GitHub 200; Crunchbase/ProductHunt/IndieHackers 403 anti-bot, inconclusive); badges empty; Semrush skipped (no API units).
+- 2026-10-30 11:06 UTC · pdf-editor · Edit PDF: added session auto-save (IndexedDB) with a resume-or-discard prompt, and unsaved-changes warnings before leaving the page or choosing another PDF, in all 10 languages. Completes build order item 4.

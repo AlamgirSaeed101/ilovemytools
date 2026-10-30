@@ -376,6 +376,8 @@
     "Difference: {value}": "فرق: {value}",
     "Difficult": "مشکل",
     "Disabled": "غیر فعال",
+    "Discard": "رد کریں",
+    "Discard your unsaved changes to this PDF?": "اس PDF میں غیر محفوظ تبدیلیاں رد کر دیں؟",
     "DNS and email": "DNS اور ای میل",
     "DNS provider": "DNS فراہم کنندہ",
     "Do I need to install anything or sign up?": "کیا مجھے کچھ انسٹال کرنا یا سائن اپ کرنا ہوگا؟",
@@ -925,6 +927,7 @@
     "Resizing…": "سائز تبدیل ہو رہا ہے…",
     "Result": "نتیجہ",
     "Resume": "دوبارہ شروع کریں",
+    "Resume editing {name}?": "{name} میں ترمیم دوبارہ شروع کریں؟",
     "Review us on Product Hunt": "Product Hunt پر ہمارا جائزہ دیں",
     "Right in the recommended 7-9 hours for adults.": "بالغ افراد کے لیے تجویز کردہ 7-9 گھنٹوں کے عین مطابق۔",
     "Roll {count} dice": {

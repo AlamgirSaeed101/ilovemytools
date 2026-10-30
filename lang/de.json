@@ -376,6 +376,8 @@
     "Difference: {value}": "Differenz: {value}",
     "Difficult": "Schwer",
     "Disabled": "Deaktiviert",
+    "Discard": "Verwerfen",
+    "Discard your unsaved changes to this PDF?": "Nicht gespeicherte Änderungen an diesem PDF verwerfen?",
     "DNS and email": "DNS und E-Mail",
     "DNS provider": "DNS-Anbieter",
     "Do I need to install anything or sign up?": "Muss ich etwas installieren oder mich registrieren?",
@@ -925,6 +927,7 @@
     "Resizing…": "Größe wird geändert…",
     "Result": "Ergebnis",
     "Resume": "Fortsetzen",
+    "Resume editing {name}?": "Bearbeitung von {name} fortsetzen?",
     "Review us on Product Hunt": "Bewerte uns auf Product Hunt",
     "Right in the recommended 7-9 hours for adults.": "Genau im empfohlenen Bereich von 7-9 Stunden für Erwachsene.",
     "Roll {count} dice": {

@@ -2036,6 +2036,18 @@
     ]
   },
   {
+    "key": "Discard",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Discard your unsaved changes to this PDF?",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "DNS and email",
     "files": [
       "resources/js/components/DomainDetails.jsx"
@@ -5734,7 +5746,14 @@
     "key": "Resume",
     "files": [
       "resources/js/tools/CountdownTimer.jsx",
+      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/Stopwatch.jsx"
+    ]
+  },
+  {
+    "key": "Resume editing {name}?",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {

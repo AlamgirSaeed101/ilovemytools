@@ -355,6 +355,8 @@
     "Difference: {value}": "차이: {value}",
     "Difficult": "어려움",
     "Disabled": "꺼짐",
+    "Discard": "삭제",
+    "Discard your unsaved changes to this PDF?": "이 PDF의 저장하지 않은 변경 내용을 삭제할까요?",
     "DNS and email": "DNS 및 이메일",
     "DNS provider": "DNS 제공업체",
     "Do I need to install anything or sign up?": "무언가를 설치하거나 가입해야 하나요?",
@@ -904,6 +906,7 @@
     "Resizing…": "크기 조절 중…",
     "Result": "결과",
     "Resume": "계속하기",
+    "Resume editing {name}?": "{name} 편집을 이어서 할까요?",
     "Review us on Product Hunt": "Product Hunt에서 리뷰 남기기",
     "Right in the recommended 7-9 hours for adults.": "성인 권장 수면 시간인 7-9시간에 정확히 들어갑니다.",
     "Roll {count} dice": {

@@ -355,6 +355,8 @@
     "Difference: {value}": "差異:{value}",
     "Difficult": "困難",
     "Disabled": "已停用",
+    "Discard": "捨棄",
+    "Discard your unsaved changes to this PDF?": "要捨棄此 PDF 尚未儲存的變更嗎？",
     "DNS and email": "DNS 與電子郵件",
     "DNS provider": "DNS 供應商",
     "Do I need to install anything or sign up?": "需要安裝軟體或註冊帳號嗎?",
@@ -904,6 +906,7 @@
     "Resizing…": "調整大小中…",
     "Result": "結果",
     "Resume": "繼續",
+    "Resume editing {name}?": "要繼續編輯「{name}」嗎？",
     "Review us on Product Hunt": "在 Product Hunt 上評價我們",
     "Right in the recommended 7-9 hours for adults.": "正好落在成人建議的 7-9 小時範圍內。",
     "Roll {count} dice": {

@@ -2462,6 +2462,7 @@ return [
             'Zoom in or out to place things precisely',
             'Rotate text, images, highlights and shapes to any angle',
             'Page thumbnails to jump straight to any page',
+            'Your work auto-saves as you go, so a refresh or accidental close never loses it',
         ],
         'content' => [
             [

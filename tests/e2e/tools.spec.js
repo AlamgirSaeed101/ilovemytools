@@ -876,6 +876,39 @@ test.describe('PDF tools', () => {
         await expect(thumbs.nth(1)).toHaveAttribute('aria-current', 'true');
     });
 
+    test('edit PDF: auto-saves the session, offers to resume it after a reload, warns before discarding it, and clears it once downloaded', async ({ page }) => {
+        await openTool(page, 'edit-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'draft.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
+        await page.getByRole('tab', { name: 'Add text' }).click();
+        await page.getByLabel('Text to add').fill('Session text');
+        await page.getByRole('button', { name: 'Add text to page' }).click();
+        await expect(page.locator('.pdf-editor__overlay')).toHaveCount(1);
+
+        // Trying to choose another PDF now warns, since the edit hasn't been downloaded yet; dismissing keeps it.
+        page.once('dialog', (dialog) => dialog.dismiss());
+        await page.getByRole('button', { name: 'Choose another PDF' }).click();
+        await expect(page.getByText('draft.pdf', { exact: true })).toBeVisible();
+        await expect(page.locator('.pdf-editor__overlay')).toHaveCount(1);
+
+        // Give the debounced auto-save time to write to IndexedDB, then reload the page (accepting
+        // the browser's own "leave site?" prompt, which the unsaved-changes warning now triggers).
+        page.on('dialog', (dialog) => dialog.accept());
+        await page.waitForTimeout(1200);
+        await page.reload();
+        await expect(page.getByText('Resume editing draft.pdf?')).toBeVisible();
+        await page.getByRole('button', { name: 'Resume' }).click();
+        await expect(page.getByText('draft.pdf', { exact: true })).toBeVisible();
+        await expect(page.locator('.pdf-editor__overlay')).toHaveCount(1);
+
+        // Downloading the edited PDF clears the saved session, so a later visit has nothing to resume.
+        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(file.suggestedFilename()).toBe('draft-edited.pdf');
+        await page.waitForTimeout(300);
+        await page.reload();
+        await expect(page.getByText(/Resume editing/)).toHaveCount(0);
+    });
+
     test('watermark PDF stamps text onto only the pages chosen, matching the live preview', async ({ page }) => {
         await openTool(page, 'watermark-pdf');
         const originalBytes = await makePdf(3);
