@@ -28,9 +28,8 @@
                 <li><a href="{{ lurl('contact') }}">{{ t('Contact') }}</a></li>
                 <li><a href="{{ lurl('privacy-policy') }}">{{ t('Privacy Policy') }}</a></li>
                 <li><a href="{{ lurl('terms') }}">{{ t('Terms of Use') }}</a></li>
-                @if (\App\Support\Locale::current() === \App\Support\Locale::default())
-                    <li><a href="{{ url('/guides') }}">Guides</a></li>
-                @endif
+                {{-- In every language: the English guides hub (guides have no translations). --}}
+                <li><a href="{{ url('/guides') }}">{{ t('All guides') }}</a></li>
                 @if (config('site.product_hunt'))
                     <li><a href="{{ config('site.product_hunt') }}" target="_blank" rel="noopener">★ {{ t('Review us on Product Hunt') }}</a></li>
                 @endif

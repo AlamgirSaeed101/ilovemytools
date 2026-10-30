@@ -143,7 +143,8 @@ class PageController extends Controller
     {
         [$title, $description, $label] = SiteData::pageMeta($page);
         $path = SiteData::PAGE_PATHS[$page];
-        $seo = Seo::make($title, $description, $path)->breadcrumbs([[$label, $path]]);
+        // Legal and company pages are indexed in English only; translated copies are for visitors.
+        $seo = Seo::make($title, $description, $path)->breadcrumbs([[$label, $path]])->englishOnly();
         if ($page === 'about') {
             $seo->about();
         }

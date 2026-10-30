@@ -8,7 +8,7 @@ import { useMeta } from '../lib/meta.js';
 
 export function GuideIndex() {
     const site = getSite();
-    useMeta({ title: `Guides - How to Get More Out of Free Online Tools | ${site.name}`, description: 'Practical, step-by-step guides on PDFs, images and writing.', path: '/guides' }, site.url);
+    useMeta({ title: `Guides - How to Get More Out of Free Online Tools | ${site.name}`, description: 'Practical, step-by-step guides on PDFs, images and writing.', path: '/guides', englishOnly: true }, site.url);
     return (
         <div className="shell shell--narrow">
             <Breadcrumbs items={[{ name: 'Guides', to: '/guides' }]} />
@@ -31,7 +31,7 @@ export function GuideIndex() {
 export function GuideArticle() {
     const guide = useLoaderData();
     const site = getSite();
-    useMeta({ ...guide.meta, path: `/guides/${guide.slug}` }, site.url);
+    useMeta({ ...guide.meta, path: `/guides/${guide.slug}`, englishOnly: true }, site.url);
     return (
         <div className="shell shell--narrow">
             <Breadcrumbs items={[{ name: 'Guides', to: '/guides' }, { name: guide.title, to: `/guides/${guide.slug}` }]} />
@@ -109,6 +109,22 @@ export function GuideArticle() {
                     </>
                 )}
             </article>
+
+            {guide.moreGuides?.length > 0 && (
+                <section className="my-11" aria-labelledby="more-guides-heading">
+                    <h2 id="more-guides-heading" className="m-0 mb-4 text-[1.35rem] font-bold">
+                        More guides
+                    </h2>
+                    <ul className="guide-links">
+                        {guide.moreGuides.map((g) => (
+                            <li key={g.slug}>
+                                <Link to={`/guides/${g.slug}`}>{g.title}</Link>
+                                <p>{g.description}</p>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            )}
         </div>
     );
 }

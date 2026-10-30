@@ -178,6 +178,8 @@ function useLanguageHref() {
     const location = useLocation();
     return (code) => {
         const prefix = code === site.defaultLocale ? '' : `/${code}`;
+        // Guides are English only (/es/guides/... doesn't exist), so other languages go to their home page.
+        if (/^\/guides(\/|$)/.test(location.pathname)) return prefix || '/';
         const path = location.pathname === '/' ? '' : location.pathname;
         return `${prefix}${path}${location.search}` || '/';
     };
@@ -409,9 +411,12 @@ function Footer() {
                         <li><Link className={link} to="/contact">{t('Contact')}</Link></li>
                         <li><Link className={link} to="/privacy-policy">{t('Privacy Policy')}</Link></li>
                         <li><Link className={link} to="/terms">{t('Terms of Use')}</Link></li>
-                        {site.locale === site.defaultLocale && (
-                            <li><Link className={link} to="/guides">Guides</Link></li>
-                        )}
+                        <li>
+                            {/* In every language, and a plain link: guides are English only, so the router must not add a language prefix (/es/guides would redirect). */}
+                            <a className={link} href="/guides">
+                                {t('All guides')}
+                            </a>
+                        </li>
                         <li><a className={link} href="/sitemap.xml">{t('Sitemap')}</a></li>
                         {site.linkedin && (
                             <li>

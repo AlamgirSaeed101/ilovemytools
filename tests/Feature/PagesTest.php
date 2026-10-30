@@ -261,7 +261,7 @@ class PagesTest extends TestCase
         $this->get('/coin-flip')->assertSee('"primaryImageOfPage": {', false)->assertSee('"@type": "ImageObject"', false);
     }
 
-    public function test_tool_pages_link_to_their_guide_in_english_only(): void
+    public function test_tool_pages_link_to_their_english_guide_in_every_language(): void
     {
         foreach (config('guides') as $slug => $guide) {
             $this->get('/'.$guide['tool'])
@@ -269,7 +269,10 @@ class PagesTest extends TestCase
                 ->assertSee('href="https://toolzy.test/guides/'.$slug.'"', false);
         }
 
-        $tool = collect(config('guides'))->first()['tool'];
-        $this->get('/de/'.$tool)->assertOk()->assertDontSee('/guides/', false);
+        // Guides exist in English only, so other languages link the English guide, never /de/guides/...
+        [$slug, $guide] = [collect(config('guides'))->keys()->first(), collect(config('guides'))->first()];
+        $this->get('/de/'.$guide['tool'])->assertOk()
+            ->assertSee('href="https://toolzy.test/guides/'.$slug.'" lang="en"', false)
+            ->assertDontSee('/de/guides', false);
     }
 }

@@ -908,6 +908,15 @@
     ]
   },
   {
+    "key": "All guides",
+    "files": [
+      "resources/js/components/Layout.jsx",
+      "resources/js/pages/Home.jsx",
+      "resources/views/pages/home.blade.php",
+      "resources/views/partials/footer.blade.php"
+    ]
+  },
+  {
     "key": "All pages",
     "files": [
       "resources/js/tools/EditPdf.jsx"
@@ -3835,6 +3844,13 @@
       "resources/js/pages/InfoPages.jsx",
       "resources/js/pages/ToolPage.jsx",
       "resources/views/pages/tool.blade.php"
+    ]
+  },
+  {
+    "key": "Latest guides",
+    "files": [
+      "resources/js/pages/Home.jsx",
+      "resources/views/pages/home.blade.php"
     ]
   },
   {

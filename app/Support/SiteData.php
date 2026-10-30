@@ -57,6 +57,8 @@ class SiteData
             'locale' => $locale,
             'dir' => Locale::dir($locale),
             'defaultLocale' => Locale::default(),
+            // Languages search engines may index (config locales.indexable); the client mirrors Seo's rules.
+            'indexable' => Locale::indexable(),
             'prefix' => Locale::prefix($locale),
             'locales' => collect(Locale::all())->map(fn (array $l, string $code) => [
                 'code' => $code,
@@ -133,12 +135,6 @@ class SiteData
     }
 
     /**
-     * The hand-written guides about a tool (its own guide first, then guides that list it as
-     * related), so tool pages link to the longer articles. Guides are English only.
-     *
-     * @return list<array{slug: string, title: string, description: string}>
-     */
-    /**
      * Rendered height of the tool's panel on a phone (sm) and a desktop (lg), measured by
      * scripts/measure-panels.mjs. The page reserves it so nothing jumps when the tool loads.
      *
@@ -153,12 +149,15 @@ class SiteData
         return isset($panel['sm'], $panel['lg']) ? ['sm' => (int) $panel['sm'], 'lg' => (int) $panel['lg']] : null;
     }
 
+    /**
+     * The hand-written guides about a tool (its own guide first, then guides that list it as
+     * related), so tool pages link to the longer articles. Guides are English only, so
+     * every language links the English guide.
+     *
+     * @return list<array{slug: string, title: string, description: string}>
+     */
     public function guidesFor(string $slug): array
     {
-        if (Locale::current() !== 'en') {
-            return [];
-        }
-
         $guides = collect(config('guides', []));
         $own = $guides->filter(fn (array $g) => ($g['tool'] ?? null) === $slug);
         $mentions = $guides->filter(fn (array $g) => ($g['tool'] ?? null) !== $slug && in_array($slug, $g['related'] ?? [], true));

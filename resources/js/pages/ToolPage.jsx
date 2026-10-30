@@ -248,7 +248,10 @@ export default function ToolPage() {
                             <ul className="guide-links">
                                 {tool.guides.map((g) => (
                                     <li key={g.slug}>
-                                        <Link to={`/guides/${g.slug}`}>{g.title}</Link>
+                                        {/* Plain link to the English guide: the router would add this page's language prefix. */}
+                                        <a href={`/guides/${g.slug}`} lang="en">
+                                            {g.title}
+                                        </a>
                                         <p>{g.description}</p>
                                     </li>
                                 ))}

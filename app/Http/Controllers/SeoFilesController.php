@@ -22,16 +22,15 @@ class SeoFilesController extends Controller
     {
         $latest = $this->registry->all()->pluck('updated')->filter()->max() ?? date('Y-m-d');
 
-        // Logical paths; each is listed once per language.
-        $pages = [['/', $latest, '1.0']];
+        // Only canonical, indexable URLs: home, tools and categories in each indexable language
+        // (config locales.indexable) with hreflang between them, legal pages in English only, then
+        // the English guides. Noindex languages and /{lang}/guides/* never appear.
+        $localized = [['/', $latest, '1.0']];
         foreach ($this->registry->all() as $tool) {
-            $pages[] = ['/'.$tool['slug'], $tool['updated'] ?? $latest, '0.9'];
+            $localized[] = ['/'.$tool['slug'], $tool['updated'] ?? $latest, '0.9'];
         }
         foreach ($this->registry->categories() as $slug => $category) {
-            $pages[] = ['/category/'.$slug, $latest, '0.7'];
-        }
-        foreach (['/about', '/contact', '/privacy-policy', '/terms'] as $page) {
-            $pages[] = [$page, $latest, '0.3'];
+            $localized[] = ['/category/'.$slug, $latest, '0.7'];
         }
 
         $xml = new \XMLWriter;
@@ -43,14 +42,15 @@ class SeoFilesController extends Controller
         $xml->startElement('urlset');
         $xml->writeAttribute('xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9');
         $xml->writeAttribute('xmlns:xhtml', 'http://www.w3.org/1999/xhtml');
-        foreach ($pages as [$path, $lastmod, $priority]) {
-            foreach (Locale::codes() as $code) {
+        $languages = Locale::indexable();
+        foreach ($localized as [$path, $lastmod, $priority]) {
+            foreach ($languages as $code) {
                 $xml->startElement('url');
                 $xml->writeElement('loc', Locale::url($path, $code));
                 $xml->writeElement('lastmod', $lastmod);
                 $xml->writeElement('priority', $priority);
-                // Every language version of this page (Google's multilingual sitemap format).
-                foreach (Locale::codes() as $alt) {
+                // Every indexable language version of this page (Google's multilingual sitemap format).
+                foreach ($languages as $alt) {
                     $xml->startElement('xhtml:link');
                     $xml->writeAttribute('rel', 'alternate');
                     $xml->writeAttribute('hreflang', Locale::hreflang($alt));
@@ -64,6 +64,14 @@ class SeoFilesController extends Controller
                 $xml->endElement();
                 $xml->endElement();
             }
+        }
+        // Legal and company pages are indexed in English only (see Seo::englishOnly()).
+        foreach (['/about', '/contact', '/privacy-policy', '/terms'] as $path) {
+            $xml->startElement('url');
+            $xml->writeElement('loc', Locale::url($path, Locale::default()));
+            $xml->writeElement('lastmod', $latest);
+            $xml->writeElement('priority', '0.3');
+            $xml->endElement();
         }
         // Guides exist in English only.
         $xml->startElement('url');

@@ -16,12 +16,20 @@ function localUrl(siteUrl, path, code, site) {
     return `${base}${prefix}${path}`;
 }
 
-/** hreflang links to this page in every language (+ x-default), or none for noindex pages. */
-function syncAlternates(siteUrl, path, noindex, site) {
+/** Languages search engines may index (same rule as Laravel's Locale::indexable()). */
+function indexableLocales(site) {
+    return site.locales.filter((l) => l.code === site.defaultLocale || (site.indexable ?? site.locales.map((x) => x.code)).includes(l.code));
+}
+
+/**
+ * hreflang links to this page in every indexable language (+ x-default), or none for noindex
+ * pages and English-only pages (legal pages, guides), so they never point at a redirect or noindex page.
+ */
+function syncAlternates(siteUrl, path, noindex, englishOnly, site) {
     document.head.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
-    if (noindex || path === undefined) return;
+    if (noindex || englishOnly || path === undefined) return;
     const canonical = document.head.querySelector('link[rel="canonical"]');
-    const links = [...site.locales.map((l) => [l.hreflang, localUrl(siteUrl, path, l.code, site)]), ['x-default', localUrl(siteUrl, path, site.defaultLocale, site)]];
+    const links = [...indexableLocales(site).map((l) => [l.hreflang, localUrl(siteUrl, path, l.code, site)]), ['x-default', localUrl(siteUrl, path, site.defaultLocale, site)]];
     for (const [hreflang, href] of links) {
         const link = document.createElement('link');
         link.rel = 'alternate';
@@ -31,8 +39,14 @@ function syncAlternates(siteUrl, path, noindex, site) {
     }
 }
 
-export function applyMeta({ title, description, path, noindex = false }, siteUrl) {
+/**
+ * `englishOnly`: the page is indexed in English only (legal pages, guides) - no hreflang, and its
+ * copies in other languages are noindex. Languages outside site.indexable are always noindex.
+ */
+export function applyMeta({ title, description, path, noindex = false, englishOnly = false }, siteUrl) {
     const site = getSite();
+    const isDefault = site.locale === site.defaultLocale;
+    noindex = noindex || !indexableLocales(site).some((l) => l.code === site.locale) || (englishOnly && !isDefault);
     if (title) {
         document.title = title;
         setMeta('meta[property="og:title"]', 'content', title);
@@ -48,13 +62,13 @@ export function applyMeta({ title, description, path, noindex = false }, siteUrl
         setMeta('link[rel="canonical"]', 'href', url);
         setMeta('meta[property="og:url"]', 'content', url);
     }
-    if (siteUrl) syncAlternates(siteUrl, path, noindex, site);
+    if (siteUrl) syncAlternates(siteUrl, path, noindex, englishOnly, site);
     setMeta('meta[name="robots"]', 'content', noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large');
 }
 
 export function useMeta(meta, siteUrl) {
-    const { title, description, path, noindex } = meta;
+    const { title, description, path, noindex, englishOnly } = meta;
     useEffect(() => {
-        applyMeta({ title, description, path, noindex }, siteUrl);
-    }, [title, description, path, noindex, siteUrl]);
+        applyMeta({ title, description, path, noindex, englishOnly }, siteUrl);
+    }, [title, description, path, noindex, englishOnly, siteUrl]);
 }

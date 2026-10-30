@@ -84,7 +84,13 @@ class TranslationsTest extends TestCase
         $this->assertStringContainsString('dir="'.$dir.'"', $html);
         $this->assertStringContainsString('<link rel="canonical" href="https://toolzy.test/'.$code.'/merge-pdf">', $html);
         $this->assertStringContainsString(e($tools['merge-pdf']['h1']), $html);
-        $this->assertStringContainsString('hreflang="x-default"', $html);
+        // Indexable languages carry hreflang; the others are noindex with none (config locales.indexable).
+        if (Locale::isIndexable($code)) {
+            $this->assertStringContainsString('hreflang="x-default"', $html);
+        } else {
+            $this->assertStringContainsString('<meta name="robots" content="noindex, follow">', $html);
+            $this->assertStringNotContainsString('hreflang="x-default"', $html);
+        }
 
         $this->get("/$code")->assertOk()->assertSee('lang="'.Locale::hreflang($code).'"', false);
         $this->getJson("/api/tools/word-counter?locale=$code")->assertOk()->assertJsonPath('h1', $tools['word-counter']['h1']);

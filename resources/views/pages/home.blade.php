@@ -24,6 +24,20 @@
             </section>
         @endforeach
 
+        {{-- The newest hand-written guides (English only), so every home page links into them. --}}
+        <section class="section cv-auto" aria-labelledby="home-guides-heading">
+            <h2 id="home-guides-heading" class="section__title">{{ t('Latest guides') }}</h2>
+            <ul class="guide-links">
+                @foreach (\App\Support\Guides::all()->take(3) as $guide)
+                    <li>
+                        <a href="{{ url('/guides/'.$guide['slug']) }}" lang="en">{{ $guide['h1'] }}</a>
+                        <p lang="en">{{ $guide['description'] }}</p>
+                    </li>
+                @endforeach
+            </ul>
+            <p><a href="{{ url('/guides') }}">{{ t('All guides') }}</a></p>
+        </section>
+
         <section class="section prose cv-auto" aria-labelledby="why-heading">
             <h2 id="why-heading">{{ t('Free tools people can trust') }}</h2>
             <p>{{ t('{name} is a free web app for everyday tasks with PDFs, images, text and data. Every tool runs in your browser, so your work stays private and results appear instantly.', ['name' => config('site.name')]) }}</p>

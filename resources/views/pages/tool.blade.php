@@ -116,8 +116,8 @@
                         <ul class="guide-links">
                             @foreach ($guides as $guide)
                                 <li>
-                                    <a href="{{ url('/guides/'.$guide['slug']) }}">{{ $guide['title'] }}</a>
-                                    <p>{{ $guide['description'] }}</p>
+                                    <a href="{{ url('/guides/'.$guide['slug']) }}" lang="en">{{ $guide['title'] }}</a>
+                                    <p lang="en">{{ $guide['description'] }}</p>
                                 </li>
                             @endforeach
                         </ul>

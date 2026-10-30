@@ -26,6 +26,8 @@ class GuideController extends Controller
     {
         $seo = Seo::make('Guides - How to Get More Out of Free Online Tools', 'Practical, step-by-step guides on PDFs, images and writing: how to compress files for email, which image format to use, how many words fit on a page and more.', '/guides')
             ->breadcrumbs([['Guides', '/guides']]);
+        // English only: no hreflang, and the language links go to each language's home page.
+        $seo->path = null;
         $seo->path = null; // English only: no hreflang alternates
 
         return $this->render('guides', $seo, 'pages.guides', ['guides' => Guides::all()]);
@@ -46,7 +48,7 @@ class GuideController extends Controller
         $seo->ogType = 'article';
         $seo->path = null;
 
-        return $this->render('guide', $seo, 'pages.guide', ['guide' => $data, 'tool' => $this->registry->find($data['tool'])], $guide, $this->payload($data));
+        return $this->render('guide', $seo, 'pages.guide', ['guide' => $data, 'tool' => $this->registry->find($data['tool']), 'moreGuides' => Guides::relatedTo($data)], $guide, $this->payload($data));
     }
 
     public function api(string $guide): JsonResponse
@@ -74,6 +76,7 @@ class GuideController extends Controller
             'sources' => $guide['sources'],
             'tool' => $tool ? ['slug' => $tool['slug'], 'name' => $tool['name'], 'icon' => $tool['icon'] ?? 'sparkles', 'tagline' => $tool['tagline']] : null,
             'related' => array_values(array_filter($guide['related'], fn ($slug) => $this->registry->find($slug) !== null)),
+            'moreGuides' => Guides::relatedTo($guide),
         ];
     }
 

@@ -55,5 +55,19 @@
                 </ul>
             @endif
         </article>
+
+        @if (! empty($moreGuides))
+            <section class="section" aria-labelledby="more-guides-heading">
+                <h2 id="more-guides-heading" class="section__title">More guides</h2>
+                <ul class="guide-links">
+                    @foreach ($moreGuides as $more)
+                        <li>
+                            <a href="{{ url('/guides/'.$more['slug']) }}">{{ $more['title'] }}</a>
+                            <p>{{ $more['description'] }}</p>
+                        </li>
+                    @endforeach
+                </ul>
+            </section>
+        @endif
     </div>
 @endsection

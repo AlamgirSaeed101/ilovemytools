@@ -27,6 +27,23 @@ class Locale
         return array_keys(self::all());
     }
 
+    /**
+     * Languages whose pages may be indexed (config locales.indexable); the default language always is.
+     *
+     * @return string[]
+     */
+    public static function indexable(): array
+    {
+        $codes = (array) config('locales.indexable', self::codes());
+
+        return array_values(array_filter(self::codes(), fn (string $code) => $code === self::default() || in_array($code, $codes, true)));
+    }
+
+    public static function isIndexable(?string $code = null): bool
+    {
+        return in_array($code ?? self::current(), self::indexable(), true);
+    }
+
     public static function default(): string
     {
         return (string) config('locales.default', 'en');

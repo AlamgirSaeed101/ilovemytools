@@ -55,9 +55,11 @@ Route::middleware('locale:'.Locale::default())->group(function () use ($guideSlu
         Route::get('/guides/{guide}', [GuideController::class, 'show'])->where('guide', $guideSlugs)->name('guide');
     }
 });
+// Nothing links to /{lang}/guides/... (guides have no translations); if one is requested anyway,
+// it gets a single permanent redirect to the English guide.
 foreach (Locale::codes() as $code) {
     if ($code !== Locale::default()) {
-        Route::get('/'.$code.'/guides/{guide?}', fn (?string $guide = null) => redirect('/guides'.($guide ? '/'.$guide : ''), 302));
+        Route::get('/'.$code.'/guides/{guide?}', fn (?string $guide = null) => redirect('/guides'.($guide ? '/'.$guide : ''), 301));
     }
 }
 

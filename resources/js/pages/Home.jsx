@@ -335,6 +335,28 @@ export default function Home() {
                     <NewsletterForm />
                 </Suspense>
 
+                {/* The newest hand-written guides. Plain links: guides are English only, so no language prefix. */}
+                {site.guides?.length > 0 && (
+                    <section className="cv-auto my-14" aria-labelledby="home-guides-heading">
+                        <h2 id="home-guides-heading" className={`${sectionTitle} mb-4`}>
+                            {t('Latest guides')}
+                        </h2>
+                        <ul className="guide-links">
+                            {site.guides.slice(0, 3).map((g) => (
+                                <li key={g.slug}>
+                                    <a href={`/guides/${g.slug}`} lang="en">
+                                        {g.title}
+                                    </a>
+                                    <p lang="en">{g.description}</p>
+                                </li>
+                            ))}
+                        </ul>
+                        <p>
+                            <a href="/guides">{t('All guides')}</a>
+                        </p>
+                    </section>
+                )}
+
                 <section className="cv-auto mb-6 text-center" aria-labelledby="trusted-heading">
                     <h2 id="trusted-heading" className={`${sectionTitle} mb-4`}>
                         {t('Free tools people can trust')}

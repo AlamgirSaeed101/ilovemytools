@@ -31,6 +31,9 @@ class Seo
     /** Logical path of this page (without the language prefix), used for hreflang links. */
     public ?string $path;
 
+    /** Indexed in English only (legal pages): no hreflang, and the other languages' copies are noindex. */
+    public bool $englishOnly = false;
+
     public function __construct(string $title, string $description, ?string $path = null)
     {
         $this->path = $path ?? self::logicalPath();
@@ -41,6 +44,11 @@ class Seo
 
         $this->schemas[] = $this->organizationSchema();
         $this->schemas[] = $this->websiteSchema();
+
+        // Languages outside config locales.indexable stay usable but aren't offered to search engines.
+        if (! Locale::isIndexable()) {
+            $this->noindex();
+        }
     }
 
     public static function make(string $title, string $description, ?string $path = null): self
@@ -61,17 +69,19 @@ class Seo
     }
 
     /**
-     * hreflang links: the same page in every language, plus x-default (English).
+     * hreflang links: the same page in every indexable language, plus x-default (English).
+     * None for noindex pages, English-only pages and pages without language versions (guides),
+     * so hreflang never points at a redirect or a noindex page.
      *
      * @return array<int, array{hreflang: string, href: string}>
      */
     public function alternates(): array
     {
-        if ($this->robots !== 'index, follow, max-image-preview:large' || $this->path === null) {
+        if ($this->robots !== 'index, follow, max-image-preview:large' || $this->path === null || $this->englishOnly) {
             return [];
         }
         $links = [];
-        foreach (Locale::codes() as $code) {
+        foreach (Locale::indexable() as $code) {
             $links[] = ['hreflang' => Locale::hreflang($code), 'href' => Locale::url($this->path, $code)];
         }
         $links[] = ['hreflang' => 'x-default', 'href' => Locale::url($this->path, Locale::default())];
@@ -82,6 +92,17 @@ class Seo
     public function noindex(): self
     {
         $this->robots = 'noindex, follow';
+
+        return $this;
+    }
+
+    /** Indexed only in English: the copies in other languages are noindex and nothing gets hreflang. */
+    public function englishOnly(): self
+    {
+        $this->englishOnly = true;
+        if (Locale::current() !== Locale::default()) {
+            $this->noindex();
+        }
 
         return $this;
     }

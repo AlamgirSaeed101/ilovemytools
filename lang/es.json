@@ -1323,5 +1323,7 @@
     "Zoom in": "Acercar",
     "Zoom out": "Alejar",
     "Zoom: {value}%": "Zoom: {value}%",
-    "Reset zoom": "Reiniciar zoom"
+    "Reset zoom": "Reiniciar zoom",
+    "Latest guides": "Guías recientes",
+    "All guides": "Todas las guías"
 }

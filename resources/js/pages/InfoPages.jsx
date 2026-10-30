@@ -9,7 +9,8 @@ import { useMeta } from '../lib/meta.js';
 function InfoPage({ page, path, children }) {
     const site = getSite();
     const meta = site.meta[page];
-    useMeta({ ...meta, path }, site.url);
+    // Legal and company pages are indexed in English only (see Seo::englishOnly()).
+    useMeta({ ...meta, path, englishOnly: true }, site.url);
     const title = meta.title.replace(` | ${site.name}`, '');
 
     return (

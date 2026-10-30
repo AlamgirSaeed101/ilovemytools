@@ -1299,5 +1299,7 @@
     "Zoom in": "확대",
     "Zoom out": "축소",
     "Zoom: {value}%": "확대/축소: {value}%",
-    "Reset zoom": "확대/축소 초기화"
+    "Reset zoom": "확대/축소 초기화",
+    "Latest guides": "최신 가이드",
+    "All guides": "모든 가이드"
 }

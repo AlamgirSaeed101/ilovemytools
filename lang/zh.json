@@ -1299,5 +1299,7 @@
     "Zoom in": "放大",
     "Zoom out": "縮小",
     "Zoom: {value}%": "縮放:{value}%",
-    "Reset zoom": "重設縮放"
+    "Reset zoom": "重設縮放",
+    "Latest guides": "最新指南",
+    "All guides": "所有指南"
 }

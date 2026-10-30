@@ -41,6 +41,28 @@ class Guides
         ];
     }
 
+    /**
+     * Other guides to read next: those about the same tool first, then those sharing a related
+     * tool, then the newest. Gives every guide internal links from its siblings.
+     *
+     * @return list<array<string, mixed>> summaries
+     */
+    public static function relatedTo(array $guide, int $limit = 3): array
+    {
+        $tools = array_merge([$guide['tool']], $guide['related'] ?? []);
+
+        return self::all()
+            ->reject(fn (array $other) => $other['slug'] === $guide['slug'])
+            ->sortByDesc(fn (array $other) => match (true) {
+                $other['tool'] === $guide['tool'] => 2,
+                array_intersect($tools, array_merge([$other['tool']], $other['related'])) !== [] => 1,
+                default => 0,
+            })
+            ->take($limit)
+            ->map(fn (array $other) => self::summary($other))
+            ->values()->all();
+    }
+
     public static function author(): string
     {
         return (string) (config('site.founder')['name'] ?? config('site.name'));

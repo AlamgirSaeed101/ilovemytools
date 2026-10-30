@@ -1323,5 +1323,7 @@
     "Zoom in": "Vergrößern",
     "Zoom out": "Verkleinern",
     "Zoom: {value}%": "Zoom: {value} %",
-    "Reset zoom": "Zoom zurücksetzen"
+    "Reset zoom": "Zoom zurücksetzen",
+    "Latest guides": "Neueste Ratgeber",
+    "All guides": "Alle Ratgeber"
 }

@@ -35,4 +35,13 @@ return [
         'zh' => ['name' => 'Chinese (Traditional)', 'native' => '繁體中文', 'dir' => 'ltr', 'og' => 'zh_HK', 'hreflang' => 'zh-Hant'],
     ],
 
+    /*
+    | Languages Google may index (owner decision 30 Oct 2026, from Search Console impressions:
+    | en and de ~1,100 each, it ~450, es ~350, fr ~280, zh ~220, pt ~150 over 28 days; pl, ko and ur
+    | had the least). The others stay fully usable but send `noindex, follow`, are left out of the
+    | sitemap and out of hreflang, so Google doesn't crawl and discard hundreds of thin pages.
+    | Move a language here once its pages have reviewed, unique copy.
+    */
+    'indexable' => ['en', 'de', 'it', 'es', 'fr', 'zh', 'pt'],
+
 ];
