@@ -1,10 +1,12 @@
-# Toolzy - Free Online Tools (Laravel + React)
+# ILoveMyTools - free online tools that run in your browser
 
-A fast, SEO-first tools website. The front end is a **React single-page app** (React Router, client-side navigation, dark mode, Ctrl+K search). **Laravel is the backend**: a JSON API (`/api/*`) plus, for every URL, the SEO `<head>` and a server-rendered copy of the page so Google and Bing see the full content. Every tool runs **entirely in the visitor's browser**: no paid APIs, no uploads, no running costs.
+Live site: **https://ilovemytools.store/**
 
-**13 tools included:** Word Counter, Case Converter, Password Generator, QR Code Generator, Image Compressor, Image Resizer & Converter, Merge PDF, Split PDF, Age Calculator, Percentage Calculator, JSON Formatter, Base64 Encoder/Decoder, What Is My IP.
+54 free online tools for PDFs, images, text, calculations and developers, in 10 languages, with no sign-up, no watermark and no daily limit. The main tool is a [PDF editor](https://ilovemytools.store/edit-pdf) that changes the text already in a PDF, in the PDF's own font.
 
-> The brand name "Toolzy" is a placeholder. Change `APP_NAME` in `.env` and run the brand image script (see below).
+File and text tools (Edit, Merge, Split and Compress PDF, Image Compressor, WebP/AVIF/PNG/JPG converters, Word Counter and the rest) run **entirely in the visitor's browser** with PDF.js, pdf-lib and Canvas, so files are never uploaded. The four lookup tools (Bulk Domain Authority Checker, Broken Link Checker, Domain Age Checker, What Is My IP) go through the server and say so on the page.
+
+Stack: **Laravel 12** serves the SEO pages (full server-rendered HTML, JSON-LD, hreflang) and a small JSON API; **React 19 + React Router + Tailwind v4** (Vite) runs the tools. Guides: https://ilovemytools.store/guides
 
 ---
 
