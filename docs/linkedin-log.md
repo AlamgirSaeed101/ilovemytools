@@ -29,3 +29,5 @@ Tools already announced on LinkedIn (one per line: date and slug). The daily rou
 2026-10-27 edit-pdf company
 2026-10-29 edit-pdf personal
 2026-10-29 edit-pdf company
+2026-10-30 edit-pdf personal
+2026-10-30 edit-pdf company
