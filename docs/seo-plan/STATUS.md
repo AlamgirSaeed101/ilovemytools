@@ -36,6 +36,16 @@ The Free Tools Directory, The Web Is Free, NoUploadTools (PDF Editor, AdSense di
 no open-source claim), dir.im, Startup Stash. Earlier: Crunchbase, LinkedIn, Indie Hackers,
 SaaSHub, Launching Next, UNL library (E7, followed up 29 Oct). AlternativeTo (E4) denied; skip.
 
+Also 30 Oct: GitHub repo README, description (54 tools) and topics updated; Crunchbase short and long
+description say 54. Outreach drafts saved in hello@ Outlook Drafts for the owner to send (sending is
+blocked for Claude): E5 comparetools.io, AUArts library guide, E9 Imghippo pitch, and a decline to
+Lilach Bullock's paid-link offer. Skipped: E6 vwsonline (their own tools hub, not a list), ToolMato
+(sells sponsored posts), Geekboots (dofollow links are paid), Tedit Online (gambling spam on the
+page), fiatjaf and pascalwengerter lists (inactive since 2019/2021), goodwebtools (a competitor's own
+repo), awesome-privacy and free-for-dev (AdSense / out of scope). GitHub PR to NwabKhan/awesome-web-tools
+(Bulk Domain Authority Checker, Developer Tools, with disclosure) is for the owner: forking was
+blocked for Claude.
+
 Owner only: Tech Productivity + Web Tools Weekly (DM on X/Bluesky), Ignlab Launch (form is
 filled by hand; it has a "what is 6 + 3" bot check), ProductPerch and IndieDebut (sign-in),
 Show HN / Reddit (maker posts himself). Guest-post pitches E9-E13 go out via "send them";
