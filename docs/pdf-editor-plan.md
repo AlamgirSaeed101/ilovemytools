@@ -27,6 +27,7 @@ text and change it in place, in the same font.
   - [x] Page thumbnails: a horizontal filmstrip above the stage (scrolls on its own, never the page) shows a thumbnail per page, rendered progressively from the same pdfjs document the editor already has open; clicking one jumps straight to that page, alongside the existing Previous/Next buttons.
 4. [x] Session: auto-save and unsaved-changes warnings
 5. [ ] Fill PDF forms (new page) and create form fields
+  - [x] Fill in a PDF's existing form fields (text boxes, checkboxes, dropdowns and radio buttons) as a new Fill form tab in Edit PDF, positioned over the page preview at each field's own widget rect; checkbox/dropdown/radio values round-trip through pdf-lib, text uses DejaVu Sans so non-Latin-1 answers still render. Creating new form fields is not part of this pass.
 6. [ ] Page tools and signature inside the editor
 7. [ ] Landing pages for each mode: add text to PDF, whiteout PDF, edit PDF text, PDF annotator, fill PDF form, Sejda alternative
 

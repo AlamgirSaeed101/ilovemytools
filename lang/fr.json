@@ -1325,5 +1325,16 @@
     "Zoom: {value}%": "Zoom : {value} %",
     "Reset zoom": "Réinitialiser le zoom",
     "Latest guides": "Derniers guides",
-    "All guides": "Tous les guides"
+    "All guides": "Tous les guides",
+    "{name}: {value}": "{name} : {value}",
+    "Checkbox: {name}": "Case à cocher : {name}",
+    "Choose a value": "Choisissez une valeur",
+    "Fill form": "Remplir le formulaire",
+    "Fill in {name}": "Remplir {name}",
+    "Fill in the fields below, then click Save PDF.": "Remplissez les champs ci-dessous, puis cliquez sur Enregistrer le PDF.",
+    "Filling the form failed: {message}": "Impossible de remplir le formulaire : {message}",
+    "No fillable fields were found in this PDF.": "Aucun champ à remplir n'a été trouvé dans ce PDF.",
+    "Reading form fields…": "Lecture des champs du formulaire…",
+    "Save filled PDF": "Enregistrer le PDF rempli",
+    "Select {name}": "Sélectionner {name}"
 }

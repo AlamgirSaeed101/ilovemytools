@@ -1325,5 +1325,16 @@
     "Zoom: {value}%": "Zoom: {value} %",
     "Reset zoom": "Zoom zurücksetzen",
     "Latest guides": "Neueste Ratgeber",
-    "All guides": "Alle Ratgeber"
+    "All guides": "Alle Ratgeber",
+    "{name}: {value}": "{name}: {value}",
+    "Checkbox: {name}": "Kontrollkästchen: {name}",
+    "Choose a value": "Wert auswählen",
+    "Fill form": "Formular ausfüllen",
+    "Fill in {name}": "{name} ausfüllen",
+    "Fill in the fields below, then click Save PDF.": "Füllen Sie die Felder unten aus und klicken Sie dann auf PDF speichern.",
+    "Filling the form failed: {message}": "Das Formular konnte nicht ausgefüllt werden: {message}",
+    "No fillable fields were found in this PDF.": "In diesem PDF wurden keine ausfüllbaren Felder gefunden.",
+    "Reading form fields…": "Formularfelder werden gelesen…",
+    "Save filled PDF": "Ausgefülltes PDF speichern",
+    "Select {name}": "{name} auswählen"
 }

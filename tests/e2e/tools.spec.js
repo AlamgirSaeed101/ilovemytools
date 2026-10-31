@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 import JSZip from 'jszip';
 import { PDFDocument, PDFName } from 'pdf-lib';
 import {
-    checkPdfPassword, extractPdfText, makeDocx, makeImage, makePdf, makePdfWithImage, makeTabularPdf, makeXlsx,
+    checkPdfPassword, extractPdfText, makeDocx, makeImage, makePdf, makePdfWithFormFields, makePdfWithImage, makeTabularPdf, makeXlsx,
     mockQpdfCdn, openTool, pdfPageCount, pdfPageRotations, pdfPageTexts, readDocxText, readDownload, readXlsx, trackErrors,
 } from './helpers.js';
 
@@ -822,6 +822,27 @@ test.describe('PDF tools', () => {
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         const text = await extractPdfText(page, await readDownload(file));
         expect(text).toContain('Zoomed text');
+    });
+
+    test('edit PDF: Fill form fills a text field, a checkbox and a dropdown, and saves their values', async ({ page }) => {
+        await openTool(page, 'edit-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'application.pdf', mimeType: 'application/pdf', buffer: await makePdfWithFormFields() });
+
+        await page.getByRole('tab', { name: 'Fill form' }).click();
+        await expect(page.getByText('Fill in the fields below, then click Save PDF.')).toBeVisible();
+
+        await page.getByLabel('Fill in full_name').fill('Jane Doe');
+        await page.getByLabel('Checkbox: subscribe').check();
+        await page.getByLabel('Select country').selectOption('DE');
+
+        await page.getByRole('button', { name: 'Save filled PDF' }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(file.suggestedFilename()).toBe('application-filled.pdf');
+        const saved = await PDFDocument.load(await readDownload(file));
+        const form = saved.getForm();
+        expect(form.getTextField('full_name').getText()).toBe('Jane Doe');
+        expect(form.getCheckBox('subscribe').isChecked()).toBe(true);
+        expect(form.getDropdown('country').getSelected()).toEqual(['DE']);
     });
 
     test('edit PDF: dragging an element\'s rotate handle spins it in place and the saved PDF still reads its text', async ({ page }) => {

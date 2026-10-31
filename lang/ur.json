@@ -1325,5 +1325,16 @@
     "Zoom: {value}%": "زوم: {value}%",
     "Reset zoom": "زوم ری سیٹ کریں",
     "Latest guides": "تازہ ترین گائیڈز",
-    "All guides": "تمام گائیڈز"
+    "All guides": "تمام گائیڈز",
+    "{name}: {value}": "{name}: {value}",
+    "Checkbox: {name}": "چیک باکس: {name}",
+    "Choose a value": "ایک قدر منتخب کریں",
+    "Fill form": "فارم پُر کریں",
+    "Fill in {name}": "{name} پُر کریں",
+    "Fill in the fields below, then click Save PDF.": "نیچے دیے گئے خانے پُر کریں، پھر PDF محفوظ کریں پر کلک کریں۔",
+    "Filling the form failed: {message}": "فارم پُر نہیں ہو سکا: {message}",
+    "No fillable fields were found in this PDF.": "اس PDF میں پُر کرنے کے قابل کوئی خانہ نہیں ملا۔",
+    "Reading form fields…": "فارم کے خانے پڑھے جا رہے ہیں…",
+    "Save filled PDF": "پُر شدہ PDF محفوظ کریں",
+    "Select {name}": "{name} منتخب کریں"
 }

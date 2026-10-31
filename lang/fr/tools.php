@@ -2201,6 +2201,7 @@ return [
             'Faites pivoter le texte, les images, les surlignages et les formes à n’importe quel angle',
             'Miniatures de pages pour aller directement à n’importe quelle page',
             'Votre travail est enregistré automatiquement au fil de l’édition, donc une actualisation ou une fermeture accidentelle ne le perd jamais',
+            'Remplissez les champs d’un formulaire existant : champs de texte, cases à cocher, listes déroulantes et boutons radio',
         ],
         'content' => [
             ['heading' => 'Comment fonctionne la modification du texte existant', 'body' => 'Cliquez sur une ligne de texte et tapez. L’ancienne formulation est recouverte de la couleur qui se trouve derrière, et la nouvelle est dessinée à la même position, dans la même taille et la même couleur, avec la police intégrée au PDF. Les PDF n’intègrent généralement que les lettres qu’ils utilisent : si votre nouveau texte demande une lettre que le fichier ne contenait pas, cette ligne passe à la police standard la plus proche et l’éditeur vous indique quelles lettres en sont la cause. Les pages numérisées sont des images sans texte modifiable ; utilisez-y le masquage blanc et Ajouter du texte.'],

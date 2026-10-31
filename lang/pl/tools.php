@@ -2074,6 +2074,7 @@ return [
             'Obracaj tekst, obrazy, zakreślenia i kształty pod dowolnym kątem',
             'Miniatury stron, aby przejść prosto do wybranej strony',
             'Twoja praca jest automatycznie zapisywana podczas edycji, więc odświeżenie lub przypadkowe zamknięcie nigdy jej nie utraci',
+            'Wypełnia istniejące pola formularza: pola tekstowe, pola wyboru, listy rozwijane i przyciski opcji',
         ],
         'content' => [
             ['heading' => 'Jak działa edycja istniejącego tekstu', 'body' => 'Kliknij wiersz tekstu i pisz. Stare brzmienie zostaje zakryte kolorem, który jest pod nim, a nowe jest rysowane w tym samym miejscu, rozmiarze i kolorze, czcionką osadzoną w PDF. Pliki PDF zwykle osadzają tylko używane litery, więc jeśli nowy tekst wymaga litery, której plik nigdy nie zawierał, ten wiersz przełącza się na najbliższą standardową czcionkę, a edytor pokazuje, które litery są przyczyną. Zeskanowane strony to obrazy bez tekstu do edycji; użyj tam zakrywania na biało i dodawania tekstu.'],

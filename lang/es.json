@@ -1325,5 +1325,16 @@
     "Zoom: {value}%": "Zoom: {value}%",
     "Reset zoom": "Reiniciar zoom",
     "Latest guides": "Guías recientes",
-    "All guides": "Todas las guías"
+    "All guides": "Todas las guías",
+    "{name}: {value}": "{name}: {value}",
+    "Checkbox: {name}": "Casilla: {name}",
+    "Choose a value": "Elige un valor",
+    "Fill form": "Rellenar formulario",
+    "Fill in {name}": "Rellenar {name}",
+    "Fill in the fields below, then click Save PDF.": "Rellena los campos de abajo y luego haz clic en Guardar PDF.",
+    "Filling the form failed: {message}": "No se pudo rellenar el formulario: {message}",
+    "No fillable fields were found in this PDF.": "No se encontraron campos rellenables en este PDF.",
+    "Reading form fields…": "Leyendo los campos del formulario…",
+    "Save filled PDF": "Guardar PDF rellenado",
+    "Select {name}": "Seleccionar {name}"
 }

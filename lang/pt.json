@@ -1325,5 +1325,16 @@
     "Zoom: {value}%": "Zoom: {value}%",
     "Reset zoom": "Redefinir zoom",
     "Latest guides": "Guias recentes",
-    "All guides": "Todos os guias"
+    "All guides": "Todos os guias",
+    "{name}: {value}": "{name}: {value}",
+    "Checkbox: {name}": "Caixa de seleção: {name}",
+    "Choose a value": "Escolha um valor",
+    "Fill form": "Preencher formulário",
+    "Fill in {name}": "Preencher {name}",
+    "Fill in the fields below, then click Save PDF.": "Preencha os campos abaixo e clique em Salvar PDF.",
+    "Filling the form failed: {message}": "Não foi possível preencher o formulário: {message}",
+    "No fillable fields were found in this PDF.": "Não foram encontrados campos preenchíveis neste PDF.",
+    "Reading form fields…": "Lendo os campos do formulário…",
+    "Save filled PDF": "Salvar PDF preenchido",
+    "Select {name}": "Selecionar {name}"
 }

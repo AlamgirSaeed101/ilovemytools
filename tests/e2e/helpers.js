@@ -61,6 +61,21 @@ export async function makePdf(pages, label = 'Doc') {
     return Buffer.from(await doc.save());
 }
 
+/** A real PDF with one page and a fillable AcroForm: a text field, a checkbox and a dropdown. */
+export async function makePdfWithFormFields() {
+    const doc = await PDFDocument.create();
+    const font = await doc.embedFont(StandardFonts.Helvetica);
+    const page = doc.addPage([300, 400]);
+    page.drawText('Application form', { x: 20, y: 360, size: 16, font });
+    const form = doc.getForm();
+    form.createTextField('full_name').addToPage(page, { x: 20, y: 300, width: 200, height: 24, font });
+    form.createCheckBox('subscribe').addToPage(page, { x: 20, y: 250, width: 20, height: 20 });
+    const country = form.createDropdown('country');
+    country.addOptions(['UK', 'US', 'DE']);
+    country.addToPage(page, { x: 20, y: 200, width: 100, height: 24, font });
+    return Buffer.from(await doc.save());
+}
+
 /** A real PDF with one page containing an embedded JPEG image (for compression tests). */
 export async function makePdfWithImage(jpegBytes, { width = 400, height = 300 } = {}) {
     const doc = await PDFDocument.create();

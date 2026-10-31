@@ -1301,5 +1301,16 @@
     "Zoom: {value}%": "확대/축소: {value}%",
     "Reset zoom": "확대/축소 초기화",
     "Latest guides": "최신 가이드",
-    "All guides": "모든 가이드"
+    "All guides": "모든 가이드",
+    "{name}: {value}": "{name}: {value}",
+    "Checkbox: {name}": "체크박스: {name}",
+    "Choose a value": "값 선택",
+    "Fill form": "양식 작성",
+    "Fill in {name}": "{name} 입력",
+    "Fill in the fields below, then click Save PDF.": "아래 필드를 입력한 다음 PDF 저장을 클릭하세요.",
+    "Filling the form failed: {message}": "양식을 작성하지 못했습니다: {message}",
+    "No fillable fields were found in this PDF.": "이 PDF에서 입력 가능한 필드를 찾을 수 없습니다.",
+    "Reading form fields…": "양식 필드 읽는 중…",
+    "Save filled PDF": "작성한 PDF 저장",
+    "Select {name}": "{name} 선택"
 }

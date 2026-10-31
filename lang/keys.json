@@ -399,6 +399,12 @@
     ]
   },
   {
+    "key": "{name}: {value}",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "{percent}% smaller",
     "files": [
       "resources/js/tools/ImageCompressor.jsx"
@@ -1317,6 +1323,12 @@
     ]
   },
   {
+    "key": "Checkbox: {name}",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Checked {done} of {total} links on {url}",
     "files": [
       "resources/js/tools/BrokenLinkChecker.jsx"
@@ -1363,6 +1375,12 @@
     "key": "Choose a password",
     "files": [
       "resources/js/tools/ProtectPdf.jsx"
+    ]
+  },
+  {
+    "key": "Choose a value",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -3009,7 +3027,31 @@
     ]
   },
   {
+    "key": "Fill form",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Fill in {name}",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Fill in the fields below, then click Save PDF.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Filled",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Filling the form failed: {message}",
     "files": [
       "resources/js/tools/EditPdf.jsx"
     ]
@@ -4391,6 +4433,12 @@
     ]
   },
   {
+    "key": "No fillable fields were found in this PDF.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "No HTTPS",
     "files": [
       "resources/js/components/DomainDetails.jsx"
@@ -5382,6 +5430,12 @@
     ]
   },
   {
+    "key": "Reading form fields…",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Reading PDF…",
     "files": [
       "resources/js/tools/CompressPdf.jsx",
@@ -5896,6 +5950,12 @@
     ]
   },
   {
+    "key": "Save filled PDF",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Save new order",
     "files": [
       "resources/js/tools/OrganizePdf.jsx"
@@ -5981,6 +6041,12 @@
     "key": "Security and authority",
     "files": [
       "resources/js/components/DomainDetails.jsx"
+    ]
+  },
+  {
+    "key": "Select {name}",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {

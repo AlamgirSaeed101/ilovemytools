@@ -1301,5 +1301,16 @@
     "Zoom: {value}%": "縮放:{value}%",
     "Reset zoom": "重設縮放",
     "Latest guides": "最新指南",
-    "All guides": "所有指南"
+    "All guides": "所有指南",
+    "{name}: {value}": "{name}: {value}",
+    "Checkbox: {name}": "核取方塊: {name}",
+    "Choose a value": "選擇一個值",
+    "Fill form": "填寫表單",
+    "Fill in {name}": "填寫 {name}",
+    "Fill in the fields below, then click Save PDF.": "請填寫以下欄位,然後按一下「儲存 PDF」。",
+    "Filling the form failed: {message}": "表單填寫失敗:{message}",
+    "No fillable fields were found in this PDF.": "在此 PDF 中找不到可填寫的欄位。",
+    "Reading form fields…": "讀取表單欄位中…",
+    "Save filled PDF": "儲存已填寫的 PDF",
+    "Select {name}": "選擇 {name}"
 }

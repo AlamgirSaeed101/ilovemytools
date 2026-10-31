@@ -15,6 +15,7 @@ import { clearSession, fileFromSession, hasUnsavedChanges, loadSession, saveSess
 // pdf-lib (~165 KB) only loads when a PDF is previewed or saved, not with the page.
 const loadWatermark = () => import('../lib/pdfWatermark.js');
 const loadEdit = () => import('../lib/pdfEdit.js');
+const loadForm = () => import('../lib/pdfForm.js');
 import { baseName, downloadBlob, formatBytes, safeFilename } from '../lib/util.js';
 
 const TEXT_SIZES = [12, 14, 18, 24, 32, 48];
@@ -129,6 +130,9 @@ export default function EditPdf({ initialMode } = {}) {
     const [wmScope, setWmScope] = useState('all');
     const [wmRangeText, setWmRangeText] = useState('');
     const [wmProgress, setWmProgress] = useState('');
+    const [formFields, setFormFields] = useState([]);
+    const [formValues, setFormValues] = useState({});
+    const [formReady, setFormReady] = useState(false);
     const [error, setError] = useState('');
     const [working, setWorking] = useState(false);
     const [result, setResult] = useState(null);
@@ -337,6 +341,53 @@ export default function EditPdf({ initialMode } = {}) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [wmKind, wmText, wmTextSize, wmTextColor, wmTextBold, wmPendingImage, wmImageScalePct, wmOpacityPct, wmRotation, wmPosition, wmLayer, wmFlatten, wmScope, wmRangeText]);
 
+    // The PDF's own fillable fields (text, checkbox, dropdown, radio), read once per file.
+    useEffect(() => {
+        if (mode !== 'form' || !doc) return;
+        let cancelled = false;
+        setFormReady(false);
+        loadForm()
+            .then(({ readFormFields }) => {
+                if (cancelled) return;
+                const detected = readFormFields(doc);
+                setFormFields(detected);
+                setFormValues((prev) => {
+                    const next = { ...prev };
+                    for (const f of detected) {
+                        if (f.type === 'radio') {
+                            if (!(f.name in next) && f.value) next[f.name] = f.value;
+                        } else if (!(f.name in next)) next[f.name] = f.value;
+                    }
+                    return next;
+                });
+            })
+            .catch(() => !cancelled && setFormFields([]))
+            .finally(() => !cancelled && setFormReady(true));
+        return () => {
+            cancelled = true;
+        };
+    }, [mode, doc]);
+
+    function setFormValue(name, value) {
+        setFormValues((prev) => ({ ...prev, [name]: value }));
+        setResult(null);
+    }
+
+    async function applyForm() {
+        if (!doc || working || formFields.length === 0) return;
+        setWorking(true);
+        setError('');
+        try {
+            const { buildFilledFormPdf } = await loadForm();
+            const blob = await buildFilledFormPdf(doc, formValues);
+            setResult({ blob, name: safeFilename(`${baseName(file.name)}-filled.pdf`) });
+        } catch (e) {
+            setError(t('Filling the form failed: {message}', { message: e.message }));
+        } finally {
+            setWorking(false);
+        }
+    }
+
     async function applyWatermark() {
         if (!doc || working) return;
         const pageWidth = doc.getPage(0).getSize().width;
@@ -439,6 +490,9 @@ export default function EditPdf({ initialMode } = {}) {
         setReplaceInfo('');
         setRedoStack([]);
         setZoomPct(100);
+        setFormFields([]);
+        setFormValues({});
+        setFormReady(false);
         setFile(picked);
     }
 
@@ -744,7 +798,7 @@ export default function EditPdf({ initialMode } = {}) {
 
     return (
         <div className="stack">
-            {mode !== 'edittext' && mode !== 'watermark' && (
+            {mode !== 'edittext' && mode !== 'watermark' && mode !== 'form' && (
                 <Notice type="info">{t('This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.')}</Notice>
             )}
 
@@ -762,6 +816,7 @@ export default function EditPdf({ initialMode } = {}) {
                     onChange={setMode}
                     tabs={[
                         { id: 'edittext', label: t('Edit text') },
+                        { id: 'form', label: t('Fill form') },
                         { id: 'text', label: t('Add text') },
                         { id: 'image', label: t('Image') },
                         { id: 'highlight', label: t('Highlight') },
@@ -914,6 +969,15 @@ export default function EditPdf({ initialMode } = {}) {
                             <button type="button" className="btn btn--primary btn--sm" onClick={addHighlight}>{t('Add highlight to page')}</button>
                         </>
                     )}
+                    {mode === 'form' && (
+                        <span className="field__hint" style={{ margin: 0 }}>
+                            {!formReady
+                                ? t('Reading form fields…')
+                                : formFields.length === 0
+                                  ? t('No fillable fields were found in this PDF.')
+                                  : t('Fill in the fields below, then click Save PDF.')}
+                        </span>
+                    )}
                     {mode === 'edittext' && !editing && (
                         <span className="field__hint" style={{ margin: 0 }}>
                             {runsReady && pageRuns.length === 0 ? t('No editable text was found on this page (it may be a scanned image).') : t('Click any text on the page to change it.')}
@@ -1062,6 +1126,80 @@ export default function EditPdf({ initialMode } = {}) {
                                         onPointerDown={(e) => e.stopPropagation()}
                                         onClick={() => startTextEdit(run)}
                                         aria-label={t('Edit text: {text}', { text: run.str })}
+                                    />
+                                );
+                            })}
+                    {mode === 'form' &&
+                        formFields
+                            .filter((f) => f.page === currentPage)
+                            .map((f) => {
+                                const r = pdfRectToCanvasRect(f.rectPdf, scale, currentPageSize.height);
+                                const style = { left: r.x, top: r.y, width: r.width, height: r.height };
+                                if (f.type === 'text') {
+                                    const Tag = f.multiline ? 'textarea' : 'input';
+                                    return (
+                                        <Tag
+                                            key={f.id}
+                                            className="pdf-editor__forminput"
+                                            style={style}
+                                            type={f.multiline ? undefined : 'text'}
+                                            value={formValues[f.name] ?? ''}
+                                            maxLength={f.maxLength}
+                                            disabled={f.readOnly}
+                                            onPointerDown={(e) => e.stopPropagation()}
+                                            onChange={(e) => setFormValue(f.name, e.target.value)}
+                                            aria-label={t('Fill in {name}', { name: f.name })}
+                                        />
+                                    );
+                                }
+                                if (f.type === 'checkbox') {
+                                    return (
+                                        <input
+                                            key={f.id}
+                                            type="checkbox"
+                                            className="pdf-editor__formcheck"
+                                            style={style}
+                                            checked={!!formValues[f.name]}
+                                            disabled={f.readOnly}
+                                            onPointerDown={(e) => e.stopPropagation()}
+                                            onChange={(e) => setFormValue(f.name, e.target.checked)}
+                                            aria-label={t('Checkbox: {name}', { name: f.name })}
+                                        />
+                                    );
+                                }
+                                if (f.type === 'dropdown') {
+                                    return (
+                                        <select
+                                            key={f.id}
+                                            className="pdf-editor__forminput"
+                                            style={style}
+                                            value={formValues[f.name] ?? ''}
+                                            disabled={f.readOnly}
+                                            onPointerDown={(e) => e.stopPropagation()}
+                                            onChange={(e) => setFormValue(f.name, e.target.value)}
+                                            aria-label={t('Select {name}', { name: f.name })}
+                                        >
+                                            <option value="">{t('Choose a value')}</option>
+                                            {f.options.map((o) => (
+                                                <option key={o} value={o}>
+                                                    {o}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    );
+                                }
+                                return (
+                                    <input
+                                        key={f.id}
+                                        type="radio"
+                                        name={`pdf-form-${f.name}`}
+                                        className="pdf-editor__formcheck"
+                                        style={style}
+                                        checked={formValues[f.name] === f.onValue}
+                                        disabled={f.readOnly}
+                                        onPointerDown={(e) => e.stopPropagation()}
+                                        onChange={() => setFormValue(f.name, f.onValue)}
+                                        aria-label={t('{name}: {value}', { name: f.name, value: f.onValue })}
                                     />
                                 );
                             })}
@@ -1226,6 +1364,10 @@ export default function EditPdf({ initialMode } = {}) {
             ) : mode === 'watermark' ? (
                 <button type="button" className="btn btn--primary btn--lg" onClick={applyWatermark} disabled={working || !(wmKind === 'text' ? wmText.trim() : wmPendingImage)}>
                     {working ? wmProgress || t('Adding watermark…') : t('Add watermark')}
+                </button>
+            ) : mode === 'form' ? (
+                <button type="button" className="btn btn--primary btn--lg" onClick={applyForm} disabled={working || formFields.length === 0}>
+                    {working ? t('Saving…') : t('Save filled PDF')}
                 </button>
             ) : (
                 <button type="button" className="btn btn--primary btn--lg" onClick={apply} disabled={working || elements.length === 0}>

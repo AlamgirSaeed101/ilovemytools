@@ -1325,5 +1325,16 @@
     "Zoom: {value}%": "Zoom: {value}%",
     "Reset zoom": "Ripristina zoom",
     "Latest guides": "Guide recenti",
-    "All guides": "Tutte le guide"
+    "All guides": "Tutte le guide",
+    "{name}: {value}": "{name}: {value}",
+    "Checkbox: {name}": "Casella di controllo: {name}",
+    "Choose a value": "Scegli un valore",
+    "Fill form": "Compila modulo",
+    "Fill in {name}": "Compila {name}",
+    "Fill in the fields below, then click Save PDF.": "Compila i campi qui sotto, poi fai clic su Salva PDF.",
+    "Filling the form failed: {message}": "Non è stato possibile compilare il modulo: {message}",
+    "No fillable fields were found in this PDF.": "In questo PDF non è stato trovato nessun campo compilabile.",
+    "Reading form fields…": "Lettura dei campi del modulo…",
+    "Save filled PDF": "Salva PDF compilato",
+    "Select {name}": "Seleziona {name}"
 }

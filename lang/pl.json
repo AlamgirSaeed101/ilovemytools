@@ -1373,5 +1373,16 @@
     "Zoom: {value}%": "Powiększenie: {value}%",
     "Reset zoom": "Resetuj powiększenie",
     "Latest guides": "Najnowsze poradniki",
-    "All guides": "Wszystkie poradniki"
+    "All guides": "Wszystkie poradniki",
+    "{name}: {value}": "{name}: {value}",
+    "Checkbox: {name}": "Pole wyboru: {name}",
+    "Choose a value": "Wybierz wartość",
+    "Fill form": "Wypełnij formularz",
+    "Fill in {name}": "Wypełnij {name}",
+    "Fill in the fields below, then click Save PDF.": "Wypełnij poniższe pola, a potem kliknij Zapisz PDF.",
+    "Filling the form failed: {message}": "Nie udało się wypełnić formularza: {message}",
+    "No fillable fields were found in this PDF.": "W tym pliku PDF nie znaleziono żadnych pól do wypełnienia.",
+    "Reading form fields…": "Wczytywanie pól formularza…",
+    "Save filled PDF": "Zapisz wypełniony PDF",
+    "Select {name}": "Wybierz {name}"
 }
