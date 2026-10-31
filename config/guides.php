@@ -1268,4 +1268,85 @@ return [
             ['title' => 'Mozilla, PDF.js - a PDF renderer and text extraction library', 'url' => 'https://mozilla.github.io/pdf.js/'],
         ],
     ],
+
+    'how-to-split-a-pdf-into-separate-files' => [
+        'title' => 'How to Split a PDF Into Separate Files (Free)',
+        'description' => 'Split a PDF into separate files or pull out specific pages for free, right in your browser. Step-by-step instructions, page-range syntax, and common mistakes.',
+        'h1' => 'How to split a PDF into separate files',
+        'intro' => 'A single PDF often holds more than you actually need: a 40-page contract when you only have to send page 12, or a scanned bundle that should really be five separate files. Splitting a PDF - pulling pages out, or dividing one document into several - is one of the most common things people need to do to a PDF and one of the easiest to get wrong by hand. Here is how to do it correctly, with no software to install and nothing uploaded anywhere.',
+        'tool' => 'split-pdf',
+        'related' => ['merge-pdf', 'rotate-pdf', 'compress-pdf'],
+        'published' => '2026-10-31',
+        'updated' => '2026-10-31',
+        'sections' => [
+            [
+                'heading' => 'Splitting vs. extracting: two different jobs',
+                'paragraphs' => [
+                    'People use "split a PDF" to mean two different things, and picking the wrong one wastes time. Extracting pulls specific pages out of a document into one new, smaller PDF - useful when you only need pages 4 to 9 of a long report and can throw the rest away. Splitting by ranges divides a document into several separate files at the points you choose - useful when one PDF is really three invoices stapled together and each one needs to stand alone. A third variant, splitting every page, turns an N-page PDF into N single-page files, which comes up more than you would expect: scanning software often produces one combined PDF for a stack of separate forms, and each form needs to be its own file before it can be filed or emailed individually.',
+                ],
+            ],
+            [
+                'heading' => 'Splitting a PDF, step by step',
+                'paragraphs' => [
+                    'This runs entirely in your browser using the [Split PDF](/split-pdf) tool - the file is opened, split and saved on your own device and never sent to a server.',
+                ],
+                'list' => [
+                    'Open Split PDF and choose the file you want to split.',
+                    'Pick a mode: extract pages into one PDF, split by ranges into separate files, or split every page into its own file.',
+                    'For extract or split-by-range mode, type the page ranges you need (see the syntax below).',
+                    'Click Split PDF.',
+                    'Download the result - a single range downloads as one PDF, multiple ranges or "split every page" download together as a ZIP file.',
+                ],
+            ],
+            [
+                'heading' => 'How to write page ranges',
+                'paragraphs' => [
+                    'Page ranges use a simple, consistent syntax that most PDF tools share, so it is worth learning once.',
+                ],
+                'table' => [
+                    'headers' => ['You type', 'What it means'],
+                    'rows' => [
+                        ['5', 'Page 5 only'],
+                        ['1-3', 'Pages 1, 2 and 3'],
+                        ['1-3, 7', 'Pages 1, 2, 3 and 7, as one file'],
+                        ['1-3, 7, 10-12', 'Pages 1-3, 7, and 10-12, as one file (in extract mode) or three separate files (in split-by-range mode)'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'What goes wrong, and how to avoid it',
+                'paragraphs' => [
+                    'Most split-PDF mistakes come from page numbers that do not mean what they look like.',
+                ],
+                'list' => [
+                    'The page number in the tool is always the physical position in the file, counting the first page as 1 - it ignores any page numbers printed on the page itself. A document with a cover page and a "page 1" printed on the second sheet means you want page 2, not page 1, for the start of the content.',
+                    'Double-booklet or front-and-back scans sometimes list pages out of order in the file (for example 1, 3, 5, 2, 4, 6) even though they display correctly - check a preview before trusting the range, not just the total page count.',
+                    'Ranges with a hyphen are always ordered low-to-high; "9-4" will not give you pages 9 down to 4 in reverse, so reorder pages first if you need them in a different sequence.',
+                    'Splitting does not shrink a file in proportion to the pages removed if the PDF shares embedded resources (like one large background image) across every page - each extracted page still carries a copy of anything it uses. Run the result through [Compress PDF](/compress-pdf) afterward if size matters.',
+                ],
+            ],
+            [
+                'heading' => 'Does splitting affect quality?',
+                'paragraphs' => [
+                    'No. Splitting copies the page content exactly as it exists in the original - the same text, fonts and images at the same resolution - so nothing is re-rendered, re-compressed or redrawn. This is different from converting a PDF to images and back, which can introduce blur or a loss of searchable text. If a split file needs to be smaller for email, compress it as a separate step rather than expecting the split itself to reduce size.',
+                ],
+            ],
+            [
+                'heading' => 'After splitting: putting files back together',
+                'paragraphs' => [
+                    'It is common to split a document, work on individual pages, and then need to recombine some of them - or to realize a page belongs in a different grouping than you first split it into. [Merge PDF](/merge-pdf) joins any number of PDFs back into one file in the order you choose, and [Rotate PDF](/rotate-pdf) fixes any pages that came out sideways from a scanned original before you send the final files.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'How do I pull just one page out of a PDF?', 'a' => 'Choose "Extract pages" in Split PDF, type the single page number (for example 4), and click Split PDF. You get a new PDF containing only that page.'],
+            ['q' => 'What is the difference between extracting pages and splitting by ranges?', 'a' => 'Extracting collects the pages you list into one new PDF. Splitting by ranges produces a separate PDF for each range you type, so "1-3, 7, 10-12" becomes three distinct files instead of one.'],
+            ['q' => 'Will splitting a PDF reduce its file size?', 'a' => 'Each resulting file will usually be smaller than the original simply because it has fewer pages, but splitting does not compress anything. If a split file is still too large, run it through a PDF compressor afterward.'],
+        ],
+        'sources' => [
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+            ['title' => 'Library of Congress, Sustainability of Digital Formats: PDF', 'url' => 'https://www.loc.gov/preservation/digital/formats/fdd/fdd000030.shtml'],
+            ['title' => 'Adobe, How to split a PDF into multiple files', 'url' => 'https://www.adobe.com/acrobat/how-to/split-pdf-pages.html'],
+        ],
+    ],
 ];
