@@ -1,4 +1,11 @@
 {
-  "updated": "2026-10-30",
-  "outbound": {}
+  "updated": "2026-10-31",
+  "outbound": {
+    "https://caniuse.com/avif": {
+      "days": 1,
+      "last": "2026-10-31",
+      "why": "503",
+      "linkedFrom": "https://ilovemytools.store/avif-to-jpg"
+    }
+  }
 }
