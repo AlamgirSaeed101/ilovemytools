@@ -1399,6 +1399,7 @@ return [
                     'Check the signature is actually on the page, not floating over the wrong spot. Zoom in after placing it - a signature that overlaps a line of printed text or sits outside the signature box looks careless and can make a reviewer send the document back.',
                     'If you uploaded a signature image, use one with a transparent or clean white background. A photo taken on a patterned desk or with a visible paper edge leaves a faint box around your name once it is placed on the page.',
                     'Match the number of signature placements to what the document actually asks for. Some contracts need initials on every page plus a full signature at the end - skimming past an initial line is one of the most common reasons a signed document gets rejected and has to be resent.',
+                    'If a typo turns up while you are checking it over, fix it directly in the file with [Edit PDF](/edit-pdf) rather than redoing the signature - correcting the text afterward does not disturb the signature you already placed.',
                 ],
             ],
             [
