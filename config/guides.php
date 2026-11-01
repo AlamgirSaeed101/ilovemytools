@@ -1349,4 +1349,85 @@ return [
             ['title' => 'Adobe, How to split a PDF into multiple files', 'url' => 'https://www.adobe.com/acrobat/how-to/split-pdf-pages.html'],
         ],
     ],
+
+    'how-to-sign-a-pdf-online' => [
+        'title' => 'How to Sign a PDF Online for Free',
+        'description' => 'Sign a PDF online for free by drawing, typing or uploading your signature, and learn the real difference between an electronic and a digital signature.',
+        'h1' => 'How to sign a PDF online',
+        'intro' => 'Printing a PDF, signing it by hand and scanning it back in is slower than just signing it on screen - and for most everyday agreements, an on-screen signature is just as valid. The confusing part is that "electronic signature" and "digital signature" are not the same thing, and knowing which one a document actually needs matters more than which tool you click through. Here is how to sign a PDF online for free, and how to tell whether that is enough for the document in front of you.',
+        'tool' => 'sign-pdf',
+        'related' => ['edit-pdf', 'redact-pdf', 'merge-pdf'],
+        'published' => '2026-11-01',
+        'updated' => '2026-11-01',
+        'sections' => [
+            [
+                'heading' => 'Electronic signature vs digital signature: the difference that matters',
+                'paragraphs' => [
+                    'An electronic signature is simply a mark - a drawn squiggle, a typed name in a script font, or a scanned image of your handwritten signature - placed onto a document to show you agreed to it. It proves intent but carries no built-in cryptographic proof of who signed or whether the file changed afterward.',
+                    'A digital signature is a different, cryptographic mechanism: it uses a certificate tied to a verified identity to create a tamper-evident seal on the exact bytes of the file, so a PDF reader can show whether the document was altered after signing. Most everyday paperwork - approving a quote, countersigning a letter, initialing a form - only needs an electronic signature. Contracts tied to specific legal or regulatory requirements, or anything that must prove the file was never altered after signing, may need a certificate-based digital signature instead, which is a separate service from simply placing a signature image on a page.',
+                ],
+            ],
+            [
+                'heading' => 'Signing a PDF online, step by step',
+                'paragraphs' => [
+                    'This creates an electronic signature - a signature image placed on the page - entirely in your browser, with the file never uploaded anywhere.',
+                ],
+                'list' => [
+                    'Open the [Sign PDF](/sign-pdf) tool and choose the PDF you need to sign.',
+                    'Pick how you want to create your signature: draw it with a mouse or finger, type your name in a signature-style font, or upload a photo of your signature.',
+                    'Click "Add signature to this page", then drag it into place and resize it so it fits naturally where a handwritten signature would go.',
+                    'Switch pages if the document needs your signature in more than one place, and add it again on each page.',
+                    'Tick "Add today\'s date" if the document should show when it was signed.',
+                    'Click Sign PDF and download the signed file.',
+                ],
+            ],
+            [
+                'heading' => 'Drawn, typed or uploaded - which looks best',
+                'table' => [
+                    'headers' => ['Method', 'Best for', 'Common mistake'],
+                    'rows' => [
+                        ['Draw with mouse/trackpad', 'A quick signature on a laptop', 'Drawing too small, then it looks shaky when enlarged - draw bigger than needed'],
+                        ['Draw with a finger on phone/tablet', 'The most natural-looking result for most people', 'Rushing the stroke; a slightly slower draw reads more like real handwriting'],
+                        ['Type your name', 'Speed, or when you don\'t want to draw at all', 'Looks visibly "generated" - fine for internal approvals, less convincing on formal documents'],
+                        ['Upload a photo of your signature', 'Reusing the same signature everywhere', 'A shadowed or off-white background leaves a grey box; crop tightly and use good lighting'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'Three things to get right before you send it',
+                'paragraphs' => [
+                    'Check the signature is actually on the page, not floating over the wrong spot. Zoom in after placing it - a signature that overlaps a line of printed text or sits outside the signature box looks careless and can make a reviewer send the document back.',
+                    'If you uploaded a signature image, use one with a transparent or clean white background. A photo taken on a patterned desk or with a visible paper edge leaves a faint box around your name once it is placed on the page.',
+                    'Match the number of signature placements to what the document actually asks for. Some contracts need initials on every page plus a full signature at the end - skimming past an initial line is one of the most common reasons a signed document gets rejected and has to be resent.',
+                ],
+            ],
+            [
+                'heading' => 'When an electronic signature is not enough',
+                'paragraphs' => [
+                    'In the United States, the federal ESIGN Act gives electronic signatures the same legal standing as a handwritten one for most contracts, as long as both sides consented to sign electronically. In the EU, the eIDAS Regulation recognizes electronic signatures too, but it also defines stronger categories - advanced and qualified electronic signatures - that carry more legal weight and are sometimes required for specific transactions, such as certain property, inheritance or company-formation documents.',
+                    'If a lawyer, bank, government agency or counterparty has told you the document needs a "digital signature," "qualified electronic signature" or notarization, check with them before relying on a simple signature image - those usually require a dedicated certificate-based signing service, not a signature drawn onto a PDF.',
+                ],
+            ],
+            [
+                'heading' => 'Checklist before you send a signed PDF',
+                'list' => [
+                    'Open the saved file and confirm the signature appears on every page it needs to, at full size with no clipping.',
+                    'Check the date stamp, if you added one, shows the correct date.',
+                    'Confirm you signed (and initialed, if required) every place the document asks for, not just the final page.',
+                    'For anything legally sensitive, confirm an electronic signature is actually sufficient for this specific document before you send it.',
+                    'Keep a copy of the signed file for your own records before sending it on.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Is a signature added this way legally binding?', 'a' => 'It is an electronic signature, which the US ESIGN Act and the EU eIDAS Regulation both give legal recognition for most everyday agreements. It is not a certificate-based digital signature, so check what a specific contract, bank or authority requires if the stakes are high.'],
+            ['q' => 'Which looks more genuine: drawing, typing or uploading my signature?', 'a' => 'Drawing with a finger on a phone or tablet usually looks closest to a real handwritten signature. Typing your name in a script font is faster but looks visibly generated, which is fine for internal approvals but less convincing on formal documents.'],
+            ['q' => 'Is my PDF uploaded to a server to sign it?', 'a' => 'No. Drawing, placing and saving the signature all happen in your browser with JavaScript, and the file is never sent anywhere.'],
+        ],
+        'sources' => [
+            ['title' => 'Cornell Law School, 15 U.S. Code §7001 - the ESIGN Act', 'url' => 'https://www.law.cornell.edu/uscode/text/15/7001'],
+            ['title' => 'European Commission, the eIDAS Regulation', 'url' => 'https://digital-strategy.ec.europa.eu/en/policies/eidas-regulation'],
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+        ],
+    ],
 ];
