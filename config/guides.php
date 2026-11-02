@@ -275,6 +275,110 @@ return [
         ],
     ],
 
+    'avif-vs-webp-vs-jpg-file-size-test' => [
+        'title' => 'AVIF vs WebP vs JPG: A Real File-Size Test (24 Images)',
+        'description' => 'We encoded 24 test images as JPG, WebP and AVIF and measured every file. Median savings vs JPG: AVIF 50-69%, WebP 20-53%. Method, raw data, limits.',
+        'h1' => 'AVIF vs WebP vs JPG: a real file-size test',
+        'intro' => 'Most format comparisons repeat the same claim: WebP is about a third smaller than JPG, AVIF about half. We wanted our own numbers, so we built a small, reproducible test: 24 images in three kinds (photo-like scenes, app screenshots and transparent graphics), each saved as JPG, WebP and AVIF with the same widely used encoder library, then measured byte by byte. Every number below comes from that run, and the script and raw CSV are public so you can check or repeat it.',
+        'tool' => 'avif-to-webp',
+        'related' => ['image-compressor', 'avif-to-jpg', 'webp-to-png', 'png-to-jpg'],
+        'published' => '2026-10-30',
+        'updated' => '2026-10-30',
+        'sections' => [
+            [
+                'heading' => 'The short answer',
+                'paragraphs' => [
+                    'At common default settings (JPG quality 80, WebP quality 80, AVIF quality 50), AVIF files were the smallest in all 24 images: a median 69% smaller than JPG for photo-like images, 62% for screenshots and 50% for graphics. WebP landed in between: 53%, 35% and 20% smaller than JPG.',
+                    'The catch is quality. On the photo-like images, WebP and AVIF at those settings were usually slightly less faithful to the original than the JPG (WebP in 8 of 8, AVIF in 7 of 8). When we raised their quality until they matched the JPG on an objective score (SSIM), AVIF still came out smaller in 7 of 8 photos, but WebP grew larger than the JPG in 7 of 8. On screenshots and graphics both formats won clearly at equal quality.',
+                ],
+            ],
+            [
+                'heading' => 'How we tested',
+                'paragraphs' => [
+                    'Images: 24 test images drawn by a script from fixed random seeds, so anyone gets exactly the same set. We did not use real camera photos. The 8 "photo-like" images (1600 x 1067) are synthetic scenes built from fractal noise, soft shapes, lighting falloff and added grain; the 8 screenshots (1440 x 900) are rendered dashboard layouts with real text, charts, tables and buttons; the 8 graphics (800 x 800) are badges, icons and logos on a transparent background.',
+                    'Encoder: sharp 0.35.5 on libvips 8.18.7, the image library behind many websites and build tools. JPG used mozjpeg at quality 80, WebP used libwebp 1.6.0 at quality 80, AVIF used libaom 3.15.1 at quality 50. Every other option was left at sharp\'s default. JPG cannot store transparency, so the graphics were flattened onto white for JPG only.',
+                    'Quality check: we measured SSIM (structural similarity, 1.0 means identical) between each compressed file and the lossless original, on brightness, with transparent images composited onto white. Then, for WebP and AVIF, we searched for the lowest quality setting that reached at least the JPG\'s SSIM and recorded that size too.',
+                ],
+            ],
+            [
+                'heading' => 'Results: file size at fixed settings',
+                'paragraphs' => [
+                    'Median file size per image in each set, and the median saving compared with the JPG of the same image. Savings are worked out per image and then the median is taken, so they do not exactly match a division of the size columns.',
+                ],
+                'table' => [
+                    'headers' => ['Image set (8 each)', 'JPG q80', 'WebP q80', 'AVIF q50', 'WebP saving', 'AVIF saving'],
+                    'rows' => [
+                        ['Photo-like, 1600 x 1067', '50.7 KB', '23.4 KB', '15.5 KB', '53.0%', '69.4%'],
+                        ['Screenshot, 1440 x 900', '83.1 KB', '53.6 KB', '30.9 KB', '35.3%', '62.3%'],
+                        ['Graphic with transparency, 800 x 800', '22.4 KB', '18.8 KB', '11.2 KB', '19.7%', '50.4%'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'Results: file size at the same quality as the JPG',
+                'paragraphs' => [
+                    'Fixed quality numbers do not mean the same thing in different formats, so this second table matches quality instead: each WebP and AVIF was re-encoded at the lowest setting whose SSIM was at least as high as the JPG q80 version. A negative saving means the file got bigger than the JPG.',
+                ],
+                'table' => [
+                    'headers' => ['Image set', 'WebP: median setting needed', 'WebP saving vs JPG', 'AVIF: median setting needed', 'AVIF saving vs JPG'],
+                    'rows' => [
+                        ['Photo-like', 'q88.5', '-18.2% (larger in 7 of 8)', 'q67.5', '12.0% (smaller in 7 of 8)'],
+                        ['Screenshot', 'q56', '49.4% (smaller in 8 of 8)', 'q39', '70.5% (smaller in 8 of 8)'],
+                        ['Graphic with transparency', 'q22', '42.3% (smaller in 8 of 8)', 'q23', '71.7% (smaller in 8 of 8)'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'What the numbers say, by image type',
+                'paragraphs' => [
+                    'Photo-like images: the biggest raw savings, but partly bought with lost detail. At default settings WebP and AVIF scored a median SSIM of 0.9674 and 0.9681 against 0.9721 for JPG; both smooth away fine grain that JPG keeps. When forced to keep as much detail as the JPG, WebP needed quality 87 to 90 and ended up larger, while AVIF still saved a median 12%. If your photos are grainy or highly detailed, do not assume WebP will shrink them at the same visual quality; compare the results yourself.',
+                    'Screenshots: here the modern formats win cleanly. Text and flat interface colours give JPG its familiar halos, and both WebP and AVIF reached a higher SSIM than JPG at their default settings while still being 35% and 62% smaller. Matched to JPG\'s quality, AVIF screenshots were about 70% smaller.',
+                    'Graphics with transparency: JPG is the wrong tool twice over, because it also throws away the transparent background. WebP at quality 80 saved only 20% here, but it was far above JPG\'s quality; matched to JPG, it saved 42% and AVIF 72%, both keeping the transparency. For comparison, the lossless PNG originals had a median size of 48.3 KB.',
+                ],
+            ],
+            [
+                'heading' => 'Limitations: read these before quoting the numbers',
+                'list' => [
+                    'The images are synthetic. They mimic photos, screenshots and graphics but are not real camera pictures, so treat the photo row as indicative only.',
+                    'One encoder per format, at default speed. Other encoders and settings (cwebp, avifenc at slower speeds, Photoshop, Squoosh) produce different sizes.',
+                    'SSIM is a rough proxy for what people see: we measured brightness only, it ignores colour, and it rewards keeping noise. A perceptual metric or a viewing test could rank the formats differently.',
+                    '"Quality 80" is not the same thing in JPG, WebP and AVIF; that is why the matched-quality table exists.',
+                    'Lossless WebP and optimised PNG were not tested; this is a lossy comparison.',
+                    'Encoding time was not measured. In practice AVIF is much slower to encode than JPG or WebP, which matters if you convert images on the fly.',
+                ],
+            ],
+            [
+                'heading' => 'Practical rules from this test',
+                'list' => [
+                    'Screenshots, UI images and diagrams for a website: AVIF first, WebP as the fallback. Both beat JPG at equal quality by a wide margin.',
+                    'Logos, icons and anything transparent: AVIF or WebP, never JPG, which drops the transparency.',
+                    'Photos for a website: AVIF gave the best size at equal quality; check grainy photos by eye before trusting WebP\'s default setting.',
+                    'Files you send to people or upload to forms: JPG or PNG still open everywhere. Convert an AVIF to WebP or JPG when a program refuses it.',
+                ],
+            ],
+            [
+                'heading' => 'Try it on your own images',
+                'paragraphs' => [
+                    'Results vary by image, so the best test is your own files. The [Image Compressor](/image-compressor) shows the new size before you download, and can aim for an exact target such as 100 KB. To switch formats, use [AVIF to WebP](/avif-to-webp) when an AVIF will not open somewhere, [WebP to PNG](/webp-to-png) for transparent graphics that need to work everywhere, or [PNG to JPG](/png-to-jpg) for large PNG photos. All of them run in your browser, so your images are never uploaded.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Is AVIF always smaller than WebP?', 'a' => 'In our test, yes: at default settings AVIF was smaller than WebP in all 24 images, by a median of 34% for photo-like images and about 41% for screenshots and graphics. Other encoders and settings can change that gap.'],
+            ['q' => 'Is WebP always smaller than JPG?', 'a' => 'At quality 80 it was smaller in all 24 images, by a median of 20% to 53% depending on the image type (one graphic saved only 0.4%). But on our photo-like images, WebP needed a much higher quality setting to keep as much detail as JPG and then became larger than the JPG in 7 of 8 cases.'],
+            ['q' => 'Can I check or repeat this test?', 'a' => 'Yes. The script generates the same 24 images from fixed seeds and writes one CSV row per image. Install sharp, run the script, and you should get matching numbers with the same sharp and libvips versions.'],
+            ['q' => 'Which format should I use on my website?', 'a' => 'AVIF for the smallest files, with WebP or JPG as a fallback for the few programs that cannot open AVIF. All current major browsers display both AVIF and WebP.'],
+        ],
+        'sources' => [
+            ['title' => 'Benchmark script and raw CSV results (GitHub)', 'url' => 'https://github.com/AlamgirSaeed101/ilovemytools/tree/main/docs/benchmarks'],
+            ['title' => 'sharp documentation, output options (JPEG, WebP, AVIF)', 'url' => 'https://sharp.pixelplumbing.com/api-output'],
+            ['title' => 'libvips, the image processing library behind sharp', 'url' => 'https://www.libvips.org/'],
+            ['title' => 'Can I use: AVIF image format', 'url' => 'https://caniuse.com/avif'],
+            ['title' => 'Can I use: WebP image format', 'url' => 'https://caniuse.com/webp'],
+            ['title' => 'Wang et al., Image quality assessment: from error visibility to structural similarity (SSIM), IEEE TIP 2004', 'url' => 'https://ieeexplore.ieee.org/document/1284395'],
+        ],
+    ],
+
     'how-many-words-is-a-page' => [
         'title' => 'How Many Words Is a Page? Essay & Reading Time Guide',
         'description' => 'How many words fit on a page single- or double-spaced, how long a 5-page essay is, and how reading time is worked out, with a quick table for common lengths.',
