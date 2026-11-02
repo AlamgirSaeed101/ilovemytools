@@ -125,7 +125,9 @@ export default function ToolPage() {
                     </section>
                     <p className="mt-3.5 mb-0 flex items-center justify-center gap-2 text-center text-[0.85rem] text-muted [&_svg]:text-success">
                         <Icon name="shield" />{' '}
-                        {tool.server
+                        {tool.slug === 'what-is-my-ip'
+                            ? t('This tool asks our server which IP address your request came from and shows it to you. We don’t store it.')
+                            : tool.server
                             ? t('This tool asks our server to fetch the address you enter. We don’t store the address or the results.')
                             : t('Private: this tool runs in your browser. Your data is never uploaded.')}
                     </p>

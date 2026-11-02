@@ -247,6 +247,9 @@ describe('pdf page ranges', () => {
     it('parses ranges', () => {
         expect(parseRanges('1-3, 5, 8-', 10)).toEqual([[1, 3], [5, 5], [8, 10]]);
         expect(parseRanges('-2; 4-end', 6)).toEqual([[1, 2], [4, 6]]);
+        // Chinese and Urdu separators, as the translated hints show them.
+        expect(parseRanges('1-3、5，8-', 10)).toEqual([[1, 3], [5, 5], [8, 10]]);
+        expect(parseRanges('1-2；4، 6', 6)).toEqual([[1, 2], [4, 4], [6, 6]]);
         expect(parseRanges(' 2 ', 3)).toEqual([[2, 2]]);
     });
     it('rejects bad ranges with helpful messages', () => {

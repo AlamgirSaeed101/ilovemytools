@@ -1351,5 +1351,6 @@
     "Text field name": "Nom du champ de texte",
     "Checkbox field name": "Nom de la case à cocher",
     "Remove this text field": "Supprimer ce champ de texte",
-    "Remove this checkbox field": "Supprimer cette case à cocher"
+    "Remove this checkbox field": "Supprimer cette case à cocher",
+    "This tool asks our server which IP address your request came from and shows it to you. We don’t store it.": "Cet outil demande à notre serveur de quelle adresse IP provient votre requête et vous l’affiche. Nous ne la conservons pas."
 }

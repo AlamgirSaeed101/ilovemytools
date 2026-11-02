@@ -1327,5 +1327,6 @@
     "Text field name": "文字方塊名稱",
     "Checkbox field name": "核取方塊名稱",
     "Remove this text field": "移除此文字方塊",
-    "Remove this checkbox field": "移除此核取方塊"
+    "Remove this checkbox field": "移除此核取方塊",
+    "This tool asks our server which IP address your request came from and shows it to you. We don’t store it.": "此工具會詢問我們的伺服器你的請求來自哪個 IP 位址,並顯示給你。我們不會儲存它。"
 }

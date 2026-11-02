@@ -1351,5 +1351,6 @@
     "Text field name": "Name des Textfelds",
     "Checkbox field name": "Name des Kontrollkästchens",
     "Remove this text field": "Dieses Textfeld entfernen",
-    "Remove this checkbox field": "Dieses Kontrollkästchen entfernen"
+    "Remove this checkbox field": "Dieses Kontrollkästchen entfernen",
+    "This tool asks our server which IP address your request came from and shows it to you. We don’t store it.": "Dieses Tool fragt unseren Server, von welcher IP-Adresse deine Anfrage kam, und zeigt sie dir an. Wir speichern sie nicht."
 }

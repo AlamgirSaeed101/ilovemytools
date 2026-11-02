@@ -8,7 +8,7 @@ export function parseRanges(input, pageCount) {
     if (!Number.isInteger(pageCount) || pageCount < 1) throw new Error(t('The PDF has no pages.'));
 
     const ranges = [];
-    for (const rawPart of text.split(/[,;]+/)) {
+    for (const rawPart of text.split(/[,;、，；،؛]+/)) {
         const part = rawPart.trim().toLowerCase();
         if (part === '') continue;
 
