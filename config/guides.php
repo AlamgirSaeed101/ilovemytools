@@ -1268,4 +1268,128 @@ return [
             ['title' => 'Mozilla, PDF.js - a PDF renderer and text extraction library', 'url' => 'https://mozilla.github.io/pdf.js/'],
         ],
     ],
+
+    'how-to-check-if-an-online-tool-uploads-your-file' => [
+        'title' => 'How to Check if an Online Tool Uploads Your File',
+        'description' => 'Check whether a "browser-based" PDF or image tool really keeps your file on your device, using the Network tab in Chrome, Edge or Firefox, an offline test and the privacy policy.',
+        'h1' => 'How to check if an online tool uploads your file',
+        'intro' => 'Many free PDF and image tools say your file "never leaves your device". Some of them mean it, some of them upload the file to a server and delete it later, and the page often looks exactly the same either way. You do not have to take the claim on trust. Every desktop browser has a built-in tool that lists what a page sends over the network, and with a few minutes of practice you can see for yourself whether your file went anywhere. No technical background is needed; here is how to do it.',
+        'tool' => 'merge-pdf',
+        'related' => ['image-compressor', 'redact-pdf', 'edit-pdf'],
+        'published' => '2026-10-30',
+        'updated' => '2026-10-30',
+        'sections' => [
+            [
+                'heading' => 'Why it matters which kind of tool you use',
+                'paragraphs' => [
+                    'The files people run through quick online tools are often the most sensitive ones they own: a scan of a passport or driving licence for an application, a signed contract, a payslip or bank statement for a rental, a medical letter. Once a file is uploaded, you are relying on the operator to store it securely, delete it when they say they will, and not keep copies in backups or logs. You usually have no way to check any of that.',
+                    'A tool that processes the file inside your browser avoids the question entirely. The page downloads its code once, and the work happens on your own computer using JavaScript libraries such as PDF.js and pdf-lib for PDFs or the Canvas API for images. Nothing about the file has to travel anywhere. The checks below tell you which of the two kinds of tool you are actually using.',
+                ],
+            ],
+            [
+                'heading' => 'The Network tab check in Chrome and Edge',
+                'paragraphs' => [
+                    'Chrome and Microsoft Edge share the same developer tools, so the steps are identical. Do this on a desktop or laptop; mobile browsers do not include these tools. Use a harmless test file the first time, not the real document.',
+                ],
+                'list' => [
+                    'Open the tool\'s page, then press F12 (or Ctrl+Shift+I on Windows and Linux, Cmd+Option+I on a Mac) to open DevTools. You can also right-click the page and choose Inspect.',
+                    'Click the Network tab at the top of the DevTools panel. If you do not see it, click the >> arrow to show more tabs.',
+                    'Tick "Preserve log" so the list is not wiped if the page reloads, then click the Clear button (the circle with a line through it) to empty the list of everything the page loaded so far.',
+                    'Now use the tool normally: choose your file, run the conversion or compression, and download the result. Keep DevTools open the whole time; it only records what happens while it is open.',
+                    'Look at the new rows that appeared. Right-click any column heading and switch on "Method" if it is not already shown. An upload almost always appears as a POST or PUT request.',
+                    'Click a POST or PUT row and open its Headers tab. Under Request Headers, "Content-Length" is the size of what was sent, in bytes. If it is close to your file\'s size (a 2 MB file is about 2,000,000 bytes), the file was uploaded. The Payload tab may also show the file name.',
+                    'To cut out noise, click the "Fetch/XHR" filter button. This hides images, fonts and scripts and leaves only the requests the page made from code, which is where an upload would be.',
+                ],
+            ],
+            [
+                'heading' => 'The same check in Firefox',
+                'paragraphs' => [
+                    'Firefox calls its version the Network Monitor. It works the same way and shows the request method by default, which makes uploads slightly easier to spot.',
+                ],
+                'list' => [
+                    'Press Ctrl+Shift+E (Cmd+Option+E on a Mac) to open the Network Monitor directly, or press F12 and click the Network tab.',
+                    'Turn on "Persist Logs" in the Network Monitor\'s settings menu (the gear icon) if the page reloads while you work, and click the bin icon to clear the list.',
+                    'Use the tool with your test file, from choosing the file through to downloading the result.',
+                    'Check the Method column for POST or PUT, and the Transferred column for sizes. Click the XHR filter to show only requests made from code.',
+                    'Click a suspicious request and look at its Headers panel for Content-Length, and at its Request panel for the content that was sent.',
+                ],
+            ],
+            [
+                'heading' => 'What normal, harmless requests look like',
+                'paragraphs' => [
+                    'An empty Network tab is not what you should expect, even from a tool that never uploads anything. Most free sites load analytics and ads, and these keep sending small requests while you use the page. On their own they are not a sign that your file went anywhere.',
+                    'Typical harmless traffic includes requests to analytics services (Google Analytics requests often have "collect" in the name), ad networks, fonts and the page\'s own scripts and images. These are usually a few hundred bytes to a few tens of kilobytes each, and many are GET requests. Analytics requests can be POST requests too, but their size stays small and does not grow with your file.',
+                    'The pattern to look for is size. One POST or PUT whose size roughly matches your file, or a run of medium-sized requests that add up to it (some sites upload in chunks), means the file was sent. Try a larger test file: if the requests grow with it, that settles it. Rows starting with "blob:" or "data:" are local to your browser and are not uploads.',
+                ],
+            ],
+            [
+                'heading' => 'The offline test',
+                'paragraphs' => [
+                    'If the Network tab feels like too much, there is a simpler check that needs no developer tools at all. A tool that runs in your browser does not need the internet once its page has loaded.',
+                ],
+                'list' => [
+                    'Open the tool\'s page and wait until it has fully loaded.',
+                    'Disconnect: turn on airplane mode, switch off Wi-Fi, or unplug the network cable. In Chrome or Edge DevTools you can instead pick "Offline" from the throttling menu on the Network tab, which only affects that tab.',
+                    'Choose a test file and run the tool. If it finishes and lets you download the result, the processing happened on your device.',
+                    'If it shows an error, spins forever, or says "uploading", it needed a server.',
+                    'Close the tab before you reconnect, so that nothing held back while offline can be sent when the connection comes back.',
+                ],
+            ],
+            [
+                'heading' => 'Limits of the offline test',
+                'paragraphs' => [
+                    'The offline test is good at proving a tool can work locally, but a failure does not always mean an upload. Some pages load parts of their code only when you first use them, so a genuinely local tool can fail offline simply because a script was not downloaded yet. Others break because an ad or analytics script errors out. If you get a failure, use the tool once online with a harmless file so everything is downloaded, then try again offline without reloading the page.',
+                    'It also cannot help with tools that need the network by their nature. A tool that looks up information about a website, a domain or your IP address has to ask a server; that is the job, not a privacy problem. What matters is that tools handling your own files do not need one.',
+                ],
+            ],
+            [
+                'heading' => 'Reading the privacy policy and spotting red flags',
+                'paragraphs' => [
+                    'Read the site\'s privacy policy or FAQ and search it for the words "upload", "server", "delete" and "retain". A tool that processes files locally can say so plainly. A policy that describes how long files are stored, where the servers are, or that files are "encrypted in transit" is describing uploads, however the home page is worded.',
+                    'Some signs on the page itself point to a server doing the work:',
+                ],
+                'list' => [
+                    'A progress bar or message that says "Uploading" before the processing starts. Local tools have nothing to upload; they may show "Processing" instead.',
+                    'A file-size or page-count limit for free users, such as a fixed number of megabytes. Limits like this usually exist to control server costs; a local tool is limited mainly by your own device\'s memory.',
+                    'A promise that "files are deleted after 1 hour" (or 24 hours). That is reassurance about what happens to an uploaded copy, which means there is an uploaded copy.',
+                    'A limit on how many files you can process per hour or per day, or a queue before your file is processed.',
+                    'A result delivered by email, or as a download link that keeps working from another device.',
+                ],
+            ],
+            [
+                'heading' => 'Which check to use',
+                'paragraphs' => [
+                    'Each check answers a slightly different question, and none is perfect on its own. The Network tab plus one other check gives you a clear answer.',
+                ],
+                'table' => [
+                    'headers' => ['Check', 'What it shows', 'Limits'],
+                    'rows' => [
+                        ['Network tab (Chrome, Edge, Firefox)', 'Every request the page sends while you use the tool, with its method and size', 'Desktop only; DevTools must be open before you add the file; takes a little practice to read'],
+                        ['Offline / airplane-mode test', 'Whether the tool can finish its work with no connection at all', 'Can fail for harmless reasons (lazily loaded code, ad scripts); does not apply to lookup tools'],
+                        ['Privacy policy', 'What the operator says it does with files, and for how long', 'A statement, not proof; it can be vague or out of date'],
+                        ['Red flags on the page', 'Hints such as "uploading", size limits, deletion timers', 'Indirect; a site can avoid all of them and still upload'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'How ILoveMyTools handles your files',
+                'paragraphs' => [
+                    'You can run every check above on this site, and we would rather you did than take our word for it. The PDF and image tools, such as [Merge PDF](/merge-pdf), [Redact PDF](/redact-pdf), [Edit PDF](/edit-pdf) and the [Image Compressor](/image-compressor), do their work in your browser with PDF.js, pdf-lib and the Canvas API. Your file is read from your device and the result is saved back to it; you will not see a request carrying it in the Network tab.',
+                    'You will still see small requests while you use the site, because the pages load Google Analytics and ads. A few tools do use our server because they cannot work otherwise: the [Bulk Domain Authority Checker](/domain-authority-checker), the [Broken Link Checker](/broken-link-checker), the [Domain Age Checker](/domain-age-checker) and [What Is My IP](/what-is-my-ip) all have to look things up on the internet. They send the domains or URLs you type in (or, for What Is My IP, simply ask the server which address your request came from), not files, and their pages say that they use the server.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Can I check whether a tool uploads my file on my phone?', 'a' => 'Not with the Network tab, because mobile browsers do not include developer tools. The offline test works on a phone: load the page, turn on airplane mode, then run the tool. For a full check, use a desktop browser.'],
+            ['q' => 'I see lots of requests in the Network tab. Does that mean my file was uploaded?', 'a' => 'Not necessarily. Analytics, ads, fonts and scripts all create requests. Look for a POST or PUT request whose size is close to your file\'s size, or several requests that add up to it. Small requests that do not grow with your file are not your file.'],
+            ['q' => 'If a tool works offline, is it guaranteed to be private?', 'a' => 'It proves the processing can happen on your device, which is the main thing. A page could in theory keep data and send it later, so close the tab before reconnecting, and use the Network tab check if you need to be certain.'],
+            ['q' => 'Is a tool that uploads files always unsafe?', 'a' => 'No. Many reputable services upload files and delete them as promised. The difference is that you have to trust the operator. For passports, contracts or payslips, a tool that never receives the file removes that question.'],
+            ['q' => 'Do I need to understand code to use the Network tab?', 'a' => 'No. You only need three things from it: the Method column (POST or PUT), the size of each request, and whether a request appears at the moment you use the tool. Everything else can be ignored.'],
+        ],
+        'sources' => [
+            ['title' => 'Chrome for Developers, Inspect network activity (DevTools Network panel)', 'url' => 'https://developer.chrome.com/docs/devtools/network'],
+            ['title' => 'Firefox Source Docs, Network Monitor', 'url' => 'https://firefox-source-docs.mozilla.org/devtools-user/network_monitor/index.html'],
+            ['title' => 'MDN Web Docs, POST request method', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST'],
+        ],
+    ],
 ];
