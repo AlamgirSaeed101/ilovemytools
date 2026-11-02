@@ -53,7 +53,10 @@ export function GuideArticle() {
             <article className="prose page-article guide-article">
                 <h1>{guide.title}</h1>
                 <p className="text-sm text-muted">
-                    By <Link to="/about">{guide.author}</Link> · Updated <time dateTime={guide.updated}>{formatDate(guide.updated)}</time>
+                    By{' '}
+                    <Link to={site.author?.path ?? '/about'} rel="author">
+                        {guide.author}
+                    </Link> · Updated <time dateTime={guide.updated}>{formatDate(guide.updated)}</time>
                 </p>
                 <p className="lead">{guide.intro}</p>
                 {guide.sections.map((s) => (

@@ -9,7 +9,8 @@
             <p class="lead">{{ t('{name} is a free collection of simple, fast and private online tools. We built it because most “free” tools online are slow, covered in pop-ups, add watermarks, or quietly upload your files to their servers.', ['name' => $name]) }}</p>
             <p>{{ t('{name} launched in {year}. Everything on the site is free to use and is paid for by advertising.', ['name' => $name, 'year' => config('site.founded')]) }}</p>
             @if ($founder = config('site.founder'))
-                <p>{{ t('{name} was founded by {founder}.', ['name' => $name, 'founder' => $founder['name']]) }}</p>
+                @php($founderLink = '<a href="'.e(lurl(\App\Support\Guides::AUTHOR_PATH)).'">'.e($founder['name']).'</a>')
+                <p>{!! str_replace('__FOUNDER__', $founderLink, e(t('{name} was founded by {founder}.', ['name' => $name, 'founder' => '__FOUNDER__']))) !!}</p>
             @endif
 
             @if (\App\Support\Locale::current() === \App\Support\Locale::default())

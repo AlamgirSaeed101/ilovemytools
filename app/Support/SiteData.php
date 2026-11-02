@@ -36,6 +36,34 @@ class SiteData
         return [Locale::t($title), Locale::t($description, ['name' => (string) config('site.name')]), Locale::t($label)];
     }
 
+    /** @return array{0: string, 1: string} [search title, meta description] of the founder's author page */
+    public static function authorMeta(string $name): array
+    {
+        $site = (string) config('site.name');
+
+        return [
+            "{$name} - Founder of {$site}",
+            "{$name} is the founder and developer of {$site}, based in Islamabad, Pakistan. He builds its free online tools and writes its guides.",
+        ];
+    }
+
+    /** The founder's author page for the React app, or null when no founder is configured. */
+    public static function author(): ?array
+    {
+        $founder = config('site.founder');
+        if (empty($founder['name'])) {
+            return null;
+        }
+        [$title, $description] = self::authorMeta($founder['name']);
+
+        return [
+            'path' => Guides::AUTHOR_PATH,
+            'name' => (string) $founder['name'],
+            'meta' => ['title' => Seo::fullTitle($title), 'description' => Seo::limit($description, 160)],
+            'profiles' => array_map(fn (string $url) => ['url' => $url, 'label' => Guides::profileLabel($url)], array_values($founder['same_as'] ?? [])),
+        ];
+    }
+
     public static function tagline(): string
     {
         return (string) (Locale::group('site')['tagline'] ?? config('site.tagline'));
@@ -78,6 +106,8 @@ class SiteData
             'linkedin' => (string) config('site.linkedin'),
             'badges' => array_values(config('site.badges', [])),
             'founder' => (string) (config('site.founder')['name'] ?? ''),
+            // The founder's author page (English only): its path, search title and public profiles.
+            'author' => self::author(),
             // English About page only (the indexed version): plain answers about the brand.
             'brandFaqs' => Locale::current() === Locale::default() ? BrandFaq::all() : [],
             'ads' => [

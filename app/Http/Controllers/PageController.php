@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Support\Guides;
 use App\Support\HomeFaq;
 use App\Support\Locale;
 use App\Support\Seo;
@@ -111,6 +112,28 @@ class PageController extends Controller
     public function about(): Response
     {
         return $this->info('about');
+    }
+
+    /** The founder's author page: who builds the tools and writes the guides (indexed in English only). */
+    public function author(): Response
+    {
+        $founder = config('site.founder');
+        if (empty($founder['name'])) {
+            return $this->notFound(request());
+        }
+
+        [$title, $description] = SiteData::authorMeta($founder['name']);
+        $path = Guides::AUTHOR_PATH;
+        $seo = Seo::make($title, $description, $path)
+            ->breadcrumbs([[Locale::t('About Us'), '/about'], [$founder['name'], $path]])
+            ->englishOnly()
+            ->profile($founder);
+        $seo->ogType = 'profile';
+
+        return $this->render('author', $seo, 'pages.author', [
+            'founder' => $founder,
+            'guides' => Guides::all(),
+        ]);
     }
 
     public function contact(): Response

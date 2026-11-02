@@ -49,7 +49,9 @@ export function About() {
                 {t('{name} is a free collection of simple, fast and private online tools. We built it because most “free” tools online are slow, covered in pop-ups, add watermarks, or quietly upload your files to their servers.', { name })}
             </p>
             <p>{t('{name} launched in {year}. Everything on the site is free to use and is paid for by advertising.', { name, year: site.founded })}</p>
-            {site.founder && <p>{t('{name} was founded by {founder}.', { name, founder: site.founder })}</p>}
+            {site.founder && (
+                <p>{tr('{name} was founded by {founder}.', { name, founder: site.author ? <Link to={site.author.path}>{site.founder}</Link> : site.founder })}</p>
+            )}
 
             {site.brandFaqs?.length > 0 && (
                 <>

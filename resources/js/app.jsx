@@ -5,6 +5,7 @@ import { RouterProvider } from 'react-router/dom';
 import Layout from './components/Layout.jsx';
 import { getJson, getSite, initialPage, loadCategory, loadSite, loadTool, NotFoundError } from './lib/api.js';
 import { initI18n } from './lib/i18n.js';
+import Author from './pages/Author.jsx';
 import Category from './pages/Category.jsx';
 import Home from './pages/Home.jsx';
 import { About, Contact, Privacy, Terms } from './pages/InfoPages.jsx';
@@ -23,6 +24,7 @@ const routes = [
                 children: [
                     { index: true, element: <Home /> },
                     { path: 'about', element: <About /> },
+                    { path: 'about/m-alamgir-saeed', element: <Author /> },
                     { path: 'contact', element: <Contact /> },
                     { path: 'privacy-policy', element: <Privacy /> },
                     { path: 'terms', element: <Terms /> },
