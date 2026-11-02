@@ -62,3 +62,15 @@ E9 needs the AVIF/WebP benchmark built first.
 NoSignupTools, OnlinesTool. Generic link directories in the queue (ExactSeek, Jayde, ActiveSearchResults,
 WLD, Directory World, Cipinet, ProLinkDirectory, SoMuch, Directory-Free) are deliberately not submitted:
 mass directories are against the owner's rules and carry spam risk.
+
+## Titles changed 2 Nov (judge after 28 days, about 30 Nov; don't change them before then)
+/merge-pdf, /image-compressor, /avif-to-webp titles; /domain-authority-checker description.
+Earlier (30 Oct, judge about 27 Nov): /domain-authority-checker title, /de/word-counter, /de/merge-pdf,
+/de/image-compressor, /category/calculators.
+
+## Outreach waiting for the owner's "send them" (2 Nov)
+Claude can only send batches the owner approves. Waiting: 29 `new` rows in docs/outreach/prospects.md, and
+4 drafts in hello@ Outlook Drafts: comparetools.io, library@auarts.ca, info@imghippo.com (rewritten on
+the real benchmark) and the decline to Lilach Bullock. If Imghippo says yes, the article must be re-run
+on real photographs, as the pitch promises.
+
