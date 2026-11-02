@@ -1431,4 +1431,232 @@ return [
             ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
         ],
     ],
+
+    'how-to-check-if-an-online-tool-uploads-your-file' => [
+        'title' => 'How to Check if an Online Tool Uploads Your File',
+        'description' => 'Check whether a "browser-based" PDF or image tool really keeps your file on your device, using the Network tab in Chrome, Edge or Firefox, an offline test and the privacy policy.',
+        'h1' => 'How to check if an online tool uploads your file',
+        'intro' => 'Many free PDF and image tools say your file "never leaves your device". Some of them mean it, some of them upload the file to a server and delete it later, and the page often looks exactly the same either way. You do not have to take the claim on trust. Every desktop browser has a built-in tool that lists what a page sends over the network, and with a few minutes of practice you can see for yourself whether your file went anywhere. No technical background is needed; here is how to do it.',
+        'tool' => 'merge-pdf',
+        'related' => ['image-compressor', 'redact-pdf', 'edit-pdf'],
+        'published' => '2026-10-30',
+        'updated' => '2026-10-30',
+        'sections' => [
+            [
+                'heading' => 'Why it matters which kind of tool you use',
+                'paragraphs' => [
+                    'The files people run through quick online tools are often the most sensitive ones they own: a scan of a passport or driving licence for an application, a signed contract, a payslip or bank statement for a rental, a medical letter. Once a file is uploaded, you are relying on the operator to store it securely, delete it when they say they will, and not keep copies in backups or logs. You usually have no way to check any of that.',
+                    'A tool that processes the file inside your browser avoids the question entirely. The page downloads its code once, and the work happens on your own computer using JavaScript libraries such as PDF.js and pdf-lib for PDFs or the Canvas API for images. Nothing about the file has to travel anywhere. The checks below tell you which of the two kinds of tool you are actually using.',
+                ],
+            ],
+            [
+                'heading' => 'The Network tab check in Chrome and Edge',
+                'paragraphs' => [
+                    'Chrome and Microsoft Edge share the same developer tools, so the steps are identical. Do this on a desktop or laptop; mobile browsers do not include these tools. Use a harmless test file the first time, not the real document.',
+                ],
+                'list' => [
+                    'Open the tool\'s page, then press F12 (or Ctrl+Shift+I on Windows and Linux, Cmd+Option+I on a Mac) to open DevTools. You can also right-click the page and choose Inspect.',
+                    'Click the Network tab at the top of the DevTools panel. If you do not see it, click the >> arrow to show more tabs.',
+                    'Tick "Preserve log" so the list is not wiped if the page reloads, then click the Clear button (the circle with a line through it) to empty the list of everything the page loaded so far.',
+                    'Now use the tool normally: choose your file, run the conversion or compression, and download the result. Keep DevTools open the whole time; it only records what happens while it is open.',
+                    'Look at the new rows that appeared. Right-click any column heading and switch on "Method" if it is not already shown. An upload almost always appears as a POST or PUT request.',
+                    'Click a POST or PUT row and open its Headers tab. Under Request Headers, "Content-Length" is the size of what was sent, in bytes. If it is close to your file\'s size (a 2 MB file is about 2,000,000 bytes), the file was uploaded. The Payload tab may also show the file name.',
+                    'To cut out noise, click the "Fetch/XHR" filter button. This hides images, fonts and scripts and leaves only the requests the page made from code, which is where an upload would be.',
+                ],
+            ],
+            [
+                'heading' => 'The same check in Firefox',
+                'paragraphs' => [
+                    'Firefox calls its version the Network Monitor. It works the same way and shows the request method by default, which makes uploads slightly easier to spot.',
+                ],
+                'list' => [
+                    'Press Ctrl+Shift+E (Cmd+Option+E on a Mac) to open the Network Monitor directly, or press F12 and click the Network tab.',
+                    'Turn on "Persist Logs" in the Network Monitor\'s settings menu (the gear icon) if the page reloads while you work, and click the bin icon to clear the list.',
+                    'Use the tool with your test file, from choosing the file through to downloading the result.',
+                    'Check the Method column for POST or PUT, and the Transferred column for sizes. Click the XHR filter to show only requests made from code.',
+                    'Click a suspicious request and look at its Headers panel for Content-Length, and at its Request panel for the content that was sent.',
+                ],
+            ],
+            [
+                'heading' => 'What normal, harmless requests look like',
+                'paragraphs' => [
+                    'An empty Network tab is not what you should expect, even from a tool that never uploads anything. Most free sites load analytics and ads, and these keep sending small requests while you use the page. On their own they are not a sign that your file went anywhere.',
+                    'Typical harmless traffic includes requests to analytics services (Google Analytics requests often have "collect" in the name), ad networks, fonts and the page\'s own scripts and images. These are usually a few hundred bytes to a few tens of kilobytes each, and many are GET requests. Analytics requests can be POST requests too, but their size stays small and does not grow with your file.',
+                    'The pattern to look for is size. One POST or PUT whose size roughly matches your file, or a run of medium-sized requests that add up to it (some sites upload in chunks), means the file was sent. Try a larger test file: if the requests grow with it, that settles it. Rows starting with "blob:" or "data:" are local to your browser and are not uploads.',
+                ],
+            ],
+            [
+                'heading' => 'The offline test',
+                'paragraphs' => [
+                    'If the Network tab feels like too much, there is a simpler check that needs no developer tools at all. A tool that runs in your browser does not need the internet once its page has loaded.',
+                ],
+                'list' => [
+                    'Open the tool\'s page and wait until it has fully loaded.',
+                    'Disconnect: turn on airplane mode, switch off Wi-Fi, or unplug the network cable. In Chrome or Edge DevTools you can instead pick "Offline" from the throttling menu on the Network tab, which only affects that tab.',
+                    'Choose a test file and run the tool. If it finishes and lets you download the result, the processing happened on your device.',
+                    'If it shows an error, spins forever, or says "uploading", it needed a server.',
+                    'Close the tab before you reconnect, so that nothing held back while offline can be sent when the connection comes back.',
+                ],
+            ],
+            [
+                'heading' => 'Limits of the offline test',
+                'paragraphs' => [
+                    'The offline test is good at proving a tool can work locally, but a failure does not always mean an upload. Some pages load parts of their code only when you first use them, so a genuinely local tool can fail offline simply because a script was not downloaded yet. Others break because an ad or analytics script errors out. If you get a failure, use the tool once online with a harmless file so everything is downloaded, then try again offline without reloading the page.',
+                    'It also cannot help with tools that need the network by their nature. A tool that looks up information about a website, a domain or your IP address has to ask a server; that is the job, not a privacy problem. What matters is that tools handling your own files do not need one.',
+                ],
+            ],
+            [
+                'heading' => 'Reading the privacy policy and spotting red flags',
+                'paragraphs' => [
+                    'Read the site\'s privacy policy or FAQ and search it for the words "upload", "server", "delete" and "retain". A tool that processes files locally can say so plainly. A policy that describes how long files are stored, where the servers are, or that files are "encrypted in transit" is describing uploads, however the home page is worded.',
+                    'Some signs on the page itself point to a server doing the work:',
+                ],
+                'list' => [
+                    'A progress bar or message that says "Uploading" before the processing starts. Local tools have nothing to upload; they may show "Processing" instead.',
+                    'A file-size or page-count limit for free users, such as a fixed number of megabytes. Limits like this usually exist to control server costs; a local tool is limited mainly by your own device\'s memory.',
+                    'A promise that "files are deleted after 1 hour" (or 24 hours). That is reassurance about what happens to an uploaded copy, which means there is an uploaded copy.',
+                    'A limit on how many files you can process per hour or per day, or a queue before your file is processed.',
+                    'A result delivered by email, or as a download link that keeps working from another device.',
+                ],
+            ],
+            [
+                'heading' => 'Which check to use',
+                'paragraphs' => [
+                    'Each check answers a slightly different question, and none is perfect on its own. The Network tab plus one other check gives you a clear answer.',
+                ],
+                'table' => [
+                    'headers' => ['Check', 'What it shows', 'Limits'],
+                    'rows' => [
+                        ['Network tab (Chrome, Edge, Firefox)', 'Every request the page sends while you use the tool, with its method and size', 'Desktop only; DevTools must be open before you add the file; takes a little practice to read'],
+                        ['Offline / airplane-mode test', 'Whether the tool can finish its work with no connection at all', 'Can fail for harmless reasons (lazily loaded code, ad scripts); does not apply to lookup tools'],
+                        ['Privacy policy', 'What the operator says it does with files, and for how long', 'A statement, not proof; it can be vague or out of date'],
+                        ['Red flags on the page', 'Hints such as "uploading", size limits, deletion timers', 'Indirect; a site can avoid all of them and still upload'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'How ILoveMyTools handles your files',
+                'paragraphs' => [
+                    'You can run every check above on this site, and we would rather you did than take our word for it. The PDF and image tools, such as [Merge PDF](/merge-pdf), [Redact PDF](/redact-pdf), [Edit PDF](/edit-pdf) and the [Image Compressor](/image-compressor), do their work in your browser with PDF.js, pdf-lib and the Canvas API. Your file is read from your device and the result is saved back to it; you will not see a request carrying it in the Network tab.',
+                    'You will still see small requests while you use the site, because the pages load Google Analytics and ads. A few tools do use our server because they cannot work otherwise: the [Bulk Domain Authority Checker](/domain-authority-checker), the [Broken Link Checker](/broken-link-checker), the [Domain Age Checker](/domain-age-checker) and [What Is My IP](/what-is-my-ip) all have to look things up on the internet. They send the domains or URLs you type in (or, for What Is My IP, simply ask the server which address your request came from), not files, and their pages say that they use the server.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Can I check whether a tool uploads my file on my phone?', 'a' => 'Not with the Network tab, because mobile browsers do not include developer tools. The offline test works on a phone: load the page, turn on airplane mode, then run the tool. For a full check, use a desktop browser.'],
+            ['q' => 'I see lots of requests in the Network tab. Does that mean my file was uploaded?', 'a' => 'Not necessarily. Analytics, ads, fonts and scripts all create requests. Look for a POST or PUT request whose size is close to your file\'s size, or several requests that add up to it. Small requests that do not grow with your file are not your file.'],
+            ['q' => 'If a tool works offline, is it guaranteed to be private?', 'a' => 'It proves the processing can happen on your device, which is the main thing. A page could in theory keep data and send it later, so close the tab before reconnecting, and use the Network tab check if you need to be certain.'],
+            ['q' => 'Is a tool that uploads files always unsafe?', 'a' => 'No. Many reputable services upload files and delete them as promised. The difference is that you have to trust the operator. For passports, contracts or payslips, a tool that never receives the file removes that question.'],
+            ['q' => 'Do I need to understand code to use the Network tab?', 'a' => 'No. You only need three things from it: the Method column (POST or PUT), the size of each request, and whether a request appears at the moment you use the tool. Everything else can be ignored.'],
+        ],
+        'sources' => [
+            ['title' => 'Chrome for Developers, Inspect network activity (DevTools Network panel)', 'url' => 'https://developer.chrome.com/docs/devtools/network'],
+            ['title' => 'Firefox Source Docs, Network Monitor', 'url' => 'https://firefox-source-docs.mozilla.org/devtools-user/network_monitor/index.html'],
+            ['title' => 'MDN Web Docs, POST request method', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST'],
+        ],
+    ],
+
+    'avif-vs-webp-vs-jpg-file-size-test' => [
+        'title' => 'AVIF vs WebP vs JPG: A Real File-Size Test (24 Images)',
+        'description' => 'We encoded 24 test images as JPG, WebP and AVIF and measured every file. Median savings vs JPG: AVIF 50-69%, WebP 20-53%. Method, raw data, limits.',
+        'h1' => 'AVIF vs WebP vs JPG: a real file-size test',
+        'intro' => 'Most format comparisons repeat the same claim: WebP is about a third smaller than JPG, AVIF about half. We wanted our own numbers, so we built a small, reproducible test: 24 images in three kinds (photo-like scenes, app screenshots and transparent graphics), each saved as JPG, WebP and AVIF with the same widely used encoder library, then measured byte by byte. Every number below comes from that run, and the script and raw CSV are public so you can check or repeat it.',
+        'tool' => 'avif-to-webp',
+        'related' => ['image-compressor', 'avif-to-jpg', 'webp-to-png', 'png-to-jpg'],
+        'published' => '2026-10-30',
+        'updated' => '2026-10-30',
+        'sections' => [
+            [
+                'heading' => 'The short answer',
+                'paragraphs' => [
+                    'At common default settings (JPG quality 80, WebP quality 80, AVIF quality 50), AVIF files were the smallest in all 24 images: a median 69% smaller than JPG for photo-like images, 62% for screenshots and 50% for graphics. WebP landed in between: 53%, 35% and 20% smaller than JPG.',
+                    'The catch is quality. On the photo-like images, WebP and AVIF at those settings were usually slightly less faithful to the original than the JPG (WebP in 8 of 8, AVIF in 7 of 8). When we raised their quality until they matched the JPG on an objective score (SSIM), AVIF still came out smaller in 7 of 8 photos, but WebP grew larger than the JPG in 7 of 8. On screenshots and graphics both formats won clearly at equal quality.',
+                ],
+            ],
+            [
+                'heading' => 'How we tested',
+                'paragraphs' => [
+                    'Images: 24 test images drawn by a script from fixed random seeds, so anyone gets exactly the same set. We did not use real camera photos. The 8 "photo-like" images (1600 x 1067) are synthetic scenes built from fractal noise, soft shapes, lighting falloff and added grain; the 8 screenshots (1440 x 900) are rendered dashboard layouts with real text, charts, tables and buttons; the 8 graphics (800 x 800) are badges, icons and logos on a transparent background.',
+                    'Encoder: sharp 0.35.5 on libvips 8.18.7, the image library behind many websites and build tools. JPG used mozjpeg at quality 80, WebP used libwebp 1.6.0 at quality 80, AVIF used libaom 3.15.1 at quality 50. Every other option was left at sharp\'s default. JPG cannot store transparency, so the graphics were flattened onto white for JPG only.',
+                    'Quality check: we measured SSIM (structural similarity, 1.0 means identical) between each compressed file and the lossless original, on brightness, with transparent images composited onto white. Then, for WebP and AVIF, we searched for the lowest quality setting that reached at least the JPG\'s SSIM and recorded that size too.',
+                ],
+            ],
+            [
+                'heading' => 'Results: file size at fixed settings',
+                'paragraphs' => [
+                    'Median file size per image in each set, and the median saving compared with the JPG of the same image. Savings are worked out per image and then the median is taken, so they do not exactly match a division of the size columns.',
+                ],
+                'table' => [
+                    'headers' => ['Image set (8 each)', 'JPG q80', 'WebP q80', 'AVIF q50', 'WebP saving', 'AVIF saving'],
+                    'rows' => [
+                        ['Photo-like, 1600 x 1067', '50.7 KB', '23.4 KB', '15.5 KB', '53.0%', '69.4%'],
+                        ['Screenshot, 1440 x 900', '83.1 KB', '53.6 KB', '30.9 KB', '35.3%', '62.3%'],
+                        ['Graphic with transparency, 800 x 800', '22.4 KB', '18.8 KB', '11.2 KB', '19.7%', '50.4%'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'Results: file size at the same quality as the JPG',
+                'paragraphs' => [
+                    'Fixed quality numbers do not mean the same thing in different formats, so this second table matches quality instead: each WebP and AVIF was re-encoded at the lowest setting whose SSIM was at least as high as the JPG q80 version. A negative saving means the file got bigger than the JPG.',
+                ],
+                'table' => [
+                    'headers' => ['Image set', 'WebP: median setting needed', 'WebP saving vs JPG', 'AVIF: median setting needed', 'AVIF saving vs JPG'],
+                    'rows' => [
+                        ['Photo-like', 'q88.5', '-18.2% (larger in 7 of 8)', 'q67.5', '12.0% (smaller in 7 of 8)'],
+                        ['Screenshot', 'q56', '49.4% (smaller in 8 of 8)', 'q39', '70.5% (smaller in 8 of 8)'],
+                        ['Graphic with transparency', 'q22', '42.3% (smaller in 8 of 8)', 'q23', '71.7% (smaller in 8 of 8)'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'What the numbers say, by image type',
+                'paragraphs' => [
+                    'Photo-like images: the biggest raw savings, but partly bought with lost detail. At default settings WebP and AVIF scored a median SSIM of 0.9674 and 0.9681 against 0.9721 for JPG; both smooth away fine grain that JPG keeps. When forced to keep as much detail as the JPG, WebP needed quality 87 to 90 and ended up larger, while AVIF still saved a median 12%. If your photos are grainy or highly detailed, do not assume WebP will shrink them at the same visual quality; compare the results yourself.',
+                    'Screenshots: here the modern formats win cleanly. Text and flat interface colours give JPG its familiar halos, and both WebP and AVIF reached a higher SSIM than JPG at their default settings while still being 35% and 62% smaller. Matched to JPG\'s quality, AVIF screenshots were about 70% smaller.',
+                    'Graphics with transparency: JPG is the wrong tool twice over, because it also throws away the transparent background. WebP at quality 80 saved only 20% here, but it was far above JPG\'s quality; matched to JPG, it saved 42% and AVIF 72%, both keeping the transparency. For comparison, the lossless PNG originals had a median size of 48.3 KB.',
+                ],
+            ],
+            [
+                'heading' => 'Limitations: read these before quoting the numbers',
+                'list' => [
+                    'The images are synthetic. They mimic photos, screenshots and graphics but are not real camera pictures, so treat the photo row as indicative only.',
+                    'One encoder per format, at default speed. Other encoders and settings (cwebp, avifenc at slower speeds, Photoshop, Squoosh) produce different sizes.',
+                    'SSIM is a rough proxy for what people see: we measured brightness only, it ignores colour, and it rewards keeping noise. A perceptual metric or a viewing test could rank the formats differently.',
+                    '"Quality 80" is not the same thing in JPG, WebP and AVIF; that is why the matched-quality table exists.',
+                    'Lossless WebP and optimised PNG were not tested; this is a lossy comparison.',
+                    'Encoding time was not measured. In practice AVIF is much slower to encode than JPG or WebP, which matters if you convert images on the fly.',
+                ],
+            ],
+            [
+                'heading' => 'Practical rules from this test',
+                'list' => [
+                    'Screenshots, UI images and diagrams for a website: AVIF first, WebP as the fallback. Both beat JPG at equal quality by a wide margin.',
+                    'Logos, icons and anything transparent: AVIF or WebP, never JPG, which drops the transparency.',
+                    'Photos for a website: AVIF gave the best size at equal quality; check grainy photos by eye before trusting WebP\'s default setting.',
+                    'Files you send to people or upload to forms: JPG or PNG still open everywhere. Convert an AVIF to WebP or JPG when a program refuses it.',
+                ],
+            ],
+            [
+                'heading' => 'Try it on your own images',
+                'paragraphs' => [
+                    'Results vary by image, so the best test is your own files. The [Image Compressor](/image-compressor) shows the new size before you download, and can aim for an exact target such as 100 KB. To switch formats, use [AVIF to WebP](/avif-to-webp) when an AVIF will not open somewhere, [WebP to PNG](/webp-to-png) for transparent graphics that need to work everywhere, or [PNG to JPG](/png-to-jpg) for large PNG photos. All of them run in your browser, so your images are never uploaded.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Is AVIF always smaller than WebP?', 'a' => 'In our test, yes: at default settings AVIF was smaller than WebP in all 24 images, by a median of 34% for photo-like images and about 41% for screenshots and graphics. Other encoders and settings can change that gap.'],
+            ['q' => 'Is WebP always smaller than JPG?', 'a' => 'At quality 80 it was smaller in all 24 images, by a median of 20% to 53% depending on the image type (one graphic saved only 0.4%). But on our photo-like images, WebP needed a much higher quality setting to keep as much detail as JPG and then became larger than the JPG in 7 of 8 cases.'],
+            ['q' => 'Can I check or repeat this test?', 'a' => 'Yes. The script generates the same 24 images from fixed seeds and writes one CSV row per image. Install sharp, run the script, and you should get matching numbers with the same sharp and libvips versions.'],
+            ['q' => 'Which format should I use on my website?', 'a' => 'AVIF for the smallest files, with WebP or JPG as a fallback for the few programs that cannot open AVIF. All current major browsers display both AVIF and WebP.'],
+        ],
+        'sources' => [
+            ['title' => 'Benchmark script and raw CSV results (GitHub)', 'url' => 'https://github.com/AlamgirSaeed101/ilovemytools/tree/main/docs/benchmarks'],
+            ['title' => 'sharp documentation, output options (JPEG, WebP, AVIF)', 'url' => 'https://sharp.pixelplumbing.com/api-output'],
+            ['title' => 'libvips, the image processing library behind sharp', 'url' => 'https://www.libvips.org/'],
+            ['title' => 'Can I use: AVIF image format', 'url' => 'https://caniuse.com/avif'],
+            ['title' => 'Can I use: WebP image format', 'url' => 'https://caniuse.com/webp'],
+            ['title' => 'Wang et al., Image quality assessment: from error visibility to structural similarity (SSIM), IEEE TIP 2004', 'url' => 'https://ieeexplore.ieee.org/document/1284395'],
+        ],
+    ],
 ];
