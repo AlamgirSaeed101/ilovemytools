@@ -190,6 +190,13 @@ class Seo
             'offers' => ['@type' => 'Offer', 'price' => '0', 'priceCurrency' => 'USD'],
             'featureList' => implode(', ', $tool['features']),
             'dateModified' => $tool['updated'] ?? null,
+            'screenshot' => ($shot = SiteData::screenshot($tool['slug'])) ? [
+                '@type' => 'ImageObject',
+                'url' => self::absoluteUrl(ltrim($shot['url'], '/')),
+                'width' => $shot['width'],
+                'height' => $shot['height'],
+                'caption' => $shot['alt'],
+            ] : null,
             'inLanguage' => Locale::hreflang(Locale::current()),
             'image' => $this->toolImage($tool['slug'] ?? ''),
             'author' => ['@id' => self::absoluteUrl('/').'#organization'],

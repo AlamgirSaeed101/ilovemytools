@@ -1,0 +1,52 @@
+{
+    "compress-pdf": {
+        "width": 838,
+        "height": 340,
+        "alt": "Compress PDF tool with a loaded PDF and the compression options"
+    },
+    "edit-pdf": {
+        "width": 838,
+        "height": 1421,
+        "alt": "Edit PDF tool showing an open document with the editing toolbar"
+    },
+    "image-compressor": {
+        "width": 838,
+        "height": 576,
+        "alt": "Image Compressor with a loaded image, its compressed size and the quality setting"
+    },
+    "json-formatter": {
+        "width": 838,
+        "height": 865,
+        "alt": "JSON Formatter showing sample JSON formatted with indentation"
+    },
+    "merge-pdf": {
+        "width": 838,
+        "height": 457,
+        "alt": "Merge PDF tool with three PDF files listed in order, ready to combine"
+    },
+    "password-generator": {
+        "width": 838,
+        "height": 556,
+        "alt": "Password Generator showing a generated password with length and character options"
+    },
+    "percentage-calculator": {
+        "width": 838,
+        "height": 1321,
+        "alt": "Percentage Calculator showing a result with the formula used"
+    },
+    "qr-code-generator": {
+        "width": 838,
+        "height": 498,
+        "alt": "QR Code Generator showing a generated QR code and the download options"
+    },
+    "split-pdf": {
+        "width": 838,
+        "height": 340,
+        "alt": "Split PDF tool with a loaded PDF and the page range options"
+    },
+    "word-counter": {
+        "width": 838,
+        "height": 666,
+        "alt": "Word Counter showing live word, character and sentence counts for sample text"
+    }
+}

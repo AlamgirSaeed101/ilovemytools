@@ -44,6 +44,12 @@
                                 <li>{{ $step }}</li>
                             @endforeach
                         </ol>
+                        @php($shot = \App\Support\SiteData::screenshot($tool['slug']))
+                        @if ($shot)
+                            <figure class="tool-shot">
+                                <img src="{{ $shot['url'] }}" alt="{{ $shot['alt'] }}" width="{{ $shot['width'] }}" height="{{ $shot['height'] }}" loading="lazy" decoding="async">
+                            </figure>
+                        @endif
                     @endif
 
                     @if ($tool['features'] !== [])

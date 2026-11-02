@@ -153,6 +153,11 @@ export default function ToolPage() {
                                         <li key={step}>{step}</li>
                                     ))}
                                 </ol>
+                                {tool.screenshot && (
+                                    <figure className="tool-shot">
+                                        <img src={tool.screenshot.url} alt={tool.screenshot.alt} width={tool.screenshot.width} height={tool.screenshot.height} loading="lazy" decoding="async" />
+                                    </figure>
+                                )}
                             </>
                         )}
 

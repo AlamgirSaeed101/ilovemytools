@@ -179,6 +179,21 @@ class IndexingTest extends TestCase
         $this->get('/security.txt')->assertStatus(301)->assertRedirect('/.well-known/security.txt');
     }
 
+    public function test_top_tools_show_a_screenshot_with_image_schema_in_english_only(): void
+    {
+        $shots = json_decode((string) file_get_contents(resource_path('data/tool-screenshots.json')), true);
+        $this->assertNotEmpty($shots);
+
+        foreach ($shots as $slug => $shot) {
+            $this->assertFileExists(public_path('images/tools/'.$slug.'.jpg'));
+            $html = $this->get('/'.$slug)->assertOk()->getContent();
+            $this->assertStringContainsString('src="/images/tools/'.$slug.'.jpg" alt="'.e($shot['alt']).'"', $html);
+            $this->assertStringContainsString('"ImageObject"', $html);
+        }
+
+        $this->assertStringNotContainsString('/images/tools/', $this->get('/de/merge-pdf')->getContent());
+    }
+
     public function test_unknown_urls_are_404_noindex_without_a_canonical(): void
     {
         $html = $this->get('/no-such-page-xyz')->assertNotFound()->getContent();

@@ -1353,5 +1353,6 @@
     "Remove this text field": "Rimuovi questa casella di testo",
     "Remove this checkbox field": "Rimuovi questa casella di controllo",
     "This tool asks our server which IP address your request came from and shows it to you. We don’t store it.": "Questo strumento chiede al nostro server da quale indirizzo IP proviene la tua richiesta e te lo mostra. Non lo conserviamo.",
-    "Guides": "Guide"
+    "Guides": "Guide",
+    "Pages 1 to {count}. Separate with commas.": "Pagine da 1 a {count}. Separa con virgole."
 }

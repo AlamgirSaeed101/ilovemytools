@@ -2498,6 +2498,17 @@ fieldset.grid-2 .check:has(input:checked) {
     border: 1px solid var(--border);
     border-radius: 12px;
 }
+.tool-shot {
+    margin: 1.25rem 0;
+    max-width: 560px;
+}
+.tool-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--line, #e5e7eb);
+    border-radius: 0.9rem;
+}
 .guide-links a {
     font-weight: 700;
 }

@@ -135,7 +135,9 @@ export default function SplitPdf() {
                         placeholder={t('e.g. 1-3, 5, 8-10')}
                     />
                     <span className="field__hint" id="sp-help">
-                        {t('Pages 1 to {count}. Separate with commas. Example: 1-3, 5, 8-{count}', { count: source.pageCount })}
+                        {source.pageCount >= 9
+                            ? t('Pages 1 to {count}. Separate with commas. Example: 1-3, 5, 8-{count}', { count: source.pageCount })
+                            : t('Pages 1 to {count}. Separate with commas.', { count: source.pageCount })}
                     </span>
                     {rangeError && <Notice type="error">{rangeError}</Notice>}
                 </div>

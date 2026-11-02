@@ -162,6 +162,7 @@ class SiteData
             'related' => $this->registry->related($tool)->keys()->all(),
             'guides' => $this->guidesFor($tool['slug']),
             'panel' => self::panelHeight($tool['slug']),
+            'screenshot' => self::screenshot($tool['slug']),
             'meta' => $this->meta($tool['title'], $tool['description']),
         ];
     }
@@ -172,6 +173,24 @@ class SiteData
      *
      * @return array{sm: int, lg: int}|null
      */
+    /**
+     * Real screenshot of a top tool in use (resources/data/tool-screenshots.json, from
+     * scripts/tool-screenshots.mjs). English pages only: the screenshots show the English interface.
+     *
+     * @return array{url: string, width: int, height: int, alt: string}|null
+     */
+    public static function screenshot(string $slug): ?array
+    {
+        static $shots = null;
+        $shots ??= json_decode((string) @file_get_contents(resource_path('data/tool-screenshots.json')), true) ?: [];
+        $shot = $shots[$slug] ?? null;
+        if ($shot === null || Locale::current() !== Locale::default()) {
+            return null;
+        }
+
+        return ['url' => '/images/tools/'.$slug.'.jpg', 'width' => (int) $shot['width'], 'height' => (int) $shot['height'], 'alt' => (string) $shot['alt']];
+    }
+
     public static function panelHeight(string $slug): ?array
     {
         static $heights = null;

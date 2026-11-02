@@ -1329,5 +1329,6 @@
     "Remove this text field": "이 텍스트 상자 제거",
     "Remove this checkbox field": "이 체크박스 제거",
     "This tool asks our server which IP address your request came from and shows it to you. We don’t store it.": "이 도구는 요청이 어떤 IP 주소에서 왔는지 서버에 물어본 뒤 보여 줍니다. 저장하지 않습니다.",
-    "Guides": "가이드"
+    "Guides": "가이드",
+    "Pages 1 to {count}. Separate with commas.": "1부터 {count}까지. 쉼표로 구분하세요."
 }

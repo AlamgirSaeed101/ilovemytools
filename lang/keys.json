@@ -4904,6 +4904,12 @@
     ]
   },
   {
+    "key": "Pages 1 to {count}. Separate with commas.",
+    "files": [
+      "resources/js/tools/SplitPdf.jsx"
+    ]
+  },
+  {
     "key": "Pages 1 to {count}. Separate with commas. Example: 1-3, 5, 8-{count}",
     "files": [
       "resources/js/tools/SplitPdf.jsx"
