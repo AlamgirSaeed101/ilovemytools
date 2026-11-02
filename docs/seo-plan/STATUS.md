@@ -16,8 +16,8 @@ tracks what has shipped, so routines don't redo work. Update it when an item cha
 | A16/D7 404 without canonical | Live 30 Oct. Payload not slimmed (inline CSS kept on purpose) |
 | A17/D8 /.well-known/security.txt | Live 30 Oct |
 | A14/D1 externalise inline CSS | **Not doing**: inline CSS is part of the 91-100 mobile scores; a render-blocking stylesheet would cost FCP on phones |
-| A15/D5 zh-Hant content expansion (Prompt 2) | Open: needs native Traditional Chinese writing |
-| A20/D10 author page with Person schema | Open |
+| A15/D5 zh-Hant content expansion (Prompt 2) | Shipped 2 Nov: 15 tools rewritten and lengthened, not reviewed by a native speaker. Other zh pages may still show 、 in page-range examples |
+| A20/D10 author page with Person schema | Shipped 2 Nov: /about/m-alamgir-saeed |
 | D11 nofollow on ko/pl/ur switcher links | Skipped (P3, low value) |
 | D12 DE-only H2s (Prompt 3 items 3 and 5) | Open: tool content must have the same number of sections in every language (TranslationsTest) |
 | D9 Sucuri cache rules | Owner (dashboard) |
@@ -50,3 +50,15 @@ Owner only: Tech Productivity + Web Tools Weekly (DM on X/Bluesky), Ignlab Launc
 filled by hand; it has a "what is 6 + 3" bot check), ProductPerch and IndieDebut (sign-in),
 Show HN / Reddit (maker posts himself). Guest-post pitches E9-E13 go out via "send them";
 E9 needs the AVIF/WebP benchmark built first.
+
+## Link-worthy assets (F), shipped 2 Nov
+- /guides/how-to-check-if-an-online-tool-uploads-your-file
+- /guides/avif-vs-webp-vs-jpg-file-size-test: measured on 24 SYNTHETIC images (say so when pitching),
+  script scripts/format-benchmark.mjs, data docs/benchmarks/. Don't quote the 53-69% photo savings
+  alone: at matched SSIM, WebP was larger than JPEG on photo-like images.
+- Still unbuilt: exact-KB compression explainer, Moz DA vs DR vs OpenPageRank piece, words-per-page table.
+
+## Submitted 2 Nov
+NoSignupTools, OnlinesTool. Generic link directories in the queue (ExactSeek, Jayde, ActiveSearchResults,
+WLD, Directory World, Cipinet, ProLinkDirectory, SoMuch, Directory-Free) are deliberately not submitted:
+mass directories are against the owner's rules and carry spam risk.
