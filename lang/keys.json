@@ -762,6 +762,18 @@
     ]
   },
   {
+    "key": "Add a checkbox",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Add a text field",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Add at least 2 entries to spin.",
     "files": [
       "resources/js/tools/SpinWheel.jsx"
@@ -771,6 +783,12 @@
     "key": "Add at least one more PDF to merge.",
     "files": [
       "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "Add fields",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -823,6 +841,12 @@
   },
   {
     "key": "Add watermark",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Adding the field failed: {message}",
     "files": [
       "resources/js/tools/EditPdf.jsx"
     ]
@@ -1320,6 +1344,18 @@
     "key": "Check text",
     "files": [
       "resources/js/tools/AiDetector.jsx"
+    ]
+  },
+  {
+    "key": "Checkbox field - drag to move",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Checkbox field name",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -2338,6 +2374,12 @@
     ]
   },
   {
+    "key": "Drag a field to move it, drag its corner to resize it, and edit its name in the box.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Drag a page to reorder it, or use the move buttons.",
     "files": [
       "resources/js/tools/OrganizePdf.jsx"
@@ -3039,6 +3081,12 @@
     ]
   },
   {
+    "key": "Fill in fields",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Fill in the fields below, then click Save PDF.",
     "files": [
       "resources/js/tools/EditPdf.jsx"
@@ -3277,6 +3325,12 @@
     "key": "Get new tools by email",
     "files": [
       "resources/js/components/Newsletter.jsx"
+    ]
+  },
+  {
+    "key": "Give every new field a name before saving.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -5642,6 +5696,12 @@
     ]
   },
   {
+    "key": "Remove this checkbox field",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Remove this drawing",
     "files": [
       "resources/js/tools/EditPdf.jsx"
@@ -5679,6 +5739,12 @@
   },
   {
     "key": "Remove this text",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Remove this text field",
     "files": [
       "resources/js/tools/EditPdf.jsx"
     ]
@@ -5963,6 +6029,12 @@
   },
   {
     "key": "Save PDF",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Save PDF with new fields",
     "files": [
       "resources/js/tools/EditPdf.jsx"
     ]
@@ -6665,6 +6737,18 @@
     ]
   },
   {
+    "key": "Text field - drag to move",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Text field name",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Text to add",
     "files": [
       "resources/js/tools/EditPdf.jsx"
@@ -7279,6 +7363,12 @@
     "key": "Try it free",
     "files": [
       "resources/views/emails/new-tools.blade.php"
+    ]
+  },
+  {
+    "key": "Two fields can’t share the name \"{name}\". Give each field its own name.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {

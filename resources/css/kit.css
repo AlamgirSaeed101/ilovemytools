@@ -2669,6 +2669,30 @@ fieldset.grid-2 .check:has(input:checked) {
     opacity: 0.4;
 }
 
+/* Fill form - Add fields: a newly created, still-empty text box or checkbox field. */
+.pdf-editor__overlay--field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    border-color: var(--brand);
+    background: color-mix(in srgb, var(--brand) 10%, transparent);
+}
+
+.pdf-editor__fieldname {
+    width: 90%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 3px;
+    border: none;
+    background: transparent;
+    font: inherit;
+    font-size: 0.75rem;
+    text-align: center;
+    color: var(--text);
+    pointer-events: auto;
+}
+
 .pdf-editor__date {
     position: absolute;
     left: 0;

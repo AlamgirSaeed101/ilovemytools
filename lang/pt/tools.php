@@ -2202,6 +2202,7 @@ return [
             'Miniaturas de página para ir direto a qualquer página',
             'Seu trabalho é salvo automaticamente enquanto você edita, assim uma atualização ou um fechamento acidental nunca o perde',
             'Preenche os campos de um formulário existente: caixas de texto, caixas de seleção, listas suspensas e botões de opção',
+            'Cria campos novos: uma caixa de texto ou uma caixa de seleção, colocada onde quiser na página',
         ],
         'content' => [
             ['heading' => 'Como funciona a edição do texto existente', 'body' => 'Clique em uma linha de texto e digite. O texto antigo é coberto com a cor que está atrás dele e o novo é desenhado na mesma posição, tamanho e cor, usando a fonte incorporada ao PDF. Os PDFs costumam incorporar apenas as letras que usam; se o novo texto precisar de uma letra que o arquivo nunca teve, essa linha passa para a fonte padrão mais parecida e o editor informa quais letras causaram isso. Páginas digitalizadas são imagens sem texto editável; nelas, use o corretivo branco e Adicionar texto.'],

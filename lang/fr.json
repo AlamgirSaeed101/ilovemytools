@@ -1336,5 +1336,20 @@
     "No fillable fields were found in this PDF.": "Aucun champ à remplir n'a été trouvé dans ce PDF.",
     "Reading form fields…": "Lecture des champs du formulaire…",
     "Save filled PDF": "Enregistrer le PDF rempli",
-    "Select {name}": "Sélectionner {name}"
+    "Select {name}": "Sélectionner {name}",
+    "Fill in fields": "Remplir les champs",
+    "Add fields": "Ajouter des champs",
+    "Add a text field": "Ajouter un champ de texte",
+    "Add a checkbox": "Ajouter une case à cocher",
+    "Drag a field to move it, drag its corner to resize it, and edit its name in the box.": "Faites glisser un champ pour le déplacer, faites glisser son coin pour le redimensionner, et modifiez son nom dans la case.",
+    "Give every new field a name before saving.": "Donnez un nom à chaque nouveau champ avant d’enregistrer.",
+    "Two fields can’t share the name \"{name}\". Give each field its own name.": "Deux champs ne peuvent pas porter le même nom \"{name}\". Donnez à chaque champ son propre nom.",
+    "Adding the field failed: {message}": "Impossible d’ajouter le champ : {message}",
+    "Save PDF with new fields": "Enregistrer le PDF avec les nouveaux champs",
+    "Text field - drag to move": "Champ de texte - faites glisser pour déplacer",
+    "Checkbox field - drag to move": "Case à cocher - faites glisser pour déplacer",
+    "Text field name": "Nom du champ de texte",
+    "Checkbox field name": "Nom de la case à cocher",
+    "Remove this text field": "Supprimer ce champ de texte",
+    "Remove this checkbox field": "Supprimer cette case à cocher"
 }

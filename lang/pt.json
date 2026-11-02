@@ -1336,5 +1336,20 @@
     "No fillable fields were found in this PDF.": "Não foram encontrados campos preenchíveis neste PDF.",
     "Reading form fields…": "Lendo os campos do formulário…",
     "Save filled PDF": "Salvar PDF preenchido",
-    "Select {name}": "Selecionar {name}"
+    "Select {name}": "Selecionar {name}",
+    "Fill in fields": "Preencher campos",
+    "Add fields": "Adicionar campos",
+    "Add a text field": "Adicionar uma caixa de texto",
+    "Add a checkbox": "Adicionar uma caixa de seleção",
+    "Drag a field to move it, drag its corner to resize it, and edit its name in the box.": "Arraste um campo para movê-lo, arraste o canto para redimensioná-lo e edite o nome na caixa.",
+    "Give every new field a name before saving.": "Dê um nome a cada campo novo antes de salvar.",
+    "Two fields can’t share the name \"{name}\". Give each field its own name.": "Dois campos não podem ter o mesmo nome \"{name}\". Dê a cada campo o seu próprio nome.",
+    "Adding the field failed: {message}": "Não foi possível adicionar o campo: {message}",
+    "Save PDF with new fields": "Salvar PDF com os novos campos",
+    "Text field - drag to move": "Caixa de texto - arraste para mover",
+    "Checkbox field - drag to move": "Caixa de seleção - arraste para mover",
+    "Text field name": "Nome da caixa de texto",
+    "Checkbox field name": "Nome da caixa de seleção",
+    "Remove this text field": "Remover esta caixa de texto",
+    "Remove this checkbox field": "Remover esta caixa de seleção"
 }

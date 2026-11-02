@@ -1336,5 +1336,20 @@
     "No fillable fields were found in this PDF.": "In diesem PDF wurden keine ausfüllbaren Felder gefunden.",
     "Reading form fields…": "Formularfelder werden gelesen…",
     "Save filled PDF": "Ausgefülltes PDF speichern",
-    "Select {name}": "{name} auswählen"
+    "Select {name}": "{name} auswählen",
+    "Fill in fields": "Felder ausfüllen",
+    "Add fields": "Felder hinzufügen",
+    "Add a text field": "Textfeld hinzufügen",
+    "Add a checkbox": "Kontrollkästchen hinzufügen",
+    "Drag a field to move it, drag its corner to resize it, and edit its name in the box.": "Ziehen Sie ein Feld, um es zu verschieben, ziehen Sie seine Ecke, um die Größe zu ändern, und bearbeiten Sie seinen Namen im Feld.",
+    "Give every new field a name before saving.": "Geben Sie jedem neuen Feld einen Namen, bevor Sie speichern.",
+    "Two fields can’t share the name \"{name}\". Give each field its own name.": "Zwei Felder können nicht denselben Namen \"{name}\" haben. Geben Sie jedem Feld einen eigenen Namen.",
+    "Adding the field failed: {message}": "Das Feld konnte nicht hinzugefügt werden: {message}",
+    "Save PDF with new fields": "PDF mit neuen Feldern speichern",
+    "Text field - drag to move": "Textfeld - zum Verschieben ziehen",
+    "Checkbox field - drag to move": "Kontrollkästchen - zum Verschieben ziehen",
+    "Text field name": "Name des Textfelds",
+    "Checkbox field name": "Name des Kontrollkästchens",
+    "Remove this text field": "Dieses Textfeld entfernen",
+    "Remove this checkbox field": "Dieses Kontrollkästchen entfernen"
 }

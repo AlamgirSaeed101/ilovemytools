@@ -133,6 +133,7 @@ export default function EditPdf({ initialMode } = {}) {
     const [formFields, setFormFields] = useState([]);
     const [formValues, setFormValues] = useState({});
     const [formReady, setFormReady] = useState(false);
+    const [formSubMode, setFormSubMode] = useState('fill');
     const [error, setError] = useState('');
     const [working, setWorking] = useState(false);
     const [result, setResult] = useState(null);
@@ -388,6 +389,55 @@ export default function EditPdf({ initialMode } = {}) {
         }
     }
 
+    /** The first "Text field N" / "Checkbox N" name not already used by an existing or a new field. */
+    function nextFieldName(kind) {
+        const prefix = kind === 'checkbox' ? 'Checkbox' : 'Text field';
+        const used = new Set([...formFields.map((f) => f.name), ...elements.filter((el) => el.type === 'formfield').map((el) => el.name)]);
+        let n = 1;
+        while (used.has(`${prefix} ${n}`)) n += 1;
+        return `${prefix} ${n}`;
+    }
+
+    function addFormField(kind) {
+        if (!canvasSize.width) return;
+        const width = kind === 'checkbox' ? 24 : 160;
+        const height = kind === 'checkbox' ? 24 : 32;
+        const rect = clampRect({ x: (canvasSize.width - width) / 2, y: (canvasSize.height - height) / 2, width, height }, canvasSize.width, canvasSize.height, 10);
+        pushElement({ type: 'formfield', fieldType: kind, name: nextFieldName(kind), ...rect });
+    }
+
+    async function applyNewFormFields() {
+        if (!doc || working) return;
+        const toCreate = elements.filter((el) => el.type === 'formfield');
+        if (toCreate.length === 0) return;
+        setWorking(true);
+        setError('');
+        try {
+            const { validateNewFieldNames, buildPdfWithNewFields } = await loadForm();
+            const named = toCreate.map((el) => ({ ...el, name: el.name.trim() }));
+            const check = validateNewFieldNames(named, formFields.map((f) => f.name));
+            if (!check.ok) {
+                setError(
+                    check.reason === 'duplicate'
+                        ? t('Two fields can’t share the name "{name}". Give each field its own name.', { name: check.name })
+                        : t('Give every new field a name before saving.')
+                );
+                return;
+            }
+            const fields = named.map((el) => {
+                const size = doc.getPage(el.page).getSize();
+                const scaleForPage = computeDisplayScale(size.width, size.height);
+                return { fieldType: el.fieldType, name: el.name, page: el.page, rectPdf: canvasRectToPdfRect(el, scaleForPage, size.height) };
+            });
+            const blob = await buildPdfWithNewFields(doc, fields);
+            setResult({ blob, name: safeFilename(`${baseName(file.name)}-form.pdf`) });
+        } catch (e) {
+            setError(t('Adding the field failed: {message}', { message: e.message }));
+        } finally {
+            setWorking(false);
+        }
+    }
+
     async function applyWatermark() {
         if (!doc || working) return;
         const pageWidth = doc.getPage(0).getSize().width;
@@ -493,6 +543,7 @@ export default function EditPdf({ initialMode } = {}) {
         setFormFields([]);
         setFormValues({});
         setFormReady(false);
+        setFormSubMode('fill');
         setFile(picked);
     }
 
@@ -970,13 +1021,32 @@ export default function EditPdf({ initialMode } = {}) {
                         </>
                     )}
                     {mode === 'form' && (
-                        <span className="field__hint" style={{ margin: 0 }}>
-                            {!formReady
-                                ? t('Reading form fields…')
-                                : formFields.length === 0
-                                  ? t('No fillable fields were found in this PDF.')
-                                  : t('Fill in the fields below, then click Save PDF.')}
-                        </span>
+                        <>
+                            <Tabs
+                                label={t('Fill form')}
+                                value={formSubMode}
+                                onChange={setFormSubMode}
+                                tabs={[
+                                    { id: 'fill', label: t('Fill in fields') },
+                                    { id: 'add', label: t('Add fields') },
+                                ]}
+                            />
+                            {formSubMode === 'add' ? (
+                                <>
+                                    <button type="button" className="btn btn--sm" onClick={() => addFormField('text')}>{t('Add a text field')}</button>
+                                    <button type="button" className="btn btn--sm" onClick={() => addFormField('checkbox')}>{t('Add a checkbox')}</button>
+                                    <span className="field__hint" style={{ margin: 0 }}>{t('Drag a field to move it, drag its corner to resize it, and edit its name in the box.')}</span>
+                                </>
+                            ) : (
+                                <span className="field__hint" style={{ margin: 0 }}>
+                                    {!formReady
+                                        ? t('Reading form fields…')
+                                        : formFields.length === 0
+                                          ? t('No fillable fields were found in this PDF.')
+                                          : t('Fill in the fields below, then click Save PDF.')}
+                                </span>
+                            )}
+                        </>
                     )}
                     {mode === 'edittext' && !editing && (
                         <span className="field__hint" style={{ margin: 0 }}>
@@ -1266,6 +1336,38 @@ export default function EditPdf({ initialMode } = {}) {
                                 </div>
                             );
                         }
+                        if (el.type === 'formfield') {
+                            const checkbox = el.fieldType === 'checkbox';
+                            return (
+                                <div
+                                    key={el.id}
+                                    className="pdf-editor__overlay pdf-editor__overlay--field"
+                                    style={{ left: el.x, top: el.y, width: el.width, height: el.height }}
+                                    onPointerDown={(e) => startDrag(e, el.id, 'move')}
+                                    role="button"
+                                    tabIndex={0}
+                                    aria-label={checkbox ? t('Checkbox field - drag to move') : t('Text field - drag to move')}
+                                >
+                                    <input
+                                        className="pdf-editor__fieldname"
+                                        value={el.name}
+                                        onPointerDown={(e) => e.stopPropagation()}
+                                        onChange={(e) => updateElement(el.id, { name: e.target.value })}
+                                        aria-label={checkbox ? t('Checkbox field name') : t('Text field name')}
+                                    />
+                                    <button
+                                        type="button"
+                                        className="pdf-editor__remove"
+                                        aria-label={checkbox ? t('Remove this checkbox field') : t('Remove this text field')}
+                                        onPointerDown={(e) => e.stopPropagation()}
+                                        onClick={() => removeElement(el.id)}
+                                    >
+                                        ×
+                                    </button>
+                                    <span className="pdf-editor__handle" onPointerDown={(e) => startDrag(e, el.id, 'resize')} aria-hidden="true" />
+                                </div>
+                            );
+                        }
                         const labels = OVERLAY_LABELS[el.type === 'markup' ? el.kind : el.type] ?? OVERLAY_LABELS.highlight;
                         return (
                             <div
@@ -1364,6 +1466,10 @@ export default function EditPdf({ initialMode } = {}) {
             ) : mode === 'watermark' ? (
                 <button type="button" className="btn btn--primary btn--lg" onClick={applyWatermark} disabled={working || !(wmKind === 'text' ? wmText.trim() : wmPendingImage)}>
                     {working ? wmProgress || t('Adding watermark…') : t('Add watermark')}
+                </button>
+            ) : mode === 'form' && formSubMode === 'add' ? (
+                <button type="button" className="btn btn--primary btn--lg" onClick={applyNewFormFields} disabled={working || elements.filter((el) => el.type === 'formfield').length === 0}>
+                    {working ? t('Saving…') : t('Save PDF with new fields')}
                 </button>
             ) : mode === 'form' ? (
                 <button type="button" className="btn btn--primary btn--lg" onClick={applyForm} disabled={working || formFields.length === 0}>

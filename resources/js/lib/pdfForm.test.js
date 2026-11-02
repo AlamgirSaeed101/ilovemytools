@@ -1,6 +1,6 @@
 import { PDFDocument, StandardFonts } from 'pdf-lib';
 import { describe, expect, it } from 'vitest';
-import { buildFilledFormPdf, readFormFields } from './pdfForm.js';
+import { buildFilledFormPdf, buildPdfWithNewFields, readFormFields, validateNewFieldNames } from './pdfForm.js';
 
 async function docWithFields() {
     const doc = await PDFDocument.create();
@@ -88,5 +88,45 @@ describe('buildFilledFormPdf', () => {
         const blob = await buildFilledFormPdf(doc, { agree: true });
         const reloaded = await PDFDocument.load(new Uint8Array(await blob.arrayBuffer()));
         expect(reloaded.getForm().getTextField('name').getText()).toBe('Unchanged');
+    });
+});
+
+describe('validateNewFieldNames', () => {
+    it('accepts unique, non-empty names', () => {
+        expect(validateNewFieldNames([{ name: 'first' }, { name: 'second' }], ['existing'])).toEqual({ ok: true });
+    });
+
+    it('rejects a blank or whitespace-only name', () => {
+        expect(validateNewFieldNames([{ name: '  ' }], [])).toEqual({ ok: false, reason: 'empty' });
+    });
+
+    it('rejects a new field that collides with another new field', () => {
+        expect(validateNewFieldNames([{ name: 'dup' }, { name: 'dup' }], [])).toEqual({ ok: false, reason: 'duplicate', name: 'dup' });
+    });
+
+    it('rejects a new field that collides with an existing field', () => {
+        expect(validateNewFieldNames([{ name: 'full_name' }], ['full_name'])).toEqual({ ok: false, reason: 'duplicate', name: 'full_name' });
+    });
+});
+
+describe('buildPdfWithNewFields', () => {
+    it('creates an empty text field and an empty checkbox at the given rects', async () => {
+        const doc = await PDFDocument.create();
+        doc.addPage([400, 400]);
+        const blob = await buildPdfWithNewFields(doc, [
+            { fieldType: 'text', name: 'email', page: 0, rectPdf: { x: 40, y: 300, width: 180, height: 24 } },
+            { fieldType: 'checkbox', name: 'subscribe', page: 0, rectPdf: { x: 40, y: 260, width: 20, height: 20 } },
+        ]);
+        const reloaded = await PDFDocument.load(new Uint8Array(await blob.arrayBuffer()));
+        const form = reloaded.getForm();
+        expect(form.getTextField('email').getText()).toBeUndefined();
+        expect(form.getCheckBox('subscribe').isChecked()).toBe(false);
+    });
+
+    it('throws when a new field name already exists in the document', async () => {
+        const { doc } = await docWithFields();
+        await expect(
+            buildPdfWithNewFields(doc, [{ fieldType: 'text', name: 'name', page: 0, rectPdf: { x: 0, y: 0, width: 100, height: 20 } }])
+        ).rejects.toThrow();
     });
 });

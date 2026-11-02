@@ -1336,5 +1336,20 @@
     "No fillable fields were found in this PDF.": "In questo PDF non è stato trovato nessun campo compilabile.",
     "Reading form fields…": "Lettura dei campi del modulo…",
     "Save filled PDF": "Salva PDF compilato",
-    "Select {name}": "Seleziona {name}"
+    "Select {name}": "Seleziona {name}",
+    "Fill in fields": "Compila campi",
+    "Add fields": "Aggiungi campi",
+    "Add a text field": "Aggiungi una casella di testo",
+    "Add a checkbox": "Aggiungi una casella di controllo",
+    "Drag a field to move it, drag its corner to resize it, and edit its name in the box.": "Trascina un campo per spostarlo, trascina il suo angolo per ridimensionarlo e modifica il suo nome nella casella.",
+    "Give every new field a name before saving.": "Dai un nome a ogni nuovo campo prima di salvare.",
+    "Two fields can’t share the name \"{name}\". Give each field its own name.": "Due campi non possono avere lo stesso nome \"{name}\". Dai a ciascun campo un nome diverso.",
+    "Adding the field failed: {message}": "Non è stato possibile aggiungere il campo: {message}",
+    "Save PDF with new fields": "Salva PDF con i nuovi campi",
+    "Text field - drag to move": "Casella di testo - trascina per spostare",
+    "Checkbox field - drag to move": "Casella di controllo - trascina per spostare",
+    "Text field name": "Nome della casella di testo",
+    "Checkbox field name": "Nome della casella di controllo",
+    "Remove this text field": "Rimuovi questa casella di testo",
+    "Remove this checkbox field": "Rimuovi questa casella di controllo"
 }

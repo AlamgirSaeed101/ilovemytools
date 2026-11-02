@@ -1336,5 +1336,20 @@
     "No fillable fields were found in this PDF.": "اس PDF میں پُر کرنے کے قابل کوئی خانہ نہیں ملا۔",
     "Reading form fields…": "فارم کے خانے پڑھے جا رہے ہیں…",
     "Save filled PDF": "پُر شدہ PDF محفوظ کریں",
-    "Select {name}": "{name} منتخب کریں"
+    "Select {name}": "{name} منتخب کریں",
+    "Fill in fields": "خانے پُر کریں",
+    "Add fields": "خانے شامل کریں",
+    "Add a text field": "ٹیکسٹ باکس شامل کریں",
+    "Add a checkbox": "چیک باکس شامل کریں",
+    "Drag a field to move it, drag its corner to resize it, and edit its name in the box.": "خانے کو گھسیٹ کر منتقل کریں، اس کے کونے کو گھسیٹ کر سائز بدلیں، اور باکس میں اس کا نام تبدیل کریں۔",
+    "Give every new field a name before saving.": "محفوظ کرنے سے پہلے ہر نئے خانے کو نام دیں۔",
+    "Two fields can’t share the name \"{name}\". Give each field its own name.": "دو خانے ایک ہی نام \"{name}\" نہیں رکھ سکتے۔ ہر خانے کو اپنا الگ نام دیں۔",
+    "Adding the field failed: {message}": "خانہ شامل نہیں ہو سکا: {message}",
+    "Save PDF with new fields": "نئے خانوں والا PDF محفوظ کریں",
+    "Text field - drag to move": "ٹیکسٹ باکس - حرکت دینے کے لیے گھسیٹیں",
+    "Checkbox field - drag to move": "چیک باکس - حرکت دینے کے لیے گھسیٹیں",
+    "Text field name": "ٹیکسٹ باکس کا نام",
+    "Checkbox field name": "چیک باکس کا نام",
+    "Remove this text field": "یہ ٹیکسٹ باکس ہٹائیں",
+    "Remove this checkbox field": "یہ چیک باکس ہٹائیں"
 }

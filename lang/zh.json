@@ -1312,5 +1312,20 @@
     "No fillable fields were found in this PDF.": "在此 PDF 中找不到可填寫的欄位。",
     "Reading form fields…": "讀取表單欄位中…",
     "Save filled PDF": "儲存已填寫的 PDF",
-    "Select {name}": "選擇 {name}"
+    "Select {name}": "選擇 {name}",
+    "Fill in fields": "填寫欄位",
+    "Add fields": "新增欄位",
+    "Add a text field": "新增文字方塊",
+    "Add a checkbox": "新增核取方塊",
+    "Drag a field to move it, drag its corner to resize it, and edit its name in the box.": "拖曳欄位可移動,拖曳角落可調整大小,並可在方框中編輯其名稱。",
+    "Give every new field a name before saving.": "儲存前請為每個新欄位命名。",
+    "Two fields can’t share the name \"{name}\". Give each field its own name.": "兩個欄位不能使用相同的名稱「{name}」,請為每個欄位取不同的名稱。",
+    "Adding the field failed: {message}": "新增欄位失敗:{message}",
+    "Save PDF with new fields": "儲存含新欄位的 PDF",
+    "Text field - drag to move": "文字方塊 - 拖曳以移動",
+    "Checkbox field - drag to move": "核取方塊 - 拖曳以移動",
+    "Text field name": "文字方塊名稱",
+    "Checkbox field name": "核取方塊名稱",
+    "Remove this text field": "移除此文字方塊",
+    "Remove this checkbox field": "移除此核取方塊"
 }

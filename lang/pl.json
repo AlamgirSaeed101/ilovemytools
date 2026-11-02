@@ -1384,5 +1384,20 @@
     "No fillable fields were found in this PDF.": "W tym pliku PDF nie znaleziono żadnych pól do wypełnienia.",
     "Reading form fields…": "Wczytywanie pól formularza…",
     "Save filled PDF": "Zapisz wypełniony PDF",
-    "Select {name}": "Wybierz {name}"
+    "Select {name}": "Wybierz {name}",
+    "Fill in fields": "Wypełnij pola",
+    "Add fields": "Dodaj pola",
+    "Add a text field": "Dodaj pole tekstowe",
+    "Add a checkbox": "Dodaj pole wyboru",
+    "Drag a field to move it, drag its corner to resize it, and edit its name in the box.": "Przeciągnij pole, aby je przenieść, przeciągnij jego narożnik, aby zmienić rozmiar, i edytuj jego nazwę w polu.",
+    "Give every new field a name before saving.": "Nadaj nazwę każdemu nowemu polu przed zapisaniem.",
+    "Two fields can’t share the name \"{name}\". Give each field its own name.": "Dwa pola nie mogą mieć tej samej nazwy \"{name}\". Nadaj każdemu polu własną nazwę.",
+    "Adding the field failed: {message}": "Nie udało się dodać pola: {message}",
+    "Save PDF with new fields": "Zapisz PDF z nowymi polami",
+    "Text field - drag to move": "Pole tekstowe - przeciągnij, aby przesunąć",
+    "Checkbox field - drag to move": "Pole wyboru - przeciągnij, aby przesunąć",
+    "Text field name": "Nazwa pola tekstowego",
+    "Checkbox field name": "Nazwa pola wyboru",
+    "Remove this text field": "Usuń to pole tekstowe",
+    "Remove this checkbox field": "Usuń to pole wyboru"
 }

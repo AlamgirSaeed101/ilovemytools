@@ -28,6 +28,7 @@ text and change it in place, in the same font.
 4. [x] Session: auto-save and unsaved-changes warnings
 5. [ ] Fill PDF forms (new page) and create form fields
   - [x] Fill in a PDF's existing form fields (text boxes, checkboxes, dropdowns and radio buttons) as a new Fill form tab in Edit PDF, positioned over the page preview at each field's own widget rect; checkbox/dropdown/radio values round-trip through pdf-lib, text uses DejaVu Sans so non-Latin-1 answers still render. Creating new form fields is not part of this pass.
+  - [x] Create new form fields: an "Add fields" mode inside the Fill form tab lets you place a text box or a checkbox anywhere on the page (drag to move or resize, editable field name), then saves them as real, empty AcroForm fields with pdf-lib so any PDF reader - including this tool's own Fill form view - can fill them in afterwards. Dropdown and signature field creation are left for a future run.
 6. [ ] Page tools and signature inside the editor
 7. [ ] Landing pages for each mode: add text to PDF, whiteout PDF, edit PDF text, PDF annotator, fill PDF form, Sejda alternative
 
