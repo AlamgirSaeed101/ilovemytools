@@ -74,3 +74,21 @@ Claude can only send batches the owner approves. Waiting: 29 `new` rows in docs/
 the real benchmark) and the decline to Lilach Bullock. If Imghippo says yes, the article must be re-run
 on real photographs, as the pitch promises.
 
+## Audit of 2 Nov (grok page), checked against the live site
+Its crawl (464 URLs, 18 guides) predates the 2 Nov deploys, so the What Is My IP badge and Merge PDF FAQ
+were already fixed.
+- Shipped: Guides in nav, guides on category pages, /guides lastmod, honest dates on the 6 changed tools,
+  Merge PDF intro repeat (en, de), /security.txt redirect, comparison guide
+  /guides/ilovemytools-vs-ilovepdf-vs-smallpdf, screenshots on the top 10 tools (English pages), Split PDF
+  hint that suggested an impossible range on short PDFs.
+- Product Hunt: description fixed to 54 (the audit couldn't read PH). The ilovetools-3 slug stays; the name is right.
+- Already in place: ads and analytics load late. Not doing: inline CSS to a stylesheet (see above).
+- Owner: Sucuri overrides the 1-year cache header with max-age=86400 on /build/assets (the origin .htaccess is
+  right), so this is a Sucuri dashboard setting. Cold-page response time is Sucuri/GoDaddy too.
+- Owner decision: location. Site, Crunchbase say Islamabad; LinkedIn company and founder profile say Jhelum.
+- Submitted: Rankbench (/edit-pdf, nofollow ugc). Login needed: ThisTool, BetaList. Skipped: Techtools Launchpad
+  (186 unreviewed bot listings a day, a mass directory), uno.directory (badge required), ToolMato (sells posts),
+  Quick Tool Desk (catch-all guest posts from beauty to travel).
+- Not done: llms-full.txt (optional, unproven), Developer & SEO Tools category title (audit says later), self-hosted
+  font, privacy-proof video, citation checks for the Meta docs page (blocked for the extension).
+
