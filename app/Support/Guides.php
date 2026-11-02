@@ -10,6 +10,9 @@ use Illuminate\Support\Collection;
  */
 class Guides
 {
+    /** The author page of the guides' writer (the founder), linked from every byline. */
+    public const AUTHOR_PATH = '/about/m-alamgir-saeed';
+
     /** @return Collection<string, array<string, mixed>> */
     public static function all(): Collection
     {
@@ -92,5 +95,25 @@ class Guides
     public static function author(): string
     {
         return (string) (config('site.founder')['name'] ?? config('site.name'));
+    }
+
+    /** Link text for one of the founder's profiles: the site's name ("LinkedIn"), else its host. */
+    public static function profileLabel(string $url): string
+    {
+        $host = preg_replace('/^www\./', '', (string) parse_url($url, PHP_URL_HOST));
+
+        return match ($host) {
+            'linkedin.com' => 'LinkedIn',
+            'crunchbase.com' => 'Crunchbase',
+            'github.com' => 'GitHub',
+            'x.com', 'twitter.com' => 'X',
+            default => $host,
+        };
+    }
+
+    /** Absolute URL of the author page (English only). */
+    public static function authorUrl(): string
+    {
+        return Seo::absoluteUrl(self::AUTHOR_PATH);
     }
 }

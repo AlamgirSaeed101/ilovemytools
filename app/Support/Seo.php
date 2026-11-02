@@ -248,7 +248,7 @@ class Seo
             'inLanguage' => 'en',
             'datePublished' => $guide['published'],
             'dateModified' => $guide['updated'],
-            'author' => ['@type' => 'Person', 'name' => $author, 'url' => self::absoluteUrl('/about')],
+            'author' => ['@type' => 'Person', '@id' => Guides::authorUrl().'#person', 'name' => $author, 'url' => Guides::authorUrl()],
             'publisher' => ['@id' => self::absoluteUrl('/').'#organization'],
             'mainEntityOfPage' => $this->canonical,
             'citation' => array_map(fn ($s) => ['@type' => 'CreativeWork', 'name' => $s['title'], 'url' => $s['url']], $guide['sources'] ?? []),
@@ -268,6 +268,35 @@ class Seo
             'inLanguage' => Locale::hreflang(Locale::current()),
             'isPartOf' => ['@id' => self::absoluteUrl('/').'#website'],
             'mainEntity' => ['@id' => self::absoluteUrl('/').'#organization'],
+        ];
+
+        return $this;
+    }
+
+    /**
+     * The founder's author page: ProfilePage about a Person, linked to the Organization and to
+     * his public profiles (config site.founder.same_as).
+     */
+    public function profile(array $founder): self
+    {
+        $url = Guides::authorUrl();
+        $this->schemas[] = [
+            '@context' => 'https://schema.org',
+            '@type' => 'ProfilePage',
+            'name' => $this->title,
+            'url' => $url,
+            'inLanguage' => 'en',
+            'isPartOf' => ['@id' => self::absoluteUrl('/').'#website'],
+            'mainEntity' => array_filter([
+                '@type' => 'Person',
+                '@id' => $url.'#person',
+                'name' => $founder['name'],
+                'url' => $url,
+                'jobTitle' => 'Founder and developer of '.config('site.name'),
+                'worksFor' => ['@type' => 'Organization', '@id' => self::absoluteUrl('/').'#organization', 'name' => config('site.name'), 'url' => self::absoluteUrl('/')],
+                'homeLocation' => ['@type' => 'Place', 'name' => 'Islamabad, Pakistan'],
+                'sameAs' => array_values($founder['same_as'] ?? []) ?: null,
+            ], fn ($value) => $value !== null),
         ];
 
         return $this;
@@ -356,7 +385,8 @@ class Seo
             'foundingDate' => config('site.founded'),
             'foundingLocation' => ['@type' => 'Place', 'name' => 'Islamabad, Pakistan'],
             'slogan' => 'Free PDF, image and text tools that run in your browser',
-            'founder' => ($founder = config('site.founder')) ? array_filter(['@type' => 'Person', 'name' => $founder['name'] ?? null, 'url' => $founder['url'] ?? null, 'sameAs' => $founder['same_as'] ?? null]) : null,
+            // The founder's url is his author page on this site; his external profiles stay in sameAs.
+            'founder' => ($founder = config('site.founder')) ? array_filter(['@type' => 'Person', '@id' => Guides::authorUrl().'#person', 'name' => $founder['name'] ?? null, 'url' => Guides::authorUrl(), 'sameAs' => $founder['same_as'] ?? null]) : null,
             'knowsAbout' => ['PDF', 'Image compression', 'Image conversion', 'Word count', 'Readability', 'QR codes', 'Mortgage calculation', 'JSON', 'SEO'],
             'sameAs' => array_values(array_unique(array_filter([
                 ...(array) config('site.same_as', []),

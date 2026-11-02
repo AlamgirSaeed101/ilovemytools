@@ -66,7 +66,7 @@ class SeoFilesController extends Controller
             }
         }
         // Legal and company pages are indexed in English only (see Seo::englishOnly()).
-        foreach (['/about', '/contact', '/privacy-policy', '/terms'] as $path) {
+        foreach (['/about', \App\Support\Guides::AUTHOR_PATH, '/contact', '/privacy-policy', '/terms'] as $path) {
             $xml->startElement('url');
             $xml->writeElement('loc', Locale::url($path, Locale::default()));
             $xml->writeElement('lastmod', $latest);

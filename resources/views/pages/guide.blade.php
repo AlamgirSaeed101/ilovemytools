@@ -5,7 +5,7 @@
         @include('partials.breadcrumbs')
         <article class="prose page-article guide-article">
             <h1>{{ $guide['h1'] }}</h1>
-            <p class="text-sm text-muted">By <a href="{{ url('/about') }}">{{ \App\Support\Guides::author() }}</a> · Updated <time datetime="{{ $guide['updated'] }}">{{ \Illuminate\Support\Carbon::parse($guide['updated'])->isoFormat('LL') }}</time></p>
+            <p class="text-sm text-muted">By <a href="{{ url(\App\Support\Guides::AUTHOR_PATH) }}" rel="author">{{ \App\Support\Guides::author() }}</a> · Updated <time datetime="{{ $guide['updated'] }}">{{ \Illuminate\Support\Carbon::parse($guide['updated'])->isoFormat('LL') }}</time></p>
             <p class="lead">{{ $guide['intro'] }}</p>
 
             @foreach ($guide['sections'] as $section)

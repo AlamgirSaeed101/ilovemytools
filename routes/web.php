@@ -35,6 +35,8 @@ $toolSlugs = array_keys(config('tools', []));
 $pages = function () use ($toolSlugs) {
     Route::get('/', [PageController::class, 'home'])->name('home');
     Route::get('/about', [PageController::class, 'about'])->name('about');
+    // The founder's author page (E-E-A-T): indexed in English only, like the About page.
+    Route::get(\App\Support\Guides::AUTHOR_PATH, [PageController::class, 'author'])->name('author');
     Route::get('/contact', [PageController::class, 'contact'])->name('contact');
     Route::get('/privacy-policy', [PageController::class, 'privacy'])->name('privacy');
     Route::get('/terms', [PageController::class, 'terms'])->name('terms');
