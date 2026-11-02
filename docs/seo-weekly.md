@@ -1,5 +1,9 @@
 # Weekly SEO report
 
+## Week ending 2026-11-01
+
+**No data this week — Windsor.ai connector reads are paused.** Both `searchconsole` and `googleanalytics4` pulls returned the same error: "reads are paused because you have 2 accounts connected ... and your Free plan includes 1 account." (confirmed via `get_current_user`: plan `FREE`, `is_paid: false`). No numbers were estimated or carried forward to avoid showing fabricated data. This is an account-level fix (disconnect one of the two connected accounts, or upgrade the Windsor.ai plan, at https://onboard.windsor.ai/app/ or https://onboard.windsor.ai/app/pricing) — left for the owner to decide, since it affects which external account stays connected. See the 2026-10-24 report below for the last real data.
+
 ## Week ending 2026-10-24
 
 **DROP** — this week's Search Console impressions (4) are down from 949 last week, essentially a return to zero. No sign of recovery yet.
