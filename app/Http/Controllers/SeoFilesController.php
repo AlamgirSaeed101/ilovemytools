@@ -76,6 +76,7 @@ class SeoFilesController extends Controller
         // Guides exist in English only.
         $xml->startElement('url');
         $xml->writeElement('loc', Seo::absoluteUrl('/guides'));
+        $xml->writeElement('lastmod', (string) \App\Support\Guides::all()->max('updated'));
         $xml->writeElement('priority', '0.6');
         $xml->endElement();
         foreach (\App\Support\Guides::all() as $guide) {

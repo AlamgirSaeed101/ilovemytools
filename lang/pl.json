@@ -1400,5 +1400,6 @@
     "Checkbox field name": "Nazwa pola wyboru",
     "Remove this text field": "Usuń to pole tekstowe",
     "Remove this checkbox field": "Usuń to pole wyboru",
-    "This tool asks our server which IP address your request came from and shows it to you. We don’t store it.": "To narzędzie pyta nasz serwer, z jakiego adresu IP przyszło Twoje żądanie, i pokazuje Ci go. Nie zapisujemy go."
+    "This tool asks our server which IP address your request came from and shows it to you. We don’t store it.": "To narzędzie pyta nasz serwer, z jakiego adresu IP przyszło Twoje żądanie, i pokazuje Ci go. Nie zapisujemy go.",
+    "Guides": "Poradniki"
 }

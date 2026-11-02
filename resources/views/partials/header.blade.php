@@ -10,6 +10,7 @@
                 @foreach ($registry->categories() as $slug => $category)
                     <li><a href="{{ lurl('category/'.$slug) }}">{{ $category['name'] }}</a></li>
                 @endforeach
+                <li><a href="{{ url('/guides') }}">{{ t('Guides') }}</a></li>
             </ul>
         </nav>
 

@@ -17,6 +17,7 @@ Route::get('/robots.txt', [SeoFilesController::class, 'robots'])->name('robots')
 Route::get('/ads.txt', [SeoFilesController::class, 'ads'])->name('ads');
 Route::get('/llms.txt', [SeoFilesController::class, 'llms'])->name('llms');
 Route::get('/.well-known/security.txt', [SeoFilesController::class, 'security'])->name('security');
+Route::redirect('/security.txt', '/.well-known/security.txt', 301);
 
 // Newsletter links from emails (not language-prefixed; they redirect to the subscriber's language).
 Route::get('/newsletter/confirm/{token}', [NewsletterController::class, 'confirm'])->where('token', '[A-Za-z0-9]{20,64}')->name('newsletter.confirm');

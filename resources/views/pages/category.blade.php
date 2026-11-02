@@ -30,6 +30,19 @@
                 </table>
             </div>
 
+            @php($categoryGuides = \App\Support\Guides::forTools($tools->keys()->all()))
+            @if ($categoryGuides !== [])
+                <h2 id="guides">{{ t('Guides') }}</h2>
+                <ul class="guide-links">
+                    @foreach ($categoryGuides as $guide)
+                        <li>
+                            <a href="{{ url('/guides/'.$guide['slug']) }}" lang="en">{{ $guide['title'] }}</a>
+                            <p lang="en">{{ $guide['description'] }}</p>
+                        </li>
+                    @endforeach
+                </ul>
+            @endif
+
             @foreach ($category['content'] ?? [] as $section)
                 <h2>{{ $section['heading'] }}</h2>
                 <p>{{ $section['body'] }}</p>

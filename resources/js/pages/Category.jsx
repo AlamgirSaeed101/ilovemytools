@@ -59,6 +59,20 @@ export default function Category() {
                     </table>
                 </div>
 
+                {category.guides?.length > 0 && (
+                    <>
+                        <h2 id="guides">{t('Guides')}</h2>
+                        <ul className="guide-links">
+                            {category.guides.map((g) => (
+                                <li key={g.slug}>
+                                    <a href={`/guides/${g.slug}`} lang="en">{g.title}</a>
+                                    <p lang="en">{g.description}</p>
+                                </li>
+                            ))}
+                        </ul>
+                    </>
+                )}
+
                 {(category.content ?? []).map((section) => (
                     <div key={section.heading}>
                         <h2>{section.heading}</h2>

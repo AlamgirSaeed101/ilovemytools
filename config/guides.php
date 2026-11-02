@@ -1660,4 +1660,72 @@ return [
         ],
     ],
 
+    'ilovemytools-vs-ilovepdf-vs-smallpdf' => [
+        'title' => 'ILoveMyTools vs iLovePDF vs Smallpdf: Who Uploads Your PDF?',
+        'description' => 'An honest comparison of three free PDF sites: where your file goes, how long it is kept, what the free plan limits, and when the bigger services are the better pick.',
+        'h1' => 'ILoveMyTools vs iLovePDF vs Smallpdf',
+        'intro' => 'The main difference between these three sites is where your file is processed. iLovePDF and Smallpdf upload your PDF to their servers and delete it later; ILoveMyTools does the work inside your browser, so the file stays on your device. That does not make one of them best for everything. We built ILoveMyTools, so read this with that in mind: every claim about the other two comes from their own pages, linked below, as they read on 2 November 2026.',
+        'tool' => 'protect-pdf',
+        'related' => ['merge-pdf', 'compress-pdf', 'edit-pdf'],
+        'published' => '2026-11-02',
+        'updated' => '2026-11-02',
+        'sections' => [
+            [
+                'heading' => 'The short comparison',
+                'paragraphs' => [
+                    'The table covers what matters most for an everyday job. Prices and limits change often, so check the linked pages before you rely on a figure.',
+                ],
+                'table' => [
+                    'headers' => ['', 'ILoveMyTools', 'iLovePDF', 'Smallpdf'],
+                    'rows' => [
+                        ['Where a PDF is processed', 'In your browser', 'On their servers', 'On their servers'],
+                        ['How long the file is kept', 'Never received', 'Up to 2 hours', 'Deleted after 1 hour'],
+                        ['Free plan', 'Everything free, no daily limit', 'Limited document processing', 'Limited use, varies by tool'],
+                        ['Paid plan', 'None', 'Premium from $4 a month, billed yearly', 'Pro plan available'],
+                        ['Ads', 'Yes', 'Free plan has ads; Premium is ad-free', 'Check their current plans'],
+                        ['Desktop and mobile apps', 'No, website only', 'Yes, with Premium', 'Check their current plans'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'Does uploading matter?',
+                'paragraphs' => [
+                    'Uploading is not automatically unsafe. iLovePDF says uploads are encrypted and that files stay on its servers for a maximum of 2 hours. Smallpdf says its files are protected with TLS encryption, that it complies with GDPR and is ISO/IEC 27001 certified, and that files are deleted automatically after one hour. For a lunch menu or a public brochure, that is plenty.',
+                    'It matters more for a passport scan, a contract, a payslip or medical records, or if your employer does not allow documents on outside services. A file that is never sent cannot be stored or leaked by the site. You do not have to take our word for that: our guide on [how to check if a tool uploads your file](/guides/how-to-check-if-an-online-tool-uploads-your-file) shows how to test any site in a few minutes, including this one.',
+                ],
+            ],
+            [
+                'heading' => 'When iLovePDF or Smallpdf is the better choice',
+                'paragraphs' => [
+                    'The bigger services have real advantages, and it would be misleading to skip them. They are the better pick in these cases:',
+                ],
+                'list' => [
+                    'You need desktop or mobile apps, not just a website.',
+                    'You work in a team and want shared accounts, invoicing or company contracts.',
+                    'You work with very large files on a slow phone or an old computer. A server does the heavy work for you, while our tools use your own device\'s memory.',
+                    'You want a site with no ads. Paid plans remove them; ILoveMyTools shows ads on every page and has no paid plan.',
+                ],
+            ],
+            [
+                'heading' => 'When ILoveMyTools is the better choice',
+                'paragraphs' => [
+                    'Our tools suit a different need: you want the job done now, on a private file, with no account. You can [merge up to 50 PDFs](/merge-pdf), [compress a PDF](/compress-pdf), [change the text already in a PDF](/edit-pdf), or [redact it properly](/redact-pdf) with no sign-up, no watermark and no daily limit, and the file stays on your device.',
+                    'There are limits to be honest about. Because everything runs on your device, a very large file can be slow or fail on a phone with little memory. The site also has a few lookup tools, such as the Bulk Domain Authority Checker, that have to use our server, and they say so on the page. Those tools handle web addresses, not your files.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Does iLovePDF upload my files?', 'a' => 'Yes. iLovePDF processes files on its servers. Its FAQ says uploads are encrypted and files are kept for a maximum of 2 hours so you can download the result.'],
+            ['q' => 'Does Smallpdf upload my files?', 'a' => 'Yes. Smallpdf asks you to upload the file and says it deletes files automatically after one hour, with TLS encryption in transit.'],
+            ['q' => 'Does ILoveMyTools upload my files?', 'a' => 'No, not for its file tools. PDFs, images and text are processed in your browser with PDF.js, pdf-lib and Canvas. You can confirm it in your browser\'s Network tab. A few lookup tools use our server for the web addresses you enter.'],
+            ['q' => 'Which one is best?', 'a' => 'It depends on the job. For a private file and no account, a browser-based tool is a good fit. For apps, team features or very large files on a weak device, a paid server-based service may suit you better.'],
+        ],
+        'sources' => [
+            ['title' => 'iLovePDF, Frequently asked questions', 'url' => 'https://www.ilovepdf.com/help/faq'],
+            ['title' => 'iLovePDF, Pricing plans', 'url' => 'https://www.ilovepdf.com/pricing'],
+            ['title' => 'Smallpdf, Compress PDF (security notes on the page)', 'url' => 'https://smallpdf.com/compress-pdf'],
+            ['title' => 'Compare Tools, Best free online PDF tools in 2026', 'url' => 'https://comparetools.io/best-free-online-pdf-tools/'],
+        ],
+    ],
+
 ];

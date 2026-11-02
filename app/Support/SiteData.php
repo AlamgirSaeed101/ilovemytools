@@ -218,6 +218,7 @@ class SiteData
             'content' => array_values($category['content'] ?? []),
             'faqs' => array_values($category['faqs'] ?? []),
             'tools' => $this->registry->inCategory($slug)->keys()->all(),
+            'guides' => Guides::forTools($this->registry->inCategory($slug)->keys()->all()),
             'meta' => $this->meta($category['title'], $category['description']),
         ];
     }

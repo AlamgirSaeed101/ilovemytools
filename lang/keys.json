@@ -3379,6 +3379,15 @@
     ]
   },
   {
+    "key": "Guides",
+    "files": [
+      "resources/js/components/Layout.jsx",
+      "resources/js/pages/Category.jsx",
+      "resources/views/pages/category.blade.php",
+      "resources/views/partials/header.blade.php"
+    ]
+  },
+  {
     "key": "Gunning Fog Index",
     "files": [
       "resources/js/tools/ReadabilityChecker.jsx"

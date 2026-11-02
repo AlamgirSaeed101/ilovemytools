@@ -32,6 +32,15 @@ class Guides
         return self::all()->first(fn (array $guide) => $guide['tool'] === $toolSlug);
     }
 
+    /** Guides about any of these tools, for category pages. @return array<int, array<string, string>> */
+    public static function forTools(array $toolSlugs): array
+    {
+        return self::all()
+            ->filter(fn (array $guide) => in_array($guide['tool'], $toolSlugs, true))
+            ->map(fn (array $guide) => self::summary($guide))
+            ->values()->all();
+    }
+
     /** Short card data for lists and the React app. */
     public static function summary(array $guide): array
     {

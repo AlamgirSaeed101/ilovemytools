@@ -284,6 +284,7 @@ function Header({ onSearch }) {
 
                 <nav className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 lg:flex" aria-label={t('Main')}>
                     <CategoryNav categories={site.categories} tools={site.tools} />
+                    <a className={navLink} href="/guides">{t('Guides')}</a>
                 </nav>
 
                 <div className="ms-auto flex shrink-0 items-center gap-1.5 sm:gap-2">
@@ -327,6 +328,7 @@ function Header({ onSearch }) {
                                 {c.name}
                             </Link>
                         ))}
+                        <a className={mobileLink} href="/guides">{t('Guides')}</a>
                         <Link className={mobileLink} to="/about">{t('About')}</Link>
                         <Link className={mobileLink} to="/contact">{t('Contact')}</Link>
                         <p className="m-0 mt-4 mb-2 flex items-center gap-2 px-1.5 text-xs font-extrabold tracking-wider text-muted uppercase">

@@ -165,6 +165,20 @@ class IndexingTest extends TestCase
         $this->assertMatchesRegularExpression('#"numberOfItems":\s*'.Guides::all()->count().'#', $hub);
     }
 
+    public function test_guides_are_in_the_nav_on_category_pages_and_dated_in_the_sitemap(): void
+    {
+        $guide = Guides::find('how-to-merge-pdf-files');
+
+        foreach (['/category/pdf-tools', '/de/category/pdf-tools'] as $path) {
+            $html = $this->get($path)->assertOk()->getContent();
+            $this->assertStringContainsString('<li><a href="'.url('/guides').'">', $html, "{$path} has Guides in the nav.");
+            $this->assertStringContainsString(url('/guides/'.$guide['slug']).'" lang="en"', $html, "{$path} lists its guides.");
+        }
+
+        $this->assertMatchesRegularExpression('#<loc>'.preg_quote(url('/guides'), '#').'</loc>\s*<lastmod>\d{4}-\d\d-\d\d</lastmod>#', $this->get('/sitemap.xml')->getContent());
+        $this->get('/security.txt')->assertStatus(301)->assertRedirect('/.well-known/security.txt');
+    }
+
     public function test_unknown_urls_are_404_noindex_without_a_canonical(): void
     {
         $html = $this->get('/no-such-page-xyz')->assertNotFound()->getContent();
