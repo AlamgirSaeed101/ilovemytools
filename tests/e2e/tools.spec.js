@@ -845,6 +845,31 @@ test.describe('PDF tools', () => {
         expect(form.getDropdown('country').getSelected()).toEqual(['DE']);
     });
 
+    test('edit PDF: Fill form - Add fields creates a new, named text field and checkbox in the saved PDF', async ({ page }) => {
+        await openTool(page, 'edit-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'blank.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
+
+        await page.getByRole('tab', { name: 'Fill form' }).click();
+        await expect(page.getByText('No fillable fields were found in this PDF.')).toBeVisible();
+
+        await page.getByRole('tab', { name: 'Add fields' }).click();
+        await page.getByRole('button', { name: 'Add a text field' }).click();
+        await page.getByRole('button', { name: 'Add a checkbox' }).click();
+
+        const names = page.locator('.pdf-editor__fieldname');
+        await expect(names).toHaveCount(2);
+        await names.nth(0).fill('email');
+        await names.nth(1).fill('subscribe');
+
+        await page.getByRole('button', { name: 'Save PDF with new fields' }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(file.suggestedFilename()).toBe('blank-form.pdf');
+        const saved = await PDFDocument.load(await readDownload(file));
+        const form = saved.getForm();
+        expect(form.getTextField('email')).toBeTruthy();
+        expect(form.getCheckBox('subscribe').isChecked()).toBe(false);
+    });
+
     test('edit PDF: dragging an element\'s rotate handle spins it in place and the saved PDF still reads its text', async ({ page }) => {
         await openTool(page, 'edit-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'rotated.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });

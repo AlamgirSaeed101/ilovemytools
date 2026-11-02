@@ -1,7 +1,7 @@
 // Filling in a PDF's existing AcroForm fields (Edit PDF's "Fill form" tab). pdf-lib reads and
 // writes the fields directly; this file only turns that into a flat list the editor can render
 // as overlay inputs on top of the page preview, and turns the answers back into field values.
-import { PDFCheckBox, PDFDropdown, PDFRadioGroup, PDFTextField } from 'pdf-lib';
+import { PDFCheckBox, PDFDropdown, PDFRadioGroup, PDFTextField, rgb } from 'pdf-lib';
 import { embedDocumentFonts } from './pdfFonts.js';
 
 /**
@@ -69,6 +69,40 @@ export async function buildFilledFormPdf(doc, values) {
         form.updateFieldAppearances(fonts.regular);
     } catch {
         // Falls back to pdf-lib's own Helvetica appearance update on save below.
+    }
+    const bytes = await doc.save();
+    return new Blob([bytes], { type: 'application/pdf' });
+}
+
+/**
+ * Checks that every new field in `newFields` (each `{ name }`) has a non-empty name and that no
+ * two of them, or one of them and an existing field, share a name - pdf-lib throws if a field
+ * with the given name already exists. Returns `{ ok: true }` or `{ ok: false, reason, name? }`.
+ */
+export function validateNewFieldNames(newFields, existingNames) {
+    const seen = new Set(existingNames);
+    for (const field of newFields) {
+        const name = field.name.trim();
+        if (!name) return { ok: false, reason: 'empty' };
+        if (seen.has(name)) return { ok: false, reason: 'duplicate', name };
+        seen.add(name);
+    }
+    return { ok: true };
+}
+
+/**
+ * Creates new, empty AcroForm fields in `doc` - a text box or a checkbox, one widget each, placed
+ * at `rectPdf` on `page` - and returns the finished PDF as a Blob. `fields`: an array of
+ * `{ fieldType: 'text' | 'checkbox', name, page, rectPdf: {x, y, width, height} }`. The fields are
+ * created empty; this tool's "Fill form" view can fill them in once the file is reopened.
+ */
+export async function buildPdfWithNewFields(doc, fields) {
+    const form = doc.getForm();
+    for (const field of fields) {
+        const page = doc.getPage(field.page);
+        const box = { ...field.rectPdf, borderWidth: 1, borderColor: rgb(0.45, 0.45, 0.45) };
+        if (field.fieldType === 'checkbox') form.createCheckBox(field.name).addToPage(page, box);
+        else form.createTextField(field.name).addToPage(page, box);
     }
     const bytes = await doc.save();
     return new Blob([bytes], { type: 'application/pdf' });
