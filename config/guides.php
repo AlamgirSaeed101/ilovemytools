@@ -1728,4 +1728,79 @@ return [
         ],
     ],
 
+    'how-much-sleep-do-you-need-sleep-cycles' => [
+        'title' => 'How Much Sleep You Need: A Guide to Sleep Cycles',
+        'description' => 'How much sleep adults, teens and kids actually need, why 90-minute sleep cycles matter more than a round number of hours, and how to time an alarm.',
+        'h1' => 'How much sleep you need: a guide to sleep cycles',
+        'intro' => '"Get 8 hours" is the sleep advice everyone has heard, but it misses the part that actually decides whether you wake up groggy or refreshed: where in a sleep cycle your alarm happens to land. Two people can both sleep exactly 8 hours and have completely different mornings, because one woke at the end of a cycle and the other was pulled out of deep sleep halfway through one. Here is what the research actually recommends by age, how sleep cycles work, and how to use that to pick a better bedtime or alarm.',
+        'tool' => 'sleep-calculator',
+        'related' => ['stopwatch', 'countdown-timer', 'age-calculator'],
+        'published' => '2026-11-03',
+        'updated' => '2026-11-03',
+        'sections' => [
+            [
+                'heading' => 'How much sleep you actually need, by age',
+                'paragraphs' => [
+                    'Sleep need is not one number for everyone - it changes a lot with age, and the ranges below come from the two main US sleep health bodies, the American Academy of Sleep Medicine and the Sleep Foundation, who largely agree with each other. Adults need less sleep than teenagers, who in turn need less than school-age children, because a developing brain and body need more time in the deeper and REM stages of sleep that drive growth and memory consolidation.',
+                    'These are ranges, not a single target. Sleeping slightly outside the range occasionally is normal; feeling consistently exhausted inside the "recommended" range is a signal to look at sleep quality, not just quantity - a cycle interrupted by a poorly timed alarm, noise, light, or a condition like sleep apnea can make 8 hours feel like 5.',
+                ],
+                'table' => [
+                    'headers' => ['Age group', 'Recommended sleep', 'Typical in sleep cycles (90 min each)'],
+                    'rows' => [
+                        ['School-age children (6-12)', '9-12 hours', '6-8 cycles'],
+                        ['Teenagers (13-18)', '8-10 hours', '5.5-6.5 cycles'],
+                        ['Adults (18+)', '7-9 hours', '4.5-6 cycles'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'What a sleep cycle actually is',
+                'paragraphs' => [
+                    'Overnight, sleep does not stay at one depth - it moves through a repeating cycle of light sleep, deep sleep and REM (the dreaming stage), and one full cycle takes roughly 90 minutes, usually ranging from about 80 to 120 minutes depending on the person and the time of night. Most adults go through four to six of these cycles in a night.',
+                    'The mix changes as the night goes on: the first couple of cycles contain the most deep sleep, which is the stage most linked to physical recovery, while the later cycles, closer to morning, contain more REM, which is more linked to memory and dreaming. That is one reason a short night costs you disproportionately more REM sleep than deep sleep - you lose the cycles at the end first.',
+                    'Near the very end of each cycle, sleep becomes light again for a short stretch before the next cycle begins (or before you wake up for the day). Waking during that light stretch usually feels easy; waking in the middle of a deep-sleep stage is what produces that disoriented, heavy-headed feeling called sleep inertia.',
+                ],
+            ],
+            [
+                'heading' => 'Working out a better bedtime or alarm, step by step',
+                'list' => [
+                    'Pick a fixed point: either the time you need to wake up, or the time you plan to go to bed.',
+                    'Count backward or forward in 90-minute steps from that point, in whole cycles - 4 cycles is 6 hours, 5 cycles is 7.5 hours, 6 cycles is 9 hours.',
+                    'Add the time it typically takes you to fall asleep (commonly 10-20 minutes) on top of that, since the cycles only start once you are actually asleep.',
+                    'Favour 5 or 6 full cycles for most adults, since that lands inside the 7-9 hour range public health guidance recommends.',
+                    'If you are short on time, prefer waking a full cycle earlier (so after 4 cycles instead of partway into a 5th) rather than letting an alarm cut a cycle in the middle - less total sleep but an easier wake-up.',
+                    'The [Sleep Calculator](/sleep-calculator) does this arithmetic for you: enter a wake-up time, a bedtime, or use "Sleep now", and it lists the matching times by cycle count, plus a chart of the night ahead.',
+                ],
+            ],
+            [
+                'heading' => 'Three habits that undo good timing',
+                'paragraphs' => [
+                    'An irregular schedule. Sleep cycles are fairly consistent in length once you are actually asleep, but a bedtime that moves by two or three hours night to night makes it much harder to predict - and often harder to reach - deep, restorative sleep at all. A regular sleep and wake time, even on weekends, does more for daytime alertness than chasing an exact cycle count on any single night.',
+                    'Treating "cycle count" as more precise than it is. 90 minutes is an average, not a fixed number - actual cycle length varies from person to person and can shift across a single night (earlier cycles sometimes run a little longer than later ones). Use the cycle math to pick a sensible range of good options, not a single exact minute to aim for.',
+                    'Screens and light right before bed. Bright light, especially from a phone or laptop held close to the face, suppresses the release of melatonin, the hormone that signals it is time to sleep, which can both delay falling asleep and shift when your cycles start relative to your alarm.',
+                ],
+            ],
+            [
+                'heading' => 'Checklist for a better night',
+                'list' => [
+                    'Pick a wake-up time and count back in whole 90-minute cycles rather than just subtracting "8 hours".',
+                    'Add your own typical time-to-fall-asleep on top, instead of assuming you are asleep the instant you lie down.',
+                    'Keep the same bed and wake time daily, weekends included, so your body\'s own rhythm lines up with the schedule you want.',
+                    'If you consistently feel exhausted after a full night that fits the recommended range, treat that as a sign to check sleep quality (noise, light, screens, stress) or speak to a doctor, rather than just sleeping more.',
+                    'Use a consistent way to time your night - the [Stopwatch](/stopwatch) or [Countdown Timer](/countdown-timer) for naps, or the Sleep Calculator\'s own hours-slept counter for a full night.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Is it better to sleep in full 90-minute cycles than to just get 8 hours?', 'a' => 'Timing an alarm for the end of a cycle tends to make waking up feel easier, but total sleep time still matters most for health - don\'t cut hours short just to land on a round number of cycles. Use the cycle math to fine-tune timing within a healthy range, not to justify sleeping less.'],
+            ['q' => 'Does everyone have exactly 90-minute sleep cycles?', 'a' => 'No. 90 minutes is a commonly cited average; real cycle length varies from person to person and can range from about 80 to 120 minutes, and it can shift slightly across a single night.'],
+            ['q' => 'Why do I wake up tired after what felt like a full night of sleep?', 'a' => 'It often means your alarm or a disturbance happened during a deep-sleep stage rather than at the lighter transition between cycles. Shifting your bedtime or wake time by 15-30 minutes at a time can help you land on an easier point in the cycle.'],
+        ],
+        'sources' => [
+            ['title' => 'Sleep Foundation, How much sleep do you need?', 'url' => 'https://www.sleepfoundation.org/how-sleep-works/how-much-sleep-do-we-really-need'],
+            ['title' => 'National Sleep Foundation, How many hours of sleep do you really need?', 'url' => 'https://www.thensf.org/how-many-hours-of-sleep-do-you-really-need/'],
+            ['title' => 'CDC, About Sleep', 'url' => 'https://www.cdc.gov/sleep/about/index.html'],
+        ],
+    ],
+
 ];
