@@ -1,6 +1,6 @@
 import { PDFDocument, StandardFonts } from 'pdf-lib';
 import { describe, expect, it } from 'vitest';
-import { buildFilledFormPdf, buildPdfWithNewFields, readFormFields, validateNewFieldNames } from './pdfForm.js';
+import { buildFilledFormPdf, buildPdfWithNewFields, parseDropdownOptions, readFormFields, validateNewFieldNames } from './pdfForm.js';
 
 async function docWithFields() {
     const doc = await PDFDocument.create();
@@ -107,6 +107,30 @@ describe('validateNewFieldNames', () => {
     it('rejects a new field that collides with an existing field', () => {
         expect(validateNewFieldNames([{ name: 'full_name' }], ['full_name'])).toEqual({ ok: false, reason: 'duplicate', name: 'full_name' });
     });
+
+    it('rejects a dropdown with fewer than two options', () => {
+        expect(validateNewFieldNames([{ name: 'country', fieldType: 'dropdown', options: ['UK'] }], [])).toEqual({ ok: false, reason: 'options', name: 'country' });
+        expect(validateNewFieldNames([{ name: 'country', fieldType: 'dropdown', options: [] }], [])).toEqual({ ok: false, reason: 'options', name: 'country' });
+    });
+
+    it('accepts a dropdown with two or more options', () => {
+        expect(validateNewFieldNames([{ name: 'country', fieldType: 'dropdown', options: ['UK', 'US'] }], [])).toEqual({ ok: true });
+    });
+});
+
+describe('parseDropdownOptions', () => {
+    it('splits, trims and drops empty entries', () => {
+        expect(parseDropdownOptions('UK, US ,  , DE')).toEqual(['UK', 'US', 'DE']);
+    });
+
+    it('de-duplicates while keeping the first occurrence order', () => {
+        expect(parseDropdownOptions('UK, US, UK')).toEqual(['UK', 'US']);
+    });
+
+    it('returns an empty list for blank or missing input', () => {
+        expect(parseDropdownOptions('')).toEqual([]);
+        expect(parseDropdownOptions(undefined)).toEqual([]);
+    });
 });
 
 describe('buildPdfWithNewFields', () => {
@@ -121,6 +145,18 @@ describe('buildPdfWithNewFields', () => {
         const form = reloaded.getForm();
         expect(form.getTextField('email').getText()).toBeUndefined();
         expect(form.getCheckBox('subscribe').isChecked()).toBe(false);
+    });
+
+    it('creates a dropdown field with its options at the given rect', async () => {
+        const doc = await PDFDocument.create();
+        doc.addPage([400, 400]);
+        const blob = await buildPdfWithNewFields(doc, [
+            { fieldType: 'dropdown', name: 'country', page: 0, rectPdf: { x: 40, y: 300, width: 180, height: 24 }, options: ['UK', 'US', 'DE'] },
+        ]);
+        const reloaded = await PDFDocument.load(new Uint8Array(await blob.arrayBuffer()));
+        const dropdown = reloaded.getForm().getDropdown('country');
+        expect(dropdown.getOptions()).toEqual(['UK', 'US', 'DE']);
+        expect(dropdown.getSelected()).toEqual([]);
     });
 
     it('throws when a new field name already exists in the document', async () => {

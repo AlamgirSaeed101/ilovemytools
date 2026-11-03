@@ -770,6 +770,12 @@
     ]
   },
   {
+    "key": "Add a dropdown field",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Add a text field",
     "files": [
       "resources/js/tools/EditPdf.jsx"
@@ -2528,6 +2534,24 @@
     ]
   },
   {
+    "key": "Dropdown field - drag to move",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Dropdown field name",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Dropdown options, separated by commas",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "e.g. 1-3, 5",
     "files": [
       "resources/js/tools/EditPdf.jsx"
@@ -3331,6 +3355,12 @@
   },
   {
     "key": "Give every new field a name before saving.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Give the dropdown \"{name}\" at least two options, separated by commas.",
     "files": [
       "resources/js/tools/EditPdf.jsx"
     ]
@@ -4760,6 +4790,12 @@
     ]
   },
   {
+    "key": "Option 1, Option 2",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Orientation",
     "files": [
       "resources/js/tools/ExcelToPdf.jsx",
@@ -5720,6 +5756,12 @@
   },
   {
     "key": "Remove this drawing",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Remove this dropdown field",
     "files": [
       "resources/js/tools/EditPdf.jsx"
     ]

@@ -2202,7 +2202,7 @@ return [
             'Miniature delle pagine per saltare direttamente a qualsiasi pagina',
             'Il tuo lavoro viene salvato automaticamente mentre modifichi, così un aggiornamento o una chiusura accidentale non lo perde mai',
             'Compila i campi di un modulo esistente: caselle di testo, caselle di controllo, menu a discesa e pulsanti di opzione',
-            'Crea nuovi campi: una casella di testo o una casella di controllo, posizionata ovunque sulla pagina',
+            'Crea nuovi campi: una casella di testo, una casella di controllo o un menu a discesa, posizionato ovunque sulla pagina',
         ],
         'content' => [
             ['heading' => 'Come funziona la modifica del testo esistente', 'body' => 'Fai clic su una riga di testo e scrivi. La vecchia formulazione viene coperta con il colore che le sta dietro e la nuova viene disegnata nella stessa posizione, dimensione e colore, usando il carattere incorporato nel PDF. I PDF di solito incorporano solo le lettere che usano: se il nuovo testo richiede una lettera che il file non conteneva, quella riga passa al carattere standard più simile e l’editor ti dice quali lettere lo hanno causato. Le pagine scansionate sono immagini senza testo modificabile; lì usa Copri con bianco e Aggiungi testo.'],

@@ -389,9 +389,9 @@ export default function EditPdf({ initialMode } = {}) {
         }
     }
 
-    /** The first "Text field N" / "Checkbox N" name not already used by an existing or a new field. */
+    /** The first "Text field N" / "Checkbox N" / "Dropdown N" name not already used by an existing or a new field. */
     function nextFieldName(kind) {
-        const prefix = kind === 'checkbox' ? 'Checkbox' : 'Text field';
+        const prefix = kind === 'checkbox' ? 'Checkbox' : kind === 'dropdown' ? 'Dropdown' : 'Text field';
         const used = new Set([...formFields.map((f) => f.name), ...elements.filter((el) => el.type === 'formfield').map((el) => el.name)]);
         let n = 1;
         while (used.has(`${prefix} ${n}`)) n += 1;
@@ -401,9 +401,9 @@ export default function EditPdf({ initialMode } = {}) {
     function addFormField(kind) {
         if (!canvasSize.width) return;
         const width = kind === 'checkbox' ? 24 : 160;
-        const height = kind === 'checkbox' ? 24 : 32;
+        const height = kind === 'checkbox' ? 24 : kind === 'dropdown' ? 54 : 32;
         const rect = clampRect({ x: (canvasSize.width - width) / 2, y: (canvasSize.height - height) / 2, width, height }, canvasSize.width, canvasSize.height, 10);
-        pushElement({ type: 'formfield', fieldType: kind, name: nextFieldName(kind), ...rect });
+        pushElement({ type: 'formfield', fieldType: kind, name: nextFieldName(kind), ...(kind === 'dropdown' ? { optionsText: '' } : {}), ...rect });
     }
 
     async function applyNewFormFields() {
@@ -413,21 +413,33 @@ export default function EditPdf({ initialMode } = {}) {
         setWorking(true);
         setError('');
         try {
-            const { validateNewFieldNames, buildPdfWithNewFields } = await loadForm();
-            const named = toCreate.map((el) => ({ ...el, name: el.name.trim() }));
+            const { validateNewFieldNames, buildPdfWithNewFields, parseDropdownOptions } = await loadForm();
+            const named = toCreate.map((el) => ({
+                ...el,
+                name: el.name.trim(),
+                ...(el.fieldType === 'dropdown' ? { options: parseDropdownOptions(el.optionsText) } : {}),
+            }));
             const check = validateNewFieldNames(named, formFields.map((f) => f.name));
             if (!check.ok) {
                 setError(
                     check.reason === 'duplicate'
                         ? t('Two fields can’t share the name "{name}". Give each field its own name.', { name: check.name })
-                        : t('Give every new field a name before saving.')
+                        : check.reason === 'options'
+                          ? t('Give the dropdown "{name}" at least two options, separated by commas.', { name: check.name })
+                          : t('Give every new field a name before saving.')
                 );
                 return;
             }
             const fields = named.map((el) => {
                 const size = doc.getPage(el.page).getSize();
                 const scaleForPage = computeDisplayScale(size.width, size.height);
-                return { fieldType: el.fieldType, name: el.name, page: el.page, rectPdf: canvasRectToPdfRect(el, scaleForPage, size.height) };
+                return {
+                    fieldType: el.fieldType,
+                    name: el.name,
+                    page: el.page,
+                    rectPdf: canvasRectToPdfRect(el, scaleForPage, size.height),
+                    ...(el.fieldType === 'dropdown' ? { options: el.options } : {}),
+                };
             });
             const blob = await buildPdfWithNewFields(doc, fields);
             setResult({ blob, name: safeFilename(`${baseName(file.name)}-form.pdf`) });
@@ -1035,6 +1047,7 @@ export default function EditPdf({ initialMode } = {}) {
                                 <>
                                     <button type="button" className="btn btn--sm" onClick={() => addFormField('text')}>{t('Add a text field')}</button>
                                     <button type="button" className="btn btn--sm" onClick={() => addFormField('checkbox')}>{t('Add a checkbox')}</button>
+                                    <button type="button" className="btn btn--sm" onClick={() => addFormField('dropdown')}>{t('Add a dropdown field')}</button>
                                     <span className="field__hint" style={{ margin: 0 }}>{t('Drag a field to move it, drag its corner to resize it, and edit its name in the box.')}</span>
                                 </>
                             ) : (
@@ -1338,27 +1351,41 @@ export default function EditPdf({ initialMode } = {}) {
                         }
                         if (el.type === 'formfield') {
                             const checkbox = el.fieldType === 'checkbox';
+                            const dropdown = el.fieldType === 'dropdown';
+                            const dragLabel = checkbox ? t('Checkbox field - drag to move') : dropdown ? t('Dropdown field - drag to move') : t('Text field - drag to move');
+                            const nameLabel = checkbox ? t('Checkbox field name') : dropdown ? t('Dropdown field name') : t('Text field name');
+                            const removeLabel = checkbox ? t('Remove this checkbox field') : dropdown ? t('Remove this dropdown field') : t('Remove this text field');
                             return (
                                 <div
                                     key={el.id}
-                                    className="pdf-editor__overlay pdf-editor__overlay--field"
+                                    className={`pdf-editor__overlay pdf-editor__overlay--field${dropdown ? ' pdf-editor__overlay--dropdown' : ''}`}
                                     style={{ left: el.x, top: el.y, width: el.width, height: el.height }}
                                     onPointerDown={(e) => startDrag(e, el.id, 'move')}
                                     role="button"
                                     tabIndex={0}
-                                    aria-label={checkbox ? t('Checkbox field - drag to move') : t('Text field - drag to move')}
+                                    aria-label={dragLabel}
                                 >
                                     <input
                                         className="pdf-editor__fieldname"
                                         value={el.name}
                                         onPointerDown={(e) => e.stopPropagation()}
                                         onChange={(e) => updateElement(el.id, { name: e.target.value })}
-                                        aria-label={checkbox ? t('Checkbox field name') : t('Text field name')}
+                                        aria-label={nameLabel}
                                     />
+                                    {dropdown && (
+                                        <input
+                                            className="pdf-editor__fieldoptions"
+                                            value={el.optionsText ?? ''}
+                                            placeholder={t('Option 1, Option 2')}
+                                            onPointerDown={(e) => e.stopPropagation()}
+                                            onChange={(e) => updateElement(el.id, { optionsText: e.target.value })}
+                                            aria-label={t('Dropdown options, separated by commas')}
+                                        />
+                                    )}
                                     <button
                                         type="button"
                                         className="pdf-editor__remove"
-                                        aria-label={checkbox ? t('Remove this checkbox field') : t('Remove this text field')}
+                                        aria-label={removeLabel}
                                         onPointerDown={(e) => e.stopPropagation()}
                                         onClick={() => removeElement(el.id)}
                                     >

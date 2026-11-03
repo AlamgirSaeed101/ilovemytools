@@ -870,6 +870,38 @@ test.describe('PDF tools', () => {
         expect(form.getCheckBox('subscribe').isChecked()).toBe(false);
     });
 
+    test('edit PDF: Fill form - Add fields creates a new dropdown field with its own options', async ({ page }) => {
+        await openTool(page, 'edit-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'blank.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
+
+        await page.getByRole('tab', { name: 'Fill form' }).click();
+        await page.getByRole('tab', { name: 'Add fields' }).click();
+        await page.getByRole('button', { name: 'Add a dropdown field' }).click();
+
+        await page.locator('.pdf-editor__fieldname').fill('country');
+        await page.locator('.pdf-editor__fieldoptions').fill('UK, US, DE');
+
+        await page.getByRole('button', { name: 'Save PDF with new fields' }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(file.suggestedFilename()).toBe('blank-form.pdf');
+        const saved = await PDFDocument.load(await readDownload(file));
+        expect(saved.getForm().getDropdown('country').getOptions()).toEqual(['UK', 'US', 'DE']);
+    });
+
+    test('edit PDF: Fill form - Add fields blocks saving a dropdown with fewer than two options', async ({ page }) => {
+        await openTool(page, 'edit-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'blank.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
+
+        await page.getByRole('tab', { name: 'Fill form' }).click();
+        await page.getByRole('tab', { name: 'Add fields' }).click();
+        await page.getByRole('button', { name: 'Add a dropdown field' }).click();
+        await page.locator('.pdf-editor__fieldname').fill('country');
+        await page.locator('.pdf-editor__fieldoptions').fill('Only one');
+
+        await page.getByRole('button', { name: 'Save PDF with new fields' }).click();
+        await expect(page.getByText('Give the dropdown "country" at least two options, separated by commas.')).toBeVisible();
+    });
+
     test('edit PDF: dragging an element\'s rotate handle spins it in place and the saved PDF still reads its text', async ({ page }) => {
         await openTool(page, 'edit-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'rotated.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });

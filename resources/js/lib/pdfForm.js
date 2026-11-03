@@ -75,9 +75,10 @@ export async function buildFilledFormPdf(doc, values) {
 }
 
 /**
- * Checks that every new field in `newFields` (each `{ name }`) has a non-empty name and that no
- * two of them, or one of them and an existing field, share a name - pdf-lib throws if a field
- * with the given name already exists. Returns `{ ok: true }` or `{ ok: false, reason, name? }`.
+ * Checks that every new field in `newFields` (each `{ name, fieldType?, options? }`) has a
+ * non-empty name and that no two of them, or one of them and an existing field, share a name -
+ * pdf-lib throws if a field with the given name already exists. A dropdown also needs at least
+ * two options. Returns `{ ok: true }` or `{ ok: false, reason: 'empty' | 'duplicate' | 'options', name? }`.
  */
 export function validateNewFieldNames(newFields, existingNames) {
     const seen = new Set(existingNames);
@@ -86,15 +87,25 @@ export function validateNewFieldNames(newFields, existingNames) {
         if (!name) return { ok: false, reason: 'empty' };
         if (seen.has(name)) return { ok: false, reason: 'duplicate', name };
         seen.add(name);
+        if (field.fieldType === 'dropdown' && (field.options ?? []).length < 2) return { ok: false, reason: 'options', name };
     }
     return { ok: true };
 }
 
 /**
- * Creates new, empty AcroForm fields in `doc` - a text box or a checkbox, one widget each, placed
- * at `rectPdf` on `page` - and returns the finished PDF as a Blob. `fields`: an array of
- * `{ fieldType: 'text' | 'checkbox', name, page, rectPdf: {x, y, width, height} }`. The fields are
- * created empty; this tool's "Fill form" view can fill them in once the file is reopened.
+ * Splits a comma-separated options string into a trimmed, de-duplicated, non-empty list - the
+ * format the "Add fields" dropdown editor keeps while the user is typing its options.
+ */
+export function parseDropdownOptions(text) {
+    return [...new Set(String(text ?? '').split(',').map((option) => option.trim()).filter(Boolean))];
+}
+
+/**
+ * Creates new, empty AcroForm fields in `doc` - a text box, checkbox or dropdown, one widget each,
+ * placed at `rectPdf` on `page` - and returns the finished PDF as a Blob. `fields`: an array of
+ * `{ fieldType: 'text' | 'checkbox' | 'dropdown', name, page, rectPdf: {x, y, width, height}, options? }`
+ * (`options`, a string array, is required for a dropdown). The fields are created empty; this
+ * tool's "Fill form" view can fill them in once the file is reopened.
  */
 export async function buildPdfWithNewFields(doc, fields) {
     const form = doc.getForm();
@@ -102,7 +113,11 @@ export async function buildPdfWithNewFields(doc, fields) {
         const page = doc.getPage(field.page);
         const box = { ...field.rectPdf, borderWidth: 1, borderColor: rgb(0.45, 0.45, 0.45) };
         if (field.fieldType === 'checkbox') form.createCheckBox(field.name).addToPage(page, box);
-        else form.createTextField(field.name).addToPage(page, box);
+        else if (field.fieldType === 'dropdown') {
+            const dropdown = form.createDropdown(field.name);
+            dropdown.addOptions(field.options);
+            dropdown.addToPage(page, box);
+        } else form.createTextField(field.name).addToPage(page, box);
     }
     const bytes = await doc.save();
     return new Blob([bytes], { type: 'application/pdf' });

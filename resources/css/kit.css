@@ -2704,6 +2704,31 @@ fieldset.grid-2 .check:has(input:checked) {
     pointer-events: auto;
 }
 
+/* Fill form - Add fields: a dropdown field stacks its name above its comma-separated options. */
+.pdf-editor__overlay--dropdown {
+    flex-direction: column;
+    gap: 2px;
+    padding: 2px 4px;
+}
+
+.pdf-editor__fieldoptions {
+    width: 90%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 3px;
+    border: none;
+    background: transparent;
+    font: inherit;
+    font-size: 0.65rem;
+    text-align: center;
+    color: var(--text);
+    pointer-events: auto;
+}
+
+.pdf-editor__fieldoptions::placeholder {
+    color: var(--muted);
+}
+
 .pdf-editor__date {
     position: absolute;
     left: 0;
