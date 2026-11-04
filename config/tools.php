@@ -2466,7 +2466,7 @@ return [
             'Page thumbnails to jump straight to any page',
             'Your work auto-saves as you go, so a refresh or accidental close never loses it',
             'Fill in existing form fields: text boxes, checkboxes, dropdowns and radio buttons',
-            'Create new fields: a text box, checkbox or dropdown, placed anywhere on the page',
+            'Create new fields: a text box, checkbox, dropdown or signature, placed anywhere on the page',
         ],
         'content' => [
             [

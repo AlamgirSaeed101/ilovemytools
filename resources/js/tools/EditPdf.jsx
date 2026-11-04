@@ -389,9 +389,9 @@ export default function EditPdf({ initialMode } = {}) {
         }
     }
 
-    /** The first "Text field N" / "Checkbox N" / "Dropdown N" name not already used by an existing or a new field. */
+    /** The first "Text field N" / "Checkbox N" / "Dropdown N" / "Signature N" name not already used by an existing or a new field. */
     function nextFieldName(kind) {
-        const prefix = kind === 'checkbox' ? 'Checkbox' : kind === 'dropdown' ? 'Dropdown' : 'Text field';
+        const prefix = kind === 'checkbox' ? 'Checkbox' : kind === 'dropdown' ? 'Dropdown' : kind === 'signature' ? 'Signature' : 'Text field';
         const used = new Set([...formFields.map((f) => f.name), ...elements.filter((el) => el.type === 'formfield').map((el) => el.name)]);
         let n = 1;
         while (used.has(`${prefix} ${n}`)) n += 1;
@@ -401,7 +401,7 @@ export default function EditPdf({ initialMode } = {}) {
     function addFormField(kind) {
         if (!canvasSize.width) return;
         const width = kind === 'checkbox' ? 24 : 160;
-        const height = kind === 'checkbox' ? 24 : kind === 'dropdown' ? 54 : 32;
+        const height = kind === 'checkbox' ? 24 : kind === 'dropdown' ? 54 : kind === 'signature' ? 50 : 32;
         const rect = clampRect({ x: (canvasSize.width - width) / 2, y: (canvasSize.height - height) / 2, width, height }, canvasSize.width, canvasSize.height, 10);
         pushElement({ type: 'formfield', fieldType: kind, name: nextFieldName(kind), ...(kind === 'dropdown' ? { optionsText: '' } : {}), ...rect });
     }
@@ -1048,6 +1048,7 @@ export default function EditPdf({ initialMode } = {}) {
                                     <button type="button" className="btn btn--sm" onClick={() => addFormField('text')}>{t('Add a text field')}</button>
                                     <button type="button" className="btn btn--sm" onClick={() => addFormField('checkbox')}>{t('Add a checkbox')}</button>
                                     <button type="button" className="btn btn--sm" onClick={() => addFormField('dropdown')}>{t('Add a dropdown field')}</button>
+                                    <button type="button" className="btn btn--sm" onClick={() => addFormField('signature')}>{t('Add a signature field')}</button>
                                     <span className="field__hint" style={{ margin: 0 }}>{t('Drag a field to move it, drag its corner to resize it, and edit its name in the box.')}</span>
                                 </>
                             ) : (
@@ -1352,9 +1353,10 @@ export default function EditPdf({ initialMode } = {}) {
                         if (el.type === 'formfield') {
                             const checkbox = el.fieldType === 'checkbox';
                             const dropdown = el.fieldType === 'dropdown';
-                            const dragLabel = checkbox ? t('Checkbox field - drag to move') : dropdown ? t('Dropdown field - drag to move') : t('Text field - drag to move');
-                            const nameLabel = checkbox ? t('Checkbox field name') : dropdown ? t('Dropdown field name') : t('Text field name');
-                            const removeLabel = checkbox ? t('Remove this checkbox field') : dropdown ? t('Remove this dropdown field') : t('Remove this text field');
+                            const signature = el.fieldType === 'signature';
+                            const dragLabel = checkbox ? t('Checkbox field - drag to move') : dropdown ? t('Dropdown field - drag to move') : signature ? t('Signature field - drag to move') : t('Text field - drag to move');
+                            const nameLabel = checkbox ? t('Checkbox field name') : dropdown ? t('Dropdown field name') : signature ? t('Signature field name') : t('Text field name');
+                            const removeLabel = checkbox ? t('Remove this checkbox field') : dropdown ? t('Remove this dropdown field') : signature ? t('Remove this signature field') : t('Remove this text field');
                             return (
                                 <div
                                     key={el.id}

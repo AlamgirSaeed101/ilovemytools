@@ -776,6 +776,12 @@
     ]
   },
   {
+    "key": "Add a signature field",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Add a text field",
     "files": [
       "resources/js/tools/EditPdf.jsx"
@@ -5791,6 +5797,12 @@
     ]
   },
   {
+    "key": "Remove this signature field",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Remove this strikethrough",
     "files": [
       "resources/js/tools/EditPdf.jsx"
@@ -6332,6 +6344,18 @@
     "key": "Sign PDF",
     "files": [
       "resources/js/tools/SignPdf.jsx"
+    ]
+  },
+  {
+    "key": "Signature field - drag to move",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Signature field name",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {

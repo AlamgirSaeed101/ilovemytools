@@ -26,10 +26,11 @@ text and change it in place, in the same font.
   - [x] Rotate: a handle above added text, images, highlights and rectangle/ellipse shapes drags to spin the element around its own centre (any angle); the saved PDF rotates it the same way with pdf-lib, anchored to match. Lines, arrows, whiteout, underline/strikethrough and links are unaffected (not part of this pass).
   - [x] Page thumbnails: a horizontal filmstrip above the stage (scrolls on its own, never the page) shows a thumbnail per page, rendered progressively from the same pdfjs document the editor already has open; clicking one jumps straight to that page, alongside the existing Previous/Next buttons.
 4. [x] Session: auto-save and unsaved-changes warnings
-5. [ ] Fill PDF forms (new page) and create form fields
+5. [x] Fill PDF forms (new page) and create form fields
   - [x] Fill in a PDF's existing form fields (text boxes, checkboxes, dropdowns and radio buttons) as a new Fill form tab in Edit PDF, positioned over the page preview at each field's own widget rect; checkbox/dropdown/radio values round-trip through pdf-lib, text uses DejaVu Sans so non-Latin-1 answers still render. Creating new form fields is not part of this pass.
   - [x] Create new form fields: an "Add fields" mode inside the Fill form tab lets you place a text box or a checkbox anywhere on the page (drag to move or resize, editable field name), then saves them as real, empty AcroForm fields with pdf-lib so any PDF reader - including this tool's own Fill form view - can fill them in afterwards. Dropdown and signature field creation are left for a future run.
   - [x] Create a dropdown form field: "Add fields" now also places a dropdown, with its own comma-separated options entered right in the overlay (at least two required, de-duplicated and trimmed), saved as a real AcroForm choice field with pdf-lib. Signature field creation is left for a future run.
+  - [x] Create a signature form field: "Add fields" now also places a signature field, saved as a real, unsigned AcroForm `/Sig` field with pdf-lib's low-level acroform API (pdf-lib's high-level form helpers only read signature fields, not create them) so any PDF reader can sign it later; this tool never handles certificates or cryptographic signing itself.
 6. [ ] Page tools and signature inside the editor
 7. [ ] Landing pages for each mode: add text to PDF, whiteout PDF, edit PDF text, PDF annotator, fill PDF form, Sejda alternative
 

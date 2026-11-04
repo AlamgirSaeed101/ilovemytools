@@ -1,7 +1,7 @@
 // Filling in a PDF's existing AcroForm fields (Edit PDF's "Fill form" tab). pdf-lib reads and
 // writes the fields directly; this file only turns that into a flat list the editor can render
 // as overlay inputs on top of the page preview, and turns the answers back into field values.
-import { PDFCheckBox, PDFDropdown, PDFRadioGroup, PDFTextField, rgb } from 'pdf-lib';
+import { AnnotationFlags, PDFAcroSignature, PDFCheckBox, PDFDropdown, PDFRadioGroup, PDFTextField, PDFWidgetAnnotation, colorToComponents, rgb } from 'pdf-lib';
 import { embedDocumentFonts } from './pdfFonts.js';
 
 /**
@@ -101,11 +101,40 @@ export function parseDropdownOptions(text) {
 }
 
 /**
- * Creates new, empty AcroForm fields in `doc` - a text box, checkbox or dropdown, one widget each,
- * placed at `rectPdf` on `page` - and returns the finished PDF as a Blob. `fields`: an array of
- * `{ fieldType: 'text' | 'checkbox' | 'dropdown', name, page, rectPdf: {x, y, width, height}, options? }`
- * (`options`, a string array, is required for a dropdown). The fields are created empty; this
- * tool's "Fill form" view can fill them in once the file is reopened.
+ * Creates a new, empty AcroForm signature field (`/FT /Sig`) named `name`, with one widget at
+ * `rectPdf` on `page`. pdf-lib has no high-level `form.createSignature()` (it only supports
+ * reading signature fields), so this builds the field dict and widget annotation the same way
+ * pdf-lib's own `createCheckBox`/`addToPage` do, then registers both with the document's AcroForm
+ * and the page's annotations. The field stays unsigned: this tool never handles certificates or
+ * cryptographic signing, only places the placeholder another PDF reader can sign later.
+ */
+function createSignatureField(doc, name, page, rectPdf) {
+    const context = doc.context;
+    const fieldDict = context.obj({ FT: 'Sig', Ff: 0, Kids: [] });
+    const fieldRef = context.register(fieldDict);
+    const sigField = PDFAcroSignature.fromDict(fieldDict, fieldRef);
+    sigField.setPartialName(name);
+
+    const widget = PDFWidgetAnnotation.create(context, fieldRef);
+    widget.setRectangle(rectPdf);
+    widget.setP(page.ref);
+    widget.getOrCreateAppearanceCharacteristics().setBorderColor(colorToComponents(rgb(0.45, 0.45, 0.45)));
+    widget.getOrCreateBorderStyle().setWidth(1);
+    widget.setFlagTo(AnnotationFlags.Print, true);
+    const widgetRef = context.register(widget.dict);
+
+    sigField.addWidget(widgetRef);
+    page.node.addAnnot(widgetRef);
+    doc.getForm().acroForm.addField(fieldRef);
+}
+
+/**
+ * Creates new, empty AcroForm fields in `doc` - a text box, checkbox, dropdown or signature, one
+ * widget each, placed at `rectPdf` on `page` - and returns the finished PDF as a Blob. `fields`:
+ * an array of `{ fieldType: 'text' | 'checkbox' | 'dropdown' | 'signature', name, page, rectPdf:
+ * {x, y, width, height}, options? }` (`options`, a string array, is required for a dropdown). The
+ * fields are created empty; this tool's "Fill form" view can fill in the text/checkbox/dropdown
+ * ones once the file is reopened (signature fields are left for the PDF's own reader to sign).
  */
 export async function buildPdfWithNewFields(doc, fields) {
     const form = doc.getForm();
@@ -117,7 +146,8 @@ export async function buildPdfWithNewFields(doc, fields) {
             const dropdown = form.createDropdown(field.name);
             dropdown.addOptions(field.options);
             dropdown.addToPage(page, box);
-        } else form.createTextField(field.name).addToPage(page, box);
+        } else if (field.fieldType === 'signature') createSignatureField(doc, field.name, page, field.rectPdf);
+        else form.createTextField(field.name).addToPage(page, box);
     }
     const bytes = await doc.save();
     return new Blob([bytes], { type: 'application/pdf' });

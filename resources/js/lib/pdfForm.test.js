@@ -165,4 +165,30 @@ describe('buildPdfWithNewFields', () => {
             buildPdfWithNewFields(doc, [{ fieldType: 'text', name: 'name', page: 0, rectPdf: { x: 0, y: 0, width: 100, height: 20 } }])
         ).rejects.toThrow();
     });
+
+    it('creates an unsigned signature field at the given rect', async () => {
+        const doc = await PDFDocument.create();
+        doc.addPage([400, 400]);
+        const blob = await buildPdfWithNewFields(doc, [
+            { fieldType: 'signature', name: 'sign_here', page: 0, rectPdf: { x: 40, y: 300, width: 160, height: 50 } },
+        ]);
+        const reloaded = await PDFDocument.load(new Uint8Array(await blob.arrayBuffer()));
+        const signature = reloaded.getForm().getSignature('sign_here');
+        expect(signature.acroField.FT().toString()).toBe('/Sig');
+        expect(signature.acroField.getWidgets()).toHaveLength(1);
+        expect(signature.acroField.getWidgets()[0].getRectangle()).toMatchObject({ x: 40, y: 300, width: 160, height: 50 });
+    });
+
+    it('places a signature field alongside other new fields without name clashes', async () => {
+        const doc = await PDFDocument.create();
+        doc.addPage([400, 400]);
+        const blob = await buildPdfWithNewFields(doc, [
+            { fieldType: 'text', name: 'name', page: 0, rectPdf: { x: 40, y: 340, width: 180, height: 24 } },
+            { fieldType: 'signature', name: 'sign_here', page: 0, rectPdf: { x: 40, y: 300, width: 160, height: 50 } },
+        ]);
+        const reloaded = await PDFDocument.load(new Uint8Array(await blob.arrayBuffer()));
+        const form = reloaded.getForm();
+        expect(form.getTextField('name').getText()).toBeUndefined();
+        expect(form.getSignature('sign_here').acroField.FT().toString()).toBe('/Sig');
+    });
 });

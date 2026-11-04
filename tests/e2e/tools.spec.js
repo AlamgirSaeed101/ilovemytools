@@ -888,6 +888,24 @@ test.describe('PDF tools', () => {
         expect(saved.getForm().getDropdown('country').getOptions()).toEqual(['UK', 'US', 'DE']);
     });
 
+    test('edit PDF: Fill form - Add fields creates a new, named signature field in the saved PDF', async ({ page }) => {
+        await openTool(page, 'edit-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'contract.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
+
+        await page.getByRole('tab', { name: 'Fill form' }).click();
+        await page.getByRole('tab', { name: 'Add fields' }).click();
+        await page.getByRole('button', { name: 'Add a signature field' }).click();
+        await page.locator('.pdf-editor__fieldname').fill('sign_here');
+
+        await page.getByRole('button', { name: 'Save PDF with new fields' }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(file.suggestedFilename()).toBe('contract-form.pdf');
+        const saved = await PDFDocument.load(await readDownload(file));
+        const signature = saved.getForm().getSignature('sign_here');
+        expect(signature.acroField.FT().toString()).toBe('/Sig');
+        expect(signature.acroField.getWidgets()).toHaveLength(1);
+    });
+
     test('edit PDF: Fill form - Add fields blocks saving a dropdown with fewer than two options', async ({ page }) => {
         await openTool(page, 'edit-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'blank.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
