@@ -1341,5 +1341,13 @@
     "Remove this signature field": "이 서명란 제거",
     "This tool asks our server which IP address your request came from and shows it to you. We don’t store it.": "이 도구는 요청이 어떤 IP 주소에서 왔는지 서버에 물어본 뒤 보여 줍니다. 저장하지 않습니다.",
     "Guides": "가이드",
-    "Pages 1 to {count}. Separate with commas.": "1부터 {count}까지. 쉼표로 구분하세요."
+    "Pages 1 to {count}. Separate with commas.": "1부터 {count}까지. 쉼표로 구분하세요.",
+    "Send us a message": "메시지 보내기",
+    "Your name": "이름",
+    "Your email": "이메일",
+    "Message": "메시지",
+    "Send message": "메시지 보내기",
+    "Sending…": "보내는 중…",
+    "Thanks! Your message was sent.": "감사합니다! 메시지를 보냈습니다.",
+    "Your message could not be sent. Please email us instead.": "메시지를 보내지 못했습니다. 이메일로 연락해 주세요."
 }

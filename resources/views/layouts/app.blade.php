@@ -147,10 +147,11 @@
         @vite(['resources/css/app.css', 'resources/js/app.jsx'])
     @endif
 
-    {{-- Google AdSense: only a preconnect here. The library script loads later (see the
-         deferred loader at the end of body) so it never competes for the main thread during startup. --}}
+    {{-- Google AdSense: the account meta tag and the standard head script on every page, so AdSense's
+         review can see them. Interaction-only loading hid them from review (audit, 4 Nov 2026). --}}
     @if ($adClient !== '')
-        <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+        <meta name="google-adsense-account" content="{{ $adClient }}">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ $adClient }}" crossorigin="anonymous" onerror="window.__adsBlocked=true"></script>
     @endif
 </head>
 <body>
@@ -169,20 +170,19 @@
 
     <script id="boot-data" type="application/json">{!! json_encode($boot, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) !!}</script>
 
-    @if ($ga4 !== '' || $adClient !== '')
-        {{-- Analytics and ads never need to be ready for the first paint. Ads (and Google's consent
-             script that comes with them) cost about 1 s of main-thread time on a phone, so they load only
-             once the visitor interacts: ad slots sit below the first screen anyway. Analytics loads on the
-             first interaction too, or 7 s after the page has loaded for visitors who only read; events
-             queue in dataLayer until then, so nothing is lost. --}}
+    @if ($ga4 !== '')
+        {{-- Analytics never needs to be ready for the first paint: it loads on the first interaction, or
+             7 s after the page has loaded for visitors who only read; events queue in dataLayer until
+             then. Automated browsers are skipped: Lighthouse runs from GitHub's US servers were counted
+             as hundreds of new "direct" users (about 620 of 631 in the 28 days to 3 Nov 2026). --}}
         <script>
             (function () {
-                var gtagLoaded = false, adsLoaded = false;
-                function loadScript(src, extra) {
+                if (navigator.webdriver || /lighthouse|headless|bot|crawl|spider|slurp|preview/i.test(navigator.userAgent)) return;
+                var gtagLoaded = false;
+                function loadScript(src) {
                     var s = document.createElement('script');
                     s.async = true;
                     s.src = src;
-                    if (extra) extra(s);
                     document.head.appendChild(s);
                 }
                 function loadAnalytics() {
@@ -192,19 +192,8 @@
                         loadScript('https://www.googletagmanager.com/gtag/js?id={{ $ga4 }}');
                     @endif
                 }
-                function onInteraction() {
-                    loadAnalytics();
-                    @if ($adClient !== '')
-                        if (adsLoaded) return;
-                        adsLoaded = true;
-                        loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ $adClient }}', function (s) {
-                            s.crossOrigin = 'anonymous';
-                            s.onerror = function () { window.__adsBlocked = true; };
-                        });
-                    @endif
-                }
                 ['pointerdown', 'keydown', 'touchstart', 'scroll', 'mousemove'].forEach(function (type) {
-                    window.addEventListener(type, onInteraction, { once: true, passive: true });
+                    window.addEventListener(type, loadAnalytics, { once: true, passive: true });
                 });
                 window.addEventListener('load', function () { setTimeout(loadAnalytics, 7000); });
             })();

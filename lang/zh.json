@@ -1341,5 +1341,13 @@
     "Remove this signature field": "移除此簽名欄",
     "This tool asks our server which IP address your request came from and shows it to you. We don’t store it.": "此工具會詢問我們的伺服器你的請求來自哪個 IP 位址,並顯示給你。我們不會儲存它。",
     "Guides": "指南",
-    "Pages 1 to {count}. Separate with commas.": "第 1 至 {count} 頁,請用逗號分隔。"
+    "Pages 1 to {count}. Separate with commas.": "第 1 至 {count} 頁,請用逗號分隔。",
+    "Send us a message": "傳送訊息給我們",
+    "Your name": "你的姓名",
+    "Your email": "你的電子郵件",
+    "Message": "訊息",
+    "Send message": "傳送訊息",
+    "Sending…": "傳送中…",
+    "Thanks! Your message was sent.": "謝謝!你的訊息已傳送。",
+    "Your message could not be sent. Please email us instead.": "無法傳送你的訊息,請改用電子郵件與我們聯絡。"
 }

@@ -1413,5 +1413,13 @@
     "Remove this signature field": "Usuń to pole podpisu",
     "This tool asks our server which IP address your request came from and shows it to you. We don’t store it.": "To narzędzie pyta nasz serwer, z jakiego adresu IP przyszło Twoje żądanie, i pokazuje Ci go. Nie zapisujemy go.",
     "Guides": "Poradniki",
-    "Pages 1 to {count}. Separate with commas.": "Strony od 1 do {count}. Rozdziel przecinkami."
+    "Pages 1 to {count}. Separate with commas.": "Strony od 1 do {count}. Rozdziel przecinkami.",
+    "Send us a message": "Wyślij nam wiadomość",
+    "Your name": "Twoje imię",
+    "Your email": "Twój e-mail",
+    "Message": "Wiadomość",
+    "Send message": "Wyślij wiadomość",
+    "Sending…": "Wysyłanie…",
+    "Thanks! Your message was sent.": "Dziękujemy! Wiadomość została wysłana.",
+    "Your message could not be sent. Please email us instead.": "Nie udało się wysłać wiadomości. Napisz do nas e-mail."
 }

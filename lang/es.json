@@ -1365,5 +1365,13 @@
     "Remove this signature field": "Eliminar este campo de firma",
     "This tool asks our server which IP address your request came from and shows it to you. We don’t store it.": "Esta herramienta pregunta a nuestro servidor desde qué dirección IP llegó tu solicitud y te la muestra. No la guardamos.",
     "Guides": "Guías",
-    "Pages 1 to {count}. Separate with commas.": "Páginas de la 1 a la {count}. Sepáralas con comas."
+    "Pages 1 to {count}. Separate with commas.": "Páginas de la 1 a la {count}. Sepáralas con comas.",
+    "Send us a message": "Envíanos un mensaje",
+    "Your name": "Tu nombre",
+    "Your email": "Tu correo electrónico",
+    "Message": "Mensaje",
+    "Send message": "Enviar mensaje",
+    "Sending…": "Enviando…",
+    "Thanks! Your message was sent.": "¡Gracias! Tu mensaje se ha enviado.",
+    "Your message could not be sent. Please email us instead.": "No se pudo enviar tu mensaje. Escríbenos por correo electrónico."
 }

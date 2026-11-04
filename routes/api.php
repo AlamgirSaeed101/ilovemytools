@@ -25,6 +25,8 @@ Route::get('/ip', [IpController::class, 'show'])
     ->name('api.ip');
 
 // Newsletter sign-up and the unsubscribe button (strictly rate limited).
+Route::post('/contact', [\App\Http\Controllers\ContactController::class, 'send'])->middleware('throttle:3,1,contact')->name('api.contact');
+
 Route::middleware('throttle:5,1,newsletter')->group(function () {
     Route::post('/newsletter', [NewsletterController::class, 'subscribe'])->name('api.newsletter.subscribe');
     Route::post('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscribe'])->name('api.newsletter.unsubscribe');

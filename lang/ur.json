@@ -1365,5 +1365,13 @@
     "Remove this signature field": "یہ دستخط کا خانہ ہٹائیں",
     "This tool asks our server which IP address your request came from and shows it to you. We don’t store it.": "یہ ٹول ہمارے سرور سے پوچھتا ہے کہ آپ کی درخواست کس IP ایڈریس سے آئی اور اسے آپ کو دکھاتا ہے۔ ہم اسے محفوظ نہیں کرتے۔",
     "Guides": "گائیڈز",
-    "Pages 1 to {count}. Separate with commas.": "صفحہ 1 سے {count} تک۔ کوما سے الگ کریں۔"
+    "Pages 1 to {count}. Separate with commas.": "صفحہ 1 سے {count} تک۔ کوما سے الگ کریں۔",
+    "Send us a message": "ہمیں پیغام بھیجیں",
+    "Your name": "آپ کا نام",
+    "Your email": "آپ کا ای میل",
+    "Message": "پیغام",
+    "Send message": "پیغام بھیجیں",
+    "Sending…": "بھیجا جا رہا ہے…",
+    "Thanks! Your message was sent.": "شکریہ! آپ کا پیغام بھیج دیا گیا۔",
+    "Your message could not be sent. Please email us instead.": "آپ کا پیغام نہیں بھیجا جا سکا۔ براہ کرم ہمیں ای میل کریں۔"
 }

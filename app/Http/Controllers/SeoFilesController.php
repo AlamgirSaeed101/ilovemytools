@@ -14,13 +14,24 @@ use Illuminate\Http\Response;
  */
 class SeoFilesController extends Controller
 {
+    /** Last real content change of the legal and company pages. Update a date only with its page. */
+    private const COMPANY_PAGES_UPDATED = [
+        '/about' => '2026-11-02',
+        '/about/m-alamgir-saeed' => '2026-11-02',
+        '/contact' => '2026-11-04',
+        '/privacy-policy' => '2026-09-30',
+        '/terms' => '2026-09-30',
+    ];
+
     public function __construct(private ToolRegistry $registry)
     {
     }
 
     public function sitemap(): Response
     {
-        $latest = $this->registry->all()->pluck('updated')->filter()->max() ?? date('Y-m-d');
+        // Honest dates only: a page's lastmod moves when that page's own content changes. A category moves
+        // with its tools and the home page with the guides it lists, never all at once.
+        $latest = (string) \App\Support\Guides::all()->max('updated');
 
         // Only canonical, indexable URLs: home, tools and categories in each indexable language
         // (config locales.indexable) with hreflang between them, legal pages in English only, then
@@ -30,7 +41,7 @@ class SeoFilesController extends Controller
             $localized[] = ['/'.$tool['slug'], $tool['updated'] ?? $latest, '0.9'];
         }
         foreach ($this->registry->categories() as $slug => $category) {
-            $localized[] = ['/category/'.$slug, $latest, '0.7'];
+            $localized[] = ['/category/'.$slug, $this->registry->inCategory($slug)->pluck('updated')->filter()->max() ?? $latest, '0.7'];
         }
 
         $xml = new \XMLWriter;
@@ -66,10 +77,10 @@ class SeoFilesController extends Controller
             }
         }
         // Legal and company pages are indexed in English only (see Seo::englishOnly()).
-        foreach (['/about', \App\Support\Guides::AUTHOR_PATH, '/contact', '/privacy-policy', '/terms'] as $path) {
+        foreach (self::COMPANY_PAGES_UPDATED as $path => $updated) {
             $xml->startElement('url');
             $xml->writeElement('loc', Locale::url($path, Locale::default()));
-            $xml->writeElement('lastmod', $latest);
+            $xml->writeElement('lastmod', $updated);
             $xml->writeElement('priority', '0.3');
             $xml->endElement();
         }
@@ -150,6 +161,32 @@ class SeoFilesController extends Controller
         $lines[] = '- [Privacy policy]('.Seo::absoluteUrl('privacy-policy').'): how data, cookies and advertising are handled';
         $lines[] = '- [Contact]('.Seo::absoluteUrl('contact').'): '.config('site.contact_email');
         $lines[] = '- [Sitemap]('.Seo::absoluteUrl('sitemap.xml').')';
+
+        return response(implode("\n", $lines)."\n", 200, ['Content-Type' => 'text/plain; charset=UTF-8']);
+    }
+
+    /** The long version of llms.txt: every tool's explanation, steps and answers, for AI assistants. */
+    public function llmsFull(): Response
+    {
+        $name = (string) config('site.name');
+        $lines = ["# {$name}: full reference", '', '> '.config('site.description'), '', 'Short version: '.Seo::absoluteUrl('llms.txt')];
+
+        foreach ($this->registry->all() as $tool) {
+            array_push($lines, '', '## '.$tool['name'], '', 'URL: '.Seo::absoluteUrl($tool['slug']), 'Processing: '.(empty($tool['server']) && $tool['slug'] !== 'what-is-my-ip' ? 'in the browser' : 'uses our server for lookups'), '', $tool['intro']);
+            if ($tool['steps'] !== []) {
+                array_push($lines, '', 'How to use it:');
+                foreach (array_values($tool['steps']) as $i => $step) {
+                    $lines[] = ($i + 1).'. '.$step;
+                }
+            }
+            foreach ($tool['faqs'] as $faq) {
+                array_push($lines, '', 'Q: '.$faq['q'], 'A: '.$faq['a']);
+            }
+        }
+
+        foreach (\App\Support\Guides::all() as $guide) {
+            array_push($lines, '', '## Guide: '.$guide['h1'], '', 'URL: '.Seo::absoluteUrl('guides/'.$guide['slug']), '', $guide['intro']);
+        }
 
         return response(implode("\n", $lines)."\n", 200, ['Content-Type' => 'text/plain; charset=UTF-8']);
     }

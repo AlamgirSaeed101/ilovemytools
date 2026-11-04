@@ -4280,6 +4280,12 @@
     ]
   },
   {
+    "key": "Message",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
     "key": "Message (optional)",
     "files": [
       "resources/js/tools/QrCodeGenerator.jsx"
@@ -6241,7 +6247,25 @@
     ]
   },
   {
+    "key": "Send message",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
     "key": "Send privacy or legal requests",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Send us a message",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Sending…",
     "files": [
       "resources/js/pages/InfoPages.jsx"
     ]
@@ -6853,6 +6877,12 @@
     "key": "Thanks for signing up! Click the button below to confirm your email address. We will then send you one short email whenever we add a new free tool.",
     "files": [
       "resources/views/emails/confirm.blade.php"
+    ]
+  },
+  {
+    "key": "Thanks! Your message was sent.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
     ]
   },
   {
@@ -8097,9 +8127,27 @@
     ]
   },
   {
+    "key": "Your email",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
     "key": "Your files stay on your device",
     "files": [
       "resources/js/pages/Home.jsx"
+    ]
+  },
+  {
+    "key": "Your message could not be sent. Please email us instead.",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Your name",
+    "files": [
+      "resources/js/pages/InfoPages.jsx"
     ]
   },
   {

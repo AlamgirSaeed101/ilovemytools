@@ -11,6 +11,8 @@ Read Parts 1-2 of `TOOLS_SPEC_PROMPT.md` (architecture, SEO rules: lines 1-87) b
 
 ## Rules (never break these)
 
+0. **Honest dates (owner, 4 Nov 2026).** Change a tool's or guide's `updated` date only when that page's own visible content really changed, never in bulk or to look fresh. Only en, de and it are indexed (`config/locales.php`); don't add languages without the owner. AdSense is under a "Low value content" review: prefer first-hand content (real tests, limits, worked examples) over more templated pages.
+
 1. **Start with CI.** Run `gh run list --limit 3`. If the latest run on `main` failed, fixing it is today's task: open the log (`gh run view <id> --log-failed`), fix the cause, and push. Nothing else until CI is green.
 2. **One item per run.** One new tool, or one SEO item. Small, finished, tested changes. Never leave half-built work on `main`.
 3. **Everything runs in the browser.** No paid APIs, no API keys, no server-side file processing, no new server endpoints. Heavy libraries are lazy-loaded inside the tool.

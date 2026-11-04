@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router';
 import Breadcrumbs from '../components/Breadcrumbs.jsx';
 import CopyButton from '../components/CopyButton.jsx';
@@ -104,6 +105,57 @@ export function About() {
     );
 }
 
+function ContactForm() {
+    const [state, setState] = useState('idle');
+
+    async function submit(event) {
+        event.preventDefault();
+        const form = event.currentTarget;
+        setState('sending');
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                body: JSON.stringify(Object.fromEntries(new FormData(form))),
+            });
+            if (!res.ok) throw new Error(String(res.status));
+            form.reset();
+            setState('sent');
+        } catch {
+            setState('failed');
+        }
+    }
+
+    return (
+        <form className="my-6 grid gap-3" onSubmit={submit}>
+            <h2 className="m-0">{t('Send us a message')}</h2>
+            <div className="field">
+                <label className="field__label" htmlFor="contact-name">{t('Your name')}</label>
+                <input id="contact-name" className="input" name="name" required maxLength={100} autoComplete="name" />
+            </div>
+            <div className="field">
+                <label className="field__label" htmlFor="contact-email">{t('Your email')}</label>
+                <input id="contact-email" className="input" name="email" type="email" required maxLength={254} autoComplete="email" />
+            </div>
+            <div className="field">
+                <label className="field__label" htmlFor="contact-message">{t('Message')}</label>
+                <textarea id="contact-message" className="input" name="message" rows={6} required minLength={10} maxLength={5000} />
+            </div>
+            {/* Bots fill in every field; people never see this one. */}
+            <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: '-9999px' }} />
+            <div>
+                <button className="btn btn--primary" type="submit" disabled={state === 'sending'}>
+                    {state === 'sending' ? t('Sending…') : t('Send message')}
+                </button>
+            </div>
+            <div aria-live="polite">
+                {state === 'sent' && <p className="notice notice--success m-0">{t('Thanks! Your message was sent.')}</p>}
+                {state === 'failed' && <p className="notice notice--error m-0">{t('Your message could not be sent. Please email us instead.')}</p>}
+            </div>
+        </form>
+    );
+}
+
 export function Contact() {
     const { contactEmail } = getSite();
     return (
@@ -130,6 +182,8 @@ export function Contact() {
                 </div>
                 <CopyButton text={contactEmail} label={t('Copy email')} className="btn btn--sm" />
             </div>
+
+            <ContactForm />
 
             <p>{t('When reporting a problem, please tell us which tool you used, your browser (for example Chrome or Safari) and your device, so we can fix it quickly.')}</p>
         </InfoPage>

@@ -16,6 +16,7 @@ Route::get('/sitemap.xml', [SeoFilesController::class, 'sitemap'])->name('sitema
 Route::get('/robots.txt', [SeoFilesController::class, 'robots'])->name('robots');
 Route::get('/ads.txt', [SeoFilesController::class, 'ads'])->name('ads');
 Route::get('/llms.txt', [SeoFilesController::class, 'llms'])->name('llms');
+Route::get('/llms-full.txt', [SeoFilesController::class, 'llmsFull'])->name('llms-full');
 Route::get('/.well-known/security.txt', [SeoFilesController::class, 'security'])->name('security');
 Route::redirect('/security.txt', '/.well-known/security.txt', 301);
 

@@ -36,12 +36,13 @@ return [
     ],
 
     /*
-    | Languages Google may index (owner decision 30 Oct 2026, from Search Console impressions:
-    | en and de ~1,100 each, it ~450, es ~350, fr ~280, zh ~220, pt ~150 over 28 days; pl, ko and ur
-    | had the least). The others stay fully usable but send `noindex, follow`, are left out of the
-    | sitemap and out of hreflang, so Google doesn't crawl and discard hundreds of thin pages.
+    | Languages Google may index (owner decision 4 Nov 2026, audit P0: the 1-2 languages with the most
+    | Search Console impressions next to English; en and de ~1,100 each, it ~450, es ~350, fr ~280,
+    | zh ~220, pt ~150 over the 28 days to 28 Oct). The others stay fully usable but send
+    | `noindex, follow`, are left out of the sitemap and out of hreflang, so Google doesn't crawl and
+    | discard hundreds of templated pages.
     | Move a language here once its pages have reviewed, unique copy.
     */
-    'indexable' => ['en', 'de', 'it', 'es', 'fr', 'zh', 'pt'],
+    'indexable' => ['en', 'de', 'it'],
 
 ];
