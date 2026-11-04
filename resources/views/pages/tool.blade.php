@@ -52,6 +52,8 @@
                         @endif
                     @endif
 
+                    @include('partials.tested-note')
+
                     @if ($tool['features'] !== [])
                         <h2>{{ t('Features') }}</h2>
                         <ul class="checklist">

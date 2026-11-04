@@ -30,7 +30,7 @@ class BrandFaq
             ] : null,
             [
                 'q' => "Why is {$name} free?",
-                'a' => "The tools run in your browser, so processing a file costs the site nothing. Every tool is free with no account, no watermark and no daily limit, and the site is supported by advertising rather than paywalls.",
+                'a' => "The tools run in your browser, so processing a file costs the site nothing. Every tool is free with no account and no watermark, file tools have no daily limit, and the site is supported by advertising rather than paywalls.",
             ],
             [
                 'q' => "Does {$name} upload my files?",

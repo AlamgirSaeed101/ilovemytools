@@ -47,6 +47,51 @@ function NextSteps({ tools: next }) {
     );
 }
 
+// First-hand results from config/tool-notes.php (English pages). Same markup as partials/tested-note.
+function TestedNote({ note }) {
+    return (
+        <>
+            <h2 id="tested">We tested it</h2>
+            <p className="text-sm text-muted">
+                Tested on the live site on <time dateTime={note.tested}>{formatDate(note.tested)}</time>, with sample files we made for the test.
+            </p>
+            {note.paragraphs.map((p) => (
+                <p key={p.slice(0, 40)}>{p}</p>
+            ))}
+            {note.table && (
+                <div className="table-wrap">
+                    <table className="compare-table">
+                        <thead>
+                            <tr>
+                                {note.table.headers.map((h) => (
+                                    <th key={h} scope="col">{h}</th>
+                                ))}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {note.table.rows.map((row) => (
+                                <tr key={row[0]}>
+                                    {row.map((cell, i) => (i === 0 ? <th key={i} scope="row">{cell}</th> : <td key={i}>{cell}</td>))}
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            )}
+            {note.limits?.length > 0 && (
+                <>
+                    <h3>Limits</h3>
+                    <ul>
+                        {note.limits.map((limit) => (
+                            <li key={limit}>{limit}</li>
+                        ))}
+                    </ul>
+                </>
+            )}
+        </>
+    );
+}
+
 export default function ToolPage() {
     const tool = useLoaderData();
     const site = getSite();
@@ -160,6 +205,8 @@ export default function ToolPage() {
                                 )}
                             </>
                         )}
+
+                        {tool.testedNote && <TestedNote note={tool.testedNote} />}
 
                         {tool.features.length > 0 && (
                             <>

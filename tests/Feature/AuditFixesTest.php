@@ -77,6 +77,20 @@ class AuditFixesTest extends TestCase
         $this->postJson('/api/contact', ['name' => 'Ann', 'email' => 'nope', 'message' => 'short'])->assertStatus(422);
     }
 
+    public function test_top_tools_show_first_hand_results_in_english_only(): void
+    {
+        $notes = config('tool-notes');
+        $this->assertGreaterThanOrEqual(15, count($notes));
+
+        foreach ($notes as $slug => $note) {
+            $this->assertArrayHasKey($slug, config('tools'));
+            $html = $this->get('/'.$slug)->assertOk()->getContent();
+            $this->assertStringContainsString('id="tested"', $html, $slug);
+            $this->assertStringContainsString(e($note['paragraphs'][0]), $html, $slug);
+        }
+        $this->assertStringNotContainsString('id="tested"', $this->get('/de/merge-pdf')->getContent());
+    }
+
     public function test_contact_form_honeypot_sends_nothing(): void
     {
         Mail::fake();

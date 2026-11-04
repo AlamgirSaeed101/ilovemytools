@@ -18,6 +18,9 @@
         </section>
 
         <article class="prose tool-article">
+            @if (! empty($category['overview']) && \App\Support\Locale::current() === \App\Support\Locale::default())
+                <p>{{ $category['overview'] }}</p>
+            @endif
             <h2 id="compare">{{ t('Which tool do you need?') }}</h2>
             <div class="table-wrap">
                 <table class="compare-table">

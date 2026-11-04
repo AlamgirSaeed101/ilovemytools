@@ -1,0 +1,235 @@
+{
+    "broken-link-checker": {
+        "tested": "2026-11-04",
+        "panel": "Page address (URL) Check links Checks every link and image on one page (up to 300). Checked 82 of 82 links on https://ilovemytools.store/about 0 Broken 0 Redirects 82 OK 0 Blocked or no answer Problems Redirects OK All Download CSV No broken links found on this page.",
+        "largestUploadBytes": 470,
+        "nonGetRequests": [
+            "POST /api/links/extract",
+            "POST /api/links/check",
+            "POST /api/links/check",
+            "POST /api/links/check",
+            "POST /api/links/check",
+            "POST /api/links/check",
+            "POST /api/links/check",
+            "POST /api/links/check",
+            "POST /api/links/check",
+            "POST /api/links/check"
+        ]
+    },
+    "coin-flip": {
+        "tested": "2026-11-04",
+        "coinsPerFlip": 100,
+        "flips": 10,
+        "panel": "Coins per flip 1 2 5 10 25 100 T H H T H T H H H T H T H H T H H T T H T T T T T T T T H T H T H T T T T T H T H H H T H H H H H H T H H T T H H H H H H H H H H H H T T T H T T H H H T T T T T H H T H H H T T T H T T T T H H T H H 53 heads · 47 tails Flip 100 coins 510 Heads 490 Tails 1000 Total flips 2 Heads streak 51% H 49% T T T T T T H H T H H H T T T H T T T T H H T H H Reset stats",
+        "largestUploadBytes": 0,
+        "nonGetRequests": []
+    },
+    "compound-interest-calculator": {
+        "tested": "2026-11-04",
+        "panel": "Starting amount Currency $ £ € C$ A$ Interest rate (annual %) Number of years Monthly contribution (optional) Compound frequency Annually Semi-annually Quarterly Monthly Daily $125,510.22 Final balance $48,000.00 Total contributed $67,510.22 Total interest earned This is a projection based on a fixed interest rate. Real investment returns vary year to year and are not guaranteed. Show the year-by-",
+        "largestUploadBytes": 0,
+        "nonGetRequests": []
+    },
+    "compress-pdf": {
+        "tested": "2026-11-04",
+        "pages": 3,
+        "originalKB": 716,
+        "recommendedKB": 122,
+        "recommendedPages": 3,
+        "largestUploadBytes": 0,
+        "nonGetRequests": []
+    },
+    "domain-age-checker": {
+        "tested": "2026-11-04",
+        "result": "Domains (one per line, up to 20) 1 of 20 domains · full URLs are fine, they are reduced to the domain. Check domain age Clear 1 of 1 domains checked Download CSV Domain age results DOMAIN CREATED AGE EXPIRES LAST UPDATED REGISTRAR STATUS NAMESERVERS wikipedia.org January 13, 2001 25y 9m 22d January ",
+        "largestUploadBytes": 29,
+        "nonGetRequests": [
+            "POST /api/domain-age"
+        ]
+    },
+    "domain-authority-checker": {
+        "tested": "2026-11-04",
+        "table": "Domain authority results DOMAIN SCORE (0-10) GLOBAL RANK REFERRING DOMAINS DETAILS wikipedia.org 9.63 #36 627,034 Details ilovemytools.store Not found – – Details",
+        "largestUploadBytes": 50,
+        "nonGetRequests": [
+            "POST /api/domain-authority"
+        ]
+    },
+    "edit-pdf": {
+        "tested": "2026-11-04",
+        "note": "Replaced 2 times.",
+        "outputPages": 2,
+        "rawOldWordInFile": false,
+        "largestUploadBytes": 0,
+        "nonGetRequests": []
+    },
+    "excel-to-pdf": {
+        "tested": "2026-11-04",
+        "notice": "Drop a spreadsheet here or click to choose One .xlsx, .xls or .csv file · max 50 MB Each sheet becomes a table spread across one or more pages, with the header row repeated. Cell colours, formulas, charts and merged cells are not preserved, and text too wide for its column is shortened with \"…\".",
+        "largestUploadBytes": 0,
+        "nonGetRequests": []
+    },
+    "image-compressor": {
+        "tested": "2026-11-04",
+        "originalKB": 926,
+        "quality75": "photo.jpg 926 KB → 200 KB · 1600×1067 −78% Download ✕",
+        "target100KB": 100,
+        "largestUploadBytes": 0,
+        "nonGetRequests": []
+    },
+    "image-resizer": {
+        "tested": "2026-11-04",
+        "from": "1600 x 1067",
+        "widthSet": 800,
+        "heightAuto": "534",
+        "width": 800,
+        "height": 534,
+        "largestUploadBytes": 0,
+        "nonGetRequests": []
+    },
+    "jpg-to-pdf": {
+        "tested": "2026-11-04",
+        "images": 3,
+        "imageKB": 484,
+        "outputPages": 3,
+        "outputKB": 1453,
+        "largestUploadBytes": 0,
+        "nonGetRequests": []
+    },
+    "jpg-to-png": {
+        "tested": "2026-11-04",
+        "jpgKB": 88,
+        "pngKB": 571,
+        "largestUploadBytes": 0,
+        "nonGetRequests": []
+    },
+    "json-errors": {
+        "tested": "2026-11-04",
+        "singleQuotes": {
+            "text": "{'name': 'Ann'}",
+            "message": "Invalid JSON: Expected property name or '}' in JSON at position 1 (line 1, column 2). JSON strings and keys must use double quotes (\"), not single quotes."
+        },
+        "missingComma": {
+            "text": "{\"a\": 1 \"b\": 2}",
+            "message": "Invalid JSON: Expected ',' or '}' after property value in JSON at position 8 (line 1, column 9)"
+        },
+        "unquotedKey": {
+            "text": "{name: \"Ann\"}",
+            "message": "Invalid JSON: Expected property name or '}' in JSON at position 1 (line 1, column 2). Keys and text values must be wrapped in double quotes."
+        },
+        "trailingArrayComma": {
+            "text": "[1, 2, 3,]",
+            "message": "Invalid JSON: Unexpected token ']', \"[1, 2, 3,]\" is not valid JSON"
+        },
+        "missingBracket": {
+            "text": "{\"tags\": [\"a\", \"b\"}",
+            "message": "Invalid JSON: Expected ',' or ']' after array element in JSON at position 18 (line 1, column 19)"
+        },
+        "comment": {
+            "text": "{\"a\": 1 // note\n}",
+            "message": "Invalid JSON: Expected ',' or '}' after property value in JSON at position 8 (line 1, column 9). Comments are not allowed in JSON."
+        },
+        "largestUploadBytes": 0,
+        "nonGetRequests": []
+    },
+    "json-formatter": {
+        "tested": "2026-11-04",
+        "trailingCommaMessage": "Invalid JSON: Expected double-quoted property name in JSON at position 31 (line 1, column 32). Remove the trailing comma before this bracket.",
+        "validMessage": "Valid JSON ✓ Formatted · 53 B",
+        "largestUploadBytes": 0,
+        "nonGetRequests": []
+    },
+    "merge-pdf": {
+        "tested": "2026-11-04",
+        "inputFiles": 3,
+        "inputPages": 8,
+        "outputPages": 8,
+        "outputKB": 2,
+        "largestUploadBytes": 0,
+        "nonGetRequests": []
+    },
+    "mortgage-calculator": {
+        "tested": "2026-11-04",
+        "panel": "Home price Currency $ £ € C$ A$ Down payment By percentage By amount Down payment percentage % Interest rate (annual %) Extra monthly payment (optional) Loan term 10 years 15 years 20 years 25 years 30 years Custom loan term (years) $1,769.79 Monthly payment (principal & interest) $280,000.00 Loan amount $357,124.57 Total interest $707,124.57 Total cost (price + interest) Paid off in 30 years. Thi",
+        "largestUploadBytes": 0,
+        "nonGetRequests": []
+    },
+    "organize-pdf": {
+        "tested": "2026-11-04",
+        "panel": "doc.pdf · 3 pages · 1.23 KB Choose another PDF Drag a page to reorder it, or use the move buttons. 1 ← → 2 ← → 3 ← → Save new order",
+        "largestUploadBytes": 0,
+        "nonGetRequests": []
+    },
+    "password-generator": {
+        "tested": "2026-11-04",
+        "default16Chars": "104 bits of entropy",
+        "largestUploadBytes": 0,
+        "nonGetRequests": []
+    },
+    "pdf-to-jpg": {
+        "tested": "2026-11-04",
+        "pageKBByDpi": {
+            "72": 6,
+            "150": 18,
+            "300": 63
+        },
+        "largestUploadBytes": 0,
+        "nonGetRequests": []
+    },
+    "qr-code-generator": {
+        "tested": "2026-11-04",
+        "pngKB": 8.6,
+        "pngSize": "512 x 512",
+        "svgIsVector": true,
+        "largestUploadBytes": 0,
+        "nonGetRequests": []
+    },
+    "split-pdf": {
+        "tested": "2026-11-04",
+        "inputPages": 12,
+        "range": "1-3, 5",
+        "outputPages": 4,
+        "fileName": "report-pages-1-3_5.pdf",
+        "largestUploadBytes": 0,
+        "nonGetRequests": []
+    },
+    "unlock-pdf": {
+        "tested": "2026-11-04",
+        "noPasswordMessage": "Drop a password-protected PDF here or click to choose One PDF file · max 200 MB \"plain.pdf\" does not have a password. There is nothing to unlock.",
+        "largestUploadBytes": 0,
+        "nonGetRequests": []
+    },
+    "webp-to-png": {
+        "tested": "2026-11-04",
+        "webpKB": 77,
+        "pngKB": 801,
+        "name": "a.png",
+        "largestUploadBytes": 0,
+        "nonGetRequests": []
+    },
+    "word-counter": {
+        "tested": "2026-11-04",
+        "plain": {
+            "text": "The quick brown fox jumps over the lazy dog.",
+            "words": "9"
+        },
+        "hyphen": {
+            "text": "A state-of-the-art tool.",
+            "words": "3"
+        },
+        "apostrophe": {
+            "text": "Don't stop, it's fine.",
+            "words": "4"
+        },
+        "numbers": {
+            "text": "In 2026 we paid 1,250.50 dollars.",
+            "words": "6"
+        },
+        "german": {
+            "text": "Die Bachelorarbeit ist z. B. lang.",
+            "words": "6"
+        },
+        "largestUploadBytes": 0,
+        "nonGetRequests": []
+    }
+}

@@ -387,7 +387,7 @@ return [
         'tool' => 'word-counter',
         'related' => ['readability-checker', 'case-converter', 'ai-content-detector'],
         'published' => '2026-10-10',
-        'updated' => '2026-10-10',
+        'updated' => '2026-11-04',
         'sections' => [
             [
                 'heading' => 'The quick answer',
@@ -448,6 +448,12 @@ return [
                     'If your text arrives in capitals, or a heading needs title case, the [Case Converter](/case-converter) fixes it without retyping.',
                 ],
             ],
+            [
+                'heading' => 'How we count words matters too',
+                'paragraphs' => [
+                    'Page estimates start from a word count, and word counters disagree on the awkward cases. In our test of the [Word Counter](/word-counter), "A state-of-the-art tool." counted as 3 words, "Don\'t stop, it\'s fine." as 4, and "In 2026 we paid 1,250.50 dollars." as 6. Microsoft Word may differ on a few of these, so if a deadline is strict, check your total in the program your teacher or publisher uses.',
+                ],
+            ],
         ],
         'faqs' => [
             ['q' => 'How many words is a 5-page essay?', 'a' => 'About 1,250 to 1,500 words double-spaced, or 2,500 to 3,000 words single-spaced, with a 12-point font and 1-inch margins.'],
@@ -467,7 +473,7 @@ return [
         'tool' => 'remove-background',
         'related' => ['image-compressor', 'image-resizer', 'webp-to-png'],
         'published' => '2026-10-10',
-        'updated' => '2026-10-10',
+        'updated' => '2026-11-04',
         'sections' => [
             [
                 'heading' => 'How automatic background removal works',
@@ -512,6 +518,13 @@ return [
                     'The cut-out downloads as a PNG with a transparent background. To fit it to the exact size a profile or shop listing asks for, use the [Image Resizer](/image-resizer); to change other JPG images to PNG without removing anything, use [JPG to PNG](/jpg-to-png).',
                 ],
             ],
+            [
+                'heading' => 'Getting a cleaner cut-out',
+                'paragraphs' => [
+                    'The result depends heavily on the photo. Clear contrast between the subject and the background works best, with even light and sharp focus. Fine hair, fur, glass and objects the same colour as the background are the hardest cases, so look along those edges at full size.',
+                    'Check the result against both a light and a dark background, since a pale halo can be invisible on white and obvious on black. Then use the [Image Resizer](/image-resizer) to fit the size a shop or profile asks for.',
+                ],
+            ],
         ],
         'faqs' => [
             ['q' => 'Is it free to remove a background here?', 'a' => 'Yes. There is no sign up, no watermark and no limit on the number of images.'],
@@ -531,7 +544,7 @@ return [
         'tool' => 'password-generator',
         'related' => ['random-number-generator', 'qr-code-generator', 'base64-encoder-decoder'],
         'published' => '2026-10-10',
-        'updated' => '2026-10-10',
+        'updated' => '2026-11-04',
         'sections' => [
             [
                 'heading' => 'Length beats complexity',
@@ -570,6 +583,26 @@ return [
                     'Two-factor authentication on email, banking and social accounts.',
                 ],
             ],
+            [
+                'heading' => 'How much strength is enough?',
+                'paragraphs' => [
+                    'Password strength is measured in bits of entropy. Each extra bit doubles the number of guesses needed. Our [Password Generator](/password-generator) shows the figure as you change the settings: at its default of 16 characters using all four character types, it showed 104 bits when we tested it.',
+                    'That is far beyond what guessing can reach, as long as the site stores passwords properly. For a password you must type by hand, such as your computer login, a long passphrase of several random words is easier and can be just as strong.',
+                ],
+            ],
+            [
+                'heading' => 'What attackers actually do',
+                'paragraphs' => [
+                    'Most accounts are not lost to clever maths. Attackers try passwords from earlier data breaches on other sites, which is why reuse is so dangerous, and they trick people into typing passwords into fake pages. A strong password protects against neither if you reuse it or hand it over.',
+                    'That is why the most useful steps are a unique password for each account, a password manager to remember them, and two-step sign-in on your email and bank. Your email matters most, because it can reset everything else.',
+                ],
+            ],
+            [
+                'heading' => 'Protecting files as well as accounts',
+                'paragraphs' => [
+                    'The same rules apply to a password on a document. [Protect PDF](/protect-pdf) locks a file so it cannot be opened without the password. Send the password by a different route than the file, such as a phone call or a separate message, or anyone who gets the email gets both.',
+                ],
+            ],
         ],
         'faqs' => [
             ['q' => 'How long should a password be?', 'a' => 'At least 15 characters if it is the only thing protecting the account. Longer is better, and a passphrase of four or more random words reaches that easily.'],
@@ -589,7 +622,7 @@ return [
         'tool' => 'pdf-to-word',
         'related' => ['word-to-pdf', 'compress-pdf', 'pdf-to-excel'],
         'published' => '2026-10-10',
-        'updated' => '2026-10-10',
+        'updated' => '2026-11-04',
         'sections' => [
             [
                 'heading' => 'Why PDF to Word is never perfect',
@@ -635,6 +668,21 @@ return [
                     'For a small fix, such as a typo or a date, you may not need Word at all: [Edit PDF](/edit-pdf) changes the existing text directly in the PDF, in its own font.',
                 ],
             ],
+            [
+                'heading' => 'Check the result before you rely on it',
+                'paragraphs' => [
+                    'A conversion rebuilds the document from what the PDF contains, so it can look right and still have small errors. Read through anything important. Look closely at the things that are easiest to get wrong: tables, multi-column text, headers and footers, and special characters.',
+                    'Search for the last sentence of the original, and compare the number of pages. If a section is missing, it was probably an image in the PDF rather than text.',
+                ],
+            ],
+            [
+                'heading' => 'When not to convert at all',
+                'paragraphs' => [
+                    'If you only need to change a date or fix a typo, you may not need Word. Editing the PDF directly keeps the layout exactly as it is, and converting back and forth is where formatting usually goes wrong.',
+                    'To pull figures out of a table, [PDF to Excel](/pdf-to-excel) is often a better fit, because it keeps rows and columns as cells. When you finish in Word, [Word to PDF](/word-to-pdf) turns it back into a file that looks the same on every device.',
+                    'A PDF made by scanning paper is really a picture of text. Tools without text recognition cannot read it, so you get little or nothing back. The quick test: try to select a sentence in your PDF viewer. If you cannot, it is a scan.',
+                ],
+            ],
         ],
         'faqs' => [
             ['q' => 'Will the Word file look exactly like the PDF?', 'a' => 'Simple documents come close. Complex layouts, tables and special fonts usually need some adjustment after conversion.'],
@@ -655,7 +703,7 @@ return [
         'tool' => 'qr-code-generator',
         'related' => ['password-generator', 'image-resizer', 'jpg-to-pdf'],
         'published' => '2026-10-10',
-        'updated' => '2026-10-10',
+        'updated' => '2026-11-04',
         'sections' => [
             [
                 'heading' => 'What a QR code is',
@@ -695,6 +743,26 @@ return [
                     'If you need the QR code at an exact pixel size for a slide or a print layout, resize the downloaded image with the [Image Resizer](/image-resizer).',
                 ],
             ],
+            [
+                'heading' => 'Test it properly before printing',
+                'paragraphs' => [
+                    'A code that scans on your laptop screen can still fail on a poster. Print one at the real size and try it with two or three different phones, in normal light and from the distance people will actually stand.',
+                    'Common causes of failure are too little contrast, a dark code on a dark background, a code printed too small, and a missing quiet zone: the empty margin around the code that scanners need. Keep that margin clear. Light codes on dark backgrounds also fail on some older scanner apps.',
+                ],
+            ],
+            [
+                'heading' => 'What to put in the code',
+                'paragraphs' => [
+                    'Shorter data makes a simpler pattern that is easier to scan from further away. A short web address beats a long one with tracking parameters. Our test code for a web address came out as a 512 x 512 PNG of 8.6 KB; for print, use the SVG download, which stays sharp at any size.',
+                    'If the address might change, point the code at a page you control and can redirect, because a static code cannot be edited after printing. Resize the PNG for a slide or web page with the [Image Resizer](/image-resizer) rather than stretching it in a design tool, which can blur the edges.',
+                ],
+            ],
+            [
+                'heading' => 'Be careful what you scan',
+                'paragraphs' => [
+                    'QR codes hide their destination, which scammers exploit by sticking fake codes over real ones on parking meters and restaurant tables. Check the address your phone shows before you open it, and never enter a password or card number on a page you reached that way unless you are sure of it.',
+                ],
+            ],
         ],
         'faqs' => [
             ['q' => 'Do these QR codes expire?', 'a' => 'No. The content is stored inside the code, so it keeps working as long as the link it points to works.'],
@@ -715,7 +783,7 @@ return [
         'tool' => 'percentage-calculator',
         'related' => ['tip-calculator', 'loan-calculator', 'mortgage-calculator'],
         'published' => '2026-10-10',
-        'updated' => '2026-10-10',
+        'updated' => '2026-11-04',
         'sections' => [
             [
                 'heading' => 'What "percent" means',
@@ -762,6 +830,28 @@ return [
                 'heading' => 'Let the calculator do it',
                 'paragraphs' => [
                     'The [Percentage Calculator](/percentage-calculator) on this site has a box for each of these three questions and shows the formula it used, so you can check the working. For splitting a bill, the [Tip Calculator](/tip-calculator) does the percentage and the division in one go.',
+                ],
+            ],
+            [
+                'heading' => 'Worked examples from everyday life',
+                'paragraphs' => [
+                    'A jacket costs $80 and is 25% off. The discount is 80 x 0.25 = $20, so you pay $60. A quicker way is to multiply by what is left: 80 x 0.75 = 60.',
+                    'A restaurant bill is $64 and you leave 18%: 64 x 0.18 = $11.52, for a total of $75.52. The [Tip Calculator](/tip-calculator) does this and splits it between people.',
+                    'Your pay rises from $3,200 to $3,400 a month. The change is 200, and 200 / 3,200 x 100 = 6.25%. Always divide by the old value, not the new one.',
+                ],
+            ],
+            [
+                'heading' => 'Percent versus percentage points',
+                'paragraphs' => [
+                    'If a loan rate goes from 4% to 5%, it rose by one percentage point, but by 25% in relative terms, because 1 is a quarter of 4. News stories and adverts often use whichever sounds bigger, so check which one you are reading.',
+                    'This matters when you compare offers. A rate quoted in the [Loan Calculator](/loan-calculator) is a percentage of the balance, and a small change in points can mean a large change in what you pay over the years.',
+                ],
+            ],
+            [
+                'heading' => 'Why percentages do not add up the way you expect',
+                'paragraphs' => [
+                    'A 50% rise followed by a 50% fall does not bring you back to where you began. Start at 100: up 50% is 150, and down 50% is 75. The second percentage is taken from a bigger number, so the fall is larger than the rise.',
+                    'It is the same with stacked discounts. 20% off and then another 10% off is not 30% off. Multiply instead: 0.8 x 0.9 = 0.72, which is 28% off.',
                 ],
             ],
         ],
@@ -1538,7 +1628,7 @@ return [
 
     'how-to-check-if-an-online-tool-uploads-your-file' => [
         'title' => 'How to Check if an Online Tool Uploads Your File',
-        'description' => 'Check whether a "browser-based" PDF or image tool really keeps your file on your device, using the Network tab in Chrome, Edge or Firefox, an offline test and the privacy policy.',
+        'description' => 'Check whether a "browser-based" PDF or image tool really keeps your file on your device, using the Network tab, an offline test and the privacy policy.',
         'h1' => 'How to check if an online tool uploads your file',
         'intro' => 'Many free PDF and image tools say your file "never leaves your device". Some of them mean it, some of them upload the file to a server and delete it later, and the page often looks exactly the same either way. You do not have to take the claim on trust. Every desktop browser has a built-in tool that lists what a page sends over the network, and with a few minutes of practice you can see for yourself whether your file went anywhere. No technical background is needed; here is how to do it.',
         'tool' => 'merge-pdf',
@@ -1662,13 +1752,13 @@ return [
 
     'ilovemytools-vs-ilovepdf-vs-smallpdf' => [
         'title' => 'ILoveMyTools vs iLovePDF vs Smallpdf: Who Uploads Your PDF?',
-        'description' => 'An honest comparison of three free PDF sites: where your file goes, how long it is kept, what the free plan limits, and when the bigger services are the better pick.',
+        'description' => 'An honest comparison of three free PDF sites: where your file goes, how long it is kept, free-plan limits, and when the bigger services win.',
         'h1' => 'ILoveMyTools vs iLovePDF vs Smallpdf',
         'intro' => 'The main difference between these three sites is where your file is processed. iLovePDF and Smallpdf upload your PDF to their servers and delete it later; ILoveMyTools does the work inside your browser, so the file stays on your device. That does not make one of them best for everything. We built ILoveMyTools, so read this with that in mind: every claim about the other two comes from their own pages, linked below, as they read on 2 November 2026.',
         'tool' => 'protect-pdf',
         'related' => ['merge-pdf', 'compress-pdf', 'edit-pdf'],
         'published' => '2026-11-02',
-        'updated' => '2026-11-02',
+        'updated' => '2026-11-04',
         'sections' => [
             [
                 'heading' => 'The short comparison',
@@ -1711,6 +1801,19 @@ return [
                 'paragraphs' => [
                     'Our tools suit a different need: you want the job done now, on a private file, with no account. You can [merge up to 50 PDFs](/merge-pdf), [compress a PDF](/compress-pdf), [change the text already in a PDF](/edit-pdf), or [redact it properly](/redact-pdf) with no sign-up, no watermark and no daily limit, and the file stays on your device.',
                     'There are limits to be honest about. Because everything runs on your device, a very large file can be slow or fail on a phone with little memory. The site also has a few lookup tools, such as the Bulk Domain Authority Checker, that have to use our server, and they say so on the page. Those tools handle web addresses, not your files.',
+                ],
+            ],
+            [
+                'heading' => 'How to test any of these yourself',
+                'paragraphs' => [
+                    'You do not have to trust any of the three sites, including us. Open your browser\'s developer tools, go to the Network tab, and run a job with a small test file. A browser-based tool shows no request carrying your file. A server-based one shows an upload roughly the size of the file. Our [guide to checking for uploads](/guides/how-to-check-if-an-online-tool-uploads-your-file) walks through it step by step.',
+                    'We ran that check on our own file tools on 4 November 2026 and recorded the results on the tool pages: 0 bytes uploaded while merging, compressing and splitting. The numbers for a 3-page photo PDF were 716 KB down to 122 KB on the Recommended setting.',
+                ],
+            ],
+            [
+                'heading' => 'Which should you choose?',
+                'paragraphs' => [
+                    'For a private file and a one-off job, with no account, use a browser-based tool. For a very large file on a weak phone, a server may simply be faster. If you process documents every day in a team, a paid plan\'s apps and admin features may well be worth the cost. There is no single best answer, and anyone who says otherwise, us included, is selling something.',
                 ],
             ],
         ],
@@ -1800,6 +1903,712 @@ return [
             ['title' => 'Sleep Foundation, How much sleep do you need?', 'url' => 'https://www.sleepfoundation.org/how-sleep-works/how-much-sleep-do-we-really-need'],
             ['title' => 'National Sleep Foundation, How many hours of sleep do you really need?', 'url' => 'https://www.thensf.org/how-many-hours-of-sleep-do-you-really-need/'],
             ['title' => 'CDC, About Sleep', 'url' => 'https://www.cdc.gov/sleep/about/index.html'],
+        ],
+    ],
+
+    'how-compound-interest-works' => [
+        'title' => 'How Compound Interest Works, With a Worked Example',
+        'description' => 'See how compound interest grows money, with a worked 20-year example, the formula, the Rule of 72, and how much monthly contributions really change the result.',
+        'h1' => 'How compound interest works',
+        'intro' => 'Compound interest means you earn interest on your interest as well as on the money you put in. Early on the difference looks small, and over decades it does most of the work. This guide walks through one real calculation, shows the formula behind it, and explains the assumption that matters most: no real investment pays the same rate every year.',
+        'tool' => 'compound-interest-calculator',
+        'related' => ['percentage-calculator', 'loan-calculator', 'mortgage-calculator'],
+        'published' => '2026-11-04',
+        'updated' => '2026-11-04',
+        'sections' => [
+            [
+                'heading' => 'A worked example',
+                'paragraphs' => [
+                    'We ran this through the [Compound Interest Calculator](/compound-interest-calculator): $10,000 to start, 6% a year compounded monthly, for 20 years, adding $200 every month. The final balance was $125,510.22.',
+                    'You put in $58,000 of your own money: the $10,000 starting amount plus $48,000 in contributions. The other $67,510.22 is interest, so more than half of the final balance is money you never paid in.',
+                ],
+                'table' => [
+                    'headers' => ['Item', 'Amount'],
+                    'rows' => [
+                        ['Starting amount', '$10,000.00'],
+                        ['Monthly contributions over 20 years', '$48,000.00'],
+                        ['Interest earned', '$67,510.22'],
+                        ['Final balance', '$125,510.22'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'The formula',
+                'paragraphs' => [
+                    'For a single deposit with no further contributions, the balance is A = P x (1 + r / n) ^ (n x t). P is the starting amount, r is the yearly rate as a decimal, n is how many times a year interest is added, and t is the number of years.',
+                    'Using our example with no monthly contributions: $10,000 x (1 + 0.06 / 12) ^ 240 is about $33,102. Compare that with the $125,510.22 above and you can see that steady contributions did more for the total than the starting amount did.',
+                ],
+            ],
+            [
+                'heading' => 'The Rule of 72',
+                'paragraphs' => [
+                    'To estimate how long money takes to double, divide 72 by the yearly rate. At 6% that gives about 12 years. It is an approximation for mental arithmetic and works best for rates between about 4% and 12%. To work out the rates themselves, the [Percentage Calculator](/percentage-calculator) shows each step.',
+                ],
+            ],
+            [
+                'heading' => 'What actually changes the result',
+                'paragraphs' => [
+                    'Time and the rate matter far more than how often interest is added. Moving from yearly to monthly compounding helps a little; starting ten years earlier helps a lot, because the last years of growth are the largest.',
+                    'The same maths works against you on debt. A [loan](/loan-calculator) or a credit card balance grows on the same principle, which is why paying off high-interest debt usually beats saving at a lower rate.',
+                ],
+                'list' => [
+                    'Start early: extra years add more than a slightly higher rate.',
+                    'Contribute regularly: small monthly amounts add up, as the example shows.',
+                    'Watch fees: a yearly fee comes straight off your rate, and it compounds too.',
+                ],
+            ],
+            [
+                'heading' => 'The limit of any calculator',
+                'paragraphs' => [
+                    'A calculator assumes one fixed rate for the whole period. Savings rates change, and investment returns vary from year to year, including years that lose money. Treat the result as a projection for comparing options, not a forecast. It also ignores tax and inflation unless you allow for them yourself. This guide is general information, not financial advice.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'What is the difference between simple and compound interest?', 'a' => 'Simple interest is paid only on the original amount. Compound interest is also paid on the interest already earned, so the balance grows faster over time.'],
+            ['q' => 'How much does $10,000 grow to in 20 years at 6%?', 'a' => 'With monthly compounding and no further deposits, about $33,102. With $200 added every month, our calculator gave $125,510.22.'],
+            ['q' => 'Does compounding more often make a big difference?', 'a' => 'Only a small one. The rate and the number of years matter far more.'],
+        ],
+        'sources' => [
+            ['title' => 'U.S. Securities and Exchange Commission, Compound interest calculator', 'url' => 'https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator'],
+        ],
+    ],
+
+    'how-to-fix-invalid-json' => [
+        'title' => 'How to Fix Invalid JSON: 6 Common Errors and What They Mean',
+        'description' => 'What JSON error messages really mean: six common mistakes, the exact message each one produces, and how to fix them, from trailing commas to single quotes.',
+        'h1' => 'How to fix invalid JSON',
+        'intro' => 'JSON is strict. One stray comma or the wrong kind of quote and the whole document is rejected, often with a message that points somewhere confusing. We fed six of the most common mistakes into our JSON Formatter and recorded exactly what came back, so you can match your error to its cause. The position in the message is where the parser gave up, which is often just after the real mistake.',
+        'tool' => 'json-formatter',
+        'related' => ['base64-encoder-decoder', 'case-converter', 'domain-age-checker'],
+        'published' => '2026-11-04',
+        'updated' => '2026-11-04',
+        'sections' => [
+            [
+                'heading' => 'The six errors we tested',
+                'paragraphs' => [
+                    'Each message below is what the [JSON Formatter](/json-formatter) reported in Chrome. The technical part comes from the browser, so its wording can differ slightly in other browsers; the tool adds the plain-English hint in some cases.',
+                ],
+                'table' => [
+                    'headers' => ['Mistake', 'Example', 'Message', 'Fix'],
+                    'rows' => [
+                        ['Trailing comma in an object', '{"a": 1,}', 'Expected double-quoted property name... Remove the trailing comma before this bracket.', 'Delete the last comma'],
+                        ['Trailing comma in an array', '[1, 2, 3,]', 'Unexpected token \']\'', 'Delete the last comma'],
+                        ['Single quotes', '{\'name\': \'Ann\'}', 'Expected property name or \'}\'... must use double quotes', 'Use " for keys and strings'],
+                        ['Unquoted key', '{name: "Ann"}', 'Expected property name or \'}\'... must be wrapped in double quotes', 'Write "name"'],
+                        ['Missing comma', '{"a": 1 "b": 2}', 'Expected \',\' or \'}\' after property value', 'Add a comma between items'],
+                        ['Comment', '{"a": 1 // note}', 'Expected \',\' or \'}\'... Comments are not allowed in JSON.', 'Remove the comment'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'Reading the position',
+                'paragraphs' => [
+                    'A message like "position 8 (line 1, column 9)" tells you where the parser stopped, counted from the start. With a missing comma, as in {"a": 1 "b": 2}, position 8 is the start of "b", because that is where a comma should have appeared. So look just before the position as well as at it.',
+                    'One mismatched bracket can do the same thing. In {"tags": ["a", "b"} the parser complains at the closing brace, position 18, because it expected the array to end first. Formatting a long document first makes this kind of mistake much easier to see.',
+                ],
+            ],
+            [
+                'heading' => 'A quick way to debug a large file',
+                'list' => [
+                    'Paste the JSON into the formatter and note the line and column in the message.',
+                    'Check that spot and the character just before it.',
+                    'Fix one error and format again: the next error often only appears after the first is gone.',
+                    'If the JSON came from code, fix it there too, or the same error will return.',
+                ],
+                'paragraphs' => [
+                    'The usual culprits are hand-edited config files, JavaScript objects pasted as if they were JSON, and copying from a document that turned straight quotes into curly ones.',
+                ],
+            ],
+            [
+                'heading' => 'JSON is not JavaScript',
+                'paragraphs' => [
+                    'Most of these errors come from the same confusion. JavaScript objects allow single quotes, unquoted keys, trailing commas and comments. JSON allows none of them. The rules are short and fixed by the standard, so a strict error is the parser doing its job.',
+                    'If a value holds binary data or an encoded string, a tool like the [Base64 Encoder](/base64-encoder-decoder) can help you see what is inside. Your JSON stays in your browser in the formatter: our network log showed 0 bytes sent during these tests, so it is safe for config files, though you should still be careful where you paste live secrets.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Why does JSON not allow trailing commas?', 'a' => 'The JSON standard simply does not include them. A comma must be followed by another value.'],
+            ['q' => 'Can JSON have comments?', 'a' => 'No. Standard JSON has no comment syntax. Some tools accept variants such as JSON5, but a strict parser will reject them.'],
+            ['q' => 'Why is the error position after my mistake?', 'a' => 'The parser reports where it could no longer continue, which is often the character right after the real problem.'],
+        ],
+        'sources' => [
+            ['title' => 'RFC 8259, The JavaScript Object Notation (JSON) Data Interchange Format', 'url' => 'https://www.rfc-editor.org/rfc/rfc8259'],
+            ['title' => 'MDN Web Docs, SyntaxError: JSON.parse: bad parsing', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/JSON_bad_parse'],
+        ],
+    ],
+
+    'what-is-a-good-domain-authority-score' => [
+        'title' => 'What Is a Good Domain Authority Score? DA vs DR vs OPR',
+        'description' => 'What a good authority score looks like, how Moz DA, Ahrefs DR and OpenPageRank differ, and what a low score on a new website does and does not mean.',
+        'h1' => 'What is a good domain authority score?',
+        'intro' => 'There is no single authority score. Moz, Ahrefs, Semrush and OpenPageRank each run their own formula on their own data, so the same site gets different numbers, and none of them comes from Google. A "good" score is one that is strong compared with the sites you actually compete with. Here is how the metrics differ, and what we found when we checked a giant site alongside our own new one.',
+        'tool' => 'domain-authority-checker',
+        'related' => ['domain-age-checker', 'broken-link-checker', 'readability-checker'],
+        'published' => '2026-11-04',
+        'updated' => '2026-11-04',
+        'sections' => [
+            [
+                'heading' => 'The metrics compared',
+                'paragraphs' => [
+                    'All of these estimate how strong a site is from links pointing to it. They are not interchangeable: a DR of 40 and a DA of 40 are different measurements.',
+                ],
+                'table' => [
+                    'headers' => ['Metric', 'Made by', 'Scale'],
+                    'rows' => [
+                        ['OpenPageRank', 'OpenPageRank (Common Crawl data)', '0-10'],
+                        ['Domain Authority (DA)', 'Moz', '0-100'],
+                        ['Domain Rating (DR)', 'Ahrefs', '0-100'],
+                        ['Authority Score', 'Semrush', '0-100'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'What we saw when we checked',
+                'paragraphs' => [
+                    'We ran two sites through the [Bulk Domain Authority Checker](/domain-authority-checker) on 4 November 2026. wikipedia.org scored 9.63 out of 10, ranked #36 globally, with 627,034 referring domains. Our own site, ilovemytools.store, launched in 2026, came back as "Not found".',
+                    'That second result is the useful one. It does not mean a site is penalised or broken. It means the site does not have enough links in the web crawl behind the score yet. Almost every new site starts here.',
+                ],
+            ],
+            [
+                'heading' => 'So what counts as good?',
+                'paragraphs' => [
+                    'The scales are logarithmic, so each step up is much harder than the last. Moving from 2 to 3 on OpenPageRank takes far fewer links than moving from 8 to 9. As a rough guide, new sites sit near 0, small established sites often score 2 to 4, well-known brands 5 to 7, and only the largest sites go higher.',
+                    'The better question is how you compare with the sites ranking for the searches you want. Paste your competitors in alongside your own domain and sort the table. If they are all at 3, you are in reach at 2.5. If they are all at 7, you need a different target for now.',
+                ],
+            ],
+            [
+                'heading' => 'What these scores are not',
+                'paragraphs' => [
+                    'They are not Google rankings or a Google metric. Moz says plainly that Domain Authority is not a ranking factor. A page with a low score can outrank a stronger site if it answers the search better, especially for specific long-tail searches.',
+                    'They also do not measure quality directly. Scores can be pushed up with low-quality or paid links, which is exactly what Google\'s spam policies target, so treat a sudden high score on an unknown site with some suspicion.',
+                ],
+            ],
+            [
+                'heading' => 'How to use a score sensibly',
+                'list' => [
+                    'Compare within one metric. Never compare DA from one site with DR from another.',
+                    'Use it to size up link partners and guest-post sites, then read the site itself.',
+                    'Check a domain\'s history too: the [Domain Age Checker](/domain-age-checker) shows when it was registered.',
+                    'Fix your own [broken links](/broken-link-checker) before chasing new ones.',
+                    'Track the trend over months. Scores update slowly; OpenPageRank updates monthly.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Is a domain authority of 30 good?', 'a' => 'It depends on the metric and your competitors. On a 0-100 scale, 30 is reasonable for a small site in a low-competition niche and weak in a crowded one.'],
+            ['q' => 'Why does my new site show no score?', 'a' => 'Scores come from crawls of links across the web. A new site with few links often has no score yet, and that is normal.'],
+            ['q' => 'Does Google use domain authority?', 'a' => 'No. DA is a Moz metric, and these scores are made by third parties to estimate strength. Google has its own systems.'],
+        ],
+        'sources' => [
+            ['title' => 'OpenPageRank: how the score is calculated', 'url' => 'https://openpagerank.keywordseverywhere.com/methodology'],
+            ['title' => 'Moz, What is Domain Authority?', 'url' => 'https://moz.com/learn/seo/domain-authority'],
+            ['title' => 'Google Search Central, Spam policies: link spam', 'url' => 'https://developers.google.com/search/docs/essentials/spam-policies'],
+        ],
+    ],
+
+    'are-online-coin-flips-fair' => [
+        'title' => 'Are Online Coin Flips Fair? We Flipped 1,000 Coins to Check',
+        'description' => 'We flipped 1,000 virtual coins on our own tool and got 510 heads and 490 tails. What that shows about fairness, streaks, and how to judge any random tool.',
+        'h1' => 'Are online coin flips fair?',
+        'intro' => 'A fair online coin should land on heads about half the time, with no pattern you can predict. We flipped 1,000 coins on our Coin Flip tool and got 510 heads and 490 tails. That is a good result, but it is also easy to misread, because a fair coin is not supposed to be perfectly even. Here is what the number shows, what it does not show, and how randomness works in a browser.',
+        'tool' => 'coin-flip',
+        'related' => ['dice-roller', 'spin-the-wheel', 'random-number-generator'],
+        'published' => '2026-11-04',
+        'updated' => '2026-11-04',
+        'sections' => [
+            [
+                'heading' => 'What we did',
+                'paragraphs' => [
+                    'On the live [Coin Flip](/coin-flip) page we set 100 coins per flip and flipped 10 times, for 1,000 coins in total. The tool counted 510 heads and 490 tails, or 51% and 49%.',
+                ],
+                'table' => [
+                    'headers' => ['Result', 'Count', 'Share'],
+                    'rows' => [['Heads', '510', '51%'], ['Tails', '490', '49%'], ['Total', '1,000', '100%']],
+                ],
+            ],
+            [
+                'heading' => 'Is 510 out of 1,000 fair?',
+                'paragraphs' => [
+                    'Yes. With 1,000 fair flips, the typical distance from 500 is about 16 flips (the standard deviation, the square root of 1,000 x 0.5 x 0.5). Our result is 10 away, well inside normal variation. An exact 500 would not be any more impressive.',
+                    'One run cannot prove a coin is fair; it can only fail to show a problem. A much larger gap, say 600 heads in 1,000, would be a real warning sign, since that is more than six standard deviations from the middle.',
+                ],
+            ],
+            [
+                'heading' => 'Streaks are normal',
+                'paragraphs' => [
+                    'People expect random results to alternate, so a run of five heads looks suspicious. It is not. In a long series of flips, runs like that are expected. Each flip is independent: after five heads the next is still 50/50. Believing tails is now "due" is the gambler\'s fallacy.',
+                ],
+            ],
+            [
+                'heading' => 'Where the randomness comes from',
+                'paragraphs' => [
+                    'Our random tools use your browser\'s crypto.getRandomValues, a cryptographically secure generator, rather than the simpler Math.random. The code also avoids a subtle bias called modulo bias by discarding values that would skew the result. The flip happens on your device, so the site does not choose the outcome.',
+                    'The same source drives the [Dice Roller](/dice-roller) and [Spin the Wheel](/spin-the-wheel), so all of them have the same basis for fairness.',
+                ],
+            ],
+            [
+                'heading' => 'How to judge any random tool',
+                'list' => [
+                    'Run a large sample and compare it with what chance predicts, not with a perfect split.',
+                    'Look for a statement of how results are generated. Secure browser randomness is a good sign.',
+                    'For anything with money or legal weight, use a process people can witness or audit. A website is fine for deciding who goes first, not for a prize draw with legal rules.',
+                ],
+                'paragraphs' => [
+                    'Virtual coins also skip a detail of real ones: studies of human coin tossing have found a slight tendency to land on the side that started up. A software flip has no starting side.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Is a virtual coin flip truly random?', 'a' => 'It is random enough for everyday decisions. Ours uses the browser\'s cryptographically secure generator, which is designed to be unpredictable.'],
+            ['q' => 'What are the odds of 5 heads in a row?', 'a' => 'One in 32, or about 3%, for any given five flips: 0.5 multiplied by itself five times.'],
+            ['q' => 'Does the previous flip affect the next one?', 'a' => 'No. Each flip is independent and stays 50/50.'],
+        ],
+        'sources' => [
+            ['title' => 'MDN Web Docs, Crypto: getRandomValues()', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues'],
+        ],
+    ],
+
+    'how-to-find-broken-links' => [
+        'title' => 'How to Find Broken Links on Your Website (Free Check)',
+        'description' => 'How to find and fix broken links page by page: what 404, redirect and blocked results mean, which pages to check first, and a real scan of one of our own pages.',
+        'h1' => 'How to find broken links on your website',
+        'intro' => 'A broken link sends a visitor to an error page and wastes the trust that got them to click. Sites collect them quietly as other pages move or disappear. You can find them on any page in about a minute. This guide covers how to check, what the results mean, and what to do with each kind, using a real scan of one of our own pages as the example.',
+        'tool' => 'broken-link-checker',
+        'related' => ['domain-authority-checker', 'domain-age-checker', 'readability-checker'],
+        'published' => '2026-11-04',
+        'updated' => '2026-11-04',
+        'sections' => [
+            [
+                'heading' => 'How to run the check',
+                'list' => [
+                    'Open the [Broken Link Checker](/broken-link-checker) and enter the address of one page.',
+                    'Click Check links. It tests every link and image on that page, up to 300.',
+                    'Read the Problems tab first, then download the CSV if you want a list to work through.',
+                    'Repeat for your other important pages.',
+                ],
+                'paragraphs' => [
+                    'When we ran it on our own About page, it checked 82 links: 82 OK, 0 broken, 0 redirects and 0 blocked. This tool has to use our server to fetch the links, because a browser page is not allowed to test other sites directly. It sends the address you enter and stores nothing.',
+                ],
+            ],
+            [
+                'heading' => 'What the results mean',
+                'table' => [
+                    'headers' => ['Result', 'Meaning', 'What to do'],
+                    'rows' => [
+                        ['OK', 'The link works', 'Nothing'],
+                        ['Broken', 'A missing page, server error or dead domain', 'Update the link or remove it'],
+                        ['Redirect', 'It still works, through another address', 'Point it at the final address when convenient'],
+                        ['Blocked or no answer', 'The site refused an automated check, often with 401, 403 or 429', 'Open it in a browser before changing anything'],
+                    ],
+                ],
+                'paragraphs' => [
+                    'Blocked is not the same as broken. Plenty of large sites turn away automated requests while working perfectly for people, so check those by hand.',
+                ],
+            ],
+            [
+                'heading' => 'Which pages to check first',
+                'paragraphs' => [
+                    'The tool checks one page at a time, so start where a broken link costs the most: your home page, main menu and footer (which appear everywhere), your most visited articles, and any page that earns money or leads.',
+                    'Old articles collect the most dead links, because they often point to sources that have since moved. Check them once or twice a year.',
+                ],
+            ],
+            [
+                'heading' => 'How to fix what you find',
+                'list' => [
+                    'If the page moved, update the link to its new address.',
+                    'If it is gone, find a replacement source or remove the link and adjust the sentence.',
+                    'If the broken page is on your own site, add a redirect to the closest live page so existing links keep working.',
+                    'Never delete a page that other sites link to without a redirect: that throws those links away.',
+                ],
+                'paragraphs' => [
+                    'Broken outgoing links are mainly a problem for visitors. Google has said broken links are a normal part of the web, so do not panic over a few. Treat this as upkeep. To see how strong the sites linking to you are, try the [Bulk Domain Authority Checker](/domain-authority-checker).',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Does a broken link hurt SEO?', 'a' => 'A few rarely matter on their own. The clearer costs are a poor visitor experience and, for broken pages on your own site, losing the value of links pointing to them.'],
+            ['q' => 'Can this check my whole website at once?', 'a' => 'No. It checks one page at a time, up to 300 links. Enter your other pages one by one.'],
+            ['q' => 'Why is a working link marked Blocked?', 'a' => 'Some sites refuse automated requests or require a login. Open the link in a normal browser to confirm.'],
+        ],
+        'sources' => [
+            ['title' => 'MDN Web Docs, HTTP response status codes', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Status'],
+        ],
+    ],
+
+    'how-to-check-how-old-a-domain-is' => [
+        'title' => 'How to Check How Old a Domain Is (and Why It Matters)',
+        'description' => 'Find out when any domain was registered, when it expires and who the registrar is. What domain age can and cannot tell you when judging a website or a purchase.',
+        'h1' => 'How to check how old a domain is',
+        'intro' => 'A domain\'s registration date is public record, and it is one quick way to judge a website you do not know. An online shop that claims twenty years in business on a domain registered last month deserves a closer look. Here is how to check, what the record shows, and the part people often get wrong: domain age does not make a site rank better.',
+        'tool' => 'domain-age-checker',
+        'related' => ['domain-authority-checker', 'broken-link-checker', 'what-is-my-ip'],
+        'published' => '2026-11-04',
+        'updated' => '2026-11-04',
+        'sections' => [
+            [
+                'heading' => 'How to check',
+                'paragraphs' => [
+                    'Enter the domain in the [Domain Age Checker](/domain-age-checker), or up to 20 domains, one per line. Full addresses are fine; they are reduced to the domain. We looked up wikipedia.org on 4 November 2026: it was created on January 13, 2001, which made it 25 years, 9 months and 22 days old that day.',
+                    'The tool looks the domain up in public registration records through our server. It sends only the domain name and stores nothing.',
+                ],
+            ],
+            [
+                'heading' => 'What the record shows',
+                'table' => [
+                    'headers' => ['Field', 'What it tells you'],
+                    'rows' => [
+                        ['Created', 'When this registration began'],
+                        ['Age', 'Time since that date'],
+                        ['Expires', 'When it must be renewed'],
+                        ['Last updated', 'When the record last changed, such as a renewal'],
+                        ['Registrar', 'The company it was registered through'],
+                        ['Status and nameservers', 'Its current state and where its DNS is hosted'],
+                    ],
+                ],
+                'paragraphs' => [
+                    'The owner\'s personal details are usually hidden for privacy, so this normally will not tell you who runs a site.',
+                ],
+            ],
+            [
+                'heading' => 'When it is useful',
+                'list' => [
+                    'Checking a shop or a message before you pay: a very new domain is a reason to look harder, though not proof of anything.',
+                    'Buying a domain: the history shows how long it has been registered.',
+                    'Checking your own renewals: note the expiry date so a domain never lapses by accident.',
+                    'Researching competitors or link partners, alongside their [authority score](/domain-authority-checker).',
+                ],
+            ],
+            [
+                'heading' => 'What it cannot tell you',
+                'paragraphs' => [
+                    'Age is not a measure of trust on its own. A new domain can belong to an honest new business, and an old one can be bought by anyone. The created date also resets if a domain lapses and is registered again, so it may not reach back to its earliest use.',
+                    'Domain age is also not a ranking boost. Google\'s John Mueller has said publicly that it does not help. Older sites often rank well because they have had longer to earn links and build content, not because of the date itself. Do not pay extra for an "aged" domain on that promise alone.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Does domain age affect SEO?', 'a' => 'Not directly. Google has said age itself does not help. Older sites simply have had more time to earn links and publish.'],
+            ['q' => 'Can I see who owns a domain?', 'a' => 'Usually not. Most registrations hide personal details for privacy, though the registrar is shown.'],
+            ['q' => 'Is a new domain a scam?', 'a' => 'Not necessarily. It is one signal to weigh along with reviews, contact details and payment protection.'],
+        ],
+        'sources' => [
+            ['title' => 'ICANN, Registration Data Access Protocol (RDAP)', 'url' => 'https://www.icann.org/rdap'],
+        ],
+    ],
+
+    'what-your-ip-address-reveals' => [
+        'title' => 'What Your IP Address Reveals (and What It Does Not)',
+        'description' => 'What a website can learn from your IP address and browser, what it cannot, how accurate IP location is, and what a VPN does and does not change.',
+        'h1' => 'What your IP address reveals, and what it does not',
+        'intro' => 'Every website you visit sees your public IP address, because that is how it knows where to send the page. It reveals less than most people fear, and also a bit more than some assume. An IP address points to your network and a rough location, not your name or your home. Here is what it shows, what else your browser shares, and what actually protects your privacy.',
+        'tool' => 'what-is-my-ip',
+        'related' => ['password-generator', 'domain-age-checker', 'qr-code-generator'],
+        'published' => '2026-11-04',
+        'updated' => '2026-11-04',
+        'sections' => [
+            [
+                'heading' => 'What an IP address shows',
+                'paragraphs' => [
+                    'Your public IP is assigned by your internet provider. From it, a website can usually work out your provider and an approximate location, often the city or region, and sometimes only the country. It often points to a provider\'s equipment rather than to your building, so "your location" on a lookup site can be a neighbouring city.',
+                    'It does not reveal your name, street address, email or browsing history. Only your provider can link an IP to a customer, and normally only under legal process.',
+                ],
+            ],
+            [
+                'heading' => 'What your browser shares too',
+                'paragraphs' => [
+                    'The IP is only part of it. Open [What Is My IP](/what-is-my-ip) and you will see what any page can read from your browser without asking.',
+                ],
+                'table' => [
+                    'headers' => ['Detail', 'Where it comes from'],
+                    'rows' => [
+                        ['Public IP and IPv4 or IPv6', 'Your connection, seen by the server'],
+                        ['Browser and operating system', 'The user agent your browser sends'],
+                        ['Screen resolution', 'Readable by the page'],
+                        ['Language and time zone', 'Your browser settings'],
+                        ['Whether cookies are enabled', 'Your browser settings'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'How our tool works',
+                'paragraphs' => [
+                    'To show your public IP, the page has to ask our server which address your request came from, since a page cannot see it alone. The IP is sent back to you and we do not store it in that lookup. The other details are read by the page in your own browser. The site also uses analytics and advertising, as our privacy policy explains.',
+                ],
+            ],
+            [
+                'heading' => 'Dynamic, shared and VPN addresses',
+                'list' => [
+                    'Most home addresses are dynamic, so yours may change from time to time.',
+                    'Phone networks and many providers share one public IP among lots of customers.',
+                    'A VPN hides your IP from the sites you visit by showing the VPN\'s address instead, and hides your traffic from your provider. The VPN company can then see that traffic, so choose carefully.',
+                ],
+                'paragraphs' => [
+                    'A VPN does not make you anonymous. Logins, cookies and browser details can still identify you, as can a site you are signed in to.',
+                ],
+            ],
+            [
+                'heading' => 'What actually protects you',
+                'paragraphs' => [
+                    'Your IP address is rarely the weak point. Most accounts are lost through reused or stolen passwords and phishing. Using a unique password for each account, from a [Password Generator](/password-generator) and a password manager, plus two-step sign-in, does more for most people than hiding an IP. Be careful about scanning unknown QR codes or clicking links in unexpected messages as well.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Can someone find my home address from my IP?', 'a' => 'Not from the IP alone. It usually shows an approximate area and your provider. Linking it to a customer normally needs the provider and a legal process.'],
+            ['q' => 'Why does my IP show the wrong city?', 'a' => 'Location databases are estimates, and many point to your provider\'s equipment rather than your building.'],
+            ['q' => 'Does my IP change?', 'a' => 'Often, yes. Most home connections have dynamic addresses, and using mobile data or a VPN gives you a different one.'],
+        ],
+        'sources' => [
+            ['title' => 'MDN Web Docs, User-Agent header', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent'],
+        ],
+    ],
+
+    'how-to-reorder-and-delete-pdf-pages' => [
+        'title' => 'How to Reorder and Delete Pages in a PDF (Free, No Upload)',
+        'description' => 'Put PDF pages in the right order and remove the ones you do not need, in your browser. Steps, when to use each tool, and what stays the same in the file.',
+        'h1' => 'How to reorder and delete pages in a PDF',
+        'intro' => 'A scan comes out backwards, a report has a blank page in the middle, or an attachment needs only three pages out of twenty. You do not need a paid editor for any of these. Reordering and deleting pages are separate jobs with separate tools here, and both leave the content of the remaining pages untouched. Here is how to do each, and in what order if you need both.',
+        'tool' => 'organize-pdf',
+        'related' => ['delete-pdf-pages', 'pdf-to-png', 'split-pdf'],
+        'published' => '2026-11-04',
+        'updated' => '2026-11-04',
+        'sections' => [
+            [
+                'heading' => 'How to reorder pages',
+                'list' => [
+                    'Open [Organize PDF](/organize-pdf) and choose your file. Each page appears as a thumbnail.',
+                    'Drag a page to its new position, or use the left and right arrow buttons under it.',
+                    'Click Save new order and download the file.',
+                    'Open the result and check the order before you send it.',
+                ],
+                'paragraphs' => [
+                    'The arrow buttons also work from the keyboard, which helps with long documents where dragging is awkward. We opened a 3-page test file this way, and it stayed on the device: 0 bytes were uploaded.',
+                ],
+            ],
+            [
+                'heading' => 'How to delete pages',
+                'list' => [
+                    'Open [Delete PDF Pages](/delete-pdf-pages) and choose your file.',
+                    'Click the thumbnails of the pages to remove, or switch to Page ranges and type them, such as 2, 4-6.',
+                    'Click Delete pages and download the new file.',
+                ],
+                'paragraphs' => [
+                    'Your original file is not changed. You always get a new copy, so a wrong selection costs nothing.',
+                ],
+            ],
+            [
+                'heading' => 'Which tool do you need?',
+                'table' => [
+                    'headers' => ['You want to', 'Use'],
+                    'rows' => [
+                        ['Change the page order', 'Organize PDF'],
+                        ['Remove a few pages and keep the rest', 'Delete PDF Pages'],
+                        ['Keep only a few pages from a long file', 'Split PDF'],
+                        ['Turn a page into an image', 'PDF to PNG or PDF to JPG'],
+                        ['Combine several files', 'Merge PDF'],
+                    ],
+                ],
+                'paragraphs' => [
+                    'If you only need 3 pages out of 200, [Split PDF](/split-pdf) is quicker than deleting 197. If you need a single page as a picture, such as for a slide, use [PDF to PNG](/pdf-to-png).',
+                ],
+            ],
+            [
+                'heading' => 'Doing both, and a warning',
+                'paragraphs' => [
+                    'If you need to do both jobs, delete first and reorder second, so you are not moving pages you are about to remove. Check the page numbers printed on the pages too: they are part of the page content, so moving a page does not renumber them.',
+                    'Deleting a page removes it from the new file, but it does not remove sensitive text from the pages you keep. To hide something on a page you are keeping, use [Redact PDF](/redact-pdf), which removes the text instead of covering it.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Does reordering change the quality of the pages?', 'a' => 'No. Pages are copied as they are; only their position changes.'],
+            ['q' => 'Can I undo a change?', 'a' => 'Your original file is untouched, so open it again and start over. The tools always create a new copy.'],
+            ['q' => 'Are my files uploaded?', 'a' => 'No. Both tools work in your browser. In our test the network log showed 0 bytes uploaded.'],
+        ],
+        'sources' => [
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+        ],
+    ],
+
+    'how-to-remove-a-pdf-password' => [
+        'title' => 'How to Remove a PDF Password You Already Know',
+        'description' => 'Remove the open password from a PDF when you know it, in your browser with no upload, and what to do if you have lost the password.',
+        'h1' => 'How to remove a PDF password you already know',
+        'intro' => 'Bank statements and payslips often arrive locked with a password, and typing it every time gets old. If you know the password, removing it takes a few seconds and gives you an ordinary PDF. If you do not know it, this is not the guide for you: our tool will not crack or guess one. Here is how it works, when you should keep the password, and what to do if yours is lost.',
+        'tool' => 'unlock-pdf',
+        'related' => ['protect-pdf', 'password-generator', 'compress-pdf'],
+        'published' => '2026-11-04',
+        'updated' => '2026-11-04',
+        'sections' => [
+            [
+                'heading' => 'How to remove it',
+                'list' => [
+                    'Open [Unlock PDF](/unlock-pdf) and choose the locked file.',
+                    'Type the password once.',
+                    'Download the new copy, which opens without a password.',
+                    'Keep or delete the locked original as you prefer. It is not changed.',
+                ],
+                'paragraphs' => [
+                    'The work happens in your browser using a WebAssembly build of the open-source QPDF library, so neither the file nor the password leaves your device. If the password is wrong you see an "Incorrect password" message and can try again. If you give it a PDF with no password, it tells you there is nothing to unlock: we got "plain.pdf does not have a password" when we tested that.',
+                ],
+            ],
+            [
+                'heading' => 'What it will not do',
+                'paragraphs' => [
+                    'It does not crack, guess or bypass a password you do not have. Protection that any website could remove would not protect anything, so be wary of sites promising to do that with your confidential files: you would be uploading them to a stranger to do it.',
+                    'Only remove passwords from files you are entitled to use. Being sent a document does not always give you the right to remove its protection.',
+                ],
+            ],
+            [
+                'heading' => 'If you have lost the password',
+                'list' => [
+                    'Ask whoever sent the file. Banks and employers can usually resend it or tell you the format.',
+                    'Check the original email: statements often explain the format, such as a date of birth plus part of an account number.',
+                    'Look in your password manager, if you set the password yourself.',
+                ],
+            ],
+            [
+                'heading' => 'Should you remove it at all?',
+                'paragraphs' => [
+                    'A password protects the file wherever it goes. Remove it for a copy you are keeping safely on your own device, or when you need to [compress](/compress-pdf) or merge the file. Think twice before removing it from anything you will email, because email is not a safe place for an unprotected payslip or ID.',
+                    'To lock a file again, use [Protect PDF](/protect-pdf) with a strong password from the [Password Generator](/password-generator). Send the password by a different route than the file.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Can this tool recover a forgotten password?', 'a' => 'No. It only removes a password you type in yourself.'],
+            ['q' => 'Does removing the password change the PDF?', 'a' => 'No. Only the protection is removed. Pages, text and images stay as they were.'],
+            ['q' => 'Is it safe to type my password here?', 'a' => 'The password is used in your browser and is not sent to any server. In our testing, the tool made no upload.'],
+        ],
+        'sources' => [
+            ['title' => 'QPDF documentation', 'url' => 'https://qpdf.readthedocs.io/'],
+        ],
+    ],
+
+    'how-to-convert-excel-to-pdf' => [
+        'title' => 'How to Convert Excel to PDF Without Losing Your Data',
+        'description' => 'Turn a spreadsheet into a PDF in your browser: what comes through, what does not, and how to prepare a sheet first so wide columns are not cut off.',
+        'h1' => 'How to convert Excel to PDF',
+        'intro' => 'A PDF is the safe way to send a spreadsheet to someone who only needs to read it: it looks the same everywhere, and nobody can change a formula by accident. Our converter works in your browser and turns each sheet into a clean table. It deliberately keeps the data rather than the design, so it is worth knowing what comes through before you rely on it.',
+        'tool' => 'excel-to-pdf',
+        'related' => ['html-to-pdf', 'pdf-to-excel', 'word-to-pdf'],
+        'published' => '2026-11-04',
+        'updated' => '2026-11-04',
+        'sections' => [
+            [
+                'heading' => 'How to convert',
+                'list' => [
+                    'Open [Excel to PDF](/excel-to-pdf) and choose one .xlsx, .xls or .csv file, up to 50 MB.',
+                    'Each sheet becomes a table across one or more pages, with the header row repeated on each page.',
+                    'Download the PDF and read through it before sending.',
+                ],
+            ],
+            [
+                'heading' => 'What comes through and what does not',
+                'table' => [
+                    'headers' => ['Kept', 'Not kept'],
+                    'rows' => [
+                        ['Cell values, including the results of formulas', 'The formulas themselves'],
+                        ['Every sheet in the file', 'Charts'],
+                        ['A repeated header row', 'Cell colours'],
+                        ['Table layout', 'Merged cells'],
+                    ],
+                ],
+                'paragraphs' => [
+                    'Text too wide for its column is shortened with "…". That is the main thing to check, because a cut-off value in a report can look like a complete one.',
+                ],
+            ],
+            [
+                'heading' => 'Prepare your sheet first',
+                'list' => [
+                    'Delete working sheets and scratch columns you do not want to share.',
+                    'Shorten long text or split it across columns, so nothing is cut off.',
+                    'Unmerge cells and give each column a clear header.',
+                    'Save or convert the charts separately if the reader needs them.',
+                ],
+                'paragraphs' => [
+                    'If the exact look matters, such as a designed invoice with colours and a logo, Excel\'s own Save as PDF will keep it better. Our tool is for getting the data into a readable PDF quickly, without installing anything and without uploading a file that may hold salaries or customer details.',
+                ],
+            ],
+            [
+                'heading' => 'Related conversions',
+                'paragraphs' => [
+                    'Going the other way, [PDF to Excel](/pdf-to-excel) pulls tables back out of a PDF. For a document rather than a table, use [Word to PDF](/word-to-pdf). For a web page or plain text, [HTML to PDF](/html-to-pdf) handles headings, paragraphs, lists and images; its own tables and custom styling are not kept, so use this tool when your content is really a table.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Are formulas kept in the PDF?', 'a' => 'No. A PDF shows the values, not the formulas. Keep your original spreadsheet to edit them.'],
+            ['q' => 'Why are some cells cut off?', 'a' => 'Text too wide for its column is shortened with "…". Shorten the text or split it across columns, then convert again.'],
+            ['q' => 'Can I convert a CSV file?', 'a' => 'Yes. The tool accepts .xlsx, .xls and .csv files up to 50 MB.'],
+        ],
+        'sources' => [
+            ['title' => 'SheetJS documentation', 'url' => 'https://docs.sheetjs.com/'],
+        ],
+    ],
+
+    'should-you-convert-jpg-to-png' => [
+        'title' => 'Should You Convert JPG to PNG? Our Test Says Usually Not',
+        'description' => 'We converted a photo from JPG to PNG: 88 KB became 571 KB with no gain in quality. When conversion makes sense, and why PNG cannot restore lost detail.',
+        'h1' => 'Should you convert JPG to PNG?',
+        'intro' => 'Converting a JPG to PNG does not make it better. PNG keeps every pixel it is given, but the detail JPG threw away when the photo was saved is already gone. In our test a photo grew from 88 KB to 571 KB, more than six times larger, and looked the same. There are good reasons to convert, but "higher quality" is not one of them. Here is when it helps and when to leave the file alone.',
+        'tool' => 'jpg-to-png',
+        'related' => ['avif-to-png', 'pdf-to-png', 'image-compressor'],
+        'published' => '2026-11-04',
+        'updated' => '2026-11-04',
+        'sections' => [
+            [
+                'heading' => 'What we measured',
+                'paragraphs' => [
+                    'We ran a photo-like 800 x 533 JPG, generated for the test, through [JPG to PNG](/jpg-to-png) on 4 November 2026. It went from 88 KB to 571 KB, about 6.5 times the size. The exact ratio will vary with your image, but photos always grow a lot, because PNG cannot use the tricks that make JPG small.',
+                ],
+                'table' => [
+                    'headers' => ['Format', 'Size', 'Change'],
+                    'rows' => [['JPG (original)', '88 KB', '-'], ['PNG (converted)', '571 KB', 'About 6.5x larger']],
+                ],
+            ],
+            [
+                'heading' => 'Why PNG cannot restore quality',
+                'paragraphs' => [
+                    'JPG is lossy: it discards detail to save space, and that happens when the JPG is saved. PNG is lossless: it stores exactly what it receives. So converting faithfully preserves the JPG\'s existing blur and artifacts, in a bigger file. The only way to get better quality is to go back to the original photo.',
+                ],
+            ],
+            [
+                'heading' => 'When converting does make sense',
+                'list' => [
+                    'You will edit the image and save it several times. PNG stops further loss from building up.',
+                    'A form or app insists on PNG.',
+                    'The image is a graphic, a logo or a screenshot that you will keep editing.',
+                    'You want to add transparency in an editor, since JPG has none. Converting alone does not make the background transparent; use the [Background Remover](/remove-background) for that.',
+                ],
+            ],
+            [
+                'heading' => 'When to leave it alone',
+                'list' => [
+                    'It is a photo for a website: JPG, WebP or AVIF will be far smaller.',
+                    'You are emailing it: the larger file only gets in the way.',
+                    'You want it to look sharper: conversion will not do that.',
+                ],
+                'paragraphs' => [
+                    'If the real problem is file size, the [Image Compressor](/image-compressor) is what you want. Our [AVIF, WebP and JPG file-size test](/guides/avif-vs-webp-vs-jpg-file-size-test) shows how the modern formats compare.',
+                ],
+            ],
+            [
+                'heading' => 'Other routes to PNG',
+                'paragraphs' => [
+                    'Starting from another format? [AVIF to PNG](/avif-to-png) works the same way. To get a PDF page as a crisp image, [PDF to PNG](/pdf-to-png) suits pages with sharp text and diagrams, because PNG keeps edges clean where JPG tends to smudge them. In each case the file stays on your device: our network log showed 0 bytes uploaded during the conversion.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Does converting JPG to PNG improve quality?', 'a' => 'No. It keeps the image exactly as it is now, in a larger file. Detail lost when the JPG was saved does not come back.'],
+            ['q' => 'Why did my PNG get so much bigger?', 'a' => 'PNG is lossless, and photos contain too much fine variation for it to compress well. In our test the file grew about 6.5 times.'],
+            ['q' => 'Does a converted PNG have a transparent background?', 'a' => 'No. JPG has no transparency, so the background stays. Use a background remover for that.'],
+        ],
+        'sources' => [
+            ['title' => 'MDN Web Docs, Image file type and format guide', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types'],
         ],
     ],
 

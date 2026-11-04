@@ -183,6 +183,8 @@ class IndexingTest extends TestCase
     {
         $shots = json_decode((string) file_get_contents(resource_path('data/tool-screenshots.json')), true);
         $this->assertNotEmpty($shots);
+        // It would publish the IP address of whoever took the screenshot.
+        $this->assertArrayNotHasKey('what-is-my-ip', $shots);
 
         foreach ($shots as $slug => $shot) {
             $this->assertFileExists(public_path('images/tools/'.$slug.'.jpg'));

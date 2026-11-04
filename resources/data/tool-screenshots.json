@@ -1,52 +1,262 @@
 {
+    "age-calculator": {
+        "width": 838,
+        "height": 424,
+        "alt": "Age Calculator showing an exact age for a sample date of birth"
+    },
+    "ai-content-detector": {
+        "width": 838,
+        "height": 423,
+        "alt": "AI Content Detector tool on ILoveMyTools"
+    },
+    "avif-to-jpg": {
+        "width": 838,
+        "height": 364,
+        "alt": "AVIF to JPG tool on ILoveMyTools"
+    },
+    "avif-to-png": {
+        "width": 838,
+        "height": 340,
+        "alt": "AVIF to PNG tool on ILoveMyTools"
+    },
+    "avif-to-webp": {
+        "width": 838,
+        "height": 364,
+        "alt": "AVIF to WebP tool on ILoveMyTools"
+    },
+    "base64-encoder-decoder": {
+        "width": 838,
+        "height": 663,
+        "alt": "Base64 Encode / Decode tool on ILoveMyTools"
+    },
+    "broken-link-checker": {
+        "width": 838,
+        "height": 340,
+        "alt": "Broken Link Checker tool on ILoveMyTools"
+    },
+    "case-converter": {
+        "width": 838,
+        "height": 503,
+        "alt": "Case Converter tool on ILoveMyTools"
+    },
+    "coin-flip": {
+        "width": 838,
+        "height": 599,
+        "alt": "Coin Flip tool on ILoveMyTools"
+    },
+    "compound-interest-calculator": {
+        "width": 838,
+        "height": 856,
+        "alt": "Compound Interest Calculator tool on ILoveMyTools"
+    },
     "compress-pdf": {
         "width": 838,
         "height": 340,
         "alt": "Compress PDF tool with a loaded PDF and the compression options"
+    },
+    "countdown-timer": {
+        "width": 838,
+        "height": 574,
+        "alt": "Countdown Timer tool on ILoveMyTools"
+    },
+    "delete-pdf-pages": {
+        "width": 838,
+        "height": 477,
+        "alt": "Delete PDF Pages tool on ILoveMyTools"
+    },
+    "dice-roller": {
+        "width": 838,
+        "height": 511,
+        "alt": "Dice Roller tool on ILoveMyTools"
+    },
+    "domain-age-checker": {
+        "width": 838,
+        "height": 401,
+        "alt": "Domain Age Checker with a list of domains ready to check"
+    },
+    "domain-authority-checker": {
+        "width": 838,
+        "height": 401,
+        "alt": "Bulk Domain Authority Checker with a list of domains ready to check"
     },
     "edit-pdf": {
         "width": 838,
         "height": 1421,
         "alt": "Edit PDF tool showing an open document with the editing toolbar"
     },
+    "excel-to-pdf": {
+        "width": 838,
+        "height": 372,
+        "alt": "Excel to PDF tool on ILoveMyTools"
+    },
+    "html-to-pdf": {
+        "width": 838,
+        "height": 689,
+        "alt": "HTML to PDF tool on ILoveMyTools"
+    },
     "image-compressor": {
         "width": 838,
         "height": 576,
         "alt": "Image Compressor with a loaded image, its compressed size and the quality setting"
+    },
+    "image-resizer": {
+        "width": 838,
+        "height": 829,
+        "alt": "Image Resizer tool on ILoveMyTools"
+    },
+    "jpg-to-pdf": {
+        "width": 838,
+        "height": 493,
+        "alt": "JPG to PDF tool on ILoveMyTools"
+    },
+    "jpg-to-png": {
+        "width": 838,
+        "height": 340,
+        "alt": "JPG to PNG tool on ILoveMyTools"
     },
     "json-formatter": {
         "width": 838,
         "height": 865,
         "alt": "JSON Formatter showing sample JSON formatted with indentation"
     },
+    "loan-calculator": {
+        "width": 838,
+        "height": 618,
+        "alt": "Loan Calculator tool on ILoveMyTools"
+    },
     "merge-pdf": {
         "width": 838,
         "height": 457,
         "alt": "Merge PDF tool with three PDF files listed in order, ready to combine"
+    },
+    "mortgage-calculator": {
+        "width": 838,
+        "height": 779,
+        "alt": "Mortgage Calculator tool on ILoveMyTools"
+    },
+    "organize-pdf": {
+        "width": 838,
+        "height": 458,
+        "alt": "Organize PDF tool on ILoveMyTools"
     },
     "password-generator": {
         "width": 838,
         "height": 556,
         "alt": "Password Generator showing a generated password with length and character options"
     },
+    "pdf-to-excel": {
+        "width": 838,
+        "height": 372,
+        "alt": "PDF to Excel tool on ILoveMyTools"
+    },
+    "pdf-to-jpg": {
+        "width": 838,
+        "height": 469,
+        "alt": "PDF to JPG tool on ILoveMyTools"
+    },
+    "pdf-to-png": {
+        "width": 838,
+        "height": 469,
+        "alt": "PDF to PNG tool on ILoveMyTools"
+    },
+    "pdf-to-word": {
+        "width": 838,
+        "height": 348,
+        "alt": "PDF to Word tool on ILoveMyTools"
+    },
     "percentage-calculator": {
         "width": 838,
         "height": 1321,
         "alt": "Percentage Calculator showing a result with the formula used"
+    },
+    "png-to-jpg": {
+        "width": 838,
+        "height": 364,
+        "alt": "PNG to JPG tool on ILoveMyTools"
+    },
+    "protect-pdf": {
+        "width": 838,
+        "height": 340,
+        "alt": "Protect PDF tool on ILoveMyTools"
     },
     "qr-code-generator": {
         "width": 838,
         "height": 498,
         "alt": "QR Code Generator showing a generated QR code and the download options"
     },
+    "random-number-generator": {
+        "width": 838,
+        "height": 340,
+        "alt": "Random Number Generator tool on ILoveMyTools"
+    },
+    "readability-checker": {
+        "width": 838,
+        "height": 1013,
+        "alt": "Readability Checker tool on ILoveMyTools"
+    },
+    "redact-pdf": {
+        "width": 838,
+        "height": 1241,
+        "alt": "Redact PDF tool on ILoveMyTools"
+    },
+    "rotate-pdf": {
+        "width": 838,
+        "height": 487,
+        "alt": "Rotate PDF tool on ILoveMyTools"
+    },
+    "sign-pdf": {
+        "width": 838,
+        "height": 1623,
+        "alt": "Sign PDF tool on ILoveMyTools"
+    },
+    "sleep-calculator": {
+        "width": 838,
+        "height": 779,
+        "alt": "Sleep Calculator tool on ILoveMyTools"
+    },
+    "spin-the-wheel": {
+        "width": 838,
+        "height": 572,
+        "alt": "Spin the Wheel with six named entries on the wheel"
+    },
     "split-pdf": {
         "width": 838,
         "height": 340,
         "alt": "Split PDF tool with a loaded PDF and the page range options"
     },
+    "stopwatch": {
+        "width": 838,
+        "height": 507,
+        "alt": "Stopwatch tool on ILoveMyTools"
+    },
+    "tip-calculator": {
+        "width": 838,
+        "height": 466,
+        "alt": "Tip Calculator tool on ILoveMyTools"
+    },
+    "unlock-pdf": {
+        "width": 838,
+        "height": 340,
+        "alt": "Unlock PDF tool ready for a password-protected file"
+    },
+    "watermark-pdf": {
+        "width": 838,
+        "height": 975,
+        "alt": "Watermark PDF tool on ILoveMyTools"
+    },
+    "webp-to-png": {
+        "width": 838,
+        "height": 340,
+        "alt": "WebP to PNG tool on ILoveMyTools"
+    },
     "word-counter": {
         "width": 838,
         "height": 666,
         "alt": "Word Counter showing live word, character and sentence counts for sample text"
+    },
+    "word-to-pdf": {
+        "width": 838,
+        "height": 348,
+        "alt": "Word to PDF tool on ILoveMyTools"
     }
 }

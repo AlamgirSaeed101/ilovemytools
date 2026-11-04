@@ -109,7 +109,44 @@ const shots = {
     },
 };
 
-const only = process.argv[3] ? process.argv[3].split(',') : Object.keys(shots);
+// Every other tool gets a screenshot from a generic sample: a PDF, an image or some text where the
+// tool takes one, its ready state otherwise. The alt text says only what is certainly on screen.
+const SAMPLE_TEXT = 'The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.';
+function genericShot(tool) {
+    return {
+        alt: `${tool.name} tool on ILoveMyTools`,
+        generic: true,
+        run: async (page) => {
+            const file = page.locator('.tool-panel input[type=file]').first();
+            if (await file.count()) {
+                const accept = (await file.getAttribute('accept')) || '';
+                if (/pdf/i.test(accept)) await file.setInputFiles(await samplePdf('Annual report', 3));
+                else if (/image|png|jpe?g|webp|avif/i.test(accept) && !/avif|heic/i.test(accept.replace(/image\/\*/, ''))) {
+                    const type = /webp/i.test(accept) && !/jpe?g/i.test(accept) ? 'webp' : /png/i.test(accept) && !/jpe?g/i.test(accept) ? 'png' : 'jpeg';
+                    await file.setInputFiles({ name: `photo.${type === 'jpeg' ? 'jpg' : type}`, mimeType: `image/${type}`, buffer: await page.screenshot({ type: 'jpeg', quality: 80 }) });
+                }
+                return;
+            }
+            const box = page.locator('.tool-panel textarea').first();
+            if (await box.count()) await box.fill(SAMPLE_TEXT);
+        },
+    };
+}
+
+Object.assign(shots, {
+    'domain-authority-checker': { alt: 'Bulk Domain Authority Checker with a list of domains ready to check', run: async (page) => page.locator('.tool-panel textarea').first().fill('example.com\nwikipedia.org\nmozilla.org') },
+    'domain-age-checker': { alt: 'Domain Age Checker with a list of domains ready to check', run: async (page) => page.locator('.tool-panel textarea').first().fill('example.com\nwikipedia.org\nmozilla.org') },
+    'spin-the-wheel': { alt: 'Spin the Wheel with six named entries on the wheel', run: async (page) => page.locator('.tool-panel textarea').first().fill('Pizza\nTacos\nSushi\nCurry\nBurgers\nPasta') },
+    'age-calculator': { alt: 'Age Calculator showing an exact age for a sample date of birth', run: async (page) => page.locator('.tool-panel input[type=date]').first().fill('2000-03-15') },
+    'unlock-pdf': { alt: 'Unlock PDF tool ready for a password-protected file', run: async () => {} },
+});
+
+const toolList = (await (await fetch(`${base}/api/site`)).json()).tools;
+for (const tool of toolList) if (!shots[tool.slug]) shots[tool.slug] = genericShot(tool);
+// remove-background downloads a large AI model. what-is-my-ip would publish the IP address and browser
+// details of whoever runs this script: never capture it.
+const skip = new Set(['remove-background', 'what-is-my-ip']);
+const only = process.argv[3] ? process.argv[3].split(',') : Object.keys(shots).filter((s) => !skip.has(s));
 const list = fs.existsSync(listFile) ? JSON.parse(fs.readFileSync(listFile, 'utf8')) : {};
 // HOST_RULES lets this PC reach the live site (see the local DNS note); ads and analytics stay blocked
 // so screenshots never count as impressions or visits.
@@ -120,7 +157,11 @@ await page.route(/googlesyndication|doubleclick|googletagmanager|google-analytic
 for (const slug of only) {
     await page.goto(`${base}/${slug}`, { waitUntil: 'networkidle' });
     await page.locator('.tool-panel').first().waitFor();
-    await shots[slug].run(page);
+    try {
+        await shots[slug].run(page);
+    } catch (e) {
+        console.log('sample failed', slug, String(e.message).split('\n')[0].slice(0, 120));
+    }
     await page.waitForTimeout(2500);
     const panel = page.locator('.tool-panel').first();
     const file = path.join(outDir, `${slug}.jpg`);

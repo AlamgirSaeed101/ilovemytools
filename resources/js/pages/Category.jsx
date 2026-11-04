@@ -37,6 +37,7 @@ export default function Category() {
             <AdSlot key={`${category.slug}-in-content`} position="in_content" />
 
             <article className="prose tool-article my-11">
+                {category.overview && <p>{category.overview}</p>}
                 <h2 id="compare">{t('Which tool do you need?')}</h2>
                 <div className="table-wrap">
                     <table className="compare-table">

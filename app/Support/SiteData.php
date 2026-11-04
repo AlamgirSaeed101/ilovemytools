@@ -163,6 +163,7 @@ class SiteData
             'guides' => $this->guidesFor($tool['slug']),
             'panel' => self::panelHeight($tool['slug']),
             'screenshot' => self::screenshot($tool['slug']),
+            'testedNote' => self::testedNote($tool['slug']),
             'meta' => $this->meta($tool['title'], $tool['description']),
         ];
     }
@@ -189,6 +190,16 @@ class SiteData
         }
 
         return ['url' => '/images/tools/'.$slug.'.jpg', 'width' => (int) $shot['width'], 'height' => (int) $shot['height'], 'alt' => (string) $shot['alt']];
+    }
+
+    /**
+     * First-hand test results for a top tool (config/tool-notes.php). English pages only for now.
+     *
+     * @return array{tested: string, paragraphs: list<string>, table?: array, limits?: list<string>}|null
+     */
+    public static function testedNote(string $slug): ?array
+    {
+        return Locale::current() === Locale::default() ? config('tool-notes.'.$slug) : null;
     }
 
     public static function panelHeight(string $slug): ?array
@@ -234,6 +245,7 @@ class SiteData
                 'short' => $category['short'] ?? $category['name'],
                 'subtitle' => $category['subtitle'] ?? '',
             'intro' => $category['intro'] ?? '',
+            'overview' => Locale::current() === Locale::default() ? ($category['overview'] ?? '') : '',
             'content' => array_values($category['content'] ?? []),
             'faqs' => array_values($category['faqs'] ?? []),
             'tools' => $this->registry->inCategory($slug)->keys()->all(),
