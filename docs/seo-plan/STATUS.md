@@ -68,11 +68,17 @@ mass directories are against the owner's rules and carry spam risk.
 Earlier (30 Oct, judge about 27 Nov): /domain-authority-checker title, /de/word-counter, /de/merge-pdf,
 /de/image-compressor, /category/calculators.
 
-## Outreach waiting for the owner's "send them" (2 Nov)
-Claude can only send batches the owner approves. Waiting: 29 `new` rows in docs/outreach/prospects.md, and
-4 drafts in hello@ Outlook Drafts: comparetools.io, library@auarts.ca, info@imghippo.com (rewritten on
-the real benchmark) and the decline to Lilach Bullock. If Imghippo says yes, the article must be re-run
-on real photographs, as the pitch promises.
+## Outreach sent 4 Nov (owner said "send them")
+Claude can only send batches the owner approves. Sent from hello@ on 4 Nov, 30 emails (the daily limit), all
+confirmed in Sent Items: Techjockey, comparetools.io, library@auarts.ca, info@imghippo.com, the decline to
+Lilach Bullock, and 25 pitches from docs/outreach/prospects.md. If Imghippo says yes, the article must be
+re-run on real photographs, as the pitch promises.
+- Bounced, dead addresses, marked skip: redaction@droitbelge.be, mhall@tcea.org, cdrcac@uvic.ca. These were
+  address failures, not spam blocks; the uvic bounce shows SPF, DKIM and DMARC passing.
+- Approved, still to send (over the daily limit): andrei@updivision.com, marketing@botkeeper.com,
+  wedodigitaleditor@gmail.com, jose.a@empowerly.com. Botkeeper's second idea says "covering up" account numbers;
+  change it to proper redaction first.
+- Not approved, stay `new`: the 9 pitches written 3 and 4 Nov.
 
 ## Audit of 2 Nov (grok page), checked against the live site
 Its crawl (464 URLs, 18 guides) predates the 2 Nov deploys, so the What Is My IP badge and Merge PDF FAQ
@@ -103,5 +109,5 @@ category overviews (English); contact form; llms-full.txt.
 - Already fine: IndexNow runs on every deploy; HTTP to HTTPS 301s verified 4 Nov.
 - Not done: inline CSS move (wait for speed numbers with AdSense); native review of de/it (needs a person);
   Sucuri asset cache (dashboard); entity location (owner: Islamabad or Jhelum); AdSense review request (not before
-  crawled-not-indexed clearly drops); outreach (needs "send them").
+  crawled-not-indexed clearly drops). Outreach: sent 4 Nov, see above.
 
