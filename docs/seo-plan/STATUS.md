@@ -92,3 +92,16 @@ were already fixed.
 - Not done: llms-full.txt (optional, unproven), Developer & SEO Tools category title (audit says later), self-hosted
   font, privacy-proof video, citation checks for the Meta docs page (blocked for the extension).
 
+## Audit of 4 Nov: priority checklist
+Live 4 Nov (c1f4d33): AdSense script and meta in the head; indexed languages cut to en, de, it (first-visit
+language switch still serves all translated languages); honest sitemap dates; GA4 skips Lighthouse/headless
+browsers; first-hand "We tested it" notes on 15 tools (config/tool-notes.php, scripts/tool-tests.mjs,
+resources/data/tool-tests.json); 11 new guides, every tool links a guide; screenshots on 52 of 54 tools;
+category overviews (English); contact form; llms-full.txt.
+- Traffic: about 620 of GA4's 631 "new users" match our own Lighthouse workflow (23 runs x about 9 pages x 3).
+  Not confirmed inside GA4: Windsor reads are paused (free plan allows 1 account, 2 connected). Recheck in 28 days.
+- Already fine: IndexNow runs on every deploy; HTTP to HTTPS 301s verified 4 Nov.
+- Not done: inline CSS move (wait for speed numbers with AdSense); native review of de/it (needs a person);
+  Sucuri asset cache (dashboard); entity location (owner: Islamabad or Jhelum); AdSense review request (not before
+  crawled-not-indexed clearly drops); outreach (needs "send them").
+

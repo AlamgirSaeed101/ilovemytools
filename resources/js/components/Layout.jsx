@@ -20,7 +20,7 @@ const isMac = typeof navigator !== 'undefined' && /Mac|iPhone|iPad/.test(navigat
 const iconBtn =
     'inline-grid size-10 place-items-center rounded-full border border-line bg-surface text-ink-2 transition-colors hover:border-line-strong hover:bg-surface-2 hover:text-ink cursor-pointer';
 const navLink =
-    'inline-flex h-10 shrink-0 items-center gap-1 whitespace-nowrap rounded-xl border-0 bg-transparent px-3 font-[inherit] text-[0.9rem] font-semibold text-ink-2 no-underline transition-colors hover:bg-surface-2 hover:text-ink aria-expanded:bg-surface-2 aria-expanded:text-ink [&.active]:text-brand cursor-pointer';
+    'inline-flex h-10 shrink-0 items-center gap-1 whitespace-nowrap rounded-xl border-0 bg-transparent px-2 font-[inherit] text-[0.9rem] font-semibold text-ink-2 no-underline transition-colors hover:bg-surface-2 hover:text-ink aria-expanded:bg-surface-2 aria-expanded:text-ink [&.active]:text-brand cursor-pointer';
 const tile = 'inline-grid size-7 shrink-0 place-items-center rounded-lg bg-[linear-gradient(135deg,var(--accent),var(--accent2,var(--accent)))] text-white shadow-hair [&_svg]:size-3.5';
 
 /** Close a popup on outside click or Escape (focus returns to its button). */
@@ -86,7 +86,7 @@ function Logo({ name, footer = false }) {
 
 // Header order: the busiest categories first (the rest go under "More").
 const NAV_ORDER = ['pdf-tools', 'image-tools', 'text-tools', 'calculators', 'developer-tools', 'generators', 'games', 'time-tools'];
-const NAV_VISIBLE = 5;
+const NAV_VISIBLE = 4;
 
 /** One header dropdown: a category's tools, plus a link to the category page. */
 const NAV_MENU_TOOLS = 5;
@@ -290,14 +290,14 @@ function Header({ onSearch }) {
                 <div className="ms-auto flex shrink-0 items-center gap-1.5 sm:gap-2">
                     <button
                         type="button"
-                        className="inline-flex h-10 w-10 cursor-pointer items-center justify-center gap-2 rounded-full border border-line bg-surface-2 text-[0.88rem] font-medium text-muted transition hover:border-line-strong hover:bg-surface lg:w-auto lg:min-w-44 lg:justify-start lg:ps-3.5 lg:pe-2 xl:min-w-60"
+                        className="inline-flex h-10 w-10 cursor-pointer items-center justify-center gap-2 rounded-full border border-line bg-surface-2 text-[0.88rem] font-medium text-muted transition hover:border-line-strong hover:bg-surface xl:w-auto xl:min-w-48 xl:justify-start xl:ps-3.5 xl:pe-2"
                         onClick={onSearch}
                         aria-label={t('Search tools')}
                         aria-keyshortcuts={isMac ? 'Meta+K' : 'Control+K'}
                     >
                         <Icon name="search" />
-                        <span className="hidden max-w-40 truncate lg:inline">{t('Search tools…')}</span>
-                        <kbd className="kbd ms-auto hidden lg:inline-flex">{isMac ? '⌘' : 'Ctrl'} K</kbd>
+                        <span className="hidden max-w-40 truncate xl:inline">{t('Search tools…')}</span>
+                        <kbd className="kbd ms-auto hidden xl:inline-flex">{isMac ? '⌘' : 'Ctrl'} K</kbd>
                     </button>
                     <LanguageMenu />
                     <ThemeToggle />

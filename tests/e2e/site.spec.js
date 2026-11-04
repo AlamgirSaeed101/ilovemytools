@@ -198,3 +198,29 @@ test.describe('App shell', () => {
         await context.close();
     });
 });
+
+test.describe('Desktop header', () => {
+    for (const width of [1024, 1280, 1536]) {
+        for (const path of ['/', '/de', '/fr', '/it', '/pl']) {
+            test(`menu fits without overlapping at ${width}px on ${path}`, async ({ page }) => {
+                await page.setViewportSize({ width, height: 800 });
+                await page.goto(path);
+                // The dropdown buttons only exist once React has replaced the server-rendered header.
+                await expect(page.locator('header nav[aria-label] button').first()).toBeVisible();
+                const box = await page.evaluate(() => {
+                    const header = document.querySelector('header');
+                    const nav = header.querySelector('nav[aria-label]');
+                    const items = [...nav.children].map((el) => el.getBoundingClientRect());
+                    return {
+                        logoRight: header.querySelector('a[aria-label]').getBoundingClientRect().right,
+                        navLeft: Math.min(...items.map((r) => r.left)),
+                        navRight: Math.max(...items.map((r) => r.right)),
+                        controlsLeft: nav.nextElementSibling.getBoundingClientRect().left,
+                    };
+                });
+                expect(box.navLeft).toBeGreaterThanOrEqual(box.logoRight);
+                expect(box.navRight).toBeLessThanOrEqual(box.controlsLeft);
+            });
+        }
+    }
+});
