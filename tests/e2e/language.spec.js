@@ -10,6 +10,16 @@ test.describe('Automatic language on first visit', () => {
         await ctx.close();
     });
 
+    test('a language search engines do not index still reaches its visitors', async ({ browser, baseURL }) => {
+        const ctx = await browser.newContext({ locale: 'es-ES', baseURL });
+        const page = await ctx.newPage();
+        await page.goto('/merge-pdf');
+        await expect(page).toHaveURL(/\/es\/merge-pdf$/);
+        await page.goto('/guides');
+        await expect(page).toHaveURL(/\/guides$/);
+        await ctx.close();
+    });
+
     test('choosing English in the menu is remembered', async ({ browser, baseURL }) => {
         const ctx = await browser.newContext({ locale: 'de-DE', baseURL });
         const page = await ctx.newPage();

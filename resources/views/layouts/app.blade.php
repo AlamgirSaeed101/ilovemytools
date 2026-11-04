@@ -58,17 +58,14 @@
             var first = ((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
             if (first.slice(0, 2) === 'en') return;
             var code = first.slice(0, 2);
-            if (code === 'zh') {
-                // Only Traditional Chinese variants redirect; zh-CN and zh-SG (Simplified) never do.
-                if (['zh-tw', 'zh-hk', 'zh-mo', 'zh-hant'].indexOf(first) === -1) return;
-                code = 'zh-hant';
-            }
-            var links = document.querySelectorAll('link[rel="alternate"][hreflang]');
-            var alt = null;
-            for (var i = 0; i < links.length; i++) {
-                if (links[i].getAttribute('hreflang').toLowerCase().indexOf(code) === 0) { alt = links[i]; break; }
-            }
-            if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+            // Only Traditional Chinese variants redirect; zh-CN and zh-SG (Simplified) never do.
+            if (code === 'zh' && ['zh-tw', 'zh-hk', 'zh-mo', 'zh-hant'].indexOf(first) === -1) return;
+            // Every translated language, indexed or not: what Google indexes shouldn't change what visitors
+            // get. Pages without language versions (guides, legal pages) have no hreflang links and stay put.
+            if (@json(array_values(array_diff(\App\Support\Locale::codes(), [\App\Support\Locale::default()]))).indexOf(code) === -1) return;
+            if (!document.querySelector('link[rel="alternate"][hreflang]')) return;
+            var path = location.pathname === '/' ? '' : location.pathname;
+            location.replace('/' + code + path + location.search + location.hash);
         })();
     </script>
 
