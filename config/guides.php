@@ -2612,4 +2612,91 @@ return [
         ],
     ],
 
+    'how-to-convert-avif-to-jpg' => [
+        'title' => 'How to Convert AVIF to JPG (and When You Should)',
+        'description' => 'Convert AVIF images to JPG for free in your browser, keep enough quality, and learn when JPG is the better choice over AVIF for sharing, editing or printing.',
+        'h1' => 'How to convert AVIF to JPG',
+        'intro' => 'You save a photo from a website or your phone, and instead of opening normally it shows up as a broken icon or an "unsupported file" error. More often than not, the file is AVIF, a newer image format that saves space but that a lot of older apps, editors and upload forms still cannot read. Converting it to JPG fixes that in seconds. Here is how to do it, what you gain and lose in the process, and when to leave the file as AVIF instead.',
+        'tool' => 'avif-to-jpg',
+        'related' => ['avif-to-png', 'avif-to-webp', 'image-compressor'],
+        'published' => '2026-11-05',
+        'updated' => '2026-11-05',
+        'sections' => [
+            [
+                'heading' => 'Why AVIF files cause problems in the first place',
+                'paragraphs' => [
+                    'AVIF stores images using the same compression ideas as the AV1 video codec, which lets it pack a photo into a noticeably smaller file than JPG at a similar visual quality. Current versions of Chrome, Firefox, Safari and Edge all display AVIF directly, and many phones and websites now save or serve images in this format by default, which is why you keep running into it.',
+                    'The catch is everything built before AVIF existed. Many photo editors, some office software, certain printers, and upload forms for things like passport photos or online marketplaces only recognize older formats. They do not throw a helpful error; the file just silently fails to open or upload, which is confusing the first few times it happens.',
+                ],
+            ],
+            [
+                'heading' => 'Converting AVIF to JPG, step by step',
+                'list' => [
+                    'Open the [AVIF to JPG converter](/avif-to-jpg).',
+                    'Drop in your AVIF file, or click the box to choose it from your device; you can add up to 30 at once if you have a batch to get through.',
+                    'Leave the quality slider at 85% for a good balance of sharpness and file size, or raise it toward 100% if the image will be printed or zoomed into.',
+                    'Click Download next to a single image, or use "Download all (ZIP)" when you converted more than one.',
+                    'Open the downloaded JPG to confirm it looks right before you delete the original AVIF.',
+                ],
+            ],
+            [
+                'heading' => 'Converting a batch without uploading anywhere',
+                'paragraphs' => [
+                    'If you have a folder full of AVIF photos from a camera roll export or a website scrape, converting them one at a time in a desktop app is tedious. The browser-based converter linked above handles up to 30 files in a single batch: drop the whole folder\'s selection in at once, let it process each image, and download everything together as one ZIP instead of 30 separate clicks.',
+                    'Because the conversion runs entirely in your browser\'s own code rather than on a server, none of the images are sent anywhere over the network to be processed. That matters most for anything personal, such as scanned documents saved as AVIF, photos of ID cards, or pictures you have not shared publicly; nothing leaves your device at any point in the process.',
+                ],
+            ],
+            [
+                'heading' => 'What changes and what does not',
+                'paragraphs' => [
+                    'A conversion like this is not completely free: JPG and AVIF compress images differently, so a few things shift along the way.',
+                ],
+                'table' => [
+                    'headers' => ['Property', 'What happens when you convert'],
+                    'rows' => [
+                        ['File size', 'Usually grows, because AVIF is more efficient than JPG at the same visual quality'],
+                        ['Transparency', 'Lost. JPG has no transparency channel, so any transparent area is filled in, normally with white'],
+                        ['Image quality', 'Set by the quality slider; 85% or higher keeps photos looking sharp to the eye'],
+                        ['Compatibility', 'Improves a lot, since JPG opens in essentially every app, editor, printer and upload form'],
+                        ['Animation', 'AVIF can hold a short animated sequence; converting to JPG keeps only a single still frame'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'When converting is the right call',
+                'list' => [
+                    'An upload form, print shop or older editor rejects the AVIF file outright.',
+                    'You are sending the image to someone whose phone, email client or software you do not control and cannot guarantee supports AVIF.',
+                    'The image needs to go into a document, slideshow or template that expects JPG.',
+                    'You want the smallest possible JPG for an old workflow that has no AVIF option, even though AVIF itself would have been smaller.',
+                ],
+            ],
+            [
+                'heading' => 'When to leave it as AVIF',
+                'paragraphs' => [
+                    'If the image is only going on a modern website, or staying on a device and in apps you know support AVIF, converting just makes the file bigger for no benefit. Keep it as AVIF for web use, and only convert the specific copy you need to hand off somewhere that cannot read it.',
+                    'If the AVIF has a transparent background you need to keep, convert to PNG instead, since JPG discards transparency entirely; the [AVIF to PNG converter](/avif-to-png) handles that without flattening it to white.',
+                ],
+            ],
+            [
+                'heading' => 'Common mistakes',
+                'list' => [
+                    'Assuming a "file won\'t open" error means the photo is corrupted, when it is usually just an unsupported format, AVIF, that the app has never seen before.',
+                    'Converting at a very low quality setting to save space, then noticing visible blotching around sharp edges or text in the image; raise the quality slider instead of guessing.',
+                    'Converting an AVIF with a transparent logo or graphic to JPG and being surprised the transparent area turned solid white - that is expected; use PNG for anything that needs to stay transparent.',
+                    'Re-converting the same image back and forth between formats repeatedly, which loses a little quality each time a lossy format like JPG is re-saved; keep the original AVIF and convert fresh from it each time instead.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Why can\'t I open an AVIF file?', 'a' => 'AVIF is a newer image format. Current web browsers display it, but many older apps, photo editors, printers and upload forms do not support it yet, so the file fails to open until you convert it to a more common format like JPG.'],
+            ['q' => 'Will converting AVIF to JPG make the file bigger?', 'a' => 'Usually, yes. AVIF compresses images more efficiently than JPG, so the same picture typically takes up more space once it becomes a JPG, even at a similar visual quality.'],
+            ['q' => 'What happens to a transparent background when I convert to JPG?', 'a' => 'It is lost. JPG does not support transparency, so any transparent area is filled in, normally with white. If you need to keep transparency, convert the AVIF to PNG instead.'],
+        ],
+        'sources' => [
+            ['title' => 'Alliance for Open Media, AV1 Image File Format (AVIF) specification', 'url' => 'https://aomediacodec.github.io/av1-avif/'],
+            ['title' => 'Can I use, AVIF image format browser support', 'url' => 'https://caniuse.com/avif'],
+        ],
+    ],
+
 ];
