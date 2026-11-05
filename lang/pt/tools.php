@@ -2200,6 +2200,7 @@ return [
             'Aproxime ou afaste a visualização para posicionar tudo com precisão',
             'Gire texto, imagens, realces e formas para qualquer ângulo',
             'Miniaturas de página para ir direto a qualquer página',
+            'Insira uma página em branco, exclua, gire ou reordene páginas',
             'Seu trabalho é salvo automaticamente enquanto você edita, assim uma atualização ou um fechamento acidental nunca o perde',
             'Preenche os campos de um formulário existente: caixas de texto, caixas de seleção, listas suspensas e botões de opção',
             'Cria campos novos: uma caixa de texto, uma caixa de seleção, uma lista suspensa ou um campo de assinatura, onde quiser na página',

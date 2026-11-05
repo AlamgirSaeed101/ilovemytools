@@ -2095,6 +2095,7 @@ return [
             'Acerca o aleja la vista para colocar todo con precisión',
             'Rota texto, imágenes, resaltados y formas a cualquier ángulo',
             'Miniaturas de página para saltar directamente a cualquier página',
+            'Inserta una página en blanco, elimina, gira o reordena páginas',
             'Tu trabajo se guarda automáticamente mientras editas, así que un refresco o un cierre accidental nunca lo pierde',
             'Rellena los campos de un formulario existente: casillas de texto, casillas de verificación, listas desplegables y botones de opción',
             'Crea campos nuevos: una casilla de texto, una casilla de verificación, una lista desplegable o un campo de firma, donde quieras en la página',

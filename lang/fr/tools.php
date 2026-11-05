@@ -2200,6 +2200,7 @@ return [
             'Zoomez ou dézoomez pour placer les éléments avec précision',
             'Faites pivoter le texte, les images, les surlignages et les formes à n’importe quel angle',
             'Miniatures de pages pour aller directement à n’importe quelle page',
+            'Insérez une page vierge, supprimez, pivotez ou réorganisez les pages',
             'Votre travail est enregistré automatiquement au fil de l’édition, donc une actualisation ou une fermeture accidentelle ne le perd jamais',
             'Remplissez les champs d’un formulaire existant : champs de texte, cases à cocher, listes déroulantes et boutons radio',
             'Créez de nouveaux champs : un champ de texte, une case à cocher, une liste déroulante ou un champ de signature, placés où vous voulez sur la page',

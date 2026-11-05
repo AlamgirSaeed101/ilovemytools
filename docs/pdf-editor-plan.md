@@ -32,6 +32,7 @@ text and change it in place, in the same font.
   - [x] Create a dropdown form field: "Add fields" now also places a dropdown, with its own comma-separated options entered right in the overlay (at least two required, de-duplicated and trimmed), saved as a real AcroForm choice field with pdf-lib. Signature field creation is left for a future run.
   - [x] Create a signature form field: "Add fields" now also places a signature field, saved as a real, unsigned AcroForm `/Sig` field with pdf-lib's low-level acroform API (pdf-lib's high-level form helpers only read signature fields, not create them) so any PDF reader can sign it later; this tool never handles certificates or cryptographic signing itself.
 6. [ ] Page tools and signature inside the editor
+  - [x] Page tools: a new Pages tab lets you insert a blank page, delete, rotate (90° steps) or reorder pages (move buttons, touch-friendly), applied to a fresh copy of the document only when you click Save PDF so the live edit session is never disturbed; content added elsewhere moves with its page. Placing an actual signature (drawn/typed/uploaded, distinct from the signature *field* shipped in item 5) is left for a future run.
 7. [ ] Landing pages for each mode: add text to PDF, whiteout PDF, edit PDF text, PDF annotator, fill PDF form, Sejda alternative
 
 ## Features

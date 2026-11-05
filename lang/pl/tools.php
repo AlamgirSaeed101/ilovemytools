@@ -2073,6 +2073,7 @@ return [
             'Powiększaj lub zmniejszaj widok, aby precyzyjnie rozmieszczać elementy',
             'Obracaj tekst, obrazy, zakreślenia i kształty pod dowolnym kątem',
             'Miniatury stron, aby przejść prosto do wybranej strony',
+            'Wstaw pustą stronę, usuń, obróć lub zmień kolejność stron',
             'Twoja praca jest automatycznie zapisywana podczas edycji, więc odświeżenie lub przypadkowe zamknięcie nigdy jej nie utraci',
             'Wypełnia istniejące pola formularza: pola tekstowe, pola wyboru, listy rozwijane i przyciski opcji',
             'Twórz nowe pola: pole tekstowe, pole wyboru, listę rozwijaną lub pole podpisu, umieszczone w dowolnym miejscu strony',

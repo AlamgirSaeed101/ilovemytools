@@ -2121,6 +2121,15 @@ fieldset.grid-2 .check:has(input:checked) {
     color: var(--muted);
 }
 
+.page-card__blank {
+    display: block;
+    width: 70%;
+    height: 70%;
+    border: 2px dashed var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+}
+
 .page-card__check {
     position: absolute;
     z-index: 1;

@@ -824,6 +824,40 @@ test.describe('PDF tools', () => {
         expect(text).toContain('Zoomed text');
     });
 
+    test('edit PDF: Pages tab rotates, reorders, deletes and inserts a blank page', async ({ page }) => {
+        await openTool(page, 'edit-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'booklet.pdf', mimeType: 'application/pdf', buffer: await makePdf(3) });
+
+        await page.getByRole('tab', { name: 'Pages' }).click();
+        const grid = page.locator('.page-grid');
+        const card = (label) => grid.getByRole('group', { name: label, exact: true });
+        await expect(grid.locator('li')).toHaveCount(3);
+        await expect(page.getByRole('button', { name: 'Save PDF', exact: true })).toBeDisabled();
+
+        // Rotate page 1, then move it to the second position.
+        await card('Page 1').locator('button', { hasText: '⟳' }).click();
+        await card('Page 1').locator('button', { hasText: '→' }).click();
+
+        // Delete page 3 (still last after the move above).
+        await card('Page 3').locator('button', { hasText: 'Delete' }).click();
+        await expect(grid.locator('li')).toHaveCount(2);
+
+        // Insert a blank page right after page 2 (now first).
+        await card('Page 2').locator('button', { hasText: 'Insert blank page after' }).click();
+        await expect(grid.locator('li')).toHaveCount(3);
+
+        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(file.suggestedFilename()).toBe('booklet-pages.pdf');
+        const bytes = await readDownload(file);
+        expect(await pdfPageCount(bytes)).toBe(3);
+        const texts = await pdfPageTexts(page, bytes);
+        expect(texts[0]).toContain('Doc page 2');
+        expect(texts[1]).toBe('');
+        expect(texts[2]).toContain('Doc page 1');
+        expect(await pdfPageRotations(bytes)).toEqual([0, 0, 90]);
+    });
+
     test('edit PDF: Fill form fills a text field, a checkbox and a dropdown, and saves their values', async ({ page }) => {
         await openTool(page, 'edit-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'application.pdf', mimeType: 'application/pdf', buffer: await makePdfWithFormFields() });

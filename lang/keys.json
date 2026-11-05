@@ -1177,6 +1177,12 @@
     ]
   },
   {
+    "key": "Blank page",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Blocked",
     "files": [
       "scripts/i18n-extract.mjs"
@@ -2031,13 +2037,15 @@
   {
     "key": "Delete",
     "files": [
-      "resources/js/tools/DeletePdfPages.jsx"
+      "resources/js/tools/DeletePdfPages.jsx",
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
     "key": "Delete page {number}",
     "files": [
-      "resources/js/tools/DeletePdfPages.jsx"
+      "resources/js/tools/DeletePdfPages.jsx",
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -3787,6 +3795,18 @@
     ]
   },
   {
+    "key": "Insert a blank page, delete, rotate or reorder pages. This only changes the file once you click Save PDF below.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Insert blank page after",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Instant results - no waiting in an upload or download queue",
     "files": [
       "scripts/i18n-extract.mjs"
@@ -4413,12 +4433,14 @@
   {
     "key": "Move page {number} earlier",
     "files": [
+      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/OrganizePdf.jsx"
     ]
   },
   {
     "key": "Move page {number} later",
     "files": [
+      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/OrganizePdf.jsx"
     ]
   },
@@ -4902,6 +4924,7 @@
     "key": "Page {number}",
     "files": [
       "resources/js/lib/pdfToExcel.js",
+      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/OrganizePdf.jsx"
     ]
   },
@@ -5072,6 +5095,7 @@
   {
     "key": "PDF pages, in order",
     "files": [
+      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/OrganizePdf.jsx"
     ]
   },
@@ -6018,6 +6042,12 @@
     "key": "Rotate left 90 degrees",
     "files": [
       "resources/js/tools/RotatePdf.jsx"
+    ]
+  },
+  {
+    "key": "Rotate page {number}",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -7598,6 +7628,12 @@
     "key": "Unsubscribe from new tool emails?",
     "files": [
       "resources/js/components/Newsletter.jsx"
+    ]
+  },
+  {
+    "key": "Updating the pages failed: {message}",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {

@@ -2200,6 +2200,7 @@ return [
             'Zoomen Sie hinein oder heraus, um alles präzise zu platzieren',
             'Text, Bilder, Markierungen und Formen in jeden Winkel drehen',
             'Seitenminiaturen, um direkt zu jeder Seite zu springen',
+            'Füge eine leere Seite ein, lösche, drehe oder ordne Seiten neu an',
             'Ihre Arbeit wird während der Bearbeitung automatisch gespeichert, sodass ein Neuladen oder ein versehentliches Schließen sie nie verliert',
             'Füllt vorhandene Formularfelder aus: Textfelder, Kontrollkästchen, Dropdown-Listen und Optionsfelder',
             'Erstellt neue Formularfelder: ein Textfeld, ein Kontrollkästchen, eine Dropdown-Liste oder ein Unterschriftsfeld, frei auf der Seite platzierbar',

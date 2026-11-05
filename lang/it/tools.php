@@ -2200,6 +2200,7 @@ return [
             'Ingrandisci o riduci la vista per posizionare tutto con precisione',
             'Ruota testo, immagini, evidenziazioni e forme in qualsiasi angolazione',
             'Miniature delle pagine per saltare direttamente a qualsiasi pagina',
+            'Inserisci una pagina vuota, elimina, ruota o riordina le pagine',
             'Il tuo lavoro viene salvato automaticamente mentre modifichi, così un aggiornamento o una chiusura accidentale non lo perde mai',
             'Compila i campi di un modulo esistente: caselle di testo, caselle di controllo, menu a discesa e pulsanti di opzione',
             'Crea nuovi campi: una casella di testo, una casella di controllo, un menu a discesa o un campo firma, posizionato ovunque sulla pagina',
