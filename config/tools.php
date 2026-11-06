@@ -2436,7 +2436,7 @@ return [
         'category' => 'pdf-tools',
         'icon' => 'pdf',
         'popular' => false,
-        'updated' => '2026-11-05',
+        'updated' => '2026-11-06',
         'title' => 'Edit PDF Online Free - Add Text and Images',
         'description' => 'Edit a PDF online for free: change text in its own font, add text, images, shapes, links or a watermark, or white out content. No upload, no sign up.',
         'h1' => 'Edit PDF',
@@ -2468,6 +2468,7 @@ return [
             'Your work auto-saves as you go, so a refresh or accidental close never loses it',
             'Fill in existing form fields: text boxes, checkboxes, dropdowns and radio buttons',
             'Create new fields: a text box, checkbox, dropdown or signature, placed anywhere on the page',
+            'Add your own signature: draw, type or upload it, then drag and resize it on any page',
         ],
         'content' => [
             [

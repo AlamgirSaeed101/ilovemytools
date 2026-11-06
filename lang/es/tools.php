@@ -2099,6 +2099,7 @@ return [
             'Tu trabajo se guarda automáticamente mientras editas, así que un refresco o un cierre accidental nunca lo pierde',
             'Rellena los campos de un formulario existente: casillas de texto, casillas de verificación, listas desplegables y botones de opción',
             'Crea campos nuevos: una casilla de texto, una casilla de verificación, una lista desplegable o un campo de firma, donde quieras en la página',
+            'Añade tu propia firma: dibújala, escríbela o súbela, y luego arrástrala y redimensiónala en cualquier página',
         ],
         'content' => [
             ['heading' => 'Cómo funciona la edición del texto existente', 'body' => 'Haz clic en una línea de texto y escribe. El texto antiguo se cubre con el color que hay detrás y el nuevo se dibuja en la misma posición, tamaño y color, con la fuente incrustada en el PDF. Los PDF suelen incrustar solo las letras que usan, así que si tu texto nuevo necesita una letra que el archivo nunca contuvo, esa línea pasa a la fuente estándar más parecida y el editor te indica qué letras lo causaron. Las páginas escaneadas son imágenes sin texto editable; ahí usa el corrector blanco y Añadir texto.'],

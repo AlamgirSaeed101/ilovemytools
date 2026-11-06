@@ -66,10 +66,10 @@ const tools = {
     'stopwatch': lazy(() => import('./Stopwatch.jsx')),
     'countdown-timer': lazy(() => import('./CountdownTimer.jsx')),
     'sleep-calculator': lazy(() => import('./SleepCalculator.jsx')),
-    'sign-pdf': lazy(() => import('./SignPdf.jsx')),
     'redact-pdf': lazy(() => import('./RedactPdf.jsx')),
     'edit-pdf': lazy(() => import('./EditPdf.jsx')),
     'watermark-pdf': editPdfMode('watermark'),
+    'sign-pdf': editPdfMode('sign'),
 };
 
 export default tools;

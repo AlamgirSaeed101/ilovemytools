@@ -525,7 +525,7 @@
   {
     "key": "1. Create your signature",
     "files": [
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -567,7 +567,7 @@
   {
     "key": "2. Place it on the page",
     "files": [
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -681,7 +681,7 @@
   {
     "key": "A PNG with a transparent background works best",
     "files": [
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -832,7 +832,7 @@
   {
     "key": "Add signature to this page",
     "files": [
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -850,7 +850,7 @@
   {
     "key": "Add today's date under the signature",
     "files": [
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -1465,7 +1465,6 @@
       "resources/js/tools/ProtectPdf.jsx",
       "resources/js/tools/RedactPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
-      "resources/js/tools/SignPdf.jsx",
       "resources/js/tools/SplitPdf.jsx",
       "resources/js/tools/UnlockPdf.jsx"
     ]
@@ -1509,11 +1508,11 @@
       "resources/js/tools/DiceRoller.jsx",
       "resources/js/tools/DomainAgeChecker.jsx",
       "resources/js/tools/DomainAuthority.jsx",
+      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/JpgToPdf.jsx",
       "resources/js/tools/JsonFormatter.jsx",
       "resources/js/tools/MergePdf.jsx",
       "resources/js/tools/ReadabilityChecker.jsx",
-      "resources/js/tools/SignPdf.jsx",
       "resources/js/tools/SpinWheel.jsx",
       "resources/js/tools/WordCounter.jsx"
     ]
@@ -1869,7 +1868,7 @@
   {
     "key": "Could not create the signature image.",
     "files": [
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -2208,7 +2207,6 @@
       "resources/js/tools/PdfToImage.jsx",
       "resources/js/tools/RedactPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
-      "resources/js/tools/SignPdf.jsx",
       "resources/js/tools/SplitPdf.jsx"
     ]
   },
@@ -2346,7 +2344,6 @@
       "resources/js/tools/OrganizePdf.jsx",
       "resources/js/tools/RedactPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
-      "resources/js/tools/SignPdf.jsx",
       "resources/js/tools/SplitPdf.jsx",
       "resources/js/tools/WordToPdf.jsx"
     ]
@@ -2434,8 +2431,7 @@
   {
     "key": "Draw",
     "files": [
-      "resources/js/tools/EditPdf.jsx",
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -2453,7 +2449,7 @@
   {
     "key": "Draw your signature here",
     "files": [
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -2493,14 +2489,13 @@
       "resources/js/tools/ProtectPdf.jsx",
       "resources/js/tools/RedactPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
-      "resources/js/tools/SignPdf.jsx",
       "resources/js/tools/SplitPdf.jsx"
     ]
   },
   {
     "key": "Drop a signature image or click to choose",
     "files": [
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -4521,8 +4516,7 @@
     "key": "Next page",
     "files": [
       "resources/js/tools/EditPdf.jsx",
-      "resources/js/tools/RedactPdf.jsx",
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/RedactPdf.jsx"
     ]
   },
   {
@@ -4775,7 +4769,6 @@
       "resources/js/tools/ProtectPdf.jsx",
       "resources/js/tools/RedactPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
-      "resources/js/tools/SignPdf.jsx",
       "resources/js/tools/SplitPdf.jsx",
       "resources/js/tools/UnlockPdf.jsx"
     ]
@@ -4916,8 +4909,7 @@
     "key": "Page {current} of {total}",
     "files": [
       "resources/js/tools/EditPdf.jsx",
-      "resources/js/tools/RedactPdf.jsx",
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/RedactPdf.jsx"
     ]
   },
   {
@@ -5190,7 +5182,6 @@
       "resources/js/tools/ProtectPdf.jsx",
       "resources/js/tools/RedactPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
-      "resources/js/tools/SignPdf.jsx",
       "resources/js/tools/SplitPdf.jsx",
       "resources/js/tools/UnlockPdf.jsx"
     ]
@@ -5198,8 +5189,7 @@
   {
     "key": "Please choose a PNG, JPG or WebP image.",
     "files": [
-      "resources/js/tools/EditPdf.jsx",
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -5377,8 +5367,7 @@
     "key": "Previous page",
     "files": [
       "resources/js/tools/EditPdf.jsx",
-      "resources/js/tools/RedactPdf.jsx",
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/RedactPdf.jsx"
     ]
   },
   {
@@ -5591,7 +5580,6 @@
       "resources/js/tools/ProtectPdf.jsx",
       "resources/js/tools/RedactPdf.jsx",
       "resources/js/tools/RotatePdf.jsx",
-      "resources/js/tools/SignPdf.jsx",
       "resources/js/tools/SplitPdf.jsx",
       "resources/js/tools/UnlockPdf.jsx"
     ]
@@ -5757,7 +5745,7 @@
   {
     "key": "Remove signature",
     "files": [
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -6397,7 +6385,13 @@
   {
     "key": "Sign PDF",
     "files": [
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Signature",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -6415,37 +6409,37 @@
   {
     "key": "Signature on the page - drag to move",
     "files": [
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
     "key": "Signature preview",
     "files": [
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
     "key": "Signature ready.",
     "files": [
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
     "key": "Signature type",
     "files": [
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
     "key": "Signing failed: {message}",
     "files": [
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
     "key": "Signing…",
     "files": [
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -7140,7 +7134,7 @@
   {
     "key": "This creates an electronic signature (a drawn, typed or uploaded image placed on the PDF), not a certificate-based digital signature.",
     "files": [
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -7524,7 +7518,7 @@
   {
     "key": "Type",
     "files": [
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -7560,7 +7554,7 @@
   {
     "key": "Type your name",
     "files": [
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -7639,7 +7633,7 @@
   {
     "key": "Upload",
     "files": [
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -7681,7 +7675,7 @@
   {
     "key": "Use this signature",
     "files": [
-      "resources/js/tools/SignPdf.jsx"
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {

@@ -575,10 +575,11 @@ test.describe('PDF tools', () => {
         expect(rows[2][0]).toBe('Bob');
     });
 
-    test('sign PDF draws a signature, places it on the page and signs the file', async ({ page }) => {
-        await openTool(page, 'sign-pdf');
+    test('signature lives inside Edit PDF as its own tab: draws a signature, places it on the page and signs the file', async ({ page }) => {
+        await openTool(page, 'edit-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'contract.pdf', mimeType: 'application/pdf', buffer: await makePdf(2) });
         await expect(page.getByText('contract.pdf', { exact: true })).toBeVisible();
+        await page.getByRole('tab', { name: 'Signature' }).click();
 
         // Draw a signature on the pad, then use it.
         const pad = page.locator('.signature-pad');
@@ -616,6 +617,22 @@ test.describe('PDF tools', () => {
         const signedBytes = await readDownload(file);
         expect(await pdfPageCount(signedBytes)).toBe(2);
         expect(signedBytes.length).toBeGreaterThan(originalBytes.length);
+
+        // Switching to another tab leaves the placed signature in place; switching back still shows it.
+        await page.getByRole('tab', { name: 'Edit text' }).click();
+        await page.getByRole('tab', { name: 'Signature' }).click();
+        await expect(overlay).toHaveCount(1);
+    });
+
+    test('sign-pdf opens Edit PDF with the Signature tab preselected, and the full editor stays reachable', async ({ page }) => {
+        await openTool(page, 'sign-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'contract.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
+        await expect(page.getByRole('tab', { name: 'Signature' })).toHaveAttribute('aria-selected', 'true');
+        await expect(page.getByText('Create your signature')).toBeVisible();
+
+        // The one editor is still underneath: every other tab is reachable from this page too.
+        await expect(page.getByRole('tab', { name: 'Edit text' })).toBeVisible();
+        await expect(page.getByRole('tab', { name: 'Watermark' })).toBeVisible();
     });
 
     test('redact PDF burns a box into the page so the covered text can no longer be extracted', async ({ page }) => {
