@@ -2712,7 +2712,7 @@ return [
             [
                 'heading' => 'The formula lenders actually use',
                 'paragraphs' => [
-                    'For a fixed-rate, fixed-term loan, the monthly payment is M = P x r / (1 - (1 + r)^-n), where P is the amount borrowed, r is the monthly interest rate (the annual rate divided by 12), and n is the total number of monthly payments (the term in years multiplied by 12). This single formula covers a personal loan, an auto loan, a student loan or any other loan that charges a fixed rate over a fixed term - only the mortgage case adds a down payment and, often, property tax and insurance on top of principal and interest.',
+                    'For a fixed-rate, fixed-term loan, the monthly payment is M = P x r / (1 - (1 + r)^-n), where P is the amount borrowed, r is the monthly interest rate (the annual rate divided by 12), and n is the total number of monthly payments (the term in years multiplied by 12). This single formula covers a personal loan, an auto loan, a student loan or any other loan that charges a fixed rate over a fixed term - only the mortgage case (see the [mortgage calculator](/mortgage-calculator) for that math) adds a down payment and, often, property tax and insurance on top of principal and interest.',
                     'The formula looks intimidating mainly because of the (1 + r)^-n term, which is just compounding running in reverse: it spreads the interest the lender is owed evenly across every payment so that the very last payment, like the first, is the same size.',
                 ],
             ],
