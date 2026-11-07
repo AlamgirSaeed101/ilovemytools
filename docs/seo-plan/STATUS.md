@@ -123,3 +123,10 @@ From the 7 Nov grok research page (free publishing and discovery, 14 domains).
 - Owner only: Jamro Tools (finished human-written article, headshot, 5 FAQs, no AI text); 10015 Product Finder and
   Capterra (sign-in); SourceForge (free profile is not a clickable link). Digital Tech Updates already said paid only (24 Oct).
 - If Sevenseventech or AiWebSoft accept, the article must be written by the owner: both reject AI-written text.
+- Inbox and Junk read 7 Nov night; replies sent from hello@: polite no-thanks to the three paid offers (Technology for
+  Learners $80, EasyGrader $100, Lawfold price sheet), thanks to e-fellows, and America's Charities told the form and
+  draft will follow. Sevenseventech's address bounced (relay denied: mailbox not hosted). Virtual Vocations (23 Oct)
+  takes a finished free draft from businesses: an owner-written remote-job article could go there.
+- Listings also done 7 Nov: MeWebLink, Free For NonProfits, carleslc/resources (Spanish list, Airtable form),
+  NoSignups (GitHub issue #2348), OneOffTech/awesome-pdf (issue #133). Blocked: GitHub forks/PRs (owner), KillerStartups
+  (community sign-up), Gründerküche (creates an account). DACHstartups is DACH-only; Leptidigital's form is gone (404).
