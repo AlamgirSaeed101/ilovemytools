@@ -111,3 +111,15 @@ category overviews (English); contact form; llms-full.txt.
   Sucuri asset cache (dashboard); entity location (owner: Islamabad or Jhelum); AdSense review request (not before
   crawled-not-indexed clearly drops). Outreach: sent 4 Nov, see above.
 
+
+## Backlinks and guest posts, 7 Nov (owner: "start doing backlinking and guest posting")
+From the 7 Nov grok research page (free publishing and discovery, 14 domains).
+- Submitted free listings: The Tool Directory, AI Free Premium Tools (as a productivity tool, not AI).
+- Sent from hello@, all in Sent Items: the 4 approved 4 Nov leftovers (Updivision, Botkeeper with redaction wording,
+  EasyGrader, Empowerly) and new pitches to Sevenseventech (20 KB photo/signature for Indian forms, 1 dofollow) and
+  AiWebSoft (verify a tool doesn't upload files; all links nofollow; AI use must be disclosed).
+- Replies to the 4 Nov batch: America's Charities said yes, needs their Stage 1 PDF form + full draft (owner);
+  Technology for Learners wants $80 (paid link, declined); e-fellows declined.
+- Owner only: Jamro Tools (finished human-written article, headshot, 5 FAQs, no AI text); 10015 Product Finder and
+  Capterra (sign-in); SourceForge (free profile is not a clickable link). Digital Tech Updates already said paid only (24 Oct).
+- If Sevenseventech or AiWebSoft accept, the article must be written by the owner: both reject AI-written text.
