@@ -2699,4 +2699,96 @@ return [
         ],
     ],
 
+    'how-to-calculate-a-loan-payment' => [
+        'title' => 'How to Calculate a Loan Payment by Hand',
+        'description' => 'Calculate a personal, auto or student loan payment by hand with the amortization formula, see a worked example, and learn what a loan calculator adds on top.',
+        'h1' => 'How to calculate a loan payment',
+        'intro' => 'Every fixed-rate loan - a personal loan, a car loan, a student loan - reduces to the same math: the amount borrowed, the interest rate and the term fix the monthly payment, down to the cent. Lenders are not doing anything mysterious when they quote you a number; they are running a standard amortization formula that you can run yourself. Here is the formula, a worked example, and the details - extra payments, APR versus the interest rate, prepayment penalties - that a quick online quote usually glosses over.',
+        'tool' => 'loan-calculator',
+        'related' => ['mortgage-calculator', 'percentage-calculator', 'compound-interest-calculator'],
+        'published' => '2026-11-07',
+        'updated' => '2026-11-07',
+        'sections' => [
+            [
+                'heading' => 'The formula lenders actually use',
+                'paragraphs' => [
+                    'For a fixed-rate, fixed-term loan, the monthly payment is M = P x r / (1 - (1 + r)^-n), where P is the amount borrowed, r is the monthly interest rate (the annual rate divided by 12), and n is the total number of monthly payments (the term in years multiplied by 12). This single formula covers a personal loan, an auto loan, a student loan or any other loan that charges a fixed rate over a fixed term - only the mortgage case adds a down payment and, often, property tax and insurance on top of principal and interest.',
+                    'The formula looks intimidating mainly because of the (1 + r)^-n term, which is just compounding running in reverse: it spreads the interest the lender is owed evenly across every payment so that the very last payment, like the first, is the same size.',
+                ],
+            ],
+            [
+                'heading' => 'A worked example, step by step',
+                'paragraphs' => [
+                    'Take a $20,000 loan at 7% annual interest over 5 years (60 months).',
+                ],
+                'list' => [
+                    'Convert the annual rate to a monthly rate: 7% / 12 = 0.5833% = 0.005833 as a decimal.',
+                    'Count the payments: 5 years x 12 = 60.',
+                    'Plug into the formula: M = 20000 x 0.005833 / (1 - (1.005833)^-60.',
+                    '(1.005833)^-60 works out to about 0.7190, so the denominator is 1 - 0.7190 = 0.2810.',
+                    'M = 20000 x 0.005833 / 0.2810 = 116.66 / 0.2810 ≈ $396.02 a month.',
+                    'Total repaid over the term: $396.02 x 60 ≈ $23,761. Total interest: about $3,761, all on top of the $20,000 borrowed.',
+                ],
+            ],
+            [
+                'heading' => 'How the term changes the payment and the total cost',
+                'paragraphs' => [
+                    'The same $20,000 at 7% costs very different amounts depending only on the term you choose - a shorter term raises the monthly payment but cuts the total interest sharply, because the balance has less time to keep accruing interest.',
+                ],
+                'table' => [
+                    'headers' => ['Loan term', 'Monthly payment', 'Total interest paid'],
+                    'rows' => [
+                        ['2 years', '$895.45', '$1,490.84'],
+                        ['3 years', '$617.54', '$2,231.51'],
+                        ['5 years', '$396.02', '$3,761.44'],
+                        ['7 years', '$301.85', '$5,355.70'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'What this math does not include',
+                'paragraphs' => [
+                    'The formula gives you principal and interest only. It leaves out everything a lender might bolt on separately: an origination fee taken off the loan before you receive it, credit insurance, a documentation fee, or - for an auto loan - taxes and dealer add-ons rolled into the amount financed. That gap is exactly why a lender\'s quoted APR (annual percentage rate) is usually a little higher than the plain interest rate you plugged into the formula: APR is built to fold fees into a single comparable yearly cost, so it is the number to compare between lenders, while the interest rate alone is what you use to recompute the payment by hand.',
+                    'The math also assumes every payment lands on time and in full. Miss a payment or pay late and most lenders add fees or extra accrued interest that this formula does not model at all.',
+                ],
+            ],
+            [
+                'heading' => 'Why extra payments save more than they look like they should',
+                'paragraphs' => [
+                    'Every payment you make splits between interest already accrued on the current balance and principal, which permanently lowers that balance. An extra dollar paid toward principal stops earning the lender interest for every remaining month of the loan, so extra payments made early - when the balance and the interest share of each payment are largest - save far more than the same extra amount paid near the end. A loan calculator with an extra-payment field shows this directly, by comparing the full schedule with and without it, rather than asking you to re-run the formula month by month.',
+                    'Check the loan agreement before sending extra money: some fixed-rate loans, mortgages especially, charge a prepayment penalty for paying off the balance faster than scheduled.',
+                ],
+            ],
+            [
+                'heading' => 'Common mistakes doing this by hand',
+                'list' => [
+                    'Using the annual rate directly instead of dividing by 12 first - this is the single most common error and produces a payment far too high.',
+                    'Mixing up the term in years with the term in months inside n, which throws the whole result off by a factor of 12.',
+                    'Comparing two loan offers by interest rate alone instead of APR, which hides a lower-rate loan that actually costs more once its fees are counted.',
+                    'Forgetting that a longer term lowers the monthly payment but raises the total interest paid - the cheaper-looking monthly number is not the cheaper loan.',
+                ],
+            ],
+            [
+                'heading' => 'Checklist before you sign',
+                'list' => [
+                    'Confirm the rate you are comparing is the APR, not just the headline interest rate, when shopping between lenders.',
+                    'Recompute the payment yourself (or with a [loan calculator](/loan-calculator)) using the actual rate and term in the offer, not a rounded version.',
+                    'Ask whether a prepayment penalty applies before planning to pay the loan off early.',
+                    'Check what the payment does and does not include - some lenders quote principal and interest only, others roll in fees or insurance.',
+                    'Run the numbers at more than one term so you can see the full monthly-payment-versus-total-interest trade-off before choosing.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Does this formula work for a mortgage too?', 'a' => 'The same amortization formula drives a mortgage payment, but a mortgage usually adds a down payment that reduces the amount financed, plus property tax and insurance that are not part of this principal-and-interest formula. Use the Mortgage Calculator for a home loan and the Loan Calculator for a personal, auto or student loan.'],
+            ['q' => 'Why is my lender\'s quoted payment different from what I calculated?', 'a' => 'Lenders often fold in fees, insurance or their own rounding, and your actual approved rate depends on your credit profile. Recomputing with the exact rate and term from your offer, principal and interest only, should match closely; a larger gap usually means fees are being added to the payment.'],
+            ['q' => 'Is it always worth making extra payments?', 'a' => 'Usually it lowers total interest, since extra money goes straight to the principal and stops accruing interest for the rest of the loan. Check your loan agreement first, though - some fixed-rate loans charge a prepayment penalty that can offset part of the saving.'],
+        ],
+        'sources' => [
+            ['title' => 'Consumer Financial Protection Bureau, What is amortization?', 'url' => 'https://www.consumerfinance.gov/ask-cfpb/what-is-amortization-and-how-could-it-affect-my-auto-loan-en-755/'],
+            ['title' => 'Consumer Financial Protection Bureau, What is the difference between a loan\'s interest rate and its APR?', 'url' => 'https://www.consumerfinance.gov/ask-cfpb/what-is-the-difference-between-a-interest-rate-and-the-annual-percentage-rate-apr-in-a-car-loan-en-733/'],
+            ['title' => 'Consumer Financial Protection Bureau, What is a prepayment penalty?', 'url' => 'https://www.consumerfinance.gov/ask-cfpb/what-is-a-prepayment-penalty-en-1957/'],
+        ],
+    ],
+
 ];
