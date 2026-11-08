@@ -130,3 +130,13 @@ From the 7 Nov grok research page (free publishing and discovery, 14 domains).
 - Listings also done 7 Nov: MeWebLink, Free For NonProfits, carleslc/resources (Spanish list, Airtable form),
   NoSignups (GitHub issue #2348), OneOffTech/awesome-pdf (issue #133). Blocked: GitHub forks/PRs (owner), KillerStartups
   (community sign-up), Gründerküche (creates an account). DACHstartups is DACH-only; Leptidigital's form is gone (404).
+
+## 8 Nov: research by region + 30 pitches
+Research (agents, every page opened): UK 16, USA 42, Canada 23, AU/NZ 21, Europe 31 = 133 verified free prospects
+(109 guest routes, 24 listings), all added to prospects.md / backlinks-queue.md. Short of 50 per region: the shared
+web-search limit ran out, and many outlets are paid-only, local-authors-only or Cloudflare-blocked.
+- Sent 8 Nov from hello@ (30, the daily limit): 4 UK, 9 USA, 6 Canada, 6 AU/NZ, 3 German, 2 Italian. Statuses in prospects.md.
+- Submitted 8 Nov: KI-Suche (background remover, which really runs U-2-Net/BiRefNet in the browser). UCSD suggestion form is down.
+- Next batches: the remaining `new` rows (about 79 guest + email-suggestion library guides), 30 a day.
+- Owner: eSchool News / eCampus News / WP Space / TechWyse / SiteCentre reject AI-written text, so accepted articles must be
+  written by the owner.
