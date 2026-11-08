@@ -182,3 +182,11 @@ With 0 Search Console rows and 1 Organic Search session, there isn't yet a real 
 position or country showing actual search demand to build on. Revisit once Search Console
 starts returning impressions (can take a few days to a couple of weeks after connecting) and
 Organic Search sessions pass single digits.
+
+## 2026-11-08 (read in Chrome, last 28 days to 5 Nov)
+- 8 clicks, 1.25K impressions, CTR 0.6%, average position 44.1 (13 Oct: 0 clicks, 1,893 impressions).
+- Top queries still sit far down: "when was a domain (name) registered" 74-83, German "öffentliche ip" 78-94. Near page 1:
+  "jpg to pdf combiner" 8.0, "lançar moeda" 8.4 (pt, noindexed since 4 Nov). Brand query "ilovemytools.store" only 19.5.
+- Indexing: 384 indexed, 309 not (259 crawled - currently not indexed, 31 discovered - not indexed, 19 redirects).
+- Links report: 63 external links, 58 of them from circlesaasboard.com (badge removed 13 Oct); real linking domains:
+  saashub, deepnlp, launchfree, startupbase. Authority is the bottleneck.
