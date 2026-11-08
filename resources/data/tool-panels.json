@@ -1,4 +1,8 @@
 {
+    "add-text-to-pdf": {
+        "sm": 340,
+        "lg": 340
+    },
     "age-calculator": {
         "sm": 340,
         "lg": 340

@@ -1143,6 +1143,30 @@ test.describe('PDF tools', () => {
         await expect(page.getByRole('tab', { name: 'Edit text' })).toBeVisible();
         await expect(page.getByRole('tab', { name: 'Shapes' })).toBeVisible();
     });
+
+    test('add-text-to-pdf opens Edit PDF with the Add text tab preselected and can type, place and save text', async ({ page }) => {
+        await openTool(page, 'add-text-to-pdf');
+        const originalBytes = await makePdf(1);
+        await page.getByTestId('file-input').setInputFiles({ name: 'form.pdf', mimeType: 'application/pdf', buffer: originalBytes });
+        await expect(page.getByRole('tab', { name: 'Add text' })).toHaveAttribute('aria-selected', 'true');
+        await expect(page.getByLabel('Text to add')).toBeVisible();
+
+        await page.getByLabel('Text to add').fill('Approved');
+        await page.getByRole('button', { name: 'Add text to page' }).click();
+        const overlay = page.locator('.pdf-editor__overlay');
+        await expect(overlay).toHaveCount(1);
+
+        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(file.suggestedFilename()).toBe('form-edited.pdf');
+        const savedBytes = await readDownload(file);
+        expect(await pdfPageCount(savedBytes)).toBe(1);
+        expect(savedBytes.length).toBeGreaterThan(originalBytes.length);
+
+        // The one editor is still underneath: every other tab is reachable from this page too.
+        await expect(page.getByRole('tab', { name: 'Edit text' })).toBeVisible();
+        await expect(page.getByRole('tab', { name: 'Watermark' })).toBeVisible();
+    });
 });
 
 test.describe('Calculators', () => {

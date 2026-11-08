@@ -2548,6 +2548,57 @@ return [
         'related' => ['edit-pdf', 'sign-pdf', 'compress-pdf', 'merge-pdf'],
     ],
 
+    'add-text-to-pdf' => [
+        'name' => 'Add Text to PDF',
+        'category' => 'pdf-tools',
+        'icon' => 'pdf',
+        'popular' => false,
+        'updated' => '2026-11-08',
+        'title' => 'Add Text to PDF Online Free - Type Anywhere',
+        'description' => 'Add text to a PDF online for free. Click anywhere on the page, type, then choose the font size and colour before placing it. No upload, no sign up.',
+        'h1' => 'Add Text to PDF',
+        'tagline' => 'Click anywhere on a page and type - right in your browser.',
+        'keywords' => ['add text to pdf', 'add text to pdf online', 'type on a pdf', 'insert text into pdf', 'pdf text tool free'],
+        'intro' => 'Add text to a PDF by clicking anywhere on the page and typing - no printing, scanning or new software needed. Choose the font size and colour first, then drag the text into place and add as many lines as you need, on any page. This is the Text tool inside the full PDF editor, so you can also switch to editing the PDF\'s own text, add an image or a signature, or move on to another page, all without leaving your browser.',
+        'steps' => [
+            'Choose the PDF you want to add text to.',
+            'Type your text, then pick its font size and colour.',
+            'Click "Add text to page", then drag it into place.',
+            'Add more text or switch pages - Undo removes the last one if you change your mind.',
+            'Click Save PDF and download the file.',
+        ],
+        'features' => [
+            'Add text anywhere on any page',
+            'Choose the font size and colour before placing it',
+            'Drag placed text to reposition it',
+            'Add as many lines or pages of text as you need',
+            'Also edit the PDF\'s existing text, add images, shapes or a signature',
+            'Private - your PDF never leaves your device',
+        ],
+        'content' => [
+            [
+                'heading' => 'When to add text instead of editing what\'s already there',
+                'body' => 'Use this when the PDF has no text in the right spot yet - a blank line on a form, a scanned page, a margin note or a stamp. To change wording that\'s already printed in the PDF, use the Edit text mode in the same editor instead: it keeps the original font and simply replaces the old words.',
+            ],
+            [
+                'heading' => 'Getting text to look right',
+                'body' => 'Pick the font size before you add the text - it stays at that size once placed, so set it close to what you need rather than resizing afterwards. A dark colour on a light page keeps text easy to read; match the page\'s own text colour for notes that should blend in, or use a bright colour to make an addition stand out.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Can I add text anywhere on the page, even a blank area?', 'a' => 'Yes. Type your text, click "Add text to page" and it appears in the middle of the page ready to drag anywhere, including blank margins or empty form lines.'],
+            ['q' => 'Can I change the size or colour after adding the text?', 'a' => 'The size is fixed once placed, so choose it from the dropdown before clicking "Add text to page"; the colour works the same way. You can still drag the text to move it, or remove it and add it again with a new size or colour.'],
+            ['q' => 'Can I add more than one line of text?', 'a' => 'Yes. Add each line as its own piece of text so you can position each one independently, or type a longer line and drag it into place.'],
+            ['q' => 'Is my PDF uploaded to a server?', 'a' => 'No. Everything - adding, moving and saving - happens in your browser with JavaScript and nothing is sent anywhere.'],
+            ['q' => 'Can I also edit text that\'s already in the PDF?', 'a' => 'Yes. Switch to the Edit text mode in the same tool to click any existing line and retype it in the PDF\'s own font.'],
+        ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+        ],
+        'related' => ['edit-pdf', 'watermark-pdf', 'sign-pdf', 'merge-pdf'],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Mortgage Calculator',
         'category' => 'calculators',

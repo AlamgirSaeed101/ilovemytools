@@ -2258,6 +2258,42 @@ return [
         ],
     ],
 
+    'add-text-to-pdf' => [
+        'name' => 'Ajouter du texte à un PDF',
+        'title' => 'Ajouter du Texte à un PDF en Ligne Gratuit',
+        'description' => 'Ajoutez du texte à un PDF gratuitement. Cliquez sur la page, tapez, choisissez la taille et la couleur. Sans envoi de fichier, sans inscription.',
+        'h1' => 'Ajouter du texte à un PDF',
+        'tagline' => "Cliquez n'importe où sur une page et tapez - directement dans votre navigateur.",
+        'keywords' => ['ajouter du texte à un pdf', 'ajouter du texte à un pdf en ligne', 'écrire sur un pdf', 'insérer du texte dans un pdf', 'outil de texte pdf gratuit'],
+        'intro' => "Ajoutez du texte à un PDF en cliquant n'importe où sur la page et en tapant - sans imprimer, scanner ni installer quoi que ce soit. Choisissez d'abord la taille et la couleur, puis faites glisser le texte à sa place et ajoutez autant de lignes que nécessaire, sur n'importe quelle page. C'est l'outil Texte du même éditeur de PDF complet, donc vous pouvez aussi passer à la modification du texte déjà présent dans le PDF, ajouter une image ou une signature, ou passer à une autre page, tout cela sans quitter votre navigateur.",
+        'steps' => [
+            'Choisissez le PDF auquel vous voulez ajouter du texte.',
+            'Tapez votre texte, puis choisissez sa taille et sa couleur.',
+            "Cliquez sur « Ajouter le texte à la page », puis faites-le glisser à sa place.",
+            'Ajoutez d\'autre texte ou changez de page - Annuler supprime le dernier ajout si vous changez d\'avis.',
+            'Cliquez sur Enregistrer le PDF et téléchargez le fichier.',
+        ],
+        'features' => [
+            "Ajoutez du texte n'importe où sur n'importe quelle page",
+            'Choisissez la taille et la couleur avant de le placer',
+            'Faites glisser le texte déjà placé pour le repositionner',
+            'Ajoutez autant de lignes ou de pages de texte que nécessaire',
+            'Modifiez aussi le texte déjà présent dans le PDF, ajoutez des images, des formes ou une signature',
+            'Privé - votre PDF ne quitte jamais votre appareil',
+        ],
+        'content' => [
+            ['heading' => "Quand ajouter du texte plutôt que modifier ce qui existe déjà", 'body' => "Utilisez ceci quand le PDF n'a pas encore de texte au bon endroit - une ligne vide d'un formulaire, une page scannée, une note en marge ou un tampon. Pour changer un mot déjà imprimé dans le PDF, utilisez plutôt le mode Modifier le texte du même éditeur : il conserve la police d'origine et remplace simplement les anciens mots."],
+            ['heading' => 'Conseils pour un texte bien placé', 'body' => "Choisissez la taille avant d'ajouter le texte - elle reste fixée une fois placé, donc réglez-la au plus près de ce qu'il vous faut plutôt que de la redimensionner après. Une couleur sombre sur une page claire facilite la lecture ; reprenez la couleur du texte de la page pour une note qui doit se fondre dedans, ou utilisez une couleur vive pour faire ressortir un ajout."],
+        ],
+        'faqs' => [
+            ['q' => "Puis-je ajouter du texte n'importe où sur la page, même sur une zone vide ?", 'a' => 'Oui. Tapez votre texte, cliquez sur « Ajouter le texte à la page » et il apparaît au centre de la page, prêt à être déplacé n\'importe où, y compris dans une marge vide ou une ligne de formulaire inoccupée.'],
+            ['q' => 'Puis-je changer la taille ou la couleur après avoir ajouté le texte ?', 'a' => "La taille est fixée une fois le texte placé, choisissez-la donc dans le menu avant de cliquer sur « Ajouter le texte à la page » ; la couleur fonctionne de la même façon. Vous pouvez toujours faire glisser le texte pour le déplacer, ou le supprimer et l'ajouter à nouveau avec une autre taille ou couleur."],
+            ['q' => 'Puis-je ajouter plusieurs lignes de texte ?', 'a' => 'Oui. Ajoutez chaque ligne comme un texte séparé pour pouvoir la positionner indépendamment, ou tapez une ligne plus longue et faites-la glisser à sa place.'],
+            ['q' => 'Mon PDF est-il envoyé à un serveur ?', 'a' => "Non. Tout - l'ajout, le déplacement et l'enregistrement - se passe dans votre navigateur avec JavaScript, et rien n'est envoyé où que ce soit."],
+            ['q' => 'Puis-je aussi modifier le texte déjà présent dans le PDF ?', 'a' => "Oui. Passez au mode Modifier le texte dans le même outil pour cliquer sur n'importe quelle ligne existante et la retaper dans la police d'origine du PDF."],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Calculateur de prêt immobilier',
         'title' => 'Calculateur de Prêt Immobilier - Mensualité et Amortissement',

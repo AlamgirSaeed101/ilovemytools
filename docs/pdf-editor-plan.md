@@ -35,6 +35,7 @@ text and change it in place, in the same font.
   - [x] Page tools: a new Pages tab lets you insert a blank page, delete, rotate (90° steps) or reorder pages (move buttons, touch-friendly), applied to a fresh copy of the document only when you click Save PDF so the live edit session is never disturbed; content added elsewhere moves with its page.
   - [x] Signature: a new Signature tab lets you draw, type or upload a signature and place it on any page (drag to move, drag the corner to resize), with an optional date stamp underneath - the same capture flow the standalone Sign PDF page used, now inside the one editor. `/sign-pdf` opens Edit PDF with this tab preselected, same settings and output as before.
 7. [ ] Landing pages for each mode: add text to PDF, whiteout PDF, edit PDF text, PDF annotator, fill PDF form, Sejda alternative
+  - [x] Add text to PDF `/add-text-to-pdf` (opens Edit PDF with the Add text tab preselected, same editor underneath), own SEO content in all 10 languages, e2e test, panel height measured.
 
 ## Features
 

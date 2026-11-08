@@ -2131,6 +2131,42 @@ return [
         ],
     ],
 
+    'add-text-to-pdf' => [
+        'name' => 'Dodaj tekst do PDF',
+        'title' => 'Dodaj Tekst do PDF Online Bezpłatnie',
+        'description' => 'Dodaj tekst do PDF bezpłatnie online. Kliknij na stronie, wpisz tekst, wybierz rozmiar i kolor przed umieszczeniem. Bez wgrywania plików, bez rejestracji.',
+        'h1' => 'Dodaj tekst do PDF',
+        'tagline' => 'Kliknij w dowolnym miejscu strony i wpisz tekst - prosto w przeglądarce.',
+        'keywords' => ['dodaj tekst do pdf', 'dodawanie tekstu do pdf online', 'pisanie na pdf', 'wstawianie tekstu do pdf', 'bezpłatne narzędzie do tekstu w pdf'],
+        'intro' => 'Dodaj tekst do PDF, klikając w dowolnym miejscu strony i wpisując go - bez drukowania, skanowania czy instalowania czegokolwiek. Najpierw wybierz rozmiar i kolor, potem przeciągnij tekst na właściwe miejsce i dodaj tyle linii, ile potrzebujesz, na każdej stronie. To narzędzie Tekst w tym samym, pełnym edytorze PDF, więc możesz też przełączyć się na edycję tekstu już znajdującego się w PDF, dodać obraz lub podpis, albo przejść do innej strony - wszystko bez wychodzenia z przeglądarki.',
+        'steps' => [
+            'Wybierz PDF, do którego chcesz dodać tekst.',
+            'Wpisz swój tekst, a potem wybierz jego rozmiar i kolor.',
+            'Kliknij "Dodaj tekst do strony", a potem przeciągnij go na miejsce.',
+            'Dodaj więcej tekstu lub zmień stronę - Wstecz usuwa ostatnią zmianę, jeśli zmienisz zdanie.',
+            'Kliknij Zapisz PDF i pobierz plik.',
+        ],
+        'features' => [
+            'Dodawaj tekst w dowolnym miejscu na każdej stronie',
+            'Wybierz rozmiar i kolor przed umieszczeniem',
+            'Przeciągnij umieszczony tekst, aby go przesunąć',
+            'Dodaj tyle linii lub stron tekstu, ile potrzebujesz',
+            'Edytuj też tekst już w PDF, dodawaj obrazy, kształty lub podpis',
+            'Prywatne - Twój PDF nigdy nie opuszcza Twojego urządzenia',
+        ],
+        'content' => [
+            ['heading' => 'Kiedy dodać tekst, a kiedy edytować to, co już jest', 'body' => 'Użyj tej opcji, gdy PDF nie ma jeszcze tekstu we właściwym miejscu - pusta linia w formularzu, zeskanowana strona, notatka na marginesie albo pieczątka. Aby zmienić słowo już wydrukowane w PDF, użyj zamiast tego trybu Edytuj tekst w tym samym edytorze: zachowuje oryginalną czcionkę i po prostu zastępuje stare słowa.'],
+            ['heading' => 'Jak sprawić, by tekst dobrze wyglądał', 'body' => 'Wybierz rozmiar przed dodaniem tekstu - po umieszczeniu pozostaje on w tym rozmiarze, więc ustaw go bliski temu, czego potrzebujesz, zamiast zmieniać rozmiar później. Ciemny kolor na jasnej stronie ułatwia czytanie; dopasuj kolor do tekstu na stronie, jeśli notatka ma się wtopić, albo użyj jaskrawego koloru, aby dodatek się wyróżnił.'],
+        ],
+        'faqs' => [
+            ['q' => 'Czy mogę dodać tekst w dowolnym miejscu strony, nawet na pustym obszarze?', 'a' => 'Tak. Wpisz tekst, kliknij "Dodaj tekst do strony" i pojawi się on na środku strony, gotowy do przeciągnięcia w dowolne miejsce, w tym na pusty margines lub wolną linię formularza.'],
+            ['q' => 'Czy mogę zmienić rozmiar lub kolor po dodaniu tekstu?', 'a' => 'Rozmiar jest ustalony po umieszczeniu, więc wybierz go z listy przed kliknięciem "Dodaj tekst do strony"; z kolorem jest tak samo. Możesz nadal przeciągać tekst, aby go przesunąć, albo usunąć go i dodać ponownie z nowym rozmiarem lub kolorem.'],
+            ['q' => 'Czy mogę dodać więcej niż jedną linię tekstu?', 'a' => 'Tak. Dodaj każdą linię jako osobny element tekstowy, aby ustawić każdą niezależnie, albo wpisz dłuższą linię i przeciągnij ją na miejsce.'],
+            ['q' => 'Czy mój PDF jest wgrywany na serwer?', 'a' => 'Nie. Wszystko - dodawanie, przesuwanie i zapisywanie - dzieje się w przeglądarce za pomocą JavaScript i nic nie jest wysyłane nigdzie.'],
+            ['q' => 'Czy mogę też edytować tekst już znajdujący się w PDF?', 'a' => 'Tak. Przełącz się na tryb Edytuj tekst w tym samym narzędziu, aby kliknąć istniejącą linię i wpisać ją na nowo w oryginalnej czcionce PDF.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Kalkulator kredytu hipotecznego',
         'title' => 'Kalkulator Kredytu Hipotecznego - Rata i Harmonogram Spłat',

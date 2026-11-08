@@ -2153,6 +2153,42 @@ return [
         ],
     ],
 
+    'add-text-to-pdf' => [
+        'name' => 'Añadir texto a un PDF',
+        'title' => 'Añadir Texto a un PDF Online Gratis',
+        'description' => 'Añade texto a un PDF online gratis. Haz clic en la página, escribe y elige el tamaño y el color antes de colocarlo. Sin subir archivos, sin registro.',
+        'h1' => 'Añadir texto a un PDF',
+        'tagline' => 'Haz clic en cualquier parte de una página y escribe - directamente en tu navegador.',
+        'keywords' => ['añadir texto a pdf', 'añadir texto a pdf online', 'escribir en un pdf', 'insertar texto en pdf', 'herramienta de texto pdf gratis'],
+        'intro' => 'Añade texto a un PDF haciendo clic en cualquier parte de la página y escribiendo - sin imprimir, escanear ni instalar nada. Elige primero el tamaño de letra y el color, luego arrastra el texto hasta su posición y añade tantas líneas como necesites, en cualquier página. Esta es la herramienta de texto dentro del editor de PDF completo, así que también puedes cambiar a editar el texto que ya tiene el PDF, añadir una imagen o una firma, o pasar a otra página, todo sin salir de tu navegador.',
+        'steps' => [
+            'Elige el PDF al que quieres añadir texto.',
+            'Escribe tu texto y elige su tamaño de letra y color.',
+            'Haz clic en "Añadir texto a la página" y luego arrástralo hasta su posición.',
+            'Añade más texto o cambia de página - Deshacer elimina el último si cambias de opinión.',
+            'Haz clic en Guardar PDF y descarga el archivo.',
+        ],
+        'features' => [
+            'Añade texto en cualquier parte de cualquier página',
+            'Elige el tamaño de letra y el color antes de colocarlo',
+            'Arrastra el texto colocado para reposicionarlo',
+            'Añade tantas líneas o páginas de texto como necesites',
+            'También edita el texto que ya tiene el PDF, añade imágenes, formas o una firma',
+            'Privado: tu PDF nunca sale de tu dispositivo',
+        ],
+        'content' => [
+            ['heading' => 'Cuándo añadir texto en vez de editar lo que ya hay', 'body' => 'Usa esto cuando el PDF todavía no tiene texto en el lugar adecuado: una línea en blanco de un formulario, una página escaneada, una nota al margen o un sello. Para cambiar una palabra que ya está impresa en el PDF, usa en su lugar el modo Editar texto del mismo editor: mantiene la fuente original y simplemente sustituye las palabras antiguas.'],
+            ['heading' => 'Consejos para que el texto quede bien', 'body' => 'Elige el tamaño de letra antes de añadir el texto - se queda en ese tamaño una vez colocado, así que ajústalo cerca de lo que necesitas en vez de redimensionarlo después. Un color oscuro sobre una página clara facilita la lectura; iguala el color del texto de la página para notas que deban integrarse, o usa un color llamativo para que una adición destaque.'],
+        ],
+        'faqs' => [
+            ['q' => '¿Puedo añadir texto en cualquier parte de la página, incluso en un área en blanco?', 'a' => 'Sí. Escribe tu texto, haz clic en "Añadir texto a la página" y aparecerá en el centro de la página listo para arrastrarlo a cualquier sitio, incluidos márgenes en blanco o líneas vacías de un formulario.'],
+            ['q' => '¿Puedo cambiar el tamaño o el color después de añadir el texto?', 'a' => 'El tamaño queda fijado una vez colocado, así que elígelo en el desplegable antes de hacer clic en "Añadir texto a la página"; el color funciona igual. Aun así puedes arrastrar el texto para moverlo, o eliminarlo y añadirlo de nuevo con otro tamaño o color.'],
+            ['q' => '¿Puedo añadir más de una línea de texto?', 'a' => 'Sí. Añade cada línea como un texto independiente para poder colocar cada una por separado, o escribe una línea más larga y arrástrala hasta su sitio.'],
+            ['q' => '¿Se sube mi PDF a un servidor?', 'a' => 'No. Todo - añadir, mover y guardar - ocurre en tu navegador con JavaScript y nada se envía a ningún sitio.'],
+            ['q' => '¿Puedo editar también el texto que ya tiene el PDF?', 'a' => 'Sí. Cambia al modo Editar texto en la misma herramienta para hacer clic en cualquier línea existente y volver a escribirla en la fuente original del PDF.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Calculadora de hipoteca',
         'title' => 'Calculadora de Hipoteca - Cuota Mensual y Amortización',

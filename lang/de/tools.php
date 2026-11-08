@@ -2258,6 +2258,42 @@ return [
         ],
     ],
 
+    'add-text-to-pdf' => [
+        'name' => 'Text zu PDF hinzufügen',
+        'title' => 'PDF Text Hinzufügen - Kostenlos Online',
+        'description' => 'Fügen Sie kostenlos Text zu einem PDF hinzu. Klicken Sie auf die Seite, tippen Sie, wählen Sie Größe und Farbe. Ohne Hochladen, ohne Anmeldung.',
+        'h1' => 'Text zu PDF hinzufügen',
+        'tagline' => 'Klicken Sie irgendwo auf eine Seite und tippen Sie - direkt in Ihrem Browser.',
+        'keywords' => ['text zu pdf hinzufügen', 'pdf text einfügen online', 'auf pdf schreiben', 'text in pdf einfügen', 'kostenloses pdf text werkzeug'],
+        'intro' => 'Fügen Sie Text zu einem PDF hinzu, indem Sie irgendwo auf die Seite klicken und tippen - ohne Drucken, Scannen oder neue Software. Wählen Sie zuerst Schriftgröße und Farbe, ziehen Sie den Text dann an die richtige Stelle und fügen Sie so viele Zeilen hinzu, wie Sie brauchen, auf jeder Seite. Das ist das Text-Werkzeug im vollständigen PDF-Editor, Sie können also auch zum Bearbeiten des vorhandenen PDF-Texts wechseln, ein Bild oder eine Unterschrift hinzufügen oder zu einer anderen Seite springen, alles ohne Ihren Browser zu verlassen.',
+        'steps' => [
+            'Wählen Sie das PDF aus, zu dem Sie Text hinzufügen möchten.',
+            'Tippen Sie Ihren Text und wählen Sie Schriftgröße und Farbe.',
+            'Klicken Sie auf „Text zur Seite hinzufügen" und ziehen Sie ihn an die richtige Stelle.',
+            'Fügen Sie weiteren Text hinzu oder wechseln Sie die Seite - Rückgängig entfernt die letzte Änderung.',
+            'Klicken Sie auf PDF speichern und laden Sie die Datei herunter.',
+        ],
+        'features' => [
+            'Text an jeder beliebigen Stelle auf jeder Seite hinzufügen',
+            'Schriftgröße und Farbe vor dem Platzieren wählen',
+            'Platzierten Text zum Neupositionieren ziehen',
+            'So viele Zeilen oder Seiten mit Text hinzufügen, wie Sie brauchen',
+            'Auch vorhandenen PDF-Text bearbeiten, Bilder, Formen oder eine Unterschrift hinzufügen',
+            'Privat - Ihr PDF verlässt niemals Ihr Gerät',
+        ],
+        'content' => [
+            ['heading' => 'Wann Text hinzufügen statt Vorhandenes bearbeiten', 'body' => 'Nutzen Sie dies, wenn das PDF an der gewünschten Stelle noch keinen Text hat - eine leere Zeile in einem Formular, eine gescannte Seite, eine Randnotiz oder ein Stempel. Um einen Wortlaut zu ändern, der bereits im PDF gedruckt ist, verwenden Sie stattdessen den Modus Text bearbeiten im selben Editor: Er behält die Originalschrift bei und ersetzt einfach die alten Wörter.'],
+            ['heading' => 'Tipps, damit der Text gut aussieht', 'body' => 'Wählen Sie die Schriftgröße, bevor Sie den Text hinzufügen - sie bleibt nach dem Platzieren erhalten, stellen Sie sie also möglichst genau ein, statt sie später zu ändern. Eine dunkle Farbe auf einer hellen Seite erleichtert das Lesen; passen Sie die Farbe an den vorhandenen Seitentext an, wenn eine Notiz unauffällig bleiben soll, oder nutzen Sie eine kräftige Farbe, damit ein Zusatz auffällt.'],
+        ],
+        'faqs' => [
+            ['q' => 'Kann ich Text überall auf der Seite hinzufügen, auch in einem leeren Bereich?', 'a' => 'Ja. Tippen Sie Ihren Text, klicken Sie auf „Text zur Seite hinzufügen" und er erscheint in der Seitenmitte, bereit, überallhin gezogen zu werden - auch in leere Ränder oder freie Formularzeilen.'],
+            ['q' => 'Kann ich Größe oder Farbe nach dem Hinzufügen ändern?', 'a' => 'Die Größe ist nach dem Platzieren festgelegt, wählen Sie sie also vorher im Dropdown aus; bei der Farbe ist es genauso. Sie können den Text trotzdem ziehen, um ihn zu verschieben, oder ihn entfernen und mit neuer Größe oder Farbe erneut hinzufügen.'],
+            ['q' => 'Kann ich mehr als eine Textzeile hinzufügen?', 'a' => 'Ja. Fügen Sie jede Zeile als eigenes Textelement hinzu, um jede unabhängig zu positionieren, oder tippen Sie eine längere Zeile und ziehen Sie sie an die richtige Stelle.'],
+            ['q' => 'Wird mein PDF auf einen Server hochgeladen?', 'a' => 'Nein. Alles - Hinzufügen, Verschieben und Speichern - geschieht in Ihrem Browser mit JavaScript, und nichts wird irgendwohin gesendet.'],
+            ['q' => 'Kann ich auch vorhandenen PDF-Text bearbeiten?', 'a' => 'Ja. Wechseln Sie im selben Werkzeug zum Modus Text bearbeiten, klicken Sie auf eine vorhandene Zeile und tippen Sie sie in der Originalschrift des PDFs neu ein.'],
+        ],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Baufinanzierungsrechner',
         'title' => 'Baufinanzierungsrechner - Monatsrate & Tilgungsplan',

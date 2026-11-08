@@ -70,6 +70,7 @@ const tools = {
     'edit-pdf': lazy(() => import('./EditPdf.jsx')),
     'watermark-pdf': editPdfMode('watermark'),
     'sign-pdf': editPdfMode('sign'),
+    'add-text-to-pdf': editPdfMode('text'),
 };
 
 export default tools;
