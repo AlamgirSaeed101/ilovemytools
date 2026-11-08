@@ -140,3 +140,7 @@ web-search limit ran out, and many outlets are paid-only, local-authors-only or 
 - Next batches: the remaining `new` rows (about 79 guest + email-suggestion library guides), 30 a day.
 - Owner: eSchool News / eCampus News / WP Space / TechWyse / SiteCentre reject AI-written text, so accepted articles must be
   written by the owner.
+- 8 Nov: brand fix pushed (0e16dde): home title "ILoveMyTools: Free Online Tools - Fast, Private, No Sign Up", WebSite and
+  Organization alternateName. Judge the "ilovemytools.store" query position around 6 Dec (it was 19.5).
+- JPG to PDF checked: only 6 impressions in 28 days ("jpg to pdf combiner" at 8); title, intro and FAQ already cover
+  "combine", so no change. Next for the owner: GitHub PR lines for ~25 awesome-lists (see backlinks-queue.md `ready` rows).
