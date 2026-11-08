@@ -194,6 +194,30 @@ class PagesTest extends TestCase
             ->assertDontSee('203.0.113.9', false);
     }
 
+    public function test_home_title_leads_with_the_brand_and_schema_lists_its_other_spellings(): void
+    {
+        $html = $this->get('/')->assertOk()->getContent();
+        $brand = config('site.name');
+
+        preg_match('#<title>(.*?)</title>#s', $html, $title);
+        $this->assertStringStartsWith($brand.': ', html_entity_decode($title[1], ENT_QUOTES));
+
+        $website = null;
+        preg_match_all('#<script type="application/ld\+json"[^>]*>(.*?)</script>#s', $html, $blocks);
+        foreach ($blocks[1] as $json) {
+            $data = json_decode($json, true);
+            foreach ($data['@graph'] ?? [$data] as $node) {
+                if (($node['@type'] ?? null) === 'WebSite') {
+                    $website = $node;
+                }
+            }
+        }
+        $this->assertNotNull($website);
+        $this->assertSame($brand, $website['name']);
+        $this->assertContains('I Love My Tools', $website['alternateName']);
+        $this->assertContains(ucfirst((string) parse_url(config('app.url'), PHP_URL_HOST)), $website['alternateName']);
+    }
+
     public function test_boot_json_cannot_break_out_of_its_script_tag(): void
     {
         config(['site.tagline' => 'Tools </script><script>alert(1)</script>']);

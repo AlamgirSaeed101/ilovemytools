@@ -379,6 +379,7 @@ class Seo
             '@type' => 'Organization',
             '@id' => self::absoluteUrl('/').'#organization',
             'name' => config('site.name'),
+            'alternateName' => self::brandAlternateNames(),
             'url' => self::absoluteUrl('/'),
             'logo' => self::absoluteUrl('/images/logo-512.png'),
             'description' => Locale::group('site')['description'] ?? config('site.description'),
@@ -402,6 +403,18 @@ class Seo
         ], fn ($value) => $value !== [] && $value !== '' && $value !== null);
     }
 
+    /** Other ways people write the brand: the domain and the spaced-out name. */
+    private static function brandAlternateNames(): array
+    {
+        $host = (string) parse_url(self::absoluteUrl('/'), PHP_URL_HOST);
+        $spaced = trim((string) preg_replace('/(?<=.)(?=[A-Z][a-z])/', ' ', (string) config('site.name')));
+
+        return array_values(array_unique(array_filter([
+            $host !== '' ? ucfirst(preg_replace('/^www\./', '', $host)) : null,
+            $spaced !== (string) config('site.name') ? $spaced : null,
+        ])));
+    }
+
     private function websiteSchema(): array
     {
         return [
@@ -409,6 +422,8 @@ class Seo
             '@type' => 'WebSite',
             '@id' => self::absoluteUrl('/').'#website',
             'name' => config('site.name'),
+            // Google's site-name system reads name + alternateName from the home page's WebSite schema.
+            'alternateName' => self::brandAlternateNames(),
             'url' => self::absoluteUrl('/'),
             'description' => Locale::group('site')['description'] ?? config('site.description'),
             'inLanguage' => Locale::hreflang(Locale::current()),

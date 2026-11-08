@@ -25,7 +25,7 @@ class PageController extends Controller
 
     public function home(): Response
     {
-        $seo = Seo::make(SiteData::tagline(), SiteData::description(), '/')
+        $seo = Seo::make(SiteData::homeTitle(), SiteData::description(), '/')
             ->addSchema([
                 '@context' => 'https://schema.org',
                 '@type' => 'ItemList',

@@ -69,6 +69,24 @@ class SiteData
         return (string) (Locale::group('site')['tagline'] ?? config('site.tagline'));
     }
 
+    /**
+     * The home page title leads with the brand, so a search for the site's own name
+     * ("ilovemytools", "ilovemytools.store") matches the home page first. Falls back to
+     * the tagline-first form when the brand-first title would not fit in 60 characters.
+     */
+    public static function homeTitle(): string
+    {
+        $brand = (string) config('site.name');
+        $tagline = self::tagline();
+        foreach ([$brand.': '.$tagline, $tagline.' | '.$brand] as $title) {
+            if ($brand !== '' && mb_strlen($title) <= 60) {
+                return $title;
+            }
+        }
+
+        return $tagline;
+    }
+
     public static function description(): string
     {
         return (string) (Locale::group('site')['description'] ?? config('site.description'));
@@ -117,7 +135,7 @@ class SiteData
                 'adblockNotice' => (bool) config('site.ads.adblock_notice'),
             ],
             'meta' => [
-                'home' => $this->meta(self::tagline(), self::description()),
+                'home' => $this->meta(self::homeTitle(), self::description()),
             ] + collect(array_keys(self::PAGES))->mapWithKeys(fn ($page) => [
                 $page => $this->meta(...array_slice(self::pageMeta($page), 0, 2)),
             ])->all(),
