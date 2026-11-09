@@ -2791,4 +2791,75 @@ return [
         ],
     ],
 
+    'how-to-add-text-to-a-pdf' => [
+        'title' => 'How to Add Text to a PDF Online for Free',
+        'description' => 'Add text to a PDF online for free: click anywhere on the page and type, pick the right font size and colour, and fix the mistakes that trip people up most.',
+        'h1' => 'How to add text to a PDF',
+        'intro' => 'Sometimes a PDF just needs one more line - a note in the margin, a missing answer on a form, a date stamped on a scanned page - and the file has no editable field anywhere near it. Printing the page, writing on it and scanning it back in works, but it is slow and the result looks worse than the original. Typing straight onto the PDF in your browser is faster, free and keeps the file looking clean. Here is how to do it well and avoid the few things that catch people out.',
+        'tool' => 'add-text-to-pdf',
+        'related' => ['edit-pdf', 'watermark-pdf', 'sign-pdf'],
+        'published' => '2026-11-09',
+        'updated' => '2026-11-09',
+        'sections' => [
+            [
+                'heading' => 'When adding text is the right tool',
+                'paragraphs' => [
+                    'A PDF only has two kinds of blank space you might want to fill: a spot where the file already has an interactive field built in, and a spot that is simply empty page - a margin, a blank line drawn on a scan, a gap left for a signature or date. Interactive fields belong to a different workflow (filling in an existing form); everywhere else, adding a free-floating piece of text on top of the page is the simplest fix, and it works on any PDF, including a scanned one, because it does not depend on the file having any structure at all underneath.',
+                    'The one thing it will not do is blend into text that is already printed in the document - matching an existing paragraph\'s exact font takes editing that text in place, not adding new text next to it. If you need to change wording that is already in the PDF, rather than add something new, use Edit text mode instead; it reads the PDF\'s own font and replaces words in it directly.',
+                ],
+            ],
+            [
+                'heading' => 'Step by step: adding text to a PDF',
+                'list' => [
+                    'Open the [Add Text to PDF](/add-text-to-pdf) tool and choose your file. It opens straight into the editor with the text tool already selected.',
+                    'Type the text you want to add, then pick its font size and colour from the toolbar before placing it - the size is locked in once it is on the page, so get it close to right here rather than resizing afterwards.',
+                    'Click "Add text to page." The text appears in the middle of the page, ready to drag.',
+                    'Drag it to the exact spot you need - a margin, a blank line, next to an existing paragraph - and repeat for each extra line or note.',
+                    'Switch pages with the page controls if you need to add text in more than one place in a longer document.',
+                    'Click Save PDF and download the finished file.',
+                ],
+            ],
+            [
+                'heading' => 'Getting the size and colour right the first time',
+                'paragraphs' => [
+                    'Because the font size locks in as soon as the text is placed, a little planning upfront saves a redo. Use this as a rough starting point and adjust from there once you see it next to the page\'s own print.',
+                ],
+                'table' => [
+                    'headers' => ['What you are adding', 'Typical size', 'Colour tip'],
+                    'rows' => [
+                        ['A note in a blank margin', '10-12pt', 'Match the page\'s body text colour to look intentional, or use a bright colour to flag it as a comment'],
+                        ['An answer on a form line', 'Same size as the printed labels next to it', 'Black or dark blue, to match typical ink'],
+                        ['A date or reference stamp', '9-11pt', 'Grey or black, placed in a corner so it does not crowd other content'],
+                        ['A short heading or title added to a blank page', '16-24pt', 'Match the document\'s existing heading colour if it has one'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'Common mistakes',
+                'list' => [
+                    'Placing the text, then trying to resize it afterwards: the size is fixed once it is on the page, so pick the size first, or remove the text and add it again at the new size.',
+                    'Adding each sentence as one long block when it needs to span several lines at specific points: add each line as its own separate piece of text so every line can be dragged into its own position.',
+                    'Choosing a light colour on a light page: it looks fine zoomed in on screen but can be nearly invisible once printed or viewed at normal size - check at 100% zoom before saving.',
+                    'Forgetting which page the text landed on in a long document: use the page controls to confirm you are on the right page before clicking "Add text to page", since it is easy to add a note to the wrong page in a form with many sections.',
+                ],
+            ],
+            [
+                'heading' => 'Is it safe to add text this way?',
+                'paragraphs' => [
+                    'The whole process runs on your own device: the PDF is opened, edited and saved using JavaScript in your browser, and it is never uploaded to a server. That matters for anything with personal information on it - a filled-in form, a signed letter, a document with your address or ID number - since there is nothing for anyone else to intercept or store.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Can I add text anywhere on the page, even a blank area with nothing printed?', 'a' => 'Yes. Type the text, click "Add text to page" and it appears ready to drag anywhere, including empty margins or blank lines on a form.'],
+            ['q' => 'Can I change the font size or colour after I have placed the text?', 'a' => 'The size and colour are set when you place it, so choose them from the toolbar first. If you need a different size afterwards, remove that piece of text and add it again - dragging it to reposition still works at any time.'],
+            ['q' => 'Is this different from editing text that is already in the PDF?', 'a' => 'Yes. Adding text places a brand-new, separate piece of text on top of the page. To change wording that already exists in the document, use Edit text mode instead, which keeps the original font and replaces the words in place.'],
+        ],
+        'sources' => [
+            ['title' => 'Library of Congress, Sustainability of Digital Formats: PDF', 'url' => 'https://www.loc.gov/preservation/digital/formats/fdd/fdd000030.shtml'],
+            ['title' => 'Mozilla, PDF.js - a PDF renderer and text extraction library', 'url' => 'https://mozilla.github.io/pdf.js/'],
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+        ],
+    ],
+
 ];
