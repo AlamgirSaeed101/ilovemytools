@@ -2805,7 +2805,7 @@ return [
                 'heading' => 'When adding text is the right tool',
                 'paragraphs' => [
                     'A PDF only has two kinds of blank space you might want to fill: a spot where the file already has an interactive field built in, and a spot that is simply empty page - a margin, a blank line drawn on a scan, a gap left for a signature or date. Interactive fields belong to a different workflow (filling in an existing form); everywhere else, adding a free-floating piece of text on top of the page is the simplest fix, and it works on any PDF, including a scanned one, because it does not depend on the file having any structure at all underneath.',
-                    'The one thing it will not do is blend into text that is already printed in the document - matching an existing paragraph\'s exact font takes editing that text in place, not adding new text next to it. If you need to change wording that is already in the PDF, rather than add something new, use Edit text mode instead; it reads the PDF\'s own font and replaces words in it directly.',
+                    'The one thing it will not do is blend into text that is already printed in the document - matching an existing paragraph\'s exact font takes editing that text in place, not adding new text next to it. If you need to change wording that is already in the PDF, rather than add something new, use [Edit PDF](/edit-pdf)\'s text mode instead; it reads the PDF\'s own font and replaces words in it directly.',
                 ],
             ],
             [
