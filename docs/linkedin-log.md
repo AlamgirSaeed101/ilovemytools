@@ -41,3 +41,5 @@ Tools already announced on LinkedIn (one per line: date and slug). The daily rou
 2026-11-05 edit-pdf company
 2026-11-06 edit-pdf personal
 2026-11-06 edit-pdf company
+2026-11-09 add-text-to-pdf personal
+2026-11-09 add-text-to-pdf company
