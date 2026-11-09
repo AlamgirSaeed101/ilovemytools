@@ -144,3 +144,12 @@ web-search limit ran out, and many outlets are paid-only, local-authors-only or 
   Organization alternateName. Judge the "ilovemytools.store" query position around 6 Dec (it was 19.5).
 - JPG to PDF checked: only 6 impressions in 28 days ("jpg to pdf combiner" at 8); title, intro and FAQ already cover
   "combine", so no change. Next for the owner: GitHub PR lines for ~25 awesome-lists (see backlinks-queue.md `ready` rows).
+
+## 9 Nov
+- Technology for Learners ACCEPTED a free guest post (700+ words, one link): "editing a PDF worksheet without re-typing it".
+  Second acceptance after America's Charities. Both drafts are for the owner.
+- LaunchFree / The Runway listing is live: https://launchfree.io/listings/ilovemytools.html
+- LinkedIn routine now designs an original 1200x1200 image per day (HTML rendered by scripts/linkedin-image.mjs, committed to
+  public/images/linkedin/, posted from its raw GitHub URL) and writes a full paragraph about the tool shown. On 9 Nov the
+  company post rejected the image from ilovemytools.store ("Could not find entity", likely Sucuri blocking Zapier), so
+  images now come from raw.githubusercontent.com.
