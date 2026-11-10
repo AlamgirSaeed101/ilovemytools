@@ -1451,7 +1451,7 @@ test.describe('Text analysis and AVIF', () => {
         );
         await check.click();
         await expect(page.getByTestId('ai-verdict')).toHaveText('Likely AI-generated');
-        await expect(page.getByText('AI-typical phrases found')).toBeVisible();
+        await expect(page.locator('.tool-panel').getByText('AI-typical phrases found')).toBeVisible();
 
         await box.fill(
             "I didn't plan to buy a bike. Honestly, I just walked past the shop on Saturday because the bakery next door was out of bread, and there it was: a green one, a bit rusty, forty quid. The guy said it'd been sitting there since spring. I rode it home in the rain. Got soaked. My neighbour laughed at me, which, fair enough. Anyway, it's been three weeks now and I've ridden it to work almost every day. Turns out the hill on Mill Lane is brutal! But I'm getting faster, and I don't miss the bus at all. Not even a little.",

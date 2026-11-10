@@ -17,6 +17,9 @@ export default defineConfig({
         channel: 'chrome',
         acceptDownloads: true,
         trace: 'retain-on-failure',
+        // The production build registers a service worker (public/sw.js). Requests it handles bypass
+        // page.route(), which several tests use to mock the network, so tests run without it.
+        serviceWorkers: 'block',
     },
     projects: [
         { name: 'desktop', use: { ...devices['Desktop Chrome'], channel: 'chrome' }, testIgnore: /mobile.spec.js/ },
