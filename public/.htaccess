@@ -23,6 +23,11 @@
     RewriteCond %{HTTP:X-Forwarded-Proto} !https
     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+    # /index.php and /index.php/anything -> the clean URL (one address per page). THE_REQUEST is
+    # the browser's own request line, so the internal rewrite to index.php below never loops.
+    RewriteCond %{THE_REQUEST} \s/index\.php[/?\s] [NC]
+    RewriteRule ^index\.php(?:/(.*))?$ https://%{HTTP_HOST}/$1 [L,R=301,NE]
+
     # Redirect Trailing Slashes If Not A Folder (one canonical URL per page)...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} (.+)/$
@@ -48,19 +53,32 @@ AddType application/octet-stream .onnx
     ExpiresActive On
     ExpiresByType text/css "access plus 1 year"
     ExpiresByType application/javascript "access plus 1 year"
-    ExpiresByType image/png "access plus 1 month"
-    ExpiresByType image/svg+xml "access plus 1 month"
-    ExpiresByType image/x-icon "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 year"
+    ExpiresByType application/wasm "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType image/png "access plus 1 week"
+    ExpiresByType image/jpeg "access plus 1 week"
+    ExpiresByType image/webp "access plus 1 week"
+    ExpiresByType image/svg+xml "access plus 1 week"
+    ExpiresByType image/x-icon "access plus 1 week"
 </IfModule>
 
-# Hashed build files never change (a new build gets new names), so browsers and the
-# firewall can keep them for a year. Other static files: one week.
+# Hashed build files (public/build/assets: JS, CSS, fonts, images and wasm with a content hash in
+# the name) never change - a new build gets new names - so browsers and the firewall may keep them
+# for a year. Other static files: one week. HTML is not matched here: Laravel sends its own short
+# Cache-Control for pages (PageController::PAGE_CACHE).
 <IfModule mod_headers.c>
-    <If "%{REQUEST_URI} =~ m#^/build/#">
-        Header set Cache-Control "public, max-age=31536000, immutable"
+    # The service worker must be re-checked on every visit, or updates would wait a year.
+    <If "%{REQUEST_URI} == '/sw.js'">
+        Header always set Cache-Control "no-cache"
+        Header unset Expires
     </If>
-    <ElseIf "%{REQUEST_URI} =~ m#\.(png|svg|ico|webmanifest)$#">
-        Header set Cache-Control "public, max-age=604800"
+    <ElseIf "%{REQUEST_URI} =~ m#^/build/#">
+        Header always set Cache-Control "public, max-age=31536000, immutable"
+        Header unset Expires
+    </ElseIf>
+    <ElseIf "%{REQUEST_URI} =~ m#\.(png|jpe?g|webp|svg|ico|webmanifest|woff2?|ttf)$#">
+        Header always set Cache-Control "public, max-age=604800"
     </ElseIf>
     Header always unset X-Powered-By
 </IfModule>

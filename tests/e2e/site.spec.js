@@ -188,12 +188,27 @@ test.describe('App shell', () => {
         await expect(page.locator('.ad--below_tool .ad__placeholder')).toBeVisible();
     });
 
+    test('home search filters tools instantly and recent tools are remembered', async ({ page }) => {
+        await page.goto('/word-counter');
+        await page.goto('/');
+        await page.getByRole('searchbox', { name: 'Search tools' }).fill('merge');
+        await expect(page.locator('#home-search-results').getByRole('link', { name: 'Merge PDF' })).toBeVisible();
+        await page.getByRole('searchbox', { name: 'Search tools' }).fill('zzqx');
+        await expect(page.locator('#home-search-results')).toContainText('No tools match');
+        await expect(page.getByText('Recently used:')).toBeVisible();
+        await page.goto('/merge-pdf');
+        await expect(page.getByRole('navigation', { name: 'Recently used' }).getByRole('link', { name: 'Word Counter' })).toBeVisible();
+    });
+
     test('pages work without JavaScript (crawler view)', async ({ browser }) => {
         const context = await browser.newContext({ javaScriptEnabled: false });
         const page = await context.newPage();
         await page.goto('/merge-pdf');
         await expect(page.getByRole('heading', { level: 1 })).toHaveText('Merge PDF Files Online');
-        await expect(page.getByText('This tool needs JavaScript')).toBeVisible();
+        // Crawlers get real content in the tool's place: the description and steps (the <noscript> note is
+        // checked in PHPUnit, ContentFeaturesTest; Playwright's no-JS mode parses <noscript> as raw text).
+        await expect(page.getByRole('heading', { name: 'What is the Merge PDF tool?' })).toBeVisible();
+        await expect(page.locator('.tool-intro')).toBeVisible();
         await expect(page.getByRole('heading', { name: 'Frequently asked questions' })).toBeVisible();
         await context.close();
     });

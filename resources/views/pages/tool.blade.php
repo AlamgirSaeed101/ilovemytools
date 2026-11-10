@@ -24,9 +24,8 @@
                 {{-- The React app renders the working tool here. --}}
                 @php($panel = \App\Support\SiteData::panelHeight($tool['slug']))
                 <section class="tool-panel" aria-label="{{ $tool['name'] }}" @if ($panel) style="--panel-sm: {{ $panel['sm'] }}px; --panel-lg: {{ $panel['lg'] }}px" @endif>
-                    {{-- Hidden by CSS once the page's own inline script marks <html> as "js" (see layouts.app), so it's only
-                         ever shown to real browsers with JavaScript off and to crawlers/AI engines that don't run JS. --}}
-                    <p class="notice notice--warn no-js-notice">{{ t('This tool needs JavaScript. Please enable JavaScript in your browser settings to use the {name}.', ['name' => $tool['name']]) }}</p>
+                    {{-- Only browsers with JavaScript off render this; crawlers read the description, steps and FAQ below instead. --}}
+                    <noscript><p class="notice notice--warn">{{ t('This tool needs JavaScript. Please enable JavaScript in your browser settings to use the {name}.', ['name' => $tool['name']]) }}</p></noscript>
                     <p class="privacy-note">{!! \App\Support\Icon::svg('shield') !!} {{ $tool['slug'] === 'what-is-my-ip' ? t('This tool asks our server which IP address your request came from and shows it to you. We don’t store it.') : (! empty($tool['server']) ? t('This tool asks our server to fetch the address you enter. We don’t store the address or the results.') : t('Private: this tool runs in your browser. Your data is never uploaded.')) }}</p>
                 </section>
 
@@ -66,6 +65,13 @@
                     @foreach ($tool['content'] as $section)
                         <h2>{{ $section['heading'] }}</h2>
                         <p>{{ $section['body'] }}</p>
+                        @if (! empty($section['items']))
+                            <ul>
+                                @foreach ($section['items'] as $item)
+                                    <li>{{ $item }}</li>
+                                @endforeach
+                            </ul>
+                        @endif
                     @endforeach
 
                     @if (! empty($tool['table']))

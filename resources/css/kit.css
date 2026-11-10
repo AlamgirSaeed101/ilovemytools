@@ -1749,17 +1749,6 @@ fieldset.grid-2 .check:has(input:checked) {
     color: var(--warn);
 }
 
-/* Only shown while <html> still has "no-js" - i.e. to real browsers with JavaScript off and to
-   crawlers/AI engines that don't run it. The inline script in layouts.app removes "no-js" as soon
-   as it runs, before anything else paints. */
-.no-js-notice {
-    display: none;
-}
-
-.no-js .no-js-notice {
-    display: block;
-}
-
 .notice.row {
     display: flex;
 }
@@ -2482,6 +2471,33 @@ fieldset.grid-2 .check:has(input:checked) {
 }
 
 /* Source list under tool articles. */
+/* Guide table of contents ("On this page"). */
+.toc {
+    margin: 1.5rem 0 2rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 0.9rem;
+    background: var(--surface-2);
+}
+
+.toc__title {
+    margin: 0 0 0.4rem;
+    font-weight: 700;
+}
+
+.toc ol {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.toc li + li {
+    margin-top: 0.2rem;
+}
+
+.guide-article h2[id] {
+    scroll-margin-top: 5rem;
+}
+
 .sources {
     padding-inline-start: 1.2rem;
     font-size: 0.92rem;

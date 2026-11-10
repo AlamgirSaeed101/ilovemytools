@@ -388,7 +388,8 @@ class Seo
                 '@type' => 'ContactPoint',
                 'contactType' => 'customer support',
                 'email' => config('site.contact_email'),
-                'availableLanguage' => array_values(array_map(fn ($l) => $l['name'], Locale::all())),
+                // Support is offered in the indexed languages only (the others are machine-translated, noindex).
+                'availableLanguage' => array_values(array_map(fn ($code) => Locale::all()[$code]['name'], Locale::indexable())),
             ],
             'foundingDate' => config('site.founded'),
             'foundingLocation' => ['@type' => 'Place', 'name' => 'Islamabad, Pakistan'],

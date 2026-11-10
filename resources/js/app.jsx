@@ -1,17 +1,58 @@
-import { StrictMode, startTransition } from 'react';
+import { createElement, lazy, StrictMode, startTransition } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter } from 'react-router';
 import { RouterProvider } from 'react-router/dom';
 import Layout from './components/Layout.jsx';
 import { getJson, getSite, initialPage, loadCategory, loadSite, loadTool, NotFoundError } from './lib/api.js';
 import { initI18n } from './lib/i18n.js';
-import Author from './pages/Author.jsx';
-import Category from './pages/Category.jsx';
-import Home from './pages/Home.jsx';
-import { About, Contact, Privacy, Terms } from './pages/InfoPages.jsx';
-import { GuideArticle, GuideIndex } from './pages/Guides.jsx';
 import NotFound, { RouteError } from './pages/NotFound.jsx';
-import ToolPage from './pages/ToolPage.jsx';
+
+// Each kind of page is its own JavaScript file, so a tool page doesn't download the home page,
+// the guides or the legal pages. start() loads the current page's file before React mounts, so the
+// first render never waits on it (the server-rendered copy stays painted until then).
+const loaded = {};
+const track = (module, importer) => () => importer().then((m) => (loaded[module] = m));
+const pageModules = {
+    home: track('home', () => import('./pages/Home.jsx')),
+    tool: track('tool', () => import('./pages/ToolPage.jsx')),
+    category: track('category', () => import('./pages/Category.jsx')),
+    info: track('info', () => import('./pages/InfoPages.jsx')),
+    guides: track('guides', () => import('./pages/Guides.jsx')),
+    author: track('author', () => import('./pages/Author.jsx')),
+};
+// Renders straight from the file once it has loaded (always true for the first page, so the first
+// render never suspends); other pages suspend inside the router's navigation transition, which keeps
+// the current page on screen until the next one's file arrives.
+const page = (module, name = 'default') => {
+    const Lazy = lazy(() => pageModules[module]().then((m) => ({ default: m[name] })));
+    const Page = (props) => createElement(loaded[module]?.[name] ?? Lazy, props);
+    Page.displayName = `Page(${module}.${name})`;
+    return Page;
+};
+const Home = page('home');
+const ToolPage = page('tool');
+const Category = page('category');
+const About = page('info', 'About');
+const Contact = page('info', 'Contact');
+const Privacy = page('info', 'Privacy');
+const Terms = page('info', 'Terms');
+const GuideIndex = page('guides', 'GuideIndex');
+const GuideArticle = page('guides', 'GuideArticle');
+const Author = page('author');
+
+/** Which page file the server-rendered page needs (page types from the Laravel controllers). */
+const initialModule = {
+    home: 'home',
+    tool: 'tool',
+    category: 'category',
+    about: 'info',
+    contact: 'info',
+    privacy: 'info',
+    terms: 'info',
+    guides: 'guides',
+    guide: 'guides',
+    author: 'author',
+}[initialPage?.type];
 
 // URLs must match routes/web.php so every page also works on a full reload.
 const routes = [
@@ -99,7 +140,7 @@ document.addEventListener(
 async function start() {
     const container = document.getElementById('app');
     if (!container) return;
-    const site = await loadSite();
+    const [site] = await Promise.all([loadSite(), initialModule ? pageModules[initialModule]() : null]);
     initI18n(site);
 
     // The language prefix (/es) is the router's basename, so every <Link to="/merge-pdf">
@@ -116,6 +157,17 @@ async function start() {
                 <RouterProvider router={router} />
             </StrictMode>,
         );
+    });
+}
+
+// Installable app + offline use of tools already opened (public/sw.js). Registered once the page has
+// loaded and the browser is idle, so it never competes with the first paint. Production only: a
+// service worker would serve stale files during development.
+if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        const register = () => navigator.serviceWorker.register('/sw.js').catch(() => undefined);
+        if ('requestIdleCallback' in window) window.requestIdleCallback(register, { timeout: 10000 });
+        else setTimeout(register, 3000);
     });
 }
 
