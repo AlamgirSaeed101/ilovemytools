@@ -43,6 +43,9 @@ export function GuideIndex() {
     );
 }
 
+/** Anchor id for a guide heading (same rule as Guides::headingId() in PHP). */
+const headingId = (heading) => heading.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+
 export function GuideArticle() {
     const guide = useLoaderData();
     const site = getSite();
@@ -59,9 +62,26 @@ export function GuideArticle() {
                     </Link> · Updated <time dateTime={guide.updated}>{formatDate(guide.updated)}</time>
                 </p>
                 <p className="lead">{guide.intro}</p>
+                <nav className="toc" aria-labelledby="toc-title">
+                    <p id="toc-title" className="toc__title">
+                        On this page
+                    </p>
+                    <ol>
+                        {guide.sections.map((s) => (
+                            <li key={s.heading}>
+                                <a href={`#${headingId(s.heading)}`}>{s.heading}</a>
+                            </li>
+                        ))}
+                        {guide.faqs.length > 0 && (
+                            <li>
+                                <a href="#faq">Frequently asked questions</a>
+                            </li>
+                        )}
+                    </ol>
+                </nav>
                 {guide.sections.map((s) => (
                     <section key={s.heading}>
-                        <h2>{s.heading}</h2>
+                        <h2 id={headingId(s.heading)}>{s.heading}</h2>
                         {(s.paragraphs ?? []).map((p) => (
                             <p key={p.slice(0, 40)}><GuideText text={p} /></p>
                         ))}
@@ -103,7 +123,7 @@ export function GuideArticle() {
                 )}
                 {guide.faqs.length > 0 && (
                     <>
-                        <h2>Frequently asked questions</h2>
+                        <h2 id="faq">Frequently asked questions</h2>
                         {guide.faqs.map((f) => (
                             <div key={f.q}>
                                 <h3>{f.q}</h3>

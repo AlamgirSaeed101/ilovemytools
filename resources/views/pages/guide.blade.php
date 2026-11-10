@@ -8,8 +8,20 @@
             <p class="text-sm text-muted">By <a href="{{ url(\App\Support\Guides::AUTHOR_PATH) }}" rel="author">{{ \App\Support\Guides::author() }}</a> · Updated <time datetime="{{ $guide['updated'] }}">{{ \Illuminate\Support\Carbon::parse($guide['updated'])->isoFormat('LL') }}</time></p>
             <p class="lead">{{ $guide['intro'] }}</p>
 
+            <nav class="toc" aria-labelledby="toc-title">
+                <p id="toc-title" class="toc__title">On this page</p>
+                <ol>
+                    @foreach ($guide['sections'] as $section)
+                        <li><a href="#{{ \App\Support\Guides::headingId($section['heading']) }}">{{ $section['heading'] }}</a></li>
+                    @endforeach
+                    @if ($guide['faqs'] !== [])
+                        <li><a href="#faq">Frequently asked questions</a></li>
+                    @endif
+                </ol>
+            </nav>
+
             @foreach ($guide['sections'] as $section)
-                <h2>{{ $section['heading'] }}</h2>
+                <h2 id="{{ \App\Support\Guides::headingId($section['heading']) }}">{{ $section['heading'] }}</h2>
                 @foreach ($section['paragraphs'] ?? [] as $paragraph)
                     <p>{{ \App\Support\Guides::inline($paragraph) }}</p>
                 @endforeach
@@ -39,7 +51,7 @@
             @endif
 
             @if ($guide['faqs'] !== [])
-                <h2>Frequently asked questions</h2>
+                <h2 id="faq">Frequently asked questions</h2>
                 @foreach ($guide['faqs'] as $faq)
                     <h3>{{ $faq['q'] }}</h3>
                     <p>{{ $faq['a'] }}</p>

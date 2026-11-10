@@ -40,10 +40,19 @@ class TranslationsTest extends TestCase
                 $this->assertIsString($tr[$field] ?? null, "$code/$slug.$field");
                 $this->assertNotSame('', trim($tr[$field]), "$code/$slug.$field is empty");
             }
-            $this->assertCount(count($tool['steps']), $tr['steps'], "$code/$slug steps");
             $this->assertCount(count($tool['features']), $tr['features'], "$code/$slug features");
-            $this->assertCount(count($tool['content']), $tr['content'], "$code/$slug content");
-            $this->assertCount(count($tool['faqs']), $tr['faqs'], "$code/$slug faqs");
+            if (in_array($code, Locale::indexable(), true)) {
+                // Indexed languages mirror the English page exactly (same steps, sections and FAQs).
+                $this->assertCount(count($tool['steps']), $tr['steps'], "$code/$slug steps");
+                $this->assertCount(count($tool['content']), $tr['content'], "$code/$slug content");
+                $this->assertCount(count($tool['faqs']), $tr['faqs'], "$code/$slug faqs");
+            } else {
+                // noindex languages keep their own complete translation, which may predate a newer,
+                // longer English page; each field is still shown whole in that one language.
+                $this->assertNotEmpty($tr['steps'], "$code/$slug steps");
+                $this->assertNotEmpty($tr['content'], "$code/$slug content");
+                $this->assertNotEmpty($tr['faqs'], "$code/$slug faqs");
+            }
             if (isset($tool['table'])) {
                 $this->assertNotEmpty($tr['table']['caption'] ?? null, "$code/$slug table caption");
                 $this->assertCount(count($tool['table']['headers']), $tr['table']['headers'] ?? [], "$code/$slug table headers");

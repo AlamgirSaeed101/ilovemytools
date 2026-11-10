@@ -410,6 +410,14 @@ function Footer() {
                     </div>
                     <ul className="m-0 flex list-none flex-wrap gap-x-4 gap-y-1 p-0">
                         <li><Link className={link} to="/about">{t('About')}</Link></li>
+                        {site.author && (
+                            <li>
+                                {/* A plain link: the author page is indexed in English only. */}
+                                <a className={link} href={site.author.path} rel="author">
+                                    {site.author.name}
+                                </a>
+                            </li>
+                        )}
                         <li><Link className={link} to="/contact">{t('Contact')}</Link></li>
                         <li><Link className={link} to="/privacy-policy">{t('Privacy Policy')}</Link></li>
                         <li><Link className={link} to="/terms">{t('Terms of Use')}</Link></li>

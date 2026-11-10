@@ -51,9 +51,12 @@ return [
         'keywords' => ['convertitore maiuscole minuscole', 'da maiuscolo a minuscolo', 'iniziali maiuscole', 'maiuscola iniziale', 'convertitore camelcase'],
         'intro' => 'Un convertitore maiuscole/minuscole è uno strumento che cambia le maiuscole di un testo, per esempio da MAIUSCOLO a minuscolo. Hai scritto con il Bloc Maiusc attivo o ti serve un titolo con le iniziali maiuscole? Incolla il testo e clicca un pulsante per convertirlo all’istante. Gli sviluppatori possono anche passare tra camelCase, PascalCase, snake_case, kebab-case e CONSTANT_CASE.',
         'steps' => [
-            'Incolla il testo nella casella.',
-            'Clicca lo stile che vuoi, ad esempio Iniziali Maiuscole o minuscolo.',
-            'Copia il testo convertito o scaricalo come file .txt.',
+            'Scrivi o incolla il testo nella casella Il tuo testo.',
+            'Clicca lo stile che vuoi, ad esempio Iniziali Maiuscole, minuscolo o snake_case.',
+            'Controlla il risultato nella stessa casella; il pulsante evidenziato indica l’ultimo stile applicato.',
+            'Clicca un altro pulsante per convertire di nuovo, oppure modifica il testo a mano.',
+            'Clicca Copia, oppure Scarica .txt per salvare il testo come converted-text.txt.',
+            'Clicca Cancella per svuotare la casella e ricominciare.',
         ],
         'features' => [
             'MAIUSCOLO, minuscolo, Iniziali Maiuscole e maiuscola iniziale',
@@ -65,18 +68,47 @@ return [
         'content' => [
             [
                 'heading' => 'Iniziali maiuscole o maiuscola iniziale: qual è la differenza?',
-                'body' => 'Le Iniziali Maiuscole mettono la maiuscola alle parole principali di un titolo (“The Quick Guide to SEO”), mentre le parole brevi come a, and, of e the restano minuscole se non aprono il titolo: è lo stile dei titoli in inglese. La maiuscola iniziale mette la maiuscola solo alla prima parola di ogni frase (“The quick guide to SEO”), lo stile preferito da molti siti moderni e quello normale in italiano.',
+                'body' => 'Le Iniziali Maiuscole mettono la maiuscola alle parole principali di un titolo (“The Quick Guide to Writing”), mentre le parole brevi come a, and, of e the restano minuscole se non aprono o chiudono la riga: è lo stile dei titoli in inglese. La maiuscola iniziale mette la maiuscola solo alla prima lettera di ogni frase (“The quick guide to writing”), lo stile preferito da molti siti moderni e quello normale in italiano. In questo strumento una nuova frase inizia dopo un punto, un punto interrogativo, un punto esclamativo o un a capo, e una “i” isolata diventa sempre “I”. Nelle Iniziali Maiuscole le parole con trattino ricevono la maiuscola su ogni parte, quindi “well-known” diventa “Well-Known”.',
             ],
             [
                 'heading' => 'Quali stili si usano nella programmazione?',
-                'body' => 'Il camelCase è comune per le variabili JavaScript, il PascalCase per i nomi delle classi, lo snake_case in Python e per le colonne dei database, il kebab-case per URL e classi CSS, e il CONSTANT_CASE per costanti e variabili d’ambiente.',
+                'body' => 'Il camelCase è comune per le variabili JavaScript, il PascalCase per i nomi delle classi, lo snake_case in Python e per le colonne dei database, il kebab-case per URL e classi CSS, e il CONSTANT_CASE per costanti e variabili d’ambiente. Partendo da “user first name”, i cinque pulsanti danno userFirstName, UserFirstName, user_first_name, user-first-name e USER_FIRST_NAME.',
+            ],
+            [
+                'heading' => 'Come gli stili di programmazione dividono le parole',
+                'body' => 'Prima di unire le parole, il convertitore divide il testo in parole a ogni spazio, segno di punteggiatura o simbolo, e anche dove una lettera minuscola o una cifra è seguita da una maiuscola. Così puoi passare direttamente da uno stile all’altro: “XMLHttpRequest” diventa xml_http_request in snake_case e “order-total” diventa orderTotal in camelCase. La punteggiatura viene eliminata, lettere e cifre restano, e ogni riga viene convertita da sola: puoi incollare un intero elenco di nomi di campi e trasformare ogni riga in un identificatore separato.',
+            ],
+            [
+                'heading' => 'Sigle e nomi propri con Iniziali Maiuscole e Maiuscola iniziale',
+                'body' => 'Iniziali Maiuscole e Maiuscola iniziale prima mettono tutte le lettere in minuscolo e poi aggiungono le maiuscole dove la regola le richiede. Questo sistema il testo scritto tutto in maiuscolo, ma cambia anche le parole che dovrebbero restare maiuscole: “NASA” diventa “Nasa” con le Iniziali Maiuscole, e con la Maiuscola iniziale nomi come “Parigi” o “SEO” a metà frase diventano minuscoli. Rileggi il risultato una volta e ripristina a mano sigle e nomi propri prima di pubblicarlo.',
+            ],
+            [
+                'heading' => 'aLtErNaTiNg e InVeRsE',
+                'body' => 'aLtErNaTiNg alterna minuscolo e maiuscolo a ogni lettera, partendo dal minuscolo e saltando spazi, cifre e punteggiatura, così lo schema resta regolare anche tra una parola e l’altra. Si usa soprattutto per battute e post sui social. InVeRsE inverte ogni lettera: le maiuscole diventano minuscole e le minuscole maiuscole. È il modo più rapido per sistemare un testo scritto per errore con il Bloc Maiusc attivo, perché “hELLO wORLD” torna subito “Hello World”.',
+            ],
+            [
+                'heading' => 'Casi d’uso',
+                'body' => 'Alcuni lavori quotidiani che il convertitore rende più veloci:',
+                'items' => [
+                    'Sistemare un’email o un documento scritto con il Bloc Maiusc attivo, senza riscriverlo.',
+                    'Rendere uniforme un elenco di titoli di articoli in Iniziali Maiuscole o Maiuscola iniziale prima di pubblicarli.',
+                    'Rinominare le intestazioni di un foglio di calcolo in nomi di colonna snake_case per importarle in un database.',
+                    'Trasformare il titolo di una pagina in uno slug URL o in un nome di classe CSS in kebab-case.',
+                    'Convertire chiavi JSON o nomi di variabili tra camelCase e snake_case quando sposti codice da un linguaggio all’altro.',
+                ],
+            ],
+            [
+                'heading' => 'Limiti e privacy',
+                'body' => 'La conversione avviene nel browser con JavaScript e il tuo testo non viene inviato a nessun server. Ogni pulsante sostituisce il testo nella casella, quindi una conversione che toglie le maiuscole non può essere annullata dallo strumento: tieni una copia dell’originale se potrebbe servirti. Il testo non viene salvato, quindi ricaricando la pagina la casella si svuota. Le Iniziali Maiuscole usano le regole inglesi per le parole brevi, quindi in altre lingue controlla quali parole devono restare minuscole. Maiuscole e minuscole seguono le impostazioni di lingua del browser, cosa che conta per alcune lettere come la i turca con e senza puntino.',
             ],
         ],
         'faqs' => [
             ['q' => 'Come converto il maiuscolo in minuscolo?', 'a' => 'Incolla il testo e clicca “minuscolo”. Ogni lettera viene convertita all’istante e puoi copiare il risultato con un clic.'],
-            ['q' => 'Le Iniziali Maiuscole mettono la maiuscola a ogni parola?', 'a' => 'No. Seguono le guide di stile inglesi più diffuse e lasciano minuscole le parole brevi (a, an, the, and, but, or, of, in, on, at, to, for), tranne se sono la prima o l’ultima.'],
+            ['q' => 'Le Iniziali Maiuscole mettono la maiuscola a ogni parola?', 'a' => 'No. Lasciano minuscole le parole brevi inglesi, tranne se sono la prima o l’ultima di una riga: a, an, the, and, but, or, nor, for, so, yet, as, at, by, in, of, off, on, per, to, up, via e vs.'],
+            ['q' => 'Perché la mia sigla ha perso le maiuscole?', 'a' => 'Iniziali Maiuscole e Maiuscola iniziale mettono tutto in minuscolo prima di aggiungere le maiuscole, quindi sigle come NASA o SEO diventano Nasa o nasa. Correggile a mano dopo la conversione.'],
+            ['q' => 'Come sistemo un testo scritto con il Bloc Maiusc attivo?', 'a' => 'Clicca InVeRsE per invertire di nuovo ogni lettera, oppure Maiuscola iniziale se tutto il testo è stato scritto in maiuscolo.'],
             ['q' => 'C’è un limite alla lunghezza del testo?', 'a' => 'In pratica no. La conversione avviene nel browser, quindi anche i documenti lunghi vengono convertiti all’istante.'],
-            ['q' => 'Funziona con le lettere accentate?', 'a' => 'Sì. Le lettere accentate e quelle di altre lingue, come è, ü e ñ, vengono convertite correttamente.'],
+            ['q' => 'Funziona con le lettere accentate?', 'a' => 'Sì. Le lettere accentate e quelle di altre lingue, come è, ü e ñ, vengono convertite correttamente e contano come lettere quando le parole vengono divise per camelCase o snake_case.'],
         ],
     ],
 
@@ -109,12 +141,17 @@ return [
                 'heading' => 'Come posso proteggere le mie password?',
                 'body' => 'Usa una password diversa per ogni account, conservale in un password manager e attiva l’autenticazione a due fattori ovunque sia disponibile. Non riutilizzare mai una password comparsa in una fuga di dati.',
             ],
+            [
+                'heading' => 'Impostazioni per una password sicura di 16 caratteri',
+                'body' => 'Le impostazioni predefinite te la danno già: lunghezza 16 con Maiuscole (A-Z), Minuscole (a-z), Numeri (0-9) e Simboli spuntati. Insieme questi gruppi contano 26 + 26 + 10 + 27 = 89 caratteri; i 27 simboli sono ! @ # $ % ^ & * ( ) - _ = + [ ] { } ; : , . < > ? / ~. L’entropia è lunghezza × log2(dimensione del set), quindi 16 × log2(89) = 16 × 6,48 ≈ 104 bit, che l’indicatore valuta Eccellente (da 100 bit in su). Senza simboli il set ha 62 caratteri: 16 × 5,95 ≈ 95 bit, valutata Forte. Spuntando Escludi simili spariscono I, L, O, i, l, o, 1 e 0; restano 81 caratteri e circa 101 bit. Perché 16? Supera il minimo di 15 caratteri del NIST e, con tutti e quattro i gruppi, è la lunghezza più corta oltre i 100 bit; 15 caratteri danno circa 97 bit. Il valore è leggermente sovrastimato, perché il generatore include sempre almeno un carattere di ogni tipo spuntato.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Questo generatore di password è sicuro?', 'a' => 'Sì. Le password vengono generate nel tuo browser con la Web Crypto API. Niente viene inviato al nostro server, registrato o salvato.'],
             ['q' => 'Quanto deve essere lunga la password?', 'a' => 'Almeno 15 caratteri, il minimo indicato dalle attuali linee guida del NIST (SP 800-63B), e 16 o più per gli account importanti come email e banca.'],
             ['q' => 'Cosa fa “Escludi simili”?', 'a' => 'Rimuove i caratteri che si somigliano, come l, 1, I, O e 0, così la password è più facile da leggere e digitare a mano.'],
             ['q' => 'Cos’è l’entropia di una password?', 'a' => 'L’entropia misura in bit quanto è imprevedibile una password. Ogni bit in più raddoppia i tentativi necessari a un attaccante. Da 80 bit in su è forte, da 100 in su è eccellente.'],
+            ['q' => 'Un sito non accetta simboli. Quanto deve essere lunga la password?', 'a' => 'Togli la spunta a Simboli e aggiungi un carattere. Lettere e numeri danno 62 caratteri possibili, circa 5,95 bit ciascuno: 16 caratteri arrivano a circa 95 bit e 17 caratteri a circa 101 bit, di nuovo sopra la soglia dei 100 bit.'],
         ],
         'table' => [
             'caption' => 'Lunghezza e sicurezza della password (entropia in bit)',
@@ -211,13 +248,17 @@ return [
                 'heading' => 'Quale formato scegliere?',
                 'body' => 'Il JPG è il migliore per le foto. Il PNG mantiene trasparenza e bordi nitidi per loghi e screenshot, ma i file sono pesanti. Il WebP produce i file più leggeri sia per foto sia per grafiche ed è supportato da tutti i browser moderni.',
             ],
+            [
+                'heading' => 'Comprimere una foto a 50 KB o 20 KB',
+                'body' => 'I moduli di domanda chiedono spesso una foto sotto i 50 KB o perfino i 20 KB. Apri la scheda Dimensione obiettivo (es. 100 KB) e scrivi il limite in Dimensione massima del file (KB); il valore minimo accettato è 5. Per ogni immagine lo strumento cerca la qualità più alta che rientra ancora nel limite. Se anche la qualità più bassa è troppo pesante, riduce larghezza e altezza a passi del 20% finché il file rientra, e la riga del risultato mostra le nuove dimensioni. Se non ci riesce comunque, te lo dice e ti dà la versione più piccola che ha ottenuto. Le dimensioni contano 1 KB come 1.024 byte. Per obiettivi piccoli tieni JPG o WebP come formato di output: il PNG non ha un’impostazione di qualità, quindi può alleggerirsi solo perdendo pixel. Se il modulo richiede anche misure precise, impostale prima con Ridimensiona immagine e poi comprimi qui.',
+            ],
         ],
         'faqs' => [
-            ['q' => 'Come comprimo un’immagine a 100 KB?', 'a' => 'Scegli “Dimensione obiettivo”, inserisci 100 e clicca Comprimi. Lo strumento trova la qualità migliore che resta sotto i 100 KB e riduce le dimensioni dell’immagine solo se necessario.'],
+            ['q' => 'Come comprimo un’immagine a 100 KB?', 'a' => 'Apri la scheda “Dimensione obiettivo” e inserisci 100. Le immagini vengono compresse appena le aggiungi; se cambi l’impostazione dopo, clicca Ricomprimi tutto. Lo strumento trova la qualità migliore che resta sotto i 100 KB e riduce le dimensioni dell’immagine solo se necessario.'],
             ['q' => 'Le mie immagini vengono caricate su un server?', 'a' => 'No. Le immagini vengono compresse nel browser con l’API Canvas. Non lasciano mai il tuo dispositivo.'],
             ['q' => 'La compressione riduce la qualità?', 'a' => 'Con la qualità predefinita (75%) quasi nessuno nota differenze, mentre il peso spesso cala del 50-80%.'],
             ['q' => 'Come riduco le dimensioni di un\'immagine PNG?', 'a' => 'Il PNG è un formato senza perdita, quindi comprimerlo da solo aiuta poco. Per ridurre davvero le dimensioni di un PNG, imposta WebP (mantiene la trasparenza) o JPG (se non serve la trasparenza) come formato di output: entrambi riducono molto il peso del PNG senza perdita di qualità visibile.'],
-            ['q' => 'Come riduco le dimensioni di un JPG online?', 'a' => 'Carica il tuo JPG, scegli “Dimensione obiettivo” o una qualità intorno al 60-80% e clicca Comprimi. Per le foto, una qualità JPG del 70-80% basta di solito a ridurre il peso in modo netto senza perdita visibile.'],
+            ['q' => 'Come riduco le dimensioni di un JPG online?', 'a' => 'Scegli “Dimensione obiettivo” o una qualità intorno al 60-80%, poi aggiungi il tuo JPG: viene compresso subito. Per le foto, una qualità JPG del 70-80% basta di solito a ridurre il peso in modo netto senza perdita visibile.'],
         ],
         'table' => [
             'caption' => 'Quale formato di immagine usare',
@@ -260,6 +301,10 @@ return [
                 'heading' => 'Come convertire PNG in JPG?',
                 'body' => 'Il JPG non supporta la trasparenza, quindi le aree trasparenti diventano bianche quando converti un PNG in JPG. Se devi mantenere la trasparenza, scegli PNG o WebP come formato di output.',
             ],
+            [
+                'heading' => 'Come ridimensionare un’immagine a 1080 x 1080',
+                'body' => 'Per un post quadrato di Instagram, apri la scheda In pixel. Se la foto è già quadrata, lascia spuntato Blocca proporzioni e scrivi 1080 come larghezza; l’altezza si adegua. Se non è quadrata, questo strumento non la ritaglia. Con il blocco attivo, una foto 4:3 impostata a 1080 di larghezza diventa 1080 x 810, e se togli la spunta e inserisci 1080 x 1080 l’immagine viene allungata o schiacciata. Quindi ritagliala prima in formato quadrato, ad esempio con l’editor di foto del telefono, e poi ridimensionala qui. Tieni JPG per le foto (la qualità predefinita è 90%), controlla che il pulsante indichi Ridimensiona a 1080 × 1080 px e scarica. Ingrandire una foto più piccola a 1080 pixel funziona, ma può risultare morbida perché non si creano nuovi dettagli.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Come ridimensiono un’immagine senza deformarla?', 'a' => 'Lascia spuntato “Blocca proporzioni”. Quando cambi la larghezza, l’altezza si aggiorna automaticamente per mantenere le proporzioni originali.'],
@@ -281,12 +326,20 @@ return [
 
     'jpg-to-pdf' => [
         'name' => 'Da JPG a PDF',
-        'title' => 'Da JPG a PDF: converti immagini in PDF gratis',
-        'description' => 'Converti immagini JPG, PNG o WebP in PDF online gratis. Riordina le foto e scegli formato, orientamento e margini. Nessun caricamento, nessuna filigrana.',
-        'h1' => 'Da JPG a PDF',
-        'tagline' => 'Combina immagini JPG, PNG e WebP in un unico file PDF.',
-        'keywords' => ['da jpg a pdf', 'convertire jpg in pdf', 'immagine in pdf', 'jpg in pdf online', 'convertitore jpg pdf'],
-        'intro' => 'Un convertitore da JPG a PDF trasforma immagini JPG, PNG o WebP in un unico documento PDF. Aggiungi più foto, riordinale e scegli il formato pagina, l’orientamento e i margini prima di unirle in un solo documento. Questo convertitore da jpg a pdf funziona interamente sul tuo dispositivo, quindi le tue immagini non vengono mai caricate su un server.',
+        'title' => 'Unire JPG in PDF: combina più immagini in un solo PDF',
+        'description' => 'Unisci più immagini JPG, PNG o WebP in un unico PDF gratis. Convertitore da JPG a PDF con riordino e pagine A4 o Letter. Nessun upload, nessuna filigrana.',
+        'h1' => 'Unire JPG in PDF',
+        'tagline' => 'Unisci più immagini JPG, PNG e WebP in un unico file PDF.',
+        'keywords' => [
+            'unire jpg in pdf',
+            'unire più jpg in un pdf',
+            'combinare immagini in pdf',
+            'da jpg a pdf',
+            'convertire jpg in pdf',
+            'immagine in pdf',
+            'convertitore jpg pdf',
+        ],
+        'intro' => 'Con questo strumento puoi unire più foto JPG, o immagini PNG e WebP, in un unico documento PDF, con un’immagine per pagina. Aggiungi fino a 30 immagini, mettile in ordine con le frecce e scegli formato pagina, orientamento e margini prima di unirle. Con una sola foto funziona anche come semplice convertitore da JPG a PDF. Tutto avviene sul tuo dispositivo, quindi le tue immagini non vengono mai caricate su un server.',
         'steps' => [
             'Aggiungi una o più immagini JPG, PNG o WebP trascinandole o cliccando per sfogliare.',
             'Se necessario, riordina le immagini con le frecce su e giù.',
@@ -310,13 +363,19 @@ return [
                 'heading' => 'Perché convertire JPG in PDF?',
                 'body' => 'Un unico PDF è più facile da inviare via email, stampare e caricare nei moduli rispetto a più file immagine separati. Unire pagine scansionate, ricevute o foto in un solo PDF mantiene anche l’ordine corretto ed evita che si mescolino.',
             ],
+            [
+                'heading' => 'Unire più JPG in un unico PDF',
+                'body' => 'Ogni immagine diventa una pagina, nell’ordine dell’elenco numerato, quindi controllalo prima di cliccare su Converti in PDF: le frecce su e giù spostano una foto e la croce la rimuove. Puoi unire fino a 30 immagini alla volta, ciascuna fino a 50 MB. Con A4 o Letter tutte le pagine hanno la stessa dimensione, che in stampa dà un aspetto ordinato, e l’orientamento automatico assegna alle foto orizzontali una pagina orizzontale. Adatta all’immagine rende ogni pagina grande quanto la sua foto, quindi le pagine di uno stesso PDF possono essere diverse. Il PDF pesa più o meno quanto tutte le immagini insieme, perché i file JPG e PNG vengono incorporati senza essere ricompressi. Se è troppo pesante per un’email, riduci prima le foto con il Compressore di immagini oppure passa il PDF finito in Comprimi PDF.',
+            ],
         ],
         'faqs' => [
-            ['q' => 'Posso combinare più immagini in un unico PDF?', 'a' => 'Sì. Aggiungi tutte le immagini JPG, PNG o WebP che vuoi, mettile nell’ordine desiderato con le frecce e verranno combinate in un unico PDF.'],
+            ['q' => 'Quanti JPG posso unire in un unico PDF?', 'a' => 'Fino a 30 immagini alla volta, ciascuna fino a 50 MB. Aggiungile, mettile nell’ordine desiderato con le frecce e verranno unite in un unico PDF con un’immagine per pagina. Per più di 30, crea due PDF e uniscili con Unisci PDF.'],
             ['q' => 'Questo convertitore da JPG a PDF aggiunge una filigrana?', 'a' => 'No. Il PDF contiene solo le tue immagini, senza filigrana, logo o pagine aggiunte.'],
             ['q' => 'Posso convertire anche immagini PNG e WebP, non solo JPG?', 'a' => 'Sì. Le immagini JPG, PNG e WebP sono tutte supportate e possono essere unite nello stesso PDF.'],
             ['q' => 'A cosa serve l’impostazione del margine?', 'a' => 'Aggiunge spazio bianco intorno a ogni immagine sulla pagina. Scegli Nessuno perché l’immagine arrivi fino ai bordi, oppure un margine più ampio per un aspetto più simile a un documento.'],
             ['q' => 'La qualità delle mie immagini viene ridotta?', 'a' => 'Le immagini JPG e PNG vengono incorporate con la qualità originale. Le immagini WebP vengono prima convertite in PNG, il che mantiene una qualità senza perdite.'],
+            ['q' => 'Posso cambiare l’ordine delle pagine dopo averle unite?', 'a' => 'Prima della conversione sì: usa le frecce, e ogni modifica annulla il risultato precedente, così ti basta cliccare di nuovo su Converti in PDF. Per riordinare le pagine di un PDF già scaricato, usa Organizza PDF.'],
+            ['q' => 'Perché il PDF unito è così pesante?', 'a' => 'Le immagini JPG e PNG vengono inserite nel PDF con la qualità originale, quindi il file pesa all’incirca quanto tutte le immagini sommate. Per alleggerirlo, comprimi prima le immagini con il Compressore di immagini oppure passa il PDF in Comprimi PDF, la cui modalità Consigliata ricomprime le foto JPG al suo interno.'],
         ],
     ],
 
@@ -407,10 +466,11 @@ return [
         'keywords' => ['jpg in png', 'jpeg in png', 'convertire jpg in png', 'da jpg a png', 'jpeg to png'],
         'intro' => 'Il PNG è un formato senza perdita: un’immagine salvata in PNG si può modificare e salvare di nuovo senza diventare più sfocata. Questo convertitore da JPEG a PNG trasforma foto JPG e JPEG in file PNG, una alla volta o in gruppi fino a 30, direttamente nel tuo browser.',
         'steps' => [
-            'Trascina le immagini JPG o JPEG nel riquadro o clicca per sceglierle.',
-            'Ogni immagine viene convertita in PNG subito.',
-            'Clicca Scarica accanto a un’immagine, oppure Scarica tutto (ZIP).',
-            'Usa Cancella tutto per convertire un altro gruppo.',
+            'Trascina le immagini JPG o JPEG nel riquadro, o cliccaci sopra per sceglierle (fino a 30 alla volta, 50 MB ciascuna).',
+            'Ogni immagine viene convertita subito in PNG; nel frattempo l’elenco mostra “in attesa…” e “conversione…”.',
+            'Controlla il nuovo nome del file e il peso indicati accanto a ogni immagine.',
+            'Clicca Scarica accanto a un’immagine, oppure Scarica tutto (ZIP) quando due o più sono pronte.',
+            'Rimuovi una singola immagine con il pulsante ✕, oppure usa Cancella tutto per convertire un altro gruppo.',
         ],
         'features' => [
             'Converte JPG e JPEG in PNG senza perdita',
@@ -428,11 +488,41 @@ return [
                 'heading' => 'L’immagine diventerà trasparente o più nitida?',
                 'body' => 'No. La conversione lascia l’immagine esattamente com’è: un JPG non ha trasparenza da conservare e i dettagli persi con la compressione JPG non si possono recuperare. Inoltre il PNG di solito pesa più del JPG, perché salva ogni pixel senza perdita.',
             ],
+            [
+                'heading' => 'Come funziona la conversione',
+                'body' => 'Il browser decodifica ogni JPG, lo disegna a grandezza piena su un canvas invisibile e salva quel canvas come PNG. Dato che il PNG è senza perdita, non c’è un cursore della qualità: il PNG contiene esattamente i pixel che il browser ha decodificato dal JPG. Le immagini vengono convertite una dopo l’altra, quindi un gruppo numeroso viene completato in sequenza e non tutto insieme. Il nuovo file mantiene il nome originale con l’estensione .png, così “foto vacanze.jpg” diventa “foto vacanze.png”. Nello ZIP, chiamato converted-to-png.zip, i file con lo stesso nome vengono rinominati perché nessuno sovrascriva gli altri.',
+            ],
+            [
+                'heading' => 'Controllare il risultato',
+                'body' => 'Ogni immagine dell’elenco mostra un’anteprima, il peso originale e, a conversione finita, il nuovo nome PNG con il relativo peso, così vedi subito quanto è più grande il PNG. Se un file non va a buon fine, il motivo compare in rosso sotto il nome e il resto del gruppo prosegue. Il contatore sotto l’elenco indica quante immagini sono state convertite in PNG finora.',
+            ],
+            [
+                'heading' => 'JPG o PNG: quale conservare?',
+                'body' => 'Per le foto che vuoi solo guardare, condividere o caricare, il JPG di solito è il formato migliore perché i file sono molto più leggeri. Il PNG è la copia di lavoro migliore per screenshot, scansioni di testi, diagrammi e immagini che ritaglierai, annoterai o modificherai più volte, perché salvarlo di nuovo non aggiunge mai artefatti di compressione. Se ti serve soprattutto un file più leggero e non uno senza perdita, comprimi il JPG invece di convertirlo.',
+            ],
+            [
+                'heading' => 'Casi d\'uso',
+                'body' => 'Di solito si converte un JPG in PNG per uno di questi motivi.',
+                'items' => [
+                    'Un sito, un’app o un servizio di stampa accetta solo caricamenti in PNG.',
+                    'Vuoi una copia master senza perdita di una foto prima di modificarla più volte.',
+                    'Stai inserendo una foto in un file grafico o in una presentazione dove il PNG è il formato standard.',
+                    'Devi convertire in un colpo solo una cartella di scansioni o screenshot salvati in JPG e scaricarli in un unico ZIP.',
+                ],
+            ],
+            [
+                'heading' => 'Limiti e privacy',
+                'body' => 'Puoi aggiungere fino a 30 immagini alla volta, ciascuna fino a 50 MB; i file più grandi vengono saltati con un avviso. Le immagini molto grandi vengono ridotte per stare entro 10.000 × 10.000 pixel. Poiché ogni immagine viene ridisegnata su un canvas, i metadati come i dati della fotocamera e la posizione GPS non vengono copiati nel PNG. Un file danneggiato, o che il browser non riesce ad aprire, mostra un errore invece del risultato. Il riquadro accetta anche file PNG, WebP, AVIF, GIF e BMP, che vengono convertiti in PNG allo stesso modo; una GIF animata diventa un singolo fotogramma fisso. Tutta la conversione avviene nel tuo browser e nessuna immagine viene caricata.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Come converto un JPG in PNG?', 'a' => 'Trascina il JPG nel riquadro qui sopra. Viene convertito in PNG subito e si scarica con un clic.'],
-            ['q' => 'C’è differenza tra JPG e JPEG?', 'a' => 'No. Sono due nomi dello stesso formato e si convertono allo stesso modo.'],
+            ['q' => 'C’è differenza tra JPG e JPEG?', 'a' => 'No. Sono due nomi dello stesso formato e si convertono allo stesso modo. Sono accettati anche i file con estensione .jfif.'],
             ['q' => 'Perché il file PNG è più pesante?', 'a' => 'Il PNG è senza perdita e conserva ogni pixel esattamente. Il JPG risparmia spazio eliminando dettagli, per questo i suoi file sono più leggeri.'],
+            ['q' => 'Posso convertire molti JPG insieme?', 'a' => 'Sì. Aggiungi fino a 30 immagini alla volta. Quando due o più sono convertite, Scarica tutto (ZIP) le salva in un unico file. Usa Cancella tutto per iniziare il gruppo successivo.'],
+            ['q' => 'Posso rendere trasparente lo sfondo?', 'a' => 'Non con la sola conversione. Un JPG non ha zone trasparenti, quindi il PNG mantiene lo stesso sfondo pieno. Per scontornare il soggetto e ottenere un PNG con sfondo trasparente, usa invece lo strumento per rimuovere lo sfondo.'],
+            ['q' => 'Perché un’immagine grande non si è convertita sul mio telefono?', 'a' => 'Convertire un’immagine molto grande richiede molta memoria e alcuni telefoni la esauriscono. Se il browser non riesce a creare il PNG, un errore ti chiede di provare dimensioni più piccole; ridimensiona prima l’immagine e convertila di nuovo.'],
+            ['q' => 'I dati EXIF della foto vengono mantenuti?', 'a' => 'No. L’immagine viene ridisegnata e salvata come nuovo PNG, quindi i dati della fotocamera, la data e la posizione del JPG non vengono copiati. È anche un modo semplice per condividere una foto senza la sua posizione.'],
             ['q' => 'Le mie foto vengono caricate?', 'a' => 'No. Tutto avviene nel browser e le tue foto non lasciano mai il tuo dispositivo.'],
         ],
     ],
@@ -521,9 +611,11 @@ return [
         'keywords' => ['calcolatore età', 'calcolare età', 'calcolo data di nascita', 'quanti anni ho', 'calcolo età da data di nascita'],
         'intro' => 'Un calcolatore di età calcola l’età esatta di una persona, in anni, mesi e giorni, dalla sua data di nascita. Inserisci una data di nascita per conoscere l’età esatta in anni, mesi e giorni. Ottieni anche il totale di mesi, settimane, giorni e ore vissuti, il giorno della settimana in cui sei nato e il conto alla rovescia per il prossimo compleanno. Puoi calcolare l’età anche a qualsiasi data passata o futura.',
         'steps' => [
-            'Inserisci la data di nascita.',
-            'Lascia oggi come data “età alla data del” o scegline un’altra.',
-            'Vedi subito l’età esatta e i dettagli.',
+            'Inserisci la data di nascita nel campo Data di nascita.',
+            'Lascia la data di oggi nel campo Età alla data del, oppure scegli una qualsiasi data passata o futura.',
+            'Leggi l’età esatta in anni, mesi e giorni, con sotto il giorno della settimana in cui sei nato.',
+            'Controlla i totali: mesi totali, settimane, giorni totali e ore totali (circa).',
+            'Guarda la riga del prossimo compleanno, con giorno della settimana, data, giorni mancanti e l’età che si compie.',
         ],
         'features' => [
             'Età esatta in anni, mesi e giorni',
@@ -537,13 +629,42 @@ return [
                 'heading' => 'Come si calcola l’età',
                 'body' => 'Il calcolatore conta prima gli anni compiuti, poi i mesi completi e infine i giorni rimanenti, lo stesso metodo dei moduli ufficiali. Gli anni bisestili sono gestiti automaticamente, e chi è nato il 29 febbraio festeggia il 28 febbraio negli anni non bisestili.',
             ],
+            [
+                'heading' => 'Quando un mese è completo?',
+                'body' => 'Un mese è completo quando si torna allo stesso giorno del mese. Se il mese successivo è troppo corto per avere quel giorno, vale il suo ultimo giorno. Così chi è nato il 31 gennaio ha compiuto un mese il 28 febbraio (o il 29 febbraio in un anno bisestile), e il 1° marzo ha 1 mese e 1 giorno. I giorni rimanenti si contano dall’ultimo mese completato, quindi anni, mesi e giorni corrispondono sempre esattamente alle date inserite.',
+            ],
+            [
+                'heading' => 'Un esempio pratico',
+                'body' => 'Prendi come data di nascita il 15 marzo 1990 e come data “età alla data del” il 10 novembre 2026. L’ultimo compleanno è stato il 15 marzo 2026, quindi gli anni compiuti sono 36. Da lì, il 15 ottobre 2026 è il settimo mese completo e il 10 novembre arriva 26 giorni dopo: l’età è 36 anni, 7 mesi, 26 giorni. Lo stesso periodo corrisponde a 439 mesi totali, 13.389 giorni totali, 1.912 settimane più 5 giorni e circa 321.336 ore. La persona è nata di giovedì e il prossimo compleanno è lunedì 15 marzo 2027, tra 125 giorni, quando compirà 37 anni.',
+            ],
+            [
+                'heading' => 'Cosa indicano i totali',
+                'body' => 'Giorni totali è il numero esatto di giorni di calendario tra le due date. Settimane è quel numero diviso per sette, con gli eventuali giorni in più tra parentesi, per esempio “Settimane (+5 giorni)”. Mesi totali conta solo i mesi completi. Ore totali è semplicemente il numero di giorni moltiplicato per 24, ed è per questo che è indicato come approssimativo: non conosce l’ora di nascita e ignora i cambi dell’ora legale.',
+            ],
+            [
+                'heading' => 'Casi d\'uso',
+                'body' => 'Poter scegliere la data “età alla data del” rende il calcolatore utile ben oltre il sapere quanti anni hai oggi.',
+                'items' => [
+                    'Verifica se un bambino rispetta la data limite per l’iscrizione a scuola impostando “età alla data del” su quel giorno.',
+                    'Conferma un limite di età per un esame, una candidatura, un visto o una categoria sportiva alla data di scadenza.',
+                    'Scopri quanti anni aveva un parente in una data passata, come un matrimonio o la data di un vecchio documento.',
+                    'Scopri in che giorno della settimana sei nato e quanti giorni mancano al tuo prossimo compleanno.',
+                    'Ottieni il numero totale di giorni o settimane vissuti per un traguardo come i 10.000 giorni.',
+                ],
+            ],
+            [
+                'heading' => 'Limiti e privacy',
+                'body' => 'Il calcolatore lavora con date di calendario intere, quindi non tiene conto dell’ora di nascita né dei fusi orari, e il risultato non si sposta mai di un giorno a seconda di dove ti trovi. La data di oggi viene dall’orologio del tuo dispositivo. L’anno deve avere quattro cifre e la data di nascita deve essere uguale o precedente alla data “età alla data del”; altrimenti un messaggio di errore spiega cosa correggere. Tutto viene calcolato nel tuo browser mentre scrivi: non c’è nessun pulsante da premere e le date inserite non vengono salvate né inviate da nessuna parte.',
+            ],
         ],
         'faqs' => [
-            ['q' => 'Come calcolo la mia età esatta?', 'a' => 'Inserisci la data di nascita e il calcolatore mostra la tua età in anni, mesi e giorni a oggi, o a qualsiasi data tu scelga.'],
+            ['q' => 'Come calcolo la mia età esatta?', 'a' => 'Inserisci la data di nascita e il calcolatore mostra la tua età in anni, mesi e giorni a oggi, o a qualsiasi data tu scelga. Conta prima gli anni compiuti, poi i mesi completi e infine i giorni rimanenti.'],
             ['q' => 'Posso calcolare l’età a una data specifica?', 'a' => 'Sì. Cambia la data “Età alla data del” per vedere quanti anni aveva o avrà una persona quel giorno: utile per iscrizioni scolastiche e requisiti di età per concorsi.'],
             ['q' => 'Come vengono gestiti gli anni bisestili?', 'a' => 'Gli anni bisestili vengono contati con precisione. Per chi compie gli anni il 29 febbraio, il prossimo compleanno in un anno non bisestile viene mostrato il 28 febbraio.'],
+            ['q' => 'Perché le ore totali sono indicate come approssimative?', 'a' => 'Le ore totali sono i giorni totali moltiplicati per 24. Il calcolatore non conosce l’ora in cui sei nato e ignora i cambi dell’ora legale, quindi il valore può differire fino all’equivalente di un giorno di ore.'],
+            ['q' => 'Posso calcolare l’età di qualcuno non ancora nato, o un compleanno futuro?', 'a' => 'Puoi impostare la data “età alla data del” nel futuro per vedere quanti anni avrà una persona in quel momento. La data di nascita, però, deve essere uguale o precedente a quella data, quindi non è possibile fare il conto alla rovescia fino a una nascita.'],
+            ['q' => 'Perché un altro calcolatore di età mostra un numero di giorni diverso?', 'a' => 'I calcolatori gestiscono la fine del mese in modi diversi. Alcuni considerano ogni mese di 30 giorni o contano i giorni rimanenti in un altro modo. Questo usa mesi di calendario completi, ripiegando sull’ultimo giorno dei mesi più corti, così anni, mesi e giorni corrispondono al calendario e i giorni e le settimane totali sono sempre esatti.'],
             ['q' => 'La mia data di nascita viene salvata?', 'a' => 'No. Il calcolo avviene nel tuo browser e nulla viene salvato o inviato.'],
-            ['q' => 'Come si calcola l’età dalla data di nascita?', 'a' => 'Il calcolatore di età usa la tua data di nascita per calcolare la tua età esatta in anni, mesi e giorni: basta inserirla per vedere subito il risultato.'],
         ],
     ],
 
@@ -699,10 +820,13 @@ return [
         'keywords' => ['codifica base64', 'decodifica base64', 'convertitore base64', 'base64 in testo', 'immagine in base64'],
         'intro' => 'Il Base64 è un modo per scrivere qualsiasi dato, file compresi, usando solo 64 caratteri di testo; codificare converte in Base64 e decodificare fa il contrario. Converti un testo in Base64 o decodifica Base64 in testo leggibile, con pieno supporto a emoji e caratteri non inglesi. Puoi anche trasformare un file o un’immagine in una data URL Base64 da incorporare in HTML, CSS o JSON.',
         'steps' => [
-            'Scegli la modalità Testo o File.',
-            'Per il testo, incolla l’input e clicca Codifica o Decodifica.',
-            'Per i file, scegli un file per ottenerne la stringa Base64 o la data URL.',
-            'Copia il risultato.',
+            'Scegli la scheda Testo o la scheda File / Immagine.',
+            'In modalità Testo scrivi o incolla nella casella Input e spunta Sicuro per URL se ti serve un output sicuro per URL.',
+            'Clicca Codifica per trasformare l’input in Base64, oppure Decodifica per riportare il Base64 in testo.',
+            'Leggi il messaggio sotto i pulsanti: conferma il risultato o spiega perché il Base64 non è valido.',
+            'Clicca Copia sopra la casella Output, oppure Scambia per spostare l’output nell’Input per un altro passaggio.',
+            'In modalità File / Immagine trascina un file fino a 10 MB o clicca per sceglierne uno.',
+            'Copia la stringa Base64 o la Data URL (per HTML / CSS) già pronta.',
         ],
         'features' => [
             'Codifica e decodifica testo con pieno supporto UTF-8',
@@ -714,14 +838,43 @@ return [
         'content' => [
             [
                 'heading' => 'Cos’è il Base64?',
-                'body' => 'Il Base64 rappresenta dati binari con 64 caratteri di testo sicuri (A-Z, a-z, 0-9, + e /). Si usa per incorporare immagini in HTML e CSS, inviare allegati via email e passare dati in URL e API. Il Base64 è una codifica, non una crittografia: non tiene segreti i dati.',
+                'body' => 'Il Base64 rappresenta dati binari con 64 caratteri di testo sicuri (A-Z, a-z, 0-9, + e /). Si usa per incorporare immagini in HTML e CSS, inviare allegati via email e passare dati in URL e API. Ogni 3 byte di input diventano 4 caratteri, ciascuno dei quali vale 6 bit, e uno o due segni = riempiono la fine quando la lunghezza dell’input non è un multiplo di 3. Il Base64 è una codifica, non una crittografia: non tiene segreti i dati.',
+            ],
+            [
+                'heading' => 'Come viene codificato il testo',
+                'body' => 'Il testo viene prima trasformato in byte UTF-8 e poi in Base64, ed è per questo che emoji e lettere non inglesi funzionano: “Hello” diventa SGVsbG8=, mentre “é” occupa due byte e la maggior parte delle emoji quattro prima della codifica. Molti codificatori semplici chiamano direttamente la funzione btoa del browser, che fallisce con qualsiasi carattere fuori dal Latin-1; questo strumento evita il problema. Con Sicuro per URL spuntato, l’output usa - e _ al posto di + e / ed elimina i segni = finali.',
+            ],
+            [
+                'heading' => 'Cosa accetta il decodificatore',
+                'body' => 'La decodifica è tollerante sul formato. Accetta Base64 standard e sicuro per URL, con o senza riempimento =, ignora spazi e a capo (quindi il Base64 spezzato su più righe di un’email o di un blocco PEM si incolla senza problemi) ed elimina il prefisso data:...;base64, se incolli una data URL intera. Se l’input contiene caratteri diversi da A-Z, a-z, 0-9, +, / e =, o se la sua lunghezza indica che è stato troncato, ricevi un errore chiaro invece di caratteri senza senso. Quando i byte decodificati non sono testo UTF-8 valido, lo strumento li mostra comunque ma avvisa che il risultato è un dato binario e che alcuni caratteri potrebbero sembrare strani.',
+            ],
+            [
+                'heading' => 'File, immagini e data URL',
+                'body' => 'La modalità File / Immagine legge qualsiasi tipo di file sul tuo dispositivo e ne mostra il nome, la dimensione originale e quella della versione Base64. Le immagini hanno anche una piccola anteprima. Ottieni due risultati: la stringa Base64 grezza, che l’opzione Sicuro per URL può modificare, e una data URL che usa sempre il Base64 standard e il tipo MIME del file, ad esempio data:image/png;base64,... Un file che il browser non riconosce viene etichettato come application/octet-stream. Le data URL sono comode per piccole icone in CSS o nelle email HTML, ma le immagini grandi conviene collegarle come file normali, perché il Base64 ne aumenta il peso di circa un terzo e un’immagine incorporata non può essere memorizzata nella cache da sola.',
+            ],
+            [
+                'heading' => 'Casi d’uso',
+                'body' => 'Motivi comuni per codificare o decodificare in Base64:',
+                'items' => [
+                    'Incorporare un piccolo logo o un’icona direttamente in un file CSS o in un’email HTML come data URL.',
+                    'Leggere il contenuto di un token, di un valore di configurazione o di una risposta API che arriva in Base64.',
+                    'Preparare un breve valore di testo per un parametro URL o un nome di file con l’opzione Sicuro per URL.',
+                    'Controllare cosa dice davvero una stringa codificata in un file di log o in un campo di database.',
+                    'Convertire un’immagine in Base64 per una richiesta JSON a un’API che si aspetta file incorporati.',
+                ],
+            ],
+            [
+                'heading' => 'Limiti e privacy',
+                'body' => 'Codifica e decodifica avvengono nel browser con JavaScript; i tuoi testi e file non vengono caricati. La modalità File accetta file fino a 10 MB, perché il Base64 di file più grandi è troppo lungo per incollarlo da qualche parte in modo utile. La decodifica produce sempre testo nella casella Output, quindi lo strumento non può riportare il Base64 in un file scaricabile come un’immagine o un PDF; i dati binari decodificati appaiono come caratteri illeggibili. Ricorda che chiunque può decodificare il Base64: non usarlo mai per nascondere password o segreti.',
             ],
         ],
         'faqs' => [
             ['q' => 'Il Base64 è una crittografia?', 'a' => 'No. Chiunque può decodificare il Base64. Usalo per trasportare dati, mai per proteggere password o segreti.'],
-            ['q' => 'Cos’è il Base64 sicuro per URL?', 'a' => 'Una variante che sostituisce + con - e / con _, e di solito elimina il riempimento con =, così la stringa si può usare senza problemi in URL e nomi di file.'],
+            ['q' => 'Cos’è il Base64 sicuro per URL?', 'a' => 'Una variante che sostituisce + con - e / con _, e di solito elimina il riempimento con =, così la stringa si può usare senza problemi in URL e nomi di file. Il decodificatore qui accetta entrambe le forme.'],
             ['q' => 'Perché il Base64 è più grande dell’originale?', 'a' => 'Il Base64 trasforma ogni 3 byte in 4 caratteri, quindi i dati codificati sono circa il 33% più grandi dell’originale.'],
-            ['q' => 'Come converto un’immagine in Base64?', 'a' => 'Passa alla modalità File e scegli l’immagine. Ottieni sia la stringa Base64 grezza sia una data URL pronta all’uso.'],
+            ['q' => 'Come converto un’immagine in Base64?', 'a' => 'Passa alla modalità File / Immagine e scegli l’immagine. Ottieni sia la stringa Base64 grezza sia una data URL pronta all’uso.'],
+            ['q' => 'Perché dice che il mio Base64 non è valido?', 'a' => 'O il testo contiene caratteri che non fanno parte del Base64, o ha una lunghezza sbagliata, il che di solito significa che è stato troncato durante la copia. Spazi, a capo e il prefisso di una data URL vengono rimossi automaticamente.'],
+            ['q' => 'Posso riconvertire il Base64 in un file?', 'a' => 'Non con questo strumento. La decodifica mostra il risultato come testo, il che funziona per testo e JSON ma non per immagini, PDF o altri file binari.'],
         ],
         'table' => [
             'caption' => 'Quanto il Base64 aumenta i dati',
@@ -873,10 +1026,13 @@ return [
         'keywords' => ['ruota della fortuna', 'ruota online', 'estrattore di nomi', 'ruota dei nomi', 'scelta casuale'],
         'intro' => 'La ruota della fortuna è un estrattore casuale: aggiungi nomi o opzioni, la fai girare e si ferma su uno a caso. Non sai decidere cosa mangiare, chi è il prossimo o chi vince il concorso? Scrivi le opzioni nella lista, una per riga, e gira la ruota. Fa diversi giri e rallenta fino a fermarsi su una voce a caso, poi annuncia il vincitore. Puoi rimuovere automaticamente ogni vincitore per estrarre i nomi uno alla volta senza ripetizioni.',
         'steps' => [
-            'Scrivi o incolla le voci, una per riga (fino a 100).',
-            'Premi Gira, clicca al centro della ruota o premi S.',
-            'Guarda la ruota rallentare e fermarsi sul vincitore.',
+            'Premi Cancella per togliere le voci di esempio, oppure modificale direttamente.',
+            'Scrivi o incolla le tue voci nel riquadro, una per riga (fino a 100).',
+            'Se vuoi, premi Mescola per cambiare l’ordine degli spicchi.',
             'Se vuoi, spunta “Rimuovi il vincitore dopo ogni giro” per estrarre senza ripetizioni.',
+            'Premi Gira la ruota, clicca GIRA al centro della ruota o premi S.',
+            'Guarda la ruota rallentare e fermarsi; il vincitore viene annunciato sotto.',
+            'Premi il pulsante Rimuovi con il nome del vincitore per toglierlo dalla lista, oppure gira di nuovo.',
         ],
         'features' => [
             'Fino a 100 voci, ognuna con il suo spicchio colorato',
@@ -888,18 +1044,44 @@ return [
         'content' => [
             [
                 'heading' => 'Come la ruota sceglie il vincitore',
-                'body' => 'Quando premi Gira, il vincitore viene scelto prima con il generatore casuale sicuro del browser, dando a ogni voce la stessa probabilità a prescindere dalla lunghezza del nome. Poi la ruota calcola esattamente di quanto girare perché lo spicchio scelto si fermi sotto l’indicatore, aggiungendo diversi giri completi e un punto di arresto casuale nello spicchio, così ogni giro è diverso.',
+                'body' => 'Quando premi Gira, il vincitore viene scelto prima con il generatore casuale sicuro del browser, crypto.getRandomValues(), con il campionamento con rifiuto, così ogni voce ha esattamente la stessa probabilità, a prescindere dalla lunghezza del nome o dalla sua posizione sulla ruota. Poi la ruota calcola di quanto girare perché lo spicchio scelto si fermi sotto l’indicatore. Aggiunge sei giri completi e un punto di arresto casuale nello spicchio, lontano dai bordi, così ogni giro è diverso e il risultato non è mai ambiguo. Quando la ruota si ferma, il vincitore viene letto dall’angolo finale della ruota, quindi il nome annunciato è sempre lo spicchio che vedi sotto l’indicatore.',
+            ],
+            [
+                'heading' => 'Inserire e gestire i nomi',
+                'body' => 'Ogni riga non vuota del riquadro diventa uno spicchio della ruota; le righe vuote vengono ignorate e gli spazi all’inizio e alla fine di una riga vengono tolti. Un contatore sopra il riquadro mostra quante voci sono in uso su 100. Se incolli più di 100 righe, la ruota mostra un avviso e usa solo le prime 100. Mescola riordina le voci a caso, cambiando la posizione di ogni spicchio sulla ruota ma non la probabilità di vincere. Cancella svuota la lista. La ruota ha bisogno di almeno due voci per girare. I nomi lunghi vengono accorciati con i puntini sulla ruota per entrare nello spicchio, ma l’annuncio del vincitore mostra il nome completo.',
             ],
             [
                 'heading' => 'Idee per usare una ruota',
-                'body' => 'Gli insegnanti la usano per interrogare gli studenti in modo equo, streamer e negozi per i giveaway, gli amici per scegliere ristorante, film o faccende di casa. Attiva “Rimuovi il vincitore dopo ogni giro” per stabilire un ordine, dividere le persone in squadre o estrarre più premi senza che nessuno vinca due volte.',
+                'body' => 'Gli insegnanti la usano per interrogare gli studenti in modo equo, streamer e negozi per i giveaway, gli amici per scegliere ristorante, film o faccende di casa. Attiva “Rimuovi il vincitore dopo ogni giro” per stabilire un ordine, dividere le persone in squadre o estrarre più premi senza che nessuno vinca due volte. Ogni vincitore finisce nella lista Estrazioni precedenti, che conserva gli ultimi 10 risultati, così puoi rileggere l’ordine in cui sono stati estratti i nomi.',
+            ],
+            [
+                'heading' => 'Il giro e l’annuncio del vincitore',
+                'body' => 'Un giro dura poco più di cinque secondi e rallenta dolcemente fino a fermarsi. Lo spicchio vincente viene evidenziato e il nome compare sotto “La ruota ha scelto” con una breve pioggia di coriandoli. Se “Rimuovi il vincitore dopo ogni giro” è spuntato, il nome viene tolto dalla lista circa un secondo e mezzo dopo l’annuncio, e la scritta diventa “Estratto e rimosso dalla lista”, così tutti vedono ancora chi ha vinto. Se il tuo dispositivo richiede movimenti ridotti, la ruota passa subito al risultato senza animazione né coriandoli.',
+            ],
+            [
+                'heading' => 'Casi d\'uso',
+                'body' => 'Una ruota è utile ogni volta che un gruppo vuole un modo visibile ed equo per scegliere.',
+                'items' => [
+                    'Scegli uno studente per la prossima domanda, rimuovendo ogni nome perché tutti abbiano il loro turno.',
+                    'Estrai in diretta il vincitore di un giveaway sui social, con ogni partecipante su una riga.',
+                    'Decidi dove mangiare, che film guardare o a che gioco giocare quando nessuno si mette d’accordo.',
+                    'Stabilisci l’ordine degli interventi o delle presentazioni girando più volte con la rimozione automatica attiva.',
+                    'Assegna faccende o compiti mettendo i lavori sulla ruota e girando una volta per persona.',
+                ],
+            ],
+            [
+                'heading' => 'Limiti e privacy',
+                'body' => 'La ruota contiene fino a 100 voci, e ogni riga conta come uno spicchio: se scrivi un nome due volte, ottiene due spicchi e il doppio delle probabilità; non esiste un’opzione separata per i pesi. Le voci non vengono salvate: ricaricando la pagina torna la lista di esempio. Le scorciatoie S, Spazio e Invio funzionano solo quando non stai scrivendo nel riquadro. Tutto avviene nel tuo browser; la lista non viene mai caricata su un server.',
             ],
         ],
         'faqs' => [
-            ['q' => 'La ruota è casuale?', 'a' => 'Sì. Il vincitore viene scelto con casualità crittograficamente sicura prima che la ruota si fermi, quindi ogni voce ha la stessa probabilità.'],
-            ['q' => 'Quanti nomi posso aggiungere?', 'a' => 'Fino a 100 voci. Metti ognuna su una riga.'],
+            ['q' => 'La ruota è casuale?', 'a' => 'Sì. Il vincitore viene scelto con casualità crittograficamente sicura tramite crypto.getRandomValues() prima che la ruota si fermi, quindi ogni voce ha la stessa probabilità.'],
+            ['q' => 'Quanti nomi posso aggiungere?', 'a' => 'Fino a 100 voci. Metti ognuna su una riga. Se ne incolli di più, vengono usate solo le prime 100.'],
             ['q' => 'Posso rimuovere un nome dopo che ha vinto?', 'a' => 'Sì. Clicca il pulsante Rimuovi dopo un giro, o spunta “Rimuovi il vincitore dopo ogni giro” per farlo automaticamente.'],
-            ['q' => 'Le mie voci vengono salvate o condivise?', 'a' => 'No. La lista resta nel tuo browser e non viene mai caricata.'],
+            ['q' => 'Posso dare a un’opzione più probabilità?', 'a' => 'Sì, inserendola più volte. Ogni riga è uno spicchio, quindi una voce presente su tre righe ha il triplo delle probabilità di una che compare una sola volta.'],
+            ['q' => 'Mescola cambia le probabilità?', 'a' => 'No. Mescola cambia solo l’ordine degli spicchi sulla ruota. Al giro successivo ogni spicchio ha ancora la stessa probabilità.'],
+            ['q' => 'Posso girare con la tastiera?', 'a' => 'Sì. Premi S, Spazio o Invio per girare, purché il cursore non sia nel riquadro delle voci.'],
+            ['q' => 'Le mie voci vengono salvate o condivise?', 'a' => 'No. La lista resta nel tuo browser e non viene mai caricata. Non viene nemmeno memorizzata, quindi ricaricando la pagina la ruota torna alle voci di esempio.'],
         ],
     ],
 
@@ -912,10 +1094,12 @@ return [
         'keywords' => ['generatore numeri casuali', 'numero casuale', 'estrattore di numeri', 'numero a caso', 'generatore numeri lotteria'],
         'intro' => 'Un generatore di numeri casuali è uno strumento che estrae numeri a caso nell’intervallo che scegli. Genera un numero casuale tra due valori qualsiasi, o un’intera lista. Scegli minimo, massimo e quanti numeri ti servono, poi decidi se ammettere ripetizioni e se ordinare la lista. Ideale per lotterie, estrazioni, attività in classe, campionamenti e giochi.',
         'steps' => [
-            'Inserisci minimo e massimo (vanno bene anche i numeri negativi).',
-            'Scegli quanti numeri vuoi, fino a 1.000.',
-            'Spunta “Senza ripetizioni” e “Ordina dal più basso al più alto” se ti servono.',
-            'Premi Genera o usa una preimpostazione come 1-100 o 6 su 49.',
+            'Scrivi il numero più basso ammesso in Minimo e il più alto in Massimo; vanno bene anche i numeri negativi.',
+            'Inserisci in Quanti quanti numeri vuoi, da 1 a 1.000.',
+            'Spunta “Senza ripetizioni” se ogni numero può uscire una sola volta.',
+            'Spunta “Ordina dal più basso al più alto” se vuoi la lista in ordine crescente.',
+            'Premi Genera, oppure clicca una preimpostazione come 1 – 100 o Lotteria 6 su 49 per compilare i campi ed estrarre subito.',
+            'Usa Copia tutto per copiare una lista di risultati separati da virgole.',
         ],
         'features' => [
             'Qualsiasi intervallo di numeri interi, anche negativi',
@@ -927,18 +1111,44 @@ return [
         'content' => [
             [
                 'heading' => 'Quanto sono casuali i numeri?',
-                'body' => 'I numeri provengono dalla Web Crypto API, un generatore di numeri casuali crittograficamente sicuro integrato in tutti i browser moderni. Il generatore usa anche il campionamento con rifiuto, una tecnica che elimina la piccola distorsione di molti strumenti semplici, così ogni numero dell’intervallo ha esattamente la stessa probabilità.',
+                'body' => 'Ogni risultato proviene da crypto.getRandomValues(), il generatore di numeri casuali crittograficamente sicuro della Web Crypto API, integrato in tutti i browser moderni. Lo strumento non usa Math.random() per scegliere i risultati. Usa anche il campionamento con rifiuto: un valore casuale a 32 bit che renderebbe alcuni numeri leggermente più probabili di altri viene scartato ed estratto di nuovo. Così sparisce la piccola “distorsione del modulo” presente in molti generatori semplici, e ogni numero intero tra il minimo e il massimo, entrambi inclusi, ha esattamente la stessa probabilità.',
             ],
             [
                 'heading' => 'Estrarre numeri senza ripetizioni',
-                'body' => 'Attiva “Senza ripetizioni” quando ogni numero può uscire una sola volta, ad esempio per estrarre biglietti di una lotteria. Lo strumento verifica che l’intervallo sia abbastanza ampio: non puoi estrarre 10 numeri diversi tra 1 e 5. Con le ripetizioni ammesse, ogni numero viene estratto in modo indipendente, come lanciare un dado più volte.',
+                'body' => 'Attiva “Senza ripetizioni” quando ogni numero può uscire una sola volta, ad esempio per estrarre biglietti di una lotteria o numeri del lotto. Lo strumento verifica prima che l’intervallo sia abbastanza ampio: non puoi estrarre 10 numeri diversi tra 1 e 5, e ti dice quanti numeri diversi contiene l’intervallo. Per intervalli fino a 20.000 numeri mescola l’intero intervallo con un mescolamento Fisher-Yates parziale e prende i primi; per intervalli più grandi estrae numeri e ripete semplicemente l’estrazione di quelli già usciti. In entrambi i casi ogni possibile combinazione di numeri è ugualmente probabile. Con le ripetizioni ammesse, ogni numero viene estratto in modo indipendente, come lanciare un dado più volte, quindi lo stesso valore può uscire due volte di fila.',
+            ],
+            [
+                'heading' => 'Intervalli, formati dei numeri e preimpostazioni',
+                'body' => 'Minimo e Massimo accettano qualsiasi numero intero, anche negativo, purché il minimo non sia maggiore del massimo e l’intervallo non contenga più di 4.294.967.296 valori (2 alla 32). Puoi scrivere i numeri grandi nel modo che preferisci, ad esempio 1000, 1.000 o 1 000. I decimali non sono supportati: il generatore restituisce solo numeri interi. Le preimpostazioni impostano tutto ed estraggono subito: 1 – 10, 1 – 100, Dado (1 – 6), Lotteria 6 su 49 (sei numeri diversi, ordinati) e 5 su 1 – 1.000 (cinque numeri diversi nell’ordine di estrazione).',
+            ],
+            [
+                'heading' => 'Leggere i risultati',
+                'body' => 'Quando estrai un solo numero, viene mostrato in grande dopo una breve animazione in stile slot machine di circa 0,8 secondi. Le cifre che scorrono durante l’animazione sono solo decorative; il risultato è già stato scelto con il generatore sicuro prima che l’animazione inizi. Se il tuo dispositivo richiede movimenti ridotti, il numero appare subito. Le estrazioni singole precedenti compaiono sotto “Precedenti:”, così vedi i tuoi ultimi 14 risultati. Quando chiedi due o più numeri, appaiono in una lista con il conteggio sopra e un pulsante Copia tutto.',
+            ],
+            [
+                'heading' => 'Casi d\'uso',
+                'body' => 'Un estrattore di numeri equo è utile ogni volta che una scelta non deve dipendere dalle preferenze di qualcuno.',
+                'items' => [
+                    'Estrai i vincitori di una lotteria numerando i biglietti ed estraendo con “Senza ripetizioni” spuntato.',
+                    'Genera una serie di numeri del lotto con la preimpostazione Lotteria 6 su 49 o con intervallo e quantità a tua scelta.',
+                    'Scegli a caso uno studente, una domanda o un numero di pagina in classe con un rapido intervallo da 1 a 30.',
+                    'Seleziona un campione casuale di righe da una lista numerata o da un foglio di calcolo per controlli o test.',
+                    'Sostituisci un dado perso in un gioco da tavolo con la preimpostazione Dado (1 – 6), o imposta un altro intervallo per altri dadi.',
+                ],
+            ],
+            [
+                'heading' => 'Limiti e privacy',
+                'body' => 'Puoi generare fino a 1.000 numeri per clic, e l’intervallo non deve superare 4.294.967.296 valori possibili. Vengono prodotti solo numeri interi; non ci sono decimali, pesi o liste di valori personalizzate (per estrarre tra dei nomi, usa piuttosto una ruota). Lo strumento non salva impostazioni né risultati, quindi spariscono quando ricarichi la pagina. Tutti i numeri vengono generati nel tuo browser e nulla viene inviato a un server.',
             ],
         ],
         'faqs' => [
-            ['q' => 'Posso generare un numero casuale tra 1 e 100?', 'a' => 'Sì. Imposta il minimo a 1 e il massimo a 100, o clicca la preimpostazione 1-100, poi premi Genera.'],
-            ['q' => 'Posso generare numeri per la lotteria?', 'a' => 'Sì. Usa la preimpostazione “Lotteria 6 su 49” o scegli intervallo e quantità con “Senza ripetizioni” spuntato.'],
-            ['q' => 'Quanti numeri posso generare alla volta?', 'a' => 'Fino a 1.000 numeri per clic. Puoi copiarli tutti con un pulsante.'],
+            ['q' => 'Posso generare un numero casuale tra 1 e 100?', 'a' => 'Sì. Imposta il minimo a 1 e il massimo a 100, o clicca la preimpostazione 1 – 100, che estrae subito un numero.'],
+            ['q' => 'Posso generare numeri per la lotteria?', 'a' => 'Sì. Usa la preimpostazione Lotteria 6 su 49, che estrae sei numeri diversi e li ordina, oppure scegli intervallo e quantità con “Senza ripetizioni” spuntato.'],
+            ['q' => 'Quanti numeri posso generare alla volta?', 'a' => 'Fino a 1.000 numeri per clic. Copia tutto copia l’intera lista come valori separati da virgole.'],
             ['q' => 'Posso usare numeri negativi?', 'a' => 'Sì. Qualsiasi numero intero va bene, ad esempio un intervallo da -50 a 50.'],
+            ['q' => 'Il generatore è davvero casuale?', 'a' => 'Usa il generatore crittograficamente sicuro del tuo browser, crypto.getRandomValues(), con il campionamento con rifiuto perché nessun numero sia favorito. Come ogni casualità informatica non si basa su un processo fisico, ma è imprevedibile e adatta a estrazioni e giochi.'],
+            ['q' => 'Perché ricevo un errore con “Senza ripetizioni” spuntato?', 'a' => 'L’intervallo contiene meno numeri diversi di quanti ne hai chiesti. Ad esempio, da 1 a 5 ci sono solo cinque numeri, quindi non puoi estrarne 10 senza ripetizioni. Allarga l’intervallo o riduci Quanti.'],
+            ['q' => 'I miei numeri vengono salvati da qualche parte?', 'a' => 'No. I risultati vengono creati nel tuo browser e non vengono caricati né salvati. La lista dei risultati precedenti sparisce quando ricarichi la pagina.'],
         ],
     ],
 
@@ -991,10 +1201,12 @@ return [
         'keywords' => ['timer', 'timer online', 'timer con allarme', 'timer 5 minuti', 'conto alla rovescia'],
         'intro' => 'Un timer conta alla rovescia da un tempo impostato fino a zero e poi fa suonare un allarme. Imposta un timer per cucinare, studiare, allenarti, per riunioni o esami. Scrivi qualsiasi durata fino a 99 ore o tocca una preimpostazione come 5 o 25 minuti. Un anello mostra il tempo rimasto, la scheda del browser lo visualizza e un allarme suona quando il conto alla rovescia arriva a zero.',
         'steps' => [
-            'Scrivi ore, minuti e secondi, o tocca una preimpostazione.',
-            'Premi Avvia (o Spazio). L’anello e il titolo della scheda fanno il conto alla rovescia.',
-            'Metti in pausa, riprendi o aggiungi un minuto quando vuoi.',
-            'Quando suona l’allarme, premi Ferma allarme, poi Nuovo timer per ricominciare.',
+            'Scrivi ore, minuti e secondi nelle tre caselle dentro l’anello (si parte da 5 minuti), oppure tocca una preimpostazione per avviare subito.',
+            'Premi Avvia, il tasto Spazio o Invio mentre una casella è selezionata. L’anello e il titolo della scheda fanno il conto alla rovescia.',
+            'Premi Pausa (o Spazio) per fermare il tempo, poi Riprendi per continuare.',
+            'Premi +1 min per aggiungere un minuto mentre il timer è in corso o in pausa.',
+            'Quando il tempo è scaduto, premi Ferma allarme per zittire i bip.',
+            'Premi Nuovo timer (o Spazio) per impostare un altro tempo, oppure Azzera (o R) in qualsiasi momento per tornare alla durata che avevi scritto.',
         ],
         'features' => [
             'Qualsiasi durata da 1 secondo a 99 ore e 59 minuti',
@@ -1006,18 +1218,48 @@ return [
         'content' => [
             [
                 'heading' => 'Il timer funziona in una scheda in background?',
-                'body' => 'Sì. Il timer calcola l’istante esatto in cui deve finire, quindi resta preciso anche quando cambi scheda e il browser rallenta la pagina. Il tempo rimasto compare anche nel titolo della scheda, così puoi tenerlo d’occhio mentre lavori altrove. Lascia la scheda aperta e il volume acceso per sentire l’allarme.',
+                'body' => 'Sì. Il timer calcola l’istante esatto in cui deve finire, quindi resta preciso anche quando cambi scheda e il browser rallenta la pagina. Il tempo rimasto compare anche nel titolo della scheda, così puoi tenerlo d’occhio mentre lavori altrove: si legge qualcosa come 04:59 · Timer, compare un ⏸ davanti quando è in pausa e diventa ⏰ Tempo scaduto! alla fine del conto alla rovescia. Lascia la scheda aperta e il volume acceso per sentire l’allarme.',
             ],
             [
                 'heading' => 'Durate più usate',
-                'body' => 'Cinque minuti sono perfetti per il tè, le pause brevi e gli esercizi veloci. Venticinque minuti sono la classica sessione di concentrazione Pomodoro, di solito seguita da cinque minuti di pausa. Timer più lunghi, da 30 o 60 minuti, vanno bene per esami, riunioni e dolci in forno. Usa le preimpostazioni o scrivi qualsiasi altra durata.',
+                'body' => 'Cinque minuti sono perfetti per il tè, le pause brevi e gli esercizi veloci. Venticinque minuti sono la classica sessione di concentrazione Pomodoro, di solito seguita da cinque minuti di pausa. Timer più lunghi, da 30 o 60 minuti, vanno bene per esami, riunioni e dolci in forno. Le preimpostazioni rapide sono 30 secondi, 1, 3, 5, 10, 15 e 25 minuti e 1 ora; toccandone una le caselle si compilano e il conto alla rovescia parte subito. Per qualsiasi altra durata, scrivila tu.',
+            ],
+            [
+                'heading' => 'Impostare il tempo',
+                'body' => 'Ogni casella accetta fino a due cifre e i valori si sommano, quindi minuti e secondi non devono restare sotto 60: scrivere 90 nella casella dei minuti dà un timer di 1 ora e 30 minuti, e 0:0:90 dà un minuto e mezzo. Sotto le caselle vedi la durata che stai per avviare, ad esempio Timer di 25:00. Mentre è in corso, l’orologio mostra minuti e secondi, e anche le ore quando il tempo rimasto è di un’ora o più. Il timer più lungo è di 99 ore, 59 minuti e 59 secondi; qualsiasi durata superiore viene limitata a questo valore e una nota te lo segnala.',
+            ],
+            [
+                'heading' => 'Come funziona l’allarme',
+                'body' => 'Quando il conto alla rovescia arriva a zero compare un banner Tempo scaduto! e il browser riproduce ogni secondo una serie di tre bip brevi e acuti per un massimo di 30 secondi, o finché non premi Ferma allarme. Il suono viene generato dalla Web Audio API del browser, quindi non c’è nessun file audio da caricare. Togli la spunta da Riproduci un allarme se vuoi un timer silenzioso; il banner e il titolo della scheda ti dicono comunque quando il tempo è scaduto. Il timer non invia notifiche sul desktop e non fa vibrare il telefono, quindi tieni la scheda dove puoi vederla o sentirla.',
+            ],
+            [
+                'heading' => 'Scorciatoie da tastiera',
+                'body' => 'Spazio fa quello che indica il pulsante principale: Avvia, Pausa, Riprendi o Nuovo timer. R azzera il timer riportandolo alla durata che avevi scritto. Mentre scrivi in una delle caselle del tempo, Spazio e R vengono ignorati per non darti fastidio, e Invio avvia il timer. Le scorciatoie vengono ignorate anche quando tieni premuto Ctrl, Alt o Cmd, così le scorciatoie del browser continuano a funzionare.',
+            ],
+            [
+                'heading' => 'Casi d’uso',
+                'body' => 'Alcuni modi in cui si usa un conto alla rovescia online:',
+                'items' => [
+                    'Cronometrare pasta, uova o una torta mentre cucini, con un allarme che senti da tutta la cucina.',
+                    'Fare sessioni di concentrazione Pomodoro da 25 minuti con 5 minuti di pausa tra l’una e l’altra.',
+                    'Mantenere interventi, punti all’ordine del giorno delle riunioni o attività in classe entro una durata fissa.',
+                    'Simulare un esame o un esercizio di scrittura a tempo.',
+                    'Impostare serie e recuperi per un allenamento o una routine di stretching.',
+                ],
+            ],
+            [
+                'heading' => 'Limiti e privacy',
+                'body' => 'Il timer funziona interamente nel browser e non viene inviato nulla a un server. Non viene salvato da nessuna parte, quindi ricaricare o chiudere la scheda annulla il conto alla rovescia. L’allarme suona solo finché la pagina è aperta e l’audio del dispositivo è attivo; i browser permettono i suoni solo dopo che hai interagito con la pagina, cosa che succede quando premi Avvia o una preimpostazione. Con +1 min non puoi portare il timer oltre 99 ore, 59 minuti e 59 secondi.',
             ],
         ],
         'faqs' => [
-            ['q' => 'Il timer emette un suono?', 'a' => 'Sì. Allo scadere suona un allarme per un massimo di 30 secondi o finché non premi Ferma allarme. Puoi disattivare il suono.'],
-            ['q' => 'Perché non ho sentito l’allarme?', 'a' => 'Controlla che il volume sia alto e la scheda ancora aperta. I browser permettono i suoni solo dopo un clic sulla pagina, che avviene quando premi Avvia.'],
+            ['q' => 'Il timer emette un suono?', 'a' => 'Sì. Allo scadere suona un allarme per un massimo di 30 secondi o finché non premi Ferma allarme. Puoi disattivare il suono con la casella Riproduci un allarme.'],
+            ['q' => 'Perché non ho sentito l’allarme?', 'a' => 'Controlla che il volume sia alto, che l’opzione dell’allarme sia spuntata e che la scheda sia ancora aperta. I browser permettono i suoni solo dopo un clic sulla pagina, che avviene quando premi Avvia.'],
             ['q' => 'Qual è il timer più lungo che posso impostare?', 'a' => 'Fino a 99 ore, 59 minuti e 59 secondi.'],
-            ['q' => 'Posso mettere in pausa il timer?', 'a' => 'Sì. Premi Pausa (o Spazio) e Riprendi per continuare. Puoi anche aggiungere un minuto mentre è in funzione.'],
+            ['q' => 'Posso mettere in pausa il timer?', 'a' => 'Sì. Premi Pausa (o Spazio) e Riprendi per continuare. Puoi anche aggiungere un minuto mentre è in corso o in pausa.'],
+            ['q' => 'Posso scrivere più di 59 minuti?', 'a' => 'Sì. Ogni casella accetta fino a 99 e i valori si sommano, quindi 90 minuti diventano un timer da 1:30:00.'],
+            ['q' => 'Ricevo una notifica quando il tempo è scaduto?', 'a' => 'Non viene inviata nessuna notifica di sistema. La pagina mostra un banner Tempo scaduto!, il titolo della scheda diventa ⏰ Tempo scaduto! e l’allarme suona se l’audio è attivo.'],
+            ['q' => 'Cosa succede se ricarico o chiudo la scheda?', 'a' => 'Il conto alla rovescia va perso, perché il timer non viene salvato. Lascia la scheda aperta finché non suona l’allarme.'],
         ],
     ],
 
@@ -1112,9 +1354,11 @@ return [
         'keywords' => ['avif in png', 'convertire avif in png', 'convertitore avif png', 'convertitore avif', 'avif in png trasparente'],
         'intro' => 'Convertire AVIF in PNG trasforma un’immagine AVIF moderna e molto compressa in un PNG senza perdita che quasi tutte le app sanno aprire. Gli sfondi trasparenti restano trasparenti, perciò il PNG è la scelta giusta per loghi, icone e grafiche. Trascina un’immagine o un gruppo e scaricale una alla volta o in un file ZIP.',
         'steps' => [
-            'Trascina le tue immagini AVIF nel riquadro o fai clic per sceglierle (fino a 30 alla volta).',
-            'Ogni immagine viene convertita subito in PNG, nel tuo browser.',
-            'Fai clic su Scarica accanto a un’immagine o su Scarica tutto (ZIP) per l’intero gruppo.',
+            'Trascina le tue immagini AVIF nel riquadro o fai clic per sceglierle (fino a 30 alla volta, 50 MB ciascuna).',
+            'Ogni immagine viene convertita subito in PNG, nel tuo browser; intanto l’elenco mostra “in attesa…” e “conversione…”.',
+            'Controlla accanto a ogni immagine il nuovo nome del file .png e il suo peso.',
+            'Fai clic su Scarica accanto a un’immagine o su Scarica tutto (ZIP) per l’intero gruppo quando due o più sono pronte.',
+            'Rimuovi un’immagine con il pulsante ✕ o fai clic su Cancella tutto per iniziare un nuovo gruppo.',
         ],
         'features' => [
             'Converte AVIF in PNG senza perdita',
@@ -1123,13 +1367,49 @@ return [
             '100% privato: non viene caricato nulla',
         ],
         'content' => [
-            ['heading' => 'Quando scegliere il PNG invece del JPG?', 'body' => 'Scegli il PNG per loghi, icone, screenshot e qualsiasi immagine con zone trasparenti o contorni netti, perché il PNG è senza perdita e supporta la trasparenza. Per le foto normali il JPG crea file molto più leggeri, quindi da AVIF a JPG di solito è la scelta migliore.'],
-            ['heading' => 'Convertire AVIF in PNG fa perdere qualità?', 'body' => 'La conversione in sé non aggiunge perdite, perché il PNG salva ogni pixel esattamente. Se l’AVIF originale era stato compresso con perdita, quella perdita precedente rimane, ma non se ne aggiungono di nuove.'],
+            [
+                'heading' => 'Quando scegliere il PNG invece del JPG?',
+                'body' => 'Scegli il PNG per loghi, icone, screenshot e qualsiasi immagine con zone trasparenti o contorni netti, perché il PNG è senza perdita e supporta la trasparenza. Per le foto normali il JPG crea file molto più leggeri, quindi da AVIF a JPG di solito è la scelta migliore.',
+            ],
+            [
+                'heading' => 'Convertire AVIF in PNG fa perdere qualità?',
+                'body' => 'La conversione in sé non aggiunge perdite, perché il PNG salva ogni pixel esattamente. Se l’AVIF originale era stato compresso con perdita, quella perdita precedente rimane, ma non se ne aggiungono di nuove.',
+            ],
+            [
+                'heading' => 'Perché convertire un AVIF?',
+                'body' => 'AVIF è un formato di immagine basato sul codec video AV1. Crea file molto leggeri, ed è per questo che molti siti ormai lo usano, ma tanti programmi di grafica, software per ufficio, moduli di caricamento e dispositivi meno recenti non riescono ancora ad aprirlo. Salvando un’immagine da una pagina web puoi ritrovarti con un file .avif che non riesci a usare. Convertirlo in PNG ti dà un file che quasi tutti i programmi accettano, senza aggiungere nuove perdite di compressione e senza perdere gli sfondi trasparenti.',
+            ],
+            [
+                'heading' => 'Come funziona la conversione',
+                'body' => 'Il browser decodifica ogni AVIF, lo disegna a grandezza piena su un canvas invisibile e salva il canvas come PNG. I pixel trasparenti restano trasparenti, perché dietro l’immagine non viene dipinto nulla. Il PNG è senza perdita, quindi non c’è nessuna impostazione di qualità da scegliere. Le immagini vengono elaborate una dopo l’altra e ogni nuovo file mantiene il nome originale con l’estensione .png. Il download ZIP si chiama converted-to-png.zip e i file con lo stesso nome vengono rinominati al suo interno, così nulla viene sovrascritto.',
+            ],
+            [
+                'heading' => 'Leggere l’elenco dei file',
+                'body' => 'Ogni immagine che aggiungi ha una riga con anteprima e peso originale. A conversione finita, la riga mostra il nuovo nome PNG e il peso, così puoi confrontarli a colpo d’occhio; aspettati che il PNG sia sensibilmente più pesante. Se un file non si può convertire, il motivo compare in rosso nella sua riga mentre gli altri proseguono, e una riga sotto l’elenco conta quante immagini sono già state convertite.',
+            ],
+            [
+                'heading' => 'Casi d\'uso',
+                'body' => 'Questi sono motivi comuni per trasformare immagini AVIF in PNG.',
+                'items' => [
+                    'Hai salvato un logo o una grafica da un sito ed è stato scaricato come AVIF, ma il tuo programma di grafica o di presentazioni non lo apre.',
+                    'Un modulo, un marketplace o un sistema di gestione dei contenuti rifiuta i caricamenti AVIF ma accetta il PNG.',
+                    'Ti serve una copia senza perdita di un’immagine AVIF da modificare, ritagliare o annotare senza aggiungere artefatti di compressione.',
+                    'Vuoi mantenere lo sfondo trasparente di un’icona AVIF rendendola compatibile con app meno recenti.',
+                ],
+            ],
+            [
+                'heading' => 'Limiti e privacy',
+                'body' => 'Puoi aggiungere fino a 30 immagini alla volta, ciascuna fino a 50 MB; i file più grandi vengono saltati con un avviso. Le immagini con un lato oltre i 10.000 pixel vengono ridotte per starci dentro. Il tuo browser deve saper decodificare l’AVIF: le versioni attuali di Chrome, Edge, Firefox e Safari ci riescono, e se il tuo non può, il file mostra un errore che dice che non è stato possibile aprirlo. L’AVIF può memorizzare colori a 10 o 12 bit e HDR, ma il canvas del browser lavora a 8 bit per canale, quindi il PNG è un’immagine standard a 8 bit. Un AVIF animato diventa un singolo fotogramma fisso e i metadati non vengono copiati. Tutto avviene nel tuo browser e nessuna immagine viene caricata.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Come converto un AVIF in PNG?', 'a' => 'Trascina il file AVIF nel riquadro qui sopra. Viene convertito subito in PNG e lo scarichi con un clic.'],
             ['q' => 'La trasparenza viene mantenuta?', 'a' => 'Sì. Il PNG supporta la trasparenza, quindi le zone trasparenti dell’AVIF restano tali nel PNG.'],
             ['q' => 'Perché il PNG è molto più pesante?', 'a' => 'AVIF usa una compressione molto efficiente mentre il PNG è senza perdita: la stessa immagine può pesare molte volte di più in PNG.'],
+            ['q' => 'Perché il mio file AVIF mostra un errore?', 'a' => 'Il browser non è riuscito a decodificarlo. Il file potrebbe essere danneggiato, oppure il tuo browser potrebbe essere troppo vecchio per leggere l’AVIF. Riprova con una versione aggiornata di Chrome, Edge, Firefox o Safari.'],
+            ['q' => 'Posso convertire anche altri formati?', 'a' => 'Sì. Il riquadro accetta anche JPG, PNG, WebP, GIF e BMP e converte ciascuno di essi in PNG allo stesso modo.'],
+            ['q' => 'Meglio convertire in PNG o in WebP?', 'a' => 'Scegli il PNG quando ti serve un file che si apra quasi ovunque o una copia senza perdita da modificare. I file WebP sono molto più leggeri e supportano anch’essi la trasparenza, quindi da AVIF a WebP è adatto alle immagini che tornano su un sito web.'],
+            ['q' => 'Funziona sul telefono?', 'a' => 'Sì, in qualsiasi browser mobile in grado di decodificare l’AVIF. Le immagini molto grandi richiedono molta memoria, quindi se il browser del telefono non riesce a creare il PNG vedrai un errore che ti chiede di provare dimensioni più piccole.'],
             ['q' => 'Le mie immagini vengono caricate online?', 'a' => 'No. La conversione avviene nel browser e le tue immagini non lasciano mai il dispositivo.'],
         ],
     ],
@@ -1143,9 +1423,13 @@ return [
         'keywords' => ['avif in webp', 'convertire avif in webp', 'convertitore avif webp', 'avif webp', 'convertitore avif online'],
         'intro' => 'Convertire AVIF in WebP ti dà un’immagine leggera e adatta al web, accettata da più app e CMS rispetto ad AVIF. Il WebP mantiene la trasparenza e comprime bene, così i file restano molto più leggeri che in PNG o JPG. Trascina un’immagine o un gruppo, scegli la qualità e scarica i risultati.',
         'steps' => [
-            'Trascina le tue immagini AVIF nel riquadro o fai clic per sceglierle (fino a 30 alla volta).',
-            'Regola la qualità del WebP se vuoi; l’85% è un buon compromesso tra peso e nitidezza.',
-            'Fai clic su Scarica accanto a un’immagine o su Scarica tutto (ZIP) per l’intero gruppo.',
+            'Trascina le tue immagini AVIF nel riquadro o fai clic per sceglierle (fino a 30 alla volta, massimo 50 MB ciascuna).',
+            'Attendi qualche istante mentre ogni file viene convertito; l’elenco mostra poi il nuovo nome .webp e il peso.',
+            'Sposta il cursore della qualità (dal 50 al 100%, 92% di default) se vuoi file più leggeri o più nitidi.',
+            'Se hai cambiato la qualità dopo la conversione, fai clic su Converti di nuovo per rifare il gruppo.',
+            'Fai clic su Scarica accanto a un’immagine per salvare quel WebP.',
+            'Con due o più immagini convertite, fai clic su Scarica tutto (ZIP) per averle in un unico file.',
+            'Rimuovi una singola immagine con ✕, oppure fai clic su Cancella tutto per iniziare un nuovo gruppo.',
         ],
         'features' => [
             'Converte AVIF in WebP nel browser',
@@ -1154,13 +1438,48 @@ return [
             '100% privato: non viene caricato nulla',
         ],
         'content' => [
-            ['heading' => 'AVIF o WebP: quale usare?', 'body' => 'Sono entrambi formati moderni con trasparenza. AVIF di solito crea file più leggeri, ma WebP esiste da più tempo ed è accettato da più app, plugin e moduli. Convertire in WebP è un buon compromesso quando un sito o uno strumento non accetta AVIF ma vuoi comunque immagini leggere.'],
-            ['heading' => 'Il WebP sarà identico?', 'body' => 'Dall’85% di qualità in su la differenza è difficilissima da notare. Ogni salvataggio con perdita può togliere qualche dettaglio: per archiviare o continuare a modificare, da AVIF a PNG conserva ogni pixel.'],
+            [
+                'heading' => 'AVIF o WebP: quale usare?',
+                'body' => 'Sono entrambi formati moderni con trasparenza. AVIF di solito crea file più leggeri, ma WebP esiste da più tempo ed è accettato da più app, plugin e moduli di caricamento. Convertire in WebP è un buon compromesso quando un sito o uno strumento non accetta AVIF ma vuoi comunque immagini leggere.',
+            ],
+            [
+                'heading' => 'Il WebP sarà identico?',
+                'body' => 'Il WebP viene salvato con compressione con perdita alla qualità che scegli. Dall’85% di qualità in su la differenza è difficilissima da notare, e il suggerimento sotto il cursore ricorda che dal 90% in su il risultato sembra identico all’originale. Ogni salvataggio con perdita può togliere qualche dettaglio: per archiviare o continuare a modificare, da AVIF a PNG conserva ogni pixel.',
+            ],
+            [
+                'heading' => 'Come funziona la conversione',
+                'body' => 'Il browser decodifica ogni AVIF con il proprio decodificatore di immagini integrato, lo disegna su un canvas alla larghezza e all’altezza originali e salva il canvas come WebP alla qualità selezionata. I file vengono convertiti uno dopo l’altro e ognuno mostra prima “in attesa”, poi “conversione” e infine il nuovo nome e il nuovo peso accanto a quello originale, così puoi confrontarli subito. Le immagini molto grandi sono l’unica eccezione al mantenimento delle dimensioni originali: se un lato supera i 10.000 pixel, l’immagine viene ridotta fino a stare in 10.000 × 10.000.',
+            ],
+            [
+                'heading' => 'Cosa cambia nel file convertito',
+                'body' => 'Vengono trasferiti solo i pixel. I metadati salvati nell’AVIF, come i dati della fotocamera, le date o la posizione GPS, non vengono copiati nel WebP, cosa utile se condividi foto pubblicamente. Un AVIF animato diventa un’unica immagine statica. Il WebP memorizza 8 bit per canale di colore, quindi le foto AVIF HDR o a 10 bit vengono convertite in gamma dinamica standard e su uno schermo HDR possono apparire un po’ diverse dall’originale. Ogni file in uscita mantiene il nome originale con l’estensione .webp e, se due file in uno ZIP avessero lo stesso nome, il secondo riceve il suffisso (2) invece di sovrascrivere il primo.',
+            ],
+            [
+                'heading' => 'Altri formati e browser meno recenti',
+                'body' => 'Il convertitore non si limita ad AVIF: puoi trascinare nello stesso gruppo anche file JPG, PNG, WebP, GIF o BMP e ottenere la versione WebP di tutti. Se il tuo browser non sa salvare in WebP, come Safari prima della versione 17, l’immagine viene salvata in JPG e una nota sotto il file te lo segnala. Se un file non si apre, per esempio perché è danneggiato o il browser non riesce a decodificarlo, quel file mostra un errore e il resto del gruppo prosegue.',
+            ],
+            [
+                'heading' => 'Casi d’uso',
+                'body' => 'Motivi tipici per trasformare AVIF in WebP:',
+                'items' => [
+                    'Caricare immagini su un sito costruito con un page builder, un CMS o un marketplace che accetta WebP ma rifiuta AVIF.',
+                    'Usare immagini AVIF scaricate in un programma di grafica o in un’app che apre WebP ma non AVIF.',
+                    'Mantenere leggeri loghi trasparenti e scontornati di prodotti passando a un formato più diffuso.',
+                    'Convertire in una volta sola una cartella di foto AVIF e scaricarle insieme in uno ZIP.',
+                    'Condividere foto senza i metadati della fotocamera e della posizione presenti nei file originali.',
+                ],
+            ],
+            [
+                'heading' => 'Limiti e privacy',
+                'body' => 'Tutto avviene nel browser: le immagini vengono decodificate, convertite e compresse in ZIP sul tuo dispositivo e non vengono mai caricate su un server. Puoi aggiungere fino a 30 immagini per gruppo e ogni file può pesare fino a 50 MB; i file più grandi vengono saltati con un messaggio. AVIF di solito comprime meglio di WebP, quindi il WebP spesso pesa più dell’AVIF di partenza; abbassa la qualità se il peso è importante. Le immagini molto grandi usano molta memoria, il che può rallentare la conversione su smartphone e computer meno recenti.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Come converto un AVIF in WebP?', 'a' => 'Trascina il file AVIF nel riquadro qui sopra, scegli la qualità e scarica il WebP con un clic.'],
             ['q' => 'La trasparenza viene mantenuta?', 'a' => 'Sì. Il WebP supporta la trasparenza, quindi le zone trasparenti restano tali.'],
             ['q' => 'Posso convertire più file AVIF insieme?', 'a' => 'Sì. Trascina fino a 30 immagini AVIF insieme e scarica ogni WebP singolarmente o tutte in un unico file ZIP.'],
+            ['q' => 'Il WebP sarà più leggero dell’AVIF?', 'a' => 'Di solito no. AVIF comprime in modo più efficiente, quindi il WebP spesso pesa un po’ di più. L’elenco dei file mostra entrambi i pesi e una qualità più bassa rende il WebP più leggero.'],
+            ['q' => 'Perché ho ottenuto un JPG invece di un WebP?', 'a' => 'Il tuo browser non sa salvare immagini WebP, quindi il convertitore ha usato il JPG e ha mostrato una nota. Aggiornare il browser, o usare una versione attuale di Chrome, Edge, Firefox o Safari, risolve il problema.'],
             ['q' => 'Quali browser lo supportano?', 'a' => 'Le versioni attuali di Chrome, Edge, Firefox e Safari sanno leggere AVIF e salvare WebP, quindi il convertitore funziona in tutti.'],
             ['q' => 'Le mie immagini vengono caricate online?', 'a' => 'No. Tutto avviene nel browser e le tue immagini non lasciano mai il dispositivo.'],
         ],
@@ -1175,9 +1494,12 @@ return [
         'keywords' => ['verifica leggibilità', 'leggibilità di un testo', 'indice di leggibilità', 'indice flesch', 'livello di lettura', 'test di leggibilità'],
         'intro' => 'Uno strumento di verifica della leggibilità misura quanto è facile leggere un testo, con formule basate sulla lunghezza di frasi e parole. Incolla un articolo, una tesina, un’email o una bozza scritta con l’IA per ottenere l’indice di facilità di lettura Flesch, il livello scolastico secondo cinque formule e l’elenco delle frasi lunghe da accorciare. Il testo viene analizzato nel browser e non viene mai caricato.',
         'steps' => [
-            'Incolla o scrivi il testo nel riquadro.',
-            'Leggi l’indice Flesch e il livello scolastico dato da ogni formula.',
-            'Accorcia le frasi lunghe elencate sotto i risultati e controlla di nuovo.',
+            'Incolla o scrivi il testo nel riquadro Il tuo testo; i punteggi compaiono appena c’è una frase.',
+            'Leggi l’indice di facilità di lettura Flesch nel cerchio colorato e il livello accanto.',
+            'Controlla sotto il punteggio il livello scolastico medio e il tempo di lettura stimato.',
+            'Confronta nella tabella il livello scolastico (USA) dato da ciascuna delle cinque formule.',
+            'Accorcia le frasi elencate sotto “Frasi lunghe da accorciare”, partendo dalla più lunga.',
+            'Modifica il testo nel riquadro e guarda i punteggi aggiornarsi, oppure premi Cancella per ricominciare.',
         ],
         'features' => [
             'Indice Flesch e livello Flesch-Kincaid',
@@ -1186,14 +1508,46 @@ return [
             'Risultati immediati; non viene caricato nulla',
         ],
         'content' => [
-            ['heading' => 'Qual è un buon punteggio di leggibilità?', 'body' => 'Per la maggior parte di siti, blog ed email punta a un indice Flesch di almeno 60, cioè un linguaggio semplice che quasi tutti gli adulti leggono facilmente, e a un livello scolastico di circa 8 o meno. I testi tecnici e accademici spesso si fermano tra 30 e 50: vanno bene per gli esperti ma sono difficili per tutti gli altri.'],
-            ['heading' => 'Come rendo il mio testo più facile da leggere?', 'body' => 'Dividi le frasi lunghe in due, preferisci parole brevi e comuni, usa la forma attiva e spezza i paragrafi troppo lunghi. Queste modifiche alzano direttamente l’indice Flesch, perché si calcola dalle parole per frase e dalle sillabe per parola.'],
+            [
+                'heading' => 'Qual è un buon punteggio di leggibilità?',
+                'body' => 'Per la maggior parte di siti, blog ed email punta a un indice Flesch di almeno 60, cioè un linguaggio semplice che quasi tutti gli adulti leggono facilmente, e a un livello scolastico di circa 8 o meno. I testi tecnici e accademici spesso si fermano tra 30 e 50: vanno bene per gli esperti ma sono difficili per tutti gli altri. Lo strumento colora il punteggio di verde da 60 in su, di arancione da 30 a poco meno di 60 e di rosso sotto 30, e lo etichetta da Molto facile (90 e oltre) a Molto difficile (sotto 30).',
+            ],
+            [
+                'heading' => 'Quali formule usa lo strumento?',
+                'body' => 'L’indice di facilità di lettura Flesch è 206,835 − 1,015 × (parole per frase) − 84,6 × (sillabe per parola); più è alto, più il testo è facile. Le cinque formule del livello scolastico stimano ciascuna la classe scolastica statunitense necessaria al lettore. Flesch-Kincaid è 0,39 × parole per frase + 11,8 × sillabe per parola − 15,59. Gunning Fog è 0,4 × (parole per frase + percentuale di parole complesse). SMOG è 1,043 × √(parole complesse × 30 ÷ frasi) + 3,1291. Coleman-Liau usa le lettere invece delle sillabe: 0,0588 × lettere ogni 100 parole − 0,296 × frasi ogni 100 parole − 15,8. L’indice di leggibilità automatizzato (ARI) è 4,71 × lettere per parola + 0,5 × parole per frase − 21,43. Qui una parola complessa è qualsiasi parola con tre o più sillabe. Il livello scolastico medio mostrato sotto il punteggio è la media delle cinque formule.',
+            ],
+            [
+                'heading' => 'Come vengono contate parole, frasi e sillabe',
+                'body' => 'Una parola è una sequenza di lettere, comprese le lettere latine accentate, e una contrazione come “don\'t” conta come una parola; i numeri da soli non contano come parole. Una frase finisce con un punto, un punto interrogativo, un punto esclamativo o dei puntini di sospensione seguiti da uno spazio, oppure con un a capo. Le abbreviazioni inglesi comuni come Mr., Mrs., Dr., Prof., etc., e.g. e i.e. non chiudono la frase, e il punto in un numero decimale come 3.5 viene ignorato. Le sillabe sono stimate con una regola pratica invece che con un dizionario: le parole di tre lettere o meno contano una sillaba, una e, es o ed muta finale viene tolta e ogni gruppo di vocali (a, e, i, o, u, y) conta come una sillaba. Come ogni regola di questo tipo, per alcune parole sbaglia di uno, e questo sposta leggermente i punteggi.',
+            ],
+            [
+                'heading' => 'Come rendo il mio testo più facile da leggere?',
+                'body' => 'Dividi le frasi lunghe in due, preferisci parole brevi e comuni, usa la forma attiva e spezza i paragrafi troppo lunghi. Queste modifiche alzano direttamente l’indice Flesch, perché si calcola dalle parole per frase e dalle sillabe per parola. Lo strumento elenca ogni frase con più di 25 parole, dalla più lunga, e ne mostra fino a cinque con il numero di parole, così sai da dove iniziare. La riga delle statistiche mostra parole, frasi, parole per frase, sillabe per parola e parole complesse, e ti fa capire se sono le frasi lunghe o le parole lunghe ad abbassare il punteggio.',
+            ],
+            [
+                'heading' => 'Casi d\'uso',
+                'body' => 'Un punteggio di leggibilità è un controllo rapido e oggettivo prima di pubblicare o inviare qualcosa.',
+                'items' => [
+                    'Verifica un articolo del blog o una landing page rispetto a un obiettivo come Flesch 60 o livello 8 prima della pubblicazione.',
+                    'Rendi più naturale una bozza scritta con l’IA trovando e dividendo le sue frasi più lunghe.',
+                    'Semplifica istruzioni, articoli di assistenza o email ai clienti perché anche i non esperti possano seguirli.',
+                    'Controlla se un tema scolastico o una relazione è adatto al livello di lettura dei destinatari.',
+                    'Confronta due versioni dello stesso paragrafo per vedere quale si legge più facilmente.',
+                ],
+            ],
+            [
+                'heading' => 'Limiti e privacy',
+                'body' => 'Le formule misurano solo la lunghezza delle frasi e delle parole. Non possono dire se un testo è corretto, ben organizzato o adatto ai lettori, e anche una parola breve può essere poco nota. Titoli, voci di elenco e righe senza punteggiatura contano ciascuno come una frase separata, cosa che può far sembrare un testo più facile di quanto sia, quindi controlla possibilmente testo continuo. Le formule sono state create per l’inglese e, sulle pagine non in inglese, lo strumento mostra un avviso che i punteggi sono solo un’indicazione approssimativa. Il tempo di lettura presuppone 238 parole al minuto. Il testo viene analizzato nel tuo browser mentre scrivi e non viene mai caricato.',
+            ],
         ],
         'faqs' => [
-            ['q' => 'Cos’è l’indice di facilità di lettura Flesch?', 'a' => 'È un punteggio da 0 a 100 basato sulla lunghezza media delle frasi e sulle sillabe per parola. Più è alto, più il testo è facile: 60-70 è linguaggio semplice, oltre 90 è molto facile.'],
+            ['q' => 'Cos’è l’indice di facilità di lettura Flesch?', 'a' => 'È un punteggio basato sulla lunghezza media delle frasi e sulle sillabe per parola. Di solito è tra 0 e 100, ma un testo molto semplice può superarlo; lo strumento mostra valori da 0 a 121. Più è alto, più il testo è facile: 60-70 è linguaggio semplice, oltre 90 è molto facile.'],
             ['q' => 'Cosa significa il livello scolastico?', 'a' => 'È la classe scolastica statunitense necessaria per capire il testo. Il livello 8 corrisponde a un ragazzo tipico di 13-14 anni.'],
+            ['q' => 'Perché i cinque livelli scolastici sono diversi?', 'a' => 'Ogni formula pesa cose diverse. Flesch-Kincaid e SMOG usano le sillabe, Gunning Fog conta le parole di tre o più sillabe, Coleman-Liau e l’indice ARI contano le lettere. La media dà un quadro più stabile di qualsiasi formula singola.'],
+            ['q' => 'Cosa conta come frase lunga?', 'a' => 'Qualsiasi frase con più di 25 parole. Sono tutte contate nel titolo, e vengono mostrate le cinque più lunghe perché tu possa accorciarle per prime.'],
             ['q' => 'Posso controllare testi scritti con l’IA?', 'a' => 'Sì. Le bozze dell’IA hanno spesso frasi e parole lunghe; lo strumento mostra quali frasi accorciare perché il testo suoni più naturale.'],
-            ['q' => 'Funziona in italiano?', 'a' => 'Le formule sono state create per l’inglese, quindi per l’italiano i risultati sono solo un’indicazione approssimativa.'],
+            ['q' => 'Funziona in italiano?', 'a' => 'Le formule sono state create per l’inglese, quindi per l’italiano i risultati sono solo un’indicazione approssimativa. Anche le regole per le sillabe sono regole inglesi.'],
+            ['q' => 'Il mio testo viene caricato o salvato?', 'a' => 'No. Tutti i conteggi e i calcoli avvengono nel tuo browser, e il testo non viene salvato. Premi Cancella per svuotare il riquadro.'],
         ],
         'table' => [
             'caption' => 'Punteggi dell’indice Flesch',
@@ -1216,9 +1570,12 @@ return [
         'keywords' => ['rilevatore ia', 'rilevatore di contenuti ia', 'rilevatore testo ia', 'rilevatore chatgpt', 'riconoscere testo ia', 'ai detector gratis'],
         'intro' => 'Un rilevatore di contenuti IA stima se un testo è stato scritto da un chatbot come ChatGPT. Questo analizza quattro segnali che distinguono la scrittura tipica dell’IA da quella di una persona: quanto sono regolari le frasi, le espressioni tipiche dell’IA, le contrazioni e la varietà del vocabolario. Ti dà un punteggio e mostra esattamente cosa l’ha fatto salire. Analizza testi in inglese nel tuo browser, senza caricare nulla.',
         'steps' => [
-            'Incolla almeno 80 parole di testo in inglese nel riquadro.',
-            'Fai clic su Controlla testo per vedere il punteggio e i quattro segnali.',
-            'Guarda le espressioni tipiche dell’IA trovate; riscriverle rende il testo più umano.',
+            'Incolla almeno 80 parole di testo in inglese nel riquadro Testo da controllare.',
+            'Fai clic su Controlla testo.',
+            'Leggi il punteggio di somiglianza all’IA e il giudizio: Probabilmente generato dall’IA, Misto o incerto oppure Probabilmente scritto da una persona.',
+            'Guarda le quattro barre dei segnali per capire quali schemi hanno fatto salire il punteggio.',
+            'Controlla le espressioni tipiche dell’IA trovate, ciascuna con il numero di occorrenze (fino a 15); riscriverle rende il testo più umano.',
+            'Fai clic su Cancella per svuotare il riquadro e controllare un altro testo.',
         ],
         'features' => [
             'Punteggio di somiglianza all’IA da 0 a 100%',
@@ -1227,13 +1584,44 @@ return [
             'Gratis, illimitato e privato: non viene caricato nulla',
         ],
         'content' => [
-            ['heading' => 'Come funziona il rilevamento dell’IA?', 'body' => 'I modelli di IA tendono a scrivere frasi molto regolari, a ripetere le stesse espressioni curate («moreover», «it is important to note», «delve») e a evitare le contrazioni. Le persone di solito alternano frasi brevi e lunghe e scrivono in modo più informale. Il rilevatore misura questi schemi e li combina in un unico punteggio.'],
-            ['heading' => 'I rilevatori di IA sono affidabili?', 'body' => 'Nessun rilevatore di IA è del tutto affidabile. Un testo umano molto formale può ottenere un punteggio alto, e un testo IA rielaborato o scritto con tono informale uno basso. Considera il punteggio un indizio per guardare meglio, mai una prova, e non usarlo mai da solo per accusare uno studente o un autore di copiare.'],
+            [
+                'heading' => 'Come funziona il rilevamento dell’IA?',
+                'body' => 'I modelli di IA tendono a scrivere frasi molto regolari, a ripetere le stesse espressioni curate («moreover», «it is important to note», «delve») e a evitare le contrazioni. Le persone di solito alternano frasi brevi e lunghe e scrivono in modo più informale. Il rilevatore misura questi schemi e li combina in un unico punteggio.',
+            ],
+            [
+                'heading' => 'I quattro segnali nel dettaglio',
+                'body' => 'Ogni segnale è mostrato come una barra da 0 a 100%. Frasi di lunghezza uniforme confronta quanto variano le lunghezze delle frasi rispetto alla loro media (il coefficiente di variazione): frasi molto regolari spingono il valore verso il 100%, mentre un forte mix di frasi brevi e lunghe lo porta a 0. Espressioni tipiche dell’IA conta, ogni 100 parole, le corrispondenze con un elenco interno di circa 60 parole ed espressioni, come «delve», «tapestry», «plays a crucial role» e «in today\'s fast-paced world»; da 1,5 corrispondenze ogni 100 parole in su si arriva al 100%. Poche contrazioni conta forme come «don\'t» e «it\'s» ogni 100 parole; nessuna contrazione dà il 100%. Vocabolario ripetitivo misura quante parole diverse compaiono in ogni tratto di 50 parole, in media su tutto il testo, e sale quanto più la varietà di parole si restringe.',
+            ],
+            [
+                'heading' => 'Come si ottengono punteggio e giudizio',
+                'body' => 'Il punteggio è una media ponderata dei quattro segnali: la regolarità delle frasi e le espressioni tipiche dell’IA pesano il 35% ciascuna, contrazioni e vocabolario il 15% ciascuno. Con un punteggio dal 65% in su il giudizio è Probabilmente generato dall’IA, dal 40% al 64% Misto o incerto e sotto il 40% Probabilmente scritto da una persona. Queste soglie sono regole fisse, non una probabilità misurata: un punteggio del 70% non significa che ci sia il 70% di probabilità che il testo venga da un’IA. Lo strumento non usa un modello linguistico e non confronta il tuo testo con alcun database di testi IA noti.',
+            ],
+            [
+                'heading' => 'I rilevatori di IA sono affidabili?',
+                'body' => 'Nessun rilevatore di IA è del tutto affidabile. Un testo umano molto formale può ottenere un punteggio alto, e un testo IA rielaborato o scritto con tono informale uno basso. Alcune ricerche hanno inoltre rilevato che i rilevatori classificano più spesso come IA i testi di chi non è madrelingua inglese. Considera il punteggio un indizio per guardare meglio, mai una prova, e non usarlo mai da solo per accusare uno studente o un autore di copiare.',
+            ],
+            [
+                'heading' => 'Casi d\'uso',
+                'body' => 'Il punteggio è più utile come aiuto alla scrittura e come spunto per guardare meglio, non come giudizio su una persona.',
+                'items' => [
+                    'Controlla la tua bozza alla ricerca di frasi fatte e frasi troppo regolari prima di pubblicarla o consegnarla.',
+                    'Rivedi un testo scritto con l’aiuto dell’IA perché suoni naturale, usando l’elenco delle espressioni trovate come lista di cose da sistemare.',
+                    'Ottieni un rapido secondo parere su un articolo o un tema consegnato prima di parlare con l’autore di come è stato scritto.',
+                    'Osserva come cambia il punteggio quando vari la lunghezza delle frasi o usi le contrazioni, per capire cosa rende un testo meccanico.',
+                ],
+            ],
+            [
+                'heading' => 'Limiti e privacy',
+                'body' => 'Il rilevatore analizza solo testi in inglese; l’elenco delle espressioni e gli schemi delle contrazioni sono in inglese. Servono almeno 80 parole e tre frasi, e se il testo è troppo corto ti dice quante parole hai. Le frasi vengono divise a punti, punti interrogativi, punti esclamativi e a capo, quindi elenchi puntati e titoli contano come frasi brevi e possono cambiare il segnale sulla regolarità. Anche le persone usano parole comuni presenti nell’elenco, come «crucial», «journey» o «additionally». L’analisi avviene interamente nel tuo browser: il testo che incolli non viene caricato, salvato né inviato da nessuna parte.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Riconosce ChatGPT?', 'a' => 'Segnala gli schemi di scrittura che ChatGPT e modelli simili producono spesso. Un testo IA rielaborato o guidato con cura potrebbe non essere rilevato.'],
-            ['q' => 'Quanto testo serve?', 'a' => 'Almeno 80 parole. Con testi di 300 parole o più il punteggio è più significativo.'],
+            ['q' => 'Quanto testo serve?', 'a' => 'Almeno 80 parole in tre o più frasi. Con testi di 300 parole o più il punteggio è più significativo.'],
             ['q' => 'Un testo umano può sembrare IA?', 'a' => 'Sì. Un testo molto formale e regolare con parole come «furthermore» può ottenere un punteggio alto anche se l’ha scritto una persona. Per questo il punteggio è solo indicativo.'],
+            ['q' => 'Il punteggio indica la probabilità che un testo sia generato dall’IA?', 'a' => 'No. È una combinazione ponderata di quattro segnali di scrittura confrontata con soglie fisse, non una probabilità. Usalo per vedere quali schemi spiccano, non come una percentuale di probabilità.'],
+            ['q' => 'Funziona anche con altre lingue?', 'a' => 'No. L’elenco delle espressioni e il controllo delle contrazioni sono pensati per l’inglese, quindi i risultati per altre lingue non sono significativi.'],
+            ['q' => 'Cosa faccio se un mio testo ottiene un punteggio alto?', 'a' => 'Guarda quale segnale è più alto. Se è la regolarità delle frasi, varia la lunghezza delle frasi; se sono le espressioni, sostituisci le parole elencate con altre più semplici; se sono le contrazioni, scrivi come parleresti, dove il tono lo consente. Se devi dimostrare come hai scritto un testo, bozze e appunti sono una prova molto migliore di qualsiasi punteggio di un rilevatore.'],
             ['q' => 'Il mio testo viene salvato?', 'a' => 'No. L’analisi avviene nel browser e il tuo testo non viene mai inviato da nessuna parte.'],
         ],
     ],
@@ -1553,6 +1941,7 @@ return [
             ],
         ],
     ],
+
     'rotate-pdf' => [
         'name' => 'Ruota PDF',
         'title' => 'Ruota PDF - Correggi Pagine Storte Online Gratis',
@@ -1584,7 +1973,9 @@ return [
             ['q' => 'Il mio PDF viene caricato su un server?', 'a' => 'No. Il PDF viene aperto e ruotato interamente nel tuo browser con JavaScript e non viene mai inviato da nessuna parte.'],
             ['q' => 'Questo aggiunge una filigrana o riduce la qualità?', 'a' => 'No. La rotazione cambia solo l\'orientamento di ogni pagina. Non viene aggiunta nessuna filigrana, logo o pagina extra, e non si perde qualità di immagine o testo.'],
         ],
-    ],    'delete-pdf-pages' => [
+    ],
+
+    'delete-pdf-pages' => [
         'name' => 'Elimina pagine PDF',
         'title' => 'Elimina Pagine PDF - Rimuovi Pagine Online Gratis',
         'description' => 'Elimina pagine da un PDF gratis online. Clicca sulle miniature o scrivi intervalli come 2, 4-6. Nessun caricamento, filigrana o registrazione.',
@@ -1615,7 +2006,9 @@ return [
             ['q' => 'Il mio PDF viene caricato da qualche parte?', 'a' => 'No. Le pagine vengono eliminate interamente nel tuo browser con JavaScript, e il file non viene mai inviato a un server.'],
             ['q' => 'Le pagine rimaste perdono qualità?', 'a' => 'No. Le pagine che mantieni vengono copiate esattamente come sono, senza ricompressione, filigrana o pagine aggiunte.'],
         ],
-    ],    'organize-pdf' => [
+    ],
+
+    'organize-pdf' => [
         'name' => 'Organizza PDF',
         'title' => 'Organizza PDF - Riordina Pagine Online Gratis',
         'description' => 'Riordina le pagine di un PDF gratis online. Trascina le miniature in un nuovo ordine o usa i pulsanti di spostamento. Nessuna filigrana o registrazione.',
@@ -1646,7 +2039,9 @@ return [
             ['q' => 'Il mio PDF viene caricato su un server?', 'a' => 'No. Il PDF viene aperto e riordinato interamente nel tuo browser con JavaScript e non viene mai inviato da nessuna parte.'],
             ['q' => 'Posso anche eliminare o ruotare pagine qui?', 'a' => 'Questo strumento riordina solo le pagine. Usa Elimina Pagine PDF o Ruota PDF per quello, prima o dopo aver organizzato l\'ordine.'],
         ],
-    ],    'pdf-to-jpg' => [
+    ],
+
+    'pdf-to-jpg' => [
         'name' => 'PDF in JPG',
         'title' => 'Convertitore PDF in JPG - Convertire Pagine Gratis',
         'description' => 'Convertire le pagine di un PDF in JPG gratis online. Scegli 72, 150 o 300 DPI e scarica un\'immagine o un ZIP. Nessun caricamento, filigrana o registrazione.',
@@ -1678,6 +2073,7 @@ return [
             ['q' => 'Posso convertire solo una pagina invece di tutto il PDF?', 'a' => 'Questo strumento convertisce tutte le pagine. Per ottenerne solo una, usa prima la modalità "Estrai pagine" di Dividi PDF, poi convertila qui il PDF di una pagina risultante.'],
         ],
     ],
+
     'pdf-to-png' => [
         'name' => 'PDF in PNG',
         'title' => 'Convertitore PDF in PNG - Convertire Pagine Gratis',
@@ -1717,13 +2113,7 @@ return [
         'description' => 'Comprimi un PDF online gratis per ridurne la dimensione. La modalità Consigliata mantiene il testo selezionabile; Forte riduce di più. Nessun upload.',
         'h1' => 'Comprimi PDF',
         'tagline' => 'Rendi un PDF più leggero senza perdere leggibilità, direttamente nel browser.',
-        'keywords' => [
-            'comprimi pdf',
-            'compressore pdf',
-            'ridurre dimensione pdf',
-            'rimpicciolire pdf',
-            'comprimi pdf online',
-        ],
+        'keywords' => ['comprimi pdf', 'compressore pdf', 'ridurre dimensione pdf', 'rimpicciolire pdf', 'comprimi pdf online'],
         'intro' => 'Uno strumento per comprimere un PDF riduce la dimensione del file diminuendo il peso delle immagini al suo interno, rendendolo più facile da inviare via email, caricare o archiviare. La modalità Consigliata ricomprime le foto incluse con una qualità più bassa mantenendo il testo nitido e selezionabile. La modalità Forte va oltre trasformando ogni pagina in una singola immagine, ottenendo il file più piccolo possibile ma impedendo di selezionare o cercare il testo. Tutto avviene sul tuo dispositivo, quindi il tuo PDF non viene mai caricato su un server.',
         'steps' => [
             'Scegli il PDF da comprimere.',
@@ -1747,24 +2137,17 @@ return [
                 'heading' => 'Perché il mio PDF non è diventato più piccolo?',
                 'body' => 'Un PDF composto solo da testo e grafica vettoriale, o uno già compresso in precedenza, potrebbe non ridursi ulteriormente in modalità Consigliata perché non restano grandi immagini da ricomprimere. In questo caso il file originale viene mantenuto, così non ottieni mai un risultato più pesante di quello di partenza, e la modalità Forte può comunque renderlo più piccolo trasformando le pagine in immagini.',
             ],
+            [
+                'heading' => 'Come comprimere un PDF a 1 MB o 200 KB',
+                'body' => 'Non c’è un campo per la dimensione obiettivo. Lo strumento ha due modalità e mostra la dimensione prima e dopo, quindi ti avvicini al limite per passi. Inizia con la modalità Consigliata: ricomprime le foto JPEG nel PDF con qualità al 60%, limita il lato più lungo a 1.600 pixel e mantiene il testo selezionabile. Per un PDF ricco di foto è il primo tentativo per un limite di 1 MB. Se il file è ancora troppo pesante, passa a Forte e prova 100 DPI, poi 72 DPI, l’impostazione più bassa. Forte trasforma ogni pagina in un JPEG, quindi il risultato dipende soprattutto dal numero di pagine e dai DPI. Se a 72 DPI il file supera ancora un limite rigido come 200 KB, il documento ha troppe pagine per quell’obiettivo: dividilo con Dividi PDF o invia meno pagine. Le dimensioni usano 1 KB = 1.024 byte, quindi resta un po’ sotto il limite del portale.',
+            ],
         ],
         'faqs' => [
-            [
-                'q' => 'Comprimere un PDF ne riduce la qualità?',
-                'a' => 'La modalità Consigliata abbassa leggermente la qualità delle foto incluse, un po\' come salvare un JPEG con un\'impostazione più bassa, mentre il testo e la grafica vettoriale restano nitidi. La modalità Forte renderizza l\'intera pagina come immagine, quindi il testo molto piccolo può apparire meno nitido quando si ingrandisce.',
-            ],
-            [
-                'q' => 'Potrò ancora selezionare il testo dopo la compressione?',
-                'a' => 'Sì, con la modalità Consigliata. La modalità Forte trasforma ogni pagina in una singola immagine, quindi il testo non potrà più essere selezionato, cercato o copiato - scegliila solo quando la dimensione del file conta più di questo.',
-            ],
-            [
-                'q' => 'Cosa succede se il file compresso non è più piccolo?',
-                'a' => 'Il file originale viene mantenuto e offerto per il download senza modifiche, così non ti ritrovi mai con un risultato più pesante di quello di partenza.',
-            ],
-            [
-                'q' => 'Il mio PDF viene caricato su un server?',
-                'a' => 'No. La compressione avviene interamente nel tuo browser con JavaScript, e il file non viene mai inviato da nessuna parte.',
-            ],
+            ['q' => 'Comprimere un PDF ne riduce la qualità?', 'a' => 'La modalità Consigliata abbassa leggermente la qualità delle foto incluse, un po\' come salvare un JPEG con un\'impostazione più bassa, mentre il testo e la grafica vettoriale restano nitidi. La modalità Forte renderizza l\'intera pagina come immagine, quindi il testo molto piccolo può apparire meno nitido quando si ingrandisce.'],
+            ['q' => 'Potrò ancora selezionare il testo dopo la compressione?', 'a' => 'Sì, con la modalità Consigliata. La modalità Forte trasforma ogni pagina in una singola immagine, quindi il testo non potrà più essere selezionato, cercato o copiato - scegliila solo quando la dimensione del file conta più di questo.'],
+            ['q' => 'Cosa succede se il file compresso non è più piccolo?', 'a' => 'Il file originale viene mantenuto e offerto per il download senza modifiche, così non ti ritrovi mai con un risultato più pesante di quello di partenza.'],
+            ['q' => 'Il mio PDF viene caricato su un server?', 'a' => 'No. La compressione avviene interamente nel tuo browser con JavaScript, e il file non viene mai inviato da nessuna parte.'],
+            ['q' => 'Perché la modalità Consigliata non ha ridotto il mio PDF scansionato?', 'a' => 'La modalità Consigliata ricomprime solo le immagini salvate come normali JPEG in RGB o in scala di grigi. Le scansioni in altri formati, le immagini CMYK e quelle con trasparenza restano intatte per non danneggiarle, quindi un file del genere può tornare invariato. La modalità Forte funziona con qualsiasi PDF, perché renderizza ogni pagina come una nuova immagine.'],
         ],
     ],
 
@@ -2207,8 +2590,18 @@ return [
             'Aggiungi la tua firma: disegnala, scrivila o caricala, poi trascinala e ridimensionala su qualsiasi pagina',
         ],
         'content' => [
-            ['heading' => 'Come funziona la modifica del testo esistente', 'body' => 'Fai clic su una riga di testo e scrivi. La vecchia formulazione viene coperta con il colore che le sta dietro e la nuova viene disegnata nella stessa posizione, dimensione e colore, usando il carattere incorporato nel PDF. I PDF di solito incorporano solo le lettere che usano: se il nuovo testo richiede una lettera che il file non conteneva, quella riga passa al carattere standard più simile e l’editor ti dice quali lettere lo hanno causato. Le pagine scansionate sono immagini senza testo modificabile; lì usa Copri con bianco e Aggiungi testo.'],
-            ['heading' => 'Usi utili per aggiungere contenuto a un PDF', 'body' => 'Correggi un refuso o una data, aggiorna un prezzo o un indirizzo, aggiungi una nota, un timbro, una sigla, un passaggio evidenziato o una freccia che indica un dettaglio: utile per sistemare un documento senza il file originale, rivedere una bozza o compilare un modulo semplice.'],
+            [
+                'heading' => 'Come funziona la modifica del testo esistente',
+                'body' => 'Fai clic su una riga di testo e scrivi. La vecchia formulazione viene coperta con il colore che le sta dietro e la nuova viene disegnata nella stessa posizione, dimensione e colore, usando il carattere incorporato nel PDF. I PDF di solito incorporano solo le lettere che usano: se il nuovo testo richiede una lettera che il file non conteneva, quella riga passa al carattere standard più simile e l’editor ti dice quali lettere lo hanno causato. Le pagine scansionate sono immagini senza testo modificabile; lì usa Copri con bianco e Aggiungi testo.',
+            ],
+            [
+                'heading' => 'Usi utili per aggiungere contenuto a un PDF',
+                'body' => 'Correggi un refuso o una data, aggiorna un prezzo o un indirizzo, aggiungi una nota, un timbro, una sigla, un passaggio evidenziato o una freccia che indica un dettaglio: utile per sistemare un documento senza il file originale, rivedere una bozza o compilare un modulo semplice.',
+            ],
+            [
+                'heading' => 'Modificare un PDF senza registrazione',
+                'body' => 'Non c’è nessun account, login o richiesta di email: apri la pagina, scegli un PDF fino a 200 MB e inizia a modificarlo. È il tuo browser a leggere e modificare il file; non viene caricato sul nostro server, quindi da noi non resta nulla da cancellare. Salva PDF ti dà un normale PDF da scaricare che contiene solo le modifiche che hai fatto. L’editor non aggiunge filigrane, loghi o pagine extra di suo; la scheda Filigrana ne applica una solo quando scegli tu di aggiungerla. Mentre lavori, i progressi vengono salvati automaticamente nella memoria del browser su questo dispositivo, così dopo un aggiornamento o una scheda chiusa puoi riprendere da dove eri. Questa copia viene cancellata quando scarichi il PDF modificato o quando scegli Scarta.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Posso modificare il testo già presente nel PDF?', 'a' => 'Sì. Scegli Modifica testo, fai clic su una riga e scrivi. La nuova formulazione sostituisce quella vecchia nello stesso punto e, quando possibile, con il carattere del PDF. Trova e sostituisci cambia una parola in tutte le pagine in un colpo solo. Il testo delle pagine scansionate fa parte di un’immagine e non si può modificare così.'],
@@ -2217,6 +2610,7 @@ return [
             ['q' => 'Il mio PDF viene caricato su un server?', 'a' => 'No. Tutto - aggiungere, spostare, ridimensionare e salvare - avviene nel tuo browser con JavaScript e nulla viene inviato da nessuna parte.'],
             ['q' => 'Quali formati immagine posso aggiungere?', 'a' => 'PNG, JPG e WebP.'],
             ['q' => 'Posso aggiungere una filigrana?', 'a' => 'Sì. Apri la scheda Filigrana per stampare testo o un logo sulla pagina, con opacità, rotazione, posizione e pagine proprie - lo stesso strumento usato dalla pagina Filigrana PDF.'],
+            ['q' => 'Serve un account, e al PDF salvato viene aggiunta una filigrana?', 'a' => 'No in entrambi i casi. Non c’è registrazione né login, e il PDF salvato contiene solo le tue modifiche, senza filigrane o marchi aggiunti dallo strumento.'],
         ],
     ],
 

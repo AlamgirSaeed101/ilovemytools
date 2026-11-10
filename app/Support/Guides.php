@@ -79,6 +79,12 @@ class Guides
      * Guide text with inline links: "[anchor](/tool-slug)" becomes a link to that page; everything else
      * is escaped. Unknown paths stay plain text, so a typo never ships a broken link.
      */
+    /** Anchor id for a guide heading (same rule as headingId() in resources/js/pages/Guides.jsx). */
+    public static function headingId(string $heading): string
+    {
+        return trim((string) preg_replace('/[^a-z0-9]+/', '-', strtolower($heading)), '-');
+    }
+
     public static function inline(string $text): \Illuminate\Support\HtmlString
     {
         $parts = preg_split('#\[([^\]]+)\]\((/[a-z0-9/-]*)\)#', $text, -1, PREG_SPLIT_DELIM_CAPTURE);

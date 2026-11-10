@@ -75,7 +75,7 @@ return [
         'category' => 'text-tools',
         'icon' => 'text',
         'popular' => false,
-        'updated' => '2026-09-30',
+        'updated' => '2026-11-10',
         'title' => 'Case Converter - Uppercase, Lowercase & Title Case',
         'description' => 'Convert text to UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case and more. Free online case converter, instant and private.',
         'h1' => 'Case Converter',
@@ -83,9 +83,12 @@ return [
         'keywords' => ['case converter', 'uppercase to lowercase', 'title case converter', 'sentence case', 'camelcase converter'],
         'intro' => 'A case converter is a tool that changes the capitalisation of text, for example from UPPERCASE to lowercase or Title Case. Accidentally typed with Caps Lock on, or need a heading in Title Case? Paste your text and click a button to convert it instantly. Developers can also switch between camelCase, PascalCase, snake_case, kebab-case and CONSTANT_CASE.',
         'steps' => [
-            'Paste your text into the box.',
-            'Click the case you want, for example Title Case or lowercase.',
-            'Copy the converted text or download it as a .txt file.',
+            'Type or paste your text into the Your text box.',
+            'Click the case you want, for example Title Case, lowercase or snake_case.',
+            'Check the result in the same box; the highlighted button shows the last case you applied.',
+            'Click another button to convert again, or edit the text by hand.',
+            'Click Copy, or Download .txt to save the text as converted-text.txt.',
+            'Click Clear to empty the box and start over.',
         ],
         'features' => [
             'UPPERCASE, lowercase, Title Case and Sentence case',
@@ -97,23 +100,55 @@ return [
         'content' => [
             [
                 'heading' => 'Title Case or Sentence case: what\'s the difference?',
-                'body' => 'Title Case capitalises the main words of a heading ("The Quick Guide to SEO"), while short words such as a, and, of and the stay lowercase unless they start the title. Sentence case only capitalises the first word of each sentence ("The quick guide to SEO"), which many modern websites prefer for readability.',
+                'body' => 'Title Case capitalises the main words of a heading ("The Quick Guide to Writing"), while short words such as a, and, of and the stay lowercase unless they start or end the line. Sentence case only capitalises the first letter of each sentence ("The quick guide to writing"), which many modern websites prefer for readability. In this tool a new sentence starts after a full stop, question mark, exclamation mark or line break, and a standalone "i" is always written as "I". Hyphenated words get a capital on each part in Title Case, so "well-known" becomes "Well-Known".',
             ],
             [
                 'heading' => 'What are the programming case styles?',
-                'body' => 'camelCase is common for JavaScript variables, PascalCase for class names, snake_case for Python and database columns, kebab-case for URLs and CSS classes, and CONSTANT_CASE for constants and environment variables.',
+                'body' => 'camelCase is common for JavaScript variables, PascalCase for class names, snake_case for Python and database columns, kebab-case for URLs and CSS classes, and CONSTANT_CASE for constants and environment variables. Starting from "user first name", the five buttons give userFirstName, UserFirstName, user_first_name, user-first-name and USER_FIRST_NAME.',
+            ],
+            [
+                'heading' => 'How the programming cases split words',
+                'body' => 'Before joining words, the converter breaks the text into words at spaces, punctuation and symbols, and also where a lowercase letter or digit is followed by a capital. That means you can convert between styles directly: "XMLHttpRequest" becomes xml_http_request in snake_case, and "order-total" becomes orderTotal in camelCase. Punctuation is dropped, letters and digits are kept, and each line is converted on its own, so you can paste a whole list of field names and turn every line into a separate identifier.',
+            ],
+            [
+                'heading' => 'Acronyms and names in Title Case and Sentence case',
+                'body' => 'Title Case and Sentence case lower every letter first and then add capitals where the rule needs them. That fixes text typed in all caps, but it also changes words that should keep their capitals: "NASA" becomes "Nasa" in Title Case, and in Sentence case names such as "Paris" or "SEO" in the middle of a sentence become lowercase. Read the result once and restore acronyms and proper nouns by hand before you publish it.',
+            ],
+            [
+                'heading' => 'aLtErNaTiNg and InVeRsE case',
+                'body' => 'aLtErNaTiNg switches between lowercase and uppercase on each letter, starting with lowercase and skipping spaces, digits and punctuation, so the pattern stays even across words. It is mostly used for jokes and social posts. InVeRsE flips every letter: capitals become lowercase and lowercase letters become capitals. That makes it the quickest fix for text typed with Caps Lock on by mistake, because "hELLO wORLD" turns straight back into "Hello World".',
+            ],
+            [
+                'heading' => 'Use cases',
+                'body' => 'A few everyday jobs the converter speeds up:',
+                'items' => [
+                    'Fix an email or document that was typed with Caps Lock on, without retyping it.',
+                    'Turn a list of article titles into consistent Title Case or Sentence case before publishing.',
+                    'Rename spreadsheet headings into snake_case column names for a database import.',
+                    'Turn a page title into a kebab-case URL slug or CSS class name.',
+                    'Convert JSON keys or variable names between camelCase and snake_case when moving code between languages.',
+                ],
+            ],
+            [
+                'heading' => 'Limits and privacy',
+                'body' => 'The conversion runs in your browser with JavaScript, and your text is not sent to a server. Each button replaces the text in the box, so a conversion that lowers capitals cannot be reversed by the tool; keep a copy of the original if you may need it. Text is not saved, so reloading the page empties the box. Title Case uses English small-word rules, so in other languages check which words should stay lowercase. Upper and lower case follow your browser\'s language settings, which matters for a few letters such as the Turkish dotted and dotless i.',
             ],
         ],
         'faqs' => [
             ['q' => 'How do I convert uppercase to lowercase?', 'a' => 'Paste your text and click "lowercase". Every letter is converted instantly, and you can copy the result with one click.'],
-            ['q' => 'Does Title Case capitalise every word?', 'a' => 'No. It follows common style guides and keeps small words (a, an, the, and, but, or, of, in, on, at, to, for) lowercase unless they are the first or last word.'],
+            ['q' => 'Does Title Case capitalise every word?', 'a' => 'No. It keeps short words lowercase unless they are the first or last word of a line: a, an, the, and, but, or, nor, for, so, yet, as, at, by, in, of, off, on, per, to, up, via and vs.'],
+            ['q' => 'Why did my acronym lose its capitals?', 'a' => 'Title Case and Sentence case lower all letters before capitalising, so acronyms such as NASA or SEO become Nasa or nasa. Fix them by hand after converting.'],
+            ['q' => 'How do I fix text typed with Caps Lock on?', 'a' => 'Click InVeRsE to flip every letter back, or click Sentence case if the whole text was typed in capitals.'],
             ['q' => 'Is there a limit on text length?', 'a' => 'No practical limit. Conversion happens in your browser, so even long documents convert instantly.'],
-            ['q' => 'Does it work with accented letters?', 'a' => 'Yes. Accented and non-English letters such as é, ü and ñ are converted correctly.'],
+            ['q' => 'Does it work with accented letters?', 'a' => 'Yes. Accented and non-English letters such as é, ü and ñ are converted correctly, and they count as letters when words are split for camelCase or snake_case.'],
         ],
         'sources' => [
-            ['title' => 'Unicode Consortium, FAQ: Character Properties, Case Mappings and Names', 'url' => 'https://www.unicode.org/faq/casemap_charprop.html'],
+            [
+                'title' => 'Unicode Consortium, FAQ: Character Properties, Case Mappings and Names',
+                'url' => 'https://www.unicode.org/faq/casemap_charprop.html',
+            ],
         ],
-        'related' => ['word-counter', 'base64-encoder-decoder', 'json-formatter'],
+        'related' => ['word-counter', 'readability-checker', 'json-formatter', 'base64-encoder-decoder', 'password-generator'],
     ],
 
     'password-generator' => [
@@ -121,7 +156,7 @@ return [
         'category' => 'generators',
         'icon' => 'lock',
         'popular' => true,
-        'updated' => '2026-09-30',
+        'updated' => '2026-11-10',
         'title' => 'Password Generator - Strong Random Passwords Free',
         'description' => 'Generate strong, random passwords with custom length, symbols and numbers. Created securely on your device and never sent anywhere. Free and instant.',
         'h1' => 'Strong Password Generator',
@@ -149,16 +184,27 @@ return [
                 'heading' => 'How do I keep my passwords safe?',
                 'body' => 'Use a different password for every account, store them in a password manager, and turn on two-factor authentication wherever it is offered. Never reuse a password that has appeared in a data breach.',
             ],
+            [
+                'heading' => 'Settings for a strong 16-character password',
+                'body' => 'The defaults already give you one: length 16 with Uppercase (A-Z), Lowercase (a-z), Numbers (0-9) and Symbols ticked. Together those sets hold 26 + 26 + 10 + 27 = 89 characters; the 27 symbols are ! @ # $ % ^ & * ( ) - _ = + [ ] { } ; : , . < > ? / ~. Entropy is length × log2(charset size), so 16 × log2(89) = 16 × 6.48 ≈ 104 bits, which the meter rates Excellent (100 bits or more). Without symbols the set has 62 characters: 16 × 5.95 ≈ 95 bits, rated Strong. Ticking Exclude similar removes I, L, O, i, l, o, 1 and 0, leaving 81 characters and about 101 bits. Why 16? It clears NIST\'s 15-character minimum, and with all four sets it is the shortest length past 100 bits; 15 characters give about 97. The figure is a slight overestimate, because the generator always includes at least one character of each ticked type.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Is this password generator safe?', 'a' => 'Yes. Passwords are generated in your browser using the Web Crypto API. Nothing is sent to our server, logged or stored.'],
             ['q' => 'How long should my password be?', 'a' => 'At least 15 characters, which is the minimum in NIST\'s current password guidelines (SP 800-63B), and 16 or more for important accounts like email and banking.'],
             ['q' => 'What does "exclude similar characters" do?', 'a' => 'It removes characters that look alike, such as l, 1, I, O and 0, so the password is easier to read and type by hand.'],
             ['q' => 'What is password entropy?', 'a' => 'Entropy measures how unpredictable a password is, in bits. Each extra bit doubles the guesses an attacker needs. 80+ bits is strong and 100+ bits is excellent.'],
+            ['q' => 'A site won\'t accept symbols. How long should my password be?', 'a' => 'Untick Symbols and add one character. Letters and numbers give 62 possible characters, about 5.95 bits each, so 16 characters reach about 95 bits and 17 characters about 101 bits, back above the 100-bit mark.'],
         ],
         'sources' => [
-            ['title' => 'NIST SP 800-63B: Digital Identity Guidelines, Authentication', 'url' => 'https://pages.nist.gov/800-63-4/sp800-63b.html'],
-            ['title' => 'MDN: Crypto.getRandomValues()', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues'],
+            [
+                'title' => 'NIST SP 800-63B: Digital Identity Guidelines, Authentication',
+                'url' => 'https://pages.nist.gov/800-63-4/sp800-63b.html',
+            ],
+            [
+                'title' => 'MDN: Crypto.getRandomValues()',
+                'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues',
+            ],
         ],
         'related' => ['qr-code-generator', 'base64-encoder-decoder', 'what-is-my-ip'],
         'table' => [
@@ -238,7 +284,7 @@ return [
         'category' => 'image-tools',
         'icon' => 'image',
         'popular' => true,
-        'updated' => '2026-11-02',
+        'updated' => '2026-11-10',
         'title' => 'Compress Image to 100KB, 50KB or Any Size: Free, No Upload',
         'description' => 'Compress JPG, PNG and WebP images online for free. Reduce image size to 100KB or any target size with no visible quality loss. Images never leave your device.',
         'h1' => 'Image Compressor',
@@ -268,16 +314,23 @@ return [
                 'heading' => 'Which format should I choose?',
                 'body' => 'JPG is best for photos. PNG keeps transparency and sharp edges for logos and screenshots, but its files are large. WebP gives the smallest files for both photos and graphics and is supported by all modern browsers.',
             ],
+            [
+                'heading' => 'Compressing a photo to 50 KB or 20 KB',
+                'body' => 'Application forms often ask for a photo under 50 KB or even 20 KB. Open the Target size (e.g. 100 KB) tab and type the limit into Maximum file size (KB); the smallest value accepted is 5. For each image the tool searches for the highest quality that still fits. If even the lowest quality is too big, it shrinks the width and height in 20% steps until the file fits, and the result line shows the new dimensions. If it still cannot get there, it says so and gives you the smallest version it managed. Sizes count 1 KB as 1,024 bytes. For small targets keep the output as JPG or WebP: PNG has no quality setting, so it can only get smaller by losing pixels. If the form also requires exact dimensions, set them with the Image Resizer first, then compress here.',
+            ],
         ],
         'faqs' => [
-            ['q' => 'How do I compress an image to 100KB?', 'a' => 'Choose "Target size", enter 100 and click Compress. The tool finds the best quality that fits under 100KB and only scales the image down if it has to.'],
+            ['q' => 'How do I compress an image to 100KB?', 'a' => 'Open the "Target size" tab and enter 100. Images are compressed as soon as you add them; if you change the setting afterwards, click Re-compress all. The tool finds the best quality that fits under 100KB and only scales the image down if it has to.'],
             ['q' => 'Are my images uploaded to a server?', 'a' => 'No. Images are compressed inside your browser using the Canvas API. They never leave your device.'],
             ['q' => 'Will compression reduce quality?', 'a' => 'At the default quality (75%) most people cannot see a difference, while file size often drops by 50-80%.'],
             ['q' => 'How do I reduce a PNG image size?', 'a' => 'PNG is a lossless format, so compressing it alone saves little. To actually shrink a PNG image size, set the output format to WebP (keeps transparency) or JPG (if you don\'t need transparency) - both cut PNG file sizes dramatically with no visible quality loss.'],
-            ['q' => 'How do I shrink a JPG online?', 'a' => 'Upload your JPG, pick "Target size" or a quality level around 60-80%, and click Compress. For photos, a JPG quality of 70-80% is usually enough to shrink the file size noticeably with no visible loss.'],
+            ['q' => 'How do I shrink a JPG online?', 'a' => 'Pick "Target size" or a quality level around 60-80%, then add your JPG; it is compressed straight away. For photos, a JPG quality of 70-80% is usually enough to shrink the file size noticeably with no visible loss.'],
         ],
         'sources' => [
-            ['title' => 'Google for Developers: An image format for the Web (WebP)', 'url' => 'https://developers.google.com/speed/webp'],
+            [
+                'title' => 'Google for Developers: An image format for the Web (WebP)',
+                'url' => 'https://developers.google.com/speed/webp',
+            ],
         ],
         'related' => ['image-resizer', 'png-to-jpg', 'webp-to-png', 'merge-pdf'],
         'table' => [
@@ -296,7 +349,7 @@ return [
         'category' => 'image-tools',
         'icon' => 'resize',
         'popular' => true,
-        'updated' => '2026-10-15',
+        'updated' => '2026-11-10',
         'title' => 'Image Resizer - Resize & Convert JPG, PNG, WebP Online',
         'description' => 'Resize images to exact pixels or by percentage and convert between JPG, PNG and WebP. Free online image resizer that keeps your photos private.',
         'h1' => 'Image Resizer & Converter',
@@ -325,6 +378,10 @@ return [
                 'heading' => 'How do I convert PNG to JPG?',
                 'body' => 'JPG does not support transparency, so transparent areas are filled with white when you convert a PNG to JPG. If you need to keep transparency, choose PNG or WebP as the output format.',
             ],
+            [
+                'heading' => 'How to resize an image to 1080 x 1080',
+                'body' => 'For a square Instagram post, open the By pixels tab. If your photo is already square, leave Lock aspect ratio ticked and type 1080 as the width; the height follows. If it is not square, this tool will not crop it. With the lock on, a 4:3 photo set to 1080 wide comes out 1080 x 810, and if you untick the lock and enter 1080 x 1080 the picture is stretched or squashed to fit. So crop it to a square first, for example in your phone\'s photo editor, then resize it here. Keep JPG for photos (quality 90% is the default), check that the button reads Resize to 1080 × 1080px, and download. Enlarging a smaller photo to 1080 pixels works, but it can look soft because no new detail is created.',
+            ],
         ],
         'faqs' => [
             ['q' => 'How do I resize an image without stretching it?', 'a' => 'Keep "Lock aspect ratio" ticked. When you change the width, the height updates automatically to keep the original proportions.'],
@@ -333,7 +390,10 @@ return [
             ['q' => 'What is the maximum size?', 'a' => 'Output images can be up to 10,000 pixels on each side, which is within what all modern browsers can handle.'],
         ],
         'sources' => [
-            ['title' => 'Google for Developers: An image format for the Web (WebP)', 'url' => 'https://developers.google.com/speed/webp'],
+            [
+                'title' => 'Google for Developers: An image format for the Web (WebP)',
+                'url' => 'https://developers.google.com/speed/webp',
+            ],
         ],
         'related' => ['png-to-jpg', 'webp-to-png', 'jpg-to-pdf', 'image-compressor'],
         'table' => [
@@ -353,13 +413,22 @@ return [
         'category' => 'pdf-tools',
         'icon' => 'pdf',
         'popular' => true,
-        'updated' => '2026-09-30',
-        'title' => 'JPG to PDF Converter - Combine Images Online Free',
-        'description' => 'Convert JPG, PNG or WebP images to a PDF online for free. Reorder photos and choose the page size, orientation and margins. No upload, no watermark, no sign up.',
-        'h1' => 'JPG to PDF',
-        'tagline' => 'Combine JPG, PNG and WebP images into one PDF file.',
-        'keywords' => ['jpg to pdf', 'jpeg to pdf', 'jpg to pdf converter', 'convert jpg to pdf', 'image to pdf'],
-        'intro' => 'A JPG to PDF converter turns JPG, PNG or WebP images into a single PDF document. Add multiple photos, reorder them, and choose the page size, orientation and margins before combining them into one document. This jpg to pdf converter works entirely on your device, so your images are never uploaded to a server.',
+        'updated' => '2026-11-10',
+        'title' => 'JPG to PDF Combiner - Merge Multiple JPGs Into One PDF',
+        'description' => 'Combine multiple JPG, PNG or WebP images into one PDF for free. A JPG to PDF converter with reordering and A4 or Letter pages. No upload, no watermark.',
+        'h1' => 'JPG to PDF Combiner',
+        'tagline' => 'Combine several JPG, PNG and WebP images into one PDF file.',
+        'keywords' => [
+            'jpg to pdf combiner',
+            'combine jpg to pdf',
+            'merge jpg into one pdf',
+            'jpg to pdf',
+            'jpeg to pdf',
+            'jpg to pdf converter',
+            'convert jpg to pdf',
+            'image to pdf',
+        ],
+        'intro' => 'A JPG to PDF combiner joins several JPG photos, or PNG and WebP images, into a single PDF document with one image per page. Add up to 30 images, put them in order with the arrows, and choose the page size, orientation and margins before combining them. It also works as a plain JPG to PDF converter when you only have one photo. Everything runs on your device, so your images are never uploaded to a server.',
         'steps' => [
             'Add one or more JPG, PNG or WebP images by dropping them or clicking to browse.',
             'Reorder the images with the up and down arrows if needed.',
@@ -377,24 +446,39 @@ return [
         'content' => [
             [
                 'heading' => 'What page size should I choose?',
-                'body' => "A4 and Letter add white space around photos that don't match the page shape, which suits documents and printing. Fit image sizes the PDF page to match each photo exactly, keeping the full image visible with no white borders - useful when you just need a quick PDF copy of a photo.",
+                'body' => 'A4 and Letter add white space around photos that don\'t match the page shape, which suits documents and printing. Fit image sizes the PDF page to match each photo exactly, keeping the full image visible with no white borders - useful when you just need a quick PDF copy of a photo.',
             ],
             [
                 'heading' => 'Why convert JPG to PDF?',
                 'body' => 'A single PDF is easier to email, print and upload to forms than several separate image files. Combining scanned pages, receipts or photos into one PDF also keeps them in the right order and stops them getting mixed up.',
             ],
+            [
+                'heading' => 'Combining several JPGs into one PDF',
+                'body' => 'Each image becomes one page, in the order of the numbered list, so check it before you click Convert to PDF: the up and down arrows move a photo and the cross removes it. You can combine up to 30 images at a time, each up to 50 MB. With A4 or Letter every page has the same size, which looks tidy when printed, and Automatic orientation gives landscape photos a landscape page. Fit image makes each page the size of its own photo, so pages in one PDF can differ. The PDF ends up roughly as large as the images together, because JPG and PNG files are embedded without re-compression. If it is too big to email, shrink the photos first with the Image Compressor, or run the finished PDF through Compress PDF.',
+            ],
         ],
         'faqs' => [
-            ['q' => 'Can I combine multiple images into one PDF?', 'a' => 'Yes. Add as many JPG, PNG or WebP images as you like, put them in the order you want with the arrows, and they are combined into a single PDF.'],
+            ['q' => 'How many JPGs can I combine into one PDF?', 'a' => 'Up to 30 images at a time, each up to 50 MB. Add them, put them in order with the arrows, and they are combined into a single PDF with one image per page. For more than 30, make two PDFs and join them with Merge PDF.'],
             ['q' => 'Does this JPG to PDF converter add a watermark?', 'a' => 'No. The PDF contains only your images, with no watermark, logo or extra pages added.'],
             ['q' => 'Can I convert PNG and WebP images too, not just JPG?', 'a' => 'Yes. JPG, PNG and WebP images are all supported and can be mixed in the same PDF.'],
             ['q' => 'What does the margin setting do?', 'a' => 'It adds blank space around each image on the page. Choose None for the image to reach the edges, or a bigger margin for a more document-like look.'],
             ['q' => 'Is my image quality reduced?', 'a' => 'JPG and PNG images are embedded at their original quality. WebP images are converted to PNG first, which keeps them lossless.'],
+            ['q' => 'Can I change the page order after combining?', 'a' => 'Before you convert, yes: use the arrows, and any change clears the old result so you simply click Convert to PDF again. To reorder the pages of a PDF you have already downloaded, use Organize PDF.'],
+            ['q' => 'Why is my combined PDF so large?', 'a' => 'JPG and PNG images are placed in the PDF at their original quality, so the file is about the size of all your images added together. To make it smaller, compress the images first with the Image Compressor, or run the PDF through Compress PDF, whose Recommended mode re-encodes the JPG photos inside it.'],
         ],
         'sources' => [
-            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
-            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
-            ['title' => 'JPEG committee, Overview of JPEG', 'url' => 'https://jpeg.org/jpeg/'],
+            [
+                'title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0',
+                'url' => 'https://www.iso.org/standard/75839.html',
+            ],
+            [
+                'title' => 'pdf-lib, create and modify PDF documents in JavaScript',
+                'url' => 'https://pdf-lib.js.org/',
+            ],
+            [
+                'title' => 'JPEG committee, Overview of JPEG',
+                'url' => 'https://jpeg.org/jpeg/',
+            ],
         ],
         'related' => ['pdf-to-jpg', 'merge-pdf', 'image-compressor'],
     ],
@@ -500,7 +584,7 @@ return [
         'category' => 'image-tools',
         'icon' => 'image',
         'popular' => false,
-        'updated' => '2026-09-30',
+        'updated' => '2026-11-10',
         'title' => 'JPG to PNG Converter - Convert JPEG to PNG Free',
         'description' => 'Convert JPG or JPEG images to PNG online for free. Lossless output, batch conversion of up to 30 files and ZIP download. Nothing leaves your device.',
         'h1' => 'JPEG to PNG Converter',
@@ -508,10 +592,11 @@ return [
         'keywords' => ['jpeg to png', 'jpg to png', 'convert jpg to png', 'jpeg to png converter', 'change jpg to png'],
         'intro' => 'PNG is a lossless format, so once an image is saved as PNG it can be edited and saved again without getting blurrier. This JPEG to PNG converter changes JPG and JPEG photos into PNG files, one at a time or in a batch of up to 30, right in your browser.',
         'steps' => [
-            'Drop your JPG or JPEG images into the box or click to choose them.',
-            'Each image is converted to PNG straight away.',
-            'Click Download next to an image, or Download all (ZIP).',
-            'Use Clear all to convert another set.',
+            'Drop your JPG or JPEG images into the box, or click it to choose them (up to 30 at a time, 50 MB each).',
+            'Each image is converted to PNG straight away; the list shows waiting… and converting… while it works.',
+            'Check the new file name and size shown next to each image.',
+            'Click Download next to an image, or Download all (ZIP) when two or more are ready.',
+            'Remove a single image with the ✕ button, or use Clear all to convert another set.',
         ],
         'features' => [
             'Converts JPG and JPEG to lossless PNG',
@@ -529,19 +614,58 @@ return [
                 'heading' => 'Will converting make the image transparent or sharper?',
                 'body' => 'No. Converting keeps the picture exactly as it is: a JPG has no transparency to carry over, and detail already lost to JPG compression cannot be restored. The PNG will also usually be larger than the JPG, because PNG stores every pixel without loss.',
             ],
+            [
+                'heading' => 'How the conversion works',
+                'body' => 'Your browser decodes each JPG, draws it onto an invisible canvas at its full size and saves that canvas as a PNG. Because PNG is lossless, there is no quality slider: the PNG holds exactly the pixels the browser decoded from the JPG. Images are converted one after another, so a large batch finishes in turn rather than all at once. The new file keeps the original name with a .png extension, so "holiday photo.jpg" becomes "holiday photo.png". In the ZIP, which is named converted-to-png.zip, files with the same name are renamed so none of them overwrite each other.',
+            ],
+            [
+                'heading' => 'Checking the result',
+                'body' => 'Each image in the list shows a thumbnail, the original file size, and then the new PNG name and size once it is done, so you can see straight away how much larger the PNG is. If a file fails, the reason appears in red under its name and the rest of the batch carries on. The counter under the list tells you how many images have been converted to PNG so far.',
+            ],
+            [
+                'heading' => 'JPG or PNG: which should you keep?',
+                'body' => 'For photos you only want to view, share or upload, JPG is usually the better format because the files are much smaller. PNG is the better working copy for screenshots, scans of text, diagrams and images you will crop, annotate or edit repeatedly, because saving it again never adds compression artefacts. If you mainly need a smaller file rather than a lossless one, compress the JPG instead of converting it.',
+            ],
+            [
+                'heading' => 'Use cases',
+                'body' => 'People usually convert JPG to PNG for one of these reasons.',
+                'items' => [
+                    'A website, app or print service only accepts PNG uploads.',
+                    'You want a lossless master copy of a photo before editing it several times.',
+                    'You are adding a photo to a design file or slide deck where PNG is the standard format.',
+                    'You need to convert a folder of scans or screenshots saved as JPG in one go and download them as a single ZIP.',
+                ],
+            ],
+            [
+                'heading' => 'Limits and privacy',
+                'body' => 'You can add up to 30 images at a time, each up to 50 MB; larger files are skipped with a message. Very large images are scaled down to fit within 10,000 × 10,000 pixels. Because each image is redrawn on a canvas, metadata such as camera details and GPS location is not copied into the PNG. A damaged file, or one your browser cannot open, shows an error instead of a result. The box also accepts PNG, WebP, AVIF, GIF and BMP files, which are converted to PNG in the same way; an animated GIF becomes a single still frame. All conversion happens in your browser and no image is uploaded.',
+            ],
         ],
         'faqs' => [
             ['q' => 'How do I convert JPG to PNG?', 'a' => 'Drop the JPG into the box above. It is converted to PNG immediately and you can download it with one click.'],
-            ['q' => 'Is there a difference between JPG and JPEG?', 'a' => 'No. They are two names for the same format, and both convert the same way.'],
+            ['q' => 'Is there a difference between JPG and JPEG?', 'a' => 'No. They are two names for the same format, and both convert the same way. Files ending in .jfif are accepted too.'],
             ['q' => 'Why is the PNG file bigger?', 'a' => 'PNG is lossless, so it keeps every pixel exactly. JPG saves space by discarding detail, which makes its files smaller.'],
+            ['q' => 'Can I convert many JPGs at once?', 'a' => 'Yes. Add up to 30 images at a time. Once two or more are converted, Download all (ZIP) saves them in one file. Use Clear all to start the next batch.'],
+            ['q' => 'Can I make the background transparent?', 'a' => 'Not by converting alone. A JPG has no transparent areas, so the PNG keeps the same solid background. To cut out the subject and get a PNG with a transparent background, use the Remove Background tool instead.'],
+            ['q' => 'Why did a large image fail on my phone?', 'a' => 'Converting a very large image needs a lot of memory, and some phones run out. If your browser cannot create the PNG, an error asks you to try smaller dimensions; resize the image first and convert it again.'],
+            ['q' => 'Is the photo\'s EXIF data kept?', 'a' => 'No. The image is redrawn and saved as a new PNG, so camera details, dates and location data from the JPG are not copied over. That also makes it a simple way to share a photo without its location.'],
             ['q' => 'Are my photos uploaded?', 'a' => 'No. Everything happens in your browser and your photos never leave your device.'],
         ],
         'sources' => [
-            ['title' => 'JPEG committee, Overview of JPEG', 'url' => 'https://jpeg.org/jpeg/'],
-            ['title' => 'W3C, Portable Network Graphics (PNG) Specification', 'url' => 'https://www.w3.org/TR/png/'],
-            ['title' => 'MDN, Pixel manipulation with canvas', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas'],
+            [
+                'title' => 'JPEG committee, Overview of JPEG',
+                'url' => 'https://jpeg.org/jpeg/',
+            ],
+            [
+                'title' => 'W3C, Portable Network Graphics (PNG) Specification',
+                'url' => 'https://www.w3.org/TR/png/',
+            ],
+            [
+                'title' => 'MDN, Pixel manipulation with canvas',
+                'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas',
+            ],
         ],
-        'related' => ['png-to-jpg', 'webp-to-png', 'image-resizer', 'image-compressor'],
+        'related' => ['png-to-jpg', 'webp-to-png', 'avif-to-png', 'image-resizer', 'image-compressor', 'jpg-to-pdf'],
     ],
 
     'merge-pdf' => [
@@ -642,7 +766,7 @@ return [
         'category' => 'calculators',
         'icon' => 'calendar',
         'popular' => true,
-        'updated' => '2026-09-30',
+        'updated' => '2026-11-10',
         'title' => 'Age Calculator: Your Exact Age in Days, Months & Years',
         'description' => 'Enter your date of birth to get your exact age in days, months and years, plus total weeks and hours lived and a countdown to your next birthday. Free.',
         'h1' => 'Age Calculator',
@@ -650,9 +774,11 @@ return [
         'keywords' => ['age calculator', 'calculate age', 'date of birth calculator', 'how old am i', 'age calculator by date of birth'],
         'intro' => 'An age calculator works out exactly how old someone is, in years, months and days, from their date of birth. Enter a date of birth to find the exact age in years, months and days. You also get the total number of months, weeks, days and hours lived, the day of the week you were born and a countdown to your next birthday. You can also calculate age on any past or future date.',
         'steps' => [
-            'Enter the date of birth.',
-            'Keep today as the "age at" date, or choose another date.',
-            'See the exact age and details instantly.',
+            'Enter the date of birth in the Date of birth field.',
+            'Leave the Age at the date of field on today\'s date, or pick any past or future date.',
+            'Read the exact age in years, months and days, with the weekday of birth underneath.',
+            'Check the totals: total months, weeks, total days and total hours (approx.).',
+            'See the next birthday line, which gives its weekday, date, how many days are left and the age being turned.',
         ],
         'features' => [
             'Exact age in years, months and days',
@@ -666,18 +792,50 @@ return [
                 'heading' => 'How age is calculated',
                 'body' => 'The calculator counts complete years first, then complete months, then the remaining days, which is the same method used on official forms. Leap years are handled automatically, and people born on 29 February celebrate on 28 February in non-leap years.',
             ],
+            [
+                'heading' => 'When does a month count as complete?',
+                'body' => 'A month is complete once the same day of the month comes round again. If the next month is too short to have that day, its last day counts instead. So someone born on 31 January has completed one month on 28 February (or 29 February in a leap year), and on 1 March they are 1 month and 1 day old. The leftover days are counted from the most recent completed month, so the years, months and days always add up to the dates you entered.',
+            ],
+            [
+                'heading' => 'A worked example',
+                'body' => 'Take a date of birth of 15 March 1990 and an "age at" date of 10 November 2026. The last birthday was 15 March 2026, which gives 36 complete years. From there, 15 October 2026 is the seventh complete month, and 10 November is 26 days later, so the age is 36 years, 7 months, 26 days. The same span is 439 total months, 13,389 total days, 1,912 weeks plus 5 days, and about 321,336 hours. The person was born on a Thursday, and the next birthday is Monday 15 March 2027, 125 days away, when they turn 37.',
+            ],
+            [
+                'heading' => 'What the totals mean',
+                'body' => 'Total days is the exact number of calendar days between the two dates. Weeks is that number divided by seven, with any leftover days shown in brackets, for example "Weeks (+5 days)". Total months counts complete months only. Total hours is simply total days multiplied by 24, which is why it is marked as approximate: it does not know the time of birth and ignores daylight saving changes.',
+            ],
+            [
+                'heading' => 'Use cases',
+                'body' => 'Being able to set the "age at" date makes the calculator useful well beyond working out how old you are today.',
+                'items' => [
+                    'Check whether a child meets a school admission cut-off by setting the "age at" date to the cut-off day.',
+                    'Confirm an age limit for an exam, a job application, a visa or a sports category on the deadline date.',
+                    'Work out how old a relative was on a past date, such as a wedding or a date on an old document.',
+                    'Find the weekday you were born on and how many days remain until your next birthday.',
+                    'Get a total number of days or weeks lived for a milestone such as 10,000 days.',
+                ],
+            ],
+            [
+                'heading' => 'Limits and privacy',
+                'body' => 'The calculator works with whole calendar dates, so it does not take the time of birth or time zones into account, and results never shift by a day because of where you are. Today\'s date comes from your device\'s clock. Years must have four digits, and the date of birth must be on or before the "age at" date; otherwise an error message explains what to fix. Everything is calculated in your browser as you type: there is no button to press, and the dates you enter are not saved or sent anywhere.',
+            ],
         ],
         'faqs' => [
-            ['q' => 'How do I calculate my exact age?', 'a' => 'Enter your date of birth and the calculator shows your age in years, months and days as of today, or as of any date you choose.'],
+            ['q' => 'How do I calculate my exact age?', 'a' => 'Enter your date of birth and the calculator shows your age in years, months and days as of today, or as of any date you choose. It counts complete years, then complete months, then the remaining days.'],
             ['q' => 'Can I calculate age on a specific date?', 'a' => 'Yes. Change the "Age at" date to see how old someone was or will be on that day, which is useful for school admissions and exam eligibility.'],
             ['q' => 'How are leap years handled?', 'a' => 'Leap years are counted exactly. For a 29 February birthday, the next birthday in a non-leap year is shown as 28 February.'],
+            ['q' => 'Why are the total hours marked as approximate?', 'a' => 'Total hours is total days multiplied by 24. It doesn\'t know the time of day you were born and ignores clock changes for daylight saving, so it can be out by up to a day\'s worth of hours.'],
+            ['q' => 'Can it work out the age of someone not yet born, or a future birthday?', 'a' => 'You can set the "age at" date in the future to see how old someone will be then. The date of birth itself must be on or before the "age at" date, so it can\'t count down to a birth.'],
+            ['q' => 'Why might another age calculator show a different number of days?', 'a' => 'Calculators handle month ends differently. Some treat every month as 30 days, or count the leftover days in another way. This one uses complete calendar months, falling back to the last day of short months, so the years, months and days match the calendar, and total days and weeks are always exact.'],
             ['q' => 'Is my date of birth stored?', 'a' => 'No. The calculation runs in your browser and nothing is saved or sent anywhere.'],
-            ['q' => 'How do you calculate age from a date of birth?', 'a' => 'The age calculator uses your date of birth to work out your exact age in years, months and days – just enter it and the result shows instantly.'],
         ],
         'sources' => [
-            ['title' => 'ECMAScript Language Specification, Date objects', 'url' => 'https://tc39.es/ecma262/#sec-date-objects'],
+            [
+                'title' => 'ECMAScript Language Specification, Date objects',
+                'url' => 'https://tc39.es/ecma262/#sec-date-objects',
+            ],
         ],
-        'related' => ['percentage-calculator', 'word-counter', 'password-generator'],
+        'related' => ['sleep-calculator', 'countdown-timer', 'percentage-calculator', 'stopwatch', 'random-number-generator'],
     ],
 
     'percentage-calculator' => [
@@ -846,7 +1004,7 @@ return [
         'category' => 'developer-tools',
         'icon' => 'code',
         'popular' => false,
-        'updated' => '2026-09-30',
+        'updated' => '2026-11-10',
         'title' => 'Base64 Encode & Decode Online - Text and Files',
         'description' => 'Encode text or files to Base64 and decode Base64 back to text online. Full UTF-8 and URL-safe support. Free, fast and private Base64 converter.',
         'h1' => 'Base64 Encoder & Decoder',
@@ -854,10 +1012,13 @@ return [
         'keywords' => ['base64 encode', 'base64 decode', 'base64 converter', 'base64 to text', 'image to base64'],
         'intro' => 'Base64 is a way to write any data, including files, using only 64 plain text characters; encoding converts to Base64 and decoding converts back. Convert text to Base64 or decode Base64 back to readable text, with full support for emoji and non-English characters. You can also turn a file or image into a Base64 data URL for embedding in HTML, CSS or JSON.',
         'steps' => [
-            'Choose Text or File mode.',
-            'For text, paste your input and click Encode or Decode.',
-            'For files, choose a file to get its Base64 string or data URL.',
-            'Copy the result.',
+            'Choose the Text tab or the File / Image tab.',
+            'In Text mode, type or paste into the Input box, and tick URL-safe if you need URL-safe output.',
+            'Click Encode to turn the input into Base64, or Decode to turn Base64 back into text.',
+            'Read the message under the buttons: it confirms the result or explains why the Base64 is invalid.',
+            'Click Copy above the Output box, or Swap to move the output into Input for another round.',
+            'In File / Image mode, drop a file of up to 10 MB or click to choose one.',
+            'Copy the Base64 string or the ready-made Data URL (for HTML / CSS).',
         ],
         'features' => [
             'Encode and decode text with full UTF-8 support',
@@ -869,19 +1030,51 @@ return [
         'content' => [
             [
                 'heading' => 'What is Base64?',
-                'body' => 'Base64 represents binary data using 64 safe text characters (A-Z, a-z, 0-9, + and /). It is used to embed images in HTML and CSS, send attachments in email, and pass data in URLs and APIs. Base64 is an encoding, not encryption, so it does not keep data secret.',
+                'body' => 'Base64 represents binary data using 64 safe text characters (A-Z, a-z, 0-9, + and /). It is used to embed images in HTML and CSS, send attachments in email, and pass data in URLs and APIs. Every 3 bytes of input become 4 characters, each standing for 6 bits, and one or two = signs pad the end when the input length is not a multiple of 3. Base64 is an encoding, not encryption, so it does not keep data secret.',
+            ],
+            [
+                'heading' => 'How text is encoded',
+                'body' => 'Text is first turned into UTF-8 bytes and then into Base64, which is why emoji and non-English letters work: "Hello" becomes SGVsbG8=, while "é" takes two bytes and most emoji take four before encoding. Many simple encoders call the browser\'s btoa function directly, which fails on any character outside Latin-1; this tool avoids that problem. With URL-safe ticked, the output uses - and _ instead of + and / and drops the trailing = padding.',
+            ],
+            [
+                'heading' => 'What the decoder accepts',
+                'body' => 'Decode is forgiving about formatting. It accepts standard and URL-safe Base64, with or without = padding, ignores spaces and line breaks (so wrapped Base64 from an email or PEM-style block pastes fine), and strips a data:...;base64, prefix if you paste a whole data URL. If the input contains characters outside A-Z, a-z, 0-9, +, / and =, or its length shows it has been cut off, you get a clear error instead of garbage. When the decoded bytes are not valid UTF-8 text, the tool still shows them but warns that the result is binary data, so some characters may look strange.',
+            ],
+            [
+                'heading' => 'Files, images and data URLs',
+                'body' => 'File / Image mode reads any file type on your device and shows its name, its original size and the size of the Base64 version. Images also get a small preview. You get two outputs: the raw Base64 string, which the URL-safe option can change, and a data URL that always uses standard Base64 and the file\'s MIME type, such as data:image/png;base64,... A file the browser can\'t identify is labelled application/octet-stream. Data URLs are handy for small icons in CSS or HTML emails, but large images are better linked as normal files, because Base64 adds about a third to the size and an embedded image can\'t be cached on its own.',
+            ],
+            [
+                'heading' => 'Use cases',
+                'body' => 'Common reasons to encode or decode Base64:',
+                'items' => [
+                    'Embed a small logo or icon directly in a CSS file or HTML email as a data URL.',
+                    'Read the payload of a token, configuration value or API response that arrives as Base64.',
+                    'Prepare a short text value for a URL parameter or file name with the URL-safe option.',
+                    'Check what an encoded string in a log file or database field actually says.',
+                    'Convert an image to Base64 for a JSON request to an API that expects inline files.',
+                ],
+            ],
+            [
+                'heading' => 'Limits and privacy',
+                'body' => 'Encoding and decoding run in your browser with JavaScript; your text and files are not uploaded. File mode accepts files up to 10 MB, because Base64 for bigger files is too large to paste anywhere useful. Decode always produces text in the Output box, so the tool can\'t turn Base64 back into a downloadable file such as an image or PDF; decoded binary data appears as unreadable characters. Remember that anyone can decode Base64, so never treat it as a way to hide passwords or secrets.',
             ],
         ],
         'faqs' => [
             ['q' => 'Is Base64 encryption?', 'a' => 'No. Anyone can decode Base64. Use it for transporting data, never for protecting passwords or secrets.'],
-            ['q' => 'What is URL-safe Base64?', 'a' => 'A variant that replaces + with - and / with _, and usually drops = padding, so the string can be used safely in URLs and file names.'],
+            ['q' => 'What is URL-safe Base64?', 'a' => 'A variant that replaces + with - and / with _, and usually drops = padding, so the string can be used safely in URLs and file names. The decoder here accepts both forms.'],
             ['q' => 'Why is Base64 larger than the original?', 'a' => 'Base64 turns every 3 bytes into 4 characters, so encoded data is about 33% larger than the original.'],
-            ['q' => 'How do I convert an image to Base64?', 'a' => 'Switch to File mode and choose your image. You get both the raw Base64 string and a ready-to-use data URL.'],
+            ['q' => 'How do I convert an image to Base64?', 'a' => 'Switch to File / Image mode and choose your image. You get both the raw Base64 string and a ready-to-use data URL.'],
+            ['q' => 'Why does it say my Base64 is not valid?', 'a' => 'Either the text contains characters that are not part of Base64, or it is the wrong length, which usually means it was cut off when copied. Spaces, line breaks and a data URL prefix are removed automatically.'],
+            ['q' => 'Can I decode Base64 back into a file?', 'a' => 'Not with this tool. Decode shows the result as text, which works for text and JSON but not for images, PDFs or other binary files.'],
         ],
         'sources' => [
-            ['title' => 'RFC 4648: The Base16, Base32, and Base64 Data Encodings', 'url' => 'https://www.rfc-editor.org/rfc/rfc4648'],
+            [
+                'title' => 'RFC 4648: The Base16, Base32, and Base64 Data Encodings',
+                'url' => 'https://www.rfc-editor.org/rfc/rfc4648',
+            ],
         ],
-        'related' => ['json-formatter', 'password-generator', 'case-converter'],
+        'related' => ['json-formatter', 'password-generator', 'case-converter', 'qr-code-generator', 'what-is-my-ip'],
         'table' => [
             'caption' => 'How much bigger Base64 makes data',
             'headers' => ['Original size', 'Base64 length'],
@@ -1052,7 +1245,7 @@ return [
         'category' => 'games',
         'icon' => 'wheel',
         'popular' => true,
-        'updated' => '2026-09-30',
+        'updated' => '2026-11-10',
         'title' => 'Spin the Wheel - Random Name & Choice Picker',
         'description' => 'Spin a wheel to pick a random name, winner or choice. Add up to 100 entries, spin with a smooth animation and remove winners as you go. Free wheel spinner.',
         'h1' => 'Spin the Wheel',
@@ -1060,10 +1253,13 @@ return [
         'keywords' => ['spin the wheel', 'wheel spinner', 'random name picker', 'wheel of names', 'random choice picker'],
         'intro' => 'Spin the wheel is a random picker: you add names or options, spin, and the wheel stops on one at random. Can\'t decide what to eat, who goes next or who wins the giveaway? Type your options into the list, one per line, and spin the wheel. It spins several times and eases to a stop on a random entry, then announces the winner. You can remove each winner automatically to draw names one by one without repeats.',
         'steps' => [
-            'Type or paste your entries, one per line (up to 100).',
-            'Press Spin, click the centre of the wheel, or press S.',
-            'Watch the wheel slow down and stop on the winner.',
-            'Optionally tick "Remove the winner after each spin" to draw without repeats.',
+            'Press Clear to remove the sample entries, or edit them directly.',
+            'Type or paste your entries in the box, one per line (up to 100).',
+            'Optionally press Shuffle to mix the order of the slices.',
+            'Optionally tick “Remove the winner after each spin” to draw without repeats.',
+            'Press Spin the wheel, click SPIN in the centre of the wheel, or press S.',
+            'Watch the wheel slow down and stop; the winner is announced below it.',
+            'Press the Remove button with the winner\'s name to take it off the list, or spin again.',
         ],
         'features' => [
             'Up to 100 entries, each with its own coloured slice',
@@ -1075,23 +1271,52 @@ return [
         'content' => [
             [
                 'heading' => 'How the wheel picks a winner',
-                'body' => 'When you press Spin, the winner is chosen first using your browser\'s secure random number generator, giving every entry an equal chance regardless of the length of its name. The wheel then calculates exactly how far to turn so that the chosen slice stops under the pointer, adding several full turns and a random stopping point inside the slice so that every spin looks different.',
+                'body' => 'When you press Spin, the winner is chosen first using your browser\'s secure random number generator, crypto.getRandomValues(), with rejection sampling so that every entry has exactly the same chance, regardless of the length of its name or its position on the wheel. The wheel then calculates how far to turn so that the chosen slice stops under the pointer. It adds six full turns and a random stopping point inside the slice, kept away from the slice edges, so every spin looks different and the result is never ambiguous. When the wheel stops, the winner is read from the final angle of the wheel, so the name announced is always the slice you see under the pointer.',
+            ],
+            [
+                'heading' => 'Entering and managing names',
+                'body' => 'Each non-empty line in the box becomes one slice of the wheel; blank lines are ignored and spaces at the start and end of a line are trimmed. A counter above the box shows how many entries are in use out of 100. If you paste more than 100 lines, the wheel shows a warning and uses only the first 100. Shuffle reorders your entries randomly, which changes where each slice sits on the wheel but not anyone\'s chance of winning. Clear empties the list. The wheel needs at least two entries before it can spin. Long names are shortened with an ellipsis on the wheel to fit the slice, but the full name is shown in the winner announcement.',
             ],
             [
                 'heading' => 'Ideas for using a wheel spinner',
-                'body' => 'Teachers use name wheels to pick students fairly, streamers and shops run giveaways with them, and friends use them to decide on restaurants, films or chores. Turn on "Remove the winner after each spin" to draw a running order, split people into teams, or pick several prize winners without anyone winning twice.',
+                'body' => 'Teachers use name wheels to pick students fairly, streamers and shops run giveaways with them, and friends use them to decide on restaurants, films or chores. Turn on “Remove the winner after each spin” to draw a running order, split people into teams, or pick several prize winners without anyone winning twice. Every winner is added to the Previous picks list, which keeps the last 10 results, so you can read back the order in which names were drawn.',
+            ],
+            [
+                'heading' => 'The spin and the winner announcement',
+                'body' => 'A spin lasts a little over five seconds and eases out to a smooth stop. The winning slice is highlighted and the name appears under “The wheel picked” with a short burst of confetti. If “Remove the winner after each spin” is ticked, the name is taken off the list about a second and a half after it is announced, and the label changes to “Picked and removed from the list” so everyone can still see who won. If your device asks for reduced motion, the wheel jumps straight to the result without the animation or confetti.',
+            ],
+            [
+                'heading' => 'Use cases',
+                'body' => 'A wheel is useful whenever a group wants a visible, fair way to choose.',
+                'items' => [
+                    'Pick a student to answer the next question, removing each name so everyone gets a turn.',
+                    'Draw the winner of a social media giveaway on a live stream, with each entrant on one line.',
+                    'Decide where to eat, what film to watch or which game to play when nobody can agree.',
+                    'Set a speaking or presentation order by spinning repeatedly with automatic removal turned on.',
+                    'Hand out household chores or tasks by putting the jobs on the wheel and spinning once per person.',
+                ],
+            ],
+            [
+                'heading' => 'Limits and privacy',
+                'body' => 'The wheel holds up to 100 entries, and every line counts as one slice, so typing a name twice gives it two slices and twice the chance; there is no separate weighting option. Entries are not saved: reloading the page brings back the sample list. The keyboard shortcuts S, Space and Enter work only when you are not typing in the box. Everything runs in your browser; your list is never uploaded to a server.',
             ],
         ],
         'faqs' => [
-            ['q' => 'Is the wheel spinner random?', 'a' => 'Yes. The winner is picked with cryptographically secure randomness before the wheel stops, so every entry has an equal chance.'],
-            ['q' => 'How many names can I add?', 'a' => 'You can add up to 100 entries. Put each one on its own line.'],
-            ['q' => 'Can I remove a name after it wins?', 'a' => 'Yes. Click the Remove button after a spin, or tick "Remove the winner after each spin" to do it automatically.'],
-            ['q' => 'Are my entries saved or shared?', 'a' => 'No. Your list stays in your browser and is never uploaded.'],
+            ['q' => 'Is the wheel spinner random?', 'a' => 'Yes. The winner is picked with cryptographically secure randomness from crypto.getRandomValues() before the wheel stops, so every entry has an equal chance.'],
+            ['q' => 'How many names can I add?', 'a' => 'You can add up to 100 entries. Put each one on its own line. If you paste more, only the first 100 are used.'],
+            ['q' => 'Can I remove a name after it wins?', 'a' => 'Yes. Click the Remove button after a spin, or tick “Remove the winner after each spin” to do it automatically.'],
+            ['q' => 'Can I give one option a bigger chance?', 'a' => 'Yes, by adding it more than once. Each line is its own slice, so an entry that appears on three lines is three times as likely to be picked as one that appears once.'],
+            ['q' => 'Does Shuffle change the odds?', 'a' => 'No. Shuffle only changes the order of the slices on the wheel. Every slice still has the same chance on the next spin.'],
+            ['q' => 'Can I spin with the keyboard?', 'a' => 'Yes. Press S, Space or Enter to spin, as long as the cursor is not in the entries box.'],
+            ['q' => 'Are my entries saved or shared?', 'a' => 'No. Your list stays in your browser and is never uploaded. It is also not stored, so reloading the page resets the wheel to the sample entries.'],
         ],
         'sources' => [
-            ['title' => 'MDN: Crypto.getRandomValues()', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues'],
+            [
+                'title' => 'MDN: Crypto.getRandomValues()',
+                'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues',
+            ],
         ],
-        'related' => ['random-number-generator', 'dice-roller', 'coin-flip'],
+        'related' => ['random-number-generator', 'dice-roller', 'coin-flip', 'countdown-timer'],
     ],
 
     'random-number-generator' => [
@@ -1099,7 +1324,7 @@ return [
         'category' => 'games',
         'icon' => 'hash',
         'popular' => false,
-        'updated' => '2026-09-30',
+        'updated' => '2026-11-10',
         'title' => 'Random Number Generator - Pick Numbers in Any Range',
         'description' => 'Generate random numbers in any range, one or hundreds at a time, with or without duplicates. Great for raffles, lottery picks and games. Free and instant.',
         'h1' => 'Random Number Generator',
@@ -1107,10 +1332,12 @@ return [
         'keywords' => ['random number generator', 'random number', 'number picker', 'rng', 'lottery number generator'],
         'intro' => 'A random number generator is a tool that picks numbers by chance from a range you choose. Generate a random number between any two values, or a whole list of them. Choose the minimum, the maximum and how many numbers you need, then decide whether duplicates are allowed and whether the list should be sorted. It is ideal for raffles, lottery picks, classroom activities, sampling and games.',
         'steps' => [
-            'Enter the minimum and maximum numbers (negative numbers work too).',
-            'Choose how many numbers you want, up to 1,000.',
-            'Tick "No duplicates" and "Sort low to high" if you need them.',
-            'Press Generate, or use a preset such as 1-100 or 6 of 49.',
+            'Type the lowest allowed number in Minimum and the highest in Maximum; negative numbers work too.',
+            'Enter how many numbers you want in How many, from 1 to 1,000.',
+            'Tick “No duplicates” if each number may appear only once.',
+            'Tick “Sort low to high” if you want the list in ascending order.',
+            'Press Generate, or click a preset such as 1 – 100 or Lottery 6 of 49 to fill the fields and draw at once.',
+            'Use Copy all to copy a list of results, separated by commas.',
         ],
         'features' => [
             'Any whole-number range, including negative numbers',
@@ -1122,23 +1349,52 @@ return [
         'content' => [
             [
                 'heading' => 'How random are the numbers?',
-                'body' => 'The numbers come from the Web Crypto API, a cryptographically secure random number generator built into every modern browser. The generator also uses rejection sampling, a technique that removes the small bias found in many simple random number tools, so every number in your range has exactly the same probability.',
+                'body' => 'Every result comes from crypto.getRandomValues(), the cryptographically secure random number generator of the Web Crypto API that is built into every modern browser. The tool does not use Math.random() to pick results. It also uses rejection sampling: a random 32-bit value that would make some numbers slightly more likely than others is thrown away and drawn again. This removes the small “modulo bias” found in many simple generators, so every whole number between your minimum and maximum, both included, has exactly the same probability.',
             ],
             [
                 'heading' => 'Picking numbers without duplicates',
-                'body' => 'Turn on "No duplicates" when each number may only appear once, for example when drawing raffle tickets or lottery numbers. The tool checks that your range is big enough: you cannot pick 10 different numbers between 1 and 5. With duplicates allowed, each number is picked independently, like rolling a die several times.',
+                'body' => 'Turn on “No duplicates” when each number may appear only once, for example when drawing raffle tickets or lottery numbers. The tool checks first that your range is big enough: you cannot pick 10 different numbers between 1 and 5, and it tells you how many different numbers the range holds. For ranges of up to 20,000 numbers it shuffles the whole range with a partial Fisher-Yates shuffle and takes the first picks; for bigger ranges it draws numbers and simply redraws any it has already used. Either way, every possible set of numbers is equally likely. With duplicates allowed, each number is picked independently, like rolling a die several times, so the same value can come up twice in a row.',
+            ],
+            [
+                'heading' => 'Ranges, number formats and presets',
+                'body' => 'Minimum and Maximum accept any whole numbers, including negative ones, as long as the minimum is not larger than the maximum and the range holds no more than 4,294,967,296 values (2 to the power of 32). You can type large numbers in the style you are used to, such as 1000, 1,000 or 1 000. Decimals are not supported: the generator only returns whole numbers. The presets set everything for you and draw straight away: 1 – 10, 1 – 100, Dice (1 – 6), Lottery 6 of 49 (six different numbers, sorted) and 5 of 1 – 1,000 (five different numbers in the order drawn).',
+            ],
+            [
+                'heading' => 'Reading the results',
+                'body' => 'When you draw a single number, it is shown large after a short slot-machine style reveal of about 0.8 seconds. The flickering digits during that reveal are only decoration; the result itself was already picked with the secure generator before the animation starts. If your device asks for reduced motion, the number appears immediately. Earlier single draws are listed under “Previous:”, so you can see your last 14 results. When you ask for two or more numbers, they appear as a list with a count above it and a Copy all button.',
+            ],
+            [
+                'heading' => 'Use cases',
+                'body' => 'A fair number picker is handy whenever a choice must not depend on anyone\'s preference.',
+                'items' => [
+                    'Draw raffle winners by numbering the tickets and picking with “No duplicates” ticked.',
+                    'Generate a set of lottery numbers with the Lottery 6 of 49 preset or your own range and count.',
+                    'Choose a random student, question or page number in class with a quick 1 – 30 range.',
+                    'Select a random sample of rows from a numbered list or spreadsheet for checking or testing.',
+                    'Replace a lost die in a board game with the Dice (1 – 6) preset, or set any other range for other dice.',
+                ],
+            ],
+            [
+                'heading' => 'Limits and privacy',
+                'body' => 'You can generate up to 1,000 numbers per click, and the range must stay within 4,294,967,296 possible values. Only whole numbers are produced; there are no decimals, weights or custom lists of values (for picking from names, use a wheel instead). The tool does not save your settings or results, so they are gone when you reload the page. All numbers are generated in your browser and nothing is sent to a server.',
             ],
         ],
         'faqs' => [
-            ['q' => 'Can I generate a random number between 1 and 100?', 'a' => 'Yes. Set the minimum to 1 and the maximum to 100, or click the 1-100 preset, then press Generate.'],
-            ['q' => 'Can I generate lottery numbers?', 'a' => 'Yes. Use the "Lottery 6 of 49" preset, or choose your own range and count with "No duplicates" ticked.'],
-            ['q' => 'How many numbers can I generate at once?', 'a' => 'Up to 1,000 numbers per click. You can copy them all with one button.'],
+            ['q' => 'Can I generate a random number between 1 and 100?', 'a' => 'Yes. Set the minimum to 1 and the maximum to 100, or click the 1 – 100 preset, which draws a number straight away.'],
+            ['q' => 'Can I generate lottery numbers?', 'a' => 'Yes. Use the Lottery 6 of 49 preset, which picks six different numbers and sorts them, or choose your own range and count with “No duplicates” ticked.'],
+            ['q' => 'How many numbers can I generate at once?', 'a' => 'Up to 1,000 numbers per click. Copy all copies the whole list as comma-separated values.'],
             ['q' => 'Can I use negative numbers?', 'a' => 'Yes. Any whole numbers work, for example a range from -50 to 50.'],
+            ['q' => 'Is the generator truly random?', 'a' => 'It uses your browser\'s cryptographically secure generator, crypto.getRandomValues(), with rejection sampling so no number is favored. Like all computer randomness it is not based on a physical process, but it is unpredictable and suitable for draws and games.'],
+            ['q' => 'Why do I get an error with “No duplicates” ticked?', 'a' => 'Your range holds fewer different numbers than you asked for. For example, 1 to 5 has only five numbers, so you cannot draw 10 without repeats. Widen the range or lower How many.'],
+            ['q' => 'Are my numbers stored anywhere?', 'a' => 'No. Results are created in your browser and are not uploaded or saved. The list of previous results disappears when you reload the page.'],
         ],
         'sources' => [
-            ['title' => 'MDN: Crypto.getRandomValues()', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues'],
+            [
+                'title' => 'MDN: Crypto.getRandomValues()',
+                'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues',
+            ],
         ],
-        'related' => ['spin-the-wheel', 'dice-roller', 'password-generator'],
+        'related' => ['spin-the-wheel', 'dice-roller', 'coin-flip', 'password-generator'],
     ],
 
     'stopwatch' => [
@@ -1194,7 +1450,7 @@ return [
         'category' => 'time-tools',
         'icon' => 'timer',
         'popular' => false,
-        'updated' => '2026-09-30',
+        'updated' => '2026-11-10',
         'title' => 'Countdown Timer - Online Timer with Alarm',
         'description' => 'Set a countdown timer for seconds, minutes or hours with one-click presets. An alarm sounds when time is up and the tab title shows the time left. Free online.',
         'h1' => 'Countdown Timer',
@@ -1202,10 +1458,12 @@ return [
         'keywords' => ['countdown timer', 'online timer', 'timer with alarm', '5 minute timer', 'set a timer'],
         'intro' => 'A countdown timer counts down from a set amount of time to zero and then sounds an alarm. Set a timer for cooking, study sessions, workouts, meetings or exams. Type any length up to 99 hours or tap a preset like 5 minutes or 25 minutes. A ring counts down the time left, the browser tab shows the remaining time, and an alarm sounds when the countdown reaches zero.',
         'steps' => [
-            'Type the hours, minutes and seconds, or tap a preset.',
-            'Press Start (or Space). The ring and the tab title count down.',
-            'Pause, resume or add a minute at any time.',
-            'When the alarm sounds, press Stop alarm, then New timer to go again.',
+            'Type the hours, minutes and seconds into the three boxes inside the ring (it starts at 5 minutes), or tap a preset to start straight away.',
+            'Press Start, the Space key, or Enter while a box is selected. The ring and the tab title count down.',
+            'Press Pause (or Space) to stop the clock, then Resume to carry on.',
+            'Press +1 min to add a minute while the timer is running or paused.',
+            'When time is up, press Stop alarm to silence the beeps.',
+            'Press New timer (or Space) to set another time, or Reset (or R) at any point to go back to the length you typed.',
         ],
         'features' => [
             'Any length from 1 second to 99 hours 59 minutes',
@@ -1217,23 +1475,56 @@ return [
         'content' => [
             [
                 'heading' => 'Will the timer work in a background tab?',
-                'body' => 'Yes. The timer works out the exact moment it should end, so it stays accurate even when you switch tabs and your browser slows the page down. The remaining time is also shown in the tab title, so you can keep an eye on it while you work in another tab. Keep the tab open and your volume on to hear the alarm.',
+                'body' => 'Yes. The timer works out the exact moment it should end, so it stays accurate even when you switch tabs and your browser slows the page down. The remaining time is also shown in the tab title, so you can keep an eye on it while you work in another tab: it reads like 04:59 · Timer, gets a ⏸ in front while paused, and changes to ⏰ Time\'s up! when the countdown ends. Keep the tab open and your volume on to hear the alarm.',
             ],
             [
                 'heading' => 'Popular timer lengths',
-                'body' => 'Five minutes is ideal for tea, short breaks and quick exercises. Twenty-five minutes is the classic Pomodoro focus session, usually followed by a five-minute break. Longer timers of 30 or 60 minutes suit exams, meetings and baking. Use the presets for these, or type any other length.',
+                'body' => 'Five minutes is ideal for tea, short breaks and quick exercises. Twenty-five minutes is the classic Pomodoro focus session, usually followed by a five-minute break. Longer timers of 30 or 60 minutes suit exams, meetings and baking. The quick presets are 30 seconds, 1, 3, 5, 10, 15 and 25 minutes and 1 hour; tapping one fills in the boxes and starts the countdown at once. For any other length, type it in.',
+            ],
+            [
+                'heading' => 'Setting the time',
+                'body' => 'Each box takes up to two digits, and the boxes add up, so minutes and seconds don\'t have to stay below 60: typing 90 in the minutes box gives a 1 hour 30 minute timer, and 0:0:90 gives a minute and a half. Below the boxes you see the length you are about to start, such as 25:00 timer. While it runs, the clock shows minutes and seconds, and hours as well once the time left is an hour or more. The longest timer is 99 hours, 59 minutes and 59 seconds; anything longer is capped at that, and a note tells you so.',
+            ],
+            [
+                'heading' => 'How the alarm works',
+                'body' => 'When the countdown reaches zero, a Time\'s up! banner appears and the browser plays a burst of three short, high beeps every second for up to 30 seconds, or until you press Stop alarm. The sound is generated by the browser\'s Web Audio API, so no audio file needs to load. Untick Play an alarm sound if you want a silent timer; the banner and the tab title still tell you when time is up. The timer does not send desktop notifications or vibrate your phone, so keep the tab where you can see or hear it.',
+            ],
+            [
+                'heading' => 'Keyboard shortcuts',
+                'body' => 'Space does whatever the main button shows: Start, Pause, Resume or New timer. R resets the timer to the length you typed. While you are typing in one of the time boxes, Space and R are ignored so they don\'t interfere, and Enter starts the timer instead. Shortcuts are also ignored when Ctrl, Alt or Cmd is held down, so browser shortcuts keep working.',
+            ],
+            [
+                'heading' => 'Use cases',
+                'body' => 'A few ways people use an online countdown:',
+                'items' => [
+                    'Time pasta, eggs or a cake while cooking, with an alarm you can hear across the kitchen.',
+                    'Run 25-minute Pomodoro focus sessions with 5-minute breaks in between.',
+                    'Keep talks, meeting agenda items or classroom activities to a fixed length.',
+                    'Time a practice exam or a timed writing exercise.',
+                    'Set rounds and rest periods for a workout or stretching routine.',
+                ],
+            ],
+            [
+                'heading' => 'Limits and privacy',
+                'body' => 'The timer runs entirely in your browser and nothing is sent to a server. It is not saved anywhere, so reloading or closing the tab cancels the countdown. The alarm only plays while the page is open and your device\'s sound is on; browsers allow sound only after you interact with the page, which pressing Start or a preset does. Adding minutes with +1 min can\'t take the timer beyond 99 hours, 59 minutes and 59 seconds.',
             ],
         ],
         'faqs' => [
-            ['q' => 'Does the countdown timer make a sound?', 'a' => 'Yes. An alarm beeps when time is up, for up to 30 seconds or until you press Stop alarm. You can turn the sound off.'],
-            ['q' => 'Why did I not hear the alarm?', 'a' => 'Check that your volume is up and the tab is still open. Browsers only allow sound after you click on the page, which happens when you press Start.'],
+            ['q' => 'Does the countdown timer make a sound?', 'a' => 'Yes. An alarm beeps when time is up, for up to 30 seconds or until you press Stop alarm. You can turn the sound off with the Play an alarm sound checkbox.'],
+            ['q' => 'Why did I not hear the alarm?', 'a' => 'Check that your volume is up, the alarm sound option is ticked and the tab is still open. Browsers only allow sound after you click on the page, which happens when you press Start.'],
             ['q' => 'What is the longest timer I can set?', 'a' => 'Up to 99 hours, 59 minutes and 59 seconds.'],
-            ['q' => 'Can I pause the timer?', 'a' => 'Yes. Press Pause (or Space) and Resume to carry on. You can also add a minute while it is running.'],
+            ['q' => 'Can I pause the timer?', 'a' => 'Yes. Press Pause (or Space) and Resume to carry on. You can also add a minute while it is running or paused.'],
+            ['q' => 'Can I type more than 59 minutes?', 'a' => 'Yes. Each box accepts up to 99, and the values are added together, so 90 minutes becomes a 1:30:00 timer.'],
+            ['q' => 'Will I get a notification when time is up?', 'a' => 'No system notification is sent. The page shows a Time\'s up! banner, the tab title changes to ⏰ Time\'s up! and the alarm beeps if sound is on.'],
+            ['q' => 'What happens if I reload or close the tab?', 'a' => 'The countdown is lost, because the timer is not saved. Leave the tab open until the alarm goes off.'],
         ],
         'sources' => [
-            ['title' => 'MDN: Performance.now()', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Performance/now'],
+            [
+                'title' => 'MDN: Performance.now()',
+                'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Performance/now',
+            ],
         ],
-        'related' => ['stopwatch', 'age-calculator', 'percentage-calculator'],
+        'related' => ['stopwatch', 'sleep-calculator', 'age-calculator', 'percentage-calculator', 'random-number-generator'],
     ],
 
     'sleep-calculator' => [
@@ -1295,6 +1586,7 @@ return [
             ],
         ],
     ],
+
     'avif-to-jpg' => [
         'name' => 'AVIF to JPG',
         'category' => 'image-tools',
@@ -1340,7 +1632,7 @@ return [
         'category' => 'image-tools',
         'icon' => 'image',
         'popular' => false,
-        'updated' => '2026-10-02',
+        'updated' => '2026-11-10',
         'title' => 'AVIF to PNG Converter - Free, Keeps Transparency',
         'description' => 'Convert AVIF to PNG online for free. Transparent backgrounds are kept, batch convert up to 30 images and download a ZIP. Nothing is uploaded.',
         'h1' => 'AVIF to PNG Converter',
@@ -1348,9 +1640,11 @@ return [
         'keywords' => ['avif to png', 'convert avif to png', 'avif to png converter', 'avif converter', 'avif to png transparent'],
         'intro' => 'AVIF to PNG conversion turns a modern, highly compressed AVIF image into a lossless PNG that almost every app can open. Transparent backgrounds stay transparent, which makes PNG the right choice for logos, icons and graphics. Drop one image or a batch and download them one by one or as a ZIP.',
         'steps' => [
-            'Drop your AVIF images into the box or click to choose them (up to 30 at once).',
-            'Each image is converted to PNG straight away, in your browser.',
-            'Click Download next to an image, or Download all (ZIP) for the whole batch.',
+            'Drop your AVIF images into the box or click to choose them (up to 30 at once, 50 MB each).',
+            'Each image is converted to PNG straight away, in your browser; the list shows waiting… and converting… as it goes.',
+            'Check the new .png file name and its size next to each image.',
+            'Click Download next to an image, or Download all (ZIP) for the whole batch once two or more are ready.',
+            'Remove one image with the ✕ button, or click Clear all to start a new batch.',
         ],
         'features' => [
             'Converts AVIF to lossless PNG',
@@ -1359,20 +1653,62 @@ return [
             '100% private: nothing is uploaded',
         ],
         'content' => [
-            ['heading' => 'When should I choose PNG instead of JPG?', 'body' => 'Choose PNG for logos, icons, screenshots and anything with transparent areas or sharp edges, because PNG is lossless and supports transparency. For ordinary photos, JPG gives much smaller files, so AVIF to JPG is usually the better choice.'],
-            ['heading' => 'Does converting AVIF to PNG lose quality?', 'body' => 'The conversion itself adds no loss, because PNG stores every pixel exactly. If the original AVIF was saved with lossy compression, that earlier loss stays, but nothing new is added.'],
+            [
+                'heading' => 'When should I choose PNG instead of JPG?',
+                'body' => 'Choose PNG for logos, icons, screenshots and anything with transparent areas or sharp edges, because PNG is lossless and supports transparency. For ordinary photos, JPG gives much smaller files, so AVIF to JPG is usually the better choice.',
+            ],
+            [
+                'heading' => 'Does converting AVIF to PNG lose quality?',
+                'body' => 'The conversion itself adds no loss, because PNG stores every pixel exactly. If the original AVIF was saved with lossy compression, that earlier loss stays, but nothing new is added.',
+            ],
+            [
+                'heading' => 'Why convert AVIF at all?',
+                'body' => 'AVIF is an image format based on the AV1 video codec. It makes very small files, which is why many websites now serve it, but plenty of image editors, office programs, upload forms and older devices still cannot open it. Saving an image from a web page can leave you with an .avif file you cannot use. Converting it to PNG gives you a file that almost any program accepts, without adding new compression loss and without losing transparent backgrounds.',
+            ],
+            [
+                'heading' => 'How the conversion works',
+                'body' => 'Your browser decodes each AVIF, draws it onto an invisible canvas at full size and saves the canvas as a PNG. Transparent pixels stay transparent, because nothing is painted behind the image. PNG is lossless, so there is no quality setting to choose. Images are processed one after another, and each new file keeps its original name with a .png extension. The ZIP download is named converted-to-png.zip, and files that share a name are renamed inside it so nothing is overwritten.',
+            ],
+            [
+                'heading' => 'Reading the file list',
+                'body' => 'Every image you add gets a row with a thumbnail and its original size. When it is done, the row shows the new PNG name and size, so you can compare the two at a glance; expect the PNG to be noticeably larger. If one file can\'t be converted, the reason is shown in red on its row while the others carry on, and a line under the list counts how many images are already converted.',
+            ],
+            [
+                'heading' => 'Use cases',
+                'body' => 'These are common reasons to turn AVIF images into PNG.',
+                'items' => [
+                    'You saved a logo or graphic from a website and it downloaded as AVIF, but your editor or slide software won\'t open it.',
+                    'A form, marketplace or content system rejects AVIF uploads but accepts PNG.',
+                    'You need a lossless copy of an AVIF image to edit, crop or annotate without adding compression artefacts.',
+                    'You want to keep the transparent background of an AVIF icon while making it compatible with older apps.',
+                ],
+            ],
+            [
+                'heading' => 'Limits and privacy',
+                'body' => 'You can add up to 30 images at a time, each up to 50 MB; bigger files are skipped with a message. Images larger than 10,000 pixels on a side are scaled down to fit. Your browser has to be able to decode AVIF: current versions of Chrome, Edge, Firefox and Safari can, and if yours can\'t, the file shows an error saying it could not be opened. AVIF can store 10- or 12-bit colour and HDR, but the browser canvas works with 8 bits per channel, so the PNG is a standard 8-bit image. An animated AVIF becomes a single still frame, and metadata is not copied over. Everything runs in your browser and no image is uploaded.',
+            ],
         ],
         'faqs' => [
             ['q' => 'How do I convert AVIF to PNG?', 'a' => 'Drop the AVIF file into the box above. It is converted to PNG instantly and you can download it with one click.'],
             ['q' => 'Is transparency kept?', 'a' => 'Yes. PNG supports transparency, so transparent areas in the AVIF stay transparent in the PNG.'],
             ['q' => 'Why is the PNG so much bigger?', 'a' => 'AVIF uses very efficient compression while PNG is lossless, so the same image can be several times larger as a PNG.'],
+            ['q' => 'Why does my AVIF file show an error?', 'a' => 'The browser could not decode it. The file may be damaged, or your browser may be too old to read AVIF. Try again in an up-to-date version of Chrome, Edge, Firefox or Safari.'],
+            ['q' => 'Can I convert other formats here too?', 'a' => 'Yes. The box also accepts JPG, PNG, WebP, GIF and BMP, and converts each of them to PNG in the same way.'],
+            ['q' => 'Should I convert to PNG or WebP?', 'a' => 'Choose PNG when you need a file that opens almost anywhere or a lossless copy to edit. WebP files are much smaller and also support transparency, so AVIF to WebP suits images going back onto a website.'],
+            ['q' => 'Does it work on a phone?', 'a' => 'Yes, in any mobile browser that can decode AVIF. Very large images need a lot of memory, so if your phone\'s browser cannot create the PNG you will see an error asking you to try smaller dimensions.'],
             ['q' => 'Are my images uploaded?', 'a' => 'No. The conversion runs in your browser and your images never leave your device.'],
         ],
         'sources' => [
-            ['title' => 'Alliance for Open Media: AV1 Image File Format (AVIF) specification', 'url' => 'https://aomediacodec.github.io/av1-avif/'],
-            ['title' => 'MDN: Image file type and format guide', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types'],
+            [
+                'title' => 'Alliance for Open Media: AV1 Image File Format (AVIF) specification',
+                'url' => 'https://aomediacodec.github.io/av1-avif/',
+            ],
+            [
+                'title' => 'MDN: Image file type and format guide',
+                'url' => 'https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types',
+            ],
         ],
-        'related' => ['avif-to-jpg', 'avif-to-webp', 'webp-to-png', 'image-compressor'],
+        'related' => ['avif-to-jpg', 'avif-to-webp', 'webp-to-png', 'jpg-to-png', 'image-compressor'],
     ],
 
     'avif-to-webp' => [
@@ -1380,7 +1716,7 @@ return [
         'category' => 'image-tools',
         'icon' => 'image',
         'popular' => false,
-        'updated' => '2026-11-02',
+        'updated' => '2026-11-10',
         'title' => 'AVIF to WebP Converter: Free, Batch, Keeps Transparency',
         'description' => 'Convert AVIF to WebP online for free. Keep small file sizes and transparency, batch convert up to 30 images and get a ZIP. Nothing is uploaded.',
         'h1' => 'AVIF to WebP Converter',
@@ -1388,9 +1724,13 @@ return [
         'keywords' => ['avif to webp', 'convert avif to webp', 'avif to webp converter', 'avif webp', 'avif converter online'],
         'intro' => 'Converting AVIF to WebP gives you a small, web-friendly image that more apps and content management systems accept than AVIF. WebP keeps transparency and compresses well, so files stay much smaller than PNG or JPG. Drop one image or a batch, choose the quality and download the results.',
         'steps' => [
-            'Drop your AVIF images into the box or click to choose them (up to 30 at once).',
-            'Adjust the WebP quality if you like; 85% is a good balance of size and sharpness.',
-            'Click Download next to an image, or Download all (ZIP) for the whole batch.',
+            'Drop your AVIF images into the box or click to choose them (up to 30 at once, max 50 MB each).',
+            'Wait a moment while each file converts; the list then shows the new .webp name and its size.',
+            'Move the Quality slider (50 to 100%, 92% by default) if you want smaller or sharper files.',
+            'If you changed the quality after converting, click Convert again to redo the batch.',
+            'Click Download next to an image to save that WebP.',
+            'With two or more images converted, click Download all (ZIP) to get them in one file.',
+            'Remove a single image with ✕, or click Clear all to start a new batch.',
         ],
         'features' => [
             'Converts AVIF to WebP in your browser',
@@ -1399,21 +1739,62 @@ return [
             '100% private: nothing is uploaded',
         ],
         'content' => [
-            ['heading' => 'AVIF or WebP: which should I use?', 'body' => 'Both are modern formats with transparency. AVIF usually makes smaller files, but WebP has been around longer and is accepted by more apps, plugins and upload forms. Converting to WebP is a good middle ground when a site or tool won\'t take AVIF but you still want small images.'],
-            ['heading' => 'Will the WebP look the same?', 'body' => 'At 85% quality or higher the difference is very hard to see. Each lossy save can lose a little detail, so for archiving or further editing, AVIF to PNG keeps every pixel instead.'],
+            [
+                'heading' => 'AVIF or WebP: which should I use?',
+                'body' => 'Both are modern formats with transparency. AVIF usually makes smaller files, but WebP has been around longer and is accepted by more apps, plugins and upload forms. Converting to WebP is a good middle ground when a site or tool won\'t take AVIF but you still want small images.',
+            ],
+            [
+                'heading' => 'Will the WebP look the same?',
+                'body' => 'The WebP is saved with lossy compression at the quality you choose. At 85% quality or higher the difference is very hard to see, and the hint under the slider notes that 90% or more looks identical to the original. Each lossy save can lose a little detail, so for archiving or further editing, AVIF to PNG keeps every pixel instead.',
+            ],
+            [
+                'heading' => 'How the conversion works',
+                'body' => 'Your browser decodes each AVIF with its own built-in image decoder, draws it onto a canvas at its original width and height, and saves the canvas as WebP at the selected quality. Files are converted one after another, and each one shows waiting, converting and then its new name and size next to the original size, so you can compare them straight away. Very large images are the one exception to keeping the original dimensions: if a side is longer than 10,000 pixels, the image is scaled down to fit within 10,000 × 10,000.',
+            ],
+            [
+                'heading' => 'What changes in the converted file',
+                'body' => 'Only the pixels are carried over. Metadata stored in the AVIF, such as camera details, dates or GPS location, is not copied into the WebP, which is useful if you share photos publicly. An animated AVIF becomes a single still image. WebP stores 8 bits per color channel, so HDR or 10-bit AVIF photos are converted to standard dynamic range and may look a little different from the original on an HDR screen. Each output keeps the original file name with a .webp extension, and if two files in a ZIP would get the same name, the second one gets a (2) suffix instead of overwriting the first.',
+            ],
+            [
+                'heading' => 'Other formats and older browsers',
+                'body' => 'The converter is not limited to AVIF: you can also drop JPG, PNG, WebP, GIF or BMP files into the same batch and get WebP versions of all of them. If your browser cannot save WebP, which was the case in Safari before version 17, the image is saved as JPG instead and a note under the file tells you so. If a file can\'t be opened, for example because it is damaged or your browser can\'t decode it, that file shows an error and the rest of the batch carries on.',
+            ],
+            [
+                'heading' => 'Use cases',
+                'body' => 'Typical reasons to turn AVIF into WebP:',
+                'items' => [
+                    'Upload images to a website builder, CMS or marketplace that accepts WebP but rejects AVIF.',
+                    'Use AVIF images you downloaded in an image editor or app that can open WebP but not AVIF.',
+                    'Keep transparent logos and product cutouts small while switching to a more widely accepted format.',
+                    'Convert a folder of AVIF photos in one go and download them together as a ZIP.',
+                    'Share photos without the camera and location metadata that the original files contained.',
+                ],
+            ],
+            [
+                'heading' => 'Limits and privacy',
+                'body' => 'Everything runs in your browser: images are decoded, converted and zipped on your device and are never uploaded to a server. You can add up to 30 images per batch and each file can be up to 50 MB; larger files are skipped with a message. AVIF usually compresses better than WebP, so the WebP is often larger than the AVIF you started with; lower the quality if size matters. Very large images use a lot of memory, which can make conversion slow on phones and older computers.',
+            ],
         ],
         'faqs' => [
             ['q' => 'How do I convert AVIF to WebP?', 'a' => 'Drop the AVIF file into the box above, choose a quality and download the WebP with one click.'],
             ['q' => 'Is transparency kept?', 'a' => 'Yes. WebP supports transparency, so transparent areas stay transparent.'],
             ['q' => 'Can I convert several AVIF files at once?', 'a' => 'Yes. Drop up to 30 AVIF images together, then download each WebP on its own or all of them in one ZIP file.'],
+            ['q' => 'Will the WebP be smaller than the AVIF?', 'a' => 'Usually not. AVIF compresses more efficiently, so the WebP is often a bit larger. The file list shows both sizes, and a lower quality setting makes the WebP smaller.'],
+            ['q' => 'Why did I get a JPG instead of a WebP?', 'a' => 'Your browser cannot save WebP images, so the converter used JPG and showed a note. Updating the browser, or using a current version of Chrome, Edge, Firefox or Safari, fixes it.'],
             ['q' => 'Which browsers can do this?', 'a' => 'Current versions of Chrome, Edge, Firefox and Safari can decode AVIF and save WebP, so the converter works in all of them.'],
             ['q' => 'Are my images uploaded?', 'a' => 'No. Everything happens in your browser and your images never leave your device.'],
         ],
         'sources' => [
-            ['title' => 'Can I use: AVIF image format browser support', 'url' => 'https://caniuse.com/avif'],
-            ['title' => 'Google for Developers: An image format for the Web (WebP)', 'url' => 'https://developers.google.com/speed/webp'],
+            [
+                'title' => 'Can I use: AVIF image format browser support',
+                'url' => 'https://caniuse.com/avif',
+            ],
+            [
+                'title' => 'Google for Developers: An image format for the Web (WebP)',
+                'url' => 'https://developers.google.com/speed/webp',
+            ],
         ],
-        'related' => ['avif-to-jpg', 'avif-to-png', 'webp-to-png', 'image-compressor'],
+        'related' => ['avif-to-jpg', 'avif-to-png', 'webp-to-png', 'image-compressor', 'image-resizer'],
     ],
 
     'readability-checker' => [
@@ -1421,17 +1802,27 @@ return [
         'category' => 'text-tools',
         'icon' => 'gauge',
         'popular' => false,
-        'updated' => '2026-10-02',
+        'updated' => '2026-11-10',
         'title' => 'Readability Checker - Free Flesch Score & Grade Level',
         'description' => 'Free readability checker: get the Flesch Reading Ease score, grade level, Gunning Fog and SMOG, and find long sentences to fix. Text stays private.',
         'h1' => 'Readability Checker',
         'tagline' => 'See how easy your text is to read, and what to fix.',
-        'keywords' => ['readability checker', 'ai readability checker', 'readability score', 'flesch reading ease calculator', 'flesch kincaid grade level', 'readability test'],
+        'keywords' => [
+            'readability checker',
+            'ai readability checker',
+            'readability score',
+            'flesch reading ease calculator',
+            'flesch kincaid grade level',
+            'readability test',
+        ],
         'intro' => 'A readability checker measures how easy a text is to read, using formulas based on sentence length and word length. Paste an article, essay, email or AI-written draft to get the Flesch Reading Ease score, the US school grade level from five formulas, and a list of long sentences to shorten. Your text is analysed in your browser and never uploaded.',
         'steps' => [
-            'Paste or type your text into the box.',
-            'Read the Flesch Reading Ease score and the grade level from each formula.',
-            'Shorten the long sentences listed below the scores, then check again.',
+            'Paste or type your text into the Your text box; scores appear as soon as there is a sentence.',
+            'Read the Flesch Reading Ease score in the colored circle and the plain-English level next to it.',
+            'Check the average grade level and the estimated reading time under the score.',
+            'Compare the US school grade from each of the five formulas in the table.',
+            'Shorten the sentences listed under “Long sentences to shorten”, starting with the longest.',
+            'Edit your text in the box and watch the scores update, or press Clear to start again.',
         ],
         'features' => [
             'Flesch Reading Ease and Flesch-Kincaid Grade Level',
@@ -1440,14 +1831,46 @@ return [
             'Instant results; nothing is uploaded',
         ],
         'content' => [
-            ['heading' => 'What is a good readability score?', 'body' => 'For most websites, blogs and emails, aim for a Flesch Reading Ease score of 60 or higher, which is plain English that most adults read easily, and a grade level of about 8 or lower. Technical and academic writing often scores 30-50, which is fine for expert readers but hard for everyone else.'],
-            ['heading' => 'How do I make my writing easier to read?', 'body' => 'Split long sentences in two, prefer short everyday words to long ones, use active verbs, and break big paragraphs into smaller ones. These changes raise the Flesch score directly, because it is calculated from words per sentence and syllables per word.'],
+            [
+                'heading' => 'What is a good readability score?',
+                'body' => 'For most websites, blogs and emails, aim for a Flesch Reading Ease score of 60 or higher, which is plain English that most adults read easily, and a grade level of about 8 or lower. Technical and academic writing often scores 30-50, which is fine for expert readers but hard for everyone else. The checker colors the score green from 60 up, amber from 30 to just under 60, and red below 30, and labels it from Very easy (90 and above) down to Very difficult (below 30).',
+            ],
+            [
+                'heading' => 'Which formulas does the checker use?',
+                'body' => 'Flesch Reading Ease is 206.835 − 1.015 × (words per sentence) − 84.6 × (syllables per word); higher is easier. The five grade-level formulas each estimate the US school grade a reader needs. Flesch-Kincaid Grade is 0.39 × words per sentence + 11.8 × syllables per word − 15.59. Gunning Fog is 0.4 × (words per sentence + the percentage of complex words). SMOG is 1.043 × √(complex words × 30 ÷ sentences) + 3.1291. Coleman-Liau uses letters instead of syllables: 0.0588 × letters per 100 words − 0.296 × sentences per 100 words − 15.8. The Automated Readability Index is 4.71 × letters per word + 0.5 × words per sentence − 21.43. Here a complex word is any word with three or more syllables. The average grade level shown under the score is the mean of the five formulas.',
+            ],
+            [
+                'heading' => 'How words, sentences and syllables are counted',
+                'body' => 'A word is a run of letters, including accented Latin letters, and a contraction such as “don\'t” counts as one word; numbers on their own are not counted as words. A sentence ends at a full stop, question mark, exclamation mark or ellipsis followed by a space, or at a line break. Common abbreviations such as Mr., Mrs., Dr., Prof., etc., e.g. and i.e. do not end a sentence, and the point in a decimal number such as 3.5 is ignored. Syllables are estimated with a rule of thumb rather than a dictionary: words of three letters or fewer count as one syllable, a silent final e, es or ed is dropped, and each group of vowels (a, e, i, o, u, y) counts as one syllable. Like any such rule, it is off by one for some words, which shifts the scores slightly.',
+            ],
+            [
+                'heading' => 'How do I make my writing easier to read?',
+                'body' => 'Split long sentences in two, prefer short everyday words to long ones, use active verbs, and break big paragraphs into smaller ones. These changes raise the Flesch score directly, because it is calculated from words per sentence and syllables per word. The checker lists every sentence over 25 words, longest first, and shows up to five of them with their word count, so you know where to start. The stats row shows words, sentences, words per sentence, syllables per word and complex words, which tells you whether long sentences or long words are pulling the score down.',
+            ],
+            [
+                'heading' => 'Use cases',
+                'body' => 'A readability score is a quick, objective check before you publish or send something.',
+                'items' => [
+                    'Check a blog post or landing page against a target such as Flesch 60 or grade 8 before it goes live.',
+                    'Make an AI-written draft sound more natural by finding and splitting its longest sentences.',
+                    'Simplify instructions, help articles or customer emails so that non-experts can follow them.',
+                    'See whether a school essay or report suits the reading level of its intended audience.',
+                    'Compare two versions of the same paragraph to see which one is easier to read.',
+                ],
+            ],
+            [
+                'heading' => 'Limits and privacy',
+                'body' => 'The formulas measure only sentence length and word length. They cannot tell whether a text is accurate, well organized or suited to its readers, and a short word can still be unfamiliar. Headings, list items and lines without punctuation each count as a separate sentence, which can make a text look easier than it is, so check running prose where possible. The formulas were designed for English, and on non-English pages the tool shows a reminder that scores are only a rough guide. The reading time assumes 238 words per minute. Your text is analyzed in your browser as you type and is never uploaded.',
+            ],
         ],
         'faqs' => [
-            ['q' => 'What is the Flesch Reading Ease score?', 'a' => 'It is a 0-100 score based on average sentence length and syllables per word. Higher scores are easier: 60-70 is plain English and 90+ is very easy.'],
+            ['q' => 'What is the Flesch Reading Ease score?', 'a' => 'It is a score based on average sentence length and syllables per word. It usually falls between 0 and 100, though very simple text can go higher; the checker shows values from 0 to 121. Higher scores are easier: 60-70 is plain English and 90+ is very easy.'],
             ['q' => 'What does the grade level mean?', 'a' => 'It is the US school grade a reader needs to understand the text. Grade 8 means a typical 13-14 year old can read it.'],
+            ['q' => 'Why do the five grade levels differ?', 'a' => 'Each formula weighs different things. Flesch-Kincaid and SMOG use syllables, Gunning Fog counts words of three or more syllables, and Coleman-Liau and the Automated Readability Index count letters. Looking at the average gives a steadier picture than any single formula.'],
+            ['q' => 'What counts as a long sentence?', 'a' => 'Any sentence of more than 25 words. All of them are counted in the heading, and the five longest are shown so you can shorten them first.'],
             ['q' => 'Can I check AI-written text?', 'a' => 'Yes. AI drafts often use long sentences and long words; the checker shows which sentences to shorten so the text sounds more natural.'],
-            ['q' => 'Does it work in other languages?', 'a' => 'The formulas were designed for English, so scores for other languages are only a rough guide.'],
+            ['q' => 'Does it work in other languages?', 'a' => 'The formulas were designed for English, so scores for other languages are only a rough guide. The syllable rules are English rules too.'],
+            ['q' => 'Is my text uploaded or stored?', 'a' => 'No. All counting and scoring happen in your browser, and the text is not saved. Press Clear to empty the box.'],
         ],
         'table' => [
             'caption' => 'Flesch Reading Ease scores',
@@ -1460,10 +1883,16 @@ return [
             ],
         ],
         'sources' => [
-            ['title' => 'Wikipedia: Flesch-Kincaid readability tests', 'url' => 'https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests'],
-            ['title' => 'Wikipedia: Gunning fog index', 'url' => 'https://en.wikipedia.org/wiki/Gunning_fog_index'],
+            [
+                'title' => 'Wikipedia: Flesch-Kincaid readability tests',
+                'url' => 'https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests',
+            ],
+            [
+                'title' => 'Wikipedia: Gunning fog index',
+                'url' => 'https://en.wikipedia.org/wiki/Gunning_fog_index',
+            ],
         ],
-        'related' => ['word-counter', 'ai-content-detector', 'case-converter'],
+        'related' => ['word-counter', 'ai-content-detector', 'case-converter', 'broken-link-checker'],
     ],
 
     'ai-content-detector' => [
@@ -1471,7 +1900,7 @@ return [
         'category' => 'text-tools',
         'icon' => 'bot',
         'popular' => true,
-        'updated' => '2026-10-02',
+        'updated' => '2026-11-10',
         'title' => 'AI Content Detector - Free AI Text Checker',
         'description' => 'Free AI content detector: check if text looks AI-generated with an AI-likeness score, the phrases that give it away and four writing signals. Private.',
         'h1' => 'AI Content Detector',
@@ -1479,9 +1908,12 @@ return [
         'keywords' => ['ai content detector', 'ai detector', 'ai text checker', 'chatgpt detector', 'detect ai writing', 'ai checker free'],
         'intro' => 'An AI content detector estimates whether a text was written by an AI chatbot such as ChatGPT. This one analyses four writing signals that differ between typical AI and human writing: how even the sentence lengths are, AI-typical phrases, contractions and vocabulary variety. It gives an AI-likeness score and shows exactly what raised it. It works on English text in your browser, without uploading anything.',
         'steps' => [
-            'Paste at least 80 words of English text into the box.',
-            'Click Check text to get the AI-likeness score and the four signals.',
-            'Review the AI-typical phrases it found; rewriting them makes text sound more human.',
+            'Paste at least 80 words of English text into the Text to check box.',
+            'Click Check text.',
+            'Read the AI-likeness score and the verdict: Likely AI-generated, Mixed or unclear, or Likely human-written.',
+            'Look at the four signal bars to see which patterns raised the score.',
+            'Review the AI-typical phrases found, shown with how often each appears (up to 15); rewriting them makes text sound more human.',
+            'Click Clear to empty the box and check another text.',
         ],
         'features' => [
             'AI-likeness score from 0 to 100%',
@@ -1490,19 +1922,53 @@ return [
             'Free, unlimited and private: nothing is uploaded',
         ],
         'content' => [
-            ['heading' => 'How does AI detection work?', 'body' => 'AI models tend to write very even sentences, reuse the same polished phrases ("moreover", "it is important to note", "delve") and avoid contractions. People usually mix short and long sentences and write more casually. The detector measures these patterns and combines them into one score.'],
-            ['heading' => 'How accurate are AI detectors?', 'body' => 'No AI detector is fully reliable. Formal human writing can score high, and AI text that has been edited or prompted to sound casual can score low. Treat the score as a hint to look closer, never as proof, and never use it alone to accuse a student or writer of cheating.'],
+            [
+                'heading' => 'How does AI detection work?',
+                'body' => 'AI models tend to write very even sentences, reuse the same polished phrases ("moreover", "it is important to note", "delve") and avoid contractions. People usually mix short and long sentences and write more casually. The detector measures these patterns and combines them into one score.',
+            ],
+            [
+                'heading' => 'The four signals, exactly',
+                'body' => 'Each signal is shown as a bar from 0 to 100%. Uniform sentence lengths compares how much sentence lengths vary relative to their average (the coefficient of variation): very even sentences push it towards 100%, while a strong mix of short and long ones brings it to 0. AI-typical phrases counts matches from a built-in list of about 60 words and phrases, such as "delve", "tapestry", "plays a crucial role" and "in today\'s fast-paced world", per 100 words; 1.5 or more matches per 100 words gives 100%. Few contractions counts forms such as "don\'t" and "it\'s" per 100 words; none at all gives 100%. Repetitive vocabulary measures how many different words appear in each 50-word stretch of the text, averaged across the whole text, and rises as the range of words narrows.',
+            ],
+            [
+                'heading' => 'How the score and verdict are worked out',
+                'body' => 'The score is a weighted average of the four signals: sentence uniformity and AI-typical phrases count for 35% each, and contractions and vocabulary for 15% each. A score of 65% or more is labelled Likely AI-generated, 40% to 64% Mixed or unclear, and below 40% Likely human-written. These thresholds are fixed rules, not a measured probability, so a score of 70% does not mean there is a 70% chance the text came from an AI. The tool does not run a language model and does not compare your text with any database of known AI output.',
+            ],
+            [
+                'heading' => 'How accurate are AI detectors?',
+                'body' => 'No AI detector is fully reliable. Formal human writing can score high, and AI text that has been edited or prompted to sound casual can score low. Research has also found that detectors flag writing by non-native English speakers as AI more often. Treat the score as a hint to look closer, never as proof, and never use it alone to accuse a student or writer of cheating.',
+            ],
+            [
+                'heading' => 'Use cases',
+                'body' => 'The score is most useful as a writing aid and a prompt for a closer look, not as a verdict on a person.',
+                'items' => [
+                    'Check your own draft for stock phrases and very even sentences before you publish or submit it.',
+                    'Edit AI-assisted text so it reads naturally, using the list of phrases found as a to-do list.',
+                    'Get a quick second opinion on a submitted article or essay before talking to the writer about how it was produced.',
+                    'See how much the score moves when you vary sentence length or use contractions, to learn what makes writing sound mechanical.',
+                ],
+            ],
+            [
+                'heading' => 'Limits and privacy',
+                'body' => 'The checker analyses English text only; the phrase list and contraction patterns are English. It needs at least 80 words and three sentences, and it tells you how many words you have if the text is too short. Sentences are split at full stops, question marks, exclamation marks and line breaks, so bullet lists and headings count as short sentences and can change the uniformity signal. Common words on the phrase list, such as "crucial", "journey" or "additionally", are also used by people. The analysis runs entirely in your browser: the text you paste is not uploaded, saved or sent anywhere.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Can it detect ChatGPT?', 'a' => 'It flags the writing patterns that ChatGPT and similar models often produce. Edited or carefully prompted AI text may not be detected.'],
-            ['q' => 'How much text do I need?', 'a' => 'At least 80 words. Longer texts of 300 words or more give a more meaningful score.'],
+            ['q' => 'How much text do I need?', 'a' => 'At least 80 words in three or more sentences. Longer texts of 300 words or more give a more meaningful score.'],
             ['q' => 'Can a human text score as AI?', 'a' => 'Yes. Very formal, even writing with phrases like "furthermore" can score high even when a person wrote it. That is why the score is only a guide.'],
+            ['q' => 'Does the score show the chance that a text is AI-generated?', 'a' => 'No. It is a weighted mix of four writing signals compared against fixed thresholds, not a probability. Use it to see which patterns stand out, not as a percentage chance.'],
+            ['q' => 'Does it work for other languages?', 'a' => 'No. The phrase list and contraction checks are built for English, so results for other languages are not meaningful.'],
+            ['q' => 'What should I do if my own writing scores high?', 'a' => 'Look at which signal is highest. If it is sentence uniformity, vary your sentence lengths; if it is phrases, swap the listed words for plainer ones; if it is contractions, write as you would speak where the tone allows. If you need to show how you wrote something, drafts and notes are far better evidence than any detector score.'],
             ['q' => 'Is my text stored?', 'a' => 'No. The analysis runs in your browser and your text is never sent anywhere.'],
         ],
         'sources' => [
-            ['title' => 'Liang et al. (2023), "GPT detectors are biased against non-native English writers", arXiv:2304.02819', 'url' => 'https://arxiv.org/abs/2304.02819'],
+            [
+                'title' => 'Liang et al. (2023), "GPT detectors are biased against non-native English writers", arXiv:2304.02819',
+                'url' => 'https://arxiv.org/abs/2304.02819',
+            ],
         ],
-        'related' => ['readability-checker', 'word-counter', 'case-converter'],
+        'related' => ['readability-checker', 'word-counter', 'case-converter', 'password-generator'],
     ],
 
     'remove-background' => [
@@ -1951,7 +2417,7 @@ return [
         'category' => 'pdf-tools',
         'icon' => 'pdf',
         'popular' => true,
-        'updated' => '2026-10-03',
+        'updated' => '2026-11-10',
         'title' => 'Compress PDF - Reduce PDF File Size Free',
         'description' => 'Compress a PDF online for free to make it smaller. Keep text selectable with Recommended mode, or shrink further with Strong mode. No upload, no sign up.',
         'h1' => 'Compress PDF',
@@ -1980,17 +2446,31 @@ return [
                 'heading' => 'Why didn\'t my PDF get smaller?',
                 'body' => 'A PDF made only of text and vector graphics, or one that has already been compressed, may not shrink further in Recommended mode because there are no large images left to re-encode. In that case the original file is kept so you never end up with a bigger download, and Strong mode can still make it smaller by rendering the pages as images.',
             ],
+            [
+                'heading' => 'How to compress a PDF to 1 MB or 200 KB',
+                'body' => 'There is no target-size box. The tool has two modes and shows the size before and after, so you work towards a limit in steps. Start with Recommended: it re-encodes the JPEG photos inside the PDF at 60% quality, caps their longer side at 1,600 pixels and keeps the text selectable. For a photo-heavy PDF that is the first thing to try for a 1 MB limit. If the file is still too big, switch to Strong and try 100 DPI, then 72 DPI, the smallest setting. Strong turns each page into a JPEG, so the result depends mostly on the number of pages and the DPI. If 72 DPI is still over a strict limit such as 200 KB, the document has too many pages for that target: split it with Split PDF or send fewer pages. Sizes use 1 KB = 1,024 bytes, so leave a little margin below a portal\'s limit.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Does compressing a PDF reduce its quality?', 'a' => 'Recommended mode lowers the quality of embedded photos slightly, similar to saving a JPEG at a lower setting, while text and line art stay sharp. Strong mode renders the whole page as an image, so very small text can look less crisp when zoomed in.'],
             ['q' => 'Will I still be able to select text after compressing?', 'a' => 'Yes, with Recommended mode. Strong mode rasterises every page into one image, so text can no longer be selected, searched or copied - only choose it when file size matters more than that.'],
             ['q' => 'What happens if the compressed file is not smaller?', 'a' => 'The original file is kept and offered for download unchanged, so you are never left with a result that is bigger than what you started with.'],
             ['q' => 'Is my PDF uploaded to a server?', 'a' => 'No. Compression happens entirely in your browser with JavaScript, and the file is never sent anywhere.'],
+            ['q' => 'Why did Recommended mode not shrink my scanned PDF?', 'a' => 'Recommended only re-encodes images stored as ordinary JPEGs in RGB or grayscale. Scans saved in other formats, CMYK images and images with transparency are left untouched to avoid damaging them, so such a file may come back unchanged. Strong mode works on any PDF, because it renders every page as a new image.'],
         ],
         'sources' => [
-            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
-            ['title' => 'PDF.js, the PDF renderer by Mozilla', 'url' => 'https://mozilla.github.io/pdf.js/'],
-            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+            [
+                'title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0',
+                'url' => 'https://www.iso.org/standard/75839.html',
+            ],
+            [
+                'title' => 'PDF.js, the PDF renderer by Mozilla',
+                'url' => 'https://mozilla.github.io/pdf.js/',
+            ],
+            [
+                'title' => 'pdf-lib, create and modify PDF documents in JavaScript',
+                'url' => 'https://pdf-lib.js.org/',
+            ],
         ],
         'related' => ['protect-pdf', 'merge-pdf', 'split-pdf', 'image-compressor'],
     ],
@@ -2436,7 +2916,7 @@ return [
         'category' => 'pdf-tools',
         'icon' => 'pdf',
         'popular' => false,
-        'updated' => '2026-11-06',
+        'updated' => '2026-11-10',
         'title' => 'Edit PDF Online Free - Add Text and Images',
         'description' => 'Edit a PDF online for free: change text in its own font, add text, images, shapes, links or a watermark, or white out content. No upload, no sign up.',
         'h1' => 'Edit PDF',
@@ -2479,6 +2959,10 @@ return [
                 'heading' => 'Good uses for adding content to a PDF',
                 'body' => 'Correct a typo or a date, update a price or an address, add a note, a stamp, an initial, a highlighted passage or an arrow pointing something out - useful for fixing a document when you don\'t have the original file, reviewing a draft or filling in a simple form.',
             ],
+            [
+                'heading' => 'Edit a PDF without signing up',
+                'body' => 'There is no account, login or email step: open the page, choose a PDF of up to 200 MB and start editing. Your browser reads and edits the file itself; it is not uploaded to our server, so nothing is stored on our side that you would need to delete. Save PDF gives you an ordinary PDF download containing only the changes you made. The editor adds no watermark, logo or extra page of its own; the Watermark tab stamps one only when you choose to add it. While you work, your progress is auto-saved in your browser\'s storage on this device, so a refresh or a closed tab can be resumed. That saved copy is cleared when you download the edited PDF, or when you choose Discard.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Can I edit text that\'s already in the PDF?', 'a' => 'Yes. Choose Edit text, click any line and type. The new wording replaces the old one in the same place and, wherever possible, in the PDF\'s own font. Find and replace changes a word on every page at once. Text on scanned pages is part of an image and can\'t be edited this way.'],
@@ -2487,10 +2971,17 @@ return [
             ['q' => 'Is my PDF uploaded to a server?', 'a' => 'No. Everything - adding, moving, resizing and saving - happens in your browser with JavaScript and nothing is sent anywhere.'],
             ['q' => 'What image formats can I add?', 'a' => 'PNG, JPG and WebP.'],
             ['q' => 'Can I add a watermark?', 'a' => 'Yes. Open the Watermark tab to stamp text or a logo image across the page, with its own opacity, rotation, position and page range - the same tool the Watermark PDF page uses.'],
+            ['q' => 'Do I need an account, and is a watermark added to the saved PDF?', 'a' => 'No to both. There is no sign-up or login, and the saved PDF contains only your own edits, with no watermark or branding added by the tool.'],
         ],
         'sources' => [
-            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
-            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+            [
+                'title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0',
+                'url' => 'https://www.iso.org/standard/75839.html',
+            ],
+            [
+                'title' => 'pdf-lib, create and modify PDF documents in JavaScript',
+                'url' => 'https://pdf-lib.js.org/',
+            ],
         ],
         'related' => ['sign-pdf', 'redact-pdf', 'watermark-pdf', 'merge-pdf'],
     ],

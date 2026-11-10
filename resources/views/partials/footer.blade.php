@@ -25,6 +25,9 @@
             <p>&copy; {{ date('Y') }} {{ config('site.name') }}. {{ t('All rights reserved.') }}</p>
             <ul class="footer-legal">
                 <li><a href="{{ lurl('about') }}">{{ t('About') }}</a></li>
+                @if (! empty(config('site.founder.name')))
+                    <li><a href="{{ url(\App\Support\Guides::AUTHOR_PATH) }}" rel="author">{{ config('site.founder.name') }}</a></li>
+                @endif
                 <li><a href="{{ lurl('contact') }}">{{ t('Contact') }}</a></li>
                 <li><a href="{{ lurl('privacy-policy') }}">{{ t('Privacy Policy') }}</a></li>
                 <li><a href="{{ lurl('terms') }}">{{ t('Terms of Use') }}</a></li>

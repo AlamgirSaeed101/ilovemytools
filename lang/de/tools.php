@@ -51,9 +51,12 @@ return [
         'keywords' => ['groß kleinschreibung umwandeln', 'großbuchstaben in kleinbuchstaben', 'titelschreibung', 'satzanfang groß', 'camelcase konverter'],
         'intro' => 'Ein Groß-/Kleinschreibungs-Umwandler ist ein Tool, das die Schreibweise eines Textes ändert, zum Beispiel von GROSSBUCHSTABEN in kleinbuchstaben. Versehentlich mit aktivierter Feststelltaste getippt oder brauchst du eine Überschrift in Titelschreibung? Füge deinen Text ein und klicke auf eine Schaltfläche, um ihn sofort umzuwandeln. Entwickler können außerdem zwischen camelCase, PascalCase, snake_case, kebab-case und CONSTANT_CASE wechseln.',
         'steps' => [
-            'Füge deinen Text in das Feld ein.',
-            'Klicke auf die gewünschte Schreibweise, zum Beispiel Titelschreibung oder kleinbuchstaben.',
-            'Kopiere den umgewandelten Text oder lade ihn als .txt-Datei herunter.',
+            'Tippe oder füge deinen Text in das Feld Dein Text ein.',
+            'Klicke auf die gewünschte Schreibweise, zum Beispiel Titelschreibung, kleinbuchstaben oder snake_case.',
+            'Prüfe das Ergebnis im selben Feld; die hervorgehobene Schaltfläche zeigt die zuletzt angewendete Schreibweise.',
+            'Klicke auf eine andere Schaltfläche, um erneut umzuwandeln, oder bearbeite den Text von Hand.',
+            'Klicke auf Kopieren oder auf .txt herunterladen, um den Text als converted-text.txt zu speichern.',
+            'Klicke auf Leeren, um das Feld zu leeren und neu anzufangen.',
         ],
         'features' => [
             'GROSSBUCHSTABEN, kleinbuchstaben, Titelschreibung und Satzanfang groß',
@@ -65,18 +68,47 @@ return [
         'content' => [
             [
                 'heading' => 'Titelschreibung oder Satzanfang groß: Was ist der Unterschied?',
-                'body' => 'Die Titelschreibung schreibt die Hauptwörter einer Überschrift groß („The Quick Guide to SEO“), während kurze Wörter wie a, and, of und the klein bleiben, außer am Anfang. Bei „Satzanfang groß“ wird nur das erste Wort jedes Satzes großgeschrieben („The quick guide to SEO“), was viele moderne Websites wegen der Lesbarkeit bevorzugen. Im Deutschen bleiben Substantive natürlich immer großgeschrieben – prüfe das Ergebnis also kurz.',
+                'body' => 'Die Titelschreibung schreibt die Hauptwörter einer Überschrift groß („The Quick Guide to Writing“), während kurze Wörter wie a, and, of und the klein bleiben, außer sie stehen am Anfang oder Ende der Zeile. Bei „Satzanfang groß“ wird nur der erste Buchstabe jedes Satzes großgeschrieben („The quick guide to writing“), was viele moderne Websites wegen der Lesbarkeit bevorzugen. In diesem Tool beginnt ein neuer Satz nach einem Punkt, Fragezeichen, Ausrufezeichen oder Zeilenumbruch, und ein alleinstehendes „i“ wird immer als „I“ geschrieben. Bei Wörtern mit Bindestrich bekommt in der Titelschreibung jeder Teil einen Großbuchstaben, aus „well-known“ wird also „Well-Known“. Im Deutschen bleiben Substantive natürlich immer großgeschrieben – prüfe das Ergebnis also kurz.',
             ],
             [
                 'heading' => 'Welche Schreibweisen gibt es in der Programmierung?',
-                'body' => 'camelCase ist bei JavaScript-Variablen üblich, PascalCase bei Klassennamen, snake_case in Python und bei Datenbankspalten, kebab-case bei URLs und CSS-Klassen und CONSTANT_CASE bei Konstanten und Umgebungsvariablen.',
+                'body' => 'camelCase ist bei JavaScript-Variablen üblich, PascalCase bei Klassennamen, snake_case in Python und bei Datenbankspalten, kebab-case bei URLs und CSS-Klassen und CONSTANT_CASE bei Konstanten und Umgebungsvariablen. Aus „user first name“ machen die fünf Schaltflächen userFirstName, UserFirstName, user_first_name, user-first-name und USER_FIRST_NAME.',
+            ],
+            [
+                'heading' => 'Wie die Programmier-Schreibweisen Wörter trennen',
+                'body' => 'Bevor Wörter verbunden werden, zerlegt der Umwandler den Text an Leerzeichen, Satzzeichen und Symbolen in Wörter und außerdem dort, wo auf einen Kleinbuchstaben oder eine Ziffer ein Großbuchstabe folgt. So kannst du direkt zwischen den Stilen wechseln: Aus „XMLHttpRequest“ wird in snake_case xml_http_request, und aus „order-total“ wird in camelCase orderTotal. Satzzeichen fallen weg, Buchstaben und Ziffern bleiben erhalten, und jede Zeile wird einzeln umgewandelt. Du kannst also eine ganze Liste von Feldnamen einfügen und jede Zeile in einen eigenen Bezeichner verwandeln.',
+            ],
+            [
+                'heading' => 'Abkürzungen und Namen bei Titelschreibung und Satzanfang groß',
+                'body' => 'Titelschreibung und Satzanfang groß setzen zuerst alle Buchstaben klein und fügen dann Großbuchstaben dort ein, wo die Regel sie verlangt. Das repariert Text in reinen Großbuchstaben, verändert aber auch Wörter, die ihre Großbuchstaben behalten sollten: Aus „NASA“ wird in der Titelschreibung „Nasa“, und bei Satzanfang groß werden Namen wie „Paris“ oder „SEO“ mitten im Satz kleingeschrieben. Lies das Ergebnis einmal durch und stelle Abkürzungen und Eigennamen von Hand wieder her, bevor du es veröffentlichst.',
+            ],
+            [
+                'heading' => 'aLtErNaTiNg und InVeRsE',
+                'body' => 'aLtErNaTiNg wechselt bei jedem Buchstaben zwischen Klein- und Großschreibung. Es beginnt mit einem Kleinbuchstaben und überspringt Leerzeichen, Ziffern und Satzzeichen, damit das Muster auch über Wortgrenzen hinweg gleichmäßig bleibt. Das wird vor allem für Witze und Social-Media-Posts genutzt. InVeRsE dreht jeden Buchstaben um: Großbuchstaben werden klein und Kleinbuchstaben groß. Das ist die schnellste Lösung für Text, der versehentlich mit aktivierter Feststelltaste getippt wurde, denn aus „hELLO wORLD“ wird sofort wieder „Hello World“.',
+            ],
+            [
+                'heading' => 'Anwendungsfälle',
+                'body' => 'Einige alltägliche Aufgaben, die der Umwandler beschleunigt:',
+                'items' => [
+                    'Repariere eine E-Mail oder ein Dokument, das mit aktivierter Feststelltaste getippt wurde, ohne es neu zu schreiben.',
+                    'Bringe eine Liste von Artikeltiteln vor dem Veröffentlichen einheitlich in Titelschreibung oder Satzanfang groß.',
+                    'Benenne Tabellenüberschriften für einen Datenbankimport in snake_case-Spaltennamen um.',
+                    'Mache aus einem Seitentitel einen URL-Slug oder CSS-Klassennamen in kebab-case.',
+                    'Wandle JSON-Schlüssel oder Variablennamen zwischen camelCase und snake_case um, wenn du Code zwischen Programmiersprachen überträgst.',
+                ],
+            ],
+            [
+                'heading' => 'Grenzen und Datenschutz',
+                'body' => 'Die Umwandlung läuft per JavaScript in deinem Browser, und dein Text wird an keinen Server gesendet. Jede Schaltfläche ersetzt den Text im Feld. Eine Umwandlung, die Großbuchstaben entfernt, kann das Tool also nicht rückgängig machen; behalte eine Kopie des Originals, falls du es noch brauchst. Der Text wird nicht gespeichert, beim Neuladen der Seite ist das Feld leer. Die Titelschreibung nutzt englische Regeln für kurze Wörter, prüfe in anderen Sprachen also, welche Wörter klein bleiben sollen. Groß- und Kleinschreibung richten sich nach den Spracheinstellungen deines Browsers, was bei einigen Buchstaben wie dem türkischen i mit und ohne Punkt eine Rolle spielt.',
             ],
         ],
         'faqs' => [
             ['q' => 'Wie wandle ich Großbuchstaben in Kleinbuchstaben um?', 'a' => 'Füge deinen Text ein und klicke auf „kleinbuchstaben“. Jeder Buchstabe wird sofort umgewandelt, und du kannst das Ergebnis mit einem Klick kopieren.'],
-            ['q' => 'Schreibt die Titelschreibung jedes Wort groß?', 'a' => 'Nein. Sie folgt gängigen englischen Stilregeln und lässt kurze Wörter (a, an, the, and, but, or, of, in, on, at, to, for) klein, außer sie stehen am Anfang oder Ende.'],
+            ['q' => 'Schreibt die Titelschreibung jedes Wort groß?', 'a' => 'Nein. Sie lässt kurze englische Wörter klein, außer sie stehen am Anfang oder Ende einer Zeile: a, an, the, and, but, or, nor, for, so, yet, as, at, by, in, of, off, on, per, to, up, via und vs.'],
+            ['q' => 'Warum hat meine Abkürzung ihre Großbuchstaben verloren?', 'a' => 'Titelschreibung und Satzanfang groß setzen vor dem Großschreiben alle Buchstaben klein, deshalb werden Abkürzungen wie NASA oder SEO zu Nasa oder nasa. Korrigiere sie nach dem Umwandeln von Hand.'],
+            ['q' => 'Wie repariere ich Text, der mit Feststelltaste getippt wurde?', 'a' => 'Klicke auf InVeRsE, um jeden Buchstaben zurückzudrehen, oder auf Satzanfang groß, wenn der ganze Text in Großbuchstaben getippt wurde.'],
             ['q' => 'Gibt es eine Längenbegrenzung?', 'a' => 'Praktisch nicht. Die Umwandlung findet in deinem Browser statt, daher werden auch lange Dokumente sofort umgewandelt.'],
-            ['q' => 'Funktioniert es mit Umlauten und Akzenten?', 'a' => 'Ja. Umlaute und Buchstaben mit Akzent wie ä, ö, ü, é und ñ werden korrekt umgewandelt.'],
+            ['q' => 'Funktioniert es mit Umlauten und Akzenten?', 'a' => 'Ja. Umlaute und Buchstaben mit Akzent wie ä, ö, ü, é und ñ werden korrekt umgewandelt und zählen als Buchstaben, wenn Wörter für camelCase oder snake_case getrennt werden.'],
         ],
     ],
 
@@ -109,12 +141,17 @@ return [
                 'heading' => 'Wie halte ich meine Passwörter sicher?',
                 'body' => 'Verwende für jedes Konto ein anderes Passwort, speichere sie in einem Passwort-Manager und aktiviere die Zwei-Faktor-Authentifizierung, wo immer sie angeboten wird. Verwende nie ein Passwort erneut, das in einem Datenleck aufgetaucht ist.',
             ],
+            [
+                'heading' => 'Einstellungen für ein sicheres 16-stelliges Passwort',
+                'body' => 'Die Standardeinstellungen liefern es bereits: Länge 16 mit Großbuchstaben (A-Z), Kleinbuchstaben (a-z), Ziffern (0-9) und Sonderzeichen angehakt. Zusammen umfassen diese Zeichensätze 26 + 26 + 10 + 27 = 89 Zeichen; die 27 Sonderzeichen sind ! @ # $ % ^ & * ( ) - _ = + [ ] { } ; : , . < > ? / ~. Die Entropie ist Länge × log2(Zeichensatzgröße), also 16 × log2(89) = 16 × 6,48 ≈ 104 Bit, was die Anzeige als Ausgezeichnet bewertet (ab 100 Bit). Ohne Sonderzeichen hat der Zeichensatz 62 Zeichen: 16 × 5,95 ≈ 95 Bit, bewertet als Stark. Mit „Ähnliche ausschließen“ fallen I, L, O, i, l, o, 1 und 0 weg; übrig bleiben 81 Zeichen und etwa 101 Bit. Warum 16? Damit liegst du über dem NIST-Minimum von 15 Zeichen, und mit allen vier Zeichensätzen ist es die kürzeste Länge über 100 Bit; 15 Zeichen ergeben etwa 97. Der Wert ist leicht überschätzt, weil der Generator immer mindestens ein Zeichen jeder angehakten Art einfügt.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Ist dieser Passwort-Generator sicher?', 'a' => 'Ja. Passwörter werden in deinem Browser mit der Web Crypto API erzeugt. Nichts wird an unseren Server gesendet, protokolliert oder gespeichert.'],
             ['q' => 'Wie lang sollte mein Passwort sein?', 'a' => 'Mindestens 15 Zeichen, so verlangen es die aktuellen NIST-Richtlinien (SP 800-63B), für wichtige Konten wie E-Mail und Online-Banking 16 oder mehr.'],
             ['q' => 'Was bewirkt „Ähnliche ausschließen“?', 'a' => 'Es entfernt Zeichen, die sich ähneln, wie l, 1, I, O und 0, damit das Passwort leichter zu lesen und von Hand einzutippen ist.'],
             ['q' => 'Was ist Passwort-Entropie?', 'a' => 'Die Entropie misst in Bit, wie unvorhersehbar ein Passwort ist. Jedes zusätzliche Bit verdoppelt die Zahl der Versuche, die ein Angreifer braucht. Ab 80 Bit ist es stark, ab 100 Bit ausgezeichnet.'],
+            ['q' => 'Eine Website akzeptiert keine Sonderzeichen. Wie lang sollte mein Passwort sein?', 'a' => 'Entferne den Haken bei Sonderzeichen und nimm ein Zeichen mehr. Buchstaben und Ziffern ergeben 62 mögliche Zeichen, etwa 5,95 Bit pro Zeichen; 16 Zeichen kommen also auf etwa 95 Bit und 17 Zeichen auf etwa 101 Bit, wieder über der 100-Bit-Marke.'],
         ],
         'table' => [
             'caption' => 'Passwortlänge und Stärke (Entropie in Bit)',
@@ -186,7 +223,16 @@ return [
         'description' => 'JPG, PNG und WebP online verkleinern: Bildgröße kostenlos reduzieren, z. B. auf 100 KB, ohne sichtbaren Qualitätsverlust. Nichts verlässt dein Gerät.',
         'h1' => 'Bild verkleinern & komprimieren',
         'tagline' => 'Verkleinere JPG-, PNG- und WebP-Dateien – sogar auf eine exakte Größe wie 100 KB.',
-        'keywords' => ['bild verkleinern', 'jpg verkleinern online', 'png verkleinern', 'png größe verkleinern', 'bild komprimieren', 'bild auf 100kb komprimieren', 'bildgröße reduzieren', 'jpg komprimieren'],
+        'keywords' => [
+            'bild verkleinern',
+            'jpg verkleinern online',
+            'png verkleinern',
+            'png größe verkleinern',
+            'bild komprimieren',
+            'bild auf 100kb komprimieren',
+            'bildgröße reduzieren',
+            'jpg komprimieren',
+        ],
         'intro' => 'Ein JPG verkleinern heißt, die Dateigröße des Bildes zu reduzieren, damit es schneller lädt und leichter zu versenden ist. Mit diesem Tool kannst du ein JPG verkleinern oder ein PNG verkleinern, ohne dass die Bilder sichtbar schlechter aussehen. Mach deine Bilder kleiner, ohne sichtbar an Qualität zu verlieren. Lege eine oder mehrere JPG-, PNG- oder WebP-Dateien ab, wähle eine Qualitätsstufe oder eine Zielgröße wie 100 KB und lade die komprimierten Bilder herunter. Die Komprimierung passiert in deinem Browser, deine Fotos werden also nie hochgeladen.',
         'steps' => [
             'Bilder per Drag & Drop ablegen oder zum Auswählen klicken (JPG, PNG oder WebP).',
@@ -211,13 +257,17 @@ return [
                 'heading' => 'Welches Format soll ich wählen?',
                 'body' => 'JPG eignet sich am besten für Fotos. PNG erhält Transparenz und scharfe Kanten für Logos und Screenshots, erzeugt aber große Dateien. WebP liefert die kleinsten Dateien für Fotos und Grafiken und wird von allen modernen Browsern unterstützt.',
             ],
+            [
+                'heading' => 'Ein Foto auf 50 KB oder 20 KB komprimieren',
+                'body' => 'Bewerbungs- und Antragsformulare verlangen oft ein Foto unter 50 KB oder sogar 20 KB. Öffne den Reiter Zielgröße (z. B. 100 KB) und gib das Limit unter Maximale Dateigröße (KB) ein; der kleinste erlaubte Wert ist 5. Für jedes Bild sucht das Tool die höchste Qualität, die noch passt. Ist selbst die niedrigste Qualität zu groß, verkleinert es Breite und Höhe in Schritten von 20 %, bis die Datei passt, und die Ergebniszeile zeigt die neuen Abmessungen. Klappt es trotzdem nicht, sagt es dir das und liefert die kleinste Version, die möglich war. Die Größen rechnen 1 KB als 1.024 Byte. Für kleine Ziele bleib bei JPG oder WebP als Ausgabe: PNG hat keine Qualitätseinstellung und kann nur durch weniger Pixel kleiner werden. Verlangt das Formular auch exakte Abmessungen, stelle sie zuerst mit Bildgröße ändern ein und komprimiere danach hier.',
+            ],
         ],
         'faqs' => [
-            ['q' => 'Wie komprimiere ich ein Bild auf 100 KB?', 'a' => 'Wähle „Zielgröße“, gib 100 ein und klicke auf Komprimieren. Das Tool findet die beste Qualität unter 100 KB und verkleinert die Abmessungen nur, wenn es nötig ist.'],
+            ['q' => 'Wie komprimiere ich ein Bild auf 100 KB?', 'a' => 'Öffne den Reiter „Zielgröße“ und gib 100 ein. Bilder werden komprimiert, sobald du sie hinzufügst; änderst du die Einstellung danach, klicke auf Alle neu komprimieren. Das Tool findet die beste Qualität unter 100 KB und verkleinert die Abmessungen nur, wenn es nötig ist.'],
             ['q' => 'Werden meine Bilder auf einen Server hochgeladen?', 'a' => 'Nein. Die Bilder werden in deinem Browser mit der Canvas-API komprimiert. Sie verlassen nie dein Gerät.'],
             ['q' => 'Verringert die Komprimierung die Qualität?', 'a' => 'Bei der Standardqualität (75 %) sehen die meisten keinen Unterschied, während die Dateigröße oft um 50-80 % sinkt.'],
             ['q' => 'Wie verkleinere ich eine PNG-Bildgröße?', 'a' => 'PNG ist ein verlustfreies Format, daher bringt reines Komprimieren wenig. Um eine PNG wirklich zu verkleinern, stelle WebP (behält Transparenz) oder JPG (ohne Transparenz) als Ausgabeformat ein - beide verkleinern die PNG-Bildgröße deutlich, ohne sichtbaren Qualitätsverlust.'],
-            ['q' => 'Wie verkleinere ich ein JPG online?', 'a' => 'Lade dein JPG hoch, wähle „Zielgröße“ oder eine Qualität von etwa 60-80 % und klicke auf Komprimieren. Bei Fotos reicht meist eine JPG-Qualität von 70-80 %, um die Dateigröße deutlich zu verkleinern, ohne dass du einen Unterschied siehst.'],
+            ['q' => 'Wie verkleinere ich ein JPG online?', 'a' => 'Wähle „Zielgröße“ oder eine Qualität von etwa 60-80 % und füge dann dein JPG hinzu; es wird sofort komprimiert. Bei Fotos reicht meist eine JPG-Qualität von 70-80 %, um die Dateigröße deutlich zu verkleinern, ohne dass du einen Unterschied siehst.'],
         ],
         'table' => [
             'caption' => 'Welches Bildformat passt',
@@ -260,6 +310,10 @@ return [
                 'heading' => 'Wie wandle ich PNG in JPG um?',
                 'body' => 'JPG unterstützt keine Transparenz, deshalb werden transparente Bereiche beim Umwandeln von PNG in JPG weiß gefüllt. Wenn die Transparenz erhalten bleiben soll, wähle PNG oder WebP als Ausgabeformat.',
             ],
+            [
+                'heading' => 'So änderst du die Bildgröße auf 1080 x 1080',
+                'body' => 'Für einen quadratischen Instagram-Post öffnest du den Reiter Nach Pixeln. Ist dein Foto schon quadratisch, lass Seitenverhältnis beibehalten angehakt und gib 1080 als Breite ein; die Höhe passt sich an. Ist es nicht quadratisch, schneidet dieses Tool es nicht zu. Mit Haken wird ein 4:3-Foto mit 1080 Pixeln Breite zu 1080 x 810, und wenn du den Haken entfernst und 1080 x 1080 eingibst, wird das Bild gestreckt oder gestaucht. Schneide es also zuerst quadratisch zu, zum Beispiel im Fotoeditor deines Handys, und ändere dann hier die Größe. Bleib für Fotos bei JPG (Qualität 90 % ist voreingestellt), prüfe, dass der Button Auf 1080 × 1080 px ändern zeigt, und lade das Bild herunter. Ein kleineres Foto auf 1080 Pixel zu vergrößern funktioniert, kann aber weich wirken, weil keine neuen Details entstehen.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Wie ändere ich die Bildgröße, ohne es zu verzerren?', 'a' => 'Lass „Seitenverhältnis beibehalten“ angehakt. Wenn du die Breite änderst, passt sich die Höhe automatisch an die ursprünglichen Proportionen an.'],
@@ -281,12 +335,20 @@ return [
 
     'jpg-to-pdf' => [
         'name' => 'JPG zu PDF',
-        'title' => 'JPG zu PDF: Bilder online kostenlos in PDF umwandeln',
-        'description' => 'Wandle JPG-, PNG- oder WebP-Bilder kostenlos in PDF um. Fotos anordnen, Seitengröße, Ausrichtung und Ränder wählen. Kein Upload, kein Wasserzeichen.',
-        'h1' => 'JPG zu PDF',
-        'tagline' => 'Kombiniere JPG-, PNG- und WebP-Bilder in einer PDF-Datei.',
-        'keywords' => ['jpg zu pdf', 'jpg in pdf umwandeln', 'bild zu pdf', 'jpg zu pdf online', 'jpg pdf konverter'],
-        'intro' => 'Ein JPG-zu-PDF-Konverter wandelt JPG-, PNG- oder WebP-Bilder in ein einziges PDF-Dokument um. Füge mehrere Fotos hinzu, ordne sie neu an und wähle Seitengröße, Ausrichtung und Ränder, bevor du sie zu einem Dokument zusammenfügst. Dieser JPG-zu-PDF-Konverter läuft vollständig auf deinem Gerät, sodass deine Bilder nie auf einen Server hochgeladen werden.',
+        'title' => 'JPG in PDF zusammenfügen: mehrere Bilder in ein PDF',
+        'description' => 'Füge mehrere JPG-, PNG- oder WebP-Bilder kostenlos zu einem PDF zusammen. JPG-zu-PDF-Konverter mit Reihenfolge, A4 oder Letter. Kein Upload, kein Wasserzeichen.',
+        'h1' => 'JPG in PDF zusammenfügen',
+        'tagline' => 'Füge mehrere JPG-, PNG- und WebP-Bilder zu einer PDF-Datei zusammen.',
+        'keywords' => [
+            'jpg in pdf zusammenfügen',
+            'mehrere jpg in ein pdf',
+            'bilder zu pdf zusammenfügen',
+            'jpg zu pdf',
+            'jpg in pdf umwandeln',
+            'bild zu pdf',
+            'jpg pdf konverter',
+        ],
+        'intro' => 'Mit diesem Tool fügst du mehrere JPG-Fotos oder PNG- und WebP-Bilder zu einem einzigen PDF-Dokument zusammen, mit einem Bild pro Seite. Füge bis zu 30 Bilder hinzu, bring sie mit den Pfeilen in die richtige Reihenfolge und wähle Seitengröße, Ausrichtung und Ränder, bevor du sie zusammenfügst. Für ein einzelnes Foto funktioniert es auch als einfacher JPG-zu-PDF-Konverter. Alles läuft auf deinem Gerät, deine Bilder werden also nie auf einen Server hochgeladen.',
         'steps' => [
             'Ein oder mehrere JPG-, PNG- oder WebP-Bilder per Ablegen oder Durchsuchen hinzufügen.',
             'Die Bilder bei Bedarf mit den Pfeilen nach oben und unten neu anordnen.',
@@ -310,13 +372,19 @@ return [
                 'heading' => 'Warum JPG in PDF umwandeln?',
                 'body' => 'Eine einzelne PDF-Datei lässt sich leichter per E-Mail versenden, drucken und in Formulare hochladen als mehrere einzelne Bilddateien. Das Zusammenfügen von gescannten Seiten, Quittungen oder Fotos in einem PDF hält außerdem die richtige Reihenfolge ein und verhindert, dass sie durcheinandergeraten.',
             ],
+            [
+                'heading' => 'Mehrere JPGs zu einem PDF zusammenfügen',
+                'body' => 'Jedes Bild wird zu einer Seite, in der Reihenfolge der nummerierten Liste. Prüfe sie also, bevor du auf In PDF umwandeln klickst: Die Pfeile nach oben und unten verschieben ein Foto, das Kreuz entfernt es. Du kannst bis zu 30 Bilder auf einmal zusammenfügen, jedes bis zu 50 MB groß. Mit A4 oder Letter sind alle Seiten gleich groß, was gedruckt ordentlich aussieht, und die automatische Ausrichtung gibt Querformat-Fotos eine Seite im Querformat. An Bild anpassen macht jede Seite so groß wie ihr Foto, die Seiten eines PDFs können sich dann unterscheiden. Das PDF ist ungefähr so groß wie alle Bilder zusammen, weil JPG- und PNG-Dateien ohne erneute Komprimierung eingebettet werden. Ist es zu groß für eine E-Mail, verkleinere die Fotos vorher mit Bild komprimieren oder schicke das fertige PDF durch PDF komprimieren.',
+            ],
         ],
         'faqs' => [
-            ['q' => 'Kann ich mehrere Bilder in einer PDF-Datei kombinieren?', 'a' => 'Ja. Füge so viele JPG-, PNG- oder WebP-Bilder hinzu, wie du möchtest, bringe sie mit den Pfeilen in die gewünschte Reihenfolge, und sie werden zu einer einzigen PDF-Datei kombiniert.'],
+            ['q' => 'Wie viele JPGs kann ich zu einem PDF zusammenfügen?', 'a' => 'Bis zu 30 Bilder auf einmal, jedes bis zu 50 MB. Füge sie hinzu, bring sie mit den Pfeilen in die gewünschte Reihenfolge, und sie werden zu einem einzigen PDF mit einem Bild pro Seite zusammengefügt. Für mehr als 30 erstellst du zwei PDFs und verbindest sie mit PDF zusammenfügen.'],
             ['q' => 'Fügt dieser JPG-zu-PDF-Konverter ein Wasserzeichen hinzu?', 'a' => 'Nein. Das PDF enthält nur deine Bilder, ohne Wasserzeichen, Logo oder zusätzliche Seiten.'],
             ['q' => 'Kann ich auch PNG- und WebP-Bilder umwandeln, nicht nur JPG?', 'a' => 'Ja. JPG-, PNG- und WebP-Bilder werden alle unterstützt und können im selben PDF gemischt werden.'],
             ['q' => 'Was bewirkt die Randeinstellung?', 'a' => 'Sie fügt Leerraum um jedes Bild auf der Seite hinzu. Wähle Kein, damit das Bild bis an den Rand reicht, oder einen größeren Rand für einen dokumentähnlicheren Look.'],
             ['q' => 'Wird die Qualität meiner Bilder verringert?', 'a' => 'JPG- und PNG-Bilder werden mit ihrer Originalqualität eingebettet. WebP-Bilder werden zuerst in PNG umgewandelt, wodurch die verlustfreie Qualität erhalten bleibt.'],
+            ['q' => 'Kann ich die Seitenreihenfolge nach dem Zusammenfügen ändern?', 'a' => 'Vor dem Umwandeln ja: Nutze die Pfeile. Jede Änderung verwirft das alte Ergebnis, du klickst dann einfach erneut auf In PDF umwandeln. Um die Seiten eines bereits heruntergeladenen PDFs neu anzuordnen, nutze PDF organisieren.'],
+            ['q' => 'Warum ist mein zusammengefügtes PDF so groß?', 'a' => 'JPG- und PNG-Bilder werden in Originalqualität ins PDF übernommen, die Datei ist also etwa so groß wie alle Bilder zusammen. Um sie zu verkleinern, komprimiere die Bilder vorher mit Bild komprimieren oder schicke das PDF durch PDF komprimieren, dessen Modus „Empfohlen“ die JPG-Fotos darin neu komprimiert.'],
         ],
     ],
 
@@ -407,10 +475,11 @@ return [
         'keywords' => ['jpg in png', 'jpeg in png', 'jpg in png umwandeln', 'jpg zu png', 'jpeg to png'],
         'intro' => 'PNG ist ein verlustfreies Format: Ein als PNG gespeichertes Bild lässt sich bearbeiten und erneut speichern, ohne unschärfer zu werden. Dieser JPEG-zu-PNG-Konverter wandelt JPG- und JPEG-Fotos in PNG-Dateien um, einzeln oder im Stapel von bis zu 30, direkt in deinem Browser.',
         'steps' => [
-            'Lege deine JPG- oder JPEG-Bilder im Feld ab oder klicke zum Auswählen.',
-            'Jedes Bild wird sofort in PNG umgewandelt.',
-            'Klicke neben einem Bild auf Herunterladen oder auf Alle herunterladen (ZIP).',
-            'Mit Alle entfernen wandelst du eine neue Auswahl um.',
+            'Lege deine JPG- oder JPEG-Bilder im Feld ab oder klicke darauf, um sie auszuwählen (bis zu 30 auf einmal, je 50 MB).',
+            'Jedes Bild wird sofort in PNG umgewandelt; währenddessen zeigt die Liste „wartet…“ und „wird umgewandelt…“.',
+            'Prüfe den neuen Dateinamen und die Größe neben jedem Bild.',
+            'Klicke neben einem Bild auf Herunterladen oder auf Alle herunterladen (ZIP), sobald zwei oder mehr fertig sind.',
+            'Entferne ein einzelnes Bild mit der Schaltfläche ✕ oder wandle mit Alle entfernen eine neue Auswahl um.',
         ],
         'features' => [
             'Wandelt JPG und JPEG verlustfrei in PNG um',
@@ -428,11 +497,41 @@ return [
                 'heading' => 'Wird das Bild dadurch transparent oder schärfer?',
                 'body' => 'Nein. Die Umwandlung lässt das Bild genau so, wie es ist: Ein JPG hat keine Transparenz, die übernommen werden könnte, und durch die JPG-Kompression verlorene Details lassen sich nicht zurückholen. Das PNG ist meist auch größer als das JPG, weil es jeden Pixel verlustfrei speichert.',
             ],
+            [
+                'heading' => 'So funktioniert die Umwandlung',
+                'body' => 'Dein Browser dekodiert jedes JPG, zeichnet es in voller Größe auf eine unsichtbare Canvas-Fläche und speichert diese als PNG. Da PNG verlustfrei ist, gibt es keinen Qualitätsregler: Das PNG enthält genau die Pixel, die der Browser aus dem JPG dekodiert hat. Die Bilder werden nacheinander umgewandelt, ein großer Stapel wird also der Reihe nach fertig und nicht alle auf einmal. Die neue Datei behält den ursprünglichen Namen mit der Endung .png, aus „urlaubsfoto.jpg“ wird also „urlaubsfoto.png“. In der ZIP-Datei namens converted-to-png.zip werden gleichnamige Dateien umbenannt, damit keine eine andere überschreibt.',
+            ],
+            [
+                'heading' => 'Das Ergebnis prüfen',
+                'body' => 'Jedes Bild in der Liste zeigt ein Vorschaubild, die ursprüngliche Dateigröße und nach der Umwandlung den neuen PNG-Namen samt Größe – so siehst du sofort, um wie viel größer das PNG ist. Schlägt eine Datei fehl, erscheint der Grund in Rot unter ihrem Namen, und der Rest des Stapels läuft weiter. Der Zähler unter der Liste zeigt, wie viele Bilder bisher in PNG umgewandelt wurden.',
+            ],
+            [
+                'heading' => 'JPG oder PNG: Was solltest du behalten?',
+                'body' => 'Für Fotos, die du nur ansehen, teilen oder hochladen willst, ist JPG meist das bessere Format, weil die Dateien viel kleiner sind. PNG ist die bessere Arbeitskopie für Screenshots, gescannte Texte, Diagramme und Bilder, die du mehrmals zuschneiden, beschriften oder bearbeiten willst, denn erneutes Speichern fügt nie Kompressionsartefakte hinzu. Brauchst du vor allem eine kleinere statt einer verlustfreien Datei, komprimiere das JPG, statt es umzuwandeln.',
+            ],
+            [
+                'heading' => 'Anwendungsfälle',
+                'body' => 'Meist wandelt man JPG aus einem dieser Gründe in PNG um.',
+                'items' => [
+                    'Eine Website, App oder ein Druckdienst akzeptiert nur PNG-Uploads.',
+                    'Du möchtest eine verlustfreie Masterkopie eines Fotos, bevor du es mehrmals bearbeitest.',
+                    'Du fügst ein Foto in eine Designdatei oder Präsentation ein, in der PNG das übliche Format ist.',
+                    'Du musst einen Ordner mit Scans oder Screenshots im JPG-Format in einem Rutsch umwandeln und als eine ZIP-Datei herunterladen.',
+                ],
+            ],
+            [
+                'heading' => 'Grenzen und Datenschutz',
+                'body' => 'Du kannst bis zu 30 Bilder auf einmal hinzufügen, jedes bis zu 50 MB; größere Dateien werden mit einem Hinweis übersprungen. Sehr große Bilder werden so verkleinert, dass sie in 10.000 × 10.000 Pixel passen. Da jedes Bild auf einer Canvas-Fläche neu gezeichnet wird, werden Metadaten wie Kameradaten und GPS-Standort nicht ins PNG übernommen. Eine beschädigte Datei oder eine, die dein Browser nicht öffnen kann, zeigt einen Fehler statt eines Ergebnisses. Das Feld akzeptiert auch PNG-, WebP-, AVIF-, GIF- und BMP-Dateien, die auf dieselbe Weise in PNG umgewandelt werden; ein animiertes GIF wird zu einem einzelnen Standbild. Die gesamte Umwandlung passiert in deinem Browser, und kein Bild wird hochgeladen.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Wie wandle ich JPG in PNG um?', 'a' => 'Lege das JPG im Feld oben ab. Es wird sofort in PNG umgewandelt und lässt sich mit einem Klick herunterladen.'],
-            ['q' => 'Gibt es einen Unterschied zwischen JPG und JPEG?', 'a' => 'Nein. Es sind zwei Namen für dasselbe Format, und beide werden gleich umgewandelt.'],
+            ['q' => 'Gibt es einen Unterschied zwischen JPG und JPEG?', 'a' => 'Nein. Es sind zwei Namen für dasselbe Format, und beide werden gleich umgewandelt. Dateien mit der Endung .jfif werden ebenfalls angenommen.'],
             ['q' => 'Warum ist die PNG-Datei größer?', 'a' => 'PNG ist verlustfrei und speichert jeden Pixel exakt. JPG spart Platz, indem es Details verwirft, deshalb sind seine Dateien kleiner.'],
+            ['q' => 'Kann ich viele JPGs auf einmal umwandeln?', 'a' => 'Ja. Füge bis zu 30 Bilder auf einmal hinzu. Sobald zwei oder mehr umgewandelt sind, speichert Alle herunterladen (ZIP) sie in einer Datei. Mit Alle entfernen startest du den nächsten Stapel.'],
+            ['q' => 'Kann ich den Hintergrund transparent machen?', 'a' => 'Nicht allein durch die Umwandlung. Ein JPG hat keine transparenten Bereiche, daher behält das PNG denselben einfarbigen Hintergrund. Um das Motiv freizustellen und ein PNG mit transparentem Hintergrund zu erhalten, nutze stattdessen das Tool zum Entfernen des Hintergrunds.'],
+            ['q' => 'Warum ist ein großes Bild auf meinem Handy fehlgeschlagen?', 'a' => 'Die Umwandlung eines sehr großen Bildes braucht viel Arbeitsspeicher, und manchen Handys geht er aus. Kann dein Browser das PNG nicht erstellen, bittet dich eine Fehlermeldung, kleinere Abmessungen zu versuchen; verkleinere das Bild zuerst und wandle es dann erneut um.'],
+            ['q' => 'Bleiben die EXIF-Daten des Fotos erhalten?', 'a' => 'Nein. Das Bild wird neu gezeichnet und als neues PNG gespeichert, daher werden Kameradaten, Aufnahmedatum und Standortdaten aus dem JPG nicht übernommen. So kannst du ein Foto auch einfach ohne seinen Standort teilen.'],
             ['q' => 'Werden meine Fotos hochgeladen?', 'a' => 'Nein. Alles passiert in deinem Browser, und deine Fotos verlassen nie dein Gerät.'],
         ],
     ],
@@ -521,9 +620,11 @@ return [
         'keywords' => ['altersrechner', 'alter berechnen', 'geburtsdatum rechner', 'wie alt bin ich', 'alter berechnen mit geburtsdatum'],
         'intro' => 'Ein Altersrechner berechnet aus dem Geburtsdatum das genaue Alter einer Person in Jahren, Monaten und Tagen. Gib ein Geburtsdatum ein, um das genaue Alter in Jahren, Monaten und Tagen zu erfahren. Außerdem siehst du die Gesamtzahl gelebter Monate, Wochen, Tage und Stunden, den Wochentag deiner Geburt und einen Countdown bis zum nächsten Geburtstag. Du kannst das Alter auch für jedes vergangene oder zukünftige Datum berechnen.',
         'steps' => [
-            'Das Geburtsdatum eingeben.',
-            'Heute als Datum für „Alter am“ lassen oder ein anderes Datum wählen.',
-            'Genaues Alter und Details sofort ansehen.',
+            'Gib das Geburtsdatum im Feld Geburtsdatum ein.',
+            'Lass im Feld Alter am das heutige Datum stehen oder wähle ein beliebiges vergangenes oder zukünftiges Datum.',
+            'Lies das genaue Alter in Jahren, Monaten und Tagen ab, darunter den Wochentag der Geburt.',
+            'Sieh dir die Summen an: Monate insgesamt, Wochen, Tage insgesamt und Stunden insgesamt (ca.).',
+            'Prüfe die Zeile zum nächsten Geburtstag mit Wochentag, Datum, verbleibenden Tagen und dem Alter, das erreicht wird.',
         ],
         'features' => [
             'Genaues Alter in Jahren, Monaten und Tagen',
@@ -537,13 +638,42 @@ return [
                 'heading' => 'So wird das Alter berechnet',
                 'body' => 'Der Rechner zählt zuerst die vollen Jahre, dann die vollen Monate und dann die restlichen Tage – dieselbe Methode wie in amtlichen Formularen. Schaltjahre werden automatisch berücksichtigt, und wer am 29. Februar geboren ist, feiert in Nicht-Schaltjahren am 28. Februar.',
             ],
+            [
+                'heading' => 'Wann gilt ein Monat als voll?',
+                'body' => 'Ein Monat ist voll, sobald derselbe Tag im Monat wieder erreicht ist. Ist der nächste Monat zu kurz für diesen Tag, zählt stattdessen sein letzter Tag. Wer am 31. Januar geboren ist, hat am 28. Februar (in einem Schaltjahr am 29. Februar) also einen Monat vollendet und ist am 1. März 1 Monat und 1 Tag alt. Die übrigen Tage werden ab dem zuletzt vollendeten Monat gezählt, sodass Jahre, Monate und Tage immer genau zu den eingegebenen Daten passen.',
+            ],
+            [
+                'heading' => 'Ein Rechenbeispiel',
+                'body' => 'Nimm als Geburtsdatum den 15. März 1990 und als Datum für „Alter am“ den 10. November 2026. Der letzte Geburtstag war am 15. März 2026, das ergibt 36 volle Jahre. Von dort ist der 15. Oktober 2026 der siebte volle Monat, und der 10. November liegt 26 Tage später – das Alter beträgt also 36 Jahre, 7 Monate, 26 Tage. Derselbe Zeitraum entspricht 439 Monaten insgesamt, 13.389 Tagen insgesamt, 1.912 Wochen plus 5 Tagen und rund 321.336 Stunden. Die Person wurde an einem Donnerstag geboren, und der nächste Geburtstag ist Montag, der 15. März 2027, in 125 Tagen, an dem sie 37 wird.',
+            ],
+            [
+                'heading' => 'Was die Summen bedeuten',
+                'body' => 'Tage insgesamt ist die genaue Zahl der Kalendertage zwischen den beiden Daten. Wochen ist diese Zahl geteilt durch sieben, übrige Tage stehen in Klammern, zum Beispiel „Wochen (+5 Tage)“. Monate insgesamt zählt nur volle Monate. Stunden insgesamt ist einfach die Zahl der Tage mal 24 und deshalb als ungefähr gekennzeichnet: Die Geburtszeit ist nicht bekannt, und Zeitumstellungen werden nicht berücksichtigt.',
+            ],
+            [
+                'heading' => 'Anwendungsfälle',
+                'body' => 'Weil du das Datum für „Alter am“ frei wählen kannst, ist der Rechner weit mehr als nur eine Antwort auf die Frage, wie alt du heute bist.',
+                'items' => [
+                    'Prüfe, ob ein Kind einen Stichtag für die Einschulung erfüllt, indem du „Alter am“ auf diesen Stichtag setzt.',
+                    'Bestätige eine Altersgrenze für eine Prüfung, eine Bewerbung, ein Visum oder eine Sport-Altersklasse zum Fristdatum.',
+                    'Finde heraus, wie alt ein Verwandter an einem früheren Datum war, etwa bei einer Hochzeit oder auf einem alten Dokument.',
+                    'Erfahre, an welchem Wochentag du geboren bist und wie viele Tage es noch bis zu deinem nächsten Geburtstag sind.',
+                    'Ermittle die Gesamtzahl gelebter Tage oder Wochen für einen Meilenstein wie 10.000 Tage.',
+                ],
+            ],
+            [
+                'heading' => 'Grenzen und Datenschutz',
+                'body' => 'Der Rechner arbeitet mit ganzen Kalenderdaten. Geburtszeit und Zeitzonen spielen daher keine Rolle, und das Ergebnis verschiebt sich nie um einen Tag, nur weil du dich woanders befindest. Das heutige Datum stammt von der Uhr deines Geräts. Jahreszahlen müssen vierstellig sein, und das Geburtsdatum muss am oder vor dem Datum für „Alter am“ liegen; andernfalls erklärt eine Fehlermeldung, was zu korrigieren ist. Alles wird während der Eingabe in deinem Browser berechnet: Es gibt keinen Knopf zum Drücken, und die eingegebenen Daten werden weder gespeichert noch irgendwohin gesendet.',
+            ],
         ],
         'faqs' => [
-            ['q' => 'Wie berechne ich mein genaues Alter?', 'a' => 'Gib dein Geburtsdatum ein, und der Rechner zeigt dein Alter in Jahren, Monaten und Tagen zum heutigen oder zu einem beliebigen anderen Datum.'],
+            ['q' => 'Wie berechne ich mein genaues Alter?', 'a' => 'Gib dein Geburtsdatum ein, und der Rechner zeigt dein Alter in Jahren, Monaten und Tagen zum heutigen oder zu einem beliebigen anderen Datum. Er zählt zuerst volle Jahre, dann volle Monate und dann die restlichen Tage.'],
             ['q' => 'Kann ich das Alter an einem bestimmten Datum berechnen?', 'a' => 'Ja. Ändere das Datum bei „Alter am“, um zu sehen, wie alt jemand an diesem Tag war oder sein wird – nützlich für Schulanmeldungen und Altersvoraussetzungen bei Prüfungen.'],
             ['q' => 'Wie werden Schaltjahre behandelt?', 'a' => 'Schaltjahre werden exakt gezählt. Bei einem Geburtstag am 29. Februar wird der nächste Geburtstag in einem Nicht-Schaltjahr als 28. Februar angezeigt.'],
+            ['q' => 'Warum sind die Stunden insgesamt nur ungefähr?', 'a' => 'Stunden insgesamt sind die Tage insgesamt mal 24. Der Rechner kennt deine Geburtszeit nicht und ignoriert Zeitumstellungen, daher kann der Wert um bis zu einen Tag an Stunden abweichen.'],
+            ['q' => 'Kann ich das Alter für eine Person berechnen, die noch nicht geboren ist, oder einen künftigen Geburtstag?', 'a' => 'Du kannst „Alter am“ in die Zukunft legen, um zu sehen, wie alt jemand dann sein wird. Das Geburtsdatum selbst muss aber am oder vor dem Datum für „Alter am“ liegen, einen Countdown bis zu einer Geburt gibt es also nicht.'],
+            ['q' => 'Warum zeigt ein anderer Altersrechner eine andere Zahl an Tagen?', 'a' => 'Rechner behandeln Monatsenden unterschiedlich. Manche setzen jeden Monat mit 30 Tagen an oder zählen die übrigen Tage anders. Dieser verwendet volle Kalendermonate und weicht bei kurzen Monaten auf deren letzten Tag aus. So passen Jahre, Monate und Tage zum Kalender, und Tage und Wochen insgesamt sind immer exakt.'],
             ['q' => 'Wird mein Geburtsdatum gespeichert?', 'a' => 'Nein. Die Berechnung läuft in deinem Browser, und nichts wird gespeichert oder irgendwohin gesendet.'],
-            ['q' => 'Wie berechnet man das Alter aus dem Geburtsdatum?', 'a' => 'Der Altersrechner nutzt dein Geburtsdatum, um dein genaues Alter in Jahren, Monaten und Tagen zu berechnen – einfach eingeben und das Ergebnis sofort ablesen.'],
         ],
     ],
 
@@ -699,10 +829,13 @@ return [
         'keywords' => ['base64 kodieren', 'base64 dekodieren', 'base64 konverter', 'base64 in text', 'bild in base64'],
         'intro' => 'Base64 ist eine Methode, beliebige Daten, auch Dateien, mit nur 64 Textzeichen darzustellen; Kodieren wandelt in Base64 um, Dekodieren wieder zurück. Wandle Text in Base64 um oder dekodiere Base64 zurück in lesbaren Text – mit voller Unterstützung für Emojis und nicht-englische Zeichen. Du kannst auch eine Datei oder ein Bild in eine Base64-Data-URL umwandeln, um sie in HTML, CSS oder JSON einzubetten.',
         'steps' => [
-            'Modus Text oder Datei wählen.',
-            'Bei Text die Eingabe einfügen und auf Kodieren oder Dekodieren klicken.',
-            'Bei Dateien eine Datei wählen, um ihren Base64-String oder ihre Data-URL zu erhalten.',
-            'Das Ergebnis kopieren.',
+            'Wähle den Tab Text oder den Tab Datei / Bild.',
+            'Im Text-Modus tippe oder füge deine Eingabe in das Feld Eingabe ein und setze bei Bedarf den Haken bei URL-sicher.',
+            'Klicke auf Kodieren, um die Eingabe in Base64 umzuwandeln, oder auf Dekodieren, um Base64 zurück in Text zu verwandeln.',
+            'Lies die Meldung unter den Schaltflächen: Sie bestätigt das Ergebnis oder erklärt, warum das Base64 ungültig ist.',
+            'Klicke über dem Feld Ausgabe auf Kopieren oder auf Tauschen, um die Ausgabe für eine weitere Runde in die Eingabe zu übernehmen.',
+            'Im Modus Datei / Bild lege eine Datei bis 10 MB ab oder klicke, um eine auszuwählen.',
+            'Kopiere den Base64-String oder die fertige Data-URL (für HTML / CSS).',
         ],
         'features' => [
             'Text mit voller UTF-8-Unterstützung kodieren und dekodieren',
@@ -714,14 +847,43 @@ return [
         'content' => [
             [
                 'heading' => 'Was ist Base64?',
-                'body' => 'Base64 stellt Binärdaten mit 64 sicheren Textzeichen dar (A-Z, a-z, 0-9, + und /). Es wird verwendet, um Bilder in HTML und CSS einzubetten, Anhänge per E-Mail zu versenden und Daten in URLs und APIs zu übertragen. Base64 ist eine Kodierung, keine Verschlüsselung – es hält Daten also nicht geheim.',
+                'body' => 'Base64 stellt Binärdaten mit 64 sicheren Textzeichen dar (A-Z, a-z, 0-9, + und /). Es wird verwendet, um Bilder in HTML und CSS einzubetten, Anhänge per E-Mail zu versenden und Daten in URLs und APIs zu übertragen. Je 3 Bytes der Eingabe werden zu 4 Zeichen, die jeweils 6 Bit darstellen, und ein oder zwei =-Zeichen füllen das Ende auf, wenn die Länge der Eingabe kein Vielfaches von 3 ist. Base64 ist eine Kodierung, keine Verschlüsselung – es hält Daten also nicht geheim.',
+            ],
+            [
+                'heading' => 'Wie Text kodiert wird',
+                'body' => 'Text wird zuerst in UTF-8-Bytes und dann in Base64 umgewandelt. Deshalb funktionieren Emojis und nicht-englische Buchstaben: Aus „Hello“ wird SGVsbG8=, während „é“ vor dem Kodieren zwei Bytes belegt und die meisten Emojis vier. Viele einfache Kodierer rufen direkt die Browser-Funktion btoa auf, die bei jedem Zeichen außerhalb von Latin-1 scheitert; dieses Tool umgeht das Problem. Mit dem Haken bei URL-sicher verwendet die Ausgabe - und _ statt + und / und lässt das =-Auffüllen am Ende weg.',
+            ],
+            [
+                'heading' => 'Was der Dekodierer akzeptiert',
+                'body' => 'Beim Dekodieren ist das Format zweitrangig. Das Tool akzeptiert normales und URL-sicheres Base64, mit oder ohne =-Auffüllung, ignoriert Leerzeichen und Zeilenumbrüche (umbrochenes Base64 aus einer E-Mail oder einem PEM-Block lässt sich also problemlos einfügen) und entfernt ein data:...;base64,-Präfix, wenn du eine ganze Data-URL einfügst. Enthält die Eingabe Zeichen außerhalb von A-Z, a-z, 0-9, +, / und = oder zeigt ihre Länge, dass sie abgeschnitten wurde, bekommst du eine klare Fehlermeldung statt Zeichensalat. Sind die dekodierten Bytes kein gültiger UTF-8-Text, zeigt das Tool sie trotzdem an, warnt aber, dass es sich um Binärdaten handelt und einige Zeichen seltsam aussehen können.',
+            ],
+            [
+                'heading' => 'Dateien, Bilder und Data-URLs',
+                'body' => 'Der Modus Datei / Bild liest jeden Dateityp auf deinem Gerät und zeigt Namen, Originalgröße und die Größe der Base64-Version an. Bilder bekommen zusätzlich eine kleine Vorschau. Du erhältst zwei Ergebnisse: den reinen Base64-String, den die Option URL-sicher verändern kann, und eine Data-URL, die immer normales Base64 und den MIME-Typ der Datei verwendet, etwa data:image/png;base64,... Eine Datei, die der Browser nicht erkennt, wird als application/octet-stream gekennzeichnet. Data-URLs sind praktisch für kleine Icons in CSS oder HTML-E-Mails. Große Bilder verlinkst du besser als normale Dateien, denn Base64 macht sie etwa ein Drittel größer und ein eingebettetes Bild kann nicht separat zwischengespeichert werden.',
+            ],
+            [
+                'heading' => 'Anwendungsfälle',
+                'body' => 'Häufige Gründe, Base64 zu kodieren oder zu dekodieren:',
+                'items' => [
+                    'Ein kleines Logo oder Icon als Data-URL direkt in eine CSS-Datei oder HTML-E-Mail einbetten.',
+                    'Den Inhalt eines Tokens, Konfigurationswerts oder einer API-Antwort lesen, der als Base64 ankommt.',
+                    'Mit der URL-sicheren Option einen kurzen Textwert für einen URL-Parameter oder Dateinamen vorbereiten.',
+                    'Prüfen, was ein kodierter String in einer Logdatei oder einem Datenbankfeld tatsächlich bedeutet.',
+                    'Ein Bild in Base64 umwandeln, um es in einer JSON-Anfrage an eine API zu schicken, die eingebettete Dateien erwartet.',
+                ],
+            ],
+            [
+                'heading' => 'Grenzen und Datenschutz',
+                'body' => 'Kodieren und Dekodieren laufen per JavaScript in deinem Browser; deine Texte und Dateien werden nicht hochgeladen. Der Datei-Modus akzeptiert Dateien bis 10 MB, denn Base64 von größeren Dateien ist zu lang, um es sinnvoll irgendwo einzufügen. Dekodieren erzeugt immer Text im Feld Ausgabe, das Tool kann Base64 also nicht in eine herunterladbare Datei wie ein Bild oder PDF zurückverwandeln; dekodierte Binärdaten erscheinen als unlesbare Zeichen. Denk daran, dass jeder Base64 dekodieren kann – nutze es nie, um Passwörter oder Geheimnisse zu verstecken.',
             ],
         ],
         'faqs' => [
             ['q' => 'Ist Base64 eine Verschlüsselung?', 'a' => 'Nein. Jeder kann Base64 dekodieren. Nutze es zum Transportieren von Daten, nie zum Schutz von Passwörtern oder Geheimnissen.'],
-            ['q' => 'Was ist URL-sicheres Base64?', 'a' => 'Eine Variante, die + durch - und / durch _ ersetzt und meist das Auffüllen mit = weglässt, damit der String sicher in URLs und Dateinamen verwendet werden kann.'],
+            ['q' => 'Was ist URL-sicheres Base64?', 'a' => 'Eine Variante, die + durch - und / durch _ ersetzt und meist das Auffüllen mit = weglässt, damit der String sicher in URLs und Dateinamen verwendet werden kann. Der Dekodierer hier akzeptiert beide Formen.'],
             ['q' => 'Warum ist Base64 größer als das Original?', 'a' => 'Base64 macht aus je 3 Bytes 4 Zeichen, kodierte Daten sind also etwa 33 % größer als das Original.'],
-            ['q' => 'Wie wandle ich ein Bild in Base64 um?', 'a' => 'Wechsle in den Datei-Modus und wähle dein Bild. Du erhältst den reinen Base64-String und eine fertige Data-URL.'],
+            ['q' => 'Wie wandle ich ein Bild in Base64 um?', 'a' => 'Wechsle in den Modus Datei / Bild und wähle dein Bild. Du erhältst den reinen Base64-String und eine fertige Data-URL.'],
+            ['q' => 'Warum heißt es, mein Base64 sei ungültig?', 'a' => 'Entweder enthält der Text Zeichen, die nicht zu Base64 gehören, oder er hat die falsche Länge, was meist bedeutet, dass er beim Kopieren abgeschnitten wurde. Leerzeichen, Zeilenumbrüche und ein Data-URL-Präfix werden automatisch entfernt.'],
+            ['q' => 'Kann ich Base64 zurück in eine Datei umwandeln?', 'a' => 'Mit diesem Tool nicht. Dekodieren zeigt das Ergebnis als Text an. Das funktioniert für Text und JSON, aber nicht für Bilder, PDFs oder andere Binärdateien.'],
         ],
         'table' => [
             'caption' => 'Wie viel größer Daten durch Base64 werden',
@@ -873,10 +1035,13 @@ return [
         'keywords' => ['glücksrad', 'glücksrad online', 'namen auslosen', 'namensrad', 'zufallsauswahl'],
         'intro' => 'Das Glücksrad ist ein Zufallsgenerator: Du trägst Namen oder Optionen ein, drehst, und das Rad bleibt zufällig bei einem stehen. Du kannst dich nicht entscheiden, was es zu essen gibt, wer als Nächstes dran ist oder wer das Gewinnspiel gewinnt? Trag deine Optionen in die Liste ein, eine pro Zeile, und dreh das Rad. Es dreht sich mehrmals, läuft sanft auf einem zufälligen Eintrag aus und verkündet den Gewinner. Du kannst jeden Gewinner automatisch entfernen, um Namen einzeln ohne Wiederholung zu ziehen.',
         'steps' => [
-            'Einträge eintippen oder einfügen, einer pro Zeile (bis zu 100).',
-            'Auf Drehen tippen, in die Radmitte klicken oder S drücken.',
-            'Zusehen, wie das Rad langsamer wird und beim Gewinner stoppt.',
-            'Optional „Gewinner nach jeder Drehung entfernen“ anhaken, um ohne Wiederholung zu ziehen.',
+            'Tippe auf Leeren, um die Beispieleinträge zu entfernen, oder bearbeite sie direkt.',
+            'Tippe oder füge deine Einträge in das Feld ein, einen pro Zeile (bis zu 100).',
+            'Tippe bei Bedarf auf Mischen, um die Reihenfolge der Segmente zu mischen.',
+            'Hake bei Bedarf „Gewinner nach jeder Drehung entfernen“ an, um ohne Wiederholung zu ziehen.',
+            'Tippe auf Rad drehen, klicke auf DREHEN in der Mitte des Rads oder drücke S.',
+            'Sieh zu, wie das Rad langsamer wird und stoppt; der Gewinner wird darunter angezeigt.',
+            'Tippe auf die Entfernen-Schaltfläche mit dem Namen des Gewinners, um ihn von der Liste zu nehmen, oder dreh noch einmal.',
         ],
         'features' => [
             'Bis zu 100 Einträge, jeder mit eigenem farbigen Segment',
@@ -888,18 +1053,44 @@ return [
         'content' => [
             [
                 'heading' => 'So wählt das Rad den Gewinner',
-                'body' => 'Wenn du auf Drehen tippst, wird der Gewinner zuerst mit dem sicheren Zufallsgenerator deines Browsers bestimmt – jeder Eintrag hat dieselbe Chance, egal wie lang sein Name ist. Dann berechnet das Rad genau, wie weit es sich drehen muss, damit das gewählte Segment unter dem Zeiger stoppt, und fügt mehrere volle Umdrehungen und einen zufälligen Haltepunkt innerhalb des Segments hinzu, damit jede Drehung anders aussieht.',
+                'body' => 'Wenn du auf Drehen tippst, wird der Gewinner zuerst mit dem sicheren Zufallsgenerator deines Browsers bestimmt, crypto.getRandomValues(), mit Rejection Sampling, damit jeder Eintrag genau dieselbe Chance hat, egal wie lang sein Name ist oder wo er auf dem Rad steht. Dann berechnet das Rad, wie weit es sich drehen muss, damit das gewählte Segment unter dem Zeiger stoppt. Es fügt sechs volle Umdrehungen und einen zufälligen Haltepunkt innerhalb des Segments hinzu, mit Abstand zu den Segmentgrenzen, damit jede Drehung anders aussieht und das Ergebnis nie zweideutig ist. Wenn das Rad stoppt, wird der Gewinner aus dem Endwinkel des Rads abgelesen, der angesagte Name ist also immer das Segment, das du unter dem Zeiger siehst.',
+            ],
+            [
+                'heading' => 'Namen eintragen und verwalten',
+                'body' => 'Jede nicht leere Zeile im Feld wird zu einem Segment des Rads; Leerzeilen werden ignoriert und Leerzeichen am Anfang und Ende einer Zeile entfernt. Ein Zähler über dem Feld zeigt, wie viele von 100 Einträgen verwendet werden. Fügst du mehr als 100 Zeilen ein, zeigt das Rad einen Hinweis und verwendet nur die ersten 100. Mischen ordnet deine Einträge zufällig neu, das ändert die Position jedes Segments auf dem Rad, aber nicht die Gewinnchance. Leeren leert die Liste. Das Rad braucht mindestens zwei Einträge, bevor es sich drehen kann. Lange Namen werden auf dem Rad mit Auslassungspunkten gekürzt, damit sie ins Segment passen, in der Gewinneransage steht aber der volle Name.',
             ],
             [
                 'heading' => 'Ideen für ein Glücksrad',
-                'body' => 'Lehrkräfte nutzen Namensräder, um Schüler fair aufzurufen, Streamer und Shops veranstalten damit Gewinnspiele, und Freunde entscheiden damit über Restaurant, Film oder Hausarbeit. Aktiviere „Gewinner nach jeder Drehung entfernen“, um eine Reihenfolge festzulegen, Teams einzuteilen oder mehrere Gewinner zu ziehen, ohne dass jemand doppelt gewinnt.',
+                'body' => 'Lehrkräfte nutzen Namensräder, um Schüler fair aufzurufen, Streamer und Shops veranstalten damit Gewinnspiele, und Freunde entscheiden damit über Restaurant, Film oder Hausarbeit. Aktiviere „Gewinner nach jeder Drehung entfernen“, um eine Reihenfolge festzulegen, Teams einzuteilen oder mehrere Gewinner zu ziehen, ohne dass jemand doppelt gewinnt. Jeder Gewinner landet in der Liste Bisherige Ziehungen, die die letzten 10 Ergebnisse behält, sodass du nachlesen kannst, in welcher Reihenfolge die Namen gezogen wurden.',
+            ],
+            [
+                'heading' => 'Die Drehung und die Gewinneransage',
+                'body' => 'Eine Drehung dauert etwas mehr als fünf Sekunden und läuft sanft aus. Das Gewinnersegment wird hervorgehoben, und der Name erscheint unter „Das Rad hat gewählt“ mit einem kurzen Konfettiregen. Ist „Gewinner nach jeder Drehung entfernen“ angehakt, wird der Name etwa anderthalb Sekunden nach der Ansage von der Liste genommen, und die Beschriftung wechselt zu „Gezogen und von der Liste entfernt“, damit alle weiterhin sehen, wer gewonnen hat. Wenn dein Gerät reduzierte Bewegung verlangt, springt das Rad ohne Animation und Konfetti direkt zum Ergebnis.',
+            ],
+            [
+                'heading' => 'Anwendungsfälle',
+                'body' => 'Ein Glücksrad ist immer dann nützlich, wenn eine Gruppe eine sichtbare, faire Auswahl möchte.',
+                'items' => [
+                    'Wähle einen Schüler für die nächste Frage und entferne jeden Namen, damit alle drankommen.',
+                    'Ziehe im Livestream den Gewinner eines Social-Media-Gewinnspiels, mit jedem Teilnehmer in einer eigenen Zeile.',
+                    'Entscheide, wo ihr esst, welchen Film ihr schaut oder welches Spiel ihr spielt, wenn sich niemand einigen kann.',
+                    'Lege eine Rede- oder Präsentationsreihenfolge fest, indem du mit eingeschaltetem automatischem Entfernen mehrmals drehst.',
+                    'Verteile Hausarbeiten oder Aufgaben, indem du die Aufgaben aufs Rad setzt und pro Person einmal drehst.',
+                ],
+            ],
+            [
+                'heading' => 'Grenzen und Datenschutz',
+                'body' => 'Das Rad fasst bis zu 100 Einträge, und jede Zeile zählt als ein Segment: Schreibst du einen Namen zweimal, bekommt er zwei Segmente und die doppelte Chance; eine eigene Gewichtungsoption gibt es nicht. Einträge werden nicht gespeichert: Nach dem Neuladen der Seite erscheint wieder die Beispielliste. Die Tastenkürzel S, Leertaste und Enter funktionieren nur, wenn du nicht gerade im Feld tippst. Alles läuft in deinem Browser; deine Liste wird nie auf einen Server hochgeladen.',
             ],
         ],
         'faqs' => [
-            ['q' => 'Ist das Glücksrad zufällig?', 'a' => 'Ja. Der Gewinner wird mit kryptografisch sicherem Zufall bestimmt, bevor das Rad stoppt, jeder Eintrag hat also dieselbe Chance.'],
-            ['q' => 'Wie viele Namen kann ich hinzufügen?', 'a' => 'Bis zu 100 Einträge. Schreib jeden in eine eigene Zeile.'],
-            ['q' => 'Kann ich einen Namen nach dem Gewinn entfernen?', 'a' => 'Ja. Klicke nach einer Drehung auf Entfernen oder hake „Gewinner nach jeder Drehung entfernen“ an, damit es automatisch passiert.'],
-            ['q' => 'Werden meine Einträge gespeichert oder geteilt?', 'a' => 'Nein. Deine Liste bleibt in deinem Browser und wird nie hochgeladen.'],
+            ['q' => 'Ist das Glücksrad zufällig?', 'a' => 'Ja. Der Gewinner wird mit kryptografisch sicherem Zufall aus crypto.getRandomValues() bestimmt, bevor das Rad stoppt, jeder Eintrag hat also dieselbe Chance.'],
+            ['q' => 'Wie viele Namen kann ich hinzufügen?', 'a' => 'Bis zu 100 Einträge. Schreib jeden in eine eigene Zeile. Fügst du mehr ein, werden nur die ersten 100 verwendet.'],
+            ['q' => 'Kann ich einen Namen nach dem Gewinn entfernen?', 'a' => 'Ja. Klicke nach einer Drehung auf die Entfernen-Schaltfläche oder hake „Gewinner nach jeder Drehung entfernen“ an, damit es automatisch passiert.'],
+            ['q' => 'Kann ich einer Option eine größere Chance geben?', 'a' => 'Ja, indem du sie mehrmals einträgst. Jede Zeile ist ein eigenes Segment, ein Eintrag in drei Zeilen wird also dreimal so oft gezogen wie einer, der nur einmal vorkommt.'],
+            ['q' => 'Ändert Mischen die Gewinnchancen?', 'a' => 'Nein. Mischen ändert nur die Reihenfolge der Segmente auf dem Rad. Bei der nächsten Drehung hat jedes Segment weiterhin dieselbe Chance.'],
+            ['q' => 'Kann ich mit der Tastatur drehen?', 'a' => 'Ja. Drück S, die Leertaste oder Enter, solange der Cursor nicht im Eingabefeld steht.'],
+            ['q' => 'Werden meine Einträge gespeichert oder geteilt?', 'a' => 'Nein. Deine Liste bleibt in deinem Browser und wird nie hochgeladen. Sie wird auch nicht gespeichert, nach dem Neuladen zeigt das Rad also wieder die Beispieleinträge.'],
         ],
     ],
 
@@ -912,10 +1103,12 @@ return [
         'keywords' => ['zufallszahlengenerator', 'zufallszahl', 'zahlen auslosen', 'zufallsgenerator zahlen', 'lottozahlen generator'],
         'intro' => 'Ein Zufallszahlengenerator ist ein Tool, das Zahlen zufällig aus einem von dir gewählten Bereich zieht. Erzeuge eine Zufallszahl zwischen zwei beliebigen Werten oder eine ganze Liste davon. Wähle Minimum, Maximum und Anzahl, und entscheide, ob Duplikate erlaubt sind und ob die Liste sortiert werden soll. Ideal für Verlosungen, Lotto, Unterricht, Stichproben und Spiele.',
         'steps' => [
-            'Minimum und Maximum eingeben (negative Zahlen funktionieren auch).',
-            'Wählen, wie viele Zahlen du willst, bis zu 1.000.',
-            'Bei Bedarf „Keine Duplikate“ und „Aufsteigend sortieren“ anhaken.',
-            'Auf Generieren tippen oder eine Vorgabe wie 1-100 oder 6 aus 49 nutzen.',
+            'Gib die kleinste erlaubte Zahl bei Minimum und die größte bei Maximum ein; negative Zahlen funktionieren auch.',
+            'Trag bei Wie viele ein, wie viele Zahlen du willst, von 1 bis 1.000.',
+            'Hake „Keine Duplikate“ an, wenn jede Zahl nur einmal vorkommen darf.',
+            'Hake „Aufsteigend sortieren“ an, wenn du die Liste der Größe nach geordnet haben willst.',
+            'Tippe auf Generieren oder klicke auf eine Vorgabe wie 1 – 100 oder Lotto 6 aus 49, die die Felder ausfüllt und sofort zieht.',
+            'Kopiere eine Ergebnisliste mit Alle kopieren, durch Kommas getrennt.',
         ],
         'features' => [
             'Beliebiger Bereich ganzer Zahlen, auch negativ',
@@ -927,18 +1120,44 @@ return [
         'content' => [
             [
                 'heading' => 'Wie zufällig sind die Zahlen?',
-                'body' => 'Die Zahlen stammen aus der Web Crypto API, einem kryptografisch sicheren Zufallszahlengenerator, der in jeden modernen Browser eingebaut ist. Der Generator nutzt außerdem Rejection Sampling, eine Technik, die die kleine Verzerrung vieler einfacher Zufallstools beseitigt – jede Zahl im Bereich hat also exakt dieselbe Wahrscheinlichkeit.',
+                'body' => 'Jedes Ergebnis stammt aus crypto.getRandomValues(), dem kryptografisch sicheren Zufallszahlengenerator der Web Crypto API, der in jeden modernen Browser eingebaut ist. Das Tool verwendet für die Ergebnisse nicht Math.random(). Außerdem nutzt es Rejection Sampling: Ein zufälliger 32-Bit-Wert, der einige Zahlen etwas wahrscheinlicher machen würde, wird verworfen und neu gezogen. So verschwindet die kleine „Modulo-Verzerrung“ vieler einfacher Generatoren, und jede ganze Zahl zwischen deinem Minimum und Maximum, beide eingeschlossen, hat exakt dieselbe Wahrscheinlichkeit.',
             ],
             [
                 'heading' => 'Zahlen ohne Duplikate ziehen',
-                'body' => 'Aktiviere „Keine Duplikate“, wenn jede Zahl nur einmal vorkommen darf, etwa beim Ziehen von Losen oder Lottozahlen. Das Tool prüft, ob dein Bereich groß genug ist: 10 verschiedene Zahlen zwischen 1 und 5 gehen nicht. Mit erlaubten Duplikaten wird jede Zahl unabhängig gezogen, wie beim mehrfachen Würfeln.',
+                'body' => 'Aktiviere „Keine Duplikate“, wenn jede Zahl nur einmal vorkommen darf, etwa beim Ziehen von Losen oder Lottozahlen. Das Tool prüft zuerst, ob dein Bereich groß genug ist: 10 verschiedene Zahlen zwischen 1 und 5 gehen nicht, und es sagt dir, wie viele verschiedene Zahlen der Bereich enthält. Bei Bereichen bis 20.000 Zahlen mischt es den ganzen Bereich mit einem teilweisen Fisher-Yates-Shuffle und nimmt die ersten Treffer; bei größeren Bereichen zieht es Zahlen und zieht bereits verwendete einfach neu. In beiden Fällen ist jede mögliche Zahlenkombination gleich wahrscheinlich. Mit erlaubten Duplikaten wird jede Zahl unabhängig gezogen, wie beim mehrfachen Würfeln, sodass derselbe Wert auch zweimal hintereinander kommen kann.',
+            ],
+            [
+                'heading' => 'Bereiche, Zahlenformate und Vorgaben',
+                'body' => 'Minimum und Maximum akzeptieren alle ganzen Zahlen, auch negative, solange das Minimum nicht größer als das Maximum ist und der Bereich höchstens 4.294.967.296 Werte umfasst (2 hoch 32). Große Zahlen kannst du so schreiben, wie du es gewohnt bist, etwa 1000, 1.000 oder 1 000. Dezimalzahlen werden nicht unterstützt: Der Generator liefert nur ganze Zahlen. Die Vorgaben stellen alles für dich ein und ziehen sofort: 1 – 10, 1 – 100, Würfel (1 – 6), Lotto 6 aus 49 (sechs verschiedene Zahlen, sortiert) und 5 aus 1 – 1.000 (fünf verschiedene Zahlen in der gezogenen Reihenfolge).',
+            ],
+            [
+                'heading' => 'Die Ergebnisse lesen',
+                'body' => 'Ziehst du eine einzelne Zahl, wird sie nach einer kurzen Enthüllung im Stil eines Spielautomaten von etwa 0,8 Sekunden groß angezeigt. Die flackernden Ziffern während dieser Animation sind nur Dekoration; das Ergebnis selbst wurde schon vor dem Start der Animation mit dem sicheren Generator gezogen. Wenn dein Gerät reduzierte Bewegung verlangt, erscheint die Zahl sofort. Frühere Einzelziehungen stehen unter „Bisher:“, sodass du deine letzten 14 Ergebnisse siehst. Fragst du nach zwei oder mehr Zahlen, erscheinen sie als Liste mit der Anzahl darüber und einer Schaltfläche Alle kopieren.',
+            ],
+            [
+                'heading' => 'Anwendungsfälle',
+                'body' => 'Ein fairer Zahlengenerator hilft immer dann, wenn eine Wahl nicht von persönlichen Vorlieben abhängen darf.',
+                'items' => [
+                    'Ziehe Gewinner einer Verlosung, indem du die Lose nummerierst und mit angehaktem „Keine Duplikate“ ziehst.',
+                    'Erzeuge Lottozahlen mit der Vorgabe Lotto 6 aus 49 oder mit eigenem Bereich und eigener Anzahl.',
+                    'Wähle im Unterricht mit einem schnellen Bereich von 1 bis 30 zufällig einen Schüler, eine Frage oder eine Seitenzahl.',
+                    'Wähle eine Zufallsstichprobe von Zeilen aus einer nummerierten Liste oder Tabelle zum Prüfen oder Testen.',
+                    'Ersetze bei einem Brettspiel einen verlorenen Würfel mit der Vorgabe Würfel (1 – 6) oder stelle für andere Würfel einen anderen Bereich ein.',
+                ],
+            ],
+            [
+                'heading' => 'Grenzen und Datenschutz',
+                'body' => 'Du kannst bis zu 1.000 Zahlen pro Klick erzeugen, und der Bereich darf höchstens 4.294.967.296 mögliche Werte umfassen. Es entstehen nur ganze Zahlen; es gibt keine Dezimalzahlen, Gewichtungen oder eigenen Wertelisten (um aus Namen zu ziehen, nimm lieber ein Glücksrad). Das Tool speichert weder Einstellungen noch Ergebnisse, nach dem Neuladen der Seite sind sie also weg. Alle Zahlen werden in deinem Browser erzeugt, und nichts wird an einen Server gesendet.',
             ],
         ],
         'faqs' => [
-            ['q' => 'Kann ich eine Zufallszahl zwischen 1 und 100 erzeugen?', 'a' => 'Ja. Setze das Minimum auf 1 und das Maximum auf 100 oder klicke auf die Vorgabe 1-100 und tippe dann auf Generieren.'],
-            ['q' => 'Kann ich Lottozahlen erzeugen?', 'a' => 'Ja. Nutze die Vorgabe „Lotto 6 aus 49“ oder wähle eigenen Bereich und Anzahl mit angehaktem „Keine Duplikate“.'],
-            ['q' => 'Wie viele Zahlen kann ich auf einmal erzeugen?', 'a' => 'Bis zu 1.000 Zahlen pro Klick. Du kannst alle mit einer Schaltfläche kopieren.'],
+            ['q' => 'Kann ich eine Zufallszahl zwischen 1 und 100 erzeugen?', 'a' => 'Ja. Setze das Minimum auf 1 und das Maximum auf 100 oder klicke auf die Vorgabe 1 – 100, die sofort eine Zahl zieht.'],
+            ['q' => 'Kann ich Lottozahlen erzeugen?', 'a' => 'Ja. Nutze die Vorgabe Lotto 6 aus 49, die sechs verschiedene Zahlen zieht und sortiert, oder wähle eigenen Bereich und Anzahl mit angehaktem „Keine Duplikate“.'],
+            ['q' => 'Wie viele Zahlen kann ich auf einmal erzeugen?', 'a' => 'Bis zu 1.000 Zahlen pro Klick. Alle kopieren kopiert die ganze Liste als durch Kommas getrennte Werte.'],
             ['q' => 'Kann ich negative Zahlen verwenden?', 'a' => 'Ja. Alle ganzen Zahlen funktionieren, zum Beispiel ein Bereich von -50 bis 50.'],
+            ['q' => 'Ist der Generator wirklich zufällig?', 'a' => 'Er nutzt den kryptografisch sicheren Generator deines Browsers, crypto.getRandomValues(), mit Rejection Sampling, damit keine Zahl bevorzugt wird. Wie jeder Computerzufall beruht er nicht auf einem physikalischen Vorgang, ist aber unvorhersehbar und für Ziehungen und Spiele geeignet.'],
+            ['q' => 'Warum bekomme ich mit „Keine Duplikate“ eine Fehlermeldung?', 'a' => 'Dein Bereich enthält weniger verschiedene Zahlen, als du angefordert hast. Von 1 bis 5 gibt es zum Beispiel nur fünf Zahlen, also kannst du nicht 10 ohne Wiederholung ziehen. Vergrößere den Bereich oder verringere Wie viele.'],
+            ['q' => 'Werden meine Zahlen irgendwo gespeichert?', 'a' => 'Nein. Die Ergebnisse entstehen in deinem Browser und werden weder hochgeladen noch gespeichert. Die Liste der bisherigen Ergebnisse verschwindet, wenn du die Seite neu lädst.'],
         ],
     ],
 
@@ -991,10 +1210,12 @@ return [
         'keywords' => ['countdown timer', 'online timer', 'timer mit alarm', '5 minuten timer', 'timer stellen'],
         'intro' => 'Ein Countdown-Timer zählt eine eingestellte Zeit bis null herunter und löst dann einen Alarm aus. Stell einen Timer fürs Kochen, Lernen, Training, Meetings oder Prüfungen. Gib eine beliebige Dauer bis 99 Stunden ein oder tippe auf eine Vorgabe wie 5 oder 25 Minuten. Ein Ring zählt die Restzeit herunter, der Browser-Tab zeigt sie an, und ein Alarm ertönt, wenn der Countdown null erreicht.',
         'steps' => [
-            'Stunden, Minuten und Sekunden eingeben oder eine Vorgabe antippen.',
-            'Auf Start (oder Leertaste) drücken. Ring und Tab-Titel zählen herunter.',
-            'Jederzeit pausieren, fortsetzen oder eine Minute hinzufügen.',
-            'Wenn der Alarm ertönt, auf Alarm stoppen und dann auf Neuer Timer drücken.',
+            'Gib Stunden, Minuten und Sekunden in die drei Felder im Ring ein (voreingestellt sind 5 Minuten) oder tippe auf eine Vorgabe, um sofort zu starten.',
+            'Drücke auf Start, die Leertaste oder Enter, während ein Feld ausgewählt ist. Ring und Tab-Titel zählen herunter.',
+            'Drücke auf Pause (oder Leertaste), um die Uhr anzuhalten, und dann auf Fortsetzen, um weiterzumachen.',
+            'Drücke auf +1 Min., um eine Minute hinzuzufügen, während der Timer läuft oder pausiert ist.',
+            'Wenn die Zeit um ist, drücke auf Alarm stoppen, um das Piepen zu beenden.',
+            'Drücke auf Neuer Timer (oder Leertaste), um eine neue Zeit einzustellen, oder jederzeit auf Zurücksetzen (oder R), um zur eingegebenen Dauer zurückzukehren.',
         ],
         'features' => [
             'Jede Dauer von 1 Sekunde bis 99 Stunden 59 Minuten',
@@ -1006,18 +1227,48 @@ return [
         'content' => [
             [
                 'heading' => 'Funktioniert der Timer in einem Hintergrund-Tab?',
-                'body' => 'Ja. Der Timer berechnet den exakten Endzeitpunkt, er bleibt also genau, auch wenn du den Tab wechselst und der Browser die Seite ausbremst. Die Restzeit steht außerdem im Tab-Titel, sodass du sie im Blick behältst, während du in einem anderen Tab arbeitest. Lass den Tab offen und den Ton an, um den Alarm zu hören.',
+                'body' => 'Ja. Der Timer berechnet den exakten Endzeitpunkt, er bleibt also genau, auch wenn du den Tab wechselst und der Browser die Seite ausbremst. Die Restzeit steht außerdem im Tab-Titel, sodass du sie im Blick behältst, während du in einem anderen Tab arbeitest: Dort steht etwa 04:59 · Timer, beim Pausieren erscheint ein ⏸ davor, und wenn der Countdown endet, wechselt der Titel zu ⏰ Die Zeit ist um!. Lass den Tab offen und den Ton an, um den Alarm zu hören.',
             ],
             [
                 'heading' => 'Beliebte Timer-Längen',
-                'body' => 'Fünf Minuten sind ideal für Tee, kurze Pausen und schnelle Übungen. Fünfundzwanzig Minuten sind die klassische Pomodoro-Fokuseinheit, meist gefolgt von fünf Minuten Pause. Längere Timer von 30 oder 60 Minuten passen zu Prüfungen, Meetings und zum Backen. Nutze dafür die Vorgaben oder gib eine andere Dauer ein.',
+                'body' => 'Fünf Minuten sind ideal für Tee, kurze Pausen und schnelle Übungen. Fünfundzwanzig Minuten sind die klassische Pomodoro-Fokuseinheit, meist gefolgt von fünf Minuten Pause. Längere Timer von 30 oder 60 Minuten passen zu Prüfungen, Meetings und zum Backen. Die Schnellauswahl bietet 30 Sekunden, 1, 3, 5, 10, 15 und 25 Minuten sowie 1 Stunde; ein Tipp darauf füllt die Felder aus und startet den Countdown sofort. Jede andere Dauer gibst du einfach ein.',
+            ],
+            [
+                'heading' => 'Die Zeit einstellen',
+                'body' => 'Jedes Feld nimmt bis zu zwei Ziffern auf, und die Felder werden zusammengezählt. Minuten und Sekunden müssen also nicht unter 60 bleiben: 90 im Minutenfeld ergibt einen Timer von 1 Stunde 30 Minuten, und 0:0:90 ergibt anderthalb Minuten. Unter den Feldern siehst du die Dauer, die du gleich startest, etwa 25:00-Timer. Während der Timer läuft, zeigt die Uhr Minuten und Sekunden an, und zusätzlich Stunden, sobald die Restzeit eine Stunde oder mehr beträgt. Der längste Timer dauert 99 Stunden, 59 Minuten und 59 Sekunden; alles darüber wird darauf begrenzt, und ein Hinweis sagt dir das.',
+            ],
+            [
+                'heading' => 'So funktioniert der Alarm',
+                'body' => 'Wenn der Countdown null erreicht, erscheint ein Banner mit Die Zeit ist um!, und der Browser spielt jede Sekunde drei kurze, hohe Pieptöne ab – bis zu 30 Sekunden lang oder bis du auf Alarm stoppen drückst. Der Ton wird über die Web Audio API des Browsers erzeugt, es muss also keine Audiodatei geladen werden. Entferne den Haken bei Alarmton abspielen, wenn du einen stillen Timer möchtest; Banner und Tab-Titel zeigen trotzdem an, wann die Zeit um ist. Der Timer sendet keine Desktop-Benachrichtigungen und lässt dein Handy nicht vibrieren, behalte den Tab also in Sicht- oder Hörweite.',
+            ],
+            [
+                'heading' => 'Tastenkürzel',
+                'body' => 'Die Leertaste macht das, was die Hauptschaltfläche anzeigt: Start, Pause, Fortsetzen oder Neuer Timer. R setzt den Timer auf die eingegebene Dauer zurück. Während du in einem der Zeitfelder tippst, werden Leertaste und R ignoriert, damit sie nicht stören, und Enter startet stattdessen den Timer. Kürzel werden auch ignoriert, wenn Strg, Alt oder Cmd gedrückt ist, damit Browser-Kürzel weiter funktionieren.',
+            ],
+            [
+                'heading' => 'Anwendungsfälle',
+                'body' => 'Ein paar Arten, wie man einen Online-Countdown nutzt:',
+                'items' => [
+                    'Nudeln, Eier oder einen Kuchen beim Kochen timen, mit einem Alarm, den du in der ganzen Küche hörst.',
+                    'Pomodoro-Fokuseinheiten von 25 Minuten mit 5 Minuten Pause dazwischen machen.',
+                    'Vorträge, Tagesordnungspunkte in Meetings oder Aktivitäten im Unterricht auf eine feste Länge begrenzen.',
+                    'Eine Probeprüfung oder eine Schreibübung mit Zeitlimit stoppen.',
+                    'Runden und Pausen für ein Training oder eine Dehnroutine festlegen.',
+                ],
+            ],
+            [
+                'heading' => 'Grenzen und Datenschutz',
+                'body' => 'Der Timer läuft vollständig in deinem Browser, und nichts wird an einen Server gesendet. Er wird nirgends gespeichert, Neuladen oder Schließen des Tabs bricht den Countdown also ab. Der Alarm ertönt nur, solange die Seite geöffnet und der Ton deines Geräts eingeschaltet ist; Browser erlauben Ton erst, nachdem du mit der Seite interagiert hast, und genau das passiert, wenn du auf Start oder eine Vorgabe drückst. Mit +1 Min. kann der Timer nicht über 99 Stunden, 59 Minuten und 59 Sekunden hinaus verlängert werden.',
             ],
         ],
         'faqs' => [
-            ['q' => 'Gibt der Countdown-Timer einen Ton aus?', 'a' => 'Ja. Ein Alarm piept, wenn die Zeit um ist – bis zu 30 Sekunden lang oder bis du auf Alarm stoppen drückst. Du kannst den Ton ausschalten.'],
-            ['q' => 'Warum habe ich den Alarm nicht gehört?', 'a' => 'Prüfe, ob die Lautstärke aufgedreht und der Tab noch geöffnet ist. Browser erlauben Ton erst nach einem Klick auf die Seite – der passiert, wenn du auf Start drückst.'],
+            ['q' => 'Gibt der Countdown-Timer einen Ton aus?', 'a' => 'Ja. Ein Alarm piept, wenn die Zeit um ist – bis zu 30 Sekunden lang oder bis du auf Alarm stoppen drückst. Mit dem Kontrollkästchen Alarmton abspielen kannst du den Ton ausschalten.'],
+            ['q' => 'Warum habe ich den Alarm nicht gehört?', 'a' => 'Prüfe, ob die Lautstärke aufgedreht, der Alarmton aktiviert und der Tab noch geöffnet ist. Browser erlauben Ton erst nach einem Klick auf die Seite – der passiert, wenn du auf Start drückst.'],
             ['q' => 'Wie lang kann der Timer maximal sein?', 'a' => 'Bis zu 99 Stunden, 59 Minuten und 59 Sekunden.'],
-            ['q' => 'Kann ich den Timer pausieren?', 'a' => 'Ja. Drücke Pause (oder Leertaste) und Fortsetzen zum Weitermachen. Du kannst auch während des Laufs eine Minute hinzufügen.'],
+            ['q' => 'Kann ich den Timer pausieren?', 'a' => 'Ja. Drücke Pause (oder Leertaste) und Fortsetzen zum Weitermachen. Du kannst auch eine Minute hinzufügen, während er läuft oder pausiert ist.'],
+            ['q' => 'Kann ich mehr als 59 Minuten eingeben?', 'a' => 'Ja. Jedes Feld nimmt Werte bis 99 an, und die Werte werden zusammengezählt, aus 90 Minuten wird also ein Timer von 1:30:00.'],
+            ['q' => 'Bekomme ich eine Benachrichtigung, wenn die Zeit um ist?', 'a' => 'Es wird keine Systembenachrichtigung gesendet. Die Seite zeigt ein Banner mit Die Zeit ist um!, der Tab-Titel wechselt zu ⏰ Die Zeit ist um!, und bei eingeschaltetem Ton piept der Alarm.'],
+            ['q' => 'Was passiert, wenn ich den Tab neu lade oder schließe?', 'a' => 'Der Countdown geht verloren, weil der Timer nicht gespeichert wird. Lass den Tab offen, bis der Alarm ertönt.'],
         ],
     ],
 
@@ -1112,9 +1363,11 @@ return [
         'keywords' => ['avif in png', 'avif in png umwandeln', 'avif zu png', 'avif konverter', 'avif in png transparent'],
         'intro' => 'Beim Umwandeln von AVIF in PNG wird ein modernes, stark komprimiertes AVIF-Bild zu einem verlustfreien PNG, das fast jedes Programm öffnen kann. Transparente Hintergründe bleiben transparent, deshalb ist PNG die richtige Wahl für Logos, Icons und Grafiken. Ziehen Sie ein Bild oder einen Stapel hinein und laden Sie die Ergebnisse einzeln oder als ZIP herunter.',
         'steps' => [
-            'Ziehen Sie Ihre AVIF-Bilder in das Feld oder klicken Sie, um sie auszuwählen (bis zu 30 auf einmal).',
-            'Jedes Bild wird sofort in Ihrem Browser in PNG umgewandelt.',
-            'Klicken Sie neben einem Bild auf Herunterladen oder auf Alle herunterladen (ZIP) für den ganzen Stapel.',
+            'Ziehen Sie Ihre AVIF-Bilder in das Feld oder klicken Sie, um sie auszuwählen (bis zu 30 auf einmal, je 50 MB).',
+            'Jedes Bild wird sofort in Ihrem Browser in PNG umgewandelt; die Liste zeigt dabei „wartet…“ und „wird umgewandelt…“.',
+            'Prüfen Sie neben jedem Bild den neuen .png-Dateinamen und seine Größe.',
+            'Klicken Sie neben einem Bild auf Herunterladen oder auf Alle herunterladen (ZIP) für den ganzen Stapel, sobald zwei oder mehr fertig sind.',
+            'Entfernen Sie ein Bild mit der Schaltfläche ✕ oder klicken Sie auf Alle entfernen, um einen neuen Stapel zu beginnen.',
         ],
         'features' => [
             'Wandelt AVIF verlustfrei in PNG um',
@@ -1123,13 +1376,49 @@ return [
             '100 % privat: Es wird nichts hochgeladen',
         ],
         'content' => [
-            ['heading' => 'Wann ist PNG besser als JPG?', 'body' => 'Wählen Sie PNG für Logos, Icons, Screenshots und alle Bilder mit transparenten Bereichen oder scharfen Kanten, denn PNG ist verlustfrei und unterstützt Transparenz. Für normale Fotos erzeugt JPG deutlich kleinere Dateien – dann ist AVIF in JPG meist die bessere Wahl.'],
-            ['heading' => 'Verliert das Bild beim Umwandeln in PNG an Qualität?', 'body' => 'Die Umwandlung selbst verursacht keinen Verlust, weil PNG jedes Pixel exakt speichert. Wurde das ursprüngliche AVIF verlustbehaftet komprimiert, bleibt dieser frühere Verlust bestehen, es kommt aber kein neuer hinzu.'],
+            [
+                'heading' => 'Wann ist PNG besser als JPG?',
+                'body' => 'Wählen Sie PNG für Logos, Icons, Screenshots und alle Bilder mit transparenten Bereichen oder scharfen Kanten, denn PNG ist verlustfrei und unterstützt Transparenz. Für normale Fotos erzeugt JPG deutlich kleinere Dateien – dann ist AVIF in JPG meist die bessere Wahl.',
+            ],
+            [
+                'heading' => 'Verliert das Bild beim Umwandeln in PNG an Qualität?',
+                'body' => 'Die Umwandlung selbst verursacht keinen Verlust, weil PNG jedes Pixel exakt speichert. Wurde das ursprüngliche AVIF verlustbehaftet komprimiert, bleibt dieser frühere Verlust bestehen, es kommt aber kein neuer hinzu.',
+            ],
+            [
+                'heading' => 'Warum AVIF überhaupt umwandeln?',
+                'body' => 'AVIF ist ein Bildformat, das auf dem Videocodec AV1 basiert. Es erzeugt sehr kleine Dateien, weshalb viele Websites es inzwischen ausliefern, doch zahlreiche Bildbearbeitungen, Office-Programme, Upload-Formulare und ältere Geräte können es noch nicht öffnen. Wer ein Bild von einer Webseite speichert, hat danach womöglich eine .avif-Datei, mit der er nichts anfangen kann. Die Umwandlung in PNG liefert eine Datei, die fast jedes Programm akzeptiert – ohne neuen Kompressionsverlust und ohne dass transparente Hintergründe verloren gehen.',
+            ],
+            [
+                'heading' => 'So funktioniert die Umwandlung',
+                'body' => 'Ihr Browser dekodiert jedes AVIF, zeichnet es in voller Größe auf eine unsichtbare Canvas-Fläche und speichert diese als PNG. Transparente Pixel bleiben transparent, weil nichts hinter das Bild gemalt wird. PNG ist verlustfrei, daher gibt es keine Qualitätseinstellung. Die Bilder werden nacheinander verarbeitet, und jede neue Datei behält ihren ursprünglichen Namen mit der Endung .png. Der ZIP-Download heißt converted-to-png.zip, und gleichnamige Dateien werden darin umbenannt, damit nichts überschrieben wird.',
+            ],
+            [
+                'heading' => 'Die Dateiliste lesen',
+                'body' => 'Jedes hinzugefügte Bild erhält eine Zeile mit Vorschaubild und ursprünglicher Größe. Ist es fertig, zeigt die Zeile den neuen PNG-Namen und die Größe, sodass Sie beide auf einen Blick vergleichen können; rechnen Sie damit, dass das PNG deutlich größer ist. Lässt sich eine Datei nicht umwandeln, erscheint der Grund in Rot in ihrer Zeile, während die anderen weiterlaufen, und eine Zeile unter der Liste zählt, wie viele Bilder bereits umgewandelt sind.',
+            ],
+            [
+                'heading' => 'Anwendungsfälle',
+                'body' => 'Das sind häufige Gründe, AVIF-Bilder in PNG umzuwandeln.',
+                'items' => [
+                    'Sie haben ein Logo oder eine Grafik von einer Website gespeichert, die als AVIF heruntergeladen wurde, aber Ihr Bildbearbeitungs- oder Präsentationsprogramm öffnet sie nicht.',
+                    'Ein Formular, ein Marktplatz oder ein Content-System lehnt AVIF-Uploads ab, akzeptiert aber PNG.',
+                    'Sie brauchen eine verlustfreie Kopie eines AVIF-Bildes, um es ohne zusätzliche Kompressionsartefakte zu bearbeiten, zuzuschneiden oder zu beschriften.',
+                    'Sie möchten den transparenten Hintergrund eines AVIF-Icons behalten und es zugleich mit älteren Apps kompatibel machen.',
+                ],
+            ],
+            [
+                'heading' => 'Grenzen und Datenschutz',
+                'body' => 'Sie können bis zu 30 Bilder auf einmal hinzufügen, jedes bis zu 50 MB; größere Dateien werden mit einem Hinweis übersprungen. Bilder mit mehr als 10.000 Pixeln an einer Seite werden passend verkleinert. Ihr Browser muss AVIF dekodieren können: Aktuelle Versionen von Chrome, Edge, Firefox und Safari können das; kann Ihrer es nicht, zeigt die Datei einen Fehler, dass sie nicht geöffnet werden konnte. AVIF kann 10- oder 12-Bit-Farbe und HDR speichern, die Canvas-Fläche des Browsers arbeitet aber mit 8 Bit pro Kanal, daher ist das PNG ein normales 8-Bit-Bild. Ein animiertes AVIF wird zu einem einzelnen Standbild, und Metadaten werden nicht übernommen. Alles läuft in Ihrem Browser, und kein Bild wird hochgeladen.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Wie wandle ich AVIF in PNG um?', 'a' => 'Ziehen Sie die AVIF-Datei in das Feld oben. Sie wird sofort in PNG umgewandelt und Sie laden sie mit einem Klick herunter.'],
             ['q' => 'Bleibt die Transparenz erhalten?', 'a' => 'Ja. PNG unterstützt Transparenz, daher bleiben transparente Bereiche des AVIF auch im PNG transparent.'],
             ['q' => 'Warum ist das PNG so viel größer?', 'a' => 'AVIF komprimiert sehr effizient, PNG dagegen verlustfrei – dasselbe Bild kann als PNG um ein Vielfaches größer sein.'],
+            ['q' => 'Warum zeigt meine AVIF-Datei einen Fehler?', 'a' => 'Der Browser konnte sie nicht dekodieren. Die Datei ist vielleicht beschädigt, oder Ihr Browser ist zu alt, um AVIF zu lesen. Versuchen Sie es erneut in einer aktuellen Version von Chrome, Edge, Firefox oder Safari.'],
+            ['q' => 'Kann ich hier auch andere Formate umwandeln?', 'a' => 'Ja. Das Feld akzeptiert auch JPG, PNG, WebP, GIF und BMP und wandelt jedes davon auf dieselbe Weise in PNG um.'],
+            ['q' => 'Soll ich in PNG oder WebP umwandeln?', 'a' => 'Wählen Sie PNG, wenn Sie eine Datei brauchen, die sich fast überall öffnen lässt, oder eine verlustfreie Kopie zum Bearbeiten. WebP-Dateien sind viel kleiner und unterstützen ebenfalls Transparenz, daher eignet sich AVIF in WebP für Bilder, die wieder auf eine Website kommen.'],
+            ['q' => 'Funktioniert es auf dem Handy?', 'a' => 'Ja, in jedem mobilen Browser, der AVIF dekodieren kann. Sehr große Bilder brauchen viel Arbeitsspeicher; kann der Browser Ihres Handys das PNG nicht erstellen, erscheint ein Fehler mit der Bitte, kleinere Abmessungen zu versuchen.'],
             ['q' => 'Werden meine Bilder hochgeladen?', 'a' => 'Nein. Die Umwandlung läuft in Ihrem Browser und Ihre Bilder verlassen nie Ihr Gerät.'],
         ],
     ],
@@ -1139,45 +1428,87 @@ return [
         'title' => 'AVIF in WebP umwandeln - kostenlos online, Stapel',
         'description' => 'AVIF kostenlos online in WebP umwandeln. Kleine Dateien und Transparenz bleiben, bis zu 30 Bilder pro Stapel, Download als ZIP. Kein Upload.',
         'h1' => 'AVIF in WebP umwandeln',
-        'tagline' => 'Wandeln Sie AVIF in WebP um und behalten Sie kleine Dateien.',
+        'tagline' => 'Wandle AVIF in WebP um und behalte kleine Dateien.',
         'keywords' => ['avif in webp', 'avif in webp umwandeln', 'avif zu webp', 'avif webp', 'avif konverter online'],
-        'intro' => 'Durch das Umwandeln von AVIF in WebP erhalten Sie ein kleines, webtaugliches Bild, das mehr Programme und Content-Management-Systeme akzeptieren als AVIF. WebP behält die Transparenz und komprimiert gut, sodass die Dateien deutlich kleiner bleiben als PNG oder JPG. Ziehen Sie ein Bild oder einen Stapel hinein, wählen Sie die Qualität und laden Sie die Ergebnisse herunter.',
+        'intro' => 'Durch das Umwandeln von AVIF in WebP erhältst du ein kleines, webtaugliches Bild, das mehr Programme und Content-Management-Systeme akzeptieren als AVIF. WebP behält die Transparenz und komprimiert gut, sodass die Dateien deutlich kleiner bleiben als PNG oder JPG. Ziehe ein Bild oder einen Stapel hinein, wähle die Qualität und lade die Ergebnisse herunter.',
         'steps' => [
-            'Ziehen Sie Ihre AVIF-Bilder in das Feld oder klicken Sie, um sie auszuwählen (bis zu 30 auf einmal).',
-            'Passen Sie bei Bedarf die WebP-Qualität an; 85 % ist ein guter Kompromiss aus Größe und Schärfe.',
-            'Klicken Sie neben einem Bild auf Herunterladen oder auf Alle herunterladen (ZIP) für den ganzen Stapel.',
+            'Ziehe deine AVIF-Bilder in das Feld oder klicke, um sie auszuwählen (bis zu 30 auf einmal, höchstens 50 MB pro Datei).',
+            'Warte kurz, während jede Datei umgewandelt wird; die Liste zeigt danach den neuen .webp-Namen und die Dateigröße.',
+            'Verschiebe den Qualitätsregler (50 bis 100 %, standardmäßig 92 %), wenn du kleinere oder schärfere Dateien möchtest.',
+            'Wenn du die Qualität nach dem Umwandeln geändert hast, klicke auf Erneut umwandeln, um den Stapel neu zu erstellen.',
+            'Klicke neben einem Bild auf Herunterladen, um dieses WebP zu speichern.',
+            'Sind zwei oder mehr Bilder umgewandelt, klicke auf Alle herunterladen (ZIP), um sie in einer Datei zu erhalten.',
+            'Entferne ein einzelnes Bild mit ✕ oder klicke auf Alle entfernen, um einen neuen Stapel zu beginnen.',
         ],
         'features' => [
-            'Wandelt AVIF in Ihrem Browser in WebP um',
+            'Wandelt AVIF in deinem Browser in WebP um',
             'Transparente Hintergründe bleiben erhalten',
             'Einstellbare Qualität und ZIP-Download',
             '100 % privat: Es wird nichts hochgeladen',
         ],
         'content' => [
-            ['heading' => 'AVIF oder WebP: Was soll ich nutzen?', 'body' => 'Beide sind moderne Formate mit Transparenz. AVIF erzeugt meist kleinere Dateien, WebP gibt es aber schon länger und es wird von mehr Programmen, Plugins und Upload-Formularen akzeptiert. Die Umwandlung in WebP ist ein guter Mittelweg, wenn eine Website oder ein Tool kein AVIF annimmt, Sie aber kleine Bilder möchten.'],
-            ['heading' => 'Sieht das WebP genauso aus?', 'body' => 'Ab 85 % Qualität ist der Unterschied kaum zu erkennen. Jedes verlustbehaftete Speichern kann etwas Detail kosten – zum Archivieren oder Weiterbearbeiten behält AVIF in PNG dagegen jedes Pixel.'],
+            [
+                'heading' => 'AVIF oder WebP: Was soll ich nutzen?',
+                'body' => 'Beide sind moderne Formate mit Transparenz. AVIF erzeugt meist kleinere Dateien, WebP gibt es aber schon länger und es wird von mehr Programmen, Plugins und Upload-Formularen akzeptiert. Die Umwandlung in WebP ist ein guter Mittelweg, wenn eine Website oder ein Tool kein AVIF annimmt, du aber kleine Bilder möchtest.',
+            ],
+            [
+                'heading' => 'Sieht das WebP genauso aus?',
+                'body' => 'Das WebP wird mit verlustbehafteter Kompression in der gewählten Qualität gespeichert. Ab 85 % Qualität ist der Unterschied kaum zu erkennen, und der Hinweis unter dem Regler sagt, dass 90 % oder mehr identisch zum Original aussieht. Jedes verlustbehaftete Speichern kann etwas Detail kosten – zum Archivieren oder Weiterbearbeiten behält AVIF in PNG dagegen jedes Pixel.',
+            ],
+            [
+                'heading' => 'So funktioniert die Umwandlung',
+                'body' => 'Dein Browser dekodiert jedes AVIF mit seinem eigenen eingebauten Bilddecoder, zeichnet es in Originalbreite und -höhe auf ein Canvas und speichert das Canvas in der gewählten Qualität als WebP. Die Dateien werden nacheinander umgewandelt, und jede zeigt erst „wartet“, dann „wird umgewandelt“ und schließlich ihren neuen Namen und ihre Größe neben der Originalgröße, sodass du sie sofort vergleichen kannst. Sehr große Bilder sind die einzige Ausnahme beim Beibehalten der Originalmaße: Ist eine Seite länger als 10.000 Pixel, wird das Bild verkleinert, bis es in 10.000 × 10.000 passt.',
+            ],
+            [
+                'heading' => 'Was sich in der umgewandelten Datei ändert',
+                'body' => 'Übernommen werden nur die Pixel. Im AVIF gespeicherte Metadaten wie Kameradaten, Datum oder GPS-Standort werden nicht ins WebP kopiert, was praktisch ist, wenn du Fotos öffentlich teilst. Ein animiertes AVIF wird zu einem einzelnen Standbild. WebP speichert 8 Bit pro Farbkanal, daher werden HDR- oder 10-Bit-AVIF-Fotos in normalen Dynamikumfang umgewandelt und können auf einem HDR-Bildschirm etwas anders aussehen als das Original. Jede Ausgabe behält den ursprünglichen Dateinamen mit der Endung .webp, und wenn zwei Dateien in einem ZIP denselben Namen bekämen, erhält die zweite den Zusatz (2), statt die erste zu überschreiben.',
+            ],
+            [
+                'heading' => 'Andere Formate und ältere Browser',
+                'body' => 'Der Konverter ist nicht auf AVIF beschränkt: Du kannst auch JPG-, PNG-, WebP-, GIF- oder BMP-Dateien in denselben Stapel ziehen und von allen WebP-Versionen erhalten. Wenn dein Browser kein WebP speichern kann, wie Safari vor Version 17, wird das Bild stattdessen als JPG gespeichert und ein Hinweis unter der Datei sagt dir das. Lässt sich eine Datei nicht öffnen, etwa weil sie beschädigt ist oder dein Browser sie nicht dekodieren kann, zeigt diese Datei einen Fehler und der Rest des Stapels läuft weiter.',
+            ],
+            [
+                'heading' => 'Anwendungsfälle',
+                'body' => 'Typische Gründe, AVIF in WebP umzuwandeln:',
+                'items' => [
+                    'Bilder in einen Website-Baukasten, ein CMS oder einen Marktplatz hochladen, der WebP annimmt, AVIF aber ablehnt.',
+                    'Heruntergeladene AVIF-Bilder in einem Bildbearbeitungsprogramm oder einer App nutzen, die WebP öffnen kann, AVIF aber nicht.',
+                    'Transparente Logos und freigestellte Produktbilder klein halten und dabei zu einem verbreiteteren Format wechseln.',
+                    'Einen ganzen Ordner mit AVIF-Fotos auf einmal umwandeln und gesammelt als ZIP herunterladen.',
+                    'Fotos ohne die Kamera- und Standort-Metadaten teilen, die in den Originaldateien steckten.',
+                ],
+            ],
+            [
+                'heading' => 'Grenzen und Datenschutz',
+                'body' => 'Alles läuft in deinem Browser: Bilder werden auf deinem Gerät dekodiert, umgewandelt und gezippt und nie auf einen Server hochgeladen. Du kannst bis zu 30 Bilder pro Stapel hinzufügen, und jede Datei darf bis zu 50 MB groß sein; größere Dateien werden mit einer Meldung übersprungen. AVIF komprimiert meist besser als WebP, daher ist das WebP oft größer als das ursprüngliche AVIF; senke die Qualität, wenn die Größe wichtig ist. Sehr große Bilder brauchen viel Arbeitsspeicher, was die Umwandlung auf Smartphones und älteren Computern verlangsamen kann.',
+            ],
         ],
         'faqs' => [
-            ['q' => 'Wie wandle ich AVIF in WebP um?', 'a' => 'Ziehen Sie die AVIF-Datei in das Feld oben, wählen Sie die Qualität und laden Sie das WebP mit einem Klick herunter.'],
+            ['q' => 'Wie wandle ich AVIF in WebP um?', 'a' => 'Ziehe die AVIF-Datei in das Feld oben, wähle die Qualität und lade das WebP mit einem Klick herunter.'],
             ['q' => 'Bleibt die Transparenz erhalten?', 'a' => 'Ja. WebP unterstützt Transparenz, daher bleiben transparente Bereiche erhalten.'],
             ['q' => 'Kann ich mehrere AVIF-Dateien auf einmal umwandeln?', 'a' => 'Ja. Lege bis zu 30 AVIF-Bilder gleichzeitig ab und lade jedes WebP einzeln oder alle zusammen als ZIP-Datei herunter.'],
+            ['q' => 'Ist das WebP kleiner als das AVIF?', 'a' => 'Meist nicht. AVIF komprimiert effizienter, daher ist das WebP oft etwas größer. Die Dateiliste zeigt beide Größen, und eine niedrigere Qualität macht das WebP kleiner.'],
+            ['q' => 'Warum habe ich ein JPG statt eines WebP bekommen?', 'a' => 'Dein Browser kann keine WebP-Bilder speichern, deshalb hat der Konverter JPG verwendet und einen Hinweis angezeigt. Ein Browser-Update oder eine aktuelle Version von Chrome, Edge, Firefox oder Safari behebt das.'],
             ['q' => 'Welche Browser können das?', 'a' => 'Aktuelle Versionen von Chrome, Edge, Firefox und Safari können AVIF lesen und WebP speichern, daher funktioniert der Konverter in allen.'],
-            ['q' => 'Werden meine Bilder hochgeladen?', 'a' => 'Nein. Alles passiert in Ihrem Browser und Ihre Bilder verlassen nie Ihr Gerät.'],
+            ['q' => 'Werden meine Bilder hochgeladen?', 'a' => 'Nein. Alles passiert in deinem Browser und deine Bilder verlassen nie dein Gerät.'],
         ],
     ],
 
     'readability-checker' => [
         'name' => 'Lesbarkeitsprüfer',
         'title' => 'Lesbarkeitsprüfer kostenlos: Flesch-Wert & Niveau',
-        'description' => 'Kostenloser Lesbarkeitsprüfer: Flesch-Lesbarkeitswert, Klassenstufe, Gunning Fog und SMOG berechnen und zu lange Sätze finden. Ihr Text bleibt privat.',
+        'description' => 'Kostenloser Lesbarkeitsprüfer: Flesch-Lesbarkeitswert, Klassenstufe, Gunning Fog und SMOG berechnen und zu lange Sätze finden. Dein Text bleibt privat.',
         'h1' => 'Lesbarkeitsprüfer',
-        'tagline' => 'Sehen Sie, wie leicht Ihr Text lesbar ist – und was Sie verbessern können.',
+        'tagline' => 'Sieh, wie leicht dein Text lesbar ist – und was du verbessern kannst.',
         'keywords' => ['lesbarkeit prüfen', 'lesbarkeitsprüfer', 'lesbarkeitsindex', 'flesch index', 'flesch reading ease', 'lesbarkeitstest'],
-        'intro' => 'Ein Lesbarkeitsprüfer misst, wie leicht ein Text zu lesen ist – mit Formeln, die auf Satz- und Wortlänge beruhen. Fügen Sie einen Artikel, eine Hausarbeit, eine E-Mail oder einen KI-Entwurf ein und erhalten Sie den Flesch-Lesbarkeitswert, die Klassenstufe nach fünf Formeln und eine Liste zu langer Sätze. Ihr Text wird in Ihrem Browser analysiert und nie hochgeladen.',
+        'intro' => 'Ein Lesbarkeitsprüfer misst, wie leicht ein Text zu lesen ist – mit Formeln, die auf Satz- und Wortlänge beruhen. Füge einen Artikel, eine Hausarbeit, eine E-Mail oder einen KI-Entwurf ein und erhalte den Flesch-Lesbarkeitswert, die Klassenstufe nach fünf Formeln und eine Liste zu langer Sätze. Dein Text wird in deinem Browser analysiert und nie hochgeladen.',
         'steps' => [
-            'Fügen Sie Ihren Text in das Feld ein oder tippen Sie ihn.',
-            'Lesen Sie den Flesch-Wert und die Klassenstufe jeder Formel ab.',
-            'Kürzen Sie die unter den Ergebnissen aufgeführten langen Sätze und prüfen Sie erneut.',
+            'Füge deinen Text in das Feld Dein Text ein oder tippe ihn; die Werte erscheinen, sobald ein Satz da ist.',
+            'Lies den Flesch-Lesbarkeitswert im farbigen Kreis und das Niveau daneben ab.',
+            'Sieh dir unter dem Wert die durchschnittliche Klassenstufe und die geschätzte Lesezeit an.',
+            'Vergleiche in der Tabelle die US-Klassenstufe aller fünf Formeln.',
+            'Kürze die unter „Lange Sätze zum Kürzen“ aufgeführten Sätze, angefangen mit dem längsten.',
+            'Bearbeite deinen Text im Feld und sieh zu, wie sich die Werte ändern, oder tippe auf Leeren, um neu zu beginnen.',
         ],
         'features' => [
             'Flesch-Lesbarkeitswert und Flesch-Kincaid-Klassenstufe',
@@ -1186,14 +1517,46 @@ return [
             'Sofortige Ergebnisse; nichts wird hochgeladen',
         ],
         'content' => [
-            ['heading' => 'Was ist ein guter Lesbarkeitswert?', 'body' => 'Für die meisten Websites, Blogs und E-Mails sollten Sie einen Flesch-Wert von mindestens 60 anstreben – das ist einfache Sprache, die fast alle Erwachsenen mühelos lesen – und eine Klassenstufe von etwa 8 oder darunter. Fach- und wissenschaftliche Texte liegen oft bei 30 bis 50, was für Fachleute passt, für alle anderen aber schwer ist.'],
-            ['heading' => 'Wie mache ich meinen Text leichter lesbar?', 'body' => 'Teilen Sie lange Sätze, verwenden Sie kurze Alltagswörter statt langer, schreiben Sie aktiv und gliedern Sie große Absätze. Diese Änderungen erhöhen den Flesch-Wert direkt, weil er aus Wörtern pro Satz und Silben pro Wort berechnet wird.'],
+            [
+                'heading' => 'Was ist ein guter Lesbarkeitswert?',
+                'body' => 'Für die meisten Websites, Blogs und E-Mails solltest du einen Flesch-Wert von mindestens 60 anstreben, das ist einfache Sprache, die fast alle Erwachsenen mühelos lesen, und eine Klassenstufe von etwa 8 oder darunter. Fach- und wissenschaftliche Texte liegen oft bei 30 bis 50, was für Fachleute passt, für alle anderen aber schwer ist. Der Prüfer färbt den Wert ab 60 grün, von 30 bis knapp unter 60 orange und unter 30 rot und beschriftet ihn von Sehr leicht (ab 90) bis Sehr schwer (unter 30).',
+            ],
+            [
+                'heading' => 'Welche Formeln verwendet der Prüfer?',
+                'body' => 'Der Flesch-Lesbarkeitswert ist 206,835 − 1,015 × (Wörter pro Satz) − 84,6 × (Silben pro Wort); je höher, desto leichter. Die fünf Formeln für die Klassenstufe schätzen jeweils, welche US-Schulklasse ein Leser braucht. Flesch-Kincaid ist 0,39 × Wörter pro Satz + 11,8 × Silben pro Wort − 15,59. Gunning Fog ist 0,4 × (Wörter pro Satz + Anteil komplexer Wörter in Prozent). SMOG ist 1,043 × √(komplexe Wörter × 30 ÷ Sätze) + 3,1291. Coleman-Liau verwendet Buchstaben statt Silben: 0,0588 × Buchstaben pro 100 Wörter − 0,296 × Sätze pro 100 Wörter − 15,8. Der Automated Readability Index ist 4,71 × Buchstaben pro Wort + 0,5 × Wörter pro Satz − 21,43. Als komplexes Wort zählt hier jedes Wort mit drei oder mehr Silben. Die durchschnittliche Klassenstufe unter dem Wert ist der Mittelwert der fünf Formeln.',
+            ],
+            [
+                'heading' => 'So werden Wörter, Sätze und Silben gezählt',
+                'body' => 'Ein Wort ist eine Folge von Buchstaben, auch lateinischen Buchstaben mit Akzent, und eine Verkürzung wie „don\'t“ zählt als ein Wort; reine Zahlen zählen nicht als Wörter. Ein Satz endet an einem Punkt, Fragezeichen, Ausrufezeichen oder Auslassungszeichen mit folgendem Leerzeichen oder an einem Zeilenumbruch. Gängige englische Abkürzungen wie Mr., Mrs., Dr., Prof., etc., e.g. und i.e. beenden keinen Satz, und der Punkt in einer Dezimalzahl wie 3.5 wird ignoriert. Silben werden mit einer Faustregel statt mit einem Wörterbuch geschätzt: Wörter mit höchstens drei Buchstaben zählen als eine Silbe, ein stummes e, es oder ed am Wortende fällt weg, und jede Vokalgruppe (a, e, i, o, u, y) zählt als eine Silbe. Wie jede solche Regel liegt sie bei manchen Wörtern um eins daneben, was die Werte leicht verschiebt.',
+            ],
+            [
+                'heading' => 'Wie mache ich meinen Text leichter lesbar?',
+                'body' => 'Teile lange Sätze, verwende kurze Alltagswörter statt langer, schreib aktiv und gliedere große Absätze. Diese Änderungen erhöhen den Flesch-Wert direkt, weil er aus Wörtern pro Satz und Silben pro Wort berechnet wird. Der Prüfer listet jeden Satz mit mehr als 25 Wörtern auf, den längsten zuerst, und zeigt bis zu fünf davon mit ihrer Wortzahl, damit du weißt, wo du anfangen sollst. Die Statistikzeile zeigt Wörter, Sätze, Wörter pro Satz, Silben pro Wort und komplexe Wörter, so erkennst du, ob lange Sätze oder lange Wörter den Wert drücken.',
+            ],
+            [
+                'heading' => 'Anwendungsfälle',
+                'body' => 'Ein Lesbarkeitswert ist ein schneller, objektiver Check, bevor du etwas veröffentlichst oder verschickst.',
+                'items' => [
+                    'Prüfe einen Blogartikel oder eine Landingpage vor dem Livegang gegen ein Ziel wie Flesch 60 oder Klassenstufe 8.',
+                    'Lass einen KI-Entwurf natürlicher klingen, indem du seine längsten Sätze findest und teilst.',
+                    'Vereinfache Anleitungen, Hilfeartikel oder Kunden-E-Mails, damit auch Laien sie verstehen.',
+                    'Prüfe, ob ein Schulaufsatz oder Bericht zum Leseniveau seiner Zielgruppe passt.',
+                    'Vergleiche zwei Fassungen desselben Absatzes, um zu sehen, welche leichter zu lesen ist.',
+                ],
+            ],
+            [
+                'heading' => 'Grenzen und Datenschutz',
+                'body' => 'Die Formeln messen nur Satzlänge und Wortlänge. Sie können nicht beurteilen, ob ein Text stimmt, gut gegliedert ist oder zu seinen Lesern passt, und auch ein kurzes Wort kann unbekannt sein. Überschriften, Listenpunkte und Zeilen ohne Satzzeichen zählen jeweils als eigener Satz, was einen Text leichter wirken lassen kann, als er ist; prüfe daher möglichst Fließtext. Die Formeln wurden für Englisch entwickelt, und auf nicht englischen Seiten zeigt das Tool einen Hinweis, dass die Werte nur ein grober Anhaltspunkt sind. Die Lesezeit geht von 238 Wörtern pro Minute aus. Dein Text wird beim Tippen in deinem Browser analysiert und nie hochgeladen.',
+            ],
         ],
         'faqs' => [
-            ['q' => 'Was ist der Flesch-Lesbarkeitswert?', 'a' => 'Ein Wert von 0 bis 100, der auf der durchschnittlichen Satzlänge und den Silben pro Wort beruht. Je höher, desto leichter: 60-70 ist einfache Sprache, über 90 sehr leicht.'],
+            ['q' => 'Was ist der Flesch-Lesbarkeitswert?', 'a' => 'Ein Wert, der auf der durchschnittlichen Satzlänge und den Silben pro Wort beruht. Er liegt meist zwischen 0 und 100, sehr einfache Texte können aber darüber liegen; der Prüfer zeigt Werte von 0 bis 121. Je höher, desto leichter: 60-70 ist einfache Sprache, über 90 sehr leicht.'],
             ['q' => 'Was bedeutet die Klassenstufe?', 'a' => 'Sie gibt die US-Schulklasse an, die ein Leser braucht, um den Text zu verstehen. Stufe 8 entspricht einem typischen 13- bis 14-Jährigen.'],
-            ['q' => 'Kann ich KI-Texte prüfen?', 'a' => 'Ja. KI-Entwürfe enthalten oft lange Sätze und lange Wörter; der Prüfer zeigt, welche Sätze Sie kürzen sollten, damit der Text natürlicher klingt.'],
-            ['q' => 'Funktioniert das auch auf Deutsch?', 'a' => 'Die Formeln wurden für Englisch entwickelt, deshalb sind die Ergebnisse für deutsche Texte nur ein grober Anhaltspunkt.'],
+            ['q' => 'Warum unterscheiden sich die fünf Klassenstufen?', 'a' => 'Jede Formel gewichtet etwas anderes. Flesch-Kincaid und SMOG nutzen Silben, Gunning Fog zählt Wörter mit drei oder mehr Silben, und Coleman-Liau und der Automated Readability Index zählen Buchstaben. Der Durchschnitt ergibt ein stabileres Bild als jede einzelne Formel.'],
+            ['q' => 'Was gilt als langer Satz?', 'a' => 'Jeder Satz mit mehr als 25 Wörtern. Alle werden in der Überschrift gezählt, und die fünf längsten werden angezeigt, damit du sie zuerst kürzen kannst.'],
+            ['q' => 'Kann ich KI-Texte prüfen?', 'a' => 'Ja. KI-Entwürfe enthalten oft lange Sätze und lange Wörter; der Prüfer zeigt, welche Sätze du kürzen solltest, damit der Text natürlicher klingt.'],
+            ['q' => 'Funktioniert das auch auf Deutsch?', 'a' => 'Die Formeln wurden für Englisch entwickelt, deshalb sind die Ergebnisse für deutsche Texte nur ein grober Anhaltspunkt. Auch die Silbenregeln sind englische Regeln.'],
+            ['q' => 'Wird mein Text hochgeladen oder gespeichert?', 'a' => 'Nein. Alles Zählen und Berechnen passiert in deinem Browser, und der Text wird nicht gespeichert. Tippe auf Leeren, um das Feld zu leeren.'],
         ],
         'table' => [
             'caption' => 'Flesch-Lesbarkeitswerte',
@@ -1216,9 +1579,12 @@ return [
         'keywords' => ['ki detektor', 'ki text erkennen', 'ki checker', 'chatgpt detektor', 'ki generierten text erkennen', 'ai detector kostenlos'],
         'intro' => 'Ein KI-Text-Detektor schätzt, ob ein Text von einem KI-Chatbot wie ChatGPT geschrieben wurde. Dieser analysiert vier Signale, in denen sich typische KI-Texte von menschlichen unterscheiden: wie gleichmäßig die Sätze sind, KI-typische Formulierungen, Kurzformen und die Vielfalt des Wortschatzes. Er liefert einen Wert und zeigt genau, was ihn erhöht hat. Er analysiert englische Texte in Ihrem Browser, ohne etwas hochzuladen.',
         'steps' => [
-            'Fügen Sie mindestens 80 Wörter englischen Text in das Feld ein.',
-            'Klicken Sie auf Text prüfen, um den Wert und die vier Signale zu sehen.',
-            'Sehen Sie sich die gefundenen KI-typischen Formulierungen an; umformuliert klingt der Text menschlicher.',
+            'Fügen Sie mindestens 80 Wörter englischen Text in das Feld Zu prüfender Text ein.',
+            'Klicken Sie auf Text prüfen.',
+            'Lesen Sie den KI-Ähnlichkeitswert und das Urteil ab: Wahrscheinlich KI-generiert, Gemischt oder unklar oder Wahrscheinlich von einem Menschen geschrieben.',
+            'Sehen Sie sich die vier Signalbalken an, um zu erkennen, welche Muster den Wert erhöht haben.',
+            'Prüfen Sie die gefundenen KI-typischen Formulierungen, jeweils mit ihrer Häufigkeit (bis zu 15); umformuliert klingt der Text menschlicher.',
+            'Klicken Sie auf Leeren, um das Feld zu leeren und einen anderen Text zu prüfen.',
         ],
         'features' => [
             'KI-Ähnlichkeitswert von 0 bis 100 %',
@@ -1227,13 +1593,44 @@ return [
             'Kostenlos, unbegrenzt und privat: Es wird nichts hochgeladen',
         ],
         'content' => [
-            ['heading' => 'Wie funktioniert KI-Erkennung?', 'body' => 'KI-Modelle schreiben oft sehr gleichmäßige Sätze, wiederholen dieselben polierten Wendungen („moreover“, „it is important to note“, „delve“) und vermeiden Kurzformen. Menschen mischen eher kurze und lange Sätze und schreiben lockerer. Der Detektor misst diese Muster und fasst sie zu einem Wert zusammen.'],
-            ['heading' => 'Wie zuverlässig sind KI-Detektoren?', 'body' => 'Kein KI-Detektor ist völlig zuverlässig. Sehr förmliche menschliche Texte können hoch bewertet werden, und überarbeitete oder locker formulierte KI-Texte niedrig. Betrachten Sie den Wert als Hinweis, genauer hinzusehen – nie als Beweis, und nutzen Sie ihn nie allein, um Schülern oder Autoren Täuschung vorzuwerfen.'],
+            [
+                'heading' => 'Wie funktioniert KI-Erkennung?',
+                'body' => 'KI-Modelle schreiben oft sehr gleichmäßige Sätze, wiederholen dieselben polierten Wendungen („moreover“, „it is important to note“, „delve“) und vermeiden Kurzformen. Menschen mischen eher kurze und lange Sätze und schreiben lockerer. Der Detektor misst diese Muster und fasst sie zu einem Wert zusammen.',
+            ],
+            [
+                'heading' => 'Die vier Signale im Detail',
+                'body' => 'Jedes Signal erscheint als Balken von 0 bis 100 %. Gleichmäßige Satzlängen vergleicht, wie stark die Satzlängen im Verhältnis zu ihrem Durchschnitt schwanken (der Variationskoeffizient): Sehr gleichmäßige Sätze treiben den Wert Richtung 100 %, eine starke Mischung aus kurzen und langen Sätzen senkt ihn auf 0. KI-typische Formulierungen zählt Treffer aus einer eingebauten Liste von etwa 60 Wörtern und Wendungen wie „delve“, „tapestry“, „plays a crucial role“ und „in today\'s fast-paced world“ pro 100 Wörter; ab 1,5 Treffern pro 100 Wörter ergibt das 100 %. Wenige Kurzformen zählt Formen wie „don\'t“ und „it\'s“ pro 100 Wörter; gar keine ergibt 100 %. Wiederholender Wortschatz misst, wie viele verschiedene Wörter in jedem Abschnitt von 50 Wörtern vorkommen, gemittelt über den ganzen Text, und steigt, je kleiner die Wortvielfalt ist.',
+            ],
+            [
+                'heading' => 'So entstehen Wert und Urteil',
+                'body' => 'Der Wert ist ein gewichteter Durchschnitt der vier Signale: Gleichmäßigkeit der Sätze und KI-typische Formulierungen zählen je 35 %, Kurzformen und Wortschatz je 15 %. Ab 65 % lautet das Urteil Wahrscheinlich KI-generiert, von 40 % bis 64 % Gemischt oder unklar und unter 40 % Wahrscheinlich von einem Menschen geschrieben. Diese Schwellen sind feste Regeln, keine gemessene Wahrscheinlichkeit: Ein Wert von 70 % bedeutet nicht, dass der Text mit 70-prozentiger Wahrscheinlichkeit von einer KI stammt. Das Tool nutzt kein Sprachmodell und vergleicht Ihren Text mit keiner Datenbank bekannter KI-Texte.',
+            ],
+            [
+                'heading' => 'Wie zuverlässig sind KI-Detektoren?',
+                'body' => 'Kein KI-Detektor ist völlig zuverlässig. Sehr förmliche menschliche Texte können hoch bewertet werden, und überarbeitete oder locker formulierte KI-Texte niedrig. Studien haben zudem gezeigt, dass Detektoren Texte von Nicht-Muttersprachlern des Englischen häufiger als KI einstufen. Betrachten Sie den Wert als Hinweis, genauer hinzusehen – nie als Beweis, und nutzen Sie ihn nie allein, um Schülern oder Autoren Täuschung vorzuwerfen.',
+            ],
+            [
+                'heading' => 'Anwendungsfälle',
+                'body' => 'Am nützlichsten ist der Wert als Schreibhilfe und als Anlass, genauer hinzusehen – nicht als Urteil über eine Person.',
+                'items' => [
+                    'Prüfen Sie Ihren eigenen Entwurf auf Standardfloskeln und sehr gleichmäßige Sätze, bevor Sie ihn veröffentlichen oder einreichen.',
+                    'Überarbeiten Sie KI-gestützte Texte, damit sie natürlich klingen, und nutzen Sie die Liste der gefundenen Formulierungen als Aufgabenliste.',
+                    'Holen Sie sich eine schnelle zweite Einschätzung zu einem eingereichten Artikel oder Aufsatz, bevor Sie mit dem Verfasser darüber sprechen, wie er entstanden ist.',
+                    'Beobachten Sie, wie sich der Wert ändert, wenn Sie Satzlängen variieren oder Kurzformen verwenden, und lernen Sie so, was Texte mechanisch klingen lässt.',
+                ],
+            ],
+            [
+                'heading' => 'Grenzen und Datenschutz',
+                'body' => 'Der Detektor analysiert nur englische Texte; die Liste der Formulierungen und die Muster für Kurzformen sind englisch. Er braucht mindestens 80 Wörter und drei Sätze und zeigt Ihnen an, wie viele Wörter Sie haben, wenn der Text zu kurz ist. Sätze werden an Punkten, Fragezeichen, Ausrufezeichen und Zeilenumbrüchen getrennt, daher zählen Aufzählungen und Überschriften als kurze Sätze und können das Signal für gleichmäßige Satzlängen verändern. Gängige Wörter auf der Liste wie „crucial“, „journey“ oder „additionally“ verwenden auch Menschen. Die Analyse läuft vollständig in Ihrem Browser: Der eingefügte Text wird weder hochgeladen noch gespeichert oder irgendwohin gesendet.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Erkennt er ChatGPT?', 'a' => 'Er markiert Schreibmuster, die ChatGPT und ähnliche Modelle oft erzeugen. Überarbeitete oder gezielt gesteuerte KI-Texte werden möglicherweise nicht erkannt.'],
-            ['q' => 'Wie viel Text brauche ich?', 'a' => 'Mindestens 80 Wörter. Ab etwa 300 Wörtern ist der Wert aussagekräftiger.'],
+            ['q' => 'Wie viel Text brauche ich?', 'a' => 'Mindestens 80 Wörter in drei oder mehr Sätzen. Ab etwa 300 Wörtern ist der Wert aussagekräftiger.'],
             ['q' => 'Kann ein menschlicher Text als KI gelten?', 'a' => 'Ja. Ein sehr förmlicher, gleichmäßiger Text mit Wörtern wie „furthermore“ kann hoch bewertet werden, auch wenn ein Mensch ihn geschrieben hat. Deshalb ist der Wert nur ein Anhaltspunkt.'],
+            ['q' => 'Zeigt der Wert die Wahrscheinlichkeit, dass ein Text KI-generiert ist?', 'a' => 'Nein. Er ist eine gewichtete Mischung aus vier Schreibsignalen, die mit festen Schwellen verglichen wird, keine Wahrscheinlichkeit. Nutzen Sie ihn, um zu sehen, welche Muster auffallen, nicht als prozentuale Chance.'],
+            ['q' => 'Funktioniert er auch für andere Sprachen?', 'a' => 'Nein. Die Liste der Formulierungen und die Prüfung auf Kurzformen sind für Englisch gebaut, daher sind Ergebnisse für andere Sprachen nicht aussagekräftig.'],
+            ['q' => 'Was tun, wenn mein eigener Text hoch bewertet wird?', 'a' => 'Schauen Sie, welches Signal am höchsten ist. Ist es die Gleichmäßigkeit der Sätze, variieren Sie die Satzlängen; sind es Formulierungen, ersetzen Sie die aufgelisteten Wörter durch einfachere; sind es Kurzformen, schreiben Sie, wo der Ton es erlaubt, so, wie Sie sprechen würden. Wenn Sie zeigen müssen, wie Sie einen Text geschrieben haben, sind Entwürfe und Notizen ein weit besserer Beleg als jeder Detektorwert.'],
             ['q' => 'Wird mein Text gespeichert?', 'a' => 'Nein. Die Analyse läuft in Ihrem Browser und Ihr Text wird nirgendwohin gesendet.'],
         ],
     ],
@@ -1553,6 +1950,7 @@ return [
             ],
         ],
     ],
+
     'rotate-pdf' => [
         'name' => 'PDF drehen',
         'title' => 'PDF Drehen - Schiefe Seiten Kostenlos Korrigieren',
@@ -1584,7 +1982,9 @@ return [
             ['q' => 'Wird mein PDF auf einen Server hochgeladen?', 'a' => 'Nein. Das PDF wird vollständig in Ihrem Browser mit JavaScript geöffnet und gedreht und nie irgendwohin gesendet.'],
             ['q' => 'Fügt das ein Wasserzeichen hinzu oder verringert die Qualität?', 'a' => 'Nein. Das Drehen ändert nur die Ausrichtung jeder Seite. Es wird kein Wasserzeichen, Logo oder zusätzliche Seite hinzugefügt, und es geht keine Bild- oder Textqualität verloren.'],
         ],
-    ],    'delete-pdf-pages' => [
+    ],
+
+    'delete-pdf-pages' => [
         'name' => 'PDF-Seiten löschen',
         'title' => 'PDF-Seiten Löschen - Seiten Kostenlos Entfernen',
         'description' => 'Löschen Sie PDF-Seiten kostenlos online - per Miniaturansicht oder Bereich wie 2, 4-6. Kein Upload, kein Wasserzeichen, keine Anmeldung.',
@@ -1615,7 +2015,9 @@ return [
             ['q' => 'Wird mein PDF irgendwohin hochgeladen?', 'a' => 'Nein. Die Seiten werden vollständig in Ihrem Browser mit JavaScript entfernt, und die Datei wird nie an einen Server gesendet.'],
             ['q' => 'Verlieren die verbleibenden Seiten an Qualität?', 'a' => 'Nein. Die behaltenen Seiten werden exakt so kopiert, wie sie sind, ohne erneute Komprimierung, Wasserzeichen oder zusätzliche Seiten.'],
         ],
-    ],    'organize-pdf' => [
+    ],
+
+    'organize-pdf' => [
         'name' => 'PDF organisieren',
         'title' => 'PDF Organisieren - Seiten Kostenlos Neu Anordnen',
         'description' => 'Ordnen Sie die Seiten eines PDFs kostenlos online neu an. Ziehen Sie Miniaturansichten in eine neue Reihenfolge, oder nutzen Sie die Verschieben-Buttons.',
@@ -1646,7 +2048,9 @@ return [
             ['q' => 'Wird mein PDF auf einen Server hochgeladen?', 'a' => 'Nein. Das PDF wird vollständig in Ihrem Browser mit JavaScript geöffnet und neu angeordnet und nie irgendwohin gesendet.'],
             ['q' => 'Kann ich hier auch Seiten löschen oder drehen?', 'a' => 'Dieses Werkzeug ordnet nur Seiten neu an. Nutzen Sie dafür PDF-Seiten löschen oder PDF drehen, vor oder nach dem Organisieren der Reihenfolge.'],
         ],
-    ],    'pdf-to-jpg' => [
+    ],
+
+    'pdf-to-jpg' => [
         'name' => 'PDF zu JPG',
         'title' => 'PDF zu JPG Konverter - Seiten Kostenlos Umwandeln',
         'description' => 'Wandeln Sie PDF-Seiten kostenlos in JPG-Bilder um. Wählen Sie 72, 150 oder 300 DPI und laden Sie ein Bild oder ein ZIP herunter. Kein Upload, keine Anmeldung.',
@@ -1678,6 +2082,7 @@ return [
             ['q' => 'Kann ich nur eine Seite statt des ganzen PDFs umwandeln?', 'a' => 'Dieses Werkzeug wandelt alle Seiten um. Für nur eine Seite nutzen Sie zuerst den Modus „Seiten extrahieren" von PDF teilen und wandeln dann das entstandene einseitige PDF hier um.'],
         ],
     ],
+
     'pdf-to-png' => [
         'name' => 'PDF zu PNG',
         'title' => 'PDF zu PNG Konverter - Seiten Kostenlos Umwandeln',
@@ -1717,13 +2122,7 @@ return [
         'description' => 'Komprimieren Sie ein PDF online kostenlos, um es kleiner zu machen. Modus „Empfohlen" hält Text auswählbar; „Stark" verkleinert stärker. Kein Upload.',
         'h1' => 'PDF komprimieren',
         'tagline' => 'Machen Sie ein PDF kleiner, ohne die Lesbarkeit zu verlieren - direkt in Ihrem Browser.',
-        'keywords' => [
-            'pdf komprimieren',
-            'pdf compressor',
-            'pdf größe reduzieren',
-            'pdf verkleinern',
-            'pdf komprimieren online',
-        ],
+        'keywords' => ['pdf komprimieren', 'pdf compressor', 'pdf größe reduzieren', 'pdf verkleinern', 'pdf komprimieren online'],
         'intro' => 'Ein Tool zum PDF komprimieren verkleinert eine PDF-Datei, indem es die darin enthaltenen Bilder reduziert, damit sie sich leichter per E-Mail versenden, hochladen oder speichern lässt. Der Modus „Empfohlen" komprimiert eingebettete Fotos mit geringerer Qualität neu, während der Text scharf und auswählbar bleibt. Der Modus „Stark" geht weiter und verwandelt jede Seite in ein einziges Bild, was die kleinstmögliche Datei ergibt, aber bedeutet, dass Text nicht mehr ausgewählt oder durchsucht werden kann. Alles läuft auf Ihrem Gerät ab, Ihr PDF wird also nie hochgeladen.',
         'steps' => [
             'Wählen Sie das PDF, das Sie komprimieren möchten.',
@@ -1747,24 +2146,17 @@ return [
                 'heading' => 'Warum ist mein PDF nicht kleiner geworden?',
                 'body' => 'Ein PDF, das nur aus Text und Vektorgrafiken besteht, oder eines, das bereits komprimiert wurde, schrumpft im Modus „Empfohlen" möglicherweise nicht weiter, weil keine großen Bilder mehr zum Neukomprimieren übrig sind. In diesem Fall wird die Originaldatei beibehalten, damit Sie nie mit einem größeren Download enden, und der Modus „Stark" kann sie trotzdem verkleinern, indem er die Seiten in Bilder umwandelt.',
             ],
+            [
+                'heading' => 'So komprimieren Sie ein PDF auf 1 MB oder 200 KB',
+                'body' => 'Ein Feld für eine Zielgröße gibt es nicht. Das Tool hat zwei Modi und zeigt die Größe vorher und nachher, Sie nähern sich einem Limit also schrittweise. Beginnen Sie mit „Empfohlen“: Dieser Modus komprimiert die JPEG-Fotos im PDF mit 60 % Qualität neu, begrenzt ihre längere Seite auf 1.600 Pixel und lässt den Text auswählbar. Bei einem fotolastigen PDF ist das der erste Versuch für ein Limit von 1 MB. Ist die Datei noch zu groß, wechseln Sie zu „Stark“ und probieren 100 DPI, dann 72 DPI, die kleinste Einstellung. „Stark“ macht aus jeder Seite ein JPEG, das Ergebnis hängt also vor allem von der Seitenzahl und den DPI ab. Liegt die Datei bei 72 DPI immer noch über einem strengen Limit wie 200 KB, hat das Dokument zu viele Seiten für dieses Ziel: Teilen Sie es mit PDF teilen oder senden Sie weniger Seiten. Die Größen rechnen mit 1 KB = 1.024 Byte, bleiben Sie also etwas unter dem Limit eines Portals.',
+            ],
         ],
         'faqs' => [
-            [
-                'q' => 'Verringert das Komprimieren eines PDFs die Qualität?',
-                'a' => 'Der Modus „Empfohlen" senkt die Qualität eingebetteter Fotos leicht, ähnlich wie das Speichern eines JPEGs mit einer niedrigeren Einstellung, während Text und Strichgrafiken scharf bleiben. Der Modus „Stark" rendert die gesamte Seite als Bild, sodass sehr kleiner Text beim Hineinzoomen weniger scharf wirken kann.',
-            ],
-            [
-                'q' => 'Kann ich nach dem Komprimieren noch Text auswählen?',
-                'a' => 'Ja, mit dem Modus „Empfohlen". Der Modus „Stark" rastert jede Seite zu einem einzigen Bild, sodass Text danach nicht mehr ausgewählt, durchsucht oder kopiert werden kann - wählen Sie ihn nur, wenn die Dateigröße wichtiger ist als das.',
-            ],
-            [
-                'q' => 'Was passiert, wenn die komprimierte Datei nicht kleiner ist?',
-                'a' => 'Die Originaldatei wird beibehalten und unverändert zum Download angeboten, sodass Sie nie mit einem größeren Ergebnis als zu Beginn enden.',
-            ],
-            [
-                'q' => 'Wird mein PDF an einen Server gesendet?',
-                'a' => 'Nein. Die Komprimierung erfolgt vollständig in Ihrem Browser mit JavaScript, und die Datei wird nie irgendwohin gesendet.',
-            ],
+            ['q' => 'Verringert das Komprimieren eines PDFs die Qualität?', 'a' => 'Der Modus „Empfohlen" senkt die Qualität eingebetteter Fotos leicht, ähnlich wie das Speichern eines JPEGs mit einer niedrigeren Einstellung, während Text und Strichgrafiken scharf bleiben. Der Modus „Stark" rendert die gesamte Seite als Bild, sodass sehr kleiner Text beim Hineinzoomen weniger scharf wirken kann.'],
+            ['q' => 'Kann ich nach dem Komprimieren noch Text auswählen?', 'a' => 'Ja, mit dem Modus „Empfohlen". Der Modus „Stark" rastert jede Seite zu einem einzigen Bild, sodass Text danach nicht mehr ausgewählt, durchsucht oder kopiert werden kann - wählen Sie ihn nur, wenn die Dateigröße wichtiger ist als das.'],
+            ['q' => 'Was passiert, wenn die komprimierte Datei nicht kleiner ist?', 'a' => 'Die Originaldatei wird beibehalten und unverändert zum Download angeboten, sodass Sie nie mit einem größeren Ergebnis als zu Beginn enden.'],
+            ['q' => 'Wird mein PDF an einen Server gesendet?', 'a' => 'Nein. Die Komprimierung erfolgt vollständig in Ihrem Browser mit JavaScript, und die Datei wird nie irgendwohin gesendet.'],
+            ['q' => 'Warum hat der Modus „Empfohlen“ mein gescanntes PDF nicht verkleinert?', 'a' => '„Empfohlen“ komprimiert nur Bilder neu, die als gewöhnliche JPEGs in RGB oder Graustufen gespeichert sind. Scans in anderen Formaten, CMYK-Bilder und Bilder mit Transparenz bleiben unverändert, um sie nicht zu beschädigen, deshalb kann eine solche Datei unverändert zurückkommen. Der Modus „Stark“ funktioniert mit jedem PDF, weil er jede Seite als neues Bild rendert.'],
         ],
     ],
 
@@ -2207,8 +2599,18 @@ return [
             'Füge deine eigene Unterschrift hinzu: zeichne, tippe oder lade sie hoch und ziehe und skaliere sie dann auf jeder Seite',
         ],
         'content' => [
-            ['heading' => 'So funktioniert das Bearbeiten von vorhandenem Text', 'body' => 'Klicken Sie auf eine Textzeile und tippen Sie. Der alte Wortlaut wird mit der Farbe dahinter abgedeckt und der neue an derselben Position, in derselben Größe und Farbe mit der im PDF eingebetteten Schrift gezeichnet. PDFs betten meist nur die verwendeten Buchstaben ein: Braucht Ihr neuer Text einen Buchstaben, den die Datei nie enthielt, wechselt diese Zeile zur ähnlichsten Standardschrift, und der Editor zeigt an, welche Buchstaben der Grund sind. Gescannte Seiten sind Bilder ohne bearbeitbaren Text; nutzen Sie dort Weiß abdecken und Text hinzufügen.'],
-            ['heading' => 'Gute Verwendungen, um Inhalte zu einem PDF hinzuzufügen', 'body' => 'Korrigieren Sie einen Tippfehler oder ein Datum, aktualisieren Sie einen Preis oder eine Adresse, fügen Sie eine Notiz, einen Stempel, ein Kürzel, eine markierte Stelle oder einen Pfeil auf ein Detail ein – praktisch, um ein Dokument ohne Originaldatei zu korrigieren, einen Entwurf zu prüfen oder ein einfaches Formular auszufüllen.'],
+            [
+                'heading' => 'So funktioniert das Bearbeiten von vorhandenem Text',
+                'body' => 'Klicken Sie auf eine Textzeile und tippen Sie. Der alte Wortlaut wird mit der Farbe dahinter abgedeckt und der neue an derselben Position, in derselben Größe und Farbe mit der im PDF eingebetteten Schrift gezeichnet. PDFs betten meist nur die verwendeten Buchstaben ein: Braucht Ihr neuer Text einen Buchstaben, den die Datei nie enthielt, wechselt diese Zeile zur ähnlichsten Standardschrift, und der Editor zeigt an, welche Buchstaben der Grund sind. Gescannte Seiten sind Bilder ohne bearbeitbaren Text; nutzen Sie dort Weiß abdecken und Text hinzufügen.',
+            ],
+            [
+                'heading' => 'Gute Verwendungen, um Inhalte zu einem PDF hinzuzufügen',
+                'body' => 'Korrigieren Sie einen Tippfehler oder ein Datum, aktualisieren Sie einen Preis oder eine Adresse, fügen Sie eine Notiz, einen Stempel, ein Kürzel, eine markierte Stelle oder einen Pfeil auf ein Detail ein – praktisch, um ein Dokument ohne Originaldatei zu korrigieren, einen Entwurf zu prüfen oder ein einfaches Formular auszufüllen.',
+            ],
+            [
+                'heading' => 'PDF bearbeiten ohne Anmeldung',
+                'body' => 'Es gibt kein Konto, kein Login und keine E-Mail-Abfrage: Öffnen Sie die Seite, wählen Sie ein PDF mit bis zu 200 MB und beginnen Sie mit der Bearbeitung. Ihr Browser liest und bearbeitet die Datei selbst; sie wird nicht auf unseren Server hochgeladen, bei uns ist also nichts gespeichert, das Sie löschen müssten. PDF speichern liefert Ihnen einen gewöhnlichen PDF-Download, der nur Ihre eigenen Änderungen enthält. Der Editor fügt kein eigenes Wasserzeichen, Logo und keine zusätzliche Seite hinzu; der Reiter Wasserzeichen setzt nur dann eines, wenn Sie es selbst hinzufügen. Während Sie arbeiten, wird Ihr Fortschritt im Speicher Ihres Browsers auf diesem Gerät automatisch gesichert, sodass Sie nach einem Neuladen oder einem geschlossenen Tab weitermachen können. Diese Sicherung wird gelöscht, sobald Sie das bearbeitete PDF herunterladen oder Verwerfen wählen.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Kann ich Text bearbeiten, der schon im PDF steht?', 'a' => 'Ja. Wählen Sie Text bearbeiten, klicken Sie auf eine Zeile und tippen Sie. Der neue Wortlaut ersetzt den alten an derselben Stelle und, wo möglich, in der Schrift des PDFs. Suchen und Ersetzen ändert ein Wort auf allen Seiten auf einmal. Text auf gescannten Seiten ist Teil eines Bildes und lässt sich so nicht bearbeiten.'],
@@ -2217,6 +2619,7 @@ return [
             ['q' => 'Wird mein PDF auf einen Server hochgeladen?', 'a' => 'Nein. Alles - Hinzufügen, Verschieben, Größenänderung und Speichern - geschieht in Ihrem Browser mit JavaScript, und nichts wird irgendwohin gesendet.'],
             ['q' => 'Welche Bildformate kann ich hinzufügen?', 'a' => 'PNG, JPG und WebP.'],
             ['q' => 'Kann ich ein Wasserzeichen hinzufügen?', 'a' => 'Ja. Öffnen Sie den Reiter Wasserzeichen, um Text oder ein Logo auf die Seite zu stempeln, mit eigener Deckkraft, Drehung, Position und Seitenbereich - demselben Werkzeug wie auf der Seite PDF-Wasserzeichen.'],
+            ['q' => 'Brauche ich ein Konto, und wird dem gespeicherten PDF ein Wasserzeichen hinzugefügt?', 'a' => 'Beides nein. Es gibt keine Registrierung und kein Login, und das gespeicherte PDF enthält nur Ihre eigenen Änderungen, ohne Wasserzeichen oder Branding durch das Tool.'],
         ],
     ],
 

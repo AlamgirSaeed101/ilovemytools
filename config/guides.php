@@ -387,7 +387,7 @@ return [
         'tool' => 'word-counter',
         'related' => ['readability-checker', 'case-converter', 'ai-content-detector'],
         'published' => '2026-10-10',
-        'updated' => '2026-11-04',
+        'updated' => '2026-11-10',
         'sections' => [
             [
                 'heading' => 'The quick answer',
@@ -406,10 +406,35 @@ return [
                 ],
             ],
             [
+                'heading' => 'Going the other way: words to pages',
+                'paragraphs' => [
+                    'To turn a word count into pages, divide by the words per page. Using about 275 words for a double-spaced page and 550 for a single-spaced one gives a quick middle estimate.',
+                    'Worked example: an assignment of 1,500 words is 1,500 / 275, roughly 5.5 pages double-spaced, or 1,500 / 550, roughly 2.7 pages single-spaced. A 2,000-word report is about 7 pages double-spaced and under 4 single-spaced. Round up when you plan, because headings and paragraph breaks always add a little.',
+                ],
+                'table' => [
+                    'headers' => ['Words', 'Pages double-spaced', 'Pages single-spaced'],
+                    'rows' => [
+                        ['500', 'about 2', 'about 1'],
+                        ['750', 'about 3', 'about 1.5'],
+                        ['1,000', 'about 4', 'about 2'],
+                        ['1,500', 'about 5.5', 'about 3'],
+                        ['2,500', 'about 9', 'about 4.5'],
+                    ],
+                ],
+            ],
+            [
                 'heading' => 'Why the number of words per page varies',
                 'paragraphs' => [
                     'A page is not a fixed amount of text. Four things change how much fits: the font, the font size, the line spacing and the margins. Arial is wider than Times New Roman, so the same essay runs slightly longer. Headings, short paragraphs, dialogue and bullet lists also leave white space and lower the count.',
                     'Because of this, many teachers and editors now give word counts instead of page counts. If you are given a page count, check which font, size and spacing are expected, and treat the table above as a guide rather than an exact rule.',
+                    'The kind of writing matters too. Academic prose with long words and long paragraphs packs more onto a page than a story full of dialogue, where many lines are only a few words long. A page of a script or a poem can hold far fewer words than either.',
+                ],
+            ],
+            [
+                'heading' => 'Meeting a page count without tricks',
+                'paragraphs' => [
+                    'Stretching the margins, choosing a wider font or setting 12.5-point text to fill three pages is the oldest trick in the book, and teachers who mark hundreds of essays tend to spot it immediately. If you are short, it is better to add substance: one more example, a counter-argument you answer, or a clearer explanation of a key term.',
+                    'If you are over, cut before you shrink. Look for filler phrases first: "in order to" becomes "to", "due to the fact that" becomes "because". Then remove sentences that repeat the point of the sentence before. The [Readability Checker](/readability-checker) can show you which long sentences are worth splitting or trimming.',
                 ],
             ],
             [
@@ -441,10 +466,17 @@ return [
                 ],
             ],
             [
+                'heading' => 'Planning a speech by word count',
+                'paragraphs' => [
+                    'Turn the speaking pace around to plan a talk: multiply the minutes you have by 150. A 3-minute speech is about 450 words, a 5-minute speech about 750 words and a 10-minute presentation about 1,500 words. If you pause for slides, questions or laughter, aim a little lower.',
+                    'Worked example: you have five minutes for a wedding toast. A draft of 900 words would take 900 / 150 = 6 minutes at a steady pace, so cut about 150 words. Read it aloud once with a timer, because your own pace may be faster or slower than the average.',
+                ],
+            ],
+            [
                 'heading' => 'How to count your words',
                 'paragraphs' => [
-                    'Paste your text into the [Word Counter](/word-counter) on this site. It shows words, characters with and without spaces, sentences, paragraphs, reading time and speaking time as you type, and it never uploads your text. Word processors such as Microsoft Word and Google Docs also have a built-in word count, usually under the Tools or Review menu.',
-                    'If you need to cut words, look for filler phrases first: "in order to" becomes "to", "due to the fact that" becomes "because". The [Readability Checker](/readability-checker) can then show you which long sentences are worth splitting.',
+                    'Paste your text into the [Word Counter](/word-counter) on this site. It shows words, characters with and without spaces, sentences, paragraphs and lines, plus reading time and speaking time, as you type. Your text is counted in your browser and never uploaded. Word processors such as Microsoft Word and Google Docs also have a built-in word count, usually under the Tools or Review menu.',
+                    'The Word Counter also lists the top keywords in your text with how often each appears, leaving out very common words such as "the" and "and". That makes it easy to spot a word you have leaned on too often.',
                     'If your text arrives in capitals, or a heading needs title case, the [Case Converter](/case-converter) fixes it without retyping.',
                 ],
             ],
@@ -452,6 +484,24 @@ return [
                 'heading' => 'How we count words matters too',
                 'paragraphs' => [
                     'Page estimates start from a word count, and word counters disagree on the awkward cases. In our test of the [Word Counter](/word-counter), "A state-of-the-art tool." counted as 3 words, "Don\'t stop, it\'s fine." as 4, and "In 2026 we paid 1,250.50 dollars." as 6. Microsoft Word may differ on a few of these, so if a deadline is strict, check your total in the program your teacher or publisher uses.',
+                    'The rule behind those results is simple. The counter splits text at spaces and line breaks, so a hyphenated phrase or a contraction counts as one word, and a number counts as a word. A dash or symbol standing on its own between spaces does not count, because it contains no letters or digits. For languages written without spaces, such as Chinese, Japanese and Thai, it uses the browser\'s built-in word segmentation instead.',
+                    'Reading and speaking times are worked out from the same count at 238 and 150 words per minute, rounded up to the next second. A 1,000-word text shows a reading time of 4 min 13 sec and a speaking time of 6 min 40 sec. Character counts treat an emoji or an accented letter as one character, the way a reader would.',
+                ],
+            ],
+            [
+                'heading' => 'Characters versus words',
+                'paragraphs' => [
+                    'Some limits are set in characters, not words: social media posts, text messages, search result titles and many online form fields. A rough guide for English is five to six characters per word including the space, so a 160-character limit fits roughly 26 to 32 words. Check whether the limit counts spaces; the Word Counter shows characters both with and without them.',
+                ],
+            ],
+            [
+                'heading' => 'Common mistakes',
+                'list' => [
+                    'Assuming "a page" means the same thing to everyone; always check font, size and spacing.',
+                    'Counting the title, headings, footnotes or reference list when the rules exclude them, or leaving them out when the rules include them.',
+                    'Trusting a page count from a different program; pages shift between Word, Google Docs and PDF.',
+                    'Timing a speech by reading silently; reading aloud is much slower.',
+                    'Leaving the final word count until the last minute, when cutting is hardest.',
                 ],
             ],
         ],
@@ -459,12 +509,22 @@ return [
             ['q' => 'How many words is a 5-page essay?', 'a' => 'About 1,250 to 1,500 words double-spaced, or 2,500 to 3,000 words single-spaced, with a 12-point font and 1-inch margins.'],
             ['q' => 'Does a title or reference list count towards the word count?', 'a' => 'Usually not, but rules differ between schools and journals. Check the instructions, and if they are unclear, ask before you submit.'],
             ['q' => 'How many pages is 1,000 words?', 'a' => 'About 2 pages single-spaced or 4 pages double-spaced.'],
+            ['q' => 'How many words is a 5-minute speech?', 'a' => 'About 750 words at a comfortable speaking pace of 150 words per minute. Read your draft aloud with a timer to check.'],
+            ['q' => 'How many words is a 650-word essay in pages?', 'a' => 'About 2.5 pages double-spaced or just over 1 page single-spaced. The Word Counter shows it takes about 2 min 44 sec to read silently.'],
+            ['q' => 'Why does my word count differ between programs?', 'a' => 'Programs treat hyphenated words, numbers, dashes and symbols differently. The differences are usually small, but check in the program your teacher or publisher uses if the limit is strict.'],
         ],
         'sources' => [
-            ['title' => 'Brysbaert (2019), "How many words do we read per minute?", Journal of Memory and Language', 'url' => 'https://doi.org/10.1016/j.jml.2019.104047'],
-            ['title' => 'Common App, First-year essay prompts', 'url' => 'https://www.commonapp.org/apply/essay-prompts'],
+            [
+                'title' => 'Brysbaert (2019), "How many words do we read per minute?", Journal of Memory and Language',
+                'url' => 'https://doi.org/10.1016/j.jml.2019.104047',
+            ],
+            [
+                'title' => 'Common App, First-year essay prompts',
+                'url' => 'https://www.commonapp.org/apply/essay-prompts',
+            ],
         ],
     ],
+
     'how-to-remove-background-from-image' => [
         'title' => 'How to Remove the Background From an Image (Free)',
         'description' => 'Remove a photo background in seconds without uploading it: how AI cut-outs work, how to get clean edges on hair and products, and when to use PNG or WebP.',
@@ -473,22 +533,43 @@ return [
         'tool' => 'remove-background',
         'related' => ['image-compressor', 'image-resizer', 'webp-to-png'],
         'published' => '2026-10-10',
-        'updated' => '2026-11-04',
+        'updated' => '2026-11-10',
         'sections' => [
             [
                 'heading' => 'How automatic background removal works',
                 'paragraphs' => [
                     'Background removers use a type of AI model trained to find the main subject in a picture, a task researchers call salient object detection. The model looks at the whole image and produces a mask: a grey-scale map where white means "keep" and black means "remove". The mask is then used to make the background transparent.',
                     'Older tools sent your photo to a server to run the model. The [Background Remover](/remove-background) on this site runs the model inside your web browser instead, so the picture never leaves your device. The first run downloads the model once; after that it works quickly.',
+                    'Grey values in the mask matter too. Pixels the model is unsure about, such as the edge of a strand of hair, become partly transparent instead of being cut sharply, which is why a good cut-out looks soft at the edges rather than jagged.',
                 ],
             ],
             [
                 'heading' => 'Step by step',
                 'list' => [
-                    'Open the Background Remover and drop in a JPG, PNG or WebP image.',
-                    'Wait a few seconds while the AI finds the subject; the preview shows the cut-out on a checkerboard pattern, which means transparent.',
-                    'If your device supports it, try the high-quality mode for difficult edges such as hair and fur.',
-                    'Download the result as a PNG, which keeps the transparency.',
+                    'Open the [Background Remover](/remove-background) and choose Fast or High quality at the top. Fast works on every device; High quality needs a browser with WebGPU, such as Chrome or Edge.',
+                    'Drop in a JPG, PNG, WebP or AVIF image of up to 50 MB, or click to choose one.',
+                    'Wait while the AI model loads and the background is removed. A progress bar shows the model download the first time.',
+                    'Compare the original and the result side by side. The checkerboard pattern behind the result means transparent.',
+                    'Under Background, keep Transparent, or choose White or Colour to place the subject on a solid background.',
+                    'Click Download PNG. The file is saved with "-no-bg" added to the original name.',
+                ],
+            ],
+            [
+                'heading' => 'Fast or High quality?',
+                'paragraphs' => [
+                    'The two modes use different AI models. Fast uses U-2-Netp, the small version of the U-2-Net model from the research paper listed below. It is about 4.4 MB, runs on any device and looks at the image at 320 x 320 pixels. High quality uses a larger model called BiRefNet lite, a one-time download of about 109 MB, which looks at the image at 1,024 x 1,024 pixels and gives sharper hair and edges.',
+                    'That working size explains the difference. Whatever the size of your photo, the model draws its mask at 320 or 1,024 pixels, and the mask is then scaled up smoothly to fit your image. On a large photo in Fast mode, fine details such as loose hair or the gap between fingers can be blurred or lost. High quality keeps far more of that detail.',
+                    'High quality runs on your graphics chip through WebGPU, which not every browser or device supports. If your browser lacks it, the button is disabled and says so. If it starts but fails, you will see a message suggesting Fast mode instead. The model is saved in your browser after the first download, so next time it starts much sooner.',
+                ],
+                'table' => [
+                    'headers' => ['', 'Fast', 'High quality'],
+                    'rows' => [
+                        ['Model', 'U-2-Netp', 'BiRefNet lite'],
+                        ['Download', 'About 4.4 MB', 'About 109 MB, once'],
+                        ['Mask resolution', '320 x 320', '1,024 x 1,024'],
+                        ['Runs on', 'Every device', 'Browsers with WebGPU (Chrome or Edge)'],
+                        ['Best for', 'Simple shapes, quick jobs, phones', 'Hair, fur, detailed edges'],
+                    ],
                 ],
             ],
             [
@@ -505,24 +586,49 @@ return [
                 ],
             ],
             [
+                'heading' => 'Check the edges before you use it',
+                'paragraphs' => [
+                    'The result depends heavily on the photo. Fine hair, fur, glass and objects the same colour as the background are the hardest cases, so look along those edges at full size.',
+                    'Check the result against both a light and a dark background, since a pale halo can be invisible on white and obvious on black. The tool makes this easy: switch Background to Colour and pick a dark colour to inspect the edges, then switch back to Transparent before you download if that is what you need.',
+                ],
+            ],
+            [
+                'heading' => 'Worked example: a product photo for an online shop',
+                'paragraphs' => [
+                    'Say you have a phone photo of a mug on a kitchen worktop and want a clean image on white for a listing. Photograph the mug in daylight near a window, with the worktop clear behind it. Drop the photo into the Background Remover in Fast mode; a simple solid shape like a mug usually cuts out cleanly.',
+                    'Choose White under Background and download the PNG. The download keeps your photo\'s full size, up to 4,096 pixels on the longest side, so a 4,000 x 3,000 photo stays 4,000 x 3,000. Then use the [Image Resizer](/image-resizer) to fit the dimensions the marketplace asks for, and the [Image Compressor](/image-compressor) if the file is too large to upload.',
+                    'For a portrait with loose hair, the steps are the same, but try High quality if your browser supports it, and check the hairline against a dark colour before you download.',
+                ],
+            ],
+            [
                 'heading' => 'Which format should I save it in?',
                 'paragraphs' => [
-                    'Save cut-outs as PNG when you need them to work everywhere, for example in documents, presentations and marketplaces. PNG keeps full transparency. For a website, WebP also keeps transparency and is usually much smaller. Do not save a cut-out as JPG: JPG cannot be transparent, so the background turns white again.',
-                    'If the PNG is large, run it through the Image Compressor and choose WebP output to shrink it while keeping the transparent background.',
+                    'The Background Remover downloads a PNG, which keeps full transparency and works everywhere, for example in documents, presentations and marketplaces. Do not convert a transparent cut-out to JPG: JPG cannot be transparent, so the background turns solid again.',
+                    'For a website, WebP also keeps transparency and is usually much smaller. If the PNG is large, run it through the [Image Compressor](/image-compressor) and choose WebP output to shrink it while keeping the transparent background.',
                 ],
             ],
             [
                 'heading' => 'What background removal cannot do well',
                 'paragraphs' => [
                     'Fine, semi-transparent details are the hardest part: wispy hair, glass, smoke and lace. The AI may leave a faint halo or cut a little too much. For a product listing that matters, check the edges at full size. Very busy scenes with several people or objects can also confuse the model about which one is the subject; cropping the photo around your subject first usually fixes that.',
-                    'The cut-out downloads as a PNG with a transparent background. To fit it to the exact size a profile or shop listing asks for, use the [Image Resizer](/image-resizer); to change other JPG images to PNG without removing anything, use [JPG to PNG](/jpg-to-png).',
+                    'There is no brush to paint parts back in or erase leftovers by hand, so if the model keeps something you did not want, a better source photo or a tighter crop is the fix. The cut-out downloads as a PNG with a transparent background. To change other JPG images to PNG without removing anything, use [JPG to PNG](/jpg-to-png).',
                 ],
             ],
             [
-                'heading' => 'Getting a cleaner cut-out',
+                'heading' => 'Troubleshooting',
+                'list' => [
+                    'The first image takes a long time: the model is downloading. Later images are quicker, because the model is kept in your browser\'s cache.',
+                    'It downloads the model every time: private or incognito windows may not keep the cache, so the model is fetched again in each session.',
+                    '"High quality mode could not run on this device": your browser or graphics chip could not run the larger model. Use Fast mode.',
+                    'The file is refused: only JPG, PNG, WebP and AVIF images up to 50 MB are accepted. Convert or shrink the image first.',
+                    'The wrong object was kept: crop the photo so the subject fills most of the frame, then try again.',
+                    'Edges look soft on a big photo: switch to High quality, which draws its mask at a much higher resolution.',
+                ],
+            ],
+            [
+                'heading' => 'Privacy: what is downloaded and what is not',
                 'paragraphs' => [
-                    'The result depends heavily on the photo. Clear contrast between the subject and the background works best, with even light and sharp focus. Fine hair, fur, glass and objects the same colour as the background are the hardest cases, so look along those edges at full size.',
-                    'Check the result against both a light and a dark background, since a pale halo can be invisible on white and obvious on black. Then use the [Image Resizer](/image-resizer) to fit the size a shop or profile asks for.',
+                    'Your image is never uploaded. The AI runs in your browser, so the only things fetched from the internet are the model files and the code that runs them. The Fast model comes from our own site, the High quality model from Hugging Face, and the runtime that executes the models from a public code library network. None of these receive your photo.',
                 ],
             ],
         ],
@@ -530,9 +636,15 @@ return [
             ['q' => 'Is it free to remove a background here?', 'a' => 'Yes. There is no sign up, no watermark and no limit on the number of images.'],
             ['q' => 'Are my photos uploaded?', 'a' => 'No. The AI model runs in your browser, so the image stays on your device.'],
             ['q' => 'Why does the first image take longer?', 'a' => 'The AI model is downloaded the first time you use the tool. After that it is ready, and each image only takes a few seconds.'],
+            ['q' => 'Can I put the subject on a white or coloured background?', 'a' => 'Yes. After the background is removed, choose White or Colour under Background, pick a colour if you like, and download the PNG.'],
+            ['q' => 'Does it reduce the size of my image?', 'a' => 'Not for normal photos. The cut-out keeps the original dimensions; only images larger than 4,096 pixels on the longest side are scaled down to that size.'],
+            ['q' => 'Why is High quality greyed out?', 'a' => 'It needs WebGPU, which is available in browsers such as Chrome and Edge on supported devices. On other browsers, use Fast mode.'],
         ],
         'sources' => [
-            ['title' => 'Qin et al. (2020), "U2-Net: Going Deeper with Nested U-Structure for Salient Object Detection", arXiv:2005.09007', 'url' => 'https://arxiv.org/abs/2005.09007'],
+            [
+                'title' => 'Qin et al. (2020), "U2-Net: Going Deeper with Nested U-Structure for Salient Object Detection", arXiv:2005.09007',
+                'url' => 'https://arxiv.org/abs/2005.09007',
+            ],
         ],
     ],
 
@@ -544,7 +656,7 @@ return [
         'tool' => 'password-generator',
         'related' => ['random-number-generator', 'qr-code-generator', 'base64-encoder-decoder'],
         'published' => '2026-10-10',
-        'updated' => '2026-11-04',
+        'updated' => '2026-11-10',
         'sections' => [
             [
                 'heading' => 'Length beats complexity',
@@ -561,6 +673,55 @@ return [
                 ],
             ],
             [
+                'heading' => 'How to generate one, step by step',
+                'list' => [
+                    'Open the [Password Generator](/password-generator). A 16-character password using all four character types is ready as soon as the page loads.',
+                    'Set the length with the slider or type a number into the box next to it. Any length from 4 to 128 characters works; choose at least 15 for an important account.',
+                    'Tick the character types you want: Uppercase (A-Z), Lowercase (a-z), Numbers (0-9) and Symbols. Tick "Exclude similar (l, 1, O, 0)" if you will ever need to read the password aloud or type it from paper.',
+                    'Watch the strength bar and the bits of entropy update. Click New or Generate password for a different one.',
+                    'Click Copy and paste it straight into the website and your password manager. Do not keep it in a plain text file or an email to yourself.',
+                ],
+            ],
+            [
+                'heading' => 'How the generator works',
+                'paragraphs' => [
+                    'Each character is picked with crypto.getRandomValues, the browser\'s cryptographically secure random number source, rather than the predictable Math.random. The generator uses a method called rejection sampling so that every character in the pool is equally likely, then guarantees at least one character from each type you ticked and shuffles the result, so the guaranteed characters are not always at the start.',
+                    'Everything happens on your device. The password is not sent to our server, logged or saved, and a new one is made every time you change a setting.',
+                ],
+            ],
+            [
+                'heading' => 'How much strength is enough?',
+                'paragraphs' => [
+                    'Password strength is measured in bits of entropy. Each extra bit doubles the number of guesses needed. For a randomly generated password, the figure is the length multiplied by log2 of the number of possible characters. Our [Password Generator](/password-generator) shows the figure as you change the settings: at its default of 16 characters using all four character types, it showed 104 bits when we tested it.',
+                    'The four character sets together give 89 possible characters (26 capitals, 26 lower-case letters, 10 digits and 27 symbols), and each one adds about 6.5 bits. Lower-case letters alone give 26 characters, about 4.7 bits each. The generator labels results from Very weak (under 40 bits) through Weak, Good and Strong to Excellent (100 bits or more).',
+                    'That is far beyond what guessing can reach, as long as the site stores passwords properly. For a password you must type by hand, such as your computer login, a long passphrase of several random words is easier and can be just as strong.',
+                ],
+                'table' => [
+                    'headers' => ['Settings', 'Bits of entropy', 'Label in the generator'],
+                    'rows' => [
+                        ['8 characters, all four types', '52', 'Weak'],
+                        ['12 characters, all four types', '78', 'Good'],
+                        ['16 characters, numbers only', '53', 'Weak'],
+                        ['16 characters, lower-case only', '75', 'Good'],
+                        ['20 characters, lower-case only', '94', 'Strong'],
+                        ['16 characters, all four types', '104', 'Excellent'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'Why a long lower-case password can beat a short complex one',
+                'paragraphs' => [
+                    'The table shows the point of the length-first advice. Twenty random lower-case letters (94 bits) are stronger than twelve characters mixing capitals, numbers and symbols (78 bits), and much easier to type on a phone. If a website refuses symbols, untick Symbols and add a few characters instead: 16 characters of letters and numbers still give about 95 bits.',
+                    'The same maths explains passphrases. If each word is picked at random from a list of 7,776 words, the size of the well-known Diceware list, every word adds about 12.9 bits. Five random words give about 65 bits and six give about 78 bits. The words must be chosen at random, for example with dice or a generator; words you pick yourself are far more predictable.',
+                ],
+            ],
+            [
+                'heading' => 'Entropy only applies to random passwords',
+                'paragraphs' => [
+                    'A password like "Sunshine2025!" has 12 characters from all four sets, but it is not worth 78 bits, because it was not chosen at random. It is a dictionary word, a year and a symbol, which is exactly the pattern guessing tools try early. The entropy figure in the generator is accurate because the generator picks every character at random. Do not use it to judge a password you made up.',
+                ],
+            ],
+            [
                 'heading' => 'Never reuse a password',
                 'paragraphs' => [
                     'Reuse is the biggest real-world risk. When one website is breached, attackers try the leaked email and password on email, banking and shopping sites. A unique password for every account stops one breach from spreading. NIST also advises services to check new passwords against lists of passwords known to be compromised.',
@@ -570,7 +731,24 @@ return [
                 'heading' => 'Change passwords when there is a reason, not on a schedule',
                 'paragraphs' => [
                     'The same guidance says services should not force people to change passwords periodically. Forced changes lead to small, guessable edits such as "Summer2025" becoming "Autumn2025". Change a password when there is evidence it may be compromised, for example after a breach notice, if you shared it, or if you typed it on a device you do not trust.',
-                    'Strong passwords protect files too: [Protect PDF](/protect-pdf) locks a PDF with a password so only the people you share it with can open it.',
+                ],
+            ],
+            [
+                'heading' => 'What attackers actually do',
+                'paragraphs' => [
+                    'Most accounts are not lost to clever maths. Attackers try passwords from earlier data breaches on other sites, which is why reuse is so dangerous, and they trick people into typing passwords into fake pages. A strong password protects against neither if you reuse it or hand it over.',
+                    'That is why the most useful steps are a unique password for each account, a password manager to remember them, and two-step sign-in on your email and bank. Your email matters most, because it can reset everything else.',
+                ],
+            ],
+            [
+                'heading' => 'Common mistakes',
+                'list' => [
+                    'Making one strong password and using it everywhere.',
+                    'Building passwords from names, birthdays, pets or teams, which are easy to find online.',
+                    'Swapping letters for look-alike symbols, such as @ for a or 0 for o; guessing tools already try these.',
+                    'Adding a number to the end when forced to change a password.',
+                    'Writing passwords in a note on your phone or an unprotected spreadsheet instead of a password manager.',
+                    'Sending a password in the same email as the file or account it protects.',
                 ],
             ],
             [
@@ -584,23 +762,10 @@ return [
                 ],
             ],
             [
-                'heading' => 'How much strength is enough?',
-                'paragraphs' => [
-                    'Password strength is measured in bits of entropy. Each extra bit doubles the number of guesses needed. Our [Password Generator](/password-generator) shows the figure as you change the settings: at its default of 16 characters using all four character types, it showed 104 bits when we tested it.',
-                    'That is far beyond what guessing can reach, as long as the site stores passwords properly. For a password you must type by hand, such as your computer login, a long passphrase of several random words is easier and can be just as strong.',
-                ],
-            ],
-            [
-                'heading' => 'What attackers actually do',
-                'paragraphs' => [
-                    'Most accounts are not lost to clever maths. Attackers try passwords from earlier data breaches on other sites, which is why reuse is so dangerous, and they trick people into typing passwords into fake pages. A strong password protects against neither if you reuse it or hand it over.',
-                    'That is why the most useful steps are a unique password for each account, a password manager to remember them, and two-step sign-in on your email and bank. Your email matters most, because it can reset everything else.',
-                ],
-            ],
-            [
                 'heading' => 'Protecting files as well as accounts',
                 'paragraphs' => [
-                    'The same rules apply to a password on a document. [Protect PDF](/protect-pdf) locks a file so it cannot be opened without the password. Send the password by a different route than the file, such as a phone call or a separate message, or anyone who gets the email gets both.',
+                    'The same rules apply to a password on a document. [Protect PDF](/protect-pdf) locks a PDF with a password so only the people you share it with can open it. Send the password by a different route than the file, such as a phone call or a separate message, or anyone who gets the email gets both.',
+                    'A generated password works well here too, because the recipient can paste it rather than type it. If you need a random PIN or a number for something else, the [Random Number Generator](/random-number-generator) picks numbers in a range you set.',
                 ],
             ],
         ],
@@ -608,9 +773,15 @@ return [
             ['q' => 'How long should a password be?', 'a' => 'At least 15 characters if it is the only thing protecting the account. Longer is better, and a passphrase of four or more random words reaches that easily.'],
             ['q' => 'Do I still need symbols and numbers?', 'a' => 'Not according to current NIST guidance, although some websites still require them. Length and uniqueness matter much more.'],
             ['q' => 'Is a password generator safe to use online?', 'a' => 'This one creates passwords in your browser with a cryptographic random number generator; nothing is sent to a server or saved.'],
+            ['q' => 'What does "Exclude similar" do?', 'a' => 'It leaves out characters that are easy to confuse, such as l, 1, I, O and 0. The password becomes slightly weaker per character, so add a character or two if you use it.'],
+            ['q' => 'What is the longest password the generator makes?', 'a' => '128 characters. Some websites cap passwords at a shorter length, so if one is rejected, check the site\'s limit and generate a shorter one.'],
+            ['q' => 'What does bits of entropy mean?', 'a' => 'It measures how many guesses a random password could need: each extra bit doubles the number. 104 bits means 2 to the power of 104 possible passwords with those settings.'],
         ],
         'sources' => [
-            ['title' => 'NIST Special Publication 800-63B-4, Digital Identity Guidelines: Authentication and Authenticator Management', 'url' => 'https://pages.nist.gov/800-63-4/sp800-63b.html'],
+            [
+                'title' => 'NIST Special Publication 800-63B-4, Digital Identity Guidelines: Authentication and Authenticator Management',
+                'url' => 'https://pages.nist.gov/800-63-4/sp800-63b.html',
+            ],
         ],
     ],
 
@@ -622,7 +793,7 @@ return [
         'tool' => 'pdf-to-word',
         'related' => ['word-to-pdf', 'compress-pdf', 'pdf-to-excel'],
         'published' => '2026-10-10',
-        'updated' => '2026-11-04',
+        'updated' => '2026-11-10',
         'sections' => [
             [
                 'heading' => 'Why PDF to Word is never perfect',
@@ -634,10 +805,19 @@ return [
             [
                 'heading' => 'Step by step',
                 'list' => [
-                    'Open [PDF to Word](/pdf-to-word) and drop in your PDF. The file is processed in your browser and not uploaded.',
-                    'Wait while the text, paragraphs and headings are detected.',
-                    'Download the .docx file and open it in Microsoft Word, Google Docs or LibreOffice.',
+                    'Open [PDF to Word](/pdf-to-word) and drop in your PDF, or click to choose one. One file at a time, up to 200 MB. The file is processed in your browser and not uploaded.',
+                    'Check the file name, size and page count that appear, so you know you picked the right document.',
+                    'Click Convert to Word and wait while the text, paragraphs and headings are detected.',
+                    'Click Download Word document to save the .docx file, then open it in Microsoft Word, Google Docs or LibreOffice.',
                     'Check headings, lists and tables, and fix any line breaks that landed in the wrong place.',
+                ],
+            ],
+            [
+                'heading' => 'How our converter rebuilds the document',
+                'paragraphs' => [
+                    'It helps to know what the converter is actually doing, because it explains most of the clean-up you may need. First it reads every piece of text on each page with PDF.js. Pieces at the same height are joined into a line, reading from left to right. Lines are then grouped into paragraphs: a gap noticeably bigger than the normal line spacing starts a new paragraph.',
+                    'Headings are guessed from size. The converter finds the most common text size on the page and treats it as body text. A line at least 15% bigger becomes a level 3 heading, at least 35% bigger a level 2 heading, and at least 60% bigger a level 1 heading. These are real Word heading styles, so the navigation pane and an automatic table of contents work straight away.',
+                    'Each PDF page ends with a page break in the Word file, so page 3 of the PDF starts on a new page in Word. Inside a paragraph, each original line is kept as a line break rather than being joined into flowing text, so you can compare it line by line with the original.',
                 ],
             ],
             [
@@ -648,16 +828,46 @@ return [
                         ['Normal paragraphs of text', 'Converts well'],
                         ['Headings', 'Usually detected from the font size'],
                         ['Simple lists', 'Kept as separate lines'],
-                        ['Multi-column layouts', 'May need re-arranging'],
-                        ['Complex tables', 'Often need fixing by hand'],
+                        ['Bold, italics, colours and fonts', 'Not kept; text uses the default Word style'],
+                        ['Multi-column layouts', 'Lines at the same height are joined across columns'],
+                        ['Complex tables', 'Come through as lines of text, not a Word table'],
+                        ['Images, charts and logos', 'Not included'],
+                        ['Headers, footers and page numbers', 'Come through as ordinary text on each page'],
                         ['Scanned pages (photos of text)', 'No text to extract'],
                     ],
+                ],
+            ],
+            [
+                'heading' => 'Tidying the Word file afterwards',
+                'paragraphs' => [
+                    'Because each line of the PDF becomes a separate line inside its paragraph, text you edit will not reflow neatly until you remove those breaks. In Microsoft Word, open Find and Replace, type ^l (a caret and a lower-case L) in the Find box, which stands for a manual line break, and a single space in the Replace box. Run it on a selected paragraph or the whole document, and the lines join into normal flowing paragraphs.',
+                    'Then remove repeated headers, footers and page numbers, which appear once per page, and delete page breaks you no longer need. If a heading was missed or a large line was wrongly made a heading, apply the right style from the Styles gallery. Finally, check words that were hyphenated across a line break in the PDF; they may now read as "docu- ment" in the middle of a line.',
+                ],
+            ],
+            [
+                'heading' => 'A worked example',
+                'paragraphs' => [
+                    'Take a three-page job offer letter: a company name in large type at the top, a heading for each section, body text in one column, and a signature line. The large company name and section headings are bigger than the body text, so they become Word headings. The body paragraphs come through as paragraphs with their original line breaks, and the letter is split over three pages as in the PDF.',
+                    'What needs attention: the logo at the top is missing, because images are not included, and the footer with the company address appears at the bottom of every page as plain text. Joining the line breaks and deleting the repeated footer takes a few minutes, and the letter is then fully editable.',
+                    'A two-column newsletter is a different story. Lines from the left and right columns that sit at the same height are joined into one line, so the text alternates between the two columns. For a document like that, copying each column separately from the PDF, or retyping a short section, may be quicker than fixing the conversion.',
                 ],
             ],
             [
                 'heading' => 'What about scanned PDFs?',
                 'paragraphs' => [
                     'A scanned PDF is just a picture of a page. There is no actual text inside it, only pixels, so a normal converter has nothing to extract. To edit a scanned document you need OCR (optical character recognition), which reads the letters in the image. A quick test: if you cannot select a word in the PDF with your mouse, it is a scan.',
+                    'Our converter does not include OCR. If it finds no text at all, it tells you that no text was found and that scanned pages without selectable text cannot be converted, rather than giving you an empty document.',
+                ],
+            ],
+            [
+                'heading' => 'Troubleshooting',
+                'list' => [
+                    '"Password-protected": the PDF is encrypted. Open it with the password and save a copy without one, or use [Unlock PDF](/unlock-pdf) if you know the password, then convert again.',
+                    '"Could not be read": the file may be damaged or not really a PDF. Try opening it in a PDF viewer and saving or printing it to a new PDF.',
+                    '"No text was found": the pages are scans or images. You need OCR before converting.',
+                    'Strange characters or missing letters: some PDFs use embedded fonts without a proper map from shapes to letters, so the text cannot be read back correctly. Copying text from the PDF viewer will usually show the same problem.',
+                    'Words run together or split oddly: the PDF placed letters individually. Fix them in Word with spell check, which highlights most of them.',
+                    'Large file is slow: the work happens on your device, so a long PDF on an older phone takes longer. A laptop or desktop is faster.',
                 ],
             ],
             [
@@ -665,7 +875,6 @@ return [
                 'paragraphs' => [
                     'PDFs often contain contracts, CVs, bank statements and other personal information. Many online converters upload the file to their servers. This converter reads the PDF and builds the Word file entirely in your browser, using the open-source PDF.js library from Mozilla, so the document stays on your device.',
                     'When you have finished editing, [Word to PDF](/word-to-pdf) turns the document back into a PDF that looks the same on every device.',
-                    'For a small fix, such as a typo or a date, you may not need Word at all: [Edit PDF](/edit-pdf) changes the existing text directly in the PDF, in its own font.',
                 ],
             ],
             [
@@ -678,20 +887,30 @@ return [
             [
                 'heading' => 'When not to convert at all',
                 'paragraphs' => [
-                    'If you only need to change a date or fix a typo, you may not need Word. Editing the PDF directly keeps the layout exactly as it is, and converting back and forth is where formatting usually goes wrong.',
+                    'If you only need to change a date or fix a typo, you may not need Word. [Edit PDF](/edit-pdf) changes the existing text directly in the PDF, in its own font, which keeps the layout exactly as it is. Converting back and forth is where formatting usually goes wrong.',
                     'To pull figures out of a table, [PDF to Excel](/pdf-to-excel) is often a better fit, because it keeps rows and columns as cells. When you finish in Word, [Word to PDF](/word-to-pdf) turns it back into a file that looks the same on every device.',
                     'A PDF made by scanning paper is really a picture of text. Tools without text recognition cannot read it, so you get little or nothing back. The quick test: try to select a sentence in your PDF viewer. If you cannot, it is a scan.',
+                    'For a simple text document that you do want to rewrite, though, [PDF to Word](/pdf-to-word) saves retyping every paragraph.',
                 ],
             ],
         ],
         'faqs' => [
-            ['q' => 'Will the Word file look exactly like the PDF?', 'a' => 'Simple documents come close. Complex layouts, tables and special fonts usually need some adjustment after conversion.'],
+            ['q' => 'Will the Word file look exactly like the PDF?', 'a' => 'No. The text, paragraphs and headings are rebuilt, but fonts, bold and italics, images, columns and tables are not kept. Simple documents come closest.'],
             ['q' => 'Can I convert a scanned PDF to Word?', 'a' => 'Not directly: a scan contains images of text, not text. It needs OCR first.'],
-            ['q' => 'Is there a page limit?', 'a' => 'There is no fixed limit. Very large PDFs simply take longer, because the work happens on your own device.'],
+            ['q' => 'Is there a page limit?', 'a' => 'There is no fixed page limit, but the file can be up to 200 MB. Very large PDFs simply take longer, because the work happens on your own device.'],
+            ['q' => 'Why does every line end with a break in Word?', 'a' => 'The converter keeps each line of the PDF as a line break inside its paragraph. In Word, replace ^l with a space to join them into flowing text.'],
+            ['q' => 'Can I convert a password-protected PDF?', 'a' => 'Not while it is locked. Remove the password first, for example by opening it with the password and saving a copy, then convert the copy.'],
+            ['q' => 'Is my PDF uploaded?', 'a' => 'No. The PDF is read and the Word file is built in your browser, so the document never leaves your device.'],
         ],
         'sources' => [
-            ['title' => 'PDF.js, the PDF renderer by Mozilla', 'url' => 'https://mozilla.github.io/pdf.js/'],
-            ['title' => 'Ecma International, ECMA-376 Office Open XML file formats (.docx)', 'url' => 'https://ecma-international.org/publications-and-standards/standards/ecma-376/'],
+            [
+                'title' => 'PDF.js, the PDF renderer by Mozilla',
+                'url' => 'https://mozilla.github.io/pdf.js/',
+            ],
+            [
+                'title' => 'Ecma International, ECMA-376 Office Open XML file formats (.docx)',
+                'url' => 'https://ecma-international.org/publications-and-standards/standards/ecma-376/',
+            ],
         ],
     ],
 
@@ -703,44 +922,92 @@ return [
         'tool' => 'qr-code-generator',
         'related' => ['password-generator', 'image-resizer', 'jpg-to-pdf'],
         'published' => '2026-10-10',
-        'updated' => '2026-11-04',
+        'updated' => '2026-11-10',
         'sections' => [
             [
                 'heading' => 'What a QR code is',
                 'paragraphs' => [
                     'QR stands for "Quick Response". The format was invented in 1994 by Denso Wave, a Japanese company, to track car parts, and it was later made an international standard. A QR code stores text, such as a web address, in a square grid of black and white modules that any phone camera can read.',
+                    'Everything a QR code does comes down to that stored text. A link is just text that starts with https://, and a Wi-Fi code is text in a special format that phones recognise. The phone reads the text and decides what to offer: open a page, join a network, start an email or dial a number.',
                 ],
             ],
             [
                 'heading' => 'Step by step',
                 'list' => [
-                    'Open the [QR Code Generator](/qr-code-generator) and choose what the code should contain: a link, plain text, Wi-Fi details or contact information.',
-                    'Type or paste the content. The code updates as you type.',
-                    'Choose the size and, if you like, the colours. Keep strong contrast: dark code on a light background.',
-                    'Download it as PNG for screens and documents, or SVG for printing at any size.',
+                    'Open the [QR Code Generator](/qr-code-generator) and pick a tab for what the code should contain: URL, Text, Wi-Fi, Email, Phone or SMS.',
+                    'Type or paste the content. The preview updates as you type.',
+                    'Open "Customise colours, size and quality" if you want to change the colours, the size, the error correction level or the margin. Keep strong contrast: dark code on a light background.',
+                    'Read any warning under the preview, such as colours that are too similar or a margin that is too small, and fix it.',
+                    'Click Download PNG for screens and documents, or Download SVG for printing at any size.',
                     'Scan it with at least two different phones before you print anything.',
+                ],
+            ],
+            [
+                'heading' => 'What each type of code contains',
+                'paragraphs' => ['Each tab builds a different piece of text for the code. Knowing what goes inside helps when a code does not do what you expected.'],
+                'table' => [
+                    'headers' => ['Tab', 'What you enter', 'What the phone does'],
+                    'rows' => [
+                        ['URL', 'A web address; https:// is added if you leave it out', 'Offers to open the page'],
+                        ['Text', 'Any text', 'Shows the text'],
+                        ['Wi-Fi', 'Network name (SSID), security type, password, and whether the network is hidden', 'Offers to join the network'],
+                        ['Email', 'Email address, optional subject and message', 'Opens a new email, filled in'],
+                        ['Phone', 'Phone number with country code', 'Offers to call the number'],
+                        ['SMS', 'Phone number and optional message', 'Opens a text message, filled in'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'Making a Wi-Fi QR code',
+                'paragraphs' => [
+                    'A Wi-Fi code saves guests from typing a long password. In the Wi-Fi tab, enter the network name exactly as it appears on your router, including capitals and spaces, choose the security type (WPA / WPA2 / WPA3, WEP, or No password), and type the password. Tick Hidden network only if your network does not broadcast its name.',
+                    'The generator handles special characters for you: a semicolon, comma, colon, quote mark or backslash in the name or password is escaped so phones read it correctly. If a phone fails to join, the usual cause is a typo in the network name or password, or the wrong security type.',
+                    'Remember that the password is stored in the code as plain text. Anyone who can photograph the code can join your network, so for a café or an office lobby, point the code at a guest network rather than your main one.',
                 ],
             ],
             [
                 'heading' => 'Error correction: why some damage is fine',
                 'paragraphs' => [
-                    'QR codes contain extra data so they still scan when part of the code is dirty, torn or covered. There are four levels: L restores about 7 percent of the code, M about 15 percent, Q about 25 percent and H about 30 percent. Level M is the most common choice. A higher level makes the code denser but tougher, which is useful for codes that will be printed on packaging or placed outdoors.',
+                    'QR codes contain extra data so they still scan when part of the code is dirty, torn or covered. There are four levels: L restores about 7 percent of the code, M about 15 percent, Q about 25 percent and H about 30 percent. Level M is the most common choice, and it is the default in our generator, where the levels are labelled Low, Medium, Quartile and High.',
+                    'A higher level makes the code denser but tougher, which is useful for codes that will be printed on packaging or placed outdoors. The trade-off is capacity: the same text needs more modules at level H than at level L. If the generator says there is too much data for one QR code, shorten the text or choose a lower level.',
                 ],
             ],
             [
                 'heading' => 'Size, contrast and placement',
                 'list' => [
                     'Print it large enough: about 2 x 2 cm is a practical minimum for a short link held close to the camera; bigger for posters seen from a distance.',
-                    'Keep a quiet zone, a plain margin around the code, so the camera can find its edges.',
+                    'Keep a quiet zone, a plain margin around the code, so the camera can find its edges. The generator\'s default margin is 4 modules, which is the width the QR standard calls for.',
                     'Use dark modules on a light background. Inverted or low-contrast codes fail on many phones.',
                     'Keep the content short. A short link produces a simpler code that scans faster.',
+                    'Avoid curved or shiny surfaces where possible; glare and bending distort the grid.',
+                ],
+            ],
+            [
+                'heading' => 'How big should a printed QR code be?',
+                'paragraphs' => [
+                    'A common rule of thumb is that a code can be scanned from about ten times its own width. By that rule, a 2 cm code on a business card works at arm\'s length, while a code on a poster that people will read from 2 metres away should be around 20 cm across. Treat this as a starting point and test at the real distance, because lighting, camera quality and how much data the code holds all make a difference.',
+                    'Pixel size and print size are linked by the printer\'s resolution. Our PNG download is 512 x 512 pixels by default, and the size slider goes from 128 to 1,024 pixels in steps of 32. At 300 dots per inch, a 512-pixel image prints at about 1.7 inches, or 4.3 cm, before it starts to blur. For anything larger, or when you are not sure, use the SVG download: it is a vector file, so it stays sharp at any size.',
+                ],
+            ],
+            [
+                'heading' => 'Colours that still scan',
+                'paragraphs' => [
+                    'You can change the QR colour and the background, but the camera still needs to tell them apart. The generator measures the contrast between the two colours and shows a warning when they are too similar for many phones to read. It also warns when the code is lighter than its background, because light-on-dark codes do not scan on some phones.',
+                    'A safe approach is a very dark brand colour for the code, such as navy or deep green, on white or a very pale background. Test colour codes on paper, since printed colours often come out darker or duller than on screen.',
                 ],
             ],
             [
                 'heading' => 'Static codes never expire',
                 'paragraphs' => [
                     'The codes made here are static: the link or text is stored inside the code itself, so the code works forever and does not depend on any service staying online. The trade-off is that you cannot change the destination after printing. If you might need to, point the code at a page on your own website that you can update.',
-                    'If you need the QR code at an exact pixel size for a slide or a print layout, resize the downloaded image with the [Image Resizer](/image-resizer).',
+                    'The code is drawn in your browser by an open-source QR library, so the text you type, including a Wi-Fi password, is not sent to our server.',
+                ],
+            ],
+            [
+                'heading' => 'What to put in the code',
+                'paragraphs' => [
+                    'Shorter data makes a simpler pattern that is easier to scan from further away. A short web address beats a long one with tracking parameters. Our test code for a web address came out as a 512 x 512 PNG of 8.6 KB; for print, use the SVG download, which stays sharp at any size.',
+                    'If the address might change, point the code at a page you control and can redirect, because a static code cannot be edited after printing. Resize the PNG for a slide or web page with the [Image Resizer](/image-resizer) rather than stretching it in a design tool, which can blur the edges. To put one or more codes on a printable page, [JPG to PDF](/jpg-to-pdf) can turn the image into a PDF.',
                 ],
             ],
             [
@@ -751,27 +1018,41 @@ return [
                 ],
             ],
             [
-                'heading' => 'What to put in the code',
-                'paragraphs' => [
-                    'Shorter data makes a simpler pattern that is easier to scan from further away. A short web address beats a long one with tracking parameters. Our test code for a web address came out as a 512 x 512 PNG of 8.6 KB; for print, use the SVG download, which stays sharp at any size.',
-                    'If the address might change, point the code at a page you control and can redirect, because a static code cannot be edited after printing. Resize the PNG for a slide or web page with the [Image Resizer](/image-resizer) rather than stretching it in a design tool, which can blur the edges.',
+                'heading' => 'Troubleshooting a code that will not scan',
+                'list' => [
+                    'The phone sees nothing: make the code bigger, add more light, or move the camera further back so the whole code and its margin fit in the frame.',
+                    'It scans on one phone but not another: raise the contrast, return to black on white, and check the margin is at least 4 modules.',
+                    'It opens the wrong page: check the address for typos and make sure it works when typed into a browser.',
+                    'The Wi-Fi code does not connect: re-type the network name and password exactly, and check the security type.',
+                    'The generator reports too much data: shorten the text or link, or lower the error correction level.',
+                    'It printed blurry: go back to the [QR Code Generator](/qr-code-generator) and download the SVG instead of the PNG, or generate the PNG at a larger size.',
                 ],
             ],
             [
                 'heading' => 'Be careful what you scan',
                 'paragraphs' => [
                     'QR codes hide their destination, which scammers exploit by sticking fake codes over real ones on parking meters and restaurant tables. Check the address your phone shows before you open it, and never enter a password or card number on a page you reached that way unless you are sure of it.',
+                    'If you run a shop or restaurant, check your printed codes from time to time to make sure nobody has covered them with a sticker.',
                 ],
             ],
         ],
         'faqs' => [
             ['q' => 'Do these QR codes expire?', 'a' => 'No. The content is stored inside the code, so it keeps working as long as the link it points to works.'],
-            ['q' => 'Can I add a logo to a QR code?', 'a' => 'A small logo in the centre can work with a high error correction level, but always test it on several phones before printing.'],
+            ['q' => 'Can I add a logo to a QR code?', 'a' => 'The generator does not add logos. A small logo placed over the centre in a design tool can work with a high error correction level, but always test it on several phones before printing.'],
             ['q' => 'PNG or SVG?', 'a' => 'PNG for websites and documents, SVG for printing because it stays sharp at any size.'],
+            ['q' => 'Can I make a contact card (vCard) QR code?', 'a' => 'There is no contact-card tab. You can use the Email, Phone or SMS tabs to let people reach you in one tap, or the Text tab for any other text.'],
+            ['q' => 'Can I track how many people scan my code?', 'a' => 'Not with a static code, because the phone goes straight to your link without passing through any tracking service. If you need numbers, use a link on your own site whose visits you can measure.'],
+            ['q' => 'What error correction level should I choose?', 'a' => 'Medium (15%) suits most codes. Choose Quartile or High for codes that may get scratched, dirty or partly covered, and Low only when you need to fit a lot of data.'],
         ],
         'sources' => [
-            ['title' => 'DENSO WAVE, History of QR Code', 'url' => 'https://www.qrcode.com/en/history/'],
-            ['title' => 'DENSO WAVE, QR Code error correction feature', 'url' => 'https://www.qrcode.com/en/about/error_correction.html'],
+            [
+                'title' => 'DENSO WAVE, History of QR Code',
+                'url' => 'https://www.qrcode.com/en/history/',
+            ],
+            [
+                'title' => 'DENSO WAVE, QR Code error correction feature',
+                'url' => 'https://www.qrcode.com/en/about/error_correction.html',
+            ],
         ],
     ],
 
@@ -779,22 +1060,35 @@ return [
         'title' => 'How to Calculate Percentages: Formulas and Examples',
         'description' => 'The three percentage formulas you actually need, with worked examples for discounts, tips, grades and percentage change, plus common mistakes to avoid.',
         'h1' => 'How to calculate percentages',
-        'intro' => 'Percentages show up in shopping discounts, restaurant tips, exam scores, pay rises and price increases. Almost every percentage question is one of three simple calculations. Learn those three and you can handle nearly anything, with or without a calculator.',
+        'intro' => 'Percentages show up in shopping discounts, restaurant tips, exam scores, pay rises, tax and price increases. Almost every percentage question is one of three simple calculations, plus two close relatives: working backwards to the original number, and adding or taking off a percentage. Learn those and you can handle nearly anything, with or without a calculator. This guide gives each formula, worked examples with the arithmetic shown, and the mistakes that catch people out.',
         'tool' => 'percentage-calculator',
         'related' => ['tip-calculator', 'loan-calculator', 'mortgage-calculator'],
         'published' => '2026-10-10',
-        'updated' => '2026-11-04',
+        'updated' => '2026-11-10',
         'sections' => [
             [
                 'heading' => 'What "percent" means',
                 'paragraphs' => [
                     'Percent means "per hundred". 25 percent is 25 out of every 100, which is the same as the fraction 25/100 or the decimal 0.25. To turn a percentage into a decimal, divide it by 100; to turn a decimal into a percentage, multiply by 100.',
+                    'Fractions work the same way. To turn 3/8 into a percentage, divide 3 by 8 to get 0.375, then multiply by 100: 37.5%. Keeping this conversion in mind makes every formula below easier, because most percentage sums are really multiplication by a decimal.',
+                ],
+                'table' => [
+                    'headers' => ['Percentage', 'Decimal', 'Fraction', 'Quick way to find it'],
+                    'rows' => [
+                        ['1%', '0.01', '1/100', 'Divide by 100'],
+                        ['10%', '0.1', '1/10', 'Divide by 10'],
+                        ['12.5%', '0.125', '1/8', 'Divide by 8'],
+                        ['25%', '0.25', '1/4', 'Divide by 4'],
+                        ['50%', '0.5', '1/2', 'Divide by 2'],
+                        ['75%', '0.75', '3/4', 'Divide by 4, then multiply by 3'],
+                    ],
                 ],
             ],
             [
                 'heading' => '1. What is X% of a number?',
                 'paragraphs' => [
                     'Multiply the number by the percentage and divide by 100. 20% of 80 is 80 x 20 / 100 = 16. A quick mental trick: 10% is the number divided by 10, so 20% is twice that, and 5% is half of it.',
+                    'Another handy trick is that X% of Y is the same as Y% of X. 8% of 50 looks awkward, but 50% of 8 is obviously 4, and both answers are the same.',
                 ],
                 'table' => [
                     'headers' => ['Question', 'Calculation', 'Answer'],
@@ -809,12 +1103,39 @@ return [
                 'heading' => '2. X is what percent of Y?',
                 'paragraphs' => [
                     'Divide the part by the whole and multiply by 100. If you scored 42 out of 50 on a test, your score is 42 / 50 x 100 = 84%. The same formula tells you what share of a budget went on rent, or what fraction of a task is finished.',
+                    'The order matters: the part goes on top and the whole underneath. If you spend 900 of a 2,400 monthly income on rent, that is 900 / 2,400 x 100 = 37.5%. Flip the numbers and you get 266.67%, which is clearly not a share of anything.',
                 ],
             ],
             [
                 'heading' => '3. Percentage increase or decrease',
                 'paragraphs' => [
                     'Subtract the old value from the new value, divide by the old value and multiply by 100. A price that goes from 50 to 60 has risen by (60 - 50) / 50 x 100 = 20%. A price that falls from 60 to 45 has dropped by (45 - 60) / 60 x 100 = -25%, a 25% decrease.',
+                    'A school example: a test score goes from 62 to 74. The change is 12, and 12 / 62 x 100 = 19.35% to two decimal places. Notice that it is not 12%: the 12 marks are measured against where you started.',
+                    'Percentage change from zero has no answer, because you cannot divide by zero. If a new product sold nothing last month and 40 units this month, describe the change in units instead.',
+                ],
+            ],
+            [
+                'heading' => '4. Working backwards: X is Y% of what?',
+                'paragraphs' => [
+                    'Sometimes you know the part and the percentage but not the original number. Divide the part by the percentage as a decimal. If 25 is 20% of a number, the number is 25 / 0.2 = 125.',
+                    'This is the formula people need most often without realising it. You paid 60 for a jacket after a 25% discount; what was the original price? You paid 75% of it, so the original was 60 / 0.75 = 80. A common wrong answer is to add 25% to 60, which gives 75 and is too low, because the 25% was taken from the bigger, original price.',
+                    'Prices that include sales tax or VAT work the same way. A price of 54 including 20% VAT is 120% of the price before tax, so the pre-tax price is 54 / 1.2 = 45 and the tax is 9. Taking 20% off 54 gives 43.20, which is wrong for the same reason.',
+                ],
+            ],
+            [
+                'heading' => '5. Adding or taking off a percentage',
+                'paragraphs' => [
+                    'To increase a number by a percentage, multiply it by 1 plus the percentage as a decimal. To decrease it, multiply by 1 minus the decimal. Increasing 50 by 20% gives 50 x 1.2 = 60; decreasing 50 by 20% gives 50 x 0.8 = 40.',
+                    'This one-step method is faster than working out the percentage and then adding or subtracting it, and it is the key to every multi-step problem: a 3% pay rise on 2,800 is 2,800 x 1.03 = 2,884.',
+                ],
+            ],
+            [
+                'heading' => 'Worked examples from everyday life',
+                'paragraphs' => [
+                    'A jacket costs $80 and is 25% off. The discount is 80 x 0.25 = $20, so you pay $60. A quicker way is to multiply by what is left: 80 x 0.75 = 60.',
+                    'A restaurant bill is $64 and you leave 18%: 64 x 0.18 = $11.52, for a total of $75.52. The [Tip Calculator](/tip-calculator) does this and splits it between people.',
+                    'Your pay rises from $3,200 to $3,400 a month. The change is 200, and 200 / 3,200 x 100 = 6.25%. Always divide by the old value, not the new one.',
+                    'You answered 8 out of 10 questions correctly on one quiz (80%) and 36 out of 40 on another (90%). Your overall score is not the average of 80 and 90. Add up the marks instead: 44 out of 50, which is 88%, because the second quiz had four times as many questions.',
                 ],
             ],
             [
@@ -824,27 +1145,8 @@ return [
                     'Always divide by the original value when working out a change, not the new one.',
                     'Two discounts multiply, they do not add: 20% off then another 10% off is 28% off in total, not 30%.',
                     'Percentage points are not percent: an interest rate moving from 3% to 4% is a rise of 1 percentage point, but 33% in relative terms.',
-                ],
-            ],
-            [
-                'heading' => 'Let the calculator do it',
-                'paragraphs' => [
-                    'The [Percentage Calculator](/percentage-calculator) on this site has a box for each of these three questions and shows the formula it used, so you can check the working. For splitting a bill, the [Tip Calculator](/tip-calculator) does the percentage and the division in one go.',
-                ],
-            ],
-            [
-                'heading' => 'Worked examples from everyday life',
-                'paragraphs' => [
-                    'A jacket costs $80 and is 25% off. The discount is 80 x 0.25 = $20, so you pay $60. A quicker way is to multiply by what is left: 80 x 0.75 = 60.',
-                    'A restaurant bill is $64 and you leave 18%: 64 x 0.18 = $11.52, for a total of $75.52. The [Tip Calculator](/tip-calculator) does this and splits it between people.',
-                    'Your pay rises from $3,200 to $3,400 a month. The change is 200, and 200 / 3,200 x 100 = 6.25%. Always divide by the old value, not the new one.',
-                ],
-            ],
-            [
-                'heading' => 'Percent versus percentage points',
-                'paragraphs' => [
-                    'If a loan rate goes from 4% to 5%, it rose by one percentage point, but by 25% in relative terms, because 1 is a quarter of 4. News stories and adverts often use whichever sounds bigger, so check which one you are reading.',
-                    'This matters when you compare offers. A rate quoted in the [Loan Calculator](/loan-calculator) is a percentage of the balance, and a small change in points can mean a large change in what you pay over the years.',
+                    'To remove a percentage that was added, divide; do not subtract the same percentage again.',
+                    'Averaging percentages from groups of different sizes gives the wrong total; add the underlying numbers first.',
                 ],
             ],
             [
@@ -852,6 +1154,33 @@ return [
                 'paragraphs' => [
                     'A 50% rise followed by a 50% fall does not bring you back to where you began. Start at 100: up 50% is 150, and down 50% is 75. The second percentage is taken from a bigger number, so the fall is larger than the rise.',
                     'It is the same with stacked discounts. 20% off and then another 10% off is not 30% off. Multiply instead: 0.8 x 0.9 = 0.72, which is 28% off.',
+                    'Growth over several years compounds the same way. Something that grows 10% a year for three years grows by 1.1 x 1.1 x 1.1 = 1.331, a total rise of 33.1%, not 30%. Savings and debts follow this rule, which is what the [Compound Interest Calculator](/compound-interest-calculator) works out year by year.',
+                ],
+            ],
+            [
+                'heading' => 'Percent versus percentage points',
+                'paragraphs' => [
+                    'If a loan rate goes from 4% to 5%, it rose by one percentage point, but by 25% in relative terms, because 1 is a quarter of 4. News stories and adverts often use whichever sounds bigger, so check which one you are reading.',
+                    'This matters when you compare offers. A rate quoted in the [Loan Calculator](/loan-calculator) is a percentage of the balance, and a small change in points can mean a large change in what you pay over the years.',
+                    'A percentage of a percentage is a third trap. If 40% of a class chose science, and 25% of those chose physics, then 0.4 x 0.25 = 0.1, so 10% of the whole class chose physics.',
+                ],
+            ],
+            [
+                'heading' => 'Let the calculator do it',
+                'paragraphs' => [
+                    'The [Percentage Calculator](/percentage-calculator) on this site has a separate box for each of the five questions in this guide: what is X% of Y, X is what percent of Y, percentage increase or decrease, X is Y% of what number, and increase or decrease a number by a percentage. Each result shows the formula it used, so you can check the working, and the last box also shows the difference between the old and new number.',
+                    'You can type numbers with a comma or a point as the decimal separator, such as 1,234.5 or 1.234,5, and a trailing % sign is ignored. Results are shown to up to six decimal places. If a calculation would mean dividing by zero, such as a percentage change from a starting value of 0, the calculator says so instead of showing a meaningless number.',
+                    'For splitting a bill, the [Tip Calculator](/tip-calculator) does the percentage and the division in one go.',
+                ],
+            ],
+            [
+                'heading' => 'A quick checklist before you trust an answer',
+                'list' => [
+                    'Ask what the percentage is "of": the original price, the new price or the total.',
+                    'Estimate first. 19% of 300 should be a little under 60; if you get 570, a decimal point has moved.',
+                    'For a change, check you divided by the starting value.',
+                    'For several steps, multiply the factors rather than adding the percentages.',
+                    'Run the numbers through the [Percentage Calculator](/percentage-calculator) and compare its formula with yours.',
                 ],
             ],
         ],
@@ -859,6 +1188,9 @@ return [
             ['q' => 'How do I work out 15% of a number in my head?', 'a' => 'Find 10% by dividing by 10, then add half of that again. For 60: 10% is 6, half of 6 is 3, so 15% is 9.'],
             ['q' => 'How do I calculate a discount price?', 'a' => 'Multiply the price by (100 - discount) / 100. A 25% discount on 80 is 80 x 0.75 = 60.'],
             ['q' => 'What is the difference between percent and percentage points?', 'a' => 'Percentage points measure the gap between two percentages (3% to 4% is 1 point). Percent change measures it relative to the start (a 33% increase).'],
+            ['q' => 'How do I find the original price before a discount?', 'a' => 'Divide the price you paid by what was left after the discount. After 25% off you pay 75%, so a sale price of 60 means an original price of 60 / 0.75 = 80.'],
+            ['q' => 'How do I remove VAT or sales tax from a price?', 'a' => 'Divide by 1 plus the tax rate. A price of 54 including 20% VAT is 54 / 1.2 = 45 before tax, so the tax is 9.'],
+            ['q' => 'Can a percentage be more than 100?', 'a' => 'Yes, when the part is bigger than the whole or a value more than doubles. A price going from 20 to 50 has risen by 150%.'],
         ],
     ],
 
@@ -1914,7 +2246,7 @@ return [
         'tool' => 'compound-interest-calculator',
         'related' => ['percentage-calculator', 'loan-calculator', 'mortgage-calculator'],
         'published' => '2026-11-04',
-        'updated' => '2026-11-04',
+        'updated' => '2026-11-10',
         'sections' => [
             [
                 'heading' => 'A worked example',
@@ -1933,16 +2265,50 @@ return [
                 ],
             ],
             [
+                'heading' => 'How the balance builds, year by year',
+                'paragraphs' => [
+                    'The same example, followed through the years, shows why compounding is described as slow and then fast. In the first year interest adds only a few hundred dollars. By the last years the balance earns several thousand dollars of interest a year, without any extra effort from you.',
+                    'Between year 15 and year 20 the balance grows by $42,805.54, of which $12,000 is your contributions. The remaining $30,805.54 is interest earned in just those five years, nearly half of all the interest earned over the full 20.',
+                ],
+                'table' => [
+                    'headers' => ['After year', 'Balance', 'Paid in so far', 'Interest so far'],
+                    'rows' => [
+                        ['1', '$13,083.89', '$12,400.00', '$683.89'],
+                        ['5', '$27,442.51', '$22,000.00', '$5,442.51'],
+                        ['10', '$50,969.84', '$34,000.00', '$16,969.84'],
+                        ['15', '$82,704.68', '$46,000.00', '$36,704.68'],
+                        ['20', '$125,510.22', '$58,000.00', '$67,510.22'],
+                    ],
+                ],
+            ],
+            [
                 'heading' => 'The formula',
                 'paragraphs' => [
                     'For a single deposit with no further contributions, the balance is A = P x (1 + r / n) ^ (n x t). P is the starting amount, r is the yearly rate as a decimal, n is how many times a year interest is added, and t is the number of years.',
                     'Using our example with no monthly contributions: $10,000 x (1 + 0.06 / 12) ^ 240 is about $33,102. Compare that with the $125,510.22 above and you can see that steady contributions did more for the total than the starting amount did.',
+                    'Regular deposits add a second part: C x ((1 + r / n) ^ (n x t) - 1) / (r / n), where C is the amount paid in each period. With $200 a month, that part comes to about $92,408, and $33,102 plus $92,408 gives the $125,510 total. The calculator assumes each deposit is made at the end of its period.',
+                ],
+            ],
+            [
+                'heading' => 'Simple interest versus compound interest',
+                'paragraphs' => [
+                    'With simple interest, $10,000 at 6% earns $600 every year, forever, because interest is only ever paid on the original $10,000. After 20 years you have $22,000.',
+                    'With interest compounded monthly, the same $10,000 grows to about $33,102 over 20 years. The extra $11,102 is interest earned on earlier interest. The gap is small in the first few years and widens every year after that.',
                 ],
             ],
             [
                 'heading' => 'The Rule of 72',
                 'paragraphs' => [
                     'To estimate how long money takes to double, divide 72 by the yearly rate. At 6% that gives about 12 years. It is an approximation for mental arithmetic and works best for rates between about 4% and 12%. To work out the rates themselves, the [Percentage Calculator](/percentage-calculator) shows each step.',
+                ],
+                'table' => [
+                    'headers' => ['Yearly rate', 'Rule of 72', 'Exact (compounded yearly)'],
+                    'rows' => [
+                        ['2%', '36 years', '35.0 years'],
+                        ['6%', '12 years', '11.9 years'],
+                        ['9%', '8 years', '8.0 years'],
+                        ['18%', '4 years', '4.2 years'],
+                    ],
                 ],
             ],
             [
@@ -1958,6 +2324,46 @@ return [
                 ],
             ],
             [
+                'heading' => 'Comparing the levers with real numbers',
+                'paragraphs' => [
+                    'All of these use the calculator\'s method, with $200 a month and monthly compounding unless stated. They show how much each choice moves the final figure.',
+                ],
+                'table' => [
+                    'headers' => ['Change', 'Result', 'Compared with the example'],
+                    'rows' => [
+                        ['$10,000 lump sum only, compounded yearly', '$32,071.35', '$1,030.69 less than monthly compounding ($33,102.04)'],
+                        ['$10,000 lump sum only, compounded daily', '$33,197.90', 'Only $95.86 more than monthly'],
+                        ['$200 a month only, 20 years', '$92,408.18', '$48,000 paid in'],
+                        ['$200 a month only, 30 years', '$200,903.01', '$72,000 paid in, more than double the 20-year result'],
+                        ['Example at 5% instead of 6% (a 1% yearly fee)', '$109,333.14', '$16,177.08 less'],
+                        ['Example at 7% instead of 6%', '$144,572.72', '$19,062.50 more'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'How to use the calculator',
+                'paragraphs' => [
+                    'The [Compound Interest Calculator](/compound-interest-calculator) updates as you type, so it is quick to try several scenarios side by side.',
+                ],
+                'list' => [
+                    'Enter your Starting amount and pick a Currency symbol ($, £, €, C$ or A$). The symbol only changes the display.',
+                    'Enter the Interest rate (annual %) and the Number of years, from 1 to 50.',
+                    'Add a Monthly contribution if you plan to pay in regularly, or leave it at 0.',
+                    'Choose the Compound frequency: Annually, Semi-annually, Quarterly, Monthly or Daily.',
+                    'Read the Final balance, Total contributed and Total interest earned. Total contributed counts your monthly deposits only; the starting amount is separate.',
+                    'Open Show the year-by-year balance to see every year, as in the table above. There, the contributed column includes the starting amount.',
+                ],
+            ],
+            [
+                'heading' => 'Common mistakes',
+                'list' => [
+                    'Typing a monthly rate into a yearly field. A savings account advertising 0.5% a month is 6% a year, not 0.5%.',
+                    'Comparing a rate quoted with compounding to one quoted without. 6% compounded monthly works out to about 6.17% over a year, which is why savings accounts often quote an annual equivalent.',
+                    'Forgetting inflation. At 2.5% inflation a year, $125,510.22 in 20 years buys roughly what $76,595 buys today.',
+                    'Assuming the rate holds for decades. Use a few different rates to see a range rather than one number.',
+                ],
+            ],
+            [
                 'heading' => 'The limit of any calculator',
                 'paragraphs' => [
                     'A calculator assumes one fixed rate for the whole period. Savings rates change, and investment returns vary from year to year, including years that lose money. Treat the result as a projection for comparing options, not a forecast. It also ignores tax and inflation unless you allow for them yourself. This guide is general information, not financial advice.',
@@ -1967,10 +2373,15 @@ return [
         'faqs' => [
             ['q' => 'What is the difference between simple and compound interest?', 'a' => 'Simple interest is paid only on the original amount. Compound interest is also paid on the interest already earned, so the balance grows faster over time.'],
             ['q' => 'How much does $10,000 grow to in 20 years at 6%?', 'a' => 'With monthly compounding and no further deposits, about $33,102. With $200 added every month, our calculator gave $125,510.22.'],
-            ['q' => 'Does compounding more often make a big difference?', 'a' => 'Only a small one. The rate and the number of years matter far more.'],
+            ['q' => 'Does compounding more often make a big difference?', 'a' => 'Only a small one. On $10,000 at 6% for 20 years, daily compounding gives $33,197.90 against $33,102.04 for monthly. The rate and the number of years matter far more.'],
+            ['q' => 'How does compound interest work on a credit card?', 'a' => 'The same way, against you. A 20% yearly rate charged monthly works out to about 21.9% over a year, so an unpaid $5,000 balance would grow to about $6,097 in 12 months with no new spending and no payments.'],
+            ['q' => 'Is the calculator\'s result guaranteed?', 'a' => 'No. It assumes one fixed rate for the whole period. Real returns vary, so use it to compare options rather than to predict an exact balance.'],
         ],
         'sources' => [
-            ['title' => 'U.S. Securities and Exchange Commission, Compound interest calculator', 'url' => 'https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator'],
+            [
+                'title' => 'U.S. Securities and Exchange Commission, Compound interest calculator',
+                'url' => 'https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator',
+            ],
         ],
     ],
 
@@ -1982,7 +2393,7 @@ return [
         'tool' => 'json-formatter',
         'related' => ['base64-encoder-decoder', 'case-converter', 'domain-age-checker'],
         'published' => '2026-11-04',
-        'updated' => '2026-11-04',
+        'updated' => '2026-11-10',
         'sections' => [
             [
                 'heading' => 'The six errors we tested',
@@ -1992,7 +2403,12 @@ return [
                 'table' => [
                     'headers' => ['Mistake', 'Example', 'Message', 'Fix'],
                     'rows' => [
-                        ['Trailing comma in an object', '{"a": 1,}', 'Expected double-quoted property name... Remove the trailing comma before this bracket.', 'Delete the last comma'],
+                        [
+                            'Trailing comma in an object',
+                            '{"a": 1,}',
+                            'Expected double-quoted property name... Remove the trailing comma before this bracket.',
+                            'Delete the last comma',
+                        ],
                         ['Trailing comma in an array', '[1, 2, 3,]', 'Unexpected token \']\'', 'Delete the last comma'],
                         ['Single quotes', '{\'name\': \'Ann\'}', 'Expected property name or \'}\'... must use double quotes', 'Use " for keys and strings'],
                         ['Unquoted key', '{name: "Ann"}', 'Expected property name or \'}\'... must be wrapped in double quotes', 'Write "name"'],
@@ -2002,10 +2418,35 @@ return [
                 ],
             ],
             [
+                'heading' => 'How to check your JSON, step by step',
+                'list' => [
+                    'Paste the JSON into the box labelled JSON input in the [JSON Formatter](/json-formatter). The Sample button loads a small valid example if you want to see how it works first.',
+                    'Click Validate to check it without changing anything, or Format / Beautify to check it and lay it out with indentation.',
+                    'If it is invalid, read the message under the buttons: it gives the browser\'s description, the line and column, and for common mistakes a hint such as "Remove the trailing comma before this bracket."',
+                    'Fix the problem in the input and click again. Repeat until the message says Valid JSON.',
+                    'Copy or download the result. Use as input moves the formatted result back into the input box if you want to keep editing it.',
+                ],
+            ],
+            [
                 'heading' => 'Reading the position',
                 'paragraphs' => [
                     'A message like "position 8 (line 1, column 9)" tells you where the parser stopped, counted from the start. With a missing comma, as in {"a": 1 "b": 2}, position 8 is the start of "b", because that is where a comma should have appeared. So look just before the position as well as at it.',
                     'One mismatched bracket can do the same thing. In {"tags": ["a", "b"} the parser complains at the closing brace, position 18, because it expected the array to end first. Formatting a long document first makes this kind of mistake much easier to see.',
+                    'Positions are counted from 0, so position 8 is the ninth character, which is why the formatter reports it as column 9. Chrome and Edge give a position or a line and column; Firefox gives a line and column. The formatter turns either into the same line and column, so you can jump to the spot in your editor.',
+                ],
+            ],
+            [
+                'heading' => 'Six more mistakes that break JSON',
+                'paragraphs' => [
+                    'The table above covers the most common errors, but these come up often too, especially with data copied from documents, spreadsheets or code.',
+                ],
+                'list' => [
+                    'Curly quotes. Word processors and chat apps often turn "straight" quotes into “curly” ones. JSON only accepts the straight double quote, so retype the quotes or paste through a plain-text editor.',
+                    'Unescaped backslashes. A Windows path such as "C:\\Users\\ann" is invalid, because \\U is not a valid escape. Write each backslash twice: "C:\\\\Users\\\\ann".',
+                    'Line breaks inside a string. A string cannot contain a real line break; use \\n for a new line and \\t for a tab.',
+                    'JavaScript values. undefined, NaN and Infinity are not JSON. Use null, or a number, or a string.',
+                    'Number formats. Leading zeros such as 007, hexadecimal such as 0xFF, a leading + sign and a trailing decimal point such as 5. are all invalid. Write 7, 255, 5 and 5.0.',
+                    'Truncated data. If a file or API response was cut off, the brackets never close and the parser reports that the input ended too early. Get the full response again rather than adding brackets by hand.',
                 ],
             ],
             [
@@ -2018,6 +2459,23 @@ return [
                 ],
                 'paragraphs' => [
                     'The usual culprits are hand-edited config files, JavaScript objects pasted as if they were JSON, and copying from a document that turned straight quotes into curly ones.',
+                    'If the error position makes no sense, the real problem may be much earlier. An unclosed string, for example, swallows everything up to the next quote mark, so the parser may only complain many lines later. Look upwards from the reported line for a string that is missing its closing quote.',
+                ],
+            ],
+            [
+                'heading' => 'Worked example: fixing a broken config file',
+                'paragraphs' => [
+                    'Suppose you paste this into the formatter: {name: \'my-app\', "port": 8080, "debug": true, // local only }. It contains three problems: an unquoted key, single quotes and a comment, plus a trailing comma hidden before the comment.',
+                    'The first message points at name and says keys must be wrapped in double quotes. Change it to "name" and validate again. The next message, in Chrome, reports an unexpected \' token, the single quote; change \'my-app\' to "my-app". The third message says comments are not allowed; delete // local only. The last error is the trailing comma after true. Remove it and the message changes to Valid JSON.',
+                    'This is why it pays to fix one error at a time. The parser stops at the first problem it meets, so it can only ever show one.',
+                ],
+            ],
+            [
+                'heading' => 'What formatting changes, and what it does not',
+                'paragraphs' => [
+                    'Format / Beautify reads your JSON and writes it out again with 2 spaces, 4 spaces or tabs, whichever you choose in the Indent menu. Minify removes all the spacing to make the file as small as possible. Sort keys A-Z puts the keys of every object in alphabetical order, which makes two versions of a file easier to compare.',
+                    'Because the formatter rebuilds the data, a few details can change. Numbers are rewritten in their simplest form, so 1.0 becomes 1 and 1e3 becomes 1000. Escapes such as \\u00e9 are written out as the character itself, é. If an object has the same key twice, only the last value is kept. And very large whole numbers lose precision: JavaScript numbers are exact only up to 9,007,199,254,740,991, so a long ID like 12345678901234567890 comes back as 12345678901234567000. Keep large IDs as strings if they must stay exact.',
+                    'Validate never changes anything, so use it when you only need a yes or no.',
                 ],
             ],
             [
@@ -2027,15 +2485,33 @@ return [
                     'If a value holds binary data or an encoded string, a tool like the [Base64 Encoder](/base64-encoder-decoder) can help you see what is inside. Your JSON stays in your browser in the formatter: our network log showed 0 bytes sent during these tests, so it is safe for config files, though you should still be careful where you paste live secrets.',
                 ],
             ],
+            [
+                'heading' => 'Preventing invalid JSON in the first place',
+                'list' => [
+                    'Generate JSON with your language\'s built-in encoder, such as JSON.stringify in JavaScript or json.dumps in Python, instead of joining strings by hand.',
+                    'Use an editor that highlights JSON syntax, so a missing quote stands out as you type.',
+                    'Do not write JSON in a word processor; it changes quotes and dashes.',
+                    'If you need comments in a config file, check whether the program accepts a format that allows them, such as JSON5 or YAML, rather than adding them to strict JSON.',
+                ],
+            ],
         ],
         'faqs' => [
             ['q' => 'Why does JSON not allow trailing commas?', 'a' => 'The JSON standard simply does not include them. A comma must be followed by another value.'],
             ['q' => 'Can JSON have comments?', 'a' => 'No. Standard JSON has no comment syntax. Some tools accept variants such as JSON5, but a strict parser will reject them.'],
             ['q' => 'Why is the error position after my mistake?', 'a' => 'The parser reports where it could no longer continue, which is often the character right after the real problem.'],
+            ['q' => 'Is a single number or string valid JSON?', 'a' => 'Yes. Under the current standard, any JSON value can stand on its own, so 42, "hello", true and null are all valid documents.'],
+            ['q' => 'Why did my long ID number change after formatting?', 'a' => 'JavaScript numbers are only exact up to 9,007,199,254,740,991. Larger whole numbers are rounded when the JSON is read. Store such IDs as strings.'],
+            ['q' => 'Does the formatter fix errors automatically?', 'a' => 'No. It shows where the error is and, for common mistakes, what to change, but you make the fix yourself so nothing is changed without you seeing it.'],
         ],
         'sources' => [
-            ['title' => 'RFC 8259, The JavaScript Object Notation (JSON) Data Interchange Format', 'url' => 'https://www.rfc-editor.org/rfc/rfc8259'],
-            ['title' => 'MDN Web Docs, SyntaxError: JSON.parse: bad parsing', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/JSON_bad_parse'],
+            [
+                'title' => 'RFC 8259, The JavaScript Object Notation (JSON) Data Interchange Format',
+                'url' => 'https://www.rfc-editor.org/rfc/rfc8259',
+            ],
+            [
+                'title' => 'MDN Web Docs, SyntaxError: JSON.parse: bad parsing',
+                'url' => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/JSON_bad_parse',
+            ],
         ],
     ],
 
@@ -2047,12 +2523,13 @@ return [
         'tool' => 'domain-authority-checker',
         'related' => ['domain-age-checker', 'broken-link-checker', 'readability-checker'],
         'published' => '2026-11-04',
-        'updated' => '2026-11-04',
+        'updated' => '2026-11-10',
         'sections' => [
             [
                 'heading' => 'The metrics compared',
                 'paragraphs' => [
                     'All of these estimate how strong a site is from links pointing to it. They are not interchangeable: a DR of 40 and a DA of 40 are different measurements.',
+                    'Each company crawls the web with its own crawler, or uses a public crawl, and counts the links it finds. Because no crawl sees the whole web, and each formula weighs links differently, the same domain can look strong on one metric and average on another. That is normal, and it is the main reason to stick to one metric when you compare sites.',
                 ],
                 'table' => [
                     'headers' => ['Metric', 'Made by', 'Scale'],
@@ -2077,12 +2554,71 @@ return [
                     'The scales are logarithmic, so each step up is much harder than the last. Moving from 2 to 3 on OpenPageRank takes far fewer links than moving from 8 to 9. As a rough guide, new sites sit near 0, small established sites often score 2 to 4, well-known brands 5 to 7, and only the largest sites go higher.',
                     'The better question is how you compare with the sites ranking for the searches you want. Paste your competitors in alongside your own domain and sort the table. If they are all at 3, you are in reach at 2.5. If they are all at 7, you need a different target for now.',
                 ],
+                'table' => [
+                    'headers' => ['OpenPageRank score', 'Typical kind of site (rough guide)'],
+                    'rows' => [
+                        ['0 or not found', 'New sites, or sites with very few links'],
+                        ['2 to 4', 'Small established sites and local businesses'],
+                        ['5 to 7', 'Well-known brands and popular publications'],
+                        ['8 and above', 'Only the largest sites on the web'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'How to check scores in bulk, step by step',
+                'list' => [
+                    'Open the [Bulk Domain Authority Checker](/domain-authority-checker) and paste your domains into the box, one per line. Up to 100 domains are checked at a time.',
+                    'Full addresses are fine: https://www.example.com/page is reduced to the domain. Anything that is not a domain is skipped and listed in a warning, so you can see what was left out.',
+                    'Click Check authority. The table shows each domain\'s OpenPageRank score out of 10, its global rank and the number of referring domains.',
+                    'Use Sort by to order the table by Highest score, Domain A-Z or Your order. The summary above it shows how many domains were checked, how many have a score, and the average score of those that do.',
+                    'Click Details on a row for that domain\'s registration record, public DNS and HTTPS certificate. With a single domain, the details open automatically.',
+                    'Click Download CSV to keep the results in a spreadsheet and compare them again in a few months.',
+                ],
+            ],
+            [
+                'heading' => 'What happens to the domains you enter',
+                'paragraphs' => [
+                    'Unlike most tools on this site, this one has to ask an outside service, so it does not run only in your browser. The list of domains you paste is sent to our server, which looks up the scores with the OpenPageRank service and caches the answers. The Details panel is also fetched by our server, from registry RDAP records, public DNS and the site\'s HTTPS certificate. Only the domain names are sent, nothing else.',
+                    'Because the scores come from a free service, there is a daily limit on lookups, and checking many lists in a short time may ask you to wait a minute. The date of the data is shown under the table.',
+                ],
+            ],
+            [
+                'heading' => 'Worked example: sizing up your competition',
+                'paragraphs' => [
+                    'Say you run a small bakery website and want to rank for a search like "birthday cakes" in your town. Search for it, note the five sites on the first page, and paste them into the checker with your own domain, six lines in total.',
+                    'Suppose the results come back as 4.1, 3.6, 3.2, 2.9 and 2.4, with your own site at 1.8. Sort by Highest score. The average in the summary covers all six domains, 3 here; the five competitors alone average 3.24. The two weakest rivals are within about one point of you, so these searches are realistic targets if your page is genuinely more useful. The strongest one at 4.1 will take longer to catch.',
+                    'Now suppose instead that a national chain and two big recipe sites fill the first page, all scoring 6 or more. That does not mean you can never rank, but it is a sign to aim first at more specific searches, such as a particular cake style plus your town, where the competition is smaller sites.',
+                ],
+            ],
+            [
+                'heading' => 'Reading the other columns',
+                'paragraphs' => [
+                    'Referring domains is the number of different websites linking to a domain, which matters more than the raw number of links, because a thousand links from one site count for far less than a link each from a hundred sites. The global rank places the domain among all the domains OpenPageRank knows about; a lower number is stronger.',
+                    'A dash in those columns, or "Not found" in the score column, means the data source has nothing for that domain yet. Double-check the spelling first, then treat it as a sign that the site is new or has very few links.',
+                ],
             ],
             [
                 'heading' => 'What these scores are not',
                 'paragraphs' => [
                     'They are not Google rankings or a Google metric. Moz says plainly that Domain Authority is not a ranking factor. A page with a low score can outrank a stronger site if it answers the search better, especially for specific long-tail searches.',
                     'They also do not measure quality directly. Scores can be pushed up with low-quality or paid links, which is exactly what Google\'s spam policies target, so treat a sudden high score on an unknown site with some suspicion.',
+                ],
+            ],
+            [
+                'heading' => 'How to improve a low score',
+                'paragraphs' => [
+                    'Because these scores count links from other sites, the only lasting way to raise them is to earn more links from real, relevant websites. That usually comes from publishing something people want to reference: original data, a genuinely useful tool or guide, or local news and partnerships for a local business.',
+                    'Buying links or joining link schemes can lift a third-party score for a while, but it breaks Google\'s spam policies and can harm the rankings you actually care about. Expect real progress to take months, and measure it against your competitors rather than against a target number.',
+                ],
+            ],
+            [
+                'heading' => 'Common mistakes',
+                'list' => [
+                    'Comparing a Moz DA with an Ahrefs DR or an OpenPageRank score as if they were the same scale.',
+                    'Panicking about a low or missing score on a new site, which is normal.',
+                    'Choosing link partners by score alone without reading the site.',
+                    'Treating a score change from one month to the next as a ranking change; scores and rankings move independently.',
+                    'Chasing a number instead of the searches and visitors it is meant to stand for.',
                 ],
             ],
             [
@@ -2100,11 +2636,23 @@ return [
             ['q' => 'Is a domain authority of 30 good?', 'a' => 'It depends on the metric and your competitors. On a 0-100 scale, 30 is reasonable for a small site in a low-competition niche and weak in a crowded one.'],
             ['q' => 'Why does my new site show no score?', 'a' => 'Scores come from crawls of links across the web. A new site with few links often has no score yet, and that is normal.'],
             ['q' => 'Does Google use domain authority?', 'a' => 'No. DA is a Moz metric, and these scores are made by third parties to estimate strength. Google has its own systems.'],
+            ['q' => 'How many domains can I check at once?', 'a' => 'Up to 100 per check. Paste them one per line; full URLs are reduced to the domain automatically.'],
+            ['q' => 'Why is the score out of 10 and not 100?', 'a' => 'The checker shows OpenPageRank, which uses a 0-10 scale. Do not multiply it by 10 to compare with Moz or Ahrefs; they are different formulas on different data.'],
+            ['q' => 'Are the domains I check stored or shared?', 'a' => 'The domain names are sent to our server to look up the scores and details, and the answers are cached. No other information is sent.'],
         ],
         'sources' => [
-            ['title' => 'OpenPageRank: how the score is calculated', 'url' => 'https://openpagerank.keywordseverywhere.com/methodology'],
-            ['title' => 'Moz, What is Domain Authority?', 'url' => 'https://moz.com/learn/seo/domain-authority'],
-            ['title' => 'Google Search Central, Spam policies: link spam', 'url' => 'https://developers.google.com/search/docs/essentials/spam-policies'],
+            [
+                'title' => 'OpenPageRank: how the score is calculated',
+                'url' => 'https://openpagerank.keywordseverywhere.com/methodology',
+            ],
+            [
+                'title' => 'Moz, What is Domain Authority?',
+                'url' => 'https://moz.com/learn/seo/domain-authority',
+            ],
+            [
+                'title' => 'Google Search Central, Spam policies: link spam',
+                'url' => 'https://developers.google.com/search/docs/essentials/spam-policies',
+            ],
         ],
     ],
 
@@ -2116,7 +2664,7 @@ return [
         'tool' => 'coin-flip',
         'related' => ['dice-roller', 'spin-the-wheel', 'random-number-generator'],
         'published' => '2026-11-04',
-        'updated' => '2026-11-04',
+        'updated' => '2026-11-10',
         'sections' => [
             [
                 'heading' => 'What we did',
@@ -2125,27 +2673,71 @@ return [
                 ],
                 'table' => [
                     'headers' => ['Result', 'Count', 'Share'],
-                    'rows' => [['Heads', '510', '51%'], ['Tails', '490', '49%'], ['Total', '1,000', '100%']],
+                    'rows' => [
+                        ['Heads', '510', '51%'],
+                        ['Tails', '490', '49%'],
+                        ['Total', '1,000', '100%'],
+                    ],
                 ],
             ],
             [
                 'heading' => 'Is 510 out of 1,000 fair?',
                 'paragraphs' => [
-                    'Yes. With 1,000 fair flips, the typical distance from 500 is about 16 flips (the standard deviation, the square root of 1,000 x 0.5 x 0.5). Our result is 10 away, well inside normal variation. An exact 500 would not be any more impressive.',
+                    'Yes. With 1,000 fair flips, the typical distance from 500 is about 16 flips (the standard deviation, the square root of 1,000 x 0.5 x 0.5, which is 15.8). Our result is 10 away, well inside normal variation. An exact 500 would not be any more impressive.',
                     'One run cannot prove a coin is fair; it can only fail to show a problem. A much larger gap, say 600 heads in 1,000, would be a real warning sign, since that is more than six standard deviations from the middle.',
+                ],
+            ],
+            [
+                'heading' => 'What normal variation looks like',
+                'paragraphs' => [
+                    'The binomial distribution tells you exactly how uneven a fair coin is allowed to look. These figures are calculated, not measured, and they apply to any fair coin, real or virtual.',
+                ],
+                'table' => [
+                    'headers' => ['Flips', 'Chance of an exact 50/50 split', 'At least 95% of fair runs land between'],
+                    'rows' => [
+                        ['10', '24.6% (exactly 5 heads)', '2 and 8 heads'],
+                        ['100', '8.0% (exactly 50 heads)', '40 and 60 heads'],
+                        ['1,000', '2.5% (exactly 500 heads)', '469 and 531 heads'],
+                    ],
+                ],
+                'list' => [
+                    'With 10 flips, a lopsided result is common: 8 or more of one side, either way, happens about 11% of the time.',
+                    'With 1,000 flips, only about half of all fair runs land between 490 and 510 heads. Our 510 sits right at the edge of that middle band, which is entirely ordinary.',
+                    'The percentage gets closer to 50% as you flip more, but the raw gap from an even split tends to grow. That is the law of large numbers working as it should, not a sign of bias.',
                 ],
             ],
             [
                 'heading' => 'Streaks are normal',
                 'paragraphs' => [
-                    'People expect random results to alternate, so a run of five heads looks suspicious. It is not. In a long series of flips, runs like that are expected. Each flip is independent: after five heads the next is still 50/50. Believing tails is now "due" is the gambler\'s fallacy.',
+                    'People expect random results to alternate, so a run of five heads looks suspicious. It is not. Each flip is independent: after five heads the next is still 50/50. Believing tails is now "due" is the gambler\'s fallacy.',
+                    'In fact, long runs are close to guaranteed. In 100 fair flips, the chance of seeing a run of at least 5 of the same side somewhere is about 97%, at least 6 about 81%, and at least 7 about 54%. In 1,000 flips, a run of 10 or more turns up about 62% of the time. A list of results with no runs longer than three would be more suspicious than one with a streak of seven.',
+                ],
+            ],
+            [
+                'heading' => 'How to run your own test',
+                'list' => [
+                    'Open the [Coin Flip](/coin-flip) tool and choose 100 under Coins per flip.',
+                    'Press Flip 100 coins ten times. You can also press F, the space bar or Enter.',
+                    'Read the Heads, Tails and Total flips counters and the percentage bar underneath.',
+                    'Compare the result with the table above: anything between about 469 and 531 heads in 1,000 is what a fair coin produces 95% of the time.',
+                    'Click Reset stats to start a fresh test.',
+                ],
+                'paragraphs' => [
+                    'The counters keep the most recent 1,000 coins, so for a test of exactly 1,000, reset first. The streak counter shows the current run of heads or tails, and the row of small coins shows the last 24 results, which is a good way to see for yourself how often runs of three or four appear.',
+                ],
+            ],
+            [
+                'heading' => 'One coin or many: same odds',
+                'paragraphs' => [
+                    'With one coin selected, the tool shows a full toss animation and lands on the result; with 2 to 100 coins it shows a grid of small coins and a heads and tails count. The display is the only difference. Every coin in a batch is decided separately by the same generator, so flipping 100 coins once is statistically the same as flipping one coin 100 times, just faster. That makes the batch mode the practical choice for testing, and the single coin the friendlier choice for settling who goes first. If your device is set to reduce motion, the result appears without the animation.',
                 ],
             ],
             [
                 'heading' => 'Where the randomness comes from',
                 'paragraphs' => [
-                    'Our random tools use your browser\'s crypto.getRandomValues, a cryptographically secure generator, rather than the simpler Math.random. The code also avoids a subtle bias called modulo bias by discarding values that would skew the result. The flip happens on your device, so the site does not choose the outcome.',
-                    'The same source drives the [Dice Roller](/dice-roller) and [Spin the Wheel](/spin-the-wheel), so all of them have the same basis for fairness.',
+                    'Our random tools use your browser\'s crypto.getRandomValues, a cryptographically secure generator, rather than the simpler Math.random. The flip happens on your device, so the site does not choose the outcome.',
+                    'The code also guards against a subtle problem called modulo bias by discarding random values that would favour some outcomes over others. For a coin it never has to: the generator produces one of 2^32 equally likely numbers, which divides exactly into two halves, so heads and tails each get exactly half. The guard matters for things like a 6-sided die, where 2^32 does not divide evenly by 6.',
+                    'The same source drives the [Dice Roller](/dice-roller), [Spin the Wheel](/spin-the-wheel) and the [Random Number Generator](/random-number-generator), so all of them have the same basis for fairness.',
                 ],
             ],
             [
@@ -2153,20 +2745,36 @@ return [
                 'list' => [
                     'Run a large sample and compare it with what chance predicts, not with a perfect split.',
                     'Look for a statement of how results are generated. Secure browser randomness is a good sign.',
+                    'Check whether the result is decided on your device or on a server you cannot see. A server-side result is not necessarily unfair, but you are trusting the operator.',
                     'For anything with money or legal weight, use a process people can witness or audit. A website is fine for deciding who goes first, not for a prize draw with legal rules.',
                 ],
                 'paragraphs' => [
                     'Virtual coins also skip a detail of real ones: studies of human coin tossing have found a slight tendency to land on the side that started up. A software flip has no starting side.',
                 ],
             ],
+            [
+                'heading' => 'Common misunderstandings',
+                'list' => [
+                    '"It gave heads three times, so it must be broken." Three in a row happens one time in eight for any three flips.',
+                    '"I flipped 10 and got 7 heads, so it is biased." Seven or more heads in 10 flips happens about 17% of the time.',
+                    '"Best of three is fairer than one flip." Each player still has exactly a 50% chance; it only takes longer.',
+                    '"The animation decides the result." The result is chosen first by the random generator, and the spinning coin is then drawn to land on it.',
+                ],
+            ],
         ],
         'faqs' => [
             ['q' => 'Is a virtual coin flip truly random?', 'a' => 'It is random enough for everyday decisions. Ours uses the browser\'s cryptographically secure generator, which is designed to be unpredictable.'],
-            ['q' => 'What are the odds of 5 heads in a row?', 'a' => 'One in 32, or about 3%, for any given five flips: 0.5 multiplied by itself five times.'],
+            ['q' => 'What are the odds of 5 heads in a row?', 'a' => 'One in 32, or about 3%, for any given five flips: 0.5 multiplied by itself five times. Somewhere within 100 flips, a run of 5 of the same side is very likely, at about 97%.'],
             ['q' => 'Does the previous flip affect the next one?', 'a' => 'No. Each flip is independent and stays 50/50.'],
+            ['q' => 'How many coins can I flip at once?', 'a' => 'Up to 100 per flip. You can choose 1, 2, 5, 10, 25 or 100 coins, and the tool counts heads and tails for you.'],
+            ['q' => 'Is it fair for settling a decision between two people?', 'a' => 'Yes, for everyday choices. Agree who takes heads before anyone flips, flip once, and accept the result; re-flipping until someone likes the answer is what makes it unfair.'],
+            ['q' => 'How many flips do I need to test fairness?', 'a' => 'Several hundred at least. With 10 flips almost any split is normal; with 1,000 a fair coin lands between 469 and 531 heads about 95% of the time.'],
         ],
         'sources' => [
-            ['title' => 'MDN Web Docs, Crypto: getRandomValues()', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues'],
+            [
+                'title' => 'MDN Web Docs, Crypto: getRandomValues()',
+                'url' => 'https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues',
+            ],
         ],
     ],
 
@@ -2178,52 +2786,113 @@ return [
         'tool' => 'broken-link-checker',
         'related' => ['domain-authority-checker', 'domain-age-checker', 'readability-checker'],
         'published' => '2026-11-04',
-        'updated' => '2026-11-04',
+        'updated' => '2026-11-10',
         'sections' => [
             [
                 'heading' => 'How to run the check',
-                'list' => [
-                    'Open the [Broken Link Checker](/broken-link-checker) and enter the address of one page.',
-                    'Click Check links. It tests every link and image on that page, up to 300.',
-                    'Read the Problems tab first, then download the CSV if you want a list to work through.',
-                    'Repeat for your other important pages.',
-                ],
                 'paragraphs' => [
-                    'When we ran it on our own About page, it checked 82 links: 82 OK, 0 broken, 0 redirects and 0 blocked. This tool has to use our server to fetch the links, because a browser page is not allowed to test other sites directly. It sends the address you enter and stores nothing.',
+                    'When we ran it on our own About page, it checked 82 links: 82 OK, 0 broken, 0 redirects and 0 blocked. This tool has to use our server to fetch the links, because a browser page is not allowed to test other sites directly. It sends the address you enter and stores nothing: our server fetches the page and each link only to read its status, and does not save the address or the results.',
+                ],
+                'list' => [
+                    'Open the [Broken Link Checker](/broken-link-checker) and enter the address of one page in Page address (URL).',
+                    'Click Check links. It tests every link and image on that page, up to 300, and shows progress as it goes. Click Stop if you want to end early.',
+                    'Read the Problems tab first. The Redirects, OK and All tabs show the rest.',
+                    'Download the CSV if you want a list to work through. It includes each URL, its status code, the result, the final address after any redirects, the link text, whether it is a link or an image, and whether it is internal or external.',
+                    'Repeat for your other important pages.',
                 ],
             ],
             [
                 'heading' => 'What the results mean',
+                'paragraphs' => [
+                    'Each link ends up in one of the groups in the table below. Under every result you can also see whether it is a link or an image, its link text, whether it points to your own site (Internal) or elsewhere (External), and, for redirects, where it ends up.',
+                    'Blocked is not the same as broken. Plenty of large sites turn away automated requests while working perfectly for people, so check those by hand. A link that redirects and then lands on a missing page counts as broken, because what matters is where the visitor ends up.',
+                ],
                 'table' => [
                     'headers' => ['Result', 'Meaning', 'What to do'],
                     'rows' => [
                         ['OK', 'The link works', 'Nothing'],
-                        ['Broken', 'A missing page, server error or dead domain', 'Update the link or remove it'],
+                        [
+                            'Broken',
+                            'A missing page (such as 404 or 410), a server error (500 and up) or a domain that no longer exists',
+                            'Update the link or remove it',
+                        ],
                         ['Redirect', 'It still works, through another address', 'Point it at the final address when convenient'],
-                        ['Blocked or no answer', 'The site refused an automated check, often with 401, 403 or 429', 'Open it in a browser before changing anything'],
+                        ['Blocked', 'The site refused an automated check, with 401, 403 or 429', 'Open it in a browser before changing anything'],
+                        ['No answer', 'No response in time, or too many redirects', 'Try the link yourself; the site may be slow or down for now'],
                     ],
                 ],
+            ],
+            [
+                'heading' => 'A worked example: triaging one page',
                 'paragraphs' => [
-                    'Blocked is not the same as broken. Plenty of large sites turn away automated requests while working perfectly for people, so check those by hand.',
+                    'Suppose a blog post has 40 links and the checker reports 34 OK, 3 redirects, 2 broken and 1 blocked. Here is a sensible order to handle them, most urgent first.',
+                ],
+                'list' => [
+                    'The 2 broken links. Open each one. If the page moved, search the site for its new address and update your link. If it is gone for good, find another source or reword the sentence.',
+                    'The 1 blocked link. Open it in your browser. If it loads normally, the site simply refused our automated check and there is nothing to fix.',
+                    'The 3 redirects. Look at where each one ends up. If http:// now goes to https://, or an old address goes to the same article at a new address, update the link to the final address when you next edit the post. If a redirect lands on a site\'s home page instead of the article you linked, treat it as broken: the content you cited is probably gone.',
+                    'Run the check again to confirm the Problems tab is empty.',
                 ],
             ],
             [
                 'heading' => 'Which pages to check first',
                 'paragraphs' => [
                     'The tool checks one page at a time, so start where a broken link costs the most: your home page, main menu and footer (which appear everywhere), your most visited articles, and any page that earns money or leads.',
-                    'Old articles collect the most dead links, because they often point to sources that have since moved. Check them once or twice a year.',
+                    'Old articles collect the most dead links, because they often point to sources that have since moved. Check them once or twice a year. A link in your menu or footer appears on every page, so fixing it once on the template fixes it everywhere.',
                 ],
             ],
             [
                 'heading' => 'How to fix what you find',
+                'paragraphs' => [
+                    'Broken outgoing links are mainly a problem for visitors. Google has said broken links are a normal part of the web, so do not panic over a few. Treat this as upkeep. To see how strong the sites linking to you are, try the [Bulk Domain Authority Checker](/domain-authority-checker).',
+                ],
                 'list' => [
                     'If the page moved, update the link to its new address.',
                     'If it is gone, find a replacement source or remove the link and adjust the sentence.',
                     'If the broken page is on your own site, add a redirect to the closest live page so existing links keep working.',
                     'Never delete a page that other sites link to without a redirect: that throws those links away.',
+                    'For a broken image, upload the image again or point to a working copy, and keep its alt text.',
                 ],
+            ],
+            [
+                'heading' => 'What the checker does not see',
                 'paragraphs' => [
-                    'Broken outgoing links are mainly a problem for visitors. Google has said broken links are a normal part of the web, so do not panic over a few. Treat this as upkeep. To see how strong the sites linking to you are, try the [Bulk Domain Authority Checker](/domain-authority-checker).',
+                    'Knowing the limits helps you read a clean result correctly. The checker reads the page\'s HTML as the server sends it, the same way a search engine first sees it.',
+                ],
+                'list' => [
+                    'Links added by JavaScript after the page loads are not in that HTML, so they are not checked.',
+                    'Only ordinary links and images are tested. Email (mailto:), phone (tel:) and javascript: links are skipped, as are links to a #section on the same page.',
+                    'The part of an address after # is ignored, so a link to a missing section of a working page shows as OK.',
+                    'A page that says "not found" but returns a normal success code (a so-called soft 404) shows as OK, because the server reported success.',
+                    'The same address linked twice on a page is checked once.',
+                    'Only public websites can be checked. Addresses on your own computer or a private office network are refused.',
+                    'On a page with more than 300 links, the first 300 are checked and a note tells you the rest were skipped.',
+                ],
+            ],
+            [
+                'heading' => 'If the page itself cannot be checked',
+                'paragraphs' => [
+                    'Sometimes the tool cannot read the page you entered, so it has no links to test. The message tells you why. If you run many checks in a short time you may be asked to wait a minute; the limits keep our server from hammering other sites.',
+                ],
+                'table' => [
+                    'headers' => ['Message', 'Likely cause', 'What to do'],
+                    'rows' => [
+                        ['That website could not be found', 'A typo in the address, or the domain has expired', 'Check the spelling'],
+                        [
+                            'The page answered with error 404 (or another code)',
+                            'The page you entered is itself missing or broken',
+                            'Open it in a browser and check the address',
+                        ],
+                        ['The website did not respond', 'The site is down, slow or blocking automated checks', 'Try again later'],
+                        ['That address is not a web page (HTML)', 'You entered a PDF, image or other file', 'Enter the page that links to it instead'],
+                        ['This address can\'t be checked', 'A local, private or unusual address or port', 'Use the public address of the page'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'A simple routine',
+                'paragraphs' => [
+                    'Most sites only need a light, regular check rather than a big clean-up. Once a quarter, run the [Broken Link Checker](/broken-link-checker) on your home page and your five most visited pages, fix anything on the Problems tab, and keep the CSV files so you can see what changed since last time. Before publishing a long article with many sources, check it once too: sources you found months ago may already have moved. If the article is long and dense, the [Readability Checker](/readability-checker) is a useful second pass while you are editing.',
                 ],
             ],
         ],
@@ -2231,9 +2900,15 @@ return [
             ['q' => 'Does a broken link hurt SEO?', 'a' => 'A few rarely matter on their own. The clearer costs are a poor visitor experience and, for broken pages on your own site, losing the value of links pointing to them.'],
             ['q' => 'Can this check my whole website at once?', 'a' => 'No. It checks one page at a time, up to 300 links. Enter your other pages one by one.'],
             ['q' => 'Why is a working link marked Blocked?', 'a' => 'Some sites refuse automated requests or require a login. Open the link in a normal browser to confirm.'],
+            ['q' => 'Are redirects a problem?', 'a' => 'Not usually. The link still works. Updating it to the final address saves a step for visitors and avoids surprises if the redirect is ever removed.'],
+            ['q' => 'Does it check images too?', 'a' => 'Yes. Images on the page are checked alongside links and marked Image in the results.'],
+            ['q' => 'Why does a link work for me but show No answer?', 'a' => 'The site may have been slow to respond, or it may ignore automated requests. Try the check again later, or open the link yourself.'],
         ],
         'sources' => [
-            ['title' => 'MDN Web Docs, HTTP response status codes', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Status'],
+            [
+                'title' => 'MDN Web Docs, HTTP response status codes',
+                'url' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Status',
+            ],
         ],
     ],
 
@@ -2245,13 +2920,20 @@ return [
         'tool' => 'domain-age-checker',
         'related' => ['domain-authority-checker', 'broken-link-checker', 'what-is-my-ip'],
         'published' => '2026-11-04',
-        'updated' => '2026-11-04',
+        'updated' => '2026-11-10',
         'sections' => [
             [
                 'heading' => 'How to check',
+                'list' => [
+                    'Open the [Domain Age Checker](/domain-age-checker).',
+                    'Type or paste a domain, or up to 20 domains, one per line. Full addresses such as https://www.example.com/page are fine; they are reduced to the domain, and a leading www. is dropped.',
+                    'Click Check domain age.',
+                    'Read the table: created date, age, expiry, last update, registrar, status and nameservers for each domain.',
+                    'Click Download CSV if you want to keep the results or compare them in a spreadsheet.',
+                ],
                 'paragraphs' => [
-                    'Enter the domain in the [Domain Age Checker](/domain-age-checker), or up to 20 domains, one per line. Full addresses are fine; they are reduced to the domain. We looked up wikipedia.org on 4 November 2026: it was created on January 13, 2001, which made it 25 years, 9 months and 22 days old that day.',
-                    'The tool looks the domain up in public registration records through our server. It sends only the domain name and stores nothing.',
+                    'We looked up wikipedia.org on 4 November 2026: it was created on January 13, 2001, which made it 25 years, 9 months and 22 days old that day. The age is shown in the short form 25y 9m 22d.',
+                    'The tool looks the domain up in public registration records through our server, using RDAP, the structured successor to WHOIS. It sends only the domain name and does not keep a record of who searched for what. Registration records are cached on the server for up to a day, because they rarely change.',
                 ],
             ],
             [
@@ -2260,15 +2942,46 @@ return [
                     'headers' => ['Field', 'What it tells you'],
                     'rows' => [
                         ['Created', 'When this registration began'],
-                        ['Age', 'Time since that date'],
+                        ['Age', 'Time since that date, in years, months and days'],
                         ['Expires', 'When it must be renewed'],
-                        ['Last updated', 'When the record last changed, such as a renewal'],
+                        ['Last updated', 'When the record last changed, such as a renewal or a change of nameservers'],
                         ['Registrar', 'The company it was registered through'],
-                        ['Status and nameservers', 'Its current state and where its DNS is hosted'],
+                        ['Status', 'Codes from the registry, such as client transfer prohibited'],
+                        ['Nameservers', 'Where its DNS is hosted, which often hints at the hosting or DNS provider'],
                     ],
                 ],
                 'paragraphs' => [
-                    'The owner\'s personal details are usually hidden for privacy, so this normally will not tell you who runs a site.',
+                    'The owner\'s personal details are usually hidden for privacy, so this normally will not tell you who runs a site. Some registries also publish fewer fields than others; a dash in a column means the registry did not provide that value.',
+                ],
+            ],
+            [
+                'heading' => 'Reading the age: a worked example',
+                'paragraphs' => [
+                    'The age is counted in calendar months, not in blocks of 30 days. For wikipedia.org, January 13, 2001 to October 13, 2026 is 25 years and 9 months, and October 13 to November 4 adds 22 days: 18 days to the end of October plus 4 in November.',
+                    'Now a hypothetical case. A shop\'s About page says it has been trading since 2005, but the domain shows Created August 20, 2026 and, on November 10, 2026, an age of 0y 2m 21d. That does not prove anything by itself: the business may have moved to a new domain. It is a reason to look for older evidence, such as reviews from before August 2026 or a company registration number you can look up.',
+                ],
+            ],
+            [
+                'heading' => 'Making sense of the status codes',
+                'paragraphs' => [
+                    'The Status column shows the registry\'s own codes, unchanged. Most healthy domains show active plus one or more "prohibited" codes, which are locks rather than problems.',
+                ],
+                'table' => [
+                    'headers' => ['Status', 'What it usually means'],
+                    'rows' => [
+                        ['active', 'Registered and working normally'],
+                        [
+                            'client transfer prohibited',
+                            'A lock set by the registrar so the domain cannot be moved to another registrar without the owner unlocking it; a normal security setting',
+                        ],
+                        ['client delete prohibited / client update prohibited', 'Further locks against accidental or unauthorised changes'],
+                        ['redemption period', 'The domain expired and was not renewed; the previous owner can still restore it, usually for a fee'],
+                        ['pending delete', 'The domain is about to be released and may soon be registrable by anyone'],
+                    ],
+                ],
+                'list' => [
+                    '"Server" versions of the same codes are set by the registry rather than the registrar, often for high-value domains.',
+                    'A domain in redemption period or pending delete on a site you rely on is worth telling its owner about, if you can reach them.',
                 ],
             ],
             [
@@ -2276,15 +2989,58 @@ return [
                 'list' => [
                     'Checking a shop or a message before you pay: a very new domain is a reason to look harder, though not proof of anything.',
                     'Buying a domain: the history shows how long it has been registered.',
-                    'Checking your own renewals: note the expiry date so a domain never lapses by accident.',
+                    'Checking your own renewals: paste all your domains at once, download the CSV and note each expiry date so a domain never lapses by accident.',
                     'Researching competitors or link partners, alongside their [authority score](/domain-authority-checker).',
+                    'Spotting look-alike domains: a domain that copies a well-known brand with one letter changed and was created recently is a classic phishing sign.',
                 ],
             ],
             [
                 'heading' => 'What it cannot tell you',
                 'paragraphs' => [
-                    'Age is not a measure of trust on its own. A new domain can belong to an honest new business, and an old one can be bought by anyone. The created date also resets if a domain lapses and is registered again, so it may not reach back to its earliest use.',
+                    'Age is not a measure of trust on its own. A new domain can belong to an honest new business, and an old one can be bought by anyone. The created date also resets if a domain lapses and is registered again, so it may not reach back to its earliest use. A domain that changed hands without lapsing keeps its original date, so an old date does not mean the same people have run it all along.',
                     'Domain age is also not a ranking boost. Google\'s John Mueller has said publicly that it does not help. Older sites often rank well because they have had longer to earn links and build content, not because of the date itself. Do not pay extra for an "aged" domain on that promise alone.',
+                ],
+            ],
+            [
+                'heading' => 'Troubleshooting',
+                'table' => [
+                    'headers' => ['Message or result', 'Likely cause', 'What to do'],
+                    'rows' => [
+                        [
+                            'No RDAP record was found',
+                            'The domain is not registered, was registered minutes ago, or you entered a subdomain',
+                            'Check the spelling, and enter the registered domain (example.com rather than shop.example.com). A brand-new registration can take up to a day to show here',
+                        ],
+                        [
+                            'This domain\'s extension does not have an RDAP service yet',
+                            'Some country-code extensions do not offer RDAP',
+                            'Use that registry\'s own WHOIS lookup page',
+                        ],
+                        [
+                            'Skipped (not a domain)',
+                            'The line was not a valid domain name',
+                            'Remove spaces and stray characters, and include the extension, such as .com',
+                        ],
+                        ['Could not be checked right now', 'The registry did not answer in time', 'Try again in a minute'],
+                        [
+                            'Expiry date looks out of date',
+                            'The domain was renewed after the record was cached',
+                            'Check again the next day, or ask the registrar',
+                        ],
+                    ],
+                ],
+                'paragraphs' => [
+                    'If you enter more than 20 domains, the tool asks you to shorten the list rather than checking only some of them. Duplicates are checked once.',
+                ],
+            ],
+            [
+                'heading' => 'A quick checklist for judging an unfamiliar site',
+                'list' => [
+                    'Check the domain age with the [Domain Age Checker](/domain-age-checker) and compare it with what the site claims about its history.',
+                    'Look at the registrar and nameservers. They are not proof of anything, but a sudden change can explain why a long-running site suddenly looks different.',
+                    'Search for independent reviews and complaints that predate the domain\'s creation date.',
+                    'Check the site\'s links: a page full of [broken links](/broken-link-checker) suggests nobody maintains it.',
+                    'Pay with a method that offers buyer protection when you are unsure.',
                 ],
             ],
         ],
@@ -2292,9 +3048,15 @@ return [
             ['q' => 'Does domain age affect SEO?', 'a' => 'Not directly. Google has said age itself does not help. Older sites simply have had more time to earn links and publish.'],
             ['q' => 'Can I see who owns a domain?', 'a' => 'Usually not. Most registrations hide personal details for privacy, though the registrar is shown.'],
             ['q' => 'Is a new domain a scam?', 'a' => 'Not necessarily. It is one signal to weigh along with reviews, contact details and payment protection.'],
+            ['q' => 'How many domains can I check at once?', 'a' => 'Up to 20, one per line. Full URLs are reduced to the domain automatically, and you can download the results as a CSV.'],
+            ['q' => 'Why does a subdomain show no record?', 'a' => 'Registration records exist for the registered domain, such as example.com, not for subdomains like blog.example.com. Enter the main domain instead.'],
+            ['q' => 'Is RDAP the same as WHOIS?', 'a' => 'It holds the same registration data, served in a structured format. RDAP is the protocol that is replacing WHOIS.'],
         ],
         'sources' => [
-            ['title' => 'ICANN, Registration Data Access Protocol (RDAP)', 'url' => 'https://www.icann.org/rdap'],
+            [
+                'title' => 'ICANN, Registration Data Access Protocol (RDAP)',
+                'url' => 'https://www.icann.org/rdap',
+            ],
         ],
     ],
 
@@ -2306,7 +3068,7 @@ return [
         'tool' => 'what-is-my-ip',
         'related' => ['password-generator', 'domain-age-checker', 'qr-code-generator'],
         'published' => '2026-11-04',
-        'updated' => '2026-11-04',
+        'updated' => '2026-11-10',
         'sections' => [
             [
                 'heading' => 'What an IP address shows',
@@ -2319,12 +3081,14 @@ return [
                 'heading' => 'What your browser shares too',
                 'paragraphs' => [
                     'The IP is only part of it. Open [What Is My IP](/what-is-my-ip) and you will see what any page can read from your browser without asking.',
+                    'None of the details in the table below needs a permission prompt. Each one on its own is shared by millions of people, but together they narrow things down, which is why advertisers combine them into a so-called fingerprint. The tool also shows your full user agent string, so you can see exactly what your browser announces to every site.',
                 ],
                 'table' => [
                     'headers' => ['Detail', 'Where it comes from'],
                     'rows' => [
                         ['Public IP and IPv4 or IPv6', 'Your connection, seen by the server'],
                         ['Browser and operating system', 'The user agent your browser sends'],
+                        ['Device type (desktop, mobile or tablet)', 'Worked out from the user agent'],
                         ['Screen resolution', 'Readable by the page'],
                         ['Language and time zone', 'Your browser settings'],
                         ['Whether cookies are enabled', 'Your browser settings'],
@@ -2334,7 +3098,22 @@ return [
             [
                 'heading' => 'How our tool works',
                 'paragraphs' => [
-                    'To show your public IP, the page has to ask our server which address your request came from, since a page cannot see it alone. The IP is sent back to you and we do not store it in that lookup. The other details are read by the page in your own browser. The site also uses analytics and advertising, as our privacy policy explains.',
+                    'To show your public IP, the page has to ask our server which address your request came from, since a page cannot see it alone. The IP is sent back to you and we do not store it in that lookup. Each request uses a unique address and tells caches not to keep the answer, so a cached copy can never show you someone else\'s IP. Click Refresh to look it up again, for example after switching network, and Copy IP to copy it.',
+                    'The other details are read by the page in your own browser. Our tool does not look up a location for your IP; it shows the address and your browser details only. The site also uses analytics and advertising, as our privacy policy explains.',
+                ],
+            ],
+            [
+                'heading' => 'IPv4 and IPv6',
+                'paragraphs' => [
+                    'An IPv4 address is four numbers from 0 to 255 separated by dots, such as 203.0.113.9. There are only about 4.3 billion of them (2 to the power of 32), far fewer than the devices online, which is why providers share them. An IPv6 address is longer, written in groups of letters and digits separated by colons, such as 2001:db8::1, and the pool is so large that every device can have its own.',
+                    'Many connections support both. When they do, your browser usually prefers IPv6, so seeing an IPv6 address on [What Is My IP](/what-is-my-ip) is normal. The badge next to your address tells you which one the site saw.',
+                ],
+            ],
+            [
+                'heading' => 'Public and private addresses',
+                'paragraphs' => [
+                    'Your router gives each device at home a private address, usually starting 192.168., 10. or 172.16. to 172.31. These addresses are reused in millions of homes and are not visible to websites. The router then sends everyone\'s traffic out through one public address, which is the one websites see.',
+                    'That explains two things people often ask about. Every device on your home Wi-Fi shows the same public IP, and the address in your computer\'s network settings is different from the one our tool shows. Both are expected.',
                 ],
             ],
             [
@@ -2344,14 +3123,34 @@ return [
                     'Phone networks and many providers share one public IP among lots of customers.',
                     'A VPN hides your IP from the sites you visit by showing the VPN\'s address instead, and hides your traffic from your provider. The VPN company can then see that traffic, so choose carefully.',
                 ],
+                'paragraphs' => ['A VPN does not make you anonymous. Logins, cookies and browser details can still identify you, as can a site you are signed in to.'],
+            ],
+            [
+                'heading' => 'Test what your VPN actually changes',
+                'list' => [
+                    'With the VPN off, open [What Is My IP](/what-is-my-ip) and note the IP address, language and time zone.',
+                    'Turn the VPN on and connect to a server in another country.',
+                    'Click Refresh. The IP should change to the VPN\'s address.',
+                    'Now look at the rest of the table. Your language and time zone have not changed, because they come from your device, not your connection.',
+                    'If the IP did not change, the VPN is not routing your browser\'s traffic. Reconnect it, or check whether it is set to cover only some apps.',
+                ],
                 'paragraphs' => [
-                    'A VPN does not make you anonymous. Logins, cookies and browser details can still identify you, as can a site you are signed in to.',
+                    'The time zone point matters if you use a VPN to appear to be elsewhere. A site that sees a VPN address in one country and a browser time zone from another can tell that something does not match.',
+                ],
+            ],
+            [
+                'heading' => 'When knowing your IP is useful',
+                'list' => [
+                    'Setting up remote access or a game server, where someone asks for your public address.',
+                    'Checking whether a VPN or proxy is on before you browse.',
+                    'Giving your IP to support staff when a website or service has blocked it by mistake.',
+                    'Adding your address to an allow list for a work system or a hosting control panel. Remember a dynamic address can change, so the allow list may need updating.',
                 ],
             ],
             [
                 'heading' => 'What actually protects you',
                 'paragraphs' => [
-                    'Your IP address is rarely the weak point. Most accounts are lost through reused or stolen passwords and phishing. Using a unique password for each account, from a [Password Generator](/password-generator) and a password manager, plus two-step sign-in, does more for most people than hiding an IP. Be careful about scanning unknown QR codes or clicking links in unexpected messages as well.',
+                    'Your IP address is rarely the weak point. Most accounts are lost through reused or stolen passwords and phishing. Using a unique password for each account, from a [Password Generator](/password-generator) and a password manager, plus two-step sign-in, does more for most people than hiding an IP. Be careful about scanning unknown QR codes or clicking links in unexpected messages as well. If a message links to a website you do not recognise, checking how long its domain has existed with the [Domain Age Checker](/domain-age-checker) is a quick sanity test.',
                 ],
             ],
         ],
@@ -2359,9 +3158,16 @@ return [
             ['q' => 'Can someone find my home address from my IP?', 'a' => 'Not from the IP alone. It usually shows an approximate area and your provider. Linking it to a customer normally needs the provider and a legal process.'],
             ['q' => 'Why does my IP show the wrong city?', 'a' => 'Location databases are estimates, and many point to your provider\'s equipment rather than your building.'],
             ['q' => 'Does my IP change?', 'a' => 'Often, yes. Most home connections have dynamic addresses, and using mobile data or a VPN gives you a different one.'],
+            ['q' => 'Why do all my devices at home show the same IP?', 'a' => 'Your router shares one public address between every device on your network. Each device has its own private address inside the network, which websites do not see.'],
+            ['q' => 'Why is my IP address IPv6?', 'a' => 'Your provider supports IPv6 and your browser used it. That is normal and works the same way for browsing.'],
+            ['q' => 'What if the tool says it could not look up my IP?', 'a' => 'The request to our server did not get through, usually because the connection dropped or a privacy extension or firewall blocked it. Check your connection, allow the page if an extension blocked it, and click Refresh.'],
+            ['q' => 'Does the What Is My IP tool show my location?', 'a' => 'No. It shows your public IP, whether it is IPv4 or IPv6, and the browser details any page can read. It does not look up a location.'],
         ],
         'sources' => [
-            ['title' => 'MDN Web Docs, User-Agent header', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent'],
+            [
+                'title' => 'MDN Web Docs, User-Agent header',
+                'url' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent',
+            ],
         ],
     ],
 
@@ -2373,29 +3179,32 @@ return [
         'tool' => 'organize-pdf',
         'related' => ['delete-pdf-pages', 'pdf-to-png', 'split-pdf'],
         'published' => '2026-11-04',
-        'updated' => '2026-11-04',
+        'updated' => '2026-11-10',
         'sections' => [
             [
                 'heading' => 'How to reorder pages',
                 'list' => [
-                    'Open [Organize PDF](/organize-pdf) and choose your file. Each page appears as a thumbnail.',
-                    'Drag a page to its new position, or use the left and right arrow buttons under it.',
-                    'Click Save new order and download the file.',
+                    'Open [Organize PDF](/organize-pdf) and choose your file (one PDF, up to 200 MB). Each page appears as a numbered thumbnail.',
+                    'Drag a page to its new position, or use the left and right arrow buttons under it to move it one place at a time.',
+                    'Watch the numbers under the thumbnails: they show each page\'s new position, so you can check the order before saving.',
+                    'Click Save new order and download the file. The button stays greyed out until you have actually moved something.',
                     'Open the result and check the order before you send it.',
                 ],
                 'paragraphs' => [
-                    'The arrow buttons also work from the keyboard, which helps with long documents where dragging is awkward. We opened a 3-page test file this way, and it stayed on the device: 0 bytes were uploaded.',
+                    'The arrow buttons also work from the keyboard, which helps with long documents where dragging is awkward. We opened a 3-page test file this way, and it stayed on the device: 0 bytes were uploaded. The new file is saved with "-organized" added to its name, so it never overwrites the original.',
                 ],
             ],
             [
                 'heading' => 'How to delete pages',
                 'list' => [
                     'Open [Delete PDF Pages](/delete-pdf-pages) and choose your file.',
-                    'Click the thumbnails of the pages to remove, or switch to Page ranges and type them, such as 2, 4-6.',
-                    'Click Delete pages and download the new file.',
+                    'On the Select by thumbnail tab, click each page you want to remove. Marked pages are labelled Delete; click again to keep one.',
+                    'Or switch to Page ranges and type them, such as 2, 4-6. You can also write 8- for "page 8 to the end" or -3 for "pages 1 to 3".',
+                    'Click Delete pages. The tool tells you how many pages are left and the new file size.',
+                    'Download the new file.',
                 ],
                 'paragraphs' => [
-                    'Your original file is not changed. You always get a new copy, so a wrong selection costs nothing.',
+                    'Your original file is not changed. You always get a new copy (with "-pages-deleted" in its name), so a wrong selection costs nothing. Typing mistakes are caught before anything is built: a range like 6-4 is reported as backwards, a page number beyond the end of the file is reported as out of range, and you cannot delete every page, because a PDF needs at least one.',
                 ],
             ],
             [
@@ -2406,12 +3215,32 @@ return [
                         ['Change the page order', 'Organize PDF'],
                         ['Remove a few pages and keep the rest', 'Delete PDF Pages'],
                         ['Keep only a few pages from a long file', 'Split PDF'],
+                        ['Turn a page the right way up', 'Rotate PDF'],
                         ['Turn a page into an image', 'PDF to PNG or PDF to JPG'],
                         ['Combine several files', 'Merge PDF'],
                     ],
                 ],
                 'paragraphs' => [
-                    'If you only need 3 pages out of 200, [Split PDF](/split-pdf) is quicker than deleting 197. If you need a single page as a picture, such as for a slide, use [PDF to PNG](/pdf-to-png).',
+                    'If you only need 3 pages out of 200, [Split PDF](/split-pdf) is quicker than deleting 197. If you need a single page as a picture, such as for a slide, use [PDF to PNG](/pdf-to-png). A page that is sideways or upside down is a rotation problem, not an order problem: [Rotate PDF](/rotate-pdf) fixes that.',
+                ],
+            ],
+            [
+                'heading' => 'Worked example: tidying a 10-page report',
+                'paragraphs' => [
+                    'Say a 10-page report has a blank page at position 4, and the appendix (page 10) should come straight after the contents page (page 2). Here is the order of work that avoids mistakes.',
+                ],
+                'list' => [
+                    'Delete first. In Delete PDF Pages, type 4 and click Delete pages. You now have 9 pages.',
+                    'Notice the renumbering. Every page after the deleted one has moved up a place, so the old page 10, the appendix, is now page 9.',
+                    'Reorder second. Open the new 9-page file in Organize PDF and drag the thumbnail in position 9 to position 3, right after the contents page.',
+                    'Check the result. The order is now cover, contents, appendix, then the old pages 3, 5, 6, 7, 8 and 9.',
+                ],
+            ],
+            [
+                'heading' => 'Worked example: fixing a double-sided scan',
+                'paragraphs' => [
+                    'Scanners without a duplex feeder often produce a common mess. You scan the fronts of a 6-page document, turn the stack over and scan the backs, and because the stack is upside down the backs come in reverse. The file order is then 1, 3, 5, 6, 4, 2.',
+                    'In Organize PDF, you want positions 1 to 6 to read 1, 2, 3, 4, 5, 6. Drag page 2 (currently last) to position 2, then page 4 to position 4. Pages 5 and 6 fall into place on their own. The thumbnails make it easy to recognise each page by its content even when the page numbers are hard to read. If some backs also came out upside down, run the file through [Rotate PDF](/rotate-pdf) as a separate step.',
                 ],
             ],
             [
@@ -2421,14 +3250,68 @@ return [
                     'Deleting a page removes it from the new file, but it does not remove sensitive text from the pages you keep. To hide something on a page you are keeping, use [Redact PDF](/redact-pdf), which removes the text instead of covering it.',
                 ],
             ],
+            [
+                'heading' => 'What stays the same and what can change',
+                'paragraphs' => [
+                    'Both tools copy each page you keep into a new PDF exactly as it is: the text stays selectable, images keep their resolution, and nothing is re-compressed. Only the list of pages and their order changes.',
+                    'Because the result is a newly built file, some document-wide extras that sit outside the pages may not come across, such as a bookmarks panel. A bookmark would point to the wrong place after a reorder anyway. If your document relies on bookmarks or fillable form fields, check the result in your PDF reader before deleting the original.',
+                ],
+            ],
+            [
+                'heading' => 'Troubleshooting',
+                'table' => [
+                    'headers' => ['What you see', 'What it means', 'What to do'],
+                    'rows' => [
+                        [
+                            'The file is reported as password-protected',
+                            'The PDF has a password, so its pages cannot be read',
+                            'Remove it with the Unlock PDF tool (you need to know the password), then try again',
+                        ],
+                        [
+                            '"Could not be read. It may be damaged"',
+                            'The file is broken or not really a PDF',
+                            'Open it in a PDF reader and save or print a fresh copy to PDF',
+                        ],
+                        ['Save new order is greyed out', 'Nothing has moved yet', 'Move at least one page'],
+                        [
+                            'A range is reported as out of range',
+                            'You typed a page number higher than the file has',
+                            'Check the page count shown next to the file name',
+                        ],
+                        [
+                            'Thumbnails are slow to appear',
+                            'Large or image-heavy pages take time to draw',
+                            'Wait for them; the page numbers are already correct',
+                        ],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'Before you send the file',
+                'list' => [
+                    'Open the downloaded copy, not the original, and page through it once.',
+                    'Check that the first page is the one you expect, since that is what a recipient sees first.',
+                    'If the file is going by email, [Compress PDF](/compress-pdf) can shrink a large scan afterwards.',
+                    'Keep the original until you are sure the new copy is right.',
+                ],
+                'paragraphs' => [
+                    'For a job that needs several changes, it is fine to chain the tools: delete pages, reorder them in [Organize PDF](/organize-pdf), then rotate or compress. Each step works on the file from the step before and keeps every remaining page intact.',
+                ],
+            ],
         ],
         'faqs' => [
             ['q' => 'Does reordering change the quality of the pages?', 'a' => 'No. Pages are copied as they are; only their position changes.'],
             ['q' => 'Can I undo a change?', 'a' => 'Your original file is untouched, so open it again and start over. The tools always create a new copy.'],
             ['q' => 'Are my files uploaded?', 'a' => 'No. Both tools work in your browser. In our test the network log showed 0 bytes uploaded.'],
+            ['q' => 'Can I delete pages and reorder them in one step?', 'a' => 'Not in one tool. Delete the pages first, then open the new file in Organize PDF and reorder it. Remember that pages after a deleted one move up a place.'],
+            ['q' => 'How do I type a range up to the last page?', 'a' => 'Leave the end blank or write end. For a 20-page file, 15- and 15-end both mean pages 15 to 20.'],
+            ['q' => 'Can I reorder a password-protected PDF?', 'a' => 'Not directly. Remove the password first with Unlock PDF, which needs the password, then reorder the unlocked copy.'],
         ],
         'sources' => [
-            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+            [
+                'title' => 'pdf-lib, create and modify PDF documents in JavaScript',
+                'url' => 'https://pdf-lib.js.org/',
+            ],
         ],
     ],
 
@@ -2440,18 +3323,41 @@ return [
         'tool' => 'unlock-pdf',
         'related' => ['protect-pdf', 'password-generator', 'compress-pdf'],
         'published' => '2026-11-04',
-        'updated' => '2026-11-04',
+        'updated' => '2026-11-10',
         'sections' => [
             [
                 'heading' => 'How to remove it',
                 'list' => [
-                    'Open [Unlock PDF](/unlock-pdf) and choose the locked file.',
-                    'Type the password once.',
-                    'Download the new copy, which opens without a password.',
+                    'Open [Unlock PDF](/unlock-pdf) and choose the locked file (one PDF, up to 200 MB). The tool first checks that the file really is password-protected.',
+                    'Type the password once in the PDF password box. Click Show if you want to see what you typed.',
+                    'Click Unlock PDF. When it succeeds you see how many pages the new file has and its size, with no password.',
+                    'Click Download unlocked PDF. The copy is saved with "-unlocked" added to its name.',
                     'Keep or delete the locked original as you prefer. It is not changed.',
                 ],
                 'paragraphs' => [
-                    'The work happens in your browser using a WebAssembly build of the open-source QPDF library, so neither the file nor the password leaves your device. If the password is wrong you see an "Incorrect password" message and can try again. If you give it a PDF with no password, it tells you there is nothing to unlock: we got "plain.pdf does not have a password" when we tested that.',
+                    'The work happens in your browser using a WebAssembly build of the open-source QPDF library, so neither the file nor the password leaves your device. The first time you unlock a file, your browser downloads the QPDF program itself (about 1.3 MB) from a public code server; that is code coming to you, not your PDF going anywhere. If the password is wrong you see an "Incorrect password" message and can try again. If you give it a PDF with no password, it tells you there is nothing to unlock: we got "plain.pdf does not have a password" when we tested that.',
+                ],
+            ],
+            [
+                'heading' => 'Two kinds of PDF password',
+                'paragraphs' => [
+                    'PDFs can carry two different passwords, and it helps to know which one you are dealing with. The table below shows how to tell them apart.',
+                    'Bank statements, payslips and tax documents sent by email usually use an open password, which is exactly what this tool removes once you supply it. A file can also have both. Whichever you have, the rule is the same: the tool needs a correct password from you, and it removes the protection only after that password has been accepted.',
+                ],
+                'table' => [
+                    'headers' => ['Type', 'What you notice', 'What it does'],
+                    'rows' => [
+                        [
+                            'Open password (also called a user password)',
+                            'The file asks for a password before it shows anything',
+                            'Encrypts the content, so nobody can read it without the password',
+                        ],
+                        [
+                            'Permissions password (also called an owner password)',
+                            'The file opens normally, but printing, copying or editing is blocked',
+                            'Sets restrictions that PDF readers are expected to respect',
+                        ],
+                    ],
                 ],
             ],
             [
@@ -2462,18 +3368,61 @@ return [
                 ],
             ],
             [
+                'heading' => 'When the password will not work',
+                'paragraphs' => [
+                    'Most "Incorrect password" messages come from small typing problems rather than a wrong password. Work through these before asking for a new one.',
+                ],
+                'list' => [
+                    'Passwords are case-sensitive. Check Caps Lock, and check whether letters in the format should be capitals.',
+                    'Click Show and read what you actually typed. It is easy to miss a doubled letter or a missing digit.',
+                    'If you pasted the password from an email, a space may have come with it at the start or end. Type it by hand instead.',
+                    'Check the keyboard layout. On a different language layout, some symbols and even letters such as y and z can swap places.',
+                    'Dates are a common trap. A format of DDMMYYYY written as MMDDYYYY, or with slashes, will be rejected.',
+                    'Make sure you are using the password for this file. Some senders use a different password for each statement.',
+                ],
+            ],
+            [
+                'heading' => 'A worked example: a statement password format',
+                'paragraphs' => [
+                    'Many senders explain the format rather than sending the password itself. Here is a made-up example of the kind of rule you might see: "the first four letters of your surname in capitals, followed by the day and month of your birth". For someone called Ana Smithson born on 5 December, that gives SMIT0512.',
+                    'Each part is a place to go wrong: smit0512 fails because of the lower-case letters, SMITH0512 fails because it has five letters, and SMIT1205 fails because the day and month are swapped. Read the instructions slowly, write the password down once, and type it from your note.',
+                ],
+            ],
+            [
                 'heading' => 'If you have lost the password',
                 'list' => [
                     'Ask whoever sent the file. Banks and employers can usually resend it or tell you the format.',
                     'Check the original email: statements often explain the format, such as a date of birth plus part of an account number.',
                     'Look in your password manager, if you set the password yourself.',
+                    'Download the document again from your online banking or employee portal; the copy there may not be password-protected at all.',
                 ],
             ],
             [
                 'heading' => 'Should you remove it at all?',
                 'paragraphs' => [
                     'A password protects the file wherever it goes. Remove it for a copy you are keeping safely on your own device, or when you need to [compress](/compress-pdf) or merge the file. Think twice before removing it from anything you will email, because email is not a safe place for an unprotected payslip or ID.',
-                    'To lock a file again, use [Protect PDF](/protect-pdf) with a strong password from the [Password Generator](/password-generator). Send the password by a different route than the file.',
+                    'To lock a file again, use [Protect PDF](/protect-pdf) with a strong password from the [Password Generator](/password-generator). Send the password by a different route than the file, such as a text message for a file sent by email.',
+                ],
+            ],
+            [
+                'heading' => 'Why other PDF tools ask you to unlock first',
+                'paragraphs' => [
+                    'Our other PDF tools cannot read the pages of a password-protected file, so they show a message asking you to remove the password first. A common workflow is to run the file through [Unlock PDF](/unlock-pdf), do the job you actually need, then lock it again if it is going to leave your device.',
+                ],
+                'list' => [
+                    'Combining several statements into one file: unlock each, then use [Merge PDF](/merge-pdf).',
+                    'Making a large scan small enough to email: unlock, compress, then protect again.',
+                    'Removing pages you do not need, such as marketing inserts: unlock, then delete the pages.',
+                ],
+            ],
+            [
+                'heading' => 'Keeping unlocked copies safe',
+                'paragraphs' => ['Once the password is gone, the file is only as safe as the place you keep it. A few habits make a big difference.'],
+                'list' => [
+                    'Store unlocked statements in one folder on a device protected by its own sign-in, rather than scattered across Downloads.',
+                    'Be careful with folders that sync to the cloud or are shared with family or colleagues: anyone with access can now open the file.',
+                    'Delete unlocked copies you no longer need, and empty the recycle bin or trash afterwards.',
+                    'If you must send an unlocked file, protect it again first instead of attaching the open copy.',
                 ],
             ],
         ],
@@ -2481,9 +3430,15 @@ return [
             ['q' => 'Can this tool recover a forgotten password?', 'a' => 'No. It only removes a password you type in yourself.'],
             ['q' => 'Does removing the password change the PDF?', 'a' => 'No. Only the protection is removed. Pages, text and images stay as they were.'],
             ['q' => 'Is it safe to type my password here?', 'a' => 'The password is used in your browser and is not sent to any server. In our testing, the tool made no upload.'],
+            ['q' => 'Why does it say my PDF does not have a password?', 'a' => 'The file is not encrypted, so there is nothing to remove. If it still asks for a password in another app, that app may be opening a different copy.'],
+            ['q' => 'Why do I keep getting Incorrect password?', 'a' => 'Check capital letters, stray spaces from copying, keyboard layout and the order of any date. Click Show to see exactly what you typed.'],
+            ['q' => 'Can I add a password back later?', 'a' => 'Yes. Protect PDF adds a new open password to any unprotected PDF, also in your browser.'],
         ],
         'sources' => [
-            ['title' => 'QPDF documentation', 'url' => 'https://qpdf.readthedocs.io/'],
+            [
+                'title' => 'QPDF documentation',
+                'url' => 'https://qpdf.readthedocs.io/',
+            ],
         ],
     ],
 
@@ -2491,18 +3446,23 @@ return [
         'title' => 'How to Convert Excel to PDF Without Losing Your Data',
         'description' => 'Turn a spreadsheet into a PDF in your browser: what comes through, what does not, and how to prepare a sheet first so wide columns are not cut off.',
         'h1' => 'How to convert Excel to PDF',
-        'intro' => 'A PDF is the safe way to send a spreadsheet to someone who only needs to read it: it looks the same everywhere, and nobody can change a formula by accident. Our converter works in your browser and turns each sheet into a clean table. It deliberately keeps the data rather than the design, so it is worth knowing what comes through before you rely on it.',
+        'intro' => 'A PDF is the safe way to send a spreadsheet to someone who only needs to read it: it looks the same everywhere, and nobody can change a formula by accident. Our converter works in your browser and turns each sheet into a clean table. It deliberately keeps the data rather than the design, so it is worth knowing what comes through, how the pages are laid out, and how to prepare a sheet so nothing important is cut off before you rely on it.',
         'tool' => 'excel-to-pdf',
         'related' => ['html-to-pdf', 'pdf-to-excel', 'word-to-pdf'],
         'published' => '2026-11-04',
-        'updated' => '2026-11-04',
+        'updated' => '2026-11-10',
         'sections' => [
             [
                 'heading' => 'How to convert',
                 'list' => [
                     'Open [Excel to PDF](/excel-to-pdf) and choose one .xlsx, .xls or .csv file, up to 50 MB.',
-                    'Each sheet becomes a table across one or more pages, with the header row repeated on each page.',
-                    'Download the PDF and read through it before sending.',
+                    'Pick a Page size (A4 or Letter) and an Orientation (Portrait or Landscape). The page size starts on the one usual where you are, guessed from your browser\'s language and time zone, so check it if you are sending the file abroad.',
+                    'Click Convert to PDF. Each sheet becomes a table across one or more pages, with the header row repeated on each page.',
+                    'Click Download PDF and read through the result before sending it.',
+                    'If something looks wrong, change the settings or fix the sheet and convert again. Changing a setting clears the old result, so you always download the version that matches what you see.',
+                ],
+                'paragraphs' => [
+                    'The file is read and the PDF is built on your device. Nothing is uploaded, which matters when a spreadsheet holds salaries, customer lists or bank details.',
                 ],
             ],
             [
@@ -2511,21 +3471,52 @@ return [
                     'headers' => ['Kept', 'Not kept'],
                     'rows' => [
                         ['Cell values, including the results of formulas', 'The formulas themselves'],
-                        ['Every sheet in the file', 'Charts'],
-                        ['A repeated header row', 'Cell colours'],
-                        ['Table layout', 'Merged cells'],
+                        ['Every sheet with data, each starting on a new page', 'Charts'],
+                        ['The first row, in bold and repeated on every page', 'Cell colours'],
+                        ['Table layout with light borders', 'Merged cells'],
+                        ['The sheet name as a heading on each page', 'Fonts, column widths and print settings from Excel'],
                     ],
                 ],
                 'paragraphs' => [
+                    'Values come through as text formatted the way the sheet formats them, so a date or a currency amount usually looks as it does on screen. Empty sheets are skipped. If every sheet is empty you get the message "This spreadsheet has no data to convert", and a damaged or renamed file that is not really a spreadsheet is refused with a clear error instead of producing a broken PDF.',
                     'Text too wide for its column is shortened with "…". That is the main thing to check, because a cut-off value in a report can look like a complete one.',
+                ],
+            ],
+            [
+                'heading' => 'How the pages are laid out',
+                'paragraphs' => [
+                    'Every page has 15 mm margins, the sheet name at the top (with "(continued)" on the second and later pages of the same sheet), and rows of a fixed height in 9-point text. Each column is first made wide enough for its longest value. If all the columns together are wider than the page, they are all narrowed by the same proportion until they fit. The text does not get smaller, so narrower columns mean more values are shortened with "…".',
+                    'That gives a simple rule: the converter never spreads one sheet\'s columns across two pages. All the columns sit side by side on each page, and long sheets simply continue downwards onto more pages.',
+                ],
+            ],
+            [
+                'heading' => 'A worked example: 500 rows in each setting',
+                'paragraphs' => [
+                    'Take a sheet with one header row and 500 data rows. The number of rows that fit depends on the page size and orientation, and the header is repeated at the top of every page, so the page counts work out as shown in the table below the tips.',
+                ],
+                'table' => [
+                    'headers' => ['Setting', 'Usable width', 'Data rows per page', 'Pages for 500 rows'],
+                    'rows' => [
+                        ['A4 portrait', 'About 180 mm', '45', '12'],
+                        ['A4 landscape', 'About 267 mm', '29', '18'],
+                        ['Letter portrait', 'About 186 mm', '41', '13'],
+                        ['Letter landscape', 'About 249 mm', '30', '17'],
+                    ],
+                ],
+                'list' => [
+                    'Narrow sheet with a few columns: choose portrait. You get the fewest pages and nothing is squeezed.',
+                    'Wide sheet with many columns: choose landscape. It costs more pages, but each column gets roughly half as much width again, so far fewer values are cut off.',
+                    'Suppose your columns would need about 1,000 points of width at full size. In A4 portrait (about 510 points usable) each column is squeezed to roughly 51% of its natural width; in A4 landscape (about 757 points) it keeps roughly 76%.',
                 ],
             ],
             [
                 'heading' => 'Prepare your sheet first',
                 'list' => [
-                    'Delete working sheets and scratch columns you do not want to share.',
-                    'Shorten long text or split it across columns, so nothing is cut off.',
+                    'Make the real column headers the first row. The tool treats row 1 as the header, so a report title typed above the headers would be printed in bold and repeated on every page instead.',
+                    'Delete working sheets and scratch columns you do not want to share. Hiding them in Excel is not enough: delete them, or copy only the sheet you need into a new file.',
+                    'Shorten long text or split it across columns, so nothing is cut off. A notes column full of sentences is the usual cause of "…".',
                     'Unmerge cells and give each column a clear header.',
+                    'Rename sheets to something meaningful, since the sheet name becomes the heading on every page. "Sheet1" tells the reader nothing; "Q3 sales by region" does.',
                     'Save or convert the charts separately if the reader needs them.',
                 ],
                 'paragraphs' => [
@@ -2533,19 +3524,68 @@ return [
                 ],
             ],
             [
+                'heading' => 'Common problems and how to fix them',
+                'table' => [
+                    'headers' => ['Problem', 'Likely cause', 'Fix'],
+                    'rows' => [
+                        [
+                            'Values end in "…"',
+                            'Too many or too long columns for the page width',
+                            'Switch to Landscape, remove columns the reader does not need, or shorten the text',
+                        ],
+                        [
+                            'A title appears in bold at the top of every page',
+                            'The title is in row 1, above the real headers',
+                            'Delete the title row so the headers are row 1',
+                        ],
+                        [
+                            'A sheet you did not expect appears',
+                            'Every sheet with data is converted',
+                            'Delete that sheet, or copy the one you want into a new file',
+                        ],
+                        [
+                            'The paper size is wrong for the recipient',
+                            'A4 or Letter was guessed from your browser',
+                            'Choose the other Page size and convert again',
+                        ],
+                        [
+                            '"This file could not be read"',
+                            'The file is damaged, password-protected or not really a spreadsheet',
+                            'Open it in Excel, save a fresh copy as .xlsx and try that',
+                        ],
+                    ],
+                ],
+                'paragraphs' => [
+                    'A CSV file has no sheets of its own, so it becomes a single table. If a CSV comes out with everything in one column, its separator was probably not recognised; open it in your spreadsheet program, check it splits into columns correctly, and save it as .xlsx before converting.',
+                ],
+            ],
+            [
+                'heading' => 'Before you send it',
+                'paragraphs' => [
+                    'Scroll through every page of the PDF and look for three things: values ending in "…", the page count (a 2-page summary that became 40 pages means a large sheet was included by mistake), and anything you did not intend to share. A PDF is easy to forward, so treat it as public once it leaves your hands.',
+                    'If the PDF is large because a sheet is very long, [Compress PDF](/compress-pdf) can help before emailing, though a table of text is usually small already. To add the table to a longer report, convert it here and then combine the files with [Merge PDF](/merge-pdf).',
+                ],
+            ],
+            [
                 'heading' => 'Related conversions',
                 'paragraphs' => [
-                    'Going the other way, [PDF to Excel](/pdf-to-excel) pulls tables back out of a PDF. For a document rather than a table, use [Word to PDF](/word-to-pdf). For a web page or plain text, [HTML to PDF](/html-to-pdf) handles headings, paragraphs, lists and images; its own tables and custom styling are not kept, so use this tool when your content is really a table.',
+                    'Going the other way, [PDF to Excel](/pdf-to-excel) pulls tables back out of a PDF. For a document rather than a table, use [Word to PDF](/word-to-pdf). For a web page or plain text, [HTML to PDF](/html-to-pdf) handles headings, paragraphs, lists and images; its own tables and custom styling are not kept, so use [Excel to PDF](/excel-to-pdf) when your content is really a table.',
                 ],
             ],
         ],
         'faqs' => [
             ['q' => 'Are formulas kept in the PDF?', 'a' => 'No. A PDF shows the values, not the formulas. Keep your original spreadsheet to edit them.'],
-            ['q' => 'Why are some cells cut off?', 'a' => 'Text too wide for its column is shortened with "…". Shorten the text or split it across columns, then convert again.'],
+            ['q' => 'Why are some cells cut off?', 'a' => 'Text too wide for its column is shortened with "…". Switch to landscape, remove unneeded columns, or shorten the text, then convert again.'],
             ['q' => 'Can I convert a CSV file?', 'a' => 'Yes. The tool accepts .xlsx, .xls and .csv files up to 50 MB.'],
+            ['q' => 'Will a wide sheet be split across two pages side by side?', 'a' => 'No. All columns are fitted onto the page width by narrowing them, and long sheets continue onto more pages downwards.'],
+            ['q' => 'Can I convert only one sheet from a workbook?', 'a' => 'The tool converts every sheet that has data. To convert just one, delete the others or copy that sheet into a new file first.'],
+            ['q' => 'Is my spreadsheet uploaded?', 'a' => 'No. The file is read and the PDF is created in your browser, so the data stays on your device.'],
         ],
         'sources' => [
-            ['title' => 'SheetJS documentation', 'url' => 'https://docs.sheetjs.com/'],
+            [
+                'title' => 'SheetJS documentation',
+                'url' => 'https://docs.sheetjs.com/',
+            ],
         ],
     ],
 
@@ -2557,7 +3597,7 @@ return [
         'tool' => 'jpg-to-png',
         'related' => ['avif-to-png', 'pdf-to-png', 'image-compressor'],
         'published' => '2026-11-04',
-        'updated' => '2026-11-04',
+        'updated' => '2026-11-10',
         'sections' => [
             [
                 'heading' => 'What we measured',
@@ -2566,19 +3606,30 @@ return [
                 ],
                 'table' => [
                     'headers' => ['Format', 'Size', 'Change'],
-                    'rows' => [['JPG (original)', '88 KB', '-'], ['PNG (converted)', '571 KB', 'About 6.5x larger']],
+                    'rows' => [
+                        ['JPG (original)', '88 KB', '-'],
+                        ['PNG (converted)', '571 KB', 'About 6.5x larger'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'Where the extra size comes from',
+                'paragraphs' => [
+                    'An 800 x 533 image has 426,400 pixels. Stored raw, at 3 bytes per pixel for red, green and blue, that is about 1.28 MB of data. The JPG squeezed that into 88 KB, roughly 7% of the raw size, by throwing away fine detail the eye barely notices. PNG is not allowed to throw anything away, so the best it managed was 571 KB, still around 45% of the raw size.',
+                    'PNG compresses well when neighbouring pixels repeat: flat colours, sharp edges, text and screenshots. A photo has noise and subtle gradients almost everywhere, and a JPG adds its own small compression artifacts on top, so there is very little repetition for PNG to exploit.',
                 ],
             ],
             [
                 'heading' => 'Why PNG cannot restore quality',
                 'paragraphs' => [
                     'JPG is lossy: it discards detail to save space, and that happens when the JPG is saved. PNG is lossless: it stores exactly what it receives. So converting faithfully preserves the JPG\'s existing blur and artifacts, in a bigger file. The only way to get better quality is to go back to the original photo.',
+                    'Think of it like photocopying a photocopy onto better paper: the paper is nicer, but the copy is no sharper than what you started with.',
                 ],
             ],
             [
                 'heading' => 'When converting does make sense',
                 'list' => [
-                    'You will edit the image and save it several times. PNG stops further loss from building up.',
+                    'You will edit the image and save it several times. Each time a JPG is opened and saved again it is compressed again and can lose a little more; PNG stops further loss from building up.',
                     'A form or app insists on PNG.',
                     'The image is a graphic, a logo or a screenshot that you will keep editing.',
                     'You want to add transparency in an editor, since JPG has none. Converting alone does not make the background transparent; use the [Background Remover](/remove-background) for that.',
@@ -2590,15 +3641,58 @@ return [
                     'It is a photo for a website: JPG, WebP or AVIF will be far smaller.',
                     'You are emailing it: the larger file only gets in the way.',
                     'You want it to look sharper: conversion will not do that.',
+                    'An upload has a size limit: a file six times bigger may no longer fit.',
                 ],
                 'paragraphs' => [
-                    'If the real problem is file size, the [Image Compressor](/image-compressor) is what you want. Our [AVIF, WebP and JPG file-size test](/guides/avif-vs-webp-vs-jpg-file-size-test) shows how the modern formats compare.',
+                    'If the real problem is file size, the [Image Compressor](/image-compressor) is what you want. Our [AVIF, WebP and JPG file-size test](/guides/avif-vs-webp-vs-jpg-file-size-test) shows how the modern formats compare, and [JPG vs PNG vs WebP vs AVIF](/guides/jpg-vs-png-vs-webp-vs-avif) explains which format suits which job.',
+                ],
+            ],
+            [
+                'heading' => 'A quick decision guide',
+                'table' => [
+                    'headers' => ['Your situation', 'Best choice', 'Why'],
+                    'rows' => [
+                        ['Holiday photo for a blog or shop page', 'Keep JPG, or compress it', 'Smallest file with no visible difference'],
+                        ['Screenshot you will annotate and re-save', 'Convert to PNG', 'No new loss each time you save'],
+                        ['Logo you received as a JPG', 'Ask for the original PNG or SVG', 'Converting keeps the JPG\'s fuzzy edges'],
+                        ['Upload form that only accepts PNG', 'Convert to PNG', 'The form requires it; check its size limit'],
+                        ['Photo that looks blurry', 'Find the original or a larger copy', 'No conversion can add missing detail'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'How to convert, if you need to',
+                'list' => [
+                    'Open [JPG to PNG](/jpg-to-png) and drop in your images, or click to choose them. You can add up to 30 at a time, up to 50 MB each.',
+                    'Conversion starts straight away. There is no quality slider, because PNG is lossless and has no quality setting to choose.',
+                    'Download each PNG on its own, or click Download all (ZIP) to get every converted image in one file.',
+                    'Use Clear all to start again with a new batch, or remove a single image from the list if you added it by mistake.',
+                ],
+                'paragraphs' => [
+                    'The page also accepts PNG, WebP, AVIF, GIF and BMP files, so you can turn a mixed folder into PNGs in one go. Each image keeps its width and height; only an extremely large image, more than 10,000 pixels on a side, is scaled down to fit that limit.',
+                ],
+            ],
+            [
+                'heading' => 'What changes besides the format',
+                'paragraphs' => [
+                    'The image is redrawn by your browser and saved fresh, so the new PNG contains only the picture. Hidden information stored inside many JPGs, such as the camera model, the date taken and sometimes GPS coordinates, is not copied across. That is useful if you are about to share a photo publicly, but keep the original if you rely on that information for sorting your photo library.',
+                    'Colours should look the same on screen. If you are preparing images for professional print, check the result with whoever is printing it, since print workflows can depend on embedded colour information that a browser does not carry over.',
+                ],
+            ],
+            [
+                'heading' => 'Common mistakes',
+                'list' => [
+                    'Converting to fix a blurry photo. The blur is in the pixels, and PNG keeps the pixels exactly.',
+                    'Converting a photo for a website "for quality". Visitors download a much bigger file and see no difference.',
+                    'Expecting a transparent background. The white or coloured background in the JPG stays exactly where it is.',
+                    'Converting back and forth. Going JPG to PNG and then to JPG again compresses the image a second time; keep one master copy instead.',
+                    'Deleting the originals. Keep the JPGs until you have checked the PNGs, especially if you care about the photo details mentioned above.',
                 ],
             ],
             [
                 'heading' => 'Other routes to PNG',
                 'paragraphs' => [
-                    'Starting from another format? [AVIF to PNG](/avif-to-png) works the same way. To get a PDF page as a crisp image, [PDF to PNG](/pdf-to-png) suits pages with sharp text and diagrams, because PNG keeps edges clean where JPG tends to smudge them. In each case the file stays on your device: our network log showed 0 bytes uploaded during the conversion.',
+                    'Starting from another format? [AVIF to PNG](/avif-to-png) works the same way. To get a PDF page as a crisp image, [PDF to PNG](/pdf-to-png) suits pages with sharp text and diagrams, because PNG keeps edges clean where JPG tends to smudge them. Going the other way, [PNG to JPG](/png-to-jpg) turns large screenshots or exports into much smaller photos when transparency is not needed. In each case the file stays on your device: our network log showed 0 bytes uploaded during the conversion.',
                 ],
             ],
         ],
@@ -2606,9 +3700,15 @@ return [
             ['q' => 'Does converting JPG to PNG improve quality?', 'a' => 'No. It keeps the image exactly as it is now, in a larger file. Detail lost when the JPG was saved does not come back.'],
             ['q' => 'Why did my PNG get so much bigger?', 'a' => 'PNG is lossless, and photos contain too much fine variation for it to compress well. In our test the file grew about 6.5 times.'],
             ['q' => 'Does a converted PNG have a transparent background?', 'a' => 'No. JPG has no transparency, so the background stays. Use a background remover for that.'],
+            ['q' => 'Can I convert several JPGs at once?', 'a' => 'Yes. Add up to 30 images, up to 50 MB each, and download them one by one or together as a ZIP file.'],
+            ['q' => 'Are my photos uploaded?', 'a' => 'No. The conversion runs in your browser, and our network log showed 0 bytes uploaded.'],
+            ['q' => 'Does the PNG keep the photo\'s location and camera data?', 'a' => 'No. The image is redrawn and saved fresh, so details such as camera model and GPS position stored in the JPG are not copied into the PNG.'],
         ],
         'sources' => [
-            ['title' => 'MDN Web Docs, Image file type and format guide', 'url' => 'https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types'],
+            [
+                'title' => 'MDN Web Docs, Image file type and format guide',
+                'url' => 'https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types',
+            ],
         ],
     ],
 
