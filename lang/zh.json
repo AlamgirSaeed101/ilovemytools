@@ -1355,5 +1355,8 @@
     "Send message": "傳送訊息",
     "Sending…": "傳送中…",
     "Thanks! Your message was sent.": "謝謝!你的訊息已傳送。",
-    "Your message could not be sent. Please email us instead.": "無法傳送你的訊息,請改用電子郵件與我們聯絡。"
+    "Your message could not be sent. Please email us instead.": "無法傳送你的訊息,請改用電子郵件與我們聯絡。",
+    "Share this tool": "分享此工具",
+    "Recently used": "最近使用",
+    "Bookmark this page ({keys}) to find this tool again.": "将此页面加入书签（{keys}），方便再次找到此工具。"
 }

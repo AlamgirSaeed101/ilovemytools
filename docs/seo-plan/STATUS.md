@@ -153,3 +153,19 @@ web-search limit ran out, and many outlets are paid-only, local-authors-only or 
   public/images/linkedin/, posted from its raw GitHub URL) and writes a full paragraph about the tool shown. On 9 Nov the
   company post rejected the image from ilovemytools.store ("Could not find entity", likely Sucuri blocking Zapier), so
   images now come from raw.githubusercontent.com.
+
+## 10 Nov: owner's P0/P1/P2 SEO task list
+- P0: /index.php(/...) 301s to the clean URL (.htaccess + RedirectIndexPhp middleware). Static cache headers hardened in
+  .htaccess; live /build/assets still show max-age=86400, set by Sucuri, so the owner must switch Sucuri caching to
+  "Site caching (using your site headers)". Public HTML: no cookies, no Vary: Cookie, `public, max-age=600, s-maxage=86400`
+  (kept 86400 rather than 3600: every deploy purges and re-warms the edge, so a longer TTL only adds HITs).
+  The "needs JavaScript" warning is now a <noscript> note; crawlers already got the description, steps and FAQ.
+  Page components are split per page type (app.js 121 KB -> 74 KB gzipped). AdSense deliberately stays in <head>
+  (interaction-only loading hid it from AdSense review on 4 Nov). ContactPoint languages: English, German, Italian.
+- P1: jpg-to-pdf retargeted to "JPG to PDF combiner" (EN/DE/IT). 11 tools expanded to 950-1150 words with steps,
+  use cases, limits and privacy, 6-8 FAQs (EN/DE/IT; noindex languages keep their older translation). Long-tail
+  sections: compress PDF to 1 MB / 200 KB, edit PDF without sign up, 16-character password, compress image to 50/20 KB,
+  resize to 1080x1080. 17 guides taken from 410-794 words to 1,262-1,818. Guides got a table of contents; footer links
+  the author page.
+- P2: service worker (public/sw.js), recently used tools on home and tool pages, share button + bookmark hint after a
+  result, home search box + quick links, IndexNow key 04a72c039825434292d3a51b4891960d.

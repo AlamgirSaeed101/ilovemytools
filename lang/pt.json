@@ -1379,5 +1379,8 @@
     "Send message": "Enviar mensagem",
     "Sending…": "Enviando…",
     "Thanks! Your message was sent.": "Obrigado! Sua mensagem foi enviada.",
-    "Your message could not be sent. Please email us instead.": "Não foi possível enviar sua mensagem. Envie-nos um e-mail."
+    "Your message could not be sent. Please email us instead.": "Não foi possível enviar sua mensagem. Envie-nos um e-mail.",
+    "Share this tool": "Partilhar ferramenta",
+    "Recently used": "Usadas recentemente",
+    "Bookmark this page ({keys}) to find this tool again.": "Adicione esta página aos favoritos ({keys}) para voltar a encontrar a ferramenta."
 }

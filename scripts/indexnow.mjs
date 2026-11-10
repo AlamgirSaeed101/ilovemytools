@@ -3,7 +3,7 @@
 //   default: URLs whose sitemap <lastmod> is today (UTC); --all: every URL in the sitemap.
 // The key is public by design: search engines check it at https://<host>/<key>.txt.
 const HOST = 'ilovemytools.store';
-const KEY = 'f27033772f157c8897ff513aef676628';
+const KEY = '04a72c039825434292d3a51b4891960d';
 
 const xml = await (await fetch(`https://${HOST}/sitemap.xml`)).text();
 const today = new Date().toISOString().slice(0, 10);

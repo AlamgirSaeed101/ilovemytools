@@ -2,7 +2,7 @@
 
 Live site: **https://ilovemytools.store/**
 
-54 free online tools for PDFs, images, text, calculations and developers, in 10 languages, with no sign-up, no watermark and no daily limit. The main tool is a [PDF editor](https://ilovemytools.store/edit-pdf) that changes the text already in a PDF, in the PDF's own font.
+56 free online tools for PDFs, images, text, calculations and developers, in 10 languages, with no sign-up, no watermark and no daily limit. The main tool is a [PDF editor](https://ilovemytools.store/edit-pdf) that changes the text already in a PDF, in the PDF's own font.
 
 File and text tools (Edit, Merge, Split and Compress PDF, Image Compressor, WebP/AVIF/PNG/JPG converters, Word Counter and the rest) run **entirely in the visitor's browser** with PDF.js, pdf-lib and Canvas, so files are never uploaded. The four lookup tools (Bulk Domain Authority Checker, Broken Link Checker, Domain Age Checker, What Is My IP) go through the server and say so on the page.
 

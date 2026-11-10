@@ -10,7 +10,8 @@ import tools from '../tools/index.js';
 import { getSite } from '../lib/api.js';
 import { formatDate, t } from '../lib/i18n.js';
 import { useMeta } from '../lib/meta.js';
-import { addRecent } from '../lib/recent.js';
+import { addRecent, getRecent } from '../lib/recent.js';
+import { bookmarkKeys, shareLink } from '../lib/share.js';
 
 function ToolLoading({ name }) {
     return (
@@ -26,8 +27,29 @@ const badges = [
     ['zap', 'No sign up'],
 ];
 
+/** Share the tool (not the result: results stay on the visitor's device), plus a bookmark hint. */
+function ShareTool({ tool, url }) {
+    const [copied, setCopied] = useState(false);
+    const share = async () => {
+        const result = await shareLink({ title: tool.name, url });
+        if (result === 'copied') {
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2500);
+        }
+        if (result !== 'cancelled') track('share', { method: result });
+    };
+    return (
+        <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-line pt-3.5 text-[0.88rem] text-muted">
+            <button type="button" className="btn btn--ghost btn--sm" onClick={share}>
+                <Icon name={copied ? 'check' : 'link'} /> {copied ? t('Copied!') : t('Share this tool')}
+            </button>
+            <span>{t('Bookmark this page ({keys}) to find this tool again.', { keys: bookmarkKeys() })}</span>
+        </div>
+    );
+}
+
 /** "Done! What next?" card shown once a tool has produced a result. */
-function NextSteps({ tools: next }) {
+function NextSteps({ tools: next, tool, url }) {
     return (
         <section className="next-steps animate-pop mt-5 rounded-2xl border border-line bg-surface-2 p-4 sm:p-5" aria-labelledby="next-steps-heading" aria-live="polite">
             <h2 id="next-steps-heading" className="m-0 mb-3 flex items-center gap-2 text-[1.05rem] font-bold [&_svg]:text-success">
@@ -43,7 +65,34 @@ function NextSteps({ tools: next }) {
                     </li>
                 ))}
             </ul>
+            <ShareTool tool={tool} url={url} />
         </section>
+    );
+}
+
+/** The visitor's recently used tools (stored in this browser only), newest first. */
+function RecentTools({ current, site }) {
+    const recent = getRecent()
+        .filter((slug) => slug !== current)
+        .map((slug) => site.tools.find((x) => x.slug === slug))
+        .filter(Boolean)
+        .slice(0, 5);
+    if (recent.length === 0) return null;
+    return (
+        <nav className="rounded-card border border-line bg-surface p-[1.1rem] shadow-hair" aria-labelledby="recent-heading">
+            <h2 id="recent-heading" className="m-0 mb-2.5 text-[0.78rem] font-bold tracking-wider text-muted uppercase">
+                {t('Recently used')}
+            </h2>
+            <ul className="m-0 list-none p-0">
+                {recent.map((x) => (
+                    <li key={x.slug}>
+                        <Link className="flex items-center gap-2.5 rounded-[10px] px-2.5 py-2 text-[0.93rem] font-medium text-ink-2 no-underline hover:bg-surface-2 hover:text-ink [&_svg]:text-accent-ink" to={`/${x.slug}`}>
+                            <Icon name={x.icon} /> {x.name}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </nav>
     );
 }
 
@@ -118,6 +167,7 @@ export default function ToolPage() {
     const related = tool.related.map((slug) => site.tools.find((x) => x.slug === slug)).filter(Boolean);
 
     useMeta({ ...tool.meta, path: `/${tool.slug}` }, site.url);
+    const toolUrl = `${String(site.url).replace(/\/$/, '')}${site.prefix || ''}/${tool.slug}`;
     // useLayoutEffect (not useEffect) so this is written before the next paint,
     // not racing a navigation away from the page that happens right after mount.
     useLayoutEffect(() => addRecent(tool.slug), [tool.slug]);
@@ -177,7 +227,7 @@ export default function ToolPage() {
                             : t('Private: this tool runs in your browser. Your data is never uploaded.')}
                     </p>
 
-                    {done && related.length > 0 && <NextSteps tools={related.slice(0, 3)} />}
+                    {done && related.length > 0 && <NextSteps tools={related.slice(0, 3)} tool={tool} url={toolUrl} />}
 
                     <AdSlot key={`${tool.slug}-below`} position="below_tool" />
 
@@ -225,6 +275,13 @@ export default function ToolPage() {
                             <div key={section.heading}>
                                 <h2>{section.heading}</h2>
                                 <p>{section.body}</p>
+                                {section.items?.length > 0 && (
+                                    <ul>
+                                        {section.items.map((item) => (
+                                            <li key={item}>{item}</li>
+                                        ))}
+                                    </ul>
+                                )}
                                 {i === 0 && <AdSlot key={`${tool.slug}-in-content`} position="in_content" />}
                             </div>
                         ))}
@@ -346,6 +403,7 @@ export default function ToolPage() {
                                 {t('All free tools')} <Icon name="arrow" className="icon rtl:-scale-x-100" />
                             </Link>
                         </nav>
+                        <RecentTools current={tool.slug} site={site} />
                         <AdSlot key={`${tool.slug}-sidebar`} position="sidebar" />
                     </div>
                 </aside>

@@ -1201,6 +1201,12 @@
     ]
   },
   {
+    "key": "Bookmark this page ({keys}) to find this tool again.",
+    "files": [
+      "resources/js/pages/ToolPage.jsx"
+    ]
+  },
+  {
     "key": "Born on a {weekday}",
     "files": [
       "resources/js/tools/AgeCalculator.jsx"
@@ -1800,7 +1806,8 @@
   {
     "key": "Copied!",
     "files": [
-      "resources/js/components/CopyButton.jsx"
+      "resources/js/components/CopyButton.jsx",
+      "resources/js/pages/ToolPage.jsx"
     ]
   },
   {
@@ -4638,7 +4645,8 @@
   {
     "key": "No tools match “{query}”. Try another word.",
     "files": [
-      "resources/js/components/CommandPalette.jsx"
+      "resources/js/components/CommandPalette.jsx",
+      "resources/js/pages/Home.jsx"
     ]
   },
   {
@@ -5292,6 +5300,7 @@
   {
     "key": "Popular tools",
     "files": [
+      "resources/js/pages/Home.jsx",
       "resources/js/pages/NotFound.jsx",
       "resources/views/errors/404.blade.php"
     ]
@@ -5594,6 +5603,13 @@
     "key": "reading…",
     "files": [
       "resources/js/tools/MergePdf.jsx"
+    ]
+  },
+  {
+    "key": "Recently used",
+    "files": [
+      "resources/js/pages/Home.jsx",
+      "resources/js/pages/ToolPage.jsx"
     ]
   },
   {
@@ -6176,14 +6192,16 @@
     "key": "Search tools",
     "files": [
       "resources/js/components/CommandPalette.jsx",
-      "resources/js/components/Layout.jsx"
+      "resources/js/components/Layout.jsx",
+      "resources/js/pages/Home.jsx"
     ]
   },
   {
     "key": "Search tools…",
     "files": [
       "resources/js/components/CommandPalette.jsx",
-      "resources/js/components/Layout.jsx"
+      "resources/js/components/Layout.jsx",
+      "resources/js/pages/Home.jsx"
     ]
   },
   {
@@ -6348,6 +6366,12 @@
     "key": "Shapes",
     "files": [
       "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Share this tool",
+    "files": [
+      "resources/js/pages/ToolPage.jsx"
     ]
   },
   {

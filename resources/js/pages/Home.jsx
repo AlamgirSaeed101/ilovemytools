@@ -1,11 +1,13 @@
 import { lazy, Suspense, useRef, useState } from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import AdSlot from '../components/AdSlot.jsx';
 import Icon from '../components/Icon.jsx';
 import ToolCard, { categoryOf } from '../components/ToolCard.jsx';
 import { getSite } from '../lib/api.js';
 import { formatNumber, t, tn } from '../lib/i18n.js';
 import { useMeta } from '../lib/meta.js';
+import { getRecent } from '../lib/recent.js';
+import { searchTools } from '../lib/search.js';
 
 // Well below the fold (after the hero, categories and popular tools), so not needed for first paint.
 const NewsletterForm = lazy(() => import('../components/Newsletter.jsx'));
@@ -100,11 +102,19 @@ export default function Home() {
     const categories = [...site.categories].sort(byOrder);
     const [category, setCategory] = useState('all');
     const [showAll, setShowAll] = useState(false);
+    const [query, setQuery] = useState('');
+    const navigate = useNavigate();
     const scroller = useRef(null);
 
     const sorted = [...site.tools].sort((a, b) => Number(b.popular) - Number(a.popular));
     const filtered = category === 'all' ? sorted : site.tools.filter((x) => x.category === category);
     const tools = category === 'all' && !showAll ? filtered.slice(0, POPULAR_LIMIT) : filtered;
+    const matches = query.trim() ? searchTools(site.tools, query, site.categories).slice(0, 8) : [];
+    // Returning visitors get their own recent tools here; everyone else the most used ones.
+    const recent = getRecent()
+        .map((slug) => site.tools.find((x) => x.slug === slug))
+        .filter(Boolean);
+    const quick = (recent.length > 0 ? recent : sorted).slice(0, 5);
 
     const scrollCards = (dir) => {
         const el = scroller.current;
@@ -130,6 +140,56 @@ export default function Home() {
                         </h1>
                         <p className="mx-auto mb-7 max-w-[520px] text-[clamp(1rem,1.6vw,1.12rem)] leading-relaxed text-ink-2">
                             {t('Access {count} free online tools. 100% free, private and secure.', { count: formatNumber(site.tools.length) })}
+                        </p>
+                        {/* Instant tool search: results appear as you type; Enter opens the first match. */}
+                        <form
+                            role="search"
+                            className="relative mx-auto mb-4 max-w-[520px] text-start"
+                            onSubmit={(e) => {
+                                e.preventDefault();
+                                if (matches[0]) navigate(`/${matches[0].slug}`);
+                            }}
+                        >
+                            <label htmlFor="home-search" className="sr-only">
+                                {t('Search tools')}
+                            </label>
+                            <span className="pointer-events-none absolute start-4 top-1/2 -translate-y-1/2 text-muted [&_svg]:size-5">
+                                <Icon name="search" />
+                            </span>
+                            <input
+                                id="home-search"
+                                type="search"
+                                value={query}
+                                onChange={(e) => setQuery(e.target.value)}
+                                placeholder={t('Search tools…')}
+                                autoComplete="off"
+                                aria-controls="home-search-results"
+                                className="w-full rounded-full border border-line bg-surface py-3.5 ps-12 pe-4 text-[1rem] text-ink shadow-soft outline-none focus:border-brand"
+                            />
+                        </form>
+                        <div id="home-search-results" aria-live="polite" className="mx-auto max-w-[520px] text-start">
+                            {query.trim() !== '' &&
+                                (matches.length > 0 ? (
+                                    <ul className="m-0 mb-5 grid list-none gap-1.5 rounded-2xl border border-line bg-surface p-2 shadow-card">
+                                        {matches.map((x) => (
+                                            <li key={x.slug}>
+                                                <Link className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-[0.95rem] font-semibold text-ink no-underline hover:bg-surface-2" to={`/${x.slug}`}>
+                                                    <Icon name={x.icon} /> {x.name}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                ) : (
+                                    <p className="m-0 mb-5 text-center text-[0.95rem] text-muted">{t('No tools match “{query}”. Try another word.', { query: query.trim() })}</p>
+                                ))}
+                        </div>
+                        <p className="m-0 mb-7 flex flex-wrap items-center justify-center gap-x-2 gap-y-1.5 text-[0.88rem]">
+                            <span className="font-semibold text-ink-2">{recent.length > 0 ? t('Recently used') : t('Popular tools')}:</span>
+                            {quick.map((x) => (
+                                <Link key={x.slug} to={`/${x.slug}`} className="rounded-full border border-line bg-surface px-3 py-1 font-semibold text-ink-2 no-underline hover:border-line-strong hover:text-ink">
+                                    {x.name}
+                                </Link>
+                            ))}
                         </p>
                         <a
                             href="#popular"
