@@ -211,6 +211,10 @@
         "sm": 858,
         "lg": 770
     },
+    "whiteout-pdf": {
+        "sm": 340,
+        "lg": 340
+    },
     "word-counter": {
         "sm": 729,
         "lg": 545

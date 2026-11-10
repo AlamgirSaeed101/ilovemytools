@@ -2356,6 +2356,42 @@ return [
         ],
     ],
 
+    'whiteout-pdf' => [
+        'name' => 'Corretivo Branco para PDF',
+        'title' => 'Corretivo Branco para PDF Online Grátis',
+        'description' => 'Aplique corretivo branco a um PDF online grátis. Arraste sobre texto, imagem ou área para cobri-la com uma caixa branca. Sem upload, sem cadastro.',
+        'h1' => 'Corretivo Branco para PDF',
+        'tagline' => 'Arraste sobre qualquer parte da página para cobri-la de branco - direto no seu navegador.',
+        'keywords' => ['corretivo branco pdf', 'cobrir texto no pdf', 'tapar texto pdf online', 'ocultar texto em pdf', 'ferramenta grátis para cobrir pdf'],
+        'intro' => 'Aplique corretivo branco a um PDF arrastando uma caixa branca sobre qualquer texto, imagem ou área que queira ocultar - sem imprimir, escanear ou instalar nada. Escolha a página, arraste para cobrir o que não quer visível e adicione quantas caixas precisar, em qualquer página. Essa é a ferramenta Corretivo branco dentro do editor de PDF completo, então você também pode editar o texto que já existe no PDF, adicionar uma marca d\'água ou uma assinatura, ou passar para outra página, tudo sem sair do navegador.',
+        'steps' => [
+            'Escolha o PDF ao qual quer aplicar o corretivo branco.',
+            'Mude para a aba Corretivo branco.',
+            'Arraste sobre qualquer texto, imagem ou área que queira cobrir com branco.',
+            'Adicione mais caixas ou mude de página - Desfazer remove a última se você mudar de ideia.',
+            'Clique em Salvar PDF e baixe o arquivo.',
+        ],
+        'features' => [
+            'Cubra qualquer texto, imagem ou área com uma caixa branca sólida',
+            'Arraste para desenhar uma caixa do tamanho exato que precisa',
+            'Mova ou redimensione uma caixa depois de posicioná-la',
+            'Adicione quantas caixas ou páginas precisar',
+            'Também edite o texto que já existe no PDF, adicione uma marca d\'água ou uma assinatura',
+            'Privado - seu PDF nunca sai do seu dispositivo',
+        ],
+        'content' => [
+            ['heading' => 'Corretivo branco ou redação - qual você precisa?', 'body' => 'O corretivo branco simplesmente pinta uma caixa branca por cima de algo - rápido para cobrir um selo antigo, uma marca solta ou conteúdo que você pretende reescrever em cima, mas o texto ou a imagem originais ainda estão no arquivo por baixo. Para remover permanentemente texto ou imagens sensíveis, de forma que não possam ser recuperados, copiados ou pesquisados, use a ferramenta Redigir PDF, que reconstrói a página como uma imagem plana.'],
+            ['heading' => 'Como conseguir uma cobertura limpa', 'body' => 'Arraste a caixa um pouco maior que a área que quer ocultar para que nenhuma borda do conteúdo antigo apareça, especialmente perto da borda da página. Redimensione ou mova depois com a alça se não ficar bem alinhada, e adicione uma nova caixa para cada coisa separada que quiser cobrir, em vez de uma caixa grande sobre vários pontos.'],
+        ],
+        'faqs' => [
+            ['q' => 'O corretivo branco realmente remove o texto por baixo?', 'a' => 'Não. Ele desenha uma caixa branca opaca por cima, que o esconde visualmente e na impressão, mas o texto ou a imagem originais permanecem no conteúdo do PDF. Para conteúdo que precise ser removido de forma permanente, use a ferramenta Redigir PDF.'],
+            ['q' => 'Posso mover ou redimensionar uma caixa branca depois de posicioná-la?', 'a' => 'Sim. Arraste a caixa para movê-la, ou use a alça do canto para redimensioná-la, em qualquer momento antes de salvar.'],
+            ['q' => 'Posso cobrir mais de uma área?', 'a' => 'Sim. Adicione uma caixa separada para cada área que quiser cobrir, em qualquer página.'],
+            ['q' => 'Meu PDF é enviado para um servidor?', 'a' => 'Não. Tudo - cobrir, mover e salvar - acontece no seu navegador com JavaScript e nada é enviado a lugar nenhum.'],
+            ['q' => 'Posso editar também o texto que já existe no PDF?', 'a' => 'Sim. Mude para o modo Editar texto na mesma ferramenta para clicar em qualquer linha existente e digitar de novo na fonte original do PDF.'],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Calculadora de empréstimo',
         'title' => 'Calculadora de Empréstimo - Parcela e Amortização',

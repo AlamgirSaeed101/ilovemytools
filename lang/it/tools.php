@@ -2356,6 +2356,42 @@ return [
         ],
     ],
 
+    'whiteout-pdf' => [
+        'name' => 'Copri con Bianco un PDF',
+        'title' => 'Copri con Bianco un PDF Online Gratis',
+        'description' => 'Copri con bianco un PDF online gratis. Trascina su testo, immagini o aree per coprirli con un riquadro bianco. Senza caricare file, senza registrazione.',
+        'h1' => 'Copri con Bianco un PDF',
+        'tagline' => 'Trascina su qualsiasi parte della pagina per coprirla di bianco - direttamente nel tuo browser.',
+        'keywords' => ['copri con bianco pdf', 'coprire testo nel pdf', 'nascondere testo pdf online', 'coprire area pdf', 'strumento gratis per coprire pdf'],
+        'intro' => 'Copri con bianco un PDF trascinando un riquadro bianco su qualsiasi testo, immagine o area che vuoi nascondere - senza stampare, scansionare o installare nulla. Scegli la pagina, trascina per coprire ciò che non vuoi visibile e aggiungi tutti i riquadri che ti servono, su qualsiasi pagina. Questo è lo strumento Copri con bianco dello stesso editor di PDF completo, quindi puoi anche modificare il testo già presente nel PDF, aggiungere una filigrana o una firma, oppure passare a un\'altra pagina, tutto senza uscire dal browser.',
+        'steps' => [
+            'Scegli il PDF che vuoi coprire con bianco.',
+            'Passa alla scheda Copri con bianco.',
+            'Trascina su qualsiasi testo, immagine o area che vuoi coprire di bianco.',
+            'Aggiungi altri riquadri o cambia pagina - Annulla rimuove l\'ultimo se cambi idea.',
+            'Clicca su Salva PDF e scarica il file.',
+        ],
+        'features' => [
+            'Copri qualsiasi testo, immagine o area con un riquadro bianco opaco',
+            'Trascina per disegnare un riquadro della dimensione esatta che ti serve',
+            'Sposta o ridimensiona un riquadro dopo averlo posizionato',
+            'Aggiungi tutti i riquadri o le pagine che ti servono',
+            'Modifica anche il testo già presente nel PDF, aggiungi una filigrana o una firma',
+            'Privato - il tuo PDF non lascia mai il tuo dispositivo',
+        ],
+        'content' => [
+            ['heading' => 'Coprire con bianco o redigere - quale ti serve?', 'body' => 'Copri con bianco dipinge semplicemente un riquadro bianco sopra qualcosa - rapido per coprire un vecchio timbro, un segno isolato o un contenuto che hai intenzione di riscrivere sopra, ma il testo o l\'immagine originali restano nel file sotto di esso. Per rimuovere in modo permanente testo o immagini sensibili, in modo che non possano essere recuperati, copiati o cercati, usa invece lo strumento Redigi PDF, che ricostruisce la pagina come un\'immagine appiattita.'],
+            ['heading' => 'Per una copertura pulita', 'body' => 'Trascina il riquadro un po\' più grande dell\'area che vuoi nascondere, così nessun bordo del vecchio contenuto sporge fuori, soprattutto vicino al margine della pagina. Ridimensionalo o spostalo dopo con la maniglia se non è ben allineato, e aggiungi un nuovo riquadro per ogni elemento separato che vuoi coprire invece di un riquadro grande su più punti.'],
+        ],
+        'faqs' => [
+            ['q' => 'Copri con bianco rimuove davvero il testo sottostante?', 'a' => 'No. Disegna un riquadro bianco opaco sopra, che lo nasconde visivamente e in stampa, ma il testo o l\'immagine originali restano nel contenuto del PDF. Per contenuti che devono essere rimossi in modo permanente, usa invece lo strumento Redigi PDF.'],
+            ['q' => 'Posso spostare o ridimensionare un riquadro bianco dopo averlo posizionato?', 'a' => 'Sì. Trascina il riquadro per spostarlo, oppure usa la maniglia d\'angolo per ridimensionarlo, in qualsiasi momento prima di salvare.'],
+            ['q' => 'Posso coprire più di un\'area?', 'a' => 'Sì. Aggiungi un riquadro separato per ogni area che vuoi coprire, su qualsiasi pagina.'],
+            ['q' => 'Il mio PDF viene caricato su un server?', 'a' => 'No. Tutto - coprire, spostare e salvare - avviene nel tuo browser con JavaScript e nulla viene inviato da nessuna parte.'],
+            ['q' => 'Posso anche modificare il testo già presente nel PDF?', 'a' => 'Sì. Passa alla modalità Modifica testo nello stesso strumento per cliccare su qualsiasi riga esistente e riscriverla nel carattere originale del PDF.'],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Calcolatore di prestito',
         'title' => 'Calcolatore di Prestito - Rata e Piano di Ammortamento',

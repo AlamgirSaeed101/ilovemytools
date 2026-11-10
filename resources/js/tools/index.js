@@ -71,6 +71,7 @@ const tools = {
     'watermark-pdf': editPdfMode('watermark'),
     'sign-pdf': editPdfMode('sign'),
     'add-text-to-pdf': editPdfMode('text'),
+    'whiteout-pdf': editPdfMode('whiteout'),
 };
 
 export default tools;

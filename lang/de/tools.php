@@ -2356,6 +2356,42 @@ return [
         ],
     ],
 
+    'whiteout-pdf' => [
+        'name' => 'PDF Weiß Abdecken',
+        'title' => 'PDF Weiß Abdecken Online Kostenlos',
+        'description' => 'Decken Sie ein PDF kostenlos online weiß ab. Ziehen Sie über Text, Bilder oder Bereiche, um sie mit einem weißen Kasten abzudecken. Ohne Hochladen.',
+        'h1' => 'PDF Weiß Abdecken',
+        'tagline' => 'Ziehen Sie über einen beliebigen Bereich der Seite, um ihn weiß abzudecken - direkt in Ihrem Browser.',
+        'keywords' => ['pdf weiß abdecken', 'text in pdf weiß abdecken', 'pdf text verdecken online', 'pdf bereich abdecken', 'kostenloses werkzeug zum weiß abdecken'],
+        'intro' => 'Decken Sie ein PDF weiß ab, indem Sie einen weißen Kasten über Text, Bilder oder Bereiche ziehen, die Sie verbergen möchten - ohne Drucken, Scannen oder neue Software. Wählen Sie die Seite, ziehen Sie über das, was nicht sichtbar sein soll, und fügen Sie so viele Kästen hinzu, wie Sie brauchen, auf jeder Seite. Das ist das Werkzeug „Weiß abdecken" im vollständigen PDF-Editor, Sie können also auch den vorhandenen PDF-Text bearbeiten, ein Wasserzeichen oder eine Unterschrift hinzufügen oder zu einer anderen Seite wechseln, alles ohne Ihren Browser zu verlassen.',
+        'steps' => [
+            'Wählen Sie das PDF aus, das Sie weiß abdecken möchten.',
+            'Wechseln Sie zum Tab „Weiß abdecken".',
+            'Ziehen Sie über Text, Bilder oder Bereiche, die Sie weiß abdecken möchten.',
+            'Fügen Sie weitere Kästen hinzu oder wechseln Sie die Seite - Rückgängig entfernt den letzten, falls Sie es sich anders überlegen.',
+            'Klicken Sie auf PDF speichern und laden Sie die Datei herunter.',
+        ],
+        'features' => [
+            'Text, Bilder oder Bereiche mit einem deckenden weißen Kasten abdecken',
+            'Einen Kasten genau in der benötigten Größe aufziehen',
+            'Einen Kasten nach dem Platzieren verschieben oder in der Größe ändern',
+            'So viele Kästen oder Seiten hinzufügen, wie Sie brauchen',
+            'Auch vorhandenen PDF-Text bearbeiten, ein Wasserzeichen oder eine Unterschrift hinzufügen',
+            'Privat - Ihr PDF verlässt niemals Ihr Gerät',
+        ],
+        'content' => [
+            ['heading' => 'Weiß abdecken oder schwärzen - was brauchen Sie?', 'body' => 'Weiß abdecken malt einfach einen weißen Kasten über etwas - schnell, um einen alten Stempel, einen verirrten Fleck oder Inhalt zu überdecken, den Sie neu beschriften wollen, aber der ursprüngliche Text oder das Bild bleibt darunter in der Datei erhalten. Um sensiblen Text oder Bilder dauerhaft zu entfernen, sodass sie nicht wiederhergestellt, kopiert oder durchsucht werden können, nutzen Sie stattdessen das Werkzeug PDF schwärzen, das die Seite als geglättetes Bild neu aufbaut.'],
+            ['heading' => 'Für eine saubere Abdeckung', 'body' => 'Ziehen Sie den Kasten etwas größer als den Bereich, den Sie verbergen möchten, damit kein Rand des alten Inhalts hervorschaut, besonders nahe am Seitenrand. Passen Sie Größe oder Position danach bei Bedarf mit dem Griff an, und fügen Sie für jede einzelne Stelle, die Sie abdecken möchten, einen eigenen Kasten hinzu, statt einen großen Kasten über mehrere Stellen zu legen.'],
+        ],
+        'faqs' => [
+            ['q' => 'Entfernt „Weiß abdecken" den Text darunter wirklich?', 'a' => 'Nein. Es zeichnet einen deckenden weißen Kasten darüber, der ihn optisch und beim Drucken verbirgt, aber der ursprüngliche Text oder das Bild bleibt im Inhalt des PDFs erhalten. Für Inhalte, die dauerhaft entfernt werden müssen, nutzen Sie stattdessen das Werkzeug PDF schwärzen.'],
+            ['q' => 'Kann ich einen weißen Kasten nach dem Platzieren verschieben oder in der Größe ändern?', 'a' => 'Ja. Ziehen Sie den Kasten, um ihn zu verschieben, oder nutzen Sie den Eckgriff, um ihn in der Größe zu ändern, jederzeit vor dem Speichern.'],
+            ['q' => 'Kann ich mehr als einen Bereich abdecken?', 'a' => 'Ja. Fügen Sie für jeden Bereich, den Sie abdecken möchten, einen eigenen Kasten hinzu, auf jeder Seite.'],
+            ['q' => 'Wird mein PDF auf einen Server hochgeladen?', 'a' => 'Nein. Alles - Abdecken, Verschieben und Speichern - geschieht in Ihrem Browser mit JavaScript, und nichts wird irgendwohin gesendet.'],
+            ['q' => 'Kann ich auch vorhandenen PDF-Text bearbeiten?', 'a' => 'Ja. Wechseln Sie im selben Werkzeug zum Modus Text bearbeiten, klicken Sie auf eine vorhandene Zeile und tippen Sie sie in der Originalschrift des PDFs neu ein.'],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Kreditrechner',
         'title' => 'Kreditrechner - Monatliche Rate & Tilgungsplan',

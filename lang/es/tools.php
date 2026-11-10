@@ -2251,6 +2251,42 @@ return [
         ],
     ],
 
+    'whiteout-pdf' => [
+        'name' => 'Corrector Blanco para PDF',
+        'title' => 'Corrector Blanco para PDF Online Gratis',
+        'description' => 'Aplica un corrector blanco a un PDF online gratis. Arrastra sobre texto, imagen o área para cubrirla con un recuadro blanco. Sin subir archivos.',
+        'h1' => 'Corrector Blanco para PDF',
+        'tagline' => 'Arrastra sobre cualquier parte de la página para cubrirla de blanco - directamente en tu navegador.',
+        'keywords' => ['corrector blanco pdf', 'tapar texto en pdf', 'cubrir texto pdf online', 'ocultar texto en pdf', 'herramienta gratis para tapar pdf'],
+        'intro' => 'Aplica un corrector blanco a un PDF arrastrando un recuadro blanco sobre cualquier texto, imagen o área que quieras ocultar - sin imprimir, escanear ni instalar nada. Elige la página, arrastra para cubrir lo que no quieras que se vea y añade tantos recuadros como necesites, en cualquier página. Esta es la herramienta Corrector blanco dentro del editor de PDF completo, así que también puedes editar el texto que ya tiene el PDF, añadir una marca de agua o una firma, o pasar a otra página, todo sin salir de tu navegador.',
+        'steps' => [
+            'Elige el PDF al que quieres aplicar el corrector blanco.',
+            'Cambia a la pestaña Corrector blanco.',
+            'Arrastra sobre cualquier texto, imagen o área que quieras cubrir con blanco.',
+            'Añade más recuadros o cambia de página - Deshacer elimina el último si cambias de opinión.',
+            'Haz clic en Guardar PDF y descarga el archivo.',
+        ],
+        'features' => [
+            'Cubre cualquier texto, imagen o área con un recuadro blanco sólido',
+            'Arrastra para dibujar un recuadro del tamaño exacto que necesitas',
+            'Mueve o redimensiona un recuadro después de colocarlo',
+            'Añade tantos recuadros o páginas como necesites',
+            'También edita el texto que ya tiene el PDF, añade una marca de agua o una firma',
+            'Privado: tu PDF nunca sale de tu dispositivo',
+        ],
+        'content' => [
+            ['heading' => 'Corrector blanco o redacción - ¿cuál necesitas?', 'body' => 'El corrector blanco simplemente pinta un recuadro blanco encima de algo - rápido para cubrir un sello antiguo, una marca suelta o contenido que piensas volver a escribir encima, pero el texto o la imagen originales siguen estando en el archivo debajo. Para eliminar de forma permanente texto o imágenes sensibles, de modo que no se puedan recuperar, copiar ni buscar, usa en su lugar la herramienta Redactar PDF, que reconstruye la página como una imagen plana.'],
+            ['heading' => 'Cómo conseguir una cobertura limpia', 'body' => 'Arrastra el recuadro un poco más grande que el área que quieres ocultar para que no se asome ningún borde del contenido anterior, especialmente cerca del borde de la página. Redimensiónalo o muévelo después con el tirador si no queda bien alineado, y añade un recuadro nuevo para cada cosa distinta que quieras cubrir en vez de un recuadro grande sobre varios puntos.'],
+        ],
+        'faqs' => [
+            ['q' => '¿El corrector blanco elimina realmente el texto de debajo?', 'a' => 'No. Dibuja un recuadro blanco opaco encima, que lo oculta visualmente y al imprimir, pero el texto o la imagen originales siguen en el contenido del PDF. Para contenido que deba eliminarse de forma permanente, usa en su lugar la herramienta Redactar PDF.'],
+            ['q' => '¿Puedo mover o redimensionar un recuadro blanco después de colocarlo?', 'a' => 'Sí. Arrastra el recuadro para moverlo, o usa el tirador de la esquina para redimensionarlo, en cualquier momento antes de guardar.'],
+            ['q' => '¿Puedo cubrir más de un área?', 'a' => 'Sí. Añade un recuadro distinto para cada área que quieras cubrir, en cualquier página.'],
+            ['q' => '¿Se sube mi PDF a un servidor?', 'a' => 'No. Todo - cubrir, mover y guardar - ocurre en tu navegador con JavaScript y nada se envía a ningún sitio.'],
+            ['q' => '¿Puedo editar también el texto que ya tiene el PDF?', 'a' => 'Sí. Cambia al modo Editar texto en la misma herramienta para hacer clic en cualquier línea existente y volver a escribirla en la fuente original del PDF.'],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Calculadora de préstamo',
         'title' => 'Calculadora de Préstamo - Cuota y Amortización',

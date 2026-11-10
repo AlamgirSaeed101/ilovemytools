@@ -1167,6 +1167,35 @@ test.describe('PDF tools', () => {
         await expect(page.getByRole('tab', { name: 'Edit text' })).toBeVisible();
         await expect(page.getByRole('tab', { name: 'Watermark' })).toBeVisible();
     });
+
+    test('whiteout-pdf opens Edit PDF with the Whiteout tab preselected and can cover and save content', async ({ page }) => {
+        await openTool(page, 'whiteout-pdf');
+        const originalBytes = await makePdf(1);
+        await page.getByTestId('file-input').setInputFiles({ name: 'form.pdf', mimeType: 'application/pdf', buffer: originalBytes });
+        await expect(page.getByRole('tab', { name: 'Whiteout' })).toHaveAttribute('aria-selected', 'true');
+        const stage = page.locator('.pdf-editor__stage');
+        await expect.poll(async () => (await page.locator('.pdf-editor__canvas').boundingBox())?.height ?? 0).toBeGreaterThan(100);
+        await stage.scrollIntoViewIfNeeded();
+        const box = await stage.boundingBox();
+        await page.mouse.move(box.x + 30, box.y + 150);
+        await page.mouse.down();
+        await page.mouse.move(box.x + 150, box.y + 190, { steps: 6 });
+        await page.mouse.up();
+        const overlay = page.locator('.pdf-editor__overlay');
+        await expect(overlay).toHaveCount(1);
+        await expect(page.getByRole('button', { name: 'Whiteout - drag to move' })).toBeVisible();
+
+        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(file.suggestedFilename()).toBe('form-edited.pdf');
+        const savedBytes = await readDownload(file);
+        expect(await pdfPageCount(savedBytes)).toBe(1);
+        expect(savedBytes.length).toBeGreaterThan(originalBytes.length);
+
+        // The one editor is still underneath: every other tab is reachable from this page too.
+        await expect(page.getByRole('tab', { name: 'Edit text' })).toBeVisible();
+        await expect(page.getByRole('tab', { name: 'Watermark' })).toBeVisible();
+    });
 });
 
 test.describe('Calculators', () => {

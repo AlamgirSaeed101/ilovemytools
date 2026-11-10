@@ -2229,6 +2229,42 @@ return [
         ],
     ],
 
+    'whiteout-pdf' => [
+        'name' => 'Zakryj na Biało PDF',
+        'title' => 'Zakryj na Biało PDF Online Bezpłatnie',
+        'description' => 'Zakryj na biało PDF bezpłatnie online. Przeciągnij nad tekstem, obrazem lub obszarem, aby zakryć je białym polem. Bez wgrywania plików, bez rejestracji.',
+        'h1' => 'Zakryj na Biało PDF',
+        'tagline' => 'Przeciągnij nad dowolnym miejscem strony, aby zakryć je na biało - prosto w przeglądarce.',
+        'keywords' => ['zakryj na biało pdf', 'zakrycie tekstu w pdf', 'ukryj tekst pdf online', 'zakryj obszar pdf', 'bezpłatne narzędzie do zakrywania pdf'],
+        'intro' => 'Zakryj na biało PDF, przeciągając białe pole nad tekstem, obrazem lub obszarem, który chcesz ukryć - bez drukowania, skanowania czy instalowania czegokolwiek. Wybierz stronę, przeciągnij, aby zakryć to, co nie powinno być widoczne, i dodaj tyle pól, ile potrzebujesz, na każdej stronie. To narzędzie Zakryj na biało w tym samym, pełnym edytorze PDF, więc możesz też edytować tekst już znajdujący się w PDF, dodać znak wodny lub podpis, albo przejść do innej strony - wszystko bez wychodzenia z przeglądarki.',
+        'steps' => [
+            'Wybierz PDF, który chcesz zakryć na biało.',
+            'Przełącz się na zakładkę Zakryj na biało.',
+            'Przeciągnij nad tekstem, obrazem lub obszarem, który chcesz zakryć na biało.',
+            'Dodaj kolejne pola lub zmień stronę - Wstecz usuwa ostatnie, jeśli zmienisz zdanie.',
+            'Kliknij Zapisz PDF i pobierz plik.',
+        ],
+        'features' => [
+            'Zakryj tekst, obraz lub obszar pełnym białym polem',
+            'Przeciągnij, aby narysować pole o dokładnie potrzebnym rozmiarze',
+            'Przesuń lub zmień rozmiar pola po jego umieszczeniu',
+            'Dodaj tyle pól lub stron, ile potrzebujesz',
+            'Edytuj też tekst już w PDF, dodaj znak wodny lub podpis',
+            'Prywatne - Twój PDF nigdy nie opuszcza Twojego urządzenia',
+        ],
+        'content' => [
+            ['heading' => 'Zakryć na biało czy zaczernić - co jest Ci potrzebne?', 'body' => 'Zakryj na biało po prostu maluje białe pole na czymś - szybkie, by zakryć stary stempel, przypadkowy znak lub treść, którą planujesz nadpisać, ale oryginalny tekst lub obraz wciąż znajduje się w pliku pod spodem. Aby na stałe usunąć wrażliwy tekst lub obrazy, tak by nie można ich było odzyskać, skopiować ani znaleźć, użyj zamiast tego narzędzia Zaczernij PDF, które odtwarza stronę jako spłaszczony obraz.'],
+            ['heading' => 'Jak uzyskać czyste zakrycie', 'body' => 'Przeciągnij pole trochę większe niż obszar, który chcesz zakryć, aby żaden fragment starej treści nie wystawał, zwłaszcza blisko krawędzi strony. Zmień potem rozmiar lub przesuń je uchwytem, jeśli nie jest dobrze wyrównane, i dodaj nowe pole dla każdej osobnej rzeczy, którą chcesz zakryć, zamiast jednego dużego pola na kilka miejsc.'],
+        ],
+        'faqs' => [
+            ['q' => 'Czy zakrycie na biało naprawdę usuwa tekst pod spodem?', 'a' => 'Nie. Rysuje pełne białe pole na wierzchu, które skrywa go wizualnie i podczas druku, ale oryginalny tekst lub obraz pozostaje w treści PDF. Dla treści, które muszą zostać usunięte na stałe, użyj zamiast tego narzędzia Zaczernij PDF.'],
+            ['q' => 'Czy mogę przesunąć lub zmienić rozmiar białego pola po jego umieszczeniu?', 'a' => 'Tak. Przeciągnij pole, aby je przesunąć, albo użyj uchwytu w rogu, aby zmienić jego rozmiar, w każdej chwili przed zapisaniem.'],
+            ['q' => 'Czy mogę zakryć więcej niż jeden obszar?', 'a' => 'Tak. Dodaj osobne pole dla każdego obszaru, który chcesz zakryć, na każdej stronie.'],
+            ['q' => 'Czy mój PDF jest wgrywany na serwer?', 'a' => 'Nie. Wszystko - zakrywanie, przesuwanie i zapisywanie - dzieje się w przeglądarce za pomocą JavaScript i nic nie jest wysyłane nigdzie.'],
+            ['q' => 'Czy mogę też edytować tekst już znajdujący się w PDF?', 'a' => 'Tak. Przełącz się na tryb Edytuj tekst w tym samym narzędziu, aby kliknąć istniejącą linię i wpisać ją na nowo w oryginalnej czcionce PDF.'],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Kalkulator kredytu',
         'title' => 'Kalkulator Kredytu - Rata i Harmonogram Spłat',

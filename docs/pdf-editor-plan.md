@@ -36,6 +36,7 @@ text and change it in place, in the same font.
   - [x] Signature: a new Signature tab lets you draw, type or upload a signature and place it on any page (drag to move, drag the corner to resize), with an optional date stamp underneath - the same capture flow the standalone Sign PDF page used, now inside the one editor. `/sign-pdf` opens Edit PDF with this tab preselected, same settings and output as before.
 7. [ ] Landing pages for each mode: add text to PDF, whiteout PDF, edit PDF text, PDF annotator, fill PDF form, Sejda alternative
   - [x] Add text to PDF `/add-text-to-pdf` (opens Edit PDF with the Add text tab preselected, same editor underneath), own SEO content in all 10 languages, e2e test, panel height measured.
+  - [x] Whiteout PDF `/whiteout-pdf` (opens Edit PDF with the Whiteout tab preselected, same editor underneath), own SEO content in all 10 languages, e2e test, panel height measured.
 
 ## Features
 

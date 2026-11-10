@@ -2356,6 +2356,42 @@ return [
         ],
     ],
 
+    'whiteout-pdf' => [
+        'name' => 'Masquer en Blanc un PDF',
+        'title' => 'Masquer en Blanc un PDF Gratuit en Ligne',
+        'description' => "Masquez en blanc un PDF gratuitement en ligne. Faites glisser sur du texte, une image ou une zone pour la couvrir d'un cadre blanc. Sans envoi de fichier.",
+        'h1' => 'Masquer en Blanc un PDF',
+        'tagline' => "Faites glisser sur n'importe quelle partie de la page pour la couvrir de blanc - directement dans votre navigateur.",
+        'keywords' => ['masquer en blanc un pdf', 'couvrir du texte dans un pdf', 'cacher du texte pdf en ligne', 'masquer du texte pdf', 'outil gratuit pour masquer un pdf'],
+        'intro' => "Masquez en blanc un PDF en faisant glisser un cadre blanc sur tout texte, image ou zone que vous voulez cacher - sans imprimer, scanner ni installer quoi que ce soit. Choisissez la page, faites glisser pour couvrir ce que vous ne voulez pas voir et ajoutez autant de cadres que nécessaire, sur n'importe quelle page. C'est l'outil Masquer en blanc du même éditeur de PDF complet, donc vous pouvez aussi modifier le texte déjà présent dans le PDF, ajouter un filigrane ou une signature, ou passer à une autre page, tout cela sans quitter votre navigateur.",
+        'steps' => [
+            'Choisissez le PDF à masquer en blanc.',
+            "Passez à l'onglet Masquer en blanc.",
+            'Faites glisser sur tout texte, image ou zone que vous voulez couvrir de blanc.',
+            "Ajoutez d'autres cadres ou changez de page - Annuler supprime le dernier si vous changez d'avis.",
+            'Cliquez sur Enregistrer le PDF et téléchargez le fichier.',
+        ],
+        'features' => [
+            'Couvrez tout texte, image ou zone avec un cadre blanc opaque',
+            'Faites glisser pour dessiner un cadre à la taille exacte souhaitée',
+            "Déplacez ou redimensionnez un cadre après l'avoir placé",
+            'Ajoutez autant de cadres ou de pages que nécessaire',
+            'Modifiez aussi le texte déjà présent dans le PDF, ajoutez un filigrane ou une signature',
+            'Privé - votre PDF ne quitte jamais votre appareil',
+        ],
+        'content' => [
+            ['heading' => 'Masquer en blanc ou caviarder - lequel vous faut-il ?', 'body' => "Masquer en blanc peint simplement un cadre blanc par-dessus quelque chose - pratique pour couvrir un vieux tampon, une marque isolée ou un contenu que vous comptez retaper par-dessus, mais le texte ou l'image d'origine reste dans le fichier en dessous. Pour supprimer définitivement du texte ou des images sensibles, afin qu'ils ne puissent plus être récupérés, copiés ni recherchés, utilisez plutôt l'outil Caviarder un PDF, qui reconstruit la page sous forme d'image aplatie."],
+            ['heading' => 'Pour une couverture bien nette', 'body' => "Faites glisser un cadre un peu plus grand que la zone à cacher pour qu'aucun bord de l'ancien contenu ne dépasse, surtout près d'une bordure de page. Redimensionnez-le ou déplacez-le ensuite avec la poignée s'il n'est pas bien aligné, et ajoutez un nouveau cadre pour chaque élément distinct à couvrir plutôt qu'un grand cadre sur plusieurs zones."],
+        ],
+        'faqs' => [
+            ['q' => 'Masquer en blanc supprime-t-il vraiment le texte en dessous ?', 'a' => "Non. Un cadre blanc opaque est dessiné par-dessus, ce qui le cache visuellement et à l'impression, mais le texte ou l'image d'origine reste dans le contenu du PDF. Pour un contenu devant être supprimé définitivement, utilisez plutôt l'outil Caviarder un PDF."],
+            ['q' => "Puis-je déplacer ou redimensionner un cadre blanc après l'avoir placé ?", 'a' => "Oui. Faites glisser le cadre pour le déplacer, ou utilisez sa poignée d'angle pour le redimensionner, à tout moment avant d'enregistrer."],
+            ['q' => 'Puis-je couvrir plusieurs zones ?', 'a' => "Oui. Ajoutez un cadre distinct pour chaque zone à couvrir, sur n'importe quelle page."],
+            ['q' => 'Mon PDF est-il envoyé à un serveur ?', 'a' => "Non. Tout - couvrir, déplacer et enregistrer - se passe dans votre navigateur avec JavaScript, et rien n'est envoyé où que ce soit."],
+            ['q' => 'Puis-je aussi modifier le texte déjà présent dans le PDF ?', 'a' => "Oui. Passez au mode Modifier le texte dans le même outil pour cliquer sur n'importe quelle ligne existante et la retaper dans la police d'origine du PDF."],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Calculateur de prêt',
         'title' => 'Calculateur de Prêt - Mensualité et Amortissement',

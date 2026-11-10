@@ -2599,6 +2599,57 @@ return [
         'related' => ['edit-pdf', 'watermark-pdf', 'sign-pdf', 'merge-pdf'],
     ],
 
+    'whiteout-pdf' => [
+        'name' => 'Whiteout PDF',
+        'category' => 'pdf-tools',
+        'icon' => 'pdf',
+        'popular' => false,
+        'updated' => '2026-11-10',
+        'title' => 'Whiteout PDF Online Free - Cover Text or Areas',
+        'description' => 'Whiteout a PDF online for free. Drag over any text, image or area to cover it with a white box, right on the page. No upload, no sign up, no limits.',
+        'h1' => 'Whiteout PDF',
+        'tagline' => 'Drag over anything on the page to cover it with white - right in your browser.',
+        'keywords' => ['whiteout pdf', 'whiteout pdf online', 'cover text in pdf', 'white out pdf text', 'free pdf whiteout tool'],
+        'intro' => 'Whiteout a PDF by dragging a white box over any text, image or area you want to hide - no printing, scanning or new software needed. Choose the page, drag to cover what you don\'t want visible, and add as many boxes as you need, on any page. This is the Whiteout tool inside the full PDF editor, so you can also edit the PDF\'s own text, add a watermark or a signature, or move on to another page, all without leaving your browser.',
+        'steps' => [
+            'Choose the PDF you want to whiteout.',
+            'Switch to the Whiteout tab.',
+            'Drag over any text, image or area you want to cover with white.',
+            'Add more boxes or switch pages - Undo removes the last one if you change your mind.',
+            'Click Save PDF and download the file.',
+        ],
+        'features' => [
+            'Cover any text, image or area with a solid white box',
+            'Drag to draw a box exactly the size you need',
+            'Move or resize a box after placing it',
+            'Add as many boxes or pages as you need',
+            'Also edit the PDF\'s existing text, add a watermark or a signature',
+            'Private - your PDF never leaves your device',
+        ],
+        'content' => [
+            [
+                'heading' => 'Whiteout or redaction - which do you need?',
+                'body' => 'Whiteout simply paints a white box over the top of something - quick for covering an old stamp, a stray mark or content you plan to retype over, but the original text or image is still in the file underneath it. To permanently remove sensitive text or images so they can\'t be recovered, copied or searched, use the separate Redact PDF tool instead, which rebuilds the page as a flattened image.',
+            ],
+            [
+                'heading' => 'Getting a clean cover',
+                'body' => 'Drag the box a little larger than the area you want hidden so no edge of the old content peeks out, especially near a page border. Resize or move it afterwards with the handle if it doesn\'t quite line up, and add a new box for each separate thing you want to cover rather than one large box over several spots.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Does whiteout actually remove the text underneath?', 'a' => 'No. It draws an opaque white box over the top, which hides it visually and when printed, but the original text or image stays in the PDF\'s content. For content that must be permanently removed, use the Redact PDF tool instead.'],
+            ['q' => 'Can I move or resize a white box after placing it?', 'a' => 'Yes. Drag the box to move it, or use its corner handle to resize it, at any point before you save.'],
+            ['q' => 'Can I cover more than one area?', 'a' => 'Yes. Add a separate box for each area you want to cover, on any page.'],
+            ['q' => 'Is my PDF uploaded to a server?', 'a' => 'No. Everything - covering, moving and saving - happens in your browser with JavaScript and nothing is sent anywhere.'],
+            ['q' => 'Can I also edit text that\'s already in the PDF?', 'a' => 'Yes. Switch to the Edit text mode in the same tool to click any existing line and retype it in the PDF\'s own font.'],
+        ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+        ],
+        'related' => ['edit-pdf', 'redact-pdf', 'add-text-to-pdf', 'watermark-pdf'],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Mortgage Calculator',
         'category' => 'calculators',
