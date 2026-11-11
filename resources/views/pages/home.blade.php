@@ -10,6 +10,8 @@
     </section>
 
     <div class="shell">
+        @include('partials.featured-banner')
+
         @foreach ($categories as $slug => $category)
             <section class="section" id="{{ $slug }}" aria-labelledby="heading-{{ $slug }}">
                 <div class="section__head">

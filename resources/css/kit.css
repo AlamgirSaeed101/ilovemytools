@@ -2889,3 +2889,151 @@ fieldset.grid-2 .check:has(input:checked) {
     font-weight: 650;
     color: var(--muted);
 }
+
+/* "Featured website" banner on the home page (components/FeaturedBanner.jsx, partials/featured-banner).
+   Inherits the site font; sits inside .shell so it matches the content width. */
+.feature-banner {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 2rem;
+    margin: 2.25rem 0 0.5rem;
+    padding: clamp(1.5rem, 4vw, 2.75rem) clamp(1.25rem, 4vw, 3rem);
+    border-radius: 1.5rem;
+    color: #fff;
+    background: linear-gradient(120deg, #0b1736 0%, #0f2a4a 48%, #0f766e 100%);
+    box-shadow: 0 24px 50px -28px rgb(11 23 54 / 0.8);
+}
+
+/* Soft abstract shapes behind the content. */
+.feature-banner::before,
+.feature-banner::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.feature-banner::before {
+    width: 320px;
+    height: 320px;
+    right: -90px;
+    top: -140px;
+    background: radial-gradient(circle, rgb(94 234 212 / 0.28), transparent 70%);
+}
+
+.feature-banner::after {
+    width: 260px;
+    height: 260px;
+    left: -110px;
+    bottom: -150px;
+    background: radial-gradient(circle, rgb(56 189 248 / 0.22), transparent 70%);
+}
+
+.feature-banner__body {
+    min-width: 0;
+}
+
+.feature-banner__label {
+    margin: 0 0 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: #5eead4;
+}
+
+.feature-banner__title {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.5rem, 3.2vw, 2.15rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: #fff;
+}
+
+.feature-banner__text {
+    margin: 0 0 1.4rem;
+    max-width: 34rem;
+    font-size: 1.02rem;
+    line-height: 1.6;
+    color: rgb(255 255 255 / 0.86);
+}
+
+.feature-banner__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.1rem;
+}
+
+.feature-banner__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    min-height: 46px;
+    padding: 0.75rem 1.4rem;
+    border-radius: 999px;
+    background: #fff;
+    color: #0b1736;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 10px 24px -12px rgb(0 0 0 / 0.6);
+    transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.feature-banner__button:hover {
+    color: #0b1736;
+    background: #ccfbf1;
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px -12px rgb(0 0 0 / 0.65);
+}
+
+.feature-banner__button:focus-visible {
+    outline: 3px solid #5eead4;
+    outline-offset: 3px;
+}
+
+.feature-banner__domain {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgb(255 255 255 / 0.75);
+}
+
+.feature-banner__art {
+    display: block;
+    width: 240px;
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 640px) {
+    .feature-banner {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.25rem;
+        text-align: left;
+    }
+
+    .feature-banner__art {
+        order: -1;
+        width: 150px;
+    }
+
+    .feature-banner__button {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .feature-banner__button {
+        transition: none;
+    }
+
+    .feature-banner__button:hover {
+        transform: none;
+    }
+}

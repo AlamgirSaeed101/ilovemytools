@@ -1,6 +1,7 @@
 import { lazy, Suspense, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import AdSlot from '../components/AdSlot.jsx';
+import FeaturedBanner from '../components/FeaturedBanner.jsx';
 import Icon from '../components/Icon.jsx';
 import ToolCard, { categoryOf } from '../components/ToolCard.jsx';
 import { getSite } from '../lib/api.js';
@@ -213,6 +214,7 @@ export default function Home() {
             </section>
 
             <div className="shell">
+                <FeaturedBanner />
                 <AdSlot key="home-header" position="header" />
 
                 {/* ---------- Browse tools (category cards) ---------- */}
