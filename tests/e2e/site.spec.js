@@ -190,6 +190,7 @@ test.describe('App shell', () => {
 
     test('home search filters tools instantly and recent tools are remembered', async ({ page }) => {
         await page.goto('/word-counter');
+        await expect(page.locator('h1')).toBeVisible(); // wait for the lazy-loaded tool page to mount and record itself as recent
         await page.goto('/');
         await page.getByRole('searchbox', { name: 'Search tools' }).fill('merge');
         await expect(page.locator('#home-search-results').getByRole('link', { name: 'Merge PDF' })).toBeVisible();

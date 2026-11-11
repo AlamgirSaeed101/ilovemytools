@@ -1,4 +1,11 @@
 {
-  "updated": "2026-11-10",
-  "outbound": {}
+  "updated": "2026-11-11",
+  "outbound": {
+    "https://www.linkedin.com/in/alamgir-saeed-bse161020": {
+      "days": 1,
+      "last": "2026-11-11",
+      "why": "999",
+      "linkedFrom": "https://ilovemytools.store/about/m-alamgir-saeed"
+    }
+  }
 }
