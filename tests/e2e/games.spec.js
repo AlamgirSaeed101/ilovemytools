@@ -170,6 +170,14 @@ test.describe('Random & Games', () => {
 async function openClockTool(page, slug) {
     await page.clock.install({ time: new Date('2026-01-01T10:00:00') });
     await openTool(page, slug);
+    // The tool itself is a separate lazy chunk loaded inside the page, on top of what openTool()
+    // already waited for; its Suspense fallback can still be resolving in the background. Wait for
+    // its real content before freezing the clock, or that still-pending resolution - scheduled while
+    // time was flowing - never gets a chance to run once pauseAt() stops the clock for good.
+    // (.clock is present from first render in both the stopwatch and the countdown timer, whether
+    // or not they have been started yet - unlike .clock__time, which the countdown timer only
+    // renders once running.)
+    await expect(page.locator('.clock')).toBeVisible();
     await page.clock.pauseAt(new Date('2026-01-01T10:05:00'));
 }
 
