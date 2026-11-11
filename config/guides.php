@@ -3962,4 +3962,87 @@ return [
         ],
     ],
 
+    'how-to-convert-jpg-to-pdf' => [
+        'title' => 'How to Convert JPG to PDF for Free (One or Many)',
+        'description' => 'Convert one or several JPG photos into a PDF for free, right in your browser: pick the right page size, keep the order correct, and avoid an oversized file.',
+        'h1' => 'How to convert JPG to PDF',
+        'intro' => 'Most places that ask you to "upload a PDF" - a visa application, a job portal, a bank, a school - will not take a plain JPG, even though a photo of a document is exactly what most people have on their phone. Turning one or more JPGs into a proper PDF solves that in under a minute, but a few choices along the way - page size, order, orientation - change how usable the result looks once someone else opens it. Here is how to get it right.',
+        'tool' => 'jpg-to-pdf',
+        'related' => ['pdf-to-jpg', 'merge-pdf', 'image-compressor'],
+        'published' => '2026-11-11',
+        'updated' => '2026-11-11',
+        'sections' => [
+            [
+                'heading' => 'Why convert a JPG to PDF at all',
+                'paragraphs' => [
+                    'A JPG is a single image; a PDF is a document format built to hold one or many pages in a fixed order, which is what most official uploads actually expect. Converting also solves the "I have five photos of one form" problem - instead of attaching five separate image files that someone has to open one at a time and hope are in the right order, you get one file with the pages exactly as you arranged them.',
+                ],
+                'list' => [
+                    'Submitting a scanned ID, passport page or signed form to a bank, visa office or landlord.',
+                    'Turning several photographed receipts into one PDF for an expense claim.',
+                    'Combining photographed pages of a contract, worksheet or assignment into a single document to email or upload.',
+                    'Sending a product photo or certificate somewhere that only accepts PDF attachments.',
+                ],
+            ],
+            [
+                'heading' => 'Step by step: JPG to PDF',
+                'list' => [
+                    'Open the [JPG to PDF](/jpg-to-pdf) tool and add your image or images - drop them in or click to browse. PNG and WebP work too, and you can mix formats in the same batch.',
+                    'If you added more than one, check the numbered order and use the up/down arrows to fix it - this is the order the pages will be in, so do it before converting rather than after.',
+                    'Choose a page size: A4, Letter, or Fit image (the page matches each photo\'s own shape and size exactly, with no white border).',
+                    'Pick Automatic orientation so a landscape photo gets a landscape page, or set it manually.',
+                    'Set a margin if you want white space around each image, or None to let the photo reach the edges.',
+                    'Click Convert to PDF and download the result.',
+                ],
+            ],
+            [
+                'heading' => 'A4/Letter or Fit image - which to pick',
+                'paragraphs' => [
+                    'This is the one setting that most changes how the final PDF looks, and it depends on what the PDF is for.',
+                ],
+                'table' => [
+                    'headers' => ['You are converting', 'Best page size', 'Why'],
+                    'rows' => [
+                        ['A scanned form, ID or document photo', 'A4 or Letter', 'Looks and prints like an ordinary document page; every page in the PDF is the same size'],
+                        ['A product photo, certificate or image you just need as a PDF file', 'Fit image', 'No white border is added; the page is exactly the photo\'s own shape'],
+                        ['Several photos of different shapes (portrait and landscape mixed)', 'Fit image with Automatic orientation', 'Each page matches its own photo instead of forcing every photo onto one fixed shape'],
+                        ['Anything that will be printed', 'A4 or Letter', 'Matches standard printer paper, so nothing gets cropped or scaled oddly at print time'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'Keeping the page order right',
+                'paragraphs' => [
+                    'Each image becomes one page, in the order shown in the list before you convert - there is no way to reorder pages after the PDF is downloaded from this tool, so check the numbered list first. For a multi-page form or contract photographed one page at a time, this is the step people skip and then have to redo: take the photos in order to begin with, and double-check the order again in the tool before clicking Convert, since photo filenames and gallery order do not always match the order you actually took them in.',
+                    'If you later need to fix the page order of a PDF you already downloaded, or you have several PDFs to join together, that is a separate step done afterwards: use [Organize PDF](/organize-pdf) to reorder an existing PDF\'s pages, or [Merge PDF](/merge-pdf) to combine finished PDFs into one.',
+                ],
+            ],
+            [
+                'heading' => 'Why the file comes out larger than expected',
+                'paragraphs' => [
+                    'A JPG to PDF conversion does not re-compress your photos - each image is placed into the PDF at its original quality, so the resulting PDF is roughly as large as all the source images added together. A dozen full-resolution phone photos can easily add up to a file too big for an email attachment or a web form\'s upload limit. If that happens, shrink the photos first with an image compressor before converting, or compress the finished PDF afterwards; either keeps the pages looking the same while cutting the file size.',
+                ],
+            ],
+            [
+                'heading' => 'Checklist before you submit the PDF',
+                'list' => [
+                    'Open the downloaded PDF and check every page is present and in the right order, not just the first one.',
+                    'Confirm text on scanned pages is actually readable at normal zoom, not blurry from a low-quality photo.',
+                    'Check the file size against any upload limit the destination states, and compress first if it is too big.',
+                    'If the form says "PDF only", confirm the file actually saved with a .pdf extension and opens as a document, not an image viewer.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Can I combine several JPGs into one PDF, or only convert one at a time?', 'a' => 'Both. Add a single photo for a one-page PDF, or add several and arrange them with the up/down arrows for a multi-page PDF with one image per page.'],
+            ['q' => 'Will converting reduce my photo quality?', 'a' => 'No. JPG and PNG images are placed into the PDF at their original quality; WebP images are converted to PNG first, which stays lossless.'],
+            ['q' => 'Are my photos uploaded to a server to make the PDF?', 'a' => 'No. The conversion happens in your browser using JavaScript, and the images never leave your device.'],
+        ],
+        'sources' => [
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+            ['title' => 'JPEG committee, Overview of JPEG', 'url' => 'https://jpeg.org/jpeg/'],
+            ['title' => 'Library of Congress, Sustainability of Digital Formats: JPEG File Interchange Format', 'url' => 'https://www.loc.gov/preservation/digital/formats/fdd/fdd000018.shtml'],
+        ],
+    ],
+
 ];
