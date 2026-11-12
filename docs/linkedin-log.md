@@ -47,3 +47,5 @@ Tools already announced on LinkedIn (one per line: date and slug). The daily rou
 2026-11-10 split-pdf company
 2026-11-11 word-counter personal
 2026-11-11 word-counter company
+2026-11-12 whiteout-pdf personal
+2026-11-12 whiteout-pdf company
