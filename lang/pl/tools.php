@@ -2265,6 +2265,42 @@ return [
         ],
     ],
 
+    'edit-pdf-text' => [
+        'name' => 'Edytuj Tekst w PDF',
+        'title' => 'Edytuj Tekst w PDF Online Bezpłatnie',
+        'description' => 'Edytuj tekst w PDF bezpłatnie online. Kliknij, wpisz nową treść, a zachowuje czcionkę i rozmiar oryginalnego PDF. Bez wgrywania plików, bez rejestracji.',
+        'h1' => 'Edytuj Tekst w PDF',
+        'tagline' => 'Kliknij dowolną linię tekstu w PDF i wpisz ją na nowo, w oryginalnej czcionce - prosto w przeglądarce.',
+        'keywords' => ['edytuj tekst w pdf', 'edycja tekstu w pdf', 'zmiana tekstu w pdf', 'edytuj tekst pdf online', 'wpisz na nowo tekst pdf'],
+        'intro' => 'Edytuj tekst, który już jest w PDF, klikając linię i wpisując nową treść - bez drukowania, skanowania czy instalowania czegokolwiek. Nowy tekst zachowuje oryginalną czcionkę, rozmiar, kolor i pozycję, o ile te litery już są w pliku, a Znajdź i zamień zmienia słowo na wszystkich stronach naraz. To narzędzie Edytuj tekst w tym samym, pełnym edytorze PDF, więc możesz też dodać nowy tekst, obrazy lub podpis, albo przejść do innej strony - wszystko bez wychodzenia z przeglądarki.',
+        'steps' => [
+            'Wybierz PDF, który chcesz edytować.',
+            'Kliknij linię tekstu i wpisz nową treść.',
+            'Kliknij Gotowe - tekst zostaje narysowany na nowo tą samą czcionką, rozmiarem i kolorem.',
+            'Użyj Znajdź i zamień, aby zmienić słowo na wszystkich stronach naraz.',
+            'Kliknij Zapisz PDF i pobierz plik.',
+        ],
+        'features' => [
+            'Zmień tekst już obecny w PDF, klikając i wpisując nową treść',
+            'Zachowuje oryginalną czcionkę, rozmiar, kolor i pozycję',
+            'Znajdź i zamień słowo na wszystkich stronach naraz',
+            'Przełącza się na podobną czcionkę standardową tylko dla liter, których PDF nigdy nie miał',
+            'Dodaj też nowy tekst, obrazy, kształty lub podpis',
+            'Prywatne - Twój PDF nigdy nie opuszcza Twojego urządzenia',
+        ],
+        'content' => [
+            ['heading' => 'Co się dzieje przy edycji istniejącego tekstu', 'body' => 'Narzędzie odczytuje fragmenty tekstu PDF wraz z osadzoną czcionką, rozmiarem i kolorem. Kliknięcie jednego z nich i wpisanie tekstu usuwa starą treść z zawartości strony, a nową rysuje na jej miejscu tą samą czcionką, kiedy to możliwe, dzięki czemu strona zachowuje swój oryginalny wygląd, a nie zyskuje niepasującą nakładkę. PDF zwykle osadza tylko litery, które już wykorzystuje, więc nowa litera, której nigdy nie było w dokumencie, przełącza tę linię na najbliższą czcionkę standardową, a edytor wskazuje, które litery to spowodowały.'],
+            ['heading' => 'Edycja tekstu PDF bez rejestracji', 'body' => 'Nie ma konta, logowania ani kroku z e-mailem: otwórz stronę, wybierz PDF do 200 MB i zacznij wpisywać nad liniami, które chcesz zmienić. Twoja przeglądarka sama odczytuje i edytuje plik; nic nie jest wgrywane, więc po naszej stronie nie zostaje nic, co trzeba by później usunąć. W trakcie pracy postępy zapisują się automatycznie w pamięci przeglądarki na tym urządzeniu, więc odświeżenie lub zamknięta karta można odzyskać, a ta zapisana kopia jest usuwana, gdy pobierzesz edytowany PDF lub wybierzesz Odrzuć.'],
+        ],
+        'faqs' => [
+            ['q' => 'Czy mogę edytować tekst, który już jest w PDF?', 'a' => 'Tak. Kliknij linię na stronie i wpisz tekst - nowa treść zastępuje starą w tym samym miejscu. Zeskanowane strony to obrazy bez edytowalnego tekstu, więc użyj w nich Zakryj na biało i Dodaj tekst.'],
+            ['q' => 'Czy edytowany tekst zachowa tę samą czcionkę?', 'a' => 'Tak, o ile PDF już osadza litery, które wpisujesz. Jeśli litery nigdy nie było w dokumencie, ta linia przełącza się na najbliższą czcionkę standardową (Arial/Helvetica, Times lub Courier), a edytor wskazuje, które litery to spowodowały.'],
+            ['q' => 'Czy mogę zmienić to samo słowo wszędzie naraz?', 'a' => 'Tak. Użyj Znajdź i zamień, aby zmienić słowo lub frazę na wszystkich stronach dokumentu w jednym kroku.'],
+            ['q' => 'Czy mój PDF jest wgrywany na serwer?', 'a' => 'Nie. Wszystko - odczyt, edycja i zapis - dzieje się w przeglądarce za pomocą JavaScript i nic nie jest wysyłane nigdzie.'],
+            ['q' => 'Czy mogę też dodać nowy tekst lub podpis?', 'a' => 'Tak. Przełącz się na zakładkę Dodaj tekst, Obraz lub Podpis w tym samym edytorze bez utraty już wprowadzonych zmian.'],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Kalkulator kredytu',
         'title' => 'Kalkulator Kredytu - Rata i Harmonogram Spłat',

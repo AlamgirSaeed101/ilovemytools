@@ -2786,6 +2786,42 @@ return [
         ],
     ],
 
+    'edit-pdf-text' => [
+        'name' => 'Modifica il Testo di un PDF',
+        'title' => 'Modifica il Testo di un PDF Online Gratis',
+        'description' => 'Modifica il testo di un PDF online gratis. Clicca, scrivi sopra e il testo mantiene carattere e dimensione del PDF originale. Senza caricare file.',
+        'h1' => 'Modifica il Testo di un PDF',
+        'tagline' => 'Clicca su qualsiasi riga di testo di un PDF e riscrivila, nel suo carattere originale - direttamente nel tuo browser.',
+        'keywords' => ['modificare il testo di un pdf', 'modificare il testo in un pdf', 'cambiare il testo nel pdf', 'modificare testo pdf online', 'riscrivere testo pdf'],
+        'intro' => 'Modifica il testo già presente in un PDF cliccando su una riga e scrivendo il nuovo testo - senza stampare, scansionare o installare nulla. Il testo sostituito mantiene il carattere, la dimensione, il colore e la posizione originali ovunque quelle lettere siano già nel file, e Trova e sostituisci cambia una parola in tutte le pagine in una volta. Questo è lo strumento Modifica testo dello stesso editor di PDF completo, quindi puoi anche aggiungere nuovo testo, immagini o una firma, oppure passare a un\'altra pagina, tutto senza uscire dal browser.',
+        'steps' => [
+            'Scegli il PDF che vuoi modificare.',
+            'Clicca su una riga di testo e scrivi il nuovo testo.',
+            'Clicca su Fatto - il testo viene ridisegnato con lo stesso carattere, dimensione e colore.',
+            'Usa Trova e sostituisci per cambiare una parola in tutte le pagine in una volta.',
+            'Clicca su Salva PDF e scarica il file.',
+        ],
+        'features' => [
+            'Cambia il testo già presente nel PDF cliccando e scrivendo',
+            'Mantiene carattere, dimensione, colore e posizione originali',
+            'Trova e sostituisci una parola in tutte le pagine in una volta',
+            'Passa a un carattere standard simile solo per le lettere che il PDF non ha mai avuto',
+            'Aggiungi anche nuovo testo, immagini, forme o una firma',
+            'Privato - il tuo PDF non lascia mai il tuo dispositivo',
+        ],
+        'content' => [
+            ['heading' => 'Cosa succede quando modifichi un testo esistente', 'body' => 'Lo strumento legge i blocchi di testo del PDF con il loro carattere, dimensione e colore incorporati. Cliccando su uno di essi e scrivendo, il testo vecchio viene rimosso dal contenuto della pagina e quello nuovo viene disegnato al suo posto con lo stesso carattere quando possibile, così la pagina mantiene il suo aspetto originale invece di avere una sovrapposizione che non corrisponde. Un PDF di solito incorpora solo le lettere che già usa, quindi una lettera mai presente nel documento fa passare quella riga al carattere standard più simile, e lo strumento indica quali lettere ne sono la causa.'],
+            ['heading' => 'Modificare il testo di un PDF senza registrarsi', 'body' => 'Non c\'è account, accesso o passaggio con email: apri la pagina, scegli un PDF fino a 200 MB e inizia a scrivere sopra le righe che vuoi cambiare. Il tuo browser legge e modifica il file da solo; niente viene caricato, quindi non resta nulla salvato da parte nostra da eliminare dopo. Mentre lavori, i progressi si salvano automaticamente nella memoria del browser su questo dispositivo, così un aggiornamento della pagina o una scheda chiusa possono essere ripresi, e quella copia salvata si elimina non appena scarichi il PDF modificato o scegli Scarta.'],
+        ],
+        'faqs' => [
+            ['q' => 'Posso modificare il testo già presente in un PDF?', 'a' => 'Sì. Clicca su una riga della pagina e scrivi - il nuovo testo sostituisce quello vecchio nella stessa posizione. Le pagine scansionate sono immagini senza testo modificabile, quindi in quel caso usa Copri con bianco e Aggiungi testo.'],
+            ['q' => 'Il testo modificato manterrà lo stesso carattere?', 'a' => 'Sì, ogni volta che il PDF incorpora già le lettere che scrivi. Se una lettera non è mai stata nel documento, quella riga passa al carattere standard più simile (Arial/Helvetica, Times o Courier) e lo strumento indica quali lettere ne sono la causa.'],
+            ['q' => 'Posso cambiare la stessa parola ovunque in una volta?', 'a' => 'Sì. Usa Trova e sostituisci per cambiare una parola o una frase in tutte le pagine del documento in un solo passaggio.'],
+            ['q' => 'Il mio PDF viene caricato su un server?', 'a' => 'No. Tutto - leggere, modificare e salvare - avviene nel tuo browser con JavaScript e nulla viene inviato da nessuna parte.'],
+            ['q' => 'Posso anche aggiungere nuovo testo o una firma?', 'a' => 'Sì. Passa alla scheda Aggiungi testo, Immagine o Firma nello stesso editor senza perdere le modifiche già fatte.'],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Calcolatore di prestito',
         'title' => 'Calcolatore di Prestito - Rata e Piano di Ammortamento',

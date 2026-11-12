@@ -71,6 +71,10 @@
         "sm": 340,
         "lg": 340
     },
+    "edit-pdf-text": {
+        "sm": 340,
+        "lg": 340
+    },
     "excel-to-pdf": {
         "sm": 449,
         "lg": 372

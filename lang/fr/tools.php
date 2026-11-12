@@ -2392,6 +2392,42 @@ return [
         ],
     ],
 
+    'edit-pdf-text' => [
+        'name' => "Modifier le Texte d'un PDF",
+        'title' => "Modifier le Texte d'un PDF Gratuit en Ligne",
+        'description' => "Modifiez le texte d'un PDF gratuitement en ligne. Cliquez, tapez par-dessus et le texte garde la police et la taille du PDF d'origine. Sans envoi de fichier.",
+        'h1' => "Modifier le Texte d'un PDF",
+        'tagline' => "Cliquez sur n'importe quelle ligne de texte d'un PDF et retapez-la, dans sa propre police - directement dans votre navigateur.",
+        'keywords' => ["modifier le texte d'un pdf", 'modifier le texte dans un pdf', 'changer le texte dans un pdf', 'modifier le texte pdf en ligne', "retaper le texte d'un pdf"],
+        'intro' => "Modifiez le texte déjà présent dans un PDF en cliquant sur une ligne et en tapant le nouveau texte - sans imprimer, scanner ni installer quoi que ce soit. Le remplacement garde la police, la taille, la couleur et la position d'origine partout où ces lettres sont déjà dans le fichier, et Rechercher et remplacer change un mot sur toutes les pages à la fois. C'est l'outil Modifier le texte du même éditeur de PDF complet, donc vous pouvez aussi ajouter du texte, des images ou une signature, ou passer à une autre page, tout cela sans quitter votre navigateur.",
+        'steps' => [
+            'Choisissez le PDF à modifier.',
+            'Cliquez sur une ligne de texte et tapez le nouveau texte.',
+            "Cliquez sur Terminé - le texte est redessiné avec la même police, la même taille et la même couleur.",
+            "Utilisez Rechercher et remplacer pour changer un mot sur toutes les pages à la fois.",
+            'Cliquez sur Enregistrer le PDF et téléchargez le fichier.',
+        ],
+        'features' => [
+            'Modifiez le texte déjà présent dans le PDF en cliquant et en tapant',
+            "Conserve la police, la taille, la couleur et la position d'origine",
+            'Rechercher et remplacer un mot sur toutes les pages à la fois',
+            'Ne passe à une police standard proche que pour les lettres jamais intégrées au PDF',
+            'Ajoutez aussi du texte, des images, des formes ou une signature',
+            'Privé - votre PDF ne quitte jamais votre appareil',
+        ],
+        'content' => [
+            ['heading' => 'Ce qui se passe quand vous modifiez un texte existant', 'body' => "L'outil lit les fragments de texte du PDF avec leur police, leur taille et leur couleur intégrées. En cliquant sur l'un d'eux et en tapant, l'ancien texte est retiré du contenu de la page et le nouveau est dessiné à sa place avec cette même police dans la mesure du possible, si bien que la page garde son apparence d'origine plutôt que de recevoir une superposition qui ne correspond pas. Un PDF n'intègre généralement que les lettres qu'il utilise déjà, donc une lettre jamais présente dans le document fait passer cette ligne à la police standard la plus proche, et l'outil indique quelles lettres en sont la cause."],
+            ['heading' => "Modifier le texte d'un PDF sans créer de compte", 'body' => "Il n'y a ni compte, ni connexion, ni étape par e-mail : ouvrez la page, choisissez un PDF de 200 Mo maximum et commencez à taper par-dessus les lignes à changer. Votre navigateur lit et modifie le fichier lui-même ; rien n'est envoyé, donc rien n'est conservé de notre côté qu'il faudrait supprimer ensuite. Pendant que vous travaillez, la progression est enregistrée automatiquement dans le stockage de votre navigateur sur cet appareil, donc une actualisation de la page ou un onglet fermé peuvent être repris, et cette copie enregistrée est effacée dès que vous téléchargez le PDF modifié ou choisissez Abandonner."],
+        ],
+        'faqs' => [
+            ['q' => 'Puis-je modifier le texte déjà présent dans un PDF ?', 'a' => "Oui. Cliquez sur une ligne de la page et tapez - le nouveau texte remplace l'ancien à la même position. Les pages scannées sont des images sans texte modifiable, utilisez alors Masquer en blanc et Ajouter du texte à la place."],
+            ['q' => 'Le texte modifié gardera-t-il la même police ?', 'a' => "Oui, dès que le PDF intègre déjà les lettres que vous tapez. Si une lettre n'a jamais été présente dans le document, cette ligne passe à la police standard la plus proche (Arial/Helvetica, Times ou Courier) et l'outil indique quelles lettres en sont la cause."],
+            ['q' => 'Puis-je changer le même mot partout à la fois ?', 'a' => 'Oui. Utilisez Rechercher et remplacer pour changer un mot ou une phrase sur toutes les pages du document en une seule fois.'],
+            ['q' => 'Mon PDF est-il envoyé à un serveur ?', 'a' => "Non. Tout - lire, modifier et enregistrer - se passe dans votre navigateur avec JavaScript, et rien n'est envoyé où que ce soit."],
+            ['q' => 'Puis-je aussi ajouter du texte ou une signature ?', 'a' => "Oui. Passez à l'onglet Ajouter du texte, Image ou Signature dans le même éditeur sans perdre les modifications déjà faites."],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Calculateur de prêt',
         'title' => 'Calculateur de Prêt - Mensualité et Amortissement',

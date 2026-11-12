@@ -3141,6 +3141,57 @@ return [
         'related' => ['edit-pdf', 'redact-pdf', 'add-text-to-pdf', 'watermark-pdf'],
     ],
 
+    'edit-pdf-text' => [
+        'name' => 'Edit PDF Text',
+        'category' => 'pdf-tools',
+        'icon' => 'pdf',
+        'popular' => false,
+        'updated' => '2026-11-12',
+        'title' => 'Edit PDF Text Online Free - Change Text in Place',
+        'description' => "Edit the text already in a PDF online for free. Click any line, type over it and the new wording keeps the PDF's own font and size. No upload, no sign up.",
+        'h1' => 'Edit PDF Text',
+        'tagline' => 'Click any line of text in a PDF and retype it, in its own font - right in your browser.',
+        'keywords' => ['edit pdf text', 'edit text in pdf', 'change text in pdf', 'edit pdf text online', 'retype pdf text'],
+        'intro' => 'Edit the text that\'s already in a PDF by clicking any line and typing the new wording - no printing, scanning or new software needed. The replacement keeps the PDF\'s own font family, size, colour and position wherever those letters are already in the file, and find and replace changes a word across every page at once. This is the Edit text tool inside the full PDF editor, so you can also add new text, images or a signature, or move to another page, all without leaving your browser.',
+        'steps' => [
+            'Choose the PDF you want to edit.',
+            'Click any line of text and type the new wording.',
+            'Click Done - the text is redrawn in the same font, size and colour.',
+            'Use Find and replace to change a word across every page at once.',
+            'Click Save PDF and download the file.',
+        ],
+        'features' => [
+            'Change text already in the PDF by clicking and typing',
+            'Keeps the original font family, size, colour and position',
+            'Find and replace a word across every page at once',
+            'Falls back to a close standard font only for letters the PDF never embedded',
+            'Also add new text, images, shapes or a signature',
+            'Private - your PDF never leaves your device',
+        ],
+        'content' => [
+            [
+                'heading' => 'What happens when you edit existing text',
+                'body' => 'The tool reads the PDF\'s own text runs with their embedded font, size and colour. Clicking one and typing removes the old wording from the page\'s content and draws the new wording in its place using that same font wherever possible, so the page keeps its original look rather than gaining a mismatched overlay. A PDF usually only embeds the letters it already uses, so a new letter that was never in the document switches that line to the closest standard font and the editor says which letters caused it.',
+            ],
+            [
+                'heading' => 'Edit PDF text without signing up',
+                'body' => 'There is no account, login or email step: open the page, choose a PDF of up to 200 MB and start typing over the lines you want to change. Your browser reads and edits the file itself; nothing is uploaded, so there is nothing stored on our side to delete afterwards. While you work, progress auto-saves in your browser\'s storage on this device, so a refresh or a closed tab can be resumed, and that saved copy clears once you download the edited PDF or choose Discard.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Can I edit text that\'s already in a PDF?', 'a' => 'Yes. Click any line on the page and type - the new wording replaces the old one at the same position. Scanned pages are images with no editable text, so use Whiteout and Add text there instead.'],
+            ['q' => 'Will the edited text keep the same font?', 'a' => 'Yes, whenever the PDF already embeds the letters you type. If a letter was never in the document, that line switches to the closest standard font (Arial/Helvetica, Times or Courier) and the editor tells you which letters caused it.'],
+            ['q' => 'Can I change the same word everywhere at once?', 'a' => 'Yes. Use Find and replace to swap a word or phrase across every page of the document in one step.'],
+            ['q' => 'Is my PDF uploaded to a server?', 'a' => 'No. Everything - reading, editing and saving - happens in your browser with JavaScript and nothing is sent anywhere.'],
+            ['q' => 'Can I also add new text or a signature?', 'a' => 'Yes. Switch to the Add text, Image or Signature tab in the same editor without losing the changes you\'ve already made.'],
+        ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+        ],
+        'related' => ['edit-pdf', 'add-text-to-pdf', 'whiteout-pdf', 'sign-pdf'],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Mortgage Calculator',
         'category' => 'calculators',

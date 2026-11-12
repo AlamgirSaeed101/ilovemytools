@@ -37,6 +37,7 @@ text and change it in place, in the same font.
 7. [ ] Landing pages for each mode: add text to PDF, whiteout PDF, edit PDF text, PDF annotator, fill PDF form, Sejda alternative
   - [x] Add text to PDF `/add-text-to-pdf` (opens Edit PDF with the Add text tab preselected, same editor underneath), own SEO content in all 10 languages, e2e test, panel height measured.
   - [x] Whiteout PDF `/whiteout-pdf` (opens Edit PDF with the Whiteout tab preselected, same editor underneath), own SEO content in all 10 languages, e2e test, panel height measured.
+  - [x] Edit PDF text `/edit-pdf-text` (opens Edit PDF with the Edit text tab preselected, same editor underneath), own SEO content in all 10 languages, e2e test, panel height measured.
 
 ## Features
 

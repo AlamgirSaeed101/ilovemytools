@@ -2287,6 +2287,42 @@ return [
         ],
     ],
 
+    'edit-pdf-text' => [
+        'name' => 'Editar Texto en PDF',
+        'title' => 'Editar Texto en PDF Online Gratis',
+        'description' => 'Edita texto en un PDF online gratis. Haz clic, escribe encima y el nuevo texto conserva la fuente y el tamaño del PDF. Sin subir archivos, sin registro.',
+        'h1' => 'Editar Texto en PDF',
+        'tagline' => 'Haz clic en cualquier línea de texto de un PDF y vuelve a escribirla, en su propia fuente - directamente en tu navegador.',
+        'keywords' => ['editar texto en pdf', 'editar texto de un pdf', 'cambiar texto en pdf', 'editar texto pdf online', 'reescribir texto pdf'],
+        'intro' => 'Edita el texto que ya tiene un PDF haciendo clic en cualquier línea y escribiendo la nueva redacción - sin imprimir, escanear ni instalar nada. El texto nuevo conserva la fuente, el tamaño, el color y la posición del original siempre que esas letras ya estén en el archivo, y Buscar y reemplazar cambia una palabra en todas las páginas a la vez. Esta es la herramienta Editar texto dentro del editor de PDF completo, así que también puedes añadir texto nuevo, imágenes o una firma, o pasar a otra página, todo sin salir de tu navegador.',
+        'steps' => [
+            'Elige el PDF que quieres editar.',
+            'Haz clic en cualquier línea de texto y escribe la nueva redacción.',
+            'Haz clic en Listo - el texto se redibuja con la misma fuente, tamaño y color.',
+            'Usa Buscar y reemplazar para cambiar una palabra en todas las páginas a la vez.',
+            'Haz clic en Guardar PDF y descarga el archivo.',
+        ],
+        'features' => [
+            'Cambia el texto que ya tiene el PDF haciendo clic y escribiendo',
+            'Conserva la fuente, el tamaño, el color y la posición originales',
+            'Buscar y reemplazar una palabra en todas las páginas a la vez',
+            'Solo cambia a una fuente estándar cercana para las letras que el PDF nunca incluyó',
+            'También añade texto nuevo, imágenes, formas o una firma',
+            'Privado: tu PDF nunca sale de tu dispositivo',
+        ],
+        'content' => [
+            ['heading' => '¿Qué pasa al editar texto ya existente?', 'body' => 'La herramienta lee los fragmentos de texto del PDF con su fuente, tamaño y color incrustados. Al hacer clic en uno y escribir, se elimina la redacción anterior del contenido de la página y se dibuja la nueva en su lugar con esa misma fuente siempre que sea posible, de modo que la página conserva su aspecto original en vez de ganar una superposición que no coincide. Un PDF normalmente solo incluye las letras que ya usa, así que una letra nueva que nunca estuvo en el documento hace que esa línea cambie a la fuente estándar más cercana, y la herramienta indica qué letras lo causaron.'],
+            ['heading' => 'Editar texto en PDF sin registrarte', 'body' => 'No hay cuenta, inicio de sesión ni paso de correo: abre la página, elige un PDF de hasta 200 MB y empieza a escribir sobre las líneas que quieras cambiar. Tu navegador lee y edita el archivo por sí mismo; nada se sube, así que no queda nada guardado de nuestro lado que haya que borrar después. Mientras trabajas, el progreso se guarda automáticamente en el almacenamiento de tu navegador en este dispositivo, así que una actualización de página o una pestaña cerrada se pueden recuperar, y esa copia guardada se borra en cuanto descargas el PDF editado o eliges Descartar.'],
+        ],
+        'faqs' => [
+            ['q' => '¿Puedo editar el texto que ya tiene un PDF?', 'a' => 'Sí. Haz clic en cualquier línea de la página y escribe - la nueva redacción sustituye a la anterior en la misma posición. Las páginas escaneadas son imágenes sin texto editable, así que usa el Corrector blanco y Añadir texto en ese caso.'],
+            ['q' => '¿El texto editado conservará la misma fuente?', 'a' => 'Sí, siempre que el PDF ya incluya las letras que escribes. Si una letra nunca estuvo en el documento, esa línea cambia a la fuente estándar más cercana (Arial/Helvetica, Times o Courier) y la herramienta te dice qué letras lo causaron.'],
+            ['q' => '¿Puedo cambiar la misma palabra en todas partes a la vez?', 'a' => 'Sí. Usa Buscar y reemplazar para cambiar una palabra o frase en todas las páginas del documento en un solo paso.'],
+            ['q' => '¿Se sube mi PDF a un servidor?', 'a' => 'No. Todo - leer, editar y guardar - ocurre en tu navegador con JavaScript y nada se envía a ningún sitio.'],
+            ['q' => '¿Puedo también añadir texto nuevo o una firma?', 'a' => 'Sí. Cambia a la pestaña Añadir texto, Imagen o Firma en el mismo editor sin perder los cambios que ya has hecho.'],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Calculadora de préstamo',
         'title' => 'Calculadora de Préstamo - Cuota y Amortización',

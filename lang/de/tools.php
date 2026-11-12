@@ -2795,6 +2795,42 @@ return [
         ],
     ],
 
+    'edit-pdf-text' => [
+        'name' => 'PDF-Text Bearbeiten',
+        'title' => 'PDF-Text Bearbeiten Online Kostenlos',
+        'description' => 'Bearbeiten Sie PDF-Text kostenlos online. Klicken Sie auf eine Zeile, tippen Sie drüber und der Text behält Schriftart und Größe des PDFs. Ohne Hochladen.',
+        'h1' => 'PDF-Text Bearbeiten',
+        'tagline' => 'Klicken Sie auf eine beliebige Textzeile in einem PDF und tippen Sie sie neu ein, in ihrer eigenen Schriftart - direkt in Ihrem Browser.',
+        'keywords' => ['pdf-text bearbeiten', 'text in pdf bearbeiten', 'text im pdf ändern', 'pdf text online bearbeiten', 'pdf text neu eintippen'],
+        'intro' => 'Bearbeiten Sie den Text, der bereits in einem PDF steht, indem Sie auf eine Zeile klicken und den neuen Wortlaut eintippen - ohne Drucken, Scannen oder neue Software. Der Ersatztext behält die Schriftart, Größe, Farbe und Position des Originals, sofern diese Buchstaben schon in der Datei enthalten sind, und Suchen und Ersetzen ändert ein Wort auf allen Seiten gleichzeitig. Das ist das Werkzeug „Text bearbeiten" im vollständigen PDF-Editor, Sie können also auch neuen Text, Bilder oder eine Unterschrift hinzufügen oder zu einer anderen Seite wechseln, alles ohne Ihren Browser zu verlassen.',
+        'steps' => [
+            'Wählen Sie das PDF aus, das Sie bearbeiten möchten.',
+            'Klicken Sie auf eine Textzeile und tippen Sie den neuen Wortlaut ein.',
+            'Klicken Sie auf Fertig - der Text wird in derselben Schriftart, Größe und Farbe neu gezeichnet.',
+            'Nutzen Sie Suchen und Ersetzen, um ein Wort auf allen Seiten gleichzeitig zu ändern.',
+            'Klicken Sie auf PDF speichern und laden Sie die Datei herunter.',
+        ],
+        'features' => [
+            'Vorhandenen PDF-Text durch Klicken und Tippen ändern',
+            'Behält die ursprüngliche Schriftart, Größe, Farbe und Position',
+            'Suchen und Ersetzen eines Wortes auf allen Seiten gleichzeitig',
+            'Wechselt nur bei Buchstaben, die das PDF nie enthielt, zu einer nahen Standardschrift',
+            'Fügen Sie auch neuen Text, Bilder, Formen oder eine Unterschrift hinzu',
+            'Privat - Ihr PDF verlässt niemals Ihr Gerät',
+        ],
+        'content' => [
+            ['heading' => 'Was beim Bearbeiten vorhandenen Textes passiert', 'body' => 'Das Werkzeug liest die Textabschnitte des PDFs mit ihrer eingebetteten Schriftart, Größe und Farbe aus. Klickt man auf einen davon und tippt, wird der alte Wortlaut aus dem Seiteninhalt entfernt und der neue an derselben Stelle in möglichst derselben Schriftart gezeichnet, sodass die Seite ihr ursprüngliches Aussehen behält statt eine unpassende Überlagerung zu bekommen. Ein PDF bettet meist nur die Buchstaben ein, die es schon verwendet, daher wechselt eine Zeile bei einem neuen Buchstaben, der nie im Dokument war, zur nächsten Standardschrift, und der Editor nennt, welche Buchstaben das ausgelöst haben.'],
+            ['heading' => 'PDF-Text bearbeiten ohne Anmeldung', 'body' => 'Es gibt kein Konto, keinen Login und keinen E-Mail-Schritt: Öffnen Sie die Seite, wählen Sie ein PDF mit bis zu 200 MB und beginnen Sie, über die Zeilen zu tippen, die Sie ändern möchten. Ihr Browser liest und bearbeitet die Datei selbst; nichts wird hochgeladen, sodass auf unserer Seite nichts gespeichert bleibt, das später gelöscht werden müsste. Während Sie arbeiten, speichert sich der Fortschritt automatisch im Speicher Ihres Browsers auf diesem Gerät, sodass ein Neuladen oder ein geschlossener Tab fortgesetzt werden kann, und diese gespeicherte Kopie wird gelöscht, sobald Sie das bearbeitete PDF herunterladen oder Verwerfen wählen.'],
+        ],
+        'faqs' => [
+            ['q' => 'Kann ich Text bearbeiten, der schon im PDF steht?', 'a' => 'Ja. Klicken Sie auf eine Zeile der Seite und tippen Sie - der neue Wortlaut ersetzt den alten an derselben Stelle. Gescannte Seiten sind Bilder ohne bearbeitbaren Text, nutzen Sie dafür stattdessen Weiß abdecken und Text hinzufügen.'],
+            ['q' => 'Behält der bearbeitete Text dieselbe Schriftart?', 'a' => 'Ja, sofern das PDF die Buchstaben, die Sie eintippen, bereits einbettet. War ein Buchstabe nie im Dokument, wechselt diese Zeile zur nächsten Standardschrift (Arial/Helvetica, Times oder Courier), und der Editor nennt, welche Buchstaben das ausgelöst haben.'],
+            ['q' => 'Kann ich dasselbe Wort überall gleichzeitig ändern?', 'a' => 'Ja. Nutzen Sie Suchen und Ersetzen, um ein Wort oder eine Formulierung auf allen Seiten des Dokuments in einem Schritt zu ändern.'],
+            ['q' => 'Wird mein PDF auf einen Server hochgeladen?', 'a' => 'Nein. Alles - Lesen, Bearbeiten und Speichern - geschieht in Ihrem Browser mit JavaScript, und nichts wird irgendwohin gesendet.'],
+            ['q' => 'Kann ich auch neuen Text oder eine Unterschrift hinzufügen?', 'a' => 'Ja. Wechseln Sie im selben Editor zum Tab Text hinzufügen, Bild oder Unterschrift, ohne die bereits gemachten Änderungen zu verlieren.'],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Kreditrechner',
         'title' => 'Kreditrechner - Monatliche Rate & Tilgungsplan',

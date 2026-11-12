@@ -72,6 +72,7 @@ const tools = {
     'sign-pdf': editPdfMode('sign'),
     'add-text-to-pdf': editPdfMode('text'),
     'whiteout-pdf': editPdfMode('whiteout'),
+    'edit-pdf-text': editPdfMode('edittext'),
 };
 
 export default tools;

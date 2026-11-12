@@ -1196,6 +1196,28 @@ test.describe('PDF tools', () => {
         await expect(page.getByRole('tab', { name: 'Edit text' })).toBeVisible();
         await expect(page.getByRole('tab', { name: 'Watermark' })).toBeVisible();
     });
+
+    test('edit-pdf-text opens Edit PDF with the Edit text tab preselected and can retype existing text', async ({ page }) => {
+        await openTool(page, 'edit-pdf-text');
+        await page.getByTestId('file-input').setInputFiles({ name: 'contract.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
+        await expect(page.getByRole('tab', { name: 'Edit text' })).toHaveAttribute('aria-selected', 'true');
+
+        await page.getByRole('button', { name: 'Edit text: Doc page 1' }).click();
+        const input = page.getByLabel('Edit this text');
+        await expect(input).toHaveValue('Doc page 1');
+        await input.fill('Signed page 1');
+        await page.getByRole('button', { name: 'Done' }).click();
+
+        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        const texts = await pdfPageTexts(page, await readDownload(file));
+        expect(texts[0]).toContain('Signed page 1');
+        expect(texts[0]).not.toContain('Doc page 1');
+
+        // The one editor is still underneath: every other tab is reachable from this page too.
+        await expect(page.getByRole('tab', { name: 'Add text' })).toBeVisible();
+        await expect(page.getByRole('tab', { name: 'Watermark' })).toBeVisible();
+    });
 });
 
 test.describe('Calculators', () => {
