@@ -1,0 +1,137 @@
+/* Edit PDF - in-place text editing: paragraph boxes, the text properties bar and their handles. */
+
+/* Hides the old wording of an edited block, line by line, wherever the new text has moved to. */
+.pdf-editor__textcover {
+    position: absolute;
+    pointer-events: none;
+}
+
+.pdf-editor__textbox {
+    position: absolute;
+    box-sizing: content-box;
+    cursor: text;
+    touch-action: none;
+}
+
+.pdf-editor__overlay.pdf-editor__textbox {
+    border: none;
+    cursor: move;
+}
+
+.pdf-editor__textbox:not(.is-selected) {
+    outline: 1px dashed transparent;
+    outline-offset: 2px;
+}
+
+.pdf-editor__textbox--edit:not(.is-selected) {
+    outline-color: color-mix(in srgb, var(--brand) 55%, transparent);
+    cursor: move;
+}
+
+.pdf-editor__textbox:not(.is-selected):hover,
+.pdf-editor__textbox:not(.is-selected):focus-visible {
+    outline: 1.5px dashed var(--brand);
+}
+
+.pdf-editor__textbox.is-empty:not(.is-selected) {
+    min-width: 1.5rem;
+    outline: 1px dashed var(--danger);
+}
+
+.pdf-editor__textbox.is-selected {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+    z-index: 3;
+}
+
+.pdf-editor__textlines {
+    white-space: pre;
+    pointer-events: none;
+    user-select: none;
+}
+
+.pdf-editor__textarea {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 1ch;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+    resize: none;
+    overflow: hidden;
+    caret-color: var(--brand);
+}
+
+/* Move handle, just outside the box's top-left corner. */
+.pdf-editor__textmove {
+    position: absolute;
+    left: -1.55rem;
+    top: -0.2rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+    background: var(--brand);
+    color: #fff;
+    cursor: move;
+    touch-action: none;
+}
+
+.pdf-editor__textmove:focus-visible {
+    outline: 2px solid var(--text);
+    outline-offset: 1px;
+}
+
+/* Width handle on the right edge: dragging it sets the wrap width. */
+.pdf-editor__textwidth {
+    position: absolute;
+    top: 50%;
+    right: -0.55rem;
+    width: 0.5rem;
+    height: 1.2rem;
+    margin-top: -0.6rem;
+    border-radius: 3px;
+    background: var(--brand);
+    border: 1.5px solid #fff;
+    cursor: ew-resize;
+    touch-action: none;
+}
+
+/* Edit text: a paragraph block that can be clicked shows a soft outline on hover. */
+.pdf-editor__textrun--block:hover,
+.pdf-editor__textrun--block:focus-visible {
+    border-style: solid;
+}
+
+.pdf-editor__textprops {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.pdf-editor__textprops .select {
+    width: auto;
+    max-width: 150px;
+}
+
+.pdf-editor__textprops-size {
+    width: 5rem;
+    max-width: 5rem;
+}
+
+.pdf-editor__textprops-group {
+    display: inline-flex;
+    gap: 2px;
+}
+
+.pdf-editor__textprops-btn {
+    min-width: 2rem;
+    justify-content: center;
+}
