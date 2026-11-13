@@ -1,6 +1,6 @@
 import { PDFDocument } from 'pdf-lib';
 import { describe, expect, it } from 'vitest';
-import { PdfFormError, fillPdfForm, readFormFields } from './pdfForms.js';
+import { PdfFormError, applyFormValues, fillPdfForm, listFormFields, readFormFields, readFormWidgets } from './pdfForms.js';
 
 async function sampleForm() {
     const doc = await PDFDocument.create();
@@ -112,5 +112,58 @@ describe('fillPdfForm', () => {
         const doc = await PDFDocument.load(out);
         const text = doc.getPages()[0].node.Contents();
         expect(text).toBeTruthy();
+    });
+});
+
+describe('applyFormValues', () => {
+    it('fills the fields of an already loaded document in place', async () => {
+        const doc = await PDFDocument.load(await sampleForm());
+        const changed = await applyFormValues(doc, { full_name: 'Ada L', agree: true, color: 'Blue', country: 'US' });
+        expect(changed).toBe(3); // country was already US
+        const fields = Object.fromEntries((await listFormFields(doc)).map((field) => [field.name, field]));
+        expect(fields.full_name.value).toBe('Ada L');
+        expect(fields.agree.value).toBe(true);
+        expect(fields.color.value).toBe('Blue');
+    });
+
+    it('maps a radio button "on" state name back to its option', async () => {
+        const doc = await PDFDocument.load(await sampleForm());
+        const group = doc.getForm().getRadioGroup('color');
+        const onValue = group.acroField.getOnValues()[1].decodeText();
+        await applyFormValues(doc, { color: onValue });
+        expect(group.getSelected()).toBe('Blue');
+    });
+
+    it('refuses text longer than the field allows', async () => {
+        const doc = await PDFDocument.load(await sampleForm());
+        await expect(applyFormValues(doc, { notes: 'too long' })).rejects.toMatchObject({ code: 'too-long', detail: 'notes' });
+    });
+});
+
+describe('readFormWidgets', () => {
+    const fakeDoc = (annotations) => ({ getPage: async () => ({ getAnnotations: async () => annotations }) });
+
+    it('turns pdf.js widget annotations into positioned fields', async () => {
+        const widgets = await readFormWidgets(
+            fakeDoc([
+                { subtype: 'Widget', id: '1R', fieldName: 'name', fieldType: 'Tx', rect: [50, 500, 250, 524], maxLen: 10, multiLine: false },
+                { subtype: 'Widget', id: '2R', fieldName: 'agree', fieldType: 'Btn', checkBox: true, exportValue: 'Yes', rect: [50, 380, 68, 398] },
+                { subtype: 'Widget', id: '3R', fieldName: 'color', fieldType: 'Btn', radioButton: true, buttonValue: 'Red', rect: [50, 280, 66, 296] },
+                { subtype: 'Widget', id: '4R', fieldName: 'country', fieldType: 'Ch', combo: true, options: [{ exportValue: 'us', displayValue: 'US' }], rect: [50, 330, 170, 354] },
+                { subtype: 'Widget', id: '5R', fieldName: 'go', fieldType: 'Btn', pushButton: true, rect: [0, 0, 10, 10] },
+                { subtype: 'Widget', id: '6R', fieldName: 'sig', fieldType: 'Sig', rect: [0, 0, 10, 10] },
+                { subtype: 'Widget', id: '7R', fieldName: 'hidden', fieldType: 'Tx', hidden: true, rect: [0, 0, 10, 10] },
+                { subtype: 'Link', id: '8R', rect: [0, 0, 10, 10] },
+            ])
+        );
+        expect(widgets.map((w) => w.name)).toEqual(['name', 'agree', 'color', 'country']);
+        expect(widgets[0]).toMatchObject({ type: 'text', rectPdf: { x: 50, y: 500, width: 200, height: 24 }, maxLength: 10 });
+        expect(widgets[1]).toMatchObject({ type: 'checkbox', onValue: 'Yes' });
+        expect(widgets[2]).toMatchObject({ type: 'radio', onValue: 'Red' });
+        expect(widgets[3]).toMatchObject({ type: 'dropdown', options: ['US'] });
+    });
+
+    it('returns nothing without a render document', async () => {
+        expect(await readFormWidgets(null, 1)).toEqual([]);
     });
 });

@@ -6,9 +6,11 @@ function fieldId(index) {
 }
 
 /**
- * The list of fields already in the PDF. The parent owns the values and the fill action.
+ * The list of fields already in the PDF - the accessible fallback to Edit PDF's on-page inputs,
+ * and the only way to reach fields whose widget isn't on a page. The parent owns the values and
+ * saves them together with every other edit. The flatten checkbox shows only with `onFlatten`.
  */
-export default function FormFillFields({ status, fields, values, flatten, blocked, onChange, onFlatten }) {
+export default function FormFillFields({ status, fields, values, flatten, onChange, onFlatten }) {
     if (status === 'loading') {
         return <p className="field__hint">{t('Reading form fields…')}</p>;
     }
@@ -25,11 +27,6 @@ export default function FormFillFields({ status, fields, values, flatten, blocke
 
     return (
         <div className="stack" style={{ marginTop: '0.7rem' }}>
-            {blocked && (
-                <Notice type="warn">
-                    {t('Save or remove your other edits before filling the form. Filling uses the original file, not the edits on the page.')}
-                </Notice>
-            )}
             {fields.map((field, index) => {
                 const id = fieldId(index);
                 if (field.type === 'unsupported') {
@@ -109,10 +106,12 @@ export default function FormFillFields({ status, fields, values, flatten, blocke
                     </div>
                 );
             })}
-            <label className="check">
-                <input type="checkbox" checked={flatten} onChange={(e) => onFlatten(e.target.checked)} />
-                {t('Flatten the form so the answers cannot be changed')}
-            </label>
+            {onFlatten && (
+                <label className="check">
+                    <input type="checkbox" checked={!!flatten} onChange={(e) => onFlatten(e.target.checked)} />
+                    {t('Flatten the form so the answers cannot be changed')}
+                </label>
+            )}
         </div>
     );
 }

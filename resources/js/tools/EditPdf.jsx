@@ -25,11 +25,16 @@ import {
 import { blockCanvasRect, groupRunsIntoBlocks, textEditElement, textElementToPdf } from '../lib/pdfTextBlocks.js';
 import TextBlockEditor from '../components/pdf-editor/TextBlockEditor.jsx';
 import TextPropsBar from '../components/pdf-editor/TextPropsBar.jsx';
+import FormFieldOverlay from '../components/pdf-editor/FormFieldOverlay.jsx';
+import FormFieldCreator, { FormCreateTools, formSaveErrorText } from '../components/pdf-editor/FormFieldCreator.jsx';
+import { newFormElement } from '../lib/pdfFormElements.js';
+import FormFillFields from './FormFillFields.jsx';
 
 // pdf-lib (~165 KB) only loads when a PDF is previewed or saved, not with the page.
 const loadWatermark = () => import('../lib/pdfWatermark.js');
 const loadEdit = () => import('../lib/pdfEdit.js');
-const loadForm = () => import('../lib/pdfForm.js');
+const loadForms = () => import('../lib/pdfForms.js');
+const loadFormCreate = () => import('../lib/pdfFormCreate.js');
 import { baseName, downloadBlob, formatBytes, safeFilename } from '../lib/util.js';
 
 const ZOOM_MIN = 50;
@@ -242,7 +247,7 @@ export default function EditPdf({ initialMode } = {}) {
     const [currentPage, setCurrentPage] = useState(0);
     const [elements, setElements] = useState([]);
     const [redoStack, setRedoStack] = useState([]);
-    const [mode, setMode] = useState(initialMode ?? 'edittext');
+    const [mode, setMode] = useState(initialMode === 'forms' ? 'form' : (initialMode ?? 'edittext'));
     const [pageRuns, setPageRuns] = useState([]);
     const [runsReady, setRunsReady] = useState(false);
     const [editingId, setEditingId] = useState(null);
@@ -290,6 +295,10 @@ export default function EditPdf({ initialMode } = {}) {
     const [formValues, setFormValues] = useState({});
     const [formReady, setFormReady] = useState(false);
     const [formSubMode, setFormSubMode] = useState('fill');
+    const [formKind, setFormKind] = useState('text');
+    const [formFlatten, setFormFlatten] = useState(false);
+    const [formChanged, setFormChanged] = useState(false);
+    const [pageWidgets, setPageWidgets] = useState([]);
     const [pageOps, setPageOps] = useState(null);
     const [error, setError] = useState('');
     const [working, setWorking] = useState(false);
@@ -513,18 +522,14 @@ export default function EditPdf({ initialMode } = {}) {
         if (mode !== 'form' || !doc) return;
         let cancelled = false;
         setFormReady(false);
-        loadForm()
-            .then(({ readFormFields }) => {
+        loadForms()
+            .then(({ listFormFields }) => listFormFields(doc))
+            .then((detected) => {
                 if (cancelled) return;
-                const detected = readFormFields(doc);
-                setFormFields(detected);
+                setFormFields(detected.filter((f) => f.type !== 'unsupported'));
                 setFormValues((prev) => {
                     const next = { ...prev };
-                    for (const f of detected) {
-                        if (f.type === 'radio') {
-                            if (!(f.name in next) && f.value) next[f.name] = f.value;
-                        } else if (!(f.name in next)) next[f.name] = f.value;
-                    }
+                    for (const f of detected) if (f.type !== 'unsupported' && !(f.name in next)) next[f.name] = f.value;
                     return next;
                 });
             })
@@ -535,85 +540,36 @@ export default function EditPdf({ initialMode } = {}) {
         };
     }, [mode, doc]);
 
-    function setFormValue(name, value) {
+    // Where the PDF's own fields sit on the page on screen, to fill them in place.
+    useEffect(() => {
+        if (mode !== 'form' || !renderDoc) return;
+        let cancelled = false;
+        loadForms()
+            .then(({ readFormWidgets }) => readFormWidgets(renderDoc, currentPage + 1))
+            .then((widgets) => !cancelled && setPageWidgets(widgets))
+            .catch(() => !cancelled && setPageWidgets([]));
+        return () => {
+            cancelled = true;
+        };
+    }, [mode, renderDoc, currentPage]);
+
+    function changeFormValue(name, value) {
         setFormValues((prev) => ({ ...prev, [name]: value }));
+        setFormChanged(true);
         setResult(null);
     }
 
-    async function applyForm() {
-        if (!doc || working || formFields.length === 0) return;
-        setWorking(true);
-        setError('');
-        try {
-            const { buildFilledFormPdf } = await loadForm();
-            const blob = await buildFilledFormPdf(doc, formValues);
-            setResult({ blob, name: safeFilename(`${baseName(file.name)}-filled.pdf`) });
-        } catch (e) {
-            setError(t('Filling the form failed: {message}', { message: e.message }));
-        } finally {
-            setWorking(false);
-        }
-    }
-
-    /** The first "Text field N" / "Checkbox N" / "Dropdown N" / "Signature N" name not already used by an existing or a new field. */
-    function nextFieldName(kind) {
-        const prefix = kind === 'checkbox' ? 'Checkbox' : kind === 'dropdown' ? 'Dropdown' : kind === 'signature' ? 'Signature' : 'Text field';
-        const used = new Set([...formFields.map((f) => f.name), ...elements.filter((el) => el.type === 'formfield').map((el) => el.name)]);
-        let n = 1;
-        while (used.has(`${prefix} ${n}`)) n += 1;
-        return `${prefix} ${n}`;
-    }
-
-    function addFormField(kind) {
+    /** Places a new field of the chosen kind: over a dragged `box`, centred on a clicked point, or mid-page. */
+    function addFormElement(box) {
         if (!canvasSize.width) return;
-        const width = kind === 'checkbox' ? 24 : 160;
-        const height = kind === 'checkbox' ? 24 : kind === 'dropdown' ? 54 : kind === 'signature' ? 50 : 32;
-        const rect = clampRect({ x: (canvasSize.width - width) / 2, y: (canvasSize.height - height) / 2, width, height }, canvasSize.width, canvasSize.height, 10);
-        pushElement({ type: 'formfield', fieldType: kind, name: nextFieldName(kind), ...(kind === 'dropdown' ? { optionsText: '' } : {}), ...rect });
+        const at = box ?? { x: canvasSize.width / 2, y: canvasSize.height / 2 };
+        pushElement({ ...newFormElement(formKind, at, { existingNames: formFields.map((f) => f.name), elements, bounds: canvasSize }), fresh: true });
     }
 
-    async function applyNewFormFields() {
-        if (!doc || working) return;
-        const toCreate = elements.filter((el) => el.type === 'formfield');
-        if (toCreate.length === 0) return;
-        setWorking(true);
-        setError('');
-        try {
-            const { validateNewFieldNames, buildPdfWithNewFields, parseDropdownOptions } = await loadForm();
-            const named = toCreate.map((el) => ({
-                ...el,
-                name: el.name.trim(),
-                ...(el.fieldType === 'dropdown' ? { options: parseDropdownOptions(el.optionsText) } : {}),
-            }));
-            const check = validateNewFieldNames(named, formFields.map((f) => f.name));
-            if (!check.ok) {
-                setError(
-                    check.reason === 'duplicate'
-                        ? t('Two fields can’t share the name "{name}". Give each field its own name.', { name: check.name })
-                        : check.reason === 'options'
-                          ? t('Give the dropdown "{name}" at least two options, separated by commas.', { name: check.name })
-                          : t('Give every new field a name before saving.')
-                );
-                return;
-            }
-            const fields = named.map((el) => {
-                const size = doc.getPage(el.page).getSize();
-                const scaleForPage = computeDisplayScale(size.width, size.height);
-                return {
-                    fieldType: el.fieldType,
-                    name: el.name,
-                    page: el.page,
-                    rectPdf: canvasRectToPdfRect(el, scaleForPage, size.height),
-                    ...(el.fieldType === 'dropdown' ? { options: el.options } : {}),
-                };
-            });
-            const blob = await buildPdfWithNewFields(doc, fields);
-            setResult({ blob, name: safeFilename(`${baseName(file.name)}-form.pdf`) });
-        } catch (e) {
-            setError(t('Adding the field failed: {message}', { message: e.message }));
-        } finally {
-            setWorking(false);
-        }
+    /** The form step of a save: changed values into the PDF's own fields, then the new fields, then flatten if asked. */
+    function formsBeforeSave(forms, built) {
+        const specs = built.filter((el) => el.type === 'formfield').map((el) => forms.toFieldSpec(el, el.rectPdf));
+        return (work) => forms.applyFormsToDocument(work, { values: formValues, specs, flatten: formFlatten });
     }
 
     async function applyWatermark() {
@@ -840,6 +796,9 @@ export default function EditPdf({ initialMode } = {}) {
         setFormReady(false);
         setPageOps(null);
         setFormSubMode('fill');
+        setFormFlatten(false);
+        setFormChanged(false);
+        setPageWidgets([]);
         setSignature(null);
         setSignPlacements([]);
         setSignSelectedId(null);
@@ -947,6 +906,7 @@ export default function EditPdf({ initialMode } = {}) {
             window.removeEventListener('pointerup', handleUp);
             setDragBox(null);
             const rect = rectFromPoints(start.x, start.y, end.x, end.y);
+            if (mode === 'form') return addFormElement(Math.hypot(rect.width, rect.height) < 6 ? end : rect);
             if (Math.hypot(rect.width, rect.height) < 6) return; // a click, not a drag
             if (mode === 'whiteout') pushElement({ type: 'whiteout', ...rect });
             else if (mode === 'underline' || mode === 'strike') pushElement({ type: 'markup', kind: mode, color: markupColor, ...rect, height: Math.max(8, rect.height) });
@@ -966,7 +926,7 @@ export default function EditPdf({ initialMode } = {}) {
             placeTextAt(pointerPoint(e, stageRef.current, canvasSize));
             return;
         }
-        if (DRAG_MODES.includes(mode)) {
+        if (DRAG_MODES.includes(mode) || (mode === 'form' && formSubMode === 'add')) {
             if (mode === 'link' && !normalizeLinkUrl(linkUrl)) {
                 setError(t('Type a valid link address first, for example https://example.com'));
                 return;
@@ -1096,16 +1056,18 @@ export default function EditPdf({ initialMode } = {}) {
     }
 
     async function apply() {
-        if (!doc || working || elements.length === 0) return;
+        if (!doc || working || (elements.length === 0 && !formChanged)) return;
         setWorking(true);
         setError('');
         try {
             const toBuild = toBuildElements(doc, elements);
-            const { buildEditedPdf } = await loadEdit();
-            const blob = await buildEditedPdf(doc, toBuild);
+            const [{ buildEditedPdf }, forms] = await Promise.all([loadEdit(), loadFormCreate()]);
+            // A copy, so saving again later doesn't draw or create anything twice.
+            const work = await forms.workingCopy(doc);
+            const blob = await buildEditedPdf(work, toBuild.filter((el) => el.type !== 'formfield'), { beforeSave: formsBeforeSave(forms, toBuild) });
             setResult({ blob, name: safeFilename(`${baseName(file.name)}-edited.pdf`) });
         } catch (e) {
-            setError(t('Editing failed: {message}', { message: e.message }));
+            setError(formSaveErrorText(e) ?? t('Editing failed: {message}', { message: e.message }));
         } finally {
             setWorking(false);
         }
@@ -1138,8 +1100,8 @@ export default function EditPdf({ initialMode } = {}) {
         try {
             const toBuild = remapElementsForPageOps(toBuildElements(doc, elements), pageOps);
             const work = await applyPageOps(doc, pageOps);
-            const { buildEditedPdf } = await loadEdit();
-            const blob = await buildEditedPdf(work, toBuild);
+            const [{ buildEditedPdf }, forms] = await Promise.all([loadEdit(), loadFormCreate()]);
+            const blob = await buildEditedPdf(work, toBuild.filter((el) => el.type !== 'formfield'), { beforeSave: formsBeforeSave(forms, toBuild) });
             setResult({ blob, name: safeFilename(`${baseName(file.name)}-pages.pdf`) });
         } catch (e) {
             setError(t('Updating the pages failed: {message}', { message: e.message }));
@@ -1486,22 +1448,20 @@ export default function EditPdf({ initialMode } = {}) {
                                 ]}
                             />
                             {formSubMode === 'add' ? (
-                                <>
-                                    <button type="button" className="btn btn--sm" onClick={() => addFormField('text')}>{t('Add a text field')}</button>
-                                    <button type="button" className="btn btn--sm" onClick={() => addFormField('checkbox')}>{t('Add a checkbox')}</button>
-                                    <button type="button" className="btn btn--sm" onClick={() => addFormField('dropdown')}>{t('Add a dropdown field')}</button>
-                                    <button type="button" className="btn btn--sm" onClick={() => addFormField('signature')}>{t('Add a signature field')}</button>
-                                    <span className="field__hint" style={{ margin: 0 }}>{t('Drag a field to move it, drag its corner to resize it, and edit its name in the box.')}</span>
-                                </>
+                                <FormCreateTools kind={formKind} onKind={setFormKind} onAdd={() => addFormElement()} />
                             ) : (
                                 <span className="field__hint" style={{ margin: 0 }}>
                                     {!formReady
                                         ? t('Reading form fields…')
                                         : formFields.length === 0
                                           ? t('No fillable fields were found in this PDF.')
-                                          : t('Fill in the fields below, then click Save PDF.')}
+                                          : t('Fill in the fields on the page, then click Save PDF.')}
                                 </span>
                             )}
+                            <label className="check">
+                                <input type="checkbox" checked={formFlatten} onChange={(e) => { setFormFlatten(e.target.checked); setResult(null); }} />
+                                {t('Flatten the form so the answers cannot be changed')}
+                            </label>
                         </>
                     )}
                     {mode === 'edittext' && !editing && (
@@ -1617,7 +1577,7 @@ export default function EditPdf({ initialMode } = {}) {
                     style={{
                         transformOrigin: 'top left',
                         ...(zoomFactor !== 1 ? { transform: `scale(${zoomFactor})` } : null),
-                        ...(mode === 'draw' || DRAG_MODES.includes(mode) ? { touchAction: 'none', cursor: 'crosshair' } : null),
+                        ...(mode === 'draw' || DRAG_MODES.includes(mode) || (mode === 'form' && formSubMode === 'add') ? { touchAction: 'none', cursor: 'crosshair' } : null),
                     }}
                 >
                     <PdfPageCanvas renderDoc={renderDoc} pageNumber={currentPage + 1} scale={scale} className="pdf-editor__canvas" onReady={onPageReady} />
@@ -1638,80 +1598,9 @@ export default function EditPdf({ initialMode } = {}) {
                                     />
                                 );
                             })}
-                    {mode === 'form' &&
-                        formFields
-                            .filter((f) => f.page === currentPage)
-                            .map((f) => {
-                                const r = pdfRectToCanvasRect(f.rectPdf, scale, currentPageSize.height);
-                                const style = { left: r.x, top: r.y, width: r.width, height: r.height };
-                                if (f.type === 'text') {
-                                    const Tag = f.multiline ? 'textarea' : 'input';
-                                    return (
-                                        <Tag
-                                            key={f.id}
-                                            className="pdf-editor__forminput"
-                                            style={style}
-                                            type={f.multiline ? undefined : 'text'}
-                                            value={formValues[f.name] ?? ''}
-                                            maxLength={f.maxLength}
-                                            disabled={f.readOnly}
-                                            onPointerDown={(e) => e.stopPropagation()}
-                                            onChange={(e) => setFormValue(f.name, e.target.value)}
-                                            aria-label={t('Fill in {name}', { name: f.name })}
-                                        />
-                                    );
-                                }
-                                if (f.type === 'checkbox') {
-                                    return (
-                                        <input
-                                            key={f.id}
-                                            type="checkbox"
-                                            className="pdf-editor__formcheck"
-                                            style={style}
-                                            checked={!!formValues[f.name]}
-                                            disabled={f.readOnly}
-                                            onPointerDown={(e) => e.stopPropagation()}
-                                            onChange={(e) => setFormValue(f.name, e.target.checked)}
-                                            aria-label={t('Checkbox: {name}', { name: f.name })}
-                                        />
-                                    );
-                                }
-                                if (f.type === 'dropdown') {
-                                    return (
-                                        <select
-                                            key={f.id}
-                                            className="pdf-editor__forminput"
-                                            style={style}
-                                            value={formValues[f.name] ?? ''}
-                                            disabled={f.readOnly}
-                                            onPointerDown={(e) => e.stopPropagation()}
-                                            onChange={(e) => setFormValue(f.name, e.target.value)}
-                                            aria-label={t('Select {name}', { name: f.name })}
-                                        >
-                                            <option value="">{t('Choose a value')}</option>
-                                            {f.options.map((o) => (
-                                                <option key={o} value={o}>
-                                                    {o}
-                                                </option>
-                                            ))}
-                                        </select>
-                                    );
-                                }
-                                return (
-                                    <input
-                                        key={f.id}
-                                        type="radio"
-                                        name={`pdf-form-${f.name}`}
-                                        className="pdf-editor__formcheck"
-                                        style={style}
-                                        checked={formValues[f.name] === f.onValue}
-                                        disabled={f.readOnly}
-                                        onPointerDown={(e) => e.stopPropagation()}
-                                        onChange={() => setFormValue(f.name, f.onValue)}
-                                        aria-label={t('{name}: {value}', { name: f.name, value: f.onValue })}
-                                    />
-                                );
-                            })}
+                    {mode === 'form' && (
+                        <FormFieldOverlay widgets={pageWidgets} fields={formFields} values={formValues} onChange={changeFormValue} scale={scale} pageHeight={currentPageSize.height} interactive={formSubMode !== 'add'} />
+                    )}
                     {mode === 'sign' &&
                         signPlacements
                             .filter((p) => p.page === currentPage)
@@ -1788,51 +1677,7 @@ export default function EditPdf({ initialMode } = {}) {
                             );
                         }
                         if (el.type === 'formfield') {
-                            const checkbox = el.fieldType === 'checkbox';
-                            const dropdown = el.fieldType === 'dropdown';
-                            const signature = el.fieldType === 'signature';
-                            const dragLabel = checkbox ? t('Checkbox field - drag to move') : dropdown ? t('Dropdown field - drag to move') : signature ? t('Signature field - drag to move') : t('Text field - drag to move');
-                            const nameLabel = checkbox ? t('Checkbox field name') : dropdown ? t('Dropdown field name') : signature ? t('Signature field name') : t('Text field name');
-                            const removeLabel = checkbox ? t('Remove this checkbox field') : dropdown ? t('Remove this dropdown field') : signature ? t('Remove this signature field') : t('Remove this text field');
-                            return (
-                                <div
-                                    key={el.id}
-                                    className={`pdf-editor__overlay pdf-editor__overlay--field${dropdown ? ' pdf-editor__overlay--dropdown' : ''}`}
-                                    style={{ left: el.x, top: el.y, width: el.width, height: el.height }}
-                                    onPointerDown={(e) => startDrag(e, el.id, 'move')}
-                                    role="button"
-                                    tabIndex={0}
-                                    aria-label={dragLabel}
-                                >
-                                    <input
-                                        className="pdf-editor__fieldname"
-                                        value={el.name}
-                                        onPointerDown={(e) => e.stopPropagation()}
-                                        onChange={(e) => updateElement(el.id, { name: e.target.value })}
-                                        aria-label={nameLabel}
-                                    />
-                                    {dropdown && (
-                                        <input
-                                            className="pdf-editor__fieldoptions"
-                                            value={el.optionsText ?? ''}
-                                            placeholder={t('Option 1, Option 2')}
-                                            onPointerDown={(e) => e.stopPropagation()}
-                                            onChange={(e) => updateElement(el.id, { optionsText: e.target.value })}
-                                            aria-label={t('Dropdown options, separated by commas')}
-                                        />
-                                    )}
-                                    <button
-                                        type="button"
-                                        className="pdf-editor__remove"
-                                        aria-label={removeLabel}
-                                        onPointerDown={(e) => e.stopPropagation()}
-                                        onClick={() => removeElement(el.id)}
-                                    >
-                                        ×
-                                    </button>
-                                    <span className="pdf-editor__handle" onPointerDown={(e) => startDrag(e, el.id, 'resize')} aria-hidden="true" />
-                                </div>
-                            );
+                            return <FormFieldCreator key={el.id} el={el} onChange={(changes) => updateElement(el.id, changes)} onRemove={() => removeElement(el.id)} onStartDrag={(e, how) => startDrag(e, el.id, how)} />;
                         }
                         const labels = OVERLAY_LABELS[el.type === 'markup' ? el.kind : el.type] ?? OVERLAY_LABELS.highlight;
                         return (
@@ -1915,6 +1760,12 @@ export default function EditPdf({ initialMode } = {}) {
                     )}
                 </div>
                 </div>
+                {mode === 'form' && formSubMode === 'fill' && formFields.length > 0 && (
+                    <details className="pdf-editor__formlist">
+                        <summary>{t('Show all fields as a list')}</summary>
+                        <FormFillFields status="ready" fields={formFields} values={formValues} onChange={changeFormValue} />
+                    </details>
+                )}
                 </>
                 )}
             </div>
@@ -1938,16 +1789,8 @@ export default function EditPdf({ initialMode } = {}) {
                 <button type="button" className="btn btn--primary btn--lg" onClick={applySignature} disabled={working || signPlacements.length === 0}>
                     {working ? t('Signing…') : t('Sign PDF')}
                 </button>
-            ) : mode === 'form' && formSubMode === 'add' ? (
-                <button type="button" className="btn btn--primary btn--lg" onClick={applyNewFormFields} disabled={working || elements.filter((el) => el.type === 'formfield').length === 0}>
-                    {working ? t('Saving…') : t('Save PDF with new fields')}
-                </button>
-            ) : mode === 'form' ? (
-                <button type="button" className="btn btn--primary btn--lg" onClick={applyForm} disabled={working || formFields.length === 0}>
-                    {working ? t('Saving…') : t('Save filled PDF')}
-                </button>
             ) : (
-                <button type="button" className="btn btn--primary btn--lg" onClick={apply} disabled={working || elements.length === 0}>
+                <button type="button" className="btn btn--primary btn--lg" onClick={apply} disabled={working || (elements.length === 0 && !formChanged)}>
                     {working ? t('Saving…') : t('Save PDF')}
                 </button>
             )}

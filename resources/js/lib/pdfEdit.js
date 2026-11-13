@@ -46,8 +46,10 @@ function drawTextElement(page, el, font, color) {
  * own text: { run, runs, text, size, color, background, family, bold, italic, align, lineHeight, x, y,
  * maxWidth } - every run of the block is removed (or covered) and the new text is wrapped and drawn
  * at x / first baseline y. A 'text' element takes the same layout fields (see pdfTextBlocks.js).
+ * `beforeSave(doc)`, when given, runs after the elements are drawn and before saving (Edit PDF's
+ * form values and new fields).
  */
-export async function buildEditedPdf(doc, elements) {
+export async function buildEditedPdf(doc, elements, { beforeSave } = {}) {
     const editFonts = new Map();
     // Edits of existing text go first, so anything added on top of the page stays on top of them.
     const ordered = [...elements.filter((el) => el.type === 'textedit'), ...elements.filter((el) => el.type !== 'textedit')];
@@ -120,6 +122,7 @@ export async function buildEditedPdf(doc, elements) {
             }
         }
     }
+    if (beforeSave) await beforeSave(doc);
     const bytes = await doc.save();
     return new Blob([bytes], { type: 'application/pdf' });
 }
