@@ -10,17 +10,26 @@ import { mergeTextItems, classifyFont, coverRect, sampleRunColors, colorsFromCan
 export { mergeTextItems, classifyFont, coverRect, sampleRunColors, colorsFromCanvas, extractPageRuns, missingGlyphs };
 
 const STANDARD = {
+    sans: [StandardFonts.Helvetica, StandardFonts.HelveticaBold, StandardFonts.HelveticaOblique, StandardFonts.HelveticaBoldOblique],
     serif: [StandardFonts.TimesRoman, StandardFonts.TimesRomanBold, StandardFonts.TimesRomanItalic, StandardFonts.TimesRomanBoldItalic],
     mono: [StandardFonts.Courier, StandardFonts.CourierBold, StandardFonts.CourierOblique, StandardFonts.CourierBoldOblique],
 };
 
 /**
  * The pdf-lib font to draw an edited run with: the PDF's own font when it has every letter,
- * otherwise the closest standard one (Times / Courier for Latin-1 text, DejaVu Sans for the rest).
+ * otherwise the closest standard one (Helvetica / Times / Courier for Latin-1 text, DejaVu Sans
+ * for the rest). `overrides` ({ family: 'original'|'sans'|'serif'|'mono', bold, italic }) are the
+ * choices made in the text properties bar: a family other than 'original', or bold/italic switched
+ * away from the run's own style, always uses the matching standard (or DejaVu) face.
  * `cache` (a Map) avoids embedding the same font twice in one save.
  */
-export async function fontForEdit(doc, run, text, cache) {
-    if (run.fontData && (await missingGlyphs(run.fontData, text)).length === 0) {
+export async function fontForEdit(doc, run, rawText, cache, overrides = {}) {
+    const text = String(rawText ?? '').replace(/[\r\n\t]+/g, ' '); // line breaks are laid out, never drawn
+    const family = overrides.family ?? 'original';
+    const bold = overrides.bold ?? Boolean(run.bold);
+    const italic = overrides.italic ?? Boolean(run.italic);
+    const sameStyle = bold === Boolean(run.bold) && italic === Boolean(run.italic);
+    if (family === 'original' && sameStyle && run.fontData && (await missingGlyphs(run.fontData, text)).length === 0) {
         const key = `own:${run.fontName}`;
         if (!cache.has(key)) {
             const { default: fontkit } = await import('@pdf-lib/fontkit');
@@ -29,9 +38,10 @@ export async function fontForEdit(doc, run, text, cache) {
         }
         if (cache.get(key)) return cache.get(key);
     }
-    const style = (run.bold ? 1 : 0) + (run.italic ? 2 : 0);
-    if (STANDARD[run.family]) {
-        const name = STANDARD[run.family][style];
+    const fallbackFamily = family === 'original' ? run.family ?? 'sans' : family;
+    const style = (bold ? 1 : 0) + (italic ? 2 : 0);
+    if (STANDARD[fallbackFamily]) {
+        const name = STANDARD[fallbackFamily][style];
         if (!cache.has(name)) cache.set(name, await doc.embedFont(name));
         const font = cache.get(name);
         try {
@@ -42,5 +52,5 @@ export async function fontForEdit(doc, run, text, cache) {
         }
     }
     if (!cache.has('dejavu')) cache.set('dejavu', await embedDocumentFonts(doc));
-    return pickFont(cache.get('dejavu'), run);
+    return pickFont(cache.get('dejavu'), { bold, italic });
 }

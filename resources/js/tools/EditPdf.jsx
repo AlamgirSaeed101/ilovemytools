@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Dropzone from '../components/Dropzone.jsx';
 import PdfPageCanvas from '../components/PdfPageCanvas.jsx';
 import { Notice, Tabs } from '../components/ui.jsx';
@@ -22,6 +22,9 @@ import {
     remapElementsForPageOps,
     rotatePageOp,
 } from '../lib/pdfPageOps.js';
+import { blockCanvasRect, groupRunsIntoBlocks, textEditElement, textElementToPdf } from '../lib/pdfTextBlocks.js';
+import TextBlockEditor from '../components/pdf-editor/TextBlockEditor.jsx';
+import TextPropsBar from '../components/pdf-editor/TextPropsBar.jsx';
 
 // pdf-lib (~165 KB) only loads when a PDF is previewed or saved, not with the page.
 const loadWatermark = () => import('../lib/pdfWatermark.js');
@@ -29,7 +32,6 @@ const loadEdit = () => import('../lib/pdfEdit.js');
 const loadForm = () => import('../lib/pdfForm.js');
 import { baseName, downloadBlob, formatBytes, safeFilename } from '../lib/util.js';
 
-const TEXT_SIZES = [12, 14, 18, 24, 32, 48];
 const ZOOM_MIN = 50;
 const ZOOM_MAX = 200;
 const ZOOM_STEP = 25;
@@ -61,12 +63,6 @@ const WATERMARK_SCOPES = [
 ];
 // Modes where dragging on the page creates the element (instead of an "Add" button).
 const DRAG_MODES = ['whiteout', 'shape', 'underline', 'strike', 'link'];
-// CSS stand-ins for the fonts pdfTextEdit.fontForEdit() falls back to (DejaVu Sans, Times, Courier).
-const FALLBACK_CSS = {
-    sans: '"DejaVu Sans", Verdana, Arial, sans-serif',
-    serif: '"Times New Roman", Times, serif',
-    mono: '"Courier New", Courier, monospace',
-};
 const OVERLAY_LABELS = {
     text: { drag: () => t('Text - drag to move'), remove: () => t('Remove this text') },
     image: { drag: () => t('Image - drag to move'), remove: () => t('Remove this image') },
@@ -255,8 +251,7 @@ export default function EditPdf({ initialMode } = {}) {
     const [replaceText, setReplaceText] = useState('');
     const [replaceInfo, setReplaceInfo] = useState('');
     const [textValue, setTextValue] = useState('');
-    const [textSize, setTextSize] = useState(18);
-    const [textColor, setTextColor] = useState('#1d4ed8');
+    const [textProps, setTextProps] = useState({ family: 'sans', size: 18, color: '#1d4ed8', bold: false, italic: false, align: 'left', lineHeight: 1.2 });
     const [highlightColor, setHighlightColor] = useState('#fde047');
     const [drawColor, setDrawColor] = useState('#dc2626');
     const [drawThickness, setDrawThickness] = useState(3);
@@ -403,12 +398,14 @@ export default function EditPdf({ initialMode } = {}) {
             cancelled = true;
         };
     }, [renderDoc, currentPage]);
+    // Lines of one paragraph (same font, size, edge, spacing) are edited together as one block.
+    const pageBlocks = useMemo(() => groupRunsIntoBlocks(pageRuns), [pageRuns]);
 
     const editing = elements.find((el) => el.id === editingId) ?? null;
 
     // Letters the selected edit needs that the PDF's own font doesn't contain (then a similar font is used).
     useEffect(() => {
-        if (!editing) {
+        if (editing?.type !== 'textedit') {
             setMissing([]);
             return;
         }
@@ -737,17 +734,17 @@ export default function EditPdf({ initialMode } = {}) {
         }
     }
 
-    /** A text-edit element for `run`, with the colours sampled from `canvas` (rendered at `atScale`). */
-    function textEditFor(run, page, canvas, atScale, text) {
+    /** A text-edit element for a paragraph `block`, with the colours sampled from `canvas` (rendered at `atScale`). */
+    function textEditFor(block, page, canvas, atScale, text) {
         const { width, height: pageHeight } = doc.getPage(page).getSize();
-        const coverPdf = coverRect(run, run.ascent, run.descent);
-        const sampled = colorsFromCanvas(canvas, pdfRectToCanvasRect(coverPdf, atScale, pageHeight));
-        const rect = pdfRectToCanvasRect(coverPdf, computeDisplayScale(width, pageHeight), pageHeight);
-        return { type: 'textedit', page, run, text, size: run.size, color: sampled.color, background: sampled.background, ...rect };
+        const first = block.runs?.[0] ?? block;
+        const colors = colorsFromCanvas(canvas, pdfRectToCanvasRect(coverRect(first, first.ascent, first.descent), atScale, pageHeight));
+        return { ...textEditElement(block, { scale: computeDisplayScale(width, pageHeight), pageHeight, colors }), page, text };
     }
 
-    function startTextEdit(run) {
-        const existing = elements.find((el) => el.type === 'textedit' && el.page === currentPage && el.run.id === run.id);
+    function startTextEdit(block) {
+        dropEmptyText();
+        const existing = elements.find((el) => el.type === 'textedit' && el.page === currentPage && (el.runs ?? [el.run]).some((r) => r.id === block.id));
         if (existing) {
             setEditingId(existing.id);
             return;
@@ -755,8 +752,35 @@ export default function EditPdf({ initialMode } = {}) {
         const canvas = stageRef.current?.querySelector('canvas');
         if (!canvas) return;
         const id = nextId.current;
-        pushElement(textEditFor(run, currentPage, canvas, scale, run.str));
+        pushElement(textEditFor(block, currentPage, canvas, scale, block.text));
         setEditingId(id);
+    }
+
+    /** Added text left empty is dropped when editing moves on, so no blank boxes pile up. */
+    function dropEmptyText() {
+        if (editing?.type === 'text' && !editing.text.trim()) removeElement(editing.id);
+    }
+
+    function finishEditing() {
+        dropEmptyText();
+        setEditingId(null);
+    }
+
+    /** Text tool: a click on the page starts a new, empty text box there to type into. */
+    function placeTextAt(point) {
+        if (editing) {
+            finishEditing();
+            return;
+        }
+        const id = nextId.current;
+        const lineHeightPx = textProps.size * scale * textProps.lineHeight;
+        pushElement({ type: 'text', text: '', ...textProps, maxWidth: null, rotation: 0, x: point.x, y: Math.max(0, point.y - lineHeightPx / 2), width: 16, height: lineHeightPx });
+        setEditingId(id);
+    }
+
+    function changeTextProps(changes) {
+        if (editing) updateElement(editing.id, changes);
+        if (!editing || editing.type === 'text') setTextProps((current) => ({ ...current, ...changes }));
     }
 
     function updateElement(id, changes) {
@@ -774,8 +798,8 @@ export default function EditPdf({ initialMode } = {}) {
         try {
             for (let n = 1; n <= pageCount; n++) {
                 // Search the wording as it is now: a line already edited is matched on its new text.
-                const editOf = (run) => elements.find((el) => el.type === 'textedit' && el.page === n - 1 && el.run.id === run.id);
-                const runs = (await extractPageRuns(renderDoc, n)).filter((run) => (editOf(run)?.text ?? run.str).includes(findText));
+                const editOf = (block) => elements.find((el) => el.type === 'textedit' && el.page === n - 1 && el.run.id === block.id);
+                const runs = groupRunsIntoBlocks(await extractPageRuns(renderDoc, n)).filter((run) => (editOf(run)?.text ?? run.str).includes(findText));
                 if (runs.length === 0) continue;
                 const canvas = await renderPageToCanvas(renderDoc, n, { scale: 1, background: '#ffffff' });
                 for (const run of runs) {
@@ -854,11 +878,11 @@ export default function EditPdf({ initialMode } = {}) {
 
     function addText() {
         if (!textValue.trim() || !canvasSize.width) return;
-        const pxSize = textSize * scale;
+        const pxSize = textProps.size * scale;
         const width = measureText(textValue, pxSize) + 10;
-        const height = pxSize * 1.35;
+        const height = pxSize * textProps.lineHeight;
         const rect = clampRect({ x: (canvasSize.width - width) / 2, y: (canvasSize.height - height) / 2, width, height }, canvasSize.width, canvasSize.height, 10);
-        pushElement({ type: 'text', text: textValue, size: textSize, color: textColor, rotation: 0, ...rect });
+        pushElement({ type: 'text', text: textValue, ...textProps, maxWidth: null, rotation: 0, ...rect });
     }
 
     function addImage() {
@@ -935,8 +959,13 @@ export default function EditPdf({ initialMode } = {}) {
     }
 
     function startDraw(e) {
-        if (mode === 'edittext') setEditingId(null);
+        if (mode === 'edittext') finishEditing();
         if (!canvasSize.width) return;
+        if (mode === 'text') {
+            e.preventDefault();
+            placeTextAt(pointerPoint(e, stageRef.current, canvasSize));
+            return;
+        }
         if (DRAG_MODES.includes(mode)) {
             if (mode === 'link' && !normalizeLinkUrl(linkUrl)) {
                 setError(t('Type a valid link address first, for example https://example.com'));
@@ -974,7 +1003,7 @@ export default function EditPdf({ initialMode } = {}) {
         const stage = stageRef.current;
         const natural = canvasSize;
         const el = elements.find((x) => x.id === id);
-        if (!stage || !el || el.type === 'textedit') return;
+        if (!stage || !el) return;
         const startPoint = pointerPoint(e, stage, natural);
 
         if (isLine(el)) {
@@ -1007,6 +1036,10 @@ export default function EditPdf({ initialMode } = {}) {
                     if (item.id !== id) return item;
                     if (dragMode === 'move') {
                         return { ...item, ...clampRect({ ...startRect, x: startRect.x + dx, y: startRect.y + dy }, natural.width, natural.height, 0) };
+                    }
+                    if (item.type === 'text' || item.type === 'textedit') {
+                        const width = Math.max(20, startRect.width + dx);
+                        return { ...item, width, maxWidth: width };
                     }
                     if (item.type === 'image') {
                         const width = Math.max(20, startRect.width + dx);
@@ -1054,13 +1087,7 @@ export default function EditPdf({ initialMode } = {}) {
         return srcElements.map((el) => {
             const size = srcDoc.getPage(el.page).getSize();
             const scaleForPage = computeDisplayScale(size.width, size.height);
-            if (el.type === 'text') {
-                const rectPdf = canvasRectToPdfRect(el, scaleForPage, size.height);
-                return { type: 'text', page: el.page, text: el.text, size: el.size, color: el.color, rotation: el.rotation, ...rectPdf };
-            }
-            if (el.type === 'textedit') {
-                return { type: 'textedit', page: el.page, run: el.run, text: el.text, size: el.size, color: el.color, background: el.background };
-            }
+            if (el.type === 'text' || el.type === 'textedit') return textElementToPdf(el, scaleForPage, size.height);
             if (isLine(el)) {
                 return { ...el, thickness: el.thickness / scaleForPage, points: pointsToPdf(el.points, scaleForPage, size.height) };
             }
@@ -1168,7 +1195,7 @@ export default function EditPdf({ initialMode } = {}) {
         <div className="stack">
             {mode === 'sign' ? (
                 <Notice type="info">{t('This creates an electronic signature (a drawn, typed or uploaded image placed on the PDF), not a certificate-based digital signature.')}</Notice>
-            ) : mode !== 'edittext' && mode !== 'watermark' && mode !== 'form' && mode !== 'pages' && (
+            ) : mode !== 'edittext' && mode !== 'text' && mode !== 'watermark' && mode !== 'form' && mode !== 'pages' && (
                 <Notice type="info">{t('This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.')}</Notice>
             )}
 
@@ -1403,12 +1430,28 @@ export default function EditPdf({ initialMode } = {}) {
                 <div className="pdf-editor__toolbar" style={{ marginTop: '0.7rem' }}>
                     {mode === 'text' && (
                         <>
+                            <span className="field__hint" style={{ margin: 0 }}>{t('Click anywhere on the page and type, or click existing text to change it.')}</span>
                             <input className="input" style={{ maxWidth: '240px' }} value={textValue} onChange={(e) => setTextValue(e.target.value)} placeholder={t('Text to add')} aria-label={t('Text to add')} />
-                            <select className="select" style={{ maxWidth: '110px' }} value={textSize} onChange={(e) => setTextSize(Number(e.target.value))} aria-label={t('Font size')}>
-                                {TEXT_SIZES.map((s) => <option key={s} value={s}>{s}px</option>)}
-                            </select>
-                            <input type="color" value={textColor} onChange={(e) => setTextColor(e.target.value)} aria-label={t('Text colour')} />
                             <button type="button" className="btn btn--primary btn--sm" disabled={!textValue.trim()} onClick={addText}>{t('Add text to page')}</button>
+                        </>
+                    )}
+                    {(mode === 'text' || (mode === 'edittext' && editing)) && (
+                        <TextPropsBar
+                            value={editing ?? textProps}
+                            onChange={changeTextProps}
+                            originalFontAvailable={Boolean(editing?.type === 'textedit' && editing.run.fontData)}
+                            originalStyle={editing?.type === 'textedit' ? editing.run : null}
+                        />
+                    )}
+                    {(mode === 'text' || mode === 'edittext') && editing && (
+                        <>
+                            {editing.type === 'textedit' && (
+                                <>
+                                    <button type="button" className="btn btn--sm" onClick={() => { updateElement(editing.id, { text: '' }); setEditingId(null); }}>{t('Delete text')}</button>
+                                    <button type="button" className="btn btn--sm" onClick={() => { removeElement(editing.id); setEditingId(null); }}>{t('Restore original')}</button>
+                                </>
+                            )}
+                            <button type="button" className="btn btn--primary btn--sm" onClick={finishEditing}>{t('Done')}</button>
                         </>
                     )}
                     {mode === 'image' && (
@@ -1466,24 +1509,6 @@ export default function EditPdf({ initialMode } = {}) {
                             {runsReady && pageRuns.length === 0 ? t('No editable text was found on this page (it may be a scanned image).') : t('Click any text on the page to change it.')}
                         </span>
                     )}
-                    {mode === 'edittext' && editing && (
-                        <>
-                            <input
-                                className="input"
-                                type="number"
-                                style={{ maxWidth: '90px' }}
-                                min={4}
-                                max={200}
-                                step={0.5}
-                                value={Math.round(editing.size * 10) / 10}
-                                onChange={(e) => updateElement(editing.id, { size: Math.min(200, Math.max(4, Number(e.target.value) || editing.size)) })}
-                                aria-label={t('Font size')}
-                            />
-                            <input type="color" value={editing.color} onChange={(e) => updateElement(editing.id, { color: e.target.value })} aria-label={t('Text colour')} />
-                            <button type="button" className="btn btn--sm" onClick={() => { removeElement(editing.id); setEditingId(null); }}>{t('Restore original')}</button>
-                            <button type="button" className="btn btn--primary btn--sm" onClick={() => setEditingId(null)}>{t('Done')}</button>
-                        </>
-                    )}
                     {mode === 'whiteout' && <span className="field__hint" style={{ margin: 0 }}>{t('Drag on the page to cover content with white.')}</span>}
                     {(mode === 'underline' || mode === 'strike') && (
                         <>
@@ -1526,7 +1551,7 @@ export default function EditPdf({ initialMode } = {}) {
                 </div>
                 )}
 
-                {mode === 'edittext' && editing && missing.length > 0 && (
+                {(mode === 'edittext' || mode === 'text') && editing?.type === 'textedit' && (editing.family ?? 'original') === 'original' && editing.run.fontData && missing.length > 0 && (
                     <Notice type="warn">{t('The PDF’s own font doesn’t include {letters}, so this line will use a similar font.', { letters: missing.join(' ') })}</Notice>
                 )}
                 {mode === 'edittext' && (
@@ -1596,20 +1621,20 @@ export default function EditPdf({ initialMode } = {}) {
                     }}
                 >
                     <PdfPageCanvas renderDoc={renderDoc} pageNumber={currentPage + 1} scale={scale} className="pdf-editor__canvas" onReady={onPageReady} />
-                    {mode === 'edittext' &&
-                        pageRuns
-                            .filter((run) => !currentElements.some((el) => el.type === 'textedit' && el.run.id === run.id))
-                            .map((run) => {
-                                const r = pdfRectToCanvasRect(coverRect(run, run.ascent, run.descent), scale, currentPageSize.height);
+                    {(mode === 'edittext' || mode === 'text') &&
+                        pageBlocks
+                            .filter((block) => !currentElements.some((el) => el.type === 'textedit' && (el.runs ?? [el.run]).some((r) => block.runs.some((b) => b.id === r.id))))
+                            .map((block) => {
+                                const r = blockCanvasRect(block, scale, currentPageSize.height);
                                 return (
                                     <button
-                                        key={run.id}
+                                        key={block.id}
                                         type="button"
-                                        className="pdf-editor__textrun"
+                                        className="pdf-editor__textrun pdf-editor__textrun--block"
                                         style={{ left: r.x, top: r.y, width: r.width, height: r.height }}
                                         onPointerDown={(e) => e.stopPropagation()}
-                                        onClick={() => startTextEdit(run)}
-                                        aria-label={t('Edit text: {text}', { text: run.str })}
+                                        onClick={() => startTextEdit(block)}
+                                        aria-label={t('Edit text: {text}', { text: block.text })}
                                     />
                                 );
                             })}
@@ -1715,42 +1740,27 @@ export default function EditPdf({ initialMode } = {}) {
                                 </div>
                             ))}
                     {currentElements.map((el) => {
-                        if (el.type === 'textedit') {
-                            const selected = el.id === editingId;
-                            // The PDF's own font while it has every letter, otherwise the fallback the saved file will use.
-                            const own = el.run.fontData && !el.fallback;
-                            const fontStyle = {
-                                fontFamily: own ? el.run.cssFamily : FALLBACK_CSS[el.run.family] ?? FALLBACK_CSS.sans,
-                                fontSize: el.size * scale,
-                                color: el.color,
-                                fontWeight: own ? undefined : el.run.bold ? 700 : 400,
-                                fontStyle: !own && el.run.italic ? 'italic' : undefined,
-                            };
+                        if (el.type === 'textedit' || el.type === 'text') {
                             return (
-                                <div
+                                <TextBlockEditor
                                     key={el.id}
-                                    className={`pdf-editor__textedit${selected ? ' is-selected' : ''}`}
-                                    style={{ left: el.x, top: el.y, minWidth: el.width, height: el.height, background: el.background }}
-                                    onPointerDown={(e) => {
-                                        e.stopPropagation();
-                                        setMode('edittext');
+                                    el={el}
+                                    selected={el.id === editingId && (mode === 'edittext' || mode === 'text')}
+                                    scale={scale}
+                                    labels={el.type === 'text' ? { drag: OVERLAY_LABELS.text.drag(), remove: OVERLAY_LABELS.text.remove() } : undefined}
+                                    onChange={(changes) => updateElement(el.id, changes)}
+                                    onLayout={(box) => setElements((list) => list.map((item) => (item.id === el.id ? { ...item, ...box } : item)))}
+                                    onSelect={() => {
+                                        if (mode !== 'edittext' && mode !== 'text') setMode(el.type === 'text' ? 'text' : 'edittext');
+                                        if (editingId !== el.id) dropEmptyText();
                                         setEditingId(el.id);
                                     }}
-                                >
-                                    {selected ? (
-                                        <input
-                                            autoFocus
-                                            value={el.text}
-                                            onChange={(e) => updateElement(el.id, { text: e.target.value })}
-                                            onKeyDown={(e) => (e.key === 'Enter' || e.key === 'Escape') && setEditingId(null)}
-                                            aria-label={t('Edit this text')}
-                                            size={Math.max(1, el.text.length)}
-                                            style={{ ...fontStyle, border: 0, padding: 0, margin: 0, background: 'transparent', outline: 'none', width: '100%', minWidth: el.width }}
-                                        />
-                                    ) : (
-                                        <span style={{ ...fontStyle, whiteSpace: 'pre', pointerEvents: 'none' }}>{el.text}</span>
-                                    )}
-                                </div>
+                                    onDone={finishEditing}
+                                    onMoveStart={(e) => startDrag(e, el.id, 'move')}
+                                    onResizeStart={(e) => startDrag(e, el.id, 'resize')}
+                                    onRotateStart={el.type === 'text' ? (e) => startRotate(e, el.id) : undefined}
+                                    onRemove={el.type === 'text' ? () => { removeElement(el.id); if (editingId === el.id) setEditingId(null); } : undefined}
+                                />
                             );
                         }
                         if (isLine(el)) {
@@ -1845,9 +1855,6 @@ export default function EditPdf({ initialMode } = {}) {
                                 aria-label={labels.drag()}
                                 title={el.type === 'link' ? el.url : undefined}
                             >
-                                {el.type === 'text' && (
-                                    <span style={{ fontSize: el.size * scale, color: el.color, lineHeight: 1, whiteSpace: 'nowrap', pointerEvents: 'none' }}>{el.text}</span>
-                                )}
                                 {el.type === 'image' && <img src={el.dataUrl} alt="" draggable={false} />}
                                 {el.type === 'shape' && (
                                     <svg width={el.width} height={el.height} style={{ pointerEvents: 'none', overflow: 'visible', position: 'absolute', inset: 0 }}>

@@ -358,6 +358,12 @@
     ]
   },
   {
+    "key": "{name} does not include that choice.",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
+    ]
+  },
+  {
     "key": "{name} home",
     "files": [
       "resources/js/components/Layout.jsx",
@@ -382,6 +388,12 @@
     "key": "{name} is available in {count} languages: {languages}.",
     "files": [
       "app/Support/HomeFaq.php"
+    ]
+  },
+  {
+    "key": "{name} is longer than this field allows.",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
     ]
   },
   {
@@ -939,6 +951,30 @@
     ]
   },
   {
+    "key": "Align centre",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
+    "key": "Align left",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
+    "key": "Align right",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
+    "key": "Alignment",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
     "key": "All",
     "files": [
       "resources/js/tools/BrokenLinkChecker.jsx"
@@ -1197,6 +1233,7 @@
   {
     "key": "Bold",
     "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -1538,6 +1575,12 @@
   },
   {
     "key": "Click any text on the page to change it.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Click anywhere on the page and type, or click existing text to change it.",
     "files": [
       "resources/js/tools/EditPdf.jsx"
     ]
@@ -1892,6 +1935,12 @@
     ]
   },
   {
+    "key": "Could not fill this form. The file may use a form feature this tool does not support.",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
+    ]
+  },
+  {
     "key": "Could not load the fonts needed to build this PDF. Check your connection and try again.",
     "files": [
       "resources/js/lib/pdfFonts.js"
@@ -2058,6 +2107,18 @@
     "key": "Delete pages",
     "files": [
       "resources/js/tools/DeletePdfPages.jsx"
+    ]
+  },
+  {
+    "key": "Delete text",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Deleted text - click to type new text",
+    "files": [
+      "resources/js/components/pdf-editor/TextBlockEditor.jsx"
     ]
   },
   {
@@ -2436,6 +2497,18 @@
     ]
   },
   {
+    "key": "Drag to change the width (the text wraps)",
+    "files": [
+      "resources/js/components/pdf-editor/TextBlockEditor.jsx"
+    ]
+  },
+  {
+    "key": "Drag to move",
+    "files": [
+      "resources/js/components/pdf-editor/TextBlockEditor.jsx"
+    ]
+  },
+  {
     "key": "Draw",
     "files": [
       "resources/js/tools/EditPdf.jsx"
@@ -2649,7 +2722,13 @@
   {
     "key": "Edit this text",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/TextBlockEditor.jsx"
+    ]
+  },
+  {
+    "key": "Edited text - click to change, drag to move",
+    "files": [
+      "resources/js/components/pdf-editor/TextBlockEditor.jsx"
     ]
   },
   {
@@ -3183,6 +3262,12 @@
     ]
   },
   {
+    "key": "Flatten the form so the answers cannot be changed",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
+    ]
+  },
+  {
     "key": "Flattening page {page} of {total}…",
     "files": [
       "resources/js/tools/EditPdf.jsx"
@@ -3225,8 +3310,15 @@
     ]
   },
   {
+    "key": "Font",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
     "key": "Font size",
     "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -3567,6 +3659,12 @@
     ]
   },
   {
+    "key": "Hold Ctrl or Command to select more than one.",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
+    ]
+  },
+  {
     "key": "Home",
     "files": [
       "app/Support/Seo.php",
@@ -3866,6 +3964,12 @@
     ]
   },
   {
+    "key": "Italic",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
     "key": "JPG has no transparency, so transparent areas become white.",
     "files": [
       "resources/js/tools/ImageConverter.jsx",
@@ -4085,6 +4189,18 @@
     "key": "Line colour",
     "files": [
       "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Line spacing",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
+    "key": "Line spacing {value}",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
     ]
   },
   {
@@ -4351,6 +4467,12 @@
     ]
   },
   {
+    "key": "Monospace",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
     "key": "Monthly",
     "files": [
       "resources/js/tools/CompoundInterestCalculator.jsx"
@@ -4444,6 +4566,12 @@
     "files": [
       "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/OrganizePdf.jsx"
+    ]
+  },
+  {
+    "key": "Move this text (drag, or use the arrow keys)",
+    "files": [
+      "resources/js/components/pdf-editor/TextBlockEditor.jsx"
     ]
   },
   {
@@ -4584,6 +4712,12 @@
     "key": "No matches found.",
     "files": [
       "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "No option selected",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
     ]
   },
   {
@@ -4841,6 +4975,12 @@
     "key": "Original",
     "files": [
       "resources/js/tools/BackgroundRemover.jsx"
+    ]
+  },
+  {
+    "key": "Original font",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
     ]
   },
   {
@@ -5573,7 +5713,8 @@
   {
     "key": "Reading form fields…",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/tools/EditPdf.jsx",
+      "resources/js/tools/FormFillFields.jsx"
     ]
   },
   {
@@ -5845,6 +5986,7 @@
   {
     "key": "Remove this text",
     "files": [
+      "resources/js/components/pdf-editor/TextBlockEditor.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -6121,6 +6263,12 @@
     ]
   },
   {
+    "key": "Sans-serif",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
     "key": "Save as",
     "files": [
       "resources/js/tools/ImageResizer.jsx"
@@ -6136,6 +6284,12 @@
     "key": "Save new order",
     "files": [
       "resources/js/tools/OrganizePdf.jsx"
+    ]
+  },
+  {
+    "key": "Save or remove your other edits before filling the form. Filling uses the original file, not the edits on the page.",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
     ]
   },
   {
@@ -6317,6 +6471,12 @@
     "files": [
       "resources/js/tools/ReadabilityChecker.jsx",
       "resources/js/tools/WordCounter.jsx"
+    ]
+  },
+  {
+    "key": "Serif",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
     ]
   },
   {
@@ -6888,6 +7048,7 @@
   {
     "key": "Text colour",
     "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -6901,6 +7062,12 @@
     "key": "Text field name",
     "files": [
       "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Text properties",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
     ]
   },
   {
@@ -7042,6 +7209,12 @@
     ]
   },
   {
+    "key": "The PDF’s own font has no bold or italic version for this text, so a similar standard font is used.",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
     "key": "The percentage cannot be 0 (division by zero).",
     "files": [
       "resources/js/lib/percent.js"
@@ -7175,6 +7348,12 @@
     ]
   },
   {
+    "key": "This field cannot be filled in the browser.",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
+    ]
+  },
+  {
     "key": "This file could not be read. It may be damaged or not a real spreadsheet.",
     "files": [
       "resources/js/lib/excelToPdf.js"
@@ -7232,6 +7411,24 @@
     "key": "This PDF could not be made smaller, so the original file is ready to download unchanged ({size}).",
     "files": [
       "resources/js/tools/CompressPdf.jsx"
+    ]
+  },
+  {
+    "key": "This PDF could not be opened.",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
+    ]
+  },
+  {
+    "key": "This PDF has no fillable form fields. A scanned form is only a picture, so use Edit text or Add text to write on it.",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
+    ]
+  },
+  {
+    "key": "This PDF is password-protected. Unlock it first, then fill the form.",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
     ]
   },
   {
