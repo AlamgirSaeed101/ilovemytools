@@ -32,6 +32,11 @@ import FormFieldOverlay from '../components/pdf-editor/FormFieldOverlay.jsx';
 import FormFieldCreator, { FormCreateTools, formSaveErrorText } from '../components/pdf-editor/FormFieldCreator.jsx';
 import { newFormElement } from '../lib/pdfFormElements.js';
 import FormFillFields from './FormFillFields.jsx';
+import { quadsBounds, quadsForRuns, smoothStroke, strokeToSvgPath } from '../lib/pdfAnnotationGeometry.js';
+import ShapeProps, { DEFAULT_SHAPE_PROPS, LineEndHandles, isLineShape, shapeElementStyle, shapeSvgStyle } from '../components/pdf-editor/ShapeProps.jsx';
+import StickyNote, { NOTE_COLORS, NOTE_SIZE, rememberedAuthor } from '../components/pdf-editor/StickyNote.jsx';
+import LinkOverlay, { LinkTargetFields, linkTargetLabel, pageIndexFrom } from '../components/pdf-editor/LinkOverlay.jsx';
+import TextMarkup from '../components/pdf-editor/TextMarkup.jsx';
 
 // pdf-lib (~165 KB) only loads when a PDF is previewed or saved, not with the page.
 const loadWatermark = () => import('../lib/pdfWatermark.js');
@@ -43,12 +48,6 @@ import { baseName, downloadBlob, formatBytes, safeFilename } from '../lib/util.j
 const ZOOM_MIN = 50;
 const ZOOM_MAX = 200;
 const ZOOM_STEP = 25;
-const SHAPES = [
-    { id: 'rect', label: () => t('Rectangle') },
-    { id: 'ellipse', label: () => t('Ellipse') },
-    { id: 'line', label: () => t('Line') },
-    { id: 'arrow', label: () => t('Arrow') },
-];
 const WATERMARK_TEXT_SIZES = [24, 32, 48, 64, 96];
 const WATERMARK_POSITIONS = [
     { id: 'center', label: () => t('Centre') },
@@ -70,7 +69,7 @@ const WATERMARK_SCOPES = [
     { id: 'range', label: () => t('Choose pages') },
 ];
 // Modes where dragging on the page creates the element (instead of an "Add" button).
-const DRAG_MODES = ['whiteout', 'shape', 'underline', 'strike', 'link'];
+const DRAG_MODES = ['whiteout', 'shape', 'highlight', 'underline', 'strike', 'link'];
 const OVERLAY_LABELS = {
     text: { drag: () => t('Text - drag to move'), remove: () => t('Remove this text') },
     image: { drag: () => t('Image - drag to move'), remove: () => t('Remove this image') },
@@ -118,10 +117,11 @@ export default function EditPdf({ initialMode } = {}) {
     const [highlightColor, setHighlightColor] = useState('#fde047');
     const [drawColor, setDrawColor] = useState('#dc2626');
     const [drawThickness, setDrawThickness] = useState(3);
-    const [shapeKind, setShapeKind] = useState('rect');
-    const [shapeColor, setShapeColor] = useState('#dc2626');
-    const [shapeThickness, setShapeThickness] = useState(3);
-    const [shapeFill, setShapeFill] = useState(false);
+    const [shapeProps, setShapeProps] = useState(DEFAULT_SHAPE_PROPS);
+    const [drawAsInk, setDrawAsInk] = useState(false);
+    const [linkTarget, setLinkTarget] = useState('url');
+    const [linkPage, setLinkPage] = useState(1);
+    const [pageLinks, setPageLinks] = useState([]);
     const [markupColor, setMarkupColor] = useState('#dc2626');
     const [linkUrl, setLinkUrl] = useState('');
     const [dragBox, setDragBox] = useState(null);
@@ -265,6 +265,20 @@ export default function EditPdf({ initialMode } = {}) {
     }, [renderDoc, currentPage]);
     // Lines of one paragraph (same font, size, edge, spacing) are edited together as one block.
     const pageBlocks = useMemo(() => groupRunsIntoBlocks(pageRuns), [pageRuns]);
+
+    // The links the page on screen already has, so the Link tool can show, change or remove them.
+    useEffect(() => {
+        setPageLinks([]);
+        if (!renderDoc || mode !== 'link') return undefined;
+        let cancelled = false;
+        import('../lib/pdfLinks.js')
+            .then(({ readPageLinks }) => readPageLinks(renderDoc, currentPage + 1))
+            .then((links) => !cancelled && setPageLinks(links))
+            .catch(() => !cancelled && setPageLinks([]));
+        return () => {
+            cancelled = true;
+        };
+    }, [renderDoc, currentPage, mode]);
 
     const editing = elements.find((el) => el.id === editingId) ?? null;
 
@@ -671,11 +685,21 @@ export default function EditPdf({ initialMode } = {}) {
             const rect = rectFromPoints(start.x, start.y, end.x, end.y);
             if (mode === 'form') return addFormElement(Math.hypot(rect.width, rect.height) < 6 ? end : rect);
             if (Math.hypot(rect.width, rect.height) < 6) return; // a click, not a drag
-            if (mode === 'whiteout') pushElement({ type: 'whiteout', ...rect });
-            else if (mode === 'underline' || mode === 'strike') pushElement({ type: 'markup', kind: mode, color: markupColor, ...rect, height: Math.max(8, rect.height) });
+            // Highlight / underline / strikethrough dragged across real text snap to its lines and save as annotations.
+            const markup = mode === 'highlight' || mode === 'underline' || mode === 'strike';
+            const quads = markup ? quadsForRuns(pageRuns, canvasRectToPdfRect(rect, scale, currentPageSize.height)) : [];
+            if (quads.length) {
+                const quadsBox = quadsBounds(quads);
+                const box = pdfRectToCanvasRect(quadsBox, scale, currentPageSize.height);
+                if (mode === 'highlight') pushElement({ type: 'highlight', color: highlightColor, quads, quadsBox, ...box });
+                else pushElement({ type: 'markup', kind: mode, color: markupColor, quads, quadsBox, ...box });
+            } else if (mode === 'highlight') pushElement({ type: 'highlight', color: highlightColor, rotation: 0, ...rect });
+            else if (mode === 'whiteout') pushElement({ type: 'whiteout', ...rect });
+            else if (markup) pushElement({ type: 'markup', kind: mode, color: markupColor, ...rect, height: Math.max(8, rect.height) });
+            else if (mode === 'link' && linkTarget === 'page') pushElement({ type: 'link', url: null, pageTarget: pageIndexFrom(linkPage, pageCount), ...rect });
             else if (mode === 'link') pushElement({ type: 'link', url: normalizeLinkUrl(linkUrl), ...rect });
-            else if (shapeKind === 'line' || shapeKind === 'arrow') pushElement({ type: 'shape', shape: shapeKind, color: shapeColor, thickness: shapeThickness, points: [start, end] });
-            else pushElement({ type: 'shape', shape: shapeKind, color: shapeColor, thickness: shapeThickness, fill: shapeFill, rotation: 0, ...rect });
+            else if (isLineShape(shapeProps.shape)) pushElement({ type: 'shape', shape: shapeProps.shape, ...shapeElementStyle(shapeProps), points: [start, end] });
+            else pushElement({ type: 'shape', shape: shapeProps.shape, ...shapeElementStyle(shapeProps), rotation: 0, ...rect });
         }
         window.addEventListener('pointermove', handleMove);
         window.addEventListener('pointerup', handleUp);
@@ -696,9 +720,19 @@ export default function EditPdf({ initialMode } = {}) {
             placeImage(placing, pointerPoint(e, stageRef.current, canvasSize));
             return;
         }
+        if (mode === 'note') {
+            const p = pointerPoint(e, stageRef.current, canvasSize);
+            const rect = clampRect({ x: p.x - NOTE_SIZE / 2, y: p.y - NOTE_SIZE / 2, width: NOTE_SIZE, height: NOTE_SIZE }, canvasSize.width, canvasSize.height, NOTE_SIZE);
+            pushElement({ type: 'note', color: NOTE_COLORS[0], contents: '', author: rememberedAuthor(), icon: 'Comment', ...rect });
+            return;
+        }
         if (DRAG_MODES.includes(mode) || (mode === 'form' && formSubMode === 'add')) {
-            if (mode === 'link' && !normalizeLinkUrl(linkUrl)) {
+            if (mode === 'link' && linkTarget === 'url' && !normalizeLinkUrl(linkUrl)) {
                 setError(t('Type a valid link address first, for example https://example.com'));
+                return;
+            }
+            if (mode === 'link' && linkTarget === 'page' && pageIndexFrom(linkPage, pageCount) == null) {
+                setError(t('Choose a page from 1 to {total}.', { total: pageCount }));
                 return;
             }
             setError('');
@@ -721,7 +755,7 @@ export default function EditPdf({ initialMode } = {}) {
             window.removeEventListener('pointerup', handleUp);
             setDrawingPoints(null);
             if (points.length < 2) return;
-            pushElement({ type: 'stroke', points, color: drawColor, thickness: drawThickness });
+            pushElement({ type: 'stroke', points: smoothStroke(points), color: drawColor, thickness: drawThickness, ink: drawAsInk });
         }
         window.addEventListener('pointermove', handleMove);
         window.addEventListener('pointerup', handleUp);
@@ -956,6 +990,7 @@ export default function EditPdf({ initialMode } = {}) {
                         { id: 'whiteout', label: t('Whiteout') },
                         { id: 'shape', label: t('Shapes') },
                         { id: 'link', label: t('Link') },
+                        { id: 'note', label: t('Note') },
                         { id: 'draw', label: t('Draw') },
                         { id: 'pages', label: t('Pages') },
                         { id: 'watermark', label: t('Watermark') },
@@ -1177,6 +1212,7 @@ export default function EditPdf({ initialMode } = {}) {
                         <>
                             <input type="color" value={highlightColor} onChange={(e) => setHighlightColor(e.target.value)} aria-label={t('Highlight colour')} />
                             <button type="button" className="btn btn--primary btn--sm" onClick={addHighlight}>{t('Add highlight to page')}</button>
+                            <span className="field__hint" style={{ margin: 0 }}>{t('Or drag across text to highlight it.')}</span>
                         </>
                     )}
                     {mode === 'form' && (
@@ -1219,33 +1255,25 @@ export default function EditPdf({ initialMode } = {}) {
                             <span className="field__hint" style={{ margin: 0 }}>{mode === 'underline' ? t('Drag across the text to underline it.') : t('Drag across the text to strike it through.')}</span>
                         </>
                     )}
-                    {mode === 'shape' && (
-                        <>
-                            <select className="select" style={{ maxWidth: '140px' }} value={shapeKind} onChange={(e) => setShapeKind(e.target.value)} aria-label={t('Shape')}>
-                                {SHAPES.map((sh) => <option key={sh.id} value={sh.id}>{sh.label()}</option>)}
-                            </select>
-                            <input type="color" value={shapeColor} onChange={(e) => setShapeColor(e.target.value)} aria-label={t('Shape colour')} />
-                            <select className="select" style={{ maxWidth: '110px' }} value={shapeThickness} onChange={(e) => setShapeThickness(Number(e.target.value))} aria-label={t('Line thickness')}>
-                                {[1, 2, 3, 5, 8].map((v) => <option key={v} value={v}>{v}px</option>)}
-                            </select>
-                            {(shapeKind === 'rect' || shapeKind === 'ellipse') && (
-                                <label className="check"><input type="checkbox" checked={shapeFill} onChange={(e) => setShapeFill(e.target.checked)} /> {t('Filled')}</label>
-                            )}
-                            <span className="field__hint" style={{ margin: 0 }}>{t('Drag on the page to draw the shape.')}</span>
-                        </>
-                    )}
+                    {mode === 'shape' && <ShapeProps value={shapeProps} onChange={(patch) => setShapeProps((p) => ({ ...p, ...patch }))} />}
                     {mode === 'link' && (
                         <>
-                            <input className="input" style={{ maxWidth: '260px' }} value={linkUrl} onChange={(e) => setLinkUrl(e.target.value)} placeholder="https://" aria-label={t('Link address')} inputMode="url" />
-                            <span className="field__hint" style={{ margin: 0 }}>{t('Then drag on the page over the area that should open the link.')}</span>
+                            <LinkTargetFields target={linkTarget} onTarget={setLinkTarget} url={linkUrl} onUrl={setLinkUrl} page={linkPage} onPage={setLinkPage} pageCount={pageCount} idPrefix="new-link" />
+                            <span className="field__hint" style={{ margin: 0 }}>
+                                {t('Then drag on the page over the area that should open the link.')} {pageLinks.length > 0 && t('Click an existing link to change or remove it.')}
+                            </span>
                         </>
                     )}
+                    {mode === 'note' && <span className="field__hint" style={{ margin: 0 }}>{t('Click on the page to add a note. Other PDF apps show it as a comment.')}</span>}
                     {mode === 'draw' && (
                         <>
                             <input type="color" value={drawColor} onChange={(e) => setDrawColor(e.target.value)} aria-label={t('Drawing colour')} />
                             <select className="select" style={{ maxWidth: '110px' }} value={drawThickness} onChange={(e) => setDrawThickness(Number(e.target.value))} aria-label={t('Line thickness')}>
                                 {[2, 3, 5, 8].map((v) => <option key={v} value={v}>{v}px</option>)}
                             </select>
+                            <label className="check">
+                                <input type="checkbox" checked={drawAsInk} onChange={(e) => setDrawAsInk(e.target.checked)} /> {t('Save as an annotation (editable in other PDF apps)')}
+                            </label>
                             <span className="field__hint" style={{ margin: 0 }}>{t('Draw directly on the page below')}</span>
                         </>
                     )}
@@ -1320,7 +1348,7 @@ export default function EditPdf({ initialMode } = {}) {
                     style={{
                         transformOrigin: 'top left',
                         ...(zoomFactor !== 1 ? { transform: `scale(${zoomFactor})` } : null),
-                        ...(mode === 'draw' || DRAG_MODES.includes(mode) || (mode === 'form' && formSubMode === 'add') ? { touchAction: 'none', cursor: 'crosshair' } : null),
+                        ...(mode === 'draw' || mode === 'note' || DRAG_MODES.includes(mode) || (mode === 'form' && formSubMode === 'add') ? { touchAction: 'none', cursor: 'crosshair' } : null),
                         ...((mode === 'sign' && signature) || (mode === 'image' && pendingImage) ? { cursor: 'copy' } : null),
                     }}
                 >
@@ -1345,7 +1373,33 @@ export default function EditPdf({ initialMode } = {}) {
                     {mode === 'form' && (
                         <FormFieldOverlay widgets={pageWidgets} fields={formFields} values={formValues} onChange={changeFormValue} scale={scale} pageHeight={currentPageSize.height} interactive={formSubMode !== 'add'} />
                     )}
+                    {mode === 'link' &&
+                        pageLinks
+                            .filter((link) => !currentElements.some((el) => el.type === 'linkedit' && el.annotIndex === link.index))
+                            .map((link) => (
+                                <LinkOverlay
+                                    key={`link-${link.index}`}
+                                    link={link}
+                                    edit={null}
+                                    rect={pdfRectToCanvasRect(link.rect, scale, currentPageSize.height)}
+                                    pageCount={pageCount}
+                                    onChange={(patch) => pushElement({ type: 'linkedit', annotId: link.id, annotIndex: link.index, linkRect: link.rect, link, url: link.url, pageTarget: link.pageTarget, remove: false, ...pdfRectToCanvasRect(link.rect, scale, currentPageSize.height), ...patch })}
+                                    onRevert={() => {}}
+                                />
+                            ))}
                     {currentElements.map((el) => {
+                        if (el.type === 'linkedit') {
+                            if (mode !== 'link') return null;
+                            const rect = pdfRectToCanvasRect(el.linkRect, scale, currentPageSize.height);
+                            return <LinkOverlay key={el.id} link={el.link} edit={el} rect={rect} pageCount={pageCount} onChange={(patch) => updateElement(el.id, patch)} onRevert={() => removeElement(el.id)} />;
+                        }
+                        if (el.type === 'note') {
+                            return <StickyNote key={el.id} el={el} onDragStart={(e) => startDrag(e, el.id, 'move')} onChange={(patch) => updateElement(el.id, patch)} onRemove={() => removeElement(el.id)} />;
+                        }
+                        if (el.quads?.length) {
+                            const labels = OVERLAY_LABELS[el.type === 'markup' ? el.kind : 'highlight'];
+                            return <TextMarkup key={el.id} el={el} scale={scale} pageHeight={currentPageSize.height} label={labels.drag()} removeLabel={labels.remove()} onDragStart={(e) => startDrag(e, el.id, 'move')} onRemove={() => removeElement(el.id)} />;
+                        }
                         if (el.type === 'textedit' || el.type === 'text') {
                             return (
                                 <TextBlockEditor
@@ -1373,6 +1427,7 @@ export default function EditPdf({ initialMode } = {}) {
                             const bbox = strokeBoundingBox(el.points);
                             const local = el.points.map((p) => ({ x: p.x - bbox.x, y: p.y - bbox.y }));
                             const head = el.shape === 'arrow' ? arrowHeadLines(local[0], local[1], Math.max(8, el.thickness * 4)) : [];
+                            const look = el.type === 'shape' ? shapeSvgStyle(el) : { stroke: el.color, strokeWidth: el.thickness };
                             return (
                                 <div
                                     key={el.id}
@@ -1384,11 +1439,20 @@ export default function EditPdf({ initialMode } = {}) {
                                     aria-label={el.type === 'shape' ? t('Shape - drag to move') : t('Drawing - drag to move')}
                                 >
                                     <svg width={bbox.width} height={bbox.height} style={{ pointerEvents: 'none', overflow: 'visible' }}>
-                                        <polyline points={local.map((p) => `${p.x},${p.y}`).join(' ')} fill="none" stroke={el.color} strokeWidth={el.thickness} strokeLinecap="round" strokeLinejoin="round" />
-                                        {head.map((h, i) => (
-                                            <line key={i} x1={h.start.x} y1={h.start.y} x2={h.end.x} y2={h.end.y} stroke={el.color} strokeWidth={el.thickness} strokeLinecap="round" />
-                                        ))}
+                                        <g opacity={look.opacity}>
+                                            {el.type === 'stroke' ? (
+                                                <path d={strokeToSvgPath(local)} fill="none" stroke={look.stroke} strokeWidth={look.strokeWidth} strokeLinecap="round" strokeLinejoin="round" />
+                                            ) : (
+                                                <line x1={local[0].x} y1={local[0].y} x2={local[1].x} y2={local[1].y} stroke={look.stroke} strokeWidth={look.strokeWidth} strokeDasharray={look.strokeDasharray} strokeLinecap={look.strokeDasharray ? 'butt' : 'round'} />
+                                            )}
+                                            {head.map((h, i) => (
+                                                <line key={i} x1={h.start.x} y1={h.start.y} x2={h.end.x} y2={h.end.y} stroke={look.stroke} strokeWidth={look.strokeWidth} strokeLinecap="round" />
+                                            ))}
+                                        </g>
                                     </svg>
+                                    {el.type === 'shape' && (
+                                        <LineEndHandles points={el.points} origin={bbox} stageRef={stageRef} canvasSize={canvasSize} onChange={(points) => updateElement(el.id, { points })} />
+                                    )}
                                     <button type="button" className="pdf-editor__remove" aria-label={el.type === 'shape' ? t('Remove this shape') : t('Remove this drawing')} onPointerDown={(e) => e.stopPropagation()} onClick={() => removeElement(el.id)}>×</button>
                                 </div>
                             );
@@ -1415,16 +1479,16 @@ export default function EditPdf({ initialMode } = {}) {
                                 role="button"
                                 tabIndex={0}
                                 aria-label={labels.drag()}
-                                title={el.type === 'link' ? el.url : undefined}
+                                title={el.type === 'link' ? linkTargetLabel(el) : undefined}
                             >
                                 {el.type === 'image' && <img src={el.dataUrl} alt="" draggable={false} style={el.opacity != null && el.opacity < 1 ? { opacity: el.opacity } : undefined} />}
                                 {el.type === 'image' && el.dateText && <span className="pdf-editor__date">{el.dateText}</span>}
                                 {el.type === 'shape' && (
                                     <svg width={el.width} height={el.height} style={{ pointerEvents: 'none', overflow: 'visible', position: 'absolute', inset: 0 }}>
                                         {el.shape === 'ellipse' ? (
-                                            <ellipse cx={el.width / 2} cy={el.height / 2} rx={el.width / 2} ry={el.height / 2} fill={el.fill ? el.color : 'none'} stroke={el.color} strokeWidth={el.thickness} />
+                                            <ellipse cx={el.width / 2} cy={el.height / 2} rx={el.width / 2} ry={el.height / 2} {...shapeSvgStyle(el)} />
                                         ) : (
-                                            <rect x={0} y={0} width={el.width} height={el.height} fill={el.fill ? el.color : 'none'} stroke={el.color} strokeWidth={el.thickness} />
+                                            <rect x={0} y={0} width={el.width} height={el.height} {...shapeSvgStyle(el)} />
                                         )}
                                     </svg>
                                 )}
@@ -1443,7 +1507,7 @@ export default function EditPdf({ initialMode } = {}) {
                                     />
                                 )}
                                 {el.type === 'link' && (
-                                    <span style={{ fontSize: 11, color: '#1d4ed8', padding: '0 4px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', pointerEvents: 'none' }}>{el.url}</span>
+                                    <span style={{ fontSize: 11, color: '#1d4ed8', padding: '0 4px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', pointerEvents: 'none' }}>{linkTargetLabel(el)}</span>
                                 )}
                                 <button
                                     type="button"
@@ -1461,8 +1525,8 @@ export default function EditPdf({ initialMode } = {}) {
                     })}
                     {dragBox && (
                         <svg className="pdf-editor__overlay" style={{ left: 0, top: 0, width: canvasSize.width, height: canvasSize.height, border: 'none', pointerEvents: 'none' }}>
-                            {mode === 'shape' && (shapeKind === 'line' || shapeKind === 'arrow') ? (
-                                <line x1={dragBox.start.x} y1={dragBox.start.y} x2={dragBox.end.x} y2={dragBox.end.y} stroke={shapeColor} strokeWidth={shapeThickness} strokeLinecap="round" />
+                            {mode === 'shape' && isLineShape(shapeProps.shape) ? (
+                                <line x1={dragBox.start.x} y1={dragBox.start.y} x2={dragBox.end.x} y2={dragBox.end.y} {...shapeSvgStyle(shapeElementStyle(shapeProps))} strokeLinecap="round" />
                             ) : (
                                 (() => {
                                     const r = rectFromPoints(dragBox.start.x, dragBox.start.y, dragBox.end.x, dragBox.end.y);

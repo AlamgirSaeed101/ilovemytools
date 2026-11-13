@@ -78,3 +78,23 @@ export function rotatedBoxOrigin(cx, cy, width, height, rotationDeg) {
     const hh = height / 2;
     return { x: cx - (hw * cos - hh * sin), y: cy - (hw * sin + hh * cos), rotateDeg };
 }
+
+/**
+ * A shape element's drawing style: { strokeColor, fillColor (null = no fill), opacity (0-1),
+ * dash ('solid' | 'dashed' | 'dotted') }. Shapes saved before these options existed only have
+ * `color` and `fill`, so those are used as the defaults and old sessions keep working.
+ */
+export function shapeStyleOf(el) {
+    const strokeColor = el.strokeColor ?? el.color ?? '#000000';
+    const fillColor = el.fillColor !== undefined ? el.fillColor : el.fill ? el.color ?? strokeColor : null;
+    const opacity = Number.isFinite(el.opacity) ? Math.min(1, Math.max(0, el.opacity)) : 1;
+    return { strokeColor, fillColor, opacity, dash: el.dash ?? 'solid' };
+}
+
+/** The dash pattern (in the same units as `thickness`) of a 'dashed' or 'dotted' line, or null for a solid one. */
+export function dashPattern(dash, thickness) {
+    const t = Math.max(0.5, thickness);
+    if (dash === 'dashed') return [t * 4, t * 3];
+    if (dash === 'dotted') return [t, t * 2];
+    return null;
+}
