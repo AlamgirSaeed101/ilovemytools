@@ -4070,7 +4070,7 @@ return [
             [
                 'heading' => 'Checking a text, step by step',
                 'list' => [
-                    'Get at least 80-100 words of the text - very short snippets do not give the underlying signals enough to measure.',
+                    'Get at least 80-100 words of the text (a [Word Counter](/word-counter) can confirm the count) - very short snippets do not give the underlying signals enough to measure.',
                     'Paste it into an AI detector such as the [AI Content Detector](/ai-content-detector) on this site and run the check.',
                     'Read the overall score, but don\'t stop there - open the breakdown of individual signals.',
                     'Look specifically at which signal is highest. A high score driven entirely by "uses no contractions" is weaker evidence than one driven by several signals together.',
