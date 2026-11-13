@@ -113,7 +113,14 @@ export async function buildEditedPdf(doc, elements, { beforeSave } = {}) {
             drawTextElement(page, laid, font, rgb(r, g, b));
         } else if (el.type === 'image') {
             const image = el.format === 'jpg' ? await doc.embedJpg(el.bytes) : await doc.embedPng(el.bytes);
-            page.drawImage(image, rotatedRect(el.rectPdf, el.rotation));
+            page.drawImage(image, { ...rotatedRect(el.rectPdf, el.rotation), opacity: el.opacity ?? 1 });
+            if (el.dateText) {
+                // A signature's optional date stamp, just under it.
+                const dateStyle = { family: 'sans', bold: false, italic: false };
+                const dateFont = await fontForEdit(doc, dateStyle, el.dateText, editFonts, dateStyle);
+                const size = Math.max(8, Math.min(12, el.rectPdf.height * 0.22));
+                page.drawText(el.dateText, { x: el.rectPdf.x, y: el.rectPdf.y - size - 4, size, font: dateFont, color: rgb(0, 0, 0) });
+            }
         } else if (el.type === 'highlight') {
             page.drawRectangle({ ...rotatedRect(el.rectPdf, el.rotation), color: rgb(r, g, b), opacity: 0.4 });
         } else if (el.type === 'stroke') {

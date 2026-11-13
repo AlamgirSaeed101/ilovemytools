@@ -53,7 +53,7 @@ export async function buildWatermarkedPdf(doc, { pageIndexes, position, opacity,
                 page.drawText(content.text, { x: origin.x, y: origin.y, size: content.size, font, color: rgb(r, g, b), rotate: degrees(rotation), opacity });
             }
         } else {
-            image ??= await doc.embedPng(content.bytes);
+            image ??= content.format === 'jpg' ? await doc.embedJpg(content.bytes) : await doc.embedPng(content.bytes);
             for (const { cx, cy } of watermarkCenters(pageWidth, pageHeight, content.width, content.height, position, margin)) {
                 const origin = rotatedDrawOrigin(cx, cy, content.width / 2, content.height / 2, rotation);
                 page.drawImage(image, { x: origin.x, y: origin.y, width: content.width, height: content.height, rotate: degrees(rotation), opacity });

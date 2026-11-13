@@ -635,6 +635,90 @@ test.describe('PDF tools', () => {
         await expect(page.getByRole('tab', { name: 'Watermark' })).toBeVisible();
     });
 
+    test('signature: a typed signature saved on the device survives a reload, is placed where you click, and can be deleted', async ({ page }) => {
+        // Nothing about the signature is ever uploaded: no request carries a body.
+        const bodies = [];
+        page.on('request', (req) => {
+            if (req.postData()) bodies.push(req.url());
+        });
+
+        await openTool(page, 'edit-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'contract.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
+        await page.getByRole('tab', { name: 'Signature' }).click();
+        await page.getByRole('tab', { name: 'Type' }).click();
+        await page.getByLabel('Type your name').fill('Jane Doe');
+        await page.getByLabel('Remember on this device').check();
+        await page.getByRole('button', { name: 'Use this signature' }).click();
+        await expect(page.getByText('Signature ready.')).toBeVisible();
+        await expect(page.getByRole('button', { name: 'Use saved signature 1' })).toBeVisible();
+
+        // A click on the page places the picked signature centred on the pointer.
+        const stage = page.locator('.pdf-editor__stage');
+        await stage.scrollIntoViewIfNeeded();
+        const box = await stage.boundingBox();
+        await page.mouse.click(box.x + box.width * 0.3, box.y + box.height * 0.7);
+        const overlay = page.locator('.pdf-editor__overlay');
+        await expect(overlay).toHaveCount(1);
+        const placed = await overlay.boundingBox();
+        expect(placed.x + placed.width / 2).toBeCloseTo(box.x + box.width * 0.3, -1);
+        expect(placed.y + placed.height / 2).toBeCloseTo(box.y + box.height * 0.7, -1);
+
+        // After a reload the saved signature is still offered, and placing it again works.
+        await page.reload();
+        await page.getByTestId('file-input').setInputFiles({ name: 'contract.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
+        await page.getByRole('tab', { name: 'Signature' }).click();
+        await page.getByRole('button', { name: 'Use saved signature 1' }).click();
+        await expect(page.getByText('Signature ready.')).toBeVisible();
+        await page.getByRole('button', { name: 'Add signature to this page' }).click();
+        await expect(page.locator('.pdf-editor__overlay')).toHaveCount(1);
+        await page.getByRole('button', { name: 'Sign PDF', exact: true }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(file.suggestedFilename()).toBe('contract-signed.pdf');
+
+        // Deleting it removes it from the device.
+        page.once('dialog', (dialog) => dialog.accept());
+        await page.getByRole('button', { name: 'Delete saved signature 1' }).click();
+        await expect(page.getByRole('button', { name: 'Use saved signature 1' })).toHaveCount(0);
+        await page.reload();
+        await page.getByTestId('file-input').setInputFiles({ name: 'contract.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
+        await page.getByRole('tab', { name: 'Signature' }).click();
+        await expect(page.getByText('1. Create your signature')).toBeVisible();
+        await expect(page.getByRole('button', { name: 'Use saved signature 1' })).toHaveCount(0);
+        expect(bodies).toEqual([]);
+    });
+
+    test('edit PDF: a JPEG image is placed with a click, stays JPEG in the saved PDF and keeps its opacity', async ({ page }) => {
+        await openTool(page, 'edit-pdf');
+        const jpeg = await makeImage(page, { width: 400, height: 200, type: 'image/jpeg', quality: 0.8 });
+        await page.getByTestId('file-input').setInputFiles({ name: 'photo.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
+        await page.getByRole('tab', { name: 'Image', exact: true }).click();
+        await page.getByTestId('file-input').setInputFiles({ name: 'photo.jpg', mimeType: 'image/jpeg', buffer: jpeg });
+        await expect(page.getByRole('button', { name: 'Add image to page' })).toBeEnabled();
+
+        const stage = page.locator('.pdf-editor__stage');
+        await stage.scrollIntoViewIfNeeded();
+        const box = await stage.boundingBox();
+        await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
+        await expect(page.locator('.pdf-editor__overlay')).toHaveCount(1);
+
+        const opacity = page.locator('input[type="range"]');
+        await opacity.focus();
+        for (let i = 0; i < 10; i++) await opacity.press('ArrowLeft');
+        await expect(page.getByText('Opacity: 50%')).toBeVisible();
+        await expect(page.locator('.pdf-editor__overlay img')).toHaveCSS('opacity', '0.5');
+
+        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        const saved = await PDFDocument.load(await readDownload(file));
+        const objects = saved.context.enumerateIndirectObjects().map(([, obj]) => obj);
+        const images = objects.filter((obj) => obj.dict?.get(PDFName.of('Subtype'))?.toString() === '/Image');
+        expect(images).toHaveLength(1);
+        expect(images[0].dict.get(PDFName.of('Filter')).toString()).toBe('/DCTDecode');
+        const extG = saved.getPage(0).node.Resources().lookup(PDFName.of('ExtGState'));
+        const states = [...objects, ...(extG ? extG.entries().map(([, v]) => saved.context.lookup(v)) : [])];
+        expect(states.some((gs) => gs?.get?.(PDFName.of('ca'))?.asNumber?.() === 0.5)).toBe(true);
+    });
+
     test('redact PDF burns a box into the page so the covered text can no longer be extracted', async ({ page }) => {
         await openTool(page, 'redact-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'secret.pdf', mimeType: 'application/pdf', buffer: await makePdf(2, 'Secret') });

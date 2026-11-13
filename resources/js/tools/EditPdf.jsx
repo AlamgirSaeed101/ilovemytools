@@ -10,7 +10,10 @@ import { loadRenderDoc, renderPageToCanvas } from '../lib/pdfRender.js';
 import { colorsFromCanvas, coverRect, extractPageRuns, missingGlyphs } from '../lib/pdfTextRuns.js';
 import { angleFromCenter, arrowHeadLines, normalizeLinkUrl, pointsToPdf, strokeBoundingBox, undoLast } from '../lib/pdfEditShapes.js';
 import { imageWatermarkSize, watermarkPageIndexes } from '../lib/pdfWatermarkLayout.js';
-import { buildSignedPdf, formatSignatureDate, signatureBoxSize } from '../lib/pdfSign.js';
+import { formatSignatureDate } from '../lib/pdfSign.js';
+import { imageFromClipboard, loadImageFile, placementRect } from '../lib/imageUtils.js';
+import SignatureMenu from '../components/pdf-editor/SignatureMenu.jsx';
+import ImageControls from '../components/pdf-editor/ImageControls.jsx';
 import { clearSession, fileFromSession, hasUnsavedChanges, loadSession, saveSession } from '../lib/pdfSession.js';
 import {
     applyPageOps,
@@ -97,151 +100,6 @@ function measureText(text, pxSize) {
     return Math.max(10, ctx.measureText(text).width);
 }
 
-function canvasToPng(canvas) {
-    return new Promise((resolve, reject) => {
-        canvas.toBlob(async (blob) => {
-            if (!blob) {
-                reject(new Error(t('Could not create the signature image.')));
-                return;
-            }
-            const bytes = new Uint8Array(await blob.arrayBuffer());
-            resolve({ bytes, dataUrl: canvas.toDataURL('image/png'), width: canvas.width, height: canvas.height });
-        }, 'image/png');
-    });
-}
-
-function SignaturePad({ onUse }) {
-    const canvasRef = useRef(null);
-    const drawingRef = useRef(false);
-    const [hasDrawing, setHasDrawing] = useState(false);
-
-    function point(e) {
-        const canvas = canvasRef.current;
-        const rect = canvas.getBoundingClientRect();
-        return { x: ((e.clientX - rect.left) * canvas.width) / rect.width, y: ((e.clientY - rect.top) * canvas.height) / rect.height };
-    }
-
-    function down(e) {
-        e.preventDefault();
-        drawingRef.current = true;
-        const ctx = canvasRef.current.getContext('2d');
-        const p = point(e);
-        ctx.beginPath();
-        ctx.moveTo(p.x, p.y);
-    }
-    function move(e) {
-        if (!drawingRef.current) return;
-        e.preventDefault();
-        const ctx = canvasRef.current.getContext('2d');
-        ctx.lineWidth = 3;
-        ctx.lineCap = 'round';
-        ctx.lineJoin = 'round';
-        ctx.strokeStyle = '#1e293b';
-        const p = point(e);
-        ctx.lineTo(p.x, p.y);
-        ctx.stroke();
-        setHasDrawing(true);
-    }
-    function up() {
-        drawingRef.current = false;
-    }
-    function clear() {
-        const canvas = canvasRef.current;
-        canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
-        setHasDrawing(false);
-    }
-
-    return (
-        <div className="stack">
-            <canvas
-                ref={canvasRef}
-                width={500}
-                height={180}
-                className="signature-pad"
-                aria-label={t('Draw your signature here')}
-                onPointerDown={down}
-                onPointerMove={move}
-                onPointerUp={up}
-                onPointerLeave={up}
-            />
-            <div className="row">
-                <button type="button" className="btn btn--sm" onClick={clear} disabled={!hasDrawing}>{t('Clear')}</button>
-                <button type="button" className="btn btn--primary btn--sm" disabled={!hasDrawing} onClick={() => onUse(canvasRef.current)}>
-                    {t('Use this signature')}
-                </button>
-            </div>
-        </div>
-    );
-}
-
-function TypedSignature({ onUse }) {
-    const [name, setName] = useState('');
-
-    function use() {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = 500;
-        canvas.height = 150;
-        ctx.font = "60px 'Brush Script MT', cursive";
-        const width = Math.min(480, Math.max(ctx.measureText(name).width + 40, 140));
-        canvas.width = width;
-        ctx.font = "60px 'Brush Script MT', cursive";
-        ctx.fillStyle = '#1e293b';
-        ctx.textBaseline = 'middle';
-        ctx.fillText(name, 16, canvas.height / 2);
-        onUse(canvas);
-    }
-
-    return (
-        <div className="stack">
-            <input
-                className="input"
-                style={{ fontFamily: "'Brush Script MT', cursive", fontSize: '1.7rem' }}
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder={t('Type your name')}
-                maxLength={60}
-                aria-label={t('Type your name')}
-            />
-            <button type="button" className="btn btn--primary btn--sm" disabled={!name.trim()} onClick={use}>
-                {t('Use this signature')}
-            </button>
-        </div>
-    );
-}
-
-function UploadSignature({ onUse, onError }) {
-    function handleFiles([file]) {
-        const img = new Image();
-        const url = URL.createObjectURL(file);
-        img.onload = () => {
-            const canvas = document.createElement('canvas');
-            canvas.width = img.naturalWidth;
-            canvas.height = img.naturalHeight;
-            canvas.getContext('2d').drawImage(img, 0, 0);
-            URL.revokeObjectURL(url);
-            onUse(canvas);
-        };
-        img.onerror = () => {
-            URL.revokeObjectURL(url);
-            onError();
-        };
-        img.src = url;
-    }
-
-    return (
-        <Dropzone
-            accept="image/png,image/jpeg,image/webp"
-            isAccepted={(f) => /^image\/(png|jpeg|webp)$/.test(f.type)}
-            onFiles={handleFiles}
-            onReject={onError}
-            title={t('Drop a signature image or click to choose')}
-            hint={t('A PNG with a transparent background works best')}
-            compact
-        />
-    );
-}
-
 export default function EditPdf({ initialMode } = {}) {
     const [file, setFile] = useState(null);
     const [currentPage, setCurrentPage] = useState(0);
@@ -286,11 +144,9 @@ export default function EditPdf({ initialMode } = {}) {
     const [wmScope, setWmScope] = useState('all');
     const [wmRangeText, setWmRangeText] = useState('');
     const [wmProgress, setWmProgress] = useState('');
-    const [signMode, setSignMode] = useState('draw');
     const [signature, setSignature] = useState(null);
     const [signAddDate, setSignAddDate] = useState(false);
-    const [signPlacements, setSignPlacements] = useState([]);
-    const [signSelectedId, setSignSelectedId] = useState(null);
+    const [activeImageId, setActiveImageId] = useState(null);
     const [formFields, setFormFields] = useState([]);
     const [formValues, setFormValues] = useState({});
     const [formReady, setFormReady] = useState(false);
@@ -437,33 +293,16 @@ export default function EditPdf({ initialMode } = {}) {
         }
         if (!wmPendingImage) return null;
         const { width, height } = imageWatermarkSize(pageWidth, wmPendingImage.width, wmPendingImage.height, wmImageScalePct);
-        return { kind: 'image', bytes: wmPendingImage.bytes, width, height };
+        return { kind: 'image', bytes: wmPendingImage.bytes, format: wmPendingImage.format, width, height };
     }
 
     function handleWatermarkImageFile([picked]) {
-        const img = new Image();
-        const url = URL.createObjectURL(picked);
-        img.onload = () => {
-            const canvas = document.createElement('canvas');
-            canvas.width = img.naturalWidth;
-            canvas.height = img.naturalHeight;
-            canvas.getContext('2d').drawImage(img, 0, 0);
-            URL.revokeObjectURL(url);
-            canvas.toBlob(async (blob) => {
-                if (!blob) {
-                    setError(t('Could not read that image.'));
-                    return;
-                }
-                const bytes = new Uint8Array(await blob.arrayBuffer());
-                setWmPendingImage({ dataUrl: canvas.toDataURL('image/png'), bytes, width: canvas.width, height: canvas.height });
+        loadImageFile(picked)
+            .then((image) => {
+                setWmPendingImage(image);
                 setResult(null);
-            }, 'image/png');
-        };
-        img.onerror = () => {
-            URL.revokeObjectURL(url);
-            setError(t('Could not read that image.'));
-        };
-        img.src = url;
+            })
+            .catch(() => setError(t('Could not read that image.')));
     }
 
     // Live preview: builds a real one-page watermarked PDF for page 1 and renders it with pdf.js,
@@ -600,95 +439,48 @@ export default function EditPdf({ initialMode } = {}) {
         }
     }
 
-    function onSignatureReady(canvas) {
-        canvasToPng(canvas)
-            .then((sig) => setSignature(sig))
-            .catch((e) => setError(e.message));
+    /** Places a picked signature or image on the current page, centred on `at` (a click on the page) or in the middle of it. */
+    function placeImage(img, at = null) {
+        if (!img || !canvasSize.width) return;
+        const signing = mode === 'sign';
+        const initials = img.kind === 'initials';
+        const targetWidth = signing ? Math.min(canvasSize.width * (initials ? 0.2 : 0.45), initials ? 110 : 260) : Math.min(canvasSize.width * 0.4, 220);
+        const rect = placementRect({ imageWidth: img.width, imageHeight: img.height, targetWidth, areaWidth: canvasSize.width, areaHeight: canvasSize.height, center: at });
+        setActiveImageId(nextId.current);
+        pushElement({
+            type: 'image',
+            dataUrl: img.dataUrl,
+            bytes: img.bytes,
+            format: img.format ?? 'png',
+            opacity: 1,
+            rotation: 0,
+            ...rect,
+            ...(signing ? { signature: true, dateText: signAddDate ? formatSignatureDate(getLocale()) : null } : {}),
+        });
     }
 
-    function addSignatureToPage() {
-        if (!signature || !canvasSize.width) return;
-        setResult(null);
-        const targetWidth = Math.min(canvasSize.width * 0.45, 260);
-        const box = signatureBoxSize(signature.width, signature.height, targetWidth);
-        const rect = clampRect(
-            { x: (canvasSize.width - box.width) / 2, y: (canvasSize.height - box.height) / 2, width: box.width, height: box.height },
-            canvasSize.width,
-            canvasSize.height
-        );
-        const id = nextId.current++;
-        setSignPlacements((list) => [
-            ...list,
-            { id, page: currentPage, ...rect, dataUrl: signature.dataUrl, pngBytes: signature.bytes, dateText: signAddDate ? formatSignatureDate(getLocale()) : null },
-        ]);
-        setSignSelectedId(id);
-    }
-
-    function removeSignPlacement(id) {
-        setSignPlacements((list) => list.filter((p) => p.id !== id));
-        if (signSelectedId === id) setSignSelectedId(null);
-        setResult(null);
-    }
-
-    function startSignDrag(e, id, dragMode) {
-        e.preventDefault();
-        e.stopPropagation();
-        setSignSelectedId(id);
-        const stage = stageRef.current;
-        const natural = canvasSize;
-        const placement = signPlacements.find((p) => p.id === id);
-        if (!stage || !placement) return;
-        const startPoint = pointerPoint(e, stage, natural);
-        const startRect = { x: placement.x, y: placement.y, width: placement.width, height: placement.height };
-        const ratio = startRect.height / startRect.width;
-
-        function handleMove(ev) {
-            const p = pointerPoint(ev, stage, natural);
-            const dx = p.x - startPoint.x;
-            const dy = p.y - startPoint.y;
-            setSignPlacements((list) =>
-                list.map((item) => {
-                    if (item.id !== id) return item;
-                    if (dragMode === 'move') {
-                        return { ...item, ...clampRect({ ...startRect, x: startRect.x + dx, y: startRect.y + dy }, natural.width, natural.height) };
+    // Pasting an image (Ctrl+V) anywhere outside a text box adds it to the page on screen.
+    useEffect(() => {
+        if (!file || !canvasSize.width || mode === 'watermark' || mode === 'pages') return undefined;
+        function onPaste(e) {
+            const target = e.target;
+            if (target instanceof HTMLElement && (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName))) return;
+            const pasted = imageFromClipboard(e.clipboardData);
+            if (!pasted) return;
+            e.preventDefault();
+            loadImageFile(pasted)
+                .then((image) => {
+                    if (mode !== 'sign') {
+                        setMode('image');
+                        setPendingImage(image);
                     }
-                    const width = Math.max(30, startRect.width + dx);
-                    return { ...item, ...clampRect({ x: startRect.x, y: startRect.y, width, height: width * ratio }, natural.width, natural.height) };
+                    placeImage(image);
                 })
-            );
-            setResult(null);
+                .catch(() => setError(t('Could not read that image.')));
         }
-        function handleUp() {
-            window.removeEventListener('pointermove', handleMove);
-            window.removeEventListener('pointerup', handleUp);
-        }
-        window.addEventListener('pointermove', handleMove);
-        window.addEventListener('pointerup', handleUp);
-    }
-
-    async function applySignature() {
-        if (!doc || working || signPlacements.length === 0) return;
-        setWorking(true);
-        setError('');
-        try {
-            const toBuild = signPlacements.map((p) => {
-                const size = doc.getPage(p.page).getSize();
-                const scaleForPage = computeDisplayScale(size.width, size.height);
-                return {
-                    page: p.page,
-                    pngBytes: p.pngBytes,
-                    dateText: p.dateText,
-                    rectPdf: canvasRectToPdfRect({ x: p.x, y: p.y, width: p.width, height: p.height }, scaleForPage, size.height),
-                };
-            });
-            const blob = await buildSignedPdf(doc, toBuild);
-            setResult({ blob, name: safeFilename(`${baseName(file.name)}-signed.pdf`) });
-        } catch (e) {
-            setError(t('Signing failed: {message}', { message: e.message }));
-        } finally {
-            setWorking(false);
-        }
-    }
+        window.addEventListener('paste', onPaste);
+        return () => window.removeEventListener('paste', onPaste);
+    });
 
     /** A text-edit element for a paragraph `block`, with the colours sampled from `canvas` (rendered at `atScale`). */
     function textEditFor(block, page, canvas, atScale, text) {
@@ -800,8 +592,7 @@ export default function EditPdf({ initialMode } = {}) {
         setFormChanged(false);
         setPageWidgets([]);
         setSignature(null);
-        setSignPlacements([]);
-        setSignSelectedId(null);
+        setActiveImageId(null);
         setFile(picked);
     }
 
@@ -845,16 +636,7 @@ export default function EditPdf({ initialMode } = {}) {
     }
 
     function addImage() {
-        if (!pendingImage || !canvasSize.width) return;
-        const targetWidth = Math.min(canvasSize.width * 0.4, 220);
-        const ratio = pendingImage.height / pendingImage.width || 1;
-        const rect = clampRect(
-            { x: (canvasSize.width - targetWidth) / 2, y: (canvasSize.height - targetWidth * ratio) / 2, width: targetWidth, height: targetWidth * ratio },
-            canvasSize.width,
-            canvasSize.height,
-            20
-        );
-        pushElement({ type: 'image', dataUrl: pendingImage.dataUrl, bytes: pendingImage.bytes, format: 'png', rotation: 0, ...rect });
+        placeImage(pendingImage);
     }
 
     function addHighlight() {
@@ -866,28 +648,9 @@ export default function EditPdf({ initialMode } = {}) {
     }
 
     function handleImageFile([picked]) {
-        const img = new Image();
-        const url = URL.createObjectURL(picked);
-        img.onload = () => {
-            const canvas = document.createElement('canvas');
-            canvas.width = img.naturalWidth;
-            canvas.height = img.naturalHeight;
-            canvas.getContext('2d').drawImage(img, 0, 0);
-            URL.revokeObjectURL(url);
-            canvas.toBlob(async (blob) => {
-                if (!blob) {
-                    setError(t('Could not read that image.'));
-                    return;
-                }
-                const bytes = new Uint8Array(await blob.arrayBuffer());
-                setPendingImage({ dataUrl: canvas.toDataURL('image/png'), bytes, width: canvas.width, height: canvas.height });
-            }, 'image/png');
-        };
-        img.onerror = () => {
-            URL.revokeObjectURL(url);
-            setError(t('Could not read that image.'));
-        };
-        img.src = url;
+        loadImageFile(picked)
+            .then((image) => setPendingImage(image))
+            .catch(() => setError(t('Could not read that image.')));
     }
 
     function startCreate(e) {
@@ -924,6 +687,13 @@ export default function EditPdf({ initialMode } = {}) {
         if (mode === 'text') {
             e.preventDefault();
             placeTextAt(pointerPoint(e, stageRef.current, canvasSize));
+            return;
+        }
+        // With a signature or image picked, a click on the page places it at the pointer.
+        const placing = mode === 'sign' ? signature : mode === 'image' ? pendingImage : null;
+        if (placing) {
+            e.preventDefault();
+            placeImage(placing, pointerPoint(e, stageRef.current, canvasSize));
             return;
         }
         if (DRAG_MODES.includes(mode) || (mode === 'form' && formSubMode === 'add')) {
@@ -964,6 +734,7 @@ export default function EditPdf({ initialMode } = {}) {
         const natural = canvasSize;
         const el = elements.find((x) => x.id === id);
         if (!stage || !el) return;
+        if (el.type === 'image') setActiveImageId(id);
         const startPoint = pointerPoint(e, stage, natural);
 
         if (isLine(el)) {
@@ -1055,7 +826,7 @@ export default function EditPdf({ initialMode } = {}) {
         });
     }
 
-    async function apply() {
+    async function apply(suffix = 'edited') {
         if (!doc || working || (elements.length === 0 && !formChanged)) return;
         setWorking(true);
         setError('');
@@ -1065,7 +836,7 @@ export default function EditPdf({ initialMode } = {}) {
             // A copy, so saving again later doesn't draw or create anything twice.
             const work = await forms.workingCopy(doc);
             const blob = await buildEditedPdf(work, toBuild.filter((el) => el.type !== 'formfield'), { beforeSave: formsBeforeSave(forms, toBuild) });
-            setResult({ blob, name: safeFilename(`${baseName(file.name)}-edited.pdf`) });
+            setResult({ blob, name: safeFilename(`${baseName(file.name)}-${suffix}.pdf`) });
         } catch (e) {
             setError(formSaveErrorText(e) ?? t('Editing failed: {message}', { message: e.message }));
         } finally {
@@ -1151,6 +922,7 @@ export default function EditPdf({ initialMode } = {}) {
     const currentPageSize = doc.getPage(currentPage).getSize();
     const scale = computeDisplayScale(currentPageSize.width, currentPageSize.height);
     const currentElements = elements.filter((el) => el.page === currentPage);
+    const activeImage = elements.find((el) => el.id === activeImageId && el.type === 'image') ?? null;
     const zoomFactor = zoomPct / 100;
 
     return (
@@ -1352,41 +1124,10 @@ export default function EditPdf({ initialMode } = {}) {
                 ) : (
                 <>
                 {mode === 'sign' && (
-                    <div className="stack" style={{ marginTop: '0.7rem' }}>
-                        <div className="field">
-                            <span className="field__label">{t('1. Create your signature')}</span>
-                            <Tabs
-                                label={t('Signature type')}
-                                value={signMode}
-                                onChange={setSignMode}
-                                tabs={[
-                                    { id: 'draw', label: t('Draw') },
-                                    { id: 'type', label: t('Type') },
-                                    { id: 'upload', label: t('Upload') },
-                                ]}
-                            />
-                            <div style={{ marginTop: '0.7rem' }}>
-                                {signMode === 'draw' && <SignaturePad onUse={onSignatureReady} />}
-                                {signMode === 'type' && <TypedSignature onUse={onSignatureReady} />}
-                                {signMode === 'upload' && <UploadSignature onUse={onSignatureReady} onError={() => setError(t('Please choose a PNG, JPG or WebP image.'))} />}
-                            </div>
-                            {signature && (
-                                <p className="field__hint">
-                                    {t('Signature ready.')} <img src={signature.dataUrl} alt={t('Signature preview')} style={{ height: '28px', verticalAlign: 'middle' }} />
-                                </p>
-                            )}
-                        </div>
-                        <span className="field__label">{t('2. Place it on the page')}</span>
-                        <div className="pdf-editor__toolbar">
-                            <label className="row" style={{ gap: '0.4rem' }}>
-                                <input type="checkbox" checked={signAddDate} onChange={(e) => setSignAddDate(e.target.checked)} />
-                                {t("Add today's date under the signature")}
-                            </label>
-                            <button type="button" className="btn btn--primary btn--sm" disabled={!signature} onClick={addSignatureToPage}>
-                                {t('Add signature to this page')}
-                            </button>
-                        </div>
-                    </div>
+                    <>
+                        <SignatureMenu picked={signature} onPick={setSignature} onPlace={() => placeImage(signature)} addDate={signAddDate} onAddDateChange={setSignAddDate} onError={setError} />
+                        <ImageControls element={activeImage?.signature ? activeImage : null} onChange={(changes) => updateElement(activeImage.id, changes)} onError={setError} />
+                    </>
                 )}
                 {mode !== 'sign' && (
                 <div className="pdf-editor__toolbar" style={{ marginTop: '0.7rem' }}>
@@ -1428,6 +1169,8 @@ export default function EditPdf({ initialMode } = {}) {
                                 compact
                             />
                             <button type="button" className="btn btn--primary btn--sm" disabled={!pendingImage} onClick={addImage}>{t('Add image to page')}</button>
+                            <span className="field__hint" style={{ margin: 0 }}>{pendingImage ? t('Or click on the page to place it there.') : t('You can also paste an image with Ctrl+V.')}</span>
+                            <ImageControls element={activeImage && !activeImage.signature ? activeImage : null} onChange={(changes) => updateElement(activeImage.id, changes)} onError={setError} />
                         </>
                     )}
                     {mode === 'highlight' && (
@@ -1578,6 +1321,7 @@ export default function EditPdf({ initialMode } = {}) {
                         transformOrigin: 'top left',
                         ...(zoomFactor !== 1 ? { transform: `scale(${zoomFactor})` } : null),
                         ...(mode === 'draw' || DRAG_MODES.includes(mode) || (mode === 'form' && formSubMode === 'add') ? { touchAction: 'none', cursor: 'crosshair' } : null),
+                        ...((mode === 'sign' && signature) || (mode === 'image' && pendingImage) ? { cursor: 'copy' } : null),
                     }}
                 >
                     <PdfPageCanvas renderDoc={renderDoc} pageNumber={currentPage + 1} scale={scale} className="pdf-editor__canvas" onReady={onPageReady} />
@@ -1601,33 +1345,6 @@ export default function EditPdf({ initialMode } = {}) {
                     {mode === 'form' && (
                         <FormFieldOverlay widgets={pageWidgets} fields={formFields} values={formValues} onChange={changeFormValue} scale={scale} pageHeight={currentPageSize.height} interactive={formSubMode !== 'add'} />
                     )}
-                    {mode === 'sign' &&
-                        signPlacements
-                            .filter((p) => p.page === currentPage)
-                            .map((p) => (
-                                <div
-                                    key={p.id}
-                                    className={`pdf-editor__overlay${signSelectedId === p.id ? ' is-selected' : ''}`}
-                                    style={{ left: p.x, top: p.y, width: p.width, height: p.height }}
-                                    onPointerDown={(e) => startSignDrag(e, p.id, 'move')}
-                                    role="button"
-                                    tabIndex={0}
-                                    aria-label={t('Signature on the page - drag to move')}
-                                >
-                                    <img src={p.dataUrl} alt="" draggable={false} />
-                                    {p.dateText && <span className="pdf-editor__date">{p.dateText}</span>}
-                                    <button
-                                        type="button"
-                                        className="pdf-editor__remove"
-                                        aria-label={t('Remove signature')}
-                                        onPointerDown={(e) => e.stopPropagation()}
-                                        onClick={() => removeSignPlacement(p.id)}
-                                    >
-                                        ×
-                                    </button>
-                                    <span className="pdf-editor__handle" onPointerDown={(e) => startSignDrag(e, p.id, 'resize')} aria-hidden="true" />
-                                </div>
-                            ))}
                     {currentElements.map((el) => {
                         if (el.type === 'textedit' || el.type === 'text') {
                             return (
@@ -1700,7 +1417,8 @@ export default function EditPdf({ initialMode } = {}) {
                                 aria-label={labels.drag()}
                                 title={el.type === 'link' ? el.url : undefined}
                             >
-                                {el.type === 'image' && <img src={el.dataUrl} alt="" draggable={false} />}
+                                {el.type === 'image' && <img src={el.dataUrl} alt="" draggable={false} style={el.opacity != null && el.opacity < 1 ? { opacity: el.opacity } : undefined} />}
+                                {el.type === 'image' && el.dateText && <span className="pdf-editor__date">{el.dateText}</span>}
                                 {el.type === 'shape' && (
                                     <svg width={el.width} height={el.height} style={{ pointerEvents: 'none', overflow: 'visible', position: 'absolute', inset: 0 }}>
                                         {el.shape === 'ellipse' ? (
@@ -1786,11 +1504,11 @@ export default function EditPdf({ initialMode } = {}) {
                     {working ? wmProgress || t('Adding watermark…') : t('Add watermark')}
                 </button>
             ) : mode === 'sign' ? (
-                <button type="button" className="btn btn--primary btn--lg" onClick={applySignature} disabled={working || signPlacements.length === 0}>
+                <button type="button" className="btn btn--primary btn--lg" onClick={() => apply('signed')} disabled={working || elements.length === 0}>
                     {working ? t('Signing…') : t('Sign PDF')}
                 </button>
             ) : (
-                <button type="button" className="btn btn--primary btn--lg" onClick={apply} disabled={working || (elements.length === 0 && !formChanged)}>
+                <button type="button" className="btn btn--primary btn--lg" onClick={() => apply()} disabled={working || (elements.length === 0 && !formChanged)}>
                     {working ? t('Saving…') : t('Save PDF')}
                 </button>
             )}
