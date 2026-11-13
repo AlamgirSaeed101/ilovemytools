@@ -7,7 +7,7 @@ import { usePageThumbnails, usePdfDoc } from '../lib/pdfPages.js';
 import { canvasRectToPdfRect, clampRect, computeDisplayScale, pdfRectToCanvasRect, rectFromPoints } from '../lib/pdfOverlay.js';
 import { loadRenderDoc, renderPageToCanvas } from '../lib/pdfRender.js';
 import { colorsFromCanvas, coverRect, extractPageRuns, missingGlyphs } from '../lib/pdfTextRuns.js';
-import { angleFromCenter, arrowHeadLines, normalizeLinkUrl, pointsToPdf, strokeBoundingBox, undoLast } from '../lib/pdfEditShapes.js';
+import { angleFromCenter, arrowHeadLines, normalizeLinkUrl, pointsToPdf, shapeStyleOf, strokeBoundingBox } from '../lib/pdfEditShapes.js';
 import { imageWatermarkSize, watermarkPageIndexes } from '../lib/pdfWatermarkLayout.js';
 import { formatSignatureDate } from '../lib/pdfSign.js';
 import { imageFromClipboard, loadImageFile, placementRect } from '../lib/imageUtils.js';
@@ -31,7 +31,12 @@ import PageScroller from '../components/pdf-editor/PageScroller.jsx';
 import PageSidebar from '../components/pdf-editor/PageSidebar.jsx';
 import usePageMap from '../components/pdf-editor/usePageMap.js';
 import { insertBlank } from '../lib/pdfPageOps.js';
-import { pointerToPage, stageTransform, viewSize } from '../lib/pdfPageView.js';
+import { isSideways, pointerToPage, stageTransform, viewSize } from '../lib/pdfPageView.js';
+import { useHistory } from '../lib/editorHistory.js';
+import { useEditorShortcuts } from '../lib/editorShortcuts.js';
+import { canReorder, cursorForMode, duplicateElement, elementBox, moveElement, reorderElement } from '../lib/editorSelection.js';
+import EditorToolbar, { ZOOM_PRESETS } from '../components/pdf-editor/EditorToolbar.jsx';
+import SelectionBar from '../components/pdf-editor/SelectionBar.jsx';
 
 // pdf-lib (~165 KB) only loads when a PDF is previewed or saved, not with the page.
 const loadWatermark = () => import('../lib/pdfWatermark.js');
@@ -42,7 +47,6 @@ import { baseName, downloadBlob, formatBytes, safeFilename } from '../lib/util.j
 
 const ZOOM_MIN = 50;
 const ZOOM_MAX = 200;
-const ZOOM_STEP = 25;
 const WATERMARK_TEXT_SIZES = [24, 32, 48, 64, 96];
 const WATERMARK_POSITIONS = [
     { id: 'center', label: () => t('Centre') },
@@ -65,6 +69,12 @@ const WATERMARK_SCOPES = [
 ];
 // Modes where dragging on the page creates the element (instead of an "Add" button).
 const DRAG_MODES = ['whiteout', 'shape', 'highlight', 'underline', 'strike', 'link'];
+// The tools the toolbar shows (see EditorToolbar's TOOL_ITEMS).
+const EDITOR_MODES = ['select', 'edittext', 'text', 'link', 'form', 'image', 'sign', 'whiteout', 'highlight', 'underline', 'strike', 'draw', 'note', 'shape', 'watermark'];
+// Added elements that get the selection bar; text, notes, links and form fields have their own editors on the page.
+const SELECTABLE = ['image', 'highlight', 'markup', 'stroke', 'shape', 'whiteout', 'link'];
+const EMPTY_HISTORY = { elements: [], pageMap: null, formValues: {} };
+const resolveNext = (next, current) => (typeof next === 'function' ? next(current) : next);
 const OVERLAY_LABELS = {
     text: { drag: () => t('Text - drag to move'), remove: () => t('Remove this text') },
     image: { drag: () => t('Image - drag to move'), remove: () => t('Remove this image') },
@@ -94,8 +104,19 @@ function measureText(text, pxSize) {
 export default function EditPdf({ initialMode } = {}) {
     const [file, setFile] = useState(null);
     const [currentPage, setCurrentPage] = useState(0);
-    const [elements, setElements] = useState([]);
-    const [redoStack, setRedoStack] = useState([]);
+    // Every change to the added elements, the page panel's pages and the form's values goes through
+    // one snapshot history, so undo/redo covers all of them in the order they were made.
+    const history = useHistory(EMPTY_HISTORY);
+    const { elements, formValues } = history.present;
+    const setElements = (next, options) =>
+        history.set((state) => {
+            const list = resolveNext(next, state.elements);
+            return list === state.elements ? state : { ...state, elements: list };
+        }, options);
+    const [selectedId, setSelectedId] = useState(null);
+    const [findOpen, setFindOpen] = useState(false);
+    const clipboardRef = useRef(null);
+    const mainRef = useRef(null);
     const [mode, setMode] = useState(initialMode === 'forms' ? 'form' : (initialMode ?? 'edittext'));
     const [pageRuns, setPageRuns] = useState([]);
     const [runsReady, setRunsReady] = useState(false);
@@ -140,7 +161,6 @@ export default function EditPdf({ initialMode } = {}) {
     const [signAddDate, setSignAddDate] = useState(false);
     const [activeImageId, setActiveImageId] = useState(null);
     const [formFields, setFormFields] = useState([]);
-    const [formValues, setFormValues] = useState({});
     const [formReady, setFormReady] = useState(false);
     const [formSubMode, setFormSubMode] = useState('fill');
     const [formKind, setFormKind] = useState('text');
@@ -160,7 +180,24 @@ export default function EditPdf({ initialMode } = {}) {
     const { status, doc, renderDoc, pageCount } = usePdfDoc(file, { keepFonts: true });
     const thumbs = usePageThumbnails(renderDoc, pageCount);
     const [continuous, setContinuous] = useState(false);
-    const pages = usePageMap({ doc, renderDoc, pageCount, thumbs, elements, setElements, nextId, currentPage, setCurrentPage, onEdit: () => { setRedoStack([]); setResult(null); } });
+    const pages = usePageMap({
+        doc,
+        renderDoc,
+        pageCount,
+        thumbs,
+        rawMap: history.present.pageMap,
+        elements,
+        commit: (nextElements, pageMap) => history.set((state) => ({ ...state, elements: nextElements, pageMap })),
+        nextId,
+        currentPage,
+        setCurrentPage,
+        onEdit: () => setResult(null),
+    });
+
+    // Undo/redo of a page change can leave fewer pages than the one on screen.
+    useEffect(() => {
+        if (pages.count > 0 && currentPage > pages.count - 1) setCurrentPage(pages.count - 1);
+    }, [pages.count, currentPage]);
 
     // A previous visit left unfinished work: offer to resume it before the dropzone is shown.
     useEffect(() => {
@@ -212,7 +249,7 @@ export default function EditPdf({ initialMode } = {}) {
         if (!savedSession) return;
         const restored = fileFromSession(savedSession);
         nextId.current = 1 + Math.max(0, ...savedSession.elements.map((el) => el.id));
-        setElements(savedSession.elements);
+        history.reset({ ...EMPTY_HISTORY, elements: savedSession.elements, pageMap: Array.isArray(savedSession.pageMap) ? savedSession.pageMap : null });
         setCurrentPage(savedSession.currentPage || 0);
         setMode(savedSession.mode || 'edittext');
         pages.restore(savedSession);
@@ -288,7 +325,8 @@ export default function EditPdf({ initialMode } = {}) {
             if (cancelled) return;
             setMissing(letters);
             // The saved PDF draws this line in a fallback font when letters are missing; preview it the same way.
-            setElements((list) => list.map((el) => (el.id === editing.id ? { ...el, fallback: letters.length > 0 } : el)));
+            const fallback = letters.length > 0;
+            setElements((list) => (list.some((el) => el.id === editing.id && Boolean(el.fallback) !== fallback) ? list.map((el) => (el.id === editing.id ? { ...el, fallback } : el)) : list), { merge: true });
         });
         return () => {
             cancelled = true;
@@ -375,11 +413,12 @@ export default function EditPdf({ initialMode } = {}) {
             .then((detected) => {
                 if (cancelled) return;
                 setFormFields(detected.filter((f) => f.type !== 'unsupported'));
-                setFormValues((prev) => {
-                    const next = { ...prev };
+                // The PDF's own values are the starting point, not an undo step.
+                history.set((state) => {
+                    const next = { ...state.formValues };
                     for (const f of detected) if (f.type !== 'unsupported' && !(f.name in next)) next[f.name] = f.value;
-                    return next;
-                });
+                    return { ...state, formValues: next };
+                }, { merge: true });
             })
             .catch(() => !cancelled && setFormFields([]))
             .finally(() => !cancelled && setFormReady(true));
@@ -404,7 +443,8 @@ export default function EditPdf({ initialMode } = {}) {
     }, [mode, renderDoc, runsSource]);
 
     function changeFormValue(name, value) {
-        setFormValues((prev) => ({ ...prev, [name]: value }));
+        // Typing in one field is one undo step.
+        history.set((state) => ({ ...state, formValues: { ...state.formValues, [name]: value } }), { merge: `form:${name}` });
         setFormChanged(true);
         setResult(null);
     }
@@ -502,6 +542,8 @@ export default function EditPdf({ initialMode } = {}) {
     }
 
     function startTextEdit(block) {
+        if (mode === 'select') setMode('edittext');
+        setSelectedId(null);
         dropEmptyText();
         const existing = elements.find((el) => el.type === 'textedit' && el.page === currentPage && (el.runs ?? [el.run]).some((r) => r.id === block.id));
         if (existing) {
@@ -542,9 +584,10 @@ export default function EditPdf({ initialMode } = {}) {
         if (!editing || editing.type === 'text') setTextProps((current) => ({ ...current, ...changes }));
     }
 
-    function updateElement(id, changes) {
-        setElements((list) => list.map((el) => (el.id === id ? { ...el, ...changes } : el)));
-        setRedoStack([]);
+    // Repeated changes to the same properties of one element (typing, dragging a colour picker or a
+    // line's end) fold into one undo step.
+    function updateElement(id, changes, { merge = `${id}:${Object.keys(changes).sort().join(',')}` } = {}) {
+        setElements((list) => list.map((el) => (el.id === id ? { ...el, ...changes } : el)), { merge });
         setResult(null);
     }
 
@@ -574,7 +617,6 @@ export default function EditPdf({ initialMode } = {}) {
                 }
             }
             setElements((list) => [...list.filter((el) => !added.some((a) => a.id === el.id)), ...added]);
-            setRedoStack([]);
             setResult(null);
             setReplaceInfo(count ? tn('Replaced {count} time.', 'Replaced {count} times.', count) : t('No matches found.'));
         } catch (e) {
@@ -589,15 +631,14 @@ export default function EditPdf({ initialMode } = {}) {
         setError('');
         setResult(null);
         setCurrentPage(0);
-        setElements([]);
+        history.reset(EMPTY_HISTORY);
+        setSelectedId(null);
         setPendingImage(null);
         setWmPendingImage(null);
         setEditingId(null);
         setReplaceInfo('');
-        setRedoStack([]);
         setZoomPct(100);
         setFormFields([]);
-        setFormValues({});
         setFormReady(false);
         setFormSubMode('fill');
         setFormFlatten(false);
@@ -614,28 +655,97 @@ export default function EditPdf({ initialMode } = {}) {
     }
 
     function pushElement(el) {
-        setElements((list) => [...list, { id: nextId.current++, page: currentPage, ...el }]);
-        setRedoStack([]);
+        const id = nextId.current++;
+        setElements((list) => [...list, { id, page: currentPage, ...el }]);
         setResult(null);
+        return id;
+    }
+
+    /** Adds an element the user just placed with a tool, selects it and goes back to the Select tool (Draw stays on). */
+    function placeElement(el) {
+        const id = pushElement(el);
+        setSelectedId(id);
+        if (mode !== 'draw') setMode('select');
+        return id;
     }
 
     function undo() {
-        if (elements.length === 0) return;
-        setRedoStack((stack) => [...stack, elements[elements.length - 1]]);
-        setElements((list) => undoLast(list));
+        if (!history.canUndo) return false;
+        setEditingId(null);
+        history.undo();
         setResult(null);
     }
 
     function redo() {
-        if (redoStack.length === 0) return;
-        setElements((list) => [...list, redoStack[redoStack.length - 1]]);
-        setRedoStack((stack) => stack.slice(0, -1));
+        if (!history.canRedo) return false;
+        setEditingId(null);
+        history.redo();
         setResult(null);
     }
 
     function removeElement(id) {
         setElements((list) => list.filter((el) => el.id !== id));
-        setRedoStack([]);
+        if (id === selectedId) setSelectedId(null);
+        if (id === activeImageId) setActiveImageId(null);
+        setResult(null);
+    }
+
+    function changeTool(next, option) {
+        if (option?.shape) setShapeProps((p) => ({ ...p, shape: option.shape }));
+        if (next !== 'edittext' && next !== 'text') finishEditing();
+        setSelectedId(null);
+        if (next !== 'edittext') setFindOpen(false);
+        setMode(next);
+    }
+
+    function changeZoom(value) {
+        if (value === 'fit') {
+            const available = mainRef.current?.clientWidth ?? 0;
+            const pageWidth = isSideways(pageRotation) ? canvasSize.height : canvasSize.width;
+            if (!available || !pageWidth) return;
+            setZoomPct(Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, Math.floor((available / pageWidth) * 100))));
+            return;
+        }
+        setZoomPct(Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, value)));
+    }
+
+    const selected = elements.find((el) => el.id === selectedId && SELECTABLE.includes(el.type)) ?? null;
+
+    function duplicateSelected() {
+        if (!selected) return false;
+        const id = nextId.current++;
+        setElements((list) => [...list, duplicateElement(selected, id, canvasSize)]);
+        setSelectedId(id);
+        setResult(null);
+    }
+
+    function copySelected() {
+        if (!selected) return false;
+        clipboardRef.current = selected;
+    }
+
+    function pasteClipboard() {
+        if (!clipboardRef.current || !canvasSize.width) return false;
+        const id = nextId.current++;
+        setElements((list) => [...list, { ...duplicateElement(clipboardRef.current, id, canvasSize), page: currentPage }]);
+        setSelectedId(id);
+        setResult(null);
+    }
+
+    function deleteSelected() {
+        if (!selected) return false;
+        removeElement(selected.id);
+    }
+
+    function nudgeSelected({ dx, dy }) {
+        if (!selected) return false;
+        setElements((list) => list.map((el) => (el.id === selected.id ? moveElement(el, dx, dy, canvasSize) : el)), { merge: `nudge:${selected.id}` });
+        setResult(null);
+    }
+
+    function reorderSelected(direction) {
+        if (!selected) return;
+        setElements((list) => reorderElement(list, selected.id, direction));
         setResult(null);
     }
 
@@ -652,12 +762,14 @@ export default function EditPdf({ initialMode } = {}) {
         placeImage(pendingImage);
     }
 
-    function addHighlight() {
+    /** A highlight box centred on `at` (a click on the page), or in the middle of the page. */
+    function addHighlight(at = null) {
         if (!canvasSize.width) return;
         const width = Math.min(220, canvasSize.width * 0.5);
         const height = 28;
-        const rect = clampRect({ x: (canvasSize.width - width) / 2, y: (canvasSize.height - height) / 2, width, height }, canvasSize.width, canvasSize.height, 10);
-        pushElement({ type: 'highlight', color: highlightColor, rotation: 0, ...rect });
+        const origin = at ? { x: at.x - width / 2, y: at.y - height / 2 } : { x: (canvasSize.width - width) / 2, y: (canvasSize.height - height) / 2 };
+        const rect = clampRect({ ...origin, width, height }, canvasSize.width, canvasSize.height, 10);
+        placeElement({ type: 'highlight', color: highlightColor, rotation: 0, ...rect });
     }
 
     function handleImageFile([picked]) {
@@ -683,29 +795,35 @@ export default function EditPdf({ initialMode } = {}) {
             setDragBox(null);
             const rect = rectFromPoints(start.x, start.y, end.x, end.y);
             if (mode === 'form') return addFormElement(Math.hypot(rect.width, rect.height) < 6 ? end : rect);
-            if (Math.hypot(rect.width, rect.height) < 6) return; // a click, not a drag
+            if (Math.hypot(rect.width, rect.height) < 6) {
+                // A click, not a drag: the highlighter drops a box there; other tools need a drag.
+                if (mode === 'highlight') addHighlight(end);
+                return;
+            }
             // Highlight / underline / strikethrough dragged across real text snap to its lines and save as annotations.
             const markup = mode === 'highlight' || mode === 'underline' || mode === 'strike';
             const quads = markup ? quadsForRuns(pageRuns, canvasRectToPdfRect(rect, scale, currentPageSize.height)) : [];
             if (quads.length) {
                 const quadsBox = quadsBounds(quads);
                 const box = pdfRectToCanvasRect(quadsBox, scale, currentPageSize.height);
-                if (mode === 'highlight') pushElement({ type: 'highlight', color: highlightColor, quads, quadsBox, ...box });
-                else pushElement({ type: 'markup', kind: mode, color: markupColor, quads, quadsBox, ...box });
-            } else if (mode === 'highlight') pushElement({ type: 'highlight', color: highlightColor, rotation: 0, ...rect });
-            else if (mode === 'whiteout') pushElement({ type: 'whiteout', ...rect });
-            else if (markup) pushElement({ type: 'markup', kind: mode, color: markupColor, ...rect, height: Math.max(8, rect.height) });
-            else if (mode === 'link' && linkTarget === 'page') pushElement({ type: 'link', url: null, pageTarget: pageIndexFrom(linkPage, pages.count), ...rect });
-            else if (mode === 'link') pushElement({ type: 'link', url: normalizeLinkUrl(linkUrl), ...rect });
-            else if (isLineShape(shapeProps.shape)) pushElement({ type: 'shape', shape: shapeProps.shape, ...shapeElementStyle(shapeProps), points: [start, end] });
-            else pushElement({ type: 'shape', shape: shapeProps.shape, ...shapeElementStyle(shapeProps), rotation: 0, ...rect });
+                if (mode === 'highlight') placeElement({ type: 'highlight', color: highlightColor, quads, quadsBox, ...box });
+                else placeElement({ type: 'markup', kind: mode, color: markupColor, quads, quadsBox, ...box });
+            } else if (mode === 'highlight') placeElement({ type: 'highlight', color: highlightColor, rotation: 0, ...rect });
+            else if (mode === 'whiteout') placeElement({ type: 'whiteout', ...rect });
+            else if (markup) placeElement({ type: 'markup', kind: mode, color: markupColor, ...rect, height: Math.max(8, rect.height) });
+            else if (mode === 'link' && linkTarget === 'page') placeElement({ type: 'link', url: null, pageTarget: pageIndexFrom(linkPage, pages.count), ...rect });
+            else if (mode === 'link') placeElement({ type: 'link', url: normalizeLinkUrl(linkUrl), ...rect });
+            else if (isLineShape(shapeProps.shape)) placeElement({ type: 'shape', shape: shapeProps.shape, ...shapeElementStyle(shapeProps), points: [start, end] });
+            else placeElement({ type: 'shape', shape: shapeProps.shape, ...shapeElementStyle(shapeProps), rotation: 0, ...rect });
         }
         window.addEventListener('pointermove', handleMove);
         window.addEventListener('pointerup', handleUp);
     }
 
     function startDraw(e) {
-        if (mode === 'edittext') finishEditing();
+        if (mode === 'edittext' || mode === 'select') finishEditing();
+        // Clicking empty page deselects; with a placing tool it also places the element there.
+        setSelectedId(null);
         if (!canvasSize.width) return;
         if (mode === 'text') {
             e.preventDefault();
@@ -722,7 +840,7 @@ export default function EditPdf({ initialMode } = {}) {
         if (mode === 'note') {
             const p = pointerPoint(e, stageRef.current, canvasSize);
             const rect = clampRect({ x: p.x - NOTE_SIZE / 2, y: p.y - NOTE_SIZE / 2, width: NOTE_SIZE, height: NOTE_SIZE }, canvasSize.width, canvasSize.height, NOTE_SIZE);
-            pushElement({ type: 'note', color: NOTE_COLORS[0], contents: '', author: rememberedAuthor(), icon: 'Comment', ...rect });
+            placeElement({ type: 'note', color: NOTE_COLORS[0], contents: '', author: rememberedAuthor(), icon: 'Comment', ...rect });
             return;
         }
         if (DRAG_MODES.includes(mode) || (mode === 'form' && formSubMode === 'add')) {
@@ -754,7 +872,7 @@ export default function EditPdf({ initialMode } = {}) {
             window.removeEventListener('pointerup', handleUp);
             setDrawingPoints(null);
             if (points.length < 2) return;
-            pushElement({ type: 'stroke', points: smoothStroke(points), color: drawColor, thickness: drawThickness, ink: drawAsInk });
+            placeElement({ type: 'stroke', points: smoothStroke(points), color: drawColor, thickness: drawThickness, ink: drawAsInk });
         }
         window.addEventListener('pointermove', handleMove);
         window.addEventListener('pointerup', handleUp);
@@ -768,7 +886,10 @@ export default function EditPdf({ initialMode } = {}) {
         const el = elements.find((x) => x.id === id);
         if (!stage || !el) return;
         if (el.type === 'image') setActiveImageId(id);
+        if (SELECTABLE.includes(el.type)) setSelectedId(id);
         const startPoint = pointerPoint(e, stage, natural);
+        // The whole drag is one undo step.
+        history.beginGesture();
 
         if (isLine(el)) {
             const startPoints = el.points;
@@ -777,12 +898,12 @@ export default function EditPdf({ initialMode } = {}) {
                 const dx = p.x - startPoint.x;
                 const dy = p.y - startPoint.y;
                 setElements((list) => list.map((item) => (item.id === id ? { ...item, points: startPoints.map((pt) => ({ x: pt.x + dx, y: pt.y + dy })) } : item)));
-                setRedoStack([]);
                 setResult(null);
             };
             const handleUp = () => {
                 window.removeEventListener('pointermove', handleMove);
                 window.removeEventListener('pointerup', handleUp);
+                history.endGesture();
             };
             window.addEventListener('pointermove', handleMove);
             window.addEventListener('pointerup', handleUp);
@@ -812,12 +933,12 @@ export default function EditPdf({ initialMode } = {}) {
                     return { ...item, ...clampRect({ x: startRect.x, y: startRect.y, width: startRect.width + dx, height: startRect.height + dy }, natural.width, natural.height, 12) };
                 })
             );
-            setRedoStack([]);
             setResult(null);
         };
         const handleUp = () => {
             window.removeEventListener('pointermove', handleMove);
             window.removeEventListener('pointerup', handleUp);
+            history.endGesture();
         };
         window.addEventListener('pointermove', handleMove);
         window.addEventListener('pointerup', handleUp);
@@ -830,17 +951,19 @@ export default function EditPdf({ initialMode } = {}) {
         const natural = canvasSize;
         const el = elements.find((x) => x.id === id);
         if (!stage || !el) return;
+        if (SELECTABLE.includes(el.type)) setSelectedId(id);
         const center = { x: el.x + el.width / 2, y: el.y + el.height / 2 };
+        history.beginGesture();
 
         const handleMove = (ev) => {
             const rotation = angleFromCenter(center, pointerPoint(ev, stage, natural));
             setElements((list) => list.map((item) => (item.id === id ? { ...item, rotation } : item)));
-            setRedoStack([]);
             setResult(null);
         };
         const handleUp = () => {
             window.removeEventListener('pointermove', handleMove);
             window.removeEventListener('pointerup', handleUp);
+            history.endGesture();
         };
         window.addEventListener('pointermove', handleMove);
         window.addEventListener('pointerup', handleUp);
@@ -876,6 +999,84 @@ export default function EditPdf({ initialMode } = {}) {
         } finally {
             setWorking(false);
         }
+    }
+
+    function escapeKey() {
+        if (editingId !== null) finishEditing();
+        else if (selectedId !== null) setSelectedId(null);
+        else if (mode !== 'select' && mode !== 'edittext') changeTool('select');
+        else return false;
+    }
+
+    useEditorShortcuts(
+        {
+            undo,
+            redo,
+            delete: deleteSelected,
+            escape: escapeKey,
+            nudge: nudgeSelected,
+            copy: copySelected,
+            paste: pasteClipboard,
+            duplicate: duplicateSelected,
+            zoomIn: () => changeZoom(ZOOM_PRESETS.find((z) => z > zoomPct) ?? ZOOM_MAX),
+            zoomOut: () => changeZoom([...ZOOM_PRESETS].reverse().find((z) => z < zoomPct) ?? ZOOM_MIN),
+            prevPage: () => (currentPage > 0 ? setCurrentPage(currentPage - 1) : false),
+            nextPage: () => (currentPage < pages.count - 1 ? setCurrentPage(currentPage + 1) : false),
+        },
+        { enabled: status === 'ready' }
+    );
+
+    // One primary action for every tool: add the watermark, or save every edit (elements, pages,
+    // form values and new fields) into one PDF.
+    function applyChanges() {
+        if (mode === 'watermark') return applyWatermark();
+        return apply(mode === 'sign' ? 'signed' : 'edited');
+    }
+    const applyDisabled = working || (mode === 'watermark' ? !(wmKind === 'text' ? wmText.trim() : wmPendingImage) : elements.length === 0 && !formChanged && !pages.changed);
+    const applyLabel = !working ? t('Apply changes') : mode === 'watermark' ? wmProgress || t('Adding watermark…') : t('Saving…');
+
+    // Properties shown in the selected element's bar.
+    function propertiesFor(el) {
+        if (el.type === 'shape') {
+            const look = shapeStyleOf(el);
+            const value = { ...DEFAULT_SHAPE_PROPS, shape: el.shape, thickness: el.thickness, strokeColor: look.strokeColor, fill: look.fillColor != null, fillColor: look.fillColor ?? DEFAULT_SHAPE_PROPS.fillColor, opacity: look.opacity, dash: look.dash };
+            return (
+                <ShapeProps
+                    value={value}
+                    onChange={(patch) => {
+                        // A box can become an ellipse and back, a line an arrow; not a box a line.
+                        const shape = patch.shape && isLineShape(patch.shape) === isLineShape(el.shape) ? patch.shape : el.shape;
+                        updateElement(el.id, { shape, ...shapeElementStyle({ ...value, ...patch, shape }) });
+                    }}
+                />
+            );
+        }
+        if (el.type === 'image') {
+            return (
+                <label className="pdf-selection__range">
+                    <span>{t('Opacity: {value}%', { value: Math.round((el.opacity ?? 1) * 100) })}</span>
+                    <input type="range" className="range" min={10} max={100} step={5} value={Math.round((el.opacity ?? 1) * 100)} onChange={(e) => updateElement(el.id, { opacity: Number(e.target.value) / 100 })} />
+                </label>
+            );
+        }
+        if (el.type === 'link') {
+            return <span className="pdf-selection__label" title={linkTargetLabel(el)}>{linkTargetLabel(el)}</span>;
+        }
+        if (el.type === 'highlight' || el.type === 'markup' || el.type === 'stroke') {
+            const thick = el.type === 'stroke';
+            const sizes = thick ? [...new Set([1, 2, 3, 5, 8, el.thickness])].sort((a, b) => a - b) : [];
+            return (
+                <>
+                    <input type="color" value={el.color} onChange={(e) => updateElement(el.id, { color: e.target.value })} aria-label={t('Colour')} title={t('Colour')} />
+                    {thick && (
+                        <select className="pdf-selection__select" value={el.thickness} onChange={(e) => updateElement(el.id, { thickness: Number(e.target.value) })} aria-label={t('Line thickness')}>
+                            {sizes.map((v) => <option key={v} value={v}>{v}px</option>)}
+                        </select>
+                    )}
+                </>
+            );
+        }
+        return null;
     }
 
     if (!file) {
@@ -925,10 +1126,8 @@ export default function EditPdf({ initialMode } = {}) {
 
     return (
         <div className="stack">
-            {mode === 'sign' ? (
+            {mode === 'sign' && (
                 <Notice type="info">{t('This creates an electronic signature (a drawn, typed or uploaded image placed on the PDF), not a certificate-based digital signature.')}</Notice>
-            ) : mode !== 'edittext' && mode !== 'text' && mode !== 'watermark' && mode !== 'form' && (
-                <Notice type="info">{t('This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.')}</Notice>
             )}
 
             <div className="row row--between">
@@ -939,27 +1138,39 @@ export default function EditPdf({ initialMode } = {}) {
             </div>
 
             <div className="field">
-                <Tabs
-                    label={t('What to add')}
-                    value={mode}
-                    onChange={setMode}
-                    tabs={[
-                        { id: 'edittext', label: t('Edit text') },
-                        { id: 'form', label: t('Fill form') },
-                        { id: 'text', label: t('Add text') },
-                        { id: 'image', label: t('Image') },
-                        { id: 'highlight', label: t('Highlight') },
-                        { id: 'underline', label: t('Underline') },
-                        { id: 'strike', label: t('Strikethrough') },
-                        { id: 'whiteout', label: t('Whiteout') },
-                        { id: 'shape', label: t('Shapes') },
-                        { id: 'link', label: t('Link') },
-                        { id: 'note', label: t('Note') },
-                        { id: 'draw', label: t('Draw') },
-                        { id: 'watermark', label: t('Watermark') },
-                        { id: 'sign', label: t('Signature') },
-                    ]}
-                />
+                <div className="pdf-editor__sticky">
+                    <EditorToolbar
+                        tool={mode}
+                        onTool={changeTool}
+                        shape={shapeProps.shape}
+                        modes={EDITOR_MODES}
+                        canUndo={history.canUndo}
+                        canRedo={history.canRedo}
+                        onUndo={undo}
+                        onRedo={redo}
+                        findOpen={findOpen && mode === 'edittext'}
+                        onFind={() => {
+                            if (mode !== 'edittext') {
+                                changeTool('edittext');
+                                setFindOpen(true);
+                            } else setFindOpen((open) => !open);
+                        }}
+                        zoom={zoomPct}
+                        onZoom={mode === 'watermark' ? undefined : changeZoom}
+                        zoomMin={ZOOM_MIN}
+                        zoomMax={ZOOM_MAX}
+                    >
+                        <button type="button" className="btn btn--primary btn--sm pdf-toolbar__apply" onClick={applyChanges} disabled={applyDisabled}>
+                            {applyLabel}
+                        </button>
+                    </EditorToolbar>
+                </div>
+                {result && (
+                    <div className="notice notice--success row row--between" style={{ marginTop: '0.6rem' }}>
+                        <span>{t('Done!')} {formatBytes(result.blob.size)}</span>
+                        <button type="button" className="btn btn--primary" onClick={downloadResult}>{t('Download PDF')}</button>
+                    </div>
+                )}
 
                 {mode === 'watermark' ? (
                 <div className="grid-2" style={{ marginTop: '0.7rem' }}>
@@ -1077,6 +1288,11 @@ export default function EditPdf({ initialMode } = {}) {
                 )}
                 {mode !== 'sign' && (
                 <div className="pdf-editor__toolbar" style={{ marginTop: '0.7rem' }}>
+                    {mode === 'select' && (
+                        <span className="field__hint" style={{ margin: 0 }}>
+                            {t('Click something you added to select it, or click the PDF’s own text to change it. Pick a tool above to add more.')}
+                        </span>
+                    )}
                     {mode === 'text' && (
                         <>
                             <span className="field__hint" style={{ margin: 0 }}>{t('Click anywhere on the page and type, or click existing text to change it.')}</span>
@@ -1122,7 +1338,7 @@ export default function EditPdf({ initialMode } = {}) {
                     {mode === 'highlight' && (
                         <>
                             <input type="color" value={highlightColor} onChange={(e) => setHighlightColor(e.target.value)} aria-label={t('Highlight colour')} />
-                            <button type="button" className="btn btn--primary btn--sm" onClick={addHighlight}>{t('Add highlight to page')}</button>
+                            <button type="button" className="btn btn--primary btn--sm" onClick={() => addHighlight()}>{t('Add highlight to page')}</button>
                             <span className="field__hint" style={{ margin: 0 }}>{t('Or drag across text to highlight it.')}</span>
                         </>
                     )}
@@ -1145,7 +1361,7 @@ export default function EditPdf({ initialMode } = {}) {
                                         ? t('Reading form fields…')
                                         : formFields.length === 0
                                           ? t('No fillable fields were found in this PDF.')
-                                          : t('Fill in the fields on the page, then click Save PDF.')}
+                                          : t('Fill in the fields on the page, then click Apply changes.')}
                                 </span>
                             )}
                             <label className="check">
@@ -1188,15 +1404,13 @@ export default function EditPdf({ initialMode } = {}) {
                             <span className="field__hint" style={{ margin: 0 }}>{t('Draw directly on the page below')}</span>
                         </>
                     )}
-                    <button type="button" className="btn btn--sm" onClick={undo} disabled={elements.length === 0}>{t('Undo')}</button>
-                    <button type="button" className="btn btn--sm" onClick={redo} disabled={redoStack.length === 0}>{t('Redo')}</button>
                 </div>
                 )}
 
                 {(mode === 'edittext' || mode === 'text') && editing?.type === 'textedit' && (editing.family ?? 'original') === 'original' && editing.run.fontData && missing.length > 0 && (
                     <Notice type="warn">{t('The PDF’s own font doesn’t include {letters}, so this line will use a similar font.', { letters: missing.join(' ') })}</Notice>
                 )}
-                {mode === 'edittext' && (
+                {findOpen && mode === 'edittext' && (
                     <div className="pdf-editor__toolbar">
                         <input className="input" style={{ maxWidth: '180px' }} value={findText} onChange={(e) => setFindText(e.target.value)} placeholder={t('Find')} aria-label={t('Find')} />
                         <input className="input" style={{ maxWidth: '180px' }} value={replaceText} onChange={(e) => setReplaceText(e.target.value)} placeholder={t('Replace with')} aria-label={t('Replace with')} />
@@ -1214,12 +1428,10 @@ export default function EditPdf({ initialMode } = {}) {
                     onSelect={setCurrentPage}
                     onChange={pages.change}
                     onInsertPdf={(picked, position) => pages.insertPdf(picked, position).catch((e) => setError(t('Could not add that PDF: {message}', { message: e.message })))}
-                    onUndo={pages.undo}
-                    canUndo={pages.canUndo}
                     continuous={continuous}
                     onContinuousChange={setContinuous}
                 />
-                <div className="pdf-editor__main">
+                <div className="pdf-editor__main" ref={mainRef}>
 
                 <div className="pdf-editor__toolbar">
                     <div className="pdf-editor__nav">
@@ -1230,18 +1442,6 @@ export default function EditPdf({ initialMode } = {}) {
                         <button type="button" className="btn btn--sm" onClick={() => setCurrentPage((p) => Math.min(pages.count - 1, p + 1))} disabled={currentPage >= pages.count - 1}>
                             {t('Next page')}
                         </button>
-                    </div>
-                    <div className="pdf-editor__zoom">
-                        <button type="button" className="btn btn--sm" onClick={() => setZoomPct((z) => Math.max(ZOOM_MIN, z - ZOOM_STEP))} disabled={zoomPct <= ZOOM_MIN} aria-label={t('Zoom out')}>
-                            −
-                        </button>
-                        <span className="pdf-editor__zoom-label" aria-live="polite">{t('Zoom: {value}%', { value: zoomPct })}</span>
-                        <button type="button" className="btn btn--sm" onClick={() => setZoomPct((z) => Math.min(ZOOM_MAX, z + ZOOM_STEP))} disabled={zoomPct >= ZOOM_MAX} aria-label={t('Zoom in')}>
-                            +
-                        </button>
-                        {zoomPct !== 100 && (
-                            <button type="button" className="btn btn--sm btn--ghost" onClick={() => setZoomPct(100)}>{t('Reset zoom')}</button>
-                        )}
                     </div>
                 </div>
 
@@ -1266,12 +1466,12 @@ export default function EditPdf({ initialMode } = {}) {
                     style={{
                         transformOrigin: 'top left',
                         transform: stageTransform(canvasSize.width, canvasSize.height, pageRotation, zoomFactor),
-                        ...(mode === 'draw' || mode === 'note' || DRAG_MODES.includes(mode) || (mode === 'form' && formSubMode === 'add') ? { touchAction: 'none', cursor: 'crosshair' } : null),
-                        ...((mode === 'sign' && signature) || (mode === 'image' && pendingImage) ? { cursor: 'copy' } : null),
+                        cursor: mode === 'form' && formSubMode === 'add' ? 'crosshair' : (mode === 'sign' && !signature) || (mode === 'image' && !pendingImage) ? 'default' : cursorForMode(mode),
+                        ...(mode === 'draw' || mode === 'note' || DRAG_MODES.includes(mode) || (mode === 'form' && formSubMode === 'add') ? { touchAction: 'none' } : null),
                     }}
                 >
                     <MappedPageCanvas entry={pages.entry(currentPage)} renderDoc={pages.renderDocFor(pages.entry(currentPage))} size={currentPageSize} scale={scale} className="pdf-editor__canvas" onReady={onPageReady} />
-                    {(mode === 'edittext' || mode === 'text') &&
+                    {(mode === 'edittext' || mode === 'text' || mode === 'select') &&
                         pageBlocks
                             .filter((block) => !currentElements.some((el) => el.type === 'textedit' && (el.runs ?? [el.run]).some((r) => block.runs.some((b) => b.id === r.id))))
                             .map((block) => {
@@ -1327,7 +1527,10 @@ export default function EditPdf({ initialMode } = {}) {
                                     scale={scale}
                                     labels={el.type === 'text' ? { drag: OVERLAY_LABELS.text.drag(), remove: OVERLAY_LABELS.text.remove() } : undefined}
                                     onChange={(changes) => updateElement(el.id, changes)}
-                                    onLayout={(box) => setElements((list) => list.map((item) => (item.id === el.id ? { ...item, ...box } : item)))}
+                                    onLayout={(box) =>
+                                        // Measured layout, not a user change: never its own undo step.
+                                        setElements((list) => (list.some((item) => item.id === el.id && Object.keys(box).some((k) => item[k] !== box[k])) ? list.map((item) => (item.id === el.id ? { ...item, ...box } : item)) : list), { merge: true })
+                                    }
                                     onSelect={() => {
                                         if (mode !== 'edittext' && mode !== 'text') setMode(el.type === 'text' ? 'text' : 'edittext');
                                         if (editingId !== el.id) dropEmptyText();
@@ -1458,6 +1661,22 @@ export default function EditPdf({ initialMode } = {}) {
                             <polyline points={drawingPoints.map((p) => `${p.x},${p.y}`).join(' ')} fill="none" stroke={drawColor} strokeWidth={drawThickness} strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                     )}
+                    {selected && selected.page === currentPage && (
+                        <SelectionBar
+                            box={elementBox(selected)}
+                            stageWidth={canvasSize.width}
+                            stageHeight={canvasSize.height}
+                            zoom={zoomFactor}
+                            onDelete={deleteSelected}
+                            onDuplicate={duplicateSelected}
+                            onForward={() => reorderSelected('forward')}
+                            onBackward={() => reorderSelected('backward')}
+                            canForward={canReorder(elements, selected.id, 'forward')}
+                            canBackward={canReorder(elements, selected.id, 'backward')}
+                        >
+                            {propertiesFor(selected)}
+                        </SelectionBar>
+                    )}
                 </div>
                 </div>
                 </PageScroller>
@@ -1475,24 +1694,6 @@ export default function EditPdf({ initialMode } = {}) {
 
             <Notice type="error">{error}</Notice>
 
-            {result ? (
-                <div className="notice notice--success row row--between">
-                    <span>{t('Done!')} {formatBytes(result.blob.size)}</span>
-                    <button type="button" className="btn btn--primary" onClick={downloadResult}>{t('Download PDF')}</button>
-                </div>
-            ) : mode === 'watermark' ? (
-                <button type="button" className="btn btn--primary btn--lg" onClick={applyWatermark} disabled={working || !(wmKind === 'text' ? wmText.trim() : wmPendingImage)}>
-                    {working ? wmProgress || t('Adding watermark…') : t('Add watermark')}
-                </button>
-            ) : mode === 'sign' ? (
-                <button type="button" className="btn btn--primary btn--lg" onClick={() => apply('signed')} disabled={working || elements.length === 0}>
-                    {working ? t('Signing…') : t('Sign PDF')}
-                </button>
-            ) : (
-                <button type="button" className="btn btn--primary btn--lg" onClick={() => apply()} disabled={working || (elements.length === 0 && !formChanged && !pages.changed)}>
-                    {working ? t('Saving…') : t('Save PDF')}
-                </button>
-            )}
         </div>
     );
 }

@@ -3016,6 +3016,325 @@ fieldset.grid-2 .check:has(input:checked) {
     gap: 0.6rem;
 }
 
+/* Edit PDF tool bar (components/pdf-editor/EditorToolbar.jsx): icon + label tools above the page,
+   sticky under the site header while the page scrolls. Wraps instead of scrolling so the tool
+   menus are never clipped; below 640px only the icons show (labels stay for screen readers). */
+.pdf-editor__sticky {
+    position: sticky;
+    top: calc(var(--header-h) + 6px);
+    z-index: 20;
+}
+
+.pdf-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.35rem 0.75rem;
+    padding: 0.35rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: color-mix(in srgb, var(--surface) 94%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
+}
+
+.pdf-toolbar__tools,
+.pdf-toolbar__side {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.15rem;
+    min-width: 0;
+}
+
+.pdf-tool {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    min-width: 3.4rem;
+    min-height: 2.75rem;
+    padding: 0.3rem 0.45rem;
+    border: 1px solid transparent;
+    border-radius: var(--radius-xs);
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.1;
+    cursor: pointer;
+    position: relative;
+}
+
+.pdf-tool:hover:not(:disabled) {
+    background: var(--surface-2);
+}
+
+.pdf-tool:focus-visible {
+    outline: none;
+    box-shadow: var(--ring);
+}
+
+.pdf-tool:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.pdf-tool.is-active {
+    border-color: color-mix(in srgb, var(--brand) 45%, transparent);
+    background: color-mix(in srgb, var(--brand) 12%, var(--surface));
+    color: var(--brand-strong, var(--brand));
+}
+
+.pdf-tool--icon {
+    min-width: 2.4rem;
+}
+
+.pdf-tool__icon {
+    flex: none;
+}
+
+.pdf-tool__label {
+    white-space: nowrap;
+}
+
+.pdf-tool__caret {
+    position: absolute;
+    right: 0.1rem;
+    top: 0.3rem;
+    opacity: 0.6;
+}
+
+.pdf-tool-menu {
+    position: relative;
+}
+
+.pdf-tool-menu__list {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 4px);
+    z-index: 30;
+    display: grid;
+    min-width: 11rem;
+    padding: 0.3rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    box-shadow: var(--shadow-lg);
+}
+
+.pdf-tool-menu__item {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.5rem 0.6rem;
+    border: none;
+    border-radius: var(--radius-xs);
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    font-size: 0.9rem;
+    text-align: start;
+    cursor: pointer;
+}
+
+.pdf-tool-menu__item:hover,
+.pdf-tool-menu__item:focus-visible {
+    outline: none;
+    background: var(--surface-2);
+}
+
+.pdf-tool-menu__item[aria-checked='true'] {
+    color: var(--brand-strong, var(--brand));
+    font-weight: 650;
+}
+
+.pdf-toolbar__zoom {
+    display: inline-flex;
+    align-items: center;
+}
+
+.pdf-toolbar__zoom-select {
+    height: 2rem;
+    padding: 0 0.3rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xs);
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.8rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.pdf-toolbar__apply {
+    margin-inline-start: 0.25rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 639px) {
+    .pdf-tool {
+        min-width: 2.4rem;
+        min-height: 2.4rem;
+        padding: 0.3rem;
+    }
+
+    .pdf-tool__label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+
+    .pdf-tool__caret {
+        top: auto;
+        bottom: 0;
+        right: 0;
+    }
+
+    /* On phones a tool menu spans the whole bar, just below it, so it never runs off the screen. */
+    .pdf-toolbar {
+        position: relative;
+    }
+
+    .pdf-tool-menu {
+        position: static;
+    }
+
+    .pdf-tool-menu__list {
+        left: 0.3rem;
+        right: 0.3rem;
+        top: calc(100% + 4px);
+        min-width: 0;
+    }
+}
+
+/* Selected element: a frame plus a floating bar of actions (components/pdf-editor/SelectionBar.jsx). */
+.pdf-selection {
+    position: absolute;
+    box-sizing: border-box;
+    outline: 2px solid var(--brand);
+    outline-offset: 3px;
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.pdf-selection__bar {
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    padding: 0.2rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    white-space: nowrap;
+    cursor: default;
+}
+
+.pdf-selection__props {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0 0.35rem 0 0.15rem;
+    margin-inline-end: 0.15rem;
+    border-inline-end: 1px solid var(--border);
+}
+
+.pdf-selection__props input[type='color'] {
+    width: 1.9rem;
+    height: 1.9rem;
+    padding: 0.1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xs);
+    background: var(--surface);
+}
+
+/* Richer properties (a shape's stroke, fill, dash and opacity) wrap inside the bar instead of
+   running off the page. */
+.pdf-selection__props {
+    flex-wrap: wrap;
+    max-width: min(32rem, 80vw);
+    white-space: normal;
+}
+
+.pdf-selection__props .select {
+    width: auto;
+    min-height: 1.9rem;
+    padding-block: 0.1rem;
+    font-size: 0.8rem;
+}
+
+.pdf-selection__range {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.pdf-selection__range .range {
+    width: 6rem;
+}
+
+.pdf-selection__label {
+    max-width: 12rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.pdf-selection__select {
+    height: 1.9rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xs);
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.8rem;
+}
+
+.pdf-selection__btn {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    border-radius: var(--radius-xs);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.pdf-selection__btn:hover:not(:disabled) {
+    background: var(--surface-2);
+}
+
+.pdf-selection__btn:focus-visible {
+    outline: none;
+    box-shadow: var(--ring);
+}
+
+.pdf-selection__btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.pdf-selection__btn--danger {
+    color: var(--danger);
+}
+
 /* Horizontal filmstrip of page thumbnails above the editor stage; scrolls on its own so it
    never causes the page itself to scroll sideways on narrow phones. */
 .pdf-editor__thumbs {

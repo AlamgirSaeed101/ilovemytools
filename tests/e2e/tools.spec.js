@@ -17,6 +17,32 @@ const stat = (page, label) =>
 
 const pngSize = (buf) => ({ width: buf.readUInt32BE(16), height: buf.readUInt32BE(20) });
 
+// Edit PDF toolbar: grouped tools sit in a menu under their group button.
+const TOOL_MENUS = {
+    'Edit existing text': 'Text',
+    'Add new text': 'Text',
+    Highlight: 'Annotate',
+    Underline: 'Annotate',
+    Strikethrough: 'Annotate',
+    Draw: 'Annotate',
+    Rectangle: 'Shapes',
+    Ellipse: 'Shapes',
+    Line: 'Shapes',
+    Arrow: 'Shapes',
+};
+const toolButton = (page, name) => page.getByRole('toolbar', { name: 'PDF editing tools' }).getByRole('button', { name, exact: true });
+async function pickTool(page, name) {
+    const group = TOOL_MENUS[name];
+    if (!group) return toolButton(page, name).click();
+    await toolButton(page, group).click();
+    await page.getByRole('menuitemradio', { name, exact: true }).click();
+}
+async function expectTool(page, name) {
+    const group = TOOL_MENUS[name];
+    if (group) await expect(toolButton(page, group)).toHaveAttribute('title', `${group}: ${name}`);
+    else await expect(toolButton(page, name)).toHaveAttribute('aria-pressed', 'true');
+}
+
 test.describe('Text tools', () => {
     test('word counter counts words, sentences, paragraphs and keywords', async ({ page }) => {
         await openTool(page, 'word-counter');
@@ -761,10 +787,10 @@ test.describe('PDF tools', () => {
         const originalBytes = await makePdf(1);
         await page.getByTestId('file-input').setInputFiles({ name: 'notes.pdf', mimeType: 'application/pdf', buffer: originalBytes });
         await expect(page.getByText('notes.pdf', { exact: true })).toBeVisible();
-        await expect(page.getByRole('button', { name: 'Save PDF', exact: true })).toBeDisabled();
+        await expect(page.getByRole('button', { name: 'Apply changes' })).toBeDisabled();
 
         // Add text (Edit text is the default tab now), then drag it.
-        await page.getByRole('tab', { name: 'Add text' }).click();
+        await pickTool(page, 'Add new text');
         await page.getByLabel('Text to add').fill('Hello World');
         await page.getByRole('button', { name: 'Add text to page' }).click();
         const overlay = page.locator('.pdf-editor__overlay');
@@ -779,17 +805,18 @@ test.describe('PDF tools', () => {
         expect(after.x).not.toBeCloseTo(before.x, 0);
 
         // Add a highlight.
-        await page.getByRole('tab', { name: 'Highlight' }).click();
+        await pickTool(page, 'Highlight');
         await page.getByRole('button', { name: 'Add highlight to page' }).click();
         await expect(overlay).toHaveCount(2);
 
         // Draw a freehand stroke directly on the page, then undo it.
-        await page.getByRole('tab', { name: 'Draw' }).click();
+        await pickTool(page, 'Draw');
         const stage = page.locator('.pdf-editor__stage');
+        await stage.scrollIntoViewIfNeeded();
         const stageBox = await stage.boundingBox();
-        await page.mouse.move(stageBox.x + 20, stageBox.y + 20);
+        await page.mouse.move(stageBox.x + 20, stageBox.y + 150);
         await page.mouse.down();
-        await page.mouse.move(stageBox.x + 80, stageBox.y + 60, { steps: 5 });
+        await page.mouse.move(stageBox.x + 80, stageBox.y + 190, { steps: 5 });
         await page.mouse.up();
         await expect(overlay).toHaveCount(3);
         await expect(page.getByRole('button', { name: 'Redo' })).toBeDisabled();
@@ -803,7 +830,7 @@ test.describe('PDF tools', () => {
         await expect(overlay).toHaveCount(2);
         await expect(page.getByRole('button', { name: 'Redo' })).toBeEnabled();
 
-        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         expect(file.suggestedFilename()).toBe('notes-edited.pdf');
         const editedBytes = await readDownload(file);
@@ -818,7 +845,7 @@ test.describe('PDF tools', () => {
     test('edit PDF changes existing text in place, and find and replace works across pages', async ({ page }) => {
         await openTool(page, 'edit-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'contract.pdf', mimeType: 'application/pdf', buffer: await makePdf(2) });
-        await expect(page.getByRole('tab', { name: 'Edit text' })).toHaveAttribute('aria-selected', 'true');
+        await expectTool(page, 'Edit existing text');
 
         // Every line of the PDF's own text can be clicked and retyped.
         await page.getByRole('button', { name: 'Edit text: Doc page 1' }).click();
@@ -828,12 +855,13 @@ test.describe('PDF tools', () => {
         await page.getByRole('button', { name: 'Done' }).click();
 
         // Find and replace reaches page 2 as well.
-        await page.getByLabel('Find').fill('Doc');
+        await toolButton(page, 'Find & replace').click();
+        await page.getByLabel('Find', { exact: true }).fill('Doc');
         await page.getByLabel('Replace with').fill('Report');
         await page.getByRole('button', { name: 'Replace all' }).click();
         await expect(page.getByText('Replaced 1 time.')).toBeVisible();
 
-        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         const texts = await pdfPageTexts(page, await readDownload(file));
         // The old wording is removed from the file, not just covered: it can't be found any more.
@@ -860,30 +888,125 @@ test.describe('PDF tools', () => {
             await page.mouse.up();
         };
 
-        await page.getByRole('tab', { name: 'Whiteout' }).click();
+        await pickTool(page, 'Whiteout');
         await drag(30, 150, 150, 190);
         await expect(page.getByRole('button', { name: 'Whiteout - drag to move' })).toBeVisible();
 
-        await page.getByRole('tab', { name: 'Shapes' }).click();
-        await page.getByLabel('Shape', { exact: true }).selectOption({ label: 'Arrow' });
+        await pickTool(page, 'Arrow');
         await drag(40, 230, 200, 270);
         await expect(page.getByRole('button', { name: 'Shape - drag to move' })).toBeVisible();
 
         // A link needs a valid address before it can be placed.
-        await page.getByRole('tab', { name: 'Link' }).click();
+        await pickTool(page, 'Links');
         await drag(40, 310, 180, 340);
         await expect(page.getByText('Type a valid link address first')).toBeVisible();
         await page.getByLabel('Link address').fill('ilovemytools.store/merge-pdf');
         await drag(40, 310, 180, 340);
         await expect(overlay).toHaveCount(3);
 
-        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         const saved = await PDFDocument.load(await readDownload(file));
         const annots = saved.getPage(0).node.Annots().asArray().map((ref) => saved.context.lookup(ref));
         expect(annots).toHaveLength(1);
         const action = saved.context.lookup(annots[0].get(PDFName.of('A')));
         expect(action.get(PDFName.of('URI')).decodeText()).toBe('https://ilovemytools.store/merge-pdf');
+    });
+
+    test('edit PDF: selecting an element shows its context bar; undo/redo and keyboard shortcuts cover every change', async ({ page }) => {
+        await openTool(page, 'edit-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'keys.pdf', mimeType: 'application/pdf', buffer: await makePdf(2) });
+        const stage = page.locator('.pdf-editor__stage');
+        const overlay = page.locator('.pdf-editor__overlay');
+        const bar = page.getByRole('toolbar', { name: 'Selected item' });
+        await expect.poll(async () => (await page.locator('.pdf-editor__canvas').boundingBox())?.height ?? 0).toBeGreaterThan(100);
+
+        // Pick a tool, drag on the page, and the editor goes back to the select tool with the new box selected.
+        await pickTool(page, 'Rectangle');
+        await expectTool(page, 'Rectangle');
+        // Put the page's top 300px down the viewport: below the sticky header and toolbar, and with
+        // room under it for the drag (the thumbnail strip of a 2-page PDF pushes the page lower).
+        await stage.evaluate((el) => window.scrollBy(0, el.getBoundingClientRect().top - 300));
+        let box = await stage.boundingBox();
+        await page.mouse.move(box.x + 60, box.y + 160);
+        await page.mouse.down();
+        await page.mouse.move(box.x + 180, box.y + 220, { steps: 6 });
+        await page.mouse.up();
+        await expect(overlay).toHaveCount(1);
+        await expectTool(page, 'Select');
+        await expect(bar).toBeVisible();
+
+        // One drag is one undo step, however many pointer moves it took.
+        const before = await overlay.first().boundingBox();
+        await page.mouse.move(before.x + before.width / 2, before.y + before.height / 2);
+        await page.mouse.down();
+        for (let i = 1; i <= 8; i++) await page.mouse.move(before.x + before.width / 2 + i * 6, before.y + before.height / 2 + i * 3);
+        await page.mouse.up();
+        const moved = await overlay.first().boundingBox();
+        expect(moved.x).toBeGreaterThan(before.x + 30);
+        await page.keyboard.press('Control+z');
+        await expect.poll(async () => (await overlay.first().boundingBox()).x).toBeCloseTo(before.x, 0);
+        await page.keyboard.press('Control+Shift+z');
+        await expect.poll(async () => (await overlay.first().boundingBox()).x).toBeCloseTo(moved.x, 0);
+
+        // Recolouring from the context bar is undoable too.
+        await bar.getByLabel('Colour').fill('#00ff00');
+        await expect(overlay.first().locator('rect')).toHaveAttribute('stroke', '#00ff00');
+        await page.getByRole('button', { name: 'Undo' }).click();
+        await expect(overlay.first().locator('rect')).toHaveAttribute('stroke', '#dc2626');
+        await page.getByRole('button', { name: 'Redo' }).click();
+        await expect(overlay.first().locator('rect')).toHaveAttribute('stroke', '#00ff00');
+
+        // Arrow keys nudge (Shift for 10px); Ctrl+D duplicates; Delete removes the selection.
+        const start = await overlay.first().boundingBox();
+        await page.keyboard.press('Shift+ArrowRight');
+        await expect.poll(async () => (await overlay.first().boundingBox()).x).toBeGreaterThan(start.x + 5);
+        await page.keyboard.press('Control+d');
+        await expect(overlay).toHaveCount(2);
+        await page.keyboard.press('Delete');
+        await expect(overlay).toHaveCount(1);
+        await page.keyboard.press('Control+z');
+        await expect(overlay).toHaveCount(2);
+
+        // Esc clears the selection; shortcuts do nothing while typing in a field.
+        await page.keyboard.press('Escape');
+        await expect(bar).toHaveCount(0);
+        await pickTool(page, 'Add new text');
+        const input = page.getByLabel('Text to add');
+        await input.fill('abc');
+        await input.press('Backspace');
+        await input.press('Control+z');
+        await expect(input).toHaveValue(/^ab?c?$/);
+        await expect(overlay).toHaveCount(2);
+
+        // PageDown changes page; + and - zoom.
+        await page.evaluate(() => document.activeElement?.blur());
+        await page.keyboard.press('PageDown');
+        await expect(page.getByText('Page 2 of 2')).toBeVisible();
+        await page.keyboard.press('+');
+        await expect(page.getByLabel('Zoom', { exact: true })).toHaveValue('125');
+        await page.keyboard.press('-');
+        await expect(page.getByLabel('Zoom', { exact: true })).toHaveValue('100');
+    });
+
+    test('edit PDF: the toolbar keeps every tool reachable on a 360px phone without sideways scrolling', async ({ page }) => {
+        await page.setViewportSize({ width: 360, height: 740 });
+        await openTool(page, 'edit-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'phone.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
+        const toolbar = page.getByRole('toolbar', { name: 'PDF editing tools' });
+        await expect(toolbar).toBeVisible();
+        for (const name of ['Select', 'Text', 'Links', 'Forms', 'Images', 'Sign', 'Whiteout', 'Annotate', 'Shapes', 'Undo', 'Redo', 'Find & replace', 'Zoom in', 'Apply changes']) {
+            const button = toolbar.getByRole('button', { name, exact: true });
+            await expect(button).toBeVisible();
+            const b = await button.boundingBox();
+            expect(b.x).toBeGreaterThanOrEqual(0);
+            expect(b.x + b.width).toBeLessThanOrEqual(360);
+        }
+        expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(360);
+
+        // A grouped tool opens its menu on the phone too.
+        await pickTool(page, 'Arrow');
+        await expectTool(page, 'Arrow');
     });
 
     test('edit PDF: zoom scales the page view without breaking drags or the saved file', async ({ page }) => {
@@ -893,15 +1016,15 @@ test.describe('PDF tools', () => {
         await expect.poll(async () => (await page.locator('.pdf-editor__canvas').boundingBox())?.height ?? 0).toBeGreaterThan(100);
         const baseBox = await stage.boundingBox();
 
-        await expect(page.getByText('Zoom: 100%')).toBeVisible();
+        await expect(page.getByLabel('Zoom', { exact: true })).toHaveValue('100');
         await expect(page.getByRole('button', { name: 'Zoom out' })).toBeEnabled();
         await page.getByRole('button', { name: 'Zoom in' }).click();
-        await expect(page.getByText('Zoom: 125%')).toBeVisible();
+        await expect(page.getByLabel('Zoom', { exact: true })).toHaveValue('125');
         const zoomedBox = await stage.boundingBox();
         expect(zoomedBox.width).toBeGreaterThan(baseBox.width * 1.1);
 
         // Add text, then drag it while zoomed in: the pointer math must still map onto the page correctly.
-        await page.getByRole('tab', { name: 'Add text' }).click();
+        await pickTool(page, 'Add new text');
         await page.getByLabel('Text to add').fill('Zoomed text');
         await page.getByRole('button', { name: 'Add text to page' }).click();
         const overlay = page.locator('.pdf-editor__overlay');
@@ -915,11 +1038,10 @@ test.describe('PDF tools', () => {
         const after = await overlay.first().boundingBox();
         expect(after.x).not.toBeCloseTo(before.x, 0);
 
-        await page.getByRole('button', { name: 'Reset zoom' }).click();
-        await expect(page.getByText('Zoom: 100%')).toBeVisible();
-        await expect(page.getByRole('button', { name: 'Reset zoom' })).toHaveCount(0);
+        await page.getByLabel('Zoom', { exact: true }).selectOption('100');
+        await expect(page.getByLabel('Zoom', { exact: true })).toHaveValue('100');
 
-        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         const text = await extractPdfText(page, await readDownload(file));
         expect(text).toContain('Zoomed text');
@@ -1196,7 +1318,7 @@ test.describe('PDF tools', () => {
     test('edit PDF: dragging an element\'s rotate handle spins it in place and the saved PDF still reads its text', async ({ page }) => {
         await openTool(page, 'edit-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'rotated.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
-        await page.getByRole('tab', { name: 'Add text' }).click();
+        await pickTool(page, 'Add new text');
         await page.getByLabel('Text to add').fill('Rotated text');
         await page.getByRole('button', { name: 'Add text to page' }).click();
 
@@ -1217,7 +1339,7 @@ test.describe('PDF tools', () => {
         await page.mouse.up();
         await expect(overlay.first()).toHaveCSS('transform', /matrix/);
 
-        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         const text = await extractPdfText(page, await readDownload(file));
         expect(text).toContain('Rotated text');
@@ -1248,7 +1370,7 @@ test.describe('PDF tools', () => {
     test('edit PDF: auto-saves the session, offers to resume it after a reload, warns before discarding it, and clears it once downloaded', async ({ page }) => {
         await openTool(page, 'edit-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'draft.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
-        await page.getByRole('tab', { name: 'Add text' }).click();
+        await pickTool(page, 'Add new text');
         await page.getByLabel('Text to add').fill('Session text');
         await page.getByRole('button', { name: 'Add text to page' }).click();
         await expect(page.locator('.pdf-editor__overlay')).toHaveCount(1);
@@ -1270,7 +1392,7 @@ test.describe('PDF tools', () => {
         await expect(page.locator('.pdf-editor__overlay')).toHaveCount(1);
 
         // Downloading the edited PDF clears the saved session, so a later visit has nothing to resume.
-        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         expect(file.suggestedFilename()).toBe('draft-edited.pdf');
         await page.waitForTimeout(300);
@@ -1283,10 +1405,10 @@ test.describe('PDF tools', () => {
         const originalBytes = await makePdf(3);
         await page.getByTestId('file-input').setInputFiles({ name: 'report.pdf', mimeType: 'application/pdf', buffer: originalBytes });
         await expect(page.getByText('report.pdf', { exact: true })).toBeVisible();
-        await expect(page.getByRole('button', { name: 'Add watermark' })).toBeDisabled();
+        await expect(page.getByRole('button', { name: 'Apply changes' })).toBeDisabled();
 
         await page.getByLabel('Watermark text').fill('CONFIDENTIAL');
-        await expect(page.getByRole('button', { name: 'Add watermark' })).toBeEnabled();
+        await expect(page.getByRole('button', { name: 'Apply changes' })).toBeEnabled();
 
         // The live preview renders the real watermarked page 1 before any page is chosen.
         const preview = page.locator('canvas[aria-label="Preview of page 1"]');
@@ -1294,7 +1416,7 @@ test.describe('PDF tools', () => {
         await expect.poll(async () => (await preview.boundingBox())?.height ?? 0).toBeGreaterThan(0);
 
         await page.getByLabel('Pages', { exact: true }).selectOption({ label: 'All pages except the first' });
-        await page.getByRole('button', { name: 'Add watermark' }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         expect(file.suggestedFilename()).toBe('report-watermarked.pdf');
         const watermarkedBytes = await readDownload(file);
@@ -1317,7 +1439,7 @@ test.describe('PDF tools', () => {
         await page.getByLabel('Layer').selectOption({ label: 'Behind the content (background)' });
         await expect(page.getByText('can hide a watermark placed behind the content')).toBeVisible();
 
-        await page.getByRole('button', { name: 'Add watermark' }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [behind] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         // pdf.js lists text in drawing order: the background watermark is painted before the page text.
         const texts = await pdfPageTexts(page, await readDownload(behind));
@@ -1326,7 +1448,7 @@ test.describe('PDF tools', () => {
 
         // Flatten: same pages, but every page is now one image, so nothing (watermark included) is editable text.
         await page.getByLabel('Flatten pages so the watermark can’t be removed').check();
-        await page.getByRole('button', { name: 'Add watermark' }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [flat] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         const flatBytes = await readDownload(flat);
         expect(await pdfPageCount(flatBytes)).toBe(2);
@@ -1336,14 +1458,14 @@ test.describe('PDF tools', () => {
     test('watermark lives inside Edit PDF as its own tab, alongside the other editing tools', async ({ page }) => {
         await openTool(page, 'edit-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'notes.pdf', mimeType: 'application/pdf', buffer: await makePdf(2) });
-        await expect(page.getByRole('tab', { name: 'Edit text' })).toHaveAttribute('aria-selected', 'true');
+        await expectTool(page, 'Edit existing text');
 
-        await page.getByRole('tab', { name: 'Watermark' }).click();
-        await expect(page.getByRole('button', { name: 'Add watermark' })).toBeDisabled();
+        await pickTool(page, 'Watermark');
+        await expect(page.getByRole('button', { name: 'Apply changes' })).toBeDisabled();
         await page.getByLabel('Watermark text').fill('SAMPLE');
-        await expect(page.getByRole('button', { name: 'Add watermark' })).toBeEnabled();
+        await expect(page.getByRole('button', { name: 'Apply changes' })).toBeEnabled();
 
-        await page.getByRole('button', { name: 'Add watermark' }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         expect(file.suggestedFilename()).toBe('notes-watermarked.pdf');
         const texts = await pdfPageTexts(page, await readDownload(file));
@@ -1351,26 +1473,26 @@ test.describe('PDF tools', () => {
         expect(texts[1]).toContain('SAMPLE');
 
         // Switching back to Edit text still edits the page's own text, unaffected by the watermark tab.
-        await page.getByRole('tab', { name: 'Edit text' }).click();
+        await pickTool(page, 'Edit existing text');
         await expect(page.getByRole('button', { name: 'Edit text: Doc page 1' })).toBeVisible();
     });
 
     test('watermark-pdf opens Edit PDF with the Watermark tab preselected, and the full editor stays reachable', async ({ page }) => {
         await openTool(page, 'watermark-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'report.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
-        await expect(page.getByRole('tab', { name: 'Watermark' })).toHaveAttribute('aria-selected', 'true');
+        await expectTool(page, 'Watermark');
         await expect(page.getByLabel('Watermark text')).toBeVisible();
 
         // The one editor is still underneath: every other tab is reachable from this page too.
-        await expect(page.getByRole('tab', { name: 'Edit text' })).toBeVisible();
-        await expect(page.getByRole('tab', { name: 'Shapes' })).toBeVisible();
+        await expect(toolButton(page, 'Text')).toBeVisible();
+        await expect(toolButton(page, 'Shapes')).toBeVisible();
     });
 
     test('add-text-to-pdf opens Edit PDF with the Add text tab preselected and can type, place and save text', async ({ page }) => {
         await openTool(page, 'add-text-to-pdf');
         const originalBytes = await makePdf(1);
         await page.getByTestId('file-input').setInputFiles({ name: 'form.pdf', mimeType: 'application/pdf', buffer: originalBytes });
-        await expect(page.getByRole('tab', { name: 'Add text' })).toHaveAttribute('aria-selected', 'true');
+        await expectTool(page, 'Add new text');
         await expect(page.getByLabel('Text to add')).toBeVisible();
 
         await page.getByLabel('Text to add').fill('Approved');
@@ -1378,7 +1500,7 @@ test.describe('PDF tools', () => {
         const overlay = page.locator('.pdf-editor__overlay');
         await expect(overlay).toHaveCount(1);
 
-        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         expect(file.suggestedFilename()).toBe('form-edited.pdf');
         const savedBytes = await readDownload(file);
@@ -1386,15 +1508,15 @@ test.describe('PDF tools', () => {
         expect(savedBytes.length).toBeGreaterThan(originalBytes.length);
 
         // The one editor is still underneath: every other tab is reachable from this page too.
-        await expect(page.getByRole('tab', { name: 'Edit text' })).toBeVisible();
-        await expect(page.getByRole('tab', { name: 'Watermark' })).toBeVisible();
+        await expect(toolButton(page, 'Text')).toBeVisible();
+        await expect(toolButton(page, 'Watermark')).toBeVisible();
     });
 
     test('whiteout-pdf opens Edit PDF with the Whiteout tab preselected and can cover and save content', async ({ page }) => {
         await openTool(page, 'whiteout-pdf');
         const originalBytes = await makePdf(1);
         await page.getByTestId('file-input').setInputFiles({ name: 'form.pdf', mimeType: 'application/pdf', buffer: originalBytes });
-        await expect(page.getByRole('tab', { name: 'Whiteout' })).toHaveAttribute('aria-selected', 'true');
+        await expectTool(page, 'Whiteout');
         const stage = page.locator('.pdf-editor__stage');
         await expect.poll(async () => (await page.locator('.pdf-editor__canvas').boundingBox())?.height ?? 0).toBeGreaterThan(100);
         await stage.scrollIntoViewIfNeeded();
@@ -1407,7 +1529,7 @@ test.describe('PDF tools', () => {
         await expect(overlay).toHaveCount(1);
         await expect(page.getByRole('button', { name: 'Whiteout - drag to move' })).toBeVisible();
 
-        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         expect(file.suggestedFilename()).toBe('form-edited.pdf');
         const savedBytes = await readDownload(file);
@@ -1415,14 +1537,14 @@ test.describe('PDF tools', () => {
         expect(savedBytes.length).toBeGreaterThan(originalBytes.length);
 
         // The one editor is still underneath: every other tab is reachable from this page too.
-        await expect(page.getByRole('tab', { name: 'Edit text' })).toBeVisible();
-        await expect(page.getByRole('tab', { name: 'Watermark' })).toBeVisible();
+        await expect(toolButton(page, 'Text')).toBeVisible();
+        await expect(toolButton(page, 'Watermark')).toBeVisible();
     });
 
     test('edit-pdf-text opens Edit PDF with the Edit text tab preselected and can retype existing text', async ({ page }) => {
         await openTool(page, 'edit-pdf-text');
         await page.getByTestId('file-input').setInputFiles({ name: 'contract.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
-        await expect(page.getByRole('tab', { name: 'Edit text' })).toHaveAttribute('aria-selected', 'true');
+        await expectTool(page, 'Edit existing text');
 
         await page.getByRole('button', { name: 'Edit text: Doc page 1' }).click();
         const input = page.getByLabel('Edit this text');
@@ -1430,15 +1552,15 @@ test.describe('PDF tools', () => {
         await input.fill('Signed page 1');
         await page.getByRole('button', { name: 'Done' }).click();
 
-        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         const texts = await pdfPageTexts(page, await readDownload(file));
         expect(texts[0]).toContain('Signed page 1');
         expect(texts[0]).not.toContain('Doc page 1');
 
         // The one editor is still underneath: every other tab is reachable from this page too.
-        await expect(page.getByRole('tab', { name: 'Add text' })).toBeVisible();
-        await expect(page.getByRole('tab', { name: 'Watermark' })).toBeVisible();
+        await expect(toolButton(page, 'Text')).toBeVisible();
+        await expect(toolButton(page, 'Watermark')).toBeVisible();
     });
 });
 

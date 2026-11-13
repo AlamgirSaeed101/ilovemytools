@@ -1,30 +1,22 @@
-import { useEffect, useState } from 'react';
 import { applyPageMap, entrySize, followPage, initialPageMap, insertPages, isPageMapChanged, remapElements } from '../../lib/pdfPageOps.js';
 import useInsertedPdfs from './useInsertedPdfs.js';
 
-const UNDO_LIMIT = 30;
-
 /**
  * The page panel's state for Edit PDF: the page map (order, rotation, deleted, duplicated,
- * blank and inserted pages - see pdfPageOps.js), the PDFs inserted from other files, and an undo
- * list of page changes. Every change carries the editor's elements to their page's new position
- * (dropping those of a deleted page), and undo restores both the pages and those elements.
+ * blank and inserted pages - see pdfPageOps.js) and the PDFs inserted from other files. Every
+ * change carries the editor's elements to their page's new position (dropping those of a deleted
+ * page) in the same step, so the editor's one undo/redo history covers page changes too.
  *
- * `elements`/`setElements` and `nextId` (a ref) are the editor's; `onEdit` runs after any change
- * (the editor clears its redo list and finished download there).
+ * `rawMap` is the map held in the editor's history (null = the document's own pages, unchanged).
+ * `commit(nextElements, nextMap)` records both as one undo step. `elements` and `nextId` (a ref)
+ * are the editor's; `onEdit` runs after any change (the editor clears its finished download there).
  */
-export default function usePageMap({ doc, renderDoc, pageCount, thumbs, elements, setElements, nextId, currentPage, setCurrentPage, onEdit }) {
-    const [rawMap, setRawMap] = useState(null);
-    const [undoList, setUndoList] = useState([]);
+export default function usePageMap({ doc, renderDoc, pageCount, thumbs, rawMap, elements, commit, nextId, currentPage, setCurrentPage, onEdit }) {
     const inserted = useInsertedPdfs();
 
-    // A newly loaded document starts with its own pages in order, unless a resumed session already set the map.
-    useEffect(() => {
-        if (!doc || !pageCount) return;
-        setRawMap((current) => (current && current.every((e) => e.blank || e.from != null || e.source < pageCount) ? current : initialPageMap(pageCount)));
-    }, [doc, pageCount]);
-
-    const map = rawMap ?? (pageCount ? initialPageMap(pageCount) : []);
+    // A map restored from a session that doesn't fit the document is ignored.
+    const valid = Boolean(rawMap) && pageCount > 0 && rawMap.every((e) => e.blank || e.from != null || e.source < pageCount);
+    const map = valid ? rawMap : pageCount ? initialPageMap(pageCount) : [];
     const docs = { main: doc };
     for (const [key, value] of Object.entries(inserted.docs)) docs[key] = value.doc;
 
@@ -42,20 +34,8 @@ export default function usePageMap({ doc, renderDoc, pageCount, thumbs, elements
 
     function change(next) {
         if (next === map) return;
-        setUndoList((list) => [...list.slice(-(UNDO_LIMIT - 1)), { map, elements, currentPage }]);
-        setElements(remapElements(elements, map, next, { nextId: () => nextId.current++ }));
-        setRawMap(next);
+        commit(remapElements(elements, map, next, { nextId: () => nextId.current++ }), next);
         setCurrentPage(followPage(map, next, currentPage));
-        onEdit?.();
-    }
-
-    function undo() {
-        const last = undoList[undoList.length - 1];
-        if (!last) return;
-        setUndoList((list) => list.slice(0, -1));
-        setRawMap(last.map);
-        setElements(last.elements);
-        setCurrentPage(Math.min(last.currentPage, last.map.length - 1));
         onEdit?.();
     }
 
@@ -67,19 +47,15 @@ export default function usePageMap({ doc, renderDoc, pageCount, thumbs, elements
     }
 
     function reset() {
-        setRawMap(null);
-        setUndoList([]);
         inserted.reset();
     }
 
-    /** Restores the pages of a saved session (see sessionFields). */
+    /** Re-reads the inserted PDFs of a saved session (its page map comes back with the editor's history). */
     function restore(session) {
-        setRawMap(Array.isArray(session?.pageMap) ? session.pageMap : null);
-        setUndoList([]);
         if (session?.extraFiles?.length) inserted.restore(session.extraFiles);
     }
 
-    const changed = isPageMapChanged(rawMap, pageCount);
+    const changed = valid && isPageMapChanged(rawMap, pageCount);
     const extraDocs = Object.fromEntries(Object.entries(inserted.docs).map(([key, value]) => [key, value.doc]));
 
     return {
@@ -95,8 +71,6 @@ export default function usePageMap({ doc, renderDoc, pageCount, thumbs, elements
         /** Whether the page's existing text can be edited (it is a page of the open PDF). */
         isOwnPage: (index) => Boolean(map[index] && !map[index].blank && map[index].from == null),
         change,
-        undo,
-        canUndo: undoList.length > 0,
         insertPdf,
         reset,
         restore,
@@ -104,7 +78,7 @@ export default function usePageMap({ doc, renderDoc, pageCount, thumbs, elements
         build: (source) => applyPageMap(source, map, { extraDocs }),
         /** What a saved session needs to bring the pages back. */
         sessionFields: () => ({
-            pageMap: rawMap,
+            pageMap: valid ? rawMap : null,
             extraFiles: Object.values(inserted.docs).map(({ key, name, bytes }) => ({ key, name, bytes })),
         }),
     };

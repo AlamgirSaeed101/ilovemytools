@@ -121,7 +121,7 @@ function PageThumb({ entry, thumb, size }) {
  * rotate, duplicate, delete it, or insert a blank page or another PDF's pages around it. Every
  * change is a new page map passed to `onChange` (see pdfPageOps.js).
  */
-export default function PageSidebar({ pageMap, thumbFor, sizeOf, current, onSelect, onChange, onInsertPdf, onUndo, canUndo, continuous, onContinuousChange }) {
+export default function PageSidebar({ pageMap, thumbFor, sizeOf, current, onSelect, onChange, onInsertPdf, continuous, onContinuousChange }) {
     const [dragFrom, setDragFrom] = useState(null);
     const [dropAt, setDropAt] = useState(null);
     const [busy, setBusy] = useState(false);
@@ -197,7 +197,6 @@ export default function PageSidebar({ pageMap, thumbFor, sizeOf, current, onSele
             <div className="page-sidebar__head">
                 <span className="page-sidebar__title">{tn('{count} page', '{count} pages', count)}</span>
                 <span className="page-sidebar__tools">
-                    <IconButton icon="undo" label={t('Undo page change')} onClick={onUndo} disabled={!canUndo} />
                     <Menu icon="plus" label={t('Add pages')}>
                         <button type="button" onClick={() => { onChange(insertBlank(pageMap, count, blankSizeNear(count - 1))); onSelect(count); }}>
                             {t('Add a blank page at the end')}
