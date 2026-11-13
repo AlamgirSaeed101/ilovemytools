@@ -73,6 +73,7 @@ const tools = {
     'add-text-to-pdf': editPdfMode('text'),
     'whiteout-pdf': editPdfMode('whiteout'),
     'edit-pdf-text': editPdfMode('edittext'),
+    'fill-pdf': editPdfMode('form'),
 };
 
 export default tools;
