@@ -358,6 +358,12 @@
     ]
   },
   {
+    "key": "{name} does not include that choice.",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
+    ]
+  },
+  {
     "key": "{name} home",
     "files": [
       "resources/js/components/Layout.jsx",
@@ -382,6 +388,12 @@
     "key": "{name} is available in {count} languages: {languages}.",
     "files": [
       "app/Support/HomeFaq.php"
+    ]
+  },
+  {
+    "key": "{name} is longer than this field allows.",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
     ]
   },
   {
@@ -525,7 +537,7 @@
   {
     "key": "1. Create your signature",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -567,7 +579,7 @@
   {
     "key": "2. Place it on the page",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -679,9 +691,9 @@
     ]
   },
   {
-    "key": "A PNG with a transparent background works best",
+    "key": "A photo or scan of your signature on white paper works",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
     ]
   },
   {
@@ -832,7 +844,7 @@
   {
     "key": "Add signature to this page",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -850,7 +862,7 @@
   {
     "key": "Add today's date under the signature",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -1177,6 +1189,12 @@
     ]
   },
   {
+    "key": "Black",
+    "files": [
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
+    ]
+  },
+  {
     "key": "Blank page",
     "files": [
       "resources/js/tools/EditPdf.jsx"
@@ -1192,6 +1210,12 @@
     "key": "Blocked or no answer",
     "files": [
       "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
+    "key": "Blue",
+    "files": [
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
     ]
   },
   {
@@ -1292,6 +1316,12 @@
     "key": "By using {name} (the “Site”) you agree to these terms. If you do not agree, please do not use the Site.",
     "files": [
       "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Cancel",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -1508,13 +1538,13 @@
   {
     "key": "Clear",
     "files": [
+      "resources/js/components/pdf-editor/SignaturePads.jsx",
       "resources/js/tools/AiDetector.jsx",
       "resources/js/tools/Base64Tool.jsx",
       "resources/js/tools/CaseConverter.jsx",
       "resources/js/tools/DiceRoller.jsx",
       "resources/js/tools/DomainAgeChecker.jsx",
       "resources/js/tools/DomainAuthority.jsx",
-      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/JpgToPdf.jsx",
       "resources/js/tools/JsonFormatter.jsx",
       "resources/js/tools/MergePdf.jsx",
@@ -1875,7 +1905,7 @@
   {
     "key": "Could not create the signature image.",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -1889,6 +1919,18 @@
     "files": [
       "resources/js/tools/ImageCompressor.jsx",
       "resources/js/tools/ImageConverter.jsx"
+    ]
+  },
+  {
+    "key": "Could not delete the saved signature.",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
+    "key": "Could not fill this form. The file may use a form feature this tool does not support.",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
     ]
   },
   {
@@ -1918,6 +1960,7 @@
   {
     "key": "Could not read that image.",
     "files": [
+      "resources/js/components/pdf-editor/ImageControls.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -1934,9 +1977,33 @@
     ]
   },
   {
+    "key": "Could not save the signature on this device. You can still use it now.",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
     "key": "Counting down",
     "files": [
       "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "Create a different signature",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
+    "key": "Create a new signature",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
+    "key": "Create your signature",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -1965,6 +2032,12 @@
     "key": "Curry",
     "files": [
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Custom ink colour",
+    "files": [
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
     ]
   },
   {
@@ -2058,6 +2131,18 @@
     "key": "Delete pages",
     "files": [
       "resources/js/tools/DeletePdfPages.jsx"
+    ]
+  },
+  {
+    "key": "Delete saved signature {number}",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
+    "key": "Delete this saved signature from this device?",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -2438,6 +2523,7 @@
   {
     "key": "Draw",
     "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -2456,7 +2542,7 @@
   {
     "key": "Draw your signature here",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
     ]
   },
   {
@@ -2502,7 +2588,7 @@
   {
     "key": "Drop a signature image or click to choose",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
     ]
   },
   {
@@ -3183,6 +3269,12 @@
     ]
   },
   {
+    "key": "Flatten the form so the answers cannot be changed",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
+    ]
+  },
+  {
     "key": "Flattening page {page} of {total}…",
     "files": [
       "resources/js/tools/EditPdf.jsx"
@@ -3330,6 +3422,12 @@
     "key": "From",
     "files": [
       "resources/js/tools/PercentageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Full signature",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -3567,6 +3665,12 @@
     ]
   },
   {
+    "key": "Hold Ctrl or Command to select more than one.",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
+    ]
+  },
+  {
     "key": "Home",
     "files": [
       "app/Support/Seo.php",
@@ -3788,6 +3892,18 @@
     "key": "Indent",
     "files": [
       "resources/js/tools/JsonFormatter.jsx"
+    ]
+  },
+  {
+    "key": "Initials",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
+    "key": "Ink colour",
+    "files": [
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
     ]
   },
   {
@@ -4587,6 +4703,12 @@
     ]
   },
   {
+    "key": "No option selected",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
+    ]
+  },
+  {
     "key": "No pages selected - rotation applies to every page",
     "files": [
       "resources/js/tools/RotatePdf.jsx"
@@ -4802,6 +4924,7 @@
   {
     "key": "Opacity: {value}%",
     "files": [
+      "resources/js/components/pdf-editor/ImageControls.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -4826,6 +4949,18 @@
   },
   {
     "key": "Option 1, Option 2",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Or click anywhere on the page to place it there, as many times as you need.",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
+    "key": "Or click on the page to place it there.",
     "files": [
       "resources/js/tools/EditPdf.jsx"
     ]
@@ -5197,6 +5332,8 @@
   {
     "key": "Please choose a PNG, JPG or WebP image.",
     "files": [
+      "resources/js/components/pdf-editor/ImageControls.jsx",
+      "resources/js/components/pdf-editor/SignatureMenu.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -5573,7 +5710,8 @@
   {
     "key": "Reading form fields…",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/tools/EditPdf.jsx",
+      "resources/js/tools/FormFillFields.jsx"
     ]
   },
   {
@@ -5629,6 +5767,12 @@
     "key": "Rectangle",
     "files": [
       "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Red",
+    "files": [
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
     ]
   },
   {
@@ -5744,6 +5888,12 @@
     ]
   },
   {
+    "key": "Remember on this device",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
     "key": "Remove “{name}”",
     "files": [
       "resources/js/tools/SpinWheel.jsx"
@@ -5759,12 +5909,6 @@
     ]
   },
   {
-    "key": "Remove signature",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
     "key": "Remove the files marked in red to continue.",
     "files": [
       "resources/js/tools/MergePdf.jsx"
@@ -5774,6 +5918,12 @@
     "key": "Remove the trailing comma before this bracket.",
     "files": [
       "resources/js/lib/json.js"
+    ]
+  },
+  {
+    "key": "Remove the white background",
+    "files": [
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
     ]
   },
   {
@@ -5888,6 +6038,18 @@
     "key": "Replace all",
     "files": [
       "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Replace image",
+    "files": [
+      "resources/js/components/pdf-editor/ImageControls.jsx"
+    ]
+  },
+  {
+    "key": "Replace signature image",
+    "files": [
+      "resources/js/components/pdf-editor/ImageControls.jsx"
     ]
   },
   {
@@ -6139,6 +6301,12 @@
     ]
   },
   {
+    "key": "Save or remove your other edits before filling the form. Filling uses the original file, not the edits on the page.",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
+    ]
+  },
+  {
     "key": "Save PDF",
     "files": [
       "resources/js/tools/EditPdf.jsx"
@@ -6148,6 +6316,12 @@
     "key": "Save PDF with new fields",
     "files": [
       "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Saved only in this browser, never uploaded. You can delete it at any time.",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -6274,6 +6448,18 @@
     "key": "Select page {number}",
     "files": [
       "resources/js/tools/RotatePdf.jsx"
+    ]
+  },
+  {
+    "key": "Selected image",
+    "files": [
+      "resources/js/components/pdf-editor/ImageControls.jsx"
+    ]
+  },
+  {
+    "key": "Selected signature",
+    "files": [
+      "resources/js/components/pdf-editor/ImageControls.jsx"
     ]
   },
   {
@@ -6415,6 +6601,7 @@
   {
     "key": "Signature",
     "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -6431,33 +6618,27 @@
     ]
   },
   {
-    "key": "Signature on the page - drag to move",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
     "key": "Signature preview",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
     "key": "Signature ready.",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
+    "key": "Signature style",
+    "files": [
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
     ]
   },
   {
     "key": "Signature type",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
-    "key": "Signing failed: {message}",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -7175,6 +7356,12 @@
     ]
   },
   {
+    "key": "This field cannot be filled in the browser.",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
+    ]
+  },
+  {
     "key": "This file could not be read. It may be damaged or not a real spreadsheet.",
     "files": [
       "resources/js/lib/excelToPdf.js"
@@ -7232,6 +7419,24 @@
     "key": "This PDF could not be made smaller, so the original file is ready to download unchanged ({size}).",
     "files": [
       "resources/js/tools/CompressPdf.jsx"
+    ]
+  },
+  {
+    "key": "This PDF could not be opened.",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
+    ]
+  },
+  {
+    "key": "This PDF has no fillable form fields. A scanned form is only a picture, so use Edit text or Add text to write on it.",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
+    ]
+  },
+  {
+    "key": "This PDF is password-protected. Unlock it first, then fill the form.",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
     ]
   },
   {
@@ -7542,7 +7747,7 @@
   {
     "key": "Type",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -7578,7 +7783,7 @@
   {
     "key": "Type your name",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
     ]
   },
   {
@@ -7657,7 +7862,7 @@
   {
     "key": "Upload",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -7697,15 +7902,33 @@
     ]
   },
   {
+    "key": "Use saved initials {number}",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
+    "key": "Use saved signature {number}",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
     "key": "Use this signature",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
     ]
   },
   {
     "key": "User agent",
     "files": [
       "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Using a keyboard? Choose Type and enter your name instead.",
+    "files": [
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
     ]
   },
   {
@@ -7930,6 +8153,12 @@
     ]
   },
   {
+    "key": "What to create",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
     "key": "Wheel with {count} entries",
     "files": [
       "resources/js/tools/SpinWheel.jsx"
@@ -8090,6 +8319,12 @@
     ]
   },
   {
+    "key": "You can also paste an image with Ctrl+V.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "You can compress up to {max} images at a time.",
     "files": [
       "resources/js/tools/ImageCompressor.jsx"
@@ -8232,6 +8467,12 @@
     "key": "Your QR code will appear here.",
     "files": [
       "resources/js/tools/QrCodeGenerator.jsx"
+    ]
+  },
+  {
+    "key": "Your saved signatures",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
