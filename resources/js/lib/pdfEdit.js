@@ -20,9 +20,10 @@ function rotatedRect({ x, y, width, height }, rotationDeg) {
  * existing text, so it can add to a PDF but not edit text that was already there (a whiteout box
  * covers it instead). `elements`: [{ type: 'text'|'image'|'highlight'|'stroke'|'whiteout'|'shape'|
  * 'markup'|'link'|'textedit', page, ...PDF-space fields }]. A 'textedit' replaces a run of the PDF's
- * own text: { run, text, size, color, background } (see pdfTextEdit.js).
+ * own text: { run, text, size, color, background } (see pdfTextEdit.js). `beforeSave(doc)`, when
+ * given, runs after the elements are drawn and before saving (Edit PDF's form values and new fields).
  */
-export async function buildEditedPdf(doc, elements) {
+export async function buildEditedPdf(doc, elements, { beforeSave } = {}) {
     let fonts = null;
     const editFonts = new Map();
     // Edits of existing text go first, so anything added on top of the page stays on top of them.
@@ -92,6 +93,7 @@ export async function buildEditedPdf(doc, elements) {
             }
         }
     }
+    if (beforeSave) await beforeSave(doc);
     const bytes = await doc.save();
     return new Blob([bytes], { type: 'application/pdf' });
 }

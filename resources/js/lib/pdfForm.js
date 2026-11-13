@@ -108,7 +108,7 @@ export function parseDropdownOptions(text) {
  * and the page's annotations. The field stays unsigned: this tool never handles certificates or
  * cryptographic signing, only places the placeholder another PDF reader can sign later.
  */
-function createSignatureField(doc, name, page, rectPdf) {
+export function createSignatureField(doc, name, page, rectPdf) {
     const context = doc.context;
     const fieldDict = context.obj({ FT: 'Sig', Ff: 0, Kids: [] });
     const fieldRef = context.register(fieldDict);

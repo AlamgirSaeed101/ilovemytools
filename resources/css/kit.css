@@ -2754,6 +2754,81 @@ fieldset.grid-2 .check:has(input:checked) {
     color: var(--muted);
 }
 
+/* Forms - Add fields: the mark inside a new checkbox / radio button, and check-mark / bullet stamps. */
+.pdf-editor__fieldglyph {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 0.8rem;
+    line-height: 1;
+    color: var(--text);
+    pointer-events: none;
+}
+
+.pdf-editor__fieldglyph--radio {
+    border-radius: 50%;
+}
+
+.pdf-editor__overlay--stamp {
+    background: transparent;
+    border-style: dashed;
+    border-color: color-mix(in srgb, var(--brand) 45%, transparent);
+}
+
+/* The small "properties" button at a new field's top-left corner, and the panel it opens. */
+.pdf-editor__fieldprops-btn {
+    position: absolute;
+    top: -0.65rem;
+    left: -0.65rem;
+    width: 1.3rem;
+    height: 1.3rem;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border-radius: 50%;
+    border: 1.5px solid #fff;
+    background: var(--brand);
+    color: #fff;
+    font-size: 0.75rem;
+    line-height: 1;
+    cursor: pointer;
+    touch-action: none;
+}
+
+.pdf-editor__fieldprops {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    z-index: 5;
+    display: grid;
+    gap: 0.55rem;
+    width: 15rem;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+    color: var(--text);
+    font-size: 0.85rem;
+    text-align: left;
+    cursor: default;
+}
+
+.pdf-editor__fieldprops .field {
+    margin: 0;
+}
+
+/* Forms - Fill in fields: every field as a plain list, under the page. */
+.pdf-editor__formlist {
+    margin-top: 0.7rem;
+}
+
+.pdf-editor__formlist > summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+
 .pdf-editor__date {
     position: absolute;
     left: 0;

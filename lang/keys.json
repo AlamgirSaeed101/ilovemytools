@@ -343,6 +343,24 @@
     ]
   },
   {
+    "key": "{kind} - drag to move",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
+    ]
+  },
+  {
+    "key": "{kind} \"{name}\" - drag to move",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
+    ]
+  },
+  {
+    "key": "{kind} name",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
+    ]
+  },
+  {
     "key": "{m} min",
     "files": [
       "resources/js/lib/sleep.js",
@@ -355,6 +373,13 @@
     "key": "{m} min {s} sec",
     "files": [
       "resources/js/lib/text.js"
+    ]
+  },
+  {
+    "key": "{name} does not include that choice.",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx",
+      "resources/js/tools/FormFillFields.jsx"
     ]
   },
   {
@@ -385,6 +410,13 @@
     ]
   },
   {
+    "key": "{name} is longer than this field allows.",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx",
+      "resources/js/tools/FormFillFields.jsx"
+    ]
+  },
+  {
     "key": "{name} launched in {year}. Everything on the site is free to use and is paid for by advertising.",
     "files": [
       "resources/js/pages/InfoPages.jsx",
@@ -401,7 +433,7 @@
   {
     "key": "{name}: {value}",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/FormFieldOverlay.jsx"
     ]
   },
   {
@@ -764,30 +796,6 @@
     ]
   },
   {
-    "key": "Add a checkbox",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
-    "key": "Add a dropdown field",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
-    "key": "Add a signature field",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
-    "key": "Add a text field",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
     "key": "Add at least 2 entries to spin.",
     "files": [
       "resources/js/tools/SpinWheel.jsx"
@@ -848,6 +856,12 @@
     ]
   },
   {
+    "key": "Add to page",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
+    ]
+  },
+  {
     "key": "Add today's date under the signature",
     "files": [
       "resources/js/tools/EditPdf.jsx"
@@ -855,12 +869,6 @@
   },
   {
     "key": "Add watermark",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
-    "key": "Adding the field failed: {message}",
     "files": [
       "resources/js/tools/EditPdf.jsx"
     ]
@@ -1066,6 +1074,12 @@
     ]
   },
   {
+    "key": "Auto",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
+    ]
+  },
+  {
     "key": "Automated Readability Index",
     "files": [
       "resources/js/tools/ReadabilityChecker.jsx"
@@ -1258,6 +1272,12 @@
     ]
   },
   {
+    "key": "Bullet",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
+    ]
+  },
+  {
     "key": "Burgers",
     "files": [
       "scripts/i18n-extract.mjs"
@@ -1367,33 +1387,39 @@
     ]
   },
   {
+    "key": "Check mark",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
+    ]
+  },
+  {
     "key": "Check text",
     "files": [
       "resources/js/tools/AiDetector.jsx"
     ]
   },
   {
-    "key": "Checkbox field - drag to move",
+    "key": "Checkbox",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
-    "key": "Checkbox field name",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
     ]
   },
   {
     "key": "Checkbox: {name}",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/FormFieldOverlay.jsx"
     ]
   },
   {
     "key": "Checked {done} of {total} links on {url}",
     "files": [
       "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
+    "key": "Checked by default",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
     ]
   },
   {
@@ -1442,7 +1468,7 @@
   {
     "key": "Choose a value",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/FormFieldOverlay.jsx"
     ]
   },
   {
@@ -1892,6 +1918,13 @@
     ]
   },
   {
+    "key": "Could not fill this form. The file may use a form feature this tool does not support.",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx",
+      "resources/js/tools/FormFillFields.jsx"
+    ]
+  },
+  {
     "key": "Could not load the fonts needed to build this PDF. Check your connection and try again.",
     "files": [
       "resources/js/lib/pdfFonts.js"
@@ -2038,6 +2071,12 @@
     "key": "Deep",
     "files": [
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Default value",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
     ]
   },
   {
@@ -2203,6 +2242,7 @@
   {
     "key": "Done",
     "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -2400,12 +2440,6 @@
     ]
   },
   {
-    "key": "Drag a field to move it, drag its corner to resize it, and edit its name in the box.",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
     "key": "Drag a page to reorder it, or use the move buttons.",
     "files": [
       "resources/js/tools/OrganizePdf.jsx"
@@ -2427,6 +2461,12 @@
     "key": "Drag on the page to cover content with white.",
     "files": [
       "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Drag on the page to draw the field, or click to place it. Use ⚙ to set its name, options and default value.",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
     ]
   },
   {
@@ -2550,21 +2590,9 @@
     ]
   },
   {
-    "key": "Dropdown field - drag to move",
+    "key": "Dropdown",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
-    "key": "Dropdown field name",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
-    "key": "Dropdown options, separated by commas",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
     ]
   },
   {
@@ -2595,6 +2623,12 @@
     "key": "e.g. CONFIDENTIAL, DRAFT, Your Company",
     "files": [
       "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Each button of the radio group \"{name}\" needs its own value.",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
     ]
   },
   {
@@ -3074,6 +3108,18 @@
     ]
   },
   {
+    "key": "Field name",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
+    ]
+  },
+  {
+    "key": "Field properties",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
+    ]
+  },
+  {
     "key": "File / Image",
     "files": [
       "resources/js/tools/Base64Tool.jsx"
@@ -3119,7 +3165,7 @@
   {
     "key": "Fill in {name}",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/FormFieldOverlay.jsx"
     ]
   },
   {
@@ -3129,19 +3175,13 @@
     ]
   },
   {
-    "key": "Fill in the fields below, then click Save PDF.",
+    "key": "Fill in the fields on the page, then click Save PDF.",
     "files": [
       "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
     "key": "Filled",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
-    "key": "Filling the form failed: {message}",
     "files": [
       "resources/js/tools/EditPdf.jsx"
     ]
@@ -3180,6 +3220,13 @@
     "key": "Flatten pages so the watermark can’t be removed",
     "files": [
       "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Flatten the form so the answers cannot be changed",
+    "files": [
+      "resources/js/tools/EditPdf.jsx",
+      "resources/js/tools/FormFillFields.jsx"
     ]
   },
   {
@@ -3227,6 +3274,7 @@
   {
     "key": "Font size",
     "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -3372,13 +3420,13 @@
   {
     "key": "Give every new field a name before saving.",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
     ]
   },
   {
-    "key": "Give the dropdown \"{name}\" at least two options, separated by commas.",
+    "key": "Give the dropdown \"{name}\" at least two options, one per line.",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
     ]
   },
   {
@@ -3422,6 +3470,12 @@
     "key": "Google's use of advertising cookies enables it and its partners to serve ads to you based on your visits to this Site and/or other sites on the Internet.",
     "files": [
       "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Group name",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
     ]
   },
   {
@@ -3564,6 +3618,12 @@
     "key": "Highlight colour",
     "files": [
       "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Hold Ctrl or Command to select more than one.",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
     ]
   },
   {
@@ -4253,6 +4313,12 @@
     ]
   },
   {
+    "key": "Marks for forms without fields",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
+    ]
+  },
+  {
     "key": "Max width (px, optional)",
     "files": [
       "resources/js/tools/ImageCompressor.jsx"
@@ -4472,6 +4538,12 @@
     ]
   },
   {
+    "key": "New form field",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
+    ]
+  },
+  {
     "key": "New free tools you can use right now.",
     "files": [
       "resources/views/emails/new-tools.blade.php"
@@ -4584,6 +4656,13 @@
     "key": "No matches found.",
     "files": [
       "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "No option selected",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx",
+      "resources/js/tools/FormFillFields.jsx"
     ]
   },
   {
@@ -4825,9 +4904,9 @@
     ]
   },
   {
-    "key": "Option 1, Option 2",
+    "key": "Options (one per line)",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
     ]
   },
   {
@@ -5447,6 +5526,12 @@
     ]
   },
   {
+    "key": "Properties of {name}",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
+    ]
+  },
+  {
     "key": "Protect PDF",
     "files": [
       "resources/js/tools/ProtectPdf.jsx"
@@ -5528,6 +5613,12 @@
     ]
   },
   {
+    "key": "Radio button",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
+    ]
+  },
+  {
     "key": "Ramen",
     "files": [
       "scripts/i18n-extract.mjs"
@@ -5573,7 +5664,8 @@
   {
     "key": "Reading form fields…",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/tools/EditPdf.jsx",
+      "resources/js/tools/FormFillFields.jsx"
     ]
   },
   {
@@ -5789,21 +5881,15 @@
     ]
   },
   {
-    "key": "Remove this checkbox field",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
     "key": "Remove this drawing",
     "files": [
       "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
-    "key": "Remove this dropdown field",
+    "key": "Remove this field",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
     ]
   },
   {
@@ -5825,13 +5911,13 @@
     ]
   },
   {
-    "key": "Remove this shape",
+    "key": "Remove this mark",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
     ]
   },
   {
-    "key": "Remove this signature field",
+    "key": "Remove this shape",
     "files": [
       "resources/js/tools/EditPdf.jsx"
     ]
@@ -5844,12 +5930,6 @@
   },
   {
     "key": "Remove this text",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
-    "key": "Remove this text field",
     "files": [
       "resources/js/tools/EditPdf.jsx"
     ]
@@ -5907,6 +5987,12 @@
     "key": "Report a bug or a tool that is not working as expected",
     "files": [
       "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Required",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
     ]
   },
   {
@@ -6127,12 +6213,6 @@
     ]
   },
   {
-    "key": "Save filled PDF",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
     "key": "Save new order",
     "files": [
       "resources/js/tools/OrganizePdf.jsx"
@@ -6140,12 +6220,6 @@
   },
   {
     "key": "Save PDF",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
-    "key": "Save PDF with new fields",
     "files": [
       "resources/js/tools/EditPdf.jsx"
     ]
@@ -6231,7 +6305,7 @@
   {
     "key": "Select {name}",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/FormFieldOverlay.jsx"
     ]
   },
   {
@@ -6274,6 +6348,12 @@
     "key": "Select page {number}",
     "files": [
       "resources/js/tools/RotatePdf.jsx"
+    ]
+  },
+  {
+    "key": "Selected by default",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
     ]
   },
   {
@@ -6382,6 +6462,12 @@
     ]
   },
   {
+    "key": "Show all fields as a list",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Show passwords",
     "files": [
       "resources/js/tools/ProtectPdf.jsx"
@@ -6419,15 +6505,9 @@
     ]
   },
   {
-    "key": "Signature field - drag to move",
+    "key": "Signature field",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
-    "key": "Signature field name",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
     ]
   },
   {
@@ -6886,21 +6966,21 @@
     ]
   },
   {
+    "key": "Text area",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
+    ]
+  },
+  {
     "key": "Text colour",
     "files": [
       "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
-    "key": "Text field - drag to move",
+    "key": "Text field",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
-    "key": "Text field name",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
     ]
   },
   {
@@ -7175,9 +7255,21 @@
     ]
   },
   {
+    "key": "This field cannot be filled in the browser.",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
+    ]
+  },
+  {
     "key": "This file could not be read. It may be damaged or not a real spreadsheet.",
     "files": [
       "resources/js/lib/excelToPdf.js"
+    ]
+  },
+  {
+    "key": "This form could not be flattened. Save it without flattening instead.",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
     ]
   },
   {
@@ -7232,6 +7324,25 @@
     "key": "This PDF could not be made smaller, so the original file is ready to download unchanged ({size}).",
     "files": [
       "resources/js/tools/CompressPdf.jsx"
+    ]
+  },
+  {
+    "key": "This PDF could not be opened.",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
+    ]
+  },
+  {
+    "key": "This PDF has no fillable form fields. A scanned form is only a picture, so use Edit text or Add text to write on it.",
+    "files": [
+      "resources/js/tools/FormFillFields.jsx"
+    ]
+  },
+  {
+    "key": "This PDF is password-protected. Unlock it first, then fill the form.",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx",
+      "resources/js/tools/FormFillFields.jsx"
     ]
   },
   {
@@ -7536,7 +7647,7 @@
   {
     "key": "Two fields can’t share the name \"{name}\". Give each field its own name.",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
     ]
   },
   {
@@ -7724,6 +7835,12 @@
     "key": "Validate",
     "files": [
       "resources/js/tools/JsonFormatter.jsx"
+    ]
+  },
+  {
+    "key": "Value of this button",
+    "files": [
+      "resources/js/components/pdf-editor/FormFieldCreator.jsx"
     ]
   },
   {

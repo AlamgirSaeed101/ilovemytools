@@ -875,68 +875,126 @@ test.describe('PDF tools', () => {
         expect(await pdfPageRotations(bytes)).toEqual([0, 0, 90]);
     });
 
-    test('edit PDF: Fill form fills a text field, a checkbox and a dropdown, and saves their values', async ({ page }) => {
+    test('edit PDF: Fill form fills fields on the page and saves them in one PDF with an added text element', async ({ page }) => {
         await openTool(page, 'edit-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'application.pdf', mimeType: 'application/pdf', buffer: await makePdfWithFormFields() });
 
         await page.getByRole('tab', { name: 'Fill form' }).click();
-        await expect(page.getByText('Fill in the fields below, then click Save PDF.')).toBeVisible();
+        await expect(page.getByText('Fill in the fields on the page, then click Save PDF.')).toBeVisible();
 
-        await page.getByLabel('Fill in full_name').fill('Jane Doe');
+        // The inputs sit exactly over the PDF's own fields.
+        const nameInput = page.getByLabel('Fill in full_name');
+        await expect(nameInput).toBeVisible();
+        await nameInput.fill('Jane Doe');
         await page.getByLabel('Checkbox: subscribe').check();
         await page.getByLabel('Select country').selectOption('DE');
 
-        await page.getByRole('button', { name: 'Save filled PDF' }).click();
+        // Another edit in the same session ends up in the same file.
+        await page.getByRole('tab', { name: 'Add text' }).click();
+        await page.getByLabel('Text to add').fill('Approved');
+        await page.getByRole('button', { name: 'Add text to page' }).click();
+
+        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
-        expect(file.suggestedFilename()).toBe('application-filled.pdf');
-        const saved = await PDFDocument.load(await readDownload(file));
-        const form = saved.getForm();
+        expect(file.suggestedFilename()).toBe('application-edited.pdf');
+        const bytes = await readDownload(file);
+        const form = (await PDFDocument.load(bytes)).getForm();
         expect(form.getTextField('full_name').getText()).toBe('Jane Doe');
         expect(form.getCheckBox('subscribe').isChecked()).toBe(true);
         expect(form.getDropdown('country').getSelected()).toEqual(['DE']);
+        expect(await extractPdfText(page, bytes)).toContain('Approved');
     });
 
-    test('edit PDF: Fill form - Add fields creates a new, named text field and checkbox in the saved PDF', async ({ page }) => {
+    test('edit PDF: Fill form can flatten the answers into the page', async ({ page }) => {
+        await openTool(page, 'edit-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'application.pdf', mimeType: 'application/pdf', buffer: await makePdfWithFormFields() });
+        await page.getByRole('tab', { name: 'Fill form' }).click();
+        await page.getByLabel('Fill in full_name').fill('Flat Answer');
+        await page.getByLabel('Flatten the form so the answers cannot be changed').check();
+
+        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        const saved = await PDFDocument.load(await readDownload(file));
+        expect(saved.getForm().getFields()).toHaveLength(0);
+    });
+
+    test('edit PDF: Fill form - Add fields draws a text field, a checkbox, a radio group and a dropdown that can be filled', async ({ page }) => {
         await openTool(page, 'edit-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'blank.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
 
         await page.getByRole('tab', { name: 'Fill form' }).click();
         await expect(page.getByText('No fillable fields were found in this PDF.')).toBeVisible();
-
         await page.getByRole('tab', { name: 'Add fields' }).click();
-        await page.getByRole('button', { name: 'Add a text field' }).click();
-        await page.getByRole('button', { name: 'Add a checkbox' }).click();
 
-        const names = page.locator('.pdf-editor__fieldname');
-        await expect(names).toHaveCount(2);
-        await names.nth(0).fill('email');
-        await names.nth(1).fill('subscribe');
+        const stage = page.locator('.pdf-editor__stage');
+        await expect.poll(async () => (await page.locator('.pdf-editor__canvas').boundingBox())?.height ?? 0).toBeGreaterThan(100);
+        // Picking a kind can scroll the toolbar into view, so the page's position is read after each
+        // pick, with its top scrolled clear of the sticky site header.
+        const stageBox = async () => {
+            await stage.evaluate((el) => {
+                el.scrollIntoView({ block: 'start' });
+                window.scrollBy(0, -150);
+            });
+            return stage.boundingBox();
+        };
+        const props = page.getByRole('dialog');
+        let box;
 
-        await page.getByRole('button', { name: 'Save PDF with new fields' }).click();
+        // A text field, drawn by dragging; its properties open straight away.
+        await page.getByRole('button', { name: 'Text field', exact: true }).click();
+        box = await stageBox();
+        await page.mouse.move(box.x + 40, box.y + 40);
+        await page.mouse.down();
+        await page.mouse.move(box.x + 220, box.y + 64, { steps: 5 });
+        await page.mouse.up();
+        await props.getByLabel('Field name').fill('email');
+        await props.getByLabel('Required').check();
+        await props.getByRole('button', { name: 'Done' }).click();
+
+        // A checkbox, placed with a click.
+        await page.getByRole('button', { name: 'Checkbox', exact: true }).click();
+        box = await stageBox();
+        await page.mouse.click(box.x + 60, box.y + 110);
+        await props.getByLabel('Field name').fill('subscribe');
+        await props.getByRole('button', { name: 'Done' }).click();
+
+        // Two radio buttons of one group.
+        await page.getByRole('button', { name: 'Radio button', exact: true }).click();
+        box = await stageBox();
+        await page.mouse.click(box.x + 60, box.y + 160);
+        await props.getByLabel('Group name').fill('plan');
+        await props.getByLabel('Value of this button').fill('free');
+        await props.getByRole('button', { name: 'Done' }).click();
+        await page.mouse.click(box.x + 120, box.y + 160);
+        await props.getByLabel('Value of this button').fill('pro');
+        await props.getByRole('button', { name: 'Done' }).click();
+
+        // A dropdown with its options.
+        await page.getByRole('button', { name: 'Dropdown', exact: true }).click();
+        box = await stageBox();
+        await page.mouse.click(box.x + 120, box.y + 230);
+        await props.getByLabel('Field name').fill('country');
+        await props.getByLabel('Options (one per line)').fill('UK\nUS\nDE');
+        await props.getByLabel('Default value').selectOption('US');
+        await props.getByRole('button', { name: 'Done' }).click();
+
+        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
-        expect(file.suggestedFilename()).toBe('blank-form.pdf');
+        expect(file.suggestedFilename()).toBe('blank-edited.pdf');
         const saved = await PDFDocument.load(await readDownload(file));
         const form = saved.getForm();
-        expect(form.getTextField('email')).toBeTruthy();
+        expect(form.getTextField('email').isRequired()).toBe(true);
         expect(form.getCheckBox('subscribe').isChecked()).toBe(false);
-    });
+        expect(form.getRadioGroup('plan').getOptions()).toEqual(['free', 'pro']);
+        expect(form.getDropdown('country').getOptions()).toEqual(['UK', 'US', 'DE']);
+        expect(form.getDropdown('country').getSelected()).toEqual(['US']);
 
-    test('edit PDF: Fill form - Add fields creates a new dropdown field with its own options', async ({ page }) => {
-        await openTool(page, 'edit-pdf');
-        await page.getByTestId('file-input').setInputFiles({ name: 'blank.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
-
-        await page.getByRole('tab', { name: 'Fill form' }).click();
-        await page.getByRole('tab', { name: 'Add fields' }).click();
-        await page.getByRole('button', { name: 'Add a dropdown field' }).click();
-
-        await page.locator('.pdf-editor__fieldname').fill('country');
-        await page.locator('.pdf-editor__fieldoptions').fill('UK, US, DE');
-
-        await page.getByRole('button', { name: 'Save PDF with new fields' }).click();
-        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
-        expect(file.suggestedFilename()).toBe('blank-form.pdf');
-        const saved = await PDFDocument.load(await readDownload(file));
-        expect(saved.getForm().getDropdown('country').getOptions()).toEqual(['UK', 'US', 'DE']);
+        // The new fields can be filled: fill one and read it back.
+        form.getTextField('email').setText('a@b.c');
+        form.getRadioGroup('plan').select('pro');
+        const again = (await PDFDocument.load(await saved.save())).getForm();
+        expect(again.getTextField('email').getText()).toBe('a@b.c');
+        expect(again.getRadioGroup('plan').getSelected()).toBe('pro');
     });
 
     test('edit PDF: Fill form - Add fields creates a new, named signature field in the saved PDF', async ({ page }) => {
@@ -945,12 +1003,13 @@ test.describe('PDF tools', () => {
 
         await page.getByRole('tab', { name: 'Fill form' }).click();
         await page.getByRole('tab', { name: 'Add fields' }).click();
-        await page.getByRole('button', { name: 'Add a signature field' }).click();
-        await page.locator('.pdf-editor__fieldname').fill('sign_here');
+        await page.getByRole('button', { name: 'Signature field', exact: true }).click();
+        await page.getByRole('button', { name: 'Add to page' }).click();
+        await page.getByRole('dialog').getByLabel('Field name').fill('sign_here');
+        await page.getByRole('dialog').getByRole('button', { name: 'Done' }).click();
 
-        await page.getByRole('button', { name: 'Save PDF with new fields' }).click();
+        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
-        expect(file.suggestedFilename()).toBe('contract-form.pdf');
         const saved = await PDFDocument.load(await readDownload(file));
         const signature = saved.getForm().getSignature('sign_here');
         expect(signature.acroField.FT().toString()).toBe('/Sig');
@@ -963,12 +1022,30 @@ test.describe('PDF tools', () => {
 
         await page.getByRole('tab', { name: 'Fill form' }).click();
         await page.getByRole('tab', { name: 'Add fields' }).click();
-        await page.getByRole('button', { name: 'Add a dropdown field' }).click();
-        await page.locator('.pdf-editor__fieldname').fill('country');
-        await page.locator('.pdf-editor__fieldoptions').fill('Only one');
+        await page.getByRole('button', { name: 'Dropdown', exact: true }).click();
+        await page.getByRole('button', { name: 'Add to page' }).click();
+        await page.getByRole('dialog').getByLabel('Field name').fill('country');
+        await page.getByRole('dialog').getByLabel('Options (one per line)').fill('Only one');
+        await page.getByRole('dialog').getByRole('button', { name: 'Done' }).click();
 
-        await page.getByRole('button', { name: 'Save PDF with new fields' }).click();
-        await expect(page.getByText('Give the dropdown "country" at least two options, separated by commas.')).toBeVisible();
+        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        await expect(page.getByText('Give the dropdown "country" at least two options, one per line.')).toBeVisible();
+    });
+
+    test('edit PDF: Fill form - a check mark on a PDF without fields is drawn, not added as a field', async ({ page }) => {
+        await openTool(page, 'edit-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'printed.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
+
+        await page.getByRole('tab', { name: 'Fill form' }).click();
+        await page.getByRole('tab', { name: 'Add fields' }).click();
+        await page.getByRole('button', { name: 'Check mark', exact: true }).click();
+        await page.getByRole('button', { name: 'Add to page' }).click();
+        await expect(page.locator('.pdf-editor__overlay--stamp')).toHaveCount(1);
+
+        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        const saved = await PDFDocument.load(await readDownload(file));
+        expect(saved.getForm().getFields()).toHaveLength(0);
     });
 
     test('edit PDF: dragging an element\'s rotate handle spins it in place and the saved PDF still reads its text', async ({ page }) => {
