@@ -1481,6 +1481,91 @@ test.describe('PDF tools', () => {
         await expect(page.getByRole('button', { name: 'Edit text: Doc page 1' })).toBeVisible();
     });
 
+    test('watermark in Edit PDF saves every other edit too, and never changes the open document', async ({ page }) => {
+        await openTool(page, 'edit-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'notes.pdf', mimeType: 'application/pdf', buffer: await makePdf(3) });
+        const panel = page.getByRole('region', { name: 'Pages' });
+        const card = (n) => panel.getByRole('group', { name: `Page ${n}`, exact: true });
+
+        await pickTool(page, 'Add new text');
+        await page.getByLabel('Text to add').fill('ADDEDTEXT');
+        await page.getByRole('button', { name: 'Add text to page' }).click();
+        await card(2).getByRole('button', { name: 'Delete page 2' }).click();
+        await expect(panel.locator('.page-sidebar__item')).toHaveCount(2);
+
+        const save = async () => {
+            await page.getByRole('button', { name: 'Apply changes' }).click();
+            const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+            const bytes = await readDownload(file);
+            return { count: await pdfPageCount(bytes), texts: await pdfPageTexts(page, bytes) };
+        };
+
+        await pickTool(page, 'Watermark');
+        await page.getByLabel('Watermark text').fill('AAAA');
+        const first = await save();
+        expect(first.count).toBe(2);
+        expect(first.texts[0]).toContain('ADDEDTEXT');
+        expect(first.texts[0]).toContain('AAAA');
+        expect(first.texts[1]).toContain('Doc page 3');
+        expect(first.texts[1]).toContain('AAAA');
+
+        // Applying again with new text starts from the original, not from the last watermarked file.
+        await page.getByLabel('Watermark text').fill('BBBB');
+        const second = await save();
+        expect(second.texts.join(' ')).toContain('BBBB');
+        expect(second.texts.join(' ')).not.toContain('AAAA');
+
+        // A normal save afterwards has no watermark in it.
+        await pickTool(page, 'Select');
+        const plain = await save();
+        expect(plain.count).toBe(2);
+        expect(plain.texts[0]).toContain('ADDEDTEXT');
+        expect(plain.texts.join(' ')).not.toMatch(/AAAA|BBBB/);
+    });
+
+    test('edit PDF: the page menu stays on screen, a new note takes typing straight away, and placed elements select from the keyboard', async ({ page }) => {
+        await page.setViewportSize({ width: 1280, height: 720 });
+        await openTool(page, 'edit-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'notes.pdf', mimeType: 'application/pdf', buffer: await makePdf(2) });
+        const panel = page.getByRole('region', { name: 'Pages' });
+        const card = (n) => panel.getByRole('group', { name: `Page ${n}`, exact: true });
+        await expect(panel.locator('.page-sidebar__item')).toHaveCount(2);
+
+        // At this window size page 1's menu button sits low enough that a menu opening downwards ran off the screen.
+        const more = card(1).getByRole('button', { name: 'More actions for page 1' });
+        await more.click();
+        const menu = page.locator('.page-sidebar__menu');
+        await expect(menu).toBeVisible();
+        await expect.poll(async () => { const m = await menu.boundingBox(); return m.y + m.height <= 720; }).toBe(true);
+        await card(1).getByRole('button', { name: 'Move down' }).click();
+        await expect(card(2)).toBeVisible();
+
+        await page.getByRole('heading', { level: 1 }).scrollIntoViewIfNeeded();
+        await pickTool(page, 'Sticky note');
+        await page.locator('.pdf-editor__stage').click({ position: { x: 120, y: 120 } });
+        await page.keyboard.type('Typed at once');
+        await expect(page.getByLabel('Note text')).toHaveValue('Typed at once');
+        await expect(page.getByRole('radio', { name: 'Yellow' })).toBeVisible();
+        await page.getByRole('button', { name: 'Done', exact: true }).click();
+
+        // A whiteout placed with the mouse, then picked with Tab-style focus and moved with the arrows.
+        await pickTool(page, 'Whiteout');
+        const stage = page.locator('.pdf-editor__stage');
+        const s = await stage.boundingBox();
+        await page.mouse.move(s.x + 200, s.y + 200);
+        await page.mouse.down();
+        await page.mouse.move(s.x + 300, s.y + 260, { steps: 4 });
+        await page.mouse.up();
+        await page.keyboard.press('Escape');
+        await expect(page.locator('.pdf-selection')).toHaveCount(0);
+        const whiteout = page.getByRole('button', { name: 'Whiteout - drag to move' });
+        await whiteout.focus();
+        await expect(whiteout).toHaveAttribute('aria-pressed', 'true');
+        const before = await whiteout.boundingBox();
+        await page.keyboard.press('Shift+ArrowRight');
+        await expect.poll(async () => (await whiteout.boundingBox()).x).toBeGreaterThan(before.x + 5);
+    });
+
     test('watermark-pdf opens Edit PDF with the Watermark tab preselected, and the full editor stays reachable', async ({ page }) => {
         await openTool(page, 'watermark-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'report.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });

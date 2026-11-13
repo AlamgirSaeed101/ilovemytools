@@ -4112,7 +4112,7 @@ return [
             [
                 'heading' => 'When a detector is genuinely useful',
                 'paragraphs' => [
-                    'None of this means a detector is worthless - it means it is best used as a writing aid rather than a verdict machine. Running your own draft through one before you publish or submit it is a quick way to spot stock phrases and overly uniform sentences that read as mechanical regardless of who or what produced them, and worth fixing either way. The same signals that make AI text easy to flag - repetition, flatness, generic phrasing - are the same things that make any piece of writing less engaging to read, so tightening them up improves the text on its own merits, not just its score.',
+                    'None of this means a detector is worthless - it means it is best used as a writing aid rather than a verdict machine. Running your own draft through one before you publish or submit it is a quick way to spot stock phrases and overly uniform sentences that read as mechanical regardless of who or what produced them, and worth fixing either way; the [Readability Checker](/readability-checker) points out the long, hard-to-follow sentences to break up. The same signals that make AI text easy to flag - repetition, flatness, generic phrasing - are the same things that make any piece of writing less engaging to read, so tightening them up improves the text on its own merits, not just its score.',
                 ],
             ],
         ],

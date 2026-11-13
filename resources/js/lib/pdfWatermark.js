@@ -26,12 +26,13 @@ export function moveNewContentToBack(page, before) {
 }
 
 /**
- * Draws a text or image watermark onto every page in `pageIndexes` and returns the finished PDF
- * as a Blob. `content`: { kind: 'text', text, size, bold, color } | { kind: 'image', bytes, width, height }
- * (an image's `width`/`height` are already in PDF points). `layer` 'under' puts the watermark
- * behind the page's content (a background watermark); 'over' stamps it on top.
+ * Draws a text or image watermark onto every page in `pageIndexes` of `doc` (changing `doc`; pass
+ * a copy when the original must stay as it is). `content`: { kind: 'text', text, size, bold, color }
+ * | { kind: 'image', bytes, width, height } (an image's `width`/`height` are already in PDF points).
+ * `layer` 'under' puts the watermark behind the page's content (a background watermark); 'over'
+ * stamps it on top.
  */
-export async function buildWatermarkedPdf(doc, { pageIndexes, position, opacity, rotation, margin = 36, layer = 'over', content }) {
+export async function drawWatermark(doc, { pageIndexes, position, opacity, rotation, margin = 36, layer = 'over', content }) {
     let font = null;
     let image = null;
     for (const pageIndex of pageIndexes) {
@@ -61,6 +62,11 @@ export async function buildWatermarkedPdf(doc, { pageIndexes, position, opacity,
         }
         if (before) moveNewContentToBack(page, before);
     }
+}
+
+/** drawWatermark() on `doc`, then the finished PDF as a Blob. */
+export async function buildWatermarkedPdf(doc, options) {
+    await drawWatermark(doc, options);
     const bytes = await doc.save();
     return new Blob([bytes], { type: 'application/pdf' });
 }

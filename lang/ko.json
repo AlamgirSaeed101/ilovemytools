@@ -1495,5 +1495,9 @@
     "Zoom in": "확대",
     "Zoom in (+)": "확대 (+)",
     "Zoom out": "축소",
-    "Zoom out (-)": "축소 (-)"
+    "Zoom out (-)": "축소 (-)",
+    "Yellow": "노랑",
+    "Orange": "주황",
+    "Green": "초록",
+    "Pink": "분홍"
 }

@@ -131,6 +131,37 @@ describe('remapElements', () => {
         expect(remapElements(result, dup, later, { nextId: () => id++ })).toHaveLength(4);
     });
 
+    it('keeps a link to a page pointing at that page when pages move, are deleted or duplicated', () => {
+        const map = initialPageMap(3);
+        const link = { id: 5, page: 0, type: 'link', pageTarget: 2 };
+        // Page 3 moves to the front: the link (still on page 1, now 2nd) goes to position 0.
+        expect(remapElements([link], map, movePage(map, 2, 0))).toEqual([{ ...link, page: 1, pageTarget: 0 }]);
+        // Its target is deleted: it points at the nearest page that is left.
+        expect(remapElements([link], map, deletePage(map, 2))[0].pageTarget).toBe(1);
+        // A link without a page target is left alone.
+        const web = { id: 6, page: 0, type: 'link', url: 'https://example.com', pageTarget: null };
+        expect(remapElements([web], map, movePage(map, 2, 0))).toEqual([{ ...web, page: 1 }]);
+        // The copy on a duplicated page points at the same page.
+        let id = 50;
+        const out = remapElements([link], map, duplicatePage(map, 0), { nextId: () => id++ });
+        expect(out.map((el) => [el.page, el.pageTarget])).toEqual([[0, 3], [1, 3]]);
+    });
+
+    it('gives new form fields copied to a duplicated page names of their own', () => {
+        const map = initialPageMap(2);
+        const fields = [
+            { id: 1, page: 0, type: 'formfield', kind: 'text', name: 'Text field 1' },
+            { id: 2, page: 0, type: 'formfield', kind: 'radio', name: 'Group', exportValue: 'A' },
+            { id: 3, page: 0, type: 'formfield', kind: 'radio', name: 'Group', exportValue: 'B' },
+            { id: 4, page: 1, type: 'formfield', kind: 'text', name: 'Text field 1 copy' },
+            { id: 5, page: 0, type: 'formfield', kind: 'checkmark' },
+        ];
+        let id = 100;
+        const copies = remapElements(fields, map, duplicatePage(map, 0), { nextId: () => id++ }).filter((el) => el.id >= 100);
+        expect(copies.map((el) => el.name)).toEqual(['Text field 1 copy 2', 'Group copy', 'Group copy', undefined]);
+        expect(copies.every((el) => el.page === 1)).toBe(true);
+    });
+
     it('drops elements whose page is out of range', () => {
         expect(remapElements([{ id: 9, page: 7 }], initialPageMap(2), initialPageMap(2))).toEqual([]);
     });
@@ -212,6 +243,55 @@ describe('applyPageMap', () => {
         // Flattening needs every widget to be on a page.
         reloaded.getForm().flatten();
         expect(reloaded.getPageCount()).toBe(2);
+    });
+
+    it('makes the form fields of a duplicated page real fields of their own', async () => {
+        const doc = await PDFDocument.create();
+        const form = doc.getForm();
+        const page = doc.addPage([300, 300]);
+        form.createTextField('name').addToPage(page, { x: 20, y: 20, width: 120, height: 24 });
+        form.getTextField('name').setText('Ada');
+        const group = form.createRadioGroup('choice');
+        group.addOptionToPage('yes', page, { x: 20, y: 60, width: 14, height: 14 });
+        group.addOptionToPage('no', page, { x: 50, y: 60, width: 14, height: 14 });
+        const out = await applyPageMap(doc, duplicatePage(initialPageMap(1), 0));
+        const reloaded = await PDFDocument.load(await out.save());
+        const fields = reloaded.getForm();
+        expect(fields.getFields().map((f) => f.getName()).sort()).toEqual(['choice', 'choice copy', 'name', 'name copy']);
+        expect(fields.getTextField('name copy').getText()).toBe('Ada');
+        expect(fields.getRadioGroup('choice copy').getOptions().sort()).toEqual(['no', 'yes']);
+        // The copy is filled on its own, and flattening reaches it.
+        fields.getTextField('name copy').setText('Grace');
+        expect(fields.getTextField('name').getText()).toBe('Ada');
+        fields.flatten();
+        expect(fields.getFields()).toHaveLength(0);
+        // Every widget, the copies' too, was flattened away (pdf-lib leaves the emptied /Annots entries behind).
+        const widgets = reloaded.getPages().flatMap((p) => (p.node.Annots()?.asArray() ?? []).map((ref) => reloaded.context.lookup(ref)).filter(Boolean));
+        expect(widgets).toEqual([]);
+    });
+
+    it('leaves nothing of a deleted page inside the saved file', async () => {
+        const doc = await PDFDocument.create();
+        const font = await doc.embedFont(StandardFonts.Helvetica);
+        const keep = doc.addPage([300, 300]);
+        keep.drawText('KEEPME', { x: 10, y: 10, size: 12, font });
+        const secret = doc.addPage([300, 300]);
+        const { PDFString } = await import('pdf-lib');
+        // A marker only the deleted page holds (its /Contents stream is compressed, so check a plain object too).
+        secret.node.set(PDFName.of('SecretMarker'), PDFString.of('TOPSECRET'));
+        secret.drawText('TOPSECRET', { x: 10, y: 10, size: 12, font });
+        // A link on the kept page pointing at the deleted page must not keep it alive.
+        const dest = doc.context.obj([secret.ref, PDFName.of('Fit')]);
+        keep.node.addAnnot(doc.context.register(doc.context.obj({ Type: 'Annot', Subtype: 'Link', Rect: [0, 0, 10, 10], Dest: dest })));
+        const before = await doc.save({ useObjectStreams: false });
+        expect(Buffer.from(before).toString('latin1')).toContain('TOPSECRET');
+
+        const out = await applyPageMap(doc, deletePage(initialPageMap(2), 1));
+        const bytes = await out.save({ useObjectStreams: false });
+        expect(Buffer.from(bytes).toString('latin1')).not.toContain('TOPSECRET');
+        expect(bytes.length).toBeLessThan(before.length);
+        const reloaded = await PDFDocument.load(bytes);
+        expect(reloaded.getPageCount()).toBe(1);
     });
 
     it('fails clearly when an inserted PDF is missing', async () => {

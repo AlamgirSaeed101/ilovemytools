@@ -3,6 +3,7 @@ import { t } from '../../lib/i18n.js';
 
 export const NOTE_SIZE = 24;
 export const NOTE_COLORS = ['#facc15', '#fb923c', '#4ade80', '#60a5fa', '#f472b6'];
+const COLOR_NAMES = { '#facc15': () => t('Yellow'), '#fb923c': () => t('Orange'), '#4ade80': () => t('Green'), '#60a5fa': () => t('Blue'), '#f472b6': () => t('Pink') };
 const ICONS = [
     { id: 'Comment', label: () => t('Comment') },
     { id: 'Note', label: () => t('Note') },
@@ -51,8 +52,15 @@ export default function StickyNote({ el, onDragStart, onChange, onRemove }) {
     const textRef = useRef(null);
     const buttonRef = useRef(null);
 
+    // Focus the text box once the note opens (a new note is ready to type into straight away). The
+    // next frame as well, in case the click that placed the note moved focus after this render.
     useEffect(() => {
-        if (open) textRef.current?.focus();
+        if (!open) return undefined;
+        textRef.current?.focus();
+        const frame = requestAnimationFrame(() => {
+            if (textRef.current && !textRef.current.parentElement?.contains(document.activeElement)) textRef.current.focus();
+        });
+        return () => cancelAnimationFrame(frame);
     }, [open]);
 
     function close() {
@@ -138,7 +146,8 @@ export default function StickyNote({ el, onDragStart, onChange, onRemove }) {
                                 type="button"
                                 role="radio"
                                 aria-checked={el.color === c}
-                                aria-label={c}
+                                aria-label={COLOR_NAMES[c]?.() ?? c}
+                                title={COLOR_NAMES[c]?.() ?? c}
                                 onClick={() => onChange({ color: c })}
                                 className="rounded-full"
                                 style={{ width: 20, height: 20, padding: 0, background: c, border: el.color === c ? '2px solid var(--text)' : '1px solid var(--border)' }}

@@ -4,9 +4,10 @@ import { pdfRectToCanvasRect } from '../../lib/pdfOverlay.js';
  * A highlight, underline or strikethrough snapped to the text it was dragged across: one box per
  * line (its quads), drawn relative to the element's box so dragging the element moves them all.
  * `el`: { type: 'highlight' | 'markup', kind, color, quads, quadsBox, x, y, width, height };
- * `scale` and `pageHeight` turn its PDF-space quads into canvas pixels.
+ * `scale` and `pageHeight` turn its PDF-space quads into canvas pixels. `keyboard`: focus/key
+ * handlers that select it from the keyboard; `selected`: whether it is the selected element.
  */
-export default function TextMarkup({ el, scale, pageHeight, label, removeLabel, onDragStart, onRemove }) {
+export default function TextMarkup({ el, scale, pageHeight, label, removeLabel, onDragStart, onRemove, keyboard, selected }) {
     const origin = pdfRectToCanvasRect(el.quadsBox, scale, pageHeight);
     const kind = el.type === 'highlight' ? 'highlight' : el.kind;
     return (
@@ -14,8 +15,10 @@ export default function TextMarkup({ el, scale, pageHeight, label, removeLabel, 
             className="pdf-editor__overlay"
             style={{ left: el.x, top: el.y, width: el.width, height: el.height, borderColor: 'transparent' }}
             onPointerDown={onDragStart}
+            {...keyboard}
             role="button"
             tabIndex={0}
+            aria-pressed={selected}
             aria-label={label}
         >
             {el.quads.map((q, i) => {

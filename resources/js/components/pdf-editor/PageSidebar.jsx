@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { t, tn } from '../../lib/i18n.js';
 import { deletePage, duplicatePage, insertBlank, movePage, rotatePage } from '../../lib/pdfPageOps.js';
 import { isSideways } from '../../lib/pdfPageView.js';
@@ -44,11 +44,12 @@ function IconButton({ icon, label, onClick, disabled, danger }) {
 /**
  * A small pop-up list of actions behind an icon button; closes on a choice, a click outside,
  * Escape or scrolling. It is placed against the window (position: fixed) so the scrolling page
- * list never clips it.
+ * list never clips it, below its button, or above it when there isn't room below.
  */
 function Menu({ icon, label, title, children }) {
     const [open, setOpen] = useState(null);
     const ref = useRef(null);
+    const menuRef = useRef(null);
 
     function toggle(e) {
         if (open) {
@@ -57,8 +58,28 @@ function Menu({ icon, label, title, children }) {
         }
         const r = e.currentTarget.getBoundingClientRect();
         const width = 224;
-        setOpen({ top: r.bottom + 4, left: Math.max(8, Math.min(r.left, window.innerWidth - width - 8)) });
+        setOpen({ top: r.bottom + 4, left: Math.max(8, Math.min(r.left, window.innerWidth - width - 8)), above: r.top - 4, maxHeight: null });
     }
+
+    // Once the menu's height is known: flip it above the button when it would run off the bottom,
+    // and if it fits neither way, keep it on screen and let it scroll.
+    useLayoutEffect(() => {
+        const menu = menuRef.current;
+        if (!open || open.placed || !menu) return;
+        const margin = 8;
+        const height = menu.offsetHeight;
+        const room = window.innerHeight - margin;
+        let { top } = open;
+        let maxHeight = null;
+        if (top + height > room) {
+            if (open.above - height >= margin) top = open.above - height;
+            else {
+                top = Math.max(margin, Math.min(top, room - height));
+                if (top + height > room) maxHeight = room - top;
+            }
+        }
+        setOpen({ ...open, top, maxHeight, placed: true });
+    }, [open]);
 
     useEffect(() => {
         if (!open) return undefined;
@@ -89,7 +110,12 @@ function Menu({ icon, label, title, children }) {
                 <Glyph name={icon} />
             </button>
             {open && (
-                <div className="page-sidebar__menu" style={{ top: open.top, left: open.left }} onClick={() => setOpen(null)}>
+                <div
+                    ref={menuRef}
+                    className="page-sidebar__menu"
+                    style={{ top: open.top, left: open.left, visibility: open.placed ? undefined : 'hidden', ...(open.maxHeight ? { maxHeight: open.maxHeight, overflowY: 'auto' } : null) }}
+                    onClick={() => setOpen(null)}
+                >
                     {children}
                 </div>
             )}

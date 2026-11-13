@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Dropzone from '../components/Dropzone.jsx';
 import { Notice, Tabs } from '../components/ui.jsx';
 import { getLocale, t, tn } from '../lib/i18n.js';
-import { isPdf } from '../lib/pdf.js';
+import { addRotation, isPdf } from '../lib/pdf.js';
 import { usePageThumbnails, usePdfDoc } from '../lib/pdfPages.js';
 import { canvasRectToPdfRect, clampRect, computeDisplayScale, pdfRectToCanvasRect, rectFromPoints } from '../lib/pdfOverlay.js';
 import { loadRenderDoc, renderPageToCanvas } from '../lib/pdfRender.js';
@@ -165,7 +165,8 @@ export default function EditPdf({ initialMode } = {}) {
     const [formSubMode, setFormSubMode] = useState('fill');
     const [formKind, setFormKind] = useState('text');
     const [formFlatten, setFormFlatten] = useState(false);
-    const [formChanged, setFormChanged] = useState(false);
+    // The values the PDF's own fields had when it was opened, to tell which ones the user changed.
+    const [formInitial, setFormInitial] = useState({});
     const [pageWidgets, setPageWidgets] = useState([]);
     const [error, setError] = useState('');
     const [working, setWorking] = useState(false);
@@ -180,6 +181,12 @@ export default function EditPdf({ initialMode } = {}) {
     const { status, doc, renderDoc, pageCount } = usePdfDoc(file, { keepFonts: true });
     const thumbs = usePageThumbnails(renderDoc, pageCount);
     const [continuous, setContinuous] = useState(false);
+    // Form values that differ from what the PDF came with (a value restored from a saved session
+    // counts until the fields are read). Undoing every change brings this back to false.
+    const formDirty = useMemo(
+        () => Object.entries(formValues).some(([name, value]) => !(name in formInitial) || JSON.stringify(formInitial[name]) !== JSON.stringify(value)),
+        [formValues, formInitial]
+    );
     const pages = usePageMap({
         doc,
         renderDoc,
@@ -222,34 +229,40 @@ export default function EditPdf({ initialMode } = {}) {
     // Auto-saves to IndexedDB as the user works, and clears the save once there is nothing left to lose.
     useEffect(() => {
         if (!file) return;
-        if (!hasUnsavedChanges(elements, pages.changed)) {
+        if (!hasUnsavedChanges(elements, pages.changed || formDirty)) {
             clearSession().catch(() => {});
             return;
         }
         autosaveTimerRef.current = setTimeout(() => {
             if (!fileBytesRef.current) return;
-            saveSession({ fileName: file.name, fileType: file.type, fileBytes: fileBytesRef.current, elements, currentPage, mode, ...pages.sessionFields() }).catch(() => {});
+            saveSession({ fileName: file.name, fileType: file.type, fileBytes: fileBytesRef.current, elements, formValues, currentPage, mode, ...pages.sessionFields() }).catch(() => {});
         }, 800);
         return () => clearTimeout(autosaveTimerRef.current);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [file, elements, currentPage, mode, pages.map, pages.changed]);
+    }, [file, elements, formValues, formDirty, currentPage, mode, pages.map, pages.changed]);
 
     // Warns before the tab closes or navigates away while there is unsaved work.
     useEffect(() => {
-        if (!hasUnsavedChanges(elements, pages.changed)) return;
+        if (!hasUnsavedChanges(elements, pages.changed || formDirty)) return;
         function onBeforeUnload(e) {
             e.preventDefault();
             e.returnValue = '';
         }
         window.addEventListener('beforeunload', onBeforeUnload);
         return () => window.removeEventListener('beforeunload', onBeforeUnload);
-    }, [elements, pages.changed]);
+    }, [elements, pages.changed, formDirty]);
 
     function resumeSession() {
         if (!savedSession) return;
         const restored = fileFromSession(savedSession);
         nextId.current = 1 + Math.max(0, ...savedSession.elements.map((el) => el.id));
-        history.reset({ ...EMPTY_HISTORY, elements: savedSession.elements, pageMap: Array.isArray(savedSession.pageMap) ? savedSession.pageMap : null });
+        history.reset({
+            ...EMPTY_HISTORY,
+            elements: savedSession.elements,
+            pageMap: Array.isArray(savedSession.pageMap) ? savedSession.pageMap : null,
+            formValues: savedSession.formValues && typeof savedSession.formValues === 'object' ? savedSession.formValues : {},
+        });
+        setFormInitial({});
         setCurrentPage(savedSession.currentPage || 0);
         // Sessions saved before the toolbar may name a tab that no longer exists (the old Pages tab).
         setMode(EDITOR_MODES.includes(savedSession.mode) ? savedSession.mode : 'edittext');
@@ -265,7 +278,7 @@ export default function EditPdf({ initialMode } = {}) {
 
     /** Confirms before anything that would discard unsaved work (a new upload, or picking another PDF). */
     function confirmDiscard() {
-        return !hasUnsavedChanges(elements, pages.changed) || window.confirm(t('Discard your unsaved changes to this PDF?'));
+        return !hasUnsavedChanges(elements, pages.changed || formDirty) || window.confirm(t('Discard your unsaved changes to this PDF?'));
     }
 
     function downloadResult() {
@@ -353,34 +366,47 @@ export default function EditPdf({ initialMode } = {}) {
             .catch(() => setError(t('Could not read that image.')));
     }
 
-    // Live preview: builds a real one-page watermarked PDF for page 1 and renders it with pdf.js,
-    // so the preview always matches exactly what downloading will produce.
+    // Live preview: builds a real one-page PDF of page 1 as the page panel has it (its rotation, a
+    // blank or inserted page) with what was added to it and the watermark, and renders it with
+    // pdf.js, so the preview matches what Apply changes will save.
+    const pageMapKey = JSON.stringify(pages.map);
     useEffect(() => {
-        if (mode !== 'watermark' || !doc || !renderDoc) return;
+        if (mode !== 'watermark' || !doc) return;
         let cancelled = false;
-        const { width: pageWidth, height: pageHeight } = doc.getPage(0).getSize();
-        const scaleForPreview = computeDisplayScale(pageWidth, pageHeight);
+        const entry = pages.entry(0);
+        const size = pages.size(0);
+        const source = entry && !entry.blank ? pages.docFor(entry) : null;
+        if (entry && !entry.blank && !source) return;
         (async () => {
-            const content = wmContentFor(pageWidth);
-            let sourceRenderDoc = renderDoc;
-            let ownRenderDoc = null;
-            if (content) {
-                const { PDFDocument } = await import('pdf-lib');
+            const [{ PDFDocument, degrees }, { buildEditedPdf }, { drawWatermark }] = await Promise.all([import('pdf-lib'), loadEdit(), loadWatermark()]);
+            const content = wmContentFor(size.width);
+            const firstPage = async () => {
                 const previewDoc = await PDFDocument.create();
-                const [copied] = await previewDoc.copyPages(doc, [0]);
-                previewDoc.addPage(copied);
-                const { buildWatermarkedPdf } = await loadWatermark();
-                const blob = await buildWatermarkedPdf(previewDoc, { pageIndexes: [0], position: wmPosition, opacity: wmOpacityPct / 100, rotation: wmRotation, layer: wmLayer, content });
-                const bytes = new Uint8Array(await blob.arrayBuffer());
-                if (cancelled) return;
-                ownRenderDoc = await loadRenderDoc(bytes);
-                if (cancelled) {
-                    ownRenderDoc.destroy();
-                    return;
-                }
-                sourceRenderDoc = ownRenderDoc;
+                const page = source ? previewDoc.addPage((await previewDoc.copyPages(source, [entry.source]))[0]) : previewDoc.addPage([size.width, size.height]);
+                if (entry?.rotation) page.setRotation(degrees(addRotation(page.getRotation().angle, entry.rotation)));
+                return previewDoc;
+            };
+            const watermark = content
+                ? (work) => drawWatermark(work, { pageIndexes: [0], position: wmPosition, opacity: wmOpacityPct / 100, rotation: wmRotation, layer: wmLayer, content })
+                : undefined;
+            const onPage = elements.filter((el) => el.page === 0 && el.type !== 'formfield');
+            let blob;
+            try {
+                const previewDoc = await firstPage();
+                blob = await buildEditedPdf(previewDoc, toBuildElements(previewDoc, onPage), { beforeSave: watermark });
+            } catch {
+                // An element that can't be drawn on a one-page copy only drops out of the preview.
+                const previewDoc = await firstPage();
+                blob = await buildEditedPdf(previewDoc, [], { beforeSave: watermark });
             }
-            const canvas = await renderPageToCanvas(sourceRenderDoc, 1, { scale: scaleForPreview, background: '#ffffff' });
+            const bytes = new Uint8Array(await blob.arrayBuffer());
+            if (cancelled) return;
+            const ownRenderDoc = await loadRenderDoc(bytes);
+            if (cancelled) {
+                ownRenderDoc.destroy();
+                return;
+            }
+            const canvas = await renderPageToCanvas(ownRenderDoc, 1, { scale: computeDisplayScale(size.width, size.height), background: '#ffffff' });
             wmPreviewRenderDocRef.current?.destroy();
             wmPreviewRenderDocRef.current = ownRenderDoc;
             if (cancelled || !wmPreviewCanvasRef.current) return;
@@ -388,13 +414,13 @@ export default function EditPdf({ initialMode } = {}) {
             wmPreviewCanvasRef.current.height = canvas.height;
             wmPreviewCanvasRef.current.getContext('2d').drawImage(canvas, 0, 0);
         })().catch(() => {
-            // The preview is a convenience; a failure here never blocks the real download below.
+            // The preview is a convenience; a failure here never blocks the real download.
         });
         return () => {
             cancelled = true;
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [mode, doc, renderDoc, wmKind, wmText, wmTextSize, wmTextColor, wmTextBold, wmPendingImage, wmImageScalePct, wmOpacityPct, wmRotation, wmPosition, wmLayer]);
+    }, [mode, doc, pageMapKey, elements, wmKind, wmText, wmTextSize, wmTextColor, wmTextBold, wmPendingImage, wmImageScalePct, wmOpacityPct, wmRotation, wmPosition, wmLayer]);
 
     useEffect(() => () => wmPreviewRenderDocRef.current?.destroy(), []);
 
@@ -414,6 +440,7 @@ export default function EditPdf({ initialMode } = {}) {
             .then((detected) => {
                 if (cancelled) return;
                 setFormFields(detected.filter((f) => f.type !== 'unsupported'));
+                setFormInitial(Object.fromEntries(detected.filter((f) => f.type !== 'unsupported').map((f) => [f.name, f.value])));
                 // The PDF's own values are the starting point, not an undo step.
                 history.set((state) => {
                     const next = { ...state.formValues };
@@ -446,7 +473,6 @@ export default function EditPdf({ initialMode } = {}) {
     function changeFormValue(name, value) {
         // Typing in one field is one undo step.
         history.set((state) => ({ ...state, formValues: { ...state.formValues, [name]: value } }), { merge: `form:${name}` });
-        setFormChanged(true);
         setResult(null);
     }
 
@@ -463,10 +489,14 @@ export default function EditPdf({ initialMode } = {}) {
         return (work) => forms.applyFormsToDocument(work, { values: formValues, specs, flatten: formFlatten });
     }
 
+    /**
+     * Watermark's Apply: the same save as every other tool (pages in the page panel's order, the
+     * added elements, form values and new fields), on a copy of the open PDF, with the watermark
+     * drawn last. The open document is never changed, so applying again starts from the original.
+     */
     async function applyWatermark() {
         if (!doc || working) return;
-        const pageWidth = doc.getPage(0).getSize().width;
-        const content = wmContentFor(pageWidth);
+        const content = wmContentFor(pages.size(0).width);
         if (!content) {
             setError(wmKind === 'text' ? t('Type the watermark text first.') : t('Choose a logo or image first.'));
             return;
@@ -474,9 +504,17 @@ export default function EditPdf({ initialMode } = {}) {
         setWorking(true);
         setError('');
         try {
-            const pageIndexes = watermarkPageIndexes(pageCount, wmScope, wmRangeText);
-            const { buildWatermarkedPdf, flattenPdf } = await loadWatermark();
-            let blob = await buildWatermarkedPdf(doc, { pageIndexes, position: wmPosition, opacity: wmOpacityPct / 100, rotation: wmRotation, layer: wmLayer, content });
+            const [{ buildEditedPdf }, forms, { drawWatermark, flattenPdf }] = await Promise.all([loadEdit(), loadFormCreate(), loadWatermark()]);
+            const work = await pages.build(await forms.workingCopy(doc));
+            const toBuild = toBuildElements(work, elements);
+            const saveForms = formsBeforeSave(forms, toBuild);
+            const pageIndexes = watermarkPageIndexes(work.getPageCount(), wmScope, wmRangeText);
+            let blob = await buildEditedPdf(work, toBuild.filter((el) => el.type !== 'formfield'), {
+                beforeSave: async (target) => {
+                    await saveForms(target);
+                    await drawWatermark(target, { pageIndexes, position: wmPosition, opacity: wmOpacityPct / 100, rotation: wmRotation, layer: wmLayer, content });
+                },
+            });
             if (wmFlatten) {
                 blob = await flattenPdf(new Uint8Array(await blob.arrayBuffer()), {
                     onProgress: (page, total) => setWmProgress(t('Flattening page {page} of {total}…', { page, total })),
@@ -484,7 +522,7 @@ export default function EditPdf({ initialMode } = {}) {
             }
             setResult({ blob, name: safeFilename(`${baseName(file.name)}-watermarked.pdf`) });
         } catch (e) {
-            setError(t('Adding the watermark failed: {message}', { message: e.message }));
+            setError(formSaveErrorText(e) ?? t('Adding the watermark failed: {message}', { message: e.message }));
         } finally {
             setWorking(false);
             setWmProgress('');
@@ -643,7 +681,7 @@ export default function EditPdf({ initialMode } = {}) {
         setFormReady(false);
         setFormSubMode('fill');
         setFormFlatten(false);
-        setFormChanged(false);
+        setFormInitial({});
         setPageWidgets([]);
         setSignature(null);
         setActiveImageId(null);
@@ -839,6 +877,8 @@ export default function EditPdf({ initialMode } = {}) {
             return;
         }
         if (mode === 'note') {
+            // Keeps the click from moving focus off the new note's text box.
+            e.preventDefault();
             const p = pointerPoint(e, stageRef.current, canvasSize);
             const rect = clampRect({ x: p.x - NOTE_SIZE / 2, y: p.y - NOTE_SIZE / 2, width: NOTE_SIZE, height: NOTE_SIZE }, canvasSize.width, canvasSize.height, NOTE_SIZE);
             placeElement({ type: 'note', color: NOTE_COLORS[0], contents: '', author: rememberedAuthor(), icon: 'Comment', ...rect });
@@ -945,6 +985,23 @@ export default function EditPdf({ initialMode } = {}) {
         window.addEventListener('pointerup', handleUp);
     }
 
+    /** Keyboard selection of a placed element: focusing it (Tab) or Enter/Space selects it, so arrows nudge it and Delete removes it. */
+    function keyboardSelect(el) {
+        return {
+            onFocus: (e) => {
+                if (e.target !== e.currentTarget) return;
+                if (el.type === 'image') setActiveImageId(el.id);
+                if (SELECTABLE.includes(el.type)) setSelectedId(el.id);
+            },
+            onKeyDown: (e) => {
+                if (e.target !== e.currentTarget || (e.key !== 'Enter' && e.key !== ' ')) return;
+                e.preventDefault();
+                if (el.type === 'image') setActiveImageId(el.id);
+                if (SELECTABLE.includes(el.type)) setSelectedId(el.id);
+            },
+        };
+    }
+
     function startRotate(e, id) {
         e.preventDefault();
         e.stopPropagation();
@@ -983,8 +1040,11 @@ export default function EditPdf({ initialMode } = {}) {
         });
     }
 
+    // Something for Apply changes to save: added elements, page changes, changed form values, or a form to flatten.
+    const hasEdits = elements.length > 0 || pages.changed || formDirty || formFlatten;
+
     async function apply(suffix = 'edited') {
-        if (!doc || working || (elements.length === 0 && !formChanged && !pages.changed)) return;
+        if (!doc || working || !hasEdits) return;
         setWorking(true);
         setError('');
         try {
@@ -1033,7 +1093,7 @@ export default function EditPdf({ initialMode } = {}) {
         if (mode === 'watermark') return applyWatermark();
         return apply(mode === 'sign' ? 'signed' : 'edited');
     }
-    const applyDisabled = working || (mode === 'watermark' ? !(wmKind === 'text' ? wmText.trim() : wmPendingImage) : elements.length === 0 && !formChanged && !pages.changed);
+    const applyDisabled = working || (mode === 'watermark' ? !(wmKind === 'text' ? wmText.trim() : wmPendingImage) : !hasEdits);
     const applyLabel = !working ? t('Apply changes') : mode === 'watermark' ? wmProgress || t('Adding watermark…') : t('Saving…');
 
     // Properties shown in the selected element's bar (an image's opacity and replace stay in ImageControls).
@@ -1487,6 +1547,8 @@ export default function EditPdf({ initialMode } = {}) {
                     {mode === 'link' &&
                         pageLinks
                             .filter((link) => !currentElements.some((el) => el.type === 'linkedit' && el.annotIndex === link.index))
+                            // The PDF names the target by its page in the original file; the editor by its place in the page panel.
+                            .map((original) => ({ ...original, pageTarget: original.pageTarget == null ? null : pages.positionOfSource(original.pageTarget) }))
                             .map((link) => (
                                 <LinkOverlay
                                     key={`link-${link.index}`}
@@ -1509,7 +1571,7 @@ export default function EditPdf({ initialMode } = {}) {
                         }
                         if (el.quads?.length) {
                             const labels = OVERLAY_LABELS[el.type === 'markup' ? el.kind : 'highlight'];
-                            return <TextMarkup key={el.id} el={el} scale={scale} pageHeight={currentPageSize.height} label={labels.drag()} removeLabel={labels.remove()} onDragStart={(e) => startDrag(e, el.id, 'move')} onRemove={() => removeElement(el.id)} />;
+                            return <TextMarkup key={el.id} el={el} scale={scale} pageHeight={currentPageSize.height} label={labels.drag()} removeLabel={labels.remove()} onDragStart={(e) => startDrag(e, el.id, 'move')} onRemove={() => removeElement(el.id)} keyboard={keyboardSelect(el)} selected={el.id === selectedId} />;
                         }
                         if (el.type === 'textedit' || el.type === 'text') {
                             return (
@@ -1548,8 +1610,10 @@ export default function EditPdf({ initialMode } = {}) {
                                     className="pdf-editor__overlay"
                                     style={{ left: bbox.x, top: bbox.y, width: bbox.width, height: bbox.height, border: 'none' }}
                                     onPointerDown={(e) => startDrag(e, el.id, 'move')}
+                                    {...keyboardSelect(el)}
                                     role="button"
                                     tabIndex={0}
+                                    aria-pressed={el.id === selectedId}
                                     aria-label={el.type === 'shape' ? t('Shape - drag to move') : t('Drawing - drag to move')}
                                 >
                                     <svg width={bbox.width} height={bbox.height} style={{ pointerEvents: 'none', overflow: 'visible' }}>
@@ -1590,8 +1654,10 @@ export default function EditPdf({ initialMode } = {}) {
                                     ...(canRotate(el) && el.rotation ? { transform: `rotate(${el.rotation}deg)`, transformOrigin: 'center' } : null),
                                 }}
                                 onPointerDown={(e) => startDrag(e, el.id, 'move')}
+                                {...keyboardSelect(el)}
                                 role="button"
                                 tabIndex={0}
+                                aria-pressed={SELECTABLE.includes(el.type) ? el.id === selectedId : undefined}
                                 aria-label={labels.drag()}
                                 title={el.type === 'link' ? linkTargetLabel(el) : undefined}
                             >

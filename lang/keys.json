@@ -1274,7 +1274,8 @@
   {
     "key": "Blue",
     "files": [
-      "resources/js/components/pdf-editor/SignaturePads.jsx"
+      "resources/js/components/pdf-editor/SignaturePads.jsx",
+      "resources/js/components/pdf-editor/StickyNote.jsx"
     ]
   },
   {
@@ -3792,6 +3793,12 @@
     ]
   },
   {
+    "key": "Green",
+    "files": [
+      "resources/js/components/pdf-editor/StickyNote.jsx"
+    ]
+  },
+  {
     "key": "Group name",
     "files": [
       "resources/js/components/pdf-editor/FormFieldCreator.jsx"
@@ -5410,6 +5417,12 @@
     ]
   },
   {
+    "key": "Orange",
+    "files": [
+      "resources/js/components/pdf-editor/StickyNote.jsx"
+    ]
+  },
+  {
     "key": "Orientation",
     "files": [
       "resources/js/tools/ExcelToPdf.jsx",
@@ -5761,6 +5774,12 @@
     "key": "Picking…",
     "files": [
       "resources/js/tools/RandomNumber.jsx"
+    ]
+  },
+  {
+    "key": "Pink",
+    "files": [
+      "resources/js/components/pdf-editor/StickyNote.jsx"
     ]
   },
   {
@@ -8887,6 +8906,12 @@
     "key": "Year-by-year balance",
     "files": [
       "resources/js/tools/CompoundInterestCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Yellow",
+    "files": [
+      "resources/js/components/pdf-editor/StickyNote.jsx"
     ]
   },
   {

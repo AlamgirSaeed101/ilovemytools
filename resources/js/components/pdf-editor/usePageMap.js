@@ -67,7 +67,14 @@ export default function usePageMap({ doc, renderDoc, pageCount, thumbs, rawMap, 
         size: (index) => entrySize(map[index], docs),
         rotation: (index) => map[index]?.rotation || 0,
         renderDocFor,
+        /** The pdf-lib document a (non-blank) entry's page comes from: the open PDF or an inserted one. */
+        docFor: (item) => (item?.from != null ? docs[item.from] ?? null : doc),
         thumbFor,
+        /** Where page `source` (0-based) of the open PDF now is in the map (its first use), or null when it was deleted. */
+        positionOfSource: (source) => {
+            const index = map.findIndex((item) => !item.blank && item.from == null && item.source === source);
+            return index >= 0 ? index : null;
+        },
         /** Whether the page's existing text can be edited (it is a page of the open PDF). */
         isOwnPage: (index) => Boolean(map[index] && !map[index].blank && map[index].from == null),
         change,
