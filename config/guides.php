@@ -4045,4 +4045,86 @@ return [
         ],
     ],
 
+    'how-to-check-if-text-was-written-by-ai' => [
+        'title' => 'How to Check if Text Was Written by AI',
+        'description' => 'How AI content detectors actually work, why none of them are fully reliable, and a practical way to use a detector score without treating it as proof.',
+        'h1' => 'How to check if text was written by AI',
+        'intro' => 'A teacher reading an essay, an editor reviewing a submission, or anyone scrolling a suspiciously polished review online eventually asks the same question: did a person write this, or did an AI? A number of free tools, including the one on this site, will give you a score. What that score actually measures, and how far you can trust it, matters more than the number itself.',
+        'tool' => 'ai-content-detector',
+        'related' => ['readability-checker', 'word-counter', 'case-converter'],
+        'published' => '2026-11-13',
+        'updated' => '2026-11-13',
+        'sections' => [
+            [
+                'heading' => 'What a detector is actually measuring',
+                'paragraphs' => [
+                    'Most free AI detectors, including this site\'s own, do not run a language model that recognises "AI writing" the way a person might. Instead they measure a handful of statistical writing habits that tend to differ between typical AI output and typical human writing, then combine the results into a score.',
+                ],
+                'list' => [
+                    'Sentence length uniformity - AI text often keeps sentences a similar length; human writing tends to mix short, punchy sentences with longer ones.',
+                    'Stock phrases - certain words and transitions ("delve", "moreover", "it is important to note") show up disproportionately often in AI output, likely because they are common in the model\'s training data and easy for it to reach for.',
+                    'Contractions - AI text skews slightly more formal, using "do not" where a person is more likely to type "don\'t".',
+                    'Vocabulary variety - how many different words appear across the text, since repeating the same handful of terms is a mild AI tell.',
+                ],
+            ],
+            [
+                'heading' => 'Checking a text, step by step',
+                'list' => [
+                    'Get at least 80-100 words of the text - very short snippets do not give the underlying signals enough to measure.',
+                    'Paste it into an AI detector such as the [AI Content Detector](/ai-content-detector) on this site and run the check.',
+                    'Read the overall score, but don\'t stop there - open the breakdown of individual signals.',
+                    'Look specifically at which signal is highest. A high score driven entirely by "uses no contractions" is weaker evidence than one driven by several signals together.',
+                    'If the tool lists the specific phrases it flagged, check whether they are genuinely unusual or just normal, slightly formal writing - "furthermore" alone proves very little.',
+                ],
+            ],
+            [
+                'heading' => 'Why no detector is fully reliable',
+                'paragraphs' => [
+                    'Two things make AI detection an inherently imperfect science, not a solved problem. First, the signals above are correlations, not fingerprints: plenty of people naturally write in even sentences with little slang, and a researcher studying detector bias found that detectors disproportionately flagged text by non-native English speakers as AI-generated, likely because non-native writing can share some of the same statistical patterns - fewer idioms, more formal phrasing - that the detectors associate with AI.',
+                    'Second, a widely cited theoretical analysis argues that as AI-generated text gets closer in quality to human writing, no detector can reliably tell them apart without an unacceptably high rate of mistakes either way - and that even a text run through a basic paraphrasing step can shift its statistical fingerprint enough to slip past a detector that caught the original version. Treat every score, from this tool or any other, as a prompt to look closer, not a verdict.',
+                ],
+            ],
+            [
+                'heading' => 'Common AI "tells" and how much to trust each one alone',
+                'table' => [
+                    'headers' => ['Signal', 'What it suggests', 'How much to trust it alone'],
+                    'rows' => [
+                        ['Very even sentence lengths throughout', 'Possible AI pattern', 'Weak - many careful human writers do this too'],
+                        ['Repeated stock phrases ("delve into", "plays a crucial role")', 'Common in AI output', 'Moderate - a few instances are normal; frequent repetition is more telling'],
+                        ['No contractions anywhere in casual writing', 'Possible AI or very formal human writing', 'Weak on its own'],
+                        ['Vague, generic claims with no specific names, dates or numbers', 'Possible AI or a rushed human draft', 'Moderate - lack of specificity is a real writing-quality signal either way'],
+                        ['Several signals pointing the same way at once', 'Stronger overall pattern', 'The strongest evidence a single tool can give - still not proof'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'Using a score responsibly',
+                'paragraphs' => [
+                    'This matters most where the stakes are real - grading a student, accepting a freelance submission, or deciding whether a review is genuine.',
+                ],
+                'list' => [
+                    'Never rely on a single score as proof someone used AI; treat it as a reason to look at the evidence that actually exists, such as a document\'s edit history or earlier drafts.',
+                    'Where possible, ask the person to explain or expand on a specific claim in their own words - something generic AI output often struggles with convincingly.',
+                    'Re-check with more text where you can; a longer sample gives every signal more to work with and reduces noise from a short, unlucky paragraph.',
+                    'Remember that heavily edited AI text, or AI text produced with a casual-writing prompt, can score low even though AI was genuinely involved.',
+                ],
+            ],
+            [
+                'heading' => 'When a detector is genuinely useful',
+                'paragraphs' => [
+                    'None of this means a detector is worthless - it means it is best used as a writing aid rather than a verdict machine. Running your own draft through one before you publish or submit it is a quick way to spot stock phrases and overly uniform sentences that read as mechanical regardless of who or what produced them, and worth fixing either way. The same signals that make AI text easy to flag - repetition, flatness, generic phrasing - are the same things that make any piece of writing less engaging to read, so tightening them up improves the text on its own merits, not just its score.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Can an AI detector prove a text was written by AI?', 'a' => 'No. Detectors measure statistical writing patterns that correlate with AI output, not a certain fingerprint. A high score is a signal worth investigating, not proof, and research has shown detectors can misjudge both AI and human text.'],
+            ['q' => 'Can human writing score as AI-generated?', 'a' => 'Yes. Very formal, evenly paced writing can score high even when a person wrote every word, and research has found this happens more often to non-native English writers specifically.'],
+            ['q' => 'Can someone edit AI text to avoid detection?', 'a' => 'Yes. Varying sentence length, adding contractions, or lightly paraphrasing AI output can lower a detector\'s score without changing that AI was involved in producing it, which is exactly why a score should never be treated as final proof.'],
+        ],
+        'sources' => [
+            ['title' => 'Liang et al. (2023), "GPT detectors are biased against non-native English writers", arXiv:2304.02819', 'url' => 'https://arxiv.org/abs/2304.02819'],
+            ['title' => 'Sadasivan et al. (2023), "Can AI-Generated Text be Reliably Detected?", arXiv:2303.11156', 'url' => 'https://arxiv.org/abs/2303.11156'],
+        ],
+    ],
+
 ];
