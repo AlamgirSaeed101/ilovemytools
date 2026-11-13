@@ -2588,6 +2588,11 @@ return [
             'Compila i campi di un modulo esistente: caselle di testo, caselle di controllo, menu a discesa e pulsanti di opzione',
             'Crea nuovi campi: una casella di testo, una casella di controllo, un menu a discesa o un campo firma, posizionato ovunque sulla pagina',
             'Aggiungi la tua firma: disegnala, scrivila o caricala, poi trascinala e ridimensionala su qualsiasi pagina',
+            'Fai clic su un paragrafo per modificarlo sul posto, con carattere, dimensione, grassetto, corsivo, colore, allineamento e interlinea',
+            'Note adesive ed evidenziazione, sottolineatura e barrato salvati come vere annotazioni che le altre app PDF mostrano',
+            'Modifica o rimuovi i link già presenti nel PDF, oppure collega a un’altra pagina del documento',
+            'Trascina le pagine per riordinarle, duplica pagine e aggiungi pagine da un altro PDF',
+            'Una barra degli strumenti con scorciatoie da tastiera: annulla e ripeti ogni modifica, duplica, copia e sposta con i tasti freccia',
         ],
         'content' => [
             [

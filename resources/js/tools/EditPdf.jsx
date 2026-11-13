@@ -251,7 +251,8 @@ export default function EditPdf({ initialMode } = {}) {
         nextId.current = 1 + Math.max(0, ...savedSession.elements.map((el) => el.id));
         history.reset({ ...EMPTY_HISTORY, elements: savedSession.elements, pageMap: Array.isArray(savedSession.pageMap) ? savedSession.pageMap : null });
         setCurrentPage(savedSession.currentPage || 0);
-        setMode(savedSession.mode || 'edittext');
+        // Sessions saved before the toolbar may name a tab that no longer exists (the old Pages tab).
+        setMode(EDITOR_MODES.includes(savedSession.mode) ? savedSession.mode : 'edittext');
         pages.restore(savedSession);
         setSavedSession(null);
         setFile(restored);
@@ -1035,7 +1036,7 @@ export default function EditPdf({ initialMode } = {}) {
     const applyDisabled = working || (mode === 'watermark' ? !(wmKind === 'text' ? wmText.trim() : wmPendingImage) : elements.length === 0 && !formChanged && !pages.changed);
     const applyLabel = !working ? t('Apply changes') : mode === 'watermark' ? wmProgress || t('Adding watermark…') : t('Saving…');
 
-    // Properties shown in the selected element's bar.
+    // Properties shown in the selected element's bar (an image's opacity and replace stay in ImageControls).
     function propertiesFor(el) {
         if (el.type === 'shape') {
             const look = shapeStyleOf(el);
@@ -1049,14 +1050,6 @@ export default function EditPdf({ initialMode } = {}) {
                         updateElement(el.id, { shape, ...shapeElementStyle({ ...value, ...patch, shape }) });
                     }}
                 />
-            );
-        }
-        if (el.type === 'image') {
-            return (
-                <label className="pdf-selection__range">
-                    <span>{t('Opacity: {value}%', { value: Math.round((el.opacity ?? 1) * 100) })}</span>
-                    <input type="range" className="range" min={10} max={100} step={5} value={Math.round((el.opacity ?? 1) * 100)} onChange={(e) => updateElement(el.id, { opacity: Number(e.target.value) / 100 })} />
-                </label>
             );
         }
         if (el.type === 'link') {

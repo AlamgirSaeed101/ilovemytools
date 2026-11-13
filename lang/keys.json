@@ -217,6 +217,7 @@
     "key": "{count} pages",
     "one": "{count} page",
     "files": [
+      "resources/js/components/pdf-editor/PageSidebar.jsx",
       "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/DeletePdfPages.jsx",
       "resources/js/tools/JpgToPdf.jsx",
@@ -530,6 +531,12 @@
     ]
   },
   {
+    "key": "+ Insert blank page here",
+    "files": [
+      "resources/js/components/pdf-editor/PageScroller.jsx"
+    ]
+  },
+  {
     "key": "0% (no change)",
     "files": [
       "resources/js/lib/percent.js"
@@ -557,7 +564,7 @@
   {
     "key": "1. Create your signature",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -599,7 +606,7 @@
   {
     "key": "2. Place it on the page",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -711,9 +718,9 @@
     ]
   },
   {
-    "key": "A PNG with a transparent background works best",
+    "key": "A photo or scan of your signature on white paper works",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
     ]
   },
   {
@@ -796,6 +803,12 @@
     ]
   },
   {
+    "key": "Add a blank page at the end",
+    "files": [
+      "resources/js/components/pdf-editor/PageSidebar.jsx"
+    ]
+  },
+  {
     "key": "Add at least 2 entries to spin.",
     "files": [
       "resources/js/tools/SpinWheel.jsx"
@@ -838,15 +851,27 @@
     ]
   },
   {
-    "key": "Add signature to this page",
+    "key": "Add new text",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
     ]
   },
   {
-    "key": "Add text",
+    "key": "Add pages",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/PageSidebar.jsx"
+    ]
+  },
+  {
+    "key": "Add pages from another PDF",
+    "files": [
+      "resources/js/components/pdf-editor/PageSidebar.jsx"
+    ]
+  },
+  {
+    "key": "Add signature to this page",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -864,13 +889,7 @@
   {
     "key": "Add today's date under the signature",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
-    "key": "Add watermark",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -947,6 +966,30 @@
     ]
   },
   {
+    "key": "Align centre",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
+    "key": "Align left",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
+    "key": "Align right",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
+    "key": "Alignment",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
     "key": "All",
     "files": [
       "resources/js/tools/BrokenLinkChecker.jsx"
@@ -971,6 +1014,7 @@
   {
     "key": "All pages",
     "files": [
+      "resources/js/components/pdf-editor/PageScroller.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -1026,6 +1070,12 @@
     ]
   },
   {
+    "key": "Annotate",
+    "files": [
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
+    ]
+  },
+  {
     "key": "Annually",
     "files": [
       "resources/js/tools/CompoundInterestCalculator.jsx"
@@ -1044,6 +1094,12 @@
     ]
   },
   {
+    "key": "Apply changes",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Are my files uploaded to a server?",
     "files": [
       "app/Support/HomeFaq.php"
@@ -1058,7 +1114,8 @@
   {
     "key": "Arrow",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/EditorToolbar.jsx",
+      "resources/js/components/pdf-editor/ShapeProps.jsx"
     ]
   },
   {
@@ -1071,6 +1128,12 @@
     "key": "ASN",
     "files": [
       "resources/js/components/DomainDetails.jsx"
+    ]
+  },
+  {
+    "key": "Author",
+    "files": [
+      "resources/js/components/pdf-editor/StickyNote.jsx"
     ]
   },
   {
@@ -1191,9 +1254,9 @@
     ]
   },
   {
-    "key": "Blank page",
+    "key": "Black",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
     ]
   },
   {
@@ -1209,8 +1272,15 @@
     ]
   },
   {
+    "key": "Blue",
+    "files": [
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
+    ]
+  },
+  {
     "key": "Bold",
     "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -1242,6 +1312,12 @@
     "key": "Breadcrumb",
     "files": [
       "resources/js/components/Breadcrumbs.jsx"
+    ]
+  },
+  {
+    "key": "Bring forward",
+    "files": [
+      "resources/js/components/pdf-editor/SelectionBar.jsx"
     ]
   },
   {
@@ -1312,6 +1388,13 @@
     "key": "By using {name} (the “Site”) you agree to these terms. If you do not agree, please do not use the Site.",
     "files": [
       "resources/js/pages/InfoPages.jsx"
+    ]
+  },
+  {
+    "key": "Cancel",
+    "files": [
+      "resources/js/components/pdf-editor/LinkOverlay.jsx",
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -1460,9 +1543,22 @@
     ]
   },
   {
+    "key": "Choose a page from 1 to {total}.",
+    "files": [
+      "resources/js/components/pdf-editor/LinkOverlay.jsx",
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Choose a password",
     "files": [
       "resources/js/tools/ProtectPdf.jsx"
+    ]
+  },
+  {
+    "key": "Choose a PDF to insert",
+    "files": [
+      "resources/js/components/pdf-editor/PageSidebar.jsx"
     ]
   },
   {
@@ -1534,13 +1630,13 @@
   {
     "key": "Clear",
     "files": [
+      "resources/js/components/pdf-editor/SignaturePads.jsx",
       "resources/js/tools/AiDetector.jsx",
       "resources/js/tools/Base64Tool.jsx",
       "resources/js/tools/CaseConverter.jsx",
       "resources/js/tools/DiceRoller.jsx",
       "resources/js/tools/DomainAgeChecker.jsx",
       "resources/js/tools/DomainAuthority.jsx",
-      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/JpgToPdf.jsx",
       "resources/js/tools/JsonFormatter.jsx",
       "resources/js/tools/MergePdf.jsx",
@@ -1563,7 +1659,31 @@
     ]
   },
   {
+    "key": "Click an existing link to change or remove it.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Click any text on the page to change it.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Click anywhere on the page and type, or click existing text to change it.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Click on the page to add a note. Other PDF apps show it as a comment.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Click something you added to select it, or click the PDF’s own text to change it. Pick a tool above to add more.",
     "files": [
       "resources/js/tools/EditPdf.jsx"
     ]
@@ -1614,7 +1734,14 @@
   {
     "key": "Colour",
     "files": [
+      "resources/js/tools/EditPdf.jsx",
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Comment",
+    "files": [
+      "resources/js/components/pdf-editor/StickyNote.jsx"
     ]
   },
   {
@@ -1874,6 +2001,12 @@
     ]
   },
   {
+    "key": "Could not add that PDF: {message}",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Could not be checked right now. Please try again.",
     "files": [
       "resources/js/components/DomainDetails.jsx",
@@ -1901,7 +2034,7 @@
   {
     "key": "Could not create the signature image.",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -1915,6 +2048,12 @@
     "files": [
       "resources/js/tools/ImageCompressor.jsx",
       "resources/js/tools/ImageConverter.jsx"
+    ]
+  },
+  {
+    "key": "Could not delete the saved signature.",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -1951,6 +2090,7 @@
   {
     "key": "Could not read that image.",
     "files": [
+      "resources/js/components/pdf-editor/ImageControls.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -1967,9 +2107,33 @@
     ]
   },
   {
+    "key": "Could not save the signature on this device. You can still use it now.",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
     "key": "Counting down",
     "files": [
       "resources/js/tools/CountdownTimer.jsx"
+    ]
+  },
+  {
+    "key": "Create a different signature",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
+    "key": "Create a new signature",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
+    "key": "Create your signature",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -2001,6 +2165,12 @@
     ]
   },
   {
+    "key": "Custom ink colour",
+    "files": [
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
+    ]
+  },
+  {
     "key": "Custom loan term (years)",
     "files": [
       "resources/js/tools/LoanCalculator.jsx",
@@ -2023,6 +2193,12 @@
     "key": "Daily",
     "files": [
       "resources/js/tools/CompoundInterestCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Dashed",
+    "files": [
+      "resources/js/components/pdf-editor/ShapeProps.jsx"
     ]
   },
   {
@@ -2082,21 +2258,57 @@
   {
     "key": "Delete",
     "files": [
-      "resources/js/tools/DeletePdfPages.jsx",
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SelectionBar.jsx",
+      "resources/js/tools/DeletePdfPages.jsx"
+    ]
+  },
+  {
+    "key": "Delete (Del)",
+    "files": [
+      "resources/js/components/pdf-editor/SelectionBar.jsx"
+    ]
+  },
+  {
+    "key": "Delete note",
+    "files": [
+      "resources/js/components/pdf-editor/StickyNote.jsx"
     ]
   },
   {
     "key": "Delete page {number}",
     "files": [
-      "resources/js/tools/DeletePdfPages.jsx",
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/PageSidebar.jsx",
+      "resources/js/tools/DeletePdfPages.jsx"
     ]
   },
   {
     "key": "Delete pages",
     "files": [
       "resources/js/tools/DeletePdfPages.jsx"
+    ]
+  },
+  {
+    "key": "Delete saved signature {number}",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
+    "key": "Delete text",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Delete this saved signature from this device?",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
+    "key": "Deleted text - click to type new text",
+    "files": [
+      "resources/js/components/pdf-editor/TextBlockEditor.jsx"
     ]
   },
   {
@@ -2243,6 +2455,7 @@
     "key": "Done",
     "files": [
       "resources/js/components/pdf-editor/FormFieldCreator.jsx",
+      "resources/js/components/pdf-editor/StickyNote.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -2317,6 +2530,12 @@
     "key": "Done! Your Word document is ready.",
     "files": [
       "resources/js/tools/PdfToWord.jsx"
+    ]
+  },
+  {
+    "key": "Dotted",
+    "files": [
+      "resources/js/components/pdf-editor/ShapeProps.jsx"
     ]
   },
   {
@@ -2472,13 +2691,26 @@
   {
     "key": "Drag on the page to draw the shape.",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/ShapeProps.jsx"
+    ]
+  },
+  {
+    "key": "Drag to change the width (the text wraps)",
+    "files": [
+      "resources/js/components/pdf-editor/TextBlockEditor.jsx"
+    ]
+  },
+  {
+    "key": "Drag to move",
+    "files": [
+      "resources/js/components/pdf-editor/TextBlockEditor.jsx"
     ]
   },
   {
     "key": "Draw",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/EditorToolbar.jsx",
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -2496,7 +2728,7 @@
   {
     "key": "Draw your signature here",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
     ]
   },
   {
@@ -2542,7 +2774,7 @@
   {
     "key": "Drop a signature image or click to choose",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
     ]
   },
   {
@@ -2593,6 +2825,24 @@
     "key": "Dropdown",
     "files": [
       "resources/js/components/pdf-editor/FormFieldCreator.jsx"
+    ]
+  },
+  {
+    "key": "Duplicate",
+    "files": [
+      "resources/js/components/pdf-editor/SelectionBar.jsx"
+    ]
+  },
+  {
+    "key": "Duplicate (Ctrl+D)",
+    "files": [
+      "resources/js/components/pdf-editor/SelectionBar.jsx"
+    ]
+  },
+  {
+    "key": "Duplicate page {number}",
+    "files": [
+      "resources/js/components/pdf-editor/PageSidebar.jsx"
     ]
   },
   {
@@ -2669,9 +2919,21 @@
     ]
   },
   {
-    "key": "Edit text",
+    "key": "Edit existing text",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
+    ]
+  },
+  {
+    "key": "Edit link",
+    "files": [
+      "resources/js/components/pdf-editor/LinkOverlay.jsx"
+    ]
+  },
+  {
+    "key": "Edit page {number}",
+    "files": [
+      "resources/js/components/pdf-editor/PageScroller.jsx"
     ]
   },
   {
@@ -2683,7 +2945,13 @@
   {
     "key": "Edit this text",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/TextBlockEditor.jsx"
+    ]
+  },
+  {
+    "key": "Edited text - click to change, drag to move",
+    "files": [
+      "resources/js/components/pdf-editor/TextBlockEditor.jsx"
     ]
   },
   {
@@ -2695,7 +2963,8 @@
   {
     "key": "Ellipse",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/EditorToolbar.jsx",
+      "resources/js/components/pdf-editor/ShapeProps.jsx"
     ]
   },
   {
@@ -2730,6 +2999,12 @@
     ]
   },
   {
+    "key": "Empty note - open to write",
+    "files": [
+      "resources/js/components/pdf-editor/StickyNote.jsx"
+    ]
+  },
+  {
     "key": "Empty QR code preview",
     "files": [
       "resources/js/tools/QrCodeGenerator.jsx"
@@ -2751,6 +3026,12 @@
     "key": "Encoded to Base64 ✓",
     "files": [
       "resources/js/tools/Base64Tool.jsx"
+    ]
+  },
+  {
+    "key": "End of the line - drag to move it",
+    "files": [
+      "resources/js/components/pdf-editor/ShapeProps.jsx"
     ]
   },
   {
@@ -3157,6 +3438,18 @@
     ]
   },
   {
+    "key": "Fill",
+    "files": [
+      "resources/js/components/pdf-editor/ShapeProps.jsx"
+    ]
+  },
+  {
+    "key": "Fill colour",
+    "files": [
+      "resources/js/components/pdf-editor/ShapeProps.jsx"
+    ]
+  },
+  {
     "key": "Fill form",
     "files": [
       "resources/js/tools/EditPdf.jsx"
@@ -3175,13 +3468,7 @@
     ]
   },
   {
-    "key": "Fill in the fields on the page, then click Save PDF.",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
-    "key": "Filled",
+    "key": "Fill in the fields on the page, then click Apply changes.",
     "files": [
       "resources/js/tools/EditPdf.jsx"
     ]
@@ -3211,9 +3498,21 @@
     ]
   },
   {
+    "key": "Find & replace",
+    "files": [
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
+    ]
+  },
+  {
     "key": "Fit image",
     "files": [
       "resources/js/tools/JpgToPdf.jsx"
+    ]
+  },
+  {
+    "key": "Fit to width",
+    "files": [
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
     ]
   },
   {
@@ -3272,9 +3571,16 @@
     ]
   },
   {
+    "key": "Font",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
     "key": "Font size",
     "files": [
       "resources/js/components/pdf-editor/FormFieldCreator.jsx",
+      "resources/js/components/pdf-editor/TextPropsBar.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -3288,6 +3594,12 @@
     "key": "Formatted",
     "files": [
       "resources/js/tools/JsonFormatter.jsx"
+    ]
+  },
+  {
+    "key": "Forms",
+    "files": [
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
     ]
   },
   {
@@ -3381,6 +3693,12 @@
     ]
   },
   {
+    "key": "Full signature",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
     "key": "Generate",
     "files": [
       "resources/js/tools/RandomNumber.jsx"
@@ -3451,7 +3769,8 @@
   {
     "key": "Go to page {number}",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/LinkOverlay.jsx",
+      "resources/js/components/pdf-editor/PageSidebar.jsx"
     ]
   },
   {
@@ -3561,6 +3880,12 @@
     ]
   },
   {
+    "key": "Help",
+    "files": [
+      "resources/js/components/pdf-editor/StickyNote.jsx"
+    ]
+  },
+  {
     "key": "Hidden network",
     "files": [
       "resources/js/tools/QrCodeGenerator.jsx"
@@ -3605,7 +3930,7 @@
   {
     "key": "Highlight",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
     ]
   },
   {
@@ -3752,6 +4077,12 @@
     ]
   },
   {
+    "key": "Icon in other PDF apps",
+    "files": [
+      "resources/js/components/pdf-editor/StickyNote.jsx"
+    ]
+  },
+  {
     "key": "If you did not sign up, just ignore this email and you will not hear from us again.",
     "files": [
       "resources/views/emails/confirm.blade.php"
@@ -3785,8 +4116,7 @@
   {
     "key": "Image",
     "files": [
-      "resources/js/tools/BrokenLinkChecker.jsx",
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/tools/BrokenLinkChecker.jsx"
     ]
   },
   {
@@ -3800,6 +4130,12 @@
     "files": [
       "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/PdfToImage.jsx"
+    ]
+  },
+  {
+    "key": "Images",
+    "files": [
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
     ]
   },
   {
@@ -3851,21 +4187,45 @@
     ]
   },
   {
+    "key": "Initials",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
+    "key": "Ink colour",
+    "files": [
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
+    ]
+  },
+  {
     "key": "Input",
     "files": [
       "resources/js/tools/Base64Tool.jsx"
     ]
   },
   {
-    "key": "Insert a blank page, delete, rotate or reorder pages. This only changes the file once you click Save PDF below.",
+    "key": "Insert",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/StickyNote.jsx"
     ]
   },
   {
     "key": "Insert blank page after",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/PageSidebar.jsx"
+    ]
+  },
+  {
+    "key": "Insert blank page before",
+    "files": [
+      "resources/js/components/pdf-editor/PageSidebar.jsx"
+    ]
+  },
+  {
+    "key": "Insert pages from a PDF after",
+    "files": [
+      "resources/js/components/pdf-editor/PageSidebar.jsx"
     ]
   },
   {
@@ -3926,6 +4286,12 @@
     ]
   },
   {
+    "key": "Italic",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
     "key": "JPG has no transparency, so transparent areas become white.",
     "files": [
       "resources/js/tools/ImageConverter.jsx",
@@ -3972,6 +4338,12 @@
     "key": "Keep page {number}",
     "files": [
       "resources/js/tools/DeletePdfPages.jsx"
+    ]
+  },
+  {
+    "key": "Key",
+    "files": [
+      "resources/js/components/pdf-editor/StickyNote.jsx"
     ]
   },
   {
@@ -4138,18 +4510,39 @@
   {
     "key": "Line",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/EditorToolbar.jsx",
+      "resources/js/components/pdf-editor/ShapeProps.jsx"
     ]
   },
   {
     "key": "Line colour",
     "files": [
+      "resources/js/components/pdf-editor/ShapeProps.jsx",
       "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Line spacing",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
+    "key": "Line spacing {value}",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
+    "key": "Line style",
+    "files": [
+      "resources/js/components/pdf-editor/ShapeProps.jsx"
     ]
   },
   {
     "key": "Line thickness",
     "files": [
+      "resources/js/components/pdf-editor/ShapeProps.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -4162,8 +4555,7 @@
   {
     "key": "Link",
     "files": [
-      "resources/js/tools/BrokenLinkChecker.jsx",
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/tools/BrokenLinkChecker.jsx"
     ]
   },
   {
@@ -4175,13 +4567,37 @@
   {
     "key": "Link address",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/LinkOverlay.jsx"
     ]
   },
   {
     "key": "Link check results",
     "files": [
       "resources/js/tools/BrokenLinkChecker.jsx"
+    ]
+  },
+  {
+    "key": "Link removed",
+    "files": [
+      "resources/js/components/pdf-editor/LinkOverlay.jsx"
+    ]
+  },
+  {
+    "key": "Link to",
+    "files": [
+      "resources/js/components/pdf-editor/LinkOverlay.jsx"
+    ]
+  },
+  {
+    "key": "Link to {target} - open to change it",
+    "files": [
+      "resources/js/components/pdf-editor/LinkOverlay.jsx"
+    ]
+  },
+  {
+    "key": "Links",
+    "files": [
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
     ]
   },
   {
@@ -4205,8 +4621,8 @@
   {
     "key": "Loading…",
     "files": [
+      "resources/js/components/pdf-editor/PageSidebar.jsx",
       "resources/js/tools/DeletePdfPages.jsx",
-      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/OrganizePdf.jsx",
       "resources/js/tools/PdfToImage.jsx",
       "resources/js/tools/RotatePdf.jsx"
@@ -4417,6 +4833,12 @@
     ]
   },
   {
+    "key": "Monospace",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
     "key": "Monthly",
     "files": [
       "resources/js/tools/CompoundInterestCalculator.jsx"
@@ -4444,6 +4866,18 @@
     "key": "More",
     "files": [
       "resources/js/components/Layout.jsx"
+    ]
+  },
+  {
+    "key": "More actions",
+    "files": [
+      "resources/js/components/pdf-editor/PageSidebar.jsx"
+    ]
+  },
+  {
+    "key": "More actions for page {number}",
+    "files": [
+      "resources/js/components/pdf-editor/PageSidebar.jsx"
     ]
   },
   {
@@ -4499,17 +4933,33 @@
     ]
   },
   {
+    "key": "Move down",
+    "files": [
+      "resources/js/components/pdf-editor/PageSidebar.jsx"
+    ]
+  },
+  {
     "key": "Move page {number} earlier",
     "files": [
-      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/OrganizePdf.jsx"
     ]
   },
   {
     "key": "Move page {number} later",
     "files": [
-      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/OrganizePdf.jsx"
+    ]
+  },
+  {
+    "key": "Move this text (drag, or use the arrow keys)",
+    "files": [
+      "resources/js/components/pdf-editor/TextBlockEditor.jsx"
+    ]
+  },
+  {
+    "key": "Move up",
+    "files": [
+      "resources/js/components/pdf-editor/PageSidebar.jsx"
     ]
   },
   {
@@ -4715,6 +5165,12 @@
     ]
   },
   {
+    "key": "No target",
+    "files": [
+      "resources/js/components/pdf-editor/LinkOverlay.jsx"
+    ]
+  },
+  {
     "key": "No text was found in this PDF. Scanned pages without selectable text cannot be converted.",
     "files": [
       "resources/js/lib/pdfToExcel.js",
@@ -4756,6 +5212,30 @@
     "key": "Not found",
     "files": [
       "resources/js/tools/DomainAuthority.jsx"
+    ]
+  },
+  {
+    "key": "Note",
+    "files": [
+      "resources/js/components/pdf-editor/StickyNote.jsx"
+    ]
+  },
+  {
+    "key": "Note colour",
+    "files": [
+      "resources/js/components/pdf-editor/StickyNote.jsx"
+    ]
+  },
+  {
+    "key": "Note text",
+    "files": [
+      "resources/js/components/pdf-editor/StickyNote.jsx"
+    ]
+  },
+  {
+    "key": "Note: {text}",
+    "files": [
+      "resources/js/components/pdf-editor/StickyNote.jsx"
     ]
   },
   {
@@ -4881,6 +5361,8 @@
   {
     "key": "Opacity: {value}%",
     "files": [
+      "resources/js/components/pdf-editor/ImageControls.jsx",
+      "resources/js/components/pdf-editor/ShapeProps.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -4910,6 +5392,24 @@
     ]
   },
   {
+    "key": "Or click anywhere on the page to place it there, as many times as you need.",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
+    "key": "Or click on the page to place it there.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Or drag across text to highlight it.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
     "key": "Orientation",
     "files": [
       "resources/js/tools/ExcelToPdf.jsx",
@@ -4923,9 +5423,21 @@
     ]
   },
   {
+    "key": "Original font",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
     "key": "Original image preview",
     "files": [
       "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Other action",
+    "files": [
+      "resources/js/components/pdf-editor/LinkOverlay.jsx"
     ]
   },
   {
@@ -5002,8 +5514,9 @@
   {
     "key": "Page {number}",
     "files": [
+      "resources/js/components/pdf-editor/PageScroller.jsx",
+      "resources/js/components/pdf-editor/PageSidebar.jsx",
       "resources/js/lib/pdfToExcel.js",
-      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/OrganizePdf.jsx"
     ]
   },
@@ -5014,10 +5527,22 @@
     ]
   },
   {
+    "key": "Page in this PDF",
+    "files": [
+      "resources/js/components/pdf-editor/LinkOverlay.jsx"
+    ]
+  },
+  {
     "key": "Page not found",
     "files": [
       "resources/js/pages/NotFound.jsx",
       "resources/views/errors/404.blade.php"
+    ]
+  },
+  {
+    "key": "Page number (1 to {total})",
+    "files": [
+      "resources/js/components/pdf-editor/LinkOverlay.jsx"
     ]
   },
   {
@@ -5050,6 +5575,7 @@
   {
     "key": "Pages",
     "files": [
+      "resources/js/components/pdf-editor/PageSidebar.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -5088,6 +5614,12 @@
     "files": [
       "resources/js/tools/LoanCalculator.jsx",
       "resources/js/tools/MortgageCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Paragraph",
+    "files": [
+      "resources/js/components/pdf-editor/StickyNote.jsx"
     ]
   },
   {
@@ -5164,6 +5696,12 @@
     ]
   },
   {
+    "key": "PDF editing tools",
+    "files": [
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
+    ]
+  },
+  {
     "key": "PDF pages",
     "files": [
       "resources/js/tools/DeletePdfPages.jsx",
@@ -5174,7 +5712,6 @@
   {
     "key": "PDF pages, in order",
     "files": [
-      "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/OrganizePdf.jsx"
     ]
   },
@@ -5276,6 +5813,8 @@
   {
     "key": "Please choose a PNG, JPG or WebP image.",
     "files": [
+      "resources/js/components/pdf-editor/ImageControls.jsx",
+      "resources/js/components/pdf-editor/SignatureMenu.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -5671,6 +6210,7 @@
   {
     "key": "Reading PDF…",
     "files": [
+      "resources/js/components/pdf-editor/PageSidebar.jsx",
       "resources/js/tools/CompressPdf.jsx",
       "resources/js/tools/DeletePdfPages.jsx",
       "resources/js/tools/EditPdf.jsx",
@@ -5720,7 +6260,14 @@
   {
     "key": "Rectangle",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/EditorToolbar.jsx",
+      "resources/js/components/pdf-editor/ShapeProps.jsx"
+    ]
+  },
+  {
+    "key": "Red",
+    "files": [
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
     ]
   },
   {
@@ -5768,7 +6315,13 @@
   {
     "key": "Redo",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
+    ]
+  },
+  {
+    "key": "Redo (Ctrl+Shift+Z)",
+    "files": [
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
     ]
   },
   {
@@ -5836,6 +6389,12 @@
     ]
   },
   {
+    "key": "Remember on this device",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
     "key": "Remove “{name}”",
     "files": [
       "resources/js/tools/SpinWheel.jsx"
@@ -5851,9 +6410,9 @@
     ]
   },
   {
-    "key": "Remove signature",
+    "key": "Remove link",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/LinkOverlay.jsx"
     ]
   },
   {
@@ -5866,6 +6425,12 @@
     "key": "Remove the trailing comma before this bracket.",
     "files": [
       "resources/js/lib/json.js"
+    ]
+  },
+  {
+    "key": "Remove the white background",
+    "files": [
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
     ]
   },
   {
@@ -5931,6 +6496,7 @@
   {
     "key": "Remove this text",
     "files": [
+      "resources/js/components/pdf-editor/TextBlockEditor.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -5944,6 +6510,18 @@
     "key": "Remove this whiteout",
     "files": [
       "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Removed",
+    "files": [
+      "resources/js/components/pdf-editor/LinkOverlay.jsx"
+    ]
+  },
+  {
+    "key": "Removed link - open to restore it",
+    "files": [
+      "resources/js/components/pdf-editor/LinkOverlay.jsx"
     ]
   },
   {
@@ -5968,6 +6546,18 @@
     "key": "Replace all",
     "files": [
       "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Replace image",
+    "files": [
+      "resources/js/components/pdf-editor/ImageControls.jsx"
+    ]
+  },
+  {
+    "key": "Replace signature image",
+    "files": [
+      "resources/js/components/pdf-editor/ImageControls.jsx"
     ]
   },
   {
@@ -6016,12 +6606,6 @@
     ]
   },
   {
-    "key": "Reset zoom",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
     "key": "Resize image",
     "files": [
       "resources/js/tools/ImageResizer.jsx"
@@ -6061,6 +6645,12 @@
     "key": "Restore original",
     "files": [
       "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Restore with this target",
+    "files": [
+      "resources/js/components/pdf-editor/LinkOverlay.jsx"
     ]
   },
   {
@@ -6135,9 +6725,15 @@
     ]
   },
   {
-    "key": "Rotate page {number}",
+    "key": "Rotate page {number} left",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/PageSidebar.jsx"
+    ]
+  },
+  {
+    "key": "Rotate page {number} right",
+    "files": [
+      "resources/js/components/pdf-editor/PageSidebar.jsx"
     ]
   },
   {
@@ -6207,9 +6803,27 @@
     ]
   },
   {
+    "key": "Sans-serif",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
     "key": "Save as",
     "files": [
       "resources/js/tools/ImageResizer.jsx"
+    ]
+  },
+  {
+    "key": "Save as an annotation (editable in other PDF apps)",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Save link",
+    "files": [
+      "resources/js/components/pdf-editor/LinkOverlay.jsx"
     ]
   },
   {
@@ -6219,9 +6833,9 @@
     ]
   },
   {
-    "key": "Save PDF",
+    "key": "Saved only in this browser, never uploaded. You can delete it at any time.",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -6303,6 +6917,12 @@
     ]
   },
   {
+    "key": "Select",
+    "files": [
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
+    ]
+  },
+  {
     "key": "Select {name}",
     "files": [
       "resources/js/components/pdf-editor/FormFieldOverlay.jsx"
@@ -6351,15 +6971,45 @@
     ]
   },
   {
+    "key": "Select, move and resize what you added",
+    "files": [
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
+    ]
+  },
+  {
     "key": "Selected by default",
     "files": [
       "resources/js/components/pdf-editor/FormFieldCreator.jsx"
     ]
   },
   {
+    "key": "Selected image",
+    "files": [
+      "resources/js/components/pdf-editor/ImageControls.jsx"
+    ]
+  },
+  {
+    "key": "Selected item",
+    "files": [
+      "resources/js/components/pdf-editor/SelectionBar.jsx"
+    ]
+  },
+  {
+    "key": "Selected signature",
+    "files": [
+      "resources/js/components/pdf-editor/ImageControls.jsx"
+    ]
+  },
+  {
     "key": "Semi-annually",
     "files": [
       "resources/js/tools/CompoundInterestCalculator.jsx"
+    ]
+  },
+  {
+    "key": "Send backward",
+    "files": [
+      "resources/js/components/pdf-editor/SelectionBar.jsx"
     ]
   },
   {
@@ -6400,6 +7050,12 @@
     ]
   },
   {
+    "key": "Serif",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
     "key": "Server country",
     "files": [
       "resources/js/components/DomainDetails.jsx"
@@ -6427,7 +7083,7 @@
   {
     "key": "Shape",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/ShapeProps.jsx"
     ]
   },
   {
@@ -6437,15 +7093,9 @@
     ]
   },
   {
-    "key": "Shape colour",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
     "key": "Shapes",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
     ]
   },
   {
@@ -6465,6 +7115,12 @@
     "key": "Show all fields as a list",
     "files": [
       "resources/js/tools/EditPdf.jsx"
+    ]
+  },
+  {
+    "key": "Show all pages (scroll)",
+    "files": [
+      "resources/js/components/pdf-editor/PageSidebar.jsx"
     ]
   },
   {
@@ -6493,15 +7149,15 @@
     ]
   },
   {
-    "key": "Sign PDF",
+    "key": "Sign",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
     ]
   },
   {
     "key": "Signature",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -6511,39 +7167,27 @@
     ]
   },
   {
-    "key": "Signature on the page - drag to move",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
     "key": "Signature preview",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
     "key": "Signature ready.",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
+    "key": "Signature style",
+    "files": [
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
     ]
   },
   {
     "key": "Signature type",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
-    "key": "Signing failed: {message}",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
-    "key": "Signing…",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -6607,6 +7251,12 @@
     "key": "SMS",
     "files": [
       "scripts/i18n-extract.mjs"
+    ]
+  },
+  {
+    "key": "Solid",
+    "files": [
+      "resources/js/components/pdf-editor/ShapeProps.jsx"
     ]
   },
   {
@@ -6753,6 +7403,12 @@
     ]
   },
   {
+    "key": "Start of the line - drag to move it",
+    "files": [
+      "resources/js/components/pdf-editor/ShapeProps.jsx"
+    ]
+  },
+  {
     "key": "Start typing or paste your text here…",
     "files": [
       "resources/js/tools/WordCounter.jsx"
@@ -6776,6 +7432,12 @@
       "resources/js/components/DomainDetails.jsx",
       "resources/js/tools/BrokenLinkChecker.jsx",
       "resources/js/tools/DomainAgeChecker.jsx"
+    ]
+  },
+  {
+    "key": "Sticky note",
+    "files": [
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
     ]
   },
   {
@@ -6806,7 +7468,7 @@
   {
     "key": "Strikethrough",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
     ]
   },
   {
@@ -6953,6 +7615,7 @@
   {
     "key": "Text",
     "files": [
+      "resources/js/components/pdf-editor/EditorToolbar.jsx",
       "resources/js/tools/Base64Tool.jsx",
       "resources/js/tools/EditPdf.jsx",
       "resources/js/tools/QrCodeGenerator.jsx",
@@ -6974,6 +7637,7 @@
   {
     "key": "Text colour",
     "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -6981,6 +7645,12 @@
     "key": "Text field",
     "files": [
       "resources/js/components/pdf-editor/FormFieldCreator.jsx"
+    ]
+  },
+  {
+    "key": "Text properties",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
     ]
   },
   {
@@ -7122,6 +7792,12 @@
     ]
   },
   {
+    "key": "The PDF’s own font has no bold or italic version for this text, so a similar standard font is used.",
+    "files": [
+      "resources/js/components/pdf-editor/TextPropsBar.jsx"
+    ]
+  },
+  {
     "key": "The percentage cannot be 0 (division by zero).",
     "files": [
       "resources/js/lib/percent.js"
@@ -7221,12 +7897,6 @@
     "key": "This address can’t be checked. Only public websites on normal web ports are supported.",
     "files": [
       "resources/js/tools/BrokenLinkChecker.jsx"
-    ]
-  },
-  {
-    "key": "This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -7653,12 +8323,13 @@
   {
     "key": "Type",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
     "key": "Type a valid link address first, for example https://example.com",
     "files": [
+      "resources/js/components/pdf-editor/LinkOverlay.jsx",
       "resources/js/tools/EditPdf.jsx"
     ]
   },
@@ -7689,13 +8360,13 @@
   {
     "key": "Type your name",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
     ]
   },
   {
     "key": "Underline",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
     ]
   },
   {
@@ -7707,7 +8378,19 @@
   {
     "key": "Undo",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
+    ]
+  },
+  {
+    "key": "Undo (Ctrl+Z)",
+    "files": [
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
+    ]
+  },
+  {
+    "key": "Undo changes",
+    "files": [
+      "resources/js/components/pdf-editor/LinkOverlay.jsx"
     ]
   },
   {
@@ -7760,15 +8443,9 @@
     ]
   },
   {
-    "key": "Updating the pages failed: {message}",
-    "files": [
-      "resources/js/tools/EditPdf.jsx"
-    ]
-  },
-  {
     "key": "Upload",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -7808,15 +8485,33 @@
     ]
   },
   {
+    "key": "Use saved initials {number}",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
+    "key": "Use saved signature {number}",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
     "key": "Use this signature",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
     ]
   },
   {
     "key": "User agent",
     "files": [
       "resources/js/tools/WhatIsMyIp.jsx"
+    ]
+  },
+  {
+    "key": "Using a keyboard? Choose Type and enter your name instead.",
+    "files": [
+      "resources/js/components/pdf-editor/SignaturePads.jsx"
     ]
   },
   {
@@ -7902,7 +8597,7 @@
   {
     "key": "Watermark",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
     ]
   },
   {
@@ -7979,6 +8674,12 @@
     ]
   },
   {
+    "key": "Web address",
+    "files": [
+      "resources/js/components/pdf-editor/LinkOverlay.jsx"
+    ]
+  },
+  {
     "key": "WebP (smallest)",
     "files": [
       "resources/js/tools/ImageCompressor.jsx"
@@ -8041,9 +8742,9 @@
     ]
   },
   {
-    "key": "What to add",
+    "key": "What to create",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
     ]
   },
   {
@@ -8080,7 +8781,7 @@
   {
     "key": "Whiteout",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
     ]
   },
   {
@@ -8151,6 +8852,12 @@
     ]
   },
   {
+    "key": "Write a note…",
+    "files": [
+      "resources/js/components/pdf-editor/StickyNote.jsx"
+    ]
+  },
+  {
     "key": "Write to us through the contact page. We read every message and add new tools regularly.",
     "files": [
       "app/Support/HomeFaq.php"
@@ -8204,6 +8911,12 @@
     "key": "You are subscribed! We will email you when we add a new tool.",
     "files": [
       "resources/js/components/Newsletter.jsx"
+    ]
+  },
+  {
+    "key": "You can also paste an image with Ctrl+V.",
+    "files": [
+      "resources/js/tools/EditPdf.jsx"
     ]
   },
   {
@@ -8322,6 +9035,12 @@
     ]
   },
   {
+    "key": "Your name (optional)",
+    "files": [
+      "resources/js/components/pdf-editor/StickyNote.jsx"
+    ]
+  },
+  {
     "key": "Your order",
     "files": [
       "resources/js/tools/DomainAuthority.jsx"
@@ -8352,6 +9071,12 @@
     ]
   },
   {
+    "key": "Your saved signatures",
+    "files": [
+      "resources/js/components/pdf-editor/SignatureMenu.jsx"
+    ]
+  },
+  {
     "key": "Your text",
     "files": [
       "resources/js/tools/CaseConverter.jsx",
@@ -8360,21 +9085,33 @@
     ]
   },
   {
+    "key": "Zoom",
+    "files": [
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
+    ]
+  },
+  {
     "key": "Zoom in",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
+    ]
+  },
+  {
+    "key": "Zoom in (+)",
+    "files": [
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
     ]
   },
   {
     "key": "Zoom out",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
     ]
   },
   {
-    "key": "Zoom: {value}%",
+    "key": "Zoom out (-)",
     "files": [
-      "resources/js/tools/EditPdf.jsx"
+      "resources/js/components/pdf-editor/EditorToolbar.jsx"
     ]
   }
 ]

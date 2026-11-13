@@ -3025,6 +3025,12 @@ fieldset.grid-2 .check:has(input:checked) {
     z-index: 20;
 }
 
+/* Jumping to the page (keyboard focus, scrollIntoView) keeps it clear of the sticky header and tool bar. */
+.pdf-editor__zoomport,
+.pdf-editor__stage {
+    scroll-margin-top: calc(var(--header-h) + 9rem);
+}
+
 .pdf-toolbar {
     display: flex;
     flex-wrap: wrap;
@@ -3272,18 +3278,6 @@ fieldset.grid-2 .check:has(input:checked) {
     min-height: 1.9rem;
     padding-block: 0.1rem;
     font-size: 0.8rem;
-}
-
-.pdf-selection__range {
-    display: flex;
-    align-items: center;
-    gap: 0.35rem;
-    font-size: 0.8rem;
-    color: var(--muted);
-}
-
-.pdf-selection__range .range {
-    width: 6rem;
 }
 
 .pdf-selection__label {

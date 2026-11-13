@@ -2205,6 +2205,11 @@ return [
             'Preenche os campos de um formulário existente: caixas de texto, caixas de seleção, listas suspensas e botões de opção',
             'Cria campos novos: uma caixa de texto, uma caixa de seleção, uma lista suspensa ou um campo de assinatura, onde quiser na página',
             'Adicione a sua própria assinatura: desenhe, digite ou carregue-a, depois arraste e redimensione-a em qualquer página',
+            'Clique num parágrafo para editá-lo no lugar, com fonte, tamanho, negrito, itálico, cor, alinhamento e espaçamento entre linhas',
+            'Notas adesivas, e destaque, sublinhado e tachado salvos como anotações reais que outros apps de PDF mostram',
+            'Altere ou remova links que já estão no PDF, ou crie um link para outra página do documento',
+            'Arraste as páginas para reordená-las, duplique páginas e adicione páginas de outro PDF',
+            'Uma barra de ferramentas com atalhos de teclado: desfaça e refaça qualquer alteração, duplique, copie e mova com as setas',
         ],
         'content' => [
             ['heading' => 'Como funciona a edição do texto existente', 'body' => 'Clique em uma linha de texto e digite. O texto antigo é coberto com a cor que está atrás dele e o novo é desenhado na mesma posição, tamanho e cor, usando a fonte incorporada ao PDF. Os PDFs costumam incorporar apenas as letras que usam; se o novo texto precisar de uma letra que o arquivo nunca teve, essa linha passa para a fonte padrão mais parecida e o editor informa quais letras causaram isso. Páginas digitalizadas são imagens sem texto editável; nelas, use o corretivo branco e Adicionar texto.'],

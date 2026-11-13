@@ -8,6 +8,15 @@ test.beforeEach(({ page }) => {
 });
 test.afterEach(() => errors.assertNone());
 
+// Edit PDF toolbar: "Add new text" sits in the Text tool's menu.
+async function pickTool(page, name) {
+    const toolbar = page.getByRole('toolbar', { name: 'PDF editing tools' });
+    if (name === 'Add new text' || name === 'Edit existing text') {
+        await toolbar.getByRole('button', { name: 'Text', exact: true }).click();
+        await page.getByRole('menuitemradio', { name, exact: true }).click();
+    } else await toolbar.getByRole('button', { name, exact: true }).click();
+}
+
 const PARAGRAPH = ['The quick brown fox jumps', 'over the lazy dog near', 'the old river bank.'];
 
 /** A one-page PDF with a 3-line paragraph (Helvetica 12 pt, 14 pt apart) and a heading above it. */
@@ -29,7 +38,7 @@ async function baseFonts(bytes) {
 }
 
 async function save(page) {
-    await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+    await page.getByRole('button', { name: 'Apply changes' }).click();
     const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
     return readDownload(file);
 }
@@ -81,7 +90,7 @@ test.describe('Edit PDF - text editing', () => {
     test('added text is placed with a click, typed on the page, re-edited, styled, wrapped by width and saved', async ({ page }) => {
         await openTool(page, 'edit-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'blank.pdf', mimeType: 'application/pdf', buffer: await makeParagraphPdf() });
-        await page.getByRole('tab', { name: 'Add text' }).click();
+        await pickTool(page, 'Add new text');
         await expect.poll(async () => (await page.locator('.pdf-editor__canvas').boundingBox())?.height ?? 0).toBeGreaterThan(100);
 
         // Click an empty part of the page: a text box opens right there, ready to type into.

@@ -29,6 +29,7 @@ const TOOL_MENUS = {
     Ellipse: 'Shapes',
     Line: 'Shapes',
     Arrow: 'Shapes',
+    'Sticky note': 'Annotate',
 };
 const toolButton = (page, name) => page.getByRole('toolbar', { name: 'PDF editing tools' }).getByRole('button', { name, exact: true });
 async function pickTool(page, name) {
@@ -605,7 +606,7 @@ test.describe('PDF tools', () => {
         await openTool(page, 'edit-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'contract.pdf', mimeType: 'application/pdf', buffer: await makePdf(2) });
         await expect(page.getByText('contract.pdf', { exact: true })).toBeVisible();
-        await page.getByRole('tab', { name: 'Signature' }).click();
+        await pickTool(page, 'Sign');
 
         // Draw a signature on the pad, then use it.
         const pad = page.locator('.signature-pad');
@@ -637,7 +638,7 @@ test.describe('PDF tools', () => {
 
         // Sign and download; the file keeps its page count and grows (the signature image was embedded).
         const originalBytes = await makePdf(2);
-        await page.getByRole('button', { name: 'Sign PDF', exact: true }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         expect(file.suggestedFilename()).toBe('contract-signed.pdf');
         const signedBytes = await readDownload(file);
@@ -645,20 +646,20 @@ test.describe('PDF tools', () => {
         expect(signedBytes.length).toBeGreaterThan(originalBytes.length);
 
         // Switching to another tab leaves the placed signature in place; switching back still shows it.
-        await page.getByRole('tab', { name: 'Edit text' }).click();
-        await page.getByRole('tab', { name: 'Signature' }).click();
+        await pickTool(page, 'Edit existing text');
+        await pickTool(page, 'Sign');
         await expect(overlay).toHaveCount(1);
     });
 
     test('sign-pdf opens Edit PDF with the Signature tab preselected, and the full editor stays reachable', async ({ page }) => {
         await openTool(page, 'sign-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'contract.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
-        await expect(page.getByRole('tab', { name: 'Signature' })).toHaveAttribute('aria-selected', 'true');
+        await expectTool(page, 'Sign');
         await expect(page.getByText('Create your signature')).toBeVisible();
 
         // The one editor is still underneath: every other tab is reachable from this page too.
-        await expect(page.getByRole('tab', { name: 'Edit text' })).toBeVisible();
-        await expect(page.getByRole('tab', { name: 'Watermark' })).toBeVisible();
+        await expect(toolButton(page, 'Text')).toBeVisible();
+        await expect(toolButton(page, 'Watermark')).toBeVisible();
     });
 
     test('signature: a typed signature saved on the device survives a reload, is placed where you click, and can be deleted', async ({ page }) => {
@@ -670,7 +671,7 @@ test.describe('PDF tools', () => {
 
         await openTool(page, 'edit-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'contract.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
-        await page.getByRole('tab', { name: 'Signature' }).click();
+        await pickTool(page, 'Sign');
         await page.getByRole('tab', { name: 'Type' }).click();
         await page.getByLabel('Type your name').fill('Jane Doe');
         await page.getByLabel('Remember on this device').check();
@@ -682,22 +683,24 @@ test.describe('PDF tools', () => {
         const stage = page.locator('.pdf-editor__stage');
         await stage.scrollIntoViewIfNeeded();
         const box = await stage.boundingBox();
-        await page.mouse.click(box.x + box.width * 0.3, box.y + box.height * 0.7);
+        await page.mouse.click(box.x + box.width * 0.3, box.y + box.height * 0.4);
         const overlay = page.locator('.pdf-editor__overlay');
         await expect(overlay).toHaveCount(1);
+        // Measured against the stage again: the signature's controls can appear above the page and move it down.
         const placed = await overlay.boundingBox();
-        expect(placed.x + placed.width / 2).toBeCloseTo(box.x + box.width * 0.3, -1);
-        expect(placed.y + placed.height / 2).toBeCloseTo(box.y + box.height * 0.7, -1);
+        const after = await stage.boundingBox();
+        expect(placed.x + placed.width / 2 - after.x).toBeCloseTo(box.width * 0.3, -1);
+        expect(placed.y + placed.height / 2 - after.y).toBeCloseTo(box.height * 0.4, -1);
 
         // After a reload the saved signature is still offered, and placing it again works.
         await page.reload();
         await page.getByTestId('file-input').setInputFiles({ name: 'contract.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
-        await page.getByRole('tab', { name: 'Signature' }).click();
+        await pickTool(page, 'Sign');
         await page.getByRole('button', { name: 'Use saved signature 1' }).click();
         await expect(page.getByText('Signature ready.')).toBeVisible();
         await page.getByRole('button', { name: 'Add signature to this page' }).click();
         await expect(page.locator('.pdf-editor__overlay')).toHaveCount(1);
-        await page.getByRole('button', { name: 'Sign PDF', exact: true }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         expect(file.suggestedFilename()).toBe('contract-signed.pdf');
 
@@ -707,7 +710,7 @@ test.describe('PDF tools', () => {
         await expect(page.getByRole('button', { name: 'Use saved signature 1' })).toHaveCount(0);
         await page.reload();
         await page.getByTestId('file-input').setInputFiles({ name: 'contract.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
-        await page.getByRole('tab', { name: 'Signature' }).click();
+        await pickTool(page, 'Sign');
         await expect(page.getByText('1. Create your signature')).toBeVisible();
         await expect(page.getByRole('button', { name: 'Use saved signature 1' })).toHaveCount(0);
         expect(bodies).toEqual([]);
@@ -717,7 +720,7 @@ test.describe('PDF tools', () => {
         await openTool(page, 'edit-pdf');
         const jpeg = await makeImage(page, { width: 400, height: 200, type: 'image/jpeg', quality: 0.8 });
         await page.getByTestId('file-input').setInputFiles({ name: 'photo.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
-        await page.getByRole('tab', { name: 'Image', exact: true }).click();
+        await pickTool(page, 'Images');
         await page.getByTestId('file-input').setInputFiles({ name: 'photo.jpg', mimeType: 'image/jpeg', buffer: jpeg });
         await expect(page.getByRole('button', { name: 'Add image to page' })).toBeEnabled();
 
@@ -733,7 +736,7 @@ test.describe('PDF tools', () => {
         await expect(page.getByText('Opacity: 50%')).toBeVisible();
         await expect(page.locator('.pdf-editor__overlay img')).toHaveCSS('opacity', '0.5');
 
-        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         const saved = await PDFDocument.load(await readDownload(file));
         const objects = saved.context.enumerateIndirectObjects().map(([, obj]) => obj);
@@ -950,7 +953,7 @@ test.describe('PDF tools', () => {
         await expect.poll(async () => (await overlay.first().boundingBox()).x).toBeCloseTo(moved.x, 0);
 
         // Recolouring from the context bar is undoable too.
-        await bar.getByLabel('Colour').fill('#00ff00');
+        await bar.getByLabel('Line colour').fill('#00ff00');
         await expect(overlay.first().locator('rect')).toHaveAttribute('stroke', '#00ff00');
         await page.getByRole('button', { name: 'Undo' }).click();
         await expect(overlay.first().locator('rect')).toHaveAttribute('stroke', '#dc2626');
@@ -1058,10 +1061,10 @@ test.describe('PDF tools', () => {
         const card = (n) => panel.getByRole('group', { name: `Page ${n}`, exact: true });
         const label = page.locator('.pdf-editor__page-label');
         await expect(items).toHaveCount(3);
-        await expect(page.getByRole('button', { name: 'Save PDF', exact: true })).toBeDisabled();
+        await expect(page.getByRole('button', { name: 'Apply changes' })).toBeDisabled();
 
         // Text added on page 1.
-        await page.getByRole('tab', { name: 'Add text' }).click();
+        await pickTool(page, 'Add new text');
         await page.getByLabel('Text to add').fill('Stays on its page');
         await page.getByRole('button', { name: 'Add text to page' }).click();
         await expect(page.locator('.pdf-editor__overlay')).toHaveCount(1);
@@ -1087,7 +1090,8 @@ test.describe('PDF tools', () => {
         await card(3).getByRole('button', { name: 'Delete page 3' }).click();
         await expect(items).toHaveCount(2);
         await expect(page.locator('.pdf-editor__overlay')).toHaveCount(0);
-        await panel.getByRole('button', { name: 'Undo page change' }).click();
+        // Page changes are part of the editor's one undo history.
+        await toolButton(page, 'Undo').click();
         await expect(items).toHaveCount(3);
         await card(3).getByRole('button', { name: 'Go to page 3' }).click();
         await expect(page.locator('.pdf-editor__overlay')).toHaveCount(1);
@@ -1098,7 +1102,7 @@ test.describe('PDF tools', () => {
         await chooser.setFiles({ name: 'extra.pdf', mimeType: 'application/pdf', buffer: await makePdf(2, 'Extra') });
         await expect(items).toHaveCount(5);
 
-        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         expect(file.suggestedFilename()).toBe('booklet-edited.pdf');
         const bytes = await readDownload(file);
@@ -1133,7 +1137,7 @@ test.describe('PDF tools', () => {
         await expect(items).toHaveCount(5);
         await expect(scroller.locator('.page-scroller__slot')).toHaveCount(5);
 
-        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         const bytes = await readDownload(file);
         expect(await pdfPageCount(bytes)).toBe(5);
@@ -1146,8 +1150,8 @@ test.describe('PDF tools', () => {
         await openTool(page, 'edit-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'application.pdf', mimeType: 'application/pdf', buffer: await makePdfWithFormFields() });
 
-        await page.getByRole('tab', { name: 'Fill form' }).click();
-        await expect(page.getByText('Fill in the fields on the page, then click Save PDF.')).toBeVisible();
+        await pickTool(page, 'Forms');
+        await expect(page.getByText('Fill in the fields on the page, then click Apply changes.')).toBeVisible();
 
         // The inputs sit exactly over the PDF's own fields.
         const nameInput = page.getByLabel('Fill in full_name');
@@ -1157,11 +1161,11 @@ test.describe('PDF tools', () => {
         await page.getByLabel('Select country').selectOption('DE');
 
         // Another edit in the same session ends up in the same file.
-        await page.getByRole('tab', { name: 'Add text' }).click();
+        await pickTool(page, 'Add new text');
         await page.getByLabel('Text to add').fill('Approved');
         await page.getByRole('button', { name: 'Add text to page' }).click();
 
-        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         expect(file.suggestedFilename()).toBe('application-edited.pdf');
         const bytes = await readDownload(file);
@@ -1175,11 +1179,11 @@ test.describe('PDF tools', () => {
     test('edit PDF: Fill form can flatten the answers into the page', async ({ page }) => {
         await openTool(page, 'edit-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'application.pdf', mimeType: 'application/pdf', buffer: await makePdfWithFormFields() });
-        await page.getByRole('tab', { name: 'Fill form' }).click();
+        await pickTool(page, 'Forms');
         await page.getByLabel('Fill in full_name').fill('Flat Answer');
         await page.getByLabel('Flatten the form so the answers cannot be changed').check();
 
-        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         const saved = await PDFDocument.load(await readDownload(file));
         expect(saved.getForm().getFields()).toHaveLength(0);
@@ -1189,7 +1193,7 @@ test.describe('PDF tools', () => {
         await openTool(page, 'edit-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'blank.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
 
-        await page.getByRole('tab', { name: 'Fill form' }).click();
+        await pickTool(page, 'Forms');
         await expect(page.getByText('No fillable fields were found in this PDF.')).toBeVisible();
         await page.getByRole('tab', { name: 'Add fields' }).click();
 
@@ -1245,7 +1249,7 @@ test.describe('PDF tools', () => {
         await props.getByLabel('Default value').selectOption('US');
         await props.getByRole('button', { name: 'Done' }).click();
 
-        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         expect(file.suggestedFilename()).toBe('blank-edited.pdf');
         const saved = await PDFDocument.load(await readDownload(file));
@@ -1268,14 +1272,14 @@ test.describe('PDF tools', () => {
         await openTool(page, 'edit-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'contract.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
 
-        await page.getByRole('tab', { name: 'Fill form' }).click();
+        await pickTool(page, 'Forms');
         await page.getByRole('tab', { name: 'Add fields' }).click();
         await page.getByRole('button', { name: 'Signature field', exact: true }).click();
         await page.getByRole('button', { name: 'Add to page' }).click();
         await page.getByRole('dialog').getByLabel('Field name').fill('sign_here');
         await page.getByRole('dialog').getByRole('button', { name: 'Done' }).click();
 
-        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         const saved = await PDFDocument.load(await readDownload(file));
         const signature = saved.getForm().getSignature('sign_here');
@@ -1287,7 +1291,7 @@ test.describe('PDF tools', () => {
         await openTool(page, 'edit-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'blank.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
 
-        await page.getByRole('tab', { name: 'Fill form' }).click();
+        await pickTool(page, 'Forms');
         await page.getByRole('tab', { name: 'Add fields' }).click();
         await page.getByRole('button', { name: 'Dropdown', exact: true }).click();
         await page.getByRole('button', { name: 'Add to page' }).click();
@@ -1295,7 +1299,7 @@ test.describe('PDF tools', () => {
         await page.getByRole('dialog').getByLabel('Options (one per line)').fill('Only one');
         await page.getByRole('dialog').getByRole('button', { name: 'Done' }).click();
 
-        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         await expect(page.getByText('Give the dropdown "country" at least two options, one per line.')).toBeVisible();
     });
 
@@ -1303,13 +1307,13 @@ test.describe('PDF tools', () => {
         await openTool(page, 'edit-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'printed.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
 
-        await page.getByRole('tab', { name: 'Fill form' }).click();
+        await pickTool(page, 'Forms');
         await page.getByRole('tab', { name: 'Add fields' }).click();
         await page.getByRole('button', { name: 'Check mark', exact: true }).click();
         await page.getByRole('button', { name: 'Add to page' }).click();
         await expect(page.locator('.pdf-editor__overlay--stamp')).toHaveCount(1);
 
-        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        await page.getByRole('button', { name: 'Apply changes' }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
         const saved = await PDFDocument.load(await readDownload(file));
         expect(saved.getForm().getFields()).toHaveLength(0);

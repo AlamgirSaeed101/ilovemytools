@@ -2597,6 +2597,11 @@ return [
             'Füllt vorhandene Formularfelder aus: Textfelder, Kontrollkästchen, Dropdown-Listen und Optionsfelder',
             'Erstellt neue Formularfelder: ein Textfeld, ein Kontrollkästchen, eine Dropdown-Liste oder ein Unterschriftsfeld, frei auf der Seite platzierbar',
             'Füge deine eigene Unterschrift hinzu: zeichne, tippe oder lade sie hoch und ziehe und skaliere sie dann auf jeder Seite',
+            'Einen Absatz anklicken und direkt bearbeiten, mit Schriftart, Größe, fett, kursiv, Farbe, Ausrichtung und Zeilenabstand',
+            'Haftnotizen sowie Markieren, Unterstreichen und Durchstreichen als echte Anmerkungen, die andere PDF-Programme anzeigen',
+            'Vorhandene Links im PDF ändern oder entfernen oder auf eine andere Seite des Dokuments verlinken',
+            'Seiten per Ziehen neu anordnen, Seiten duplizieren und Seiten aus einem anderen PDF hinzufügen',
+            'Eine Werkzeugleiste mit Tastenkürzeln: jede Änderung rückgängig machen und wiederholen, duplizieren, kopieren und mit den Pfeiltasten verschieben',
         ],
         'content' => [
             [

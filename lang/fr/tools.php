@@ -2205,6 +2205,11 @@ return [
             'Remplissez les champs d’un formulaire existant : champs de texte, cases à cocher, listes déroulantes et boutons radio',
             'Créez de nouveaux champs : un champ de texte, une case à cocher, une liste déroulante ou un champ de signature, placés où vous voulez sur la page',
             'Ajoutez votre propre signature : dessinez-la, tapez-la ou importez-la, puis faites-la glisser et redimensionnez-la sur n’importe quelle page',
+            'Cliquez sur un paragraphe pour le modifier sur place, avec sa police, sa taille, le gras, l’italique, la couleur, l’alignement et l’interligne',
+            'Notes autocollantes, et surlignage, soulignement et barré enregistrés comme de vraies annotations que les autres applications PDF affichent',
+            'Modifiez ou supprimez les liens déjà présents dans le PDF, ou créez un lien vers une autre page du document',
+            'Faites glisser les pages pour les réordonner, dupliquez des pages et ajoutez des pages d’un autre PDF',
+            'Une seule barre d’outils avec raccourcis clavier : annulez et rétablissez chaque modification, dupliquez, copiez et déplacez avec les flèches',
         ],
         'content' => [
             ['heading' => 'Comment fonctionne la modification du texte existant', 'body' => 'Cliquez sur une ligne de texte et tapez. L’ancienne formulation est recouverte de la couleur qui se trouve derrière, et la nouvelle est dessinée à la même position, dans la même taille et la même couleur, avec la police intégrée au PDF. Les PDF n’intègrent généralement que les lettres qu’ils utilisent : si votre nouveau texte demande une lettre que le fichier ne contenait pas, cette ligne passe à la police standard la plus proche et l’éditeur vous indique quelles lettres en sont la cause. Les pages numérisées sont des images sans texte modifiable ; utilisez-y le masquage blanc et Ajouter du texte.'],

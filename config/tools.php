@@ -2949,6 +2949,11 @@ return [
             'Fill in existing form fields: text boxes, checkboxes, dropdowns and radio buttons',
             'Create new fields: a text box, checkbox, dropdown or signature, placed anywhere on the page',
             'Add your own signature: draw, type or upload it, then drag and resize it on any page',
+            'Click a paragraph to edit it in place, with its font, size, bold, italic, colour, alignment and line spacing',
+            'Sticky notes, plus highlight, underline and strikethrough saved as real annotations other PDF apps can show',
+            'Change or remove links already in the PDF, or link to another page of the document',
+            'Drag pages to reorder them, duplicate pages and add pages from another PDF',
+            'One toolbar with keyboard shortcuts: undo and redo every change, duplicate, copy and nudge with the arrow keys',
         ],
         'content' => [
             [

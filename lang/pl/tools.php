@@ -2078,6 +2078,11 @@ return [
             'Wypełnia istniejące pola formularza: pola tekstowe, pola wyboru, listy rozwijane i przyciski opcji',
             'Twórz nowe pola: pole tekstowe, pole wyboru, listę rozwijaną lub pole podpisu, umieszczone w dowolnym miejscu strony',
             'Dodaj własny podpis: narysuj, wpisz lub wgraj go, a potem przeciągaj i zmieniaj jego rozmiar na każdej stronie',
+            'Kliknij akapit, aby edytować go w miejscu, łącznie z czcionką, rozmiarem, pogrubieniem, kursywą, kolorem, wyrównaniem i interlinią',
+            'Karteczki z notatkami oraz zakreślenie, podkreślenie i przekreślenie zapisane jako prawdziwe adnotacje widoczne w innych programach PDF',
+            'Zmieniaj lub usuwaj linki, które już są w PDF-ie, albo dodaj link do innej strony dokumentu',
+            'Przeciągaj strony, aby zmienić ich kolejność, duplikuj strony i dodawaj strony z innego PDF-a',
+            'Jeden pasek narzędzi ze skrótami klawiszowymi: cofaj i ponawiaj każdą zmianę, duplikuj, kopiuj i przesuwaj strzałkami',
         ],
         'content' => [
             ['heading' => 'Jak działa edycja istniejącego tekstu', 'body' => 'Kliknij wiersz tekstu i pisz. Stare brzmienie zostaje zakryte kolorem, który jest pod nim, a nowe jest rysowane w tym samym miejscu, rozmiarze i kolorze, czcionką osadzoną w PDF. Pliki PDF zwykle osadzają tylko używane litery, więc jeśli nowy tekst wymaga litery, której plik nigdy nie zawierał, ten wiersz przełącza się na najbliższą standardową czcionkę, a edytor pokazuje, które litery są przyczyną. Zeskanowane strony to obrazy bez tekstu do edycji; użyj tam zakrywania na biało i dodawania tekstu.'],
