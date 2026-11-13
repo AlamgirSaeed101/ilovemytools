@@ -180,6 +180,8 @@ await pool([...internal].filter((u) => !skipInternal.test(u)), async (u) => {
 });
 
 // Outbound links: 404/410/DNS failures count as dead; 401/403/429 usually mean bot blocking, so they are only noted.
+// LinkedIn (and some other sites) answer bots with the non-standard status 999 instead of 403; that's a bot
+// block too, not proof the page is dead, so it must not be treated as a 5xx server error.
 const statePath = path.join(root, 'docs/health-state.json');
 let state = {};
 try {
@@ -200,7 +202,7 @@ async function getFollow(u, hops = 5) {
 await pool([...external.keys()], async (u) => {
     let r = await request(u, { method: 'HEAD', timeout: 15000 });
     if (r.status < 200 || r.status >= 300) r = await getFollow(u);
-    const dead = r.status === 404 || r.status === 410 || (r.status === 0 && /ENOTFOUND|ECONNREFUSED|certificate/i.test(r.error || '')) || r.status >= 500;
+    const dead = r.status === 404 || r.status === 410 || (r.status === 0 && /ENOTFOUND|ECONNREFUSED|certificate/i.test(r.error || '')) || (r.status >= 500 && r.status !== 999);
     if (dead) deadNow[u] = `${r.status} ${r.error || ''}`.trim();
 });
 const outbound = {};
