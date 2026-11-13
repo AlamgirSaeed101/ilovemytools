@@ -93,6 +93,11 @@ describe('hasUnsavedChanges', () => {
         expect(hasUnsavedChanges([])).toBe(false);
         expect(hasUnsavedChanges([{ type: 'text' }])).toBe(true);
     });
+
+    it('is true when only the pages were changed (reordered, rotated, deleted, inserted)', () => {
+        expect(hasUnsavedChanges([], true)).toBe(true);
+        expect(hasUnsavedChanges([], false)).toBe(false);
+    });
 });
 
 describe('fileFromSession', () => {

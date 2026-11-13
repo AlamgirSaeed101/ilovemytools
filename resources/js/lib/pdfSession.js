@@ -39,7 +39,11 @@ async function withStore(mode, action) {
     }
 }
 
-/** Saves the current session (the file's bytes, every element, the page and mode), replacing any previous one. */
+/**
+ * Saves the current session (the file's bytes, every element, the page and mode), replacing any
+ * previous one. Optional `pageMap` (the page panel's order/rotation/blank pages, see pdfPageOps.js)
+ * and `extraFiles` ([{ key, name, bytes }] of PDFs whose pages were inserted) are saved with it.
+ */
 export function saveSession(session) {
     return withStore('readwrite', (store) => store.put(session, KEY));
 }
@@ -59,7 +63,7 @@ export function fileFromSession(session) {
     return new File([session.fileBytes], session.fileName, { type: session.fileType || 'application/pdf' });
 }
 
-/** Whether the editor holds anything that a refresh, a closed tab or a new upload would lose. */
-export function hasUnsavedChanges(elements) {
-    return elements.length > 0;
+/** Whether the editor holds anything that a refresh, a closed tab or a new upload would lose. `pagesChanged`: the page panel changed the pages. */
+export function hasUnsavedChanges(elements, pagesChanged = false) {
+    return elements.length > 0 || Boolean(pagesChanged);
 }

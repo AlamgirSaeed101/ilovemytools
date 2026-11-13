@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Dropzone from '../components/Dropzone.jsx';
-import PdfPageCanvas from '../components/PdfPageCanvas.jsx';
 import { Notice, Tabs } from '../components/ui.jsx';
 import { getLocale, t, tn } from '../lib/i18n.js';
 import { isPdf } from '../lib/pdf.js';
@@ -15,16 +14,6 @@ import { imageFromClipboard, loadImageFile, placementRect } from '../lib/imageUt
 import SignatureMenu from '../components/pdf-editor/SignatureMenu.jsx';
 import ImageControls from '../components/pdf-editor/ImageControls.jsx';
 import { clearSession, fileFromSession, hasUnsavedChanges, loadSession, saveSession } from '../lib/pdfSession.js';
-import {
-    applyPageOps,
-    defaultPageOps,
-    deletePageOp,
-    insertBlankPageOp,
-    isPageOpsChanged,
-    movePageOp,
-    remapElementsForPageOps,
-    rotatePageOp,
-} from '../lib/pdfPageOps.js';
 import { blockCanvasRect, groupRunsIntoBlocks, textEditElement, textElementToPdf } from '../lib/pdfTextBlocks.js';
 import TextBlockEditor from '../components/pdf-editor/TextBlockEditor.jsx';
 import TextPropsBar from '../components/pdf-editor/TextPropsBar.jsx';
@@ -37,6 +26,12 @@ import ShapeProps, { DEFAULT_SHAPE_PROPS, LineEndHandles, isLineShape, shapeElem
 import StickyNote, { NOTE_COLORS, NOTE_SIZE, rememberedAuthor } from '../components/pdf-editor/StickyNote.jsx';
 import LinkOverlay, { LinkTargetFields, linkTargetLabel, pageIndexFrom } from '../components/pdf-editor/LinkOverlay.jsx';
 import TextMarkup from '../components/pdf-editor/TextMarkup.jsx';
+import MappedPageCanvas from '../components/pdf-editor/MappedPageCanvas.jsx';
+import PageScroller from '../components/pdf-editor/PageScroller.jsx';
+import PageSidebar from '../components/pdf-editor/PageSidebar.jsx';
+import usePageMap from '../components/pdf-editor/usePageMap.js';
+import { insertBlank } from '../lib/pdfPageOps.js';
+import { pointerToPage, stageTransform, viewSize } from '../lib/pdfPageView.js';
 
 // pdf-lib (~165 KB) only loads when a PDF is previewed or saved, not with the page.
 const loadWatermark = () => import('../lib/pdfWatermark.js');
@@ -84,12 +79,9 @@ const isLine = (el) => el.type === 'stroke' || (el.type === 'shape' && (el.shape
 // Elements with a fixed x/y/width/height box that a rotate handle can spin around its own centre.
 const canRotate = (el) => el.type === 'text' || el.type === 'image' || el.type === 'highlight' || (el.type === 'shape' && !isLine(el));
 
+// The stage's data-rotation is the page panel's rotation of the page on screen (see pdfPageView.js).
 function pointerPoint(e, el, natural) {
-    const rect = el.getBoundingClientRect();
-    return {
-        x: ((e.clientX - rect.left) * natural.width) / rect.width,
-        y: ((e.clientY - rect.top) * natural.height) / rect.height,
-    };
+    return pointerToPage(e.clientX, e.clientY, el.getBoundingClientRect(), natural, Number(el.dataset.rotation) || 0);
 }
 
 function measureText(text, pxSize) {
@@ -155,7 +147,6 @@ export default function EditPdf({ initialMode } = {}) {
     const [formFlatten, setFormFlatten] = useState(false);
     const [formChanged, setFormChanged] = useState(false);
     const [pageWidgets, setPageWidgets] = useState([]);
-    const [pageOps, setPageOps] = useState(null);
     const [error, setError] = useState('');
     const [working, setWorking] = useState(false);
     const [result, setResult] = useState(null);
@@ -168,12 +159,8 @@ export default function EditPdf({ initialMode } = {}) {
     const wmPreviewRenderDocRef = useRef(null);
     const { status, doc, renderDoc, pageCount } = usePdfDoc(file, { keepFonts: true });
     const thumbs = usePageThumbnails(renderDoc, pageCount);
-
-    // Starts the page-management list at the document's own order once it is known, unless a
-    // resumed session already restored one.
-    useEffect(() => {
-        if (pageCount > 0) setPageOps((prev) => prev ?? defaultPageOps(pageCount));
-    }, [pageCount]);
+    const [continuous, setContinuous] = useState(false);
+    const pages = usePageMap({ doc, renderDoc, pageCount, thumbs, elements, setElements, nextId, currentPage, setCurrentPage, onEdit: () => { setRedoStack([]); setResult(null); } });
 
     // A previous visit left unfinished work: offer to resume it before the dropzone is shown.
     useEffect(() => {
@@ -198,27 +185,28 @@ export default function EditPdf({ initialMode } = {}) {
     // Auto-saves to IndexedDB as the user works, and clears the save once there is nothing left to lose.
     useEffect(() => {
         if (!file) return;
-        if (!hasUnsavedChanges(elements) && !isPageOpsChanged(pageOps, pageCount)) {
+        if (!hasUnsavedChanges(elements, pages.changed)) {
             clearSession().catch(() => {});
             return;
         }
         autosaveTimerRef.current = setTimeout(() => {
             if (!fileBytesRef.current) return;
-            saveSession({ fileName: file.name, fileType: file.type, fileBytes: fileBytesRef.current, elements, currentPage, mode, pageOps }).catch(() => {});
+            saveSession({ fileName: file.name, fileType: file.type, fileBytes: fileBytesRef.current, elements, currentPage, mode, ...pages.sessionFields() }).catch(() => {});
         }, 800);
         return () => clearTimeout(autosaveTimerRef.current);
-    }, [file, elements, currentPage, mode, pageOps, pageCount]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [file, elements, currentPage, mode, pages.map, pages.changed]);
 
     // Warns before the tab closes or navigates away while there is unsaved work.
     useEffect(() => {
-        if (!hasUnsavedChanges(elements) && !isPageOpsChanged(pageOps, pageCount)) return;
+        if (!hasUnsavedChanges(elements, pages.changed)) return;
         function onBeforeUnload(e) {
             e.preventDefault();
             e.returnValue = '';
         }
         window.addEventListener('beforeunload', onBeforeUnload);
         return () => window.removeEventListener('beforeunload', onBeforeUnload);
-    }, [elements, pageOps, pageCount]);
+    }, [elements, pages.changed]);
 
     function resumeSession() {
         if (!savedSession) return;
@@ -227,7 +215,7 @@ export default function EditPdf({ initialMode } = {}) {
         setElements(savedSession.elements);
         setCurrentPage(savedSession.currentPage || 0);
         setMode(savedSession.mode || 'edittext');
-        setPageOps(savedSession.pageOps ?? null);
+        pages.restore(savedSession);
         setSavedSession(null);
         setFile(restored);
     }
@@ -239,7 +227,7 @@ export default function EditPdf({ initialMode } = {}) {
 
     /** Confirms before anything that would discard unsaved work (a new upload, or picking another PDF). */
     function confirmDiscard() {
-        return (!hasUnsavedChanges(elements) && !isPageOpsChanged(pageOps, pageCount)) || window.confirm(t('Discard your unsaved changes to this PDF?'));
+        return !hasUnsavedChanges(elements, pages.changed) || window.confirm(t('Discard your unsaved changes to this PDF?'));
     }
 
     function downloadResult() {
@@ -250,35 +238,42 @@ export default function EditPdf({ initialMode } = {}) {
     }
 
     // The editable text runs of the page on screen (pdf.js text + the PDF's own fonts).
+    const runsSource = pages.isOwnPage(currentPage) ? pages.entry(currentPage).source : -1;
     useEffect(() => {
         if (!renderDoc) return;
         let cancelled = false;
         setPageRuns([]);
         setRunsReady(false);
-        extractPageRuns(renderDoc, currentPage + 1)
+        // Blank pages and pages inserted from another PDF have no text of the open PDF to edit.
+        if (runsSource < 0) {
+            setRunsReady(true);
+            return;
+        }
+        extractPageRuns(renderDoc, runsSource + 1)
             .then((runs) => !cancelled && setPageRuns(runs))
             .catch(() => !cancelled && setPageRuns([]))
             .finally(() => !cancelled && setRunsReady(true));
         return () => {
             cancelled = true;
         };
-    }, [renderDoc, currentPage]);
+    }, [renderDoc, runsSource]);
     // Lines of one paragraph (same font, size, edge, spacing) are edited together as one block.
     const pageBlocks = useMemo(() => groupRunsIntoBlocks(pageRuns), [pageRuns]);
 
     // The links the page on screen already has, so the Link tool can show, change or remove them.
     useEffect(() => {
         setPageLinks([]);
-        if (!renderDoc || mode !== 'link') return undefined;
+        // Blank pages and pages inserted from another PDF have no links of the open PDF.
+        if (!renderDoc || mode !== 'link' || runsSource < 0) return undefined;
         let cancelled = false;
         import('../lib/pdfLinks.js')
-            .then(({ readPageLinks }) => readPageLinks(renderDoc, currentPage + 1))
+            .then(({ readPageLinks }) => readPageLinks(renderDoc, runsSource + 1))
             .then((links) => !cancelled && setPageLinks(links))
             .catch(() => !cancelled && setPageLinks([]));
         return () => {
             cancelled = true;
         };
-    }, [renderDoc, currentPage, mode]);
+    }, [renderDoc, runsSource, mode]);
 
     const editing = elements.find((el) => el.id === editingId) ?? null;
 
@@ -395,16 +390,18 @@ export default function EditPdf({ initialMode } = {}) {
 
     // Where the PDF's own fields sit on the page on screen, to fill them in place.
     useEffect(() => {
-        if (mode !== 'form' || !renderDoc) return;
+        setPageWidgets([]);
+        // Blank pages and pages inserted from another PDF have none of the open PDF's fields.
+        if (mode !== 'form' || !renderDoc || runsSource < 0) return;
         let cancelled = false;
         loadForms()
-            .then(({ readFormWidgets }) => readFormWidgets(renderDoc, currentPage + 1))
+            .then(({ readFormWidgets }) => readFormWidgets(renderDoc, runsSource + 1))
             .then((widgets) => !cancelled && setPageWidgets(widgets))
             .catch(() => !cancelled && setPageWidgets([]));
         return () => {
             cancelled = true;
         };
-    }, [mode, renderDoc, currentPage]);
+    }, [mode, renderDoc, runsSource]);
 
     function changeFormValue(name, value) {
         setFormValues((prev) => ({ ...prev, [name]: value }));
@@ -475,7 +472,7 @@ export default function EditPdf({ initialMode } = {}) {
 
     // Pasting an image (Ctrl+V) anywhere outside a text box adds it to the page on screen.
     useEffect(() => {
-        if (!file || !canvasSize.width || mode === 'watermark' || mode === 'pages') return undefined;
+        if (!file || !canvasSize.width || mode === 'watermark') return undefined;
         function onPaste(e) {
             const target = e.target;
             if (target instanceof HTMLElement && (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName))) return;
@@ -498,7 +495,7 @@ export default function EditPdf({ initialMode } = {}) {
 
     /** A text-edit element for a paragraph `block`, with the colours sampled from `canvas` (rendered at `atScale`). */
     function textEditFor(block, page, canvas, atScale, text) {
-        const { width, height: pageHeight } = doc.getPage(page).getSize();
+        const { width, height: pageHeight } = pages.size(page);
         const first = block.runs?.[0] ?? block;
         const colors = colorsFromCanvas(canvas, pdfRectToCanvasRect(coverRect(first, first.ascent, first.descent), atScale, pageHeight));
         return { ...textEditElement(block, { scale: computeDisplayScale(width, pageHeight), pageHeight, colors }), page, text };
@@ -558,9 +555,11 @@ export default function EditPdf({ initialMode } = {}) {
         let count = 0;
         const added = [];
         try {
-            for (let n = 1; n <= pageCount; n++) {
+            for (let page = 0; page < pages.count; page++) {
+                if (!pages.isOwnPage(page)) continue;
+                const n = pages.entry(page).source + 1;
                 // Search the wording as it is now: a line already edited is matched on its new text.
-                const editOf = (block) => elements.find((el) => el.type === 'textedit' && el.page === n - 1 && el.run.id === block.id);
+                const editOf = (block) => elements.find((el) => el.type === 'textedit' && el.page === page && el.run.id === block.id);
                 const runs = groupRunsIntoBlocks(await extractPageRuns(renderDoc, n)).filter((run) => (editOf(run)?.text ?? run.str).includes(findText));
                 if (runs.length === 0) continue;
                 const canvas = await renderPageToCanvas(renderDoc, n, { scale: 1, background: '#ffffff' });
@@ -571,7 +570,7 @@ export default function EditPdf({ initialMode } = {}) {
                     count += before.split(findText).length - 1;
                     const fallback = (await missingGlyphs(run.fontData, text)).length > 0;
                     if (current) added.push({ ...current, text, fallback });
-                    else added.push({ id: nextId.current++, ...textEditFor(run, n - 1, canvas, 1, text), fallback });
+                    else added.push({ id: nextId.current++, ...textEditFor(run, page, canvas, 1, text), fallback });
                 }
             }
             setElements((list) => [...list.filter((el) => !added.some((a) => a.id === el.id)), ...added]);
@@ -600,13 +599,13 @@ export default function EditPdf({ initialMode } = {}) {
         setFormFields([]);
         setFormValues({});
         setFormReady(false);
-        setPageOps(null);
         setFormSubMode('fill');
         setFormFlatten(false);
         setFormChanged(false);
         setPageWidgets([]);
         setSignature(null);
         setActiveImageId(null);
+        pages.reset();
         setFile(picked);
     }
 
@@ -696,7 +695,7 @@ export default function EditPdf({ initialMode } = {}) {
             } else if (mode === 'highlight') pushElement({ type: 'highlight', color: highlightColor, rotation: 0, ...rect });
             else if (mode === 'whiteout') pushElement({ type: 'whiteout', ...rect });
             else if (markup) pushElement({ type: 'markup', kind: mode, color: markupColor, ...rect, height: Math.max(8, rect.height) });
-            else if (mode === 'link' && linkTarget === 'page') pushElement({ type: 'link', url: null, pageTarget: pageIndexFrom(linkPage, pageCount), ...rect });
+            else if (mode === 'link' && linkTarget === 'page') pushElement({ type: 'link', url: null, pageTarget: pageIndexFrom(linkPage, pages.count), ...rect });
             else if (mode === 'link') pushElement({ type: 'link', url: normalizeLinkUrl(linkUrl), ...rect });
             else if (isLineShape(shapeProps.shape)) pushElement({ type: 'shape', shape: shapeProps.shape, ...shapeElementStyle(shapeProps), points: [start, end] });
             else pushElement({ type: 'shape', shape: shapeProps.shape, ...shapeElementStyle(shapeProps), rotation: 0, ...rect });
@@ -731,8 +730,8 @@ export default function EditPdf({ initialMode } = {}) {
                 setError(t('Type a valid link address first, for example https://example.com'));
                 return;
             }
-            if (mode === 'link' && linkTarget === 'page' && pageIndexFrom(linkPage, pageCount) == null) {
-                setError(t('Choose a page from 1 to {total}.', { total: pageCount }));
+            if (mode === 'link' && linkTarget === 'page' && pageIndexFrom(linkPage, pages.count) == null) {
+                setError(t('Choose a page from 1 to {total}.', { total: pages.count }));
                 return;
             }
             setError('');
@@ -861,55 +860,19 @@ export default function EditPdf({ initialMode } = {}) {
     }
 
     async function apply(suffix = 'edited') {
-        if (!doc || working || (elements.length === 0 && !formChanged)) return;
+        if (!doc || working || (elements.length === 0 && !formChanged && !pages.changed)) return;
         setWorking(true);
         setError('');
         try {
-            const toBuild = toBuildElements(doc, elements);
             const [{ buildEditedPdf }, forms] = await Promise.all([loadEdit(), loadFormCreate()]);
-            // A copy, so saving again later doesn't draw or create anything twice.
-            const work = await forms.workingCopy(doc);
+            // A copy, so saving again later doesn't draw or create anything twice; then the pages in
+            // the page panel's order, rotation, blanks and inserted PDFs; then the elements on top.
+            const work = await pages.build(await forms.workingCopy(doc));
+            const toBuild = toBuildElements(work, elements);
             const blob = await buildEditedPdf(work, toBuild.filter((el) => el.type !== 'formfield'), { beforeSave: formsBeforeSave(forms, toBuild) });
             setResult({ blob, name: safeFilename(`${baseName(file.name)}-${suffix}.pdf`) });
         } catch (e) {
             setError(formSaveErrorText(e) ?? t('Editing failed: {message}', { message: e.message }));
-        } finally {
-            setWorking(false);
-        }
-    }
-
-    function movePage(from, to) {
-        setPageOps((ops) => movePageOp(ops, from, to));
-        setResult(null);
-    }
-
-    function deletePage(position) {
-        setPageOps((ops) => deletePageOp(ops, position));
-        setResult(null);
-    }
-
-    function insertBlankPage(position) {
-        setPageOps((ops) => insertBlankPageOp(ops, position));
-        setResult(null);
-    }
-
-    function rotatePage(position, delta) {
-        setPageOps((ops) => rotatePageOp(ops, position, delta));
-        setResult(null);
-    }
-
-    async function applyPages() {
-        if (!doc || working || !isPageOpsChanged(pageOps, pageCount)) return;
-        setWorking(true);
-        setError('');
-        try {
-            const toBuild = remapElementsForPageOps(toBuildElements(doc, elements), pageOps);
-            const work = await applyPageOps(doc, pageOps);
-            const [{ buildEditedPdf }, forms] = await Promise.all([loadEdit(), loadFormCreate()]);
-            const blob = await buildEditedPdf(work, toBuild.filter((el) => el.type !== 'formfield'), { beforeSave: formsBeforeSave(forms, toBuild) });
-            setResult({ blob, name: safeFilename(`${baseName(file.name)}-pages.pdf`) });
-        } catch (e) {
-            setError(t('Updating the pages failed: {message}', { message: e.message }));
         } finally {
             setWorking(false);
         }
@@ -953,7 +916,8 @@ export default function EditPdf({ initialMode } = {}) {
         );
     }
 
-    const currentPageSize = doc.getPage(currentPage).getSize();
+    const currentPageSize = pages.size(currentPage);
+    const pageRotation = pages.rotation(currentPage);
     const scale = computeDisplayScale(currentPageSize.width, currentPageSize.height);
     const currentElements = elements.filter((el) => el.page === currentPage);
     const activeImage = elements.find((el) => el.id === activeImageId && el.type === 'image') ?? null;
@@ -963,7 +927,7 @@ export default function EditPdf({ initialMode } = {}) {
         <div className="stack">
             {mode === 'sign' ? (
                 <Notice type="info">{t('This creates an electronic signature (a drawn, typed or uploaded image placed on the PDF), not a certificate-based digital signature.')}</Notice>
-            ) : mode !== 'edittext' && mode !== 'text' && mode !== 'watermark' && mode !== 'form' && mode !== 'pages' && (
+            ) : mode !== 'edittext' && mode !== 'text' && mode !== 'watermark' && mode !== 'form' && (
                 <Notice type="info">{t('This adds new content on top of the page. To change text that is already in the PDF, use the Edit text tab.')}</Notice>
             )}
 
@@ -992,65 +956,12 @@ export default function EditPdf({ initialMode } = {}) {
                         { id: 'link', label: t('Link') },
                         { id: 'note', label: t('Note') },
                         { id: 'draw', label: t('Draw') },
-                        { id: 'pages', label: t('Pages') },
                         { id: 'watermark', label: t('Watermark') },
                         { id: 'sign', label: t('Signature') },
                     ]}
                 />
 
-                {mode === 'pages' ? (
-                <div className="stack" style={{ marginTop: '0.7rem' }}>
-                    <p className="field__hint" style={{ margin: 0 }}>
-                        {t('Insert a blank page, delete, rotate or reorder pages. This only changes the file once you click Save PDF below.')}
-                    </p>
-                    <ol className="page-grid" aria-label={t('PDF pages, in order')}>
-                        {(pageOps ?? []).map((op, position) => {
-                            const thumb = op.type === 'page' ? thumbs[op.index] : null;
-                            return (
-                                <li key={op.type === 'page' ? `page-${op.index}` : `blank-${position}`}>
-                                    <div className="page-card" style={{ cursor: 'default' }} role="group" aria-label={op.type === 'blank' ? t('Blank page') : t('Page {number}', { number: op.index + 1 })}>
-                                        <div className="page-card__frame">
-                                            {op.type === 'blank' ? (
-                                                <span className="page-card__blank" aria-hidden="true" />
-                                            ) : thumb?.url ? (
-                                                <img className="page-card__img" src={thumb.url} alt="" style={op.rotate ? { transform: `rotate(${op.rotate}deg)` } : undefined} />
-                                            ) : (
-                                                <span className="field__hint">{t('Loading…')}</span>
-                                            )}
-                                        </div>
-                                        <span className="page-card__number">{position + 1}</span>
-                                        <div className="row">
-                                            <button type="button" className="btn btn--sm" onClick={() => movePage(position, position - 1)} disabled={position === 0} aria-label={t('Move page {number} earlier', { number: position + 1 })}>
-                                                ←
-                                            </button>
-                                            <button type="button" className="btn btn--sm" onClick={() => movePage(position, position + 1)} disabled={position === pageOps.length - 1} aria-label={t('Move page {number} later', { number: position + 1 })}>
-                                                →
-                                            </button>
-                                            {op.type === 'page' && (
-                                                <button type="button" className="btn btn--sm" onClick={() => rotatePage(position, 90)} aria-label={t('Rotate page {number}', { number: position + 1 })}>
-                                                    ⟳
-                                                </button>
-                                            )}
-                                            <button
-                                                type="button"
-                                                className="btn btn--sm btn--danger"
-                                                onClick={() => deletePage(position)}
-                                                disabled={pageOps.length <= 1}
-                                                aria-label={t('Delete page {number}', { number: position + 1 })}
-                                            >
-                                                {t('Delete')}
-                                            </button>
-                                        </div>
-                                        <button type="button" className="btn btn--sm btn--ghost" onClick={() => insertBlankPage(position)}>
-                                            {t('Insert blank page after')}
-                                        </button>
-                                    </div>
-                                </li>
-                            );
-                        })}
-                    </ol>
-                </div>
-                ) : mode === 'watermark' ? (
+                {mode === 'watermark' ? (
                 <div className="grid-2" style={{ marginTop: '0.7rem' }}>
                     <div className="field">
                         <Tabs
@@ -1258,7 +1169,7 @@ export default function EditPdf({ initialMode } = {}) {
                     {mode === 'shape' && <ShapeProps value={shapeProps} onChange={(patch) => setShapeProps((p) => ({ ...p, ...patch }))} />}
                     {mode === 'link' && (
                         <>
-                            <LinkTargetFields target={linkTarget} onTarget={setLinkTarget} url={linkUrl} onUrl={setLinkUrl} page={linkPage} onPage={setLinkPage} pageCount={pageCount} idPrefix="new-link" />
+                            <LinkTargetFields target={linkTarget} onTarget={setLinkTarget} url={linkUrl} onUrl={setLinkUrl} page={linkPage} onPage={setLinkPage} pageCount={pages.count} idPrefix="new-link" />
                             <span className="field__hint" style={{ margin: 0 }}>
                                 {t('Then drag on the page over the area that should open the link.')} {pageLinks.length > 0 && t('Click an existing link to change or remove it.')}
                             </span>
@@ -1294,32 +1205,29 @@ export default function EditPdf({ initialMode } = {}) {
                     </div>
                 )}
 
-                {pageCount > 1 && (
-                    <ul className="pdf-editor__thumbs" aria-label={t('Pages')}>
-                        {thumbs.map((thumb, i) => (
-                            <li key={i}>
-                                <button
-                                    type="button"
-                                    className={`pdf-editor__thumb${i === currentPage ? ' is-selected' : ''}`}
-                                    onClick={() => setCurrentPage(i)}
-                                    aria-current={i === currentPage ? 'true' : undefined}
-                                    aria-label={t('Go to page {number}', { number: i + 1 })}
-                                >
-                                    {thumb?.url ? <img src={thumb.url} alt="" /> : <span className="field__hint">{t('Loading…')}</span>}
-                                    <span className="pdf-editor__thumb-number">{i + 1}</span>
-                                </button>
-                            </li>
-                        ))}
-                    </ul>
-                )}
+                <div className="pdf-editor__workspace">
+                <PageSidebar
+                    pageMap={pages.map}
+                    thumbFor={pages.thumbFor}
+                    sizeOf={pages.size}
+                    current={currentPage}
+                    onSelect={setCurrentPage}
+                    onChange={pages.change}
+                    onInsertPdf={(picked, position) => pages.insertPdf(picked, position).catch((e) => setError(t('Could not add that PDF: {message}', { message: e.message })))}
+                    onUndo={pages.undo}
+                    canUndo={pages.canUndo}
+                    continuous={continuous}
+                    onContinuousChange={setContinuous}
+                />
+                <div className="pdf-editor__main">
 
                 <div className="pdf-editor__toolbar">
                     <div className="pdf-editor__nav">
                         <button type="button" className="btn btn--sm" onClick={() => setCurrentPage((p) => Math.max(0, p - 1))} disabled={currentPage === 0}>
                             {t('Previous page')}
                         </button>
-                        <span className="pdf-editor__page-label">{t('Page {current} of {total}', { current: currentPage + 1, total: pageCount })}</span>
-                        <button type="button" className="btn btn--sm" onClick={() => setCurrentPage((p) => Math.min(pageCount - 1, p + 1))} disabled={currentPage === pageCount - 1}>
+                        <span className="pdf-editor__page-label">{t('Page {current} of {total}', { current: currentPage + 1, total: pages.count })}</span>
+                        <button type="button" className="btn btn--sm" onClick={() => setCurrentPage((p) => Math.min(pages.count - 1, p + 1))} disabled={currentPage >= pages.count - 1}>
                             {t('Next page')}
                         </button>
                     </div>
@@ -1337,22 +1245,32 @@ export default function EditPdf({ initialMode } = {}) {
                     </div>
                 </div>
 
+                <PageScroller
+                    enabled={continuous}
+                    count={pages.count}
+                    current={currentPage}
+                    onCurrentChange={setCurrentPage}
+                    getPage={(i) => ({ key: pages.entry(i).id, entry: pages.entry(i), renderDoc: pages.renderDocFor(pages.entry(i)), size: pages.size(i) })}
+                    zoom={zoomFactor}
+                    onInsertBlank={(position) => pages.change(insertBlank(pages.map, position, [currentPageSize.width, currentPageSize.height]))}
+                >
                 <div
                     className="pdf-editor__zoomport"
-                    style={{ width: canvasSize.width ? canvasSize.width * zoomFactor : undefined, height: canvasSize.height ? canvasSize.height * zoomFactor : undefined }}
+                    style={canvasSize.width ? viewSize(canvasSize.width, canvasSize.height, pageRotation, zoomFactor) : undefined}
                 >
                 <div
                     className="pdf-editor__stage"
                     ref={stageRef}
                     onPointerDown={startDraw}
+                    data-rotation={pageRotation || undefined}
                     style={{
                         transformOrigin: 'top left',
-                        ...(zoomFactor !== 1 ? { transform: `scale(${zoomFactor})` } : null),
+                        transform: stageTransform(canvasSize.width, canvasSize.height, pageRotation, zoomFactor),
                         ...(mode === 'draw' || mode === 'note' || DRAG_MODES.includes(mode) || (mode === 'form' && formSubMode === 'add') ? { touchAction: 'none', cursor: 'crosshair' } : null),
                         ...((mode === 'sign' && signature) || (mode === 'image' && pendingImage) ? { cursor: 'copy' } : null),
                     }}
                 >
-                    <PdfPageCanvas renderDoc={renderDoc} pageNumber={currentPage + 1} scale={scale} className="pdf-editor__canvas" onReady={onPageReady} />
+                    <MappedPageCanvas entry={pages.entry(currentPage)} renderDoc={pages.renderDocFor(pages.entry(currentPage))} size={currentPageSize} scale={scale} className="pdf-editor__canvas" onReady={onPageReady} />
                     {(mode === 'edittext' || mode === 'text') &&
                         pageBlocks
                             .filter((block) => !currentElements.some((el) => el.type === 'textedit' && (el.runs ?? [el.run]).some((r) => block.runs.some((b) => b.id === r.id))))
@@ -1382,7 +1300,7 @@ export default function EditPdf({ initialMode } = {}) {
                                     link={link}
                                     edit={null}
                                     rect={pdfRectToCanvasRect(link.rect, scale, currentPageSize.height)}
-                                    pageCount={pageCount}
+                                    pageCount={pages.count}
                                     onChange={(patch) => pushElement({ type: 'linkedit', annotId: link.id, annotIndex: link.index, linkRect: link.rect, link, url: link.url, pageTarget: link.pageTarget, remove: false, ...pdfRectToCanvasRect(link.rect, scale, currentPageSize.height), ...patch })}
                                     onRevert={() => {}}
                                 />
@@ -1391,7 +1309,7 @@ export default function EditPdf({ initialMode } = {}) {
                         if (el.type === 'linkedit') {
                             if (mode !== 'link') return null;
                             const rect = pdfRectToCanvasRect(el.linkRect, scale, currentPageSize.height);
-                            return <LinkOverlay key={el.id} link={el.link} edit={el} rect={rect} pageCount={pageCount} onChange={(patch) => updateElement(el.id, patch)} onRevert={() => removeElement(el.id)} />;
+                            return <LinkOverlay key={el.id} link={el.link} edit={el} rect={rect} pageCount={pages.count} onChange={(patch) => updateElement(el.id, patch)} onRevert={() => removeElement(el.id)} />;
                         }
                         if (el.type === 'note') {
                             return <StickyNote key={el.id} el={el} onDragStart={(e) => startDrag(e, el.id, 'move')} onChange={(patch) => updateElement(el.id, patch)} onRemove={() => removeElement(el.id)} />;
@@ -1542,12 +1460,15 @@ export default function EditPdf({ initialMode } = {}) {
                     )}
                 </div>
                 </div>
+                </PageScroller>
                 {mode === 'form' && formSubMode === 'fill' && formFields.length > 0 && (
                     <details className="pdf-editor__formlist">
                         <summary>{t('Show all fields as a list')}</summary>
                         <FormFillFields status="ready" fields={formFields} values={formValues} onChange={changeFormValue} />
                     </details>
                 )}
+                </div>
+                </div>
                 </>
                 )}
             </div>
@@ -1559,10 +1480,6 @@ export default function EditPdf({ initialMode } = {}) {
                     <span>{t('Done!')} {formatBytes(result.blob.size)}</span>
                     <button type="button" className="btn btn--primary" onClick={downloadResult}>{t('Download PDF')}</button>
                 </div>
-            ) : mode === 'pages' ? (
-                <button type="button" className="btn btn--primary btn--lg" onClick={applyPages} disabled={working || !isPageOpsChanged(pageOps, pageCount)}>
-                    {working ? t('Saving…') : t('Save PDF')}
-                </button>
             ) : mode === 'watermark' ? (
                 <button type="button" className="btn btn--primary btn--lg" onClick={applyWatermark} disabled={working || !(wmKind === 'text' ? wmText.trim() : wmPendingImage)}>
                     {working ? wmProgress || t('Adding watermark…') : t('Add watermark')}
@@ -1572,7 +1489,7 @@ export default function EditPdf({ initialMode } = {}) {
                     {working ? t('Signing…') : t('Sign PDF')}
                 </button>
             ) : (
-                <button type="button" className="btn btn--primary btn--lg" onClick={() => apply()} disabled={working || (elements.length === 0 && !formChanged)}>
+                <button type="button" className="btn btn--primary btn--lg" onClick={() => apply()} disabled={working || (elements.length === 0 && !formChanged && !pages.changed)}>
                     {working ? t('Saving…') : t('Save PDF')}
                 </button>
             )}

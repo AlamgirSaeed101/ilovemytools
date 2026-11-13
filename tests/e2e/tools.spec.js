@@ -793,13 +793,13 @@ test.describe('PDF tools', () => {
         await page.mouse.up();
         await expect(overlay).toHaveCount(3);
         await expect(page.getByRole('button', { name: 'Redo' })).toBeDisabled();
-        await page.getByRole('button', { name: 'Undo' }).click();
+        await page.getByRole('button', { name: 'Undo', exact: true }).click();
         await expect(overlay).toHaveCount(2);
 
         // Redo brings the drawing back; undo removes it again before saving.
         await page.getByRole('button', { name: 'Redo' }).click();
         await expect(overlay).toHaveCount(3);
-        await page.getByRole('button', { name: 'Undo' }).click();
+        await page.getByRole('button', { name: 'Undo', exact: true }).click();
         await expect(overlay).toHaveCount(2);
         await expect(page.getByRole('button', { name: 'Redo' })).toBeEnabled();
 
@@ -925,38 +925,99 @@ test.describe('PDF tools', () => {
         expect(text).toContain('Zoomed text');
     });
 
-    test('edit PDF: Pages tab rotates, reorders, deletes and inserts a blank page', async ({ page }) => {
+    test('edit PDF page panel: reorder by dragging, rotate, delete, insert blank and another PDF; elements follow their page and undo restores them', async ({ page }) => {
+        // Tall enough that the three thumbnails fit without scrolling the list: Playwright presses the
+        // mouse on the source and then scrolls to the target, which would start the drag on another page.
+        await page.setViewportSize({ width: 1280, height: 1600 });
         await openTool(page, 'edit-pdf');
         await page.getByTestId('file-input').setInputFiles({ name: 'booklet.pdf', mimeType: 'application/pdf', buffer: await makePdf(3) });
-
-        await page.getByRole('tab', { name: 'Pages' }).click();
-        const grid = page.locator('.page-grid');
-        const card = (label) => grid.getByRole('group', { name: label, exact: true });
-        await expect(grid.locator('li')).toHaveCount(3);
+        const panel = page.getByRole('region', { name: 'Pages' });
+        const items = panel.locator('.page-sidebar__item');
+        const card = (n) => panel.getByRole('group', { name: `Page ${n}`, exact: true });
+        const label = page.locator('.pdf-editor__page-label');
+        await expect(items).toHaveCount(3);
         await expect(page.getByRole('button', { name: 'Save PDF', exact: true })).toBeDisabled();
 
-        // Rotate page 1, then move it to the second position.
-        await card('Page 1').locator('button', { hasText: '⟳' }).click();
-        await card('Page 1').locator('button', { hasText: '→' }).click();
+        // Text added on page 1.
+        await page.getByRole('tab', { name: 'Add text' }).click();
+        await page.getByLabel('Text to add').fill('Stays on its page');
+        await page.getByRole('button', { name: 'Add text to page' }).click();
+        await expect(page.locator('.pdf-editor__overlay')).toHaveCount(1);
 
-        // Delete page 3 (still last after the move above).
-        await card('Page 3').locator('button', { hasText: 'Delete' }).click();
-        await expect(grid.locator('li')).toHaveCount(2);
+        // Drag page 1 onto page 3: the order becomes 2, 3, 1 and the text goes with its page.
+        await card(1).dragTo(card(3));
+        await expect(label).toHaveText('Page 3 of 3');
+        await expect(page.locator('.pdf-editor__overlay')).toHaveCount(1);
+        await card(1).getByRole('button', { name: 'Go to page 1' }).click();
+        await expect(page.locator('.pdf-editor__overlay')).toHaveCount(0);
 
-        // Insert a blank page right after page 2 (now first).
-        await card('Page 2').locator('button', { hasText: 'Insert blank page after' }).click();
-        await expect(grid.locator('li')).toHaveCount(3);
+        // Rotate the moved page (now page 3), delete page 1 (original page 2), insert a blank page after the new page 1.
+        await card(3).getByRole('button', { name: 'Rotate page 3 right' }).click();
+        await card(1).getByRole('button', { name: 'Delete page 1' }).click();
+        await expect(items).toHaveCount(2);
+        await card(1).getByRole('button', { name: 'More actions for page 1' }).click();
+        await card(1).getByRole('button', { name: 'Insert blank page after' }).click();
+        await expect(items).toHaveCount(3);
+
+        // Deleting the page with the text drops the text; undo brings back the page and the text.
+        await card(3).getByRole('button', { name: 'Go to page 3' }).click();
+        await expect(page.locator('.pdf-editor__overlay')).toHaveCount(1);
+        await card(3).getByRole('button', { name: 'Delete page 3' }).click();
+        await expect(items).toHaveCount(2);
+        await expect(page.locator('.pdf-editor__overlay')).toHaveCount(0);
+        await panel.getByRole('button', { name: 'Undo page change' }).click();
+        await expect(items).toHaveCount(3);
+        await card(3).getByRole('button', { name: 'Go to page 3' }).click();
+        await expect(page.locator('.pdf-editor__overlay')).toHaveCount(1);
+
+        // Add both pages of a second PDF at the end (read in the browser, never uploaded).
+        await panel.getByRole('button', { name: 'Add pages' }).click();
+        const [chooser] = await Promise.all([page.waitForEvent('filechooser'), panel.getByRole('button', { name: 'Add pages from another PDF' }).click()]);
+        await chooser.setFiles({ name: 'extra.pdf', mimeType: 'application/pdf', buffer: await makePdf(2, 'Extra') });
+        await expect(items).toHaveCount(5);
 
         await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
         const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
-        expect(file.suggestedFilename()).toBe('booklet-pages.pdf');
+        expect(file.suggestedFilename()).toBe('booklet-edited.pdf');
         const bytes = await readDownload(file);
-        expect(await pdfPageCount(bytes)).toBe(3);
+        expect(await pdfPageCount(bytes)).toBe(5);
+        expect(await pdfPageRotations(bytes)).toEqual([0, 0, 90, 0, 0]);
         const texts = await pdfPageTexts(page, bytes);
-        expect(texts[0]).toContain('Doc page 2');
+        expect(texts[0]).toContain('Doc page 3');
         expect(texts[1]).toBe('');
         expect(texts[2]).toContain('Doc page 1');
-        expect(await pdfPageRotations(bytes)).toEqual([0, 0, 90]);
+        expect(texts[2]).toContain('Stays on its page');
+        expect(texts[3]).toContain('Extra page 1');
+        expect(texts[4]).toContain('Extra page 2');
+    });
+
+    test('edit PDF page panel: move buttons, duplicate, and the continuous view with insert-here controls', async ({ page }) => {
+        await openTool(page, 'edit-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'booklet.pdf', mimeType: 'application/pdf', buffer: await makePdf(3) });
+        const panel = page.getByRole('region', { name: 'Pages' });
+        const items = panel.locator('.page-sidebar__item');
+        const card = (n) => panel.getByRole('group', { name: `Page ${n}`, exact: true });
+        await expect(items).toHaveCount(3);
+
+        await card(3).getByRole('button', { name: 'More actions for page 3' }).click();
+        await card(3).getByRole('button', { name: 'Move up' }).click();
+        await card(1).getByRole('button', { name: 'Duplicate page 1' }).click();
+        await expect(items).toHaveCount(4);
+
+        await panel.getByLabel('Show all pages (scroll)').check();
+        const scroller = page.locator('.page-scroller');
+        await expect(scroller.locator('.page-scroller__slot')).toHaveCount(4);
+        await scroller.getByRole('button', { name: '+ Insert blank page here' }).last().click();
+        await expect(items).toHaveCount(5);
+        await expect(scroller.locator('.page-scroller__slot')).toHaveCount(5);
+
+        await page.getByRole('button', { name: 'Save PDF', exact: true }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        const bytes = await readDownload(file);
+        expect(await pdfPageCount(bytes)).toBe(5);
+        const texts = await pdfPageTexts(page, bytes);
+        expect(texts.slice(0, 4)).toEqual(['Doc page 1', 'Doc page 1', 'Doc page 3', 'Doc page 2']);
+        expect(texts[4]).toBe('');
     });
 
     test('edit PDF: Fill form fills fields on the page and saves them in one PDF with an added text element', async ({ page }) => {
@@ -1167,7 +1228,7 @@ test.describe('PDF tools', () => {
         await page.getByTestId('file-input').setInputFiles({ name: 'multi.pdf', mimeType: 'application/pdf', buffer: await makePdf(3) });
         await expect(page.getByText('Page 1 of 3')).toBeVisible();
 
-        const thumbs = page.locator('.pdf-editor__thumb');
+        const thumbs = page.locator('.page-sidebar__thumb');
         await expect(thumbs).toHaveCount(3);
         await expect(thumbs.nth(0)).toHaveAttribute('aria-current', 'true');
         // Thumbnails render progressively; wait for a real image before clicking one.

@@ -3067,6 +3067,354 @@ fieldset.grid-2 .check:has(input:checked) {
     color: var(--muted);
 }
 
+/* Edit PDF page panel (components/pdf-editor/PageSidebar.jsx): a column of page thumbnails beside
+   the page on wide screens, a horizontal strip above it on phones and tablets. */
+.pdf-editor__workspace {
+    display: grid;
+    grid-template-columns: 10.5rem minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+}
+
+.pdf-editor__main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    min-width: 0;
+}
+
+.page-sidebar {
+    position: sticky;
+    /* Sticky makes its own stacking layer: lift it over the page canvas so its pop-up menus are on top. */
+    z-index: 20;
+    top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface-2);
+    min-width: 0;
+}
+
+.page-sidebar__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem;
+}
+
+.page-sidebar__title {
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.page-sidebar__tools {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.page-sidebar__view {
+    font-size: 0.78rem;
+}
+
+.page-sidebar__status {
+    margin: 0;
+}
+
+.page-sidebar__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0.2rem;
+    list-style: none;
+    max-height: min(75vh, 900px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.page-sidebar__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.35rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: grab;
+}
+
+.page-sidebar__item.is-selected {
+    border-color: var(--brand);
+    background: color-mix(in srgb, var(--brand) 10%, var(--surface));
+}
+
+.page-sidebar__item.is-dragging {
+    opacity: 0.45;
+}
+
+.page-sidebar__item.is-drop-target {
+    border-style: dashed;
+    border-color: var(--brand);
+}
+
+.page-sidebar__thumb {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 7.5rem;
+    padding: 0.25rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--surface);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.page-sidebar__thumb:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+}
+
+.page-sidebar__thumb img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.15s ease;
+}
+
+.page-sidebar__blank {
+    display: block;
+    height: 100%;
+    max-width: 100%;
+    background: #fff;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+}
+
+.page-sidebar__loading {
+    font-size: 0.72rem;
+    color: var(--muted);
+}
+
+.page-sidebar__number {
+    font-size: 0.72rem;
+    font-weight: 650;
+    color: var(--muted);
+}
+
+/* Page actions show on hover/focus, and always for the page on screen and on touch screens. */
+.page-sidebar__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.15rem;
+    opacity: 0;
+    transition: opacity 0.12s ease;
+}
+
+.page-sidebar__item:hover .page-sidebar__actions,
+.page-sidebar__item:focus-within .page-sidebar__actions,
+.page-sidebar__item.is-selected .page-sidebar__actions {
+    opacity: 1;
+}
+
+@media (hover: none) {
+    .page-sidebar__actions {
+        opacity: 1;
+    }
+}
+
+.page-sidebar__btn {
+    display: inline-grid;
+    place-items: center;
+    width: 1.7rem;
+    height: 1.7rem;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    list-style: none;
+}
+
+.page-sidebar__btn:hover:not(:disabled) {
+    border-color: var(--brand);
+    color: var(--brand);
+}
+
+.page-sidebar__btn.is-danger:hover:not(:disabled) {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+.page-sidebar__btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.page-sidebar__btn:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 1px;
+}
+
+.page-sidebar__icon {
+    width: 0.95rem;
+    height: 0.95rem;
+}
+
+.page-sidebar__more {
+    position: relative;
+}
+
+.page-sidebar__menu {
+    position: fixed;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    width: 14rem;
+    padding: 0.3rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow-md, 0 8px 24px rgb(0 0 0 / 0.15));
+}
+
+.page-sidebar__menu button {
+    padding: 0.45rem 0.6rem;
+    border: none;
+    border-radius: 5px;
+    background: none;
+    color: var(--text);
+    font: inherit;
+    font-size: 0.82rem;
+    text-align: left;
+    cursor: pointer;
+}
+
+.page-sidebar__menu button:hover:not(:disabled),
+.page-sidebar__menu button:focus-visible {
+    background: var(--surface-2);
+}
+
+.page-sidebar__menu button:disabled {
+    color: var(--muted);
+    cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+    .pdf-editor__workspace {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .page-sidebar {
+        position: static;
+    }
+
+    .page-sidebar__list {
+        flex-direction: row;
+        max-height: none;
+        overflow-x: auto;
+        overflow-y: visible;
+        padding-bottom: 0.4rem;
+    }
+
+    .page-sidebar__item {
+        flex: none;
+        width: 7.5rem;
+    }
+
+    .page-sidebar__thumb {
+        height: 6rem;
+    }
+
+    .page-sidebar__menu {
+        top: auto !important;
+        right: 1rem;
+        bottom: 1rem;
+        left: 1rem !important;
+        width: auto;
+    }
+}
+
+/* Continuous view (components/pdf-editor/PageScroller.jsx): every page in one scroll box. */
+.page-scroller {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 80vh;
+    overflow: auto;
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface-2);
+}
+
+.page-scroller__slot {
+    position: relative;
+    flex: none;
+    max-width: 100%;
+    margin-top: 1.2rem;
+}
+
+.page-scroller__label {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    font-size: 0.72rem;
+    font-weight: 650;
+    color: var(--muted);
+}
+
+.page-scroller__frame {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+}
+
+.page-scroller__preview {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.page-scroller__activate {
+    position: absolute;
+    inset: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.page-scroller__activate:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: -2px;
+}
+
+.page-scroller__gap {
+    flex: none;
+    display: flex;
+    justify-content: center;
+    padding: 0.2rem 0;
+    opacity: 0.55;
+}
+
+.page-scroller__gap:hover,
+.page-scroller__gap:focus-within {
+    opacity: 1;
+}
+
 /* "Featured website" banner on the home page (components/FeaturedBanner.jsx, partials/featured-banner).
    Inherits the site font; sits inside .shell so it matches the content width. */
 .feature-banner {
