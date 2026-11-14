@@ -1651,6 +1651,30 @@ test.describe('PDF tools', () => {
         await expect(toolButton(page, 'Text')).toBeVisible();
         await expect(toolButton(page, 'Watermark')).toBeVisible();
     });
+
+    test('annotate-pdf opens Edit PDF with the Highlight tab preselected and can highlight and save a page', async ({ page }) => {
+        await openTool(page, 'annotate-pdf');
+        const originalBytes = await makePdf(1);
+        await page.getByTestId('file-input').setInputFiles({ name: 'report.pdf', mimeType: 'application/pdf', buffer: originalBytes });
+        await expectTool(page, 'Highlight');
+        await expect(page.getByLabel('Highlight colour')).toBeVisible();
+
+        await page.getByRole('button', { name: 'Add highlight to page' }).click();
+        const overlay = page.locator('.pdf-editor__overlay');
+        await expect(overlay).toHaveCount(1);
+        await expect(page.getByRole('button', { name: 'Highlight - drag to move' })).toBeVisible();
+
+        await page.getByRole('button', { name: 'Apply changes' }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(file.suggestedFilename()).toBe('report-edited.pdf');
+        const savedBytes = await readDownload(file);
+        expect(await pdfPageCount(savedBytes)).toBe(1);
+        expect(savedBytes.length).toBeGreaterThan(originalBytes.length);
+
+        // The one editor is still underneath: every other tab is reachable from this page too.
+        await expect(toolButton(page, 'Text')).toBeVisible();
+        await expect(toolButton(page, 'Watermark')).toBeVisible();
+    });
 });
 
 test.describe('Calculators', () => {

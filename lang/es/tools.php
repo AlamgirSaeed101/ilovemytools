@@ -2328,6 +2328,42 @@ return [
         ],
     ],
 
+    'annotate-pdf' => [
+        'name' => 'Anotador de PDF',
+        'title' => 'Anotador de PDF Online Gratis - Resaltar y Notas',
+        'description' => 'Anota un PDF online gratis: resalta texto, subraya, tacha o añade notas adhesivas directamente en la página. Sin subir archivos, sin registro, sin límites.',
+        'h1' => 'Anotador de PDF',
+        'tagline' => 'Resalta, subraya, tacha o añade notas adhesivas a cualquier PDF - directamente en tu navegador.',
+        'keywords' => ['anotador de pdf', 'anotar pdf', 'resaltar pdf', 'añadir notas a un pdf', 'subrayar texto en pdf', 'herramienta de marcado pdf'],
+        'intro' => 'Un anotador de PDF te permite marcar un documento sin cambiar su texto original: resalta un párrafo, subraya o tacha una línea, o añade una nota adhesiva con un comentario, todo sin imprimir ni escanear nada. Elige una página, selecciona la herramienta de marcado que necesites y arrastra sobre el texto o haz clic donde quieras la nota. Esta es la herramienta Anotar dentro del editor de PDF completo, así que también puedes añadir texto, imágenes o una firma, o cambiar de página, todo sin salir de tu navegador.',
+        'steps' => [
+            'Elige el PDF que quieres anotar.',
+            'Elige Resaltar, Subrayar, Tachar o Nota adhesiva en el menú Anotar.',
+            'Arrastra sobre el texto para marcarlo, o haz clic en la página para añadir una nota.',
+            'Añade más marcas o cambia de página - Deshacer elimina la última si cambias de opinión.',
+            'Haz clic en Guardar PDF y descarga el archivo.',
+        ],
+        'features' => [
+            'Resalta, subraya o tacha cualquier texto',
+            'Añade una nota adhesiva en cualquier parte de la página',
+            'Elige tu propio color de resaltado y marcado',
+            'Mueve o elimina cualquier marca después de colocarla',
+            'También edita el texto que ya tiene el PDF, añade una marca de agua o una firma',
+            'Privado: tu PDF nunca sale de tu dispositivo',
+        ],
+        'content' => [
+            ['heading' => '¿Resaltar, subrayar, tachar o una nota? Cuál elegir', 'body' => 'Resaltar dibuja una banda de color translúcida detrás del texto para que destaque, igual que un marcador sobre papel. Subrayar y tachar dibujan en cambio una línea fina debajo o a través del texto, útil para señalar un cambio sin tapar nada. Una nota adhesiva añade un comentario fijado en un punto de la página sin tocar el texto en absoluto - otras aplicaciones de PDF la muestran como un comentario normal.'],
+            ['heading' => 'Anota un PDF sin registrarte', 'body' => 'No hay cuenta, inicio de sesión ni paso de correo: abre la página, elige un PDF de hasta 200 MB y empieza a marcarlo. Tu navegador lee y edita el archivo por sí mismo; nada se sube, así que no queda nada guardado de nuestro lado que haya que borrar después. Mientras trabajas, el progreso se guarda automáticamente en el almacenamiento de tu navegador en este dispositivo, así que una actualización de página o una pestaña cerrada se pueden recuperar, y esa copia guardada se borra en cuanto descargas el PDF editado o eliges Descartar.'],
+        ],
+        'faqs' => [
+            ['q' => '¿Cuál es la diferencia entre resaltar, subrayar y tachar?', 'a' => 'Resaltar dibuja una banda de color detrás del texto, subrayar dibuja una línea debajo y tachar dibuja una línea a través de él - elige la que mejor muestre el tipo de comentario que quieres hacer.'],
+            ['q' => '¿Puedo añadir un comentario sin marcar el propio texto?', 'a' => 'Sí. Usa Nota adhesiva para hacer clic en cualquier parte de la página y añadir una nota; otras aplicaciones de PDF la muestran como un comentario normal.'],
+            ['q' => '¿Puedo elegir el color de un resaltado o una marca?', 'a' => 'Sí. Elige un color antes de arrastrar sobre el texto; cada marca conserva el color con el que se hizo.'],
+            ['q' => '¿Se sube mi PDF a un servidor?', 'a' => 'No. Todo - marcar, mover y guardar - ocurre en tu navegador con JavaScript y nada se envía a ningún sitio.'],
+            ['q' => '¿Puedo también editar el texto que ya tiene el PDF o añadir una firma?', 'a' => 'Sí. Cambia a la pestaña Editar texto, Añadir texto o Firma en el mismo editor sin perder las marcas que ya has hecho.'],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Calculadora de préstamo',
         'title' => 'Calculadora de Préstamo - Cuota y Amortización',

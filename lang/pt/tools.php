@@ -2433,6 +2433,42 @@ return [
         ],
     ],
 
+    'annotate-pdf' => [
+        'name' => 'Anotador de PDF',
+        'title' => 'Anotador de PDF Online Grátis - Marcar e Notas',
+        'description' => 'Anote um PDF online e grátis: marque texto, sublinhe, tache ou adicione notas adesivas direto na página. Sem upload, sem cadastro, sem limites.',
+        'h1' => 'Anotador de PDF',
+        'tagline' => 'Marque, sublinhe, tache ou adicione notas adesivas em qualquer PDF - direto no seu navegador.',
+        'keywords' => ['anotador de pdf', 'anotar pdf', 'marcar pdf', 'adicionar notas a um pdf', 'sublinhar texto em pdf', 'ferramenta de marcação pdf'],
+        'intro' => 'Um anotador de PDF permite marcar um documento sem mudar o texto original: marque um trecho, sublinhe ou tache uma linha, ou adicione uma nota adesiva com um comentário, tudo sem imprimir ou escanear nada. Escolha uma página, a ferramenta de marcação que precisa e arraste sobre o texto ou clique onde quer a nota. Essa é a ferramenta Anotar dentro do editor de PDF completo, então você também pode adicionar texto, imagens ou uma assinatura, ou passar para outra página, tudo sem sair do navegador.',
+        'steps' => [
+            'Escolha o PDF que quer anotar.',
+            'Escolha Marcar, Sublinhar, Tachar ou Nota adesiva no menu Anotar.',
+            'Arraste sobre o texto para marcá-lo, ou clique na página para adicionar uma nota.',
+            'Adicione mais marcas ou mude de página - Desfazer remove a última se você mudar de ideia.',
+            'Clique em Salvar PDF e baixe o arquivo.',
+        ],
+        'features' => [
+            'Marque, sublinhe ou tache qualquer texto',
+            'Adicione uma nota adesiva em qualquer parte da página',
+            'Escolha sua própria cor de marcação',
+            'Mova ou remova qualquer marca depois de colocá-la',
+            'Também edite o texto que já existe no PDF, adicione uma marca d\'água ou uma assinatura',
+            'Privado - seu PDF nunca sai do seu dispositivo',
+        ],
+        'content' => [
+            ['heading' => 'Marcar, sublinhar, tachar ou uma nota - qual usar?', 'body' => 'Marcar desenha uma faixa de cor translúcida atrás do texto para destacá-lo, igual a uma caneta marca-texto no papel. Sublinhar e tachar desenham uma linha fina embaixo ou sobre o texto, útil para indicar uma mudança sem cobrir nada. Uma nota adesiva adiciona um comentário fixado em um ponto da página sem tocar no texto - outros apps de PDF mostram como um comentário comum.'],
+            ['heading' => 'Anote um PDF sem se cadastrar', 'body' => 'Não há conta, login ou etapa de e-mail: abra a página, escolha um PDF de até 200 MB e comece a marcá-lo. Seu navegador lê e edita o arquivo por conta própria; nada é enviado, então não fica nada guardado do nosso lado para apagar depois. Enquanto você trabalha, o progresso é salvo automaticamente no armazenamento do navegador neste dispositivo, então uma atualização de página ou uma aba fechada podem ser recuperadas, e essa cópia salva é apagada assim que você baixa o PDF editado ou escolhe Descartar.'],
+        ],
+        'faqs' => [
+            ['q' => 'Qual é a diferença entre marcar, sublinhar e tachar?', 'a' => 'Marcar desenha uma faixa de cor atrás do texto, sublinhar desenha uma linha embaixo e tachar desenha uma linha sobre ele - escolha o que melhor mostra o tipo de comentário que você está fazendo.'],
+            ['q' => 'Posso adicionar um comentário sem marcar o próprio texto?', 'a' => 'Sim. Use Nota adesiva para clicar em qualquer parte da página e anexar uma nota; outros apps de PDF mostram como um comentário comum.'],
+            ['q' => 'Posso escolher a cor de uma marcação?', 'a' => 'Sim. Escolha uma cor antes de arrastar sobre o texto; cada marca mantém a cor com que foi feita.'],
+            ['q' => 'Meu PDF é enviado para um servidor?', 'a' => 'Não. Tudo - marcar, mover e salvar - acontece no seu navegador com JavaScript e nada é enviado a lugar nenhum.'],
+            ['q' => 'Posso também editar o texto que já existe no PDF ou adicionar uma assinatura?', 'a' => 'Sim. Mude para a aba Editar texto, Adicionar texto ou Assinatura no mesmo editor sem perder as marcas que já fez.'],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Calculadora de empréstimo',
         'title' => 'Calculadora de Empréstimo - Parcela e Amortização',

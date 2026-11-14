@@ -3197,6 +3197,57 @@ return [
         'related' => ['edit-pdf', 'add-text-to-pdf', 'whiteout-pdf', 'sign-pdf'],
     ],
 
+    'annotate-pdf' => [
+        'name' => 'PDF Annotator',
+        'category' => 'pdf-tools',
+        'icon' => 'pdf',
+        'popular' => false,
+        'updated' => '2026-11-14',
+        'title' => 'PDF Annotator Online Free - Highlight, Underline & Notes',
+        'description' => 'Annotate a PDF online for free: highlight text, underline, strike through or add sticky notes, right on the page. No upload, no sign up, no limits.',
+        'h1' => 'PDF Annotator',
+        'tagline' => 'Highlight, underline, strike through or add sticky notes to any PDF - right in your browser.',
+        'keywords' => ['pdf annotator', 'annotate pdf', 'highlight pdf', 'add notes to pdf', 'underline pdf text', 'pdf markup tool'],
+        'intro' => 'A PDF annotator lets you mark up a document without changing its original text: highlight a passage, underline or strike through a line, or drop a sticky note with a comment, all without printing or scanning anything. Choose a page, pick the markup tool you need and drag across the text or click where you want a note. This is the Annotate tool inside the full PDF editor, so you can also add text, images or a signature, or switch pages, all without leaving your browser.',
+        'steps' => [
+            'Choose the PDF you want to annotate.',
+            'Pick Highlight, Underline, Strikethrough or Sticky note from the Annotate menu.',
+            'Drag across the text to mark it, or click the page to drop a note.',
+            'Add more marks or switch pages - Undo removes the last one if you change your mind.',
+            'Click Save PDF and download the file.',
+        ],
+        'features' => [
+            'Highlight, underline or strike through any text',
+            'Add a sticky note anywhere on the page',
+            'Choose your own highlight and markup colour',
+            'Move or remove any mark after placing it',
+            "Also edit the PDF's existing text, add a watermark or a signature",
+            'Private - your PDF never leaves your device',
+        ],
+        'content' => [
+            [
+                'heading' => 'Highlight, underline, strikethrough or a note - which to use?',
+                'body' => "Highlight draws a translucent colour band behind text to make it stand out, exactly like a highlighter pen on paper. Underline and strikethrough draw a thin line under or through the text instead, useful for marking a change without covering anything. A sticky note adds a comment pinned to a spot on the page without touching the text at all - other PDF apps show it as a regular comment.",
+            ],
+            [
+                'heading' => 'Annotate a PDF without signing up',
+                'body' => "There is no account, login or email step: open the page, choose a PDF of up to 200 MB and start marking it up. Your browser reads and edits the file itself; nothing is uploaded, so there is nothing stored on our side to delete afterwards. While you work, progress auto-saves in your browser's storage on this device, so a refresh or a closed tab can be resumed, and that saved copy clears once you download the edited PDF or choose Discard.",
+            ],
+        ],
+        'faqs' => [
+            ['q' => "What's the difference between highlight, underline and strikethrough?", 'a' => "Highlight draws a coloured band behind the text, underline draws a line beneath it, and strikethrough draws a line through it - pick whichever best shows the kind of comment you're making."],
+            ['q' => 'Can I add a comment without marking the text itself?', 'a' => "Yes. Use Sticky note to click anywhere on the page and attach a note; other PDF apps show it as a regular comment."],
+            ['q' => 'Can I choose the colour of a highlight or mark?', 'a' => 'Yes. Pick a colour before dragging across the text; each mark keeps the colour it was made with.'],
+            ['q' => 'Is my PDF uploaded to a server?', 'a' => 'No. Everything - marking, moving and saving - happens in your browser with JavaScript and nothing is sent anywhere.'],
+            ['q' => "Can I also edit the PDF's existing text or add a signature?", 'a' => "Yes. Switch to the Edit text, Add text or Signature tab in the same editor without losing the marks you've already made."],
+        ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+        ],
+        'related' => ['edit-pdf', 'add-text-to-pdf', 'whiteout-pdf', 'sign-pdf'],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Mortgage Calculator',
         'category' => 'calculators',

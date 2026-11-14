@@ -2433,6 +2433,42 @@ return [
         ],
     ],
 
+    'annotate-pdf' => [
+        'name' => 'Annotateur de PDF',
+        'title' => 'Annotateur de PDF Gratuit en Ligne - Surligner & Notes',
+        'description' => "Annotez un PDF gratuitement en ligne : surlignez, soulignez, barrez ou ajoutez des notes autocollantes, sur la page. Sans envoi de fichier, sans inscription.",
+        'h1' => 'Annotateur de PDF',
+        'tagline' => "Surlignez, soulignez, barrez ou ajoutez des notes autocollantes à n'importe quel PDF - directement dans votre navigateur.",
+        'keywords' => ['annotateur de pdf', 'annoter un pdf', 'surligner un pdf', 'ajouter des notes à un pdf', 'souligner du texte dans un pdf', 'outil de marquage pdf'],
+        'intro' => "Un annotateur de PDF permet de marquer un document sans changer son texte d'origine : surligner un passage, souligner ou barrer une ligne, ou ajouter une note autocollante avec un commentaire, tout cela sans imprimer ni scanner quoi que ce soit. Choisissez une page, l'outil de marquage dont vous avez besoin, puis faites glisser sur le texte ou cliquez à l'endroit voulu pour la note. C'est l'outil Annoter du même éditeur de PDF complet, donc vous pouvez aussi ajouter du texte, des images ou une signature, ou passer à une autre page, tout cela sans quitter votre navigateur.",
+        'steps' => [
+            'Choisissez le PDF à annoter.',
+            'Choisissez Surligner, Souligner, Barrer ou Note autocollante dans le menu Annoter.',
+            'Faites glisser sur le texte pour le marquer, ou cliquez sur la page pour ajouter une note.',
+            "Ajoutez d'autres marques ou changez de page - Annuler supprime la dernière si vous changez d'avis.",
+            'Cliquez sur Enregistrer le PDF et téléchargez le fichier.',
+        ],
+        'features' => [
+            "Surlignez, soulignez ou barrez n'importe quel texte",
+            'Ajoutez une note autocollante n\'importe où sur la page',
+            'Choisissez votre propre couleur de surlignage et de marquage',
+            "Déplacez ou supprimez n'importe quelle marque après l'avoir placée",
+            'Modifiez aussi le texte déjà présent dans le PDF, ajoutez un filigrane ou une signature',
+            'Privé - votre PDF ne quitte jamais votre appareil',
+        ],
+        'content' => [
+            ['heading' => 'Surligner, souligner, barrer ou une note - que choisir ?', 'body' => "Surligner dessine une bande de couleur translucide derrière le texte pour le faire ressortir, exactement comme un surligneur sur papier. Souligner et barrer dessinent plutôt une fine ligne sous ou à travers le texte, utile pour signaler un changement sans rien masquer. Une note autocollante ajoute un commentaire épinglé à un endroit de la page sans toucher au texte lui-même - les autres applications PDF l'affichent comme un commentaire classique."],
+            ['heading' => 'Annoter un PDF sans créer de compte', 'body' => "Il n'y a ni compte, ni connexion, ni étape par e-mail : ouvrez la page, choisissez un PDF de 200 Mo maximum et commencez à le marquer. Votre navigateur lit et modifie le fichier lui-même ; rien n'est envoyé, donc rien n'est conservé de notre côté qu'il faudrait supprimer ensuite. Pendant que vous travaillez, la progression est enregistrée automatiquement dans le stockage de votre navigateur sur cet appareil, donc une actualisation de la page ou un onglet fermé peuvent être repris, et cette copie enregistrée est effacée dès que vous téléchargez le PDF modifié ou choisissez Abandonner."],
+        ],
+        'faqs' => [
+            ['q' => 'Quelle est la différence entre surligner, souligner et barrer ?', 'a' => "Surligner dessine une bande de couleur derrière le texte, souligner trace une ligne en dessous et barrer trace une ligne à travers - choisissez celui qui montre le mieux le type de commentaire que vous faites."],
+            ['q' => 'Puis-je ajouter un commentaire sans marquer le texte lui-même ?', 'a' => "Oui. Utilisez Note autocollante pour cliquer n'importe où sur la page et attacher une note ; les autres applications PDF l'affichent comme un commentaire classique."],
+            ['q' => "Puis-je choisir la couleur d'un surlignage ou d'une marque ?", 'a' => "Oui. Choisissez une couleur avant de faire glisser sur le texte ; chaque marque garde la couleur avec laquelle elle a été créée."],
+            ['q' => 'Mon PDF est-il envoyé à un serveur ?', 'a' => "Non. Tout - marquer, déplacer et enregistrer - se passe dans votre navigateur avec JavaScript, et rien n'est envoyé où que ce soit."],
+            ['q' => 'Puis-je aussi modifier le texte déjà présent dans le PDF ou ajouter une signature ?', 'a' => "Oui. Passez à l'onglet Modifier le texte, Ajouter du texte ou Signature dans le même éditeur sans perdre les marques déjà faites."],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Calculateur de prêt',
         'title' => 'Calculateur de Prêt - Mensualité et Amortissement',

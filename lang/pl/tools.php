@@ -2306,6 +2306,42 @@ return [
         ],
     ],
 
+    'annotate-pdf' => [
+        'name' => 'Adnotacje PDF',
+        'title' => 'Adnotacje PDF Online Bezpłatnie - Zakreślanie i Notatki',
+        'description' => 'Dodawaj adnotacje do PDF bezpłatnie online: zakreślaj, podkreślaj, przekreślaj lub dodawaj notatki, na stronie. Bez wgrywania plików, bez rejestracji.',
+        'h1' => 'Adnotacje PDF',
+        'tagline' => 'Zakreślaj, podkreślaj, przekreślaj lub dodawaj notatki do każdego PDF - prosto w przeglądarce.',
+        'keywords' => ['adnotacje pdf', 'dodaj adnotacje do pdf', 'zakreślanie pdf', 'dodawanie notatek do pdf', 'podkreślanie tekstu w pdf', 'narzędzie do oznaczania pdf'],
+        'intro' => 'Narzędzie do adnotacji PDF pozwala oznaczyć dokument bez zmiany jego oryginalnego tekstu: zakreślić fragment, podkreślić lub przekreślić linię, albo dodać notatkę z komentarzem - wszystko bez drukowania czy skanowania. Wybierz stronę, potrzebne narzędzie oznaczania i przeciągnij po tekście albo kliknij miejsce na notatkę. To narzędzie Adnotacje w tym samym, pełnym edytorze PDF, więc możesz też dodać tekst, obrazy lub podpis, albo przejść do innej strony - wszystko bez wychodzenia z przeglądarki.',
+        'steps' => [
+            'Wybierz PDF, który chcesz oznaczyć.',
+            'Wybierz Zakreślenie, Podkreślenie, Przekreślenie lub Notatkę w menu Adnotacje.',
+            'Przeciągnij po tekście, aby go oznaczyć, albo kliknij stronę, aby dodać notatkę.',
+            'Dodaj więcej oznaczeń lub zmień stronę - Wstecz usuwa ostatnie, jeśli zmienisz zdanie.',
+            'Kliknij Zapisz PDF i pobierz plik.',
+        ],
+        'features' => [
+            'Zakreślaj, podkreślaj lub przekreślaj dowolny tekst',
+            'Dodaj notatkę w każdym miejscu na stronie',
+            'Wybierz własny kolor zakreślenia i oznaczeń',
+            'Przesuń lub usuń każde oznaczenie po jego umieszczeniu',
+            'Edytuj też tekst już obecny w PDF, dodaj znak wodny lub podpis',
+            'Prywatne - Twój PDF nigdy nie opuszcza Twojego urządzenia',
+        ],
+        'content' => [
+            ['heading' => 'Zakreślenie, podkreślenie, przekreślenie czy notatka - co wybrać?', 'body' => 'Zakreślenie rysuje półprzezroczysty pas koloru za tekstem, aby go wyróżnić, tak jak zakreślacz na papierze. Podkreślenie i przekreślenie rysują za to cienką linię pod lub przez tekst, przydatne do oznaczenia zmiany bez niczego zakrywania. Notatka dodaje komentarz przypięty do miejsca na stronie bez dotykania samego tekstu - inne aplikacje PDF pokazują ją jako zwykły komentarz.'],
+            ['heading' => 'Dodawaj adnotacje do PDF bez rejestracji', 'body' => 'Nie ma konta, logowania ani kroku z e-mailem: otwórz stronę, wybierz PDF do 200 MB i zacznij go oznaczać. Twoja przeglądarka sama odczytuje i edytuje plik; nic nie jest wgrywane, więc po naszej stronie nie zostaje nic, co trzeba by później usunąć. W trakcie pracy postępy zapisują się automatycznie w pamięci przeglądarki na tym urządzeniu, więc odświeżenie lub zamknięta karta można odzyskać, a ta zapisana kopia jest usuwana, gdy pobierzesz edytowany PDF lub wybierzesz Odrzuć.'],
+        ],
+        'faqs' => [
+            ['q' => 'Jaka jest różnica między zakreśleniem, podkreśleniem i przekreśleniem?', 'a' => 'Zakreślenie rysuje pas koloru za tekstem, podkreślenie rysuje linię pod nim, a przekreślenie rysuje linię przez niego - wybierz to, co najlepiej pokazuje rodzaj komentarza.'],
+            ['q' => 'Czy mogę dodać komentarz bez oznaczania samego tekstu?', 'a' => 'Tak. Użyj Notatki, aby kliknąć w dowolnym miejscu strony i dołączyć notatkę; inne aplikacje PDF pokazują ją jako zwykły komentarz.'],
+            ['q' => 'Czy mogę wybrać kolor zakreślenia lub oznaczenia?', 'a' => 'Tak. Wybierz kolor przed przeciągnięciem po tekście; każde oznaczenie zachowuje kolor, z jakim zostało zrobione.'],
+            ['q' => 'Czy mój PDF jest wgrywany na serwer?', 'a' => 'Nie. Wszystko - oznaczanie, przesuwanie i zapis - dzieje się w przeglądarce za pomocą JavaScript i nic nie jest wysyłane nigdzie.'],
+            ['q' => 'Czy mogę też edytować tekst już obecny w PDF lub dodać podpis?', 'a' => 'Tak. Przełącz się na zakładkę Edytuj tekst, Dodaj tekst lub Podpis w tym samym edytorze bez utraty już zrobionych oznaczeń.'],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Kalkulator kredytu',
         'title' => 'Kalkulator Kredytu - Rata i Harmonogram Spłat',

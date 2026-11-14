@@ -2836,6 +2836,42 @@ return [
         ],
     ],
 
+    'annotate-pdf' => [
+        'name' => 'PDF-Anmerkungen',
+        'title' => 'PDF-Anmerkungen Online Kostenlos - Markieren & Notizen',
+        'description' => 'Kommentieren Sie ein PDF kostenlos online: markieren, unterstreichen, durchstreichen oder Notizen hinzufügen - auf der Seite. Ohne Hochladen, ohne Anmeldung.',
+        'h1' => 'PDF-Anmerkungen',
+        'tagline' => 'Markieren, unterstreichen, durchstreichen oder Notizzettel zu jedem PDF hinzufügen - direkt in Ihrem Browser.',
+        'keywords' => ['pdf anmerkungen', 'pdf kommentieren', 'pdf markieren', 'notizen zu pdf hinzufügen', 'pdf text unterstreichen', 'pdf markup werkzeug'],
+        'intro' => 'Mit einem PDF-Anmerkungswerkzeug markieren Sie ein Dokument, ohne den ursprünglichen Text zu verändern: eine Passage hervorheben, eine Zeile unterstreichen oder durchstreichen, oder einen Notizzettel mit einem Kommentar anbringen - ganz ohne zu drucken oder zu scannen. Wählen Sie eine Seite, das gewünschte Markierungswerkzeug und ziehen Sie über den Text oder klicken Sie, wo die Notiz hin soll. Das ist das Werkzeug „Markieren" im vollständigen PDF-Editor, Sie können also auch Text, Bilder oder eine Unterschrift hinzufügen oder die Seite wechseln, alles ohne Ihren Browser zu verlassen.',
+        'steps' => [
+            'Wählen Sie das PDF aus, das Sie kommentieren möchten.',
+            'Wählen Sie Markieren, Unterstreichen, Durchstreichen oder Notizzettel im Menü Anmerkungen.',
+            'Ziehen Sie über den Text, um ihn zu markieren, oder klicken Sie auf die Seite, um eine Notiz hinzuzufügen.',
+            'Fügen Sie weitere Markierungen hinzu oder wechseln Sie die Seite - Rückgängig entfernt die letzte, falls Sie es sich anders überlegen.',
+            'Klicken Sie auf PDF speichern und laden Sie die Datei herunter.',
+        ],
+        'features' => [
+            'Beliebigen Text markieren, unterstreichen oder durchstreichen',
+            'Einen Notizzettel an beliebiger Stelle auf der Seite hinzufügen',
+            'Eigene Farbe für Markierung und Anmerkungen wählen',
+            'Jede Markierung nach dem Platzieren verschieben oder entfernen',
+            'Auch vorhandenen PDF-Text bearbeiten, ein Wasserzeichen oder eine Unterschrift hinzufügen',
+            'Privat - Ihr PDF verlässt niemals Ihr Gerät',
+        ],
+        'content' => [
+            ['heading' => 'Markieren, Unterstreichen, Durchstreichen oder Notiz - was wofür?', 'body' => 'Markieren zeichnet ein durchscheinendes Farbband hinter den Text, damit er auffällt, genau wie ein Textmarker auf Papier. Unterstreichen und Durchstreichen zeichnen stattdessen eine dünne Linie unter oder durch den Text, nützlich um eine Änderung zu kennzeichnen, ohne etwas zu verdecken. Ein Notizzettel fügt einen Kommentar an einer Stelle der Seite an, ohne den Text selbst zu berühren - andere PDF-Programme zeigen ihn als gewöhnlichen Kommentar an.'],
+            ['heading' => 'PDF kommentieren ohne Anmeldung', 'body' => 'Es gibt kein Konto, keinen Login und keinen E-Mail-Schritt: Öffnen Sie die Seite, wählen Sie ein PDF mit bis zu 200 MB und beginnen Sie mit dem Markieren. Ihr Browser liest und bearbeitet die Datei selbst; nichts wird hochgeladen, sodass auf unserer Seite nichts gespeichert bleibt, das später gelöscht werden müsste. Während Sie arbeiten, speichert sich der Fortschritt automatisch im Speicher Ihres Browsers auf diesem Gerät, sodass ein Neuladen oder ein geschlossener Tab fortgesetzt werden kann, und diese gespeicherte Kopie wird gelöscht, sobald Sie das bearbeitete PDF herunterladen oder Verwerfen wählen.'],
+        ],
+        'faqs' => [
+            ['q' => 'Was ist der Unterschied zwischen Markieren, Unterstreichen und Durchstreichen?', 'a' => 'Markieren zeichnet ein Farbband hinter den Text, Unterstreichen eine Linie darunter und Durchstreichen eine Linie durch den Text - wählen Sie, was die Art Ihres Kommentars am besten zeigt.'],
+            ['q' => 'Kann ich einen Kommentar hinzufügen, ohne den Text selbst zu markieren?', 'a' => 'Ja. Nutzen Sie Notizzettel, um an einer beliebigen Stelle der Seite zu klicken und eine Notiz anzuhängen; andere PDF-Programme zeigen sie als gewöhnlichen Kommentar an.'],
+            ['q' => 'Kann ich die Farbe einer Markierung wählen?', 'a' => 'Ja. Wählen Sie eine Farbe, bevor Sie über den Text ziehen; jede Markierung behält die Farbe, mit der sie erstellt wurde.'],
+            ['q' => 'Wird mein PDF auf einen Server hochgeladen?', 'a' => 'Nein. Alles - Markieren, Verschieben und Speichern - geschieht in Ihrem Browser mit JavaScript, und nichts wird irgendwohin gesendet.'],
+            ['q' => 'Kann ich auch vorhandenen PDF-Text bearbeiten oder eine Unterschrift hinzufügen?', 'a' => 'Ja. Wechseln Sie im selben Editor zum Tab Text bearbeiten, Text hinzufügen oder Unterschrift, ohne die bereits gemachten Markierungen zu verlieren.'],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Kreditrechner',
         'title' => 'Kreditrechner - Monatliche Rate & Tilgungsplan',

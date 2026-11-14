@@ -2827,6 +2827,42 @@ return [
         ],
     ],
 
+    'annotate-pdf' => [
+        'name' => 'Annotatore PDF',
+        'title' => 'Annotatore PDF Online Gratis - Evidenzia e Note',
+        'description' => 'Annota un PDF online gratis: evidenzia il testo, sottolinea, barra o aggiungi note adesive, direttamente sulla pagina. Senza caricare file, senza registrazione.',
+        'h1' => 'Annotatore PDF',
+        'tagline' => 'Evidenzia, sottolinea, barra o aggiungi note adesive a qualsiasi PDF - direttamente nel tuo browser.',
+        'keywords' => ['annotatore pdf', 'annotare un pdf', 'evidenziare un pdf', 'aggiungere note a un pdf', 'sottolineare testo in pdf', 'strumento di markup pdf'],
+        'intro' => "Un annotatore PDF ti permette di segnare un documento senza modificarne il testo originale: evidenzia un passaggio, sottolinea o barra una riga, oppure aggiungi una nota adesiva con un commento, tutto senza stampare o scansionare nulla. Scegli una pagina, lo strumento di markup che ti serve e trascina sul testo oppure clicca dove vuoi la nota. Questo è lo strumento Annota dello stesso editor di PDF completo, quindi puoi anche aggiungere testo, immagini o una firma, oppure passare a un'altra pagina, tutto senza uscire dal browser.",
+        'steps' => [
+            'Scegli il PDF che vuoi annotare.',
+            'Scegli Evidenzia, Sottolinea, Barra o Nota adesiva dal menu Annota.',
+            'Trascina sul testo per segnarlo, oppure clicca sulla pagina per aggiungere una nota.',
+            'Aggiungi altri segni o cambia pagina - Annulla rimuove l\'ultimo se cambi idea.',
+            'Clicca su Salva PDF e scarica il file.',
+        ],
+        'features' => [
+            'Evidenzia, sottolinea o barra qualsiasi testo',
+            'Aggiungi una nota adesiva in qualsiasi punto della pagina',
+            'Scegli il colore di evidenziazione e markup che preferisci',
+            'Sposta o rimuovi qualsiasi segno dopo averlo posizionato',
+            'Modifica anche il testo già presente nel PDF, aggiungi una filigrana o una firma',
+            'Privato - il tuo PDF non lascia mai il tuo dispositivo',
+        ],
+        'content' => [
+            ['heading' => 'Evidenziare, sottolineare, barrare o una nota - cosa scegliere?', 'body' => "Evidenzia disegna una banda di colore translucida dietro il testo per farlo risaltare, esattamente come un evidenziatore su carta. Sottolinea e Barra disegnano invece una linea sottile sotto o attraverso il testo, utile per segnalare una modifica senza coprire nulla. Una nota adesiva aggiunge un commento appuntato in un punto della pagina senza toccare affatto il testo - le altre app PDF la mostrano come un commento normale."],
+            ['heading' => 'Annotare un PDF senza registrarsi', 'body' => "Non c'è account, accesso o passaggio con email: apri la pagina, scegli un PDF fino a 200 MB e inizia a segnarlo. Il tuo browser legge e modifica il file da solo; niente viene caricato, quindi non resta nulla salvato da parte nostra da eliminare dopo. Mentre lavori, i progressi si salvano automaticamente nella memoria del browser su questo dispositivo, così un aggiornamento della pagina o una scheda chiusa possono essere ripresi, e quella copia salvata si elimina non appena scarichi il PDF modificato o scegli Scarta."],
+        ],
+        'faqs' => [
+            ['q' => 'Qual è la differenza tra evidenziare, sottolineare e barrare?', 'a' => "Evidenzia disegna una banda di colore dietro al testo, sottolinea traccia una linea sotto di esso e barra traccia una linea attraverso di esso - scegli quello che mostra meglio il tipo di commento che stai facendo."],
+            ['q' => 'Posso aggiungere un commento senza segnare il testo stesso?', 'a' => "Sì. Usa Nota adesiva per cliccare in qualsiasi punto della pagina e aggiungere una nota; le altre app PDF la mostrano come un commento normale."],
+            ['q' => 'Posso scegliere il colore di un\'evidenziazione o di un segno?', 'a' => "Sì. Scegli un colore prima di trascinare sul testo; ogni segno mantiene il colore con cui è stato creato."],
+            ['q' => 'Il mio PDF viene caricato su un server?', 'a' => "No. Tutto - segnare, spostare e salvare - avviene nel tuo browser con JavaScript e nulla viene inviato da nessuna parte."],
+            ['q' => 'Posso anche modificare il testo già presente nel PDF o aggiungere una firma?', 'a' => "Sì. Passa alla scheda Modifica testo, Aggiungi testo o Firma nello stesso editor senza perdere i segni già fatti."],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Calcolatore di prestito',
         'title' => 'Calcolatore di Prestito - Rata e Piano di Ammortamento',

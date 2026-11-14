@@ -11,6 +11,10 @@
         "sm": 402,
         "lg": 423
     },
+    "annotate-pdf": {
+        "sm": 340,
+        "lg": 340
+    },
     "avif-to-jpg": {
         "sm": 388,
         "lg": 364
