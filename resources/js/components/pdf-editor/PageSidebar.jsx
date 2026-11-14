@@ -50,6 +50,7 @@ function Menu({ icon, label, title, children }) {
     const [open, setOpen] = useState(null);
     const ref = useRef(null);
     const menuRef = useRef(null);
+    const openedAt = useRef(0);
 
     function toggle(e) {
         if (open) {
@@ -58,6 +59,7 @@ function Menu({ icon, label, title, children }) {
         }
         const r = e.currentTarget.getBoundingClientRect();
         const width = 224;
+        openedAt.current = Date.now();
         setOpen({ top: r.bottom + 4, left: Math.max(8, Math.min(r.left, window.innerWidth - width - 8)), above: r.top - 4, maxHeight: null });
     }
 
@@ -91,7 +93,12 @@ function Menu({ icon, label, title, children }) {
             setOpen(null);
             ref.current?.querySelector('button')?.focus();
         };
+        // Ignore scroll events for a moment after opening: async content below the tool (ads,
+        // thumbnails) can shift page layout right as the menu opens, and Chrome's scroll-anchoring
+        // then nudges the scroll position to compensate, firing a 'scroll' event that isn't the
+        // user dismissing the menu. A real scrolling gesture lasts well past this window.
         const onScroll = (e) => {
+            if (Date.now() - openedAt.current < 350) return;
             if (!ref.current?.contains(e.target)) setOpen(null);
         };
         document.addEventListener('pointerdown', onPointerDown);
