@@ -4182,7 +4182,7 @@ return [
             [
                 'heading' => 'Doing more without switching tools',
                 'paragraphs' => [
-                    'The Annotate tool is one tab inside the same editor used for the rest of this site\'s PDF editing: Edit text, Add text, Whiteout, Watermark and Signature are all one click away in the same session, on the same open file, so a single review pass can mark up a passage and also fix a typo or add a signature without exporting and reopening the PDF in between.',
+                    'The Annotate tool is one tab inside the same editor used for the rest of this site\'s PDF editing: the [Edit PDF](/edit-pdf) tool also has Add text, Whiteout, Watermark and Signature tabs one click away in the same session, on the same open file, so a single review pass can mark up a passage and also fix a typo or add a signature without exporting and reopening the PDF in between.',
                 ],
             ],
             [
