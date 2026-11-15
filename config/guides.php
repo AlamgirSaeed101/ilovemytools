@@ -4127,4 +4127,90 @@ return [
         ],
     ],
 
+    'how-to-annotate-a-pdf-online' => [
+        'title' => 'How to Annotate a PDF Online for Free',
+        'description' => 'Highlight, underline, strike through and add sticky notes to a PDF online for free. Which mark to use when, how to fix a mistake, and a review checklist.',
+        'h1' => 'How to annotate a PDF online',
+        'intro' => 'Marking up a document for review - highlighting the important line, underlining a change, crossing out what no longer applies, dropping a comment in the margin - is something people used to do with a pen because it was faster than any software. A PDF annotator does the same job without printing anything: the marks sit on top of the page as their own objects, so the original wording underneath is never touched. Here is how to use each kind of mark correctly, and how to keep a reviewed PDF easy for someone else to read afterwards.',
+        'tool' => 'annotate-pdf',
+        'related' => ['edit-pdf', 'add-text-to-pdf', 'sign-pdf'],
+        'published' => '2026-11-15',
+        'updated' => '2026-11-15',
+        'sections' => [
+            [
+                'heading' => 'What annotating changes - and what it doesn\'t',
+                'paragraphs' => [
+                    'A highlight, underline, strikethrough or sticky note is stored as a separate annotation object layered over the page, not as a change to the text itself. That matters for review work: you can mark up a contract, an essay or a report as heavily as you like and the words underneath stay exactly as they were, so nobody can accuse you of silently editing the document. If you actually need to change the wording, not just mark it, that is a different job - the Edit text tab in the same editor does that instead.',
+                    'This also means a reviewer reading the file afterwards, in this tool or a different PDF app, sees your marks as ordinary comments, not as a different version of the document.',
+                ],
+            ],
+            [
+                'heading' => 'Marking up a PDF, step by step',
+                'list' => [
+                    'Open the PDF in the [PDF Annotator](/annotate-pdf) and choose Highlight, Underline, Strikethrough or Sticky note.',
+                    'Pick a colour before you start marking, if the tool you chose uses one - it is far easier to pick the right colour once than to change several marks afterwards.',
+                    'Drag across the text you want to highlight, underline or strike through; for a sticky note, click the spot on the page where the comment belongs and type it.',
+                    'Move to the next passage and repeat - switch tools at any point without losing what you have already marked.',
+                    'If you drag the wrong line, drag over the same text again with the same tool to remove just that mark, or use Undo for the most recent one.',
+                    'When you are done, click Save PDF and download the marked-up file.',
+                ],
+            ],
+            [
+                'heading' => 'Which mark to use',
+                'table' => [
+                    'headers' => ['Mark', 'What it looks like', 'Best used for'],
+                    'rows' => [
+                        ['Highlight', 'A translucent colour band behind the text', 'Flagging something important without saying why'],
+                        ['Underline', 'A line beneath the text', 'Marking a word or phrase without covering it, e.g. a term to define'],
+                        ['Strikethrough', 'A line through the text', 'Showing text should be removed or no longer applies'],
+                        ['Sticky note', 'A small icon pinned to a spot on the page', 'Adding an actual comment or question, rather than just flagging text'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'Using colour on purpose, not at random',
+                'paragraphs' => [
+                    'A one-colour PDF full of yellow highlights tells a reader almost nothing about why each passage was marked. Agreeing on a simple colour code before you start - yellow for "read this", red for "a problem", green for "approved as-is" - turns highlighting into a genuine review signal instead of decoration, especially when more than one person is marking up the same document and comparing notes afterwards.',
+                ],
+            ],
+            [
+                'heading' => 'Fixing a mark you got wrong',
+                'paragraphs' => [
+                    'Marks placed in the wrong spot, the wrong colour, or simply no longer needed, can be moved or removed individually at any point before you save, without starting over. Undo removes the single most recent mark, which is the fastest fix right after a mis-click; for anything older than that, select the mark itself and delete it.',
+                ],
+            ],
+            [
+                'heading' => 'Doing more without switching tools',
+                'paragraphs' => [
+                    'The Annotate tool is one tab inside the same editor used for the rest of this site\'s PDF editing: Edit text, Add text, Whiteout, Watermark and Signature are all one click away in the same session, on the same open file, so a single review pass can mark up a passage and also fix a typo or add a signature without exporting and reopening the PDF in between.',
+                ],
+            ],
+            [
+                'heading' => 'Checklist before you send an annotated PDF back',
+                'list' => [
+                    'Every mark is in the right colour for the review convention you agreed on, if you are using one.',
+                    'Sticky notes actually explain the comment, rather than just repeating what the highlight already shows.',
+                    'No stray marks are left over from a mis-click - scroll back through the document once before saving.',
+                    'The file name makes clear this is the reviewed copy, so it is not confused with the original.',
+                    'You have saved or downloaded your own copy of the marked-up file before sending it on.',
+                ],
+            ],
+            [
+                'heading' => 'When annotating won\'t work',
+                'paragraphs' => [
+                    'Highlighting and underlining rely on dragging across real, selectable text, which only exists on a PDF that was generated from a document, not on a page that is actually a scanned image. On a scanned page, a drag-based highlight has no text to attach to; a sticky note still works anywhere, since it is pinned to a point on the page rather than to the text itself, and Whiteout or Add text can mark up a scanned page in other ways.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Does highlighting or underlining change the original text?', 'a' => 'No. Each mark is stored as a separate annotation layered over the page; the underlying text is untouched, which is why annotating is safe to use heavily during review.'],
+            ['q' => 'Will my highlights and sticky notes show up in other PDF apps?', 'a' => 'Yes. They are saved as standard PDF annotations, so other PDF readers display them as ordinary highlights, underlines, strikethroughs and comments, not as something specific to this tool.'],
+            ['q' => 'Is my PDF uploaded anywhere while I annotate it?', 'a' => 'No. Marking up the page, moving or removing a mark, and saving all happen in your browser with JavaScript; the file is never sent to a server.'],
+        ],
+        'sources' => [
+            ['title' => 'Wikipedia, PDF', 'url' => 'https://en.wikipedia.org/wiki/PDF'],
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+        ],
+    ],
+
 ];
