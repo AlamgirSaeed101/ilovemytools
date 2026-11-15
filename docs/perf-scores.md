@@ -1,18 +1,18 @@
 # Mobile Lighthouse scores (live site)
 
-Measured 2026-11-14 11:20 UTC from GitHub Actions (cloud runner), median of 3 runs per page, mobile emulation with simulated throttling (same method as PageSpeed Insights).
+Measured 2026-11-15 11:33 UTC from GitHub Actions (cloud runner), median of 3 runs per page, mobile emulation with simulated throttling (same method as PageSpeed Insights).
 Target: performance 90+ on every page.
 
 | Page | Perf | A11y | Best practices | SEO | FCP | LCP | TBT | CLS |
 |---|---|---|---|---|---|---|---|---|
-| / | **93** | 100 | 100 | 100 | 1.8 s | 1.8 s | 45 ms | 0.000 |
-| /edit-pdf | **73** | 100 | 100 | 100 | 1.1 s | 6.4 s | 30 ms | 0.000 |
-| /word-counter | **80** | 100 | 100 | 100 | 1.1 s | 5.0 s | 25 ms | 0.000 |
-| /merge-pdf | **98** | 100 | 100 | 100 | 1.1 s | 1.1 s | 21 ms | 0.000 |
-| /image-compressor | **98** | 100 | 100 | 100 | 1.1 s | 1.1 s | 11 ms | 0.000 |
-| /qr-code-generator | **98** | 100 | 100 | 100 | 1.1 s | 1.1 s | 26 ms | 0.000 |
-| /category/pdf-tools | **99** | 96 | 100 | 100 | 1.1 s | 1.1 s | 17 ms | 0.000 |
-| /guides | **76** | 100 | 100 | 100 | 1.1 s | 6.5 s | 19 ms | 0.000 |
-| /about | **99** | 100 | 100 | 100 | 1.1 s | 1.1 s | 10 ms | 0.000 |
-| /es/edit-pdf | **78** | 100 | 100 | 69 | 1.3 s | 5.4 s | 24 ms | 0.000 |
-| /de/word-counter | **98** | 100 | 100 | 100 | 1.2 s | 1.2 s | 26 ms | 0.000 |
+| / | **87** | 100 | 100 | 100 | 2.5 s | 2.5 s | 172 ms | 0.000 |
+| /edit-pdf | **71** | 100 | 100 | 100 | 1.9 s | 6.6 s | 147 ms | 0.000 |
+| /word-counter | **77** | 100 | 100 | 100 | 1.9 s | 5.4 s | 114 ms | 0.000 |
+| /merge-pdf | **95** | 100 | 100 | 100 | 1.9 s | 1.9 s | 104 ms | 0.000 |
+| /image-compressor | **95** | 100 | 100 | 100 | 1.9 s | 1.9 s | 161 ms | 0.000 |
+| /qr-code-generator | **95** | 100 | 100 | 100 | 1.9 s | 1.9 s | 110 ms | 0.000 |
+| /category/pdf-tools | **97** | 96 | 100 | 100 | 1.9 s | 1.9 s | 105 ms | 0.000 |
+| /guides | **74** | 100 | 100 | 100 | 1.9 s | 6.8 s | 122 ms | 0.000 |
+| /about | **98** | 100 | 100 | 100 | 1.1 s | 1.1 s | 108 ms | 0.000 |
+| /es/edit-pdf | **74** | 100 | 100 | 69 | 2.2 s | 5.6 s | 147 ms | 0.000 |
+| /de/word-counter | **95** | 100 | 100 | 100 | 2.0 s | 2.0 s | 121 ms | 0.000 |
