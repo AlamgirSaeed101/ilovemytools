@@ -2863,6 +2863,42 @@ return [
         ],
     ],
 
+    'fill-pdf' => [
+        'name' => 'Compilare modulo PDF',
+        'title' => 'Compilare Modulo PDF Online Gratis - Scrivi in Ogni Campo',
+        'description' => "Compila un modulo PDF online gratis: campi di testo, caselle di controllo, menu a tendina e firme, sulla pagina. Senza caricare file, senza registrazione.",
+        'h1' => 'Compilare modulo PDF',
+        'tagline' => 'Scrivi in qualsiasi campo di un modulo PDF - direttamente nel tuo browser.',
+        'keywords' => ['compilare modulo pdf', 'compilare pdf online', 'riempire modulo pdf', 'editor campi modulo pdf', 'compilare pdf gratis'],
+        'intro' => "Compila un modulo PDF scrivendo direttamente nei suoi campi di testo, caselle di controllo, menu a tendina, pulsanti di opzione e campi firma - senza stampare, scansionare o installare nulla. Apri il file, clicca su un campo e scrivi, seleziona una casella o scegli un'opzione dal menu, poi salva un PDF che mantiene ogni risposta esattamente al suo posto. Questo è lo strumento Compila modulo dello stesso editor di PDF completo, quindi puoi anche modificare il testo già presente nel PDF, aggiungere una firma o passare a un'altra pagina, tutto senza uscire dal browser.",
+        'steps' => [
+            'Scegli il modulo PDF che vuoi compilare.',
+            "Clicca su un campo di testo, seleziona una casella o scegli un'opzione dal menu.",
+            'Aggiungi la tua firma se il modulo la richiede.',
+            'Opzionale: seleziona "Appiattisci" per bloccare le risposte così non possano essere modificate.',
+            'Clicca su Salva PDF e scarica il file.',
+        ],
+        'features' => [
+            'Compila campi di testo, caselle di controllo, menu a tendina, pulsanti di opzione e firme',
+            'I campi si trovano esattamente dove sono nel PDF, pronti per essere compilati',
+            "Appiattisci (opzionale) blocca le risposte nella pagina",
+            'Crea nuovi campi modulo su un PDF che ancora non ne ha',
+            'Modifica anche il testo già presente nel PDF, aggiungi una firma o una filigrana',
+            'Privato - il tuo PDF non lascia mai il tuo dispositivo',
+        ],
+        'content' => [
+            ['heading' => 'E se il PDF non ha campi compilabili?', 'body' => "Un modulo scansionato o un PDF che è solo un'immagine non ha campi modulo reali su cui cliccare. Passa alla modalità Aggiungi campi nello stesso editor per disegnare prima una casella di testo, una casella di controllo, un menu a tendina o un campo firma, così diventa un vero modulo compilabile, oppure usa Aggiungi testo per scrivere direttamente sulla pagina."],
+            ['heading' => 'Compila un modulo PDF senza registrarti', 'body' => "Non c'è account, accesso o passaggio con email: apri la pagina, scegli un PDF fino a 200 MB e inizia a scrivere nei suoi campi. Il tuo browser legge e modifica il file da solo; niente viene caricato, quindi non resta nulla salvato da parte nostra da eliminare dopo. Mentre lavori, i progressi si salvano automaticamente nella memoria del browser su questo dispositivo, così un aggiornamento della pagina o una scheda chiusa possono essere ripresi, e quella copia salvata si elimina non appena scarichi il PDF modificato o scegli Scarta."],
+        ],
+        'faqs' => [
+            ['q' => 'Posso compilare un modulo PDF che ha già dei campi?', 'a' => "Sì. Clicca su un campo di testo, una casella di controllo, un menu a tendina o un pulsante di opzione sulla pagina e compilalo direttamente; i campi si trovano esattamente sopra quelli del PDF."],
+            ['q' => 'E se il PDF non ha nessun campo compilabile?', 'a' => "Un modulo scansionato o un'immagine non ne ha nessuno su cui cliccare. Passa ad Aggiungi campi per disegnare una casella di testo, una casella di controllo, un menu a tendina o un campo firma, oppure usa Aggiungi testo per scrivere direttamente sulla pagina."],
+            ['q' => 'Posso bloccare le risposte per evitare che vengano modificate in seguito?', 'a' => 'Sì. Seleziona "Appiattisci il modulo in modo che le risposte non possano essere modificate" prima di salvare, e le risposte vengono unite alla pagina invece di restare campi modificabili.'],
+            ['q' => 'Il mio PDF viene caricato su un server?', 'a' => "No. Tutto - leggere, compilare e salvare - avviene nel tuo browser con JavaScript e nulla viene inviato da nessuna parte."],
+            ['q' => 'Posso anche modificare il testo già presente nel PDF o aggiungere una firma?', 'a' => "Sì. Passa alla scheda Modifica testo o Firma nello stesso editor senza perdere le risposte già compilate."],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Calcolatore di prestito',
         'title' => 'Calcolatore di Prestito - Rata e Piano di Ammortamento',

@@ -2469,6 +2469,42 @@ return [
         ],
     ],
 
+    'fill-pdf' => [
+        'name' => 'Preencher formulário PDF',
+        'title' => 'Preencher Formulário PDF Online Grátis - Qualquer Campo',
+        'description' => 'Preencha um formulário PDF online e grátis. Escreva nos campos de texto, caixas de seleção, listas e assinaturas do documento. Sem upload, sem cadastro.',
+        'h1' => 'Preencher formulário PDF',
+        'tagline' => 'Escreva em qualquer campo de um formulário PDF - direto no seu navegador.',
+        'keywords' => ['preencher formulario pdf', 'preencher pdf online', 'completar formulario pdf', 'editor de campos pdf', 'preencher pdf gratis'],
+        'intro' => 'Preencha um formulário PDF escrevendo direto nos seus próprios campos de texto, caixas de seleção, listas, botões de opção e campos de assinatura - sem imprimir, escanear ou instalar nada. Abra o arquivo, clique em qualquer campo e escreva, marque uma caixa ou escolha uma opção da lista, depois salve um PDF que mantém cada resposta exatamente no lugar. Essa é a ferramenta Preencher formulário dentro do editor de PDF completo, então você também pode editar o texto que já existe no PDF, adicionar uma assinatura ou mudar de página, tudo sem sair do navegador.',
+        'steps' => [
+            'Escolha o formulário PDF que quer preencher.',
+            'Clique em qualquer campo de texto, marque uma caixa ou escolha uma opção da lista.',
+            'Adicione sua assinatura se o formulário precisar.',
+            'Opcional: marque "Achatar" para travar as respostas e evitar alterações.',
+            'Clique em Salvar PDF e baixe o arquivo.',
+        ],
+        'features' => [
+            'Preencha campos de texto, caixas de seleção, listas, botões de opção e assinaturas',
+            'Os campos ficam exatamente onde estão no PDF, prontos para escrever',
+            'Achatar (opcional) trava as respostas na página',
+            'Crie novos campos de formulário em um PDF que ainda não tem nenhum',
+            'Também edite o texto que já existe no PDF, adicione uma assinatura ou marca d\'água',
+            'Privado - seu PDF nunca sai do seu dispositivo',
+        ],
+        'content' => [
+            ['heading' => 'E se o PDF não tiver campos preenchíveis?', 'body' => 'Um formulário escaneado ou um PDF que é só uma imagem não tem campos de formulário reais para clicar. Mude para o modo Adicionar campos no mesmo editor para desenhar primeiro uma caixa de texto, uma caixa de seleção, uma lista ou um campo de assinatura, para que se torne um formulário preenchível de verdade, ou use Adicionar texto para escrever direto na página.'],
+            ['heading' => 'Preencha um formulário PDF sem se cadastrar', 'body' => 'Não há conta, login ou etapa de e-mail: abra a página, escolha um PDF de até 200 MB e comece a escrever nos campos. Seu navegador lê e edita o arquivo por conta própria; nada é enviado, então não fica nada guardado do nosso lado para apagar depois. Enquanto você trabalha, o progresso é salvo automaticamente no armazenamento do navegador neste dispositivo, então uma atualização de página ou uma aba fechada podem ser recuperadas, e essa cópia salva é apagada assim que você baixa o PDF editado ou escolhe Descartar.'],
+        ],
+        'faqs' => [
+            ['q' => 'Posso preencher um formulário PDF que já tem campos?', 'a' => 'Sim. Clique em qualquer campo de texto, caixa de seleção, lista ou botão de opção na página e preencha direto; os campos ficam exatamente sobre os do próprio PDF.'],
+            ['q' => 'E se o PDF não tiver nenhum campo preenchível?', 'a' => 'Um formulário escaneado ou uma imagem não tem nenhum para clicar. Mude para Adicionar campos para desenhar uma caixa de texto, uma caixa de seleção, uma lista ou um campo de assinatura, ou use Adicionar texto para escrever direto na página.'],
+            ['q' => 'Posso travar as respostas para que não possam ser alteradas depois?', 'a' => 'Sim. Marque "Achatar o formulário para que as respostas não possam ser alteradas" antes de salvar, e as respostas são fundidas à página em vez de continuarem como campos editáveis.'],
+            ['q' => 'Meu PDF é enviado para um servidor?', 'a' => 'Não. Tudo - ler, preencher e salvar - acontece no seu navegador com JavaScript e nada é enviado a lugar nenhum.'],
+            ['q' => 'Posso também editar o texto que já existe no PDF ou adicionar uma assinatura?', 'a' => 'Sim. Mude para a aba Editar texto ou Assinatura no mesmo editor sem perder as respostas que já preencheu.'],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Calculadora de empréstimo',
         'title' => 'Calculadora de Empréstimo - Parcela e Amortização',

@@ -2872,6 +2872,42 @@ return [
         ],
     ],
 
+    'fill-pdf' => [
+        'name' => 'PDF-Formular ausfüllen',
+        'title' => 'PDF-Formular Online Kostenlos Ausfüllen - Jedes Feld',
+        'description' => 'Füllen Sie ein PDF-Formular kostenlos online aus: Textfelder, Kontrollkästchen, Dropdowns und Unterschriftsfelder. Ohne Hochladen, ohne Anmeldung.',
+        'h1' => 'PDF-Formular ausfüllen',
+        'tagline' => 'Schreiben Sie in jedes Feld eines PDF-Formulars - direkt in Ihrem Browser.',
+        'keywords' => ['pdf formular ausfüllen', 'pdf online ausfüllen', 'pdf formularfelder bearbeiten', 'pdf formular ausfüller', 'pdf formular kostenlos ausfüllen'],
+        'intro' => 'Füllen Sie ein PDF-Formular aus, indem Sie direkt in seine eigenen Textfelder, Kontrollkästchen, Dropdowns, Optionsfelder und Unterschriftsfelder schreiben - ganz ohne zu drucken, zu scannen oder neue Software zu installieren. Öffnen Sie die Datei, klicken Sie in ein Feld und schreiben Sie, setzen Sie ein Häkchen oder wählen Sie eine Option aus der Liste, und speichern Sie dann ein PDF, das jede Antwort genau an ihrem Platz behält. Das ist das Werkzeug „Formular ausfüllen" im vollständigen PDF-Editor, Sie können also auch vorhandenen PDF-Text bearbeiten, eine Unterschrift hinzufügen oder die Seite wechseln, alles ohne Ihren Browser zu verlassen.',
+        'steps' => [
+            'Wählen Sie das PDF-Formular aus, das Sie ausfüllen möchten.',
+            'Klicken Sie in ein Textfeld, setzen Sie ein Häkchen oder wählen Sie eine Option aus der Liste.',
+            'Fügen Sie Ihre Unterschrift hinzu, falls das Formular eine benötigt.',
+            'Optional: Aktivieren Sie „Reduzieren", um die Antworten unveränderbar zu machen.',
+            'Klicken Sie auf PDF speichern und laden Sie die Datei herunter.',
+        ],
+        'features' => [
+            'Textfelder, Kontrollkästchen, Dropdowns, Optionsfelder und Unterschriftsfelder ausfüllen',
+            'Felder liegen genau dort, wo sie im PDF sind, und sind sofort beschreibbar',
+            'Optionales Reduzieren sperrt die Antworten auf der Seite',
+            'Neue Formularfelder auf einem PDF erstellen, das noch keine hat',
+            'Auch vorhandenen PDF-Text bearbeiten, eine Unterschrift oder ein Wasserzeichen hinzufügen',
+            'Privat - Ihr PDF verlässt niemals Ihr Gerät',
+        ],
+        'content' => [
+            ['heading' => 'Was, wenn das PDF keine ausfüllbaren Felder hat?', 'body' => 'Ein gescanntes Formular oder ein PDF, das nur ein Bild ist, hat keine echten Formularfelder, in die man klicken könnte. Wechseln Sie im selben Editor zum Modus „Felder hinzufügen", um zuerst ein Textfeld, ein Kontrollkästchen, ein Dropdown oder ein Unterschriftsfeld aufzuzeichnen, damit ein echtes ausfüllbares Formular daraus wird, oder nutzen Sie „Text hinzufügen", um direkt auf die Seite zu schreiben.'],
+            ['heading' => 'PDF-Formular ausfüllen ohne Anmeldung', 'body' => 'Es gibt kein Konto, keinen Login und keinen E-Mail-Schritt: Öffnen Sie die Seite, wählen Sie ein PDF mit bis zu 200 MB und beginnen Sie, seine Felder auszufüllen. Ihr Browser liest und bearbeitet die Datei selbst; nichts wird hochgeladen, sodass auf unserer Seite nichts gespeichert bleibt, das später gelöscht werden müsste. Während Sie arbeiten, speichert sich der Fortschritt automatisch im Speicher Ihres Browsers auf diesem Gerät, sodass ein Neuladen oder ein geschlossener Tab fortgesetzt werden kann, und diese gespeicherte Kopie wird gelöscht, sobald Sie das bearbeitete PDF herunterladen oder Verwerfen wählen.'],
+        ],
+        'faqs' => [
+            ['q' => 'Kann ich ein PDF-Formular ausfüllen, das bereits Felder hat?', 'a' => 'Ja. Klicken Sie auf ein Textfeld, Kontrollkästchen, Dropdown oder Optionsfeld auf der Seite und füllen Sie es direkt aus; die Felder liegen genau über den eigenen Feldern des PDFs.'],
+            ['q' => 'Was, wenn das PDF überhaupt keine ausfüllbaren Felder hat?', 'a' => 'Ein gescanntes Formular oder ein reines Bild hat keine, in die man klicken könnte. Wechseln Sie zu „Felder hinzufügen", um ein Textfeld, ein Kontrollkästchen, ein Dropdown oder ein Unterschriftsfeld aufzuzeichnen, oder nutzen Sie „Text hinzufügen", um direkt auf die Seite zu schreiben.'],
+            ['q' => 'Kann ich die Antworten sperren, damit sie später nicht mehr geändert werden können?', 'a' => 'Ja. Aktivieren Sie vor dem Speichern „Formular reduzieren, damit die Antworten nicht mehr geändert werden können", und die Antworten werden in die Seite eingebettet, statt bearbeitbare Felder zu bleiben.'],
+            ['q' => 'Wird mein PDF auf einen Server hochgeladen?', 'a' => 'Nein. Alles - Lesen, Ausfüllen und Speichern - geschieht in Ihrem Browser mit JavaScript, und nichts wird irgendwohin gesendet.'],
+            ['q' => 'Kann ich auch vorhandenen PDF-Text bearbeiten oder eine Unterschrift hinzufügen?', 'a' => 'Ja. Wechseln Sie im selben Editor zum Tab Text bearbeiten oder Unterschrift, ohne die bereits ausgefüllten Antworten zu verlieren.'],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Kreditrechner',
         'title' => 'Kreditrechner - Monatliche Rate & Tilgungsplan',

@@ -2469,6 +2469,42 @@ return [
         ],
     ],
 
+    'fill-pdf' => [
+        'name' => 'Remplir un formulaire PDF',
+        'title' => 'Remplir un Formulaire PDF Gratuit en Ligne - Tous les Champs',
+        'description' => "Remplissez un formulaire PDF gratuit en ligne : champs de texte, cases à cocher, listes et signatures, sur la page. Sans envoi de fichier, sans inscription.",
+        'h1' => 'Remplir un formulaire PDF',
+        'tagline' => "Écrivez dans n'importe quel champ d'un formulaire PDF - directement dans votre navigateur.",
+        'keywords' => ['remplir un formulaire pdf', 'remplir pdf en ligne', 'compléter un formulaire pdf', 'éditeur de champs pdf', 'remplir pdf gratuit'],
+        'intro' => "Remplissez un formulaire PDF en écrivant directement dans ses propres champs de texte, cases à cocher, listes déroulantes, boutons radio et champs de signature - sans imprimer, scanner ni installer quoi que ce soit. Ouvrez le fichier, cliquez dans un champ et écrivez, cochez une case ou choisissez une option dans la liste, puis enregistrez un PDF qui garde chaque réponse exactement à sa place. C'est l'outil Remplir le formulaire du même éditeur de PDF complet, donc vous pouvez aussi modifier le texte déjà présent dans le PDF, ajouter une signature ou passer à une autre page, tout cela sans quitter votre navigateur.",
+        'steps' => [
+            'Choisissez le formulaire PDF à remplir.',
+            'Cliquez dans un champ de texte, cochez une case ou choisissez une option dans la liste.',
+            "Ajoutez votre signature si le formulaire en a besoin.",
+            "Facultatif : cochez « Aplatir » pour verrouiller les réponses afin qu'elles ne puissent plus être modifiées.",
+            'Cliquez sur Enregistrer le PDF et téléchargez le fichier.',
+        ],
+        'features' => [
+            'Remplissez les champs de texte, cases à cocher, listes déroulantes, boutons radio et signatures',
+            'Les champs se trouvent exactement où ils sont dans le PDF, prêts à être remplis',
+            "Aplatir (facultatif) verrouille les réponses dans la page",
+            "Créez de nouveaux champs de formulaire sur un PDF qui n'en a pas encore",
+            'Modifiez aussi le texte déjà présent dans le PDF, ajoutez une signature ou un filigrane',
+            'Privé - votre PDF ne quitte jamais votre appareil',
+        ],
+        'content' => [
+            ['heading' => "Et si le PDF n'a pas de champs à remplir ?", 'body' => "Un formulaire numérisé ou un PDF qui n'est qu'une image n'a pas de vrais champs de formulaire sur lesquels cliquer. Passez au mode Ajouter des champs dans le même éditeur pour dessiner d'abord une zone de texte, une case à cocher, une liste déroulante ou un champ de signature, afin qu'il devienne un vrai formulaire à remplir, ou utilisez Ajouter du texte pour écrire directement sur la page."],
+            ['heading' => 'Remplissez un formulaire PDF sans créer de compte', 'body' => "Il n'y a ni compte, ni connexion, ni étape par e-mail : ouvrez la page, choisissez un PDF de 200 Mo maximum et commencez à écrire dans ses champs. Votre navigateur lit et modifie le fichier lui-même ; rien n'est envoyé, donc rien n'est conservé de notre côté qu'il faudrait supprimer ensuite. Pendant que vous travaillez, la progression est enregistrée automatiquement dans le stockage de votre navigateur sur cet appareil, donc une actualisation de la page ou un onglet fermé peuvent être repris, et cette copie enregistrée est effacée dès que vous téléchargez le PDF modifié ou choisissez Abandonner."],
+        ],
+        'faqs' => [
+            ['q' => 'Puis-je remplir un formulaire PDF qui a déjà des champs ?', 'a' => "Oui. Cliquez sur un champ de texte, une case à cocher, une liste déroulante ou un bouton radio sur la page et remplissez-le directement ; les champs se trouvent exactement sur ceux du PDF."],
+            ['q' => "Et si le PDF n'a aucun champ à remplir ?", 'a' => "Un formulaire numérisé ou une image n'en a aucun sur lequel cliquer. Passez à Ajouter des champs pour dessiner une zone de texte, une case à cocher, une liste déroulante ou un champ de signature, ou utilisez Ajouter du texte pour écrire directement sur la page."],
+            ['q' => 'Puis-je verrouiller les réponses pour éviter toute modification ultérieure ?', 'a' => 'Oui. Cochez « Aplatir le formulaire pour que les réponses ne puissent plus être modifiées » avant d\'enregistrer, et les réponses sont fusionnées dans la page plutôt que de rester des champs modifiables.'],
+            ['q' => 'Mon PDF est-il envoyé à un serveur ?', 'a' => "Non. Tout - lire, remplir et enregistrer - se passe dans votre navigateur avec JavaScript, et rien n'est envoyé où que ce soit."],
+            ['q' => 'Puis-je aussi modifier le texte déjà présent dans le PDF ou ajouter une signature ?', 'a' => "Oui. Passez à l'onglet Modifier le texte ou Signature dans le même éditeur sans perdre les réponses déjà remplies."],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Calculateur de prêt',
         'title' => 'Calculateur de Prêt - Mensualité et Amortissement',

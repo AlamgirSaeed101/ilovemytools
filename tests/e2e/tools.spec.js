@@ -1675,6 +1675,31 @@ test.describe('PDF tools', () => {
         await expect(toolButton(page, 'Text')).toBeVisible();
         await expect(toolButton(page, 'Watermark')).toBeVisible();
     });
+
+    test('fill-pdf opens Edit PDF with the Forms tab preselected and can fill and save a form', async ({ page }) => {
+        await openTool(page, 'fill-pdf');
+        await page.getByTestId('file-input').setInputFiles({ name: 'application.pdf', mimeType: 'application/pdf', buffer: await makePdfWithFormFields() });
+        await expectTool(page, 'Forms');
+        await expect(page.getByText('Fill in the fields on the page, then click Apply changes.')).toBeVisible();
+
+        const nameInput = page.getByLabel('Fill in full_name');
+        await expect(nameInput).toBeVisible();
+        await nameInput.fill('Jane Doe');
+        await page.getByLabel('Checkbox: subscribe').check();
+        await page.getByLabel('Select country').selectOption('DE');
+
+        await page.getByRole('button', { name: 'Apply changes' }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        expect(file.suggestedFilename()).toBe('application-edited.pdf');
+        const form = (await PDFDocument.load(await readDownload(file))).getForm();
+        expect(form.getTextField('full_name').getText()).toBe('Jane Doe');
+        expect(form.getCheckBox('subscribe').isChecked()).toBe(true);
+        expect(form.getDropdown('country').getSelected()).toEqual(['DE']);
+
+        // The one editor is still underneath: every other tab is reachable from this page too.
+        await expect(toolButton(page, 'Text')).toBeVisible();
+        await expect(toolButton(page, 'Watermark')).toBeVisible();
+    });
 });
 
 test.describe('Calculators', () => {

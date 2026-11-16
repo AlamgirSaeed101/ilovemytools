@@ -3248,6 +3248,57 @@ return [
         'related' => ['edit-pdf', 'add-text-to-pdf', 'whiteout-pdf', 'sign-pdf'],
     ],
 
+    'fill-pdf' => [
+        'name' => 'Fill PDF Form',
+        'category' => 'pdf-tools',
+        'icon' => 'pdf',
+        'popular' => false,
+        'updated' => '2026-11-16',
+        'title' => 'Fill PDF Form Online Free - Type into Any Field',
+        'description' => 'Fill a PDF form online for free. Type into existing text boxes, checkboxes, dropdowns and signature fields, right on the page. No upload, no sign up.',
+        'h1' => 'Fill PDF Form',
+        'tagline' => 'Type into any field in a PDF form - right in your browser.',
+        'keywords' => ['fill pdf form', 'fill pdf form online', 'fill in a pdf form', 'pdf form filler', 'edit pdf form fields'],
+        'intro' => 'Fill a PDF form by typing straight into its own text boxes, checkboxes, dropdowns, radio buttons and signature fields - no printing, scanning or new software needed. Open the file, click into any field and type, tick a checkbox or pick a dropdown option, then save a PDF that keeps every answer exactly in place. This is the Fill form tool inside the full PDF editor, so you can also edit the PDF\'s existing text, add a signature, or move to another page, all without leaving your browser.',
+        'steps' => [
+            'Choose the PDF form you want to fill in.',
+            'Click into any text box, tick a checkbox, or pick a dropdown option.',
+            'Add your signature if the form needs one.',
+            'Optional: tick "Flatten" to lock in the answers so they can\'t be changed.',
+            'Click Save PDF and download the file.',
+        ],
+        'features' => [
+            'Fill in text boxes, checkboxes, dropdowns, radio buttons and signature fields',
+            'Fields sit exactly where they are in the PDF, ready to type into',
+            'Optional flatten locks the answers into the page',
+            'Create new form fields on a PDF that has none yet',
+            'Also edit the PDF\'s existing text, add a signature or a watermark',
+            'Private - your PDF never leaves your device',
+        ],
+        'content' => [
+            [
+                'heading' => 'What if the PDF has no fillable fields?',
+                'body' => 'A scanned form or an image-only PDF has no real form fields to click into. Switch to Add fields mode in the same editor to draw a text box, checkbox, dropdown or signature field onto it first, so it becomes a real fillable form, or use Add text to type straight onto the page instead.',
+            ],
+            [
+                'heading' => 'Fill a PDF form without signing up',
+                'body' => 'There is no account, login or email step: open the page, choose a PDF of up to 200 MB and start typing into its fields. Your browser reads and edits the file itself; nothing is uploaded, so there is nothing stored on our side to delete afterwards. While you work, progress auto-saves in your browser\'s storage on this device, so a refresh or a closed tab can be resumed, and that saved copy clears once you download the edited PDF or choose Discard.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Can I fill in a PDF form that already has fields?', 'a' => 'Yes. Click any text box, checkbox, dropdown or radio button on the page and fill it in directly; the inputs sit exactly over the PDF\'s own fields.'],
+            ['q' => 'What if the PDF has no fillable fields at all?', 'a' => 'A scanned or image-only form has none to click into. Switch to Add fields to draw a text box, checkbox, dropdown or signature field onto it, or use Add text to type straight onto the page instead.'],
+            ['q' => 'Can I lock the answers so they can\'t be changed later?', 'a' => 'Yes. Tick "Flatten the form so the answers cannot be changed" before saving, and the answers are merged into the page instead of staying as editable fields.'],
+            ['q' => 'Is my PDF uploaded to a server?', 'a' => 'No. Everything - reading, filling and saving - happens in your browser with JavaScript and nothing is sent anywhere.'],
+            ['q' => 'Can I also edit the PDF\'s existing text or add a signature?', 'a' => 'Yes. Switch to the Edit text or Signature tab in the same editor without losing the answers you\'ve already filled in.'],
+        ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+        ],
+        'related' => ['edit-pdf', 'sign-pdf', 'add-text-to-pdf', 'edit-pdf-text'],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Mortgage Calculator',
         'category' => 'calculators',

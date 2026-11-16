@@ -39,6 +39,7 @@ text and change it in place, in the same font.
   - [x] Whiteout PDF `/whiteout-pdf` (opens Edit PDF with the Whiteout tab preselected, same editor underneath), own SEO content in all 10 languages, e2e test, panel height measured.
   - [x] Edit PDF text `/edit-pdf-text` (opens Edit PDF with the Edit text tab preselected, same editor underneath), own SEO content in all 10 languages, e2e test, panel height measured.
   - [x] PDF annotator `/annotate-pdf` (opens Edit PDF with the Highlight tab preselected, same editor underneath), own SEO content in all 10 languages, e2e test, panel height measured.
+  - [x] Fill PDF form `/fill-pdf` (opens Edit PDF with the Forms tab preselected, same editor underneath), own SEO content in all 10 languages, e2e test, panel height measured. The slug and the Forms tab were already wired in `resources/js/tools/index.js`/`EditPdf.jsx` from an earlier run; this part only added the missing landing page (config/tools.php + lang/*/tools.php entries, OG image, e2e test, panel height) so the route actually resolves.
 
 ## Features
 

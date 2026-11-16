@@ -2342,6 +2342,42 @@ return [
         ],
     ],
 
+    'fill-pdf' => [
+        'name' => 'Wypełnianie formularza PDF',
+        'title' => 'Wypełnianie Formularza PDF Online Bezpłatnie - Każde Pole',
+        'description' => 'Wypełnij formularz PDF bezpłatnie online. Wpisuj dane w pola tekstowe, pola wyboru, listy rozwijane i pola podpisu. Bez wgrywania plików, bez rejestracji.',
+        'h1' => 'Wypełnianie formularza PDF',
+        'tagline' => 'Wpisuj dane w każde pole formularza PDF - prosto w przeglądarce.',
+        'keywords' => ['wypełnianie formularza pdf', 'wypełnij pdf online', 'edytor pól formularza pdf', 'uzupełnianie formularza pdf', 'wypełnij pdf bezpłatnie'],
+        'intro' => 'Wypełnij formularz PDF, wpisując dane prosto w jego własne pola tekstowe, pola wyboru, listy rozwijane, przyciski opcji i pola podpisu - bez drukowania, skanowania czy instalowania czegokolwiek. Otwórz plik, kliknij w pole i wpisz tekst, zaznacz pole wyboru albo wybierz opcję z listy, a potem zapisz PDF, który zachowuje każdą odpowiedź dokładnie na swoim miejscu. To narzędzie Wypełnij formularz w tym samym, pełnym edytorze PDF, więc możesz też edytować tekst już obecny w PDF, dodać podpis albo przejść do innej strony - wszystko bez wychodzenia z przeglądarki.',
+        'steps' => [
+            'Wybierz formularz PDF, który chcesz wypełnić.',
+            'Kliknij w pole tekstowe, zaznacz pole wyboru albo wybierz opcję z listy.',
+            'Dodaj podpis, jeśli formularz go wymaga.',
+            'Opcjonalnie: zaznacz "Spłaszcz", aby zablokować odpowiedzi przed zmianą.',
+            'Kliknij Zapisz PDF i pobierz plik.',
+        ],
+        'features' => [
+            'Wypełniaj pola tekstowe, pola wyboru, listy rozwijane, przyciski opcji i podpisy',
+            'Pola znajdują się dokładnie tam, gdzie są w PDF, gotowe do wypełnienia',
+            'Spłaszczenie (opcjonalne) blokuje odpowiedzi na stronie',
+            'Twórz nowe pola formularza w PDF, który jeszcze żadnych nie ma',
+            'Edytuj też tekst już obecny w PDF, dodaj podpis lub znak wodny',
+            'Prywatne - Twój PDF nigdy nie opuszcza Twojego urządzenia',
+        ],
+        'content' => [
+            ['heading' => 'Co jeśli PDF nie ma pól do wypełnienia?', 'body' => 'Zeskanowany formularz albo PDF będący tylko obrazem nie ma żadnych prawdziwych pól formularza, w które można kliknąć. Przełącz się na tryb Dodaj pola w tym samym edytorze, aby najpierw narysować pole tekstowe, pole wyboru, listę rozwijaną lub pole podpisu, dzięki czemu stanie się prawdziwym, wypełnialnym formularzem, albo użyj Dodaj tekst, aby pisać prosto na stronie.'],
+            ['heading' => 'Wypełnij formularz PDF bez rejestracji', 'body' => 'Nie ma konta, logowania ani kroku z e-mailem: otwórz stronę, wybierz PDF do 200 MB i zacznij wpisywać dane w jego pola. Twoja przeglądarka sama odczytuje i edytuje plik; nic nie jest wgrywane, więc po naszej stronie nie zostaje nic, co trzeba by później usunąć. W trakcie pracy postępy zapisują się automatycznie w pamięci przeglądarki na tym urządzeniu, więc odświeżenie lub zamknięta karta można odzyskać, a ta zapisana kopia jest usuwana, gdy pobierzesz edytowany PDF lub wybierzesz Odrzuć.'],
+        ],
+        'faqs' => [
+            ['q' => 'Czy mogę wypełnić formularz PDF, który już ma pola?', 'a' => 'Tak. Kliknij w pole tekstowe, pole wyboru, listę rozwijaną lub przycisk opcji na stronie i wypełnij je bezpośrednio; pola znajdują się dokładnie nad własnymi polami PDF.'],
+            ['q' => 'Co jeśli PDF nie ma żadnych pól do wypełnienia?', 'a' => 'Zeskanowany formularz albo obraz nie ma żadnych, w które można kliknąć. Przełącz się na Dodaj pola, aby narysować pole tekstowe, pole wyboru, listę rozwijaną lub pole podpisu, albo użyj Dodaj tekst, aby pisać prosto na stronie.'],
+            ['q' => 'Czy mogę zablokować odpowiedzi, aby nie można ich było później zmienić?', 'a' => 'Tak. Zaznacz "Spłaszcz formularz, aby odpowiedzi nie można było zmienić" przed zapisem, a odpowiedzi zostaną scalone ze stroną, zamiast pozostać edytowalnymi polami.'],
+            ['q' => 'Czy mój PDF jest wgrywany na serwer?', 'a' => 'Nie. Wszystko - odczyt, wypełnianie i zapis - dzieje się w przeglądarce za pomocą JavaScript i nic nie jest wysyłane nigdzie.'],
+            ['q' => 'Czy mogę też edytować tekst już obecny w PDF lub dodać podpis?', 'a' => 'Tak. Przełącz się na zakładkę Edytuj tekst lub Podpis w tym samym edytorze bez utraty już wypełnionych odpowiedzi.'],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Kalkulator kredytu',
         'title' => 'Kalkulator Kredytu - Rata i Harmonogram Spłat',

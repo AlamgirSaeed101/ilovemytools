@@ -2364,6 +2364,42 @@ return [
         ],
     ],
 
+    'fill-pdf' => [
+        'name' => 'Rellenar formulario PDF',
+        'title' => 'Rellenar Formulario PDF Online Gratis - Cualquier Campo',
+        'description' => 'Rellena un formulario PDF online gratis. Escribe en los campos de texto, casillas, listas y firmas del documento. Sin subir archivos, sin registro.',
+        'h1' => 'Rellenar formulario PDF',
+        'tagline' => 'Escribe en cualquier campo de un formulario PDF - directamente en tu navegador.',
+        'keywords' => ['rellenar formulario pdf', 'rellenar pdf online', 'completar formulario pdf', 'editor de campos pdf', 'rellenar pdf gratis'],
+        'intro' => 'Rellena un formulario PDF escribiendo directamente en sus propios campos de texto, casillas, listas desplegables, botones de opción y campos de firma - sin imprimir, escanear ni instalar nada. Abre el archivo, haz clic en cualquier campo y escribe, marca una casilla o elige una opción de la lista, y luego guarda un PDF que conserva cada respuesta exactamente en su lugar. Esta es la herramienta Rellenar formulario dentro del editor de PDF completo, así que también puedes editar el texto que ya tiene el PDF, añadir una firma o cambiar de página, todo sin salir de tu navegador.',
+        'steps' => [
+            'Elige el formulario PDF que quieres rellenar.',
+            'Haz clic en cualquier campo de texto, marca una casilla o elige una opción de la lista.',
+            'Añade tu firma si el formulario la necesita.',
+            'Opcional: marca "Acoplar" para que las respuestas no se puedan cambiar.',
+            'Haz clic en Guardar PDF y descarga el archivo.',
+        ],
+        'features' => [
+            'Rellena campos de texto, casillas, listas desplegables, botones de opción y firmas',
+            'Los campos están exactamente donde están en el PDF, listos para escribir',
+            'Acoplar (opcional) bloquea las respuestas en la página',
+            'Crea nuevos campos de formulario en un PDF que todavía no tiene ninguno',
+            'También edita el texto que ya tiene el PDF, añade una firma o una marca de agua',
+            'Privado - tu PDF nunca sale de tu dispositivo',
+        ],
+        'content' => [
+            ['heading' => '¿Y si el PDF no tiene campos rellenables?', 'body' => 'Un formulario escaneado o un PDF que es solo una imagen no tiene campos de formulario reales en los que hacer clic. Cambia al modo Añadir campos en el mismo editor para dibujar primero una caja de texto, una casilla, una lista desplegable o un campo de firma, de modo que se convierta en un formulario rellenable real, o usa Añadir texto para escribir directamente sobre la página.'],
+            ['heading' => 'Rellena un formulario PDF sin registrarte', 'body' => 'No hay cuenta, inicio de sesión ni paso de correo: abre la página, elige un PDF de hasta 200 MB y empieza a escribir en sus campos. Tu navegador lee y edita el archivo por sí mismo; nada se sube, así que no queda nada guardado de nuestro lado que haya que borrar después. Mientras trabajas, el progreso se guarda automáticamente en el almacenamiento de tu navegador en este dispositivo, así que una actualización de página o una pestaña cerrada se pueden recuperar, y esa copia guardada se borra en cuanto descargas el PDF editado o eliges Descartar.'],
+        ],
+        'faqs' => [
+            ['q' => '¿Puedo rellenar un formulario PDF que ya tiene campos?', 'a' => 'Sí. Haz clic en cualquier campo de texto, casilla, lista desplegable o botón de opción de la página y rellénalo directamente; los campos están exactamente sobre los propios del PDF.'],
+            ['q' => '¿Qué pasa si el PDF no tiene ningún campo rellenable?', 'a' => 'Un formulario escaneado o una imagen no tiene ninguno en el que hacer clic. Cambia a Añadir campos para dibujar una caja de texto, una casilla, una lista desplegable o un campo de firma, o usa Añadir texto para escribir directamente sobre la página.'],
+            ['q' => '¿Puedo bloquear las respuestas para que no se puedan cambiar después?', 'a' => 'Sí. Marca "Acoplar el formulario para que las respuestas no se puedan cambiar" antes de guardar, y las respuestas se fusionan con la página en lugar de seguir siendo campos editables.'],
+            ['q' => '¿Se sube mi PDF a un servidor?', 'a' => 'No. Todo - leer, rellenar y guardar - ocurre en tu navegador con JavaScript y nada se envía a ningún sitio.'],
+            ['q' => '¿Puedo también editar el texto que ya tiene el PDF o añadir una firma?', 'a' => 'Sí. Cambia a la pestaña Editar texto o Firma en el mismo editor sin perder las respuestas que ya has rellenado.'],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Calculadora de préstamo',
         'title' => 'Calculadora de Préstamo - Cuota y Amortización',
