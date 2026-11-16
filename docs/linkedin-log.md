@@ -51,3 +51,5 @@ Tools already announced on LinkedIn (one per line: date and slug). The daily rou
 2026-11-12 whiteout-pdf company
 2026-11-13 edit-pdf-text personal
 2026-11-13 edit-pdf-text company
+2026-11-16 annotate-pdf personal
+2026-11-16 annotate-pdf company
