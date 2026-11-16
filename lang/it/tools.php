@@ -33,8 +33,16 @@ return [
                 'body' => 'Una parola è qualsiasi gruppo di lettere o numeri separato da spazi o a capo. La punteggiatura da sola non conta come parola. Le frasi si contano dalla punteggiatura finale (. ! ?) e i paragrafi dalle righe vuote, quindi i numeri coincidono con quelli di programmi come Microsoft Word e Google Documenti.',
             ],
             [
+                'heading' => 'Contaparole, conta parole o contatore di parole: cosa conta lo strumento?',
+                'body' => 'Che tu stia cercando un contaparole, un conta parole o un contatore di parole, questo strumento conta mentre scrivi le parole, i caratteri con e senza spazi, le frasi e i paragrafi del tuo testo. Mostra anche il tempo di lettura stimato (238 parole al minuto) e il tempo di lettura ad alta voce (150 parole al minuto), oltre alle parole chiave principali.',
+            ],
+            [
                 'heading' => 'Contatore caratteri: conta i caratteri con e senza spazi',
                 'body' => 'Oltre alle parole, il contatore caratteri mostra due numeri. Caratteri conta ogni lettera, cifra, segno di punteggiatura e spazio, a capo compresi. Caratteri (senza spazi) toglie spazi, tabulazioni e a capo. Le lettere accentate come è o à contano come un solo carattere. Usa il primo numero per i limiti espressi in battute e il secondo per i moduli che contano solo i caratteri visibili. Entrambi si aggiornano a ogni tasto premuto.',
+            ],
+            [
+                'heading' => 'Quante parole ci sono in una pagina?',
+                'body' => 'Per testi in inglese, con un carattere da 12 punti e margini di 1 pollice (2,54 cm), in una pagina a interlinea singola entrano circa 500 parole e in una a interlinea doppia circa 250 (all’incirca da 500 a 600 e da 250 a 300). Carattere, interlinea e titoli cambiano il numero: per la tabella completa da 1 a 10 pagine, pagine A4 e documenti Word, leggi la nostra guida in inglese “How many words is a page?”, linkata più in basso sotto “Leggi la guida”.',
             ],
             [
                 'heading' => 'Quante parole sono 2.000 caratteri? Battute e cartella editoriale',
@@ -48,8 +56,9 @@ return [
             ['q' => 'Un "contaparole" è lo stesso di un "contatore caratteri" o "contacaratteri"?', 'a' => 'Sì. Contaparole, contatore di testo, contatore caratteri e contacaratteri sono nomi diversi per lo stesso strumento: conta le parole, i caratteri, le frasi e i paragrafi del tuo testo in tempo reale.'],
             ['q' => 'Conta i caratteri con gli spazi?', 'a' => 'Sì. Ottieni sia i caratteri con spazi sia quelli senza spazi, che sono quelli a cui si riferisce la maggior parte dei limiti.'],
             ['q' => 'Come posso contare i caratteri di un testo?', 'a' => 'Incolla o scrivi il testo nel riquadro: il contatore mostra subito i caratteri con e senza spazi, insieme a parole, frasi e paragrafi.'],
-            ['q' => 'Quante parole sono 2.000 caratteri?', 'a' => 'In italiano circa 300-350 parole, spazi inclusi, a seconda della lunghezza media delle parole. Incolla il testo per avere il numero esatto.'],
             ['q' => 'Che cos’è una cartella editoriale?', 'a' => 'È lo standard editoriale italiano di 1.800 battute, spazi inclusi: 30 righe da 60 caratteri. Il contatore ti mostra quante battute ha il tuo testo.'],
+            ['q' => 'Quante parole sono 2.000 caratteri?', 'a' => 'In italiano circa 300-350 parole, spazi inclusi, a seconda della lunghezza media delle parole. Incolla il testo per avere il numero esatto.'],
+            ['q' => 'Come conta il contaparole le parole con il trattino e i numeri?', 'a' => 'È una parola tutto ciò che sta tra spazi o a capo e contiene almeno una lettera o una cifra: “e-mail” o “socio-economico” contano quindi come una parola, anche numeri come 2026 o 3,5 contano come una parola, mentre un trattino isolato no.'],
             ['q' => 'Le battute includono gli spazi?', 'a' => 'Di solito sì: nel conteggio delle battute gli spazi contano come caratteri. Per questo lo strumento mostra sia i caratteri con spazi sia quelli senza.'],
         ],
     ],
@@ -233,7 +242,7 @@ return [
     'image-compressor' => [
         'name' => 'Compressore di immagini',
         'title' => 'Compressore di immagini: comprimi JPG, PNG e WebP online',
-        'description' => 'Comprimi immagini JPG, PNG e WebP gratis. Riduci una foto a 100 KB senza perdita di qualità visibile. Nulla lascia il tuo dispositivo.',
+        'description' => 'Comprimi immagini JPG, PNG e WebP gratis. Riduci una foto a 100 KB o a ogni dimensione senza perdita di qualità visibile. Tutto resta sul dispositivo.',
         'h1' => 'Compressore di immagini',
         'tagline' => 'Riduci il peso di file JPG, PNG e WebP, anche a una dimensione precisa come 100 KB.',
         'keywords' => ['compressore immagini', 'comprimere immagine', 'comprimere immagine a 100kb', 'ridurre dimensione immagine', 'comprimere jpg'],
@@ -265,6 +274,10 @@ return [
                 'heading' => 'Comprimere una foto a 50 KB o 20 KB',
                 'body' => 'I moduli di domanda chiedono spesso una foto sotto i 50 KB o perfino i 20 KB. Apri la scheda Dimensione obiettivo (es. 100 KB) e scrivi il limite in Dimensione massima del file (KB); il valore minimo accettato è 5. Per ogni immagine lo strumento cerca la qualità più alta che rientra ancora nel limite. Se anche la qualità più bassa è troppo pesante, riduce larghezza e altezza a passi del 20% finché il file rientra, e la riga del risultato mostra le nuove dimensioni. Se non ci riesce comunque, te lo dice e ti dà la versione più piccola che ha ottenuto. Le dimensioni contano 1 KB come 1.024 byte. Per obiettivi piccoli tieni JPG o WebP come formato di output: il PNG non ha un’impostazione di qualità, quindi può alleggerirsi solo perdendo pixel. Se il modulo richiede anche misure precise, impostale prima con Ridimensiona immagine e poi comprimi qui.',
             ],
+            [
+                'heading' => 'Ridurre un PNG: dimensioni e peso del file',
+                'body' => 'Il PNG è senza perdita, quindi non ha un’impostazione di qualità. Se lasci il formato di output su “Come l’originale”, il tuo PNG resta un PNG e viene solo salvato di nuovo; spesso serve a poco, e se il file non diventa più leggero ti viene restituito l’originale (“Già ottimizzata”). Un PNG diventa molto più leggero in due modi: convertilo in WebP (la trasparenza resta) o in JPG (le aree trasparenti diventano bianche), oppure imposta una larghezza massima, così vengono salvati meno pixel. In modalità Dimensione obiettivo con PNG come output, lo strumento riduce le dimensioni a passi del 20% finché il file rientra nel limite.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Come comprimo un’immagine a 100 KB?', 'a' => 'Apri la scheda “Dimensione obiettivo” e inserisci 100. Le immagini vengono compresse appena le aggiungi; se cambi l’impostazione dopo, clicca Ricomprimi tutto. Lo strumento trova la qualità migliore che resta sotto i 100 KB e riduce le dimensioni dell’immagine solo se necessario.'],
@@ -272,6 +285,9 @@ return [
             ['q' => 'La compressione riduce la qualità?', 'a' => 'Con la qualità predefinita (75%) quasi nessuno nota differenze, mentre il peso spesso cala del 50-80%.'],
             ['q' => 'Come riduco le dimensioni di un\'immagine PNG?', 'a' => 'Il PNG è un formato senza perdita, quindi comprimerlo da solo aiuta poco. Per ridurre davvero le dimensioni di un PNG, imposta WebP (mantiene la trasparenza) o JPG (se non serve la trasparenza) come formato di output: entrambi riducono molto il peso del PNG senza perdita di qualità visibile.'],
             ['q' => 'Come riduco le dimensioni di un JPG online?', 'a' => 'Scegli “Dimensione obiettivo” o una qualità intorno al 60-80%, poi aggiungi il tuo JPG: viene compresso subito. Per le foto, una qualità JPG del 70-80% basta di solito a ridurre il peso in modo netto senza perdita visibile.'],
+            ['q' => 'Come riduco un’immagine a 1 MB?', 'a' => 'Apri la scheda “Dimensione obiettivo” e inserisci 1024 in Dimensione massima del file (KB), perché lo strumento conta 1 KB come 1.024 byte. Per ogni immagine cerca la qualità più alta che resta sotto 1 MB e riduce le dimensioni solo se necessario.'],
+            ['q' => 'Posso comprimere più immagini insieme?', 'a' => 'Sì, fino a 30 immagini alla volta. Per ciascuna vedi poi il peso prima e dopo e la percentuale risparmiata.'],
+            ['q' => 'Qual è la differenza tra comprimere e ridimensionare un’immagine?', 'a' => 'Comprimere riduce il peso del file in KB o MB, mentre le dimensioni in pixel restano uguali, a meno che tu non imposti una larghezza massima o che una dimensione obiettivo si possa raggiungere solo riducendole. Per cambiare di proposito le dimensioni in pixel, usa il nostro strumento Ridimensiona immagine.'],
         ],
         'table' => [
             'caption' => 'Quale formato di immagine usare',
@@ -324,6 +340,9 @@ return [
             ['q' => 'Posso convertire WebP in JPG?', 'a' => 'Sì. Apri l’immagine WebP, scegli JPG come formato di output e scarica.'],
             ['q' => 'Ridimensionare riduce la qualità?', 'a' => 'Rimpicciolire un’immagine la mantiene nitida. Ingrandirla molto oltre l’originale può renderla sfocata, perché non si possono creare nuovi dettagli.'],
             ['q' => 'Qual è la dimensione massima?', 'a' => 'Le immagini in uscita possono arrivare a 10.000 pixel per lato, entro i limiti gestiti da tutti i browser moderni.'],
+            ['q' => 'Come ridimensiono un’immagine WebP?', 'a' => 'Apri l’immagine WebP, inserisci la nuova larghezza e altezza in pixel o scegli una percentuale e salvala come WebP, JPG o PNG. Se il tuo browser non può salvare in WebP, lo strumento usa JPG al suo posto e te lo segnala.'],
+            ['q' => 'Come cambio il formato di un’immagine PNG?', 'a' => 'Scegli JPG o WebP come formato di output e scarica l’immagine. Con la conversione in JPG le aree trasparenti diventano bianche, con WebP la trasparenza resta.'],
+            ['q' => 'Il peso del file cambia quando ridimensiono un’immagine?', 'a' => 'Sì. Meno pixel di solito significano un file più leggero. Dopo il ridimensionamento vedi il nuovo peso del file e un’anteprima prima di scaricare l’immagine.'],
         ],
         'table' => [
             'caption' => 'Dimensioni di immagine comuni',
@@ -389,6 +408,8 @@ return [
             ['q' => 'La qualità delle mie immagini viene ridotta?', 'a' => 'Le immagini JPG e PNG vengono incorporate con la qualità originale. Le immagini WebP vengono prima convertite in PNG, il che mantiene una qualità senza perdite.'],
             ['q' => 'Posso cambiare l’ordine delle pagine dopo averle unite?', 'a' => 'Prima della conversione sì: usa le frecce, e ogni modifica annulla il risultato precedente, così ti basta cliccare di nuovo su Converti in PDF. Per riordinare le pagine di un PDF già scaricato, usa Organizza PDF.'],
             ['q' => 'Perché il PDF unito è così pesante?', 'a' => 'Le immagini JPG e PNG vengono inserite nel PDF con la qualità originale, quindi il file pesa all’incirca quanto tutte le immagini sommate. Per alleggerirlo, comprimi prima le immagini con il Compressore di immagini oppure passa il PDF in Comprimi PDF, la cui modalità Consigliata ricomprime le foto JPG al suo interno.'],
+            ['q' => 'Come converto un JPG in PDF?', 'a' => 'Trascina le tue immagini JPG nel riquadro qui sopra o selezionale, mettile in ordine con le frecce, scegli formato pagina (A4, Letter o Adatta all’immagine), orientamento e margine e clicca su Converti in PDF. Il file viene creato direttamente nel tuo browser.'],
+            ['q' => 'Posso convertire JPG in PDF gratis e senza registrazione?', 'a' => 'Sì. Lo strumento è gratuito, senza registrazione e senza filigrana, e le tue immagini non lasciano il tuo dispositivo.'],
         ],
     ],
 
@@ -543,7 +564,7 @@ return [
     'merge-pdf' => [
         'name' => 'Unisci PDF',
         'title' => 'Unisci PDF: combina file PDF online gratis',
-        'description' => 'Unisci file PDF in un unico documento online e gratis. Riordina i file, senza filigrana e senza registrazione. Nulla viene caricato.',
+        'description' => 'Unisci file PDF in un unico documento online e gratis. Riordina i file, senza filigrana e senza registrazione. Nessun file viene caricato sul server.',
         'h1' => 'Unisci file PDF online',
         'tagline' => 'Combina più PDF in un solo file, senza filigrana e senza caricamenti.',
         'keywords' => ['unire pdf', 'unisci pdf', 'combinare pdf', 'unire file pdf', 'unire pdf online gratis'],
@@ -577,6 +598,9 @@ return [
             ['q' => 'Quanti PDF posso unire?', 'a' => 'Fino a 50 file alla volta. Il limite pratico dipende dalla memoria del dispositivo, e la maggior parte gestisce facilmente qualche centinaio di pagine.'],
             ['q' => 'Link e segnalibri vengono mantenuti?', 'a' => 'Contenuto delle pagine, immagini e testo restano identici. Alcune funzioni interattive, come segnalibri e campi dei moduli, potrebbero non essere mantenute.'],
             ['q' => 'Unire i PDF qui è davvero gratuito?', 'a' => 'Sì. Non ci sono costi, limiti giornalieri, account o registrazione: puoi unire fino a 50 file alla volta, gratis e tutte le volte che vuoi, direttamente nel browser.'],
+            ['q' => 'Come unisco file PDF online?', 'a' => 'Trascina fino a 50 PDF nel riquadro, mettili nell’ordine giusto con le frecce e clicca su Unisci PDF. Scarichi subito il PDF finito, senza caricamenti, perché tutto avviene nel tuo browser.'],
+            ['q' => 'Posso cambiare l’ordine delle pagine?', 'a' => 'Qui stabilisci l’ordine dei file, non delle singole pagine. Per riordinare le singole pagine dopo, usa il nostro strumento Organizza PDF.'],
+            ['q' => 'Funziona anche sul telefono?', 'a' => 'Sì, nei browser mobili aggiornati. Con file molto grandi dipende dalla memoria del dispositivo, perché il lavoro avviene sul dispositivo stesso.'],
         ],
     ],
 
@@ -672,6 +696,8 @@ return [
         ],
         'faqs' => [
             ['q' => 'Come calcolo la mia età esatta?', 'a' => 'Inserisci la data di nascita e il calcolatore mostra la tua età in anni, mesi e giorni a oggi, o a qualsiasi data tu scelga. Conta prima gli anni compiuti, poi i mesi completi e infine i giorni rimanenti.'],
+            ['q' => 'Qual è la mia età in giorni, settimane o mesi?', 'a' => 'Inserisci la data di nascita: oltre ad anni, mesi e giorni, il calcolatore di età mostra il numero totale di mesi, settimane e giorni e, in modo approssimativo, le ore.'],
+            ['q' => 'In che giorno della settimana sono nato?', 'a' => 'Il calcolatore di età lo mostra subito sotto la tua età, appena inserisci la data di nascita.'],
             ['q' => 'Posso calcolare l’età a una data specifica?', 'a' => 'Sì. Cambia la data “Età alla data del” per vedere quanti anni aveva o avrà una persona quel giorno: utile per iscrizioni scolastiche e requisiti di età per concorsi.'],
             ['q' => 'Come vengono gestiti gli anni bisestili?', 'a' => 'Gli anni bisestili vengono contati con precisione. Per chi compie gli anni il 29 febbraio, il prossimo compleanno in un anno non bisestile viene mostrato il 28 febbraio.'],
             ['q' => 'Perché le ore totali sono indicate come approssimative?', 'a' => 'Le ore totali sono i giorni totali moltiplicati per 24. Il calcolatore non conosce l’ora in cui sei nato e ignora i cambi dell’ora legale, quindi il valore può differire fino all’equivalente di un giorno di ore.'],
@@ -718,15 +744,17 @@ return [
         ],
         'faqs' => [
             ['q' => 'Come si calcola la percentuale di un numero?', 'a' => 'Dividi la percentuale per 100 e moltiplica per il numero. Ad esempio, il 15% di 200 = 0,15 x 200 = 30.'],
+            ['q' => 'Qual è la formula della variazione percentuale?', 'a' => '(valore nuovo - valore vecchio) / valore vecchio x 100. Da 250 a 340: (340 - 250) / 250 x 100 = 36%. Se il risultato è negativo, si tratta di una diminuzione.'],
             ['q' => 'Come si calcola l’aumento percentuale?', 'a' => 'Sottrai il valore vecchio da quello nuovo, dividi per il valore vecchio e moltiplica per 100. Da 80 a 100: (100 - 80) / 80 x 100 = 25%.'],
-            ['q' => 'Come si calcola uno sconto?', 'a' => 'Usa “Diminuire un numero di una percentuale”. Con il 20% di sconto su 50 €, il prezzo scontato è 50 € x (1 - 0,20) = 40 €.'],
+            ['q' => 'Come si calcola una diminuzione percentuale?', 'a' => 'Con la stessa formula: da 340 a 250 si ottiene (250 - 340) / 340 x 100 = circa -26,5%.'],
+            ['q' => 'Come si calcola la percentuale tra due numeri?', 'a' => 'Dividi il primo numero per il secondo e moltiplica per 100. Ad esempio, 45 su 180: 45 / 180 x 100 = 25%.'],
+            ['q' => 'Che differenza c’è tra punti percentuali e percentuale?', 'a' => 'Se un tasso passa dal 20% al 25%, è salito di 5 punti percentuali, ma del 25% in termini relativi, perché 5 è un quarto di 20.'],
+            ['q' => 'Posso calcolare la variazione percentuale se il valore vecchio è 0?', 'a' => 'No. La divisione per zero non è definita, quindi una variazione a partire da 0 non si può esprimere in percentuale e il calcolatore mostra un avviso invece di un risultato. In questo caso indica la variazione assoluta.'],
+            ['q' => 'Come si calcola la crescita percentuale media in più anni?', 'a' => 'Usa il tasso di crescita annuo composto: (valore finale / valore iniziale)^(1 / anni) - 1. Da 100 a 150 in 3 anni si ottiene circa il 14,5% all’anno. Questo calcolatore gestisce la variazione tra due valori, quindi per la crescita su più anni usa questa formula.'],
+            ['q' => 'Come si calcola uno sconto?', 'a' => 'Usa “Aumentare o diminuire un numero di una percentuale” e scegli Diminuisci. Con il 20% di sconto su 50 €, il prezzo scontato è 50 € x (1 - 0,20) = 40 €.'],
             ['q' => 'Calcolatrice o calcolatore di percentuali: sono la stessa cosa?', 'a' => 'Sì, sono sinonimi. Questo strumento calcola l’incremento, la diminuzione o la variazione percentuale tra due numeri qualsiasi, online e senza scaricare nulla.'],
             ['q' => 'Posso fare il calcolo delle percentuali online senza scaricare nulla?', 'a' => 'Sì. Tutto funziona nel tuo browser: inserisci i numeri e il risultato con la formula appare subito, senza app, registrazione o caricamento di file.'],
-            ['q' => 'Come si calcola la percentuale tra due numeri?', 'a' => 'Dividi il primo numero per il secondo e moltiplica per 100. Ad esempio, 45 su 180: 45 / 180 x 100 = 25%.'],
-            ['q' => 'Qual è la formula della variazione percentuale?', 'a' => '(valore nuovo - valore vecchio) / valore vecchio x 100. Da 250 a 340: (340 - 250) / 250 x 100 = 36%. Se il risultato è negativo, si tratta di una diminuzione.'],
-            ['q' => 'Come si calcola una diminuzione percentuale?', 'a' => 'Con la stessa formula: da 340 a 250 si ottiene (250 - 340) / 340 x 100 = circa -26,5%.'],
-            ['q' => 'Che differenza c’è tra punti percentuali e percentuale?', 'a' => 'Se un tasso passa dal 20% al 25%, è salito di 5 punti percentuali, ma del 25% in termini relativi, perché 5 è un quarto di 20.'],
-            ['q' => 'Come si calcola la crescita percentuale media in più anni?', 'a' => 'Usa il tasso di crescita annuo composto: (valore finale / valore iniziale)^(1 / anni) - 1. Da 100 a 150 in 3 anni si ottiene circa il 14,5% all’anno. Questo calcolatore gestisce la variazione tra due valori, quindi per la crescita su più anni usa questa formula.'],
+            ['q' => 'Quali formule usa il calcolatore di percentuali?', 'a' => 'Per ogni tipo di calcolo mostra i passaggi con i tuoi numeri subito sotto il risultato. Alla base ci sono queste formule: X% di Y = X / 100 x Y, X come percentuale di Y = X / Y x 100 e variazione = (nuovo - vecchio) / |vecchio| x 100.'],
         ],
         'table' => [
             'caption' => 'Formule delle percentuali con esempi',
@@ -935,6 +963,10 @@ return [
         ],
         'content' => [
             [
+                'heading' => 'Come trovare il tuo IP pubblico',
+                'body' => 'Apri questa pagina: il tuo indirizzo IP pubblico compare subito in alto, senza registrazione né download. Con Copia IP lo copi negli appunti con un clic. Se hai appena attivato o disattivato una VPN, fai clic su Aggiorna e lo strumento rileva di nuovo l’indirizzo.',
+            ],
+            [
                 'heading' => 'IPv4 o IPv6',
                 'body' => 'Gli indirizzi IPv4 sono come 203.0.113.42 e ne esistono solo circa 4,3 miliardi. Gli indirizzi IPv6, come 2001:db8::1, sono stati introdotti perché gli IPv4 stavano finendo. Oggi molte connessioni supportano entrambi.',
             ],
@@ -942,13 +974,23 @@ return [
                 'heading' => 'Qual è il mio IP pubblico?',
                 'body' => 'Il tuo IP pubblico è l’indirizzo mostrato in alto in questa pagina: l’indirizzo che qualsiasi sito o servizio vede quando ti connetti, condiviso da tutta la tua rete domestica. Il router assegna poi a ogni dispositivo di quella rete il proprio IP privato (spesso 192.168.x.x), invisibile dall’esterno di Internet.',
             ],
+            [
+                'heading' => 'Verificare e testare il tuo IP (ad esempio con una VPN)',
+                'body' => 'Annota l’indirizzo mostrato, attiva la VPN e fai clic su Aggiorna. Se compare un indirizzo diverso, il tuo traffico passa dalla VPN; se resta uguale, la VPN non è attiva. Se disattivi la VPN e aggiorni di nuovo, torna il tuo indirizzo. Allo stesso modo puoi controllare se il tuo IP è cambiato dopo il riavvio del router.',
+            ],
         ],
         'faqs' => [
             ['q' => 'A cosa serve il mio indirizzo IP?', 'a' => 'Siti e servizi usano il tuo indirizzo IP per rimandarti i dati. Può anche rivelare la tua città approssimativa e il tuo provider.'],
             ['q' => 'Perché il mio indirizzo IP cambia?', 'a' => 'La maggior parte dei provider domestici assegna IP dinamici che possono cambiare quando il router si riavvia. Gli IP della rete mobile cambiano spesso.'],
             ['q' => 'Come posso nascondere il mio indirizzo IP?', 'a' => 'Usa una VPN o una rete per la privacy come Tor. I siti vedranno l’indirizzo IP della VPN invece del tuo.'],
             ['q' => 'Salvate il mio indirizzo IP?', 'a' => 'No. Questo strumento mostra solo il tuo indirizzo IP e non lo salva in alcun database.'],
-            ['q' => 'Come trovo il mio indirizzo IP pubblico?', 'a' => 'Basta aprire questa pagina: il tuo indirizzo IP pubblico appare in alto all’istante, senza registrazione, download né clic aggiuntivi. Vedrai se è un indirizzo IPv4 (come 203.0.113.42) o IPv6: esattamente il numero che altri siti e servizi vedono quando ti connetti.'],
+            ['q' => 'Come trovo il mio indirizzo IP pubblico?', 'a' => 'Basta aprire questa pagina: il tuo indirizzo IP pubblico appare in alto all’istante, senza registrazione, download né clic aggiuntivi. Vedrai il tuo indirizzo IPv4 pubblico (come 203.0.113.42): esattamente il numero che altri siti e servizi vedono quando ti connetti.'],
+            ['q' => 'Qual è il mio indirizzo IPv4 pubblico?', 'a' => 'È l’indirizzo con cui il tuo router o la tua connessione mobile appare su Internet, ad esempio 203.0.113.42. Lo trovi in alto in questa pagina. Anche se la tua connessione supporta anche IPv6, questa pagina mostra il tuo indirizzo IPv4, perché il sito è raggiungibile solo tramite IPv4.'],
+            ['q' => 'Qual è il mio IP e dove mi trovo?', 'a' => 'Questo strumento mostra il tuo indirizzo IP pubblico, ma nessuna posizione e nessuna mappa. Da un indirizzo IP si possono ricavare al massimo il paese, la regione o il provider approssimativi, spesso in modo impreciso: con una VPN o la rete mobile la località indicata è spesso molto lontana da quella reale. In più qui vedi il fuso orario del tuo dispositivo.'],
+            ['q' => 'Qual è la differenza tra IP pubblico e IP privato?', 'a' => 'L’indirizzo IP pubblico lo assegna il tuo provider ed è quello che vedono i siti. Gli indirizzi privati come 192.168.x.x, 10.x.x.x o da 172.16.x.x a 172.31.x.x valgono solo nella tua rete domestica e li assegna il router. Questo strumento mostra l’indirizzo pubblico.'],
+            ['q' => 'Come posso verificare il mio IP o controllare se la VPN funziona?', 'a' => 'Annota l’indirizzo mostrato, attiva la VPN e fai clic su Aggiorna. Se l’IP cambia, il tuo traffico passa dalla VPN. Se resta uguale, la VPN non è attiva.'],
+            ['q' => 'Perché il mio IP sul cellulare è diverso da quello sul PC?', 'a' => 'Con il Wi-Fi usi l’indirizzo IP del tuo router, con la rete mobile quello del tuo operatore. Per questo la stessa pagina mostra un IP pubblico diverso a seconda della connessione.'],
+            ['q' => 'Cercare “qual è il mio IP” o “che IP ho” è la stessa cosa?', 'a' => 'Sì. Entrambe le domande si riferiscono al tuo indirizzo IP pubblico, cioè l’indirizzo che i siti vedono quando ti connetti. Questa pagina lo mostra subito.'],
         ],
     ],
 
@@ -985,6 +1027,7 @@ return [
         ],
         'faqs' => [
             ['q' => 'Quanti dadi posso lanciare insieme?', 'a' => 'Da 1 a 10 dadi contemporaneamente. Lo strumento mostra ogni valore e somma il totale per te.'],
+            ['q' => 'Cosa significano D6 e D20?', 'a' => 'La D sta per “die”, dado in inglese: un D6 è un normale dado a sei facce e un D20 ha 20 facce; il numero dopo la D indica le facce. Scegli semplicemente il tipo di dado corrispondente.'],
             ['q' => 'I lanci sono davvero casuali?', 'a' => 'Sì. I lanci usano il generatore di numeri casuali crittograficamente sicuro del browser, quindi ogni faccia è ugualmente probabile e i risultati sono imprevedibili.'],
             ['q' => 'Posso lanciare un D20 per Dungeons & Dragons?', 'a' => 'Sì. Scegli D20 tra i tipi di dado e premi Lancia. Ci sono anche D4, D8, D10, D12 e D100.'],
             ['q' => 'Posso lanciare i dadi senza animazione?', 'a' => 'Se il tuo dispositivo è impostato per ridurre il movimento, i risultati appaiono subito senza animazione.'],
@@ -1115,7 +1158,7 @@ return [
     'random-number-generator' => [
         'name' => 'Generatore di numeri casuali',
         'title' => 'Generatore di numeri casuali in qualsiasi intervallo',
-        'description' => 'Genera numeri casuali in qualsiasi intervallo, uno o centinaia alla volta, con o senza ripetizioni. Ottimo per lotterie ed estrazioni.',
+        'description' => 'Genera numeri casuali in qualsiasi intervallo, uno o centinaia alla volta, con o senza ripetizioni. Ottimo per lotterie, estrazioni e giochi. Gratis.',
         'h1' => 'Generatore di numeri casuali',
         'tagline' => 'Estrai numeri casuali in qualsiasi intervallo, senza ripetizioni se serve.',
         'keywords' => ['generatore numeri casuali', 'numero casuale', 'estrattore di numeri', 'numero a caso', 'generatore numeri lotteria'],
@@ -1170,6 +1213,7 @@ return [
         ],
         'faqs' => [
             ['q' => 'Posso generare un numero casuale tra 1 e 100?', 'a' => 'Sì. Imposta il minimo a 1 e il massimo a 100, o clicca la preimpostazione 1 – 100, che estrae subito un numero.'],
+            ['q' => 'Posso usarlo per un gioco “indovina il numero”?', 'a' => 'Sì. Imposta un intervallo come da 1 a 100 e genera un numero come numero segreto, oppure fai generare un numero a ciascun giocatore e confrontateli. Per dare a ogni giocatore un numero diverso, imposta Quanti sul numero di giocatori e spunta Senza ripetizioni.'],
             ['q' => 'Posso generare numeri per la lotteria?', 'a' => 'Sì. Usa la preimpostazione Lotteria 6 su 49, che estrae sei numeri diversi e li ordina, oppure scegli intervallo e quantità con “Senza ripetizioni” spuntato.'],
             ['q' => 'Quanti numeri posso generare alla volta?', 'a' => 'Fino a 1.000 numeri per clic. Copia tutto copia l’intera lista come valori separati da virgole.'],
             ['q' => 'Posso usare numeri negativi?', 'a' => 'Sì. Qualsiasi numero intero va bene, ad esempio un intervallo da -50 a 50.'],
@@ -1293,7 +1337,7 @@ return [
     'sleep-calculator' => [
         'name' => 'Calcolatore del sonno',
         'title' => 'Calcolatore del sonno: quando dormire e svegliarsi',
-        'description' => 'Trova l’ora migliore per andare a letto o svegliarti con i cicli di 90 minuti, o conta quante ore hai dormito. Svegliati riposato.',
+        'description' => 'Trova l’ora migliore per andare a letto o svegliarti in base ai cicli di sonno di 90 minuti, o conta quante ore hai dormito. Svegliati riposato. Gratis.',
         'h1' => 'Calcolatore del sonno',
         'tagline' => 'Trova l’ora migliore per andare a letto o svegliarti e conta le ore dormite.',
         'keywords' => ['calcolatore del sonno', 'contatore del sonno', 'a che ora andare a letto', 'calcolo cicli del sonno', 'a che ora dormire', 'ore di sonno'],
@@ -1327,6 +1371,8 @@ return [
             ['q' => 'Perché sono stanco dopo 8 ore di sonno?', 'a' => 'Se la sveglia suona durante il sonno profondo puoi sentirti intontito anche dopo una lunga notte. Far suonare la sveglia alla fine di un ciclo e mantenere orari regolari spesso aiuta.'],
             ['q' => 'Come calcola le ore dormite il contatore del sonno?', 'a' => 'Scegli “Ore dormite” e inserisci quando sei andato a letto e quando ti sei svegliato. Funziona anche a cavallo della mezzanotte, sottrae il tempo per addormentarti e confronta il risultato con le 7-9 ore di cui hanno bisogno gli adulti.'],
             ['q' => 'Questo calcolatore del sonno è un consiglio medico?', 'a' => 'No. È una guida generale basata su cicli di sonno medi. Se hai spesso difficoltà a dormire, parla con un medico.'],
+            ['q' => 'Come funziona un calcolatore dei cicli di sonno?', 'a' => 'Calcola a ritroso o in avanti dall’orario di sveglia o da quello in cui vai a letto, a passi di 90 minuti, e tiene conto del tempo che ti serve per addormentarti (15 minuti come impostazione predefinita). Così è più probabile che tu ti svegli alla fine di un ciclo.'],
+            ['q' => 'Di quanti cicli di sonno ho bisogno per notte?', 'a' => 'La maggior parte degli adulti ha bisogno di 7-9 ore di sonno, cioè circa 5-6 cicli da più o meno 90 minuti ciascuno.'],
         ],
         'table' => [
             'caption' => 'Orari per andare a letto in base alla sveglia (15 minuti per addormentarsi)',
@@ -1575,6 +1621,7 @@ return [
             ['q' => 'Posso controllare testi scritti con l’IA?', 'a' => 'Sì. Le bozze dell’IA hanno spesso frasi e parole lunghe; lo strumento mostra quali frasi accorciare perché il testo suoni più naturale.'],
             ['q' => 'Funziona in italiano?', 'a' => 'Le formule sono state create per l’inglese, quindi per l’italiano i risultati sono solo un’indicazione approssimativa. Anche le regole per le sillabe sono regole inglesi.'],
             ['q' => 'Il mio testo viene caricato o salvato?', 'a' => 'No. Tutti i conteggi e i calcoli avvengono nel tuo browser, e il testo non viene salvato. Premi Cancella per svuotare il riquadro.'],
+            ['q' => 'Questo strumento di leggibilità è gratuito?', 'a' => 'Sì. È gratuito, senza registrazione e senza limite di parole, e il testo viene analizzato nel tuo browser, mai caricato.'],
         ],
         'table' => [
             'caption' => 'Punteggi dell’indice Flesch',
@@ -1741,6 +1788,10 @@ return [
                 'body' => 'I link rotti portano i visitatori su pagine di errore: è frustrante e fa sembrare il sito trascurato. Anche i motori di ricerca seguono i link per scoprire le pagine, quindi i link morti sprecano la scansione e possono impedire di trovare pagine importanti. Correggerli è uno dei miglioramenti SEO e di esperienza più rapidi.',
             ],
             [
+                'heading' => 'Dead link checker: trova i link morti su qualsiasi pagina',
+                'body' => 'Un link morto è un link che non porta più a nulla di utile: la pagina è stata eliminata, spostata senza reindirizzamento, oppure l’intero dominio è scaduto. Inserisci l’indirizzo di una pagina qualsiasi e fai clic su Controlla link: lo strumento verifica fino a 300 link e immagini di quella pagina ed elenca quelli morti sotto Problemi, con il codice di stato o l’errore di ciascuno, così sai quali correggere o rimuovere per primi.',
+            ],
+            [
                 'heading' => 'Cosa significano i risultati?',
                 'body' => 'OK significa che il link funziona. Reindirizzamento significa che funziona ma passa per uno o più reindirizzamenti; sostituirlo con l’indirizzo finale è più veloce per i visitatori. Rotto significa che la pagina ha risposto con un errore come 404 o 500, oppure che il dominio non esiste più. Bloccato significa che il sito ha rifiutato il controllo automatico (codice 401, 403 o 429): apri il link per verificarlo.',
             ],
@@ -1833,18 +1884,10 @@ return [
         ],
         'content' => [
             ['heading' => 'Come controllo l’autorità di dominio in blocco?', 'body' => 'Incolla fino a 100 domini o URL, uno per riga, e fai clic su Controlla autorità. Il punteggio OpenPageRank, la posizione globale e i domini di riferimento di ogni sito compaiono insieme in una tabella ordinabile che puoi scaricare in CSV. Non serve registrarsi né cercare ogni dominio separatamente.'],
-            [
-                'heading' => 'È lo stesso della Domain Authority di Moz?',
-                'body' => 'No. La Domain Authority (DA) è un punteggio da 0 a 100 di proprietà di Moz, e il Domain Rating (DR) appartiene ad Ahrefs. Questo strumento mostra OpenPageRank, un punteggio da 0 a 10 calcolato dal grafo web pubblico di Common Crawl con il metodo PageRank. Misurano tutti la stessa idea, la forza dei link di un sito, ma sono calcolati in modo diverso, quindi i numeri non si possono convertire tra loro.',
-            ],
-            [
-                'heading' => 'Qual è un buon punteggio?',
-                'body' => 'La scala è logaritmica: passare da 2 a 3 richiede molti meno link che passare da 8 a 9. I siti nuovi partono di solito vicino a 0, i piccoli siti già avviati hanno spesso 2-4, i marchi noti 5-7, e solo i siti più grandi di internet arrivano a 9 o 10. Confronta un sito con altri del suo settore, non con i giganti.',
-            ],
-            [
-                'heading' => 'Cosa mostrano i dettagli del dominio?',
-                'body' => 'Fai clic su Dettagli accanto a un dominio (si apre da solo quando ne controlli uno soltanto) per vedere il registrar, quando è stato registrato e quando scade, l’età, l’indirizzo IP e la rete che lo ospita, i provider DNS ed email, e se il certificato HTTPS è valido e quando scade. I dati provengono dal record RDAP pubblico del registro, dal DNS pubblico e dal certificato del sito, quindi sono gratuiti e senza registrazione.',
-            ],
+            ['heading' => 'Controllo gratuito del ranking di dominio in blocco: punteggio e posizione globale per 100 siti', 'body' => 'Per ogni dominio che incolli, fino a 100 alla volta, la tabella dei risultati mostra il punteggio OpenPageRank da 0 a 10, la posizione globale tra tutti i domini valutati da OpenPageRank e il numero di domini di riferimento. Ordina per Punteggio più alto, per Dominio (A-Z) o secondo Il tuo ordine, poi fai clic su Scarica CSV per portare dominio, punteggio, posizione globale e domini di riferimento in un foglio di calcolo. Così diventa un rapido strumento per controllare il ranking di molti domini in blocco e confrontare concorrenti o un elenco di potenziali siti per link uno accanto all’altro.'],
+            ['heading' => 'È lo stesso della Domain Authority di Moz?', 'body' => 'No. La Domain Authority (DA) è un punteggio da 0 a 100 di proprietà di Moz, e il Domain Rating (DR) appartiene ad Ahrefs. Questo strumento mostra OpenPageRank, un punteggio da 0 a 10 calcolato dal grafo web pubblico di Common Crawl con il metodo PageRank. Misurano tutti la stessa idea, la forza dei link di un sito, ma sono calcolati in modo diverso, quindi i numeri non si possono convertire tra loro.'],
+            ['heading' => 'Qual è un buon punteggio?', 'body' => 'La scala è logaritmica: passare da 2 a 3 richiede molti meno link che passare da 8 a 9. I siti nuovi partono di solito vicino a 0, i piccoli siti già avviati hanno spesso 2-4, i marchi noti 5-7, e solo i siti più grandi di internet arrivano a 9 o 10. Confronta un sito con altri del suo settore, non con i giganti.'],
+            ['heading' => 'Cosa mostrano i dettagli del dominio?', 'body' => 'Fai clic su Dettagli accanto a un dominio (si apre da solo quando ne controlli uno soltanto) per vedere il registrar, quando è stato registrato e quando scade, l’età, l’indirizzo IP e la rete che lo ospita, i provider DNS ed email, e se il certificato HTTPS è valido e quando scade. I dati provengono dal record RDAP pubblico del registro, dal DNS pubblico e dal certificato del sito, quindi sono gratuiti e senza registrazione.'],
         ],
         'faqs' => [
             [
@@ -1866,6 +1909,22 @@ return [
             [
                 'q' => 'Esiste un controllo autorità di dominio di massa?',
                 'a' => 'Sì: questo strumento controlla l’autorità di dominio in blocco, di massa: incolla fino a 100 domini insieme e vedi tutti i punteggi contemporaneamente, invece di cercarli uno per uno.',
+            ],
+            [
+                'q' => 'Questo controllo dell’autorità di dominio in blocco è gratuito?',
+                'a' => 'Sì. È gratuito, senza registrazione e senza crediti da acquistare: incolla fino a 100 domini, controllali in una sola volta ed esporta i risultati in un file CSV. Per mantenerlo gratuito per tutti, ogni visitatore può eseguire fino a 10 controlli al minuto, e nei giorni di grande affluenza la quota giornaliera condivisa di nuove ricerche del sito può esaurirsi fino al giorno successivo.',
+            ],
+            [
+                'q' => 'Posso controllare in blocco anche la Page Authority?',
+                'a' => 'No. Non c’è alcun punteggio di Page Authority (PA), né di Moz né di altri: lo strumento valuta con OpenPageRank interi domini, non singole pagine. Puoi comunque incollare URL completi: vengono ridotti al dominio, ed è quello che viene controllato.',
+            ],
+            [
+                'q' => 'È un controllo del ranking di dominio in blocco?',
+                'a' => 'Sì. Accanto a ogni punteggio di autorità vedi la posizione globale del dominio, così puoi confrontare fino a 100 siti per posizione e punteggio in un’unica tabella.',
+            ],
+            [
+                'q' => 'Perché il punteggio va da 0 a 10 invece che da 0 a 100?',
+                'a' => 'I punteggi provengono da OpenPageRank, che usa una scala da 0 a 10. Non sono valori Moz DA o Ahrefs DR, quindi confronta i siti usando una sola scala.',
             ],
         ],
         'table' => [
@@ -1903,7 +1962,7 @@ return [
     'domain-age-checker' => [
         'name' => 'Controllo età dominio',
         'title' => 'Controllo età dominio: quando è stato registrato?',
-        'description' => 'Controllo età dominio gratuito: età, scadenza, registrar e server dei nomi di fino a 20 domini, con dati RDAP, il successore del WHOIS.',
+        'description' => 'Controllo età dominio gratuito: scopri quando è stato registrato un dominio, età, scadenza, registrar e server dei nomi di fino a 20 domini, con dati RDAP.',
         'h1' => 'Controllo età dominio',
         'tagline' => 'Scopri l’età esatta, la data di scadenza e il registrar di fino a 20 domini.',
         'keywords' => [
@@ -1929,11 +1988,39 @@ return [
         'content' => [
             [
                 'heading' => 'Che cos’è RDAP e in cosa differisce dal WHOIS?',
-                'body' => 'RDAP (Registration Data Access Protocol) è il sostituto moderno e standardizzato del WHOIS. Mentre il WHOIS restituisce testo semplice con un formato incoerente che varia da registro a registro, RDAP restituisce JSON strutturato con gli stessi nomi di campo ovunque, è gratuito e senza chiave, e supporta nomi a dominio internazionalizzati e controlli di accesso precisi. L’ICANN ha richiesto a tutti i registrar accreditati e ai registri gTLD di offrire RDAP, e anche registri nazionali come il tedesco DENIC o il polacco NASK lo hanno aggiunto, quindi il WHOIS viene progressivamente sostituito da RDAP.',
+                'body' => 'RDAP (Registration Data Access Protocol) è il sostituto moderno e standardizzato del WHOIS. Mentre il WHOIS restituisce testo semplice con un formato incoerente che varia da registro a registro, RDAP restituisce JSON strutturato con gli stessi nomi di campo ovunque, è gratuito e senza chiave, e supporta nomi a dominio internazionalizzati e controlli di accesso precisi. L’ICANN ha richiesto a tutti i registrar accreditati e ai registri gTLD di offrire RDAP, e anche registri nazionali come il britannico Nominet o il polacco NASK lo hanno aggiunto, quindi il WHOIS viene progressivamente sostituito da RDAP.',
             ],
             [
-                'heading' => 'Perché alcuni domini mostrano "non supportato" o "nessun record trovato"?',
-                'body' => 'Un piccolo numero di estensioni di dominio nazionali non ha ancora attivato un servizio RDAP, quindi per queste non è possibile contattare alcun registro; vengono mostrate come "non supportato". Un dominio può anche non mostrare alcun record se non è attualmente registrato, se è stato registrato molto di recente e non è ancora comparso nei dati pubblici del registro, oppure se il registro è temporaneamente non disponibile. Nessuno di questi casi significa che il controllo sia sbagliato: le date mostrate provengono sempre direttamente dalla risposta in diretta del registro stesso, mai stimate.',
+                'heading' => 'Perché alcuni domini non hanno un servizio RDAP o un record?',
+                'body' => 'Alcune estensioni nazionali, tra cui .de e .io, non hanno ancora un servizio RDAP elencato nella directory RDAP dell’IANA, quindi lo strumento non può contattare alcun registro e indica che l’estensione non ha ancora un servizio RDAP. Un dominio mostra “Nessun record RDAP trovato” se non è attualmente registrato o se è stato registrato così di recente da non comparire ancora nei dati pubblici del registro. Se il registro non risponde, lo strumento indica che il dominio non può essere verificato in questo momento. Nessuno di questi casi significa che il controllo sia sbagliato: le date mostrate provengono sempre direttamente dalla risposta in diretta del registro stesso, mai stimate.',
+            ],
+            [
+                'heading' => 'Quando è stato registrato un dominio? Come trovare la data',
+                'body' => 'La data di registrazione si trova nel record pubblico del dominio presso il registro, e lo strumento la legge per te in quattro passaggi:',
+                'items' => [
+                    'Scrivi o incolla fino a 20 domini o indirizzi di pagine nel riquadro, uno per riga (vanno bene anche virgole o spazi).',
+                    'Fai clic su Controlla età dominio.',
+                    'Leggi nella colonna Creato la data di registrazione e nella colonna Età quanti anni ha il dominio, ad esempio 12a 3m 5g (anni, mesi e giorni).',
+                    'Fai clic su Scarica CSV per salvare date, registrar, stato e server dei nomi di ogni dominio.',
+                ],
+            ],
+            [
+                'heading' => 'Quanti anni ha un dominio? Leggere i risultati',
+                'body' => 'Creato è la data in cui è iniziata la registrazione attuale, e l’età si conta da quella data a oggi. Scade indica quando termina il periodo di registrazione attuale se il dominio non viene rinnovato, e Ultimo aggiornamento è quando è cambiato per l’ultima volta il record del registro stesso, ad esempio dopo un rinnovo, un trasferimento o un cambio dei server dei nomi, quindi non dice nulla sull’età del dominio. Una vendita o il passaggio a un altro registrar di solito mantiene la data Creato originale. Se un dominio è scaduto, è stato cancellato e poi registrato di nuovo, Creato mostra la nuova data di registrazione, e la sua età riparte da zero.',
+            ],
+            [
+                'heading' => 'Esempio: cosa mostra una riga dei risultati',
+                'body' => 'Ogni dominio controllato occupa una riga nella tabella dei risultati. La riga qui sotto è un esempio illustrativo per example.com con valori inventati, solo per mostrare cosa significa ogni colonna e come è formattata; un controllo reale mostra i dati in diretta del registro, e un trattino (–) dove il record lascia vuoto un campo.',
+                'items' => [
+                    'Dominio: example.com',
+                    'Creato: 15 marzo 2014',
+                    'Età: 12a 8m 1g',
+                    'Scade: 15 marzo 2027',
+                    'Ultimo aggiornamento: 10 febbraio 2026',
+                    'Registrar: Example Registrar, Inc.',
+                    'Stato: client transfer prohibited',
+                    'Server dei nomi: ns1.example.net, ns2.example.net',
+                ],
             ],
         ],
         'faqs' => [
@@ -1951,11 +2038,27 @@ return [
             ],
             [
                 'q' => 'Posso controllare qualsiasi estensione di dominio?',
-                'a' => 'La maggior parte delle estensioni comuni (tra cui .com, .net, .org, .io, .co.uk, .de e .pl) ha un record RDAP. Un piccolo numero di estensioni nazionali minori non ha ancora attivato RDAP; queste vengono mostrate come non supportate invece di essere indovinate.',
+                'a' => 'La maggior parte delle estensioni, tra cui .com, .net, .org, .co.uk e .pl, ha record RDAP che lo strumento può leggere. Alcune estensioni nazionali, tra cui .de e .io, non hanno ancora un servizio RDAP elencato, e alcuni record omettono la data. In questi casi lo strumento indica che l’estensione non ha ancora un servizio RDAP, oppure mostra un trattino, invece di tirare a indovinare.',
             ],
             [
                 'q' => 'Quando è stato registrato un dominio?',
-                'a' => 'Il record RDAP di un nome di dominio conserva una data di creazione: il giorno esatto in cui quel nome di dominio è stato registrato per la prima volta, anche se da allora ha cambiato proprietario. Inserisci il dominio sopra e il controllo legge questa data direttamente dal registro, insieme all’età in anni, mesi e giorni.',
+                'a' => 'Il record RDAP di un nome di dominio conserva una data di creazione: il giorno in cui è iniziata la registrazione attuale. Inserisci il dominio sopra e il controllo legge questa data direttamente dal registro, insieme all’età in anni, mesi e giorni.',
+            ],
+            [
+                'q' => 'L’età del dominio si mantiene se cambia proprietario?',
+                'a' => 'Sì, una vendita o un trasferimento a un altro registrar di solito mantiene la data di creazione originale, quindi l’età resta invariata. Se un dominio è scaduto, è stato cancellato e poi registrato di nuovo, la data di creazione di solito riparte dalla nuova registrazione.',
+            ],
+            [
+                'q' => 'Posso controllare l’età di più domini insieme?',
+                'a' => 'Sì. Incolla fino a 20 domini, uno per riga (vanno bene anche virgole o spazi), e ottieni per ciascuno l’età e le date di creazione, scadenza e ultimo aggiornamento, con esportazione CSV gratuita.',
+            ],
+            [
+                'q' => 'L’età del dominio influisce sulla SEO?',
+                'a' => 'Google ha dichiarato che l’età del dominio da sola non è un fattore di ranking. Un dominio più vecchio spesso si posiziona meglio perché ha avuto più tempo per ottenere link e pubblicare contenuti, non per la data in sé.',
+            ],
+            [
+                'q' => 'La data di registrazione coincide con la data di lancio del sito o con la cronologia dei proprietari?',
+                'a' => 'No. La data in Creato indica quando è iniziata la registrazione attuale del dominio, letta dal record RDAP del registro. Il sito vero e proprio può essere andato online mesi o anni dopo, o mai, e un dominio cancellato e registrato di nuovo mostra solo la data dell’ultima registrazione. Lo strumento non mostra né la data di lancio del sito né i proprietari precedenti: RDAP contiene solo la registrazione attuale. Per la storia di un sito usa un archivio web come la Wayback Machine.',
             ],
         ],
         'table' => [
@@ -1999,6 +2102,8 @@ return [
             ['q' => 'Quali angoli di rotazione sono disponibili?', 'a' => 'Ruota di 90 gradi a sinistra o a destra, oppure capovolgi una pagina di 180 gradi se è stata scansionata al contrario. Puoi combinare più clic per ottenere ciascuno dei quattro orientamenti.'],
             ['q' => 'Il mio PDF viene caricato su un server?', 'a' => 'No. Il PDF viene aperto e ruotato interamente nel tuo browser con JavaScript e non viene mai inviato da nessuna parte.'],
             ['q' => 'Questo aggiunge una filigrana o riduce la qualità?', 'a' => 'No. La rotazione cambia solo l\'orientamento di ogni pagina. Non viene aggiunta nessuna filigrana, logo o pagina extra, e non si perde qualità di immagine o testo.'],
+            ['q' => 'Come cambio l\'orientamento di un PDF da verticale a orizzontale?', 'a' => 'Ruota le pagine di 90 gradi a sinistra o a destra, fai clic su Ruota PDF e scarica il file. Le pagine vengono salvate con il nuovo orientamento e si aprono così in qualsiasi lettore PDF.'],
+            ['q' => 'La rotazione viene salvata in modo permanente?', 'a' => 'Sì. Il file scaricato mantiene la nuova rotazione. Il file originale sul tuo dispositivo non viene modificato.'],
         ],
     ],
 

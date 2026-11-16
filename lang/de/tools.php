@@ -37,8 +37,16 @@ return [
                 'body' => 'Egal, ob du nach einem Wortzähler, einem Wörterzähler oder einem Wort-Zähler suchst: Dieses Tool zählt beim Tippen die Wörter, die Zeichen mit und ohne Leerzeichen, die Sätze und die Absätze deines Textes. Dazu zeigt es die geschätzte Lesezeit (238 Wörter pro Minute) und Sprechzeit (150 Wörter pro Minute) sowie die häufigsten Schlüsselwörter.',
             ],
             [
+                'heading' => 'Zeichenzähler: Zeichen mit und ohne Leerzeichen zählen',
+                'body' => 'Neben den Wörtern zeigt der Zeichenzähler zwei Zahlen. „Zeichen“ zählt jeden Buchstaben, jede Ziffer, jedes Satzzeichen und jedes Leerzeichen, Zeilenumbrüche eingeschlossen. „Zeichen (ohne Leerzeichen)“ lässt Leerzeichen, Tabulatoren und Zeilenumbrüche weg. Umlaute und Buchstaben mit Akzent wie ä, ü oder é zählen jeweils als ein Zeichen. Die erste Zahl nimmst du für Vorgaben in Anschlägen, also mit Leerzeichen, die zweite für Formulare, die nur sichtbare Zeichen zählen. Beide Zahlen aktualisieren sich bei jedem Tastendruck.',
+            ],
+            [
                 'heading' => 'Wie viele Wörter hat eine Seite?',
                 'body' => 'Das lässt sich nur ungefähr sagen. Eine deutsche Normseite hat 1.800 Zeichen inklusive Leerzeichen (30 Zeilen mit je 60 Anschlägen), das sind ungefähr 250 Wörter. Sonst hängt die Zahl von Schriftart, Schriftgröße, Zeilenabstand und Rändern ab: Für englische Texte mit 12 pt und 2,54 cm (1 Zoll) Rand rechnet man grob mit 500–600 Wörtern bei einfachem und 250–300 Wörtern bei doppeltem Zeilenabstand. Füge deinen Text oben ein, um die genaue Zahl zu sehen. Eine ausführliche Tabelle findest du in unserem englischsprachigen Ratgeber „How many words is a page?“, verlinkt weiter unten unter „Zum Ratgeber“.',
+            ],
+            [
+                'heading' => 'Wie viele Wörter sind 2.000 Zeichen? Anschläge und Normseite',
+                'body' => 'Im Verlagswesen werden Texte oft in Zeichen statt in Wörtern gemessen, auch Anschläge genannt: Jeder Buchstabe, jedes Satzzeichen und jedes Leerzeichen zählt als ein Anschlag. Die Normseite hat 1.800 Anschläge inklusive Leerzeichen, also 30 Zeilen mit je 60 Zeichen. Im Deutschen entsprechen 2.000 Zeichen grob 250 bis 300 Wörtern, je nach durchschnittlicher Wortlänge – das ist nur eine Schätzung, füge deinen Text also oben ein, um die genaue Zahl zu sehen. Die Anschläge deines Textes sind die Zahl unter „Zeichen“.',
             ],
         ],
         'faqs' => [
@@ -49,7 +57,9 @@ return [
             ['q' => 'Kann ich auch nur Zeichen zählen, mit und ohne Leerzeichen?', 'a' => 'Ja. Neben den Wörtern zeigt der Zähler die Zeichen mit und ohne Leerzeichen – praktisch für Zeichenlimits bei Meta-Beschreibungen, Bewerbungen oder Social-Media-Beiträgen.'],
             ['q' => 'Wie viele Wörter hat mein Text?', 'a' => 'Füge den Text oben ein oder tippe ihn – der Wortzähler zeigt sofort die Zahl der Wörter, Zeichen, Sätze und Absätze und aktualisiert sie bei jeder Änderung.'],
             ['q' => 'Wie viele Zeichen und Wörter hat eine Normseite?', 'a' => 'Eine Normseite hat 1.800 Zeichen inklusive Leerzeichen (30 Zeilen mit je 60 Anschlägen). Das sind ungefähr 250 Wörter, je nach Wortlänge etwas mehr oder weniger.'],
+            ['q' => 'Wie viele Zeichen sind 500 Wörter?', 'a' => 'Im Deutschen grob 3.000 bis 3.600 Zeichen inklusive Leerzeichen, je nach Wortlänge – deutsche Wörter sind im Schnitt länger als englische. Füge deinen Text ein, um die genaue Zahl zu sehen.'],
             ['q' => 'Wie zählt der Wortzähler Wörter mit Bindestrich oder Zahlen?', 'a' => 'Als Wort gilt alles, was zwischen Leerzeichen oder Zeilenumbrüchen steht und mindestens einen Buchstaben oder eine Ziffer enthält: „E-Mail-Adresse“ zählt also als ein Wort, Zahlen wie 2026 oder 3,5 zählen ebenfalls als Wort, ein allein stehender Gedankenstrich dagegen nicht.'],
+            ['q' => 'Zählen Anschläge auch Leerzeichen?', 'a' => 'Meistens ja: Bei Anschlägen, etwa auf der Normseite, zählen Leerzeichen als Zeichen mit. Deshalb zeigt das Tool sowohl die Zeichen mit als auch ohne Leerzeichen.'],
         ],
     ],
 
@@ -159,6 +169,7 @@ return [
         ],
         'faqs' => [
             ['q' => 'Ist dieser Passwort-Generator sicher?', 'a' => 'Ja. Passwörter werden in deinem Browser mit der Web Crypto API erzeugt. Nichts wird an unseren Server gesendet, protokolliert oder gespeichert.'],
+            ['q' => 'Wie erstelle ich ein sicheres Passwort?', 'a' => 'Wähle eine Länge von mindestens 15-16 Zeichen, hake Großbuchstaben, Kleinbuchstaben, Ziffern und Sonderzeichen an und tippe auf „Passwort generieren“. Verwende für jedes Konto ein anderes Passwort.'],
             ['q' => 'Wie lang sollte mein Passwort sein?', 'a' => 'Mindestens 15 Zeichen, so verlangen es die aktuellen NIST-Richtlinien (SP 800-63B), für wichtige Konten wie E-Mail und Online-Banking 16 oder mehr.'],
             ['q' => 'Was bewirkt „Ähnliche ausschließen“?', 'a' => 'Es entfernt Zeichen, die sich ähneln, wie l, 1, I, O und 0, damit das Passwort leichter zu lesen und von Hand einzutippen ist.'],
             ['q' => 'Was ist Passwort-Entropie?', 'a' => 'Die Entropie misst in Bit, wie unvorhersehbar ein Passwort ist. Jedes zusätzliche Bit verdoppelt die Zahl der Versuche, die ein Angreifer braucht. Ab 80 Bit ist es stark, ab 100 Bit ausgezeichnet.'],
@@ -285,7 +296,7 @@ return [
             ['q' => 'Wie verkleinere ich ein JPG online?', 'a' => 'Wähle „Zielgröße“ oder eine Qualität von etwa 60-80 % und füge dann dein JPG hinzu; es wird sofort komprimiert. Bei Fotos reicht meist eine JPG-Qualität von 70-80 %, um die Dateigröße deutlich zu verkleinern, ohne dass du einen Unterschied siehst.'],
             ['q' => 'Wie kann ich ein Bild auf 1 MB verkleinern?', 'a' => 'Öffne den Reiter „Zielgröße“ und gib bei Maximale Dateigröße (KB) 1024 ein, denn das Tool rechnet 1 KB als 1.024 Byte. Es sucht für jedes Bild die höchste Qualität, die unter 1 MB bleibt, und verkleinert die Abmessungen nur, wenn es nötig ist.'],
             ['q' => 'Kann ich mehrere Bilder auf einmal verkleinern?', 'a' => 'Ja, bis zu 30 Bilder auf einmal. Danach siehst du für jedes die Größe vorher und nachher und die eingesparten Prozent.'],
-            ['q' => 'Was ist der Unterschied zwischen Bild verkleinern und Bildgröße ändern?', 'a' => 'Verkleinern (Komprimieren) senkt die Dateigröße in KB oder MB, die Pixelmaße bleiben gleich, außer du setzt eine maximale Breite. Willst du die Pixelmaße gezielt ändern, nutze unser Tool „Bildgröße ändern“.'],
+            ['q' => 'Was ist der Unterschied zwischen Bild verkleinern und Bildgröße ändern?', 'a' => 'Verkleinern (Komprimieren) senkt die Dateigröße in KB oder MB, die Pixelmaße bleiben gleich – außer du setzt eine maximale Breite oder eine Zielgröße lässt sich nur mit kleineren Abmessungen erreichen. Willst du die Pixelmaße gezielt ändern, nutze unser Tool „Bildgröße ändern“.'],
         ],
         'table' => [
             'caption' => 'Welches Bildformat passt',
@@ -732,6 +743,10 @@ return [
                 'body' => 'X % von Y = (X / 100) x Y. X als Prozent von Y = (X / Y) x 100. Prozentuale Veränderung von A nach B = ((B - A) / |A|) x 100. Ein positives Ergebnis ist eine Zunahme, ein negatives eine Abnahme.',
             ],
             [
+                'heading' => 'Prozentsatz zwischen zwei Zahlen berechnen',
+                'body' => 'Um herauszufinden, wie viel Prozent X von Y ist, teilst du X durch Y und multiplizierst mit 100: X ÷ Y × 100. Zum Beispiel ergeben 45 von 180: 45 ÷ 180 × 100 = 25 %. Im Rechner nutzt du dafür „X ist wie viel Prozent von Y?“: Gib die beiden Zahlen ein, und die Formel erscheint unter dem Ergebnis. Die zweite Zahl darf nicht 0 sein, weil die Division durch null nicht definiert ist.',
+            ],
+            [
                 'heading' => 'Prozentuale Veränderung zwischen zwei Zahlen berechnen (mit Beispiel)',
                 'body' => 'Die Formel lautet: (neuer Wert − alter Wert) ÷ alter Wert × 100. Steigt ein Wert von 250 auf 340, rechnest du (340 − 250) ÷ 250 × 100 = 36 % Zunahme. Fällt er von 340 zurück auf 250, ergibt (250 − 340) ÷ 340 × 100 etwa −26,5 %. Zu- und Abnahme sind also nicht symmetrisch, weil sich der Grundwert ändert. Im Rechner nutzt du dafür „Prozentuale Zu- / Abnahme“: Anfangswert und Endwert eingeben, und das Ergebnis zeigt die Zu- oder Abnahme samt Rechenweg. Ist der Anfangswert 0, ist keine prozentuale Veränderung definiert, und der Rechner weist dich darauf hin.',
             ],
@@ -739,12 +754,15 @@ return [
         'faqs' => [
             ['q' => 'Wie berechne ich den Prozentsatz einer Zahl?', 'a' => 'Teile den Prozentsatz durch 100 und multipliziere mit der Zahl. Beispiel: 15 % von 200 = 0,15 x 200 = 30.'],
             ['q' => 'Wie berechne ich die prozentuale Veränderung zwischen zwei Zahlen?', 'a' => 'Ziehe den alten Wert vom neuen ab, teile durch den alten Wert und multipliziere mit 100. Von 250 auf 340: (340 - 250) / 250 x 100 = 36 %. Ein positives Ergebnis ist eine Zunahme.'],
+            ['q' => 'Wie berechne ich eine prozentuale Zunahme?', 'a' => 'Ziehe den alten Wert vom neuen ab, teile durch den alten Wert und multipliziere mit 100. Von 80 auf 100: (100 - 80) / 80 x 100 = 25 %.'],
             ['q' => 'Wie berechne ich eine prozentuale Abnahme?', 'a' => 'Mit derselben Formel – das Ergebnis ist dann negativ. Von 340 auf 250: (250 - 340) / 340 x 100 = etwa -26,5 %.'],
-            ['q' => 'Wie berechne ich einen Rabatt?', 'a' => 'Nutze „Eine Zahl um einen Prozentsatz verringern“. Bei 20 % Rabatt auf 50 € beträgt der Preis 50 € x (1 - 0,20) = 40 €.'],
+            ['q' => 'Wie berechne ich, wie viel Prozent eine Zahl von einer anderen ist?', 'a' => 'Teile die erste Zahl durch die zweite und multipliziere mit 100. Beispiel: 45 von 180: 45 / 180 x 100 = 25 %.'],
+            ['q' => 'Was ist der Unterschied zwischen Prozent und Prozentpunkten?', 'a' => 'Steigt ein Wert von 20 % auf 25 %, ist das ein Plus von 5 Prozentpunkten, aber eine Steigerung um 25 %, weil 5 ein Viertel von 20 ist.'],
+            ['q' => 'Kann ich die prozentuale Veränderung berechnen, wenn der alte Wert 0 ist?', 'a' => 'Nein. Die Division durch null ist nicht definiert, eine Veränderung ab 0 lässt sich also nicht als Prozentsatz ausdrücken, und der Rechner zeigt statt eines Ergebnisses einen Hinweis. Gib in diesem Fall die absolute Veränderung an.'],
+            ['q' => 'Wie berechne ich das prozentuale Wachstum über mehrere Jahre?', 'a' => 'Mit der durchschnittlichen jährlichen Wachstumsrate: (Endwert / Anfangswert)^(1 / Jahre) - 1. Von 100 auf 150 in 3 Jahren sind das etwa 14,5 % pro Jahr. Der Rechner selbst berechnet einstufige Veränderungen, für mehrere Jahre nutzt du diese Formel.'],
+            ['q' => 'Wie berechne ich einen Rabatt?', 'a' => 'Nutze „Eine Zahl um einen Prozentsatz erhöhen oder verringern“ und wähle Verringern. Bei 20 % Rabatt auf 50 € beträgt der Preis 50 € x (1 - 0,20) = 40 €.'],
             ['q' => 'Ist ein „Prozentrechner“ dasselbe wie ein „Prozentsatzrechner“?', 'a' => 'Ja, beide Begriffe meinen dasselbe Werkzeug. Es berechnet die Zunahme, Abnahme oder prozentuale Veränderung zwischen zwei beliebigen Zahlen, direkt im Browser und ohne Download.'],
             ['q' => 'Kann ich Prozente online berechnen, ohne etwas herunterzuladen?', 'a' => 'Ja. Alles läuft in deinem Browser: Gib die Zahlen ein, und das Ergebnis samt Formel erscheint sofort, ohne App, Anmeldung oder Datei-Upload.'],
-            ['q' => 'Was ist der Unterschied zwischen Prozent und Prozentpunkten?', 'a' => 'Steigt ein Wert von 20 % auf 25 %, ist das ein Plus von 5 Prozentpunkten, aber eine Steigerung um 25 %, weil 5 ein Viertel von 20 ist.'],
-            ['q' => 'Wie berechne ich das prozentuale Wachstum über mehrere Jahre?', 'a' => 'Mit der durchschnittlichen jährlichen Wachstumsrate: (Endwert / Anfangswert)^(1 / Jahre) - 1. Von 100 auf 150 in 3 Jahren sind das etwa 14,5 % pro Jahr. Der Rechner selbst berechnet einstufige Veränderungen, für mehrere Jahre nutzt du diese Formel.'],
             ['q' => 'Welche Formel hat der Prozentrechner?', 'a' => 'Er zeigt bei jeder Rechenart den Rechenweg mit deinen Zahlen direkt unter dem Ergebnis. Dahinter stehen diese Formeln: Prozentwert = Prozentsatz / 100 x Grundwert, Prozentsatz = Prozentwert / Grundwert x 100 und Veränderung = (neu - alt) / |alt| x 100.'],
         ],
         'table' => [
@@ -1149,7 +1167,7 @@ return [
     'random-number-generator' => [
         'name' => 'Zufallszahlengenerator',
         'title' => 'Zufallszahlengenerator: Zahlen in jedem Bereich ziehen',
-        'description' => 'Erzeuge Zufallszahlen in jedem Bereich, eine oder Hunderte auf einmal, mit oder ohne Duplikate. Ideal für Verlosungen, Lotto und Spiele. Kostenlos und sofort.',
+        'description' => 'Erzeuge Zufallszahlen in jedem Bereich, eine oder Hunderte auf einmal, mit oder ohne Duplikate. Ideal für Verlosungen, Lotto und Spiele. Kostenlos.',
         'h1' => 'Zufallszahlengenerator',
         'tagline' => 'Ziehe Zufallszahlen in jedem Bereich – bei Bedarf ohne Duplikate.',
         'keywords' => ['zufallszahlengenerator', 'zufallszahl', 'zahlen auslosen', 'zufallsgenerator zahlen', 'lottozahlen generator'],
@@ -1204,6 +1222,7 @@ return [
         ],
         'faqs' => [
             ['q' => 'Kann ich eine Zufallszahl zwischen 1 und 100 erzeugen?', 'a' => 'Ja. Setze das Minimum auf 1 und das Maximum auf 100 oder klicke auf die Vorgabe 1 – 100, die sofort eine Zahl zieht.'],
+            ['q' => 'Kann ich damit ein Zahlenratespiel spielen?', 'a' => 'Ja. Stelle einen Bereich wie 1 bis 100 ein und erzeuge eine Zahl als Geheimzahl, oder lass jeden Spieler eine Zahl erzeugen und vergleicht sie. Damit jeder Spieler eine andere Zahl bekommt, setze Wie viele auf die Zahl der Spieler und hake Keine Duplikate an.'],
             ['q' => 'Kann ich Lottozahlen erzeugen?', 'a' => 'Ja. Nutze die Vorgabe Lotto 6 aus 49, die sechs verschiedene Zahlen zieht und sortiert, oder wähle eigenen Bereich und Anzahl mit angehaktem „Keine Duplikate“.'],
             ['q' => 'Wie viele Zahlen kann ich auf einmal erzeugen?', 'a' => 'Bis zu 1.000 Zahlen pro Klick. Alle kopieren kopiert die ganze Liste als durch Kommas getrennte Werte.'],
             ['q' => 'Kann ich negative Zahlen verwenden?', 'a' => 'Ja. Alle ganzen Zahlen funktionieren, zum Beispiel ein Bereich von -50 bis 50.'],
@@ -1611,6 +1630,7 @@ return [
             ['q' => 'Kann ich KI-Texte prüfen?', 'a' => 'Ja. KI-Entwürfe enthalten oft lange Sätze und lange Wörter; der Prüfer zeigt, welche Sätze du kürzen solltest, damit der Text natürlicher klingt.'],
             ['q' => 'Funktioniert das auch auf Deutsch?', 'a' => 'Die Formeln wurden für Englisch entwickelt, deshalb sind die Ergebnisse für deutsche Texte nur ein grober Anhaltspunkt. Auch die Silbenregeln sind englische Regeln.'],
             ['q' => 'Wird mein Text hochgeladen oder gespeichert?', 'a' => 'Nein. Alles Zählen und Berechnen passiert in deinem Browser, und der Text wird nicht gespeichert. Tippe auf Leeren, um das Feld zu leeren.'],
+            ['q' => 'Ist dieser Lesbarkeitsprüfer kostenlos?', 'a' => 'Ja. Er ist kostenlos, ohne Anmeldung und ohne Wortlimit, und dein Text wird in deinem Browser analysiert, nie hochgeladen.'],
         ],
         'table' => [
             'caption' => 'Flesch-Lesbarkeitswerte',
@@ -1777,6 +1797,10 @@ return [
                 'body' => 'Defekte Links schicken Besucher auf Fehlerseiten. Das ist ärgerlich und lässt eine Website vernachlässigt wirken. Suchmaschinen folgen außerdem Links, um Seiten zu finden – tote Links verschwenden ihr Crawling und können verhindern, dass wichtige Seiten entdeckt werden. Sie zu beheben ist einer der schnellsten Gewinne für SEO und Nutzererlebnis.',
             ],
             [
+                'heading' => 'Dead Link Checker: tote Links auf jeder Seite finden',
+                'body' => 'Ein toter Link führt nirgendwo mehr sinnvoll hin: Die Seite wurde gelöscht, ohne Weiterleitung verschoben, oder die ganze Domain ist abgelaufen. Gib eine beliebige Seitenadresse ein und klicke auf Links prüfen: Das Tool testet bis zu 300 Links und Bilder auf dieser Seite und listet die toten unter Probleme auf, jeweils mit Statuscode oder Fehler, damit du weißt, welche du zuerst korrigieren oder entfernen solltest.',
+            ],
+            [
                 'heading' => 'Was bedeuten die Ergebnisse?',
                 'body' => 'OK heißt, der Link funktioniert. Weiterleitung heißt, er funktioniert, führt aber über eine oder mehrere Weiterleitungen; die Zieladresse direkt zu verlinken ist für Besucher schneller. Defekt heißt, die Seite antwortete mit einem Fehler wie 404 oder 500 oder die Domain existiert nicht mehr. Blockiert heißt, die Website lehnte die automatische Prüfung ab (Status 401, 403 oder 429) – öffne den Link selbst, um ihn zu prüfen.',
             ],
@@ -1869,18 +1893,10 @@ return [
         ],
         'content' => [
             ['heading' => 'Wie prüfe ich die Domain Authority in großen Mengen?', 'body' => 'Füge bis zu 100 Domains oder URLs ein, eine pro Zeile, und klicke auf Autorität prüfen. Der OpenPageRank-Wert, der globale Rang und die verweisenden Domains jeder Website erscheinen zusammen in einer sortierbaren Tabelle, die du als CSV herunterladen kannst. Eine Anmeldung ist nicht nötig, und du musst nicht jede Domain einzeln nachschlagen.'],
-            [
-                'heading' => 'Ist das dasselbe wie Moz Domain Authority?',
-                'body' => 'Nein. Domain Authority (DA) ist ein Wert von 0 bis 100 der Firma Moz, Domain Rating (DR) gehört zu Ahrefs. Dieses Tool zeigt OpenPageRank, einen Wert von 0 bis 10, der mit dem PageRank-Verfahren aus dem öffentlichen Web-Graphen von Common Crawl berechnet wird. Alle messen dieselbe Idee – die Stärke der Links einer Website –, werden aber unterschiedlich berechnet, daher lassen sich die Zahlen nicht ineinander umrechnen.',
-            ],
-            [
-                'heading' => 'Was ist ein guter Wert?',
-                'body' => 'Die Skala ist logarithmisch: Von 2 auf 3 braucht es viel weniger Links als von 8 auf 9. Neue Websites starten meist nahe 0, kleine etablierte Websites liegen oft bei 2 bis 4, bekannte Marken bei 5 bis 7, und nur die größten Websites im Internet erreichen 9 oder 10. Vergleichen Sie eine Website mit anderen aus derselben Branche statt mit den Riesen.',
-            ],
-            [
-                'heading' => 'Was zeigen die Domain-Details?',
-                'body' => 'Klicken Sie neben einer Domain auf Details (bei nur einer Domain öffnet sich die Ansicht automatisch), um den Registrar, das Registrierungs- und Ablaufdatum, das Alter, die IP-Adresse und das Netzwerk, das die Website hostet, die DNS- und E-Mail-Anbieter sowie Gültigkeit und Ablauf des HTTPS-Zertifikats zu sehen. Die Angaben stammen aus dem öffentlichen RDAP-Eintrag der Registry, dem öffentlichen DNS und dem Zertifikat der Website – kostenlos und ohne Anmeldung.',
-            ],
+            ['heading' => 'Kostenloser Bulk-Domain-Rank-Checker: Wert und globaler Rang für 100 Websites', 'body' => 'Für jede eingefügte Domain, bis zu 100 auf einmal, zeigt die Ergebnistabelle ihren OpenPageRank-Wert von 0 bis 10, ihren globalen Rang unter allen Domains, die OpenPageRank bewertet, und die Zahl ihrer verweisenden Domains. Sortiere nach Höchster Wert, nach Domain (A-Z) oder in deiner eigenen Reihenfolge und klicke dann auf CSV herunterladen, um Domain, Wert, globalen Rang und verweisende Domains in eine Tabellenkalkulation zu übernehmen. So wird das Tool zu einem schnellen Bulk-Domain-Rank-Checker, um Wettbewerber oder eine Liste möglicher Linkquellen direkt nebeneinander zu vergleichen.'],
+            ['heading' => 'Ist das dasselbe wie Moz Domain Authority?', 'body' => 'Nein. Domain Authority (DA) ist ein Wert von 0 bis 100 der Firma Moz, Domain Rating (DR) gehört zu Ahrefs. Dieses Tool zeigt OpenPageRank, einen Wert von 0 bis 10, der mit dem PageRank-Verfahren aus dem öffentlichen Web-Graphen von Common Crawl berechnet wird. Alle messen dieselbe Idee – die Stärke der Links einer Website –, werden aber unterschiedlich berechnet, daher lassen sich die Zahlen nicht ineinander umrechnen.'],
+            ['heading' => 'Was ist ein guter Wert?', 'body' => 'Die Skala ist logarithmisch: Von 2 auf 3 braucht es viel weniger Links als von 8 auf 9. Neue Websites starten meist nahe 0, kleine etablierte Websites liegen oft bei 2 bis 4, bekannte Marken bei 5 bis 7, und nur die größten Websites im Internet erreichen 9 oder 10. Vergleichen Sie eine Website mit anderen aus derselben Branche statt mit den Riesen.'],
+            ['heading' => 'Was zeigen die Domain-Details?', 'body' => 'Klicken Sie neben einer Domain auf Details (bei nur einer Domain öffnet sich die Ansicht automatisch), um den Registrar, das Registrierungs- und Ablaufdatum, das Alter, die IP-Adresse und das Netzwerk, das die Website hostet, die DNS- und E-Mail-Anbieter sowie Gültigkeit und Ablauf des HTTPS-Zertifikats zu sehen. Die Angaben stammen aus dem öffentlichen RDAP-Eintrag der Registry, dem öffentlichen DNS und dem Zertifikat der Website – kostenlos und ohne Anmeldung.'],
         ],
         'faqs' => [
             [
@@ -1902,6 +1918,22 @@ return [
             [
                 'q' => 'Gibt es einen Massen-Domain-Authority-Checker?',
                 'a' => 'Ja – dieses Tool prüft die Domain Authority im Bulk- bzw. Massen-Modus: Fügen Sie bis zu 100 Domains gleichzeitig ein und sehen Sie alle Werte zusammen, statt jede einzeln nachzuschlagen.',
+            ],
+            [
+                'q' => 'Ist dieser Bulk-Domain-Authority-Checker kostenlos?',
+                'a' => 'Ja. Er ist kostenlos, ohne Anmeldung und ohne Credits, die du kaufen musst: Füge bis zu 100 Domains ein, prüfe sie in einem Durchgang und exportiere die Ergebnisse als CSV-Datei. Damit das Tool für alle kostenlos bleibt, kann jeder Besucher bis zu 10 Prüfungen pro Minute durchführen, und an sehr vollen Tagen kann das gemeinsame Tageskontingent der Website für neue Abfragen bis zum nächsten Tag aufgebraucht sein.',
+            ],
+            [
+                'q' => 'Kann ich auch die Page Authority in großen Mengen prüfen?',
+                'a' => 'Nein. Es gibt keinen Page-Authority-Wert (PA), weder von Moz noch einen anderen: Das Tool bewertet mit OpenPageRank ganze Domains, keine einzelnen Seiten. Du kannst trotzdem vollständige URLs einfügen: Sie werden auf die Domain gekürzt, und diese wird geprüft.',
+            ],
+            [
+                'q' => 'Ist das ein Bulk-Domain-Rank-Checker?',
+                'a' => 'Ja. Neben jedem Autoritätswert siehst du den globalen Rang der Domain, sodass du bis zu 100 Websites nach Rang und Wert in einer Tabelle vergleichen kannst.',
+            ],
+            [
+                'q' => 'Warum reicht der Wert von 0 bis 10 statt von 0 bis 100?',
+                'a' => 'Die Werte stammen von OpenPageRank, das eine Skala von 0 bis 10 verwendet. Es sind keine Werte von Moz DA oder Ahrefs DR, vergleiche Websites daher immer nur auf einer Skala.',
             ],
         ],
         'table' => [
@@ -1965,11 +1997,39 @@ return [
         'content' => [
             [
                 'heading' => 'Was ist RDAP und wie unterscheidet es sich von WHOIS?',
-                'body' => 'RDAP (Registration Data Access Protocol) ist der moderne, standardisierte Nachfolger von WHOIS. Während WHOIS einfachen Text zurückgibt, dessen Format je nach Registry unterschiedlich ist, liefert RDAP strukturiertes JSON mit überall gleichen Feldnamen, ist kostenlos und schlüssellos abrufbar und unterstützt internationalisierte Domainnamen sowie präzise Zugriffskontrollen. ICANN verpflichtete alle akkreditierten Registrare und gTLD-Registries zum Betrieb von RDAP-Diensten, und auch Länder-Registries wie die deutsche DENIC oder die polnische NASK haben RDAP ergänzt – WHOIS wird deshalb zunehmend durch RDAP abgelöst.',
+                'body' => 'RDAP (Registration Data Access Protocol) ist der moderne, standardisierte Nachfolger von WHOIS. Während WHOIS einfachen Text zurückgibt, dessen Format je nach Registry unterschiedlich ist, liefert RDAP strukturiertes JSON mit überall gleichen Feldnamen, ist kostenlos und schlüssellos abrufbar und unterstützt internationalisierte Domainnamen sowie präzise Zugriffskontrollen. ICANN verpflichtete alle akkreditierten Registrare und gTLD-Registries zum Betrieb von RDAP-Diensten, und auch Länder-Registries wie die britische Nominet oder die polnische NASK haben RDAP ergänzt – WHOIS wird deshalb zunehmend durch RDAP abgelöst.',
             ],
             [
-                'heading' => 'Warum zeigen manche Domains „nicht unterstützt“ oder „kein Eintrag gefunden“ an?',
-                'body' => 'Eine kleine Zahl von Länder-Domainendungen hat noch keinen RDAP-Dienst eingeführt, sodass für sie keine Registry erreichbar ist; diese zeigen „nicht unterstützt“. Eine Domain kann auch keinen Eintrag zeigen, wenn sie aktuell nicht registriert ist, erst sehr kürzlich registriert wurde und noch nicht in den öffentlichen Daten der Registry erscheint, oder wenn die Registry vorübergehend nicht erreichbar ist. Nichts davon bedeutet, dass die Prüfung falsch liegt: Die angezeigten Daten stammen immer direkt aus der Live-Antwort der jeweiligen Registry, niemals aus einer Schätzung.',
+                'heading' => 'Warum zeigen manche Domains keinen RDAP-Dienst oder keinen Eintrag?',
+                'body' => 'Einige Länderendungen, darunter .de und .io, haben im RDAP-Verzeichnis der IANA noch keinen RDAP-Dienst eingetragen. Das Tool kann für sie also keine Registry erreichen und meldet, dass es für diese Domainendung noch keinen RDAP-Dienst gibt. Eine Domain zeigt „Es wurde kein RDAP-Eintrag gefunden“, wenn sie derzeit nicht registriert ist oder so kürzlich registriert wurde, dass sie noch nicht in den öffentlichen Daten der Registry steht. Antwortet die Registry nicht, meldet das Tool, dass die Domain gerade nicht geprüft werden konnte. Nichts davon bedeutet, dass die Prüfung falsch liegt: Die angezeigten Daten stammen immer direkt aus der Live-Antwort der jeweiligen Registry, niemals aus einer Schätzung.',
+            ],
+            [
+                'heading' => 'Wann wurde eine Domain registriert? So findest du das Datum',
+                'body' => 'Das Registrierungsdatum steht im öffentlichen Registry-Eintrag der Domain, und das Tool liest es in vier Schritten für dich aus:',
+                'items' => [
+                    'Tippe oder füge bis zu 20 Domains oder Seitenadressen in das Feld ein, eine pro Zeile (Kommas oder Leerzeichen gehen auch).',
+                    'Klicke auf Domainalter prüfen.',
+                    'Lies in der Spalte Erstellt das Registrierungsdatum ab und in der Spalte Alter, wie alt die Domain ist, zum Beispiel 12J 3M 5T (Jahre, Monate und Tage).',
+                    'Klicke auf CSV herunterladen, um Daten, Registrar, Status und Nameserver aller Domains zu speichern.',
+                ],
+            ],
+            [
+                'heading' => 'Wie alt ist eine Domain? Die Ergebnisse lesen',
+                'body' => 'Erstellt ist das Datum, an dem die aktuelle Registrierung begann, und das Alter wird von diesem Datum bis heute gezählt. Läuft ab ist das Ende des aktuellen Registrierungszeitraums, falls die Domain nicht verlängert wird, und Zuletzt aktualisiert ist der Zeitpunkt, an dem sich der Registry-Eintrag selbst zuletzt geändert hat, etwa nach einer Verlängerung, einem Transfer oder einer Nameserver-Änderung; über das Alter der Domain sagt es also nichts aus. Ein Verkauf oder ein Wechsel zu einem anderen Registrar behält normalerweise das ursprüngliche Erstellt-Datum. Ist eine Domain ausgelaufen, gelöscht und neu registriert worden, zeigt Erstellt das neue Registrierungsdatum, und ihr Alter beginnt wieder bei null.',
+            ],
+            [
+                'heading' => 'Beispiel: Was eine Ergebniszeile zeigt',
+                'body' => 'Jede geprüfte Domain bekommt eine Zeile in der Ergebnistabelle. Die folgende Zeile ist ein erfundenes Beispiel für example.com, das nur zeigt, was jede Spalte bedeutet und wie sie formatiert ist; eine echte Prüfung zeigt die Live-Daten der Registry und einen Strich (–), wo der Eintrag ein Feld leer lässt.',
+                'items' => [
+                    'Domain: example.com',
+                    'Erstellt: 15. März 2014',
+                    'Alter: 12J 8M 1T',
+                    'Läuft ab: 15. März 2027',
+                    'Zuletzt aktualisiert: 10. Februar 2026',
+                    'Registrar: Example Registrar, Inc.',
+                    'Status: client transfer prohibited',
+                    'Nameserver: ns1.example.net, ns2.example.net',
+                ],
             ],
         ],
         'faqs' => [
@@ -1987,7 +2047,7 @@ return [
             ],
             [
                 'q' => 'Kann ich jede Domainendung prüfen?',
-                'a' => 'Die meisten gängigen Endungen (darunter .com, .net, .org, .io, .co.uk und .pl) haben RDAP-Einträge mit Erstellungsdatum. Für .de-Domains veröffentlicht die Registry kein Erstellungsdatum, deshalb kann das Tool für sie kein Alter anzeigen. Eine kleine Zahl kleinerer Länderendungen hat RDAP noch nicht eingeführt; diese werden als nicht unterstützt angezeigt, statt geraten zu werden.',
+                'a' => 'Die meisten Endungen, darunter .com, .net, .org, .co.uk und .pl, haben RDAP-Einträge, die das Tool lesen kann. Einige Länderendungen, darunter .de und .io, haben noch keinen eingetragenen RDAP-Dienst, und manche Einträge lassen das Datum weg. Dann meldet das Tool, dass es für die Endung noch keinen RDAP-Dienst gibt, oder zeigt einen Strich, statt zu raten.',
             ],
             [
                 'q' => 'Wann wurde eine Domain registriert?',
@@ -2005,6 +2065,10 @@ return [
                 'q' => 'Ist das Domainalter ein Google-Rankingfaktor?',
                 'a' => 'Google hat erklärt, dass das Domainalter allein kein Rankingfaktor ist. Ältere Domains ranken oft besser, weil sie mehr Zeit hatten, Inhalte und Links aufzubauen.',
             ],
+            [
+                'q' => 'Ist das Registrierungsdatum dasselbe wie der Start der Website oder ihre Inhaberhistorie?',
+                'a' => 'Nein. Das Datum unter Erstellt ist der Beginn der aktuellen Registrierung der Domain, entnommen aus dem RDAP-Eintrag der Registry. Die Website selbst kann Monate oder Jahre später online gegangen sein oder nie, und eine Domain, die gelöscht und neu registriert wurde, zeigt nur ihr letztes Registrierungsdatum. Das Tool zeigt weder ein Startdatum der Website noch frühere Inhaber: RDAP enthält nur die aktuelle Registrierung. Für die Geschichte einer Website hilft ein Webarchiv wie die Wayback Machine.',
+            ],
         ],
         'table' => [
             'caption' => 'Angezeigte RDAP-Ereignistypen',
@@ -2020,7 +2084,7 @@ return [
     'rotate-pdf' => [
         'name' => 'PDF drehen',
         'title' => 'PDF Drehen - Schiefe Seiten Kostenlos Korrigieren',
-        'description' => 'Drehen Sie PDF-Seiten kostenlos um 90, 180 oder 270 Grad - das ganze Dokument oder nur ausgewählte Seiten. Kein Upload, kein Wasserzeichen, keine Anmeldung.',
+        'description' => 'Drehen Sie PDF-Seiten um 90, 180 oder 270 Grad – das ganze Dokument oder nur ausgewählte Seiten. Gratis, kein Upload, kein Wasserzeichen, keine Anmeldung.',
         'h1' => 'PDF drehen',
         'tagline' => 'Schiefe oder auf dem Kopf stehende Seiten direkt im Browser richtig ausrichten.',
         'keywords' => ['pdf drehen', 'pdf seiten drehen', 'pdf online drehen', 'pdf seite drehen', 'schiefe pdf korrigieren'],
@@ -2047,6 +2111,8 @@ return [
             ['q' => 'Welche Drehwinkel sind verfügbar?', 'a' => 'Drehen Sie um 90 Grad nach links oder rechts, oder wenden Sie eine Seite um 180 Grad, wenn sie auf dem Kopf stehend gescannt wurde. Sie können mehrere Klicks kombinieren, um jede der vier Ausrichtungen zu erreichen.'],
             ['q' => 'Wird mein PDF auf einen Server hochgeladen?', 'a' => 'Nein. Das PDF wird vollständig in Ihrem Browser mit JavaScript geöffnet und gedreht und nie irgendwohin gesendet.'],
             ['q' => 'Fügt das ein Wasserzeichen hinzu oder verringert die Qualität?', 'a' => 'Nein. Das Drehen ändert nur die Ausrichtung jeder Seite. Es wird kein Wasserzeichen, Logo oder zusätzliche Seite hinzugefügt, und es geht keine Bild- oder Textqualität verloren.'],
+            ['q' => 'Wie ändere ich die Ausrichtung eines PDFs von Hochformat zu Querformat?', 'a' => 'Drehe die Seiten um 90 Grad nach links oder rechts, klicke auf PDF drehen und lade die Datei herunter. Die Seiten werden in der neuen Ausrichtung gespeichert und öffnen sich so in jedem PDF-Reader.'],
+            ['q' => 'Wird die Drehung dauerhaft gespeichert?', 'a' => 'Ja. Die heruntergeladene Datei behält die neue Drehung. Die Originaldatei auf deinem Gerät wird nicht verändert.'],
         ],
     ],
 

@@ -8,16 +8,30 @@ import { useMeta } from '../lib/meta.js';
 
 // "[anchor](/tool-slug)" in guide text is a link (the server checks the slug; see Guides::inline).
 const LINK = /\[([^\]]+)\]\((\/[a-z0-9/-]*)\)/g;
+// "**text**" is bold, as on the server.
+const BOLD = /\*\*(.+?)\*\*/g;
+
+function withBold(text, keyBase) {
+    const out = [];
+    let last = 0;
+    for (const m of text.matchAll(BOLD)) {
+        out.push(text.slice(last, m.index));
+        out.push(<strong key={`${keyBase}-b${m.index}`}>{m[1]}</strong>);
+        last = m.index + m[0].length;
+    }
+    out.push(text.slice(last));
+    return out;
+}
 
 export function GuideText({ text }) {
     const out = [];
     let last = 0;
     for (const m of text.matchAll(LINK)) {
-        out.push(text.slice(last, m.index));
+        out.push(...withBold(text.slice(last, m.index), last));
         out.push(<a key={m.index} href={m[2]}>{m[1]}</a>);
         last = m.index + m[0].length;
     }
-    out.push(text.slice(last));
+    out.push(...withBold(text.slice(last), last));
     return out;
 }
 
