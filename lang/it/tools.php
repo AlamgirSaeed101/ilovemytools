@@ -4,11 +4,11 @@ return [
 
     'word-counter' => [
         'name' => 'Contaparole',
-        'title' => 'Contaparole: conta parole e caratteri online gratis',
-        'description' => 'Contaparole online gratuito: conta parole, caratteri, frasi e paragrafi in tempo reale, con tempo di lettura e parole chiave. Senza registrazione.',
-        'h1' => 'Contaparole',
+        'title' => 'Contaparole e contacaratteri: conta parole online gratis',
+        'description' => 'Contaparole e contatore caratteri online gratis: conta parole, caratteri (con e senza spazi), frasi e paragrafi in tempo reale. Senza registrazione.',
+        'h1' => 'Contaparole e contatore caratteri',
         'tagline' => 'Conta subito parole, caratteri, frasi e tempo di lettura.',
-        'keywords' => ['contaparole', 'conta caratteri', 'contare parole', 'contare parole online', 'calcolo tempo di lettura'],
+        'keywords' => ['contaparole', 'conta caratteri', 'contatore caratteri', 'contacaratteri', 'contatore parole', 'calcolo battute', 'contare parole', 'contare parole online', 'calcolo tempo di lettura'],
         'intro' => 'Un contaparole è uno strumento che conta le parole, i caratteri, le frasi e i paragrafi di un testo. Incolla o scrivi il tuo testo qui sotto per contare parole, caratteri, frasi e paragrafi mentre scrivi. Il contaparole mostra anche il tempo stimato di lettura e di esposizione orale e le parole chiave più usate: utile per temi, articoli di blog, didascalie social e meta description SEO.',
         'steps' => [
             'Scrivi o incolla il tuo testo nella casella.',
@@ -32,6 +32,14 @@ return [
                 'heading' => 'Come vengono contate le parole?',
                 'body' => 'Una parola è qualsiasi gruppo di lettere o numeri separato da spazi o a capo. La punteggiatura da sola non conta come parola. Le frasi si contano dalla punteggiatura finale (. ! ?) e i paragrafi dalle righe vuote, quindi i numeri coincidono con quelli di programmi come Microsoft Word e Google Documenti.',
             ],
+            [
+                'heading' => 'Contatore caratteri: conta i caratteri con e senza spazi',
+                'body' => 'Oltre alle parole, il contatore caratteri mostra due numeri. Caratteri conta ogni lettera, cifra, segno di punteggiatura e spazio, a capo compresi. Caratteri (senza spazi) toglie spazi, tabulazioni e a capo. Le lettere accentate come è o à contano come un solo carattere. Usa il primo numero per i limiti espressi in battute e il secondo per i moduli che contano solo i caratteri visibili. Entrambi si aggiornano a ogni tasto premuto.',
+            ],
+            [
+                'heading' => 'Quante parole sono 2.000 caratteri? Battute e cartella editoriale',
+                'body' => 'Nell’editoria italiana i testi si misurano spesso in battute: ogni lettera, segno di punteggiatura e spazio vale una battuta. La cartella editoriale standard è di 1.800 battute spazi inclusi, cioè 30 righe da 60 caratteri. In italiano 2.000 caratteri corrispondono più o meno a 300-350 parole, a seconda della lunghezza media delle parole: è solo una stima, quindi incolla il testo per avere il conteggio esatto. Le battute del tuo testo sono il numero indicato alla voce Caratteri.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Questo contaparole è gratuito?', 'a' => 'Sì. Il contaparole è completamente gratuito, senza registrazione e senza limiti sulla quantità di testo che incolli.'],
@@ -39,6 +47,10 @@ return [
             ['q' => 'Come si calcola il tempo di lettura?', 'a' => 'Il tempo di lettura si basa su una velocità media di lettura silenziosa di un adulto di 238 parole al minuto. Il tempo di esposizione usa 150 parole al minuto, un ritmo tipico delle presentazioni.'],
             ['q' => 'Un "contaparole" è lo stesso di un "contatore caratteri" o "contacaratteri"?', 'a' => 'Sì. Contaparole, contatore di testo, contatore caratteri e contacaratteri sono nomi diversi per lo stesso strumento: conta le parole, i caratteri, le frasi e i paragrafi del tuo testo in tempo reale.'],
             ['q' => 'Conta i caratteri con gli spazi?', 'a' => 'Sì. Ottieni sia i caratteri con spazi sia quelli senza spazi, che sono quelli a cui si riferisce la maggior parte dei limiti.'],
+            ['q' => 'Come posso contare i caratteri di un testo?', 'a' => 'Incolla o scrivi il testo nel riquadro: il contatore mostra subito i caratteri con e senza spazi, insieme a parole, frasi e paragrafi.'],
+            ['q' => 'Quante parole sono 2.000 caratteri?', 'a' => 'In italiano circa 300-350 parole, spazi inclusi, a seconda della lunghezza media delle parole. Incolla il testo per avere il numero esatto.'],
+            ['q' => 'Che cos’è una cartella editoriale?', 'a' => 'È lo standard editoriale italiano di 1.800 battute, spazi inclusi: 30 righe da 60 caratteri. Il contatore ti mostra quante battute ha il tuo testo.'],
+            ['q' => 'Le battute includono gli spazi?', 'a' => 'Di solito sì: nel conteggio delle battute gli spazi contano come caratteri. Per questo lo strumento mostra sia i caratteri con spazi sia quelli senza.'],
         ],
     ],
 
@@ -114,16 +126,16 @@ return [
 
     'password-generator' => [
         'name' => 'Generatore di password',
-        'title' => 'Generatore di password: password casuali sicure gratis',
-        'description' => 'Genera password casuali e sicure con lunghezza, simboli e numeri a scelta. Create in modo sicuro sul tuo dispositivo e mai inviate. Gratis e immediato.',
-        'h1' => 'Generatore di password sicure',
+        'title' => 'Generatore di password casuali sicure – gratis online',
+        'description' => 'Generatore di password casuali: crea password sicure da 4 a 128 caratteri con maiuscole, numeri e simboli, direttamente sul tuo dispositivo. Gratis.',
+        'h1' => 'Generatore di password casuali',
         'tagline' => 'Crea password casuali e sicure con un clic, generate sul tuo dispositivo.',
-        'keywords' => ['generatore di password', 'generatore password sicure', 'password casuale', 'password sicura'],
+        'keywords' => ['generatore di password', 'generatore di password casuali', 'generatore password sicure', 'crea password', 'password casuale', 'password sicura'],
         'intro' => 'Un generatore di password è uno strumento che crea password casuali e difficili da indovinare con i caratteri che scegli. Crea una password forte e casuale, quasi impossibile da indovinare. Scegli la lunghezza e i caratteri da includere: il generatore usa il generatore di numeri casuali crittograficamente sicuro del tuo browser. Le password non vengono mai inviate al nostro server.',
         'steps' => [
             'Scegli la lunghezza della password (consigliati 16 caratteri o più).',
             'Spunta i tipi di caratteri da includere: maiuscole, minuscole, numeri e simboli.',
-            'Clicca Genera, poi Copia per usare la nuova password.',
+            'Clicca Genera password, poi Copia per usare la nuova password.',
         ],
         'features' => [
             'Lunghezza da 4 a 128 caratteri',
@@ -147,7 +159,8 @@ return [
             ],
         ],
         'faqs' => [
-            ['q' => 'Questo generatore di password è sicuro?', 'a' => 'Sì. Le password vengono generate nel tuo browser con la Web Crypto API. Niente viene inviato al nostro server, registrato o salvato.'],
+            ['q' => 'Questo generatore di password è sicuro?', 'a' => 'Sì. Le password vengono generate nel tuo browser con la Web Crypto API. Le password casuali non vengono salvate: niente viene inviato al nostro server, registrato o memorizzato, e ricaricando la pagina ne viene creata una nuova.'],
+            ['q' => 'Come posso creare una password sicura?', 'a' => 'Scegli una lunghezza di almeno 15-16 caratteri, spunta maiuscole, minuscole, numeri e simboli e premi Genera password. Usa una password diversa per ogni account.'],
             ['q' => 'Quanto deve essere lunga la password?', 'a' => 'Almeno 15 caratteri, il minimo indicato dalle attuali linee guida del NIST (SP 800-63B), e 16 o più per gli account importanti come email e banca.'],
             ['q' => 'Cosa fa “Escludi simili”?', 'a' => 'Rimuove i caratteri che si somigliano, come l, 1, I, O e 0, così la password è più facile da leggere e digitare a mano.'],
             ['q' => 'Cos’è l’entropia di una password?', 'a' => 'L’entropia misura in bit quanto è imprevedibile una password. Ogni bit in più raddoppia i tentativi necessari a un attaccante. Da 80 bit in su è forte, da 100 in su è eccellente.'],
@@ -670,12 +683,12 @@ return [
 
     'percentage-calculator' => [
         'name' => 'Calcolatore di percentuali',
-        'title' => 'Calcolo percentuale con formula: percentuale e variazione',
-        'description' => 'Calcolatore di percentuali gratis che mostra la formula di ogni risultato: il X% di Y, che percentuale è X di Y, aumento o diminuzione percentuale e altro.',
-        'h1' => 'Calcolatore di percentuali',
+        'title' => 'Calcolo percentuale online: formula, aumento e variazione',
+        'description' => 'Calcolo percentuale gratis con formula: il X% di Y, che percentuale è X di Y e la variazione percentuale tra due numeri (aumento o diminuzione).',
+        'h1' => 'Calcolo percentuale online',
         'tagline' => 'Tutti i calcoli percentuali più comuni in un unico posto, con la formula.',
         'keywords' => ['calcolatore percentuali', 'calcolo percentuale', 'calcolo variazione percentuale', 'calcolo aumento percentuale', 'che percentuale è'],
-        'intro' => 'Un calcolatore di percentuali calcola percentuali come il X% di Y o la variazione percentuale tra due numeri. Calcola le percentuali in un attimo: quanto è il 15% di 200, che percentuale è 30 di 120, l’aumento percentuale da 80 a 100 e altro. Ogni calcolatore mostra la formula usata, così puoi verificare il calcolo per compiti, sconti, mance, voti e report.',
+        'intro' => 'Un calcolatore di percentuali, o calcolatrice percentuale, calcola percentuali come il X% di Y o la variazione percentuale tra due numeri. Calcola le percentuali in un attimo: quanto è il 15% di 200, che percentuale è 30 di 120, l’aumento percentuale da 80 a 100 e altro. Ogni calcolatore mostra la formula usata, così puoi verificare il calcolo per compiti, sconti, mance, voti e report.',
         'steps' => [
             'Trova il calcolatore che corrisponde alla tua domanda.',
             'Inserisci i numeri nelle caselle.',
@@ -694,6 +707,14 @@ return [
                 'heading' => 'Qual è la formula per calcolare una percentuale?',
                 'body' => 'X% di Y = (X / 100) x Y. X come percentuale di Y = (X / Y) x 100. Variazione percentuale da A a B = ((B - A) / |A|) x 100. Un risultato positivo è un aumento, uno negativo una diminuzione.',
             ],
+            [
+                'heading' => 'Come calcolare la percentuale tra due numeri',
+                'body' => 'Per sapere che percentuale è X di Y, dividi X per Y e moltiplica per 100: X ÷ Y × 100. Ad esempio, 45 su 180 dà 45 ÷ 180 × 100 = 25%. Nel calcolatore usa la sezione “X è che percentuale di Y?”: inserisci i due numeri e la formula compare sotto il risultato. Il secondo numero non può essere 0, perché la divisione per zero non è definita.',
+            ],
+            [
+                'heading' => 'Formula della variazione percentuale (aumento e diminuzione)',
+                'body' => 'La variazione percentuale è (nuovo − vecchio) ÷ vecchio × 100. Da 250 a 340: (340 − 250) ÷ 250 × 100 = +36%. Da 340 a 250: (250 − 340) ÷ 340 × 100 ≈ −26,5%. Aumento e diminuzione non sono simmetrici, perché la base del calcolo cambia. Nel calcolatore usa la sezione “Aumento / diminuzione percentuale”: il risultato dice se è un aumento o una diminuzione e la formula divide per il valore assoluto del valore vecchio, così funziona anche con valori di partenza negativi. Se il valore vecchio è 0 la variazione non è definita e il calcolatore mostra un avviso invece di un numero.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Come si calcola la percentuale di un numero?', 'a' => 'Dividi la percentuale per 100 e moltiplica per il numero. Ad esempio, il 15% di 200 = 0,15 x 200 = 30.'],
@@ -701,6 +722,11 @@ return [
             ['q' => 'Come si calcola uno sconto?', 'a' => 'Usa “Diminuire un numero di una percentuale”. Con il 20% di sconto su 50 €, il prezzo scontato è 50 € x (1 - 0,20) = 40 €.'],
             ['q' => 'Calcolatrice o calcolatore di percentuali: sono la stessa cosa?', 'a' => 'Sì, sono sinonimi. Questo strumento calcola l’incremento, la diminuzione o la variazione percentuale tra due numeri qualsiasi, online e senza scaricare nulla.'],
             ['q' => 'Posso fare il calcolo delle percentuali online senza scaricare nulla?', 'a' => 'Sì. Tutto funziona nel tuo browser: inserisci i numeri e il risultato con la formula appare subito, senza app, registrazione o caricamento di file.'],
+            ['q' => 'Come si calcola la percentuale tra due numeri?', 'a' => 'Dividi il primo numero per il secondo e moltiplica per 100. Ad esempio, 45 su 180: 45 / 180 x 100 = 25%.'],
+            ['q' => 'Qual è la formula della variazione percentuale?', 'a' => '(valore nuovo - valore vecchio) / valore vecchio x 100. Da 250 a 340: (340 - 250) / 250 x 100 = 36%. Se il risultato è negativo, si tratta di una diminuzione.'],
+            ['q' => 'Come si calcola una diminuzione percentuale?', 'a' => 'Con la stessa formula: da 340 a 250 si ottiene (250 - 340) / 340 x 100 = circa -26,5%.'],
+            ['q' => 'Che differenza c’è tra punti percentuali e percentuale?', 'a' => 'Se un tasso passa dal 20% al 25%, è salito di 5 punti percentuali, ma del 25% in termini relativi, perché 5 è un quarto di 20.'],
+            ['q' => 'Come si calcola la crescita percentuale media in più anni?', 'a' => 'Usa il tasso di crescita annuo composto: (valore finale / valore iniziale)^(1 / anni) - 1. Da 100 a 150 in 3 anni si ottiene circa il 14,5% all’anno. Questo calcolatore gestisce la variazione tra due valori, quindi per la crescita su più anni usa questa formula.'],
         ],
         'table' => [
             'caption' => 'Formule delle percentuali con esempi',
@@ -979,9 +1005,9 @@ return [
 
     'coin-flip' => [
         'name' => 'Testa o croce',
-        'title' => 'Generatore Testa o Croce: lancia una moneta online',
-        'description' => 'Generatore di testa o croce online con animazione 3D realistica. Lancia fino a 100 monete insieme e segui totali e serie. Equo, gratis e immediato.',
-        'h1' => 'Testa o croce',
+        'title' => 'Testa o croce online: lancia una moneta (anche 100)',
+        'description' => 'Testa o croce online gratis: lancia una moneta con animazione 3D o fino a 100 monete insieme, con totali e serie. Probabilità 50/50, senza registrazione.',
+        'h1' => 'Testa o croce online',
         'tagline' => 'Testa o croce? Lancia una moneta 3D o fino a 100 insieme e guarda le statistiche.',
         'keywords' => ['testa o croce', 'lancia una moneta', 'lancio moneta', 'testa o croce online', 'moneta virtuale'],
         'intro' => 'Testa o croce è un modo rapido per scegliere a caso tra due opzioni, ciascuna con il 50% di probabilità. Prendi una decisione, scegli chi inizia o fai un esperimento di probabilità con questo testa o croce online gratuito. Lancia una moneta 3D che vola roteando, o fino a 100 monete insieme. Lo strumento tiene il conto di teste e croci, la ripartizione percentuale e la serie in corso.',
@@ -1009,7 +1035,8 @@ return [
             ],
         ],
         'faqs' => [
-            ['q' => 'Questo testa o croce è equo?', 'a' => 'Sì. Ogni lancio ha esattamente il 50% di probabilità di testa e il 50% di croce, grazie alla casualità crittograficamente sicura del browser.'],
+            ['q' => 'Questo testa o croce è equo?', 'a' => 'Sì. Ogni lancio ha esattamente il 50% di probabilità di testa e il 50% di croce, grazie alla casualità crittograficamente sicura del browser. I lanci precedenti non influenzano quello successivo.'],
+            ['q' => 'Come si lancia una monetina online?', 'a' => 'Premi Lancia la moneta, tocca la moneta oppure premi F, Spazio o Invio: la moneta gira e cade su testa o croce.'],
             ['q' => 'Posso lanciare più di una moneta?', 'a' => 'Sì. Scegli 2, 5, 10, 25 o 100 monete: vengono lanciate tutte insieme, con il conteggio di teste e croci.'],
             ['q' => 'Perché ho ottenuto testa cinque volte di fila?', 'a' => 'Le serie fanno parte del caso. La probabilità di cinque teste di fila è di circa il 3%, quindi succede regolarmente su molti lanci.'],
             ['q' => 'È un simulatore di testa o croce?', 'a' => 'Sì, questo è un simulatore di testa o croce gratuito: riproduce un vero lancio con una probabilità reale del 50/50, un’animazione 3D realistica e la possibilità di lanciare fino a 100 monete insieme.'],
