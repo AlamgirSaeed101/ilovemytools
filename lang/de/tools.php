@@ -4,11 +4,11 @@ return [
 
     'word-counter' => [
         'name' => 'Wortzähler',
-        'title' => 'Wörter zählen online – Wortzähler kostenlos, ohne Anmeldung',
-        'description' => 'Kostenloser Wortzähler: Wörter zählen, Zeichen, Sätze und Absätze sofort – inklusive Lesezeit, Sprechzeit und Keyword-Dichte. Ohne Anmeldung.',
+        'title' => 'Wortzähler: Wörter & Zeichen online zählen – kostenlos',
+        'description' => 'Wortzähler & Wörterzähler online: Wörter, Zeichen (mit/ohne Leerzeichen), Sätze und Absätze sofort zählen, mit Lesezeit. Kostenlos, ohne Anmeldung.',
         'h1' => 'Wortzähler Online',
         'tagline' => 'Zähle Wörter, Zeichen, Sätze und Lesezeit sofort.',
-        'keywords' => ['wortzähler online', 'wortzähler', 'zeichenzähler', 'wörter zählen', 'lesezeit berechnen'],
+        'keywords' => ['wortzähler online', 'wortzähler', 'wörterzähler', 'wort zähler', 'zeichenzähler', 'zeichen zählen', 'wörter zählen', 'wie viele wörter hat mein text', 'lesezeit berechnen'],
         'intro' => 'Ein Wortzähler zählt die Wörter, Zeichen, Sätze und Absätze eines Textes automatisch. Mit diesem Wortzähler online zählst du Wörter, Zeichen, Sätze und Absätze eines Textes sofort. Füge deinen Text unten ein oder tippe ihn, um die Zahlen beim Schreiben live zu sehen. Der Wortzähler zeigt außerdem die geschätzte Lese- und Sprechzeit sowie deine häufigsten Schlüsselwörter – praktisch für Aufsätze, Blogartikel, Social-Media-Posts und SEO-Meta-Beschreibungen.',
         'steps' => [
             'Tippe deinen Text in das Feld oder füge ihn ein.',
@@ -32,13 +32,24 @@ return [
                 'heading' => 'Wie werden Wörter gezählt?',
                 'body' => 'Ein Wort ist jede Gruppe von Buchstaben oder Ziffern, die durch Leerzeichen oder Zeilenumbrüche getrennt ist. Satzzeichen allein zählen nicht als Wort. Sätze werden anhand der Schlusszeichen (. ! ?) gezählt, Absätze anhand von Leerzeilen – die Zahlen entsprechen also dem, was du von Textverarbeitungen wie Microsoft Word und Google Docs kennst.',
             ],
+            [
+                'heading' => 'Wortzähler, Wörterzähler oder Zeichenzähler – was zählt das Tool?',
+                'body' => 'Egal, ob du nach einem Wortzähler, einem Wörterzähler oder einem Wort-Zähler suchst: Dieses Tool zählt beim Tippen die Wörter, die Zeichen mit und ohne Leerzeichen, die Sätze und die Absätze deines Textes. Dazu zeigt es die geschätzte Lesezeit (238 Wörter pro Minute) und Sprechzeit (150 Wörter pro Minute) sowie die häufigsten Schlüsselwörter.',
+            ],
+            [
+                'heading' => 'Wie viele Wörter hat eine Seite?',
+                'body' => 'Das lässt sich nur ungefähr sagen. Eine deutsche Normseite hat 1.800 Zeichen inklusive Leerzeichen (30 Zeilen mit je 60 Anschlägen), das sind ungefähr 250 Wörter. Sonst hängt die Zahl von Schriftart, Schriftgröße, Zeilenabstand und Rändern ab: Für englische Texte mit 12 pt und 2,54 cm (1 Zoll) Rand rechnet man grob mit 500–600 Wörtern bei einfachem und 250–300 Wörtern bei doppeltem Zeilenabstand. Füge deinen Text oben ein, um die genaue Zahl zu sehen. Eine ausführliche Tabelle findest du in unserem englischsprachigen Ratgeber „How many words is a page?“, verlinkt weiter unten unter „Zum Ratgeber“.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Ist dieser Wortzähler kostenlos?', 'a' => 'Ja. Der Wortzähler ist völlig kostenlos, ohne Anmeldung und ohne Begrenzung der Textmenge.'],
             ['q' => 'Wird mein Text gespeichert oder hochgeladen?', 'a' => 'Nein. Die Zählung findet vollständig in deinem Browser statt. Dein Text wird nie an unseren Server gesendet oder irgendwo gespeichert.'],
             ['q' => 'Wie wird die Lesezeit berechnet?', 'a' => 'Die Lesezeit basiert auf einer durchschnittlichen stillen Lesegeschwindigkeit Erwachsener von 238 Wörtern pro Minute. Die Sprechzeit nutzt 150 Wörter pro Minute, ein typisches Tempo für Präsentationen.'],
             ['q' => 'Ist ein Wortzähler dasselbe wie ein Wörterzähler?', 'a' => 'Ja. Wortzähler, Wörterzähler und Zeichenzähler sind gängige Bezeichnungen für dasselbe Tool: Es zählt Wörter, Zeichen, Sätze und Absätze in deinem Text.'],
-            ['q' => 'Zählt er Zeichen mit Leerzeichen?', 'a' => 'Ja. Du bekommst die Zeichen mit und ohne Leerzeichen – letztere meinen die meisten Zeichenbegrenzungen.'],
+            ['q' => 'Kann ich auch nur Zeichen zählen, mit und ohne Leerzeichen?', 'a' => 'Ja. Neben den Wörtern zeigt der Zähler die Zeichen mit und ohne Leerzeichen – praktisch für Zeichenlimits bei Meta-Beschreibungen, Bewerbungen oder Social-Media-Beiträgen.'],
+            ['q' => 'Wie viele Wörter hat mein Text?', 'a' => 'Füge den Text oben ein oder tippe ihn – der Wortzähler zeigt sofort die Zahl der Wörter, Zeichen, Sätze und Absätze und aktualisiert sie bei jeder Änderung.'],
+            ['q' => 'Wie viele Zeichen und Wörter hat eine Normseite?', 'a' => 'Eine Normseite hat 1.800 Zeichen inklusive Leerzeichen (30 Zeilen mit je 60 Anschlägen). Das sind ungefähr 250 Wörter, je nach Wortlänge etwas mehr oder weniger.'],
+            ['q' => 'Wie zählt der Wortzähler Wörter mit Bindestrich oder Zahlen?', 'a' => 'Als Wort gilt alles, was zwischen Leerzeichen oder Zeilenumbrüchen steht und mindestens einen Buchstaben oder eine Ziffer enthält: „E-Mail-Adresse“ zählt also als ein Wort, Zahlen wie 2026 oder 3,5 zählen ebenfalls als Wort, ein allein stehender Gedankenstrich dagegen nicht.'],
         ],
     ],
 
@@ -261,13 +272,20 @@ return [
                 'heading' => 'Ein Foto auf 50 KB oder 20 KB komprimieren',
                 'body' => 'Bewerbungs- und Antragsformulare verlangen oft ein Foto unter 50 KB oder sogar 20 KB. Öffne den Reiter Zielgröße (z. B. 100 KB) und gib das Limit unter Maximale Dateigröße (KB) ein; der kleinste erlaubte Wert ist 5. Für jedes Bild sucht das Tool die höchste Qualität, die noch passt. Ist selbst die niedrigste Qualität zu groß, verkleinert es Breite und Höhe in Schritten von 20 %, bis die Datei passt, und die Ergebniszeile zeigt die neuen Abmessungen. Klappt es trotzdem nicht, sagt es dir das und liefert die kleinste Version, die möglich war. Die Größen rechnen 1 KB als 1.024 Byte. Für kleine Ziele bleib bei JPG oder WebP als Ausgabe: PNG hat keine Qualitätseinstellung und kann nur durch weniger Pixel kleiner werden. Verlangt das Formular auch exakte Abmessungen, stelle sie zuerst mit Bildgröße ändern ein und komprimiere danach hier.',
             ],
+            [
+                'heading' => 'PNG verkleinern: Größe und Dateigröße reduzieren',
+                'body' => 'PNG ist verlustfrei, deshalb hat es keine Qualitätseinstellung. Lässt du das Ausgabeformat auf „Wie Original“, bleibt deine PNG eine PNG und wird nur neu gespeichert; das bringt oft wenig, und wird die Datei dabei nicht kleiner, bekommst du das Original zurück („Bereits optimiert“). Deutlich kleiner wird eine PNG auf zwei Wegen: Wandle sie in WebP um (die Transparenz bleibt erhalten) oder in JPG (transparente Bereiche werden weiß), oder setze eine maximale Breite, damit weniger Pixel gespeichert werden. Im Zielgrößen-Modus mit PNG als Ausgabe verkleinert das Tool die Abmessungen in Schritten von 20 %, bis die Datei passt.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Wie komprimiere ich ein Bild auf 100 KB?', 'a' => 'Öffne den Reiter „Zielgröße“ und gib 100 ein. Bilder werden komprimiert, sobald du sie hinzufügst; änderst du die Einstellung danach, klicke auf Alle neu komprimieren. Das Tool findet die beste Qualität unter 100 KB und verkleinert die Abmessungen nur, wenn es nötig ist.'],
             ['q' => 'Werden meine Bilder auf einen Server hochgeladen?', 'a' => 'Nein. Die Bilder werden in deinem Browser mit der Canvas-API komprimiert. Sie verlassen nie dein Gerät.'],
             ['q' => 'Verringert die Komprimierung die Qualität?', 'a' => 'Bei der Standardqualität (75 %) sehen die meisten keinen Unterschied, während die Dateigröße oft um 50-80 % sinkt.'],
-            ['q' => 'Wie verkleinere ich eine PNG-Bildgröße?', 'a' => 'PNG ist ein verlustfreies Format, daher bringt reines Komprimieren wenig. Um eine PNG wirklich zu verkleinern, stelle WebP (behält Transparenz) oder JPG (ohne Transparenz) als Ausgabeformat ein - beide verkleinern die PNG-Bildgröße deutlich, ohne sichtbaren Qualitätsverlust.'],
+            ['q' => 'Wie verkleinere ich eine PNG-Bildgröße?', 'a' => 'PNG ist ein verlustfreies Format, daher bringt reines Komprimieren wenig. Um die PNG-Größe zu verkleinern, stelle WebP (behält Transparenz) oder JPG (ohne Transparenz) als Ausgabeformat ein oder setze eine maximale Breite – so wird die Datei deutlich kleiner.'],
             ['q' => 'Wie verkleinere ich ein JPG online?', 'a' => 'Wähle „Zielgröße“ oder eine Qualität von etwa 60-80 % und füge dann dein JPG hinzu; es wird sofort komprimiert. Bei Fotos reicht meist eine JPG-Qualität von 70-80 %, um die Dateigröße deutlich zu verkleinern, ohne dass du einen Unterschied siehst.'],
+            ['q' => 'Wie kann ich ein Bild auf 1 MB verkleinern?', 'a' => 'Öffne den Reiter „Zielgröße“ und gib bei Maximale Dateigröße (KB) 1024 ein, denn das Tool rechnet 1 KB als 1.024 Byte. Es sucht für jedes Bild die höchste Qualität, die unter 1 MB bleibt, und verkleinert die Abmessungen nur, wenn es nötig ist.'],
+            ['q' => 'Kann ich mehrere Bilder auf einmal verkleinern?', 'a' => 'Ja, bis zu 30 Bilder auf einmal. Danach siehst du für jedes die Größe vorher und nachher und die eingesparten Prozent.'],
+            ['q' => 'Was ist der Unterschied zwischen Bild verkleinern und Bildgröße ändern?', 'a' => 'Verkleinern (Komprimieren) senkt die Dateigröße in KB oder MB, die Pixelmaße bleiben gleich, außer du setzt eine maximale Breite. Willst du die Pixelmaße gezielt ändern, nutze unser Tool „Bildgröße ändern“.'],
         ],
         'table' => [
             'caption' => 'Welches Bildformat passt',
@@ -283,7 +301,7 @@ return [
     'image-resizer' => [
         'name' => 'Bildgröße ändern',
         'title' => 'JPG Bilder Größe ändern - Online, PNG & WebP umwandeln',
-        'description' => 'Ändere die Größe von JPG-Bildern (und PNG, WebP) online auf exakte Pixel oder prozentual, kostenlos. Deine Fotos bleiben privat und werden nie hochgeladen.',
+        'description' => 'JPG Größe ändern online: Bilder auf exakte Pixel oder Prozent skalieren und zwischen JPG, PNG und WebP umwandeln. Kostenlos, ohne Upload, privat.',
         'h1' => 'Bildgröße ändern & umwandeln',
         'tagline' => 'Skaliere auf exakte Pixel oder prozentual und wandle JPG, PNG und WebP um.',
         'keywords' => ['bildgröße ändern', 'bild skalieren', 'png in jpg', 'jpg in png', 'webp in jpg', 'bild konverter'],
@@ -320,6 +338,9 @@ return [
             ['q' => 'Kann ich WebP in JPG umwandeln?', 'a' => 'Ja. Öffne dein WebP-Bild, wähle JPG als Ausgabeformat und lade es herunter.'],
             ['q' => 'Verschlechtert das Skalieren die Qualität?', 'a' => 'Beim Verkleinern bleibt das Bild scharf. Deutlich größer als das Original kann es unscharf wirken, weil keine neuen Details entstehen können.'],
             ['q' => 'Wie groß darf das Bild maximal sein?', 'a' => 'Ausgabebilder dürfen bis zu 10.000 Pixel pro Seite haben – das können alle modernen Browser verarbeiten.'],
+            ['q' => 'Wie ändere ich die Größe eines WebP-Bildes?', 'a' => 'Öffne das WebP-Bild, gib die neue Breite und Höhe in Pixeln ein oder wähle einen Prozentwert und speichere es als WebP, JPG oder PNG. Kann dein Browser kein WebP speichern, verwendet das Tool stattdessen JPG und sagt dir das.'],
+            ['q' => 'Wie ändere ich das Format eines PNG-Bildes?', 'a' => 'Wähle JPG oder WebP als Ausgabeformat und lade das Bild herunter. Beim Umwandeln in JPG werden transparente Bereiche weiß gefüllt, bei WebP bleibt die Transparenz erhalten.'],
+            ['q' => 'Ändert sich die Dateigröße, wenn ich die Bildgröße ändere?', 'a' => 'Ja. Weniger Pixel ergeben meist eine kleinere Datei. Nach dem Ändern siehst du die neue Dateigröße und eine Vorschau, bevor du das Bild herunterlädst.'],
         ],
         'table' => [
             'caption' => 'Übliche Bildgrößen',
@@ -336,7 +357,7 @@ return [
     'jpg-to-pdf' => [
         'name' => 'JPG zu PDF',
         'title' => 'JPG in PDF zusammenfügen: mehrere Bilder in ein PDF',
-        'description' => 'Füge mehrere JPG-, PNG- oder WebP-Bilder kostenlos zu einem PDF zusammen. JPG-zu-PDF-Konverter mit Reihenfolge, A4 oder Letter. Kein Upload, kein Wasserzeichen.',
+        'description' => 'JPG in PDF umwandeln: mehrere JPG-, PNG- oder WebP-Bilder kostenlos zu einem PDF zusammenfügen, sortieren, A4 oder Letter. Kein Upload, kein Wasserzeichen.',
         'h1' => 'JPG in PDF zusammenfügen',
         'tagline' => 'Füge mehrere JPG-, PNG- und WebP-Bilder zu einer PDF-Datei zusammen.',
         'keywords' => [
@@ -380,11 +401,13 @@ return [
         'faqs' => [
             ['q' => 'Wie viele JPGs kann ich zu einem PDF zusammenfügen?', 'a' => 'Bis zu 30 Bilder auf einmal, jedes bis zu 50 MB. Füge sie hinzu, bring sie mit den Pfeilen in die gewünschte Reihenfolge, und sie werden zu einem einzigen PDF mit einem Bild pro Seite zusammengefügt. Für mehr als 30 erstellst du zwei PDFs und verbindest sie mit PDF zusammenfügen.'],
             ['q' => 'Fügt dieser JPG-zu-PDF-Konverter ein Wasserzeichen hinzu?', 'a' => 'Nein. Das PDF enthält nur deine Bilder, ohne Wasserzeichen, Logo oder zusätzliche Seiten.'],
-            ['q' => 'Kann ich auch PNG- und WebP-Bilder umwandeln, nicht nur JPG?', 'a' => 'Ja. JPG-, PNG- und WebP-Bilder werden alle unterstützt und können im selben PDF gemischt werden.'],
+            ['q' => 'Wie wandle ich ein Bild in eine PDF-Datei um, auch PNG oder WebP?', 'a' => 'Genauso wie ein JPG: JPG-, PNG- und WebP-Bilder werden alle unterstützt und können im selben PDF gemischt werden. Ein Bild ergibt eine Seite, mehrere Bilder ergeben ein mehrseitiges PDF.'],
             ['q' => 'Was bewirkt die Randeinstellung?', 'a' => 'Sie fügt Leerraum um jedes Bild auf der Seite hinzu. Wähle Kein, damit das Bild bis an den Rand reicht, oder einen größeren Rand für einen dokumentähnlicheren Look.'],
             ['q' => 'Wird die Qualität meiner Bilder verringert?', 'a' => 'JPG- und PNG-Bilder werden mit ihrer Originalqualität eingebettet. WebP-Bilder werden zuerst in PNG umgewandelt, wodurch die verlustfreie Qualität erhalten bleibt.'],
             ['q' => 'Kann ich die Seitenreihenfolge nach dem Zusammenfügen ändern?', 'a' => 'Vor dem Umwandeln ja: Nutze die Pfeile. Jede Änderung verwirft das alte Ergebnis, du klickst dann einfach erneut auf In PDF umwandeln. Um die Seiten eines bereits heruntergeladenen PDFs neu anzuordnen, nutze PDF organisieren.'],
             ['q' => 'Warum ist mein zusammengefügtes PDF so groß?', 'a' => 'JPG- und PNG-Bilder werden in Originalqualität ins PDF übernommen, die Datei ist also etwa so groß wie alle Bilder zusammen. Um sie zu verkleinern, komprimiere die Bilder vorher mit Bild komprimieren oder schicke das PDF durch PDF komprimieren, dessen Modus „Empfohlen“ die JPG-Fotos darin neu komprimiert.'],
+            ['q' => 'Wie wandle ich JPG in PDF um?', 'a' => 'Zieh deine JPG-Bilder in das Feld oben oder wähle sie aus, bring sie mit den Pfeilen in die gewünschte Reihenfolge, wähle Seitengröße (A4, Letter oder An Bild anpassen), Ausrichtung und Rand und klicke auf In PDF umwandeln. Die Datei wird direkt in deinem Browser erzeugt.'],
+            ['q' => 'Kann ich JPG kostenlos und ohne Anmeldung in PDF umwandeln?', 'a' => 'Ja. Das Tool ist kostenlos, ohne Anmeldung und ohne Wasserzeichen, und deine Bilder verlassen dein Gerät nicht.'],
         ],
     ],
 
@@ -573,6 +596,9 @@ return [
             ['q' => 'Wie viele PDFs kann ich zusammenfügen?', 'a' => 'Bis zu 50 Dateien auf einmal. Die praktische Grenze hängt vom Speicher deines Geräts ab; die meisten Geräte schaffen problemlos einige hundert Seiten.'],
             ['q' => 'Bleiben Links und Lesezeichen erhalten?', 'a' => 'Seiteninhalte, Bilder und Text bleiben exakt erhalten. Manche interaktiven Funktionen wie Lesezeichen und Formularfelder werden eventuell nicht übernommen.'],
             ['q' => 'Ist PDF zusammenfügen hier wirklich kostenlos?', 'a' => 'Ja. Es gibt keine Kosten, kein Tageslimit, kein Konto und keine Anmeldung – du kannst bis zu 50 Dateien auf einmal und beliebig oft kostenlos zusammenfügen, direkt in deinem Browser.'],
+            ['q' => 'Wie kann ich PDF-Dateien online zusammenfügen?', 'a' => 'Zieh bis zu 50 PDFs in das Feld, bring sie mit den Pfeilen in die richtige Reihenfolge und klicke auf PDF zusammenfügen. Das fertige PDF lädst du sofort herunter – ohne Upload, weil alles in deinem Browser passiert.'],
+            ['q' => 'Kann ich die Reihenfolge der Seiten ändern?', 'a' => 'Hier legst du die Reihenfolge der Dateien fest, nicht die einzelner Seiten. Einzelne Seiten sortierst du danach mit unserem Tool „PDF organisieren“.'],
+            ['q' => 'Funktioniert das auch auf dem Handy?', 'a' => 'Ja, in aktuellen mobilen Browsern. Sehr große Dateien hängen vom Arbeitsspeicher deines Geräts ab, weil die Arbeit auf dem Gerät passiert.'],
         ],
     ],
 
@@ -667,7 +693,9 @@ return [
             ],
         ],
         'faqs' => [
-            ['q' => 'Wie berechne ich mein genaues Alter?', 'a' => 'Gib dein Geburtsdatum ein, und der Rechner zeigt dein Alter in Jahren, Monaten und Tagen zum heutigen oder zu einem beliebigen anderen Datum. Er zählt zuerst volle Jahre, dann volle Monate und dann die restlichen Tage.'],
+            ['q' => 'Wie berechne ich mein Alter aus dem Geburtsdatum?', 'a' => 'Gib dein Geburtsdatum ein, und der Rechner zeigt dein Alter in Jahren, Monaten und Tagen zum heutigen oder zu einem beliebigen anderen Datum. Er zählt zuerst volle Jahre, dann volle Monate und dann die restlichen Tage, auch über Schaltjahre hinweg.'],
+            ['q' => 'Wie alt bin ich in Tagen, Wochen oder Monaten?', 'a' => 'Gib dein Geburtsdatum ein: Der Altersrechner zeigt neben Jahren, Monaten und Tagen auch die Gesamtzahl der Monate, Wochen und Tage sowie ungefähr die Stunden.'],
+            ['q' => 'An welchem Wochentag wurde ich geboren?', 'a' => 'Das zeigt der Altersrechner direkt nach Eingabe des Geburtsdatums unter deinem Alter an.'],
             ['q' => 'Kann ich das Alter an einem bestimmten Datum berechnen?', 'a' => 'Ja. Ändere das Datum bei „Alter am“, um zu sehen, wie alt jemand an diesem Tag war oder sein wird – nützlich für Schulanmeldungen und Altersvoraussetzungen bei Prüfungen.'],
             ['q' => 'Wie werden Schaltjahre behandelt?', 'a' => 'Schaltjahre werden exakt gezählt. Bei einem Geburtstag am 29. Februar wird der nächste Geburtstag in einem Nicht-Schaltjahr als 28. Februar angezeigt.'],
             ['q' => 'Warum sind die Stunden insgesamt nur ungefähr?', 'a' => 'Stunden insgesamt sind die Tage insgesamt mal 24. Der Rechner kennt deine Geburtszeit nicht und ignoriert Zeitumstellungen, daher kann der Wert um bis zu einen Tag an Stunden abweichen.'],
@@ -680,7 +708,7 @@ return [
     'percentage-calculator' => [
         'name' => 'Prozentrechner',
         'title' => 'Prozentrechner mit Formel: Prozent & Veränderung',
-        'description' => 'Kostenloser Prozentrechner, der bei jedem Ergebnis die Formel zeigt: X % von Y, wie viel Prozent X von Y ist, prozentuale Zu- oder Abnahme und mehr.',
+        'description' => 'Prozentrechner online mit Formel: X % von Y, wie viel Prozent X von Y ist und die prozentuale Veränderung zwischen zwei Zahlen berechnen. Kostenlos.',
         'h1' => 'Prozentrechner',
         'tagline' => 'Alle gängigen Prozentrechnungen an einem Ort, mit Formel.',
         'keywords' => ['prozentrechner', 'prozent berechnen', 'prozentuale veränderung berechnen', 'prozentuale zunahme berechnen', 'wie viel prozent'],
@@ -703,13 +731,21 @@ return [
                 'heading' => 'Wie lautet die Formel für einen Prozentsatz?',
                 'body' => 'X % von Y = (X / 100) x Y. X als Prozent von Y = (X / Y) x 100. Prozentuale Veränderung von A nach B = ((B - A) / |A|) x 100. Ein positives Ergebnis ist eine Zunahme, ein negatives eine Abnahme.',
             ],
+            [
+                'heading' => 'Prozentuale Veränderung zwischen zwei Zahlen berechnen (mit Beispiel)',
+                'body' => 'Die Formel lautet: (neuer Wert − alter Wert) ÷ alter Wert × 100. Steigt ein Wert von 250 auf 340, rechnest du (340 − 250) ÷ 250 × 100 = 36 % Zunahme. Fällt er von 340 zurück auf 250, ergibt (250 − 340) ÷ 340 × 100 etwa −26,5 %. Zu- und Abnahme sind also nicht symmetrisch, weil sich der Grundwert ändert. Im Rechner nutzt du dafür „Prozentuale Zu- / Abnahme“: Anfangswert und Endwert eingeben, und das Ergebnis zeigt die Zu- oder Abnahme samt Rechenweg. Ist der Anfangswert 0, ist keine prozentuale Veränderung definiert, und der Rechner weist dich darauf hin.',
+            ],
         ],
         'faqs' => [
             ['q' => 'Wie berechne ich den Prozentsatz einer Zahl?', 'a' => 'Teile den Prozentsatz durch 100 und multipliziere mit der Zahl. Beispiel: 15 % von 200 = 0,15 x 200 = 30.'],
-            ['q' => 'Wie berechne ich eine prozentuale Zunahme?', 'a' => 'Ziehe den alten Wert vom neuen ab, teile durch den alten Wert und multipliziere mit 100. Von 80 auf 100: (100 - 80) / 80 x 100 = 25 %.'],
+            ['q' => 'Wie berechne ich die prozentuale Veränderung zwischen zwei Zahlen?', 'a' => 'Ziehe den alten Wert vom neuen ab, teile durch den alten Wert und multipliziere mit 100. Von 250 auf 340: (340 - 250) / 250 x 100 = 36 %. Ein positives Ergebnis ist eine Zunahme.'],
+            ['q' => 'Wie berechne ich eine prozentuale Abnahme?', 'a' => 'Mit derselben Formel – das Ergebnis ist dann negativ. Von 340 auf 250: (250 - 340) / 340 x 100 = etwa -26,5 %.'],
             ['q' => 'Wie berechne ich einen Rabatt?', 'a' => 'Nutze „Eine Zahl um einen Prozentsatz verringern“. Bei 20 % Rabatt auf 50 € beträgt der Preis 50 € x (1 - 0,20) = 40 €.'],
             ['q' => 'Ist ein „Prozentrechner“ dasselbe wie ein „Prozentsatzrechner“?', 'a' => 'Ja, beide Begriffe meinen dasselbe Werkzeug. Es berechnet die Zunahme, Abnahme oder prozentuale Veränderung zwischen zwei beliebigen Zahlen, direkt im Browser und ohne Download.'],
             ['q' => 'Kann ich Prozente online berechnen, ohne etwas herunterzuladen?', 'a' => 'Ja. Alles läuft in deinem Browser: Gib die Zahlen ein, und das Ergebnis samt Formel erscheint sofort, ohne App, Anmeldung oder Datei-Upload.'],
+            ['q' => 'Was ist der Unterschied zwischen Prozent und Prozentpunkten?', 'a' => 'Steigt ein Wert von 20 % auf 25 %, ist das ein Plus von 5 Prozentpunkten, aber eine Steigerung um 25 %, weil 5 ein Viertel von 20 ist.'],
+            ['q' => 'Wie berechne ich das prozentuale Wachstum über mehrere Jahre?', 'a' => 'Mit der durchschnittlichen jährlichen Wachstumsrate: (Endwert / Anfangswert)^(1 / Jahre) - 1. Von 100 auf 150 in 3 Jahren sind das etwa 14,5 % pro Jahr. Der Rechner selbst berechnet einstufige Veränderungen, für mehrere Jahre nutzt du diese Formel.'],
+            ['q' => 'Welche Formel hat der Prozentrechner?', 'a' => 'Er zeigt bei jeder Rechenart den Rechenweg mit deinen Zahlen direkt unter dem Ergebnis. Dahinter stehen diese Formeln: Prozentwert = Prozentsatz / 100 x Grundwert, Prozentsatz = Prozentwert / Grundwert x 100 und Veränderung = (neu - alt) / |alt| x 100.'],
         ],
         'table' => [
             'caption' => 'Prozentformeln mit Beispielen',
@@ -898,12 +934,12 @@ return [
 
     'what-is-my-ip' => [
         'name' => 'Wie ist meine IP',
-        'title' => 'Wie ist meine IP-Adresse? Öffentliche IP sofort prüfen',
-        'description' => 'Sieh sofort deine öffentliche IP-Adresse, ob sie IPv4 oder IPv6 ist, sowie Browser, Betriebssystem, Bildschirmgröße und Zeitzone. Kostenlose IP-Abfrage.',
-        'h1' => 'Wie ist meine IP-Adresse?',
+        'title' => 'Wie ist meine IP? Öffentliche IPv4-Adresse sofort prüfen',
+        'description' => 'Was ist meine IP? Sieh sofort deine öffentliche IPv4-Adresse, kopiere sie per Klick und prüfe, ob dein VPN wirkt. Kostenlos und ohne Anmeldung.',
+        'h1' => 'Was ist meine öffentliche IP-Adresse?',
         'tagline' => 'Deine öffentliche IP-Adresse und Browserdetails – sofort.',
-        'keywords' => ['wie ist meine ip', 'meine ip adresse', 'ip adresse abfragen', 'meine ip prüfen', 'was ist meine ip adresse'],
-        'intro' => 'Eine IP-Adresse ist die Nummer, die deine Verbindung im Internet kennzeichnet; deine öffentliche IP ist die, die Websites sehen. Deine öffentliche IP-Adresse ist die Adresse, die Websites sehen, wenn du dich mit dem Internet verbindest. Sie wird von deinem Internetanbieter vergeben oder von deinem VPN, falls du eins nutzt. Unten siehst du deine aktuelle IP-Adresse, ob sie IPv4 oder IPv6 ist, und Details zu deinem Browser und Gerät.',
+        'keywords' => ['wie ist meine ip', 'was ist meine ip', 'meine öffentliche ip', 'öffentliche ip adresse herausfinden', 'wie ist meine ipv4 adresse', 'ip adresse prüfen', 'meine ip adresse'],
+        'intro' => 'Deine öffentliche IP-Adresse steht oben auf dieser Seite – das ist die Adresse, mit der dein Anschluss im Internet erscheint. So kannst du deine IP sofort herausfinden, ganz gleich, ob du „Wie ist meine IP?“ oder „Was ist meine IP?“ fragst. Vergeben wird sie von deinem Internetanbieter oder von deinem VPN, falls du eins nutzt. Unter der Adresse siehst du außerdem Details zu deinem Browser und Gerät.',
         'steps' => [
             'Diese Seite öffnen – deine IP-Adresse steht ganz oben.',
             'Auf Kopieren klicken, um sie in die Zwischenablage zu kopieren.',
@@ -918,12 +954,20 @@ return [
         ],
         'content' => [
             [
-                'heading' => 'IPv4 oder IPv6',
-                'body' => 'IPv4-Adressen sehen aus wie 203.0.113.42, und es gibt nur etwa 4,3 Milliarden davon. IPv6-Adressen wie 2001:db8::1 wurden eingeführt, weil die IPv4-Adressen ausgingen. Viele Verbindungen unterstützen heute beides.',
+                'heading' => 'Öffentliche IP-Adresse herausfinden – so geht\'s',
+                'body' => 'Öffne diese Seite: Deine öffentliche IP-Adresse steht sofort ganz oben, ohne Anmeldung und ohne Download. Mit IP kopieren legst du sie per Klick in die Zwischenablage. Hast du gerade ein VPN ein- oder ausgeschaltet, klicke auf Aktualisieren – das Tool fragt die Adresse dann neu ab.',
             ],
             [
-                'heading' => 'Was ist meine öffentliche IP-Adresse?',
-                'body' => 'Deine öffentliche IP-Adresse ist die oben auf dieser Seite angezeigte Adresse – die Nummer, die jede Website und jeder Dienst sieht, wenn du dich verbindest, und die sich dein ganzes Heimnetzwerk teilt. Dein Router vergibt dann jedem Gerät in diesem Netzwerk seine eigene private IP-Adresse (oft 192.168.x.x), die vom Internet aus nicht sichtbar ist.',
+                'heading' => 'Wie ist meine IPv4-Adresse? IPv4 und IPv6 erklärt',
+                'body' => 'IPv4-Adressen bestehen aus vier Zahlen von 0 bis 255, getrennt durch Punkte, etwa 203.0.113.42, und es gibt nur etwa 4,3 Milliarden davon. IPv6-Adressen wie 2001:db8::1 sind länger und wurden eingeführt, weil die IPv4-Adressen knapp wurden. Dieses Tool zeigt genau die Adresse, über die dein Gerät diese Seite gerade abgerufen hat. Weil diese Website nur über IPv4 erreichbar ist, siehst du hier deine öffentliche IPv4-Adresse, auch wenn dein Anschluss zusätzlich IPv6 unterstützt.',
+            ],
+            [
+                'heading' => 'Öffentliche und private IP-Adresse: der Unterschied',
+                'body' => 'Deine öffentliche IP-Adresse ist die oben angezeigte Adresse – die Nummer, die jede Website und jeder Dienst sieht, wenn du dich verbindest, und die sich dein ganzes Heimnetzwerk teilt. Dein Router vergibt jedem Gerät in diesem Netzwerk zusätzlich eine eigene private IP-Adresse (oft 192.168.x.x), die vom Internet aus nicht sichtbar ist. Dieses Tool zeigt nur die öffentliche Adresse; die private findest du in den Netzwerkeinstellungen deines Geräts.',
+            ],
+            [
+                'heading' => 'IP-Adresse prüfen und testen (z. B. mit VPN)',
+                'body' => 'Notiere die angezeigte Adresse, schalte dein VPN ein und klicke auf Aktualisieren. Steht danach eine andere Adresse da, läuft dein Datenverkehr über das VPN; bleibt sie gleich, ist es nicht aktiv. Schaltest du das VPN wieder aus und aktualisierst erneut, kommt deine eigene Adresse zurück. Genauso prüfst du, ob sich deine IP nach einem Neustart des Routers geändert hat.',
             ],
         ],
         'faqs' => [
@@ -931,13 +975,19 @@ return [
             ['q' => 'Warum ändert sich meine IP-Adresse?', 'a' => 'Die meisten Internetanbieter vergeben dynamische IP-Adressen, die sich beim Neustart des Routers ändern können. IPs im Mobilfunk ändern sich häufig.'],
             ['q' => 'Wie kann ich meine IP-Adresse verbergen?', 'a' => 'Nutze ein VPN oder ein Anonymisierungsnetzwerk wie Tor. Websites sehen dann die IP-Adresse des VPN statt deiner.'],
             ['q' => 'Speichert ihr meine IP-Adresse?', 'a' => 'Nein. Dieses Tool zeigt dir deine IP-Adresse nur an und speichert sie in keiner Datenbank.'],
-            ['q' => 'Wie finde ich meine öffentliche IP-Adresse heraus?', 'a' => 'Öffne einfach diese Seite – deine öffentliche IP-Adresse wird oben sofort angezeigt, ganz ohne Anmeldung, Download oder zusätzlichen Klick. Du siehst sofort, ob es eine IPv4-Adresse (z. B. 203.0.113.42) oder eine IPv6-Adresse ist – genau die Nummer, die andere Websites und Dienste beim Verbinden sehen.'],
+            ['q' => 'Wie finde ich meine öffentliche IP-Adresse heraus?', 'a' => 'Öffne einfach diese Seite – deine öffentliche IP-Adresse wird oben sofort angezeigt, ganz ohne Anmeldung, Download oder zusätzlichen Klick. So kannst du deine öffentliche IP herausfinden, egal ob am PC oder am Handy: Es ist genau die Nummer, die andere Websites und Dienste beim Verbinden sehen, zum Beispiel 203.0.113.42.'],
+            ['q' => 'Was ist meine öffentliche IPv4-Adresse?', 'a' => 'Das ist die Adresse, mit der dein Router oder Mobilfunkanschluss im Internet erscheint, zum Beispiel 203.0.113.42. Sie steht oben auf dieser Seite. Auch wenn dein Anschluss zusätzlich IPv6 unterstützt, zeigt diese Seite deine IPv4-Adresse, weil sie nur über IPv4 erreichbar ist.'],
+            ['q' => 'Wie ist meine IP und mein Standort?', 'a' => 'Dieses Tool zeigt deine öffentliche IP-Adresse, aber keinen Standort und keine Karte. Aus einer IP-Adresse lassen sich höchstens ungefähr Land, Region oder Internetanbieter ableiten, oft ungenau – bei VPN oder Mobilfunk liegt der angezeigte Ort häufig weit daneben. Zusätzlich siehst du hier die Zeitzone deines Geräts.'],
+            ['q' => 'Was ist der Unterschied zwischen öffentlicher und privater IP-Adresse?', 'a' => 'Die öffentliche IP-Adresse vergibt dein Internetanbieter – sie sehen Websites. Private Adressen wie 192.168.x.x, 10.x.x.x oder 172.16.x.x bis 172.31.x.x gelten nur in deinem Heimnetz und werden vom Router vergeben. Dieses Tool zeigt die öffentliche Adresse.'],
+            ['q' => 'Wie kann ich meine IP-Adresse prüfen oder testen, ob mein VPN funktioniert?', 'a' => 'Notiere die angezeigte Adresse, schalte das VPN ein und klicke auf Aktualisieren. Ändert sich die IP, läuft dein Datenverkehr über das VPN. Bleibt sie gleich, ist das VPN nicht aktiv.'],
+            ['q' => 'Warum ist meine IP-Adresse auf dem Handy anders als am PC?', 'a' => 'Im WLAN nutzt du die IP-Adresse deines Routers, im Mobilfunknetz die deines Mobilfunkanbieters. Deshalb zeigt dieselbe Seite je nach Verbindung eine andere öffentliche IP-Adresse.'],
+            ['q' => 'Ist „Wie ist meine IP“ dasselbe wie „Was ist meine IP“?', 'a' => 'Ja. Beide Fragen meinen deine öffentliche IP-Adresse, also die Adresse, die Websites beim Verbinden sehen. Diese Seite zeigt sie sofort an.'],
         ],
     ],
 
     'dice-roller' => [
         'name' => 'Würfel',
-        'title' => 'Onlinewürfel: virtuelle Würfel werfen (D6, D20 und mehr)',
+        'title' => 'Online Würfel werfen: virtueller Würfel (D6, D20 & mehr)',
         'description' => 'Onlinewürfel zum Werfen: 1 bis 10 virtuelle Würfel online, D4 bis D100. Faire Zufallsergebnisse mit 3D-Animation, Summe und Wurfverlauf. Kostenlos.',
         'h1' => 'Online-Würfel',
         'tagline' => 'Wirf bis zu 10 Würfel, von D4 bis D100, mit 3D-Animation und Summe.',
@@ -967,7 +1017,8 @@ return [
             ],
         ],
         'faqs' => [
-            ['q' => 'Wie viele Würfel kann ich auf einmal werfen?', 'a' => 'Du kannst 1 bis 10 Würfel gleichzeitig werfen. Der Würfel zeigt jeden Wert und rechnet die Summe für dich aus.'],
+            ['q' => 'Kann ich mit zwei oder mehr Würfeln gleichzeitig würfeln?', 'a' => 'Ja. Du kannst 1 bis 10 Würfel gleichzeitig werfen, für zwei Würfel stellst du die Anzahl einfach auf 2. Das Tool zeigt jeden Wert und rechnet die Summe für dich aus.'],
+            ['q' => 'Was bedeuten W6 und W20?', 'a' => 'Im Deutschen steht W für Würfel: Ein W6 ist ein normaler Sechserwürfel, ein W20 hat 20 Seiten. Das ist dasselbe wie D6 und D20 – wähle einfach den passenden Würfeltyp.'],
             ['q' => 'Sind die Würfe wirklich zufällig?', 'a' => 'Ja. Die Würfe nutzen den kryptografisch sicheren Zufallszahlengenerator deines Browsers, jede Seite ist also gleich wahrscheinlich und die Ergebnisse sind nicht vorhersehbar.'],
             ['q' => 'Kann ich einen D20 für Dungeons & Dragons werfen?', 'a' => 'Ja. Wähle D20 bei den Würfeltypen und tippe auf Würfeln. D4, D8, D10, D12 und D100 gibt es auch.'],
             ['q' => 'Kann ich ohne Animation würfeln?', 'a' => 'Wenn dein Gerät auf „Bewegung reduzieren“ eingestellt ist, erscheinen die Ergebnisse sofort ohne Rollanimation.'],
@@ -988,9 +1039,9 @@ return [
 
     'coin-flip' => [
         'name' => 'Münzwurf',
-        'title' => 'Münzwurf-Generator: Kopf oder Zahl online werfen',
-        'description' => 'Münzwurf-Generator für Kopf oder Zahl: wirf online eine realistische 3D-Münze oder bis zu 100 auf einmal, mit Summen und Serien. Kostenlos, ohne Anmeldung.',
-        'h1' => 'Münze werfen',
+        'title' => 'Münzwurf online: Münze werfen – Kopf oder Zahl',
+        'description' => 'Münzwurf-Generator: Münze online werfen, Kopf oder Zahl mit 3D-Animation – oder bis zu 100 Münzen auf einmal, mit Summen und Serien. Kostenlos.',
+        'h1' => 'Münzwurf online – Münze werfen',
         'tagline' => 'Kopf oder Zahl? Wirf eine 3D-Münze oder bis zu 100 auf einmal und sieh die Statistik.',
         'keywords' => ['münzwurf', 'münze werfen', 'kopf oder zahl', 'münze werfen online', 'virtuelle münze'],
         'intro' => 'Ein Münzwurf ist eine schnelle Art, zufällig zwischen zwei Optionen zu wählen: Kopf oder Zahl, jeweils mit 50 % Chance. Triff eine Entscheidung, bestimme, wer anfängt, oder mach ein Wahrscheinlichkeitsexperiment mit diesem kostenlosen Online-Münzwurf. Wirf eine einzelne 3D-Münze, die durch die Luft wirbelt, oder bis zu 100 Münzen auf einmal. Das Tool zählt Kopf und Zahl mit, zeigt die prozentuale Verteilung und deine aktuelle Serie.',
@@ -1018,7 +1069,8 @@ return [
             ],
         ],
         'faqs' => [
-            ['q' => 'Ist dieser Münzwurf fair?', 'a' => 'Ja. Jeder Wurf hat genau 50 % Chance auf Kopf und 50 % auf Zahl, erzeugt durch den kryptografisch sicheren Zufall deines Browsers.'],
+            ['q' => 'Ist dieser Münzwurf fair – wie wahrscheinlich ist Kopf oder Zahl?', 'a' => 'Ja. Jeder Wurf hat genau 50 % Chance auf Kopf und 50 % auf Zahl, erzeugt durch den kryptografisch sicheren Zufall deines Browsers. Frühere Würfe beeinflussen den nächsten nicht.'],
+            ['q' => 'Wie werfe ich online eine Münze?', 'a' => 'Tippe auf die Münze oder auf Münze werfen, oder drücke F, die Leertaste oder Enter. Die Münze dreht sich und landet auf Kopf oder Zahl.'],
             ['q' => 'Kann ich mehr als eine Münze werfen?', 'a' => 'Ja. Wähle 2, 5, 10, 25 oder 100 Münzen – alle werden auf einmal geworfen, mit Zählung von Kopf und Zahl.'],
             ['q' => 'Warum kam fünfmal hintereinander Kopf?', 'a' => 'Serien gehören zum Zufall dazu. Die Chance auf fünfmal Kopf in Folge liegt bei etwa 3 %, das passiert bei vielen Würfen also regelmäßig.'],
             ['q' => 'Ist das ein Münzwurf-Simulator?', 'a' => 'Ja, das ist ein kostenloser Münzwurf-Simulator: Er bildet einen echten Wurf mit echter 50/50-Wahrscheinlichkeit nach, zeigt eine realistische 3D-Animation und lässt dich bis zu 100 Münzen gleichzeitig werfen.'],
@@ -1275,7 +1327,7 @@ return [
     'sleep-calculator' => [
         'name' => 'Schlafrechner',
         'title' => 'Schlafrechner: beste Zeit zum Schlafen und Aufwachen',
-        'description' => 'Finde die beste Zeit zum Schlafengehen oder Aufwachen nach 90-Minuten-Schlafzyklen oder zähle deine Schlafstunden. Erholt aufwachen.',
+        'description' => 'Schlafrechner: Finde die beste Zeit zum Schlafengehen oder Aufwachen nach 90-Minuten-Schlafzyklen, mit Einschlafzeit und Schlafstunden-Zähler. Kostenlos.',
         'h1' => 'Schlafrechner',
         'tagline' => 'Finde die beste Schlafens- oder Aufwachzeit und zähle deine geschlafenen Stunden.',
         'keywords' => ['schlafrechner', 'schlafzähler', 'wann schlafen gehen', 'schlafzyklus rechner', 'wann sollte ich ins bett gehen', 'stunden schlaf'],
@@ -1309,6 +1361,8 @@ return [
             ['q' => 'Warum bin ich nach 8 Stunden Schlaf müde?', 'a' => 'Wenn dein Wecker im Tiefschlaf klingelt, kannst du dich selbst nach einer langen Nacht benommen fühlen. Den Wecker aufs Ende eines Zyklus zu stellen und feste Schlafzeiten einzuhalten, hilft oft.'],
             ['q' => 'Wie berechnet der Schlafzähler die geschlafenen Stunden?', 'a' => 'Wähle „Geschlafene Stunden“ und gib ein, wann du ins Bett gegangen und wann du aufgewacht bist. Er rechnet über Mitternacht hinweg, zieht die Einschlafzeit ab und vergleicht das Ergebnis mit den 7-9 Stunden, die Erwachsene brauchen.'],
             ['q' => 'Ist dieser Schlafrechner eine medizinische Beratung?', 'a' => 'Nein. Er ist eine allgemeine Orientierung auf Basis durchschnittlicher Schlafzyklen. Wenn du regelmäßig schlecht schläfst, sprich mit einer Ärztin oder einem Arzt.'],
+            ['q' => 'Wie funktioniert ein Schlafzyklus-Rechner?', 'a' => 'Er rechnet von deiner Aufwach- oder Schlafenszeit in Schritten von 90 Minuten zurück oder vorwärts und berücksichtigt die Zeit, die du zum Einschlafen brauchst (standardmäßig 15 Minuten). So wachst du eher am Ende eines Zyklus auf.'],
+            ['q' => 'Wie viele Schlafzyklen brauche ich pro Nacht?', 'a' => 'Die meisten Erwachsenen brauchen 7 bis 9 Stunden Schlaf, das sind etwa 5 bis 6 Zyklen von je rund 90 Minuten.'],
         ],
         'table' => [
             'caption' => 'Schlafenszeiten für übliche Aufwachzeiten (15 Minuten zum Einschlafen)',
@@ -1694,9 +1748,9 @@ return [
     'broken-link-checker' => [
         'name' => 'Broken-Link-Checker',
         'title' => 'Broken-Link-Checker kostenlos: tote Links finden',
-        'description' => 'Kostenloser Broken-Link-Checker: Finden Sie 404-Fehler, tote Links, defekte Bilder und Weiterleitungen auf jeder Webseite und exportieren Sie sie als CSV.',
+        'description' => 'Kostenloser Broken-Link-Checker: Finde 404-Fehler, tote Links, defekte Bilder und Weiterleitungen auf jeder Webseite und exportiere sie als CSV.',
         'h1' => 'Broken-Link-Checker',
-        'tagline' => 'Finden Sie tote Links, 404-Fehler und Weiterleitungen auf jeder Seite.',
+        'tagline' => 'Finde tote Links, 404-Fehler und Weiterleitungen auf jeder Seite.',
         'keywords' => [
             'broken link checker',
             'tote links finden',
@@ -1705,11 +1759,11 @@ return [
             '404 fehler finden',
             'kaputte links finden',
         ],
-        'intro' => 'Ein Broken-Link-Checker findet Links auf einer Webseite, die nicht mehr funktionieren, etwa 404-Fehler („Seite nicht gefunden“), gelöschte Bilder oder abgelaufene Domains. Geben Sie eine Seitenadresse ein: Das Tool prüft jeden Link und jedes Bild (bis zu 300), zeigt, welche defekt sind, welche weiterleiten und welche funktionieren, und Sie können die Ergebnisse als CSV-Datei herunterladen.',
+        'intro' => 'Ein Broken-Link-Checker findet Links auf einer Webseite, die nicht mehr funktionieren, etwa 404-Fehler („Seite nicht gefunden“), gelöschte Bilder oder abgelaufene Domains. Gib eine Seitenadresse ein: Das Tool prüft jeden Link und jedes Bild (bis zu 300), zeigt, welche defekt sind, welche weiterleiten und welche funktionieren, und du kannst die Ergebnisse als CSV-Datei herunterladen.',
         'steps' => [
-            'Geben Sie die Adresse der Seite ein, die Sie prüfen möchten, zum Beispiel example.com/blog.',
-            'Klicken Sie auf Links prüfen; die Ergebnisse erscheinen, sobald jede Gruppe von Links getestet ist.',
-            'Korrigieren oder entfernen Sie die defekten Links unter Probleme und aktualisieren Sie Links mit Weiterleitung.',
+            'Gib die Adresse der Seite ein, die du prüfen möchtest, zum Beispiel example.com/blog.',
+            'Klicke auf Links prüfen; die Ergebnisse erscheinen, sobald jede Gruppe von Links getestet ist.',
+            'Korrigiere oder entferne die defekten Links unter Probleme und aktualisiere Links mit Weiterleitung.',
         ],
         'features' => [
             'Prüft alle Links und Bilder einer Seite (bis zu 300)',
@@ -1724,21 +1778,21 @@ return [
             ],
             [
                 'heading' => 'Was bedeuten die Ergebnisse?',
-                'body' => 'OK heißt, der Link funktioniert. Weiterleitung heißt, er funktioniert, führt aber über eine oder mehrere Weiterleitungen; die Zieladresse direkt zu verlinken ist für Besucher schneller. Defekt heißt, die Seite antwortete mit einem Fehler wie 404 oder 500 oder die Domain existiert nicht mehr. Blockiert heißt, die Website lehnte die automatische Prüfung ab (Status 401, 403 oder 429) – öffnen Sie den Link selbst, um ihn zu prüfen.',
+                'body' => 'OK heißt, der Link funktioniert. Weiterleitung heißt, er funktioniert, führt aber über eine oder mehrere Weiterleitungen; die Zieladresse direkt zu verlinken ist für Besucher schneller. Defekt heißt, die Seite antwortete mit einem Fehler wie 404 oder 500 oder die Domain existiert nicht mehr. Blockiert heißt, die Website lehnte die automatische Prüfung ab (Status 401, 403 oder 429) – öffne den Link selbst, um ihn zu prüfen.',
             ],
         ],
         'faqs' => [
             [
-                'q' => 'Wie finde ich defekte Links auf meiner Website?',
-                'a' => 'Geben Sie oben eine Seitenadresse ein und klicken Sie auf Links prüfen. Wiederholen Sie das für Ihre wichtigsten Seiten wie Startseite, Menüs und beliebte Artikel.',
+                'q' => 'Wie finde ich tote oder defekte Links auf meiner Website?',
+                'a' => 'Gib die Adresse einer Seite ein und klicke auf Links prüfen: Das Tool testet bis zu 300 Links und Bilder auf dieser Seite und zeigt tote Links, 404-Fehler und Weiterleitungen. Wiederhole das für deine wichtigsten Seiten wie Startseite, Menüs und beliebte Artikel.',
             ],
             [
                 'q' => 'Wird die ganze Website geprüft?',
-                'a' => 'Geprüft werden alle Links und Bilder der eingegebenen Seite, bis zu 300. Für andere Seiten geben Sie deren Adressen einzeln ein.',
+                'a' => 'Geprüft werden alle Links und Bilder der eingegebenen Seite, bis zu 300. Für andere Seiten gibst du deren Adressen einzeln ein.',
             ],
             [
                 'q' => 'Warum sind manche Links als Blockiert markiert?',
-                'a' => 'Manche Websites lehnen automatische Anfragen ab oder verlangen eine Anmeldung und antworten mit Status 401, 403 oder 429. Der Link kann in einem normalen Browser trotzdem funktionieren – öffnen Sie ihn zur Kontrolle.',
+                'a' => 'Manche Websites lehnen automatische Anfragen ab oder verlangen eine Anmeldung und antworten mit Status 401, 403 oder 429. Der Link kann in einem normalen Browser trotzdem funktionieren – öffne ihn zur Kontrolle.',
             ],
             [
                 'q' => 'Werden die Seite oder meine Ergebnisse gespeichert?',
@@ -1896,7 +1950,7 @@ return [
             'domain-abfrage',
             'rdap abfrage',
         ],
-        'intro' => 'Eine Domainalter-Prüfung fragt den offiziellen Registrierungseintrag eines Domainnamens ab, um genau zu zeigen, wie alt er ist. Gib bis zu 20 Domains ein, um für jede das Erstellungsdatum, das genaue Alter in Jahren, Monaten und Tagen, das Ablaufdatum, die letzte Aktualisierung, den Registrar und die Nameserver zu sehen – live von RDAP, dem kostenlosen, schlüssellosen Nachfolger von WHOIS. Das ist nützlich, um eine Website vor dem Kauf oder einer Verlinkung zu recherchieren, zu prüfen, wie lange ein Unternehmen schon online ist, und die Verlängerungstermine der eigenen Domains im Blick zu behalten.',
+        'intro' => 'Eine Domainalter-Prüfung fragt den offiziellen Registrierungseintrag eines Domainnamens ab, um genau zu zeigen, wie alt er ist – so kannst du das Domain-Alter prüfen, ohne WHOIS-Texte zu lesen. Gib bis zu 20 Domains ein, um für jede das Erstellungsdatum, das genaue Alter in Jahren, Monaten und Tagen, das Ablaufdatum, die letzte Aktualisierung, den Registrar und die Nameserver zu sehen – live von RDAP, dem kostenlosen, schlüssellosen Nachfolger von WHOIS. Das ist nützlich, um eine Website vor dem Kauf oder einer Verlinkung zu recherchieren, zu prüfen, wie lange ein Unternehmen schon online ist, und die Verlängerungstermine der eigenen Domains im Blick zu behalten.',
         'steps' => [
             'Gib bis zu 20 Domains oder Seitenadressen ein, eine pro Zeile.',
             'Klicke auf Domainalter prüfen.',
@@ -1920,8 +1974,8 @@ return [
         ],
         'faqs' => [
             [
-                'q' => 'Wie kann ich prüfen, wie alt eine Domain ist?',
-                'a' => 'Gib die Domain oben ein und klicke auf Domainalter prüfen. Das genaue Registrierungsdatum und das Alter in Jahren, Monaten und Tagen stammen direkt aus dem RDAP-Eintrag der Domain.',
+                'q' => 'Wie alt ist eine Domain und wie kann ich das prüfen?',
+                'a' => 'Gib die Domain oben ein und klicke auf Domainalter prüfen. Das Tool zeigt das genaue Alter in Jahren, Monaten und Tagen, gerechnet ab dem Erstellungsdatum im RDAP-Eintrag der Registry.',
             ],
             [
                 'q' => 'Sind das dieselben Informationen wie bei einer WHOIS-Abfrage?',
@@ -1933,11 +1987,23 @@ return [
             ],
             [
                 'q' => 'Kann ich jede Domainendung prüfen?',
-                'a' => 'Die meisten gängigen Endungen (darunter .com, .net, .org, .io, .co.uk, .de und .pl) haben RDAP-Einträge. Eine kleine Zahl kleinerer Länderendungen hat RDAP noch nicht eingeführt; diese werden als nicht unterstützt angezeigt, statt geraten zu werden.',
+                'a' => 'Die meisten gängigen Endungen (darunter .com, .net, .org, .io, .co.uk und .pl) haben RDAP-Einträge mit Erstellungsdatum. Für .de-Domains veröffentlicht die Registry kein Erstellungsdatum, deshalb kann das Tool für sie kein Alter anzeigen. Eine kleine Zahl kleinerer Länderendungen hat RDAP noch nicht eingeführt; diese werden als nicht unterstützt angezeigt, statt geraten zu werden.',
             ],
             [
                 'q' => 'Wann wurde eine Domain registriert?',
-                'a' => 'Der RDAP-Eintrag eines Domainnamens speichert ein Erstellungsdatum: den genauen Tag, an dem dieser Domainname zum ersten Mal registriert wurde, auch wenn er seitdem den Besitzer gewechselt hat. Gib die Domain oben ein, und die Prüfung liest dieses Datum direkt aus der Registry aus, zusammen mit dem Alter in Jahren, Monaten und Tagen.',
+                'a' => 'Der RDAP-Eintrag eines Domainnamens speichert ein Erstellungsdatum: den Tag, an dem die aktuelle Registrierung angelegt wurde. Gib die Domain oben ein, und die Prüfung liest dieses Datum direkt aus der Registry aus, zusammen mit dem Alter in Jahren, Monaten und Tagen.',
+            ],
+            [
+                'q' => 'Bleibt das Domainalter bei einem Inhaberwechsel erhalten?',
+                'a' => 'Ja, bei einem Verkauf oder Registrarwechsel bleibt das ursprüngliche Erstellungsdatum in der Regel bestehen. Wurde eine Domain gelöscht und neu registriert, beginnt das Datum meist neu.',
+            ],
+            [
+                'q' => 'Kann ich das Alter mehrerer Domains auf einmal prüfen?',
+                'a' => 'Ja. Füge bis zu 20 Domains ein, eine pro Zeile, und erhalte für jede Alter, Erstellungs-, Ablauf- und Aktualisierungsdatum – mit kostenlosem CSV-Export.',
+            ],
+            [
+                'q' => 'Ist das Domainalter ein Google-Rankingfaktor?',
+                'a' => 'Google hat erklärt, dass das Domainalter allein kein Rankingfaktor ist. Ältere Domains ranken oft besser, weil sie mehr Zeit hatten, Inhalte und Links aufzubauen.',
             ],
         ],
         'table' => [
