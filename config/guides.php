@@ -387,10 +387,10 @@ return [
         'tool' => 'word-counter',
         'related' => ['readability-checker', 'case-converter', 'ai-content-detector'],
         'published' => '2026-10-10',
-        'updated' => '2026-11-10',
+        'updated' => '2026-11-16',
         'sections' => [
             [
-                'heading' => 'The quick answer',
+                'heading' => 'How many words make a page? The quick answer',
                 'paragraphs' => [
                     'With a 12-point font such as Times New Roman or Arial and 1-inch margins, a double-spaced page holds about 250 to 300 words, and a single-spaced page about 500 to 600 words. These are the figures most schools and publishers have in mind when they talk about "pages".',
                 ],
@@ -402,6 +402,59 @@ return [
                         ['3 pages', '750-900 words', '1,500-1,800 words'],
                         ['5 pages', '1,250-1,500 words', '2,500-3,000 words'],
                         ['10 pages', '2,500-3,000 words', '5,000-6,000 words'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'How many words is one page double-spaced?',
+                'paragraphs' => [
+                    'About 250 to 300 words, with a 12-point font such as Times New Roman or Arial and 1-inch margins. If you need one number for planning, use 275.',
+                    'Double spacing leaves the height of a whole extra line between each line of text, so only about 23 lines fit on a US Letter page and about 25 on an A4 page. That is why a double-spaced page holds half as much as a single-spaced one, and why schools usually ask for double spacing: it leaves room for the marker\'s comments.',
+                ],
+            ],
+            [
+                'heading' => 'How many words is a single-spaced page?',
+                'paragraphs' => [
+                    'About 500 to 600 words with the same font, size and margins. That is twice the double-spaced figure, because twice as many lines fit on the page.',
+                    'Letters, reports, cover letters and most business documents are single-spaced, so when a job application or a client asks for "one page", this is usually the figure that applies.',
+                ],
+            ],
+            [
+                'heading' => 'How many words fit on an A4 page?',
+                'paragraphs' => [
+                    'About the same as on a US Letter page: roughly 250 to 300 words double-spaced and 500 to 600 single-spaced, with 12-point text and 2.5 cm (1-inch) margins. In our test further down, A4 held about 5% more, because it is taller (297 mm against 279 mm) even though it is slightly narrower (210 mm against 216 mm).',
+                    'A4 is the standard paper size in the UK, Europe, Australia and most of the world; US Letter (8.5 x 11 inches) is used in the United States and Canada. A page count set on one size works out practically the same on the other, so there is no need to adjust it.',
+                ],
+            ],
+            [
+                'heading' => 'How many words is a page in Microsoft Word?',
+                'paragraphs' => [
+                    'A Word page holds the same as any page with the same settings: about 250 to 300 words double-spaced and 500 to 600 single-spaced in 12-point Times New Roman with 1-inch margins. Word\'s own default settings are different, so a new blank document will not match an essay format until you change them.',
+                    'Recent versions of Word start new documents with an 11-point font (Aptos in current Microsoft 365, Calibri in older versions), line spacing a little above single and a gap after each paragraph. To set up a standard essay page, select all the text, choose Times New Roman at 12 points, set line spacing to 2.0 in the Paragraph settings, and check that the margins are Normal (1 inch, or 2.54 cm).',
+                    'To see the real figure for your own document, look at the status bar at the bottom of the window: it shows the page you are on and the word count, and if you select the text on one page it shows how many of the words are selected. Review > Word Count lists pages, words, characters, paragraphs and lines, with a tick box for including text boxes, footnotes and endnotes. In Google Docs the same figures are under Tools > Word count.',
+                ],
+            ],
+            [
+                'heading' => 'Does font size change how many words fit on a page?',
+                'paragraphs' => [
+                    'Yes, a lot. Smaller text fits more words on each line and more lines on each page, so the count changes faster than the font size. In our test, a double-spaced US Letter page of Times New Roman held about 340 words at 12 points, 390 at 11 points, 480 at 10 points and 260 at 14 points.',
+                    'The font matters less, but it shows: Arial is wider than Times New Roman, so at the same size it fitted about 8% fewer words. That is why a teacher who sets a page count usually names the font and size as well.',
+                ],
+            ],
+            [
+                'heading' => 'Our test: words per page of solid text',
+                'paragraphs' => [
+                    'To check the usual estimates, we laid out about 22,500 words of plain English prose (the paragraphs of this site\'s guides) on pages with 1-inch margins and a half-inch indent at the start of each paragraph. We used the published character widths of Times and of Helvetica, whose widths match Arial, with a line height of 1.15 times the font size for single spacing and twice that for double spacing, close to what word processors use for these fonts. There were no headings, titles, quotations or lists.',
+                    'Solid prose packed more onto a page than the rule of thumb: about 340 words on a double-spaced US Letter page in 12-point Times New Roman, against the usual 250 to 300. Real essays have a name and title block, headings, short paragraphs and quotations, which all leave white space, so 250 to 300 is still the safer figure for planning. If your writing is dense and your paragraphs are long, expect to land at the top of that range or a little above it.',
+                ],
+                'table' => [
+                    'headers' => ['Font and size (1-inch margins)', 'US Letter, single', 'US Letter, double', 'A4, single', 'A4, double'],
+                    'rows' => [
+                        ['Times New Roman 12 pt', 'about 670', 'about 340', 'about 700', 'about 350'],
+                        ['Arial 12 pt', 'about 620', 'about 310', 'about 660', 'about 330'],
+                        ['Times New Roman 11 pt', 'about 800', 'about 390', 'about 840', 'about 410'],
+                        ['Times New Roman 10 pt', 'about 960', 'about 480', 'about 990', 'about 490'],
+                        ['Times New Roman 14 pt', 'about 520', 'about 260', 'about 540', 'about 260'],
                     ],
                 ],
             ],
@@ -506,6 +559,9 @@ return [
             ],
         ],
         'faqs' => [
+            ['q' => 'How many words is 1 page double-spaced?', 'a' => 'About 250 to 300 words with a 12-point font such as Times New Roman and 1-inch margins. Use 275 as a middle estimate.'],
+            ['q' => 'How many words fit on an A4 page?', 'a' => 'About the same as on US Letter: roughly 250 to 300 words double-spaced or 500 to 600 single-spaced with 12-point text and 2.5 cm margins. A4 holds about 5% more because it is slightly taller.'],
+            ['q' => 'How do I see how many words are on a page in Word?', 'a' => 'Select the text on that page and look at the status bar at the bottom of the window, which shows the selected words out of the total. Review > Word Count shows the same figures with pages, characters and paragraphs.'],
             ['q' => 'How many words is a 5-page essay?', 'a' => 'About 1,250 to 1,500 words double-spaced, or 2,500 to 3,000 words single-spaced, with a 12-point font and 1-inch margins.'],
             ['q' => 'Does a title or reference list count towards the word count?', 'a' => 'Usually not, but rules differ between schools and journals. Check the instructions, and if they are unclear, ask before you submit.'],
             ['q' => 'How many pages is 1,000 words?', 'a' => 'About 2 pages single-spaced or 4 pages double-spaced.'],
@@ -1191,6 +1247,117 @@ return [
             ['q' => 'How do I find the original price before a discount?', 'a' => 'Divide the price you paid by what was left after the discount. After 25% off you pay 75%, so a sale price of 60 means an original price of 60 / 0.75 = 80.'],
             ['q' => 'How do I remove VAT or sales tax from a price?', 'a' => 'Divide by 1 plus the tax rate. A price of 54 including 20% VAT is 54 / 1.2 = 45 before tax, so the tax is 9.'],
             ['q' => 'Can a percentage be more than 100?', 'a' => 'Yes, when the part is bigger than the whole or a value more than doubles. A price going from 20 to 50 has risen by 150%.'],
+        ],
+    ],
+
+    'how-to-calculate-percentage-growth' => [
+        'title' => 'How to Calculate Percentage Growth Between Two Numbers',
+        'description' => 'The percentage growth formula with worked examples: growth between two numbers, negative growth, growth from zero or a negative start, and yearly rates.',
+        'h1' => 'How to calculate percentage growth between two numbers',
+        'intro' => 'Sales went from 40,000 to 46,000, visitors from 1,250 to 2,000, your rent from 1,100 to 1,166: how much did each one grow, in percent? There is one formula for all of them, and it takes three steps. This guide gives the formula, works through real examples with the arithmetic shown, and covers the cases that trip people up: negative growth, a starting value of zero or below, and average growth over several years.',
+        'tool' => 'percentage-calculator',
+        'related' => ['compound-interest-calculator', 'loan-calculator', 'mortgage-calculator'],
+        'published' => '2026-11-16',
+        'updated' => '2026-11-16',
+        'sections' => [
+            [
+                'heading' => 'What is the formula for percentage growth?',
+                'paragraphs' => [
+                    'Percentage growth = (new value - old value) / old value x 100. Subtract the starting number from the ending number, divide the result by the starting number, and multiply by 100.',
+                    'Worked example: a value goes from 200 to 250. The change is 250 - 200 = 50. Divided by the starting value, 50 / 200 = 0.25. Multiplied by 100, that is 25% growth.',
+                    'A shortcut gives the same answer in one step: divide the new value by the old one, subtract 1 and multiply by 100. 250 / 200 = 1.25, and 1.25 - 1 = 0.25, so 25%.',
+                ],
+                'list' => [
+                    'Step 1: find the change. New value minus old value.',
+                    'Step 2: divide the change by the old value.',
+                    'Step 3: multiply by 100 to turn the decimal into a percentage.',
+                ],
+            ],
+            [
+                'heading' => 'Worked examples of percentage growth',
+                'paragraphs' => [
+                    'Every row below uses the same three steps. Notice the last one: growth of more than 100% simply means the value more than doubled. Doubling is 100% growth, tripling is 200% and going up tenfold is 900%.',
+                ],
+                'table' => [
+                    'headers' => ['What changed', 'Old', 'New', 'Calculation', 'Growth'],
+                    'rows' => [
+                        ['Yearly revenue', '40,000', '46,000', '6,000 / 40,000 x 100', '15%'],
+                        ['Monthly rent', '1,100', '1,166', '66 / 1,100 x 100', '6%'],
+                        ['Salary', '52,000', '54,600', '2,600 / 52,000 x 100', '5%'],
+                        ['Website visitors', '1,250', '2,000', '750 / 1,250 x 100', '60%'],
+                        ['Followers', '800', '2,400', '1,600 / 800 x 100', '200%'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'How do you calculate negative growth?',
+                'paragraphs' => [
+                    'Use exactly the same formula. If the new value is smaller, the change is negative, and so is the result: a negative percentage growth is a decrease. A price that falls from 80 to 60 has changed by (60 - 80) / 80 x 100 = -25%, a 25% decrease.',
+                    'A decrease can never be bigger than -100%, because that would mean falling below zero. Growth upwards has no such limit.',
+                    'Falls and rises are not symmetrical. After a 25% fall from 80 to 60, getting back to 80 takes a rise of 20 / 60 x 100 = 33.33%, not 25%, because the rise is measured from the lower number. That is why a share price that halves needs to double, a 100% rise, to recover.',
+                ],
+            ],
+            [
+                'heading' => 'Which number do you divide by?',
+                'paragraphs' => [
+                    'Always the starting value: the old, earlier or original number. Dividing by the new value is the most common mistake, and it gives a different answer.',
+                    'Compare the two directions. Going from 200 to 250 is growth of 50 / 200 = 25%. Going from 250 back to 200 is a change of -50 / 250 = -20%. The gap is 50 both times, but it is measured against a different starting point.',
+                ],
+            ],
+            [
+                'heading' => 'What if the starting number is zero or negative?',
+                'paragraphs' => [
+                    'Growth from zero cannot be expressed as a percentage, because the formula would divide by zero. If a new product sold nothing in its first month and 40 units in its second, say that sales rose by 40 units. The [Percentage Calculator](/percentage-calculator) shows a message in this case rather than a meaningless number.',
+                    'A negative starting value, such as a loss that turns into a profit, breaks the plain formula: a loss of 50 becoming a profit of 100 gives (100 - (-50)) / -50 x 100 = -300%, which wrongly suggests things got worse. The usual fix is to divide by the size of the starting value, ignoring its sign: 150 / 50 x 100 = 300% improvement. The Percentage Calculator does it that way and shows the formula with the bars around the starting value. In a report, it is often clearer to describe the change in plain words, such as "from a loss of 50 to a profit of 100".',
+                ],
+            ],
+            [
+                'heading' => 'How do you calculate average growth over several years?',
+                'paragraphs' => [
+                    'Use the compound annual growth rate (CAGR): divide the final value by the starting value, raise the result to the power of 1 divided by the number of years, subtract 1 and multiply by 100. As a formula: CAGR = ((new / old)^(1 / years) - 1) x 100.',
+                    'Worked example: revenue grew from 50,000 to 80,000 over 4 years. 80,000 / 50,000 = 1.6. 1.6 to the power of 1/4 is about 1.1247. Subtract 1 and multiply by 100: about 12.47% a year. Check it by growing 50,000 by 12.47% four times: 50,000 x 1.1247 x 1.1247 x 1.1247 x 1.1247 comes back to about 80,000.',
+                    'Do not simply divide the total growth by the number of years. Total growth here is 60%, and 60 / 4 = 15% a year looks plausible, but growing by 15% a year for 4 years would reach about 87,450, not 80,000, because each year\'s growth builds on the last. In a spreadsheet, =(80000/50000)^(1/4)-1 or =RRI(4, 50000, 80000) gives the yearly rate as a decimal.',
+                    'To go the other way, and see what a steady yearly rate grows a starting amount into, use the [Compound Interest Calculator](/compound-interest-calculator), which shows the balance year by year.',
+                ],
+            ],
+            [
+                'heading' => 'Month-over-month and year-over-year growth',
+                'paragraphs' => [
+                    'Month-over-month growth compares a month with the month before it; year-over-year growth compares it with the same month a year earlier. Both use the same formula, only the starting value changes.',
+                    'They can tell opposite stories. A shop sells 12,000 in December, after 10,000 in November and 13,000 the December before. Month over month that is (12,000 - 10,000) / 10,000 = 20% growth, but year over year it is (12,000 - 13,000) / 13,000 = -7.69%. December is a busy month every year, so the year-over-year figure is the fairer test of whether the business is growing.',
+                ],
+            ],
+            [
+                'heading' => 'Percentage growth versus percentage points',
+                'paragraphs' => [
+                    'When the two numbers are themselves percentages, say which change you mean. An interest rate rising from 4% to 5% went up by 1 percentage point, but its percentage growth is (5 - 4) / 4 x 100 = 25%. Both are correct, and adverts and headlines tend to quote whichever sounds bigger. The [percentages guide](/guides/how-to-calculate-percentages) covers this and the other everyday percentage formulas.',
+                ],
+            ],
+            [
+                'heading' => 'Check your answer with the calculator',
+                'paragraphs' => [
+                    'In the [Percentage Calculator](/percentage-calculator), use the "Percentage increase / decrease" box: type the starting value and the final value, and it shows the growth as an increase or decrease, the formula it used and the difference between the two numbers. You can type 1,234.5 or 1.234,5, and the calculation runs in your browser.',
+                    'For example, from 1,250 to 2,000 it shows a 60% increase, with the formula (2,000 - 1,250) / |1,250| x 100 = 60%.',
+                ],
+            ],
+            [
+                'heading' => 'Common mistakes',
+                'list' => [
+                    'Dividing by the new value instead of the old one.',
+                    'Forgetting to multiply by 100, and reporting 0.25 growth when you mean 25%.',
+                    'Adding up yearly growth rates instead of multiplying them: 10% then 10% is 21% in total, not 20%.',
+                    'Averaging growth over several years by dividing the total by the number of years instead of using CAGR.',
+                    'Treating a rise and a fall of the same percentage as cancelling out: 100 down 20% is 80, and 80 up 20% is only 96.',
+                    'Calling a change between two percentages "percent" when it is percentage points, or the other way round.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'How do I calculate percentage growth between two numbers?', 'a' => 'Subtract the old number from the new one, divide by the old number and multiply by 100. From 200 to 250 is (250 - 200) / 200 x 100 = 25%.'],
+            ['q' => 'How do I calculate negative growth?', 'a' => 'With the same formula. A negative result is a decrease: from 80 to 60 is (60 - 80) / 80 x 100 = -25%.'],
+            ['q' => 'What is the percentage growth from 0?', 'a' => 'It cannot be calculated, because the formula would divide by zero. Describe the change in units instead, such as "up 40 units".'],
+            ['q' => 'How do I find the average yearly growth over several years?', 'a' => 'Use CAGR: (new / old) to the power of 1 / years, minus 1, times 100. From 50,000 to 80,000 in 4 years is about 12.47% a year.'],
+            ['q' => 'Is 100% growth the same as doubling?', 'a' => 'Yes. 100% growth means the value increased by its own size, so it doubled. Tripling is 200% growth.'],
         ],
     ],
 
@@ -2920,8 +3087,45 @@ return [
         'tool' => 'domain-age-checker',
         'related' => ['domain-authority-checker', 'broken-link-checker', 'what-is-my-ip'],
         'published' => '2026-11-04',
-        'updated' => '2026-11-10',
+        'updated' => '2026-11-16',
         'sections' => [
+            [
+                'heading' => 'When was a domain registered? The quick answer',
+                'paragraphs' => [
+                    'Every registered domain has a public registration record, and its created (registration) date is when the current registration began. Paste the domain into the [Domain Age Checker](/domain-age-checker) and it shows that date, the age in years, months and days, and the expiry date.',
+                    'For example, the records we looked up on 16 November 2026 show google.com registered on 15 September 1997, bbc.co.uk on 13 December 1994 and wikipedia.org on 13 January 2001. The date comes from the registry that runs the extension (Verisign for .com, Nominet for .uk, Public Interest Registry for .org), not from the website itself, so a site owner cannot make a domain look older by editing their pages.',
+                ],
+            ],
+            [
+                'heading' => 'How old is a domain?',
+                'paragraphs' => [
+                    'A domain\'s age is the time since its created date, counted in calendar years, months and days. On 16 November 2026, wikipedia.org was 25 years, 10 months and 3 days old, which the Domain Age Checker shows as 25y 10m 3d.',
+                    'The age measures the current registration, not the business behind the website. A company can be decades old and have moved to a new domain last year, and an old domain can carry a brand-new site.',
+                ],
+            ],
+            [
+                'heading' => 'Where the date comes from: WHOIS and RDAP',
+                'paragraphs' => [
+                    'Domain registration data used to be read over WHOIS, a plain-text protocol in which each registry formatted its answer its own way, so the same date might be labelled Creation Date, Created or Registered on. RDAP, the Registration Data Access Protocol, returns the same data in a structured format. ICANN says that since 28 January 2025, registries and registrars of generic extensions are no longer required to run WHOIS (except for .com, .name and .post), so for most generic extensions RDAP is now the main source.',
+                    'In an RDAP record the dates are listed as events. The standard defines "registration" as the moment the domain was initially registered, alongside "expiration", "last changed" and "transfer". When we looked up wikipedia.org, its record listed the registration on 13 January 2001 and a transfer from one registrar to another on 9 March 2012: the transfer added an event but did not reset the created date. The Domain Age Checker reads the registration event.',
+                ],
+            ],
+            [
+                'heading' => 'Does WHOIS privacy hide when a domain was registered?',
+                'paragraphs' => [
+                    'No. Privacy services and data-protection rules hide the owner\'s name, address and contact details, but the created, updated and expiry dates, the registrar and the nameservers stay public. The wikipedia.org record we checked listed no registrant details at all, yet every date was there.',
+                ],
+            ],
+            [
+                'heading' => 'Why the created date can be later than you expect, or missing',
+                'list' => [
+                    'Re-registration: if a domain expires, is deleted and is then registered again, the created date starts over. A ten-year-old site on a domain that lapsed once can show only the date of the new registration.',
+                    'A sale or a move to another registrar without a lapse keeps the original date, so an old date does not mean the same owner all along.',
+                    'Some country-code registries publish no created date at all. When we queried the .de registry\'s WHOIS for denic.de on 16 November 2026, it returned the nameservers, the status and a last-changed date, but no creation date.',
+                    'Some country-code registries do not offer RDAP yet. IANA\'s list of RDAP services published on 28 October 2026 had no entry for .de, .eu, .it, .es, .ch, .io or .co, so the [Domain Age Checker](/domain-age-checker) says the extension is not supported instead of showing a date. Use that registry\'s own lookup page for those.',
+                    'A domain registered in the last few hours may not show up yet; try again the next day.',
+                ],
+            ],
             [
                 'heading' => 'How to check',
                 'list' => [
@@ -3045,6 +3249,9 @@ return [
             ],
         ],
         'faqs' => [
+            ['q' => 'How can I find out when a domain was registered?', 'a' => 'Look up its registration record. The Domain Age Checker reads the created date from the registry over RDAP and shows it with the domain\'s age, expiry date and registrar.'],
+            ['q' => 'Does WHOIS privacy hide the registration date?', 'a' => 'No. Privacy hides the owner\'s personal details, but the created, updated and expiry dates and the registrar stay public.'],
+            ['q' => 'Why does an old website show a recent creation date?', 'a' => 'Usually because the domain lapsed and was registered again, which restarts the created date, or because the business moved to a new domain. A sale or a transfer between registrars keeps the original date.'],
             ['q' => 'Does domain age affect SEO?', 'a' => 'Not directly. Google has said age itself does not help. Older sites simply have had more time to earn links and publish.'],
             ['q' => 'Can I see who owns a domain?', 'a' => 'Usually not. Most registrations hide personal details for privacy, though the registrar is shown.'],
             ['q' => 'Is a new domain a scam?', 'a' => 'Not necessarily. It is one signal to weigh along with reviews, contact details and payment protection.'],
@@ -3056,6 +3263,14 @@ return [
             [
                 'title' => 'ICANN, Registration Data Access Protocol (RDAP)',
                 'url' => 'https://www.icann.org/rdap',
+            ],
+            [
+                'title' => 'RFC 9083, JSON Responses for the Registration Data Access Protocol (RDAP), section 10.2.3: event actions',
+                'url' => 'https://www.rfc-editor.org/rfc/rfc9083.html',
+            ],
+            [
+                'title' => 'IANA, RDAP bootstrap file for domain name extensions',
+                'url' => 'https://data.iana.org/rdap/dns.json',
             ],
         ],
     ],
