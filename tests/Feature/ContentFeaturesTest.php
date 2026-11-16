@@ -18,6 +18,12 @@ class ContentFeaturesTest extends TestCase
         }
     }
 
+    public function test_guide_paragraphs_render_bold_text_and_still_escape_html(): void
+    {
+        $this->assertSame('<strong>About 500</strong> words &lt;b&gt;', (string) Guides::inline('**About 500** words <b>'));
+        $this->get('/guides/how-many-words-is-a-page')->assertOk()->assertSee('<p><strong>A page holds about 500 words', false);
+    }
+
     public function test_tool_sections_render_their_bullet_lists_in_english_german_and_italian(): void
     {
         foreach (['', '/de', '/it'] as $prefix) {

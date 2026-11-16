@@ -380,8 +380,8 @@ return [
     ],
 
     'how-many-words-is-a-page' => [
-        'title' => 'How Many Words Is a Page? Essay & Reading Time Guide',
-        'description' => 'How many words fit on a page single- or double-spaced, how long a 5-page essay is, and how reading time is worked out, with a quick table for common lengths.',
+        'title' => 'How Many Words Is a Page? Single & Double Spaced Chart',
+        'description' => 'How many words is a page? About 500 single-spaced or 250 double-spaced (12 pt, 1-inch margins). Charts for 1-10 pages, A4 pages and reading time.',
         'h1' => 'How many words is a page?',
         'intro' => 'Your teacher asks for three pages, the job form wants 500 words, and you only know one of the two. Converting between pages and words is mostly a matter of spacing and font size. This guide gives the standard estimates, explains why they vary, and shows how long your text takes to read aloud or silently.',
         'tool' => 'word-counter',
@@ -392,6 +392,7 @@ return [
             [
                 'heading' => 'How many words make a page? The quick answer',
                 'paragraphs' => [
+                    '**A page holds about 500 words single-spaced or about 250 words double-spaced, using a 12-point font and 1-inch margins (roughly 500–600 and 250–300).**',
                     'With a 12-point font such as Times New Roman or Arial and 1-inch margins, a double-spaced page holds about 250 to 300 words, and a single-spaced page about 500 to 600 words. These are the figures most schools and publishers have in mind when they talk about "pages".',
                 ],
                 'table' => [
@@ -427,11 +428,12 @@ return [
                 ],
             ],
             [
-                'heading' => 'How many words is a page in Microsoft Word?',
+                'heading' => 'How many words is a page in Microsoft Word or Google Docs?',
                 'paragraphs' => [
                     'A Word page holds the same as any page with the same settings: about 250 to 300 words double-spaced and 500 to 600 single-spaced in 12-point Times New Roman with 1-inch margins. Word\'s own default settings are different, so a new blank document will not match an essay format until you change them.',
                     'Recent versions of Word start new documents with an 11-point font (Aptos in current Microsoft 365, Calibri in older versions), line spacing a little above single and a gap after each paragraph. To set up a standard essay page, select all the text, choose Times New Roman at 12 points, set line spacing to 2.0 in the Paragraph settings, and check that the margins are Normal (1 inch, or 2.54 cm).',
                     'To see the real figure for your own document, look at the status bar at the bottom of the window: it shows the page you are on and the word count, and if you select the text on one page it shows how many of the words are selected. Review > Word Count lists pages, words, characters, paragraphs and lines, with a tick box for including text boxes, footnotes and endnotes. In Google Docs the same figures are under Tools > Word count.',
+                    'Google Docs also starts with an 11-point font and line spacing a little above single, so a new document fits more than the 12-point estimates. Either way, expect roughly 500 words per page single-spaced at 11 to 12 points and 250 to 300 double-spaced at 12 points, and check the page count in your editor for your exact settings.',
                 ],
             ],
             [
@@ -559,7 +561,10 @@ return [
             ],
         ],
         'faqs' => [
-            ['q' => 'How many words is 1 page double-spaced?', 'a' => 'About 250 to 300 words with a 12-point font such as Times New Roman and 1-inch margins. Use 275 as a middle estimate.'],
+            ['q' => 'How many words is 1 page double-spaced?', 'a' => 'About 250 to 300 words with a 12-point font such as Times New Roman or Arial and 1-inch margins. Use 275 as a middle estimate.'],
+            ['q' => 'How many words is one page single-spaced?', 'a' => 'About 500 to 600 words with a 12-point font and 1-inch margins. Headings, lists and short paragraphs lower the count.'],
+            ['q' => 'How many words is 10 pages?', 'a' => 'About 2,500 to 3,000 words double-spaced, or 5,000 to 6,000 words single-spaced, at 12 pt with 1-inch margins.'],
+            ['q' => 'How many words is a page in Word?', 'a' => 'With 12-point text and 1-inch margins, roughly 500 words single-spaced and 250–300 double-spaced. Word\'s own default font and spacing can shift that a little, so check the page count in Word for your exact settings.'],
             ['q' => 'How many words fit on an A4 page?', 'a' => 'About the same as on US Letter: roughly 250 to 300 words double-spaced or 500 to 600 single-spaced with 12-point text and 2.5 cm margins. A4 holds about 5% more because it is slightly taller.'],
             ['q' => 'How do I see how many words are on a page in Word?', 'a' => 'Select the text on that page and look at the status bar at the bottom of the window, which shows the selected words out of the total. Review > Word Count shows the same figures with pages, characters and paragraphs.'],
             ['q' => 'How many words is a 5-page essay?', 'a' => 'About 1,250 to 1,500 words double-spaced, or 2,500 to 3,000 words single-spaced, with a 12-point font and 1-inch margins.'],

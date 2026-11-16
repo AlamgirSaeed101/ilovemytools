@@ -91,7 +91,7 @@ class Guides
         $html = '';
         foreach ($parts as $i => $part) {
             $html .= match ($i % 3) {
-                0 => e($part),
+                0 => preg_replace('#\*\*(.+?)\*\*#', '<strong>$1</strong>', e($part)),
                 1 => self::linkable($parts[$i + 1]) ? '<a href="'.e(url($parts[$i + 1])).'">'.e($part).'</a>' : e($part),
                 default => '',
             };
