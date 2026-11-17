@@ -4433,4 +4433,82 @@ return [
         ],
     ],
 
+    'how-to-fill-in-a-pdf-form-online' => [
+        'title' => 'How to Fill in a PDF Form Online for Free',
+        'description' => 'Fill in a PDF form online for free: type into text boxes, tick checkboxes, pick dropdowns, sign it, and what to do when a form has no fields at all.',
+        'h1' => 'How to fill in a PDF form online',
+        'intro' => 'A job application, a rental agreement, a consent form, a tax document - almost everything that used to mean printing a page, filling it in by hand and scanning it back now arrives as a PDF. Some of those PDFs already have real form fields built in; a lot don\'t, and look fillable only until you try clicking on them. Here is how to tell the difference and fill in either kind without installing anything.',
+        'tool' => 'fill-pdf',
+        'related' => ['edit-pdf', 'sign-pdf', 'add-text-to-pdf'],
+        'published' => '2026-11-17',
+        'updated' => '2026-11-17',
+        'sections' => [
+            [
+                'heading' => 'Why some PDF forms "just work" and others don\'t',
+                'paragraphs' => [
+                    'A PDF form built properly contains AcroForm fields: real text boxes, checkboxes, dropdowns, radio buttons and signature fields embedded in the file\'s own structure, each with a position and a name. Click one in any PDF form filler and it behaves like an actual input, because it is one. A form built by scanning a printed page, or exporting a document to PDF without adding fields, has none of that - it is a flat image or a page of static text with blank lines drawn on it, and clicking anywhere does nothing.',
+                    'You can tell which kind you have in seconds: open the file and click where a field should be. If a box highlights and accepts typing, it has real fields. If nothing happens, it doesn\'t, and you need a different approach, covered further down.',
+                ],
+            ],
+            [
+                'heading' => 'Filling in a PDF form that already has fields',
+                'list' => [
+                    'Open the [Fill PDF Form](/fill-pdf) tool and choose your file.',
+                    'Click into any text box and type; tick checkboxes and radio buttons; pick an option from any dropdown.',
+                    'If the form needs a signature field, switch to add your signature by drawing, typing or uploading it.',
+                    'Check every page, not just the first - long forms often have fields near the bottom that are easy to scroll past.',
+                    'Tick "Flatten" if you want the answers locked in so they can\'t be edited again after you save.',
+                    'Click Save PDF and download the filled-in file.',
+                ],
+            ],
+            [
+                'heading' => 'When the form has no fields to click into',
+                'paragraphs' => [
+                    'This is the case that trips people up: a form that looks fillable, with lines and boxes printed on the page, but is actually just a flat document. Clicking does nothing because there is nothing there to click. Switch to Add fields mode in the same editor and draw a text box, checkbox, dropdown or signature field directly onto the page, matching where the printed lines already are - once placed, it behaves exactly like a field that was in the PDF from the start, and it stays a real, reusable field if you save the file and reopen it later.',
+                    'For a one-off form you will never need to reopen as a fillable file, it is often faster to skip creating fields altogether and just type the answers straight onto the page with Add text instead, lining each line of text up over the printed blank.',
+                ],
+                'table' => [
+                    'headers' => ['Situation', 'What to use'],
+                    'rows' => [
+                        ['Clicking a field highlights it and accepts typing', 'Fill form - just type into what\'s there'],
+                        ['Form has printed lines/boxes but clicking does nothing', 'Add fields, then fill them in'],
+                        ['One-off form, never needs refilling as a form again', 'Add text, typed straight onto the page'],
+                        ['Form needs a wet-look signature, not just a name typed in', 'Signature tab, drawn, typed or uploaded'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'Checkboxes, dropdowns and radio buttons',
+                'paragraphs' => [
+                    'A checkbox toggles between ticked and empty with a click; a radio button works the same way but only one option in its group can be selected at a time, so picking a new one clears the one you picked before. A dropdown opens a short list of fixed options rather than letting you type free text - useful on the form\'s side for keeping answers consistent, but it means you can only pick from what is actually offered, so check the full list before assuming your answer isn\'t there.',
+                ],
+            ],
+            [
+                'heading' => 'Flattening: lock it in, or leave it editable',
+                'paragraphs' => [
+                    'Flattening merges your typed answers into the page itself, so they stop being separate, editable fields and become part of the document the same way as the original text. Use it for anything you are about to send on and don\'t want altered afterwards - a signed consent form, a submitted application. Skip it if you, or someone else, might reasonably need to come back and change an answer, since an un-flattened form stays fully editable the next time it is opened in any PDF form filler, not just this one.',
+                ],
+            ],
+            [
+                'heading' => 'Checklist before you submit a filled-in PDF form',
+                'list' => [
+                    'Every page has been checked, including any near the end that are easy to scroll past.',
+                    'Dropdowns show the option you meant to pick, not the one that happened to be first on the list.',
+                    'Checkboxes and radio buttons are ticked in the right group, especially where several groups sit close together.',
+                    'A required signature has actually been added, not just typed as plain text where a signature field was expected.',
+                    'The file has been flattened first if it is going somewhere you don\'t want the answers changed afterwards.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'The PDF form looks fillable but clicking does nothing - why?', 'a' => 'It has no real form fields, only printed lines and boxes on a flat page. Use Add fields to draw real text boxes, checkboxes or a signature field onto it, or type straight onto the page with Add text.'],
+            ['q' => 'Can I create a fillable form from scratch?', 'a' => 'Yes. Add fields lets you place text boxes, checkboxes, dropdowns and signature fields anywhere on a page, and they save as genuine form fields any PDF reader can fill in afterwards.'],
+            ['q' => 'Is my PDF uploaded anywhere while I fill it in?', 'a' => 'No. Reading the fields, filling them in and saving all happen in your browser with JavaScript; the file is never sent to a server.'],
+        ],
+        'sources' => [
+            ['title' => 'Wikipedia, PDF', 'url' => 'https://en.wikipedia.org/wiki/PDF'],
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+        ],
+    ],
+
 ];
