@@ -4455,7 +4455,7 @@ return [
                 'list' => [
                     'Open the [Fill PDF Form](/fill-pdf) tool and choose your file.',
                     'Click into any text box and type; tick checkboxes and radio buttons; pick an option from any dropdown.',
-                    'If the form needs a signature field, switch to add your signature by drawing, typing or uploading it.',
+                    'If the form needs a signature field, switch to the [Sign PDF](/sign-pdf) tab to add your signature by drawing, typing or uploading it.',
                     'Check every page, not just the first - long forms often have fields near the bottom that are easy to scroll past.',
                     'Tick "Flatten" if you want the answers locked in so they can\'t be edited again after you save.',
                     'Click Save PDF and download the filled-in file.',
@@ -4465,7 +4465,7 @@ return [
                 'heading' => 'When the form has no fields to click into',
                 'paragraphs' => [
                     'This is the case that trips people up: a form that looks fillable, with lines and boxes printed on the page, but is actually just a flat document. Clicking does nothing because there is nothing there to click. Switch to Add fields mode in the same editor and draw a text box, checkbox, dropdown or signature field directly onto the page, matching where the printed lines already are - once placed, it behaves exactly like a field that was in the PDF from the start, and it stays a real, reusable field if you save the file and reopen it later.',
-                    'For a one-off form you will never need to reopen as a fillable file, it is often faster to skip creating fields altogether and just type the answers straight onto the page with Add text instead, lining each line of text up over the printed blank.',
+                    'For a one-off form you will never need to reopen as a fillable file, it is often faster to skip creating fields altogether and just type the answers straight onto the page with [Add Text to PDF](/add-text-to-pdf) instead, lining each line of text up over the printed blank.',
                 ],
                 'table' => [
                     'headers' => ['Situation', 'What to use'],
