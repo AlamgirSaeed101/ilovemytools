@@ -55,3 +55,5 @@ Tools already announced on LinkedIn (one per line: date and slug). The daily rou
 2026-11-16 annotate-pdf company
 2026-11-17 fill-pdf personal
 2026-11-17 fill-pdf company
+2026-11-18 age-calculator personal
+2026-11-18 age-calculator company
