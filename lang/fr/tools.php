@@ -2505,6 +2505,47 @@ return [
         ],
     ],
 
+    'sejda-alternative' => [
+        'name' => 'Alternative à Sejda',
+        'title' => 'Alternative Gratuite à Sejda - Modifier et Signer un PDF',
+        'description' => 'Une alternative gratuite à Sejda : modifie le texte d\'un PDF, remplit des formulaires, signe et ajoute un filigrane, tout dans le navigateur. Sans inscription.',
+        'h1' => 'Alternative Gratuite à Sejda',
+        'tagline' => 'Tout ce que fait un éditeur de PDF comme Sejda - texte, formulaires, signatures et filigrane - sans envoyer votre fichier où que ce soit.',
+        'keywords' => ['alternative à sejda', 'alternative gratuite à sejda', 'sejda alternative', 'éditeur pdf comme sejda', 'modifier un pdf sans sejda'],
+        'intro' => 'Vous cherchez une alternative à Sejda ? C\'est le même éditeur que celui utilisé par tous les outils de cette page : cliquez sur une ligne de texte et retapez-la dans la police d\'origine du PDF, ajoutez du texte, des images, des formes ou une signature, remplissez des champs de formulaire, masquez du contenu en blanc ou ajoutez un filigrane, puis enregistrez. La différence est l\'endroit où le travail se fait : l\'éditeur de Sejda fonctionne sur ses propres serveurs, donc votre fichier y est envoyé pour être traité. Celui-ci fonctionne entièrement dans votre navigateur avec pdf.js et pdf-lib, donc le PDF ne quitte jamais votre appareil, et il n\'y a ni inscription, ni limite de tâches par heure, ni coût.',
+        'steps' => [
+            'Choisissez le PDF à modifier, remplir ou signer.',
+            'Choisissez un onglet - Modifier le texte, Ajouter du texte, Formulaires, Signature, Pages ou Filigrane - selon ce qu\'il vous faut.',
+            'Apportez vos modifications ; déplacez, redimensionnez ou supprimez ce que vous ajoutez.',
+            'Changez d\'onglet ou de page librement - Annuler et Rétablir couvrent chaque modification jusqu\'à l\'enregistrement.',
+            'Cliquez sur Enregistrer le PDF et téléchargez le fichier.',
+        ],
+        'features' => [
+            'Modifie le texte déjà présent dans le PDF, dans sa propre police et sa propre taille',
+            'Ajoute du texte, des images, des formes, des liens, des surlignages et du dessin à main levée',
+            'Remplit les champs de formulaire existants ou crée de nouveaux champs texte, case à cocher, liste déroulante et signature',
+            'Dessine, tape ou importe une signature et la place sur n\'importe quelle page',
+            'Insère, supprime, fait pivoter ou réorganise les pages',
+            'Ajoute un filigrane de texte ou de logo, au-dessus de la page ou en dessous',
+            'Masquage en blanc, soulignement, barré et notes autocollantes',
+            'Fonctionne entièrement dans votre navigateur - votre PDF n\'est jamais envoyé à un serveur',
+            'Sans inscription, sans compte, sans limite de tâches par heure, sans coût',
+            'Votre travail est enregistré automatiquement, donc une actualisation ou une fermeture accidentelle ne le fait jamais perdre',
+        ],
+        'content' => [
+            ['heading' => 'Comparaison avec Sejda', 'body' => 'L\'éditeur en ligne de Sejda couvre une gamme de tâches similaire - modifier du texte, remplir des formulaires, signer, ajouter un filigrane -, mais chaque fichier est envoyé sur les serveurs de Sejda pour être traité, et le plan gratuit limite le nombre de tâches par heure ainsi que la taille ou la durée d\'un fichier avant de demander un paiement ou une attente. Cet éditeur fait le même genre de travail avec pdf.js et pdf-lib directement dans votre navigateur : rien n\'est envoyé où que ce soit, donc rien à envoyer, à mettre en file d\'attente ou à attendre, et aucune limite sur le nombre de PDF que vous modifiez.'],
+            ['heading' => 'Un seul éditeur, toutes les fonctions', 'body' => 'Ajouter du texte à un PDF, Masquer en blanc un PDF, Modifier le texte d\'un PDF, Annotateur PDF, Remplir un formulaire PDF, Signer un PDF et Filigrane PDF sont tous ce même éditeur avec un onglet différent ouvert au départ ; changer d\'onglet ici, en cours de modification, permet d\'accéder à chacun d\'eux sans rouvrir le fichier.'],
+            ['heading' => 'À utiliser sans inscription', 'body' => 'Il n\'y a ni compte, ni connexion, ni étape par e-mail : ouvrez la page, choisissez un PDF de 200 Mo maximum et commencez à modifier. Votre navigateur lit et modifie le fichier lui-même, donc rien n\'est conservé de notre côté qu\'il faudrait supprimer ensuite. Pendant que vous travaillez, la progression est enregistrée automatiquement dans le stockage de votre navigateur sur cet appareil, donc une actualisation de page ou un onglet fermé peuvent être repris, et cette copie enregistrée est effacée une fois le PDF modifié téléchargé, ou si vous choisissez Abandonner.'],
+        ],
+        'faqs' => [
+            ['q' => 'Est-ce vraiment gratuit, contrairement au plan payant de Sejda ?', 'a' => 'Oui. Toutes les fonctions de cette page sont gratuites, sans inscription, sans compte et sans limite sur le nombre de PDF que vous modifiez ni leur fréquence.'],
+            ['q' => 'Envoie-t-il mon PDF sur un serveur comme le fait Sejda ?', 'a' => 'Non. Tout - modifier, remplir, signer et enregistrer - se passe dans votre navigateur avec JavaScript ; votre fichier n\'est jamais envoyé où que ce soit.'],
+            ['q' => 'Peut-il faire tout ce que fait l\'éditeur de Sejda ?', 'a' => 'Il couvre les mêmes tâches principales : modifier le texte déjà présent, ajouter du contenu, remplir et créer des champs de formulaire, signer, les outils de pages et le filigrane, tout dans un seul éditeur avec un onglet pour chacune.'],
+            ['q' => 'Par quel onglet commencer ?', 'a' => 'Modifier le texte pour changer un mot déjà présent dans le PDF, Formulaires pour remplir ou créer des champs, Signature pour signer, ou Filigrane pour apposer un logo ou du texte sur la page - vous pouvez changer d\'onglet à tout moment sans perdre votre travail.'],
+            ['q' => 'Mon PDF enregistré aura-t-il un filigrane ajouté automatiquement ?', 'a' => 'Non. Le PDF enregistré ne contient que les modifications que vous avez apportées ; l\'onglet Filigrane n\'en ajoute un que si vous choisissez de l\'utiliser.'],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Calculateur de prêt',
         'title' => 'Calculateur de Prêt - Mensualité et Amortissement',

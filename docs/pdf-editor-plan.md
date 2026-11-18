@@ -34,12 +34,13 @@ text and change it in place, in the same font.
 6. [x] Page tools and signature inside the editor
   - [x] Page tools: a new Pages tab lets you insert a blank page, delete, rotate (90° steps) or reorder pages (move buttons, touch-friendly), applied to a fresh copy of the document only when you click Save PDF so the live edit session is never disturbed; content added elsewhere moves with its page.
   - [x] Signature: a new Signature tab lets you draw, type or upload a signature and place it on any page (drag to move, drag the corner to resize), with an optional date stamp underneath - the same capture flow the standalone Sign PDF page used, now inside the one editor. `/sign-pdf` opens Edit PDF with this tab preselected, same settings and output as before.
-7. [ ] Landing pages for each mode: add text to PDF, whiteout PDF, edit PDF text, PDF annotator, fill PDF form, Sejda alternative
+7. [x] Landing pages for each mode: add text to PDF, whiteout PDF, edit PDF text, PDF annotator, fill PDF form, Sejda alternative
   - [x] Add text to PDF `/add-text-to-pdf` (opens Edit PDF with the Add text tab preselected, same editor underneath), own SEO content in all 10 languages, e2e test, panel height measured.
   - [x] Whiteout PDF `/whiteout-pdf` (opens Edit PDF with the Whiteout tab preselected, same editor underneath), own SEO content in all 10 languages, e2e test, panel height measured.
   - [x] Edit PDF text `/edit-pdf-text` (opens Edit PDF with the Edit text tab preselected, same editor underneath), own SEO content in all 10 languages, e2e test, panel height measured.
   - [x] PDF annotator `/annotate-pdf` (opens Edit PDF with the Highlight tab preselected, same editor underneath), own SEO content in all 10 languages, e2e test, panel height measured.
   - [x] Fill PDF form `/fill-pdf` (opens Edit PDF with the Forms tab preselected, same editor underneath), own SEO content in all 10 languages, e2e test, panel height measured. The slug and the Forms tab were already wired in `resources/js/tools/index.js`/`EditPdf.jsx` from an earlier run; this part only added the missing landing page (config/tools.php + lang/*/tools.php entries, OG image, e2e test, panel height) so the route actually resolves.
+  - [x] Sejda alternative `/sejda-alternative` (opens Edit PDF with no mode preselected, same editor underneath, defaulting to Edit text - the whole editor positioned as a free alternative to Sejda, not one tab), own SEO content in all 10 languages, e2e test, panel height measured.
 
 ## Features
 

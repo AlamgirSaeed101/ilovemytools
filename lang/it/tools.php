@@ -3031,6 +3031,47 @@ return [
         ],
     ],
 
+    'sejda-alternative' => [
+        'name' => 'Alternativa a Sejda',
+        'title' => 'Alternativa Gratis a Sejda - Modifica e Firma PDF',
+        'description' => 'Un\'alternativa gratuita a Sejda: modifica il testo del PDF, compila moduli, firma e aggiunge una filigrana, tutto nel tuo browser. Senza registrazione.',
+        'h1' => 'Alternativa Gratis a Sejda',
+        'tagline' => 'Tutto quello che fa un editor PDF come Sejda - testo, moduli, firme e filigrane - senza caricare il tuo file da nessuna parte.',
+        'keywords' => ['alternativa a sejda', 'alternativa gratis a sejda', 'sejda alternativa', 'editor pdf come sejda', 'modificare pdf senza sejda'],
+        'intro' => 'Cerchi un\'alternativa a Sejda? Questo è lo stesso editor usato da tutti gli strumenti di questa pagina: clicca su una riga di testo e riscrivila nel carattere originale del PDF, aggiungi testo, immagini, forme o una firma, compila i campi di un modulo, copri un contenuto con il bianco o aggiungi una filigrana, poi salva. La differenza è dove avviene il lavoro: l\'editor di Sejda funziona sui propri server, quindi il tuo file viene caricato lì per essere elaborato. Questo funziona interamente nel tuo browser con pdf.js e pdf-lib, quindi il PDF non lascia mai il tuo dispositivo, e non c\'è registrazione, né un limite di attività all\'ora, né un costo.',
+        'steps' => [
+            'Scegli il PDF che vuoi modificare, compilare o firmare.',
+            'Scegli una scheda - Modifica testo, Aggiungi testo, Moduli, Firma, Pagine o Filigrana - in base a ciò che ti serve.',
+            'Apporta le modifiche; sposta, ridimensiona o rimuovi ciò che aggiungi.',
+            'Cambia scheda o pagina liberamente - Annulla e Ripeti coprono ogni modifica finché non salvi.',
+            'Clicca su Salva PDF e scarica il file.',
+        ],
+        'features' => [
+            'Modifica il testo già presente nel PDF, nel suo carattere e dimensione originali',
+            'Aggiunge testo, immagini, forme, link, evidenziazioni e disegno a mano libera',
+            'Compila i campi di un modulo esistenti o crea nuovi campi di testo, casella, elenco e firma',
+            'Disegna, digita o carica una firma e la posiziona su qualsiasi pagina',
+            'Inserisce, elimina, ruota o riordina le pagine',
+            'Aggiunge una filigrana di testo o logo, sopra la pagina o dietro',
+            'Copri con bianco, sottolineato, barrato e note adesive',
+            'Funziona interamente nel tuo browser - il tuo PDF non viene mai caricato su un server',
+            'Nessuna registrazione, nessun account, nessun limite di attività all\'ora, nessun costo',
+            'Il tuo lavoro si salva automaticamente, quindi un aggiornamento o una chiusura accidentale non lo fa mai perdere',
+        ],
+        'content' => [
+            ['heading' => 'Il confronto con Sejda', 'body' => 'L\'editor online di Sejda copre una gamma simile di attività - modificare testo, compilare moduli, firmare, aggiungere filigrane -, ma ogni file viene caricato sui server di Sejda per essere elaborato, e il piano gratuito limita quante attività puoi svolgere all\'ora e quanto grande o lungo può essere un file prima di chiedere di pagare o attendere. Questo editor svolge lo stesso tipo di lavoro con pdf.js e pdf-lib direttamente nel tuo browser: niente viene inviato da nessuna parte, quindi non c\'è nulla da caricare, metterlo in coda o aspettare, e nessun limite a quanti PDF modifichi.'],
+            ['heading' => 'Un editor, ogni funzione', 'body' => 'Aggiungi testo a PDF, Copri con bianco PDF, Modifica testo PDF, Annotatore PDF, Compila modulo PDF, Firma PDF e Filigrana PDF sono tutti questo stesso editor con una scheda diversa aperta all\'inizio; cambiare scheda qui, a metà modifica, raggiunge ognuno di essi senza riaprire il file.'],
+            ['heading' => 'Usalo senza registrarti', 'body' => 'Non c\'è account, accesso né passaggio con email: apri la pagina, scegli un PDF fino a 200 MB e inizia a modificare. Il tuo browser legge e modifica il file da solo, quindi non resta nulla salvato dalla nostra parte da dover eliminare dopo. Mentre lavori, i progressi si salvano automaticamente nella memoria del tuo browser su questo dispositivo, quindi un aggiornamento della pagina o una scheda chiusa possono essere ripresi, e quella copia salvata viene eliminata non appena scarichi il PDF modificato o scegli Annulla.'],
+        ],
+        'faqs' => [
+            ['q' => 'È davvero gratis, a differenza del piano a pagamento di Sejda?', 'a' => 'Sì. Tutte le funzioni di questa pagina sono gratuite, senza registrazione, senza account e senza limiti su quanti PDF modifichi o con quale frequenza.'],
+            ['q' => 'Carica il mio PDF su un server come fa Sejda?', 'a' => 'No. Tutto - modificare, compilare, firmare e salvare - avviene nel tuo browser con JavaScript; il tuo file non viene mai inviato da nessuna parte.'],
+            ['q' => 'Può fare tutto quello che fa l\'editor di Sejda?', 'a' => 'Copre le stesse attività principali: modificare il testo già presente, aggiungere contenuti, compilare e creare campi di modulo, firmare, strumenti per le pagine e filigrane, tutto in un unico editor con una scheda per ciascuna.'],
+            ['q' => 'Da quale scheda dovrei iniziare?', 'a' => 'Modifica testo per cambiare qualcosa già scritto nel PDF, Moduli per compilare o creare campi, Firma per firmare, o Filigrana per applicare un logo o un testo sulla pagina - puoi cambiare scheda in qualsiasi momento senza perdere il tuo lavoro.'],
+            ['q' => 'Il mio PDF salvato avrà una filigrana aggiunta automaticamente?', 'a' => 'No. Il PDF salvato contiene solo le modifiche che hai fatto; la scheda Filigrana ne aggiunge una solo se scegli di usarla.'],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Calcolatore di prestito',
         'title' => 'Calcolatore di Prestito - Rata e Piano di Ammortamento',

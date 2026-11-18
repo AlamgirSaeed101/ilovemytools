@@ -2505,6 +2505,47 @@ return [
         ],
     ],
 
+    'sejda-alternative' => [
+        'name' => 'Alternativa ao Sejda',
+        'title' => 'Alternativa Gratuita ao Sejda - Editar e Assinar PDF',
+        'description' => 'Uma alternativa gratuita ao Sejda: edita texto no PDF, preenche formulários, assina e aplica marca de água, tudo no seu navegador. Sem cadastro, sem limites.',
+        'h1' => 'Alternativa Gratuita ao Sejda',
+        'tagline' => 'Tudo o que um editor de PDF como o Sejda faz - texto, formulários, assinaturas e marca de água - sem enviar o seu arquivo a lugar nenhum.',
+        'keywords' => ['alternativa ao sejda', 'alternativa gratuita ao sejda', 'sejda alternativa', 'editor de pdf como o sejda', 'editar pdf sem o sejda'],
+        'intro' => 'Procurando uma alternativa ao Sejda? Este é o mesmo editor usado por todas as ferramentas desta página: clique em qualquer linha de texto e digite de novo na própria fonte do PDF, adicione texto, imagens, formas ou uma assinatura, preencha campos de formulário, cubra conteúdo com branco ou aplique uma marca de água, e depois salve. A diferença está em onde o trabalho acontece: o editor do Sejda funciona nos próprios servidores, então o seu arquivo é enviado para lá para ser processado. Este funciona inteiramente no seu navegador com pdf.js e pdf-lib, então o PDF nunca sai do seu dispositivo, e não há cadastro, nem limite de tarefas por hora, nem custo.',
+        'steps' => [
+            'Escolha o PDF que quer editar, preencher ou assinar.',
+            'Escolha uma aba - Editar texto, Adicionar texto, Formulários, Assinatura, Páginas ou Marca de água - para o que precisar.',
+            'Faça as suas alterações; arraste, redimensione ou remova o que adicionar.',
+            'Troque de aba ou de página livremente - Desfazer e Refazer cobrem cada alteração até você salvar.',
+            'Clique em Salvar PDF e baixe o arquivo.',
+        ],
+        'features' => [
+            'Edita o texto que já existe no PDF, na sua própria fonte e tamanho',
+            'Adiciona texto, imagens, formas, links, realces e desenho à mão livre',
+            'Preenche campos de formulário existentes ou cria novos campos de texto, caixa de seleção, lista e assinatura',
+            'Desenha, digita ou envia uma assinatura e a posiciona em qualquer página',
+            'Insere, exclui, gira ou reordena páginas',
+            'Adiciona uma marca de água de texto ou logotipo, por cima da página ou por trás',
+            'Corretivo branco, sublinhado, tachado e notas adesivas',
+            'Funciona totalmente no seu navegador - o seu PDF nunca é enviado a um servidor',
+            'Sem cadastro, sem conta, sem limite de tarefas por hora, sem custo',
+            'O seu trabalho é salvo automaticamente, então uma atualização ou um fechamento acidental nunca o perde',
+        ],
+        'content' => [
+            ['heading' => 'Como se compara ao Sejda', 'body' => 'O editor online do Sejda cobre uma gama parecida de tarefas - editar texto, preencher formulários, assinar, aplicar marca de água -, mas cada arquivo é enviado aos servidores do Sejda para ser processado, e o plano gratuito limita quantas tarefas você pode fazer por hora e qual o tamanho ou duração de um arquivo antes de pedir pagamento ou espera. Este editor faz o mesmo tipo de trabalho com pdf.js e pdf-lib direto no seu navegador: nada é enviado a lugar nenhum, então não há nada para enviar, enfileirar ou esperar, e nenhum limite de quantos PDFs você edita.'],
+            ['heading' => 'Um editor, todos os recursos', 'body' => 'Adicionar texto ao PDF, Corretivo branco PDF, Editar texto de PDF, Anotador de PDF, Preencher formulário PDF, Assinar PDF e Marca de água PDF são todos este mesmo editor com uma aba diferente aberta para começar; trocar de aba aqui, no meio da edição, chega a todas elas sem reabrir o arquivo.'],
+            ['heading' => 'Use sem se cadastrar', 'body' => 'Não há conta, login nem etapa de e-mail: abra a página, escolha um PDF de até 200 MB e comece a editar. O seu navegador lê e edita o arquivo por conta própria, então nada fica guardado do nosso lado para ser excluído depois. Enquanto você trabalha, o progresso é salvo automaticamente no armazenamento do seu navegador neste dispositivo, então uma atualização de página ou uma aba fechada podem ser retomadas, e essa cópia salva é apagada quando você baixa o PDF editado ou escolhe Descartar.'],
+        ],
+        'faqs' => [
+            ['q' => 'É mesmo gratuito, diferente do plano pago do Sejda?', 'a' => 'Sim. Todos os recursos desta página são gratuitos, sem cadastro, sem conta e sem limite de quantos PDFs você edita nem com que frequência.'],
+            ['q' => 'Ele envia o meu PDF a um servidor como o Sejda faz?', 'a' => 'Não. Tudo - editar, preencher, assinar e salvar - acontece no seu navegador com JavaScript; o seu arquivo nunca é enviado a lugar nenhum.'],
+            ['q' => 'Ele faz tudo o que o editor do Sejda faz?', 'a' => 'Cobre as mesmas tarefas principais: editar o texto que já existe, adicionar conteúdo, preencher e criar campos de formulário, assinar, ferramentas de páginas e marca de água, tudo em um editor com uma aba para cada uma.'],
+            ['q' => 'Em qual aba devo começar?', 'a' => 'Editar texto para mudar algo que já está escrito no PDF, Formulários para preencher ou criar campos, Assinatura para assinar, ou Marca de água para aplicar um logotipo ou texto na página - você pode trocar de aba a qualquer momento sem perder o seu trabalho.'],
+            ['q' => 'O meu PDF salvo terá uma marca de água adicionada automaticamente?', 'a' => 'Não. O PDF salvo contém apenas as alterações que você fez; a aba Marca de água adiciona uma só se você decidir usá-la.'],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Calculadora de empréstimo',
         'title' => 'Calculadora de Empréstimo - Parcela e Amortização',

@@ -3410,6 +3410,65 @@ return [
         'related' => ['edit-pdf', 'sign-pdf', 'add-text-to-pdf', 'edit-pdf-text'],
     ],
 
+    'sejda-alternative' => [
+        'name' => 'Sejda Alternative',
+        'category' => 'pdf-tools',
+        'icon' => 'pdf',
+        'popular' => false,
+        'updated' => '2026-11-18',
+        'title' => 'Free Sejda Alternative - Edit, Fill & Sign PDFs',
+        'description' => 'A free Sejda alternative that edits PDF text, fills forms, signs and watermarks files - all in your browser, nothing uploaded. No sign up, no task limits.',
+        'h1' => 'Free Sejda Alternative',
+        'tagline' => 'Everything a PDF editor like Sejda does - text, forms, signatures and watermarks - without uploading your file anywhere.',
+        'keywords' => ['sejda alternative', 'free sejda alternative', 'sejda alternative free', 'pdf editor like sejda', 'edit pdf without sejda'],
+        'intro' => "Looking for a Sejda alternative? This is the same one editor used for every tool on this page: click any line of text and retype it in the PDF's own font, add text, images, shapes or a signature, fill in form fields, white out content, or stamp a watermark - then save. The difference is where the work happens: Sejda's editor runs on its own servers, so your file is uploaded there for processing. This one runs entirely in your browser with pdf.js and pdf-lib, so the PDF never leaves your device, and there is no sign-up, no task-per-hour limit and no price.",
+        'steps' => [
+            'Choose the PDF you want to edit, fill in or sign.',
+            'Pick a tab - Edit text, Add text, Forms, Signature, Pages or Watermark - for the job you need.',
+            'Make your changes; drag, resize or remove anything you add.',
+            'Switch tabs or pages freely - Undo and Redo cover every change until you save.',
+            'Click Save PDF and download the file.',
+        ],
+        'features' => [
+            'Edit the text already in the PDF, in its own font and size',
+            'Add text, images, shapes, links, highlights and freehand drawing',
+            'Fill in existing form fields, or create new text, checkbox, dropdown and signature fields',
+            'Draw, type or upload a signature and place it on any page',
+            'Insert, delete, rotate or reorder pages',
+            'Add a text or logo watermark, on top of the page or behind it',
+            'Whiteout, underline, strikethrough and sticky notes',
+            'Runs fully in your browser - your PDF is never uploaded to a server',
+            'No sign-up, no account, no per-hour task limit, no cost',
+            'Your work auto-saves as you go, so a refresh or accidental close never loses it',
+        ],
+        'content' => [
+            [
+                'heading' => 'How this compares to Sejda',
+                'body' => "Sejda's online editor covers a similar range of PDF jobs - editing text, filling forms, signing, watermarking - but each file is uploaded to Sejda's servers to be processed, and the free plan limits how many tasks you can run per hour and how large or long a file can be before it asks you to pay or wait. This editor runs the same kind of jobs with pdf.js and pdf-lib directly in your browser: nothing is sent anywhere, so there is nothing to upload, queue or wait on, and no limit on how many PDFs you edit.",
+            ],
+            [
+                'heading' => 'One editor, every feature',
+                'body' => "Add text to PDF, Whiteout PDF, Edit PDF text, PDF Annotator, Fill PDF Form, Sign PDF and Watermark PDF are all this same editor with a different tab open to start; switching tabs here mid-edit reaches every one of them without reopening the file.",
+            ],
+            [
+                'heading' => 'Use it without signing up',
+                'body' => 'There is no account, login or email step: open the page, choose a PDF of up to 200 MB and start editing. Your browser reads and edits the file itself, so nothing is stored on our side to delete afterwards. While you work, progress auto-saves in your browser\'s storage on this device, so a refresh or a closed tab can be resumed, and that saved copy clears once you download the edited PDF or choose Discard.',
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Is this really free, unlike Sejda\'s paid plan?', 'a' => 'Yes. Every feature on this page is free with no sign-up, no account and no limit on how many PDFs you edit or how often.'],
+            ['q' => 'Does it upload my PDF to a server the way Sejda does?', 'a' => 'No. Everything - editing, filling, signing and saving - happens in your browser with JavaScript; your file is never sent anywhere.'],
+            ['q' => 'Can it do everything Sejda\'s editor does?', 'a' => 'It covers the same core jobs: editing existing text, adding content, filling and creating form fields, signing, page tools and watermarking, all in one editor with a tab for each.'],
+            ['q' => 'Which tab should I start on?', 'a' => 'Edit text for changing wording already in the PDF, Forms for filling in or creating fields, Signature for signing, or Watermark for stamping a logo or text across the page - you can switch tabs at any time without losing your work.'],
+            ['q' => 'Will my edited PDF have a watermark or branding added automatically?', 'a' => 'No. The saved PDF contains only the changes you made; the Watermark tab adds one only if you choose to use it.'],
+        ],
+        'sources' => [
+            ['title' => 'ISO 32000-2:2020, Document management - Portable document format - Part 2: PDF 2.0', 'url' => 'https://www.iso.org/standard/75839.html'],
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+        ],
+        'related' => ['edit-pdf', 'fill-pdf', 'sign-pdf', 'watermark-pdf'],
+    ],
+
     'mortgage-calculator' => [
         'name' => 'Mortgage Calculator',
         'category' => 'calculators',

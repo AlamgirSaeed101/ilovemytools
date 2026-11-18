@@ -1700,6 +1700,28 @@ test.describe('PDF tools', () => {
         await expect(toolButton(page, 'Text')).toBeVisible();
         await expect(toolButton(page, 'Watermark')).toBeVisible();
     });
+
+    test('sejda-alternative opens the full Edit PDF editor, defaulting to Edit text, with every tab reachable', async ({ page }) => {
+        await openTool(page, 'sejda-alternative');
+        await page.getByTestId('file-input').setInputFiles({ name: 'contract.pdf', mimeType: 'application/pdf', buffer: await makePdf(1) });
+        await expectTool(page, 'Edit existing text');
+
+        await page.getByRole('button', { name: 'Edit text: Doc page 1' }).click();
+        const input = page.getByLabel('Edit this text');
+        await expect(input).toHaveValue('Doc page 1');
+        await input.fill('No Sejda needed');
+        await page.getByRole('button', { name: 'Done' }).click();
+
+        await page.getByRole('button', { name: 'Apply changes' }).click();
+        const [file] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Download PDF' }).click()]);
+        const texts = await pdfPageTexts(page, await readDownload(file));
+        expect(texts[0]).toContain('No Sejda needed');
+
+        // Every other feature is the same one editor underneath, not a cut-down tool.
+        await expect(toolButton(page, 'Forms')).toBeVisible();
+        await expect(toolButton(page, 'Sign')).toBeVisible();
+        await expect(toolButton(page, 'Watermark')).toBeVisible();
+    });
 });
 
 test.describe('Calculators', () => {

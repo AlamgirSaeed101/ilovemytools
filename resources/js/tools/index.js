@@ -75,6 +75,7 @@ const tools = {
     'edit-pdf-text': editPdfMode('edittext'),
     'annotate-pdf': editPdfMode('highlight'),
     'fill-pdf': editPdfMode('form'),
+    'sejda-alternative': lazy(() => import('./EditPdf.jsx')),
 };
 
 export default tools;

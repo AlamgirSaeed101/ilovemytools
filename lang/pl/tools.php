@@ -2378,6 +2378,47 @@ return [
         ],
     ],
 
+    'sejda-alternative' => [
+        'name' => 'Alternatywa do Sejda',
+        'title' => 'Darmowa Alternatywa dla Sejda - Edycja i Podpis PDF',
+        'description' => 'Darmowa alternatywa dla Sejda: edytuj tekst w PDF, wypełniaj formularze, podpisuj i dodawaj znak wodny, wszystko w przeglądarce. Bez rejestracji.',
+        'h1' => 'Darmowa Alternatywa dla Sejda',
+        'tagline' => 'Wszystko, co robi edytor PDF jak Sejda - tekst, formularze, podpisy i znaki wodne - bez wysyłania pliku gdziekolwiek.',
+        'keywords' => ['alternatywa dla sejda', 'darmowa alternatywa dla sejda', 'sejda alternatywa', 'edytor pdf jak sejda', 'edycja pdf bez sejda'],
+        'intro' => 'Szukasz alternatywy dla Sejda? To ten sam edytor, z którego korzystają wszystkie narzędzia na tej stronie: kliknij linię tekstu i wpisz ją na nowo we własnej czcionce PDF, dodaj tekst, obrazy, kształty lub podpis, wypełnij pola formularza, zakryj treść na biało albo dodaj znak wodny, a potem zapisz. Różnica polega na tym, gdzie odbywa się praca: edytor Sejda działa na własnych serwerach, więc Twój plik jest tam wysyłany do przetworzenia. Ten edytor działa w całości w Twojej przeglądarce z pdf.js i pdf-lib, więc PDF nigdy nie opuszcza Twojego urządzenia, a do tego nie ma rejestracji, limitu zadań na godzinę ani kosztu.',
+        'steps' => [
+            'Wybierz PDF, który chcesz edytować, wypełnić lub podpisać.',
+            'Wybierz zakładkę - Edytuj tekst, Dodaj tekst, Formularze, Podpis, Strony lub Znak wodny - zależnie od potrzeb.',
+            'Wprowadź zmiany; przesuń, zmień rozmiar lub usuń to, co dodasz.',
+            'Zmieniaj zakładki i strony swobodnie - Wycofaj i Przywróć obejmują każdą zmianę do momentu zapisu.',
+            'Kliknij Zapisz PDF i pobierz plik.',
+        ],
+        'features' => [
+            'Edytuje tekst już znajdujący się w PDF, w jego własnej czcionce i rozmiarze',
+            'Dodaje tekst, obrazy, kształty, linki, zakreślenia i rysunek odręczny',
+            'Wypełnia istniejące pola formularza lub tworzy nowe pola tekstowe, checkboxy, listy i podpisy',
+            'Rysuje, wpisuje lub wczytuje podpis i umieszcza go na dowolnej stronie',
+            'Wstawia, usuwa, obraca lub zmienia kolejność stron',
+            'Dodaje znak wodny z tekstu lub logo, na wierzchu strony lub pod spodem',
+            'Zakrywanie na biało, podkreślenie, przekreślenie i notatki',
+            'Działa w całości w Twojej przeglądarce - PDF nigdy nie jest wysyłany na serwer',
+            'Bez rejestracji, bez konta, bez limitu zadań na godzinę, bez kosztów',
+            'Twoja praca zapisuje się automatycznie, więc odświeżenie albo przypadkowe zamknięcie nigdy jej nie gubi',
+        ],
+        'content' => [
+            ['heading' => 'Porównanie z Sejda', 'body' => 'Edytor online Sejda obejmuje podobny zakres zadań - edycję tekstu, wypełnianie formularzy, podpisywanie, dodawanie znaku wodnego - ale każdy plik jest wysyłany na serwery Sejda do przetworzenia, a darmowy plan ogranicza liczbę zadań na godzinę oraz rozmiar lub długość pliku, zanim poprosi o płatność albo czekanie. Ten edytor wykonuje podobną pracę z pdf.js i pdf-lib prosto w Twojej przeglądarce: nic nie jest wysyłane nigdzie, więc nie ma nic do wysłania, kolejkowania czy czekania, i brak limitu, ile PDF-ów edytujesz.'],
+            ['heading' => 'Jeden edytor, każda funkcja', 'body' => 'Dodaj tekst do PDF, Zakryj PDF na biało, Edytuj tekst PDF, Narzędzie do anotacji PDF, Wypełnij formularz PDF, Podpisz PDF i Znak wodny PDF to wszystko ten sam edytor z inną zakładką otwartą na start; zmiana zakładki tutaj, w trakcie edycji, daje dostęp do każdej z nich bez ponownego otwierania pliku.'],
+            ['heading' => 'Korzystaj bez rejestracji', 'body' => 'Nie ma konta, logowania ani kroku z e-mailem: otwórz stronę, wybierz PDF do 200 MB i zacznij edytować. Twoja przeglądarka sama odczytuje i edytuje plik, więc po naszej stronie nic nie zostaje zapisane do późniejszego usunięcia. Podczas pracy postęp zapisuje się automatycznie w pamięci przeglądarki na tym urządzeniu, więc odświeżenie strony albo zamknięta karta można wznowić, a ta zapisana kopia jest usuwana po pobraniu edytowanego PDF-a lub wybraniu Odrzuć.'],
+        ],
+        'faqs' => [
+            ['q' => 'Czy to naprawdę darmowe, w przeciwieństwie do płatnego planu Sejda?', 'a' => 'Tak. Każda funkcja na tej stronie jest darmowa, bez rejestracji, bez konta i bez limitu, ile PDF-ów edytujesz lub jak często.'],
+            ['q' => 'Czy wysyła mój PDF na serwer tak jak Sejda?', 'a' => 'Nie. Wszystko - edycja, wypełnianie, podpisywanie i zapisywanie - odbywa się w Twojej przeglądarce dzięki JavaScript; Twój plik nigdy nie jest wysyłany nigdzie.'],
+            ['q' => 'Czy robi wszystko to, co edytor Sejda?', 'a' => 'Obejmuje te same główne zadania: edycję istniejącego tekstu, dodawanie treści, wypełnianie i tworzenie pól formularza, podpisywanie, narzędzia stron i znak wodny - wszystko w jednym edytorze z zakładką dla każdej funkcji.'],
+            ['q' => 'Od której zakładki zacząć?', 'a' => 'Edytuj tekst, by zmienić coś już napisanego w PDF, Formularze, by wypełnić lub utworzyć pola, Podpis, by się podpisać, albo Znak wodny, by umieścić logo lub tekst na stronie - możesz zmieniać zakładki w każdej chwili, nie tracąc swojej pracy.'],
+            ['q' => 'Czy zapisany PDF będzie miał automatycznie dodany znak wodny?', 'a' => 'Nie. Zapisany PDF zawiera tylko wprowadzone przez Ciebie zmiany; zakładka Znak wodny dodaje go tylko, jeśli zdecydujesz się go użyć.'],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Kalkulator kredytu',
         'title' => 'Kalkulator Kredytu - Rata i Harmonogram Spłat',

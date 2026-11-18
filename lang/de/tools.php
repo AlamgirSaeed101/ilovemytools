@@ -3040,6 +3040,47 @@ return [
         ],
     ],
 
+    'sejda-alternative' => [
+        'name' => 'Sejda-Alternative',
+        'title' => 'Kostenlose Sejda-Alternative - PDF Bearbeiten & Signieren',
+        'description' => 'Eine kostenlose Sejda-Alternative: PDF-Text bearbeiten, Formulare ausfüllen, unterschreiben und ein Wasserzeichen hinzufügen, alles im Browser. Ohne Anmeldung.',
+        'h1' => 'Kostenlose Sejda-Alternative',
+        'tagline' => 'Alles, was ein PDF-Editor wie Sejda kann - Text, Formulare, Unterschriften und Wasserzeichen - ohne Ihre Datei irgendwohin hochzuladen.',
+        'keywords' => ['sejda alternative', 'kostenlose sejda alternative', 'sejda alternative kostenlos', 'pdf editor wie sejda', 'pdf bearbeiten ohne sejda'],
+        'intro' => 'Suchen Sie eine Alternative zu Sejda? Das ist derselbe Editor, den jedes Werkzeug auf dieser Seite nutzt: Klicken Sie auf eine Zeile Text und tippen Sie sie in der eigenen Schrift des PDFs neu, fügen Sie Text, Bilder, Formen oder eine Unterschrift hinzu, füllen Sie Formularfelder aus, decken Sie Inhalte weiß ab oder fügen Sie ein Wasserzeichen hinzu, und speichern Sie dann. Der Unterschied liegt darin, wo die Arbeit stattfindet: Sejdas Editor läuft auf eigenen Servern, Ihre Datei wird also dorthin zur Verarbeitung hochgeladen. Dieser Editor läuft komplett in Ihrem Browser mit pdf.js und pdf-lib, Ihr PDF verlässt also nie Ihr Gerät, und es gibt keine Anmeldung, kein Limit an Aufgaben pro Stunde und keine Kosten.',
+        'steps' => [
+            'Wählen Sie das PDF, das Sie bearbeiten, ausfüllen oder unterschreiben möchten.',
+            'Wählen Sie einen Tab - Text bearbeiten, Text hinzufügen, Formulare, Unterschrift, Seiten oder Wasserzeichen - passend zu Ihrer Aufgabe.',
+            'Nehmen Sie Ihre Änderungen vor; verschieben, skalieren oder entfernen Sie, was Sie hinzufügen.',
+            'Wechseln Sie frei zwischen Tabs oder Seiten - Rückgängig und Wiederholen decken jede Änderung ab, bis Sie speichern.',
+            'Klicken Sie auf PDF speichern und laden Sie die Datei herunter.',
+        ],
+        'features' => [
+            'Bearbeitet den im PDF bereits vorhandenen Text in seiner eigenen Schrift und Größe',
+            'Fügt Text, Bilder, Formen, Links, Markierungen und Freihandzeichnungen hinzu',
+            'Füllt vorhandene Formularfelder aus oder erstellt neue Textfelder, Kontrollkästchen, Dropdowns und Unterschriftsfelder',
+            'Zeichnet, tippt oder lädt eine Unterschrift hoch und platziert sie auf jeder Seite',
+            'Fügt Seiten ein, löscht, dreht oder ordnet sie neu an',
+            'Fügt ein Text- oder Logo-Wasserzeichen hinzu, über oder hinter der Seite',
+            'Weiß abdecken, Unterstreichen, Durchstreichen und Haftnotizen',
+            'Läuft komplett in Ihrem Browser - Ihr PDF wird nie zu einem Server hochgeladen',
+            'Keine Anmeldung, kein Konto, kein Limit an Aufgaben pro Stunde, keine Kosten',
+            'Ihre Arbeit wird automatisch gespeichert, sodass ein Neuladen oder versehentliches Schließen sie nie verliert',
+        ],
+        'content' => [
+            ['heading' => 'Vergleich mit Sejda', 'body' => 'Sejdas Online-Editor deckt eine ähnliche Bandbreite an Aufgaben ab - Text bearbeiten, Formulare ausfüllen, unterschreiben, Wasserzeichen hinzufügen -, aber jede Datei wird zur Verarbeitung auf Sejdas Server hochgeladen, und der kostenlose Plan begrenzt, wie viele Aufgaben Sie pro Stunde erledigen können und wie groß oder lang eine Datei sein darf, bevor er zum Bezahlen oder Warten aufruft. Dieser Editor erledigt die gleiche Art von Arbeit mit pdf.js und pdf-lib direkt in Ihrem Browser: Nichts wird irgendwohin gesendet, es gibt also nichts hochzuladen, in eine Warteschlange zu stellen oder abzuwarten, und kein Limit, wie viele PDFs Sie bearbeiten.'],
+            ['heading' => 'Ein Editor, jede Funktion', 'body' => 'Text zu PDF hinzufügen, PDF weiß abdecken, PDF-Text bearbeiten, PDF-Anmerkungstool, PDF-Formular ausfüllen, PDF unterschreiben und PDF-Wasserzeichen sind alle derselbe Editor mit einem anderen Starttab; der Tab-Wechsel hier, mitten in der Bearbeitung, erreicht jedes davon, ohne die Datei erneut zu öffnen.'],
+            ['heading' => 'Nutzen ohne Anmeldung', 'body' => 'Es gibt kein Konto, keinen Login und keinen E-Mail-Schritt: Öffnen Sie die Seite, wählen Sie ein PDF mit bis zu 200 MB und beginnen Sie mit der Bearbeitung. Ihr Browser liest und bearbeitet die Datei selbst, sodass auf unserer Seite nichts gespeichert bleibt, das später gelöscht werden müsste. Während Sie arbeiten, speichert sich der Fortschritt automatisch im Speicher Ihres Browsers auf diesem Gerät, sodass ein Neuladen oder ein geschlossener Tab fortgesetzt werden kann, und diese gespeicherte Kopie wird gelöscht, sobald Sie das bearbeitete PDF herunterladen oder Verwerfen wählen.'],
+        ],
+        'faqs' => [
+            ['q' => 'Ist es wirklich kostenlos, anders als Sejdas bezahlter Plan?', 'a' => 'Ja. Alle Funktionen auf dieser Seite sind kostenlos, ohne Anmeldung, ohne Konto und ohne Limit, wie viele PDFs Sie bearbeiten oder wie oft.'],
+            ['q' => 'Lädt es mein PDF auf einen Server hoch, wie Sejda es tut?', 'a' => 'Nein. Alles - Bearbeiten, Ausfüllen, Unterschreiben und Speichern - geschieht in Ihrem Browser mit JavaScript; Ihre Datei wird nie irgendwohin gesendet.'],
+            ['q' => 'Kann es alles, was Sejdas Editor kann?', 'a' => 'Es deckt die gleichen Kernaufgaben ab: vorhandenen Text bearbeiten, Inhalte hinzufügen, Formularfelder ausfüllen und erstellen, unterschreiben, Seitenwerkzeuge und Wasserzeichen, alles in einem Editor mit einem Tab für jede Funktion.'],
+            ['q' => 'Mit welchem Tab sollte ich anfangen?', 'a' => '„Text bearbeiten" zum Ändern von Text, der schon im PDF steht, „Formulare" zum Ausfüllen oder Erstellen von Feldern, „Unterschrift" zum Unterschreiben, oder „Wasserzeichen" zum Aufstempeln eines Logos oder Textes auf die Seite - Sie können jederzeit den Tab wechseln, ohne Ihre Arbeit zu verlieren.'],
+            ['q' => 'Wird meinem gespeicherten PDF automatisch ein Wasserzeichen hinzugefügt?', 'a' => 'Nein. Das gespeicherte PDF enthält nur die von Ihnen vorgenommenen Änderungen; der Tab „Wasserzeichen" fügt eines nur hinzu, wenn Sie ihn verwenden.'],
+        ],
+    ],
+
     'loan-calculator' => [
         'name' => 'Kreditrechner',
         'title' => 'Kreditrechner - Monatliche Rate & Tilgungsplan',
