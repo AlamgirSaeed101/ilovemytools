@@ -44,7 +44,20 @@ return [
     // Launch/directory badges shown in the footer: link, one image per theme, alt text and
     // display height in px. Each directory's own image is kept for the theme it was made for
     // (they check for it); the other theme uses a recoloured copy in public/images/badges.
-    'badges' => [],
+    // A badge that adapts to the theme itself gives one 'src' (plus 'width') instead of
+    // 'light'/'dark'. Optional 'rel' and 'class' override the link's defaults when a
+    // directory asks for exact markup.
+    'badges' => [
+        [
+            'url' => 'https://hypestar.org/?utm_source=supporter_badge&utm_medium=referral&utm_campaign=hype_star_badge',
+            'src' => 'https://hypestar.org/badges/support-hype-star-auto-v2.svg',
+            'alt' => 'Featured on Hype Star',
+            'width' => 140,
+            'height' => 24,
+            'rel' => 'noopener nofollow',
+            'class' => 'hypestar-badge',
+        ],
+    ],
 
     'same_as' => [
         'https://www.linkedin.com/company/ilovemytools',

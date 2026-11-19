@@ -445,9 +445,15 @@ function Footer() {
                 {site.badges?.length > 0 && (
                     <div className="mt-4 flex flex-wrap items-center gap-3">
                         {site.badges.map((b) => (
-                            <a key={b.url} className="inline-block leading-none" href={b.url} target="_blank" rel="noopener noreferrer">
-                                <img className="block dark:hidden" src={b.light} alt={b.alt} height={b.height} style={{ height: b.height, width: 'auto' }} loading="lazy" />
-                                <img className="hidden dark:block" src={b.dark} alt={b.alt} height={b.height} style={{ height: b.height, width: 'auto' }} loading="lazy" />
+                            <a key={b.url} className={`inline-block leading-none${b.class ? ` ${b.class}` : ''}`} href={b.url} target="_blank" rel={b.rel || 'noopener noreferrer'}>
+                                {b.src ? (
+                                    <img className="block" src={b.src} width={b.width} height={b.height} alt={b.alt} loading="lazy" />
+                                ) : (
+                                    <>
+                                        <img className="block dark:hidden" src={b.light} alt={b.alt} height={b.height} style={{ height: b.height, width: 'auto' }} loading="lazy" />
+                                        <img className="hidden dark:block" src={b.dark} alt={b.alt} height={b.height} style={{ height: b.height, width: 'auto' }} loading="lazy" />
+                                    </>
+                                )}
                             </a>
                         ))}
                     </div>

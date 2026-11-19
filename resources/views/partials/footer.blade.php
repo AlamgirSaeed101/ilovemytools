@@ -44,9 +44,13 @@
             @if (config('site.badges'))
                 <div class="footer-badges">
                     @foreach (config('site.badges') as $badge)
-                        <a class="footer-badge" href="{{ $badge['url'] }}" target="_blank" rel="noopener noreferrer">
-                            <img class="footer-badge__img--light" src="{{ $badge['light'] }}" alt="{{ $badge['alt'] }}" height="{{ $badge['height'] }}" style="height:{{ $badge['height'] }}px;width:auto;" loading="lazy">
-                            <img class="footer-badge__img--dark" src="{{ $badge['dark'] }}" alt="{{ $badge['alt'] }}" height="{{ $badge['height'] }}" style="height:{{ $badge['height'] }}px;width:auto;" loading="lazy">
+                        <a class="footer-badge{{ ! empty($badge['class']) ? ' '.$badge['class'] : '' }}" href="{{ $badge['url'] }}" target="_blank" rel="{{ $badge['rel'] ?? 'noopener noreferrer' }}">
+                            @if (! empty($badge['src']))
+                                <img src="{{ $badge['src'] }}" width="{{ $badge['width'] }}" height="{{ $badge['height'] }}" alt="{{ $badge['alt'] }}" loading="lazy">
+                            @else
+                                <img class="footer-badge__img--light" src="{{ $badge['light'] }}" alt="{{ $badge['alt'] }}" height="{{ $badge['height'] }}" style="height:{{ $badge['height'] }}px;width:auto;" loading="lazy">
+                                <img class="footer-badge__img--dark" src="{{ $badge['dark'] }}" alt="{{ $badge['alt'] }}" height="{{ $badge['height'] }}" style="height:{{ $badge['height'] }}px;width:auto;" loading="lazy">
+                            @endif
                         </a>
                     @endforeach
                 </div>
