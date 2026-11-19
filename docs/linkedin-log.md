@@ -57,3 +57,5 @@ Tools already announced on LinkedIn (one per line: date and slug). The daily rou
 2026-11-17 fill-pdf company
 2026-11-18 age-calculator personal
 2026-11-18 age-calculator company
+2026-11-19 sejda-alternative personal
+2026-11-19 sejda-alternative company
