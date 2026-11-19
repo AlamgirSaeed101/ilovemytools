@@ -4511,4 +4511,88 @@ return [
         ],
     ],
 
+    'free-sejda-alternative-editing-pdfs-in-your-browser' => [
+        'title' => 'Free Sejda Alternative: Edit PDFs in Your Browser',
+        'description' => 'A free Sejda alternative for editing PDF text, filling forms, signing and watermarking, all in your browser. What it can do, how it compares, step by step.',
+        'h1' => 'A free Sejda alternative, right in your browser',
+        'intro' => 'Sejda is a well-known online PDF editor, and a reasonable first stop if you need to change text, fill a form or sign something without installing software. But its free plan uploads your file to Sejda\'s own servers to do the work, and it caps how much you can do before asking you to pay or come back later. If what you actually want is the same kind of editing - without uploading the file or running into a limit - this is a straightforward alternative built the other way around: the editing happens in your own browser, not on a server. Here is what that difference means in practice and how to use it.',
+        'tool' => 'sejda-alternative',
+        'related' => ['edit-pdf', 'fill-pdf', 'sign-pdf'],
+        'published' => '2026-11-19',
+        'updated' => '2026-11-19',
+        'sections' => [
+            [
+                'heading' => 'The real difference: where the file goes',
+                'paragraphs' => [
+                    'Most online PDF editors, Sejda included, work the same basic way: you upload your file to their servers, their software opens it and makes the change you asked for, and you download the result. That is a perfectly normal way to build a web tool, but it means your PDF - which might be a signed contract, a filled-in form with your address on it, or a scan of an ID - travels to and sits on someone else\'s infrastructure, even if only briefly.',
+                    'The alternative on this page uses two JavaScript libraries, pdf.js and pdf-lib, that run the entire job inside the tab you already have open. The file is read from your device, edited in memory, and saved back to your device; it is never sent anywhere over the network. That is also why there is nothing to queue, nothing to wait on, and no hourly cap on how much you can do - there is no server-side job to meter in the first place.',
+                ],
+            ],
+            [
+                'heading' => 'What you can actually do with it',
+                'paragraphs' => [
+                    'This is one editor with a tab for each job, not several separate tools you have to hunt for. Switching tabs keeps your file open, so you can, for example, fix a typo and then add a signature without starting over.',
+                ],
+                'list' => [
+                    'Edit text - click any line already in the PDF and retype it in the same font and size.',
+                    'Add text, images, links, shapes or freehand drawing anywhere on a page.',
+                    'Fill in existing form fields (text boxes, checkboxes, dropdowns, radio buttons), or create new ones.',
+                    'Sign - draw, type or upload a signature and place it on any page.',
+                    'Watermark - a text or logo stamp, on top of the page or behind it, on some or all pages.',
+                    'Page tools - insert a blank page, delete, rotate or reorder pages.',
+                    'Whiteout, highlight, underline and strikethrough for marking up or covering content.',
+                ],
+            ],
+            [
+                'heading' => 'Doing a typical job, step by step',
+                'paragraphs' => [
+                    'The steps are the same shape whatever you are changing, because every job happens inside the same editor:',
+                ],
+                'list' => [
+                    'Open the [Sejda Alternative](/sejda-alternative) page and choose your PDF (up to 200 MB).',
+                    'Pick the tab for your job - Edit text, Add text, Forms, Signature, Pages or Watermark.',
+                    'Make your change: click text to retype it, drag to place something new, or fill a field.',
+                    'Switch tabs or pages freely - everything stays open in the same session until you save.',
+                    'Use Undo or Redo if something needs correcting; nothing is final until you save.',
+                    'Click Save PDF and download the result.',
+                ],
+            ],
+            [
+                'heading' => 'Where a server-based editor like Sejda still makes sense',
+                'paragraphs' => [
+                    'A browser-only editor is not automatically better for every situation, and it is worth being honest about the trade-off. Running everything on your own device means the job is limited by your device\'s own memory and processing power rather than a server farm, so a genuinely huge or complex file can be slower here than on a service built around server hardware. A server-based tool can also offer things a browser cannot, such as OCR on a scanned document to recover selectable text, or converting a PDF to a fully editable Word file - jobs that need more processing than a browser can reasonably do on its own.',
+                    'What you are trading for that is simpler: uploading nothing, waiting on nothing, and not running into a plan limit while you work. For editing text that is already selectable, filling in a form, signing, or stamping a watermark - the jobs most people actually need - that trade works in your favour.',
+                ],
+                'table' => [
+                    'headers' => ['What you need', 'Where it runs', 'Why it matters here'],
+                    'rows' => [
+                        ['Edit, fill, sign or watermark a normal PDF', 'Entirely in your browser', 'Nothing uploaded, no task limit to run into'],
+                        ['OCR a scanned document into searchable text', 'A server-based tool', 'Needs more processing than a browser can reasonably do'],
+                        ['Convert a PDF into a fully editable Word document', 'A server-based tool', 'Same reason - heavier processing than click-to-edit text'],
+                        ['A very large or very long file', 'Depends on your device', 'Browser-based speed depends on your own hardware, not a server'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'Before you start',
+                'list' => [
+                    'Keep the original file until you have checked the saved copy - undo only works before you save.',
+                    'If you are editing text, remember it only changes letters already embedded in the PDF\'s own font; a completely new character the file never used falls back to a similar font with a notice.',
+                    'Your progress auto-saves in the browser as you work, so a refresh or an accidentally closed tab can usually be picked up again without starting over.',
+                    'Download or discard the file when you are done - that clears the saved session so the next file you open starts clean.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Is this actually free, with no catch like Sejda\'s free plan has?', 'a' => 'Yes. There is no account, no sign-up and no limit on how many PDFs you edit or how often you use it.'],
+            ['q' => 'Does my PDF get uploaded anywhere, the way it does with Sejda?', 'a' => 'No. Editing, filling, signing and saving all happen in your browser with JavaScript; the file is never sent to a server.'],
+            ['q' => 'Can it replace Sejda for everything I use it for?', 'a' => 'For editing existing text, adding content, filling or creating form fields, signing, watermarking and basic page tools, yes. For jobs that need heavier processing, such as OCR on a scan or converting a PDF to an editable Word file, a server-based tool is still the better fit.'],
+        ],
+        'sources' => [
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+            ['title' => 'Mozilla, PDF.js - a PDF renderer and text extraction library', 'url' => 'https://mozilla.github.io/pdf.js/'],
+            ['title' => 'Wikipedia, PDF', 'url' => 'https://en.wikipedia.org/wiki/PDF'],
+        ],
+    ],
+
 ];
