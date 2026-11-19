@@ -46,7 +46,13 @@ AddType application/octet-stream .onnx
 
 # Performance (Core Web Vitals): compress text and cache build assets for a year.
 <IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/xml application/javascript application/json image/svg+xml
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/xml application/javascript text/javascript application/json application/manifest+json image/svg+xml
+</IfModule>
+
+# Brotli is smaller than gzip; GoDaddy shared hosting has no mod_brotli today, so this block only
+# switches on if the host ever enables it (browsers that don't ask for br still get gzip).
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/xml application/xml application/javascript text/javascript application/json application/manifest+json image/svg+xml
 </IfModule>
 
 <IfModule mod_expires.c>
@@ -74,6 +80,9 @@ AddType application/octet-stream .onnx
         Header unset Expires
     </If>
     <ElseIf "%{REQUEST_URI} =~ m#^/build/#">
+        # mod_expires adds its own "Cache-Control: max-age=..." in the normal header table, so
+        # without this unset the response carried two Cache-Control headers.
+        Header unset Cache-Control
         Header always set Cache-Control "public, max-age=31536000, immutable"
         Header unset Expires
     </ElseIf>
