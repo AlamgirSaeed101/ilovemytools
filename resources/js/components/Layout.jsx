@@ -2,6 +2,7 @@ import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react'
 import { Link, Outlet, ScrollRestoration, useLocation, useNavigation } from 'react-router';
 import AdSlot from './AdSlot.jsx';
 import Icon from './Icon.jsx';
+import TrustpilotWidget from './TrustpilotWidget.jsx';
 import { getSite } from '../lib/api.js';
 import { t } from '../lib/i18n.js';
 import { usePageMotion } from '../lib/pageMotion.js';
@@ -457,6 +458,9 @@ function Footer() {
                             </a>
                         ))}
                     </div>
+                )}
+                {site.trustpilot && (
+                    <TrustpilotWidget key={site.locale} config={site.trustpilot} locale={site.locale} label={t('Review us on Trustpilot')} />
                 )}
                 <p className="mt-4 mb-0 text-[0.85rem] text-muted">
                     © {new Date().getFullYear()} {site.name}. {t('All rights reserved.')}

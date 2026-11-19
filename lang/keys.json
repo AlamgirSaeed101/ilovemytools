@@ -6700,6 +6700,13 @@
     ]
   },
   {
+    "key": "Review us on Trustpilot",
+    "files": [
+      "resources/js/components/Layout.jsx",
+      "resources/views/partials/footer.blade.php"
+    ]
+  },
+  {
     "key": "Right in the recommended 7-9 hours for adults.",
     "files": [
       "resources/js/lib/sleep.js"

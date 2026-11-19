@@ -55,6 +55,15 @@
                     @endforeach
                 </div>
             @endif
+            @if ($tp = config('site.trustpilot'))
+                {{-- Trustpilot Review Collector. The script is loaded by the React footer when this
+                     scrolls into view; the link inside is what no-JS visitors and crawlers get. --}}
+                <div class="footer-trustpilot">
+                    <div class="trustpilot-widget" data-locale="{{ $tp['locales'][\App\Support\Locale::current()] ?? 'en-US' }}" data-template-id="{{ $tp['template_id'] }}" data-businessunit-id="{{ $tp['business_unit_id'] }}" data-style-height="{{ $tp['height'] }}px" data-style-width="100%" style="height:{{ $tp['height'] }}px">
+                        <a href="{{ $tp['url'] }}" target="_blank" rel="noopener">{{ t('Review us on Trustpilot') }}</a>
+                    </div>
+                </div>
+            @endif
         </div>
     </div>
 </footer>

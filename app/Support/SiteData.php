@@ -123,6 +123,7 @@ class SiteData
             'productHunt' => (string) config('site.product_hunt'),
             'linkedin' => (string) config('site.linkedin'),
             'badges' => array_values(config('site.badges', [])),
+            'trustpilot' => config('site.trustpilot') ?: null,
             'founder' => (string) (config('site.founder')['name'] ?? ''),
             // The founder's author page (English only): its path, search title and public profiles.
             'author' => self::author(),

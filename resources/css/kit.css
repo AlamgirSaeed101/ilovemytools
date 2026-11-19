@@ -1340,6 +1340,19 @@ h3 {
     line-height: 0;
 }
 
+/* Trustpilot widget: its 52px height is reserved so the iframe doesn't shift the page. */
+.footer-trustpilot {
+    width: 100%;
+    max-width: 240px;
+    margin-top: 1rem;
+}
+
+.footer-trustpilot .trustpilot-widget {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
 /* Same switch as the logo: dark is the default, the light image shows in light mode. */
 .footer-badge__img--light,
 :root[data-theme='light'] .footer-badge__img--dark {

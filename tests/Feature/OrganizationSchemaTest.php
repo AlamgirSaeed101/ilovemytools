@@ -16,5 +16,6 @@ class OrganizationSchemaTest extends TestCase
         $this->assertNotNull($org);
         $this->assertSame(['English', 'German', 'Italian'], $org['contactPoint']['availableLanguage']);
         $this->assertContains('https://www.linkedin.com/company/ilovemytools', $org['sameAs']);
+        $this->assertContains('https://www.trustpilot.com/review/ilovemytools.store', $org['sameAs']);
     }
 }

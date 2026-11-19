@@ -59,8 +59,20 @@ return [
         ],
     ],
 
+    // Trustpilot "Review Collector" widget in the footer (free plan). The bootstrap script loads only
+    // when the footer scrolls into view or on the first interaction; the link inside works without JS.
+    'trustpilot' => [
+        'url' => 'https://www.trustpilot.com/review/ilovemytools.store',
+        'business_unit_id' => '6afb15c79898c9d06ed48fd9',
+        'template_id' => '56278e9abfbbba0bdcd568bc',
+        'height' => 52,
+        // Widget language per site language; languages Trustpilot doesn't offer fall back to en-US.
+        'locales' => ['en' => 'en-US', 'es' => 'es-ES', 'pt' => 'pt-BR', 'fr' => 'fr-FR', 'de' => 'de-DE', 'it' => 'it-IT', 'pl' => 'pl-PL'],
+    ],
+
     'same_as' => [
         'https://www.linkedin.com/company/ilovemytools',
+        'https://www.trustpilot.com/review/ilovemytools.store',
         'https://www.crunchbase.com/organization/ilovemytools',
         'https://www.producthunt.com/products/ilovetools-3',
         'https://www.indiehackers.com/product/ilovemytools',
