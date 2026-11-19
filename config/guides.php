@@ -4531,7 +4531,7 @@ return [
             [
                 'heading' => 'What you can actually do with it',
                 'paragraphs' => [
-                    'This is one editor with a tab for each job, not several separate tools you have to hunt for. Switching tabs keeps your file open, so you can, for example, fix a typo and then add a signature without starting over.',
+                    'This is one editor with a tab for each job, not several separate tools you have to hunt for. Switching tabs keeps your file open, so you can, for example, fix a typo and then add a signature without starting over. The same editor also runs the [Edit PDF](/edit-pdf) and [Fill PDF Form](/fill-pdf) pages, each opening with the right tool ready.',
                 ],
                 'list' => [
                     'Edit text - click any line already in the PDF and retype it in the same font and size.',
