@@ -4,8 +4,8 @@ return [
 
     'word-counter' => [
         'name' => 'Wortzähler',
-        'title' => 'Wortzähler: Wörter & Zeichen online zählen – kostenlos',
-        'description' => 'Wortzähler & Wörterzähler online: Wörter, Zeichen (mit/ohne Leerzeichen), Sätze und Absätze sofort zählen, mit Lesezeit. Kostenlos, ohne Anmeldung.',
+        'title' => 'Wortzähler Online: Wörter, Zeichen kostenlos zählen',
+        'description' => 'Kostenloser Wortzähler online: Zähle Wörter, Zeichen, Sätze und Absätze sofort, inklusive Lesezeit, Sprechzeit und Keyword-Dichte. Ohne Anmeldung.',
         'h1' => 'Wortzähler Online',
         'tagline' => 'Zähle Wörter, Zeichen, Sätze und Lesezeit sofort.',
         'keywords' => ['wortzähler online', 'wortzähler', 'wörterzähler', 'wort zähler', 'zeichenzähler', 'zeichen zählen', 'wörter zählen', 'wie viele wörter hat mein text', 'lesezeit berechnen'],
@@ -241,7 +241,7 @@ return [
 
     'image-compressor' => [
         'name' => 'Bild komprimieren',
-        'title' => 'JPG verkleinern online – Bildgröße kostenlos reduzieren',
+        'title' => 'Bild verkleinern online: JPG & PNG Größe reduzieren',
         'description' => 'JPG, PNG und WebP online verkleinern: Bildgröße kostenlos reduzieren, z. B. auf 100 KB, ohne sichtbaren Qualitätsverlust. Nichts verlässt dein Gerät.',
         'h1' => 'Bild verkleinern & komprimieren',
         'tagline' => 'Verkleinere JPG-, PNG- und WebP-Dateien – sogar auf eine exakte Größe wie 100 KB.',
@@ -311,8 +311,8 @@ return [
 
     'image-resizer' => [
         'name' => 'Bildgröße ändern',
-        'title' => 'JPG Bilder Größe ändern - Online, PNG & WebP umwandeln',
-        'description' => 'JPG Größe ändern online: Bilder auf exakte Pixel oder Prozent skalieren und zwischen JPG, PNG und WebP umwandeln. Kostenlos, ohne Upload, privat.',
+        'title' => 'Bildgröße ändern: JPG, PNG und WebP skalieren und umwandeln',
+        'description' => 'Ändere die Bildgröße auf exakte Pixel oder prozentual und wandle zwischen JPG, PNG und WebP um. Kostenloses Online-Tool, bei dem deine Fotos privat bleiben.',
         'h1' => 'Bildgröße ändern & umwandeln',
         'tagline' => 'Skaliere auf exakte Pixel oder prozentual und wandle JPG, PNG und WebP um.',
         'keywords' => ['bildgröße ändern', 'bild skalieren', 'png in jpg', 'jpg in png', 'webp in jpg', 'bild konverter'],
@@ -367,8 +367,8 @@ return [
 
     'jpg-to-pdf' => [
         'name' => 'JPG zu PDF',
-        'title' => 'JPG in PDF zusammenfügen: mehrere Bilder in ein PDF',
-        'description' => 'JPG in PDF umwandeln: mehrere JPG-, PNG- oder WebP-Bilder kostenlos zu einem PDF zusammenfügen, sortieren, A4 oder Letter. Kein Upload, kein Wasserzeichen.',
+        'title' => 'JPG zu PDF: Bilder online kostenlos in PDF umwandeln',
+        'description' => 'Wandle JPG-, PNG- oder WebP-Bilder kostenlos in PDF um. Fotos anordnen, Seitengröße, Ausrichtung und Ränder wählen. Kein Upload, kein Wasserzeichen.',
         'h1' => 'JPG in PDF zusammenfügen',
         'tagline' => 'Füge mehrere JPG-, PNG- und WebP-Bilder zu einer PDF-Datei zusammen.',
         'keywords' => [
@@ -572,8 +572,8 @@ return [
 
     'merge-pdf' => [
         'name' => 'PDF zusammenfügen',
-        'title' => 'PDF zusammenfügen online – kostenlos, ohne Anmeldung',
-        'description' => 'PDF zusammenfügen online: mehrere PDF-Dateien kostenlos zu einem Dokument kombinieren, Reihenfolge ändern, ohne Wasserzeichen. Nichts wird hochgeladen.',
+        'title' => 'PDF zusammenfügen: PDF-Dateien online kostenlos kombinieren',
+        'description' => 'Füge PDF-Dateien kostenlos zu einem Dokument zusammen. Reihenfolge ändern, ohne Wasserzeichen und Anmeldung. Nichts wird hochgeladen.',
         'h1' => 'PDF-Dateien online zusammenfügen',
         'tagline' => 'Mehrere PDFs zu einer Datei kombinieren – ohne Wasserzeichen, ohne Upload.',
         'keywords' => ['pdf zusammenfügen', 'pdf kombinieren', 'pdf dateien zusammenführen', 'pdf merger', 'pdf zusammenfügen kostenlos online'],
@@ -650,8 +650,8 @@ return [
 
     'age-calculator' => [
         'name' => 'Altersrechner',
-        'title' => 'Altersrechner: Alter in Tagen, Monaten & Jahren berechnen',
-        'description' => 'Berechne dein Alter in Tagen, Monaten und Jahren aus dem Geburtsdatum – mit Gesamtzahl der Tage, Wochen und Stunden sowie Countdown zum Geburtstag.',
+        'title' => 'Altersrechner: genaues Alter aus dem Geburtsdatum berechnen',
+        'description' => 'Berechne dein genaues Alter in Jahren, Monaten und Tagen aus dem Geburtsdatum, mit gelebten Tagen und Countdown zum nächsten Geburtstag.',
         'h1' => 'Altersrechner',
         'tagline' => 'Finde dein genaues Alter in Jahren, Monaten und Tagen – plus deinen nächsten Geburtstag.',
         'keywords' => ['altersrechner', 'alter berechnen', 'geburtsdatum rechner', 'wie alt bin ich', 'alter berechnen mit geburtsdatum'],
@@ -718,8 +718,8 @@ return [
 
     'percentage-calculator' => [
         'name' => 'Prozentrechner',
-        'title' => 'Prozentrechner mit Formel: Prozent & Veränderung',
-        'description' => 'Prozentrechner online mit Formel: X % von Y, wie viel Prozent X von Y ist und die prozentuale Veränderung zwischen zwei Zahlen berechnen. Kostenlos.',
+        'title' => 'Prozentrechner: Prozent, Veränderung und Zunahme berechnen',
+        'description' => 'Kostenloser Prozentrechner: X % von Y, wie viel Prozent X von Y ist, prozentuale Zu- oder Abnahme und Prozent aufschlagen oder abziehen. Mit Formel.',
         'h1' => 'Prozentrechner',
         'tagline' => 'Alle gängigen Prozentrechnungen an einem Ort, mit Formel.',
         'keywords' => ['prozentrechner', 'prozent berechnen', 'prozentuale veränderung berechnen', 'prozentuale zunahme berechnen', 'wie viel prozent'],
@@ -952,8 +952,8 @@ return [
 
     'what-is-my-ip' => [
         'name' => 'Wie ist meine IP',
-        'title' => 'Wie ist meine IP? Öffentliche IPv4-Adresse sofort prüfen',
-        'description' => 'Was ist meine IP? Sieh sofort deine öffentliche IPv4-Adresse, kopiere sie per Klick und prüfe, ob dein VPN wirkt. Kostenlos und ohne Anmeldung.',
+        'title' => 'Wie ist meine IP-Adresse? Öffentliche IP sofort prüfen',
+        'description' => 'Sieh sofort deine öffentliche IP-Adresse, ob sie IPv4 oder IPv6 ist, sowie Browser, Betriebssystem, Bildschirmgröße und Zeitzone. Kostenlose IP-Abfrage.',
         'h1' => 'Was ist meine öffentliche IP-Adresse?',
         'tagline' => 'Deine öffentliche IP-Adresse und Browserdetails – sofort.',
         'keywords' => ['wie ist meine ip', 'was ist meine ip', 'meine öffentliche ip', 'öffentliche ip adresse herausfinden', 'wie ist meine ipv4 adresse', 'ip adresse prüfen', 'meine ip adresse'],
@@ -1005,8 +1005,8 @@ return [
 
     'dice-roller' => [
         'name' => 'Würfel',
-        'title' => 'Online Würfel werfen: virtueller Würfel (D6, D20 & mehr)',
-        'description' => 'Onlinewürfel zum Werfen: 1 bis 10 virtuelle Würfel online, D4 bis D100. Faire Zufallsergebnisse mit 3D-Animation, Summe und Wurfverlauf. Kostenlos.',
+        'title' => 'Online-Würfel: virtuelle Würfel werfen (D6, D20 und mehr)',
+        'description' => 'Wirf 1 bis 10 virtuelle Würfel online: D4, D6, D8, D10, D12, D20 oder D100. Faire Zufallsergebnisse mit 3D-Animation, Summe und Wurfverlauf. Kostenlos.',
         'h1' => 'Online-Würfel',
         'tagline' => 'Wirf bis zu 10 Würfel, von D4 bis D100, mit 3D-Animation und Summe.',
         'keywords' => ['würfel online', 'online würfeln', 'virtueller würfel', 'w20 würfel', 'zufallswürfel'],
@@ -1057,8 +1057,8 @@ return [
 
     'coin-flip' => [
         'name' => 'Münzwurf',
-        'title' => 'Münzwurf online: Münze werfen – Kopf oder Zahl',
-        'description' => 'Münzwurf-Generator: Münze online werfen, Kopf oder Zahl mit 3D-Animation – oder bis zu 100 Münzen auf einmal, mit Summen und Serien. Kostenlos.',
+        'title' => 'Münzwurf: Kopf oder Zahl online werfen',
+        'description' => 'Wirf online eine Münze für Kopf oder Zahl mit realistischer 3D-Animation. Bis zu 100 Münzen auf einmal, mit Summen und Serien. Kostenlos.',
         'h1' => 'Münzwurf online – Münze werfen',
         'tagline' => 'Kopf oder Zahl? Wirf eine 3D-Münze oder bis zu 100 auf einmal und sieh die Statistik.',
         'keywords' => ['münzwurf', 'münze werfen', 'kopf oder zahl', 'münze werfen online', 'virtuelle münze'],
@@ -1167,7 +1167,7 @@ return [
     'random-number-generator' => [
         'name' => 'Zufallszahlengenerator',
         'title' => 'Zufallszahlengenerator: Zahlen in jedem Bereich ziehen',
-        'description' => 'Erzeuge Zufallszahlen in jedem Bereich, eine oder Hunderte auf einmal, mit oder ohne Duplikate. Ideal für Verlosungen, Lotto und Spiele. Kostenlos.',
+        'description' => 'Erzeuge Zufallszahlen in jedem Bereich, eine oder Hunderte auf einmal, mit oder ohne Duplikate. Ideal für Verlosungen, Lotto und Spiele. Kostenlos und sofort.',
         'h1' => 'Zufallszahlengenerator',
         'tagline' => 'Ziehe Zufallszahlen in jedem Bereich – bei Bedarf ohne Duplikate.',
         'keywords' => ['zufallszahlengenerator', 'zufallszahl', 'zahlen auslosen', 'zufallsgenerator zahlen', 'lottozahlen generator'],
@@ -1346,7 +1346,7 @@ return [
     'sleep-calculator' => [
         'name' => 'Schlafrechner',
         'title' => 'Schlafrechner: beste Zeit zum Schlafen und Aufwachen',
-        'description' => 'Schlafrechner: Finde die beste Zeit zum Schlafengehen oder Aufwachen nach 90-Minuten-Schlafzyklen, mit Einschlafzeit und Schlafstunden-Zähler. Kostenlos.',
+        'description' => 'Finde die beste Zeit zum Schlafengehen oder Aufwachen nach 90-Minuten-Schlafzyklen oder zähle deine Schlafstunden. Erholt aufwachen.',
         'h1' => 'Schlafrechner',
         'tagline' => 'Finde die beste Schlafens- oder Aufwachzeit und zähle deine geschlafenen Stunden.',
         'keywords' => ['schlafrechner', 'schlafzähler', 'wann schlafen gehen', 'schlafzyklus rechner', 'wann sollte ich ins bett gehen', 'stunden schlaf'],

@@ -4,8 +4,8 @@ return [
 
     'word-counter' => [
         'name' => 'Contaparole',
-        'title' => 'Contaparole e contacaratteri: conta parole online gratis',
-        'description' => 'Contaparole e contatore caratteri online gratis: conta parole, caratteri (con e senza spazi), frasi e paragrafi in tempo reale. Senza registrazione.',
+        'title' => 'Contaparole: conta parole e caratteri online gratis',
+        'description' => 'Contaparole online gratuito. Conta subito parole, caratteri, frasi e paragrafi e vedi tempo di lettura e parole chiave. Senza registrazione.',
         'h1' => 'Contaparole e contatore caratteri',
         'tagline' => 'Conta subito parole, caratteri, frasi e tempo di lettura.',
         'keywords' => ['contaparole', 'conta caratteri', 'contatore caratteri', 'contacaratteri', 'contatore parole', 'calcolo battute', 'contare parole', 'contare parole online', 'calcolo tempo di lettura'],
@@ -135,8 +135,8 @@ return [
 
     'password-generator' => [
         'name' => 'Generatore di password',
-        'title' => 'Generatore di password casuali sicure – gratis online',
-        'description' => 'Generatore di password casuali: crea password sicure da 4 a 128 caratteri con maiuscole, numeri e simboli, direttamente sul tuo dispositivo. Gratis.',
+        'title' => 'Generatore di password: password casuali sicure gratis',
+        'description' => 'Genera password casuali e sicure con lunghezza, simboli e numeri a scelta. Create in modo sicuro sul tuo dispositivo e mai inviate. Gratis e immediato.',
         'h1' => 'Generatore di password casuali',
         'tagline' => 'Crea password casuali e sicure con un clic, generate sul tuo dispositivo.',
         'keywords' => ['generatore di password', 'generatore di password casuali', 'generatore password sicure', 'crea password', 'password casuale', 'password sicura'],
@@ -641,8 +641,8 @@ return [
 
     'age-calculator' => [
         'name' => 'Calcolatore di età',
-        'title' => 'Calcolatore di età: la tua età in giorni, mesi e anni',
-        'description' => 'Inserisci la tua data di nascita per ottenere la tua età esatta in giorni, mesi e anni, con il conto alla rovescia per il compleanno. Gratis.',
+        'title' => 'Calcolatore di età: età esatta dalla data di nascita',
+        'description' => 'Calcola la tua età esatta in anni, mesi e giorni dalla data di nascita, con i giorni vissuti e il conto alla rovescia per il compleanno.',
         'h1' => 'Calcolatore di età',
         'tagline' => 'Scopri la tua età esatta in anni, mesi e giorni e il prossimo compleanno.',
         'keywords' => ['calcolatore età', 'calcolare età', 'calcolo data di nascita', 'quanti anni ho', 'calcolo età da data di nascita'],
@@ -709,8 +709,8 @@ return [
 
     'percentage-calculator' => [
         'name' => 'Calcolatore di percentuali',
-        'title' => 'Calcolo percentuale online: formula, aumento e variazione',
-        'description' => 'Calcolo percentuale gratis con formula: il X% di Y, che percentuale è X di Y e la variazione percentuale tra due numeri (aumento o diminuzione).',
+        'title' => 'Calcolo percentuale: percentuale, variazione e aumento',
+        'description' => 'Calcolatore di percentuali gratis: il X% di Y, che percentuale è X di Y, aumento o diminuzione percentuale e altro. Con la formula.',
         'h1' => 'Calcolo percentuale online',
         'tagline' => 'Tutti i calcoli percentuali più comuni in un unico posto, con la formula.',
         'keywords' => ['calcolatore percentuali', 'calcolo percentuale', 'calcolo variazione percentuale', 'calcolo aumento percentuale', 'che percentuale è'],
@@ -1048,8 +1048,8 @@ return [
 
     'coin-flip' => [
         'name' => 'Testa o croce',
-        'title' => 'Testa o croce online: lancia una moneta (anche 100)',
-        'description' => 'Testa o croce online gratis: lancia una moneta con animazione 3D o fino a 100 monete insieme, con totali e serie. Probabilità 50/50, senza registrazione.',
+        'title' => 'Testa o croce: lancia una moneta online',
+        'description' => 'Fai testa o croce online con un’animazione 3D realistica. Lancia fino a 100 monete insieme e segui totali e serie. Equo, gratis e immediato.',
         'h1' => 'Testa o croce online',
         'tagline' => 'Testa o croce? Lancia una moneta 3D o fino a 100 insieme e guarda le statistiche.',
         'keywords' => ['testa o croce', 'lancia una moneta', 'lancio moneta', 'testa o croce online', 'moneta virtuale'],
@@ -1337,7 +1337,7 @@ return [
     'sleep-calculator' => [
         'name' => 'Calcolatore del sonno',
         'title' => 'Calcolatore del sonno: quando dormire e svegliarsi',
-        'description' => 'Trova l’ora migliore per andare a letto o svegliarti in base ai cicli di sonno di 90 minuti, o conta quante ore hai dormito. Svegliati riposato. Gratis.',
+        'description' => 'Trova l’ora migliore per andare a letto o svegliarti con i cicli di 90 minuti, o conta quante ore hai dormito. Svegliati riposato.',
         'h1' => 'Calcolatore del sonno',
         'tagline' => 'Trova l’ora migliore per andare a letto o svegliarti e conta le ore dormite.',
         'keywords' => ['calcolatore del sonno', 'contatore del sonno', 'a che ora andare a letto', 'calcolo cicli del sonno', 'a che ora dormire', 'ore di sonno'],
