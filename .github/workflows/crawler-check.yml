@@ -1,0 +1,59 @@
+# TEMPORARY (GoDaddy case, Nov 2026): the shared host sometimes serves a "One moment, please..."
+# anti-bot page (HTTP 200) to data-centre crawlers instead of the real page or robots.txt.
+# GitHub runners are data-centre machines, so this fetches a few URLs every 30 minutes and records
+# time, runner IP, URL, user agent, status and whether the challenge came back. Each run uploads
+# a CSV artifact; the job summary shows the same rows. Remove this file once the case is closed.
+name: Crawler challenge check
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Fetch URLs and record responses
+        run: |
+          IP=$(curl -s --max-time 10 https://api.ipify.org || echo unknown)
+          echo "time_utc,runner_ip,url,user_agent,http_status,bytes,result" > results.csv
+          UAS=(
+            "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)"
+            "Mozilla/5.0 (compatible; AhrefsBot/7.0; +http://ahrefs.com/robot/)"
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
+          )
+          URLS=(
+            "https://ilovemytools.store/robots.txt"
+            "https://ilovemytools.store/sitemap.xml"
+            "https://ilovemytools.store/ads.txt"
+            "https://ilovemytools.store/"
+            "https://ilovemytools.store/compress-pdf"
+          )
+          for ua in "${UAS[@]}"; do
+            for url in "${URLS[@]}"; do
+              T=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+              CODE=$(curl -s -o body.txt -w '%{http_code}' --max-time 20 -A "$ua" "$url" || echo 000)
+              BYTES=$(wc -c < body.txt 2>/dev/null || echo 0)
+              if grep -qi "One moment, please" body.txt 2>/dev/null; then R=CHALLENGE; else R=real; fi
+              NAME=$(echo "$ua" | grep -oE 'bingbot|AhrefsBot|Chrome' | head -1)
+              echo "$T,$IP,$url,$NAME,$CODE,$BYTES,$R" >> results.csv
+            done
+          done
+          {
+            echo "### Runner IP: $IP"
+            echo '```'
+            column -s, -t < results.csv
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          if grep -q CHALLENGE results.csv; then echo "::warning::Challenge page served"; fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: crawler-check-${{ github.run_id }}
+          path: results.csv
+          retention-days: 14
