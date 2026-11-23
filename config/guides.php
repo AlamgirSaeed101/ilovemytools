@@ -4679,4 +4679,83 @@ return [
         ],
     ],
 
+    'how-to-convert-a-pdf-to-jpg' => [
+        'title' => 'How to Convert a PDF to JPG for Free',
+        'description' => 'Convert a PDF to JPG images for free, right in your browser: which DPI to pick, JPG vs. PNG, multi-page PDFs, and fixes for common conversion problems.',
+        'h1' => 'How to convert a PDF to JPG',
+        'intro' => "Most of the time a PDF is the wrong format to actually share something: you want to drop a page into a slide, post it on social media, or paste it into a chat, and none of those accept a PDF the way they accept an image. Converting the page to a JPG fixes that in one step. The part people get wrong is resolution - picking a setting that looks blurry on screen or needlessly huge for an email - so here is how to convert a PDF to JPG properly and pick the right settings for what you are actually doing with the image afterwards.",
+        'tool' => 'pdf-to-jpg',
+        'related' => ['pdf-to-png', 'jpg-to-pdf', 'split-pdf'],
+        'published' => '2026-11-23',
+        'updated' => '2026-11-23',
+        'sections' => [
+            [
+                'heading' => 'What actually happens during conversion',
+                'paragraphs' => [
+                    "A PDF page isn't a picture by default - it's a set of instructions for drawing text, lines and images at exact positions. Converting to JPG renders those instructions into an actual grid of pixels, the same way a PDF viewer draws the page on your screen, then saves that grid as a JPG file. Once it's a JPG, there is no more text to select or search, no more vector sharpness at any zoom level - just a fixed-size image, like a screenshot.",
+                    'That trade-off is fine for almost every reason people convert a PDF to JPG: sharing a page, pasting it somewhere that only takes images, or viewing it on a device or app that cannot open PDFs at all. It is a bad trade-off if you actually need the text to stay selectable or the file to stay small while covering many pages - a PDF usually beats a pile of JPGs for that.',
+                    'This is also why a multi-page PDF cannot become a single JPG: an image has one fixed width and height, so each page is rendered as its own separate file rather than stitched into one long image, which would make every page a different, awkward size to view or print.',
+                ],
+            ],
+            [
+                'heading' => 'Converting a PDF to JPG, step by step',
+                'paragraphs' => [
+                    'This runs entirely in your browser - the PDF is rendered and saved on your own device and never uploaded to a server.',
+                ],
+                'list' => [
+                    'Open the [PDF to JPG](/pdf-to-jpg) tool and choose your file.',
+                    'Check the page thumbnails to confirm you picked the right PDF.',
+                    'Pick a resolution: 72 DPI, 150 DPI or 300 DPI (see the table below for which to use).',
+                    'Click Convert.',
+                    'Download the result: a single-page PDF gives you one JPG, a multi-page PDF gives you a ZIP file of numbered images, one per page.',
+                ],
+            ],
+            [
+                'heading' => 'Which DPI should you pick?',
+                'paragraphs' => [
+                    'DPI (dots per inch) controls how many pixels the converter packs into each inch of the page, which is what decides both the sharpness of the image and its file size. A higher number is not automatically better - it just trades a bigger file for more detail, and most of that extra detail is wasted if the image is only ever going to be viewed on a screen.',
+                ],
+                'table' => [
+                    'headers' => ['Use case', 'DPI to pick', 'Why'],
+                    'rows' => [
+                        ['Posting on social media or in a chat', '72 DPI', 'Matches typical screen resolution; smallest, fastest-loading file'],
+                        ['Pasting into a slide deck, document or email', '150 DPI', 'Noticeably sharper than 72 DPI without a large file size'],
+                        ['Printing, or zooming in on small text', '300 DPI', 'Standard print resolution; produces the largest file but holds up when enlarged'],
+                        ['Archiving a scanned document as an image', '300 DPI', 'Keeps fine detail from the original scan readable'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'JPG or PNG?',
+                'paragraphs' => [
+                    'JPG uses lossy compression - it throws away some detail to make the file smaller, which is barely noticeable on a photo or a scanned page but can slightly soften sharp text edges and thin lines. PNG is lossless, so a page of crisp text, a table, or a chart with hard edges will look cleaner as a PNG, at the cost of a bigger file.',
+                    'In practice: convert to JPG for a scan, a photo page, or anything you are sharing casually where file size matters. Convert to [PDF to PNG](/pdf-to-png) instead when the page is mostly text or line art and you want it to look exactly as sharp as the original.',
+                ],
+            ],
+            [
+                'heading' => 'Fixing the problems people actually run into',
+                'paragraphs' => [
+                    'Most conversion complaints trace back to one of a small number of causes.',
+                ],
+                'list' => [
+                    'Image looks blurry when zoomed in: the DPI was too low for the zoom level you need - redo the conversion at 300 DPI.',
+                    'File is much bigger than expected: 300 DPI on a multi-page PDF produces one large image per page; drop to 150 or 72 DPI if you do not need print quality.',
+                    'Only want one page, not the whole document: use [Split PDF](/split-pdf) to pull out just that page first, then convert the one-page result - converting here always renders every page.',
+                    'Need the images back in a PDF afterwards: convert, edit the images if needed, then use [JPG to PDF](/jpg-to-pdf) to rebuild a PDF from them.',
+                    "Text looks slightly fuzzy even at 300 DPI: that's normal for JPG's lossy compression on fine text - switch to PDF to PNG if sharp text matters more than file size.",
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Can I convert just one page of a PDF to JPG?', 'a' => "This tool converts every page in the file. To get a single page, use Split PDF's \"Extract pages\" mode to pull out that one page first, then convert the resulting one-page PDF."],
+            ['q' => 'What DPI should I use for printing a converted image?', 'a' => '300 DPI is the standard choice for printing and holds up well if you need to zoom in. 150 DPI is enough for documents and slides, and 72 DPI is the smallest file, best for screens only.'],
+            ['q' => 'Does converting to JPG upload my PDF anywhere?', 'a' => "No. Pages are rendered to images entirely in your browser using JavaScript, and the file never leaves your device."],
+        ],
+        'sources' => [
+            ['title' => 'Mozilla, PDF.js - a PDF renderer and text extraction library', 'url' => 'https://mozilla.github.io/pdf.js/'],
+            ['title' => 'JPEG committee, Overview of JPEG', 'url' => 'https://jpeg.org/jpeg/'],
+            ['title' => 'Wikipedia: Dots per inch', 'url' => 'https://en.wikipedia.org/wiki/Dots_per_inch'],
+        ],
+    ],
+
 ];
