@@ -61,3 +61,5 @@ Tools already announced on LinkedIn (one per line: date and slug). The daily rou
 2026-11-19 sejda-alternative company
 2026-11-20 percentage-calculator personal
 2026-11-20 percentage-calculator company
+2026-11-23 watermark-pdf personal
+2026-11-23 watermark-pdf company
