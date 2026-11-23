@@ -1,5 +1,17 @@
 # Weekly SEO report
 
+**The 4-week page freeze has ended: the owner should decide whether to resume page edits (rule 14).**
+
+## Week ending 2026-11-22
+
+**No data for a fourth straight week — Windsor.ai connector reads are still paused.** All four pulls (Search Console: 56-day trend, 7-day pages, 7-day queries; GA4: sessions/engagement/landing pages) returned the identical error seen every week since 1 Nov: "reads are paused because you have 2 accounts connected (googleanalytics4: 1, searchconsole: 1) and your Free plan includes 1 account." `get_connectors` again shows only the two needed accounts — one each for `googleanalytics4` (account `517324997`) and `searchconsole` (account `sc-domain:ilovemytools.store`) — no stray third account to blame. `get_current_user` confirms the plan is still `FREE` (`is_paid: false`). No numbers were estimated or carried forward. This is now five consecutive weekly runs (1, 8, 15, 22 Nov) with zero real Search Console or GA4 data since the last real pull on 24 Oct — a full month with no visibility into whether the Google re-evaluation has turned around, and the page freeze has now ended (20 Nov) with the owner still unable to see whether it worked. See the 2026-10-24 report below for the last real data.
+
+### Recommended actions (owner decision only — no page edits made)
+
+1. **Fix the Windsor.ai blocker now** — it's the only thing standing between the owner and real data on whether the freeze worked: disconnect one of the two connected accounts, or upgrade to the Basic plan, at https://onboard.windsor.ai/app/ or https://onboard.windsor.ai/app/pricing, then the next weekly run (or a manual retry) should succeed.
+2. Decide whether to resume page edits (rule 14) only once real Search Console data confirms the re-evaluation has turned around — resuming blind, before that signal, risks repeating the "constant edits" pattern that triggered the original re-evaluation.
+3. Once data resumes, revisit the two items flagged in the 2026-10-24 report: `/domain-authority-checker` (good position, 0 clicks) and `/merge-pdf` (sessions but 0 engaged) — both are functional/SERP checks, not content edits, so they don't conflict with the freeze.
+
 ## Week ending 2026-11-15
 
 **No data for a third straight week — Windsor.ai connector reads are still paused.** All five pulls (Search Console: 56-day trend, 7-day pages, 7-day queries; GA4: sessions/engagement, landing pages) returned the identical error seen on 1 Nov and 8 Nov: "reads are paused because you have 2 accounts connected (googleanalytics4: 1, searchconsole: 1) and your Free plan includes 1 account." `get_connectors` again confirms only the two needed accounts (`googleanalytics4` account `517324997`, `searchconsole` account `sc-domain:ilovemytools.store`) are connected — no stray third account to blame. The blocker remains the Windsor.ai Free-plan 1-account limit itself, unchanged for three weeks running. No numbers were estimated or carried forward. The page freeze ends in 4 days (20 Nov) and this routine has now gone a full month (since 24 Oct) without a single real data point to confirm whether the Google re-evaluation has turned around — this is now the main open risk, not the freeze itself. See the 2026-10-24 report below for the last real data.
