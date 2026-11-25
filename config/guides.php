@@ -4758,4 +4758,85 @@ return [
         ],
     ],
 
+    'how-to-convert-word-to-pdf' => [
+        'title' => 'How to Convert a Word Document to PDF',
+        'description' => 'Convert a Word (.docx) file to PDF for free, right in your browser: when it matters, what formatting survives, and how to fix a converted file that looks wrong.',
+        'h1' => 'How to convert a Word document to PDF',
+        'intro' => "A resume, a contract, an invoice: the moment a Word document leaves your own computer, PDF is almost always the safer format to send it in. A .docx file can shift its layout depending on the fonts, Word version or operating system opening it; a PDF looks the same everywhere and is far harder for the recipient to accidentally edit. Here is why that happens, what actually survives the conversion, and how to do it without installing anything.",
+        'tool' => 'word-to-pdf',
+        'related' => ['pdf-to-word', 'merge-pdf', 'compress-pdf'],
+        'published' => '2026-11-25',
+        'updated' => '2026-11-25',
+        'sections' => [
+            [
+                'heading' => 'Why convert to PDF at all',
+                'paragraphs' => [
+                    'A .docx file is a working format: it is meant to be opened, reflowed and edited in Word, Google Docs or LibreOffice. None of those apps are guaranteed to render it identically - a font that is not installed on the reader\'s computer gets substituted, which can silently reflow every page and push a resume from one page onto two.',
+                    'A PDF fixes the page. Text, spacing and page breaks are baked in as a set of positioned shapes rather than reflowable content, so a bank, a recruiter or a print shop opening it sees exactly what you saw when you made it, regardless of what software or fonts they have installed.',
+                ],
+            ],
+            [
+                'heading' => 'What survives the conversion, and what does not',
+                'paragraphs' => [
+                    'Document converters read the structure of a .docx file (it is really a zip of XML files) and rebuild it as a PDF. How much of the original formatting comes through depends on how the converter rebuilds that structure.',
+                ],
+                'table' => [
+                    'headers' => ['Element', 'Usually survives?', 'Notes'],
+                    'rows' => [
+                        ['Headings and paragraphs', 'Yes', 'Reading order and structure are preserved'],
+                        ['Bulleted and numbered lists', 'Yes', 'Indentation and list markers carry over'],
+                        ['Bold, italic text', 'Yes', 'Basic character formatting is reliable'],
+                        ['Images', 'Usually', 'Simple inline images convert; wrapped or floating images are the most common exception'],
+                        ['Tables', 'Depends on the tool', 'Basic converters often skip tables entirely or flatten them to plain text'],
+                        ['Multi-column layouts, text boxes', 'Rarely', 'These are positioned content, not flowing text, and need a more complete layout engine'],
+                        ['Tracked changes, comments', 'No, by design', 'A PDF is a finished document; tracked changes should be accepted or rejected in Word first'],
+                        ['Headers and footers', 'Depends on the tool', 'Simpler converters often drop these'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'Converting with the Word to PDF tool',
+                'paragraphs' => [
+                    'The [Word to PDF](/word-to-pdf) tool on this site reads a .docx file and rebuilds its headings, paragraphs, lists, bold or italic text and images as a new PDF, entirely in your browser - the file is never uploaded to a server.',
+                ],
+                'list' => [
+                    'Choose or drop the .docx file you want to convert.',
+                    'Pick A4 or Letter as the page size, depending on where the document is going (Letter for the US, A4 almost everywhere else).',
+                    'Click Convert to PDF.',
+                    'Download the result and open it to check the layout before you send it anywhere.',
+                ],
+            ],
+            [
+                'heading' => 'Only .docx is supported - what to do with an old .doc file',
+                'paragraphs' => [
+                    'The .docx format (used by Word 2007 and every version since) is an open, documented XML structure that a browser-based tool can read directly. The older .doc format, from Word 2003 and earlier, is a closed binary format that needs different code entirely.',
+                    'If your file is still .doc, open it in Word, LibreOffice Writer or Google Docs and use "Save As" (or "Download" in Google Docs) to create a .docx copy first. That one extra step takes a few seconds and then the file converts normally.',
+                ],
+            ],
+            [
+                'heading' => 'Fixing a conversion that looks wrong',
+                'paragraphs' => [
+                    'Most problems trace back to one of a handful of causes.',
+                ],
+                'list' => [
+                    'A table turned into plain text or disappeared: this tool rebuilds paragraphs, lists, headings and images, not table layouts. If the document is mostly a table (an invoice or price list), it is usually easier to keep it in Excel and use an Excel to PDF converter instead, or accept that the table content will read as plain lines.',
+                    'An image is missing: images that wrap text or float off the page margin are the most common thing a browser-based converter cannot place reliably; images placed inline with the text come through correctly.',
+                    'The page looks cramped or the wrong size: pick Letter for documents aimed at the US and A4 for almost everywhere else, since the tool lays the content out to fit whichever one you choose before converting.',
+                    'Tracked changes or comments are missing from the PDF: this is expected, not a bug. Go back to Word, accept or reject every tracked change, and remove or resolve comments before converting, since a PDF is meant to be the final, agreed version.',
+                    'The file will not open as .docx: confirm it is not actually an old .doc file saved with the wrong extension; opening it in Word and re-saving as .docx resolves this.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Will my Word document look exactly the same once it is a PDF?', 'a' => 'Headings, paragraphs, lists, bold/italic text and most images carry over closely. Tables, multi-column layouts, text boxes, and exact fonts or spacing are not guaranteed to match pixel for pixel, so always check the result before sending it on.'],
+            ['q' => 'Can I convert an old .doc file directly?', 'a' => 'No, only the modern .docx format is supported. Open the .doc file in Word or Google Docs and save or download a .docx copy, then convert that.'],
+            ['q' => 'Does converting a Word document to PDF upload it anywhere?', 'a' => 'No. The conversion runs entirely in your browser using JavaScript, and the file never leaves your device.'],
+        ],
+        'sources' => [
+            ['title' => 'Ecma International, ECMA-376 Office Open XML file formats (.docx, .xlsx)', 'url' => 'https://ecma-international.org/publications-and-standards/standards/ecma-376/'],
+            ['title' => 'Microsoft Support, Save or convert to PDF or XPS in Office desktop apps', 'url' => 'https://support.microsoft.com/en-us/office/save-or-convert-to-pdf-or-xps-in-office-desktop-apps-d85416c5-7d77-4fd6-a216-6f4bf7c7c110'],
+            ['title' => 'Library of Congress, Sustainability of Digital Formats: PDF', 'url' => 'https://www.loc.gov/preservation/digital/formats/fdd/fdd000030.shtml'],
+        ],
+    ],
+
 ];
