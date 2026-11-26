@@ -4819,7 +4819,7 @@ return [
                     'Most problems trace back to one of a handful of causes.',
                 ],
                 'list' => [
-                    'A table turned into plain text or disappeared: this tool rebuilds paragraphs, lists, headings and images, not table layouts. If the document is mostly a table (an invoice or price list), it is usually easier to keep it in Excel and use an Excel to PDF converter instead, or accept that the table content will read as plain lines.',
+                    'A table turned into plain text or disappeared: this tool rebuilds paragraphs, lists, headings and images, not table layouts. If the document is mostly a table (an invoice or price list), it is usually easier to keep it in Excel and use the [Excel to PDF](/excel-to-pdf) converter instead, or accept that the table content will read as plain lines.',
                     'An image is missing: images that wrap text or float off the page margin are the most common thing a browser-based converter cannot place reliably; images placed inline with the text come through correctly.',
                     'The page looks cramped or the wrong size: pick Letter for documents aimed at the US and A4 for almost everywhere else, since the tool lays the content out to fit whichever one you choose before converting.',
                     'Tracked changes or comments are missing from the PDF: this is expected, not a bug. Go back to Word, accept or reject every tracked change, and remove or resolve comments before converting, since a PDF is meant to be the final, agreed version.',
