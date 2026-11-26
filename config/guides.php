@@ -4625,12 +4625,12 @@ return [
                     "Once you know your score, the fix is almost always mechanical too. This is the order that moves it fastest, worst sentences first.",
                 ],
                 'list' => [
-                    "Run your text through a readability checker and sort by sentence length - fix the longest sentences first, since they drag the average down the most.",
+                    "Run your text through our [readability checker](/readability-checker) and sort by sentence length - fix the longest sentences first, since they drag the average down the most.",
                     "Split any sentence that carries more than one main idea into two sentences; a comma or 'and' joining two complete thoughts is almost always a place to break.",
                     "Swap a long, formal word for a shorter, everyday one wherever the meaning doesn't change - 'use' instead of 'utilise', 'help' instead of 'facilitate'.",
                     "Replace passive constructions ('the form was submitted by the applicant') with active ones ('the applicant submitted the form') - active sentences are usually shorter and clearer.",
                     "Read the result out loud; if you run out of breath before the full stop, the sentence is too long regardless of what the score says.",
-                    "Re-check the score after each pass rather than rewriting the whole piece at once - small, targeted edits to the worst sentences move the average faster than a general rewrite.",
+                    "Re-check the score after each pass rather than rewriting the whole piece at once - small, targeted edits to the worst sentences move the average faster than a general rewrite; a [word counter](/word-counter) alongside it shows your live sentence count if you just want to track progress without recomputing the formula yourself.",
                 ],
             ],
             [
