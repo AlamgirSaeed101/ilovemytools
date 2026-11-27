@@ -8,7 +8,7 @@
     // Real ads only in production; locally the React app shows "Ad space" placeholders instead.
     $adClient = \App\Support\Ads::liveClient();
     $ga4 = (string) config('site.ga4_id');
-    $ga4 = app()->environment('production') && preg_match('/^G-[A-Z0-9]{4,20}$/', $ga4) ? $ga4 : '';
+    $ga4 = config('site.ga4_inline') && app()->environment('production') && preg_match('/^G-[A-Z0-9]{4,20}$/', $ga4) ? $ga4 : '';
 @endphp
 <!DOCTYPE html>
 <html lang="{{ \App\Support\Locale::hreflang(\App\Support\Locale::current()) }}" dir="{{ \App\Support\Locale::dir() }}" class="no-js" data-theme="light">

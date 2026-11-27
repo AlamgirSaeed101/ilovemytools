@@ -33,7 +33,7 @@ class AuditFixesTest extends TestCase
     public function test_analytics_skips_automated_browsers(): void
     {
         $this->app['env'] = 'production';
-        config(['site.ga4_id' => 'G-TEST12345']);
+        config(['site.ga4_id' => 'G-TEST12345', 'site.ga4_inline' => true]);
 
         $this->assertMatchesRegularExpression('#navigator\.webdriver \|\| /lighthouse\|headless#', $this->get('/')->getContent());
     }

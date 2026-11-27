@@ -109,6 +109,10 @@ return [
     // Google Analytics 4 measurement ID, e.g. G-XXXXXXXXXX (optional).
     'ga4_id' => env('GA4_MEASUREMENT_ID', ''),
 
+    // GA4 now loads through Google Tag Manager (GTM-WJ5JSJ5Q, tag "GA4 - G-GMWZ0PJW1R"), so the
+    // built-in gtag.js copy stays off; turning both on would count every visit twice.
+    'ga4_inline' => false,
+
     /*
     |--------------------------------------------------------------------------
     | Google AdSense

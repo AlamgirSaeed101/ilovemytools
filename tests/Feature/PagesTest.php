@@ -132,7 +132,7 @@ class PagesTest extends TestCase
 
     public function test_google_tag_loads_first_in_head_in_production_only(): void
     {
-        config(['site.ga4_id' => 'G-GMWZ0PJW1R']);
+        config(['site.ga4_id' => 'G-GMWZ0PJW1R', 'site.ga4_inline' => true]);
 
         $this->app['env'] = 'local';
         $this->get('/')->assertDontSee('googletagmanager.com', false);
