@@ -4839,4 +4839,77 @@ return [
         ],
     ],
 
+    'how-to-fix-a-sideways-or-upside-down-pdf' => [
+        'title' => 'How to Fix a Sideways or Upside-Down PDF (Free)',
+        'description' => 'Fix a sideways or upside-down PDF page for free, right in your browser: rotate one page or the whole file by 90, 180 or 270 degrees. Steps and fixes.',
+        'h1' => 'How to fix a sideways or upside-down PDF',
+        'intro' => 'A PDF that reads fine on pages 1 and 2 and then turns sideways on page 3 is one of the most common small annoyances in scanned documents. It usually happens because a scanner or phone camera saved that one page in a different orientation than the rest, and the fix has nothing to do with the content - the text and images are fine, only the page\'s orientation flag is wrong. Here is why it happens and how to correct it without re-scanning or re-typing anything.',
+        'tool' => 'rotate-pdf',
+        'related' => ['organize-pdf', 'split-pdf', 'merge-pdf'],
+        'published' => '2026-11-27',
+        'updated' => '2026-11-27',
+        'sections' => [
+            [
+                'heading' => 'Why a PDF page ends up sideways in the first place',
+                'paragraphs' => [
+                    'Every page in a PDF carries its own orientation setting alongside its content, so one page can be rotated differently from the rest of the same file. A flatbed scanner fed a landscape receipt or certificate in between portrait pages, a phone camera held sideways for one shot in a multi-page scan app, or a page that was scanned upside down by mistake - all of these save correctly as far as the page content goes, but with the wrong orientation flag attached to that one page.',
+                    'Because the content itself is untouched, fixing it is simple: you are not re-scanning, re-typing or re-arranging anything, just correcting a single setting on the page so every viewer and printer displays it the right way up. That is a different job from reordering pages (changing which page comes first) or deleting pages (removing ones you do not need) - rotation only changes which way up a page displays.',
+                ],
+            ],
+            [
+                'heading' => 'Rotating a PDF, step by step',
+                'paragraphs' => [
+                    'This runs entirely in your browser using the [Rotate PDF](/rotate-pdf) tool - the file is opened, rotated and saved on your own device and never uploaded to a server.',
+                ],
+                'list' => [
+                    'Open Rotate PDF and choose the file with the sideways or upside-down page.',
+                    'Look at the page thumbnails and click the one (or ones) that need fixing. Leave none selected if every page needs the same rotation.',
+                    'Click ↺ 90° or ↻ 90° to turn the selected pages a quarter turn, or 180° for a page scanned fully upside down.',
+                    'Check the thumbnail again - if one click was not enough (for example a page scanned 180 degrees out but you only rotated it 90), click the same button again.',
+                    'Click Rotate PDF, then download the corrected file and open it to confirm every page now reads the right way up.',
+                ],
+            ],
+            [
+                'heading' => 'Working out which direction to rotate',
+                'paragraphs' => [
+                    'The fastest way to tell left from right is to look at which way the top of the text is leaning, not which way the whole page looks tilted.',
+                ],
+                'table' => [
+                    'headers' => ['What you see', 'What is wrong', 'Fix'],
+                    'rows' => [
+                        ['Text runs bottom-to-top, reading sideways', 'Page rotated 90° counter-clockwise from upright', 'Rotate right (↻) 90°'],
+                        ['Text runs top-to-bottom, reading sideways', 'Page rotated 90° clockwise from upright', 'Rotate left (↺) 90°'],
+                        ['Text is upside down', 'Page rotated 180°', 'Click 180°, or click the same 90° button twice'],
+                        ['Whole document is landscape but should be portrait (or the reverse)', 'Every page saved in the wrong orientation', 'Select no pages, then rotate once to turn the entire file'],
+                    ],
+                ],
+            ],
+            [
+                'heading' => 'When rotating does not fully fix the page',
+                'paragraphs' => [
+                    'Occasionally a page looks correct in one PDF viewer but sideways in another, or prints the wrong way even after rotating. That almost always means the viewer or printer is reading a different orientation flag than the one you just set, or the file has not been re-saved since the change - downloading the corrected file and replacing the old copy resolves it. If the content itself (not just the orientation) is mirrored or distorted, the source scan was captured incorrectly and needs to be re-scanned; rotation cannot un-mirror a page.',
+                    'If a page is rotated correctly but in the wrong position in the document - for example, it should come before the previous page, not just face the right way - reorder it afterwards with [Organize PDF](/organize-pdf), and use [Split PDF](/split-pdf) if you only need that corrected page pulled out on its own.',
+                ],
+            ],
+            [
+                'heading' => 'Checklist before you send a rotated PDF on',
+                'list' => [
+                    'Open the downloaded file in an actual PDF reader (not just a thumbnail preview) and check every page, not only the one you fixed.',
+                    'If the file will be printed, do a single test print of the corrected page to confirm the printer reads the new orientation.',
+                    'Confirm no other pages shifted orientation by accident - rotating "all pages" when you meant to select just one is the most common slip.',
+                    'Keep the original file until the corrected copy has been checked, since nothing here overwrites the file already on your device.',
+                ],
+            ],
+        ],
+        'faqs' => [
+            ['q' => 'Why is only one page in my PDF sideways when the rest are fine?', 'a' => 'Each page in a PDF stores its own orientation separately, so a scanner or camera can save one page differently from the others - commonly a landscape item scanned in among portrait pages. Rotating just that page fixes it without touching the rest of the file.'],
+            ['q' => 'Does rotating a PDF page reduce its quality or add a watermark?', 'a' => 'No. Rotation only changes the page\'s orientation flag that viewers and printers read; the text and image data on the page are not re-processed, resized or watermarked.'],
+            ['q' => 'Can I rotate just a few pages and leave the rest as they are?', 'a' => 'Yes. Click the thumbnail of each page that needs fixing before clicking a rotate button - only the pages you selected turn. Leaving none selected rotates every page instead.'],
+        ],
+        'sources' => [
+            ['title' => 'pdf-lib, create and modify PDF documents in JavaScript', 'url' => 'https://pdf-lib.js.org/'],
+            ['title' => 'Library of Congress, Sustainability of Digital Formats: PDF', 'url' => 'https://www.loc.gov/preservation/digital/formats/fdd/fdd000030.shtml'],
+        ],
+    ],
+
 ];
