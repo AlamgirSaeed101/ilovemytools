@@ -69,3 +69,5 @@ Tools already announced on LinkedIn (one per line: date and slug). The daily rou
 2026-11-25 json-formatter company
 2026-11-26 sign-pdf personal
 2026-11-26 sign-pdf company
+2026-11-27 base64-encoder-decoder personal
+2026-11-27 base64-encoder-decoder company
