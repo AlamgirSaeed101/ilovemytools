@@ -24,6 +24,15 @@
             gtag('config', @json($ga4));
         </script>
     @endif
+    @production
+        {{-- Google Tag Manager (owner-supplied snippet, added as given). --}}
+        <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-WJ5JSJ5Q"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        </script>
+    @endproduction
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
