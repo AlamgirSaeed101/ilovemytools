@@ -23,7 +23,7 @@
             <p>Cookies are small text files stored on your device. We use:</p>
             <ul>
                 <li><strong>Essential cookies</strong> needed for the Site to work securely (for example a session cookie).</li>
-                <li><strong>Analytics cookies</strong> (if enabled) such as Google Analytics, to understand how visitors use the Site in aggregate.</li>
+                <li><strong>Analytics cookies</strong> from Google Analytics, loaded through Google Tag Manager, to understand how visitors use the Site in aggregate. The files you open in our tools never leave your device, and we do not send names, email addresses or phone numbers to Google Analytics.</li>
                 <li><strong>Advertising cookies</strong> used by Google and its partners to show ads, as described below.</li>
             </ul>
 

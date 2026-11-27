@@ -21,7 +21,7 @@ class SiteData
     public const PAGE_PATHS = ['about' => '/about', 'contact' => '/contact', 'privacy' => '/privacy-policy', 'terms' => '/terms'];
 
     /** Date shown as "Last updated" on the privacy policy and terms. */
-    public const LEGAL_UPDATED = '2026-09-29';
+    public const LEGAL_UPDATED = '2026-11-27';
 
     public function __construct(private ToolRegistry $registry)
     {
