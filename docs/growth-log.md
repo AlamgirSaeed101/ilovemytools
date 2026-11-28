@@ -1,5 +1,27 @@
 # Growth log (newest first)
 
+## 2026-11-28 (SEO and growth)
+
+**Search health (Google, Search Console via OpenSEO; Bing Webmaster not connected, Bing metrics blank)**
+- Latest complete 7 days 21-27 Nov: 5 impressions, 0 clicks. Previous 7 (14-20 Nov): 14 impressions, 1 click. Last 28 days (30 Oct-27 Nov): 33 impressions, 1 click. Visibility is still about zero: confirmed. Previous-28 comparison not pulled (data too small to mean anything).
+- /avif-to-webp and /domain-authority-checker: unchanged since yesterday. Both "Crawled - currently not indexed", last crawls 7 Oct and 18 Oct, canonical correct, robots allowed, HTTP 200 and the real page (~13.8k words) on live fetch (confirmed).
+- The public sitemap fetch returned the 11-word "One moment, please..." anti-bot page today, so sitemap inclusion was not re-checked (needs live inspection; retry later).
+- Windsor-ai reads are still paused (free plan, 2 accounts). OpenSEO GA4 key events for organic search returned no rows 31 Oct-27 Nov.
+
+**Best opportunities:** none qualify (1-5 impressions/day, no repeated impressions at positions 4-20). Semrush not used. Trend unverified.
+
+**Website action:** no change today. Pages are not indexed because Google has not re-crawled them since October; no title/content gap identified and 31 titles are frozen until 18 Dec.
+
+**Retention:** no funnel drop measurable. Measurement gap: no key events visible for organic-search traffic, so start/finish/download events could not be confirmed; analytics changes need owner review. No active experiment.
+
+**Next review:** 4 Dec. Act if inspect_urls shows a new crawl date, if Windsor/GA4 is restored, or if the sitemap check can be completed.
+
+### Keyword log
+Nothing qualifying today.
+
+### Change log
+No changes.
+
 ## 2026-11-27 (SEO and growth)
 
 **Search health (Google, Search Console via OpenSEO; Bing Webmaster not connected, Bing metrics blank)**
