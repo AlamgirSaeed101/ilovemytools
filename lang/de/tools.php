@@ -53,7 +53,6 @@ return [
             ['q' => 'Ist dieser Wortzähler kostenlos?', 'a' => 'Ja. Der Wortzähler ist völlig kostenlos, ohne Anmeldung und ohne Begrenzung der Textmenge.'],
             ['q' => 'Wird mein Text gespeichert oder hochgeladen?', 'a' => 'Nein. Die Zählung findet vollständig in deinem Browser statt. Dein Text wird nie an unseren Server gesendet oder irgendwo gespeichert.'],
             ['q' => 'Wie wird die Lesezeit berechnet?', 'a' => 'Die Lesezeit basiert auf einer durchschnittlichen stillen Lesegeschwindigkeit Erwachsener von 238 Wörtern pro Minute. Die Sprechzeit nutzt 150 Wörter pro Minute, ein typisches Tempo für Präsentationen.'],
-            ['q' => 'Ist ein Wortzähler dasselbe wie ein Wörterzähler?', 'a' => 'Ja. Wortzähler, Wörterzähler und Zeichenzähler sind gängige Bezeichnungen für dasselbe Tool: Es zählt Wörter, Zeichen, Sätze und Absätze in deinem Text.'],
             ['q' => 'Kann ich auch nur Zeichen zählen, mit und ohne Leerzeichen?', 'a' => 'Ja. Neben den Wörtern zeigt der Zähler die Zeichen mit und ohne Leerzeichen – praktisch für Zeichenlimits bei Meta-Beschreibungen, Bewerbungen oder Social-Media-Beiträgen.'],
             ['q' => 'Wie viele Wörter hat mein Text?', 'a' => 'Füge den Text oben ein oder tippe ihn – der Wortzähler zeigt sofort die Zahl der Wörter, Zeichen, Sätze und Absätze und aktualisiert sie bei jeder Änderung.'],
             ['q' => 'Wie viele Zeichen und Wörter hat eine Normseite?', 'a' => 'Eine Normseite hat 1.800 Zeichen inklusive Leerzeichen (30 Zeilen mit je 60 Anschlägen). Das sind ungefähr 250 Wörter, je nach Wortlänge etwas mehr oder weniger.'],
@@ -761,7 +760,6 @@ return [
             ['q' => 'Kann ich die prozentuale Veränderung berechnen, wenn der alte Wert 0 ist?', 'a' => 'Nein. Die Division durch null ist nicht definiert, eine Veränderung ab 0 lässt sich also nicht als Prozentsatz ausdrücken, und der Rechner zeigt statt eines Ergebnisses einen Hinweis. Gib in diesem Fall die absolute Veränderung an.'],
             ['q' => 'Wie berechne ich das prozentuale Wachstum über mehrere Jahre?', 'a' => 'Mit der durchschnittlichen jährlichen Wachstumsrate: (Endwert / Anfangswert)^(1 / Jahre) - 1. Von 100 auf 150 in 3 Jahren sind das etwa 14,5 % pro Jahr. Der Rechner selbst berechnet einstufige Veränderungen, für mehrere Jahre nutzt du diese Formel.'],
             ['q' => 'Wie berechne ich einen Rabatt?', 'a' => 'Nutze „Eine Zahl um einen Prozentsatz erhöhen oder verringern“ und wähle Verringern. Bei 20 % Rabatt auf 50 € beträgt der Preis 50 € x (1 - 0,20) = 40 €.'],
-            ['q' => 'Ist ein „Prozentrechner“ dasselbe wie ein „Prozentsatzrechner“?', 'a' => 'Ja, beide Begriffe meinen dasselbe Werkzeug. Es berechnet die Zunahme, Abnahme oder prozentuale Veränderung zwischen zwei beliebigen Zahlen, direkt im Browser und ohne Download.'],
             ['q' => 'Kann ich Prozente online berechnen, ohne etwas herunterzuladen?', 'a' => 'Ja. Alles läuft in deinem Browser: Gib die Zahlen ein, und das Ergebnis samt Formel erscheint sofort, ohne App, Anmeldung oder Datei-Upload.'],
             ['q' => 'Welche Formel hat der Prozentrechner?', 'a' => 'Er zeigt bei jeder Rechenart den Rechenweg mit deinen Zahlen direkt unter dem Ergebnis. Dahinter stehen diese Formeln: Prozentwert = Prozentsatz / 100 x Grundwert, Prozentsatz = Prozentwert / Grundwert x 100 und Veränderung = (neu - alt) / |alt| x 100.'],
         ],
@@ -999,7 +997,6 @@ return [
             ['q' => 'Was ist der Unterschied zwischen öffentlicher und privater IP-Adresse?', 'a' => 'Die öffentliche IP-Adresse vergibt dein Internetanbieter – sie sehen Websites. Private Adressen wie 192.168.x.x, 10.x.x.x oder 172.16.x.x bis 172.31.x.x gelten nur in deinem Heimnetz und werden vom Router vergeben. Dieses Tool zeigt die öffentliche Adresse.'],
             ['q' => 'Wie kann ich meine IP-Adresse prüfen oder testen, ob mein VPN funktioniert?', 'a' => 'Notiere die angezeigte Adresse, schalte das VPN ein und klicke auf Aktualisieren. Ändert sich die IP, läuft dein Datenverkehr über das VPN. Bleibt sie gleich, ist das VPN nicht aktiv.'],
             ['q' => 'Warum ist meine IP-Adresse auf dem Handy anders als am PC?', 'a' => 'Im WLAN nutzt du die IP-Adresse deines Routers, im Mobilfunknetz die deines Mobilfunkanbieters. Deshalb zeigt dieselbe Seite je nach Verbindung eine andere öffentliche IP-Adresse.'],
-            ['q' => 'Ist „Wie ist meine IP“ dasselbe wie „Was ist meine IP“?', 'a' => 'Ja. Beide Fragen meinen deine öffentliche IP-Adresse, also die Adresse, die Websites beim Verbinden sehen. Diese Seite zeigt sie sofort an.'],
         ],
     ],
 
@@ -1821,10 +1818,6 @@ return [
             [
                 'q' => 'Werden die Seite oder meine Ergebnisse gespeichert?',
                 'a' => 'Nein. Unser Server ruft die Seite und die Links nur zur Prüfung ab und speichert weder die Adresse noch die Ergebnisse.',
-            ],
-            [
-                'q' => 'Ist ein „Dead Link Checker“ dasselbe wie dieser Broken-Link-Checker?',
-                'a' => 'Ja. „Dead Link Checker“, „Broken Link Checker“, „404-Checker“ und „tote Links finden“ meinen alle dasselbe: ein Tool, das die Links einer Seite prüft und zeigt, welche nicht mehr funktionieren (tote Links) oder einen Fehler wie 404 liefern. Dieses Tool deckt genau diese Fälle ab.',
             ],
         ],
         'table' => [

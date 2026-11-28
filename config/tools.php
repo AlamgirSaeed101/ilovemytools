@@ -77,7 +77,6 @@ return [
             ['q' => 'Is this word counter free?', 'a' => 'Yes. The word counter is completely free with no sign up and no limits on how much text you paste.'],
             ['q' => 'Is my text saved or uploaded?', 'a' => 'No. Counting happens entirely in your browser. Your text is never sent to our server or stored anywhere.'],
             ['q' => 'How is reading time calculated?', 'a' => 'Reading time uses an average adult silent reading speed of 238 words per minute. Speaking time uses 150 words per minute, a typical pace for presentations.'],
-            ['q' => 'Is a "word counter" the same as a "words counter"?', 'a' => 'Yes. Word counter, words counter, word count tool, text counter and character counter all describe the same tool: it counts the words, characters, sentences and paragraphs in your text.'],
             ['q' => 'Does it count characters with spaces?', 'a' => 'Yes. You get both characters with spaces and characters without spaces, which is what most character limits refer to.'],
             ['q' => 'How do I count the words and characters in my text?', 'a' => 'Paste or type your text above: the word counter instantly shows the number of words, characters, sentences and paragraphs, and updates them with every change.'],
             ['q' => 'How many words is a page?', 'a' => 'About 500 words single-spaced or about 250 words double-spaced, with a 12-point font and 1-inch margins. See our guide "How many words is a page?" for a full chart.'],
@@ -926,7 +925,6 @@ return [
             ['q' => 'Can I calculate percentage change when the old value is 0?', 'a' => 'No. Dividing by zero is undefined, so a change from 0 can\'t be expressed as a percentage, and the calculator shows a message instead of a result. Report the absolute change instead.'],
             ['q' => 'How do I work out average yearly growth over several years?', 'a' => 'Use compound annual growth: (end / start)^(1 / years) - 1. From 100 to 150 over 3 years gives about 14.5% a year. This calculator handles single-step changes, so use the formula for multi-year growth.'],
             ['q' => 'How do I work out a discount?', 'a' => 'Use "Increase or decrease a number by a percentage" and choose decrease. For 20% off $50, the sale price is $50 x (1 - 0.20) = $40.'],
-            ['q' => 'Is a "percentage calculator" the same as a "percent calculator"?', 'a' => 'Yes, the names are interchangeable. This calculator works out the increase, decrease or percentage change between any two numbers, right in your browser, with no download.'],
             ['q' => 'Can I calculate percentages online without downloading anything?', 'a' => 'Yes. Everything runs in your browser: type the numbers and the result and formula appear instantly, with no app, sign-up or file upload needed.'],
             ['q' => 'What formulas does the percentage calculator use?', 'a' => 'For every type of calculation it shows the working with your numbers directly below the result. Behind it are these formulas: X% of Y = X / 100 x Y, X as a percent of Y = X / Y x 100, and change = (new - old) / |old| x 100.'],
         ],
@@ -1193,7 +1191,6 @@ return [
             ['q' => 'What is the difference between a public and a private IP address?', 'a' => 'Your public IP address is assigned by your internet provider, and it is the one websites see. Private addresses such as 192.168.x.x, 10.x.x.x or 172.16.x.x to 172.31.x.x only apply inside your home network and are assigned by your router. This tool shows the public address.'],
             ['q' => 'How can I check my IP address or test whether my VPN is working?', 'a' => 'Note the address shown, turn on the VPN and click Refresh. If the IP changes, your traffic is going through the VPN. If it stays the same, the VPN is not active.'],
             ['q' => 'Why is my IP address different on my phone than on my PC?', 'a' => 'On Wi-Fi you use your router\'s IP address; on mobile data you use your mobile carrier\'s. That is why the same page shows a different public IP address depending on the connection.'],
-            ['q' => 'Is "what\'s my IP" the same as "what is my IP address"?', 'a' => 'Yes. Both questions mean your public IP address, the address websites see when you connect. This page shows it straight away.'],
         ],
         'sources' => [
             ['title' => 'ARIN: IPv4 address depletion', 'url' => 'https://www.arin.net/resources/guide/ipv4/'],
@@ -2119,7 +2116,6 @@ return [
             ['q' => 'Does it check the whole website?', 'a' => 'It checks every link and image on the page you enter, up to 300. To check other pages, enter their addresses one by one.'],
             ['q' => 'Why are some links marked Blocked?', 'a' => 'Some websites refuse automated requests or require a login, answering with status 401, 403 or 429. The link may still work in a normal browser, so open it to check.'],
             ['q' => 'Is the page or my results stored?', 'a' => 'No. Our server fetches the page and the links only to check them and does not save the address or the results.'],
-            ['q' => 'Is a "dead link checker" the same as this broken link checker?', 'a' => 'Yes. "Dead link checker", "broken link checker", "404 checker" and "broken links checker" all describe the same kind of tool: one that tests the links on a page and shows which no longer work (dead links) or return an error such as 404. This tool covers every one of those cases.'],
         ],
         'table' => [
             'caption' => 'Common HTTP status codes',

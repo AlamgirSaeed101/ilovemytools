@@ -31,7 +31,6 @@ return [
             ['q' => '¿Este contador de palabras es gratis?', 'a' => 'Sí. Es totalmente gratis, sin registro y sin límite en la cantidad de texto que pegues.'],
             ['q' => '¿Se guarda o se sube mi texto?', 'a' => 'No. El recuento se hace por completo en tu navegador. Tu texto nunca se envía a nuestro servidor ni se guarda en ningún sitio.'],
             ['q' => '¿Cómo se calcula el tiempo de lectura?', 'a' => 'El tiempo de lectura usa una velocidad media de lectura silenciosa en adultos de 238 palabras por minuto. El tiempo de habla usa 150 palabras por minuto, un ritmo típico en presentaciones.'],
-            ['q' => '¿Es lo mismo un "contador de palabras" que un "contador de texto"?', 'a' => 'Sí. Contador de palabras, contador de texto y contador de caracteres son distintos nombres para la misma herramienta: cuenta las palabras, caracteres, frases y párrafos de tu texto.'],
             ['q' => '¿Cuenta los caracteres con espacios?', 'a' => 'Sí. Obtienes los caracteres con espacios y sin espacios, que es a lo que suelen referirse los límites de caracteres.'],
         ],
     ],
@@ -527,7 +526,6 @@ return [
             ['q' => '¿Cómo calculo el porcentaje de un número?', 'a' => 'Divide el porcentaje entre 100 y multiplícalo por el número. Por ejemplo, el 15% de 200 = 0,15 x 200 = 30.'],
             ['q' => '¿Cómo calculo un aumento porcentual?', 'a' => 'Resta el valor antiguo al nuevo, divide entre el valor antiguo y multiplica por 100. De 80 a 100: (100 - 80) / 80 x 100 = 25%.'],
             ['q' => '¿Cómo calculo un descuento?', 'a' => 'Usa "Aumentar o disminuir un número en un porcentaje" con Disminuir. Con un 20% de descuento sobre 50 €, el precio final es 50 x (1 - 0,20) = 40 €.'],
-            ['q' => '¿Es lo mismo una "calculadora de porcentajes" que una "calculadora de porcentaje"?', 'a' => 'Sí, son el mismo tipo de herramienta. Esta calculadora obtiene el aumento, la disminución o la variación porcentual entre dos números cualesquiera, directamente en tu navegador y sin descargar nada.'],
             ['q' => '¿Puedo calcular porcentajes online sin descargar nada?', 'a' => 'Sí. Todo funciona en tu navegador: escribe los números y el resultado con la fórmula aparece al instante, sin aplicación, registro ni subir archivos.'],
         ],
         'table' => [
@@ -1241,10 +1239,6 @@ return [
             [
                 'q' => '¿Se guarda la página o mis resultados?',
                 'a' => 'No. Nuestro servidor descarga la página y los enlaces solo para comprobarlos y no guarda la dirección ni los resultados.',
-            ],
-            [
-                'q' => '¿Un «dead link checker» es lo mismo que este comprobador de enlaces rotos?',
-                'a' => 'Sí. «Dead link checker», «comprobador de enlaces rotos», «error 404» y «buscador de enlaces muertos» describen el mismo tipo de herramienta: una que revisa los enlaces de una página y muestra cuáles ya no funcionan (enlaces muertos) o devuelven un error como el 404. Esta herramienta cubre todos esos casos.',
             ],
         ],
         'table' => [

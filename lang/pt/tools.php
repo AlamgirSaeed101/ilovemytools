@@ -37,7 +37,6 @@ return [
             ['q' => 'Este contador de palavras é grátis?', 'a' => 'Sim. O contador de palavras é totalmente grátis, sem cadastro e sem limite de quanto texto você pode colar.'],
             ['q' => 'Meu texto é salvo ou enviado?', 'a' => 'Não. A contagem acontece inteiramente no seu navegador. Seu texto nunca é enviado ao nosso servidor nem armazenado em lugar nenhum.'],
             ['q' => 'Como o tempo de leitura é calculado?', 'a' => 'O tempo de leitura usa a velocidade média de leitura silenciosa de um adulto, 238 palavras por minuto. O tempo de fala usa 150 palavras por minuto, um ritmo típico de apresentações.'],
-            ['q' => 'Um "contador de palavras" é o mesmo que um "contador de texto"?', 'a' => 'Sim. Contador de palavras, contador de texto e contador de caracteres são nomes diferentes para a mesma ferramenta: ela conta as palavras, caracteres, frases e parágrafos do seu texto.'],
             ['q' => 'Ele conta caracteres com espaços?', 'a' => 'Sim. Você vê os caracteres com espaços e sem espaços, que é o que a maioria dos limites de caracteres considera.'],
         ],
     ],
@@ -578,7 +577,6 @@ return [
             ['q' => 'Como calculo a porcentagem de um número?', 'a' => 'Divida a porcentagem por 100 e multiplique pelo número. Por exemplo, 15% de 200 = 0,15 x 200 = 30.'],
             ['q' => 'Como calculo o aumento percentual?', 'a' => 'Subtraia o valor antigo do valor novo, divida pelo valor antigo e multiplique por 100. De 80 para 100: (100 - 80) / 80 x 100 = 25%.'],
             ['q' => 'Como calculo um desconto?', 'a' => 'Use "Diminuir um número em uma porcentagem". Com 20% de desconto em R$ 50, o preço final é R$ 50 x (1 - 0,20) = R$ 40.'],
-            ['q' => '"Calculadora de porcentagem" e "calculadora de percentagem" são a mesma coisa?', 'a' => 'Sim, são nomes equivalentes para a mesma ferramenta. Ela calcula o aumento, a redução ou a variação percentual entre dois números quaisquer, direto no navegador e sem baixar nada.'],
             ['q' => 'Posso calcular porcentagens online sem baixar nada?', 'a' => 'Sim. Tudo funciona no seu navegador: digite os números e o resultado com a fórmula aparece na hora, sem aplicativo, cadastro ou envio de arquivos.'],
         ],
         'table' => [
@@ -1346,10 +1344,6 @@ return [
             [
                 'q' => 'A página ou meus resultados são guardados?',
                 'a' => 'Não. Nosso servidor acessa a página e os links só para verificá-los e não guarda o endereço nem os resultados.',
-            ],
-            [
-                'q' => 'Um «dead link checker» é o mesmo que este verificador de links quebrados?',
-                'a' => 'Sim. «Dead link checker», «verificador de links quebrados», «erro 404» e «localizador de links mortos» descrevem o mesmo tipo de ferramenta: uma que verifica os links de uma página e mostra quais não funcionam mais (links mortos) ou retornam um erro como 404. Esta ferramenta cobre todos esses casos.',
             ],
         ],
         'table' => [
