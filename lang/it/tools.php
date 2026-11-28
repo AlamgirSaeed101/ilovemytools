@@ -53,7 +53,6 @@ return [
             ['q' => 'Questo contaparole è gratuito?', 'a' => 'Sì. Il contaparole è completamente gratuito, senza registrazione e senza limiti sulla quantità di testo che incolli.'],
             ['q' => 'Il mio testo viene salvato o caricato?', 'a' => 'No. Il conteggio avviene interamente nel tuo browser. Il testo non viene mai inviato al nostro server né salvato da nessuna parte.'],
             ['q' => 'Come si calcola il tempo di lettura?', 'a' => 'Il tempo di lettura si basa su una velocità media di lettura silenziosa di un adulto di 238 parole al minuto. Il tempo di esposizione usa 150 parole al minuto, un ritmo tipico delle presentazioni.'],
-            ['q' => 'Un "contaparole" è lo stesso di un "contatore caratteri" o "contacaratteri"?', 'a' => 'Sì. Contaparole, contatore di testo, contatore caratteri e contacaratteri sono nomi diversi per lo stesso strumento: conta le parole, i caratteri, le frasi e i paragrafi del tuo testo in tempo reale.'],
             ['q' => 'Conta i caratteri con gli spazi?', 'a' => 'Sì. Ottieni sia i caratteri con spazi sia quelli senza spazi, che sono quelli a cui si riferisce la maggior parte dei limiti.'],
             ['q' => 'Come posso contare i caratteri di un testo?', 'a' => 'Incolla o scrivi il testo nel riquadro: il contatore mostra subito i caratteri con e senza spazi, insieme a parole, frasi e paragrafi.'],
             ['q' => 'Che cos’è una cartella editoriale?', 'a' => 'È lo standard editoriale italiano di 1.800 battute, spazi inclusi: 30 righe da 60 caratteri. Il contatore ti mostra quante battute ha il tuo testo.'],
@@ -752,7 +751,6 @@ return [
             ['q' => 'Posso calcolare la variazione percentuale se il valore vecchio è 0?', 'a' => 'No. La divisione per zero non è definita, quindi una variazione a partire da 0 non si può esprimere in percentuale e il calcolatore mostra un avviso invece di un risultato. In questo caso indica la variazione assoluta.'],
             ['q' => 'Come si calcola la crescita percentuale media in più anni?', 'a' => 'Usa il tasso di crescita annuo composto: (valore finale / valore iniziale)^(1 / anni) - 1. Da 100 a 150 in 3 anni si ottiene circa il 14,5% all’anno. Questo calcolatore gestisce la variazione tra due valori, quindi per la crescita su più anni usa questa formula.'],
             ['q' => 'Come si calcola uno sconto?', 'a' => 'Usa “Aumentare o diminuire un numero di una percentuale” e scegli Diminuisci. Con il 20% di sconto su 50 €, il prezzo scontato è 50 € x (1 - 0,20) = 40 €.'],
-            ['q' => 'Calcolatrice o calcolatore di percentuali: sono la stessa cosa?', 'a' => 'Sì, sono sinonimi. Questo strumento calcola l’incremento, la diminuzione o la variazione percentuale tra due numeri qualsiasi, online e senza scaricare nulla.'],
             ['q' => 'Posso fare il calcolo delle percentuali online senza scaricare nulla?', 'a' => 'Sì. Tutto funziona nel tuo browser: inserisci i numeri e il risultato con la formula appare subito, senza app, registrazione o caricamento di file.'],
             ['q' => 'Quali formule usa il calcolatore di percentuali?', 'a' => 'Per ogni tipo di calcolo mostra i passaggi con i tuoi numeri subito sotto il risultato. Alla base ci sono queste formule: X% di Y = X / 100 x Y, X come percentuale di Y = X / Y x 100 e variazione = (nuovo - vecchio) / |vecchio| x 100.'],
         ],
@@ -990,7 +988,6 @@ return [
             ['q' => 'Qual è la differenza tra IP pubblico e IP privato?', 'a' => 'L’indirizzo IP pubblico lo assegna il tuo provider ed è quello che vedono i siti. Gli indirizzi privati come 192.168.x.x, 10.x.x.x o da 172.16.x.x a 172.31.x.x valgono solo nella tua rete domestica e li assegna il router. Questo strumento mostra l’indirizzo pubblico.'],
             ['q' => 'Come posso verificare il mio IP o controllare se la VPN funziona?', 'a' => 'Annota l’indirizzo mostrato, attiva la VPN e fai clic su Aggiorna. Se l’IP cambia, il tuo traffico passa dalla VPN. Se resta uguale, la VPN non è attiva.'],
             ['q' => 'Perché il mio IP sul cellulare è diverso da quello sul PC?', 'a' => 'Con il Wi-Fi usi l’indirizzo IP del tuo router, con la rete mobile quello del tuo operatore. Per questo la stessa pagina mostra un IP pubblico diverso a seconda della connessione.'],
-            ['q' => 'Cercare “qual è il mio IP” o “che IP ho” è la stessa cosa?', 'a' => 'Sì. Entrambe le domande si riferiscono al tuo indirizzo IP pubblico, cioè l’indirizzo che i siti vedono quando ti connetti. Questa pagina lo mostra subito.'],
         ],
     ],
 
@@ -1812,10 +1809,6 @@ return [
             [
                 'q' => 'La pagina o i miei risultati vengono salvati?',
                 'a' => 'No. Il nostro server scarica la pagina e i link solo per controllarli e non salva né l’indirizzo né i risultati.',
-            ],
-            [
-                'q' => 'Un «dead link checker» è lo stesso di questo controllo link non funzionanti?',
-                'a' => 'Sì. «Dead link checker», «controllo link rotti», «errore 404» e «trova link morti» descrivono lo stesso tipo di strumento: uno che controlla i link di una pagina e mostra quali non funzionano più (link morti) o restituiscono un errore come 404. Questo strumento copre tutti questi casi.',
             ],
         ],
         'table' => [

@@ -37,7 +37,6 @@ return [
             ['q' => 'Ce compteur de mots est-il gratuit ?', 'a' => 'Oui. Le compteur de mots est entièrement gratuit, sans inscription et sans limite sur la quantité de texte collé.'],
             ['q' => 'Mon texte est-il enregistré ou envoyé ?', 'a' => 'Non. Le comptage se fait entièrement dans votre navigateur. Votre texte n’est jamais envoyé à notre serveur ni stocké nulle part.'],
             ['q' => 'Comment le temps de lecture est-il calculé ?', 'a' => 'Le temps de lecture se base sur une vitesse moyenne de lecture silencieuse de 238 mots par minute chez l’adulte. Le temps de parole utilise 150 mots par minute, un rythme typique pour une présentation.'],
-            ['q' => 'Un « compteur de mots » est-il la même chose qu\'un « compteur de texte » ?', 'a' => 'Oui. Compteur de mots, compteur de texte et compteur de caractères désignent le même outil : il compte les mots, caractères, phrases et paragraphes de votre texte.'],
             ['q' => 'Compte-t-il les caractères avec les espaces ?', 'a' => 'Oui. Vous obtenez les caractères avec espaces et sans espaces, ce à quoi se réfèrent la plupart des limites de caractères.'],
         ],
     ],
@@ -578,7 +577,6 @@ return [
             ['q' => 'Comment calculer un pourcentage d’un nombre ?', 'a' => 'Divisez le pourcentage par 100 et multipliez par le nombre. Par exemple, 15 % de 200 = 0,15 x 200 = 30.'],
             ['q' => 'Comment calculer une hausse en pourcentage ?', 'a' => 'Soustrayez l’ancienne valeur de la nouvelle, divisez par l’ancienne valeur et multipliez par 100. De 80 à 100 : (100 - 80) / 80 x 100 = 25 %.'],
             ['q' => 'Comment calculer une remise ?', 'a' => 'Utilisez « Diminuer un nombre d’un pourcentage ». Pour 20 % de remise sur 50 €, le prix soldé est 50 € x (1 - 0,20) = 40 €.'],
-            ['q' => 'Un « calculateur de pourcentage » est-il la même chose qu’une « calculatrice de pourcentage » ?', 'a' => 'Oui, les deux désignent le même outil. Il calcule la hausse, la baisse ou la variation en pourcentage entre deux nombres quelconques, directement dans le navigateur et sans rien télécharger.'],
             ['q' => 'Puis-je calculer un pourcentage en ligne sans rien télécharger ?', 'a' => 'Oui. Tout se passe dans votre navigateur : saisissez les nombres et le résultat avec la formule s’affiche instantanément, sans application, inscription ni envoi de fichier.'],
         ],
         'table' => [
@@ -1346,10 +1344,6 @@ return [
             [
                 'q' => 'La page ou mes résultats sont-ils conservés ?',
                 'a' => 'Non. Notre serveur récupère la page et les liens uniquement pour les vérifier et n’enregistre ni l’adresse ni les résultats.',
-            ],
-            [
-                'q' => 'Un « dead link checker » est-il la même chose que ce vérificateur de liens cassés ?',
-                'a' => 'Oui. « Dead link checker », « vérificateur de liens cassés », « erreur 404 » et « détecteur de liens morts » décrivent le même type d’outil : un outil qui teste les liens d’une page et indique lesquels ne fonctionnent plus (liens morts) ou renvoient une erreur comme 404. Cet outil couvre tous ces cas.',
             ],
         ],
         'table' => [
